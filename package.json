@@ -1,0 +1,24 @@
+{
+  "name": "rgi-assessment-tool",
+  "version": "1.0.0",
+  "description": "Assessment tool for the yearly Resource Governance Index",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NRGI/rgi-assessment-tool.git"
+  },
+  "author": "Chris Perry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NRGI/rgi-assessment-tool/issues"
+  },
+  "homepage": "https://github.com/NRGI/rgi-assessment-tool",
+  "dependencies": {
+    "express": "^4.10.2",
+    "jade": "^1.7.0"
+  }
+}
