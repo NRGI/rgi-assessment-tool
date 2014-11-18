@@ -1,6 +1,7 @@
-doctype
-html
-	head
+extend ../includes/layout
 
-	body
-		h1 Hello Worldddd
+block main-content
+	section.content
+		div(ng-view)
+	h2= mongoMessage
+

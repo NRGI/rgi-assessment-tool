@@ -18,9 +18,13 @@
   },
   "homepage": "https://github.com/NRGI/rgi-assessment-tool",
   "dependencies": {
+    "body-parser": "^1.9.2",
     "express": "^4.10.2",
     "grunt-cli": "^0.1.13",
-    "jade": "^1.7.0"
+    "jade": "^1.7.0",
+    "mongoose": "^3.8.19",
+    "morgan": "^1.5.0",
+    "stylus": "^0.49.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
