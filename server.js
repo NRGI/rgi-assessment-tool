@@ -1,33 +1,16 @@
 var express 	= require('express'),
-	mongoose 	= require ('mongoose');
+	mongoose 	= require('mongoose');
 
 // CONFIG
 var env 	= process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app 	= express();
-var config 	= {
-	rootPath: __dirname
-}
 
+// Confguration files
+var config 	= require('./server/config/config')[env];
+console.log(config.port);
 require('./server/config/express')(app,config);
+require('./server/config/mongoose')(config);
+require('./server/config/routes')(app);
 
-// connect to mongodb
-mongoose.connect('mongodb://localhost/rgi2015');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console,'connection error...'));
-db.once('open', function callback() {
-	console.log('rgi2015 db opened');
-});
-
-
-app.get('/partials/*', function(req, res) {
-	res.render('../../public/app/' + req.params[0]);
-});
-
-app.get('*', function(req, res) {
-	res.render('index');
-});
-
-var port = 3030;
-app.listen(port);
-
-console.log('Listening on port ' + port + '...');
+app.listen(config.port);
+console.log('Listening on port ' + config.port + '...');
