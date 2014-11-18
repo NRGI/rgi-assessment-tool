@@ -1,2 +1,11 @@
-h1 This is a Partial
-h2 {{ myVar }}
+.container
+	.jumbotron
+		h1 NRGI Resource Governance Index Assessment Tool 2015
+		p Welcome to the assessment to RGI Assessment Tool Portal.
+
+	.row
+		.col-md-6
+			div(ng-include="'/partials/featured-courses'")
+		.col-md-6
+			div(ng-include="'/partials/new-courses'")
+			
