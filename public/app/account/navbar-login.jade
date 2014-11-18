@@ -1,0 +1,8 @@
+.navbar-right(ng-controller="rgiNavBarLoginCtrl")
+	form.navbar-form
+		.form-group
+			input.form-control(placeholder="Email", ng-model="username")
+		.form-group
+			input.form-control(type="password" placeholder="Password", ng-model="password")
+		button.btn.btn-primary(ng-click="signin(username, password)") Sign in
+		//- button.btn.btn-primary(ng-click="signin(username, password") Sign in

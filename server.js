@@ -1,31 +1,14 @@
 var express 	= require('express'),
-	stylus 		= require('stylus'),
-	logger 		= require('morgan'),
-	bodyParser 	= require('body-parser')
 	mongoose 	= require ('mongoose');
 
 // CONFIG
 var env 	= process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app 	= express();
-// function for use by stylus middleware
-function compile (str, path) {
-	return stylus(str).set('filename', path);
+var config 	= {
+	rootPath: __dirname
 }
-// set up view engine
-app.set('views', __dirname + '/server/views');
-app.set('view engine', 'jade');
-// set up logger
-app.use(logger('dev'));
-// set up body parser
-app.use(bodyParser());
-// stylus middleware implementation - routes to anything in public directory
-app.use(stylus.middleware(
-	{
-		src: __dirname + '/public',
-		compile: compile
-	}
-));
-app.use(express.static(__dirname + '/public'));
+
+require('./server/config/express')(app,config);
 
 // connect to mongodb
 mongoose.connect('mongodb://localhost/rgi2015');
@@ -36,8 +19,8 @@ db.once('open', function callback() {
 });
 
 
-app.get('/partials/:partialPath', function(req, res) {
-	res.render('partials/' + req.params.partialPath);
+app.get('/partials/*', function(req, res) {
+	res.render('../../public/app/' + req.params[0]);
 });
 
 app.get('*', function(req, res) {
