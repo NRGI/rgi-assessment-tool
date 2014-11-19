@@ -1,4 +1,24 @@
 .container
-  table.table
-    tr(ng-repeat="user in users")
-      td {{user.firstName + ' ' + user.lastName}}
+	table.table
+		h1 Users Table
+		thead
+			tr
+				td: b First Name
+				td: b Last Name
+				td: b Username
+				td: b Roles
+		tbody
+			tr(ng-repeat="user in users")
+				td {{user.firstName}}
+				td {{user.lastName}}
+				td {{user.username}}
+				td {{user.roles}}
+
+//- .container
+//-   table.table
+//-   	
+//-     tr(ng-repeat="user in users")
+//-     	td {{user.firstName}}  
+//-     	td {{user.lastName}}
+//-     	td {{user.username}}
+//-     	//- td(ng-repeat="role in roles") {{role}}

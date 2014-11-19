@@ -4,7 +4,7 @@ var auth 		= require('./auth'),
 	User 		= mongoose.model('User');
 
 module.exports	= function(app) {
-	app.get('/api/users', auth.requiresRole('admin'), function(req, res) {
+	app.get('/api/users', auth.requiresRole('supervisor'), function(req, res) {
 		User.find({}).exec(function(err, collection) {
 			res.send(collection);
 		})

@@ -1,17 +1,19 @@
-.container
+.container(ng-controller="rgiNavBarLoginCtrl")
 	.jumbotron
 		h1 NRGI Resource Governance Index Assessment Tool 2015
 		p Welcome to the assessment to RGI Assessment Tool Portal.
 
-	.row
-		.col-md-4
-			button.btn.btn-lg.btn-block.btn-primary  Reporting Practices
-		.col-md-4
-			button.btn.btn-lg.btn-block.btn-primary Institutional and Legal Setting
-		.col-md-4
-			button.btn.btn-lg.btn-block.btn-primary Safeguards and Quality Control
+	.jumbotron(style='text-align: center')
+		h3(ng-hide="identity.isAuthenticated()") Please login with the username and password provided
+		.row(ng-show="identity.isAuthenticated()")
+			.col-md-4
+				button.btn.btn-lg.btn-block.btn-primary  Reporting Practices
+			.col-md-4
+				button.btn.btn-lg.btn-block.btn-primary Institutional and Legal Setting
+			.col-md-4
+				button.btn.btn-lg.btn-block.btn-primary Safeguards and Quality Control
 
-	.row
+	.row(ng-show="identity.isAuthenticated()")
 		.col-md-4
 			div(ng-include="'/partials/main/reporting'")
 		.col-md-4
