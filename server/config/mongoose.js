@@ -12,4 +12,5 @@ module.exports 	= function(config) {
 	});
 
 	userModel.createDefaultUsers();
+	questionModel.createDefaultQuestions();
 }

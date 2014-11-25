@@ -4,6 +4,15 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
   var routeRoleChecks = {
     supervisor: {auth: function(rgiAuth) {
       return rgiAuth.authorizeCurrentUserForRoute('supervisor')
+    }},
+    researcher: {auth: function(rgiAuth) {
+      return rgiAuth.authorizeCurrentUserForRoute('researcher')
+    }},
+    reviewer: {auth: function(rgiAuth) {
+      return rgiAuth.authorizeCurrentUserForRoute('reviewer')
+    }},
+    user: {auth: function(rgiAuth) {
+      return rgiAuth.authorizeAuthenticatedUserForRoute()
     }}
   }
 
@@ -22,18 +31,19 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/account/signup',
       controller: 'rgiSignupCtrl'
     })
+    .when('/profile', {
+      templateUrl: '/partials/account/profile',
+      controller: 'rgiProfileCtrl', 
+      resolve: routeRoleChecks.user
+    })
     .when('/reporting', {
       templateUrl: '/partials/questions/reporting',
       controller: 'rgiReportingCtrl'
+    })
+    .when('/assessment', {
+      templateUrl:'/partials/assessments/assessment-list',
+      controller: 'rgiAssessmentCtrl'
     });
-    // .when('/institutional', {
-    //   templateUrl: '/partials/questions/institutional',
-    //   controller: 'rgiInstitutionalCtrl'
-    // })
-    // .when('/safeguards', {
-    //   templateUrl: '/partials/questions/safeguards',
-    //   controller: 'rgiSafeguardsCtrl'
-    // });
 });
 
 angular.module('app').run(function($rootScope, $location) {

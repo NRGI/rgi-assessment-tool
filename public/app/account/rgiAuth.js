@@ -26,6 +26,19 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 			});
 			return dfd.promise;
 		},
+		updateCurrentUser: function(newUserData) {
+			var dfd = $q.defer();
+
+			var clone = angular.copy(rgiIdentity.currentUser);
+			angular.extend(clone, newUserData);
+			clone.$update().then(function() {
+				rgiIdentity.currentUser = clone;
+				dfd.resolve();
+			}, function(response) {
+				dfd.reject(response.data.reason);
+			});
+			return dfd.promise;
+		},
 		logoutUser: function() {
 			var dfd = $q.defer();
 			$http.post('/logout', {logout:true}).then(function() {
@@ -36,6 +49,13 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 		},
 		authorizeCurrentUserForRoute: function(role) {
 			if(rgiIdentity.isAuthorized(role)) {
+				return true;
+			} else {
+				return $q.reject('not authorized');
+			}
+		},
+		authorizeAuthenticatedUserForRoute: function() {
+			if(rgiIdentity.isAuthenticated()) {
 				return true;
 			} else {
 				return $q.reject('not authorized');
