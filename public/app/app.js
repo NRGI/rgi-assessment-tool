@@ -22,14 +22,25 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/main/main', 
       controller: 'rgiMainCtrl'
     })
-    .when('/admin/users', {
-      templateUrl: '/partials/admin/user-list', 
-      controller: 'rgiUserListCtrl', 
+    .when('/admin/user-admin', {
+      templateUrl: '/partials/admin/user-admin', 
+      controller: 'rgiUserAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    .when('/signup', {
-      templateUrl: '/partials/account/signup',
-      controller: 'rgiSignupCtrl'
+    .when('/admin/create-user', {
+      templateUrl: '/partials/admin/create-user', 
+      controller: 'rgiCreateUserCtrl', 
+      resolve: routeRoleChecks.supervisor
+    })
+    .when('/admin/question-edit', {
+      templateUrl: '/partials/admin/question-edit', 
+      controller: 'rgiQuestionEditCtrl', 
+      resolve: routeRoleChecks.supervisor
+    })
+    .when('/admin/status', {
+      templateUrl: '/partials/admin/assessment-status', 
+      controller: 'rgiAssessmentStatusCtrl', 
+      resolve: routeRoleChecks.supervisor
     })
     .when('/profile', {
       templateUrl: '/partials/account/profile',

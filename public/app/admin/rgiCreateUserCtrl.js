@@ -1,6 +1,6 @@
-angular.module('app').controller('rgiSignupCtrl', function($scope, rgiUser, rgiNotifier, $location, rgiAuth) {
+angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUser, rgiNotifier, $location, rgiAuth) {
 
-  $scope.signup = function() {
+  $scope.createUser = function() {
     var newUserData = {
       username: $scope.email,
       password: $scope.password,
