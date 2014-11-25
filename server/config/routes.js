@@ -1,12 +1,15 @@
 var auth 		= require('./auth'),
-	passport 	= require('passport'),
+	users 	= require('../controllers/users'),
 	mongoose 	= require('mongoose'),
 	User 		= mongoose.model('User');
 
 module.exports	= function(app) {
-	app.get('/api/users', auth.requiresRole('supervisor'), function(req, res) {
-		User.find({}).exec(function(err, collection) {
-			res.send(collection);
+	app.get('/api/users', auth.requiresRole('supervisor'), users.getUsers);
+	app.post('/api/users', users.createUser);
+
+	app.get('/api/questions', function(req, res) {
+		Question.find({}).exec(function(err, question) {
+			res.send(question)
 		})
 	});
 

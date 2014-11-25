@@ -14,6 +14,18 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 			});
 			return dfd.promise;
 		},
+		createUser: function(newUserData) {
+			var newUser = new rgiUser(newUserData);
+			var dfd = $q.defer();
+
+			newUser.$save().then(function() {
+				rgiIdentity.currentUser = newUser;
+				dfd.resolve();
+			}, function(response) {
+				dfd.reject(response.data.reason);
+			});
+			return dfd.promise;
+		},
 		logoutUser: function() {
 			var dfd = $q.defer();
 			$http.post('/logout', {logout:true}).then(function() {

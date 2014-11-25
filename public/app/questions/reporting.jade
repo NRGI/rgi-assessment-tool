@@ -1,0 +1,11 @@
+.container
+	table.table
+		h1 Reporting Practices
+		thead
+			tr
+				td: b Question
+				td: b Status
+		tbody
+			tr(ng-repeat="question in queistions")
+				td {{question.question_text}}
+				td {{user.status}}

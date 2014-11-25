@@ -17,8 +17,23 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/admin/user-list', 
       controller: 'rgiUserListCtrl', 
       resolve: routeRoleChecks.supervisor
-    }
-  );
+    })
+    .when('/signup', {
+      templateUrl: '/partials/account/signup',
+      controller: 'rgiSignupCtrl'
+    })
+    .when('/reporting', {
+      templateUrl: '/partials/questions/reporting',
+      controller: 'rgiReportingCtrl'
+    });
+    // .when('/institutional', {
+    //   templateUrl: '/partials/questions/institutional',
+    //   controller: 'rgiInstitutionalCtrl'
+    // })
+    // .when('/safeguards', {
+    //   templateUrl: '/partials/questions/safeguards',
+    //   controller: 'rgiSafeguardsCtrl'
+    // });
 });
 
 angular.module('app').run(function($rootScope, $location) {
