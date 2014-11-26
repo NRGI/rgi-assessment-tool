@@ -1,15 +1,20 @@
 .container
-	table.table
-		h1 Users Table
-		thead
-			tr
-				td: b First Name
-				td: b Last Name
-				td: b Username
-				td: b Roles
-		tbody
-			tr(ng-repeat="user in users")
-				td {{user.firstName}}
-				td {{user.lastName}}
-				td {{user.username}}
-				td {{user.roles}}
+	text need to add editing functionality
+	.well
+		table.table
+			h1 Users Table
+			thead
+				tr
+					th First Name
+					th Last Name
+					th Username
+					th Roles
+					th 
+			tbody
+				tr(ng-repeat="user in users")
+					td {{user.firstName}}
+					td {{user.lastName}}
+					td {{user.username}}
+					td {{user.roles}}
+					td
+						button submit
