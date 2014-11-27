@@ -47,13 +47,18 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiProfileCtrl', 
       resolve: routeRoleChecks.user
     })
-    .when('/reporting', {
-      templateUrl: '/partials/questions/reporting',
-      controller: 'rgiReportingCtrl'
+    .when('/assessments', {
+      templateUrl: '/partials/assessments/assessments-list',
+      controller: 'rgiAssessmentsListCtrl', 
+      resolve: routeRoleChecks.user
     })
-    .when('/assessment', {
-      templateUrl:'/partials/assessments/assessment-list',
-      controller: 'rgiAssessmentCtrl'
+    // .when('/reporting', {
+    //   templateUrl: '/partials/questions/reporting',
+    //   controller: 'rgiReportingCtrl'
+    // })
+    .when('/assessment/:nav_ID', {
+      templateUrl:'/partials/assessments/assessment-details',
+      controller: 'rgiAssessmentDetailCtrl'
     });
 });
 

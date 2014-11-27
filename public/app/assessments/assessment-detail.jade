@@ -1,0 +1,21 @@
+.container
+	h1 Question {{assessment.order_ID}} 
+	.row 
+		h3 {{assessment.assessment_text}}
+	.row
+		text {{assessment.component}}
+	.row
+		text {{assessment.status}}
+	.row
+		text {{assessment.researcher_score}}	
+	.row
+		text {{assessment.reviewer_score}}
+	.row
+		p(ng-repeat="comment in assessment.comments")
+			text {{comment.content}} - {{comment.author}} - {{comment.date}}
+
+	.row
+		p(ng-repeat="reference in assessment.references")
+			p
+				a(href="{{reference.URL}}") {{reference.tex_ref}}
+			p {{date_uploaded.}}	

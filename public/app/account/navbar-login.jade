@@ -1,31 +1,24 @@
 .navbar-right(ng-controller="rgiNavBarLoginCtrl")
+  //- login form -- hiden when logged in
   form.navbar-form(ng-hide="identity.isAuthenticated()")
-    //- ul.nav.navbar-nav
-    //-   li
-    //-     a(href="/signup") Sign Up
     .form-group
       input.form-control(placeholder="Email", ng-model="username")
     .form-group
       input.form-control(type="password", placeholder="Password", ng-model="password")
     button.btn.btn-primary(ng-click="signin(username, password)") Sign In
+    //- ADD FORGOT PASSWORD FUNCTIONALITY
+    //- button.btn.btn-primary(ng-click="") Forgot Password
+
+  //- nav bar elements viewable by authenticated users
   ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
+
+    //- Assessments List link
     ul.nav.navbar-nav
-      li(ng-hide="identity.currentUser.isSupervisor()")
-        a(href="/assessment") Assessment
+      li
+        a(href="/assessments") Assessments
 
+    //- Supervisor's admin dropdown
     ul.nav.navbar-nav.dropdown
-      //- li.dropdown(ng-hide="identity.currentUser.isSupervisor()")
-      //-   //- use ng-repeat here to loop throuh couhtries
-      //-   a.dropdown-toggle(href="/assessment", data-toggle="dropdown") Country 1 Assessment
-      //-     b.caret
-      //-   ul.dropdown-menu
-      //-     li
-      //-       a(href="/reporting") Reporting
-      //-     li
-      //-       a(href="/institutional") Institutional and Legal
-      //-     li
-      //-       a(href="/safeguards") Safeguards
-
       li.dropdown(ng-show="identity.currentUser.isSupervisor()")
         a.dropdown-toggle(href="", data-toggle="dropdown") Admin
           b.caret
@@ -39,18 +32,20 @@
           li
             a(href="/admin/status") Assessment Status
 
-      li.dropdown(ng-show="identity.currentUser.isSupervisor()")
-        //- use ng-repeat here to loop throuh couhtries
-        a.dropdown-toggle(href="", data-toggle="dropdown") Assessments
-          b.caret
-        ul.dropdown-menu
-          li
-            a(href="/") Country 1 Assessment
-          li
-            a(href="/") Country 2 Assessment
-          li
-            a(href="/") Country 3 Assessment
-
+      //- li.dropdown(ng-show="identity.currentUser.isSupervisor()")
+      //-   //- use ng-repeat here to loop throuh couhtries
+      //-   a.dropdown-toggle(href="", data-toggle="dropdown") Assessments
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href="/") Country 1 Assessment
+      //-     li
+      //-       a(href="/") Country 2 Assessment
+      //-     li
+      //-       a(href="/") Country 3 Assessment
+      
+    //- Users's dropdown to log out and change profile
+    ul.nav.navbar-nav.dropdown
       li.dropdown
         a.dropdown-toggle(href="", data-toggle="dropdown")
           | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}

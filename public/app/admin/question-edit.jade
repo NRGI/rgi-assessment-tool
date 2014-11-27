@@ -1,5 +1,5 @@
 .container.top-padding-med
-	text Need to add editing functionality
+	text Edit will bring you to edit 'profile' page
 	.pull-right
 		form.form-inline
 			.form-group
@@ -15,8 +15,8 @@
 				th
 			tbody
 				tr(ng-repeat="question in questions | filter:searchText | orderBy:sortOrder")
-					td{{question.order}}
+					td{{question.order_ID}}
 					td{{question.question_text}}
 					td{{question.component}}
 					td
-						button submit
+						button Edit

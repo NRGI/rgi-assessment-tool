@@ -2,19 +2,35 @@
 	.well
 		form.form-horizontal(name='profileForm')
 			fieldset
-				legend Profile
-				.form-group
-					label.col-md-2.control-label(form="email") Email
-					.col-md-10
-						input.form-control(name="email", type="email", placeholder="Email", ng-model="email", required)				
+				legend {{fullName}}'s Profile
 				.form-group
 					label.col-md-2.control-label(form="fname") First Name
 					.col-md-10
-						input.form-control(name="fname", type="fname", placeholder="First Name", ng-model="fname", required)
+						input.form-control(name="fname", type="text", placeholder="First Name", ng-model="fname", required)
 				.form-group
 					label.col-md-2.control-label(form="lname") Last Name
 					.col-md-10
-						input.form-control(name="lname", type="lname", placeholder="Last Name", ng-model="lname", required)
+						input.form-control(name="lname", type="text", placeholder="Last Name", ng-model="lname", required)
+				.form-group
+					label.col-md-2.control-label(form="username") Username
+					.col-md-10
+						input.form-control(name="username", type="text", placeholder="Username", ng-model="username", readonly)
+				.form-group
+					label.col-md-2.control-label(form="email") Email
+					.col-md-10
+						input.form-control(name="email", type="email", placeholder="Email", ng-model="email", required)
+				.form-group
+					label.col-md-2.control-label(form="roles") Roles
+					.col-md-10
+						input.form-control(name="roles", type="text", placeholder="Roles", ng-model="roles", readonly)
+				//- .form-group
+				//- 	label.col-md-2.control-label(form="address") Address
+				//- 	.col-md-10
+				//- 		input.form-control(name="address", type="text", placeholder="Address", ng-model="address", required)
+				//- .form-group
+				//- 	label.col-md-2.control-label(form="language") Language
+				//- 	.col-md-10
+				//- 		input.form-control(name="language", type="text", placeholder="Language", ng-model="language", required)
 				.form-group
 					label.col-md-2.control-label(form="password") Password
 					.col-md-10
@@ -25,4 +41,3 @@
 							button.btn.btn-primary(ng-click="update()", ng-disabled="signupFormm.$invalid") Submit
 							| &nbsp;
 							a.btn.btn-default(href="/") Cancel
-
