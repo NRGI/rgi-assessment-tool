@@ -1,0 +1,43 @@
+.container
+	.well
+		form.form-horizontal(name='profileForm')
+			fieldset
+				legend {{user.firstName}} {{user.lastName}}'s Profile
+				.form-group
+					label.col-md-2.control-label(form="") First Name
+					.col-md-10
+						input.form-control(name="firstName", type="text", placeholder="{{user.firstName}}", ng-model="fname", required)
+				.form-group
+					label.col-md-2.control-label(form="lastName") Last Name
+					.col-md-10
+						input.form-control(name="lname", type="text", placeholder="{{user.lastName}}", ng-model="lname", required)
+				.form-group
+					label.col-md-2.control-label(form="username") Username
+					.col-md-10
+						input.form-control(name="username", type="text", placeholder="{{user.username}}", ng-model="username", readonly)
+				.form-group
+					label.col-md-2.control-label(form="email") Email
+					.col-md-10
+						input.form-control(name="email", type="email", placeholder="{{user.email}}", ng-model="email", required)
+				.form-group
+					label.col-md-2.control-label(form="roles") Roles
+					.col-md-10
+						input.form-control(name="roles", type="text", placeholder="{{user.roles}}", ng-model="roles", readonly)
+				.form-group
+					label.col-md-2.control-label(form="address") Address
+					.col-md-10
+						input.form-control(name="address", type="text", placeholder="{{user.address}}", ng-model="address", required)
+				.form-group
+					label.col-md-2.control-label(form="language") Language
+					.col-md-10
+						input.form-control(name="language", type="text", placeholder="{{user.language}}", ng-model="language", required)
+				//- .form-group
+				//- 	label.col-md-2.control-label(form="password") Password
+				//- 	.col-md-10
+				//- 		input.form-control(name="password", type="password", placeholder="Password", ng-model="password")
+				.form-group
+					.col-md-10.col-md-offset-2
+						.pull-right
+							button.btn.btn-primary(ng-click="update()", ng-disabled="signupFormm.$invalid") Submit
+							| &nbsp;
+							a.btn.btn-default(href="/") Cancel

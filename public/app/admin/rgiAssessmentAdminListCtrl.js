@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiAssessments) {
+angular.module('app').controller('rgiAssessmentAdminListCtrl', function($scope, rgiAssessments) {
 	$scope.assessments = rgiAssessments.query();
 
 	$scope.sortOptions = [{value:'country',text:'Sort by Country'},

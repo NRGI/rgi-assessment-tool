@@ -19,12 +19,12 @@
 					td {{user.firstName}} {{user.lastName}}
 					td {{user.username}}
 					td {{user.email}}
-					td
+					td 
 						p(ng-repeat="role in user.roles")
 							text {{role}}
 					td
-						p(ng-repeat="country in user.countries")
-							text {{country.country}}
+						p(ng-repeat="assessment in user.assessments")
+							text {{assessment.country_name}}
 					td
 						p(ng-repeat="country in user.countries")
 							text(ng-if="country.submitted==true") Yes
@@ -32,4 +32,4 @@
 						p(ng-repeat="country in user.countries")
 							text(ng-if="country.approved==true") Yes
 					td
-						button Edit
+						a.btn.btn-default(href="/admin/user-admin/{{user._id}}") Edit

@@ -1,6 +1,6 @@
 .container
 	.well
-		h1 Open Assessments
+		h1 Assessment Status Dashboard
 
 		.pull-right
 			form.form-inline
@@ -9,22 +9,50 @@
 				.form-group.margin-left-med
 					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
 
-		table.table.table-hover.table-striped.table-condensed
+		table.table.table-hover
 			thead
 				tr
 					th Country
+					th Owner
 					th Researcher
 					th Reviewer
 					th Started
 					th Last Edited
 					th Status
-					th
-			tbody
+					th Assign to Users
+
+				tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					td 
 						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+					td (current edit rights)
 					td {{assessment.researcher_ID}}
 					td {{assessment.reviewer_ID}}
 					td {{assessment.start_date | date}}
 					td {{assessment.last_edit | date}}
 					td {{assessment.status}}
+					td
+						button(ng-if="assessment.status=='unstarted'") Assign
+
+
+				//- tbody
+				//- 	tr
+				//- 		td Afghanistan
+				//- 		td 30%
+				//- 		td Researcher
+				//- 	tr
+				//- 		td Nigeria
+				//- 		td 90%
+				//- 		td Reviewer
+				//- 	tr
+				//- 		td Malaysia
+				//- 		td 100%
+				//- 		td Supervisor
+				//- 	tr
+				//- 		td Tanzania
+				//- 		td 0%
+				//- 		td researcher
+				//- 	tr
+				//- 		td Ghana
+				//- 		td 50%
+				//- 		td researcher

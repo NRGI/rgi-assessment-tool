@@ -47,6 +47,6 @@ function createDefaultQuestions() {
 			Question.create({question_text:"Are social impact assessments for oil, gas and mining projects published?",row_id_org:19,question_order:25,"question_choices":[{"criteria":"Yes. Social impact assessments for oil, gas and mining projects are made available for stakeholder review.","name":"choice_1","order":1},{"criteria":"Yes. Social impact assessments for oil, gas and mining projects are published by the authority in charge of regulating the sector (or by other stakeholders such as companies), but only after approval by the relevant authority and not prior to awarding mineral rights or project implementation.","name":"choice_2","order":2},{"criteria":"No.  Social impact assessments for oil, gas and mining projects are not published by the authority in charge of regulating the sector.","name":"choice_3","order":3},{"criteria":"Not applicable/Other. (Explain in 'comments' box.)","name":"choice_4","order":4}],"component":"Reporting practices","row_id":12})
 		}
 	})
-}
+};
 
 exports.createDefaultQuestions = createDefaultQuestions;

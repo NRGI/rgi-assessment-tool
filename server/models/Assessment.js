@@ -1,58 +1,109 @@
 var mongoose 	= require('mongoose');
 
 var assessmentSchema = mongoose.Schema({
-	assessment_ID: {type: String, required:'{PATH} is required'}, // combination ISO3 + order_ID in Question Model with 2 leading 0's
-	question_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of Question Model
-	user_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of User Model
-	question_order: {type: String, required:'{PATH} is required'}, // generated from the order_ID of Question Model
-	component: {type: String, required:'{PATH} is required'}, // generated from Question Model
-	status: {type: String, required:'{PATH} is required'}, // started, submitted, reviewing, reviewed, approved>
-	researcher_score: Number,
-	/////ERROR CALCULATION
-	researcher_score_history: [{
-		date: {type: Date, default:Date.now},
-		order: Number,
-		score: Number
-		/////ERROR CALCULATION
-	}],
-	reviewer_score: Number,
-	/////ERROR CALCULATION
-	reviewer_score_history: [{
-		date: {type: Date, default:Date.now},
-		order: Number,
-		score: Number
-		/////ERROR CALCULATION
-	}],
-	comments: [{
-		date: {type: Date, default:Date.now},
-		content: String,
-		author: String // Pull from curretn user _id value
-	}],
-	references: [{
-		date_uploaded: {type: Date, default:Date.now},
-		tex_ref: String,
-		URL: String // generated from upload path in S3
-	}]
+	assessment_ID: {type: String, required:'{PATH} is required'}, // ISO3 of country
+	country: {type: String, required:'{PATH} is required'}, // String of country name
+	researcher_ID: String, // pulled from user_id
+	reviewer_ID: String, // pulled from user_id
+	start_date: Date,
+	submit_date: Date,
+	review_date: Date,
+	approval_date: Date,
+	last_edit: Date,
+	status: {type: String, required:'{PATH} is required', default:'unstarted'}, // unstarted, started, submitted, reviewing, reviewed, approved>
+	quesions_complete: {type:Number, default:0}
 });
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);
 
-
 function createDefaultAssessments() {
 	Assessment.find({}).exec(function(err, collection) {
 		if(collection.length === 0) {
-			Assessment.create({question_ID: "547603069deb5f4abec1a2aa",question_order:1,user_ID: "54760b36de5f58c7c5c5d86b",assessment_ID:"NIG001",component:"NULL",status: "started",researcher_score: 2,comments: [{date: "12-12-2000",content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros ante, lobortis vitae volutpat sit amet, imperdiet eget dui. Aliquam erat volutpat. Sed scelerisque quis lectus non luctus. Proin nec dictum diam. Morbi sit amet iaculis dolor. Maecenas rutrum molestie placerat. Pellentesque eu eros quis dolor euismod placerat vel ut dui. Donec porta est quis turpis efficitur facilisis. Praesent luctus consequat aliquet. Nunc diam sapien, varius in malesuada id, sollicitudin nec velit. In fringilla commodo enim, eu pharetra velit ullamcorper nec. Vestibulum faucibus massa quis iaculis lacinia.",author: "54760b36de5f58c7c5c5d872"},{date: "12-15-2000",content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros ante, lobortis vitae volutpat sit amet, imperdiet eget dui. Aliquam erat volutpat. Sed scelerisque quis lectus non luctus. Proin nec dictum diam. Morbi sit amet iaculis dolor. Maecenas rutrum molestie placerat. Pellentesque eu eros quis dolor euismod placerat vel ut dui. Donec porta est quis turpis efficitur facilisis. Praesent luctus consequat aliquet. Nunc diam sapien, varius in malesuada id, sollicitudin nec velit. In fringilla commodo enim, eu pharetra velit ullamcorper nec. Vestibulum faucibus massa quis iaculis lacinia.",author: "54760b36de5f58c7c5c5d872"}]});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2b0",question_order:2,user_ID: "54760b36de5f58c7c5c5d86b",assessment_ID:"TZA002",component:"Institutional and legal setting",status: "reviewed",researcher_score: 2,researcher_score_history: [{date: "12-12-2000",order: 1,score: 2},{date: "12-15-2000",order: 2,score: 4}],reviewer_score: 3});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2b5",question_order:3,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"MYA003",component:"NULL",status: "started",researcher_score: 1});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2bb",question_order:4,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"NOR004",component:"NULL",status: "reviewing",researcher_score: 4});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2bb",question_order:5,user_ID: "54760b36de5f58c7c5c5d86b",assessment_ID:"NIG005",component:"Government effectiveness",status: "submitted",researcher_score: 1,researcher_score_history: [{date: "12-12-2000",order: 1,score: 2},{date: "12-15-2000",order: 2,score: 4}],comments: [{date: "12-12-2000",content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros ante, lobortis vitae volutpat sit amet, imperdiet eget dui. Aliquam erat volutpat. Sed scelerisque quis lectus non luctus. Proin nec dictum diam. Morbi sit amet iaculis dolor. Maecenas rutrum molestie placerat. Pellentesque eu eros quis dolor euismod placerat vel ut dui. Donec porta est quis turpis efficitur facilisis. Praesent luctus consequat aliquet. Nunc diam sapien, varius in malesuada id, sollicitudin nec velit. In fringilla commodo enim, eu pharetra velit ullamcorper nec. Vestibulum faucibus massa quis iaculis lacinia.",author: "54760b36de5f58c7c5c5d872"},{date: "12-15-2000",content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eros ante, lobortis vitae volutpat sit amet, imperdiet eget dui. Aliquam erat volutpat. Sed scelerisque quis lectus non luctus. Proin nec dictum diam. Morbi sit amet iaculis dolor. Maecenas rutrum molestie placerat. Pellentesque eu eros quis dolor euismod placerat vel ut dui. Donec porta est quis turpis efficitur facilisis. Praesent luctus consequat aliquet. Nunc diam sapien, varius in malesuada id, sollicitudin nec velit. In fringilla commodo enim, eu pharetra velit ullamcorper nec. Vestibulum faucibus massa quis iaculis lacinia.",author: "54760b36de5f58c7c5c5d872"}],references: [{date_uploaded: "12-10-2000",tex_ref: "REFERENCE STRING",URL: "http://s3.com"},{date_uploaded: "12-15-2000",tex_ref: "REFERENCE STRING",URL: "http://s3.com"}]});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2c5",question_order:6,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"NIR006",component:"Government effectiveness",status: "approved",researcher_score: 4,researcher_score_history: [{date: "12-12-2000",order: 1,score: 2},{date: "12-15-2000",order: 2,score: 4}],reviewer_score: 3});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2ca",question_order:7,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"NOR007",component:"Government effectiveness",status: "approved",researcher_score: 3,reviewer_score: 3});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2cf",question_order:8,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"TZA008",component:"NULL",status: "started",researcher_score: 2});
-			Assessment.create({question_ID:"547603069deb5f4abec1a2d5",question_order:9,user_ID: "54760b36de5f58c7c5c5d86b",assessment_ID:"NIG009",component:"Institutional and legal setting",status: "submitted",researcher_score: 1,researcher_score_history: [{date: "12-12-2000",order: 1,score: 2},{date: "12-15-2000",order: 2,score: 4}]});
-			Assessment.create({question_ID: "547603069deb5f4abec1a2d9",question_order:10,user_ID: "54760b36de5f58c7c5c5d86f",assessment_ID:"MYA010",component:"Institutional and legal setting",status: "reviewing",researcher_score: 3});
+			Assessment.create({assessment_ID: "TZA", country: "Tanzania",researcher_ID: "547c9269d56df758a465c35d",reviewer_ID: "547c9269d56df758a465c360",start_date: "12/2/2014",status: "started",quesions_complete:3});
+			Assessment.create({assessment_ID: "NGA",country: "Nigeria",researcher_ID: "547c9269d56df758a465c359",reviewer_ID: "547c9269d56df758a465c35b",start_date: "12/1/2014",status: "started",quesions_complete:3});
+			Assessment.create({assessment_ID: "MMR",country: "Myanmar",researcher_ID: "547c9269d56df758a465c35d",reviewer_ID: "547c9269d56df758a465c360",start_date: "12/3/2014",status: "started",quesions_complete:3});
+			Assessment.create({assessment_ID: "AGO",country: "Angola"});
+			Assessment.create({assessment_ID: "RUS",country: "Russian Federation"});
+			Assessment.create({assessment_ID: "MEX",country: "Mexico"});
+			Assessment.create({assessment_ID: "EGY",country: "Egypt, Arab Rep."});
+			Assessment.create({assessment_ID: "IRN",country: "Iran, Islamic Rep."});
+			Assessment.create({assessment_ID: "DZA",country: "Algeria"});
+			Assessment.create({assessment_ID: "IRQ",country: "Iraq"});
+			Assessment.create({assessment_ID: "PER",country: "Peru"});
+			Assessment.create({assessment_ID: "VEN",country: "Venezuela, RB"});
+			Assessment.create({assessment_ID: "AFG",country: "Afghanistan"});
+			Assessment.create({assessment_ID: "SAU",country: "Saudi Arabia"});
+			Assessment.create({assessment_ID: "GHA",country: "Ghana"});
+			Assessment.create({assessment_ID: "MOZ",country: "Mozambique"});
+			Assessment.create({assessment_ID: "YEM",country: "Yemen, Rep."});
+			Assessment.create({assessment_ID: "KAZ",country: "Kazakhstan"});
+			Assessment.create({assessment_ID: "ECU",country: "Ecuador"});
+			Assessment.create({assessment_ID: "ZMB",country: "Zambia"});
+			Assessment.create({assessment_ID: "ZWE",country: "Zimbabwe"});
+			Assessment.create({assessment_ID: "TCD",country: "Chad"});
+			Assessment.create({assessment_ID: "GIN",country: "Guinea"});
+			Assessment.create({assessment_ID: "BOL",country: "Bolivia"});
+			Assessment.create({assessment_ID: "AZE",country: "Azerbaijan"});
+			Assessment.create({assessment_ID: "ARE",country: "United Arab Emirates"});
+			Assessment.create({assessment_ID: "LBY",country: "Libya"});
+			Assessment.create({assessment_ID: "KGZ",country: "Kyrgyz Republic"});
+			Assessment.create({assessment_ID: "NOR",country: "Norway"});
+			Assessment.create({assessment_ID: "COG",country: "Congo, Rep."});
+			Assessment.create({assessment_ID: "KWT",country: "Kuwait"});
+			Assessment.create({assessment_ID: "OMN",country: "Oman"});
+			Assessment.create({assessment_ID: "QAT",country: "Qatar"});
+			Assessment.create({assessment_ID: "GAB",country: "Gabon"});
+			Assessment.create({assessment_ID: "TTO",country: "Trinidad and Tobago"});
+			Assessment.create({assessment_ID: "BHR",country: "Bahrain"});
+			Assessment.create({assessment_ID: "COD",country: "Congo, Dem. Rep."});
+			Assessment.create({assessment_ID: "UZB",country: "Uzbekistan"});
+			Assessment.create({assessment_ID: "SYR",country: "Syrian Arab Republic"});
+			Assessment.create({assessment_ID: "LAO",country: "Lao PDR"});
+			Assessment.create({assessment_ID: "ERI",country: "Eritrea"});
+			Assessment.create({assessment_ID: "TKM",country: "Turkmenistan"});
+			Assessment.create({assessment_ID: "LBR",country: "Liberia"});
+			Assessment.create({assessment_ID: "MNG",country: "Mongolia"});
+			Assessment.create({assessment_ID: "GNB",country: "Guinea-Bissau"});
+			Assessment.create({assessment_ID: "COL",country: "Colombia"});
+			Assessment.create({assessment_ID: "SDN",country: "Sudan"});
+			Assessment.create({assessment_ID: "CMR",country: "Cameroon"});
+			Assessment.create({assessment_ID: "CHL",country: "Chile"});
+			Assessment.create({assessment_ID: "NER",country: "Niger"});
+			Assessment.create({assessment_ID: "PNG",country: "Papua New Guinea"});
+			Assessment.create({assessment_ID: "MRT",country: "Mauritania"});
+			Assessment.create({assessment_ID: "IND",country: "India"});
+			Assessment.create({assessment_ID: "BRA",country: "Brazil"});
+			Assessment.create({assessment_ID: "ETH",country: "Ethiopia"});
+			Assessment.create({assessment_ID: "VNM",country: "Vietnam"});
+			Assessment.create({assessment_ID: "ZAF",country: "South Africa"});
+			Assessment.create({assessment_ID: "UGA",country: "Uganda"});
+			Assessment.create({assessment_ID: "CAN",country: "Canada"});
+			Assessment.create({assessment_ID: "MYS",country: "Malaysia"});
+			Assessment.create({assessment_ID: "AUS",country: "Australia"});
+			Assessment.create({assessment_ID: "BFA",country: "Burkina Faso"});
+			Assessment.create({assessment_ID: "MLI",country: "Mali"});
+			Assessment.create({assessment_ID: "SEN",country: "Senegal"});
+			Assessment.create({assessment_ID: "RWA",country: "Rwanda"});
+			Assessment.create({assessment_ID: "GRC",country: "Greece"});
+			Assessment.create({assessment_ID: "BDI",country: "Burundi"});
+			Assessment.create({assessment_ID: "BLR",country: "Belarus"});
+			Assessment.create({assessment_ID: "BGR",country: "Bulgaria"});
+			Assessment.create({assessment_ID: "PRY",country: "Paraguay"});
+			Assessment.create({assessment_ID: "SLE",country: "Sierra Leone"});
+			Assessment.create({assessment_ID: "GEO",country: "Georgia"});
+			Assessment.create({assessment_ID: "CAF",country: "Central African Republic"});
+			Assessment.create({assessment_ID: "BIH",country: "Bosnia and Herzegovina"});
+			Assessment.create({assessment_ID: "LTU",country: "Lithuania"});
+			Assessment.create({assessment_ID: "ARM",country: "Armenia"});
+			Assessment.create({assessment_ID: "ALB",country: "Albania"});
+			Assessment.create({assessment_ID: "JAM",country: "Jamaica"});
+			Assessment.create({assessment_ID: "IDN",country: "Indonesia"});
+			Assessment.create({assessment_ID: "CIV",country: "Cote d'Ivoire"});
+			Assessment.create({assessment_ID: "NAM",country: "Namibia"});
+			Assessment.create({assessment_ID: "BWA",country: "Botswana"});
 		}
 	})
-}
+};
 
 exports.createDefaultAssessments = createDefaultAssessments;
+

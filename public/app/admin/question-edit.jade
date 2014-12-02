@@ -15,8 +15,8 @@
 				th
 			tbody
 				tr(ng-repeat="question in questions | filter:searchText | orderBy:sortOrder")
-					td{{question.order_ID}}
+					td{{question.question_order}}
 					td{{question.question_text}}
 					td{{question.component}}
 					td
-						button Edit
+						a.btn.btn-default(href="/admin/question-edit/{{question._id}}") Edit

@@ -8,15 +8,10 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUser, 
       email: $scope.email,
       password: $scope.password,
       roles: [$scope.roles],
-      countries: [{
-        country: $scope.country
-      }],
       // // Need to create creation event
       // creation: {createdBy: user id, createdDate: Date.now},
       address: [$scope.address],
       language: [$scope.language]
-
-
     };
 
     rgiAuth.createUser(newUserData).then(function() {
@@ -27,3 +22,23 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUser, 
     })
   }
 })
+
+
+// angular.module('app').controller('mvSignupCtrl', function($scope, mvUser, mvNotifier, $location, mvAuth) {
+
+//   $scope.signup = function() {
+//     var newUserData = {
+//       username: $scope.email,
+//       password: $scope.password,
+//       firstName: $scope.fname,
+//       lastName: $scope.lname
+//     };
+
+//     mvAuth.createUser(newUserData).then(function() {
+//       mvNotifier.notify('User account created!');
+//       $location.path('/');
+//     }, function(reason) {
+//       mvNotifier.error(reason);
+//     })
+//   }
+// })

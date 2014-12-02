@@ -2,9 +2,20 @@ var User 		= require('mongoose').model('User'),
 	encrypt 	= require('../utilities/encryption');
 
 exports.getUsers = function(req, res) {
-	User.find({}).exec(function(err, collection) {
+	if(req.user.hasRole('supervisor')) {
+		var query = User.find({});
+	}else{
+		var query = User.find({}).select({ "firstName": 1,"lastName":1});
+	}
+	query.exec(function(err, collection) {
 		res.send(collection);
 	})
+};
+
+exports.getUsersByID = function(req, res) {
+	User.findOne({_id:req.params.id}).exec(function(err, user) {
+		res.send(user);
+	});
 };
 
 exports.createUser = function(req, res, next) {

@@ -12,10 +12,14 @@
   //- nav bar elements viewable by authenticated users
   ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
 
-    //- Assessments List link
-    ul.nav.navbar-nav
+    //- Assessments user
+    ul.nav.navbar-nav(ng-hide="identity.currentUser.isSupervisor()")
       li
         a(href="/assessments") Assessments
+    //- Admin assessments dashboard
+    ul.nav.navbar-nav(ng-show="identity.currentUser.isSupervisor()")
+      li
+        a(href="/admin/assessments") Assessments
 
     //- Supervisor's admin dropdown
     ul.nav.navbar-nav.dropdown

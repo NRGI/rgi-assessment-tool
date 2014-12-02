@@ -1,7 +1,8 @@
 var mongoose 		= require('mongoose')
 	userModel 		= require('../models/User'),
 	questionModel 	= require('../models/Question'),
-	assessmentModel = require('../models/Assessment');
+	answerModel 	= require('../models/Answers');
+	assessmentModel = require('../models/Assessment'),
 
 module.exports 	= function(config) {
 	// connect to mongodb
@@ -13,6 +14,8 @@ module.exports 	= function(config) {
 	});
 
 	userModel.createDefaultUsers();
+	answerModel.createDefaultAnswers();
 	questionModel.createDefaultQuestions();
 	assessmentModel.createDefaultAssessments();
+
 }
