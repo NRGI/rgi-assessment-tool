@@ -53,12 +53,12 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiAssessmentAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-
-    .when('/admin/assessment-admin/:assessment_ID', {
+    .when('/admin/assessment-assign/:assessment_ID', {
       templateUrl: '/partials/admin/assessments/assessment-admin-assign', 
       controller: 'rgiAssessmentAdminAssignCtrl', 
       resolve: routeRoleChecks.supervisor
     })
+  ///////////////////////////////////////////////////////////////////
     .when('admin/assessments', {
       templateUrl: '/partials/admin/assessments/assessment-dashboard',
       controller: 'rgiAssessmentDashboardCtrl', 

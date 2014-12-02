@@ -23,9 +23,11 @@
 					td(ng-if="assessment.status=='unstarted'") {{assessment.country}}
 					td(ng-if="assessment.status!='unstarted'")
 						a(href="admin/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
-					td {{assessment.researcher_ID}}
-					td {{assessment.reviewer_ID}}
+					td 
+						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}} 
+					td
+						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}} 
 					td {{assessment.start_date | date}}
 					td {{assessment.status}}
 					td
-						a.btn.btn-default(href="/admin/assessment-admin/{{assessment.assessment_ID}}", ng-if="assessment.status=='unstarted'") Assign
+						a.btn.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unstarted'") Assign

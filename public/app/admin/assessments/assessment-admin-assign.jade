@@ -1,0 +1,18 @@
+.container.top-padding-med
+	.well
+		legend {{assessment.country}}
+		.form-group
+			label.col-md-2 Select Researcher
+			.form-group.margin-left-med
+				select.form-control(ng-model="researcherSelect", ng-options="item.value as item.text for item in researchers")
+		.form-group
+			label.col-md-2 Select Reviewer
+			.form-group.margin-left-med
+				select.form-control(ng-model="reviewerSelect", ng-options="item.value as item.text for item in reviewers")
+		.form-group
+				.col-md-10.col-md-offset-2
+					.pull-right
+						button.btn.btn-primary(ng-click="", ng-disabled="") Submit
+						| &nbsp;
+						a.btn.btn-default(href="/") Cancel
+	text {{users.isSuper}}

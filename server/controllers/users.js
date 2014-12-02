@@ -18,6 +18,20 @@ exports.getUsersByID = function(req, res) {
 	});
 };
 
+exports.getUsersListByID = function(req, res) {
+	var query = User.find({}).select({ "firstName": 1,"lastName":1, "email":1});
+	User.findOne({_id:req.params.id}).exec(function(err, user) {
+		res.send(user);
+	});
+};
+
+exports.getUsersByRoles = function(req, res) {
+	User.find({roles:{"$in": [req.params.role]}}).exec(function(err, user) {
+		res.send(user);
+	});
+};
+
+
 exports.createUser = function(req, res, next) {
 	var userData = req.body;
 	userData.username = userData.username.toLowerCase();
@@ -37,6 +51,8 @@ exports.createUser = function(req, res, next) {
 		})
 	})
 }
+
+
 
 exports.updateUser = function(req, res) {
 	var userUpdates = req.body;

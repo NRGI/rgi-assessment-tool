@@ -10,6 +10,7 @@ module.exports	= function(app) {
 	/////RESTRICT RETURN FIELDS ////////
 	app.get('/api/users', auth.requiresApiLogin, users.getUsers);
 	app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUsersByID);
+	app.get('/api/user-list/:id', users.getUsersListByID);
 	app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
 	app.put('/api/users', users.updateUser);
 
