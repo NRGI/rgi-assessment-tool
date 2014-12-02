@@ -24,39 +24,50 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     })
     // Admin Routes
     .when('/admin/create-user', {
-      templateUrl: '/partials/admin/create-user', 
+      templateUrl: '/partials/admin/users/create-user', 
       controller: 'rgiCreateUserCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/user-admin', {
-      templateUrl: '/partials/admin/user-admin', 
+      templateUrl: '/partials/admin/users/user-admin', 
       controller: 'rgiUserAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/user-admin/:id', {
-      templateUrl: '/partials/admin/user-admin-update', 
+      templateUrl: '/partials/admin/users/user-admin-update', 
       controller: 'rgiUserAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/question-admin', {
-      templateUrl: '/partials/admin/question-admin', 
+      templateUrl: '/partials/admin/questions/question-admin', 
       controller: 'rgiQuestionAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/question-admin/:id', {
-      templateUrl: '/partials/admin/question-admin-update', 
+      templateUrl: '/partials/admin/questions/question-admin-update', 
       controller: 'rgiQuestionAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/assessment-admin', {
-      templateUrl: '/partials/admin/assessment-admin', 
+      templateUrl: '/partials/admin/assessments/assessment-admin', 
       controller: 'rgiAssessmentAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
+
     .when('/admin/assessment-admin/:assessment_ID', {
-      templateUrl: '/partials/admin/assessment-admin-update', 
-      controller: 'rgiAssessmentAdminUpdateCtrl', 
+      templateUrl: '/partials/admin/assessments/assessment-admin-assign', 
+      controller: 'rgiAssessmentAdminAssignCtrl', 
       resolve: routeRoleChecks.supervisor
+    })
+    .when('admin/assessments', {
+      templateUrl: '/partials/admin/assessments/assessment-dashboard',
+      controller: 'rgiAssessmentDashboardCtrl', 
+      resolve: routeRoleChecks.user
+    })
+    .when('admin/assessments/:assessment_ID', {
+      templateUrl: '/partials/admin/assessments/assessment-dashboard-detail',
+      controller: 'rgiAssessmentDashboardDetailCtrl', 
+      resolve: routeRoleChecks.user
     })
     // User Account Routes
     .when('/profile', {
