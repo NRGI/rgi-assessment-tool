@@ -50,6 +50,16 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 			});
 			return dfd.promise;
 		},
+		updateUserAdmin: function(newUserData) {
+			var dfd = $q.defer();
+
+			newUserData.$update().then(function() {
+				dfd.resolve();
+			}), function(response) {
+				dfd.reject(response.data.reason);
+			};
+			return dfd.promise;
+		},
 		logoutUser: function() {
 			var dfd = $q.defer();
 			$http.post('/logout', {logout:true}).then(function() {

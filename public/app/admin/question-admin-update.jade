@@ -1,0 +1,22 @@
+.container.top-padding-med
+	.well
+		form.form-horizontal(name='profileForm')
+			fieldset
+				legend Question {{question.question_order}}. {{question.question_text}}
+				.form-group
+					label.col-md-2.control-label(form="order") Question Order
+					.col-md-1
+						input.form-control(name="order", type="text", ng-model="question.question_order", required)
+					label.col-md-2.control-label(form="component") Component
+					.col-md-7
+						input.form-control(name="component", type="text", ng-model="question.component", required)
+				.form-group(ng-repeat="choice in question.question_choices")
+					label.col-md-2.control-label(form="choice") {{choice.order}}
+					.col-md-10
+						textarea.form-control(name="choice", type="textbox", ng-model="choice.criteria", required)
+				.form-group
+					.col-md-10.col-md-offset-2
+						.pull-right
+							button.btn.btn-primary(ng-click="update()", ng-disabled="signupFormm.$invalid") Submit
+							| &nbsp;
+							a.btn.btn-default(href="/") Cancel

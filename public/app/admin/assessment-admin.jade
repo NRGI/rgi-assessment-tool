@@ -1,7 +1,6 @@
-.container
+.container.top-padding-med
 	.well
-		h1 Assessment Status Dashboard
-
+		legend Assessment Status Dashboard
 		.pull-right
 			form.form-inline
 				.form-group
@@ -21,7 +20,7 @@
 					th Status
 					th Assign to Users
 
-				tbody
+			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					td 
 						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
@@ -32,27 +31,5 @@
 					td {{assessment.last_edit | date}}
 					td {{assessment.status}}
 					td
-						button(ng-if="assessment.status=='unstarted'") Assign
-
-
-				//- tbody
-				//- 	tr
-				//- 		td Afghanistan
-				//- 		td 30%
-				//- 		td Researcher
-				//- 	tr
-				//- 		td Nigeria
-				//- 		td 90%
-				//- 		td Reviewer
-				//- 	tr
-				//- 		td Malaysia
-				//- 		td 100%
-				//- 		td Supervisor
-				//- 	tr
-				//- 		td Tanzania
-				//- 		td 0%
-				//- 		td researcher
-				//- 	tr
-				//- 		td Ghana
-				//- 		td 50%
-				//- 		td researcher
+						a(ng-if="assessment.status=='unstarted'")
+							.btn.btn-default(href="/admin/assessment-admin/{{assessment.assessment_ID}}") Assign

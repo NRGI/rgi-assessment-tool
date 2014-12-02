@@ -2,7 +2,7 @@
   //- login form -- hiden when logged in
   form.navbar-form(ng-hide="identity.isAuthenticated()")
     .form-group
-      input.form-control(placeholder="Email", ng-model="username")
+      input.form-control(placeholder="Username", ng-model="username")
     .form-group
       input.form-control(type="password", placeholder="Password", ng-model="password")
     button.btn.btn-primary(ng-click="signin(username, password)") Sign In
@@ -32,9 +32,9 @@
           li
             a(href="/admin/user-admin") User Admin
           li
-            a(href="/admin/question-edit") Edit Questions
+            a(href="/admin/question-admin") Questions Admin
           li
-            a(href="/admin/status") Assessment Status
+            a(href="/admin/assessment-admin") Assessment Admin
 
       //- li.dropdown(ng-show="identity.currentUser.isSupervisor()")
       //-   //- use ng-repeat here to loop throuh couhtries

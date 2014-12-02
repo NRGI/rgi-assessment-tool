@@ -38,19 +38,24 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiUserAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    .when('/admin/question-edit', {
-      templateUrl: '/partials/admin/question-edit', 
-      controller: 'rgiQuestionEditCtrl', 
+    .when('/admin/question-admin', {
+      templateUrl: '/partials/admin/question-admin', 
+      controller: 'rgiQuestionAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    .when('/admin/question-edit/:id', {
-      templateUrl: '/partials/admin/question-edit-update', 
-      controller: 'rgiQuestionEditUpdateCtrl', 
+    .when('/admin/question-admin/:id', {
+      templateUrl: '/partials/admin/question-admin-update', 
+      controller: 'rgiQuestionAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    .when('/admin/assessments', {
-      templateUrl: '/partials/admin/assessment-admin-list', 
-      controller: 'rgiAssessmentAdminListCtrl', 
+    .when('/admin/assessment-admin', {
+      templateUrl: '/partials/admin/assessment-admin', 
+      controller: 'rgiAssessmentAdminCtrl', 
+      resolve: routeRoleChecks.supervisor
+    })
+    .when('/admin/assessment-admin/:assessment_ID', {
+      templateUrl: '/partials/admin/assessment-admin-update', 
+      controller: 'rgiAssessmentAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
     // User Account Routes

@@ -1,8 +1,13 @@
-.container
-	text Edit button should take you to profile page
+.container.top-padding-med
 	.well
+		legend Assessment tool users
+		.pull-right
+			form.form-inline
+				.form-group
+					input.form-control(ng-model="searchText", placeholder="Filter")
+				.form-group.margin-left-med
+					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
 		table.table
-			h1 Users Table
 			thead
 				tr
 					th Name
@@ -15,7 +20,7 @@
 					th 
 			tbody
 				//- Loop through all users
-				tr(ng-repeat="user in users")
+				tr(ng-repeat="user in users | filter:searchText | orderBy:sortOrder")
 					td {{user.firstName}} {{user.lastName}}
 					td {{user.username}}
 					td {{user.email}}

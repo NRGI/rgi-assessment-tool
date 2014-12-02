@@ -1,7 +1,8 @@
-angular.module('app').controller('rgiQuestionEditCtrl', function($scope, rgiQuestion) {
+angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQuestion) {
 	$scope.questions = rgiQuestion.query();
 
-	$scope.sortOptions = 	[	{value: "order", text: "Sort by Question Order"},
+	$scope.sortOptions = 	[	
+								{value: "order", text: "Sort by Question Order"},
 								{value: "component", text: "Sort by Component"},
 								{value: "status", text: "Sort by Status"}
 							];

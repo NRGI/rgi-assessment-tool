@@ -14,8 +14,8 @@ module.exports	= function(app) {
 	app.put('/api/users', users.updateUser);
 
 
-	app.get('/api/questions', auth.requiresApiLogin, questions.getQuestions);
-	// app.get('/api/questions/:_id', auth.requiresApiLogin, assessments.getQuestionsByID);
+	app.get('/api/questions', questions.getQuestions);
+	app.get('/api/questions/:id', questions.getQuestionsByID);
 
 	app.get('/api/answers', auth.requiresApiLogin, answers.getAnswers);
 	// app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
