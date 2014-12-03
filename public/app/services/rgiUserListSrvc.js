@@ -1,3 +1,4 @@
+// query users or get user by id and return only first and last name and email
 angular.module('app').factory('rgiUserListSrvc', function($resource) {
 	var UserResource = $resource('/api/user-list/:_id', {_id: "@id"}, {
 		update: {method: 'PUT', isArray:false}

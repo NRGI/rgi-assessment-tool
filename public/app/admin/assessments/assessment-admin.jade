@@ -1,3 +1,4 @@
+//- admin assessment assignment page
 .container.top-padding-med
 	.well
 		legend Assessment Status Dashboard
@@ -17,7 +18,6 @@
 					th Started
 					th Status
 					th Assign to Users
-
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					td(ng-if="assessment.status=='unstarted'") {{assessment.country}}

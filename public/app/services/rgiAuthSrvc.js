@@ -1,5 +1,6 @@
 angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q, rgiUserSrvc) {
 	return {
+		// AUTHENTICATION
 		authenticateUser: function(username, password) {
 			var dfd = $q.defer();
 			$http.post('/login', {username:username, password:password}).then(function(response) {
@@ -14,6 +15,7 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 			});
 			return dfd.promise;
 		},
+		// USER CREATION LOOK AT THIS AND FIX
 		createUser: function(newUserData) {
 			var newUser = new rgiUserSrvc(newUserData);
 			var dfd = $q.defer();
@@ -37,6 +39,7 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 		// 	});
 		// 	return dfd.promise;
 		// },
+		// USER UPDATES LOOK AT THIS AND FIX
 		updateCurrentUser: function(newUserData) {
 			var dfd = $q.defer();
 
@@ -60,6 +63,7 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 			};
 			return dfd.promise;
 		},
+		// LOGOUT
 		logoutUser: function() {
 			var dfd = $q.defer();
 			$http.post('/logout', {logout:true}).then(function() {
@@ -68,6 +72,7 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 			});
 			return dfd.promise;
 		},
+		// AUTHORIZE FOR SPECIFIC ROUTE BASED ON ROLE
 		authorizeCurrentUserForRoute: function(role) {
 			if(rgiIdentitySrvc.isAuthorized(role)) {
 				return true;
@@ -75,6 +80,7 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 				return $q.reject('not authorized');
 			}
 		},
+		// LIMIT ROUTE TO AUTHENTICATED USERS
 		authorizeAuthenticatedUserForRoute: function() {
 			if(rgiIdentitySrvc.isAuthenticated()) {
 				return true;

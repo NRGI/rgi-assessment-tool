@@ -1,6 +1,7 @@
 angular.module('app', ['ngResource', 'ngRoute']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
+  // role checks
   var routeRoleChecks = {
     supervisor: {auth: function(rgiAuthSrvc) {
       return rgiAuthSrvc.authorizeCurrentUserForRoute('supervisor')
@@ -14,7 +15,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     user: {auth: function(rgiAuthSrvc) {
       return rgiAuthSrvc.authorizeAuthenticatedUserForRoute()
     }}
-  }
+  };
 
   $locationProvider.html5Mode(true);
   $routeProvider

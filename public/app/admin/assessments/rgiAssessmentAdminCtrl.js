@@ -1,6 +1,6 @@
 angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiAssessmentsSrvc, rgiUserListSrvc, $routeParams) {
 	rgiAssessmentsSrvc.query(function(data) {
-		
+		// pull assessment list from collection and adds user name to match reviewer id and researcher id
 		$scope.assessments = [];
 		for (var i = data.length - 1; i >= 0; i--) {
 			var assessment = {
@@ -19,7 +19,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiA
 			$scope.assessments.push(assessment);
 		};
 	}); 
-
+	// filtering options
 	$scope.sortOptions = [{value:'country',text:'Sort by Country'},
 		{value:'start_date', text:'Date started'},
 		{value:'status', text:'Status'}]

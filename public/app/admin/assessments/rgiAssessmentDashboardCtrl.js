@@ -8,24 +8,12 @@ angular.module('app').controller('rgiAssessmentDashboardCtrl', function($scope, 
 				assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
 				assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
 			};
-			
 			$scope.assessments.push(assessment);
 		};
 	}); 
-
+	// filtering options
 	$scope.sortOptions = [{value:'country',text:'Sort by Country'},
 		{value:'start_date', text:'Date started'},
 		{value:'status', text:'Status'}]
 	$scope.sortOrder = $scope.sortOptions[0].value;
-
-
-	// $scope.assessments = rgiAssessmentsSrvc.query();
-
-	// $scope.sortOptions = [{value:'country',text:'Sort by Country'},
-	// 	{value:'start_date', text:'Date started'},
-	// 	{value:'status', text:'Status'}]
-	// $scope.sortOrder = $scope.sortOptions[0].value;
-
-
-
 });

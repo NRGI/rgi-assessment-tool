@@ -1,14 +1,19 @@
+//- admin assessment assignment detail page
 .container.top-padding-med
 	.well.bottom-padding-lg
+		//- country title
 		legend {{assessment.country}}
+		//- researcher selection dropdown
 		.form-group
 			label.col-md-4 Select Researcher
 			.form-group.margin-left-med
 				select.form-control(ng-model="researcherSelect", ng-options="item._id as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in researchers")
+		//- reviewer selection dropdown
 		.form-group
 			label.col-md-4 Select Reviewer
 			.form-group.margin-left-med
 				select.form-control(ng-model="reviewerSelect", ng-options="item._id as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in reviewers")
+		//- Signup button needs click event functionality
 		.form-group
 			.col-md-10.col-md-offset-2
 				.pull-right

@@ -1,5 +1,5 @@
 angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUserSrvc, rgiNotifier, $location, rgiAuthSrvc) {
-
+  // fix submit button functionality
   $scope.createUser = function() {
     var newUserData = {
       firstName: $scope.fname,

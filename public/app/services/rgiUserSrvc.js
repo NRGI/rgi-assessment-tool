@@ -1,8 +1,10 @@
+// query user or get user by id
 angular.module('app').factory('rgiUserSrvc', function($resource) {
 	var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
 		update: {method: 'PUT', isArray:false}
 	});
 
+	// add role features to resource
 	UserResource.prototype.isSupervisor = function() {
 		return this.roles && this.roles.indexOf('supervisor') > -1;
 	};

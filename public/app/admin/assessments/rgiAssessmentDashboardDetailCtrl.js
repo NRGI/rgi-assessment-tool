@@ -4,4 +4,4 @@ angular.module('app').controller('rgiAssessmentDashboardDetailCtrl', function($s
 		$scope.reviewer = rgiUserListSrvc.get({_id:$scope.assessment.reviewer_ID});
 		$scope.researcher = rgiUserListSrvc.get({_id:$scope.assessment.researcher_ID});
 	});
-})
+});

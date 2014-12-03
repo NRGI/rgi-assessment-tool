@@ -2,7 +2,7 @@ angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, 
 	// var question = rgiQuestion.get({_id:$routeParams.id});
 	// $scope.question = question;
 	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
-
+	// Add update button functionality
 	// // $scope.update = function() {
 	// // 	var newUserData = {
 	// // 		firstName: $scope.fname,
