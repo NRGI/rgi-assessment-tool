@@ -1,10 +1,10 @@
-angular.module('app').controller('rgiProfileCtrl', function($scope, rgiIdentity, rgiNotifier) {
-	$scope.fullName = rgiIdentity.currentUser.firstName + " " + rgiIdentity.currentUser.lastName;
-	$scope.fname = rgiIdentity.currentUser.firstName;
-	$scope.lname = rgiIdentity.currentUser.lastName;
-	$scope.email = rgiIdentity.currentUser.email;
-	$scope.username = rgiIdentity.currentUser.username;
-	$scope.roles = rgiIdentity.currentUser.roles;
+angular.module('app').controller('rgiProfileCtrl', function($scope, rgiIdentitySrvc, rgiNotifier) {
+	$scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
+	$scope.fname = rgiIdentitySrvc.currentUser.firstName;
+	$scope.lname = rgiIdentitySrvc.currentUser.lastName;
+	$scope.email = rgiIdentitySrvc.currentUser.email;
+	$scope.username = rgiIdentitySrvc.currentUser.username;
+	$scope.roles = rgiIdentitySrvc.currentUser.roles;
 
 	$scope.update = function() {
 		var newUserData = {

@@ -1,12 +1,12 @@
-angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUser) {
+angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q, rgiUserSrvc) {
 	return {
 		authenticateUser: function(username, password) {
 			var dfd = $q.defer();
 			$http.post('/login', {username:username, password:password}).then(function(response) {
 				if(response.data.success) {
-					var user = new rgiUser();
+					var user = new rgiUserSrvc();
 					angular.extend(user, response.data.user);
-					rgiIdentity.currentUser = user;
+					rgiIdentitySrvc.currentUser = user;
 					dfd.resolve(true);
 				} else {
 					dfd.resolve(false);
@@ -15,7 +15,7 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 			return dfd.promise;
 		},
 		createUser: function(newUserData) {
-			var newUser = new rgiUser(newUserData);
+			var newUser = new rgiUserSrvc(newUserData);
 			var dfd = $q.defer();
 
 			newUser.$save().then(function() {
@@ -26,11 +26,11 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 			return dfd.promise;
 		},
 		// createUser: function(newUserData) {
-		// 	var newUser = new rgiUser(newUserData);
+		// 	var newUser = new rgiUserSrvc(newUserData);
 		// 	var dfd = $q.defer();
 
 		// 	newUser.$save().then(function() {
-		// 		rgiIdentity.currentUser = newUser;
+		// 		rgiIdentitySrvc.currentUser = newUser;
 		// 		dfd.resolve();
 		// 	}, function(response) {
 		// 		dfd.reject(response.data.reason);
@@ -40,10 +40,10 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 		updateCurrentUser: function(newUserData) {
 			var dfd = $q.defer();
 
-			var clone = angular.copy(rgiIdentity.currentUser);
+			var clone = angular.copy(rgiIdentitySrvc.currentUser);
 			angular.extend(clone, newUserData);
 			clone.$update().then(function() {
-				rgiIdentity.currentUser = clone;
+				rgiIdentitySrvc.currentUser = clone;
 				dfd.resolve();
 			}, function(response) {
 				dfd.reject(response.data.reason);
@@ -63,20 +63,20 @@ angular.module('app').factory('rgiAuth', function($http, rgiIdentity, $q, rgiUse
 		logoutUser: function() {
 			var dfd = $q.defer();
 			$http.post('/logout', {logout:true}).then(function() {
-				rgiIdentity.currentUser = undefined;
+				rgiIdentitySrvc.currentUser = undefined;
 				dfd.resolve();
 			});
 			return dfd.promise;
 		},
 		authorizeCurrentUserForRoute: function(role) {
-			if(rgiIdentity.isAuthorized(role)) {
+			if(rgiIdentitySrvc.isAuthorized(role)) {
 				return true;
 			} else {
 				return $q.reject('not authorized');
 			}
 		},
 		authorizeAuthenticatedUserForRoute: function() {
-			if(rgiIdentity.isAuthenticated()) {
+			if(rgiIdentitySrvc.isAuthenticated()) {
 				return true;
 			} else {
 				return $q.reject('not authorized');

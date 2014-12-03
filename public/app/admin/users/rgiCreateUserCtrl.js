@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUser, rgiNotifier, $location, rgiAuth) {
+angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUserSrvc, rgiNotifier, $location, rgiAuthSrvc) {
 
   $scope.createUser = function() {
     var newUserData = {
@@ -14,7 +14,7 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, rgiUser, 
       language: [$scope.language]
     };
 
-    rgiAuth.createUser(newUserData).then(function() {
+    rgiAuthSrvc.createUser(newUserData).then(function() {
       rgiNotifier.notify('User account created!');
       $location.path('/');
     }, function(reason) {

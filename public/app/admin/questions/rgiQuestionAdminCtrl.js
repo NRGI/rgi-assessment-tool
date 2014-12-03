@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQuestion) {
-	$scope.questions = rgiQuestion.query();
+angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQuestionSrvc) {
+	$scope.questions = rgiQuestionSrvc.query();
 
 	$scope.sortOptions = 	[	
 								{value: "order", text: "Sort by Question Order"},

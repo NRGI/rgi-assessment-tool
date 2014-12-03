@@ -1,7 +1,7 @@
-angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, rgiQuestion, $routeParams) {
+angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, rgiQuestionSrvc, $routeParams) {
 	// var question = rgiQuestion.get({_id:$routeParams.id});
 	// $scope.question = question;
-	$scope.question = rgiQuestion.get({_id:$routeParams.id});;
+	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
 
 	// // $scope.update = function() {
 	// // 	var newUserData = {

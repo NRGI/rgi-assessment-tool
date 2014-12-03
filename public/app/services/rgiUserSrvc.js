@@ -1,4 +1,4 @@
-angular.module('app').factory('rgiUser', function($resource) {
+angular.module('app').factory('rgiUserSrvc', function($resource) {
 	var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
 		update: {method: 'PUT', isArray:false}
 	});

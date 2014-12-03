@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiUserAdminCtrl', function($scope, rgiUser) {
-  	$scope.users = rgiUser.query();
+angular.module('app').controller('rgiUserAdminCtrl', function($scope, rgiUserSrvc) {
+  	$scope.users = rgiUserSrvc.query();
 
 	$scope.sortOptions = 	[	
 								{value: "firstName", text: "Sort by First Name"},

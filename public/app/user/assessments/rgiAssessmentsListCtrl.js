@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiAssessments) {
-	$scope.assessments = rgiAssessments.query();
+angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiAssessmentsSrvc) {
+	$scope.assessments = rgiAssessmentsSrvc.query();
 
 	$scope.sortOptions = [{value:'country',text:'Sort by Country'},
 		{value:'start_date', text:'Date started'},

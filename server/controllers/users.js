@@ -31,7 +31,6 @@ exports.getUsersByRoles = function(req, res) {
 	});
 };
 
-
 exports.createUser = function(req, res, next) {
 	var userData = req.body;
 	userData.username = userData.username.toLowerCase();
@@ -50,9 +49,7 @@ exports.createUser = function(req, res, next) {
 			res.send(user);
 		})
 	})
-}
-
-
+};
 
 exports.updateUser = function(req, res) {
 	var userUpdates = req.body;
@@ -76,4 +73,4 @@ exports.updateUser = function(req, res) {
 		};
 		res.send(req.user);
 	})
-}
+};

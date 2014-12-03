@@ -1,8 +1,8 @@
-angular.module('app').controller('rgiMainCtrl', function($scope, rgiAuth, rgiIdentity) {
+angular.module('app').controller('rgiMainCtrl', function($scope, rgiAuthSrvc, rgiIdentitySrvc) {
 	// bring in current user data to customize front page
-	if(rgiIdentity=='') {
-		$scope.fullName = rgiIdentity.currentUser.firstName + " " + rgiIdentity.currentUser.lastName;
-		$scope.roles = rgiIdentity.currentUser.roles;
+	if(rgiIdentitySrvc=='') {
+		$scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
+		$scope.roles = rgiIdentitySrvc.currentUser.roles;
 	}
 	
 });

@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, rgiUser, rgiAuth, rgiNotifier, $routeParams) {
-	var user = rgiUser.get({_id:$routeParams.id});
+angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, rgiUserSrvc, rgiAuthSrvc, rgiNotifier, $routeParams) {
+	var user = rgiUserSrvc.get({_id:$routeParams.id});
 	$scope.user = user;
 
 	$scope.update = function() {
@@ -20,7 +20,7 @@ angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, rgiU
 		}
 		console.log(newUserData);
 
-		rgiAuth.updateUserAdmin(newUserData).then(function() {
+		rgiAuthSrvc.updateUserAdmin(newUserData).then(function() {
 			rgiNotifier.notify('User account has been updated');
 		}, function(reason) {
 			rgiNotifier.notify(reason);

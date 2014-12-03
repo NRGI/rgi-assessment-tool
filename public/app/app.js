@@ -2,17 +2,17 @@ angular.module('app', ['ngResource', 'ngRoute']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
   var routeRoleChecks = {
-    supervisor: {auth: function(rgiAuth) {
-      return rgiAuth.authorizeCurrentUserForRoute('supervisor')
+    supervisor: {auth: function(rgiAuthSrvc) {
+      return rgiAuthSrvc.authorizeCurrentUserForRoute('supervisor')
     }},
-    researcher: {auth: function(rgiAuth) {
-      return rgiAuth.authorizeCurrentUserForRoute('researcher')
+    researcher: {auth: function(rgiAuthSrvc) {
+      return rgiAuthSrvc.authorizeCurrentUserForRoute('researcher')
     }},
-    reviewer: {auth: function(rgiAuth) {
-      return rgiAuth.authorizeCurrentUserForRoute('reviewer')
+    reviewer: {auth: function(rgiAuthSrvc) {
+      return rgiAuthSrvc.authorizeCurrentUserForRoute('reviewer')
     }},
-    user: {auth: function(rgiAuth) {
-      return rgiAuth.authorizeAuthenticatedUserForRoute()
+    user: {auth: function(rgiAuthSrvc) {
+      return rgiAuthSrvc.authorizeAuthenticatedUserForRoute()
     }}
   }
 
@@ -58,13 +58,12 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiAssessmentAdminAssignCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-  ///////////////////////////////////////////////////////////////////
-    .when('admin/assessments', {
+    .when('/admin/assessments/assessment-dashboard', {
       templateUrl: '/partials/admin/assessments/assessment-dashboard',
       controller: 'rgiAssessmentDashboardCtrl', 
       resolve: routeRoleChecks.user
     })
-    .when('admin/assessments/:assessment_ID', {
+    .when('/admin/assessments/assessment-dashboard/:assessment_ID', {
       templateUrl: '/partials/admin/assessments/assessment-dashboard-detail',
       controller: 'rgiAssessmentDashboardDetailCtrl', 
       resolve: routeRoleChecks.user
@@ -77,12 +76,12 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     })
     // Assessment overview routes
     .when('/assessments', {
-      templateUrl: '/partials/assessments/assessments-list',
+      templateUrl: '/partials/user/assessments/assessments-list',
       controller: 'rgiAssessmentsListCtrl', 
       resolve: routeRoleChecks.user
     })
     .when('/assessments/:assessment_ID', {
-      templateUrl: '/partials/assessments/assessment-detail',
+      templateUrl: '/partials/user/assessments/assessment-detail',
       controller: 'rgiAssessmentDetailCtrl', 
       resolve: routeRoleChecks.user
     });

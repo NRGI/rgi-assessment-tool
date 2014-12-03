@@ -1,7 +1,7 @@
-angular.module('app').factory('rgiIdentity', function($window, rgiUser) {
+angular.module('app').factory('rgiIdentitySrvc', function($window, rgiUserSrvc) {
   var currentUser;
   if(!!$window.bootstrappedUserObject) {
-    currentUser = new rgiUser();
+    currentUser = new rgiUserSrvc();
     angular.extend(currentUser, $window.bootstrappedUserObject);
   }
   return {

@@ -1,0 +1,20 @@
+.container.top-padding-med
+	.well.left-padding-med
+		legend {{assessment.country}} 
+		.row 
+			text {{assessment.assessment_text}}
+		.row
+			text Researcher: 
+			a(href="mailto:{{researcher.email}}") {{researcher.firstName}} {{researcher.lastName}}
+		.row
+			text Reviewer: 
+			a(href="mailto:{{reviewer.email}}") {{reviewer.firstName}} {{reviewer.lastName}}
+		.row
+			text Status: {{assessment.status}}	
+		.row
+			text Last edited: {{assessment.last_edit | date}}	
+		.row
+			text Started: {{assessment.start_date | date}}	
+		.row
+			text Number of questions complete: {{assessment.quesions_complete}}
+		table

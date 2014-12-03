@@ -1,22 +1,35 @@
+//- GEN SCRIPTS
 script(type="text/javascript", src="/vendor/jquery/dist/jquery.js")
 script(type="text/javascript", src="/vendor/bootstrap/dist/js/bootstrap.js")
 script(type="text/javascript", src="/vendor/toastr/toastr.js")
 script(type="text/javascript", src="/vendor/angular/angular.js")
 script(type="text/javascript", src="/vendor/angular-resource/angular-resource.js")
 script(type="text/javascript", src="/vendor/angular-route/angular-route.js")
+
+//- MAIN APP
 script(type="text/javascript", src="/app/app.js")
 script(type="text/javascript", src="/app/common/rgiNotifier.js")
 script(type="text/javascript", src="/app/main/rgiMainCtrl.js")
+
+//- SERVICES
+script(type="text/javascript", src="/app/services/rgiAuthSrvc.js")
+script(type="text/javascript", src="/app/services/rgiIdentitySrvc.js")
+script(type="text/javascript", src="/app/services/rgiUserSrvc.js")
+script(type="text/javascript", src="/app/services/rgiUserListSrvc.js")
+script(type="text/javascript", src="/app/services/rgiUserRoleSrvc.js")
+script(type="text/javascript", src="/app/services/rgiQuestionSrvc.js")
+script(type="text/javascript", src="/app/services/rgiAssessmentsSrvc.js")
+script(type="text/javascript", src="/app/services/ApiSrvc.js")
+//- script(type="text/javascript", src="/app/services/.js")
+
+//- ACCT CTRLS
 script(type="text/javascript", src="/app/account/rgiNavBarLoginCtrl.js")
-script(type="text/javascript", src="/app/account/rgiIdentity.js")
-script(type="text/javascript", src="/app/account/rgiAuth.js")
-script(type="text/javascript", src="/app/account/rgiUser.js")
-script(type="text/javascript", src="/app/account/rgiUserList.js")
 script(type="text/javascript", src="/app/account/rgiProfileCtrl.js")
+
+//- ADMIN CTRLS
 script(type="text/javascript", src="/app/admin/users/rgiCreateUserCtrl.js")
 script(type="text/javascript", src="/app/admin/users/rgiUserAdminCtrl.js")
 script(type="text/javascript", src="/app/admin/users/rgiUserAdminUpdateCtrl.js")
-script(type="text/javascript", src="/app/admin/questions/rgiQuestion.js")
 script(type="text/javascript", src="/app/admin/questions/rgiQuestionAdminCtrl.js")
 script(type="text/javascript", src="/app/admin/questions/rgiQuestionAdminUpdateCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminAssignCtrl.js")
@@ -25,6 +38,7 @@ script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminUpd
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentDashboardCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentDashboardDetailCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentStatusCtrl.js")
-script(type="text/javascript", src="/app/assessments/rgiAssessmentsListCtrl.js")
-script(type="text/javascript", src="/app/assessments/rgiAssessments.js")
-script(type="text/javascript", src="/app/assessments/rgiAssessmentDetailCtrl.js")
+
+//- USER CTRLS
+script(type="text/javascript", src="/app/user/assessments/rgiAssessmentsListCtrl.js")
+script(type="text/javascript", src="/app/user/assessments/rgiAssessmentDetailCtrl.js")
