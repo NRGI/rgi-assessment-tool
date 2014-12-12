@@ -2,6 +2,15 @@ angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, 
 	// var question = rgiQuestion.get({_id:$routeParams.id});
 	// $scope.question = question;
 	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
+
+	$scope.questionUpdate = function() {
+		
+	};
+
+	$scope.questionOptionAdd = function() {
+		$scope.question.question_choices.push({});
+	};
+
 	// Add update button functionality
 	// // $scope.update = function() {
 	// // 	var newUserData = {

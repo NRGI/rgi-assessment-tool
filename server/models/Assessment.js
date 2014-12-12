@@ -5,12 +5,14 @@ var assessmentSchema = mongoose.Schema({
 	country: {type: String, required:'{PATH} is required'}, // String of country name
 	researcher_ID: String, // pulled from user_id
 	reviewer_ID: String, // pulled from user_id
+	edit_control: String, // user_ID of editing rights
+	assign_date: Date,
 	start_date: Date,
 	submit_date: Date,
 	review_date: Date,
 	approval_date: Date,
 	last_edit: Date,
-	status: {type: String, required:'{PATH} is required', default:'unstarted'}, // unstarted, started, submitted, reviewing, reviewed, approved>
+	status: {type: String, required:'{PATH} is required', default:'unassigned'}, // unassigned, assigned, started, submitted, reviewing, reviewed, approved>
 	quesions_complete: {type:Number, default:0}
 });
 
@@ -19,9 +21,9 @@ var Assessment = mongoose.model('Assessment', assessmentSchema);
 function createDefaultAssessments() {
 	Assessment.find({}).exec(function(err, collection) {
 		if(collection.length === 0) {
-			Assessment.create({assessment_ID: "TZA", country: "Tanzania",researcher_ID: "547c9269d56df758a465c35d",reviewer_ID: "547c9269d56df758a465c360",start_date: "12/2/2014",status: "started",quesions_complete:3});
-			Assessment.create({assessment_ID: "NGA",country: "Nigeria",researcher_ID: "547c9269d56df758a465c359",reviewer_ID: "547c9269d56df758a465c35b",start_date: "12/1/2014",status: "started",quesions_complete:3});
-			Assessment.create({assessment_ID: "MMR",country: "Myanmar",researcher_ID: "547c9269d56df758a465c35d",reviewer_ID: "547c9269d56df758a465c360",start_date: "12/3/2014",status: "started",quesions_complete:3});
+			Assessment.create({assessment_ID: "TZA", country: "Tanzania"});
+			Assessment.create({assessment_ID: "NGA",country: "Nigeria"});
+			Assessment.create({assessment_ID: "MMR",country: "Myanmar"});
 			Assessment.create({assessment_ID: "AGO",country: "Angola"});
 			Assessment.create({assessment_ID: "RUS",country: "Russian Federation"});
 			Assessment.create({assessment_ID: "MEX",country: "Mexico"});

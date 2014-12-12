@@ -10,14 +10,29 @@
 					label.col-md-2.control-label(form="component") Component
 					.col-md-7
 						input.form-control(name="component", type="text", ng-model="question.component", required)
-				.form-group(ng-repeat="choice in question.question_choices")
-					label.col-md-2.control-label(form="choice") {{choice.order}}
+				.row
+					.col-md-2
+						b
+							p.text-right Option Value
 					.col-md-10
-						textarea.form-control(name="choice", type="textbox", ng-model="choice.criteria", required)
-				.form-group
-					.col-md-10.col-md-offset-2
-						.pull-right
-							//- button.btn.btn-primary(ng-click="update()", ng-disabled="signupFormm.$invalid") Submit
-							button.btn.btn-primary(ng-click="", ng-disabled="") Submit
-							| &nbsp;
-							a.btn.btn-default(href="/") Cancel
+						b
+							p Option Text
+				.row
+					.form-group(ng-repeat="choice in question.question_choices")
+						.col-md-1
+						.col-md-1
+							input.form-control(name="choiceOrder", type="text", ng-model="choice.order", required)
+						//- label.col-md-2.control-label(form="choice") {{choice.order}}
+						//- input.form-control(form="choiceOrder") {{choice.order}}
+						.col-md-10
+							textarea.form-control(name="choice", type="textbox", ng-model="choice.criteria", required)
+					.form-group
+						.col-md-10.col-md-offset-2
+							.pull-left
+								button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
+							.pull-right
+								button.btn.btn-primary(ng-click="questionUpdate()", ng-disabled="true") Submit
+								| &nbsp;
+								button.btn.btn-danger(ng-click="questionDelete()", ng-disabled="true") Delete
+								| &nbsp;
+								a.btn.btn-default(href="/") Cancel

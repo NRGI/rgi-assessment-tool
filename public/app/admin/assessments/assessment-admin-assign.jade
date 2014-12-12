@@ -13,10 +13,9 @@
 			label.col-md-4 Select Reviewer
 			.form-group.margin-left-med
 				select.form-control(ng-model="reviewerSelect", ng-options="item._id as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in reviewers")
-		//- Signup button needs click event functionality
 		.form-group
 			.col-md-10.col-md-offset-2
 				.pull-right
-					button.btn.btn-primary(ng-click="", ng-disabled="") Submit
+					button.btn.btn-primary(ng-click="assessmentAssign()", ng-disabled="") Submit
 					| &nbsp;
 					a.btn.btn-default(href="/") Cancel

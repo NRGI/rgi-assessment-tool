@@ -34,15 +34,17 @@
 				.form-group
 					label.col-md-2.control-label(form="password") Password
 					.col-md-10
-						input.form-control(name="password", type="password", png-model="user.password1")
+						input.form-control(name="password", type="password", ng-model="password")
 				.form-group
 					label.col-md-2.control-label(form="password") Repeat Password
 					.col-md-10
-						input.form-control(name="password", type="password", ng-model="user.password2")				
+						input.form-control(name="password", type="password", ng-model="password_rep")				
 				.form-group
 					.col-md-10.col-md-offset-2
 						.pull-right
-							//- button.btn.btn-primary(ng-click="update()", ng-disabled="signupFormm.$invalid") Submit
-							button.btn.btn-primary(ng-click="", ng-disabled="") Submit
+							//- button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="signupFormm.$invalid") Submit
+							button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="true") Submit
+							| &nbsp;
+							button.btn.btn-danger(ng-click="userDelete()", ng-disabled="true") Delete
 							| &nbsp;
 							a.btn.btn-default(href="/") Cancel

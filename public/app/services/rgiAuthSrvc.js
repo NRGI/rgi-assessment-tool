@@ -1,6 +1,7 @@
-angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q, rgiUserSrvc) {
+angular.module('app').factory('rgiAuthSrvc', function($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
 	return {
-		// AUTHENTICATION
+		// AUTHENTICATION AND AUTHORIZATION
+		//authentication
 		authenticateUser: function(username, password) {
 			var dfd = $q.defer();
 			$http.post('/login', {username:username, password:password}).then(function(response) {
@@ -15,7 +16,31 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 			});
 			return dfd.promise;
 		},
-		// USER CREATION LOOK AT THIS AND FIX
+		//logout
+		logoutUser: function() {
+			var dfd = $q.defer();
+			$http.post('/logout', {logout:true}).then(function() {
+				rgiIdentitySrvc.currentUser = undefined;
+				dfd.resolve();
+			});
+			return dfd.promise;
+		},
+		//authorize for specific route based on role
+		authorizeCurrentUserForRoute: function(role) {
+			if(rgiIdentitySrvc.isAuthorized(role)) {
+				return true;
+			} else {
+				return $q.reject('not authorized');
+			}
+		},
+		//limit route to authenticated users
+		authorizeAuthenticatedUserForRoute: function() {
+			if(rgiIdentitySrvc.isAuthenticated()) {
+				return true;
+			} else {
+				return $q.reject('not authorized');
+			}
+		},
 		createUser: function(newUserData) {
 			var newUser = new rgiUserSrvc(newUserData);
 			var dfd = $q.defer();
@@ -27,18 +52,23 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 			});
 			return dfd.promise;
 		},
-		// createUser: function(newUserData) {
-		// 	var newUser = new rgiUserSrvc(newUserData);
-		// 	var dfd = $q.defer();
+		updateUser: function(newUserData, user) {
 
-		// 	newUser.$save().then(function() {
-		// 		rgiIdentitySrvc.currentUser = newUser;
-		// 		dfd.resolve();
-		// 	}, function(response) {
-		// 		dfd.reject(response.data.reason);
-		// 	});
-		// 	return dfd.promise;
-		// },
+			var dfd = $q.defer();
+
+			// var clone = user;
+			angular.extend(user, newUserData);
+
+			user.$update().then(function() {
+				dfd.resolve();
+			}), function(response) {
+				dfd.reject(response.data.reason);
+			};
+			return dfd.promise;
+		},
+
+
+		
 		// USER UPDATES LOOK AT THIS AND FIX
 		updateCurrentUser: function(newUserData) {
 			var dfd = $q.defer();
@@ -52,41 +82,6 @@ angular.module('app').factory('rgiAuthSrvc', function($http, rgiIdentitySrvc, $q
 				dfd.reject(response.data.reason);
 			});
 			return dfd.promise;
-		},
-		updateUserAdmin: function(newUserData) {
-			var dfd = $q.defer();
-
-			newUserData.$update().then(function() {
-				dfd.resolve();
-			}), function(response) {
-				dfd.reject(response.data.reason);
-			};
-			return dfd.promise;
-		},
-		// LOGOUT
-		logoutUser: function() {
-			var dfd = $q.defer();
-			$http.post('/logout', {logout:true}).then(function() {
-				rgiIdentitySrvc.currentUser = undefined;
-				dfd.resolve();
-			});
-			return dfd.promise;
-		},
-		// AUTHORIZE FOR SPECIFIC ROUTE BASED ON ROLE
-		authorizeCurrentUserForRoute: function(role) {
-			if(rgiIdentitySrvc.isAuthorized(role)) {
-				return true;
-			} else {
-				return $q.reject('not authorized');
-			}
-		},
-		// LIMIT ROUTE TO AUTHENTICATED USERS
-		authorizeAuthenticatedUserForRoute: function() {
-			if(rgiIdentitySrvc.isAuthenticated()) {
-				return true;
-			} else {
-				return $q.reject('not authorized');
-			}
 		}
 	}	
 });

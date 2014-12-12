@@ -18,15 +18,12 @@ var userSchema = mongoose.Schema({
 	assessments:[{
 		assessment_id: String, // ISO3 Identifier
 		country_name: String, // Text name of country
-		started: {type: Date, default:Date.now},
+		started: Date,
 		submitted: {value:{type: Boolean, default:false}, date:Date},
 		approved: {value:{type: Boolean, default:false}, date:Date}
 	}],
-	///////////////////Add creation tagging on the add user ctrl///////////////////
-	// creation: {
-	// 	createdBy: {type: String, required:'{PATH} is required'},
-	// 	createdDate: {type: Date, default:Date.now}
-	// },
+	createdBy: String,
+	creationDate: {type: Date, default:Date.now},
 	///////////////////Add modification array on the ser update ctrl///////////////////
 	// modified: [{
 	// 	modifiedBy: {type: String, required:'{PATH} is required'},

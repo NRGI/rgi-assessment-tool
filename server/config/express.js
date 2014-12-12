@@ -22,6 +22,7 @@ module.exports = function(app, config) {
 	app.use(session({secret: 'All your base are belong to us'}));
 	app.use(passport.initialize());
 	app.use(passport.session());
+
 	// stylus middleware implementation - routes to anything in public directory
 	app.use(stylus.middleware(
 	{

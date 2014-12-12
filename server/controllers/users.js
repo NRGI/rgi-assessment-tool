@@ -44,33 +44,59 @@ exports.createUser = function(req, res, next) {
 			res.status(400)
 			return res.send({reason:err.toString()})
 		}
-		req.logIn(user, function(err) {
-			if(err) { return next(err); }
-			res.send(user);
-		})
 	})
 };
 
 exports.updateUser = function(req, res) {
 	var userUpdates = req.body;
 
-	if(req.user._id != userUpdates._id && !req.user.hasRole('supervisor')) {
+	if(!req.user.hasRole('supervisor')) {
 		res.status(403);
 		return res.end();
 	}
-
 	req.user.firstName = userUpdates.firstName;
 	req.user.lastName = userUpdates.lastName;
 	req.user.username = userUpdates.username;
+	req.user.email = userUpdates.email
+	req.user.language = userUpdates.language
+	req.user.creationDate = userUpdates.creationDate
+	req.user.assessments = userUpdates.assessments
+	req.user.roles = userUpdates.roles
+
+
 	if(userUpdates.password && userUpdates.password.length > 0) {
 		req.user.salt = encrypt.createSalt();
 		req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
 	}
-	req.user.save(function(err) {
-		if (err) { 
-			res.status(400); 
-			return res.send({reason: err.toString()});
-		};
+
+	req.user.save(function() {
+		if(err) { res.status(400); return res.send({reason:err.toString()}); }
 		res.send(req.user);
-	})
+	});
+
+
+  
+ 
+	// userUpdates.save(function(err) {
+	// 	if(err) {
+	// 		res.send(400);
+	// 		return res.send({reason: err.toString()});
+	// 	};
+	// 	res.send(req.user);
+	// });
+
+	// req.user.firstName = userUpdates.firstName;
+	// req.user.lastName = userUpdates.lastName;
+	// req.user.username = userUpdates.username;
+	// if(userUpdates.password && userUpdates.password.length > 0) {
+	// 	req.user.salt = encrypt.createSalt();
+	// 	req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
+	// }
+	// req.user.save(function(err) {
+	// 	if (err) { 
+	// 		res.status(400); 
+	// 		return res.send({reason: err.toString()});
+	// 	};
+	// 	res.send(req.user);
+	// })
 };

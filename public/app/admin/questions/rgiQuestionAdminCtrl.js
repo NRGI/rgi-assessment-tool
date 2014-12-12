@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQuestionSrvc) {
+angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQuestionSrvc, ngDialog) {
 	$scope.questions = rgiQuestionSrvc.query();
 
 	$scope.sortOptions = 	[	
@@ -7,4 +7,8 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQue
 								{value: "status", text: "Sort by Status"}
 							];
 	$scope.sortOrder = $scope.sortOptions[0].value;
+
+	$scope.newQuestionDialog = function() {
+		 ngDialog.open({ template: 'new-question-dialog.html' });
+	}
 })

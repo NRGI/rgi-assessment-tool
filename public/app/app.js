@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
   // role checks

@@ -1,6 +1,8 @@
 .container.top-padding-med
 	.well
 		legend Questions
+		.pull-left
+			.btn.btn-success(ng-click="newQuestionDialog()", ng-disabled="true", tooltip="yes") New Question
 		.pull-right
 			form.form-inline
 				.form-group
@@ -20,4 +22,4 @@
 						td{{question.question_text}}
 						td{{question.component}}
 						td
-							a.btn.btn-default(href="/admin/question-admin/{{question._id}}") Edit
+							a.btn.center-block.btn-default(href="/admin/question-admin/{{question._id}}") Edit

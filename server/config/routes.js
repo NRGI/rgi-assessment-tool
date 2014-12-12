@@ -13,7 +13,7 @@ module.exports	= function(app) {
 	app.get('/api/user-list/:id', users.getUsersListByID);
 	app.get('/api/user-roles/:role', auth.requiresRole('supervisor'), users.getUsersByRoles);
 	app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
-	app.put('/api/users', users.updateUser);
+	app.put('/api/users', auth.requiresRole('supervisor'), users.updateUser);
 
 
 	app.get('/api/questions', questions.getQuestions);
