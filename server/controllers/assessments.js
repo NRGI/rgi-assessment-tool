@@ -11,3 +11,42 @@ exports.getAssessmentsByID = function(req, res) {
 		res.send(assessment);
 	});
 };
+
+exports.updateAssessment = function(req,res) {
+	console.log(req.body);
+
+};
+
+
+exports.updateAssessment = function(req, res) {
+	var assessmentUpdates = req.body;
+
+	if(!req.user.hasRole('supervisor')) {
+		res.status(404);
+		return res.end();
+	}
+
+	Assessment.findOne({_id:req.body._id}).exec(function(err, assessment) {
+		if(err) {
+			res.status(400);
+			return res.send({ reason: err.toString() });
+		}
+		assessment.researcher_ID = assessmentUpdates.researcher_ID;
+		assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
+		assessment.edit_control = assessmentUpdates.edit_control;
+		assessment.assign_date = assessmentUpdates.assign_date;
+		assessment.status = assessmentUpdates.status;
+		
+		if(assessment.modified) {
+			assessment.modified.push({modifiedBy: req.user._id});
+		}else{
+			assessment.modified = {modifiedBy: req.user._id};
+		}
+
+		assessment.save(function(err) {
+			if(err)
+				return res.send({ reason: err.toString() });
+		})
+	});
+	res.send();
+};

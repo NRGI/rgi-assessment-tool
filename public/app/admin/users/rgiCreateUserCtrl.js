@@ -19,7 +19,6 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location
       password: $scope.password,
       // ADD ROLE IN CREATION EVENT
       roles: [$scope.roleSelect],
-      createdBy: rgiIdentitySrvc.currentUser._id,
       address: [$scope.address],
       language: [$scope.language]
     };

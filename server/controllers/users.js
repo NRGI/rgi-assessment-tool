@@ -2,14 +2,16 @@ var User 		= require('mongoose').model('User'),
 	encrypt 	= require('../utilities/encryption');
 
 exports.getUsers = function(req, res) {
+	// console.log(req.query);
 	if(req.user.hasRole('supervisor')) {
-		var query = User.find({});
+		var query = User.find(req.query);
 	}else{
-		var query = User.find({}).select({ "firstName": 1,"lastName":1});
+		var query = User.find(req.query).select({ "firstName": 1,"lastName":1});
 	}
 	query.exec(function(err, collection) {
 		res.send(collection);
 	})
+
 };
 
 exports.getUsersByID = function(req, res) {
@@ -25,17 +27,19 @@ exports.getUsersListByID = function(req, res) {
 	});
 };
 
-exports.getUsersByRoles = function(req, res) {
-	User.find({roles:{"$in": [req.params.role]}}).exec(function(err, user) {
-		res.send(user);
-	});
-};
+// exports.getUsersByRoles = function(req, res) {
+// 	User.find({roles:{"$in": [req.params.role]}}).exec(function(err, user) {
+// 		res.send(user);
+// 	});
+// };
 
 exports.createUser = function(req, res, next) {
 	var userData = req.body;
 	userData.username = userData.username.toLowerCase();
 	userData.salt = encrypt.createSalt();
 	userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
+	userData.createdBy = req.user._id;
+
 	User.create(userData, function(err, user) {
 		if(err){
 			if(err.toString().indexOf('E11000') > -1) {
@@ -49,7 +53,6 @@ exports.createUser = function(req, res, next) {
 };
 
 exports.updateUser = function(req, res) {
-
 	var userUpdates = req.body;
 
 	if(!req.user.hasRole('supervisor')) {
@@ -72,6 +75,7 @@ exports.updateUser = function(req, res) {
 		user.salt = userUpdates.salt;
 		user.hashed_pwd = userUpdates.hashed_pwd;
 		user.language = userUpdates.language;
+		user.assessments = userUpdates.assessments;
 		if(user.modified) {
 			user.modified.push({modifiedBy: req.user._id});
 		}else{

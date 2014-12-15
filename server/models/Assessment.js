@@ -6,7 +6,7 @@ var assessmentSchema = mongoose.Schema({
 	researcher_ID: String, // pulled from user_id
 	reviewer_ID: String, // pulled from user_id
 	edit_control: String, // user_ID of editing rights
-	assign_date: Date,
+	assign_date: {assigned_by: String, assigned_date: {type:Date, default:Date.now}},
 	start_date: Date,
 	submit_date: Date,
 	review_date: Date,

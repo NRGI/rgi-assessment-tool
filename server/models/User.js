@@ -25,6 +25,7 @@ var userSchema = mongoose.Schema({
 		assessment_id: String, // ISO3 Identifier
 		country_name: String, // Text name of country
 		started: Date,
+		assigned: {value:Boolean, date:{type:Date, default:Date.now}},
 		submitted: {value:{type: Boolean, default:false}, date:Date},
 		approved: {value:{type: Boolean, default:false}, date:Date}
 	}],

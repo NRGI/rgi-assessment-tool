@@ -3,11 +3,11 @@ angular.module('app').factory('rgiQuestionMethodSrvc', function($http, $q, rgiId
 		updateQuestion: function(newQuestionData) {
 			var dfd = $q.defer();
 			console.log(newQuestionData);
-			// newQuestionData.$update().then(function() {
-			// 	dfd.resolve();
-			// }), function(response) {
-			// 	dfd.reject(response.data.reason);
-			// };
+			newQuestionData.$update().then(function() {
+				dfd.resolve();
+			}), function(response) {
+				dfd.reject(response.data.reason);
+			};
 			return dfd.promise;
 		}
 	}	

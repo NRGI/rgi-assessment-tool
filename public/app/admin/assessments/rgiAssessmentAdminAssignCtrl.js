@@ -1,25 +1,48 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiUserRoleSrvc, rgiQuestionSrvc, $routeParams, $q){
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc){
 	// get all researchers
-	$scope.researchers = rgiUserRoleSrvc.get({role:'researcher'});
+	$scope.researchers = rgiUserSrvc.query({roles:'researcher'});
 	// get all reviewers
-	$scope.reviewers = rgiUserRoleSrvc.get({role:'reviewer'});
+	$scope.reviewers = rgiUserSrvc.query({roles:'reviewer'});
+	
 	// get assessment that needs to be updated
 	$scope.assessment = rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID});
 	// get questions for insertion into answers collection
 	$scope.questions = rgiQuestionSrvc.query();
 
 	$scope.assessmentAssign = function() {
-		// update user records for reviewer and researcher
-		// 	insert new subdoc in assessments array
-		// 		{
-		// 			assessment_id
-		// 			country_name
-		// 		}
-		// update assessment record
-		// 	set researcher_ID, reviewer_ID
-		// 	change status to 'assigned'
-		// 	set edit control to researcher_ID
-		// 	set assign_date to timestamp
+		
+		// newResearcherData = $scope.researcherSelect;
+		// newReviewerData = $scope.reviewerSelect;
+
+		// newAssessmentData = $scope.assessment;
+		// newAssessmentData.status = "assigned";
+		// newAssessmentData.researcher_ID = $scope.researcherSelect._id;
+		// newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
+		// newAssessmentData.edit_control = "researcher";
+
+		// newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+		// newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+
+		// rgiUserMethodSrvc.updateUser(newResearcherData).then(function() {
+		// 	rgiNotifier.notify('User account has been updated');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+
+		// rgiUserMethodSrvc.updateUser(newReviewerData).then(function() {
+		// 	rgiNotifier.notify('User account has been updated');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+		
+		// rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
+		// 	rgiNotifier.notify('Assessment created and assigned!');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+		
+
+	
 
 		// create answers
 		// 	for each question in question collection
@@ -31,15 +54,25 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 		// 		set question_order
 		// 		set component
 		// 		set status
+	
+
+	
 
 	}
 
-	$scope.assessmentCreate = function() {
-		// create assessment document
-			// assessment_ID = iso3 of country_name
-			// country = string name
-			// // figure out npm country codes modules to make this easier - https://github.com/sripaulgit/country-codes/blob/master/test.js
-	}
+
+
+
+	
+
+	
+
+	// $scope.assessmentCreate = function() {
+	// 	// create assessment document
+	// 		// assessment_ID = iso3 of country_name
+	// 		// country = string name
+	// 		// // figure out npm country codes modules to make this easier - https://github.com/sripaulgit/country-codes/blob/master/test.js
+	// }
 });
 
 

@@ -1,4 +1,10 @@
 angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams) {
+	// filtering options
+	$scope.sortOptions = [{value:'country',text:'Sort by Country'},
+		{value:'start_date', text:'Date started'},
+		{value:'status', text:'Status'}]
+	$scope.sortOrder = $scope.sortOptions[0].value;
+
 	rgiAssessmentSrvc.query(function(data) {
 		// pull assessment list from collection and adds user name to match reviewer id and researcher id
 		$scope.assessments = [];
@@ -18,10 +24,9 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiA
 			
 			$scope.assessments.push(assessment);
 		};
-	}); 
-	// filtering options
-	$scope.sortOptions = [{value:'country',text:'Sort by Country'},
-		{value:'start_date', text:'Date started'},
-		{value:'status', text:'Status'}]
-	$scope.sortOrder = $scope.sortOptions[0].value;
+	});
+
+	$scope.newAssessmentDialog = function() {
+		console.log();
+	} 
 });

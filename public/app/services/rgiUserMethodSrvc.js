@@ -23,12 +23,19 @@ angular.module('app').factory('rgiUserMethodSrvc', function($http, $q, rgiIdenti
 		},
 		updateUser: function(newUserData) {
 			var dfd = $q.defer();
-
+			// console.log(newUserData);
 			newUserData.$update().then(function() {
 				dfd.resolve();
 			}), function(response) {
 				dfd.reject(response.data.reason);
 			};
+			return dfd.promise;
+		},
+		assignUser: function(newUserData) {
+			var dfd = $q.defer();
+
+			console.log(newUserData);
+
 			return dfd.promise;
 		}
 		// // USER UPDATES LOOK AT THIS AND FIX
