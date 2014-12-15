@@ -2,6 +2,8 @@
 .container.top-padding-med
 	.well
 		legend Assessment Status Dashboard
+		.pull-left
+			.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="true", tooltip="yes") New Assessment
 		.pull-right
 			form.form-inline
 				.form-group

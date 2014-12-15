@@ -1,0 +1,125 @@
+//- answer page
+.container.top-padding-med
+	.well
+		legend.h2 {Country name} 2015 Assessment
+		.row.left-padding-lg
+			h3 {question text}
+			h5 Researcher score: {score}
+			h5 Reviewer score: {score}
+			br
+
+		.row.left-padding-lg.bottom-padding-lg
+			.col-md-pull-2
+				button.btn.btn-primary(ng-click="", ng-disabled="") Submit answer
+				| &nbsp;
+				button.btn.btn-danger(ng-click="", ng-disabled="") Clear answer
+				| &nbsp;
+				a.btn.btn-default(href="/") Return to assessment menu
+
+
+		.row.left-padding-med
+			.form-horizontal(name="answerForm")
+				fieldset
+					div(id="choiceBox")
+						legend Choose one of the following answers:
+						.form-group.left-padding-lg
+							input(type="radio", name="assessment_choice", value="1", checked="")
+							text.left-padding-med {option 1}
+							br
+							input(type="radio", name="assessment_choice", value="2", checked="")
+							text.left-padding-med {option 2}
+							br
+							input(type="radio", name="assessment_choice", value="3", checked="")
+							text.left-padding-med {option 3}
+							br
+							input(type="radio", name="assessment_choice", value="4", checked="")
+							text.left-padding-med {option 4}
+							br
+					
+					div(id="comments")
+						legend Comments:
+						div(id="prevComments")
+							.row.left-padding-lg
+								.row
+									b {author (role)}:
+								.row.col-md-11 {content of comment}
+								.row.col-md-offset-8.col-md-3
+									date
+										small
+											em {date}
+
+						div(id="newComment")
+							.form-group.top-padding-med
+								.row.left-padding-lg
+									label.col-md-2 New comment
+									.col-md-9
+										textarea.form-control(name="comment", type="text")
+						
+					div(id="bibliography")
+						legend Bibliograpical reference:
+						div(id="prevBib")
+							.row.left-padding-lg
+								.row
+									b {author (role)}:
+								.row.col-md-11
+									a(){reference text with link to s3 bucket address}
+								.row.col-md-11
+									em Comment:
+									text  {comment content}
+								.row.col-md-offset-8.col-md-3
+									date
+										small
+											em {date}
+						br
+
+						div(id="newBib")
+							.row.left-padding-med
+								.col-md-9
+									b Upload documents:
+								.pull-right.col-md-3
+									button.btn.btn-success(ng-click="", ng-disabled="") Select file
+
+							.form-group.top-padding-med
+								.row.left-padding-lg.bottom-padding-med
+									label.col-md-2 Citation:
+									.col-md-9
+										input.form-control(name="citation", type="text")
+								.row.left-padding-lg
+									label.col-md-2 Comment:
+									.col-md-9
+										textarea.form-control(name="citationComment", type="text")
+
+
+					div(id="validation")
+						legend Validation:
+						div(id="currentValidation")
+							.row.left-padding-lg
+								ul
+									li {role} {agrees/disagrees} with {other role}
+							.row.top-padding-med.left-padding-lg
+								b Do you agree with the {other role}?
+								.form-group.left-padding-lg
+									input(type="radio", name="agreeement_choice", value="1", checked="")
+									text.left-padding-med Agree
+									br
+									input(type="radio", name="agreeement_choice", value="1", checked="")
+									text.left-padding-med Disagree
+				//- 			div(id="agreementChoice")
+				//- 				fieldset
+				//- 					div(id="choiceBox")
+				//- 						legend Choose one of the following answers:
+				//- 						.form-group.left-padding-lg
+				//- 							input(type="radio", name="assessment_choice", value="1", checked="")
+				//- 							text.left-padding-med {option 1}
+				//- 							br
+				//- 							input(type="radio", name="assessment_choice", value="2", checked="")
+				//- 							text.left-padding-med {option 2}
+				//- 							br
+				//- 							input(type="radio", name="assessment_choice", value="3", checked="")
+				//- 							text.left-padding-med {option 3}
+				//- 							br
+				//- 							input(type="radio", name="assessment_choice", value="4", checked="")
+				//- 							text.left-padding-med {option 4}
+				//- 							br
+
+				//- 

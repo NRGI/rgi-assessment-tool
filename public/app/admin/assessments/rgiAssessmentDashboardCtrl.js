@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiAssessmentDashboardCtrl', function($scope, rgiAssessmentsSrvc, rgiUserListSrvc, $routeParams) {
-	rgiAssessmentsSrvc.query(function(data) {
+angular.module('app').controller('rgiAssessmentDashboardCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams) {
+	rgiAssessmentSrvc.query(function(data) {
 		
 		$scope.assessments = [];
 		for (var i = data.length - 1; i >= 0; i--) {

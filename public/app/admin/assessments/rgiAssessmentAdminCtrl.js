@@ -1,5 +1,5 @@
-angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiAssessmentsSrvc, rgiUserListSrvc, $routeParams) {
-	rgiAssessmentsSrvc.query(function(data) {
+angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams) {
+	rgiAssessmentSrvc.query(function(data) {
 		// pull assessment list from collection and adds user name to match reviewer id and researcher id
 		$scope.assessments = [];
 		for (var i = data.length - 1; i >= 0; i--) {

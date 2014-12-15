@@ -38,12 +38,12 @@
 				.form-group
 					label.col-md-2.control-label(form="password") Repeat Password
 					.col-md-10
-						input.form-control(name="password", type="password", ng-model="password_rep")				
+						input.form-control(name="password", type="password", ng-model="password_rep")
 				.form-group
 					.col-md-10.col-md-offset-2
 						.pull-right
 							//- button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="signupFormm.$invalid") Submit
-							button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="true") Submit
+							button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="") Submit
 							| &nbsp;
 							button.btn.btn-danger(ng-click="userDelete()", ng-disabled="true") Delete
 							| &nbsp;

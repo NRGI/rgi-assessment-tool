@@ -44,59 +44,76 @@ exports.createUser = function(req, res, next) {
 			res.status(400)
 			return res.send({reason:err.toString()})
 		}
-	})
+	});
+	res.send();
 };
 
 exports.updateUser = function(req, res) {
+
 	var userUpdates = req.body;
 
 	if(!req.user.hasRole('supervisor')) {
-		res.status(403);
+		res.status(404);
 		return res.end();
 	}
-	req.user.firstName = userUpdates.firstName;
-	req.user.lastName = userUpdates.lastName;
-	req.user.username = userUpdates.username;
-	req.user.email = userUpdates.email
-	req.user.language = userUpdates.language
-	req.user.creationDate = userUpdates.creationDate
-	req.user.assessments = userUpdates.assessments
-	req.user.roles = userUpdates.roles
-
-
 	if(userUpdates.password && userUpdates.password.length > 0) {
-		req.user.salt = encrypt.createSalt();
-		req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
+		userUpdates.salt = encrypt.createSalt();
+		userUpdates.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
 	}
 
-	req.user.save(function() {
-		if(err) { res.status(400); return res.send({reason:err.toString()}); }
-		res.send(req.user);
+	User.findOne({_id:req.body._id}).exec(function(err, user) {
+		if(err) {
+			res.status(400);
+			return res.send({ reason: err.toString() });
+		}
+		user.firstName = userUpdates.firstName;
+		user.lastName = userUpdates.lastName;
+		user.email = userUpdates.email;
+		user.salt = userUpdates.salt;
+		user.hashed_pwd = userUpdates.hashed_pwd;
+		user.language = userUpdates.language;
+		if(user.modified) {
+			user.modified.push({modifiedBy: req.user._id});
+		}else{
+			user.modified = {modifiedBy: req.user._id};
+		}
+		// user.address = userUpdates.address;
+		user.save(function(err) {
+			if(err)
+				return res.send({ reason: err.toString() });
+		})
 	});
+	res.send();
+};
 
-
-  
- 
-	// userUpdates.save(function(err) {
-	// 	if(err) {
-	// 		res.send(400);
-	// 		return res.send({reason: err.toString()});
-	// 	};
-	// 	res.send(req.user);
+exports.deleteUser = function(req, res) {
+	// res.send()
+	console.log(req.body);
+	// User.remove({
+	// 	_id: req.body
+	// }, function(err, user) {
+	// 	if(err)
+	// 		return res.send({ reason: err.toString() });
+	// 	res.send();
 	// });
+	// var userData = req.body;
 
-	// req.user.firstName = userUpdates.firstName;
-	// req.user.lastName = userUpdates.lastName;
-	// req.user.username = userUpdates.username;
-	// if(userUpdates.password && userUpdates.password.length > 0) {
-	// 	req.user.salt = encrypt.createSalt();
-	// 	req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
-	// }
-	// req.user.save(function(err) {
-	// 	if (err) { 
-	// 		res.status(400); 
-	// 		return res.send({reason: err.toString()});
-	// 	};
-	// 	res.send(req.user);
+	// return User.remove(userData, function(err, user) {
+	// 	if(err) {
+	// 		return res.send({reason:err.toString()})
+	// 	}
+	// });
+	
+	// userData.username = userData.username.toLowerCase();
+	// userData.salt = encrypt.createSalt();
+	// userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
+	// User.create(userData, function(err, user) {
+	// 	if(err){
+	// 		if(err.toString().indexOf('E11000') > -1) {
+	// 			err = new Error('Duplicate Username');
+	// 		}
+	// 		res.status(400)
+	// 		return res.send({reason:err.toString()})
+	// 	}
 	// })
 };

@@ -1,3 +1,3 @@
-angular.module('app').controller('rgiAssessmentAdminUpdateCtrl', function($scope, rgiAssessmentsSrvc, $routeParams) {
-	$scope.assessment = rgiAssessmentsSrvc.get({assessment_ID:$routeParams.assessment_ID});
+angular.module('app').controller('rgiAssessmentAdminUpdateCtrl', function($scope, rgiAssessmentSrvc, $routeParams) {
+	$scope.assessment = rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID});
 })

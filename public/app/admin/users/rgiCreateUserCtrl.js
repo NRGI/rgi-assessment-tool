@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location, rgiUserSrvc, rgiNotifier, rgiAuthSrvc, rgiIdentitySrvc) {
+angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location, rgiNotifier, rgiIdentitySrvc, rgiUserSrvc, rgiUserMethodSrvc) {
   
   $scope.roleOptions = [
     {value:'admin',text:'Administrator'},
@@ -24,9 +24,9 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location
       language: [$scope.language]
     };
     
-    rgiAuthSrvc.createUser(newUserData).then(function() {
+    rgiUserMethodSrvc.createUser(newUserData).then(function() {
       rgiNotifier.notify('User account created!');
-      $location.path('/');
+      $location.path('/admin/user-admin');
     }, function(reason) {
       rgiNotifier.error(reason);
     })

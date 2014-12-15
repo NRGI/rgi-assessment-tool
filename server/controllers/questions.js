@@ -11,3 +11,7 @@ exports.getQuestionsByID = function(req, res) {
 		res.send(question);
 	});
 };
+
+exports.updateQuestion = function(req, res) {
+	console.log(req.body);
+};

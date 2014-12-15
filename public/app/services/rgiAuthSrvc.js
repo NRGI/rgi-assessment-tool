@@ -40,48 +40,6 @@ angular.module('app').factory('rgiAuthSrvc', function($http, $q, rgiIdentitySrvc
 			} else {
 				return $q.reject('not authorized');
 			}
-		},
-		createUser: function(newUserData) {
-			var newUser = new rgiUserSrvc(newUserData);
-			var dfd = $q.defer();
-
-			newUser.$save().then(function() {
-				dfd.resolve();
-			}, function(response) {
-				dfd.reject(response.data.reason);
-			});
-			return dfd.promise;
-		},
-		updateUser: function(newUserData, user) {
-
-			var dfd = $q.defer();
-
-			// var clone = user;
-			angular.extend(user, newUserData);
-
-			user.$update().then(function() {
-				dfd.resolve();
-			}), function(response) {
-				dfd.reject(response.data.reason);
-			};
-			return dfd.promise;
-		},
-
-
-		
-		// USER UPDATES LOOK AT THIS AND FIX
-		updateCurrentUser: function(newUserData) {
-			var dfd = $q.defer();
-
-			var clone = angular.copy(rgiIdentitySrvc.currentUser);
-			angular.extend(clone, newUserData);
-			clone.$update().then(function() {
-				rgiIdentitySrvc.currentUser = clone;
-				dfd.resolve();
-			}, function(response) {
-				dfd.reject(response.data.reason);
-			});
-			return dfd.promise;
 		}
 	}	
 });

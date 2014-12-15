@@ -1,10 +1,10 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, rgiAssessmentsSrvc, rgiUserListSrvc, rgiUserRoleSrvc, rgiQuestionSrvc, $routeParams, $q){
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiUserRoleSrvc, rgiQuestionSrvc, $routeParams, $q){
 	// get all researchers
 	$scope.researchers = rgiUserRoleSrvc.get({role:'researcher'});
 	// get all reviewers
 	$scope.reviewers = rgiUserRoleSrvc.get({role:'reviewer'});
 	// get assessment that needs to be updated
-	$scope.assessment = rgiAssessmentsSrvc.get({assessment_ID:$routeParams.assessment_ID});
+	$scope.assessment = rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID});
 	// get questions for insertion into answers collection
 	$scope.questions = rgiQuestionSrvc.query();
 

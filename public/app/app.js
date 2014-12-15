@@ -85,6 +85,14 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/user/assessments/assessment-detail',
       controller: 'rgiAssessmentDetailCtrl', 
       resolve: routeRoleChecks.user
+    })
+    .when('/answer-page', {
+      templateUrl: '/partials/answer-page',
+      constant: 'rgiAnswerCtrl'
+    })
+    .when('/answer-page-bolivia', {
+      templateUrl: '/partials/bolivia-answer-page',
+      constant: 'boliviaCtrl'
     });
     // .when('/reporting', {
     //   templateUrl: '/partials/questions/reporting',

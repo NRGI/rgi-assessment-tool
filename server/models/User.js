@@ -1,6 +1,12 @@
 var mongoose 	= require('mongoose'),
 	encrypt		= require('../utilities/encryption');
 
+
+var modificationSchema = new mongoose.Schema({
+	modifiedBy: String,
+	modifiedDate: {type: Date, default:Date.now}
+});
+
 var userSchema = mongoose.Schema({
 	firstName: {type:String, required:'{PATH} is required!'},
 	lastName: {type:String, required:'{PATH} is required!'},
@@ -25,10 +31,7 @@ var userSchema = mongoose.Schema({
 	createdBy: String,
 	creationDate: {type: Date, default:Date.now},
 	///////////////////Add modification array on the ser update ctrl///////////////////
-	// modified: [{
-	// 	modifiedBy: {type: String, required:'{PATH} is required'},
-	// 	modifiedDate: {type: Date, default:Date.now}
-	// }],
+	modified: [modificationSchema],
 	address: String,
 	language: [String]
 	// groups: [String]

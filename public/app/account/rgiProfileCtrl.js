@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiProfileCtrl', function($scope, rgiIdentitySrvc, rgiAuthSrvc, rgiNotifier) {
+angular.module('app').controller('rgiProfileCtrl', function($scope, rgiIdentitySrvc, rgiUserMethodSrvc, rgiNotifier) {
 	// set page resources to be those of the current identity
 	$scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
 	$scope.fname = rgiIdentitySrvc.currentUser.firstName;
@@ -19,7 +19,7 @@ angular.module('app').controller('rgiProfileCtrl', function($scope, rgiIdentityS
 			newUserData.password = $scope.password;
 		}
 		// use authorization service to update user data
-		rgiAuthSrvc.updateCurrentUser(newUserData).then(function() {
+		rgiUserMethodSrvc.updateCurrentUser(newUserData).then(function() {
 			rgiNotifier.notify('Your user account has been updated');
 		}, function(reason) {
 			rgiNotifier.notify(reason);
