@@ -13,8 +13,10 @@ angular.module('app').factory('rgiUserMethodSrvc', function($http, $q, rgiIdenti
 		},
 		deleteUser: function(userDeletion) {
 			var dfd = $q.defer();
+			var deleteID = new rgiUserSrvc();
+			deleteID.id = userDeletion;
 
-			userDeletion.$remove().then(function() {
+			deleteID.$delete().then(function() {
 				dfd.resolve();
 			}), function(response) {
 				dfd.reject(response.data.reason);
@@ -23,34 +25,12 @@ angular.module('app').factory('rgiUserMethodSrvc', function($http, $q, rgiIdenti
 		},
 		updateUser: function(newUserData) {
 			var dfd = $q.defer();
-			// console.log(newUserData);
 			newUserData.$update().then(function() {
 				dfd.resolve();
 			}), function(response) {
 				dfd.reject(response.data.reason);
 			};
 			return dfd.promise;
-		},
-		assignUser: function(newUserData) {
-			var dfd = $q.defer();
-
-			console.log(newUserData);
-
-			return dfd.promise;
 		}
-		// // USER UPDATES LOOK AT THIS AND FIX
-		// updateCurrentUser: function(newUserData) {
-		// 	var dfd = $q.defer();
-
-		// 	var clone = angular.copy(rgiIdentitySrvc.currentUser);
-		// 	angular.extend(clone, newUserData);
-		// 	clone.$update().then(function() {
-		// 		rgiIdentitySrvc.currentUser = clone;
-		// 		dfd.resolve();
-		// 	}, function(response) {
-		// 		dfd.reject(response.data.reason);
-		// 	});
-		// 	return dfd.promise;
-		// }
 	}	
 });

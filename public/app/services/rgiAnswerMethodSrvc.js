@@ -1,7 +1,17 @@
 angular.module('app').factory('rgiAnswerMethodSrvc', function($http, $q, rgiIdentitySrvc, rgiAnswerSrvc) {
 	return {
-		updateAnswerSet: function(newAnswerSet) {
-			console.log(newAnswerSet);
+		insertAnswerSet: function(newAnswerSet) {
+			var dfd = $q.defer();
+
+			var newAnswers = new rgiAnswerSrvc(newAnswerSet);
+			newAnswers.length = newAnswerSet.length;
+
+			newAnswers.$save().then(function() {
+				dfd.resolve;
+			}, function(response) {
+				dfd.reject(response.data.reason);
+			});
+			return dfd.promise;
 		}
 
 		// updateAnswer: function(newAnswerData) {
@@ -16,3 +26,14 @@ angular.module('app').factory('rgiAnswerMethodSrvc', function($http, $q, rgiIden
 		// }
 	}	
 });
+// createUser: function(newUserData) {
+// 			var newUser = new rgiUserSrvc(newUserData);
+// 			var dfd = $q.defer();
+
+// 			newUser.$save().then(function() {
+// 				dfd.resolve();
+// 			}, function(response) {
+// 				dfd.reject(response.data.reason);
+// 			});
+// 			return dfd.promise;
+// 		},

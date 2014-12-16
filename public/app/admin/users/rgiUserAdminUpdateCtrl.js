@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, $routeParams, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
+angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, $routeParams, $location, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
 	
 	$scope.user = rgiUserSrvc.get({_id:$routeParams.id});
 	// fix submit button functionality
@@ -26,7 +26,8 @@ angular.module('app').controller('rgiUserAdminUpdateCtrl', function($scope, $rou
 	};
 
 	$scope.userDelete = function() {
-		var userDeletion = $scope.user;
+		var userDeletion = $scope.user._id;
+
 		rgiUserMethodSrvc.deleteUser(userDeletion).then(function() {
 			$location.path('/admin/user-admin');
 			rgiNotifier.notify('User account has been deleted');

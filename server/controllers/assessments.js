@@ -1,8 +1,24 @@
 var Assessment = require('mongoose').model('Assessment');
 
 exports.getAssessments = function(req, res) {
-	Assessment.find({}).exec(function(err, collection) {
-		res.send(collection)
+	var query = Assessment.find(req.query);
+	query.exec(function(err, collection) {
+		res.send(collection);
+	});
+	// Assessment.find({}).exec(function(err, collection) {
+	// 	res.send(collection)
+	// });
+};
+
+exports.getUsers = function(req, res) {
+	// console.log(req.query);
+	if(req.user.hasRole('supervisor')) {
+		var query = User.find(req.query);
+	}else{
+		var query = User.find(req.query).select({ "firstName": 1,"lastName":1});
+	}
+	query.exec(function(err, collection) {
+		res.send(collection);
 	});
 };
 

@@ -22,8 +22,7 @@ module.exports	= function(app) {
 	app.put('/api/users', auth.requiresRole('supervisor'), users.updateUser);
 
 	// DELETE
-	app.delete('/api/users', auth.requiresRole('supervisor'), users.deleteUser);
-	// app.delete('/api/users', auth.requiresRole('supervisor'), users.deleteUser);
+	app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
 
 	/////////////////////////////
 	///// QUESTIONS CRUD ////////
@@ -35,11 +34,17 @@ module.exports	= function(app) {
 	// PUT
 	app.put('/api/questions', auth.requiresRole('supervisor'), questions.updateQuestion);
 
+	// DELETE
+	app.delete('/api/questions/:id', auth.requiresRole('supervisor'), questions.deleteQuestion);
+
 	//////////////////////////////////////
 	///// ASSESSMENT ANSWERS CRUD ////////
 	//////////////////////////////////////
 	// GET
 	app.get('/api/answers', auth.requiresApiLogin, answers.getAnswers);
+	
+	// POST
+	app.post('/api/answers', auth.requiresRole('supervisor'), answers.createAnswers);
 	// app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
 	// app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
 	
@@ -68,7 +73,7 @@ module.exports	= function(app) {
 	});
 
 	app.all('/api/*', function(req, res) {
-		res.send(404);
+		res.sendStatus(404);
 	});
 
 	app.get('*', function(req, res) {

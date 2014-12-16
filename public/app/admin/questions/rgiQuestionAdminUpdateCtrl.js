@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, $routeParams, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
+angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
 
 	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
 
@@ -30,6 +30,13 @@ angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, 
 	};
 
 	$scope.questionDelete = function() {
+		var questionDeletion = $scope.question._id;
 
+		rgiQuestionMethodSrvc.deleteQuestion(questionDeletion).then(function() {
+			$location.path('/admin/question-admin');
+			rgiNotifier.notify('Question has been deleted');
+		}, function(reason) {
+			rgiNotifier.error(reason);
+		});
 	};
 });

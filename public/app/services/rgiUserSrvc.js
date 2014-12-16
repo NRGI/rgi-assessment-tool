@@ -1,8 +1,7 @@
 // query user or get user by id
 angular.module('app').factory('rgiUserSrvc', function($resource) {
 	var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
-		update: {method: 'PUT', isArray:false},
-		remove: {method: 'DELETE', isArray:false}
+		update: {method: 'PUT', isArray:false}
 	});
 
 	// add role features to resource

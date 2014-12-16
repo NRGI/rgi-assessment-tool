@@ -9,6 +9,7 @@ var answerSchema = mongoose.Schema({
 	question_order: {type: String, required:'{PATH} is required'}, // generated from the order_ID of Question Model
 	component: {type: String, required:'{PATH} is required'}, // generated from Question Model
 	status: String, // started, submitted, reviewing, reviewed, approved>
+	assigned: {assignedBy:String, assignedDate:{type:Date, default:Date.now}},
 	researcher_score: Number,
 	/////ERROR CALCULATION
 	researcher_score_history: [{
