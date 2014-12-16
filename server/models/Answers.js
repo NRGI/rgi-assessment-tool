@@ -8,7 +8,7 @@ var answerSchema = mongoose.Schema({
 	reviewer_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of User Model
 	question_order: {type: String, required:'{PATH} is required'}, // generated from the order_ID of Question Model
 	component: {type: String, required:'{PATH} is required'}, // generated from Question Model
-	status: {type: String, required:'{PATH} is required'}, // started, submitted, reviewing, reviewed, approved>
+	status: String, // started, submitted, reviewing, reviewed, approved>
 	researcher_score: Number,
 	/////ERROR CALCULATION
 	researcher_score_history: [{

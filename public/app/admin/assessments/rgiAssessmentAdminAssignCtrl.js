@@ -1,4 +1,13 @@
 angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc){
+	
+	function zeroFill( number, width ) {
+		width -= number.toString().length;
+		if ( width > 0 ) {
+			return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+		}
+		return number + ""; // always return a string
+	};
+
 	// get all researchers
 	$scope.researchers = rgiUserSrvc.query({roles:'researcher'});
 	// get all reviewers
@@ -11,15 +20,8 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 
 	$scope.assessmentAssign = function() {
 		
-		// newResearcherData = $scope.researcherSelect;
-		// newReviewerData = $scope.reviewerSelect;
-
-		// newAssessmentData = $scope.assessment;
-		// newAssessmentData.status = "assigned";
-		// newAssessmentData.researcher_ID = $scope.researcherSelect._id;
-		// newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
-		// newAssessmentData.edit_control = "researcher";
-
+		// var newResearcherData = $scope.researcherSelect;
+		// var newReviewerData = $scope.reviewerSelect;
 		// newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 		// newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 
@@ -34,38 +36,40 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 		// }, function(reason) {
 		// 	rgiNotifier.error(reason);
 		// });
-		
+
+		// var newAssessmentData = $scope.assessment;
+		// newAssessmentData.status = "assigned";
+		// newAssessmentData.researcher_ID = $scope.researcherSelect._id;
+		// newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
+		// newAssessmentData.edit_control = "researcher";
+
 		// rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
 		// 	rgiNotifier.notify('Assessment created and assigned!');
 		// }, function(reason) {
 		// 	rgiNotifier.error(reason);
 		// });
-		
 
-	
+		var newAnswerSet = [];
 
-		// create answers
-		// 	for each question in question collection
-		// 		set answer_ID = assessment.assessment_id + questions.question_order
-		// 		set question_ID = questions._id
-		// 		set assessment_ID = assessment.assessment_id
-		// 		set researcher_ID = researcher_ID
-		// 		set reviewer_ID = reviewer_ID
-		// 		set question_order
-		// 		set component
-		// 		set status
-	
+		for (var i = 0; i < $scope.questions.length; i++) {
+			newAnswerSet.push({});
 
-	
+			newAnswerSet[i].answer_ID = $routeParams.assessment_ID + zeroFill($scope.questions[i].question_order, 3);
+			newAnswerSet[i].question_ID = $scope.questions[i]._id;
+			newAnswerSet[i].assessment_ID = $routeParams.assessment_ID;
+			newAnswerSet[i].researcher_ID = $scope.researcherSelect._id;
+			newAnswerSet[i].reviewer_ID = $scope.reviewerSelect._id;
+			newAnswerSet[i].question_order = $scope.questions[i].question_order;
+			newAnswerSet[i].component = $scope.questions[i].component;
+		};
+		console.log(newAnswerSet);
 
+		// rgiAnswerMethodSrvc.updateAnswerSet(newAnswerSet).then(function() {
+		// 	rgiNotifier.notify('Assessment assigned!');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
 	}
-
-
-
-
-	
-
-	
 
 	// $scope.assessmentCreate = function() {
 	// 	// create assessment document
@@ -74,28 +78,3 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 	// 		// // figure out npm country codes modules to make this easier - https://github.com/sripaulgit/country-codes/blob/master/test.js
 	// }
 });
-
-
-
-
-// $scope.createUser = function() {
-//     var newUserData = {
-//       firstName: $scope.fname,
-//       lastName: $scope.lname,
-//       username: $scope.username,
-//       email: $scope.email,
-//       password: $scope.password,
-//       roles: [$scope.roles],
-//       // // Need to create creation event
-//       // creation: {createdBy: user id, createdDate: Date.now},
-//       address: [$scope.address],
-//       language: [$scope.language]
-//     };
-
-//     rgiAuthSrvc.createUser(newUserData).then(function() {
-//       rgiNotifier.notify('User account created!');
-//       $location.path('/');
-//     }, function(reason) {
-//       rgiNotifier.error(reason);
-//     })
-//   }
