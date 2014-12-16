@@ -1,18 +1,19 @@
 .container
-	h1 {{assessment.country}} 
-	.row 
-		text {{assessment.assessment_text}}
-	.row
-		text Researcher: {{assessment.researcher_ID}}
-	.row
-		text Reviewer: {{assessment.reviewer_ID}}
-	.row
-		text Status: {{assessment.status}}	
-	.row
-		text Last edited: {{assessment.last_edit | date}}	
-	.row
-		text Started: {{assessment.start_date | date}}	
-	.row
-		text Number of questions complete: {{assessment.quesions_complete}}
 	.well
-		table
+		.pull-left
+			h1 {{assessment.country}}
+				text {{assessment.assessment_text}}
+			.row
+				text Researcher: {{assessment.researcher_ID}}
+			.row
+				text Reviewer: {{assessment.reviewer_ID}}
+			.row
+				text Status: {{assessment.status}}	
+			.row
+				text Last edited: {{assessment.last_edit | date}}	
+			.row
+				text Started: {{assessment.start_date | date}}	
+			.row
+				text Number of questions complete: {{assessment.quesions_complete}}
+		.pull-right
+			img(src="/assets/mapsicon/all/{{assessment.assessment_ID}}/256.png")

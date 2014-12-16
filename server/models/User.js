@@ -55,19 +55,19 @@ function createDefaultUsers() {
 			var salt, hash;
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'jcust');
-			User.create({_id:'547c9269d56df758a465c358', firstName:'Jim',lastName:'Cust',username:'jcust',email:'jcust@resourcegovernance.org',salt: salt, hashed_pwd: hash,roles: 'supervisor'});
+			User.create({firstName:'Jim',lastName:'Cust',username:'jcust',email:'jcust@resourcegovernance.org',salt: salt, hashed_pwd: hash,roles: 'supervisor'});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'cperry');
-			User.create({_id:"547c9269d56df758a465c359", firstName:'Chris',lastName:'Perry',username:'cperry',email:'cperry@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'researcher',assessments:[{assessment_id:'NIR', country_name:'Nigeria'}]});
+			User.create({firstName:'Chris',lastName:'Perry',username:'cperry',email:'cperry@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'researcher',assessments:[]});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'apederson');
-			User.create({_id:"547c9269d56df758a465c35b", firstName:'Anders',lastName:'Pederson',username:'apederson',email:'apederson@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'reviewer',assessments:[{assessment_id:'NIR', country_name:'Nigeria'}]});
+			User.create({firstName:'Anders',lastName:'Pederson',username:'apederson',email:'apederson@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'reviewer',assessments:[]});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'ahasermann');
-			User.create({_id:"547c9269d56df758a465c35d", firstName:'Anna',lastName:'Hasermann',username:'ahasermann',email:'ahasermann@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles:'researcher',assessments:[{assessment_id:'TAZ', country_name:'Tanzania'},{assessment_id:'MMR', country_name:'Myanmar'}]});
+			User.create({firstName:'Anna',lastName:'Hasermann',username:'ahasermann',email:'ahasermann@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles:'researcher',assessments:[]});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'mkauffmann');
-			User.create({_id:"547c9269d56df758a465c360", firstName:'Mayeul',lastName:'Kauffmann',username:'mkauffmann',email:'mkauffmann@resourcegovernance.org',salt:salt,hashed_pwd: hash,roles:'reviewer',assessments:[{assessment_id:'TAZ', country_name:'Tanzania'},{assessment_id:'MMR', country_name:'Myanmar'}]});
+			User.create({firstName:'Mayeul',lastName:'Kauffmann',username:'mkauffmann',email:'mkauffmann@resourcegovernance.org',salt:salt,hashed_pwd: hash,roles:'reviewer',assessments:[]});
 		}
 	})
 };

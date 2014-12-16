@@ -64,8 +64,8 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 		};
 
 		rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
-			$location.path('/admin/assessment-admin');
 			rgiNotifier.notify('Assessment assigned!');
+			$location.path('/admin/assessment-admin');
 		}, function(reason) {
 			rgiNotifier.error(reason);
 		});

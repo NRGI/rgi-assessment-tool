@@ -16,15 +16,25 @@
 					th Researcher
 					th Reviewer
 					th Started
+					th Submitted
+					th Reviewed
+					th Approval
 					th Last Edited
 					th Status
-					th
+					th Questions Complete
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
+					//- th {{assessment}}
 					td 
 						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
-					td {{assessment.researcher_ID}}
-					td {{assessment.reviewer_ID}}
+					td
+						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+					td 
+						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
 					td {{assessment.start_date | date}}
+					td {{assessment.submit_date | date}}
+					td {{assessment.review_date | date}}
+					td {{assessment.approval_date | date}}
 					td {{assessment.last_edit | date}}
 					td {{assessment.status}}
+					td {{assessment.quesions_complete}}

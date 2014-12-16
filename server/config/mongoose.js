@@ -14,7 +14,7 @@ module.exports 	= function(config) {
 	});
 
 	userModel.createDefaultUsers();
-	answerModel.createDefaultAnswers();
+	// answerModel.createDefaultAnswers();
 	questionModel.createDefaultQuestions();
 	assessmentModel.createDefaultAssessments();
 
