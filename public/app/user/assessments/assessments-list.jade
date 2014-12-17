@@ -25,16 +25,24 @@
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					//- th {{assessment}}
-					td 
+					td(ng-if="assessment.status=='assigned'") {{assessment.country}}
+					td(ng-if="assessment.status!='assigned'")
 						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
 					td
 						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
 					td 
 						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
-					td {{assessment.start_date | date}}
-					td {{assessment.submit_date | date}}
-					td {{assessment.review_date | date}}
-					td {{assessment.approval_date | date}}
-					td {{assessment.last_edit | date}}
+					td(ng-if="!assessment.start_date") Not started
+					td(ng-if="assessment.start_date") {{assessment.start_date | date}}
+					td(ng-if="!assessment.submit_date") Not submitted
+					td(ng-if="assessment.submit_date") {{assessment.submit_date | date}}
+					td(ng-if="!assessment.review_date") Not reviewed
+					td(ng-if="assessment.review_date") {{assessment.review_date | date}}
+					td(ng-if="!assessment.approval_date") Not approved
+					td(ng-if="assessment.approval_date") {{assessment.approval_date | date}}
+					td(ng-if="!assessment.last_edit") Not started
+					td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
 					td {{assessment.status}}
-					td {{assessment.quesions_complete}}
+					td(ng-if="!assessment.quesions_complete")
+						a.btn.center-block.btn-default(href="") Start assessment
+					td.text-center(ng-if="assessment.quesions_complete") {{assessment.quesions_complete}}
