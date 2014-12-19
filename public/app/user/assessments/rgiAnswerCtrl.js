@@ -5,7 +5,7 @@ angular.module('app').controller('rgiAnswerCtrl', function($scope, $routeParams,
 		$scope.answer = data;
 		$scope.assessment = rgiAssessmentSrvc.get({assessment_ID:data.assessment_ID});
 		$scope.question = rgiQuestionSrvc.get({_id:data.question_ID});
-		var origAnswer = angular.copy($scope.answer);
+		// var origAnswer = angular.copy($scope.answer);
 		// rgiAnswerSrvc.query({assessment_ID:assessment_data.assessment_ID}, function(answer_data) {
 		// 	for (var i = 0; i < answer_data.length; i++) {
 		// 		answer = answer_data[i];
@@ -16,7 +16,7 @@ angular.module('app').controller('rgiAnswerCtrl', function($scope, $routeParams,
 	});
 
 	$scope.answerSubmit = function() {
-		console.log($scope.referenceFileUpload);
+		// console.log($scope.referenceFileUpload);
 	};
 
 	$scope.answerClear = function() {
