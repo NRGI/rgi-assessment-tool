@@ -1,6 +1,7 @@
 .container
 	.well
-		img.mapsicon(src="/assets/mapsicon/all/{{assessment.assessment_ID}}/vector.svg")
+		//- img.mapsicon(src="/assets/mapsicon/all/{{assessment.assessment_ID}}/vector.svg")
+		img.mapsicon(src="https://s3.amazonaws.com/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
 		legend {{assessment.country}}
 			
 		.pull-left.left-padding-lg.bottom-padding-lg
