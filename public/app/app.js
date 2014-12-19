@@ -83,8 +83,13 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     })
     .when('/assessments/:assessment_ID', {
       templateUrl: '/partials/user/assessments/assessment-detail',
+      // controller: '', 
       controller: 'rgiAssessmentDetailCtrl', 
       resolve: routeRoleChecks.user
+    })
+    .when('/assessments/assessment/:answer_ID', {
+      templateUrl: '/partials/user/assessments/answer-page',
+      controller: 'rgiAnswerCtrl'
     })
     .when('/answer-page', {
       templateUrl: '/partials/answer-page',

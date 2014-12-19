@@ -16,6 +16,9 @@ footer {
 footer p {
   border-top: 1px solid #d7e0e2;
 }
+.mapsicon {
+  height: 100px;
+}
 .navbar-form .form-group {
   margin-left: 10px;
 }
@@ -45,4 +48,21 @@ footer p {
 }
 #toast-container {
   top: 70px;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  outline: none;
+  cursor: inherit;
+  display: block;
+  opacity: 0;
 }

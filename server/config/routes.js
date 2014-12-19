@@ -16,10 +16,10 @@ module.exports	= function(app) {
 	app.get('/api/user-list/:id', users.getUsersListByID);
 
 	// POST
-	app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
+	app.post('/api/users', auth.requiresApiLogin, auth.requiresRole('supervisor'), users.createUser);
 
 	// PUT
-	app.put('/api/users', auth.requiresRole('supervisor'), users.updateUser);
+	app.put('/api/users', users.updateUser);
 
 	// DELETE
 	app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
@@ -30,6 +30,7 @@ module.exports	= function(app) {
 	// GET
 	app.get('/api/questions', questions.getQuestions);
 	app.get('/api/questions/:id', questions.getQuestionsByID);
+	app.get('/api/question-text/:id', questions.getQuestionTextByID);
 	
 	// PUT
 	app.put('/api/questions', auth.requiresRole('supervisor'), questions.updateQuestion);
@@ -42,9 +43,10 @@ module.exports	= function(app) {
 	//////////////////////////////////////
 	// GET
 	app.get('/api/answers', auth.requiresApiLogin, answers.getAnswers);
+	app.get('/api/answers/:answer_ID', auth.requiresApiLogin, answers.getAnswersByID);
 	
 	// POST
-	app.post('/api/answers', auth.requiresRole('supervisor'), answers.createAnswers);
+	app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
 	// app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
 	// app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
 	
@@ -56,7 +58,7 @@ module.exports	= function(app) {
 	app.get('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.getAssessmentsByID);
 	
 	// PUT
-	app.put('/api/assessments/:assessment_ID', auth.requiresRole('supervisor'), assessments.updateAssessment);
+	app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
 
 	////////////////////
 	///// OTHER ////////

@@ -43,6 +43,7 @@
 					td(ng-if="!assessment.last_edit") Not started
 					td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
 					td {{assessment.status}}
-					td(ng-if="!assessment.quesions_complete")
-						a.btn.center-block.btn-default(href="") Start assessment
-					td.text-center(ng-if="assessment.quesions_complete") {{assessment.quesions_complete}}
+					td(ng-if="assessment.status=='assigned'")
+						button.btn.btn-success(ng-click="assessmentStart(assessment)") Start assessment
+					//- 	//- a.btn.center-block.btn-default(href="/assments/assessment/{{assessment.assessment_ID}}001") Start assessment
+					td.text-center(ng-if="assessment.status!='assigned'") {{assessment.quesions_complete}}

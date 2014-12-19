@@ -12,6 +12,15 @@ exports.getQuestionsByID = function(req, res) {
 	});
 };
 
+
+exports.getQuestionTextByID = function(req, res) {
+	var query = Question.findOne({_id:req.params.id}).select({ "question_text": 1});
+	query.exec(function(err, question) {
+		res.send(question);
+	});
+};
+
+
 exports.updateQuestion = function(req, res) {
 	console.log(req.body);
 	var questionUpdate = req.body;

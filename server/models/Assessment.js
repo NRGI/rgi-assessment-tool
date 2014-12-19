@@ -1,5 +1,10 @@
 var mongoose 	= require('mongoose');
 
+var modificationSchema = new mongoose.Schema({
+	modifiedBy: String,
+	modifiedDate: {type: Date, default:Date.now}
+});
+
 var assessmentSchema = mongoose.Schema({
 	assessment_ID: {type: String, required:'{PATH} is required'}, // ISO3 of country
 	ISO3: {type: String, required:'{PATH} is required'}, // ISO3 of country
@@ -12,9 +17,10 @@ var assessmentSchema = mongoose.Schema({
 	submit_date: Date,
 	review_date: Date,
 	approval_date: Date,
+	modified: [modificationSchema],
 	last_edit: Date,
 	status: {type: String, required:'{PATH} is required', default:'unassigned'}, // unassigned, assigned, started, submitted, reviewing, reviewed, approved>
-	quesions_complete: {type:Number, default:0}
+	questions_complete: {type:Number, default:0}
 });
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);

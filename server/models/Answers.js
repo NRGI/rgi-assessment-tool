@@ -8,7 +8,7 @@ var answerSchema = mongoose.Schema({
 	reviewer_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of User Model
 	question_order: {type: String, required:'{PATH} is required'}, // generated from the order_ID of Question Model
 	component: {type: String, required:'{PATH} is required'}, // generated from Question Model
-	status: String, // started, submitted, reviewing, reviewed, approved>
+	status: {type: String, default:'assigned'}, // started, validated, submitted
 	assigned: {assignedBy:String, assignedDate:{type:Date, default:Date.now}},
 	researcher_score: Number,
 	/////ERROR CALCULATION
@@ -29,12 +29,17 @@ var answerSchema = mongoose.Schema({
 	comments: [{
 		date: {type: Date, default:Date.now},
 		content: String,
-		author: String // Pull from curretn user _id value
+		author: String, // Pull from curretn user _id value
+		author_name: String,
+		role: String 
 	}],
 	references: [{
-		date_uploaded: {type: Date, default:Date.now},
+		date: {type: Date, default:Date.now},
 		tex_ref: String,
-		URL: String // generated from upload path in S3
+		URL: String, // generated from upload path in S3
+		note: String,
+		author: String, // Pull from curretn user _id value
+		role: String 
 	}]
 });
 

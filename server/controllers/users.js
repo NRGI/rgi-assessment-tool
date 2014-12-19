@@ -20,8 +20,8 @@ exports.getUsersByID = function(req, res) {
 };
 
 exports.getUsersListByID = function(req, res) {
-	var query = User.find({}).select({ "firstName": 1,"lastName":1, "email":1});
-	User.findOne({_id:req.params.id}).exec(function(err, user) {
+	var query = User.findOne({_id:req.params.id}).select({ "firstName": 1,"lastName":1, "email":1});
+	query.exec(function(err, user) {
 		res.send(user);
 	});
 };
@@ -48,7 +48,7 @@ exports.createUser = function(req, res, next) {
 exports.updateUser = function(req, res) {
 	var userUpdates = req.body;
 
-	if(!req.user.hasRole('supervisor')) {
+	if(req.user._id != userUpdates._id && !req.user.hasRole('supervisor')) {
 		res.status(404);
 		return res.end();
 	}

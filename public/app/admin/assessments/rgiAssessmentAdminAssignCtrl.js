@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, $location, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
 	
 	function zeroFill( number, width ) {
 		width -= number.toString().length;
@@ -6,7 +6,7 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 			return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
 		}
 		return number + ""; // always return a string
-	};
+	}
 
 	// get all researchers
 	$scope.researchers = rgiUserSrvc.query({roles:'researcher'});
@@ -25,29 +25,12 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 		newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 		newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 
-		rgiUserMethodSrvc.updateUser(newResearcherData).then(function() {
-			rgiNotifier.notify('User account has been updated');
-		}, function(reason) {
-			rgiNotifier.error(reason);
-		});
-
-		rgiUserMethodSrvc.updateUser(newReviewerData).then(function() {
-			rgiNotifier.notify('User account has been updated');
-		}, function(reason) {
-			rgiNotifier.error(reason);
-		});
-
 		var newAssessmentData = $scope.assessment;
 		newAssessmentData.status = "assigned";
 		newAssessmentData.researcher_ID = $scope.researcherSelect._id;
 		newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
 		newAssessmentData.edit_control = "researcher";
-
-		rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
-			rgiNotifier.notify('Assessment created and assigned!');
-		}, function(reason) {
-			rgiNotifier.error(reason);
-		});
+		newAssessmentData.questions_complete = 0;
 
 		var newAnswerSet = [];
 
@@ -63,12 +46,36 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 			newAnswerSet[i].component = $scope.questions[i].component;
 		};
 
-		rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
-			rgiNotifier.notify('Assessment assigned!');
-			$location.path('/admin/assessment-admin');
-		}, function(reason) {
-			rgiNotifier.error(reason);
-		});
+		rgiUserMethodSrvc.updateUser(newResearcherData)
+			.then(rgiUserMethodSrvc.updateUser(newReviewerData))
+			.then(rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData))
+			.then(rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet))
+			.then(function() {
+				$location.path('/admin/assessment-admin');
+				rgiNotifier.notify('Assessment created and assigned!');
+			}, function(reason) {
+				rgiNotifier.error(reason);
+			});
+
+
+		// rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
+		// 	rgiNotifier.notify('Assessment assigned!');
+			
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+		// rgiUserMethodSrvc.updateUser(newReviewerData).then(function() {
+		// 	rgiNotifier.notify('User account has been updated');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+
+		// rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
+		// 	rgiNotifier.notify('Assessment created and assigned!');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+
 	}
 });
 

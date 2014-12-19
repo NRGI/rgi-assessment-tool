@@ -1,8 +1,16 @@
 var Answer = require('mongoose').model('Answer');
 
 exports.getAnswers = function(req, res) {
-	Answer.find({}).exec(function(err, collection) {
+	var query = Answer.find(req.query);
+
+	query.exec(function(err, collection) {
 		res.send(collection)
+	});
+};
+
+exports.getAnswersByID = function(req, res) {
+	Answer.findOne({answer_ID:req.params.answer_ID}).exec(function(err, answer) {
+		res.send(answer);
 	});
 };
 

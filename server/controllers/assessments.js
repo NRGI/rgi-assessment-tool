@@ -37,27 +37,30 @@ exports.updateAssessment = function(req,res) {
 exports.updateAssessment = function(req, res) {
 	var assessmentUpdates = req.body;
 
-	if(!req.user.hasRole('supervisor')) {
+	if(req.user._id != assessmentUpdates.researcher_ID && req.user._id != assessmentUpdates.reviewer_ID && !req.user.hasRole('supervisor')) {
 		res.status(404);
 		return res.end();
 	}
 
-	Assessment.findOne({_id:req.body._id}).exec(function(err, assessment) {
+	Assessment.findOne({_id:assessmentUpdates._id}).exec(function(err, assessment) {
 		if(err) {
 			res.status(400);
 			return res.send({ reason: err.toString() });
 		}
+
 		assessment.researcher_ID = assessmentUpdates.researcher_ID;
 		assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
+		assessment.questions_complete = assessmentUpdates.questions_complete;
 		assessment.edit_control = assessmentUpdates.edit_control;
-		assessment.assign_date = assessmentUpdates.assign_date;
+		assessment.assign_date = new Date(assessmentUpdates.assign_date);
+		assessment.start_date = new Date(assessmentUpdates.start_date);
 		assessment.status = assessmentUpdates.status;
-		
-		if(assessment.modified) {
-			assessment.modified.push({modifiedBy: req.user._id});
-		}else{
-			assessment.modified = {modifiedBy: req.user._id};
-		}
+		assessment.modified.push({modifiedBy: req.user._id});
+		assessment.last_edit = new Date(assessmentUpdates.last_edit);
+		// assessment. = assessmentUpdates.;
+
+
+
 
 		assessment.save(function(err) {
 			if(err)

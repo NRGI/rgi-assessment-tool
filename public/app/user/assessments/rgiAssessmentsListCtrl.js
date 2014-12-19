@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc) {
+angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiUserMethodSrvc, rgiAssessmentMethodSrvc) {
 
 	var currentUser = rgiIdentitySrvc.currentUser;
  	
@@ -6,14 +6,7 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiA
 		// pull assessment list from collection and adds user name to match reviewer id and researcher id
 		$scope.assessments = [];
 		for (var i = data.length - 1; i >= 0; i--) {
-			var assessment = {
-				assessment_ID: data[i].assessment_ID,
-				country: data[i].country,
-				researcher_ID: data[i].researcher_ID,
-				reviewer_ID: data[i].reviewer_ID,
-				start_date: data[i].start_date,
-				status: data[i].status
-			};
+			var assessment = data[i];
 			if(assessment.reviewer_ID != undefined) {
 				assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
 				assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
@@ -28,6 +21,49 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, rgiA
 		{value:'status', text:'Status'}]
 	$scope.sortOrder = $scope.sortOptions[0].value;
 
-	console.log($scope.assessments);
+	$scope.assessmentStart = function(assessment) {
+		var today = new Date();
+		var newUserData = currentUser;
+		var newAssessmentData = new rgiAssessmentSrvc(assessment);
+		delete newAssessmentData.researcher;
+		delete newAssessmentData.reviewer;
+		newAssessmentData.start_date = today;
+		newAssessmentData.last_edit = today;
+		newAssessmentData.status = 'started';
+
+		for (var i = 0; i < newUserData.assessments.length; i++) {
+			if(newUserData.assessments[i].assessment_id == assessment.assessment_ID) {
+				newUserData.assessments[i].started = today;
+			}
+		};
+
+		
+
+
+		rgiUserMethodSrvc.updateUser(newUserData)
+			.then(rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData))
+			.then(function() {
+				rgiNotifier.notify('Assessment assigned!');
+				$location.path('/assments/assessment/' + newAssessmentData.assessment_ID + '001');
+			}, function(reason) {
+				rgiNotifier.error(reason);
+			});
+		
+		// rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
+		// 	rgiNotifier.notify('Assessment assigned!');
+		// 	$location.path('/assments/assessment/' + newAssessmentData.assessment_ID + '001');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+
+
+		// rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
+		// 	rgiNotifier.notify('Assessment assigned!');
+		// 	$location.path('/assments/assessment/{{assessment.assessment_ID}}001');
+		// }, function(reason) {
+		// 	rgiNotifier.error(reason);
+		// });
+	}
+
 	
 });
