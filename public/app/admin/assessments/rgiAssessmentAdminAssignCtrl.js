@@ -44,6 +44,7 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 				newAnswerSet[i].researcher_ID = $scope.researcherSelect._id;
 				newAnswerSet[i].reviewer_ID = $scope.reviewerSelect._id;
 				newAnswerSet[i].question_order = $scope.questions[i].question_order;
+				// newAnswerSet[i].question_text = $scope.questions[i].question_text;
 				newAnswerSet[i].component = $scope.questions[i].component;
 				newAnswerSet[i].nrc_precept = $scope.questions[i].nrc_precept;
 			}

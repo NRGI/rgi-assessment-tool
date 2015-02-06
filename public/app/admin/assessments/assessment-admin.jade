@@ -22,8 +22,8 @@
 					th.text-center Assign
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
-					td(ng-if="assessment.status=='unstarted'") {{assessment.country}}
-					td(ng-if="assessment.status!='unstarted'")
+					td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
+					td(ng-if="assessment.status!='unassigned'")
 						a(href="admin/assessments/assessment-dashboard/{{assessment.assessment_ID}}") {{assessment.country}}
 					td 
 						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}} 

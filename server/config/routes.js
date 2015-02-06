@@ -1,4 +1,5 @@
 var auth 		= require('./auth'),
+    bodyParser 	= require('body-parser'),
 	users 		= require('../controllers/users'),
 	answers 	= require('../controllers/answers'),
 	questions 	= require('../controllers/questions'),
@@ -7,6 +8,10 @@ var auth 		= require('./auth'),
 	// User 		= mongoose.model('User');
 
 module.exports	= function(app) {
+
+	// app.use(bodyParser.urlencoded({limit: '2000mb'}));
+	// app.use(bodyParser.json({limit: '200mb'}));
+	
 	/////////////////////////
 	///// USERS CRUD ////////
 	/////////////////////////

@@ -35,6 +35,8 @@ var answerSchema = mongoose.Schema({
 	researcher_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of User Model
 	reviewer_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of User Model
 	question_order: {type: String, required:'{PATH} is required'}, // generated from the order_ID of Question Model
+	// question_text: {type: String, required:'{PATH} is required'}, // 
+	question_text: String, // 
 	component: {type: String, required:'{PATH} is required'}, // generated from Question Model
 	nrc_precept: Number,
 	question_ID: {type: String, required:'{PATH} is required'}, // generated from _id value of Question Model

@@ -23,6 +23,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/main/main', 
       controller: 'rgiMainCtrl'
     })
+    
     // Admin Routes
     .when('/admin/create-user', {
       templateUrl: '/partials/admin/users/create-user', 
@@ -69,12 +70,14 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiAssessmentDashboardDetailCtrl', 
       resolve: routeRoleChecks.user
     })
+
     // User Account Routes
     .when('/profile', {
       templateUrl: '/partials/account/profile',
       controller: 'rgiProfileCtrl', 
       resolve: routeRoleChecks.user
     })
+
     // Assessment overview routes
     .when('/assessments', {
       templateUrl: '/partials/user/assessments/assessments-list',
@@ -91,6 +94,8 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       templateUrl: '/partials/user/assessments/answer-page',
       controller: 'rgiAnswerCtrl'
     })
+
+
     .when('/answer-page', {
       templateUrl: '/partials/answer-page',
       constant: 'rgiAnswerCtrl'

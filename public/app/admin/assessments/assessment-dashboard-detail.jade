@@ -1,8 +1,14 @@
 .container
 	.well
-		
+	
 		img.mapsicon(src="https://s3.amazonaws.com/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
 		legend {{assessment.country}}
+		.pull-right
+			form.form-inline
+				.form-group
+					input.form-control(ng-model="searchText", placeholder="Filter")
+				.form-group.margin-left-med
+					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
 			
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
@@ -25,28 +31,26 @@
 		table.table.table-hover.table-striped.table-condensed
 			thead
 				tr
-					th.col-md-1 Question number
+					th.col-md-1.text-center Question number
 					th.col-md-1 Component
-					th.col-md-1 Country
-					th.col-md-5 Question
+					th.col-md-5.text-center Question
 					th.col-md-1 Status
-					th.col-md-1 Owner
-					th.col-md-1 
+					th.col-md-1.text-center 
 			tbody
-				tr(ng-repeat="answer in answers")
-					td.col-md-1 {{answer.question_order}}
+				tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
+					td.col-md-1.text-center {{answer.question_order}}
 					td.col-md-1 {{answer.component}}
-					td.col-md-1 {{answer.assessment_ID}}
 					//- td.col-md-5 {{answer.question_text}}
 					td.col-md-5 answer.question_text
 					td.col-md-1 {{answer.status}}
-					td.col-md-1
-					td.col-md-1
+					td
+						a.btn.center-block.btn-default(href="") Go to answer page
+					//- text {{answer}}
+						//- a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
+					
 
 					//- td(ng-if="answer.status!='assigned'")
 					//- 	text {{answer.status}}
 					//- td(ng-if="answer.status='assigned'")
 					//- td 
 					//- 	a(href="/assessments/assessment/{{answer.answer_ID}}") {{answer.question_text.question_text}}
-
-				
