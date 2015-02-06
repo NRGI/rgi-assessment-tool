@@ -19,7 +19,8 @@ var commentSchema = new mongoose.Schema({
 	content: String,
 	author: String, // Pull from curretn user _id value
 	author_name: String,
-	role: String 
+	// ACTUAL CHANGE
+	role: String
 });
 
 var scoreHistorySchema = new mongoose.Schema({

@@ -1,7 +1,16 @@
 .container
 	.well
-	
 		img.mapsicon(src="https://s3.amazonaws.com/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
+		//- .col-md-6
+		//- .col-md-4
+		//- 	img.mapsicon(src="https://s3.amazonaws.com/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
+		//- div
+			//- .pull-right
+			//- 	form.form-inline
+			//- 		.form-group
+			//- 			input.form-control(ng-model="searchText", placeholder="Filter")
+			//- 		.form-group.margin-left-med
+			//- 			select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
 		legend {{assessment.country}}
 		.pull-right
 			form.form-inline
@@ -9,7 +18,7 @@
 					input.form-control(ng-model="searchText", placeholder="Filter")
 				.form-group.margin-left-med
 					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
-			
+
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
 				text Researcher:
@@ -44,7 +53,8 @@
 					td.col-md-5 answer.question_text
 					td.col-md-1 {{answer.status}}
 					td
-						a.btn.center-block.btn-default(href="") Go to answer page
+						a.btn.center-block.btn-default(href="", ng-if="answer.status!='assigned'") Go to answer page
+						a.btn.center-block.btn-default.disabled(href="", ng-if="answer.status=='assigned'") No data
 					//- text {{answer}}
 						//- a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
 					
