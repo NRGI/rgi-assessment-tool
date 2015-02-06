@@ -1,4 +1,5 @@
-var Answer = require('mongoose').model('Answer');
+var Answer = require('mongoose').model('Answer'),
+	upload = require('../utilities/s3');
 
 exports.getAnswers = function(req, res) {
 	var query = Answer.find(req.query);
@@ -15,10 +16,10 @@ exports.getAnswersByID = function(req, res) {
 };
 
 exports.createAnswers = function(req, res, next) {
-	// console.log(req.body);
 	var newAnswers = req.body;
 	for (var i = 0; i < newAnswers.length; i++) {
 		newAnswers[i].assigned = {assignedBy: req.user._id};
+		newAnswers[i].modified = [{modifiedBy: req.user._id}];
 
 		Answer.create(newAnswers[i], function(err, answer) {
 			if(err) {

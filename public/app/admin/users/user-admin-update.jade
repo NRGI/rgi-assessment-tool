@@ -4,11 +4,11 @@
 			fieldset
 				legend {{user.firstName}} {{user.lastName}}'s Profile
 				.form-group
-					label.col-md-2.control-label(form="") First Name
+					label.col-md-2.control-label(form="") First Name *
 					.col-md-10
 						input.form-control(name="firstName", type="text", ng-model="user.firstName", required)
 				.form-group
-					label.col-md-2.control-label(form="lastName") Last Name
+					label.col-md-2.control-label(form="lastName") Last Name *
 					.col-md-10
 						input.form-control(name="lname", type="text", ng-model="user.lastName",required)
 				.form-group
@@ -16,7 +16,7 @@
 					.col-md-10
 						input.form-control(name="username", type="text", ng-model="user.username", readonly)
 				.form-group
-					label.col-md-2.control-label(form="email") Email
+					label.col-md-2.control-label(form="email") Email *
 					.col-md-10
 						input.form-control(name="email", type="email", ng-model="user.email", required)
 				.form-group
@@ -24,13 +24,13 @@
 					.col-md-10
 						input.form-control(name="roles", type="text", ng-model="user.roles", readonly)
 				.form-group
-					label.col-md-2.control-label(form="address") Address
+					label.col-md-2.control-label(form="address") Address *
 					.col-md-10
 						input.form-control(name="address", type="text", ng-model="user.address", required)
 				.form-group
-					label.col-md-2.control-label(form="language") Language
+					label.col-md-2.control-label(form="language") Preferred Language
 					.col-md-10
-						input.form-control(name="language", type="text", ng-model="user.language", required)
+						input.form-control(name="language", type="text", ng-model="user.language")
 				.form-group
 					label.col-md-2.control-label(form="password") Password
 					.col-md-10
@@ -48,3 +48,14 @@
 							button.btn.btn-danger(ng-click="userDelete()", ng-disabled="") Delete
 							| &nbsp;
 							a.btn.btn-default(href="/") Cancel
+				legend Possible adds
+				.form-group
+					label.col-md-3.control-label Phone number?
+				.form-group
+					label.col-md-3.control-label Do we need address?
+				.form-group
+					label.col-md-3.control-label Bio?
+				.form-group
+					label.col-md-3.control-label add interim static page?
+				.form-group
+					label.col-md-3.control-label Edit Button?	

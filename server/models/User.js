@@ -34,7 +34,7 @@ var userSchema = mongoose.Schema({
 	///////////////////Add modification array on the ser update ctrl///////////////////
 	modified: [modificationSchema],
 	address: String,
-	language: [String]
+	language: String
 	// groups: [String]
 });
 
@@ -55,19 +55,19 @@ function createDefaultUsers() {
 			var salt, hash;
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'jcust');
-			User.create({firstName:'Jim',lastName:'Cust',username:'jcust',email:'jcust@resourcegovernance.org',salt: salt, hashed_pwd: hash,roles: 'supervisor'});
+			User.create({firstName:'Jim',lastName:'Cust',username:'jcust',email:'jcust@resourcegovernance.org',salt: salt, hashed_pwd: hash,roles: 'supervisor', language: 'English'});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'cperry');
-			User.create({firstName:'Chris',lastName:'Perry',username:'cperry',email:'cperry@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'researcher',assessments:[]});
+			User.create({firstName:'Chris',lastName:'Perry',username:'cperry',email:'cperry@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'researcher',assessments:[], language: 'English'});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'apederson');
-			User.create({firstName:'Anders',lastName:'Pederson',username:'apederson',email:'apederson@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'reviewer',assessments:[]});
+			User.create({firstName:'Anders',lastName:'Pederson',username:'apederson',email:'apederson@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles: 'reviewer',assessments:[], language: 'English'});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'ahasermann');
-			User.create({firstName:'Anna',lastName:'Hasermann',username:'ahasermann',email:'ahasermann@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles:'researcher',assessments:[]});
+			User.create({firstName:'Anna',lastName:'Hasermann',username:'ahasermann',email:'ahasermann@resourcegovernance.org',salt: salt,hashed_pwd: hash,roles:'researcher',assessments:[], language: 'English'});
 			salt = encrypt.createSalt();
 			hash = encrypt.hashPwd(salt, 'mkauffmann');
-			User.create({firstName:'Mayeul',lastName:'Kauffmann',username:'mkauffmann',email:'mkauffmann@resourcegovernance.org',salt:salt,hashed_pwd: hash,roles:'reviewer',assessments:[]});
+			User.create({firstName:'David',lastName:'Mihalyi',username:'dmihalyi',email:'dmihalyi@resourcegovernance.org',salt:salt,hashed_pwd: hash,roles:'reviewer',assessments:[], language: 'English'});
 		}
 	})
 };

@@ -3,10 +3,12 @@ angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, 
 	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
 
 	$scope.componentOptions = [
-	    {value:'null',text:'N/A'},
-	    {value:'institutional',text:'Institutional and legal setting'},
-	    {value:'effectiveness',text:'Government effectiveness'},
-	    {value:'reporting',text:'Reporting practices'}
+	    {value: 'context', text: 'Context'},
+	    {value: 'government_effectiveness', text:'Government Effectiveness'},
+	    {value: 'institutional_and_legal_setting', text:'Institutional and Legal Setting'},
+	    {value: 'reporting_practices', text:'Reporting Practices'},
+	    {value: 'safeguard_and_quality_control', text:'Safeguard and Quality Control'},
+	    {value: 'enabling_environment', text:'Enabling Environment'}
 	];
 
 	$scope.questionOptionAdd = function() {

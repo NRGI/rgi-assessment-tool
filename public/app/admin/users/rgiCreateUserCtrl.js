@@ -24,7 +24,8 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location
     };
     
     rgiUserMethodSrvc.createUser(newUserData).then(function() {
-      rgiNotifier.notify('User account created!');
+      // rgiMailer.send($scope.email);
+      rgiNotifier.notify('User account created!' + $scope.email);
       $location.path('/admin/user-admin');
     }, function(reason) {
       rgiNotifier.error(reason);

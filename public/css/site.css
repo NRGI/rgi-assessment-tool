@@ -66,3 +66,9 @@ footer p {
   display: block;
   opacity: 0;
 }
+.tb-col-sm {
+  width: 5%;
+}
+.tb-col-md {
+  width: 20%;
+}

@@ -1,21 +1,52 @@
-//- detail page for assessment admin dashboard
-.container.top-padding-med
-	.well.left-padding-med
-		legend {{assessment.country}} 
-		.row 
-			text {{assessment.assessment_text}}
-		.row
-			text Researcher: 
-			a(href="mailto:{{researcher.email}}") {{researcher.firstName}} {{researcher.lastName}}
-		.row
-			text Reviewer: 
-			a(href="mailto:{{reviewer.email}}") {{reviewer.firstName}} {{reviewer.lastName}}
-		.row
-			text Status: {{assessment.status}}	
-		.row
-			text Last edited: {{assessment.last_edit | date}}	
-		.row
-			text Started: {{assessment.start_date | date}}	
-		.row
-			text Number of questions complete: {{assessment.quesions_complete}}
-		table
+.container
+	.well
+		
+		img.mapsicon(src="https://s3.amazonaws.com/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
+		legend {{assessment.country}}
+			
+		.pull-left.left-padding-lg.bottom-padding-lg
+			.row
+				text Researcher:
+				a(href="mailto:{{researcher.email}}")  {{researcher.firstName}}  {{researcher.lastName}}
+			.row
+				text Reviewer:
+				a(href="mailto:{{reviewer.email}}")  {{reviewer.firstName}}  {{reviewer.lastName}}
+			.row
+				text Status: {{assessment.status}}
+			.row
+				text Last edited:
+				em  {{assessment.last_edit | date}}	
+			.row
+				text Started:
+				em  {{assessment.start_date | date}}	
+			.row
+				text Number of questions complete: {{assessment.questions_complete}}
+			
+		table.table.table-hover.table-striped.table-condensed
+			thead
+				tr
+					th.col-md-1 Question number
+					th.col-md-1 Component
+					th.col-md-1 Country
+					th.col-md-5 Question
+					th.col-md-1 Status
+					th.col-md-1 Owner
+					th.col-md-1 
+			tbody
+				tr(ng-repeat="answer in answers")
+					td.col-md-1 {{answer.question_order}}
+					td.col-md-1 {{answer.component}}
+					td.col-md-1 {{answer.assessment_ID}}
+					//- td.col-md-5 {{answer.question_text}}
+					td.col-md-5 answer.question_text
+					td.col-md-1 {{answer.status}}
+					td.col-md-1
+					td.col-md-1
+
+					//- td(ng-if="answer.status!='assigned'")
+					//- 	text {{answer.status}}
+					//- td(ng-if="answer.status='assigned'")
+					//- td 
+					//- 	a(href="/assessments/assessment/{{answer.answer_ID}}") {{answer.question_text.question_text}}
+
+				
