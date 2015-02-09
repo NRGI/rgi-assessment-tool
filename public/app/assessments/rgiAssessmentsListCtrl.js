@@ -24,9 +24,17 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 
 
 	$scope.assessmentStart = function(assessment) {
+		// update assessment status
+		// update assessment modified
+		// update assessment start date
+
+
+
+
+
 		console.log(assessment);
-		var today = new Date();
-		console.log(today);
+		// var today = new Date().;
+		// console.log(today);
 	// 	var newUserData = currentUser;
 	// 	var newAssessmentData = new rgiAssessmentSrvc(assessment);
 	// 	delete newAssessmentData.researcher;
@@ -70,4 +78,10 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 	}
 
 	
+});
+
+angular.module('app').filter('capitalize', function() {
+	return function(input, all) {
+		return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+	}
 });

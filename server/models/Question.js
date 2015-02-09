@@ -5,6 +5,15 @@ var modificationSchema = new mongoose.Schema({
 	modifiedDate: {type: Date, default:Date.now}
 });
 
+var commentSchema = new mongoose.Schema({
+	date: {type: Date, default:Date.now},
+	content: String,
+	author: String, // Pull from curretn user _id value
+	author_name: String,
+	// ACTUAL CHANGE
+	role: String
+});
+
 var questionSchema = mongoose.Schema({
 	question_order: {type: Number, required:'{PATH} is required'},
 	old_reference: {
@@ -31,6 +40,7 @@ var questionSchema = mongoose.Schema({
 			criteria:String
 		}
 	],
+	comments: [commentSchema],
 	modified: [modificationSchema],
 	nrc_precept: Number
 });

@@ -17,21 +17,23 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 	$scope.assessment = rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID});
 	// get questions for insertion into answers collection
 	$scope.questions = rgiQuestionSrvc.query();
+	console.log();
 
 	$scope.assessmentAssign = function() {
-		
+		// update users
 		var newResearcherData = $scope.researcherSelect;
 		var newReviewerData = $scope.reviewerSelect;
 		newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 		newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
 
+		// update assessment
 		var newAssessmentData = $scope.assessment;
 		newAssessmentData.status = 'assigned';
 		newAssessmentData.researcher_ID = $scope.researcherSelect._id;
 		newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
 		newAssessmentData.edit_control = 'researcher';
-		newAssessmentData.questions_complete = 0;
 
+		// create new answer set
 		var newAnswerSet = [];
 
 		for (var i = 0; i < $scope.questions.length; i++) {
@@ -45,11 +47,13 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 				newAnswerSet[i].reviewer_ID = $scope.reviewerSelect._id;
 				newAnswerSet[i].question_order = $scope.questions[i].question_order;
 				// newAnswerSet[i].question_text = $scope.questions[i].question_text;
-				newAnswerSet[i].component = $scope.questions[i].component;
+				newAnswerSet[i].component_id = $scope.questions[i].component;
+				newAnswerSet[i].component_text = $scope.questions[i].component_text;
 				newAnswerSet[i].nrc_precept = $scope.questions[i].nrc_precept;
 			}
 		};
 
+		// send to mongo
 		rgiUserMethodSrvc.updateUser(newResearcherData)
 			.then(rgiUserMethodSrvc.updateUser(newReviewerData))
 			.then(rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData))

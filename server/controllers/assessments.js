@@ -28,14 +28,15 @@ exports.getAssessmentsByID = function(req, res) {
 	});
 };
 
-exports.updateAssessment = function(req,res) {
-	console.log(req.body);
+// exports.updateAssessment = function(req,res) {
+// 	console.log(req.body);
 
-};
+// };
 
 
 exports.updateAssessment = function(req, res) {
 	var assessmentUpdates = req.body;
+
 
 	if(req.user._id != assessmentUpdates.researcher_ID && req.user._id != assessmentUpdates.reviewer_ID && !req.user.hasRole('supervisor')) {
 		res.status(404);
@@ -48,19 +49,15 @@ exports.updateAssessment = function(req, res) {
 			return res.send({ reason: err.toString() });
 		}
 
+		timestamp = new Date().toISOString();
+
 		assessment.researcher_ID = assessmentUpdates.researcher_ID;
 		assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
 		assessment.questions_complete = assessmentUpdates.questions_complete;
 		assessment.edit_control = assessmentUpdates.edit_control;
-		assessment.assign_date = new Date(assessmentUpdates.assign_date);
-		assessment.start_date = new Date(assessmentUpdates.start_date);
+		assessment.modified.push({modified_by: req.user._id, modified_date: timestamp});
+		assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
 		assessment.status = assessmentUpdates.status;
-		assessment.modified.push({modifiedBy: req.user._id});
-		assessment.last_edit = new Date(assessmentUpdates.last_edit);
-		// assessment. = assessmentUpdates.;
-
-
-
 
 		assessment.save(function(err) {
 			if(err)

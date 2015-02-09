@@ -41,4 +41,8 @@ angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, 
 			rgiNotifier.error(reason);
 		});
 	};
+
+	$scope.questionCommentAdd = function() {
+		// $scope.question.question_choices.push({order: $scope.question.question_choices.length+1, criteria: "Enter text"});
+	};
 });

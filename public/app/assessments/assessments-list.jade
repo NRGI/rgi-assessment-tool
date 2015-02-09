@@ -42,8 +42,9 @@
 					td(ng-if="assessment.approval_date") {{assessment.approval_date | date}}
 					td(ng-if="!assessment.last_edit") Not started
 					td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
-					td {{assessment.status}}
+					td {{assessment.status | capitalize}}
 					td(ng-if="assessment.status=='assigned'")
-						button.btn.btn-success(ng-click="assessmentStart(assessment)") Start assessment
-					//- 	//- a.btn.center-block.btn-default(href="/assments/assessment/{{assessment.assessment_ID}}001") Start assessment
+						button.btn.btn-success(ng-click="assessmentStart(assessment)", ng-if="assessment.status=='assigned'") Start assessment
+						//- ADD Funtionality for button to send to last question
+						button.btn.btn-default.disabled(href="/assments/assessment/{{assessment.assessment_ID}}001", ng-if="assessment.status!='assigned'") Assessment started
 					td.text-center(ng-if="assessment.status!='assigned'") {{assessment.quesions_complete}}

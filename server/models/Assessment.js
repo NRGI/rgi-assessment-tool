@@ -1,24 +1,27 @@
 var mongoose 	= require('mongoose');
 
+var ObjectId 	= mongoose.Schema.Types.ObjectId;
+
 var modificationSchema = new mongoose.Schema({
-	modifiedBy: String,
-	modifiedDate: {type: Date, default:Date.now}
+	modified_by: ObjectId,
+	modified_date: Date
 });
+
+// var assignmentSchema = new mongoose.Schema();
 
 var assessmentSchema = mongoose.Schema({
 	assessment_ID: {type: String, required:'{PATH} is required'}, // ISO3 of country
 	ISO3: {type: String, required:'{PATH} is required'}, // ISO3 of country
 	country: {type: String, required:'{PATH} is required'}, // String of country name
-	researcher_ID: String, // pulled from user_id
-	reviewer_ID: String, // pulled from user_id
+	researcher_ID: ObjectId, // pulled from user_id
+	reviewer_ID: ObjectId, // pulled from user_id
 	edit_control: String, // user_ID of editing rights
-	assign_date: {assigned_by: String, assigned_date: {type:Date, default:Date.now}},
-	start_date: Date,
-	submit_date: Date,
-	review_date: Date,
-	approval_date: Date,
+	assignment: {assigned_by: ObjectId, assigned_date: Date},
+	start_date: {started_by: ObjectId, started_date: Date},
+	submit_date: {submitted_by: ObjectId, submitted_date: Date},
+	review_date: {reviewed_by: ObjectId, reviewed_date: Date},
+	approval: {approved_by: ObjectId, assigned_date: Date},
 	modified: [modificationSchema],
-	last_edit: Date,
 	status: {type: String, required:'{PATH} is required', default:'unassigned'}, // unassigned, assigned, started, submitted, reviewing, reviewed, approved>
 	questions_complete: {type:Number, default:0}
 });

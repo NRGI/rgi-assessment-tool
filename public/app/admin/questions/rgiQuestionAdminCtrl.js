@@ -2,7 +2,7 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function($scope, rgiQue
 	$scope.questions = rgiQuestionSrvc.query();
 
 	$scope.sortOptions = 	[	
-								{value: "order", text: "Sort by Question Order"},
+								{value: "question_order", text: "Sort by Question Order"},
 								{value: "component_text", text: "Sort by Component"},
 								{value: "status", text: "Sort by Status"}
 							];
