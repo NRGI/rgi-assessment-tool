@@ -28,12 +28,11 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 
 		newAssessmentData.status = 'started';
 		newAssessmentData.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
-		// start_date: {started_by: ObjectId, started_date: Date},
 
 		rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
-			rgiNotifier.notify('Assessment assigned!');
+			rgiNotifier.notify('Assessment started!');
 			// $location.path('/assments/assessment/' + newAssessmentData.assessment_ID + '001');
-			$location.path('/' + newAssessmentData.assessment_ID + '001');
+			$location.path('/assessments/assessment/' + newAssessmentData.assessment_ID + '001');
 		}, function(reason) {
 			rgiNotifier.error(reason);
 		});

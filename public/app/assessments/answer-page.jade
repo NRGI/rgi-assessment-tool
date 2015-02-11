@@ -3,7 +3,7 @@
 	.well
 		legend.h2 {{assessment.country}} 2015 Assessment
 		.row.left-padding-lg.bottom-padding-med
-			h3 {{answer.question_order}}. {{question.question_text}}
+			h3 {{answer.question_order}}. {{answer.question_text}}
 			h5 Researcher score:
 			em(ng-if="!answer.researcher_score") Not submitted
 			strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
@@ -17,7 +17,7 @@
 				| &nbsp;
 				button.btn.btn-danger(ng-click="answerClear()") Clear answer
 				| &nbsp;
-				a.btn.btn-default(href="/") Return to assessment menu
+				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 
 
 		.row.left-padding-lg

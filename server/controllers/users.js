@@ -82,7 +82,6 @@ exports.updateUser = function(req, res) {
 		}else{
 			user.modified = {modifiedBy: req.user._id};
 		}
-		// user.address = userUpdates.address;
 		user.save(function(err) {
 			if(err)
 				return res.send({ reason: err.toString() });
