@@ -1,0 +1,48 @@
+.container.top-padding-med
+	.well
+		form.form-horizontal(name='profileForm')
+			fieldset
+				legend Question {{question.question_order}}. {{question.question_text}}
+
+				.row.top-padding-med
+					label.col-md-2.control-label(form="component") Component
+					.col-md-7
+						text {{question.component_text}}				
+
+				.row.top-padding-lg.left-padding-lg
+					.col-md-2
+						label Option Value
+					.col-md-10
+						label Option Text
+				.row.left-padding-lg
+					.form-group(ng-repeat="choice in question.question_choices")
+						.col-md-1
+						.col-md-1
+							text.text-center {{choice.order}}
+						.col-md-8
+							text {{choice.criteria}}
+							
+					
+					.form-group.top-padding-med
+						.col-md-8.col-md-offset-2
+							.pull-right
+								a.btn.btn-default(href="/admin/question-admin-edit/{{question._id}}") Edit
+								| &nbsp;
+								a.btn.btn-default(href="/admin/question-admin") Cancel
+				//- div
+				//- 	text{{question.comments}}
+
+				div.top-padding-med(id="comments")
+						legend NRGI Comments:
+						div(id="prevComments")
+							.row.left-padding-lg(ng-repeat="comment in question.comments")
+								//- text{{comment}}
+								.row
+									b Author: 
+									em
+										b {{comment.author_name}}
+								.row.col-md-11{{comment.content}}
+								.row.col-md-offset-8.col-md-3
+									date
+										small
+											em Date: {{comment.date | date}}

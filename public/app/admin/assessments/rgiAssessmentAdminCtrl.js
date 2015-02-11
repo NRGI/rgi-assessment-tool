@@ -15,12 +15,17 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function($scope, rgiA
 				researcher_ID: data[i].researcher_ID,
 				reviewer_ID: data[i].reviewer_ID,
 				start_date: data[i].start_date,
-				status: data[i].status
+				status: data[i].status,
 			};
+			if(data[i].modified[0] != undefined) {
+				assessment.modified = data[i].modified
+				assessment.edited_by = rgiUserListSrvc.get({_id:data[i].modified[data[i].modified.length-1].modified_by});
+			}
+			
 			if(assessment.reviewer_ID != undefined) {
 				assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
 				assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
-			};
+			}
 			
 			$scope.assessments.push(assessment);
 		};

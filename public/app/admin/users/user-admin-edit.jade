@@ -47,15 +47,4 @@
 							| &nbsp;
 							button.btn.btn-danger(ng-click="userDelete()", ng-disabled="") Delete
 							| &nbsp;
-							a.btn.btn-default(href="/") Cancel
-				legend Possible adds
-				.form-group
-					label.col-md-3.control-label Phone number?
-				.form-group
-					label.col-md-3.control-label Do we need address?
-				.form-group
-					label.col-md-3.control-label Bio?
-				.form-group
-					label.col-md-3.control-label add interim static page?
-				.form-group
-					label.col-md-3.control-label Edit Button?	
+							a.btn.btn-default(href="/admin/user-admin-view/{{user._id}}") Cancel

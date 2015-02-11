@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, $location, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
 	
 	function zeroFill( number, width ) {
 		width -= number.toString().length;
@@ -21,44 +21,44 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function($scope
 
 	$scope.assessmentAssign = function() {
 		// update users
-		var newResearcherData = $scope.researcherSelect;
-		var newReviewerData = $scope.reviewerSelect;
-		// newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
-		newResearcherData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
-		// newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
-		newReviewerData.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
+		var new_researcher_data = $scope.researcherSelect;
+		var new_reviewer_data = $scope.reviewerSelect;
+		// new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+		new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
+		// new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+		new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
 
 		// update assessment
-		var newAssessmentData = $scope.assessment;
-		newAssessmentData.status = 'assigned';
-		newAssessmentData.researcher_ID = $scope.researcherSelect._id;
-		newAssessmentData.reviewer_ID = $scope.reviewerSelect._id;
-		newAssessmentData.edit_control = 'researcher';
+		var new_assessment_data = $scope.assessment;
+		new_assessment_data.status = 'assigned';
+		new_assessment_data.researcher_ID = $scope.researcherSelect._id;
+		new_assessment_data.reviewer_ID = $scope.reviewerSelect._id;
+		new_assessment_data.edit_control = 'researcher';
 
 		// create new answer set
-		var newAnswerSet = [];
+		var new_answer_set = [];
 
 		for (var i = 0; i < $scope.questions.length; i++) {
-			newAnswerSet.push({});
+			new_answer_set.push({});
 
 			if($scope.questions[i].hasOwnProperty('question_order')){
-				newAnswerSet[i].answer_ID = $routeParams.assessment_ID + String(zeroFill($scope.questions[i].question_order, 3));
-				newAnswerSet[i].question_ID = $scope.questions[i]._id;
-				newAnswerSet[i].assessment_ID = $routeParams.assessment_ID;
-				newAnswerSet[i].researcher_ID = $scope.researcherSelect._id;
-				newAnswerSet[i].reviewer_ID = $scope.reviewerSelect._id;
-				newAnswerSet[i].question_order = $scope.questions[i].question_order;
-				newAnswerSet[i].component_id = $scope.questions[i].component;
-				newAnswerSet[i].component_text = $scope.questions[i].component_text;
-				newAnswerSet[i].nrc_precept = $scope.questions[i].nrc_precept;
+				new_answer_set[i].answer_ID = $routeParams.assessment_ID + String(zeroFill($scope.questions[i].question_order, 3));
+				new_answer_set[i].question_ID = $scope.questions[i]._id;
+				new_answer_set[i].assessment_ID = $routeParams.assessment_ID;
+				new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
+				new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
+				new_answer_set[i].question_order = $scope.questions[i].question_order;
+				new_answer_set[i].component_id = $scope.questions[i].component;
+				new_answer_set[i].component_text = $scope.questions[i].component_text;
+				new_answer_set[i].nrc_precept = $scope.questions[i].nrc_precept;
 			}
 		};
 
 		// send to mongo
-		rgiUserMethodSrvc.updateUser(newResearcherData)
-			.then(rgiUserMethodSrvc.updateUser(newReviewerData))
-			.then(rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData))
-			.then(rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet))
+		rgiUserMethodSrvc.updateUser(new_researcher_data)
+			.then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
+			.then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+			.then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
 			.then(function() {
 				$location.path('/admin/assessment-admin');
 				rgiNotifier.notify('Assessment created and assigned!');

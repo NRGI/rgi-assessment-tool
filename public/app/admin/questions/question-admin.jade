@@ -1,8 +1,10 @@
 .container.top-padding-med
 	.well
-		legend Questions (DO WE WANT TO ADD APPORVAL PROCESS TO LOCK DOWN SPECIFIC QUESTIONS?)
+		legend Questions
 		.pull-left
 			.btn.btn-success(ng-click="newQuestionDialog()", ng-disabled="true", tooltip="yes") New Question
+			| &nbsp;
+			.btn.btn-default(ng-click="", ng-disabled="true") Export as CSV
 		.pull-right
 			form.form-inline
 				.form-group
@@ -22,4 +24,6 @@
 						td{{question.question_text}}
 						td{{question.component_text}}
 						td
-							a.btn.center-block.btn-default(href="/admin/question-admin/{{question._id}}") Edit
+							a.btn.center-block.btn-default(href="/admin/question-admin-view/{{question._id}}") View
+						td
+							a.btn.center-block.btn-default(href="/admin/question-admin-edit/{{question._id}}") Edit

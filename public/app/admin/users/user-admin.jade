@@ -20,6 +20,7 @@
 					th Reviewed
 					th Approved
 					th 
+					th 
 			tbody
 				//- Loop through all users
 				tr(ng-repeat="user in users | filter:searchText | orderBy:sortOrder")
@@ -52,4 +53,7 @@
 							em(ng-if="assessment.details.approval") {{assessment.details.approval.approved_date | date}}
 
 					td
-						a.btn.center-block.btn-default(href="/admin/user-admin/{{user._id}}") Edit
+						a.btn.center-block.btn-default(href="/admin/user-admin-view/{{user._id}}") View
+
+					td
+						a.btn.center-block.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit

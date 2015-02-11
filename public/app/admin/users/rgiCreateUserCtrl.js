@@ -30,5 +30,5 @@ angular.module('app').controller('rgiCreateUserCtrl', function($scope, $location
     }, function(reason) {
       rgiNotifier.error(reason);
     })
-  };
+  }
 });

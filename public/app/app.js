@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group']);
 
 angular.module('app').config(function($routeProvider, $locationProvider) {
   // role checks
@@ -48,45 +48,32 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiUserAdminUpdateCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    
-    .when('/admin/user-admin/:id', {
-      templateUrl: '/partials/admin/users/user-admin-update', 
-      controller: 'rgiUserAdminUpdateCtrl', 
+   .when('/admin/user-admin-view/:id', {
+      templateUrl: '/partials/admin/users/user-admin-view', 
+      controller: 'rgiUserAdminDetailCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    // // add 'edit' and 'view' options 
-    // .when('/admin/user-admin-view/:id', {
-    //   templateUrl: '/partials/admin/users/user-admin-update', 
-    //   controller: 'rgiUserAdminUpdateCtrl', 
-    //   resolve: routeRoleChecks.supervisor
-    // })
-    // .when('/admin/user-admin-edit/:id', {
-    //   templateUrl: '/partials/admin/users/user-admin-update', 
-    //   controller: 'rgiUserAdminUpdateCtrl', 
-    //   resolve: routeRoleChecks.supervisor
-    // })
+    .when('/admin/user-admin-edit/:id', {
+      templateUrl: '/partials/admin/users/user-admin-edit', 
+      controller: 'rgiUserAdminDetailCtrl', 
+      resolve: routeRoleChecks.supervisor
+    })
     // QUESTIONS
     .when('/admin/question-admin', {
       templateUrl: '/partials/admin/questions/question-admin', 
       controller: 'rgiQuestionAdminCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    .when('/admin/question-admin/:id', {
-      templateUrl: '/partials/admin/questions/question-admin-update', 
-      controller: 'rgiQuestionAdminUpdateCtrl', 
+    .when('/admin/question-admin-view/:id', {
+      templateUrl: '/partials/admin/questions/question-admin-view', 
+      controller: 'rgiQuestionAdminDetailCtrl', 
       resolve: routeRoleChecks.supervisor
     })
-    // // add 'edit' and 'view' options 
-    //  .when('/admin/question-admin-view/:id', {
-    //   templateUrl: '/partials/admin/questions/question-admin-update', 
-    //   controller: 'rgiQuestionAdminUpdateCtrl', 
-    //   resolve: routeRoleChecks.supervisor
-    // })
-    //   .when('/admin/question-admin-edit/:id', {
-    //   templateUrl: '/partials/admin/questions/question-admin-update', 
-    //   controller: 'rgiQuestionAdminUpdateCtrl', 
-    //   resolve: routeRoleChecks.supervisor
-    // })
+    .when('/admin/question-admin-edit/:id', {
+      templateUrl: '/partials/admin/questions/question-admin-edit', 
+      controller: 'rgiQuestionAdminDetailCtrl', 
+      resolve: routeRoleChecks.supervisor
+    })
     // ASSESSMENTS
     .when('/admin/assessment-admin', {
       templateUrl: '/partials/admin/assessments/assessment-admin', 
@@ -99,17 +86,10 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       resolve: routeRoleChecks.supervisor
     })
     .when('/admin/assessments-admin/:assessment_ID', {
-      templateUrl: '/partials/admin/assessments/assessment-dashboard-detail',
-      controller: 'rgiAssessmentDashboardDetailCtrl', 
+      templateUrl: '/partials/admin/assessments/assessment-admin-detail',
+      controller: 'rgiAssessmentAdminDetailCtrl', 
       resolve: routeRoleChecks.user
     })
-    ////////REMOVE///////////    
-    // .when('/admin/assessments/assessment-dashboard', {
-    //   templateUrl: '/partials/admin/assessments/assessment-dashboard',
-    //   controller: 'rgiAssessmentDashboardCtrl', 
-    //   resolve: routeRoleChecks.user
-    // })
-
 
     // Assessment overview routes
     .when('/assessments', {
@@ -117,20 +97,22 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       controller: 'rgiAssessmentsListCtrl', 
       resolve: routeRoleChecks.user
     })
-
-
-
     .when('/assessments/:assessment_ID', {
       templateUrl: '/partials/assessments/assessment-detail',
       // controller: '', 
       controller: 'rgiAssessmentDetailCtrl', 
       resolve: routeRoleChecks.user
     })
-    .when('/assessments/assessment/:answer_ID', {
-      templateUrl: '/partials/assessments/answer-page',
+
+
+    .when('/assessments/assessment-view/:answer_ID', {
+      templateUrl: '/partials/assessments/answer-page-view',
       controller: 'rgiAnswerCtrl'
     })
-
+     .when('/assessments/assessment-edit/:answer_ID', {
+      templateUrl: '/partials/assessments/answer-page-edit',
+      controller: 'rgiAnswerCtrl'
+    })
 
     .when('/answer-page', {
       templateUrl: '/partials/answer-page',

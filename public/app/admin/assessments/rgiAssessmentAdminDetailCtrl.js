@@ -1,4 +1,12 @@
-angular.module('app').controller('rgiAssessmentDashboardDetailCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, rgiQuestionSrvc, $routeParams) {
+angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+	// filtering options
+	$scope.sort_options = [	
+							{value: "question_order", text: "Sort by Question Number"},
+							{value: "component_id", text: "Sort by Component"},
+							{value: "status", text: "Sort by Status"}
+						];
+	$scope.sortOrder = $scope.sort_options[0].value;
+
 	rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID}, function(data) {
 		data.reviewer = rgiUserListSrvc.get({_id:data.reviewer_ID});
 		data.researcher = rgiUserListSrvc.get({_id:data.researcher_ID});
@@ -7,13 +15,6 @@ angular.module('app').controller('rgiAssessmentDashboardDetailCtrl', function($s
 		data.question_list = rgiAnswerSrvc.query({assessment_ID:data.assessment_ID});
 
 		$scope.assessment = data;
-
-		$scope.sortOptions = 	[	
-									{value: "question_order", text: "Sort by Question Number"},
-									{value: "component_id", text: "Sort by Component"},
-									{value: "status", text: "Sort by Status"}
-								];
-		$scope.sortOrder = $scope.sortOptions[0].value;
 
 	});
 });

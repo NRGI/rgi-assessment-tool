@@ -6,6 +6,7 @@
 				.row.top-padding-med
 					label.col-md-2.control-label Question Text
 					.col-md-10
+						text 
 						textarea.form-control(name="question_text", type="textbox", ng-model="question.question_text", required)
 
 				.row.top-padding-med
@@ -44,7 +45,7 @@
 								| &nbsp;
 								button.btn.btn-danger(ng-click="questionDelete()", ng-disabled="") Delete
 								| &nbsp;
-								a.btn.btn-default(href="/") Cancel
+								a.btn.btn-default(href="/admin/question-admin-view/{{question._id}}") Cancel
 				//- div
 				//- 	text{{question.comments}}
 
@@ -61,7 +62,7 @@
 								.row.col-md-offset-8.col-md-3
 									date
 										small
-											em Date: {{comment.date}}
+											em Date: {{comment.date | date}}
 
 						div(id="newComment")
 							.form-group.top-padding-med
@@ -71,7 +72,7 @@
 										textarea.form-control(name="comment", type="text")
 
 					.form-group.top-padding-med
-						.col-md-8.col-md-offset-2
+						.col-md-8
 							.pull-left
 								button.btn.btn-success.disabled(ng-click="questionCommentAdd()") Add comment
 							.pull-right

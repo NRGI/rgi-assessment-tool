@@ -1,4 +1,4 @@
-angular.module('app').controller('rgiQuestionAdminUpdateCtrl', function($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
+angular.module('app').controller('rgiQuestionAdminDetailCtrl', function($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
 
 	$scope.question = rgiQuestionSrvc.get({_id:$routeParams.id});
 

@@ -30,8 +30,13 @@
 						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}} 
 					td
 						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}} 
-					td {{assessment.start_date | date}}
-					td {{assessment.last_edit | date}}
+					td {{assessment.start_date.started_date | date}}
+					td(ng-if="assessment.edited_by")
+						a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}} 
+						text - 
+						span(ng-repeat="mod in assessment.modified")
+							em(ng-show="$last") {{mod.modified_date | date}}
+					td(ng-if="!assessment.edited_by")
 					td {{assessment.status}}
 					td
 						a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign

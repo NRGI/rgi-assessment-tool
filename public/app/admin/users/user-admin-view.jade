@@ -1,0 +1,39 @@
+.container.top-padding-med
+	.well
+		form.form-horizontal(name='profileForm')
+			fieldset
+				legend {{user.firstName}} {{user.lastName}}'s Profile
+				.form-group
+					label.col-md-2.control-label(form="") First Name *
+					.col-md-10
+						input.form-control(name="firstName", type="text", ng-model="user.firstName", readonly)
+				.form-group
+					label.col-md-2.control-label(form="lastName") Last Name *
+					.col-md-10
+						input.form-control(name="lname", type="text", ng-model="user.lastName",readonly)
+				.form-group
+					label.col-md-2.control-label(form="username", readonly) Username
+					.col-md-10
+						input.form-control(name="username", type="text", ng-model="user.username", readonly)
+				.form-group
+					label.col-md-2.control-label(form="email") Email *
+					.col-md-10
+						input.form-control(name="email", type="email", ng-model="user.email", readonly)
+				.form-group
+					label.col-md-2.control-label(form="roles") Roles
+					.col-md-10
+						input.form-control(name="roles", type="text", ng-model="user.roles", readonly)
+				.form-group
+					label.col-md-2.control-label(form="address") Address *
+					.col-md-10
+						input.form-control(name="address", type="text", ng-model="user.address", readonly)
+				.form-group
+					label.col-md-2.control-label(form="language", readonly) Preferred Language
+					.col-md-10
+						input.form-control(name="language", type="text", ng-model="user.language", readonly)
+				.form-group
+					.col-md-10.col-md-offset-2
+						.pull-right
+							a.btn.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit
+							| &nbsp;
+							a.btn.btn-default(href="/admin/user-admin") Cancel

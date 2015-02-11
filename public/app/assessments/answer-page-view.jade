@@ -3,7 +3,7 @@
 	.well
 		legend.h2 {{assessment.country}} 2015 Assessment
 		.row.left-padding-lg.bottom-padding-med
-			h3 {{answer.question_order}}. {{answer.question_text}}
+			h3 Question {{answer.question_order}}. {{answer.question_text}}
 			h5 Researcher score:
 			em(ng-if="!answer.researcher_score") Not submitted
 			strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
@@ -13,9 +13,7 @@
 
 		.row.left-padding-lg.bottom-padding-lg
 			.col-md-pull-2
-				button.btn.btn-primary(ng-click="answerSubmit()", ng-disabled="answerForm.$invalid") Submit answer
-				| &nbsp;
-				button.btn.btn-danger(ng-click="answerClear()") Clear answer
+				a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}") Edit answer
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 
@@ -24,7 +22,7 @@
 			.form-horizontal(name="answerForm")
 				fieldset
 					div(id="choiceBox").bottom-padding-med
-						legend Choose one of the following answers:
+						legend Choose one of the following answers: (DISABLE FOR VIEW)
 						.form-group.left-padding-lg(ng-repeat="choice in question.question_choices", required)
 							input(type="radio", name="choice.choice_name", value="choice.order", checked="")
 							text.left-padding-med {{choice.criteria}}
@@ -32,7 +30,8 @@
 					div(id="comments").bottom-padding-med
 						legend Comments:
 						div(id="prevComments")
-							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+							//- text {{answer.comments}}
+							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments", ng-show="answer.comments.length")
 								.row
 									b {{comment.author_name}} ({{comment.role}}):
 								.row.col-md-11 {{comment.content}}
@@ -40,18 +39,14 @@
 									date
 										small
 											em {{comment.date}}
-
-						div(id="newComment").bottom-padding-med
-							.form-group.top-padding-med
-								.row.left-padding-lg
-									label.col-md-2 New comment
-									.col-md-9
-										textarea.form-control(name="comment", type="text")
+							.row.left-padding-lg.bottom-padding-med( ng-if="!answer.comments.length")
+								.row
+									b No comments.
 						
 					div(id="bibliography").bottom-padding-med
 						legend Bibliograpical reference:
 						div(id="prevBib")
-							.row.left-padding-lg(ng-repeat="reference in answer.references")
+							.row.left-padding-lg(ng-repeat="reference in answer.references", ng-show="answer.references.length")
 								.row
 									b {{reference.author}} ({{reference.role}}):
 								.row.col-md-11
@@ -63,23 +58,9 @@
 									date
 										small
 											em {{reference.date}}
-
-						div(id="newBib").bottom-padding-med
-							.row.left-padding-med
-								.col-md-9
-									b Upload documents:
-								.pull-right.col-md-3
-									span.btn.btn-success.btn-file Select File
-										input(type="file" name="referenceFileUpload")
-							.form-group.top-padding-med
-								.row.left-padding-lg.bottom-padding-med
-									label.col-md-2 Citation:
-									.col-md-9
-										input.form-control(name="citation", type="text")
-								.row.left-padding-lg
-									label.col-md-2 Comment:
-									.col-md-9
-										textarea.form-control(name="citationComment", type="text")
+							.row.left-padding-lg.bottom-padding-med( ng-if="!answer.references.length")
+								.row
+									b No references.
 
 
 					div(id="validation").bottom-padding-med
@@ -96,22 +77,3 @@
 									br
 									input(type="radio", name="agreeement_choice", value="1", checked="")
 									text.left-padding-med Disagree
-				//- 			div(id="agreementChoice")
-				//- 				fieldset
-				//- 					div(id="choiceBox")
-				//- 						legend Choose one of the following answers:
-				//- 						.form-group.left-padding-lg
-				//- 							input(type="radio", name="assessment_choice", value="1", checked="")
-				//- 							text.left-padding-med {option 1}
-				//- 							br
-				//- 							input(type="radio", name="assessment_choice", value="2", checked="")
-				//- 							text.left-padding-med {option 2}
-				//- 							br
-				//- 							input(type="radio", name="assessment_choice", value="3", checked="")
-				//- 							text.left-padding-med {option 3}
-				//- 							br
-				//- 							input(type="radio", name="assessment_choice", value="4", checked="")
-				//- 							text.left-padding-med {option 4}
-				//- 							br
-
-				//- 

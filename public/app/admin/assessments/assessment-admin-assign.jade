@@ -4,19 +4,19 @@
 		//- country title
 		legend {{assessment.country}}
 		//- researcher selection dropdown
-		form.form-horizontal(name='assignAssessmentForm')
+		form.form-horizontal(name='assign_assessment_form')
 			.form-group
 				label.col-md-4 Select Researcher
 				.col-md-12
-					select.form-control(ng-model="researcherSelect", ng-options="item as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in researchers", required)
+					select.form-control(ng-model="researcherSelect", ng-options="item as (item.first_name + ' ' + item.last_name + ': number of assigned assessments - ' + item.assessments.length) for item in researchers", required)
 			//- reviewer selection dropdown
 			.form-group
 				label.col-md-4 Select Reviewer
 				.col-md-12
-					select.form-control(ng-model="reviewerSelect", ng-options="item as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in reviewers", required)
+					select.form-control(ng-model="reviewerSelect", ng-options="item as (item.first_name + ' ' + item.last_name + ': number of assigned assessments - ' + item.assessments.length) for item in reviewers", required)
 			.form-group
 				.col-md-10.col-md-offset-2
 					.pull-right
-						button.btn.btn-primary(ng-click="assessmentAssign()", ng-disabled="assignAssessmentForm.$invalid") Submit
+						button.btn.btn-primary(ng-click="assessmentAssign()", ng-disabled="assign_assessment_form.$invalid") Submit
 						| &nbsp;
 						a.btn.btn-default(href="/") Cancel
