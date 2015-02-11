@@ -7,6 +7,7 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 		$scope.assessments = [];
 		for (var i = data.length - 1; i >= 0; i--) {
 			var assessment = data[i];
+			assessment.edited_by = rgiUserListSrvc.get({_id:data[i].modified[data[i].modified.length-1].modified_by});
 			if(assessment.reviewer_ID != undefined) {
 				assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
 				assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
@@ -21,21 +22,32 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 		{value:'status', text:'Status'}]
 	$scope.sortOrder = $scope.sortOptions[0].value;
 
-
-
 	$scope.assessmentStart = function(assessment) {
-		// update assessment status
-		// update assessment modified
-		// update assessment start date
+
+		var newAssessmentData = new rgiAssessmentSrvc(assessment);
+
+		newAssessmentData.status = 'started';
+		newAssessmentData.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
+		// start_date: {started_by: ObjectId, started_date: Date},
+
+		rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
+			rgiNotifier.notify('Assessment assigned!');
+			// $location.path('/assments/assessment/' + newAssessmentData.assessment_ID + '001');
+			$location.path('/' + newAssessmentData.assessment_ID + '001');
+		}, function(reason) {
+			rgiNotifier.error(reason);
+		});
 
 
-
-
-
-		console.log(assessment);
-		// var today = new Date().;
-		// console.log(today);
-	// 	var newUserData = currentUser;
+	// 	// rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
+	// 	// 	rgiNotifier.notify('Assessment assigned!');
+	// 	// 	$location.path('/assments/assessment/{{assessment.assessment_ID}}001');
+	// 	// }, function(reason) {
+	// 	// 	rgiNotifier.error(reason);
+	// 	// });
+		
+		
+	// 	
 	// 	var newAssessmentData = new rgiAssessmentSrvc(assessment);
 	// 	delete newAssessmentData.researcher;
 	// 	delete newAssessmentData.reviewer;
@@ -61,20 +73,7 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function($scope, $loc
 	// 			rgiNotifier.error(reason);
 	// 		});
 		
-	// 	// rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function() {
-	// 	// 	rgiNotifier.notify('Assessment assigned!');
-	// 	// 	$location.path('/assments/assessment/' + newAssessmentData.assessment_ID + '001');
-	// 	// }, function(reason) {
-	// 	// 	rgiNotifier.error(reason);
-	// 	// });
-
-
-	// 	// rgiAnswerMethodSrvc.insertAnswerSet(newAnswerSet).then(function() {
-	// 	// 	rgiNotifier.notify('Assessment assigned!');
-	// 	// 	$location.path('/assments/assessment/{{assessment.assessment_ID}}001');
-	// 	// }, function(reason) {
-	// 	// 	rgiNotifier.error(reason);
-	// 	// });
+	
 	}
 
 	

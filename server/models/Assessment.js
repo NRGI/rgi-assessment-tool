@@ -7,20 +7,19 @@ var modificationSchema = new mongoose.Schema({
 	modified_date: Date
 });
 
-// var assignmentSchema = new mongoose.Schema();
 
 var assessmentSchema = mongoose.Schema({
-	assessment_ID: {type: String, required:'{PATH} is required'}, // ISO3 of country
+	assessment_ID: {type: String, required:'{PATH} is required', index: true}, // ISO3 of country
 	ISO3: {type: String, required:'{PATH} is required'}, // ISO3 of country
 	country: {type: String, required:'{PATH} is required'}, // String of country name
-	researcher_ID: ObjectId, // pulled from user_id
-	reviewer_ID: ObjectId, // pulled from user_id
+	researcher_ID: {type: ObjectId, index: true}, // pulled from user_id
+	reviewer_ID: {type: ObjectId, index: true}, // pulled from user_id
 	edit_control: String, // user_ID of editing rights
 	assignment: {assigned_by: ObjectId, assigned_date: Date},
 	start_date: {started_by: ObjectId, started_date: Date},
 	submit_date: {submitted_by: ObjectId, submitted_date: Date},
 	review_date: {reviewed_by: ObjectId, reviewed_date: Date},
-	approval: {approved_by: ObjectId, assigned_date: Date},
+	approval: {approved_by: ObjectId, approved_date: Date},
 	modified: [modificationSchema],
 	status: {type: String, required:'{PATH} is required', default:'unassigned'}, // unassigned, assigned, started, submitted, reviewing, reviewed, approved>
 	questions_complete: {type:Number, default:0}

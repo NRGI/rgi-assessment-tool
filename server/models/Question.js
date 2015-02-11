@@ -1,14 +1,16 @@
 var mongoose 	= require('mongoose');
 
+var ObjectId 	= mongoose.Schema.Types.ObjectId;
+
 var modificationSchema = new mongoose.Schema({
-	modifiedBy: String,
+	modifiedBy: ObjectId,
 	modifiedDate: {type: Date, default:Date.now}
 });
 
 var commentSchema = new mongoose.Schema({
 	date: {type: Date, default:Date.now},
 	content: String,
-	author: String, // Pull from curretn user _id value
+	author: ObjectId, // Pull from curretn user _id value
 	author_name: String,
 	// ACTUAL CHANGE
 	role: String

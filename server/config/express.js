@@ -18,7 +18,9 @@ module.exports = function(app, config) {
 	app.use(logger('dev'));
 	// authentication cofigs
 	app.use(cookieParser());
+	
 	app.use(bodyParser());
+
 	app.use(session({secret: 'All your base are belong to us'}));
 	app.use(passport.initialize());
 	app.use(passport.session());

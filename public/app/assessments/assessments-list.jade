@@ -24,7 +24,6 @@
 					th Questions Complete
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
-					//- th {{assessment}}
 					td(ng-if="assessment.status=='assigned'") {{assessment.country}}
 					td(ng-if="assessment.status!='assigned'")
 						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
@@ -32,15 +31,22 @@
 						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
 					td 
 						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
-					td(ng-if="!assessment.start_date") Not started
-					td(ng-if="assessment.start_date") {{assessment.start_date | date}}
-					td(ng-if="!assessment.submit_date") Not submitted
-					td(ng-if="assessment.submit_date") {{assessment.submit_date | date}}
-					td(ng-if="!assessment.review_date") Not reviewed
-					td(ng-if="assessment.review_date") {{assessment.review_date | date}}
-					td(ng-if="!assessment.approval_date") Not approved
-					td(ng-if="assessment.approval_date") {{assessment.approval_date | date}}
-					td(ng-if="!assessment.last_edit") Not started
+					td(ng-if="!assessment.start_date") No 
+					td(ng-if="assessment.start_date") {{assessment.start_date.started_date | date}}
+					td(ng-if="!assessment.submit_date") No
+					td(ng-if="assessment.submit_date") {{assessment.submit_date.submitted_date | date}}
+					td(ng-if="!assessment.review_date") No
+					td(ng-if="assessment.review_date") {{assessment.review_date.reviewed_date | date}}
+					td(ng-if="!assessment.approval_date") No
+					td(ng-if="assessment.approval_date") {{assessment.approval_date.approved_date | date}}
+					
+					td(ng-if="assessment.edited_by")
+						a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}} 
+						text - 
+						span(ng-repeat="mod in assessment.modified")
+							em(ng-show="$last") {{mod.modified_date | date}}
+						
+
 					td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
 					td {{assessment.status | capitalize}}
 					td(ng-if="assessment.status=='assigned'")

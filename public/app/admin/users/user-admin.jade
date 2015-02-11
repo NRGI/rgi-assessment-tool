@@ -14,7 +14,10 @@
 					th Username
 					th Roles
 					th Countries
+					th Assigned
+					th Started
 					th Submitted
+					th Reviewed
 					th Approved
 					th 
 			tbody
@@ -30,10 +33,23 @@
 						p(ng-repeat="assessment in user.assessments")
 							text {{assessment.country_name}}
 					td
-						p(ng-repeat="country in user.countries")
-							text(ng-if="country.submitted==true") Yes
+						p(ng-repeat="assessment in user.assessments")
+							em(ng-if="assessment.details.assignment") {{assessment.details.assignment.assigned_date | date}}
 					td
-						p(ng-repeat="country in user.countries")
-							text(ng-if="country.approved==true") Yes
+						p(ng-repeat="assessment in user.assessments")
+							em(ng-if="assessment.details.start_date") {{assessment.details.start_date.started_date | date}}
+
+					td
+						p(ng-repeat="assessment in user.assessments")
+							em(ng-if="assessment.details.submit_date") {{assessment.details.submit_date.submitted_date | date}}
+
+					td
+						p(ng-repeat="assessment in user.assessments")
+							em(ng-if="assessment.details.review_date") {{assessment.details.review_date.reviewed_date | date}}
+
+					td
+						p(ng-repeat="assessment in user.assessments")
+							em(ng-if="assessment.details.approval") {{assessment.details.approval.approved_date | date}}
+
 					td
 						a.btn.center-block.btn-default(href="/admin/user-admin/{{user._id}}") Edit

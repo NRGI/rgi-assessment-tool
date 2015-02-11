@@ -2,12 +2,8 @@ angular.module('app').factory('rgiAnswerMethodSrvc', function($http, $q, rgiIden
 	return {
 		insertAnswerSet: function(newAnswerSet) {
 			var dfd = $q.defer();
-			// console.log(newAnswerSet);
-
-
 			var newAnswers = new rgiAnswerSrvc(newAnswerSet);
 			newAnswers.length = newAnswerSet.length;
-			// console.log(newAnswers.length);
 			newAnswers.$save().then(function() {
 				dfd.resolve;
 			}, function(response) {

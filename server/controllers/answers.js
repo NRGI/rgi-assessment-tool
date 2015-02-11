@@ -1,5 +1,6 @@
-var Answer = require('mongoose').model('Answer'),
-	upload = require('../utilities/s3');
+var Answer 		= require('mongoose').model('Answer'),
+	Question 	= require('mongoose').model('Question'),
+	upload 		= require('../utilities/s3');
 
 exports.getAnswers = function(req, res) {
 	var query = Answer.find(req.query);
@@ -17,16 +18,25 @@ exports.getAnswersByID = function(req, res) {
 
 exports.createAnswers = function(req, res, next) {
 	var newAnswers = req.body;
-	for (var i = 0; i < newAnswers.length; i++) {
-		newAnswers[i].assigned = {assignedBy: req.user._id};
-		newAnswers[i].modified = [{modifiedBy: req.user._id}];
 
-		Answer.create(newAnswers[i], function(err, answer) {
-			if(err) {
-				res.status(400)
-				return res.send({reason:err.toString()})
-			}
-		});
-	};
+
+	Question.find({}).exec(function(err, questions) {
+		for (var i = questions.length - 1; i >= 0; i--) {
+
+			for (var j = newAnswers.length - 1; j >= 0; j--) {
+
+				if(questions[i]._id == newAnswers[j].question_ID) {
+					newAnswers[j].question_text = questions[i].question_text;
+					Answer.create(newAnswers[j], function(err, answer) {
+						if(err) {
+							res.status(400)
+							return res.send({reason:err.toString()})
+						}
+					});
+				}
+			};
+		};
+	});
+	
 	res.send();
 };

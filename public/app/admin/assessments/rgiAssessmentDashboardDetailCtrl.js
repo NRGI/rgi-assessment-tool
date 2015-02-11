@@ -6,18 +6,7 @@ angular.module('app').controller('rgiAssessmentDashboardDetailCtrl', function($s
 		data.edited_by = rgiUserListSrvc.get({_id:data.modified[data.modified.length-1].modified_by});
 		data.question_list = rgiAnswerSrvc.query({assessment_ID:data.assessment_ID});
 
-		rgiQuestionSrvc.query(function(question_data) {
-			for (var i = 0; i < data.question_list.length; i++) {
-				for (var j = 0; j < question_data.length; j++) {
-					if(data.question_list[i].question_ID===question_data[j]._id){
-						// console.log(data.question_list[i].question_ID);
-						data.question_list[i].question_text = question_data[j].question_text;
-					};
-				};
-			};
-		});
 		$scope.assessment = data;
-		
 
 		$scope.sortOptions = 	[	
 									{value: "question_order", text: "Sort by Question Number"},
