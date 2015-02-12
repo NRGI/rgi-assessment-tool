@@ -1,3 +1,3 @@
-angular.module('app').controller('rgiAnswerCtrl', function($scope) {
-	
+angular.module('app').controller('rgiAnswerCtrl', function ($scope) {
+
 });

@@ -3,15 +3,15 @@
 		form.form-horizontal(name='profileForm')
 			fieldset
 				//- Profile page
-				legend {{fullName}}'s Profile
+				legend {{full_name}}'s Profile
 				.form-group
-					label.col-md-2.control-label(form="fname") First Name
+					label.col-md-2.control-label(form="first_name") First Name
 					.col-md-10
-						input.form-control(name="fname", type="text", placeholder="First Name", ng-model="fname", required)
+						input.form-control(name="first_name", type="text", placeholder="First Name", ng-model="first_name", required)
 				.form-group
-					label.col-md-2.control-label(form="lname") Last Name
+					label.col-md-2.control-label(form="last_name") Last Name
 					.col-md-10
-						input.form-control(name="lname", type="text", placeholder="Last Name", ng-model="lname", required)
+						input.form-control(name="last_name", type="text", placeholder="Last Name", ng-model="last_name", required)
 				.form-group
 					label.col-md-2.control-label(form="username") Username
 					.col-md-10

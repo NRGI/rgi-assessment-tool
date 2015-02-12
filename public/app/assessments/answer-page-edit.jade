@@ -29,8 +29,9 @@
 						legend Choose one of the following answers:
 						ng-form(name="answer_choice_form")
 							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices", required)
-								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer.researcher_score")
+								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.roles[0] + '_score']")
 								text.left-padding-med {{choice.criteria}}
+
 					
 					div(id="comments_div").bottom-padding-med
 						legend Comments:
@@ -53,69 +54,79 @@
 											textarea.form-control(name="comment", type="text", ng-model="answer.new_comment")
 						
 					div(id="bibliography").bottom-padding-med
-						legend Bibliograpical reference:
+						legend Bibliograpical citations:
 						div(id="prev_bib")
-							.row.left-padding-lg(ng-repeat="reference in answer.references")
+							.row.left-padding-lg(ng-repeat="citation in answer.citations")
 								.row
-									b {{reference.author}} ({{reference.role}}):
+									text Uploaded by {{citation.upload_user_id}} on {{citation.upload_date | date}}
+									text Originally found at {{citation.upload_URL}}
+								.row
+									b Author: 
+									text {{citation.citation.authors}}
+								.row
+									b Title: 
+									text {{citation.citation.title}}
+								.row
+									b Published: 
+									text {{citation.citation.publish_year}}
 								.row.col-md-11
-									a(href="{{reference.URL}}"){{reference.tex_ref}}
+									a(href="{{citation.upload_URL}}") View here
 								.row.col-md-11
 									em Comment:
-									text  {{reference.note}}
+									text  {{citation.note.content}}
 								.row.col-md-offset-8.col-md-3
 									date
 										small
-											em {{reference.date}}
+											text {{citation.note.author_name}}
+											em {{citation.note.date | date}}
 
 						div(id="new_bib").bottom-padding-med
-							//- .row.left-padding-med
-							//- 	.col-md-9
-							//- 		b Upload documents:
-							//- 	.pull-right.col-md-3
-							//- 		span.btn.btn-success.btn-file Select File
-							//- 			input(type="file" name="referenceFileUpload")
-							//- .form-group.top-padding-med
-							//- 	.row.left-padding-lg.bottom-padding-med
-							//- 		label.col-md-2 Citation:
-							//- 		.col-md-9
-							//- 			input.form-control(name="citation", type="text")
-							//- 	.row.left-padding-lg
-							//- 		label.col-md-2 Comment:
-							//- 		.col-md-9
-							//- 			textarea.form-control(name="citationComment", type="text")
+							ng-form(name="new_citation_form")
+								.row.left-padding-med
+									.col-md-9
+										b New document:
+									.pull-right.col-md-3
+										div(flow-init="{target: '/upload'}", flow-files-submitted="$flow.upload()", flow-file-success="$file.msg = $message")
+											input(type='file' flow-btn)
+											div(class="alert" flow-drop) Drag And Drop your file here
+										
+										//- form(ng-controller="uploader")
+											//- input(type="file", name="citation_file", ng-model="file_upload")
+												//- button.btn.btn-success.btn-file(ng-click="fileUpload()") Select File
+												li {{file_upload.name}}
+								.form-group.top-padding-med
+									.row.left-padding-lg.bottom-padding-med
+										label.col-md-2 Citation:
+									p first name
+									//- | &nbsp;
+									p last name
+									p title
+									p published publish year
+									p comments
+
+									//- .col-md-9.col-md-offset-1
+									//- 	input.form-control(name="citation", type="text")
+								//- 	.row.left-padding-lg
+								//- 		label.col-md-2 Comment:
+								//- 		.col-md-9
+								//- 			textarea.form-control(name="citationComment", type="text")
+
+
+
+
 
 
 					div(id="validation").bottom-padding-med
 						legend Validation:
-		//- 				div(id="currentValidation")
-		//- 					.row.left-padding-lg
-		//- 						ul
-		//- 							li {role} {agrees/disagrees} with {other role}
-		//- 					.row.top-padding-med.left-padding-lg
-		//- 						b Do you agree with the {other role}?
-		//- 						.form-group.left-padding-lg
-		//- 							input(type="radio", name="agreeement_choice", value="1", checked="")
-		//- 							text.left-padding-med Agree
-		//- 							br
-		//- 							input(type="radio", name="agreeement_choice", value="1", checked="")
-		//- 							text.left-padding-med Disagree
-		//- 		//- 			div(id="agreementChoice")
-		//- 		//- 				fieldset
-		//- 		//- 					div(id="choice_box")
-		//- 		//- 						legend Choose one of the following answers:
-		//- 		//- 						.form-group.left-padding-lg
-		//- 		//- 							input(type="radio", name="assessment_choice", value="1", checked="")
-		//- 		//- 							text.left-padding-med {option 1}
-		//- 		//- 							br
-		//- 		//- 							input(type="radio", name="assessment_choice", value="2", checked="")
-		//- 		//- 							text.left-padding-med {option 2}
-		//- 		//- 							br
-		//- 		//- 							input(type="radio", name="assessment_choice", value="3", checked="")
-		//- 		//- 							text.left-padding-med {option 3}
-		//- 		//- 							br
-		//- 		//- 							input(type="radio", name="assessment_choice", value="4", checked="")
-		//- 		//- 							text.left-padding-med {option 4}
-		//- 		//- 							br
-
-		//- 		//- 
+						div(id="currentValidation")
+							.row.left-padding-lg
+								ul
+									li {role} {agrees/disagrees} with {other role}
+							.row.top-padding-med.left-padding-lg
+								b Do you agree with the {other role}?
+								.form-group.left-padding-lg
+									input(type="radio", name="agreeement_choice", value="1", checked="")
+									text.left-padding-med Agree
+									br
+									input(type="radio", name="agreeement_choice", value="1", checked="")
+									text.left-padding-med Disagree
