@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiQuestionSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiQuestionSrvc) {
 
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID}, function (data) {
         $scope.answer = data;

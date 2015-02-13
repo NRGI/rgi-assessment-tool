@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
 
     $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
         // filtering options

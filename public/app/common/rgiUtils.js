@@ -1,4 +1,7 @@
-// angular.module('app').factory('rgiUtils', function(rgiToastr) {
+// /*global angular */
+// 'use strict';
+
+// var app = angular.module('app').factory('rgiUtils', function(rgiToastr) {
 //   return {
 //     notify: function(msg) {
 //       rgiToastr.success(msg);

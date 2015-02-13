@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiIdentitySrvc', function ($window, rgiUserSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiIdentitySrvc', function ($window, rgiUserSrvc) {
     var currentUser;
     // bootstrapped object to keep session alive
     if (!!$window.bootstrappedUserObject) {

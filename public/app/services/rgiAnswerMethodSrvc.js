@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc) {
     return {
         insertAnswerSet: function (newAnswerSet) {
             var dfd = $q.defer();

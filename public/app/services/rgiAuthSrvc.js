@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
     return {
         // AUTHENTICATION AND AUTHORIZATION
         //authentication

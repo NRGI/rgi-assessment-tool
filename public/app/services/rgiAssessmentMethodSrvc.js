@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiAssessmentMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiAssessmentSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiAssessmentMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiAssessmentSrvc) {
     return {
         createAssessment: function (newAssessmentData) {
             // var newAssessment = new rgiAssessmentSrvc(newAssessmentData);

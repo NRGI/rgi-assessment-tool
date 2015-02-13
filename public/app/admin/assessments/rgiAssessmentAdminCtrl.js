@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams, ngDialog) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams, ngDialog) {
     // filtering options
     $scope.sortOptions = [
         {value: 'country', text: 'Sort by Country'},

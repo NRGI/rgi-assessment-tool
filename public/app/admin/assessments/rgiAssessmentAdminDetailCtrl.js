@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
     // filtering options
     $scope.sortOptions = [
         {value:  "question_order", text:  "Sort by Question Number"},

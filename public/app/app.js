@@ -1,4 +1,7 @@
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'flow']);
+/*global angular */
+'use strict';
+
+var app = angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'flow']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
     // role checks

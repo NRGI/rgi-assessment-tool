@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
 
     function zeroFill(number, width) {
         width -= number.toString().length;

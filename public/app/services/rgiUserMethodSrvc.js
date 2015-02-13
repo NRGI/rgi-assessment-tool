@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiUserMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiUserMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
     return {
         createUser: function (newUserData) {
             var dfd = $q.defer();

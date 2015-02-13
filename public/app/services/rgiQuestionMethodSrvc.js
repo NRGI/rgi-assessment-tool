@@ -1,4 +1,7 @@
-angular.module('app').factory('rgiQuestionMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiQuestionSrvc) {
+/*global angular */
+'use strict';
+
+var app = angular.module('app').factory('rgiQuestionMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiQuestionSrvc) {
     return {
         updateQuestion: function (newQuestionData) {
             var dfd = $q.defer();
