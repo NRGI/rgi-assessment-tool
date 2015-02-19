@@ -6,15 +6,16 @@ var app 	= express();
 
 var config 	= require('./server/config/config')[env];
 
-// var user	= process.env.USER_ID;
+var user	= process.env.USER_ID;
 
-// var pass	= process.env.USER_KEY;
+var pass	= process.env.USER_KEY;
+
 
 
 require('./server/config/express')(app, config);
 
-// require('./server/config/mongoose')(config, user, pass);
-require('./server/config/mongoose')(config);
+require('./server/config/mongoose')(config, user, pass);
+// require('./server/config/mongoose')(config);
 
 require('./server/config/passport')();
 
