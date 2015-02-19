@@ -1,7 +1,8 @@
 .container
 	.well
+		legend 
+			h1{{assessment.country}}
 		img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
-		legend {{assessment.country}}
 		.pull-right
 			form.form-inline
 				.form-group
@@ -29,8 +30,12 @@
 				text on 
 				span(ng-repeat="mod in assessment.modified")
 					em(ng-show="$last") {{mod.modified_date | date}}
-			.row
-				text Number of questions complete: {{assessment.questions_complete}}
+			.row(ng-if="assessment.questions_complete===0")
+				text(ng) Number of questions complete: {{assessment.questions_complete}} (0%)
+			.row(ng-if="assessment.questions_complete!==0")
+				text Number of questions complete: {{assessment.questions_complete}} (
+				text {{((assessment.questions_complete/answers.length)*100 | number :2)}}
+				text %)
 			
 		table.table.table-hover.table-striped.table-condensed
 			thead
@@ -42,7 +47,6 @@
 					th.col-md-1.text-center 
 			tbody
 				tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
-					//- tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
 					td.col-md-1.text-center {{answer.question_order}}
 					td.col-md-1 {{answer.component_text}}
 					td.col-md-5 {{answer.question_text}})
@@ -50,7 +54,30 @@
 						text {{answer.status | capitalize}}
 					td
 						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}", ng-if="answer.status!='assigned' && answer.status!='started'") View answer
-						a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}", ng-if="answer.status=='assigned' || answer.status=='started'") Edit question
+						a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}", ng-if="answer.status=='assigned' || answer.status=='started'") Jump to question
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 					//- td(ng-if="answer.status='assigned'")
 					//- td 

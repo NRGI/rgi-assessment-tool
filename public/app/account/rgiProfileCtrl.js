@@ -1,11 +1,8 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentitySrvc, rgiUserMethodSrvc, rgiNotifier) {
+angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentitySrvc, rgiUserMethodSrvc, rgiNotifier) {
     // set page resources to be those of the current identity
-    $scope.full_name = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
-    $scope.first_name = rgiIdentitySrvc.currentUser.firstName;
-    $scope.last_name = rgiIdentitySrvc.currentUser.lastName;
+    $scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
+    $scope.fname = rgiIdentitySrvc.currentUser.firstName;
+    $scope.lname = rgiIdentitySrvc.currentUser.lastName;
     $scope.email = rgiIdentitySrvc.currentUser.email;
     $scope.username = rgiIdentitySrvc.currentUser.username;
     $scope.roles = rgiIdentitySrvc.currentUser.roles;
@@ -13,8 +10,8 @@ var app = angular.module('app').controller('rgiProfileCtrl', function ($scope, r
     $scope.update = function () {
         // pass in update data
         var newUserData = {
-            firstName: $scope.first_name,
-            lastName: $scope.last_name,
+            firstName: $scope.fname,
+            lastName: $scope.lname,
             email: $scope.email
         };
         // check if password update exists and pass it in

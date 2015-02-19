@@ -41,14 +41,14 @@
 							.pull-left
 								button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
 							.pull-right
-								button.btn.btn-primary(ng-click="questionUpdate()", ng-disabled="profileForm.$invalid") Submit
+								button.btn.btn-primary(ng-click="questionUpdate()", ng-disabled="profileForm.$invalid") Save question
 								| &nbsp;
-								button.btn.btn-danger(ng-click="questionDelete()", ng-disabled="") Delete
+								button.btn.btn-danger(ng-click="questionDelete()", ng-disabled="") Delete question
+								| &nbsp;
+								button.btn.btn-default.disabled Reset question
 								| &nbsp;
 								a.btn.btn-default(href="/admin/question-admin-view/{{question._id}}") Cancel
-				//- div
-				//- 	text{{question.comments}}
-
+								
 				div.top-padding-med(id="comments")
 						legend NRGI Comments:
 						div(id="prevComments")

@@ -12,45 +12,49 @@
 		table.table.table-hover.table-striped.table-condensed
 			thead
 				tr
-					th Country
-					th Researcher
-					th Reviewer
-					th Started
-					th Submitted
-					th Reviewed
-					th Approval
-					th Last Edited
-					th Status
-					th Questions Complete
+					th.col-md-1 Country
+					th.col-md-2 Researcher
+					th.col-md-2 Reviewer
+					th.col-md-1 Started
+					th.col-md-1 Submitted
+					th.col-md-1 Reviewed
+					th.col-md-1 Approval
+					th.col-md-2 Last Edited
+					th.col-md-1 Status
+					th.col-md-1.text-center Questions Complete
+					th.col-md-1
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
-					td(ng-if="assessment.status=='assigned'") {{assessment.country}}
-					td(ng-if="assessment.status!='assigned'")
-						a(href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
-					td
-						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
-					td 
-						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
-					td(ng-if="!assessment.start_date") No 
-					td(ng-if="assessment.start_date") {{assessment.start_date.started_date | date}}
-					td(ng-if="!assessment.submit_date") No
-					td(ng-if="assessment.submit_date") {{assessment.submit_date.submitted_date | date}}
-					td(ng-if="!assessment.review_date") No
-					td(ng-if="assessment.review_date") {{assessment.review_date.reviewed_date | date}}
-					td(ng-if="!assessment.approval_date") No
-					td(ng-if="assessment.approval_date") {{assessment.approval_date.approved_date | date}}
+					td.col-md-1
+						text(ng-if="assessment.status=='assigned'") {{assessment.country}}
+						a(ng-if="assessment.status!='assigned'" href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+					td.col-md-2
+						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control==='researcher'&&assessment.status!=='assigned'")
+						a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+					td.col-md-2
+						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control==='reviewer'&&assessment.status!=='assigned'")
+						a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+					td.col-md-1 
+						text(ng-if="!assessment.start_date") No
+						text(ng-if="assessment.start_date") {{assessment.start_date.started_date | date}}
+					td.col-md-1
+						text(ng-if="!assessment.submit_date") No
+						text(ng-if="assessment.submit_date") {{assessment.submit_date.submitted_date | date}}
+					td.col-md-1
+						text(ng-if="!assessment.review_date") No
+						text(ng-if="assessment.review_date") {{assessment.review_date.reviewed_date | date}}
+					td.col-md-1
+						text(ng-if="!assessment.approval_date") No
+						text(ng-if="assessment.approval_date") {{assessment.approval_date.approved_date | date}}
 					
-					td(ng-if="assessment.edited_by")
+					td.col-md-2(ng-if="assessment.edited_by")
 						a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}} 
 						text - 
 						span(ng-repeat="mod in assessment.modified")
 							em(ng-show="$last") {{mod.modified_date | date}}
-						
-
-					td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
-					td {{assessment.status | capitalize}}
-					td(ng-if="assessment.status=='assigned'")
+					td.col-md-1 {{assessment.status | capitalize}}
+					td.text-center.col-md-1
+						text(ng-if="assessment.status!=='assigned'") {{assessment.questions_complete}}
+						text(ng-if="assessment.status==='assigned'") 
+					td.col-md-1
 						button.btn.btn-success(ng-click="assessmentStart(assessment)", ng-if="assessment.status=='assigned'") Start assessment
-						//- ADD Funtionality for button to send to last question
-						button.btn.btn-default.disabled(href="/assments/assessment/{{assessment.assessment_ID}}001", ng-if="assessment.status!='assigned'") Assessment started
-					td.text-center(ng-if="assessment.status!='assigned'") {{assessment.quesions_complete}}

@@ -14,40 +14,37 @@ exports.getQuestionsByID = function (req, res) {
 
 
 exports.getQuestionTextByID = function (req, res) {
-    var query = Question.findOne({_id: req.params.id}).select({ "question_text": 1});
+    var query = Question.findOne({_id:req.params.id}).select({ "question_text": 1});
     query.exec(function (err, question) {
         res.send(question);
     });
 };
 
-
 exports.updateQuestion = function (req, res) {
-    var questionUpdate = req.body;
+    var question_update = req.body,
+        timestamp = new Date().toISOString();
 
     if (!req.user.hasRole('supervisor')) {
         res.status(404);
         return res.end();
     }
 
-    Question.findOne({_id: req.body._id}).exec(function (err, question) {
+    Question.findOne({_id: question_update._id}).exec(function (err, question) {
         if (err) {
             res.status(400);
             return res.send({ reason: err.toString() });
         }
-        question.question_order = questionUpdate.question_order;
-        question.row_id_org = questionUpdate.row_id_org
-        question.row_id = questionUpdate.row_id;
-        question.question_text = questionUpdate.question_text;
-        question.component = questionUpdate.component;
-        question.component_text = questionUpdate.component_text;
-        question.question_choices = questionUpdate.question_choices;
+        question.question_order = question_update.question_order;
+        question.question_text = question_update.question_text;
+        question.component = question_update.component;
+        question.component_text = question_update.component.replace('_', ' ');
+        question.question_choices = question_update.question_choices;
 
         if (question.modified) {
-            question.modified.push({modifiedBy: req.user._id});
+            question.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
         } else {
-            question.modified = {modifiedBy: req.user._id};
+            question.modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
         }
-        // user.address = questionUpdate.address;
         question.save(function (err) {
             if (err) {
                 return res.send({ reason: err.toString() });
@@ -58,6 +55,7 @@ exports.updateQuestion = function (req, res) {
 };
 
 exports.deleteQuestion = function (req, res) {
+
     Question.remove({_id: req.params.id}, function (err) {
         if (!err) {
             res.send();

@@ -4,10 +4,11 @@ var auth = require('./auth'),
     answers = require('../controllers/answers'),
     questions = require('../controllers/questions'),
     assessments = require('../controllers/assessments');
-    // mongoose = require('mongoose');
-    // User = mongoose.model('User');
+    // mongoose     = require('mongoose');
+    // User         = mongoose.model('User');
 
 module.exports = function (app) {
+
     /////////////////////////
     ///// USERS CRUD ////////
     /////////////////////////
@@ -31,10 +32,10 @@ module.exports = function (app) {
     // GET
     app.get('/api/questions', questions.getQuestions);
     app.get('/api/questions/:id', questions.getQuestionsByID);
-    app.get('/api/question-text/:id', questions.getQuestionTextByID);
+    // app.get('/api/question-text/:id', questions.getQuestionTextByID);
 
     // PUT
-    app.put('/api/questions', auth.requiresRole('supervisor'), questions.updateQuestion);
+    app.put('/api/questions', questions.updateQuestion);
 
     // DELETE
     app.delete('/api/questions/:id', auth.requiresRole('supervisor'), questions.deleteQuestion);
@@ -50,6 +51,9 @@ module.exports = function (app) {
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
     // app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
     // app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
+
+    // PUT
+    app.put('/api/answers/:answer_ID', answers.updateAnswer);
 
     ///////////////////////////////////////
     ///// ASSESSMENT OVERVIEW CRUD/////////

@@ -1,7 +1,4 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiUserAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
+angular.module('app').controller('rgiUserAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
 
     $scope.user = rgiUserSrvc.get({_id: $routeParams.id});
     // fix submit button functionality

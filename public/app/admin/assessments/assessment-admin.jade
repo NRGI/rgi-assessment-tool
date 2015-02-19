@@ -37,7 +37,7 @@
 						span(ng-repeat="mod in assessment.modified")
 							em(ng-show="$last") {{mod.modified_date | date}}
 					td(ng-if="!assessment.edited_by")
-					td {{assessment.status}}
+					td {{assessment.status | capitalize}}
 					td
 						a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
 						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned

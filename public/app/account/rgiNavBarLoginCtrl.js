@@ -1,10 +1,7 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $http, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc) {
-   // assign the identity resource with the current identity using identity service
+angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $http, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc) {
+    // assign the identity resource with the current identity using identity service
     $scope.identity = rgiIdentitySrvc;
-   // signin function for signin button
+    // signin function for signin button
     $scope.signin = function (username, password) {
         rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
             if (success) {

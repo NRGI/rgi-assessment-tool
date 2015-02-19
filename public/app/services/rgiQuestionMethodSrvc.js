@@ -1,15 +1,12 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').factory('rgiQuestionMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiQuestionSrvc) {
+angular.module('app').factory('rgiQuestionMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiQuestionSrvc) {
     return {
-        updateQuestion: function (newQuestionData) {
+        updateQuestion: function (new_question_data) {
             var dfd = $q.defer();
-            newQuestionData.$update().then(function () {
+            new_question_data.$update().then(function () {
                 dfd.resolve();
-            }), function (response) {
+            }, function (response) {
                 dfd.reject(response.data.reason);
-            };
+            });
             return dfd.promise;
         },
         deleteQuestion: function (questionDeletion) {
@@ -24,5 +21,5 @@ var app = angular.module('app').factory('rgiQuestionMethodSrvc', function ($http
             };
             return dfd.promise;
         }
-    }
+    }    
 });

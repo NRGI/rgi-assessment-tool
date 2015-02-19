@@ -1,3 +1,4 @@
+
 //- answer page
 .container.top-padding-med
 	.well
@@ -11,7 +12,8 @@
 			em(ng-if="!answer.reviewer_score") Not submitted
 			strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
 
-		.row.left-padding-lg.bottom-padding-lg
+		//- Active buttons
+		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control===current_user.roles[0]")
 			.col-md-pull-2
 				button.btn.btn-primary(ng-click="answerSave()", ng-disabled="answer_form.$invalid") Save answer
 				| &nbsp;
@@ -20,7 +22,15 @@
 				button.btn.btn-danger(ng-click="answerClear()") Clear answer
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
-
+		//- View only buttons
+		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control!==current_user.roles[0]")
+				button.btn.btn-primary.disabled Save answer
+				| &nbsp;
+				button.btn.btn-success.disabled Submit answer
+				| &nbsp;
+				button.btn.btn-danger.disabled Clear answer
+				| &nbsp;
+				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 
 		.row.left-padding-lg
 			.form-horizontal(name="answer_form")
@@ -32,26 +42,61 @@
 								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.roles[0] + '_score']")
 								text.left-padding-med {{choice.criteria}}
 
+					//- Active and View options needs to play wiht form reset
+					//- div(id="answer_choice_div" ng-if="assessment.edit_control===current_user.roles[0]").bottom-padding-med
+					//- 	legend Choose one of the following answers:
+					//- 	ng-form(name="answer_choice_form" required)
+					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.roles[0] + '_score']")
+					//- 			text.left-padding-med {{choice.criteria}}
+					//- div(id="answer_choice_div" ng-if="assessment.edit_control!==current_user.roles[0]").bottom-padding-med
+					//- 	legend Choose one of the following answers:
+					//- 	ng-form
+					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices")
+					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.roles[0] + '_score']" disabled)
+					//- 			text.left-padding-med {{choice.criteria}}
 					
 					div(id="comments_div").bottom-padding-med
-						legend Comments:
-						div(id="prev_comments_div")
-							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+						legend General comments:
+
+						div(id="prev_comments_div" ng-if="answer.comments.length===0")
+							.row.left-padding-lg
 								.row
-									b {{comment.author_name}} ({{comment.role}}):
-								.row.col-md-11 {{comment.content}}
-								.row.col-md-offset-8.col-md-3
+									b Joe Blow (Researcher):
+								.row.col-md-11 receding math- pre- carbon euro-pop lights wonton soup shrine crypto- realism. tiger-team footage physical paranoid rebar futurity corporation construct voodoo god post-. futurity paranoid construct into rebar camera hotdog vinyl shanty town corporation. gang beef noodles shrine DIY post- hotdog bridge kanji man dome. saturation point shanty town RAF girl table modem warehouse wonton soup drone shrine. 
+								.row.col-md-offset-9.col-md-3
 									date
 										small
-											em {{comment.date}}
-
+											em 12/15/2014 @ 3:52pm
+							.row.left-padding-lg
+								.row
+									b Joe Blow (Researcher):
+								.row.col-md-11 receding math- pre- carbon euro-pop lights wonton soup shrine crypto- realism. tiger-team footage physical paranoid rebar futurity corporation construct voodoo god post-. futurity paranoid construct into rebar camera hotdog vinyl shanty town corporation. gang beef noodles shrine DIY post- hotdog bridge kanji man dome. saturation point shanty town RAF girl table modem warehouse wonton soup drone shrine. 
+								.row.col-md-offset-9.col-md-3
+									date
+										small
+											em 12/15/2014 @ 3:52pm
+						div(id="prev_comments_div" ng-if="answer.comments.length!==0")
+							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+								.row
+									b {{comment.author_name}} (
+									b {{comment.role}}
+									b ):
+								.row.col-md-11 {{comment.content}}
+								.row.col-md-offset-9.col-md-3
+									date
+										small
+											em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+						br
 						div(id="new_comment_div").bottom-padding-med
 							ng-form(name="new_comment_form")
 								.form-group.top-padding-med
 									.row.left-padding-lg
-										label.col-md-2 New comment
-										.col-md-9
-											textarea.form-control(name="comment", type="text", ng-model="answer.new_comment")
+										label.col-md-1 New comment
+										.col-md-8
+											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" required)
+										.col-md-1
+											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
 						
 					div(id="bibliography").bottom-padding-med
 						legend Bibliograpical citations:
@@ -110,12 +155,6 @@
 								//- 		label.col-md-2 Comment:
 								//- 		.col-md-9
 								//- 			textarea.form-control(name="citationComment", type="text")
-
-
-
-
-
-
 					div(id="validation").bottom-padding-med
 						legend Validation:
 						div(id="currentValidation")

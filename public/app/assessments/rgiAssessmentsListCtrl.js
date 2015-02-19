@@ -1,7 +1,4 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiUserMethodSrvc, rgiAssessmentMethodSrvc) {
+angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiUserMethodSrvc, rgiAssessmentMethodSrvc) {
 
     // filtering options
     $scope.sortOptions = [
@@ -16,14 +13,15 @@ var app = angular.module('app').controller('rgiAssessmentsListCtrl', function ($
     rgiAssessmentSrvc.query({[current_user_role]: current_user._id},function (data) {
         // pull assessment list from collection and adds user name to match reviewer id and researcher id
         $scope.assessments = [];
-        for (var i = data.length - 1; i >= 0; i--) {
+        var i;
+        for (i = data.length - 1; i >= 0; i -= 1) {
             var assessment = data[i];
             assessment.edited_by = rgiUserListSrvc.get({_id:data[i].modified[data[i].modified.length-1].modified_by});
             if (assessment.reviewer_ID != undefined) {
                 assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
                 assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
             };
-            
+
             $scope.assessments.push(assessment);
         };
     });
@@ -47,6 +45,6 @@ var app = angular.module('app').controller('rgiAssessmentsListCtrl', function ($
 // Angular capitilaize filter
 angular.module('app').filter('capitalize', function () {
     return function (input, all) {
-        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) :  '';
+        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }) :  '';
     };
 });

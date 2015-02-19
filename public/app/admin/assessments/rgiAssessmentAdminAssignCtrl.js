@@ -1,12 +1,9 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
 
     function zeroFill(number, width) {
         width -= number.toString().length;
         if (width > 0) {
-            return new Array(width + (/\./.test(number) ? 2 :  1) ).join('0') + number;
+            return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
         }
         return number + ""; // always return a string
     }
@@ -23,14 +20,17 @@ var app = angular.module('app').controller('rgiAssessmentAdminAssignCtrl', funct
     $scope.questions = rgiQuestionSrvc.query();
 
     $scope.assessmentAssign = function () {
+        // update users
         var new_researcher_data = $scope.researcherSelect,
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
-            new_answer_set = [];
+            new_answer_set = [],
+            i;
 
-        // update users
-        new_researcher_data.assessments.push({assessment_id:  $routeParams.assessment_ID, country_name:  $scope.assessment.country});
-        new_reviewer_data.assessments.push({assessment_id:  $routeParams.assessment_ID, country_name:  $scope.assessment.country});
+        // new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+        new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
+        // new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
+        new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
 
         // update assessment
         new_assessment_data.status = 'assigned';
@@ -39,7 +39,7 @@ var app = angular.module('app').controller('rgiAssessmentAdminAssignCtrl', funct
         new_assessment_data.edit_control = 'researcher';
 
         // create new answer set
-        for (var i = 0; i < $scope.questions.length; i++) {
+        for (i = 0; i < $scope.questions.length; i += 1) {
             new_answer_set.push({});
 
             if ($scope.questions[i].hasOwnProperty('question_order')) {

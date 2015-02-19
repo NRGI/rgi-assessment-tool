@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var modificationSchema = new mongoose.Schema({
-    modified_by: ObjectId,
-    modified_date: {type: Date, default: Date.now}
+    modifiedBy: ObjectId,
+    modifiedDate: {type: Date, default: Date.now}
 });
 
 var commentSchema = new mongoose.Schema({
@@ -34,7 +34,7 @@ var questionSchema = mongoose.Schema({
     minstry_if_applicable: String,
     section_name: String,
     child_question: String,
-    question_text : {type: String, required: '{PATH} is required'},
+    question_text : String,
     question_choices: [
         {
             name: String,

@@ -1,16 +1,15 @@
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption'),
-    nodeMail = require('../utilities/nodeMailer');
+    nodeMail = require('../utilities/nodeMailer'),
+    nodeMailer = require('nodeMailer');
 
 exports.getUsers = function (req, res) {
-    function getQuery() {
-        if (req.user.hasRole('supervisor')) {
-            return User.find(req.query);
-        } else {
-            return User.find(req.query).select({ "firstName": 1, "lastName": 1});
-        }
+    var query;
+    if (req.user.hasRole('supervisor')) {
+        query = User.find(req.query);
+    } else {
+        query = User.find(req.query).select({ "firstName": 1, "lastName": 1});
     }
-    var query = getQuery();
     query.exec(function (err, collection) {
         res.send(collection);
     });
@@ -30,13 +29,12 @@ exports.getUsersListByID = function (req, res) {
 };
 
 exports.createUser = function (req, res, next) {
-    var userData = req.body;
-
-    var mailOptions = {
-        to: userData.email,
-        subject: 'Created User',
-        text: 'Your user name ahs been created'
-    };
+    var userData = req.body,
+        mailOptions = {
+            to: userData.email,
+            subject: 'Created User',
+            text: 'Your user name ahs been created'
+        };
     nodeMail.sendMail(mailOptions);
     userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
@@ -86,7 +84,7 @@ exports.updateUser = function (req, res) {
         }
         user.save(function (err) {
             if (err) {
-                return res.send({reason: err.toString()});
+                return res.send({ reason: err.toString() });
             }
         });
     });

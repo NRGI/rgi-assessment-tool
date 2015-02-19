@@ -1,13 +1,11 @@
-/*global angular */
-'use strict';
-
-var app = angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
     // filtering options
-    $scope.sortOptions = [
-        {value:  "question_order", text:  "Sort by Question Number"},
-        {value:  "component_id", text: "Sort by Component"},
-        {value: "status", text: "Sort by Status"}];
-    $scope.sortOrder = $scope.sortOptions[0].value;
+    $scope.sort_options = [
+        {value: "question_order", text: "Sort by Question Number"},
+        {value: "component_id", text: "Sort by Component"},
+        {value: "status", text: "Sort by Status"}
+    ];
+    $scope.sortOrder = $scope.sort_options[0].value;
 
     // pull assessment data and add
     rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (data) {
@@ -18,12 +16,13 @@ var app = angular.module('app').controller('rgiAssessmentAdminDetailCtrl', funct
         data.question_list = rgiAnswerSrvc.query({assessment_ID: data.assessment_ID});
 
         $scope.assessment = data;
+
     });
 });
 
 // Angular capitilaize filter
 angular.module('app').filter('capitalize', function () {
-    return function (input, all) {
-        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) :  '';
+    return function (input) {
+        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }) :  '';
     };
 });
