@@ -37,6 +37,7 @@ var answerSchema = mongoose.Schema({
 	assessment_ID: {type: String, required:'{PATH} is required', index: true}, // generated from assessment_ID value of Assessment Model (ISO3 country)
 	researcher_ID: {type: ObjectId, required:'{PATH} is required', index: true}, // generated from _id value of User Model
 	reviewer_ID: {type: ObjectId, required:'{PATH} is required', index: true}, // generated from _id value of User Model
+	edit_control: ObjectId, // user_ID of editing rights
 	question_order: {type: Number, required:'{PATH} is required'}, // generated from the order_ID of Question Model
 	question_text: String, // 
 	component_id: {type: String, required:'{PATH} is required'}, // generated from Question Model

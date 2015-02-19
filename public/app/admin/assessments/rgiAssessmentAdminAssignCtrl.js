@@ -36,7 +36,7 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
         new_assessment_data.status = 'assigned';
         new_assessment_data.researcher_ID = $scope.researcherSelect._id;
         new_assessment_data.reviewer_ID = $scope.reviewerSelect._id;
-        new_assessment_data.edit_control = 'researcher';
+        new_assessment_data.edit_control = $scope.researcherSelect._id;
 
         // create new answer set
         for (i = 0; i < $scope.questions.length; i += 1) {
@@ -48,6 +48,7 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
                 new_answer_set[i].assessment_ID = $routeParams.assessment_ID;
                 new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
                 new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
+                new_answer_set[i].edit_control = $scope.researcherSelect._id;
                 new_answer_set[i].question_order = $scope.questions[i].question_order;
                 new_answer_set[i].component_id = $scope.questions[i].component;
                 new_answer_set[i].component_text = $scope.questions[i].component_text;

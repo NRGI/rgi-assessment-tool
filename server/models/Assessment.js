@@ -14,7 +14,7 @@ var assessmentSchema = mongoose.Schema({
 	country: {type: String, required:'{PATH} is required'}, // String of country name
 	researcher_ID: {type: ObjectId, index: true}, // pulled from user_id
 	reviewer_ID: {type: ObjectId, index: true}, // pulled from user_id
-	edit_control: String, // user_ID of editing rights
+	edit_control: ObjectId, // user_ID of editing rights
 	assignment: {assigned_by: ObjectId, assigned_date: Date},
 	start_date: {started_by: ObjectId, started_date: Date},
 	submit_date: {submitted_by: ObjectId, submitted_date: Date},
