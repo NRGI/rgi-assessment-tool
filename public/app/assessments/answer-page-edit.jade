@@ -1,5 +1,3 @@
-
-//- answer page
 .container.top-padding-med
 	.well
 		legend.h2 {{assessment.country}} 2015 Assessment
@@ -13,7 +11,7 @@
 			strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
 
 		//- Active buttons
-		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control===current_user.roles[0]")
+		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id")
 			.col-md-pull-2
 				button.btn.btn-primary(ng-click="answerSave()", ng-disabled="answer_form.$invalid") Save answer
 				| &nbsp;
@@ -23,7 +21,7 @@
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 		//- View only buttons
-		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control!==current_user.roles[0]")
+		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control!==current_user._id")
 				button.btn.btn-primary.disabled Save answer
 				| &nbsp;
 				button.btn.btn-success.disabled Submit answer
@@ -94,7 +92,7 @@
 									.row.left-padding-lg
 										label.col-md-1 New comment
 										.col-md-8
-											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" required)
+											textarea.form-control(name="comment" type="text" ng-model="question.new_comment" required)
 										.col-md-1
 											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
 						

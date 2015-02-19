@@ -1,6 +1,9 @@
-angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc) {
+'use strict';
+var angular;
+angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
 
     $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
+    $scope.current_user = rgiIdentitySrvc.currentUser;
 
     $scope.componentOptions = [
         {value: 'context', text: 'Context'},
@@ -44,8 +47,26 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
         });
     };
 
-    $scope.questionCommentAdd = function () {
-        console.log();
-        // $scope.question.question_choices.push({order: $scope.question.question_choices.length+1, criteria: "Enter text"});
+    $scope.commentSubmit = function (current_user) {
+        var new_comment_data, new_question_data;
+
+        new_comment_data = {
+            content: $scope.question.new_comment,
+            author_name: current_user.firstName + ' ' + current_user.lastName,
+            author: current_user._id,
+            role: current_user.roles[0],
+            date: new Date().toISOString()
+        };
+        new_question_data = $scope.question;
+
+        new_question_data.comments.push(new_comment_data);
+        console.log(new_question_data);
+        console.log(new_comment_data);
+
+        rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
+            rgiNotifier.notify('Comment added');
+        }, function (reason) {
+            rgiNotifier.notify(reason);
+        });
     };
 });

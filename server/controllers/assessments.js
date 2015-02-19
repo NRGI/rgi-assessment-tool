@@ -1,44 +1,34 @@
+'use strict';
 var Assessment = require('mongoose').model('Assessment');
 
-exports.getAssessments = function(req, res) {
-	var query = Assessment.find(req.query);
-	query.exec(function(err, collection) {
-		res.send(collection);
-	});
-};
-
-exports.getUsers = function(req, res) {
-	if(req.user.hasRole('supervisor')) {
-		var query = User.find(req.query);
-	}else{
-		var query = User.find(req.query).select({ "firstName": 1,"lastName":1});
-	}
-	query.exec(function(err, collection) {
-		res.send(collection);
-	});
-};
-
-exports.getAssessmentsByID = function(req, res) {
-	Assessment.findOne({assessment_ID:req.params.assessment_ID}).exec(function(err, assessment) {
-		res.send(assessment);
-	});
+exports.getAssessments = function (req, res) {
+    var query = Assessment.find(req.query);
+    query.exec(function (err, collection) {
+        res.send(collection);
+    });
 };
 
 
-exports.updateAssessment = function(req, res) {
-	var assessmentUpdates = req.body,
+exports.getAssessmentsByID = function (req, res) {
+    Assessment.findOne({assessment_ID: req.params.assessment_ID}).exec(function (err, assessment) {
+        res.send(assessment);
+    });
+};
+
+
+exports.updateAssessment = function (req, res) {
+    var assessmentUpdates = req.body,
         timestamp = new Date().toISOString();
 
 
-	if(req.user._id != assessmentUpdates.researcher_ID && req.user._id != assessmentUpdates.reviewer_ID && !req.user.hasRole('supervisor')) {
-		res.status(404);
-		return res.end();
-	};
+    if (String(req.user._id) !== String(assessmentUpdates.researcher_ID) && String(req.user._id) !== String(assessmentUpdates.reviewer_ID) && !req.user.hasRole('supervisor')) {
+        res.sendStatus(404);
+        return res.end();
+    }
 
-	Assessment.findOne({_id:assessmentUpdates._id}).exec(function(err, assessment) {
-		
-		if (err) {
-            res.status(400);
+    Assessment.findOne({_id: assessmentUpdates._id}).exec(function (err, assessment) {
+        if (err) {
+            res.sendStatus(400);
             return res.send({ reason: err.toString() });
         }
         if (!(assessment.hasOwnProperty('researcher_ID'))) {
@@ -71,8 +61,8 @@ exports.updateAssessment = function(req, res) {
                 assessment.approval = {approved_by: assessmentUpdates.approval.approved_by, approved_date: timestamp};
             }
         }
-		
-		assessment.questions_complete = assessmentUpdates.questions_complete;
+
+        assessment.questions_complete = assessmentUpdates.questions_complete;
         assessment.edit_control = assessmentUpdates.edit_control;
         assessment.status = assessmentUpdates.status;
 
@@ -88,5 +78,5 @@ exports.updateAssessment = function(req, res) {
             }
         });
     });
-	res.send();
+    res.send();
 };

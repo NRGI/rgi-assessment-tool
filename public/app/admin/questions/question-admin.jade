@@ -2,9 +2,9 @@
 	.well
 		legend Questions
 		.pull-left
-			.btn.btn-success(ng-click="newQuestionDialog()", ng-disabled="true", tooltip="yes") New Question
+			button.btn.btn-success(ng-click="newQuestionDialog()", ng-disabled="true", tooltip="yes") New Question
 			| &nbsp;
-			.btn.btn-default(ng-click="", ng-disabled="true") Export as CSV
+			button.btn.btn-default(ng-csv="getArray" filename="question_set.csv") Export as CSV
 		.pull-right
 			form.form-inline
 				.form-group

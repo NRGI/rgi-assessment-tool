@@ -37,6 +37,12 @@ footer p {
 .left-padding-med {
   padding-left: 10px;
 }
+.right-padding-lg {
+  padding-left: 40px;
+}
+.right-padding-med {
+  padding-left: 10px;
+}
 .bottom-padding-lg {
   padding-bottom: 50px;
 }

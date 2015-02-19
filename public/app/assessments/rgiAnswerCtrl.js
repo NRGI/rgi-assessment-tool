@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier) {
+'use strict';
+var angular;
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+    $scope.identity = rgiIdentitySrvc;
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
         $scope.answer = data;
@@ -54,13 +57,43 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.answer = angular.copy($scope.answer_start);
     };
 
-    // $scope.answerSave = function () {
+    $scope.answerSave = function () {
+        var new_answer_data = $scope.answer;
 
-    // };
+        if (new_answer_data.status === 'assigned') {
+            new_answer_data.status = 'saved';
+        }
 
-    // $scope.answerSubmit = function () {
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+            rgiNotifier.notify('Answer saved');
+        }, function (reason) {
+            rgiNotifier.notify(reason);
+        });
+    };
 
-    // };
+    $scope.answerSubmit = function () {
+        var new_answer_data, new_assessment_data;
+
+        new_answer_data = $scope.answer;
+        new_assessment_data = $scope.assessment;
+
+        if (new_answer_data.status !== 'submitted') {
+            new_answer_data.status = 'submitted';
+        }
+        new_assessment_data.questions_complete += 1;
+
+        console.log(new_assessment_data);
+        console.log(new_answer_data);
+
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+            .then(function () {
+                $location.path('/assessments/' + new_answer_data.assessment_ID);
+                rgiNotifier.notify('Answer submitted');
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+            });
+    };
 
     $scope.commentSubmit = function (current_user) {
         var new_comment_data = {
@@ -75,7 +108,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         new_answer_data.comments.push(new_comment_data);
 
         if (new_answer_data.status === 'assigned') {
-        	new_answer_data.status = 'saved';
+            new_answer_data.status = 'saved';
         }
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
@@ -84,64 +117,4 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             rgiNotifier.notify(reason);
         });
     };
-// var commentSchema = new mongoose.Schema({
-//     date: {type: Date, default: Date.now},
-//     content: String,
-//     author: ObjectId, // Pull from curretn user _id value
-//     author_name: String,
-//     // ACTUAL CHANGE
-//     role: String
-// });
-    // $scope.documentUpload = function () {
-
-    // };
-
-
-
-    // $scope.userCreate = function () {
-    //     var newUserData = {
-    //       firstName: $scope.fname,
-    //       lastName: $scope.lname,
-    //       username: $scope.username,
-    //       email: $scope.email,
-    //       password: $scope.password,
-    //       // ADD ROLE IN CREATION EVENT
-    //       roles: [$scope.roleSelect],
-    //       address: [$scope.address],
-    //       language: [$scope.language]
-    //     };
-
-    //     rgiUserMethodSrvc.createUser(newUserData).then(function () {
-    //       // rgiMailer.send($scope.email);
-    //       rgiNotifier.notify('User account created!' + $scope.email);
-    //       $location.path('/admin/user-admin');
-    //     }, function (reason) {
-    //       rgiNotifier.error(reason);
-    //     })
-    //   }
-
-
-
 });
-
-
-
-
-
-
-// angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, rgiQuestionSrvc, rgiQuestionTextSrvc) {
-
-//     rgiAssessmentSrvc.get({assessment_ID:$routeParams.assessment_ID},function (assessment_data) {
-//         $scope.assessment = assessment_data;
-//         $scope.assessment.reviewer = rgiUserListSrvc.get({_id:assessment_data.reviewer_ID});
-//         $scope.assessment.researcher = rgiUserListSrvc.get({_id:assessment_data.researcher_ID});
-//         $scope.answers = [];
-//         rgiAnswerSrvc.query({assessment_ID:assessment_data.assessment_ID}, function (answer_data) {
-//             for (var i = 0; i < answer_data.length; i++) {
-//                 answer = answer_data[i];
-//                 answer.question_text = rgiQuestionTextSrvc.get({_id:answer.question_ID});
-//                 $scope.answers.push(answer);
-//             };
-//         });
-//     });
-// })

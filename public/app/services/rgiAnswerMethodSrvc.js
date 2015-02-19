@@ -1,3 +1,5 @@
+'use strict';
+var angular;
 angular.module('app').factory('rgiAnswerMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiAnswerSrvc) {
     return {
         insertAnswerSet: function (new_answer_set) {
@@ -11,15 +13,13 @@ angular.module('app').factory('rgiAnswerMethodSrvc', function ($http, $q, rgiIde
             });
             return dfd.promise;
         },
-
         updateAnswer: function (new_answer_data) {
-            console.log(new_answer_data);
             var dfd = $q.defer();
             new_answer_data.$update().then(function () {
                 dfd.resolve();
-            }), function (response) {
+            }, function (response) {
                 dfd.reject(response.data.reason);
-            };
+            });
             return dfd.promise;
         }
     };

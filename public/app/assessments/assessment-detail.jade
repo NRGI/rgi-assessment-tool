@@ -9,6 +9,9 @@
 					input.form-control(ng-model="searchText", placeholder="Filter")
 				.form-group.margin-left-med
 					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
+			br
+			button.btn.btn-success.pull-right(ng-click="" ng-if="assessment.questions_complete===answers.length") Submit assessment
+			button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length").disabled Submit assessment
 
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
@@ -35,7 +38,8 @@
 			.row(ng-if="assessment.questions_complete!==0")
 				text Number of questions complete: {{assessment.questions_complete}} (
 				text {{((assessment.questions_complete/answers.length)*100 | number :2)}}
-				text %)
+				text % complete)
+
 			
 		table.table.table-hover.table-striped.table-condensed
 			thead
@@ -52,68 +56,9 @@
 					td.col-md-5 {{answer.question_text}})
 					td
 						text {{answer.status | capitalize}}
-					td
-						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}", ng-if="answer.status!='assigned' && answer.status!='started'") View answer
-						a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}", ng-if="answer.status=='assigned' || answer.status=='started'") Jump to question
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					//- td(ng-if="answer.status='assigned'")
-					//- td 
-					//- 	a(href="/assessments/assessment/{{answer.answer_ID}}") {{answer.question_text.question_text}}
-				
-			//- 	a(href="") {{answer.question_text.question_text}}
-
-			//- 	question_order
-			//- 	component
-			//- 	status
-			//- 	question_text
-
-
-
-			//- tbody
-			//- 	tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
-			//- 		//- th {{assessment}}
-			//- 		td(ng-if="assessment.status=='assigned'") {{assessment.country}}
-			//- 		td(ng-if="assessment.status!='assigned'")
-			//- 			a(href="/assessments/assessment/{{assessment.assessment_ID}}") {{assessment.country}}
-			//- 		td
-			//- 			a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
-			//- 		td 
-			//- 			a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
-			//- 		td(ng-if="!assessment.start_date") Not started
-			//- 		td(ng-if="assessment.start_date") {{assessment.start_date | date}}
-			//- 		td(ng-if="!assessment.submit_date") Not submitted
-			//- 		td(ng-if="assessment.submit_date") {{assessment.submit_date | date}}
-			//- 		td(ng-if="!assessment.review_date") Not reviewed
-			//- 		td(ng-if="assessment.review_date") {{assessment.review_date | date}}
-			//- 		td(ng-if="!assessment.approval_date") Not approved
-			//- 		td(ng-if="assessment.approval_date") {{assessment.approval_date | date}}
-			//- 		td(ng-if="!assessment.last_edit") Not started
-			//- 		td(ng-if="assessment.last_edit") {{assessment.last_edit | date}}
-			//- 		td {{assessment.status}}
-			//- 		td(ng-if="assessment.status=='assigned'")
-			//- 			button.btn.btn-success(ng-click="assessmentStart(assessment)") Start assessment
-			//- 		//- 	//- a.btn.center-block.btn-default(href="/assments/assessment/{{assessment.assessment_ID}}001") Start assessment
-			//- 		td.text-center(ng-if="assessment.status!='assigned'") {{assessment.quesions_complete}}
+					td(ng-if="answer.edit_control===identity.currentUser._id")
+						a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status=='saved'") Jump to question
+						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status==='submitted'") View to answer
+					td(ng-if="answer.edit_control!==identity.currentUser._id")
+						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status!=='assigned' && answer.status!=='saved'") View answer
+						a.btn.center-block.btn-success.disabled(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status==='saved'") No data

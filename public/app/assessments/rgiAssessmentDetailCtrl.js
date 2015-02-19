@@ -1,11 +1,12 @@
-angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc) {
-
+angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, rgiIdentitySrvc, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc) {
     // filtering options
     $scope.sortOptions = [
         {value: "question_order", text: "Sort by Question Number"},
         {value: "component_id", text: "Sort by Component"},
         {value: "status", text: "Sort by Status"}];
     $scope.sortOrder = $scope.sortOptions[0].value;
+
+    $scope.identity = rgiIdentitySrvc;
 
     rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment_data) {
         $scope.assessment = assessment_data;
