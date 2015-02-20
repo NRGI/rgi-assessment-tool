@@ -29,8 +29,12 @@
 				text on 
 				span(ng-repeat="mod in assessment.modified")
 					em(ng-show="$last") {{mod.modified_date | date}}
-			.row
-				text Number of questions complete: {{assessment.questions_complete}}
+			.row(ng-if="assessment.questions_complete===0")
+				text(ng) Number of questions complete: {{assessment.questions_complete}} (0%)
+			.row(ng-if="assessment.questions_complete!==0")
+				text Number of questions complete: {{assessment.questions_complete}} (
+				text {{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}}
+				text % complete)
 			
 		table.table.table-hover.table-striped.table-condensed
 			thead
@@ -47,5 +51,5 @@
 					td.col-md-5 {{question.question_text}}
 					td.col-md-1 {{question.status | capitalize}}
 					td
-						a.btn.center-block.btn-default(href="", ng-if="question.status!='assigned'") Go to answer page
+						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{question.answer_ID}}", ng-if="question.status!='assigned'") Go to answer page
 						a.btn.center-block.btn-default.disabled(href="", ng-if="question.status=='assigned'") No data
