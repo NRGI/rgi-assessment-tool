@@ -2,7 +2,8 @@
 	.well
 		legend Questions
 		.pull-left
-			button.btn.btn-success(ng-click="newQuestionDialog()", ng-disabled="true", tooltip="yes") New Question
+			//- a(href="" ng-click="newQuestionDialog()") New Question
+			button.btn.btn-success(ng-click="newQuestionDialog()") New Question
 			| &nbsp;
 			button.btn.btn-default(ng-csv="getArray" filename="question_set.csv") Export as CSV
 		.pull-right

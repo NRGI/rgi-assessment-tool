@@ -1,16 +1,17 @@
 var mongoose = require('mongoose');
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
+var Schemalesss = mongoose.Schema.Types.Mixed;
 
 var modificationSchema = new mongoose.Schema({
-    modifiedBy: ObjectId,
+    modifiedBy: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
     modifiedDate: {type: Date, default: Date.now}
 });
 
 var commentSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     content: String,
-    author: ObjectId, // Pull from curretn user _id value
+    author: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
     author_name: String,
     // ACTUAL CHANGE
     role: String

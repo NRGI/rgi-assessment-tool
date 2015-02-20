@@ -8,6 +8,7 @@ angular.module('app').factory('rgiQuestionMethodSrvc', function ($q, rgiQuestion
         },
         updateQuestion: function (new_question_data) {
             var dfd = $q.defer();
+            console.log(new_question_data);
             new_question_data.$update().then(function () {
                 dfd.resolve();
             }, function (response) {

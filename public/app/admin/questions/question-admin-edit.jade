@@ -4,23 +4,21 @@
 		.row.left-padding-lg
 			.form-horizontal(name="quesiont_content_form")
 				fieldset
-					
+	
 					div(id="question_text_div").bottom-padding-med
 						label Question Text
-						ng-form(name="question_text_form")
-							.form-group.left-padding-lg(required)
-								textarea.form-control(name="question_text" type="textbox" ng-model="question.question_text")
+						//- ng-form(name="question_text_form")
+						.form-group.left-padding-lg(required)
+							textarea.form-control(name="question_text" type="textbox" ng-model="question.question_text")
 
 					div(id="question_details_div")
 						label.col-md-2.control-label(form="order") Question Order
-						ng-form(name="question_order_form")
-							.col-md-1
-								input.form-control(name="order" type="text" ng-model="question.question_order")
+						.col-md-1
+							input.form-group.form-control(name="order" type="number" ng-model="question.question_order")
 
 						label.col-md-2.control-label(form="component") Component
-						ng-form(name="component_pick_form")
-							.col-md-7
-								select.form-control(ng-model="question.component" ng-options="item.value as item.text for item in componentOptions")
+						.col-md-7
+							select.form-group.form-control(ng-model="question.component" ng-options="item.value as item.text for item in componentOptions")
 					br
 					div(id="question_options_div").row.top-padding-lg
 						.col-md-2
@@ -30,31 +28,26 @@
 						b
 							p Option Text
 						.row
-							ng-form(name="question_options_form")
-								.form-group(name="" ng-repeat="choice in question.question_choices")
-									.col-md-1
-									.col-md-1
-										input.form-control(name="choiceOrder" type="text" ng-model="choice.order" required)
-									//- label.col-md-2.control-label(form="choice") {{choice.order}}
-									//- input.form-control(form="choiceOrder") {{choice.order}}
-									.col-md-8
-										textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria" required)
-									.col-md-1
-										//- button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="") Delete
-										button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
-							ng-form(name="control_buttons")
-								.form-group.top-padding-med
-									.col-md-8.col-md-offset-2
-										.pull-left
-											button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
-										.pull-right
-											button.btn.btn-primary(ng-click="questionUpdate()" ng-disabled="profileForm.$invalid") Save question
-											| &nbsp;
-											button.btn.btn-danger(ng-click="questionDelete()") Delete question
-											| &nbsp;
-											button.btn.btn-default.disabled Reset question
-											| &nbsp;
-											a.btn.btn-default(href="/admin/question-admin-view/{{question._id}}") Cancel
+							.form-group(name="question_options_form" ng-repeat="choice in question.question_choices")
+								.col-md-1
+								.col-md-1
+									input.form-control(name="choiceOrder" type="number" ng-model="choice.order" required)
+								.col-md-8
+									textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria" required)
+								.col-md-1
+									button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
+							.form-group(name="control_buttons").top-padding-med
+								.col-md-8.col-md-offset-2
+									.pull-left
+										button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
+									.pull-right
+										button.btn.btn-primary(ng-click="questionUpdate()" ng-disabled="profileForm.$invalid") Save question
+										| &nbsp;
+										button.btn.btn-danger(ng-click="questionDelete()") Delete question
+										| &nbsp;
+										button.btn.btn-default(ng-click="questionClear()") Reset question
+										| &nbsp;
+										a.btn.btn-default(href="/admin/question-admin-view/{{question._id}}") Cancel
 					br
 					div(id="comments_div")
 						legend NRGI Comments:
@@ -90,11 +83,10 @@
 
 						br
 						div(id="new_comment_div").bottom-padding-med
-							ng-form(name="new_comment_form")
-								.form-group.top-padding-med
-									.row.left-padding-lg
-										label.col-md-1 New comment
-										.col-md-8
-											textarea.form-control(name="comment" type="text" ng-model="question.new_comment" required)
-										.col-md-1
-											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
+							.form-group(name="new_comment_form").top-padding-med
+								.row.left-padding-lg
+									label.col-md-1 New comment
+									.col-md-8
+										textarea.form-control(name="comment" type="text" ng-model="question.new_comment" required)
+									.col-md-1
+										button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment

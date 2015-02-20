@@ -11,7 +11,6 @@ var user	= process.env.USER_ID;
 var pass	= process.env.USER_KEY;
 
 
-
 require('./server/config/express')(app, config);
 
 require('./server/config/mongoose')(config, user, pass);

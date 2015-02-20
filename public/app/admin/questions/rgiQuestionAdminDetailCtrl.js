@@ -1,7 +1,10 @@
 'use strict';
 var angular;
 angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
-
+    rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
+        $scope.question = data;
+        $scope.question_start = angular.copy($scope.question);
+    });
     $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
     $scope.current_user = rgiIdentitySrvc.currentUser;
 
@@ -26,8 +29,13 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
         }
     };
 
+    $scope.questionClear = function () {
+        $scope.question = angular.copy($scope.question_start);
+    };
+
     $scope.questionUpdate = function () {
         var new_question_data = $scope.question;
+
         rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
             $location.path('/admin/question-admin');
             rgiNotifier.notify('Question data has been updated');
@@ -37,9 +45,9 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     };
 
     $scope.questionDelete = function () {
-        var questionDeletion = $scope.question._id;
+        var question_deletion = $scope.question._id;
 
-        rgiQuestionMethodSrvc.deleteQuestion(questionDeletion).then(function () {
+        rgiQuestionMethodSrvc.deleteQuestion(question_deletion).then(function () {
             $location.path('/admin/question-admin');
             rgiNotifier.notify('Question has been deleted');
         }, function (reason) {
@@ -58,10 +66,10 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
             date: new Date().toISOString()
         };
         new_question_data = $scope.question;
+        delete new_question_data['new_comment']
 
         new_question_data.comments.push(new_comment_data);
         console.log(new_question_data);
-        console.log(new_comment_data);
 
         rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
             rgiNotifier.notify('Comment added');

@@ -1,0 +1,57 @@
+div.top-padding-med
+	.well
+		legend Form for new question creation
+		.row.left-padding-lg
+			.form-horizontal
+				fieldset
+					.row
+						label.col-md-6 Question Order
+						.form-group(required).col-md-5
+							input.form-group.form-control.right-padding-med(name="order" type="number" ng-model="question_order")
+					.row
+						label.col-md-6 Question Text
+					.row
+						.form-group(required).col-md-12
+							textarea.form-control(name="question_text" type="textbox" ng-model="question_text")
+					.row
+						text(ng-if="question_order!==undefined && question_text!==undefined") Question {{question_order}}. {{question_text}}
+					.row
+						.col-md-2
+							b
+								p.text-right Option Value
+						.col-md-2
+						b
+							p.text-left Option Text
+
+
+					.row
+						.form-group(ng-repeat="choice in question_choices")
+							.col-md-3
+								input.form-control(name="choiceOrder" type="number" ng-model="choice.order")
+							.col-md-8
+								textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria")
+
+					//- div(id="question_options_div").row.top-padding-lg
+					//- 	.col-md-2
+					//- 		b
+					//- 			p.text-right Option Value
+					//- 	.col-md-10
+					//- 	b
+					//- 		p Option Text
+					//- 	.row
+					//- 		.form-group(name="question_options_form" ng-repeat="choice in question.question_choices")
+					//- 			.col-md-1
+					//- 			.col-md-1
+					//- 				input.form-control(name="choiceOrder" type="number" ng-model="choice.order" required)
+					//- 			.col-md-8
+					//- 				textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria" required)
+					//- 			.col-md-1
+					//- 				button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
+
+					.row.top-padding-lg
+						button.btn.btn-success.disabled(ng-click="questionCreate()") Create new Question
+						| &nbsp;
+						button.btn.btn-danger(ng-click="closeDialog()") Cancel
+						| &nbsp;
+						button.btn.btn-warning(ng-click="questionOptionAdd()") Add option
+

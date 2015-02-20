@@ -9,6 +9,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_start = angular.copy($scope.answer);
+        $scope.answer_start = angular.copy($scope.answer);
         // $scope.$watch('files', function () {
         //     $scope.upload($scope.files);
         // });
@@ -51,9 +52,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     // });
 
     $scope.answerClear = function () {
-        $scope.answer_choice_form.$setPristine(true);
-        $scope.new_comment_form.$setPristine(true);
-
         $scope.answer = angular.copy($scope.answer_start);
     };
 
