@@ -1,6 +1,5 @@
 var User = require('mongoose').model('User'),
-    encrypt = require('../utilities/encryption'),
-    nodeMail = require('../utilities/nodeMailer');
+    encrypt = require('../utilities/encryption');
     // nodeMail = require('../utilities/nodeMailer'),
     // nodeMailer = require('nodeMailer');
 
