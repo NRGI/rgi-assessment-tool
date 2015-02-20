@@ -17,6 +17,5 @@ ENV USER_ID='cperry'
 ENV USER_KEY='50Crat3s'
 
 EXPOSE  3030
-EXPOSE  80
 
 CMD ["node", "/rgi-assessment-tool/server.js"]
