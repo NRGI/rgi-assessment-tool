@@ -1,7 +1,8 @@
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption'),
-    nodeMail = require('../utilities/nodeMailer'),
-    nodeMailer = require('nodeMailer');
+    nodeMail = require('../utilities/nodeMailer');
+    // nodeMail = require('../utilities/nodeMailer'),
+    // nodeMailer = require('nodeMailer');
 
 exports.getUsers = function (req, res) {
     var query;
