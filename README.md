@@ -1,12 +1,35 @@
-rgi-assessment-tool
+RGI Assessment Tool
 ===================
+#####Summary
+***
+This tool is a custom webapp build on Node.js, Express and Angular. It is connected on the back-end to to a MongoDB instance.
 
-MEAN build of RGI 2015 assessment tool
+The tool allows researchers to complete RGI assessments, reviewers to review assessments and administrators to validate and authorize assessments.
 
 
-TODO
--country of residence no address
--validation is for admin - make its own page
--submit always goes to admin
--email passwords and submit
--file uplaoad
+#####Installation
+***
+***Method 1:*** Open terminal and run the following commands:
+
+		git clone 
+		cd 
+
+
+***Method 2:***  Install docker. From commande line run:
+	
+		docker pull
+		docker run
+
+#####TODO
+***
+-	country of residence no address
+-	validation is for admin - make its own page
+-	submit always goes to admin
+-	email passwords and submit
+-	file uplaoad
+ 
+
+
+
+ var MONGOHQ_URL="mongodb://user:pass@server.compose.io:port_name/db_name"
+ mongodb://<user>:<password>@c582.candidate.32.mongolayer.com:10582,c726.candidate.19.mongolayer.com:10726/rgi2015_dev?replicaSet=set-54c2868c4ae1de388800b2a3
