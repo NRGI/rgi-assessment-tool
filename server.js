@@ -10,6 +10,9 @@ var user	= process.env.USER_ID;
 
 var pass	= process.env.USER_KEY;
 
+console.log(user);
+console.log(pass);
+
 
 require('./server/config/express')(app, config);
 
