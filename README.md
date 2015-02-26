@@ -1,6 +1,5 @@
 RGI Assessment Tool
 ===================
-updated
 #####Summary
 ***
 This tool is a custom webapp build on Node.js, Express and Angular. It is connected on the back-end to to a MongoDB instance.
