@@ -30,8 +30,3 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 -	email passwords and submit
 -	file uplaoad
  
-
-
-
- var MONGOHQ_URL="mongodb://user:pass@server.compose.io:port_name/db_name"
- mongodb://<user>:<password>@c582.candidate.32.mongolayer.com:10582,c726.candidate.19.mongolayer.com:10726/rgi2015_dev?replicaSet=set-54c2868c4ae1de388800b2a3
