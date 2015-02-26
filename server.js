@@ -6,9 +6,9 @@ var app 	= express();
 
 var config 	= require('./server/config/config')[env];
 
-var user	= process.env.USER;
+var user	= process.env.USER_ID;
 
-var pass	= process.env.PWD;
+var pass	= process.env.USER_KEY;
 
 
 require('./server/config/express')(app, config);
