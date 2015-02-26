@@ -17,8 +17,8 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 
 ***Method 2:***  Install docker. From commande line run:
 	
-		docker pull
-		docker run
+		docker pull byndcivilization/rgi-assessment-tool
+		docker run byndcivilization/rgi-assessment-tool -e "USER_ID=<db user name>"" -e "USER_KEY=<db pass>""
 
 #####TODO
 ***
