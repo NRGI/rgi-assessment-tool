@@ -13,9 +13,6 @@ RUN		git clone https://github.com/NRGI/rgi-assessment-tool /rgi-assessment-tool
 RUN		cd /rgi-assessment-tool && npm install
 RUN		cd /rgi-assessment-tool && bower install --allow-root
 
-RUN		echo $USER_ID
-RUN		echo $USER_KEY
-
 EXPOSE  3030
 
 CMD		["node", "/rgi-assessment-tool/server.js"]
