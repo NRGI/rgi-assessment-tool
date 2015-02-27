@@ -33,6 +33,8 @@
 		.row.left-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset
+					text {{test_cite}}
+					//- answer choice elector
 					div(id="answer_choice_div").bottom-padding-med
 						legend Choose one of the following answers:
 						ng-form(name="answer_choice_form")
@@ -54,6 +56,7 @@
 					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.roles[0] + '_score']" disabled)
 					//- 			text.left-padding-med {{choice.criteria}}
 					
+					//- Comments section
 					div(id="comments_div").bottom-padding-med
 						legend General comments:
 

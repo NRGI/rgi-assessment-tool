@@ -1,6 +1,14 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $upload, $routeParams, $resource, mendeleyAPISrvc, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location, $http) {
+
+    
+
+    // var test_cite = $resource('https://api.mendeley.com/catalog?doi=:id', {id: '@id'});
+    // $scope.test_cite = rgiAssessmentSrvc.get({id: '10.1103/PhysRevA.20.1521'});
+
+    $scope.test_cite = mendeleyAPISrvc.pull({id: '10.1103/PhysRevA.20.1521'});
+
     $scope.identity = rgiIdentitySrvc;
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
@@ -10,6 +18,23 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_start = angular.copy($scope.answer);
         $scope.answer_start = angular.copy($scope.answer);
+        // $scope.
+
+        // $upload.upload({
+        //     url: $'https://rgi-upload-test.s3-website-us-east-1.amazonaws.com', //S3 upload url including bucket name
+        //     method: 'POST',
+        //     fields : {
+        //         key: file.name, // the key to store the file on S3, could be file name or customized
+        //         AWSAccessKeyId: AKIAJWJBD5O7C322TNRA,
+        //         acl: 'private', // sets the access to the uploaded file in the bucket: private or public 
+
+        //         policy: $scope.policy, // base64-encoded json policy (see article below)
+        //         signature: $scope.signature, // base64-encoded signature based on policy string (see article below)
+        //         "Content-Type": file.type != '' ? file.type : 'application/octet-stream', // content type of the file (NotEmpty)
+        //         filename: file.name // this is needed for Flash polyfill IE8-9
+        //     },
+        //     file: file,
+        // });
         // $scope.$watch('files', function () {
         //     $scope.upload($scope.files);
         // });
