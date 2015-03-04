@@ -98,6 +98,62 @@
 						
 					div(id="bibliography").bottom-padding-med
 						legend Bibliograpical citations:
+
+						div.fileUpload.btn.btn-default
+							span Select File
+							input.upload(type="file" nv-file-select uploader="uploader")
+						div(ng-if="uploader.queue.length>0")
+							h3 Upload queue
+							p Queue length: {{ uploader.queue.length }}
+							table.table
+								thead
+									tr
+										th(width="50%") Name
+										th(ng-show="uploader.isHTML5") Size
+										th(ng-show="uploader.isHTML5") Progress
+										th Status
+										th Actions
+
+								tbody
+									tr(ng-repeat="item in uploader.queue")
+										td
+											strong {{ item.file.name }}
+										td(ng-show="uploader.isHTML5" nowrap) {{ item.file.size/1024/1024|number:2 }} MB
+										td(ng-show="uploader.isHTML5")
+											div.progress(style="margin-bottom: 0;")
+												div.progress-bar(role="progressbar" ng-style="{ 'width': item.progress + '%' }")
+										td.text-center
+											span(ng-show="item.isSuccess")
+												i.glyphicon.glyphicon-ok
+											span(ng-show="item.isCancel")
+												i.glyphicon.glyphicon-ban-circle
+											span(ng-show="item.isError")
+												i.glyphicon.glyphicon-remove
+										td(nowrap)
+											button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
+												span.glyphicon.glyphicon-upload Upload
+											| &nbsp;
+											button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+												span.glyphicon.glyphicon-ban-circle Cancel
+											| &nbsp;
+											button.btn.btn-danger.btn-xs(ng-click="item.remove()")
+												span.glyphicon.glyphicon-trash Remove
+							div
+								div
+									text Queue progress:
+									div.progress(style="")
+										div.progress-bar(role="progressbar" ng-style="{ 'width': uploader.progress + '%' }")
+								button.btn.btn-success.btn-s(type="button" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length")
+									span.glyphicon.glyphicon-upload Upload all
+								| &nbsp;
+								button.btn.btn-warning.btn-s(type="button" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading")
+									span.glyphicon.glyphicon-ban-circle Cancel all
+								| &nbsp;
+								button.btn.btn-danger.btn-s(type="button" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length")
+									span.glyphicon.glyphicon-trash Remove all
+
+	
+
 						div(id="prev_bib")
 							.row.left-padding-lg(ng-repeat="citation in answer.citations")
 								.row
@@ -123,8 +179,10 @@
 											text {{citation.note.author_name}}
 											em {{citation.note.date | date}}
 
-						div(id="new_bib").bottom-padding-med
-							ng-form(name="new_citation_form")
+						
+
+
+							//- ng-form(name="new_citation_form")
 								.row.left-padding-med
 									.col-md-9
 										b New document:

@@ -1,7 +1,14 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, FileUploader, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
+    // $scope.uploader = new FileUploader();
+
+    var uploader = $scope.uploader = new FileUploader({
+        uploadItem: function (file) {
+            console.log(file);
+        }
+    });
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
         $scope.answer = data;
@@ -10,46 +17,8 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_start = angular.copy($scope.answer);
         $scope.answer_start = angular.copy($scope.answer);
-        // $scope.$watch('files', function () {
-        //     $scope.upload($scope.files);
-        // });
-        // // $scope.upload = function (files) {
-        //     if (files && files.length) {
-        //         var i = 0;
-        //         for (i; i < files.length; i++) {
-        //             var file = files[i];
-        //             $upload.upload({
-        //                 url: $'https://s3.amazonaws.com/rgi-upload-test/',
-        //                 method: 'POST',
-        //                 key: file.name,
-        //                 AWSAccessKeyId:
 
-
-        //                 url: 'upload/url',
-        //                 fields: {'username': $scope.username},
-        //                 file: file
-        //             }).progress(function (evt) {
-        //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-        //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-        //             }).success(function (data, status, headers, config) {
-        //                 console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-        //             });
-        //         }
-        //     }
-        // };
-        // $scope.uploader = new rgiFileUploader();
-        // console.log($scope.uploader);
     });
-
-    // var uploader = $scope.uploader = new FileUploader({
-    //         url: 'upload'
-    //     });
-    // uploader.filters.push({
-    //     name: 'customFilter',
-    //     fn: function (item /*{File|FileLikeObject}*/, options) {
-    //         return this.queue.length < 10;
-    //     }
-    // });
 
     $scope.answerClear = function () {
         $scope.answer = angular.copy($scope.answer_start);

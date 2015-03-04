@@ -1,7 +1,7 @@
 'use strict';
 var angular;
 // angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
@@ -94,6 +94,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
 
     // Assessment overview routes
+        .when('/upload', {
+            templateUrl: '',
+            controller: 'upload.js'
+        })
         .when('/assessments', {
             templateUrl: '/partials/assessments/assessments-list',
             controller:  'rgiAssessmentsListCtrl',
