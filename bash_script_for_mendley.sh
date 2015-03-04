@@ -5,7 +5,7 @@ SZg8ypweGCmmpm12
 upload file
 
 // authorize
-token=$(curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -u 1541:1XwT9yezLHvHGr8r -d "grant_type=client_credentials&scope=all" https://api.mendeley.com/oauth/token | python -c 'import json,sys;obj=json.load(sys.stdin);print obj["access_token"]')
+token=$(curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -u 1550:LVGVkcbkqiZLFg3B -d "grant_type=client_credentials&scope=all" https://api.mendeley.com/oauth/token | python -c 'import json,sys;obj=json.load(sys.stdin);print obj["access_token"]')
 
 // get file hash    
 filename=bolivia-OCR.pdf

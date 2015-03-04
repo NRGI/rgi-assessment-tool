@@ -6,6 +6,25 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
         //authentication
         authenticateUser: function (username, password) {
             var dfd = $q.defer();
+            // var req = {
+            //     method: 'POST',
+            //     url: 'https://api.mendeley.com/oauth/token',
+            //     headers: {
+            //         'Content-Type': 'application/x-www-form-urlencoded',
+            //         'Allow-Control-Allow-Origin': '*'
+            //     },
+            //     data: {
+            //         grant_type: 'client_credentials',
+            //         scope: 'all',
+            //         client_id: '1550:VQbBkpTHww0mL5ue'
+            //     }
+            // };
+            // $http(req).success(function (res, err) {
+            //     console.log(res);
+            // })
+            //     .error(function (err) {
+            //         console.log(err);
+            //     });
             $http.post('/login', {username: username, password: password}).then(function (response) {
                 if (response.data.success) {
                     var user = new rgiUserSrvc();
@@ -16,6 +35,10 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
                     dfd.resolve(false);
                 }
             });
+
+            // $http.post('https://api.mendeley.com/oauth/token', )
+            // token=$(-u 1550:LVGVkcbkqiZLFg3B -d "grant_type=client_credentials&scope=all" https://api.mendeley.com/oauth/token | python -c 'import json,sys;obj=json.load(sys.stdin);print obj["access_token"]')
+
             return dfd.promise;
         },
         //logout
