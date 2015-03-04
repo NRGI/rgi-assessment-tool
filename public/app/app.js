@@ -94,10 +94,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
 
     // Assessment overview routes
-        .when('/upload', {
-            templateUrl: '',
-            controller: 'upload.js'
-        })
         .when('/assessments', {
             templateUrl: '/partials/assessments/assessments-list',
             controller:  'rgiAssessmentsListCtrl',
