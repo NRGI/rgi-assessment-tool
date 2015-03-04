@@ -14,6 +14,11 @@ exports.authenticate = function (req, res, next) {
     auth(req, res, next);
 };
 
+exports.mendeleyAuth = function (req, res, next) {
+    var mendAuth = passport.authenticate('oauth2');
+    console.log(mendAuth);
+};
+
 exports.requiresApiLogin = function (req, res, next) {
     if (!req.isAuthenticated()) {
         res.status(403);

@@ -20,7 +20,13 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             }}
         };
 
-    $locationProvider.html5Mode(true);
+    // var mendeleyAuth = {
+    //     authorized : {auth: function () {
+
+    //     }}
+    // };
+
+    $locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider
         .when('/', {
             templateUrl: '/partials/main/main',
@@ -31,6 +37,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/account/profile',
             controller:  'rgiProfileCtrl',
             resolve: routeRoleChecks.user
+        })
+
+        .when('/example', {
+            controller: 'example'
         })
 
     ///// Admin Routes

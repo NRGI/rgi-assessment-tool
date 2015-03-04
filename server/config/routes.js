@@ -1,10 +1,12 @@
 'use strict';
-var auth = require('./auth'),
-    bodyParser = require('body-parser'),
-    users = require('../controllers/users'),
-    answers = require('../controllers/answers'),
-    questions = require('../controllers/questions'),
-    assessments = require('../controllers/assessments');
+var auth        = require('./auth'),
+    bodyParser  = require('body-parser'),
+    users       = require('../controllers/users'),
+    answers     = require('../controllers/answers'),
+    questions   = require('../controllers/questions'),
+    assessments = require('../controllers/assessments'),
+    mendeley    = require('../utilities/mendeley');
+    // passport    = require('passport');
     // mongoose     = require('mongoose');
     // User         = mongoose.model('User');
 
@@ -71,6 +73,11 @@ module.exports = function (app) {
     ////////////////////
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]);
+    });
+
+    app.post('/mendeleyAuth', function (req, res) {
+        console.log(req);
+        res.send('success');
     });
 
     app.post('/login', auth.authenticate);

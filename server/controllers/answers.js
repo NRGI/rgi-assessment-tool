@@ -1,10 +1,13 @@
-'use strict';
-var Answer = require('mongoose').model('Answer'),
-    Question = require('mongoose').model('Question'),
-    Assessment = require('mongoose').model('Assessment'),
-    upload = require('../utilities/s3');
+var Answer      = require('mongoose').model('Answer'),
+    Question    = require('mongoose').model('Question'),
+    Assessment  = require('mongoose').model('Assessment'),
+    // oauth       = require('simple-oauth2'),
+    // upload      = require('../utilities/s3'),
+    upload      = require('../utilities/s3');
+    // mendeley    = require('../utilities/mendeley');
 
 exports.getAnswers = function (req, res, next) {
+    console.log(req.session.secret);
 
     if (req.user.hasRole('supervisor')) {
         Answer.find(req.query, function (err, answers) {
@@ -52,16 +55,50 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersByID = function (req, res, next) {
+    var sess = req.session;
 
-    Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
-        if (err) { return next(err); }
-        if (!answer) { return next(new Error('No answer found')); }
-        if (String(req.user._id) !== String(answer.researcher_ID) && String(req.user._id) !== String(answer.reviewer_ID) && !req.user.hasRole('supervisor')) {
-            res.sendStatus(404);
-            return res.end();
+    if (!sess.token) {
+        sess.token=null;
+        var mendeley_id = 1550;
+        var mendeley_key = 'LVGVkcbkqiZLFg3B';
+        var token;
+        var credentials = {
+            clientId: mendeley_id,
+            clientID: mendeley_id,
+            clientSecret: mendeley_key,
+            site: 'https://api.mendeley.com'
+        };
+
+        // Initialize the OAuth2 Library 
+        var oauth2 = require('simple-oauth2')(credentials);
+
+        oauth2.client.getToken({scope: 'all'}, saveToken);
+
+        // Save the access token 
+        function saveToken(error, result) {
+            if (error) { console.log('Access Token Error', error.message); }
+            // result.expires_in = 2592000; // 30 days in seconds
+            token = oauth2.accessToken.create(result);
+            // Check if the token is expired. If expired it is refreshed.
+            if (token.expired()) {
+                token.refresh(function(error, result) {
+                    token = result;
+                });
+            }
+            sess.token = token;
+
+             Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
+                if (err) { return next(err); }
+                if (!answer) { return next(new Error('No answer found')); }
+                if (String(req.user._id) !== String(answer.researcher_ID) && String(req.user._id) !== String(answer.reviewer_ID) && !req.user.hasRole('supervisor')) {
+                    res.sendStatus(404);
+                    return res.end();
+                }
+                res.send(answer);
+            });
         }
-        res.send(answer);
-    });
+    }
+
 };
 
 exports.createAnswers = function (req, res, next) {

@@ -1,16 +1,8 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $upload, $routeParams, $resource, mendeleyAPISrvc, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location, $http) {
-
-    
-
-    // var test_cite = $resource('https://api.mendeley.com/catalog?doi=:id', {id: '@id'});
-    // $scope.test_cite = rgiAssessmentSrvc.get({id: '10.1103/PhysRevA.20.1521'});
-
-    $scope.test_cite = mendeleyAPISrvc.pull({id: '10.1103/PhysRevA.20.1521'});
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location, $http) {
 
     $scope.identity = rgiIdentitySrvc;
-    // var assessment_ID = $routeParams.answer_ID.substring(0,2);
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
         $scope.answer = data;
         $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
@@ -18,63 +10,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $upload, $ro
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_start = angular.copy($scope.answer);
         $scope.answer_start = angular.copy($scope.answer);
-        // $scope.
-
-        // $upload.upload({
-        //     url: $'https://rgi-upload-test.s3-website-us-east-1.amazonaws.com', //S3 upload url including bucket name
-        //     method: 'POST',
-        //     fields : {
-        //         key: file.name, // the key to store the file on S3, could be file name or customized
-        //         AWSAccessKeyId: AKIAJWJBD5O7C322TNRA,
-        //         acl: 'private', // sets the access to the uploaded file in the bucket: private or public 
-
-        //         policy: $scope.policy, // base64-encoded json policy (see article below)
-        //         signature: $scope.signature, // base64-encoded signature based on policy string (see article below)
-        //         "Content-Type": file.type != '' ? file.type : 'application/octet-stream', // content type of the file (NotEmpty)
-        //         filename: file.name // this is needed for Flash polyfill IE8-9
-        //     },
-        //     file: file,
-        // });
-        // $scope.$watch('files', function () {
-        //     $scope.upload($scope.files);
-        // });
-        // // $scope.upload = function (files) {
-        //     if (files && files.length) {
-        //         var i = 0;
-        //         for (i; i < files.length; i++) {
-        //             var file = files[i];
-        //             $upload.upload({
-        //                 url: $'https://s3.amazonaws.com/rgi-upload-test/',
-        //                 method: 'POST',
-        //                 key: file.name,
-        //                 AWSAccessKeyId:
-
-
-        //                 url: 'upload/url',
-        //                 fields: {'username': $scope.username},
-        //                 file: file
-        //             }).progress(function (evt) {
-        //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-        //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-        //             }).success(function (data, status, headers, config) {
-        //                 console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-        //             });
-        //         }
-        //     }
-        // };
-        // $scope.uploader = new rgiFileUploader();
-        // console.log($scope.uploader);
     });
-
-    // var uploader = $scope.uploader = new FileUploader({
-    //         url: 'upload'
-    //     });
-    // uploader.filters.push({
-    //     name: 'customFilter',
-    //     fn: function (item /*{File|FileLikeObject}*/, options) {
-    //         return this.queue.length < 10;
-    //     }
-    // });
 
     $scope.answerClear = function () {
         $scope.answer = angular.copy($scope.answer_start);
