@@ -19,7 +19,8 @@
     "ngDialog": "~0.3.7",
     "ng-form-group": "~1.2.11",
     "ng-csv": "~0.3.1",
-    "angular-file-upload": "~1.1.5"
+    "angular-file-upload": "~1.1.5",
+    "mendeley-javascript-sdk": "~0.8.0"
   },
   "moduleType": [
     "node"

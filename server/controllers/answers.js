@@ -1,8 +1,9 @@
 'use strict';
 var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
-    Assessment = require('mongoose').model('Assessment'),
-    upload = require('../utilities/s3');
+    Assessment = require('mongoose').model('Assessment');
+    // upload = require('../utilities/s3'),
+    // token = require('../utilities/mendeley');
 
 exports.getAnswers = function (req, res, next) {
 
@@ -52,6 +53,7 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersByID = function (req, res, next) {
+    console.log(req.cookies);
 
     Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
         if (err) { return next(err); }
@@ -67,7 +69,6 @@ exports.getAnswersByID = function (req, res, next) {
 exports.createAnswers = function (req, res, next) {
     var new_answers, i, j;
     new_answers = req.body;
-
 
     Question.find({}).exec(function (err, questions) {
         for (i = questions.length - 1; i >= 0; i -= 1) {
@@ -125,6 +126,7 @@ exports.updateAnswer = function (req, res) {
     });
     res.send();
 };
+
 
 
 

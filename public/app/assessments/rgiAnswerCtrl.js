@@ -5,8 +5,49 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     // $scope.uploader = new FileUploader();
 
     var uploader = $scope.uploader = new FileUploader({
+        isHTML5: true,
+        withCredentials: true,
         uploadItem: function (file) {
-            console.log(file);
+            console.log(file._file);
+    //         var token_req = {
+    //             method: 'POST',
+    //             url: 'https://api.mendeley.com/oauth/token?grant_type=client_credentials&scope=all&client_id=1560:chBcJvsqMHLoD8mF',
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //                 'Access-Control-Allow-Origin': '*'
+    //             }
+    //             // data: {
+    //             //     grant_type: 'client_credentials',
+    //             //     scope: 'all',
+    //             //     client_id: '1560:chBcJvsqMHLoD8mF'
+    //             // }
+    //         };
+    // //         {method: 'GET', url: 'www.google.com/someapi', headers: {
+    // // 'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}
+    //         $http(token_req)
+    //             .success(function (data, status, headers, config) {
+    //                 console.log('success');
+    //                 console.log(data);
+    //                 console.log(status);
+    //                 console.log(headers);
+    //                 console.log(config);
+    //             }).
+    //             error(function (data, status, headers, config) {
+    //                 console.log('failure');
+    //                 console.log(data);
+    //                 console.log(status);
+    //                 console.log(headers);
+    //                 console.log(config);
+                // });
+
+            // var spawn = require('child_process').spawn;
+            // var child = spawn('openssl', ['dgst', '-sha1', file.]);
+            // filehash=`openssl dgst -sha1 $filename | sed 's/^.*= //'`
+
+            // child.stdout.on('data', function(chunk) {
+              // output here
+            // });
+            // console.log(file.FileItem);
         }
     });
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);

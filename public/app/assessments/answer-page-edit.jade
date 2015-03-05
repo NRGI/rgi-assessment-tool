@@ -138,19 +138,19 @@
 											| &nbsp;
 											button.btn.btn-danger.btn-xs(ng-click="item.remove()")
 												span.glyphicon.glyphicon-trash Remove
-							div
-								div
-									text Queue progress:
-									div.progress(style="")
-										div.progress-bar(role="progressbar" ng-style="{ 'width': uploader.progress + '%' }")
-								button.btn.btn-success.btn-s(type="button" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length")
-									span.glyphicon.glyphicon-upload Upload all
-								| &nbsp;
-								button.btn.btn-warning.btn-s(type="button" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading")
-									span.glyphicon.glyphicon-ban-circle Cancel all
-								| &nbsp;
-								button.btn.btn-danger.btn-s(type="button" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length")
-									span.glyphicon.glyphicon-trash Remove all
+							//- div
+							//- 	div
+							//- 		text Queue progress:
+							//- 		div.progress(style="")
+							//- 			div.progress-bar(role="progressbar" ng-style="{ 'width': uploader.progress + '%' }")
+							//- 	button.btn.btn-success.btn-s(type="button" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length")
+							//- 		span.glyphicon.glyphicon-upload Upload all
+							//- 	| &nbsp;
+							//- 	button.btn.btn-warning.btn-s(type="button" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading")
+							//- 		span.glyphicon.glyphicon-ban-circle Cancel all
+							//- 	| &nbsp;
+							//- 	button.btn.btn-danger.btn-s(type="button" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length")
+							//- 		span.glyphicon.glyphicon-trash Remove all
 
 	
 

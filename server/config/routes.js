@@ -1,13 +1,70 @@
-var auth = require('./auth'),
-    bodyParser = require('body-parser'),
-    users = require('../controllers/users'),
-    answers = require('../controllers/answers'),
-    questions = require('../controllers/questions'),
-    assessments = require('../controllers/assessments');
+var auth           = require('./auth'),
+    bodyParser     = require('body-parser'),
+    users          = require('../controllers/users'),
+    answers        = require('../controllers/answers'),
+    questions      = require('../controllers/questions'),
+    assessments    = require('../controllers/assessments'),
+    mendeleyConfig = require('./oauth-config'),
+    cookieParser   = require('cookie-parser');
     // mongoose     = require('mongoose');
     // User         = mongoose.model('User');
 
 module.exports = function (app) {
+
+    /////////////////////////
+    //// MENDELEY AUTH //////
+    /////////////////////////
+    var url = 'http://localhost';
+    var accessTokenCookieName = 'accessToken';
+    var refreshTokenCookieName = 'refreshToken';
+    var oauthPath = '/oauth/token';
+    var home = '/';
+    var tokenExchangePath = '/oauth/token-exchange';
+    app.use(cookieParser());
+
+    function setCookies(res, token) {
+        console.log(token);
+        res.cookie(accessTokenCookieName, token.access_token, { maxAge: token.expires_in * 1000 });
+        res.cookie(refreshTokenCookieName, token.refresh_token, { httpOnly: true });
+    }
+
+    app.get('/mendeleyAuth', function (req, res) {
+        if (!req.cookies[accessTokenCookieName]) {
+            console.log('No cookie defined, redirecting to', tokenExchangePath);
+            res.redirect(tokenExchangePath);
+        } else {
+            console.log('Access token set, redirecting to', home);
+            app.set('mendeley', 'got');
+            res.redirect('/');
+        }
+    });
+
+    app.get(tokenExchangePath, function (req, res, next) {
+        console.log('Starting token exchange');
+
+        var oauth2  = require('simple-oauth2');
+        var token;
+
+        var credentials = {
+            clientID: 1560,
+            clientSecret: 'chBcJvsqMHLoD8mF',
+            site: 'https://api.mendeley.com'
+        };
+
+        // Initialize the OAuth2 Library
+        var oauth = oauth2(credentials);
+
+        oauth.client.getToken({}, function (error, result) {
+            if (error) {
+                console.log('Access Token Error', error.message);
+            } else {
+                token = oauth.accessToken.create(result);
+                setCookies(res, token.token);
+                console.log(res.cookie);
+                res.redirect(home);
+            }
+        });
+    });
 
     /////////////////////////
     ///// USERS CRUD ////////
