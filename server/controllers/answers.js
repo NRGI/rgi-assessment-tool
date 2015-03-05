@@ -53,7 +53,6 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersByID = function (req, res, next) {
-    console.log(req.cookies);
 
     Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
         if (err) { return next(err); }

@@ -1,3 +1,6 @@
+'use strict';
+var angular;
+
 angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $http, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc) {
     // assign the identity resource with the current identity using identity service
     $scope.identity = rgiIdentitySrvc;

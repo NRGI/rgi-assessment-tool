@@ -9,15 +9,6 @@ var express         = require('express'),
     mendeleyConfig  = require('./oauth-config');
 
 module.exports = function (app, config) {
-//////////////////////////////////////////// 
-    var url = 'http://localhost';
-
-    if (mendeleyConfig.responseType === 'code') {
-        mendeleyConfig.redirectUri = url + ':' + config.port;
-        require('./oauth-app')(app, mendeleyConfig);
-    }
-
-//////////////////////////////////////////// 
     // function for use by stylus middleware
     function compile(str, path) {
         return stylus(str).set('filename', path);

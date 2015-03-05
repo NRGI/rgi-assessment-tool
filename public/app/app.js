@@ -27,8 +27,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiMainCtrl'
         })
         .when('/404', {
-            templateURL: '/partials/404',
-            constant: '404Ctrl'
+            templateUrl: '/partials/main/404',
+            controller: 'rgi404Ctrl'
         })
     // User Account Routes
         .when('/profile', {
@@ -119,11 +119,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/assessments/answer-page-edit',
             controller:  'rgiAnswerCtrl'
         })
-
-        // .when('/404', {
-        //     templateUrl: '/partials/answer-page',
-        //     constant: 'rgiAnswerCtrl'
-        // })
         .when('/answer-page-bolivia', {
             templateUrl: '/partials/bolivia-answer-page',
             constant: 'rgiBoliviaAnswerCtrl'

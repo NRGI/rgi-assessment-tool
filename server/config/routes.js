@@ -23,23 +23,23 @@ module.exports = function (app) {
     app.use(cookieParser());
 
     function setCookies(res, token) {
-        console.log(token);
         res.cookie(accessTokenCookieName, token.access_token, { maxAge: token.expires_in * 1000 });
         res.cookie(refreshTokenCookieName, token.refresh_token, { httpOnly: true });
     }
 
     app.get('/mendeleyAuth', function (req, res) {
+        // req.cookies = {};
         if (!req.cookies[accessTokenCookieName]) {
             console.log('No cookie defined, redirecting to', tokenExchangePath);
             res.redirect(tokenExchangePath);
         } else {
             console.log('Access token set, redirecting to', home);
-            app.set('mendeley', 'got');
             res.redirect('/');
         }
     });
 
     app.get(tokenExchangePath, function (req, res, next) {
+        console.log(req.cookies)
         console.log('Starting token exchange');
 
         var oauth2  = require('simple-oauth2');
@@ -57,13 +57,14 @@ module.exports = function (app) {
         oauth.client.getToken({}, function (error, result) {
             if (error) {
                 console.log('Access Token Error', error.message);
+                res.redirect('/404');
             } else {
                 token = oauth.accessToken.create(result);
                 setCookies(res, token.token);
-                console.log(res.cookie);
                 res.redirect(home);
             }
         });
+
     });
 
     /////////////////////////
