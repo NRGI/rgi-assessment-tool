@@ -3,7 +3,9 @@ var mongoose = require('mongoose'),
     userModel = require('../models/User'),
     questionModel = require('../models/Question'),
     answerModel = require('../models/Answers'),
-    assessmentModel = require('../models/Assessment');
+    assessmentModel = require('../models/Assessments'),
+    assessmentModel = require('../models/Assessments'),
+    documentModel = require('../models/Documents');
 
 module.exports = function (config, user, pass) {
 // module.exports = function(config) {

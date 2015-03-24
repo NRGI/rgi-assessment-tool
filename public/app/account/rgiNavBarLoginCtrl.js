@@ -10,6 +10,9 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $http, 
             if (success) {
                 rgiNotifier.notify('You have successfully signed in!');
                 $location.path('/mendeleyAuth');
+                    if (success) {
+                        $location('/');
+                    }
             } else {
                 rgiNotifier.notify('Username/Password combination incorrect');
             }

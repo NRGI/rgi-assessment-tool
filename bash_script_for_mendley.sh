@@ -1,37 +1,3 @@
-echo 'hello'
-
-#     // var oauth2  = require('simple-oauth2');
-#     // var token;
-#     // var credentials = {
-#     //     clientID: 1560,
-#     //     clientSecret: 'chBcJvsqMHLoD8mF',
-#     //     site: 'https://api.mendeley.com'
-#     // };
-
-#     // // Initialize the OAuth2 Library
-#     // var oauth = oauth2(credentials);
-#     //  // Save the access token
-#     // function saveToken(err, res) {
-#     //     if (err) { console.log('Access Token Error', err.message); }
-#     //     token = oauth.accessToken.create(res);
-#     //     req.session.token = token.token;
-#     // }
-#     // Get the access token object for the client
-#     // oauth.client.getToken({}, saveToken);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # rgi_test
 # chBcJvsqMHLoD8mF
 

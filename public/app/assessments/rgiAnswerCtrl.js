@@ -1,53 +1,54 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, FileUploader, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, FileUploader, rgiUploadMethodSrvc, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
     // $scope.uploader = new FileUploader();
 
     var uploader = $scope.uploader = new FileUploader({
         isHTML5: true,
         withCredentials: true,
-        uploadItem: function (file) {
-            console.log(file._file);
-    //         var token_req = {
-    //             method: 'POST',
-    //             url: 'https://api.mendeley.com/oauth/token?grant_type=client_credentials&scope=all&client_id=1560:chBcJvsqMHLoD8mF',
-    //             headers: {
-    //                 'Content-Type': 'application/x-www-form-urlencoded',
-    //                 'Access-Control-Allow-Origin': '*'
-    //             }
-    //             // data: {
-    //             //     grant_type: 'client_credentials',
-    //             //     scope: 'all',
-    //             //     client_id: '1560:chBcJvsqMHLoD8mF'
-    //             // }
-    //         };
-    // //         {method: 'GET', url: 'www.google.com/someapi', headers: {
-    // // 'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}
-    //         $http(token_req)
-    //             .success(function (data, status, headers, config) {
-    //                 console.log('success');
-    //                 console.log(data);
-    //                 console.log(status);
-    //                 console.log(headers);
-    //                 console.log(config);
-    //             }).
-    //             error(function (data, status, headers, config) {
-    //                 console.log('failure');
-    //                 console.log(data);
-    //                 console.log(status);
-    //                 console.log(headers);
-    //                 console.log(config);
-                // });
+        url: 'file-upload'
+    });
+//     uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
+//         console.info('onWhenAddingFileFailed', item, filter, options);
+//     };
+//     uploader.onAfterAddingFile = function (fileItem) {
+//         console.info('onAfterAddingFile', fileItem);
+//     };
+//     uploader.onAfterAddingAll = function (addedFileItems) {
+//         console.info('onAfterAddingAll', addedFileItems);
+//     };
+//     uploader.onBeforeUploadItem = function (item) {
+//         console.info('onBeforeUploadItem', item);
+//     };
+//     uploader.onProgressItem = function (fileItem, progress) {
+//         console.info('onProgressItem', fileItem, progress);
+//     };
+//     uploader.onProgressAll = function (progress) {
+//         console.info('onProgressAll', progress);
+//     };
+//     uploader.onSuccessItem = function (fileItem, response, status, headers) {
+//         console.info('onSuccessItem', fileItem, response, status, headers);
+//     };
+//     uploader.onErrorItem = function (fileItem, response, status, headers) {
+//         console.info('onErrorItem', fileItem, response, status, headers);
+//     };
+//     uploader.onCancelItem = function (fileItem, response, status, headers) {
+//         console.info('onCancelItem', fileItem, response, status, headers);
+//     };
+//     uploader.onCompleteItem = function (fileItem, response, status, headers) {
+//         console.info('onCompleteItem', fileItem, response, status, headers);
+//     };
+//     uploader.onCompleteAll = function () {
+//         console.info('onCompleteAll');
+//     };
 
-            // var spawn = require('child_process').spawn;
-            // var child = spawn('openssl', ['dgst', '-sha1', file.]);
-            // filehash=`openssl dgst -sha1 $filename | sed 's/^.*= //'`
-
-            // child.stdout.on('data', function(chunk) {
-              // output here
-            // });
-            // console.log(file.FileItem);
+//     console.info('uploader', uploader);
+// // FILTERS
+    uploader.filters.push({
+        name: 'customFilter',
+        fn: function (item /*{File|FileLikeObject}*/, options) {
+            return this.queue.length < 10;
         }
     });
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);

@@ -1,11 +1,29 @@
 'use strict';
 var angular;
-// // query users or get user by id and return only first and last name and email
-angular.module('app').factory('rgiUploadSrvc', function ($resource) {
-    var UploadResource = $resource('/file-upload', {}, {});
 
-    return UploadResource;
+angular.module('app').factory('rgiUploadMethodSrvc', function ($q, rgiUploadSrvc) {
+    return {
+        upload: function (fileItem) {
+            var newUpload = new rgiUploadSrvc(fileItem);
+            var dfd = $q.defer();
+
+            newUpload.$save().then(function () {
+                dfd.resolve();
+            }, function (response) {
+                dfd.reject(response.data.reason);
+            });
+            return dfd.promise;
+        }
+    };
 });
+
+
+// // query users or get user by id and return only first and last name and email
+// angular.module('app').factory('rgiUploadSrvc', function($resource) {
+//     var UserResource = $resource('/file-upload', {_id: "@id"}, {});
+
+//     return UserResource;
+// });
 
 // console.log('hello');
 //  // $scope.$watch('files', function () {
