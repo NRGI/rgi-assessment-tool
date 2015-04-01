@@ -1,8 +1,7 @@
 'use strict';
 var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
-    Assessment = require('mongoose').model('Assessment'),
-    upload = require('../utilities/s3');
+    Assessment = require('mongoose').model('Assessment');
 
 exports.getAnswers = function (req, res, next) {
 

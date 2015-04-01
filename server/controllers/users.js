@@ -1,7 +1,5 @@
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption');
-    // nodeMail = require('../utilities/nodeMailer'),
-    // nodeMailer = require('nodeMailer');
 
 exports.getUsers = function (req, res) {
     var query;
@@ -29,13 +27,7 @@ exports.getUsersListByID = function (req, res) {
 };
 
 exports.createUser = function (req, res, next) {
-    var userData = req.body,
-        mailOptions = {
-            to: userData.email,
-            subject: 'Created User',
-            text: 'Your user name ahs been created'
-        };
-    nodeMail.sendMail(mailOptions);
+    var userData = req.body;
     userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
