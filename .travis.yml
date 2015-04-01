@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
+deploy:
+  provider: opsworks
+  access_key_id: AKIAIYI2JV3JHTLT7GQQ
+  secret_access_key:
+    secure: DR4GJexcw+Q45M4X11QHHTow6IXs5dPlzYrvaKhvdDcd6q8BRtWnIyX+TASTE4OFlJA74dex7AXFlzO+vTlJuoFMdtYyaLl9x46yiTVLoqBk5nALPFDcpvx4FoQO48vFtC4QGKOeNepJp1exwiWHBKr++Gi8iXLrKHWPu/+oZgs=
+  app-id: rgi-assessment-tool
+  on:
+    repo: NRGI/rgi-assessment-tool
