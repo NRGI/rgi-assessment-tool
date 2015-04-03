@@ -12,7 +12,7 @@
 				tr
 					th Name
 					th Username
-					th Roles
+					th Role
 					th Countries
 					th Assigned
 					th Started
@@ -27,9 +27,7 @@
 					td
 						a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
 					td {{user.username}}
-					td 
-						p(ng-repeat="role in user.roles")
-							text {{role}}
+					td {{user.role}}
 					td
 						p(ng-repeat="assessment in user.assessments")
 							text {{assessment.country_name}}

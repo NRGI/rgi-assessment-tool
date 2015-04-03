@@ -1,3 +1,5 @@
+'use strict';
+var angular;
 angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $location, rgiNotifier, rgiIdentitySrvc, rgiUserSrvc, rgiUserMethodSrvc) {
     $scope.roleOptions = [
         {value: 'admin', text: 'Administrator'},
@@ -17,7 +19,7 @@ angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $locatio
             email: $scope.email,
             password: $scope.password,
             // ADD ROLE IN CREATION EVENT
-            roles: [$scope.roleSelect],
+            roles: $scope.roleSelect,
             address: [$scope.address],
             language: [$scope.language]
         };

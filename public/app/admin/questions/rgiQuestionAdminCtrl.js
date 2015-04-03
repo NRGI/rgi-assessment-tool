@@ -75,7 +75,7 @@ angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
             // email: $scope.email,
             // password: $scope.password,
             // // ADD ROLE IN CREATION EVENT
-            // roles: [$scope.roleSelect],
+            // role: $scope.roleSelect,
             // address: [$scope.address],
             // language: [$scope.language]
         };

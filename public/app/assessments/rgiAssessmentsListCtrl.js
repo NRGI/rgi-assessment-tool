@@ -10,10 +10,13 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
     $scope.sortOrder = $scope.sortOptions[0].value;
 
     var current_user = rgiIdentitySrvc.currentUser,
-        current_user_role = current_user.roles[0] + "_ID";
+        current_user_role = current_user.role + "_ID";
+    console.log(current_user_role);
+
 
     rgiAssessmentSrvc.query({[current_user_role]: current_user._id},function (data) {
         // pull assessment list from collection and adds user name to match reviewer id and researcher id
+        console.log(data);
         $scope.assessments = [];
         var i;
         for (i = data.length - 1; i >= 0; i -= 1) {

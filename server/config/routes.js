@@ -1,3 +1,5 @@
+'use strict';
+
 var auth = require('./auth'),
     bodyParser = require('body-parser'),
     users = require('../controllers/users'),

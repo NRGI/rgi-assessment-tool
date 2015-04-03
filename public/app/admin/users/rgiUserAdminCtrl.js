@@ -1,10 +1,13 @@
+'use strict';
+var angular;
+
 angular.module('app').controller('rgiUserAdminCtrl', function ($scope, rgiUserSrvc, rgiAssessmentSrvc) {
     // filtering options
     $scope.sortOptions = [
         {value: "firstName", text: "Sort by First Name"},
         {value: "lastName", text: "Sort by Last Name"},
         {value: "username", text: "Sort by Username"},
-        {value: "roles[0]", text: "Sort by Role"},
+        {value: "role", text: "Sort by Role"},
         {value: "approved", text: "Sort by Approved"},
         {value: "submitted", text: "Sort by Submitted"}
     ];
