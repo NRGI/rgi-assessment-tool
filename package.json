@@ -47,7 +47,6 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-safari-launcher": "^0.1.1",
     "load-grunt-tasks": "^0.6.0",
-    "mocha": "^2.0.1",
-    "qunitjs": "^1.18.0"
+    "mocha": "^2.0.1"
   }
 }
