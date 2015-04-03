@@ -1,6 +1,7 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiUserMethodSrvc, rgiAssessmentMethodSrvc) {
+
+angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiAssessmentMethodSrvc) {
 
     // filtering options
     $scope.sortOptions = [
@@ -9,27 +10,39 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         {value: 'status', text: 'Status'}];
     $scope.sortOrder = $scope.sortOptions[0].value;
 
-    var current_user = rgiIdentitySrvc.currentUser,
-        current_user_role = current_user.role + "_ID";
-    console.log(current_user_role);
+    var current_user = rgiIdentitySrvc.currentUser;
 
-
-    rgiAssessmentSrvc.query({[current_user_role]: current_user._id},function (data) {
-        // pull assessment list from collection and adds user name to match reviewer id and researcher id
-        console.log(data);
-        $scope.assessments = [];
-        var i;
-        for (i = data.length - 1; i >= 0; i -= 1) {
-            var assessment = data[i];
-            assessment.edited_by = rgiUserListSrvc.get({_id:data[i].modified[data[i].modified.length-1].modified_by});
-            if (assessment.reviewer_ID != undefined) {
-                assessment.reviewer = rgiUserListSrvc.get({_id:assessment.reviewer_ID});
-                assessment.researcher = rgiUserListSrvc.get({_id:assessment.researcher_ID});
-            };
-
-            $scope.assessments.push(assessment);
-        };
-    });
+    if (current_user.role === 'researcher') {
+        rgiAssessmentSrvc.query({researcher_ID: current_user._id}, function (data) {
+            // pull assessment list from collection and adds user name to match reviewer id and researcher id
+            $scope.assessments = [];
+            var i, assessment;
+            for (i = data.length - 1; i >= 0; i -= 1) {
+                assessment = data[i];
+                assessment.edited_by = rgiUserListSrvc.get({_id: data[i].modified[data[i].modified.length - 1].modified_by});
+                if (assessment.reviewer_ID != undefined) {
+                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+                    assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                }
+                $scope.assessments.push(assessment);
+            }
+        });
+    } else if (current_user.role === 'reviewer') {
+        rgiAssessmentSrvc.query({reviewer_ID: current_user._id}, function (data) {
+            // pull assessment list from collection and adds user name to match reviewer id and researcher id
+            $scope.assessments = [];
+            var i, assessment;
+            for (i = data.length - 1; i >= 0; i -= 1) {
+                assessment = data[i];
+                assessment.edited_by = rgiUserListSrvc.get({_id: data[i].modified[data[i].modified.length - 1].modified_by});
+                if (assessment.reviewer_ID != undefined) {
+                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+                    assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                }
+                $scope.assessments.push(assessment);
+            }
+        });
+    }
 
     $scope.assessmentStart = function (assessment) {
 
