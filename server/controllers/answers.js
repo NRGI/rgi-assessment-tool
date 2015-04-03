@@ -1,4 +1,5 @@
 'use strict';
+
 var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
     Assessment = require('mongoose').model('Assessment');
@@ -11,7 +12,7 @@ exports.getAnswers = function (req, res, next) {
             if (!answers) { return next(new Error('No answers found')); }
             res.send(answers);
         });
-    } else if (req.user.roles[0] === 'researcher') {
+    } else if (req.user.role === 'researcher') {
         Assessment.find({'researcher_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
             var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
 
@@ -29,7 +30,7 @@ exports.getAnswers = function (req, res, next) {
                 return res.end();
             }
         });
-    } else if (req.user.roles[0] === 'reviewer') {
+    } else if (req.user.role === 'reviewer') {
         Assessment.find({'reviewer_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
             var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
 
@@ -131,7 +132,7 @@ exports.updateAnswer = function (req, res) {
 
     // if (req.user.hasRole('supervisor')) {
 
-    // } else if (req.user.roles[0] === 'researcher') {
+    // } else if (req.user.role === 'researcher') {
     //     Assessment.find({'researcher_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
     //         var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
 
@@ -145,7 +146,7 @@ exports.updateAnswer = function (req, res) {
     //             return res.end();
     //         }
     //     });
-    // } else if (req.user.roles[0] === 'reviewer') {
+    // } else if (req.user.role === 'reviewer') {
     //     Assessment.find({'reviewer_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
     //         var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
 

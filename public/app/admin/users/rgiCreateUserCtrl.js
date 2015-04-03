@@ -19,7 +19,7 @@ angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $locatio
             email: $scope.email,
             password: $scope.password,
             // ADD ROLE IN CREATION EVENT
-            roles: $scope.roleSelect,
+            role: $scope.roleSelect,
             address: [$scope.address],
             language: [$scope.language]
         };

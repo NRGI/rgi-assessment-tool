@@ -1,5 +1,6 @@
 'use strict';
 var angular;
+
 angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
     rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
         $scope.question = data;
@@ -62,11 +63,11 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
             content: $scope.question.new_comment,
             author_name: current_user.firstName + ' ' + current_user.lastName,
             author: current_user._id,
-            role: current_user.roles[0],
+            role: current_user.role,
             date: new Date().toISOString()
         };
         new_question_data = $scope.question;
-        delete new_question_data['new_comment']
+        delete new_question_data.new_comment;
 
         new_question_data.comments.push(new_comment_data);
         console.log(new_question_data);

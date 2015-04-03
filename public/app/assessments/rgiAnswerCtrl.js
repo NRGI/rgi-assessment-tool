@@ -1,5 +1,6 @@
 'use strict';
 var angular;
+
 angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
@@ -98,7 +99,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             content: $scope.answer.new_comment,
             author_name: current_user.firstName + ' ' + current_user.lastName,
             author: current_user._id,
-            role: current_user.roles[0],
+            role: current_user.role,
             date: new Date().toISOString()
         },
             new_answer_data = $scope.answer;

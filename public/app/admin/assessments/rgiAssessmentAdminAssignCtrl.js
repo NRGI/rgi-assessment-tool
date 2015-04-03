@@ -1,4 +1,7 @@
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc){
+'use strict';
+var angular;
+
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
 
     function zeroFill(number, width) {
         width -= number.toString().length;
@@ -9,9 +12,9 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
     }
 
     // get all researchers
-    $scope.researchers = rgiUserSrvc.query({roles: 'researcher'});
+    $scope.researchers = rgiUserSrvc.query({role: 'researcher'});
     // get all reviewers
-    $scope.reviewers = rgiUserSrvc.query({roles: 'reviewer'});
+    $scope.reviewers = rgiUserSrvc.query({role: 'reviewer'});
 
     // get assessment that needs to be updated
     $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID});

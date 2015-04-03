@@ -37,21 +37,21 @@
 						legend Choose one of the following answers:
 						ng-form(name="answer_choice_form")
 							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices", required)
-								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.roles[0] + '_score']")
+								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.role + '_score']")
 								text.left-padding-med {{choice.criteria}}
 
 					//- Active and View options needs to play wiht form reset
-					//- div(id="answer_choice_div" ng-if="assessment.edit_control===current_user.roles[0]").bottom-padding-med
+					//- div(id="answer_choice_div" ng-if="assessment.edit_control===current_user.role").bottom-padding-med
 					//- 	legend Choose one of the following answers:
 					//- 	ng-form(name="answer_choice_form" required)
 					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
-					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.roles[0] + '_score']")
+					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.role + '_score']")
 					//- 			text.left-padding-med {{choice.criteria}}
-					//- div(id="answer_choice_div" ng-if="assessment.edit_control!==current_user.roles[0]").bottom-padding-med
+					//- div(id="answer_choice_div" ng-if="assessment.edit_control!==current_user.role").bottom-padding-med
 					//- 	legend Choose one of the following answers:
 					//- 	ng-form
 					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices")
-					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.roles[0] + '_score']" disabled)
+					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.role + '_score']" disabled)
 					//- 			text.left-padding-med {{choice.criteria}}
 					
 					div(id="comments_div").bottom-padding-med
