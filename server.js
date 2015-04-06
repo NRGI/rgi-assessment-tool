@@ -14,6 +14,8 @@ if (env === 'development') {
     var pass = process.env.USER_PROD_KEY;
 }
 
+console.log(user);
+console.log(pass);
 require('./server/config/express')(app, config);
 
 require('./server/config/mongoose')(config, user, pass);
