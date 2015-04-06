@@ -8,10 +8,10 @@ before_install:
 
 branch-defaults:
   master:
-    environment: rgiTool-env
+    environment: rgiAssessmentTool-env
 
 global:
-  application_name: rgi-tool
+  application_name: rgi-assessment-tool
   default_region: us-east-1
   profile: eb-cli
   sc: git
@@ -25,8 +25,18 @@ env:
     - secure: JkpVsgu4gufliMVKVgTylqglBrepZcPoM+IxJMjlO8qBRPTtHicAtMyDclamc1DfCsm3OuzXWwnOdH9D4/qxm4qjYTHl0DiCNsQlFpkw2D/e628+bOx4aLK23Ge5ZHpyurwQntChDSZGttWyBfKKQ9BLWgZ6jOfcsungCIaH0xIFK0FnDDoOvdlhqET+etvxSjcc7arkI0JwjO/dDo51vhfpxkqjxaAvcmRucovj8QDwRtdSjMh62NYM9JuoeW8jN/5+z7xkiVqHSxpNVpHpgVxVuq1qyjhRDgAYup4cNH4zNDWqG/R7CKAnQfGN4eXI7rDnVaqM9aXQHZdtSIwOaA==
     - secure: dgMNpiSbtHaA3bFCFMeaEAWhAX+qlZ2I1wC5gg3PU9FieGssvmz0p7psePbxxTolAtbHZ0h9I0bLVilYjHU/jMvI8K5BQS2QAuGk3BoikcKj1BWWaBDjgUzOY4XWj/R5fXKvyi8crBc+wScripGDZ21R1eV/bjzLDKxcs0MRC2ahjzftYUZBCiukrTok3FVOsV5x6ZIHpFYoaQwj8/VR7mi5oc7O1EGbNt8ShHMGpmGFssWP7RKd9/qSn5R4tLxTGFefInc9+O+R6RlbM5AtHdbtJsFpxwrmPjf3BtERkQ2VGfKiTD5jzqyRnaD9jf2SuL3ZLcrGALwn353w2DHWMA==
 
+before_script:
+  - mkdir -p ~/.aws
+  - echo 'profile eb-cli' > ~/.aws/config
+  - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
+  - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
+
 script:
+  - mkdir -p .elasticbeanstalk
+  - cp config.yml .elasticbeanstalk/
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
-after_success :
-  - cp -r src ./shippable/buildoutput
+# after_success :
+#   - cp -r src ./shippable/buildoutput
+
+commit_container: byndcivilization/rgi-assessment-tool
