@@ -1,6 +1,9 @@
 'use strict';
 var angular;
-angular.module('app').factory('rgiAnswerMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiAnswerSrvc) {
+/*jslint newcap: true */
+
+angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc) {
+    // $http rgiAuthSrvc
     return {
         insertAnswerSet: function (new_answer_set) {
             var dfd = $q.defer(),

@@ -1,4 +1,8 @@
-angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, $routeParams) {
+'use strict';
+var angular;
+/*jslint nomen: true regexp: true*/
+
+angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc) {
     // filtering options
     $scope.sortOptions = [
         {value: 'country', text: 'Sort by Country'},
@@ -35,7 +39,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgi
     // placeholder for code to add new assessment
     $scope.newAssessmentDialog = function () {
         console.log();
-    }; 
+    };
 });
 
 // Angular capitilaize filter

@@ -1,5 +1,7 @@
 'use strict';
 var angular;
+/*jslint nomen: true*/
+
 angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQuestionSrvc, ngDialog) {
     // filtering options
     $scope.sortOptions = [
@@ -9,12 +11,12 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
     ];
     $scope.sortOrder = $scope.sortOptions[0].value;
     rgiQuestionSrvc.query(function (data) {
-        var i, j;
+        var i, j, question;
         $scope.questions = data;
         $scope.getArray = [];
 
         for (i = data.length - 1; i >= 0; i -= 1) {
-            var question = {
+            question = {
                 question_order: data[i].question_order,
                 component_text: data[i].component_text,
                 indicator_name: data[i].indicator_name,
@@ -48,6 +50,7 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
 });
 
 angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
+
     $scope.question_choices = [{order: 1, criteria: "Enter text"}];
     $scope.dialogModel = {
         message : 'message from passed scope'
@@ -61,6 +64,7 @@ angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
     };
 
     $scope.optionDelete = function (index) {
+        console.log(index);
         // $scope.question.question_choices.splice(index, 1);
         // var i;
         // for (i = $scope.question.question_choices.length - 1; i >= 0; i -= 1) {
@@ -68,7 +72,8 @@ angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
         // }
     };
     $scope.questionCreate = function () {
-        var new_question_data = {
+        console.log('yes');
+        // var new_question_data = {
             // firstName: $scope.fname,
             // lastName: $scope.lname,
             // username: $scope.username,
@@ -78,7 +83,7 @@ angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
             // role: $scope.roleSelect,
             // address: [$scope.address],
             // language: [$scope.language]
-        };
+        // };
 
     //     rgiUserMethodSrvc.createUser(newUserData).then(function () {
     //         // rgiMailer.send($scope.email);

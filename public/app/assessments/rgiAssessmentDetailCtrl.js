@@ -1,3 +1,7 @@
+'use strict';
+var angular;
+/*jslint nomen: true regexp: true*/
+
 angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, rgiIdentitySrvc, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc) {
     // filtering options
     $scope.sortOptions = [
@@ -18,7 +22,7 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
 
 // Angular capitilaize filter
 angular.module('app').filter('capitalize', function () {
-    return function (input, all) {
+    return function (input) {
         return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }) :  '';
     };
 });

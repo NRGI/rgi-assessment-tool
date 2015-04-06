@@ -1,3 +1,7 @@
+'use strict';
+var angular;
+/*jslint nomen: true*/
+
 angular.module('app').controller('rgiUserAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
 
     $scope.user = rgiUserSrvc.get({_id: $routeParams.id});

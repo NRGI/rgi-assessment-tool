@@ -2,7 +2,8 @@
 var angular;
 
 // Experiment in wrappin all the api services into a single service
-angular.module('app').factory('rgiApiSrvc', function($resource) {
+angular.module('app').factory('rgiApiSrvc', function ($resource) {
+    console.log($resource);
 
     // function
 
