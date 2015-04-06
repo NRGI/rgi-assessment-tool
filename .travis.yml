@@ -5,4 +5,4 @@ node_js:
 
 
 script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
