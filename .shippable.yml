@@ -33,7 +33,7 @@ before_script:
 
 script:
   - mkdir -p .elasticbeanstalk
-  - cp config.yml .elasticbeanstalk/
+  - cp shippable.yml .elasticbeanstalk/
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 # after_success :
