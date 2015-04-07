@@ -14,5 +14,6 @@ RUN		cd /rgi-assessment-tool && npm install --production
 RUN		cd /rgi-assessment-tool && bower install --allow-root
 
 EXPOSE  80
+EXPOSE  3030
 
 CMD		["node", "/rgi-assessment-tool/server.js"]

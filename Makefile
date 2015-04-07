@@ -8,10 +8,10 @@ prepare:
 	git archive -o rgi-assessment-tool.tar HEAD
 
 build:
-	docker build -t $(NAME) .
+	docker build -t $(NAME):$(VERSION) --rm .
 
 tag_latest: 
-	docker tag $(NAME) $(NAME):latest
+	docker tag $(NAME):$(VERSION) $(NAME):latest
 
 push:
-	docker push $(NAME):latest
+	docker push $(NAME):$VERSION
