@@ -22,8 +22,6 @@ before_script:
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
 
 script:
-  - mkdir -p .elasticbeanstalk
-  - cp .elasticbeanstalk/config.yml .elasticbeanstalk/
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 after_success:
