@@ -9,11 +9,5 @@
       "ContainerPort": "3030"
     }
   ],
-  "portMappings": [
-    {
-      "hostPort": 3030,
-      "containerPort": 3030
-    }
-  ],
   "Logging": "/var/log/"
 }
