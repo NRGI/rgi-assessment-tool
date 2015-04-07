@@ -17,8 +17,7 @@ env:
 
 before_script:
   - mkdir -p ~/.aws
-  - var=[profile eb-cli]
-  - echo $var > ~/.aws/config
+  - echo 'profile eb-cli]' > ~/.aws/config
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
 
