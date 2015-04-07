@@ -6,24 +6,14 @@ node_js:
 before_install:
   pip install awsebcli
 
-branch-defaults:
-  master:
-    environment: rgiAssessmentTool-env
-
-global:
-  application_name: rgi-assessment-tool
-  default_region: us-east-1
-  profile: eb-cli
-  sc: git
-
 env:
+  - USER_DEV_ID: cperry
+  - USER_PROD_ID: rgi_db_access
+  - secure: JkpVsgu4gufliMVKVgTylqglBrepZcPoM+IxJMjlO8qBRPTtHicAtMyDclamc1DfCsm3OuzXWwnOdH9D4/qxm4qjYTHl0DiCNsQlFpkw2D/e628+bOx4aLK23Ge5ZHpyurwQntChDSZGttWyBfKKQ9BLWgZ6jOfcsungCIaH0xIFK0FnDDoOvdlhqET+etvxSjcc7arkI0JwjO/dDo51vhfpxkqjxaAvcmRucovj8QDwRtdSjMh62NYM9JuoeW8jN/5+z7xkiVqHSxpNVpHpgVxVuq1qyjhRDgAYup4cNH4zNDWqG/R7CKAnQfGN4eXI7rDnVaqM9aXQHZdtSIwOaA==
+  - secure: dgMNpiSbtHaA3bFCFMeaEAWhAX+qlZ2I1wC5gg3PU9FieGssvmz0p7psePbxxTolAtbHZ0h9I0bLVilYjHU/jMvI8K5BQS2QAuGk3BoikcKj1BWWaBDjgUzOY4XWj/R5fXKvyi8crBc+wScripGDZ21R1eV/bjzLDKxcs0MRC2ahjzftYUZBCiukrTok3FVOsV5x6ZIHpFYoaQwj8/VR7mi5oc7O1EGbNt8ShHMGpmGFssWP7RKd9/qSn5R4tLxTGFefInc9+O+R6RlbM5AtHdbtJsFpxwrmPjf3BtERkQ2VGfKiTD5jzqyRnaD9jf2SuL3ZLcrGALwn353w2DHWMA==
   global:
     - AWSAccessKeyId: AKIAIDN5JLKAF6E3B4RQ
     - secure: c4hkqoBDGlEF1YBZpr7nEd7Ge/b89vqQvKcJiNmypSr8aOQUItYDQb5iG+Gp1sajQv/xrev9+vxEA/VmI5lcQaQy0K16GbPmB2oxOcmiof3xMYdE44O7Qs6Jxgpi/BXZNmtyvAl4DZUzeIbRw0fJZM8pWKtdtU126mFnN5raRN/ndbP294SkRhIDZZSGVnRrCgYOocP4WZqxH1wh52PoyoDJnTDOUYQFGm+kPL2luIaj4l6DxKLqvpVMWhKzSONu5EyzqynXo/OP5tFYUEVSyFouvtnjc3cHib1Qqx9a9nwF6vddmK7bQMaSwYTWA2mvSVeLdjz8C6BG1TlKkAh3Ag==
-    - USER_DEV_ID: cperry
-    - USER_PROD_ID: rgi_db_access
-    - secure: JkpVsgu4gufliMVKVgTylqglBrepZcPoM+IxJMjlO8qBRPTtHicAtMyDclamc1DfCsm3OuzXWwnOdH9D4/qxm4qjYTHl0DiCNsQlFpkw2D/e628+bOx4aLK23Ge5ZHpyurwQntChDSZGttWyBfKKQ9BLWgZ6jOfcsungCIaH0xIFK0FnDDoOvdlhqET+etvxSjcc7arkI0JwjO/dDo51vhfpxkqjxaAvcmRucovj8QDwRtdSjMh62NYM9JuoeW8jN/5+z7xkiVqHSxpNVpHpgVxVuq1qyjhRDgAYup4cNH4zNDWqG/R7CKAnQfGN4eXI7rDnVaqM9aXQHZdtSIwOaA==
-    - secure: dgMNpiSbtHaA3bFCFMeaEAWhAX+qlZ2I1wC5gg3PU9FieGssvmz0p7psePbxxTolAtbHZ0h9I0bLVilYjHU/jMvI8K5BQS2QAuGk3BoikcKj1BWWaBDjgUzOY4XWj/R5fXKvyi8crBc+wScripGDZ21R1eV/bjzLDKxcs0MRC2ahjzftYUZBCiukrTok3FVOsV5x6ZIHpFYoaQwj8/VR7mi5oc7O1EGbNt8ShHMGpmGFssWP7RKd9/qSn5R4tLxTGFefInc9+O+R6RlbM5AtHdbtJsFpxwrmPjf3BtERkQ2VGfKiTD5jzqyRnaD9jf2SuL3ZLcrGALwn353w2DHWMA==
 
 # before_script:
 #   - mkdir -p ~/.aws
