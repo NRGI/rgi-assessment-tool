@@ -28,6 +28,7 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 after_success:
+  - eb init && eb deploy
   - cp -r src ./shippable/buildoutput
 
 commit_container: byndcivilization/rgi-assessment-tool
