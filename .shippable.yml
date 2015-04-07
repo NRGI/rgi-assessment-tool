@@ -7,8 +7,9 @@ before_install:
   pip install awsebcli
 
 env:
-  - AWSAccessKeyId: AKIAIDN5JLKAF6E3B4RQ
-  - secure: c4hkqoBDGlEF1YBZpr7nEd7Ge/b89vqQvKcJiNmypSr8aOQUItYDQb5iG+Gp1sajQv/xrev9+vxEA/VmI5lcQaQy0K16GbPmB2oxOcmiof3xMYdE44O7Qs6Jxgpi/BXZNmtyvAl4DZUzeIbRw0fJZM8pWKtdtU126mFnN5raRN/ndbP294SkRhIDZZSGVnRrCgYOocP4WZqxH1wh52PoyoDJnTDOUYQFGm+kPL2luIaj4l6DxKLqvpVMWhKzSONu5EyzqynXo/OP5tFYUEVSyFouvtnjc3cHib1Qqx9a9nwF6vddmK7bQMaSwYTWA2mvSVeLdjz8C6BG1TlKkAh3Ag==
+  global:
+    - AWSAccessKeyId: AKIAIDN5JLKAF6E3B4RQ
+    - secure: c4hkqoBDGlEF1YBZpr7nEd7Ge/b89vqQvKcJiNmypSr8aOQUItYDQb5iG+Gp1sajQv/xrev9+vxEA/VmI5lcQaQy0K16GbPmB2oxOcmiof3xMYdE44O7Qs6Jxgpi/BXZNmtyvAl4DZUzeIbRw0fJZM8pWKtdtU126mFnN5raRN/ndbP294SkRhIDZZSGVnRrCgYOocP4WZqxH1wh52PoyoDJnTDOUYQFGm+kPL2luIaj4l6DxKLqvpVMWhKzSONu5EyzqynXo/OP5tFYUEVSyFouvtnjc3cHib1Qqx9a9nwF6vddmK7bQMaSwYTWA2mvSVeLdjz8C6BG1TlKkAh3Ag==
 
 before_script:
   - mkdir -p ~/.aws
@@ -23,6 +24,7 @@ script:
 
 after_success:
   - eb init && eb deploy
+  - eb printenv
   - cp -r src ./shippable/buildoutput
 
 commit_container: byndcivilization/rgi-assessment-tool
