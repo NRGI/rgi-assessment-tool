@@ -8,5 +8,5 @@ global:
   default_ec2_keyname: rgi-tool
   default_platform: Docker 1.5.0
   default_region: us-east-1
-  profile: null
+  profile: eb-cli
   sc: git
