@@ -1,7 +1,8 @@
 'use strict';
 var angular;
+/*jslint nomen: true*/
 
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $q, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
 
     function zeroFill(number, width) {
         width -= number.toString().length;

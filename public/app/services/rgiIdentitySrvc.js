@@ -1,5 +1,6 @@
 'use strict';
 var angular;
+/*jslint newcap: true */
 
 angular.module('app').factory('rgiIdentitySrvc', function ($window, rgiUserSrvc) {
     var currentUser;

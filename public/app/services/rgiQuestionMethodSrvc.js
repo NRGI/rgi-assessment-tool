@@ -1,5 +1,7 @@
 'use strict';
 var angular;
+/*jslint newcap: true */
+
 angular.module('app').factory('rgiQuestionMethodSrvc', function ($q, rgiQuestionSrvc) {
     return {
         createQuestion: function () {
