@@ -1,6 +1,7 @@
 'use strict';
 var angular;
-angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $location, rgiNotifier, rgiIdentitySrvc, rgiUserSrvc, rgiUserMethodSrvc) {
+
+angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $location, rgiNotifier, rgiUserMethodSrvc) {
     $scope.roleOptions = [
         {value: 'admin', text: 'Administrator'},
         {value: 'supervisor', text: 'Supervisor'},

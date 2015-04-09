@@ -1,5 +1,6 @@
 'use strict';
 var angular;
+/*jslint newcap: true */
 
 angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
     return {
@@ -32,7 +33,8 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
         authorizeCurrentUserForRoute: function (role) {
             if (rgiIdentitySrvc.isAuthorized(role)) {
                 return true;
-            } else {
+            }
+            if (!rgiIdentitySrvc.isAuthorized(role)) {
                 return $q.reject('not authorized');
             }
         },
@@ -40,7 +42,8 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
         authorizeAuthenticatedUserForRoute: function () {
             if (rgiIdentitySrvc.isAuthenticated()) {
                 return true;
-            } else {
+            }
+            if (!rgiIdentitySrvc.isAuthenticated()) {
                 return $q.reject('not authorized');
             }
         }

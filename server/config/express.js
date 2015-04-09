@@ -1,3 +1,4 @@
+'use strict';
 var express      = require('express'),
     stylus       = require('stylus'),
     logger       = require('morgan'),
@@ -18,7 +19,7 @@ module.exports = function (app, config) {
     app.use(logger('dev'));
     // authentication cofigs
     app.use(cookieParser());
-    
+
     app.use(bodyParser());
 
     app.use(session({secret: 'All your base are belong to us'}));
@@ -27,10 +28,10 @@ module.exports = function (app, config) {
 
     // stylus middleware implementation - routes to anything in public directory
     app.use(stylus.middleware(
-    {
-        src: config.rootPath + '/public',
-        compile: compile
-    }
+        {
+            src: config.rootPath + '/public',
+            compile: compile
+        }
     ));
     app.use(express.static(config.rootPath + '/public'));
-}
+};

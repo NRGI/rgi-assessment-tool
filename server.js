@@ -6,11 +6,16 @@ var app     = express();
 
 var config  = require('./server/config/config')[env];
 
-var user    = process.env.USER_ID;
+if (env === 'development') {
+    var user = process.env.USER_DEV_ID;
+    var pass = process.env.USER_DEV_KEY;
+} else if (env === 'production') {
+    var user = process.env.USER_PROD_ID;
+    var pass = process.env.USER_PROD_KEY;
+}
 
-var pass    = process.env.USER_KEY;
-
-
+console.log(user);
+console.log(pass);
 require('./server/config/express')(app, config);
 
 require('./server/config/mongoose')(config, user, pass);

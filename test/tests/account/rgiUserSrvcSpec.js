@@ -1,7 +1,8 @@
 'use strict';
+/*jslint nomen: true newcap: true */
+var describe, beforeEach, it, inject, expect;
 
-
-describe('rgiUserSrvc', function () {
+describe('rgiUserSrvcSpec', function () {
     beforeEach(module('app'));
 
     describe('isSupervisor', function () {

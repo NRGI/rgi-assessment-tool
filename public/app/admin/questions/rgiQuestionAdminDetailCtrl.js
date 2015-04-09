@@ -1,5 +1,6 @@
 'use strict';
 var angular;
+/*jslint nomen: true*/
 
 angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
     rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
