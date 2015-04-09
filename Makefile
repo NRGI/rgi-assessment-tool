@@ -9,11 +9,3 @@ prepare:
 
 build:
 	docker build -t $(NAME):$(VERSION) --rm .
-
-tag_latest: 
-	docker tag $(NAME):$(VERSION) $(NAME):latest
-
-push:
-	docker push $(NAME):$VERSION
-	docker build -t $(NAME) .
-	docker push $(NAME):latest
