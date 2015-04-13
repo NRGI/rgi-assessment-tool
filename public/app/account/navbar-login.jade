@@ -16,17 +16,27 @@
     ul.nav.navbar-nav(ng-hide="identity.currentUser.isSupervisor()")
       li
         a(href="/assessments") Assessments
-    //- Admin assessments dashboard
-    ul.nav.navbar-nav(ng-show="identity.currentUser.isSupervisor()")
-      //- li
-      //-   a(href="/admin/assessments/assessment-dashboard") Assessment Dashboard
-      li
-        a(href="/admin/assessment-admin") Assessment Admin
+    ul.nav.navbar-nav.dropdown
+      li.dropdown(ng-show="identity.currentUser.isSupervisor()")
+        a.dropdown-toggle(href="/admin/assessment-admin" data-toggle="dropdown") Assessment Admin
+          b.caret
+        ul.dropdown-menu
+          li(ng-repeat="version in versions")
+            a(href="/admin/{{version.url}}") {{version.name}}
+
+
+
+    //- //- Admin assessments dashboard
+    //- ul.nav.navbar-nav(ng-show="identity.currentUser.isSupervisor()")
+    //-   //- li
+    //-   //-   a(href="/admin/assessments/assessment-dashboard") Assessment Dashboard
+    //-   li
+    //-     a(href="/admin/assessment-admin") Assessment Admin
 
     //- Supervisor's admin dropdown
     ul.nav.navbar-nav.dropdown
       li.dropdown(ng-show="identity.currentUser.isSupervisor()")
-        a.dropdown-toggle(href="", data-toggle="dropdown") Admin
+        a.dropdown-toggle(href="" data-toggle="dropdown") Admin
           b.caret
         ul.dropdown-menu
           li

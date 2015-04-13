@@ -18,13 +18,13 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
         data.forEach(function (el, i) {
             question = {
                 question_order: el.question_order,
+                question_text: el.question_text,
                 component_text: el.component_text,
                 indicator_name: el.indicator_name,
                 sub_indicator_name: el.sub_indicator_name,
                 minstry_if_applicable: el.minstry_if_applicable,
                 section_name: el.section_name,
                 child_question: el.child_question,
-                question_text: el.question_text,
                 nrc_precept: el.nrc_precept
             };
             el.question_choices.forEach(function (el_sub, j) {
@@ -33,6 +33,8 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
             });
             $scope.getArray.push(question);
         });
+
+        $scope.header = ['Question Order', 'Question Text', 'Component Text', 'Indicator Name', 'Subindicator Name', 'Ministry', 'Section', 'Child Question', 'NRC Precept'];
     });
 
     // $scope.questions = rgiQuestionSrvc.query();
@@ -42,14 +44,14 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
         // ngDialog.open({ template: '/partials/admin/questions/test' });
         ngDialog.open({
             template: 'partials/admin/questions/new-question-dialog',
-            controller: 'dialogCtrl',
-            className: 'ngdialog-theme-plain width800',
+            controller: 'questionDialogCtrl',
+            className: 'ngdialog-theme-plain width750',
             scope: $scope
         });
     };
 });
 
-angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
+angular.module('app').controller('questionDialogCtrl', function ($scope, ngDialog) {
 
     $scope.new_question = {
         question_order: $scope.questions.length + 1,
