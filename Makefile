@@ -5,10 +5,7 @@ CORE_VERSION=HEAD
 all: prepare build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm .
-
-tag_latest:
-    docker tag $(NAME):$(VERSION) $(NAME):latest
+	docker build -t $(NAME):latest --rm .
 
 push:
     docker push $(NAME):$(VERSION)

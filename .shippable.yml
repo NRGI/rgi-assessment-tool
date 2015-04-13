@@ -30,6 +30,7 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 after_success:
+  - make
   - eb init && eb deploy
   - eb setenv USER_DEV_ID=$USER_DEV_ID USER_DEV_KEY=$USER_DEV_KEY
 
