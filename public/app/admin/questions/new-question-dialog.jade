@@ -7,12 +7,12 @@ div.top-padding-med
 					.row
 						label.col-md-6 Question Order
 						.form-group(required).col-md-5
-							input.form-group.form-control.right-padding-med(name="order" type="number" ng-model="question_order")
+							input.form-group.form-control.right-padding-med(name="order" type="number" ng-model="new_question.question_order")
 					.row
 						label.col-md-6 Question Text
 					.row
 						.form-group(required).col-md-12
-							textarea.form-control(name="question_text" type="textbox" ng-model="question_text")
+							textarea.form-control(name="question_text" type="textbox" ng-model="new_question.question_text")
 					.row
 						text(ng-if="question_order!==undefined && question_text!==undefined") Question {{question_order}}. {{question_text}}
 					.row
@@ -25,11 +25,15 @@ div.top-padding-med
 
 
 					.row
-						.form-group(ng-repeat="choice in question_choices")
+						.form-group(ng-repeat="choice in new_question.question_choices")
 							.col-md-3
 								input.form-control(name="choiceOrder" type="number" ng-model="choice.order")
-							.col-md-8
+							.col-md-7
 								textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria")
+							.col-md-1
+								button.btn.btn-danger(ng-click="questionOptionDelete($index)" ng-disabled="new_question.question_choices.length==1") Delete
+					.row
+						text {{question}}
 
 					//- div(id="question_options_div").row.top-padding-lg
 					//- 	.col-md-2

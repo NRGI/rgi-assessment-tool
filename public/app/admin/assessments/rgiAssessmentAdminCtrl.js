@@ -1,6 +1,6 @@
 'use strict';
 var angular;
-/*jslint nomen: true regexp: true*/
+/*jslint nomen: true unparam: true regexp: true*/
 
 angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc) {
     // filtering options
@@ -13,27 +13,28 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, rgi
 
     rgiAssessmentSrvc.query(function (data) {
         // pull assessment list from collection and adds user name to match reviewer id and researcher id
-        var i, assessment;
+        var assessment;
         $scope.assessments = [];
-        for (i = data.length - 1; i >= 0; i -= 1) {
+
+        data.forEach(function (el, i) {
             assessment = {
-                assessment_ID: data[i].assessment_ID,
-                country: data[i].country,
-                researcher_ID: data[i].researcher_ID,
-                reviewer_ID: data[i].reviewer_ID,
-                start_date: data[i].start_date,
-                status: data[i].status
+                assessment_ID: el.assessment_ID,
+                country: el.country,
+                researcher_ID: el.researcher_ID,
+                reviewer_ID: el.reviewer_ID,
+                start_date: el.start_date,
+                status: el.status
             };
-            if (data[i].modified[0] !== undefined) {
-                assessment.modified = data[i].modified;
-                assessment.edited_by = rgiUserListSrvc.get({_id: data[i].modified[data[i].modified.length - 1].modified_by});
+            if (el.modified[0] !== undefined) {
+                assessment.modified = el.modified;
+                assessment.edited_by = rgiUserListSrvc.get({_id: el.modified[el.modified.length - 1].modified_by});
             }
             if (assessment.reviewer_ID !== undefined) {
                 assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                 assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
             }
             $scope.assessments.push(assessment);
-        }
+        });
     });
 
     // placeholder for code to add new assessment

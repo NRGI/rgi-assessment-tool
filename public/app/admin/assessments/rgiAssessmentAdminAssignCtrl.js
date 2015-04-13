@@ -28,12 +28,9 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
         var new_researcher_data = $scope.researcherSelect,
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
-            new_answer_set = [],
-            i;
+            new_answer_set = [];
 
-        // new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
         new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
-        // new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, assigned: {value:true}});
         new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
 
         // update assessment
@@ -43,22 +40,22 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
         new_assessment_data.edit_control = $scope.researcherSelect._id;
 
         // create new answer set
-        for (i = 0; i < $scope.questions.length; i += 1) {
+        $scope.questions.forEach(function (el, i) {
             new_answer_set.push({});
 
-            if ($scope.questions[i].hasOwnProperty('question_order')) {
-                new_answer_set[i].answer_ID = $routeParams.assessment_ID + String(zeroFill($scope.questions[i].question_order, 3));
-                new_answer_set[i].question_ID = $scope.questions[i]._id;
+            if (el.hasOwnProperty('question_order')) {
+                new_answer_set[i].answer_ID = $routeParams.assessment_ID + String(zeroFill(el.question_order, 3));
+                new_answer_set[i].question_ID = el._id;
                 new_answer_set[i].assessment_ID = $routeParams.assessment_ID;
                 new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
                 new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
                 new_answer_set[i].edit_control = $scope.researcherSelect._id;
-                new_answer_set[i].question_order = $scope.questions[i].question_order;
-                new_answer_set[i].component_id = $scope.questions[i].component;
-                new_answer_set[i].component_text = $scope.questions[i].component_text;
-                new_answer_set[i].nrc_precept = $scope.questions[i].nrc_precept;
+                new_answer_set[i].question_order = el.question_order;
+                new_answer_set[i].component_id = el.component;
+                new_answer_set[i].component_text = el.component_text;
+                new_answer_set[i].nrc_precept = el.nrc_precept;
             }
-        }
+        });
 
         // send to mongo
         rgiUserMethodSrvc.updateUser(new_researcher_data)
