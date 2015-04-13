@@ -11,28 +11,30 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
     ];
     $scope.sortOrder = $scope.sortOptions[0].value;
     rgiQuestionSrvc.query(function (data) {
-        var i, j, question;
+        var question;
         $scope.questions = data;
         $scope.getArray = [];
 
-        for (i = data.length - 1; i >= 0; i -= 1) {
+        data.forEach(function (el, i) {
             question = {
-                question_order: data[i].question_order,
-                component_text: data[i].component_text,
-                indicator_name: data[i].indicator_name,
-                sub_indicator_name: data[i].sub_indicator_name,
-                minstry_if_applicable: data[i].minstry_if_applicable,
-                section_name: data[i].section_name,
-                child_question: data[i].child_question,
-                question_text: data[i].question_text,
-                nrc_precept: data[i].nrc_precept
+                question_order: el.question_order,
+                question_text: el.question_text,
+                component_text: el.component_text,
+                indicator_name: el.indicator_name,
+                sub_indicator_name: el.sub_indicator_name,
+                minstry_if_applicable: el.minstry_if_applicable,
+                section_name: el.section_name,
+                child_question: el.child_question,
+                nrc_precept: el.nrc_precept
             };
-            for (j = data[i].question_choices.length - 1; j >= 0; j -= 1) {
-                question['choice_' + String(j)] = data[i].question_choices[j].name;
-                question['choice_' + String(j) + '_criteria'] = data[i].question_choices[j].criteria;
-            }
+            el.question_choices.forEach(function (el_sub, j) {
+                question['choice_' + String(j)] = el_sub.name;
+                question['choice_' + String(j) + '_criteria'] = el_sub.criteria;
+            });
             $scope.getArray.push(question);
-        }
+        });
+
+        $scope.header = ['Question Order', 'Question Text', 'Component Text', 'Indicator Name', 'Subindicator Name', 'Ministry', 'Section', 'Child Question', 'NRC Precept'];
     });
 
     // $scope.questions = rgiQuestionSrvc.query();
@@ -42,16 +44,21 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
         // ngDialog.open({ template: '/partials/admin/questions/test' });
         ngDialog.open({
             template: 'partials/admin/questions/new-question-dialog',
-            controller: 'dialogCtrl',
-            className: 'ngdialog-theme-plain',
+            controller: 'questionDialogCtrl',
+            className: 'ngdialog-theme-plain width750',
             scope: $scope
         });
     };
 });
 
-angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
+angular.module('app').controller('questionDialogCtrl', function ($scope, ngDialog) {
 
-    $scope.question_choices = [{order: 1, criteria: "Enter text"}];
+    $scope.new_question = {
+        question_order: $scope.questions.length + 1,
+        question_text: "Enter text",
+        question_choices: [{order: 1, criteria: "Enter text"}]
+    };
+    $scope.new_question.question_choices = [{order: 1, criteria: "Enter text"}];
     $scope.dialogModel = {
         message : 'message from passed scope'
     };
@@ -60,16 +67,16 @@ angular.module('app').controller('dialogCtrl', function ($scope, ngDialog) {
     };
 
     $scope.questionOptionAdd = function () {
-        $scope.question_choices.push({order: $scope.question_choices.length + 1, criteria: "Enter text"});
+        $scope.new_question.question_choices.push({order: $scope.new_question.question_choices.length + 1, criteria: "Enter text"});
     };
 
-    $scope.optionDelete = function (index) {
+    $scope.questionOptionDelete = function (index) {
         console.log(index);
-        // $scope.question.question_choices.splice(index, 1);
+        $scope.new_question.question_choices.splice(index, 1);
         // var i;
-        // for (i = $scope.question.question_choices.length - 1; i >= 0; i -= 1) {
-        //     $scope.question.question_choices[i].order = i + 1;
-        // }
+        $scope.new_question.question_choices.forEach(function (el, i) {
+            el.order = i + 1;
+        });
     };
     $scope.questionCreate = function () {
         console.log('yes');

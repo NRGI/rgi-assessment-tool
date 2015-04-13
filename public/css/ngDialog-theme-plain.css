@@ -15,6 +15,9 @@
   position: relative;
   width: 450px;
 }
+.ngdialog.ngdialog-theme-plain .width750 .ngdialog-content {
+  width: 750px;
+}
 
 .ngdialog.ngdialog-theme-plain .ngdialog-content h1,
 .ngdialog.ngdialog-theme-plain .ngdialog-content h2,

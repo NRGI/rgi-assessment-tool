@@ -6,7 +6,7 @@ var app     = express();
 
 var config  = require('./server/config/config')[env];
 
-if (env === 'development') {
+if (env === 'development' || env === 'local' ) {
     var user = process.env.USER_DEV_ID;
     var pass = process.env.USER_DEV_KEY;
 } else if (env === 'production') {
@@ -14,12 +14,9 @@ if (env === 'development') {
     var pass = process.env.USER_PROD_KEY;
 }
 
-console.log(user);
-console.log(pass);
 require('./server/config/express')(app, config);
 
-require('./server/config/mongoose')(config, user, pass);
-// require('./server/config/mongoose')(config);
+require('./server/config/mongoose')(config, user, pass, env);
 
 require('./server/config/passport')();
 

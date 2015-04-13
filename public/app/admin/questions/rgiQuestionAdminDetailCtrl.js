@@ -23,12 +23,13 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
         $scope.question.question_choices.push({order: $scope.question.question_choices.length + 1, criteria: "Enter text"});
     };
 
-    $scope.optionDelete = function (index) {
+    $scope.questionOptionDelete = function (index) {
+        console.log(index);
         $scope.question.question_choices.splice(index, 1);
-        var i;
-        for (i = $scope.question.question_choices.length - 1; i >= 0; i -= 1) {
-            $scope.question.question_choices[i].order = i + 1;
-        }
+
+        $scope.question.question_choices.forEach(function (el, i) {
+            el.order = i + 1;
+        });
     };
 
     $scope.questionClear = function () {

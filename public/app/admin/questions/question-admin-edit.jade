@@ -35,7 +35,7 @@
 								.col-md-8
 									textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria" required)
 								.col-md-1
-									button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
+									button.btn.btn-danger(ng-click="questionOptionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
 							.form-group(name="control_buttons").top-padding-med
 								.col-md-8.col-md-offset-2
 									.pull-left

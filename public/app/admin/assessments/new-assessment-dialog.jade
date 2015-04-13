@@ -1,0 +1,35 @@
+div.top-padding-med
+	.well
+		legend Form for new assessment deployment
+		.row.left-padding-lg
+			.form-horizontal
+				fieldset
+					.row
+						label.col-md-4  Year
+						.form-group(required).col-md-5
+							select.form-group.form-control.right-padding-med(name="year" ng-model="new_assessment.year")
+								option(value="" selected disabled) Select year
+								option(ng-repeat="i in [2015,2016,2017,2018,2019,2020]" value="{{i}}") {{i}}
+
+					.row
+						label.col-md-4  Version
+						.form-group(required).col-md-5
+							select.form-group.form-control.right-padding-med(name="version" ng-model="new_assessment.version")
+								option(value="" selected disabled) Select version
+								option(ng-repeat="i in [{name: 'pilot', id: 'PI'},{name: 'main', id: 'PI'}]" value="{{i}}") {{i.name}}
+
+					.row(ng-repeat="country in new_assessment.assessment_countries")
+						label.col-md-4  country {{$index+1}}
+						.form-group(required).col-md-5
+							select.form-group.form-control.right-padding-med(name="country_selector" ng-model="country.country")
+								option(value="" selected disabled) Select country
+								option(ng-repeat="c in countries" value="{{c.iso2}}") {{c.country}}
+						.col-md-1
+							button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
+					
+					.row.top-padding-lg
+						button.btn.btn-success.disabled(ng-click="assessmentDeploy()") Deploy new assessment
+						| &nbsp;
+						button.btn.btn-danger(ng-click="closeDialog()") Cancel
+						| &nbsp;
+						button.btn.btn-warning(ng-click="countryAdd()") Add country

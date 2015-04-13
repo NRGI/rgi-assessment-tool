@@ -21,9 +21,9 @@
 					th
 				tbody
 					tr(ng-repeat="question in questions | filter:searchText | orderBy:sortOrder")
-						td{{question.question_order}}
-						td{{question.question_text}}
-						td{{question.component_text}}
+						td {{question.question_order}}
+						td {{question.question_text}}
+						td {{question.component_text}}
 						td
 							a.btn.center-block.btn-default(href="/admin/question-admin-view/{{question._id}}") View
 						td

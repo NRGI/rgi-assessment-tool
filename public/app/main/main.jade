@@ -1,9 +1,11 @@
 .container(ng-controller="rgiNavBarLoginCtrl")
 	.jumbotron
 		h1 NRGI Resource Governance Index Assessment Tool 2015
-		p Welcome to the assessment to RGI Assessment Tool Portal.
-	a.btn.center-block.btn-default(href="/answer-page") Answer page template
-	a.btn.center-block.btn-default(href="/answer-page-bolivia") Bolivia answer mockup
+		p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the assessment to RGI Assessment Tool Portal.
+		p(ng-show="!identity.isAuthenticated()") Please log in.
+		//- text {{identity}}
+	//- a.btn.center-block.btn-default(href="/answer-page") Answer page template
+	//- a.btn.center-block.btn-default(href="/answer-page-bolivia") Bolivia answer mockup
 
 	//- //- Message based on authentication status
 	//- .well(style='text-align: center')
