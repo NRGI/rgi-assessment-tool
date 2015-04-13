@@ -13,6 +13,9 @@
   max-width: 100%;
   padding: 1em;
   position: relative;
+  width: 450px;
+}
+.ngdialog.ngdialog-theme-plain .width750 .ngdialog-content {
   width: 750px;
 }
 
