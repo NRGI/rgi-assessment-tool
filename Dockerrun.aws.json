@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "byndcivilization/rgi-assessment-tool",
+    "Name": "byndcivilization/rgi-assessment-tool:master.39.1",
     "Update": "true"
   },
   "Ports": [
