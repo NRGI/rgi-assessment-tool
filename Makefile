@@ -6,6 +6,7 @@ all: prepare build
 
 prepare:
 	git archive -o rgi-assessment-tool.tar HEAD
+	mv 
 
 build:
 	docker build -t $(NAME):$(VERSION) --rm .

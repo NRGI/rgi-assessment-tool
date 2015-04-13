@@ -114,16 +114,16 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/assessments/assessment-edit/:answer_ID', {
             templateUrl: '/partials/assessments/answer-page-edit',
             controller:  'rgiAnswerCtrl'
-        })
-
-        .when('/answer-page', {
-            templateUrl: '/partials/answer-page',
-            constant: 'rgiAnswerCtrl'
-        })
-        .when('/answer-page-bolivia', {
-            templateUrl: '/partials/bolivia-answer-page',
-            constant: 'boliviaCtrl'
         });
+
+        // .when('/answer-page', {
+        //     templateUrl: '/partials/answer-page',
+        //     constant: 'rgiAnswerCtrl'
+        // })
+        // .when('/answer-page-bolivia', {
+        //     templateUrl: '/partials/bolivia-answer-page',
+        //     constant: 'boliviaCtrl'
+        // });
     // .when('/reporting', {
     //   templateUrl: '/partials/questions/reporting',
     //   controller: 'rgiReportingCtrl'

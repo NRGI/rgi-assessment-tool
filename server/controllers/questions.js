@@ -17,7 +17,7 @@ exports.getQuestionTextByID = function (req, res) {
     var query = Question.findOne({_id:req.params.id}).select({ "question_text": 1});
     query.exec(function (err, question) {
         res.send(question);
-    });
+    })
 };
 
 exports.updateQuestion = function (req, res) {
@@ -41,7 +41,30 @@ exports.updateQuestion = function (req, res) {
             res.status(400);
             return res.send({ reason: err.toString() });
         }
-        question.question_order = question_update.question_order;
+
+        if (question.question_order !== question_update.question_order) {
+            var new_loc = question_update.question_order,
+                old_loc = question.question_order,
+                query = Question.find({});
+
+            query.sort({question_order: 1}).exec(function (err, q) {
+                var q_array = q.filter(function (el) {
+                        return el.question_order !== old_loc;
+                       }),
+                    q_el = q[old_loc - 1];
+
+                q_array.splice(new_loc - 1, 0, q_el);
+
+                q_array.forEach(function (element, index){
+                    Question.findOne({_id: element._id}).exec(function (err, q_up) {
+                        q_up.question_order = index + 1;
+                        q_up.save();
+                    });
+                });
+            });
+            question.question_order = question_update.question_order;
+        }
+
         question.question_text = question_update.question_text;
         question.component = question_update.component;
         question.component_text = question_update.component.replace('_', ' ').capitalize();

@@ -3,7 +3,7 @@
 	.well
 		legend Assessment Status Dashboard
 		.pull-left
-			.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="true", tooltip="yes") New Assessment
+			.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="false", tooltip="yes") Deploy Assessment
 		.pull-right
 			form.form-inline
 				.form-group
@@ -20,6 +20,8 @@
 					th Started
 					th Last Edit
 					th Status
+					th Edit control
+					th Version
 					th.text-center Assign
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
@@ -38,6 +40,8 @@
 							em(ng-show="$last") {{mod.modified_date | date}}
 					td(ng-if="!assessment.edited_by")
 					td {{assessment.status | capitalize}}
+					td {{assessment.edit_control}}
+					td {{assessment.version | capitalize}} {{assessment.year}}
 					td
 						a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
 						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned
