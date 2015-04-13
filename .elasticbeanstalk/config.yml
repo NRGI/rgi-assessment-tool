@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: rgi-staging
+    environment: prod-env
   staging:
     environment: null
 global:
