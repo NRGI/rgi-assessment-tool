@@ -2,7 +2,7 @@ NAME=byndcivilization/rgi-assessment-tool
 VERSION=`git describe`
 CORE_VERSION=HEAD
 
-# all: prepare build
+all: prepare build
 
 build:
 	docker build -t $(NAME):$(VERSION) --rm .
