@@ -5,16 +5,23 @@ var angular;
 angular.module('app').factory('rgiAssessmentMethodSrvc', function ($http, $q, rgiIdentitySrvc, rgiAssessmentSrvc) {
     return {
         createAssessment: function (newAssessmentData) {
-            console.log(newAssessmentData);
-            // var newAssessment = new rgiAssessmentSrvc(newAssessmentData);
-            // var dfd = $q.defer();
 
+            var dfd = $q.defer(),
+                newAssessments = new rgiAssessmentSrvc(newAssessmentData);
+
+            newAssessments.length = newAssessmentData.length;
+            newAssessments.$save().then(function () {
+                dfd.resolve();
+            }, function (response) {
+                dfd.reject(response.data.reason);
+            });
             // newAssessment.$save().then(function() {
             //     dfd.resolve();
             // }, function(response) {
             //     dfd.reject(response.data.reason);
             // });
-            // return dfd.promise;
+            return dfd.promise;
+
         },
         // deleteAssessment: function(userDeletion) {
         //     var dfd = $q.defer();

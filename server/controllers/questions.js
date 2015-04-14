@@ -1,7 +1,23 @@
+'use strict';
 var Question = require('mongoose').model('Question');
 
+exports.createQuestions = function (req, res, next) {
+    var new_questions = req.body, i;
+
+    for (i = 0; i < new_questions.length; i += 1) {
+        Question.create(new_questions[i], function (err, question) {
+            if (err) {
+                res.status(400);
+                return res.send({reason: err.toString()});
+            }
+        });
+    }
+    res.send();
+};
+
 exports.getQuestions = function (req, res) {
-    Question.find({}).exec(function (err, collection) {
+    var query = Question.find(req.query);
+    query.exec(function (err, collection) {
         res.send(collection);
     });
 };
@@ -17,7 +33,7 @@ exports.getQuestionTextByID = function (req, res) {
     var query = Question.findOne({_id:req.params.id}).select({ "question_text": 1});
     query.exec(function (err, question) {
         res.send(question);
-    })
+    });
 };
 
 exports.updateQuestion = function (req, res) {
