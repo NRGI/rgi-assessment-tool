@@ -6,35 +6,33 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $locati
     // assign the identity resource with the current identity using identity service
     $scope.identity = rgiIdentitySrvc;
 
-    $scope.versions = [{year:'2015', version: 'pilot', name: '2015 Pilot', url: '2015_pilot'}, {year:'2015', version: 'main', name: '2015 Main', url: '2015_main'}];
-    // $scope.versions = rgiAssessmentSrvc.query({}, function (data) {
-    //     var versions = [];
-    //     versions.push('pilot');
-    //     console.log(versions.indexOf('pilot'));
-    //     // for (var i = 0; i < data.length; i++) {
-    //     //     if(versions.contains(data[i].version)) {
-    //     //         console.log(data[i].version)
-    //     //     }
-    //     // };
-    //     // data.forEach(function (el, i) {
-    //     //     // console.log(el.version);
-    //     //     // console.log(el.year);
-    //     //     // $scope.versions.push();
-    //     //     if (!versions.contains(el.version)) {
-    //     //         console.log(el.version);
-    //     //     //     // $scope.versions.push({version: el.version, year: el.year});
-    //     //     //     $scope.versions.push(el.version);
-    //     //     }
-    //     // });
-    //     return versions;
-    //     // console.log(data);
-    // });
+    // $scope.versions = [{year:'2015', version: 'pilot', name: '2015 Pilot', url: '2015_pilot'}, {year:'2015', version: 'main', name: '2015 Main', url: '2015_main'}];
+    // $scope.versions = [];
+    // if (rgiIdentitySrvc.currentuser != undefined) {
+    //     console.log('yes');
+    // }
 
     // signin function for signin button
     $scope.signin = function (username, password) {
         rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
+            $scope.versions = [];
             if (success) {
                 rgiNotifier.notify('You have successfully signed in!');
+                var url_array = [];
+                rgiAssessmentSrvc.query({}, function (data) {
+                    data.forEach(function (el, i) {
+                        if (url_array.indexOf(el.year + '_' + el.version) < 0) {
+                            url_array.push(el.year + '_' + el.version);
+                            $scope.versions.push({
+                                year: el.year,
+                                version: el.version,
+                                name: el.year + ' ' + el.version.charAt(0).toUpperCase() + el.version.slice(1),
+                                url: el.year + '_' + el.version
+                            });
+                        }
+                    });
+                    console.log(url_array);
+                });
             } else {
                 rgiNotifier.notify('Username/Password combination incorrect');
             }
