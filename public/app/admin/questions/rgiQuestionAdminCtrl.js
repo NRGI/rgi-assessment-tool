@@ -10,7 +10,9 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
         {value: "status", text: "Sort by Status"}
     ];
     $scope.sortOrder = $scope.sortOptions[0].value;
-    rgiQuestionSrvc.query(function (data) {
+
+    rgiQuestionSrvc.query({assessment_ID: 'base'}, function (data) {
+
         var question;
         $scope.questions = data;
         $scope.getArray = [];

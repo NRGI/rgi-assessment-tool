@@ -36,6 +36,9 @@ module.exports = function (app) {
     app.get('/api/questions/:id', questions.getQuestionsByID);
     // app.get('/api/question-text/:id', questions.getQuestionTextByID);
 
+    // POST
+    app.post('/api/questions', auth.requiresRole('supervisor'), questions.createQuestions);
+
     // PUT
     app.put('/api/questions', questions.updateQuestion);
 
@@ -63,6 +66,9 @@ module.exports = function (app) {
     // GET
     app.get('/api/assessments', auth.requiresApiLogin, assessments.getAssessments);
     app.get('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.getAssessmentsByID);
+
+    // POST
+    app.post('/api/assessments', auth.requiresRole('supervisor'), assessments.createAssessments);
 
     // PUT
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
