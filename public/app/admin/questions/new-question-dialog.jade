@@ -33,23 +33,7 @@ div.top-padding-med
 							.col-md-1
 								button.btn.btn-danger(ng-click="questionOptionDelete($index)" ng-disabled="new_question.question_choices.length==1") Delete
 
-					//- div(id="question_options_div").row.top-padding-lg
-					//- 	.col-md-2
-					//- 		b
-					//- 			p.text-right Option Value
-					//- 	.col-md-10
-					//- 	b
-					//- 		p Option Text
-					//- 	.row
-					//- 		.form-group(name="question_options_form" ng-repeat="choice in question.question_choices")
-					//- 			.col-md-1
-					//- 			.col-md-1
-					//- 				input.form-control(name="choiceOrder" type="number" ng-model="choice.order" required)
-					//- 			.col-md-8
-					//- 				textarea.form-control(name="choice" type="textbox" ng-model="choice.criteria" required)
-					//- 			.col-md-1
-					//- 				button.btn.btn-danger(ng-click="optionDelete($index)" ng-disabled="question.question_choices.length==1") Delete
-
+				
 					.row.top-padding-lg
 						button.btn.btn-success.disabled(ng-click="questionCreate()") Create new Question
 						| &nbsp;

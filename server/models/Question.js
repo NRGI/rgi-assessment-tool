@@ -1,4 +1,6 @@
 'use strict';
+/*jslint nomen: true unparam: true*/
+
 var mongoose = require('mongoose');
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
@@ -35,8 +37,6 @@ var questionSchema = mongoose.Schema({
     year: String,
     version: String,
     assessment_ID: {type: String, required: '{PATH} is required'},
-    // year: {type: String, required: '{PATH} is required', default: "edit"},
-    // version: {type: String, required: '{PATH} is required', default: "edit"},
     sub_indicator_name: String,
     minstry_if_applicable: String,
     section_name: String,

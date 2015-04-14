@@ -24,7 +24,6 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     };
 
     $scope.questionOptionDelete = function (index) {
-        console.log(index);
         $scope.question.question_choices.splice(index, 1);
 
         $scope.question.question_choices.forEach(function (el, i) {
@@ -72,7 +71,6 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
         delete new_question_data.new_comment;
 
         new_question_data.comments.push(new_comment_data);
-        console.log(new_question_data);
 
         rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
             rgiNotifier.notify('Comment added');

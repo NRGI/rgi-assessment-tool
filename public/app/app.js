@@ -26,15 +26,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/main/main',
             controller: 'rgiMainCtrl'
         })
-    // User Account Routes
+        // User Account Routes
         .when('/profile', {
             templateUrl: '/partials/account/profile',
             controller:  'rgiProfileCtrl',
             resolve: routeRoleChecks.user
         })
 
-    ///// Admin Routes
-    // USERS
+        ///// Admin Routes
+        // USERS
         .when('/admin/create-user', {
             templateUrl: '/partials/admin/users/create-user',
             controller:  'rgiCreateUserCtrl',
@@ -60,7 +60,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiUserAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
-    // QUESTIONS
+        // QUESTIONS
         .when('/admin/question-admin', {
             templateUrl: '/partials/admin/questions/question-admin',
             controller:  'rgiQuestionAdminCtrl',
@@ -76,7 +76,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiQuestionAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
-    // ASSESSMENTS
+        // ASSESSMENTS
         .when('/admin/assessment-admin', {
             templateUrl: '/partials/admin/assessments/assessment-admin',
             controller:  'rgiAssessmentAdminCtrl',
@@ -98,7 +98,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             resolve: routeRoleChecks.user
         })
 
-    // Assessment overview routes
+        // Assessment overview routes
         .when('/assessments', {
             templateUrl: '/partials/assessments/assessments-list',
             controller:  'rgiAssessmentsListCtrl',
@@ -106,12 +106,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/assessments/:assessment_ID', {
             templateUrl: '/partials/assessments/assessment-detail',
-                // controller: '',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
-
-
         .when('/assessments/assessment-view/:answer_ID', {
             templateUrl: '/partials/assessments/answer-page-view',
             controller:  'rgiAnswerCtrl'
@@ -121,22 +118,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAnswerCtrl'
         });
 
-        // .when('/answer-page', {
-        //     templateUrl: '/partials/answer-page',
-        //     constant: 'rgiAnswerCtrl'
-        // })
-        // .when('/answer-page-bolivia', {
-        //     templateUrl: '/partials/bolivia-answer-page',
-        //     constant: 'boliviaCtrl'
-        // });
-    // .when('/reporting', {
-    //   templateUrl: '/partials/questions/reporting',
-    //   controller: 'rgiReportingCtrl'
-    // })
-    // .when('/assessment/:nav_ID', {
-    //   templateUrl:'/partials/assessments/assessment-details',
-    //   controller: 'rgiAssessmentDetailCtrl'
-    // });
 });
 
 angular.module('app').run(function ($rootScope, $location) {

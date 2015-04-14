@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true */
+/*jslint nomen: true unparam: true*/
 
 var passport       = require('passport'),
     mongoose       = require('mongoose'),

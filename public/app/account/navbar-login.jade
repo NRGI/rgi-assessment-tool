@@ -24,15 +24,6 @@
           li(ng-repeat="version in versions")
             a(href="/admin/assessment-admin/subs/{{version.url}}") {{version.name}}
 
-
-
-    //- //- Admin assessments dashboard
-    //- ul.nav.navbar-nav(ng-show="identity.currentUser.isSupervisor()")
-    //-   //- li
-    //-   //-   a(href="/admin/assessments/assessment-dashboard") Assessment Dashboard
-    //-   li
-    //-     a(href="/admin/assessment-admin") Assessment Admin
-
     //- Supervisor's admin dropdown
     ul.nav.navbar-nav.dropdown
       li.dropdown(ng-show="identity.currentUser.isSupervisor()")
@@ -45,8 +36,6 @@
             a(href="/admin/user-admin") User Admin
           li
             a(href="/admin/question-admin") Questions Admin
-          //- li
-          //-   a(href="/admin/assessment-admin") Assessment Admin
       
     //- Users's dropdown to log out and change profile
     ul.nav.navbar-nav.dropdown

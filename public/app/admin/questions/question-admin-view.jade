@@ -29,14 +29,12 @@
 								a.btn.btn-default(href="/admin/question-admin-edit/{{question._id}}") Edit
 								| &nbsp;
 								a.btn.btn-default(href="/admin/question-admin") Cancel
-				//- div
-				//- 	text{{question.comments}}
+
 
 				div.top-padding-med(id="comments")
 						legend NRGI Comments:
 						div(id="prevComments")
 							.row.left-padding-lg(ng-repeat="comment in question.comments")
-								//- text{{comment}}
 								.row
 									b Author: 
 									em

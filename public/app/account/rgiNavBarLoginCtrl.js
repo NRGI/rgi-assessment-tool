@@ -1,16 +1,10 @@
 'use strict';
 var angular;
-/*jslint newcap: true*/
+/*jslint newcap: true unparam: true*/
 
 angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc, rgiAssessmentSrvc) {
     // assign the identity resource with the current identity using identity service
     $scope.identity = rgiIdentitySrvc;
-
-    // $scope.versions = [{year:'2015', version: 'pilot', name: '2015 Pilot', url: '2015_pilot'}, {year:'2015', version: 'main', name: '2015 Main', url: '2015_main'}];
-    // $scope.versions = [];
-    // if (rgiIdentitySrvc.currentuser != undefined) {
-    //     console.log('yes');
-    // }
 
     // signin function for signin button
     $scope.signin = function (username, password) {
@@ -31,7 +25,6 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $locati
                             });
                         }
                     });
-                    console.log(url_array);
                 });
             } else {
                 rgiNotifier.notify('Username/Password combination incorrect');
