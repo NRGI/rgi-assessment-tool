@@ -15,6 +15,7 @@ exports.createAssessments = function (req, res, next) {
 };
 
 exports.getAssessments = function (req, res) {
+    console.log(req.query);
     var query = Assessment.find(req.query);
     query.exec(function (err, collection) {
         res.send(collection);
