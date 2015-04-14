@@ -30,7 +30,7 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 after_success:
-  - eb init && eb deploy
+  - eb init && eb deploy prod_env
   - eb setenv USER_DEV_ID=$USER_DEV_ID USER_DEV_KEY=$USER_DEV_KEY
 
 commit_container: byndcivilization/rgi-assessment-tool
