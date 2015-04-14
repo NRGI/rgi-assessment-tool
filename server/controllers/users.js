@@ -2,7 +2,9 @@
 /*jslint nomen: true unparam: true*/
 
 var User = require('mongoose').model('User'),
-    encrypt = require('../utilities/encryption');
+    encrypt = require('../utilities/encryption'),
+    mandrill = require('node-mandrill')(process.env.MANDRILL_KEY);
+
 
 exports.getUsers = function (req, res) {
     var query;
@@ -44,6 +46,22 @@ exports.createUser = function (req, res, next) {
             res.status(400);
             return res.send({reason: err.toString()});
         }
+    });
+    //send an e-mail to jim rubenstein
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: 'byndcivilization@gmail.com', name: 'Chris Perry'}],
+            from_email: 'cperry@resourcegovernance.org',
+            subject: "Hey, what's up?",
+            text: "Hello, I sent this message using mandrill."
+        }
+    }, function(error, response)
+    {
+        //uh oh, there was an error
+        if (error) console.log( JSON.stringify(error) );
+
+        //everything's good, lets see what mandrill said
+        else console.log(response);
     });
     res.send();
 };
