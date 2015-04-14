@@ -1,4 +1,5 @@
 'use strict';
+/*jslint nomen: true unparam: true*/
 
 var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
@@ -125,72 +126,3 @@ exports.updateAnswer = function (req, res) {
     });
     res.send();
 };
-
-
-
-
-
-    // if (req.user.hasRole('supervisor')) {
-
-    // } else if (req.user.role === 'researcher') {
-    //     Assessment.find({'researcher_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
-    //         var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
-
-    //         if (assessments_ids.indexOf(req.query.assessment_ID) !== -1) {
-    //             console.log('ok');
-    //             // Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answers) {
-    //             //     res.send(answers);
-    //             // });
-    //         } else {
-    //             res.sendStatus(404);
-    //             return res.end();
-    //         }
-    //     });
-    // } else if (req.user.role === 'reviewer') {
-    //     Assessment.find({'reviewer_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
-    //         var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
-
-    //         if (assessments_ids.indexOf(req.query.assessment_ID) !== -1) {
-    //             console.log('ok');
-    //             // Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answers) {
-    //             //     res.send(answers);
-    //             // });
-    //         } else {
-    //             res.sendStatus(404);
-    //             return res.end();
-    //         }
-    //     });
-    // }
-
-
-    // if (!req.user.hasRole('supervisor')) {
-    //     res.sendStatus(404);
-    //     return res.end();
-    // }
-
-    // Question.findOne({_id: req.body._id}).exec(function (err, question) {
-    //     if (err) {
-    //         res.status(400);
-    //         return res.send({ reason: err.toString() });
-    //     }
-    //     question.question_order = questionUpdate.question_order;
-    //     question.row_id_org = questionUpdate.row_id_org
-    //     question.row_id = questionUpdate.row_id;
-    //     question.question_text = questionUpdate.question_text;
-    //     question.component = questionUpdate.component;
-    //     question.component_text = questionUpdate.component_text;
-    //     question.question_choices = questionUpdate.question_choices;
-
-    //     if (question.modified) {
-    //         question.modified.push({modifiedBy: req.user._id});
-    //     } else {
-    //         question.modified = {modifiedBy: req.user._id};
-    //     }
-    //     // user.address = questionUpdate.address;
-    //     question.save(function (err) {
-    //         if (err) {
-    //             return res.send({ reason: err.toString() });
-    //         }
-    //     });
-    // });
-    // res.send();

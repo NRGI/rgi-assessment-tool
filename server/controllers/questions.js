@@ -1,19 +1,7 @@
 'use strict';
+/*jslint nomen: true unparam: true regexp: true*/
+
 var Question = require('mongoose').model('Question');
-
-exports.createQuestions = function (req, res, next) {
-    var new_questions = req.body, i;
-
-    for (i = 0; i < new_questions.length; i += 1) {
-        Question.create(new_questions[i], function (err, question) {
-            if (err) {
-                res.status(400);
-                return res.send({reason: err.toString()});
-            }
-        });
-    }
-    res.send();
-};
 
 exports.getQuestions = function (req, res) {
     var query = Question.find(req.query);
@@ -30,10 +18,26 @@ exports.getQuestionsByID = function (req, res) {
 
 
 exports.getQuestionTextByID = function (req, res) {
-    var query = Question.findOne({_id:req.params.id}).select({ "question_text": 1});
+    var query = Question.findOne({_id: req.params.id}).select({ "question_text": 1});
     query.exec(function (err, question) {
         res.send(question);
     });
+};
+
+exports.createQuestions = function (req, res, next) {
+    var new_questions, i;
+
+    new_questions = req.body;
+
+    for (i = 0; i < new_questions.length; i += 1) {
+        Question.create(new_questions[i], function (err, question) {
+            if (err) {
+                res.status(400);
+                return res.send({reason: err.toString()});
+            }
+        });
+    }
+    res.send();
 };
 
 exports.updateQuestion = function (req, res) {
@@ -66,12 +70,12 @@ exports.updateQuestion = function (req, res) {
             query.sort({question_order: 1}).exec(function (err, q) {
                 var q_array = q.filter(function (el) {
                         return el.question_order !== old_loc;
-                       }),
+                    }),
                     q_el = q[old_loc - 1];
 
                 q_array.splice(new_loc - 1, 0, q_el);
 
-                q_array.forEach(function (element, index){
+                q_array.forEach(function (element, index) {
                     Question.findOne({_id: element._id}).exec(function (err, q_up) {
                         q_up.question_order = index + 1;
                         q_up.save();
@@ -95,7 +99,6 @@ exports.updateQuestion = function (req, res) {
 
         question.save(function (err) {
             if (err) {
-                console.log(err.toString());
                 return res.end();
             }
         });

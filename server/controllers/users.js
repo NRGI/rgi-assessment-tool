@@ -1,3 +1,6 @@
+'use strict';
+/*jslint nomen: true unparam: true*/
+
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption');
 

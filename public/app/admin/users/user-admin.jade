@@ -22,7 +22,6 @@
 					th 
 					th 
 			tbody
-				//- Loop through all users
 				tr(ng-repeat="user in users | filter:searchText | orderBy:sortOrder")
 					td
 						a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}

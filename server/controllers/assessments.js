@@ -1,21 +1,9 @@
 'use strict';
+/*jslint nomen: true unparam: true*/
+
 var Assessment = require('mongoose').model('Assessment');
 
-exports.createAssessments = function (req, res, next) {
-    var new_assessments = req.body;
-    for (var i = 0; i < new_assessments.length; i++) {
-        Assessment.create(new_assessments[i], function (err, assessment) {
-            if (err) {
-                res.status(400);
-                return res.send({reason: err.toString()});
-            }
-        });
-    };
-    res.send();
-};
-
 exports.getAssessments = function (req, res) {
-    console.log(req.query);
     var query = Assessment.find(req.query);
     query.exec(function (err, collection) {
         res.send(collection);
@@ -29,6 +17,21 @@ exports.getAssessmentsByID = function (req, res) {
     });
 };
 
+exports.createAssessments = function (req, res, next) {
+    var new_assessments, i;
+
+    new_assessments = req.body;
+
+    for (i = 0; i < new_assessments.length; i += 1) {
+        Assessment.create(new_assessments[i], function (err, assessment) {
+            if (err) {
+                res.status(400);
+                return res.send({reason: err.toString()});
+            }
+        });
+    }
+    res.send();
+};
 
 exports.updateAssessment = function (req, res) {
     var assessmentUpdates = req.body,

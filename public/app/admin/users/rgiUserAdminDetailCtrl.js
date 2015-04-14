@@ -5,7 +5,7 @@ var angular;
 angular.module('app').controller('rgiUserAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc) {
 
     $scope.user = rgiUserSrvc.get({_id: $routeParams.id});
-    // fix submit button functionality
+
     $scope.userUpdate = function () {
         var newUserData = $scope.user;
 

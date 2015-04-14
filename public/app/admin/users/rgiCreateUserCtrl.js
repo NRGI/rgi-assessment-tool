@@ -7,8 +7,6 @@ angular.module('app').controller('rgiCreateUserCtrl', function ($scope, $locatio
         {value: 'supervisor', text: 'Supervisor'},
         {value: 'researcher', text: 'Researcher'},
         {value: 'reviewer', text: 'Reviewer'}
-        // {value:'external',text:'External Reviewer (i.e. company, national gov, etc.)'},
-        // {value:'',text:''}
     ];
 
   // fix submit button functionality

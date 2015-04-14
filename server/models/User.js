@@ -1,4 +1,5 @@
 'use strict';
+/*jslint nomen: true unparam: true*/
 
 var mongoose    = require('mongoose'),
     encrypt     = require('../utilities/encryption');

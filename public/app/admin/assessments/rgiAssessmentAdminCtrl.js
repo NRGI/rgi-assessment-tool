@@ -82,7 +82,6 @@ angular.module('app').controller('assessmentDialogCtrl', function ($scope, $loca
     };
 
     $scope.countryDelete = function (index) {
-        console.log(index);
         $scope.new_assessment.assessment_countries.splice(index, 1);
     };
     $scope.assessmentDeploy = function () {
@@ -100,7 +99,7 @@ angular.module('app').controller('assessmentDialogCtrl', function ($scope, $loca
                     country: el.country.country
                 });
             });
-            // console.log(data);
+
             data.forEach(function (el, i) {
                 newQuestionData.push({
                     root_QID: el._id,

@@ -6,8 +6,6 @@ var auth = require('./auth'),
     answers = require('../controllers/answers'),
     questions = require('../controllers/questions'),
     assessments = require('../controllers/assessments');
-    // mongoose     = require('mongoose');
-    // User         = mongoose.model('User');
 
 module.exports = function (app) {
 
@@ -34,7 +32,6 @@ module.exports = function (app) {
     // GET
     app.get('/api/questions', questions.getQuestions);
     app.get('/api/questions/:id', questions.getQuestionsByID);
-    // app.get('/api/question-text/:id', questions.getQuestionTextByID);
 
     // POST
     app.post('/api/questions', auth.requiresRole('supervisor'), questions.createQuestions);
@@ -54,8 +51,6 @@ module.exports = function (app) {
 
     // POST
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
-    // app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
-    // app.get('/api/answers/:answer_ID', auth.requiresApiLogin, assessments.getAnswersByID);
 
     // PUT
     app.put('/api/answers/:answer_ID', answers.updateAnswer);

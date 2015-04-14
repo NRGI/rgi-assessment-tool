@@ -28,7 +28,6 @@ div.top-padding-med
 								button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
 						
 						.row.top-padding-lg
-							//- button.btn.btn-success.disabled(ng-click="assessmentDeploy()") Deploy new assessment
 							button.btn.btn-success(ng-click="assessmentDeploy()" ng-disabled="deployAssessment.$invalid") Deploy new assessment
 							| &nbsp;
 							button.btn.btn-danger(ng-click="closeDialog()") Cancel
