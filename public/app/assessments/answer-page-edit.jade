@@ -15,7 +15,8 @@
 			.col-md-pull-2
 				button.btn.btn-primary(ng-click="answerSave()", ng-disabled="answer_form.$invalid") Save answer
 				| &nbsp;
-				button.btn.btn-success(ng-click="answerSubmit()") Submit answer
+				button.btn.btn-success(ng-click="answerSubmit()" ng-if="!answer[current_user.role + '_score']" disabled) Submit answer
+				button.btn.btn-success(ng-click="answerSubmit()" ng-if="answer[current_user.role + '_score']" ) Submit answer
 				| &nbsp;
 				button.btn.btn-danger(ng-click="answerClear()") Clear answer
 				| &nbsp;

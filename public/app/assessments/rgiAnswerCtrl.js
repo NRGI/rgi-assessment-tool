@@ -73,22 +73,31 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
     $scope.answerSubmit = function () {
         var new_answer_data, new_assessment_data;
+        function zeroFill(number, width) {
+            width -= number.toString().length;
+            if (width > 0) {
+                return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
+            }
+            return number + ""; // always return a string
+        }
 
         new_answer_data = $scope.answer;
         new_assessment_data = $scope.assessment;
 
         if (new_answer_data.status !== 'submitted') {
             new_answer_data.status = 'submitted';
+            new_assessment_data.questions_complete += 1;
         }
-        new_assessment_data.questions_complete += 1;
-
-        console.log(new_assessment_data);
-        console.log(new_answer_data);
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
-                $location.path('/assessments/' + new_answer_data.assessment_ID);
+                if (new_answer_data.question_order !== 4) {
+                    $location.path('/assessments/assessment-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
+                } else {
+                    $location.path('/assessments/' + new_answer_data.assessment_ID);
+                }
+                // $location.path();
                 rgiNotifier.notify('Answer submitted');
             }, function (reason) {
                 rgiNotifier.notify(reason);
