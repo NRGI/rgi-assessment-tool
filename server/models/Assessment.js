@@ -20,13 +20,15 @@ var assessmentSchema = mongoose.Schema({
     researcher_ID: {type: ObjectId, index: true}, // pulled from user_id
     reviewer_ID: {type: ObjectId, index: true}, // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
+    status: {type: String, required: '{PATH} is required', default: 'unassigned'}, // unassigned, assigned, started, submitted, review, reassigned, approved
+
+
     assignment: {assigned_by: ObjectId, assigned_date: Date},
     start_date: {started_by: ObjectId, started_date: Date},
     submit_date: {submitted_by: ObjectId, submitted_date: Date},
     review_date: {reviewed_by: ObjectId, reviewed_date: Date},
     approval: {approved_by: ObjectId, approved_date: Date},
     modified: [modificationSchema],
-    status: {type: String, required: '{PATH} is required', default: 'unassigned'}, // unassigned, assigned, started, submitted, reviewing, reviewed, approved>
     questions_complete: {type: Number, default: 0}
 });
 
@@ -35,43 +37,43 @@ var Assessment = mongoose.model('Assessment', assessmentSchema);
 function createDefaultAssessments() {
     Assessment.find({}).exec(function (err, collection) {
         if (collection.length === 0) {
-            Assessment.create({assessment_ID: "TZ-2015-PI", ISO3: "TZA", year: "2015", version: "pilot", country: "Tanzania"});
-            Assessment.create({assessment_ID: "NG-2015-PI", ISO3: "NGA", year: "2015", version: "pilot", country: "Nigeria"});
-            Assessment.create({assessment_ID: "MM-2015-PI", ISO3: "MMR", year: "2015", version: "pilot", country: "Myanmar"});
-            Assessment.create({assessment_ID: "AO-2015-PI", ISO3: "AGO", year: "2015", version: "pilot", country: "Angola"});
-            Assessment.create({assessment_ID: "RU-2015-PI", ISO3: "RUS", year: "2015", version: "pilot", country: "Russian Federation"});
-            Assessment.create({assessment_ID: "MX-2015-PI", ISO3: "MEX", year: "2015", version: "pilot", country: "Mexico"});
-            Assessment.create({assessment_ID: "EG-2015-PI", ISO3: "EGY", year: "2015", version: "pilot", country: "Egypt, Arab Rep."});
-            Assessment.create({assessment_ID: "IR-2015-PI", ISO3: "IRN", year: "2015", version: "pilot", country: "Iran, Islamic Rep."});
-            Assessment.create({assessment_ID: "DZ-2015-PI", ISO3: "DZA", year: "2015", version: "pilot", country: "Algeria"});
-            Assessment.create({assessment_ID: "IQ-2015-PI", ISO3: "IRQ", year: "2015", version: "pilot", country: "Iraq"});
-            Assessment.create({assessment_ID: "PE-2015-PI", ISO3: "PER", year: "2015", version: "pilot", country: "Peru"});
-            Assessment.create({assessment_ID: "VE-2015-PI", ISO3: "VEN", year: "2015", version: "pilot", country: "Venezuela, RB"});
-            Assessment.create({assessment_ID: "AF-2015-PI", ISO3: "AFG", year: "2015", version: "pilot", country: "Afghanistan"});
-            Assessment.create({assessment_ID: "SA-2015-PI", ISO3: "SAU", year: "2015", version: "pilot", country: "Saudi Arabia"});
-            Assessment.create({assessment_ID: "GH-2015-PI", ISO3: "GHA", year: "2015", version: "pilot", country: "Ghana"});
-            Assessment.create({assessment_ID: "MZ-2015-PI", ISO3: "MOZ", year: "2015", version: "pilot", country: "Mozambique"});
-            Assessment.create({assessment_ID: "YE-2015-PI", ISO3: "YEM", year: "2015", version: "pilot", country: "Yemen, Rep."});
-            Assessment.create({assessment_ID: "KZ-2015-PI", ISO3: "KAZ", year: "2015", version: "pilot", country: "Kazakhstan"});
-            Assessment.create({assessment_ID: "EC-2015-PI", ISO3: "ECU", year: "2015", version: "pilot", country: "Ecuador"});
-            Assessment.create({assessment_ID: "ZM-2015-PI", ISO3: "ZMB", year: "2015", version: "pilot", country: "Zambia"});
-            Assessment.create({assessment_ID: "ZW-2015-PI", ISO3: "ZWE", year: "2015", version: "pilot", country: "Zimbabwe"});
-            Assessment.create({assessment_ID: "TD-2015-PI", ISO3: "TCD", year: "2015", version: "pilot", country: "Chad"});
-            Assessment.create({assessment_ID: "GN-2015-PI", ISO3: "GIN", year: "2015", version: "pilot", country: "Guinea"});
-            Assessment.create({assessment_ID: "BO-2015-PI", ISO3: "BOL", year: "2015", version: "pilot", country: "Bolivia"});
-            Assessment.create({assessment_ID: "AZ-2015-PI", ISO3: "AZE", year: "2015", version: "pilot", country: "Azerbaijan"});
-            Assessment.create({assessment_ID: "AE-2015-PI", ISO3: "ARE", year: "2015", version: "pilot", country: "United Arab Emirates"});
-            Assessment.create({assessment_ID: "LY-2015-PI", ISO3: "LBY", year: "2015", version: "pilot", country: "Libya"});
-            Assessment.create({assessment_ID: "KG-2015-PI", ISO3: "KGZ", year: "2015", version: "pilot", country: "Kyrgyz Republic"});
-            Assessment.create({assessment_ID: "NO-2015-PI", ISO3: "NOR", year: "2015", version: "pilot", country: "Norway"});
-            Assessment.create({assessment_ID: "CG-2015-PI", ISO3: "COG", year: "2015", version: "pilot", country: "Congo, Rep."});
-            Assessment.create({assessment_ID: "KW-2015-PI", ISO3: "KWT", year: "2015", version: "pilot", country: "Kuwait"});
-            Assessment.create({assessment_ID: "OM-2015-PI", ISO3: "OMN", year: "2015", version: "pilot", country: "Oman"});
-            Assessment.create({assessment_ID: "QA-2015-PI", ISO3: "QAT", year: "2015", version: "pilot", country: "Qatar"});
-            Assessment.create({assessment_ID: "GA-2015-PI", ISO3: "GAB", year: "2015", version: "pilot", country: "Gabon"});
-            Assessment.create({assessment_ID: "TT-2015-PI", ISO3: "TTO", year: "2015", version: "pilot", country: "Trinidad and Tobago"});
-            Assessment.create({assessment_ID: "BH-2015-PI", ISO3: "BHR", year: "2015", version: "pilot", country: "Bahrain"});
-            Assessment.create({assessment_ID: "CD-2015-PI", ISO3: "COD", year: "2015", version: "pilot", country: "Congo, Dem. Rep."});
+            // Assessment.create({assessment_ID: "TZ-2015-PI", ISO3: "TZA", year: "2015", version: "pilot", country: "Tanzania"});
+            // Assessment.create({assessment_ID: "NG-2015-PI", ISO3: "NGA", year: "2015", version: "pilot", country: "Nigeria"});
+            // Assessment.create({assessment_ID: "MM-2015-PI", ISO3: "MMR", year: "2015", version: "pilot", country: "Myanmar"});
+            // Assessment.create({assessment_ID: "AO-2015-PI", ISO3: "AGO", year: "2015", version: "pilot", country: "Angola"});
+            // Assessment.create({assessment_ID: "RU-2015-PI", ISO3: "RUS", year: "2015", version: "pilot", country: "Russian Federation"});
+            // Assessment.create({assessment_ID: "MX-2015-PI", ISO3: "MEX", year: "2015", version: "pilot", country: "Mexico"});
+            // Assessment.create({assessment_ID: "EG-2015-PI", ISO3: "EGY", year: "2015", version: "pilot", country: "Egypt, Arab Rep."});
+            // Assessment.create({assessment_ID: "IR-2015-PI", ISO3: "IRN", year: "2015", version: "pilot", country: "Iran, Islamic Rep."});
+            // Assessment.create({assessment_ID: "DZ-2015-PI", ISO3: "DZA", year: "2015", version: "pilot", country: "Algeria"});
+            // Assessment.create({assessment_ID: "IQ-2015-PI", ISO3: "IRQ", year: "2015", version: "pilot", country: "Iraq"});
+            // Assessment.create({assessment_ID: "PE-2015-PI", ISO3: "PER", year: "2015", version: "pilot", country: "Peru"});
+            // Assessment.create({assessment_ID: "VE-2015-PI", ISO3: "VEN", year: "2015", version: "pilot", country: "Venezuela, RB"});
+            // Assessment.create({assessment_ID: "AF-2015-PI", ISO3: "AFG", year: "2015", version: "pilot", country: "Afghanistan"});
+            // Assessment.create({assessment_ID: "SA-2015-PI", ISO3: "SAU", year: "2015", version: "pilot", country: "Saudi Arabia"});
+            // Assessment.create({assessment_ID: "GH-2015-PI", ISO3: "GHA", year: "2015", version: "pilot", country: "Ghana"});
+            // Assessment.create({assessment_ID: "MZ-2015-PI", ISO3: "MOZ", year: "2015", version: "pilot", country: "Mozambique"});
+            // Assessment.create({assessment_ID: "YE-2015-PI", ISO3: "YEM", year: "2015", version: "pilot", country: "Yemen, Rep."});
+            // Assessment.create({assessment_ID: "KZ-2015-PI", ISO3: "KAZ", year: "2015", version: "pilot", country: "Kazakhstan"});
+            // Assessment.create({assessment_ID: "EC-2015-PI", ISO3: "ECU", year: "2015", version: "pilot", country: "Ecuador"});
+            // Assessment.create({assessment_ID: "ZM-2015-PI", ISO3: "ZMB", year: "2015", version: "pilot", country: "Zambia"});
+            // Assessment.create({assessment_ID: "ZW-2015-PI", ISO3: "ZWE", year: "2015", version: "pilot", country: "Zimbabwe"});
+            // Assessment.create({assessment_ID: "TD-2015-PI", ISO3: "TCD", year: "2015", version: "pilot", country: "Chad"});
+            // Assessment.create({assessment_ID: "GN-2015-PI", ISO3: "GIN", year: "2015", version: "pilot", country: "Guinea"});
+            // Assessment.create({assessment_ID: "BO-2015-PI", ISO3: "BOL", year: "2015", version: "pilot", country: "Bolivia"});
+            // Assessment.create({assessment_ID: "AZ-2015-PI", ISO3: "AZE", year: "2015", version: "pilot", country: "Azerbaijan"});
+            // Assessment.create({assessment_ID: "AE-2015-PI", ISO3: "ARE", year: "2015", version: "pilot", country: "United Arab Emirates"});
+            // Assessment.create({assessment_ID: "LY-2015-PI", ISO3: "LBY", year: "2015", version: "pilot", country: "Libya"});
+            // Assessment.create({assessment_ID: "KG-2015-PI", ISO3: "KGZ", year: "2015", version: "pilot", country: "Kyrgyz Republic"});
+            // Assessment.create({assessment_ID: "NO-2015-PI", ISO3: "NOR", year: "2015", version: "pilot", country: "Norway"});
+            // Assessment.create({assessment_ID: "CG-2015-PI", ISO3: "COG", year: "2015", version: "pilot", country: "Congo, Rep."});
+            // Assessment.create({assessment_ID: "KW-2015-PI", ISO3: "KWT", year: "2015", version: "pilot", country: "Kuwait"});
+            // Assessment.create({assessment_ID: "OM-2015-PI", ISO3: "OMN", year: "2015", version: "pilot", country: "Oman"});
+            // Assessment.create({assessment_ID: "QA-2015-PI", ISO3: "QAT", year: "2015", version: "pilot", country: "Qatar"});
+            // Assessment.create({assessment_ID: "GA-2015-PI", ISO3: "GAB", year: "2015", version: "pilot", country: "Gabon"});
+            // Assessment.create({assessment_ID: "TT-2015-PI", ISO3: "TTO", year: "2015", version: "pilot", country: "Trinidad and Tobago"});
+            // Assessment.create({assessment_ID: "BH-2015-PI", ISO3: "BHR", year: "2015", version: "pilot", country: "Bahrain"});
+            // Assessment.create({assessment_ID: "CD-2015-PI", ISO3: "COD", year: "2015", version: "pilot", country: "Congo, Dem. Rep."});
             // Assessment.create({assessment_ID: "UZ-2015-PI", ISO3: "UZB", year: "2015", version: "pilot", country: "Uzbekistan"});
             // Assessment.create({assessment_ID: "SY-2015-PI", ISO3: "SYR", year: "2015", version: "pilot", country: "Syrian Arab Republic"});
             // Assessment.create({assessment_ID: "LA-2015-PI", ISO3: "LAO", year: "2015", version: "pilot", country: "Lao PDR"});
