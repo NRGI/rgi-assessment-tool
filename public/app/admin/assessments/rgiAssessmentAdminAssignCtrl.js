@@ -30,7 +30,6 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
             new_answer_set = [];
-        console.log($scope.assessment);
         new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
         new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
@@ -45,9 +44,12 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
             new_answer_set.push({});
 
             if (el.hasOwnProperty('question_order')) {
-                new_answer_set[i].answer_ID = $routeParams.assessment_ID + String(zeroFill(el.question_order, 3));
+                new_answer_set[i].answer_ID = $routeParams.assessment_ID + '-' + String(zeroFill(el.question_order, 3));
                 new_answer_set[i].question_ID = el._id;
+                new_answer_set[i].root_question_ID = el.root_question_ID;
                 new_answer_set[i].assessment_ID = $routeParams.assessment_ID;
+                new_answer_set[i].year = el.year;
+                new_answer_set[i].version = el.version;
                 new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
                 new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
                 new_answer_set[i].edit_control = $scope.researcherSelect._id;

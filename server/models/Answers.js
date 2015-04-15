@@ -40,7 +40,7 @@ var answerSchema = mongoose.Schema({
     researcher_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of User Model
     reviewer_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of User Model
     year: String,
-    version: String,  // pilot or full
+    version: String,  // pilot or main
     edit_control: ObjectId, // user_ID of editing rights
     question_order: {type: Number, required: '{PATH} is required'}, // generated from the order_ID of Question Model
     question_text: String, // 
@@ -48,10 +48,10 @@ var answerSchema = mongoose.Schema({
     component_text: {type: String, required: '{PATH} is required'}, // generated from Question Model
     nrc_precept: Number,
     question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
+    root_question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
 
     assigned: {assignedBy: ObjectId, assignedDate: {type: Date, default: Date.now}},
-
     researcher_score: Number,
     /////ERROR CALCULATION
     researcher_score_history: [scoreHistorySchema],
