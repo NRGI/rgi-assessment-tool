@@ -3,7 +3,9 @@
 
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption'),
-    mandrill = require('node-mandrill')(process.env.MANDRILL_KEY);
+    mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
+    // client = require('campaign')();
+    // client.send(template, options, done);
 
 
 exports.getUsers = function (req, res) {
@@ -32,7 +34,14 @@ exports.getUsersListByID = function (req, res) {
 };
 
 exports.createUser = function (req, res, next) {
-    var userData = req.body;
+    var userData = req.body,
+        rec_email = userData.email,
+        rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
+        rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
+        rec_username = userData.username,
+        rec_password = userData.password,
+        send_name = req.user.firstName + " " + req.user.lastName;
+
     userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
@@ -47,16 +56,21 @@ exports.createUser = function (req, res, next) {
             return res.send({reason: err.toString()});
         }
     });
-    //send an e-mail to jim rubenstein
+
+    // //send an e-mail to jim rubenstein
     mandrill('/messages/send', {
         message: {
-            to: [{email: 'byndcivilization@gmail.com', name: 'Chris Perry'}],
+            to: [{email: rec_email, name: rec_name}],
             from_email: 'cperry@resourcegovernance.org',
-            subject: "Hey, what's up?",
-            text: "Hello, I sent this message using mandrill."
+            subject: rec_role + ' account created!',
+            html: "Hello " + rec_name + ",<p>\
+                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                   Thanks!<p>\
+                   The RGI Team."
         }
-    }, function(error, response)
-    {
+    }, function (error, response) {
         //uh oh, there was an error
         if (error) console.log( JSON.stringify(error) );
 
@@ -68,6 +82,12 @@ exports.createUser = function (req, res, next) {
 
 exports.updateUser = function (req, res) {
     var userUpdates = req.body;
+        // rec_email = userData.email,
+        // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
+        // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
+        // rec_username = userData.username,
+        // rec_password = userData.password,
+        // send_name = req.user.firstName + " " + req.user.lastName;;
 
     if (req.user._id != userUpdates._id && !req.user.hasRole('supervisor')) {
         res.status(404);
@@ -101,10 +121,37 @@ exports.updateUser = function (req, res) {
             }
         });
     });
+    // // //send an e-mail to jim rubenstein
+    // mandrill('/messages/send', {
+    //     message: {
+    //         to: [{email: rec_email, name: rec_name}],
+    //         from_email: 'cperry@resourcegovernance.org',
+    //         subject: rec_role + ' account created!',
+    //         html: "Hello " + rec_name + ",<p>\
+    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+    //                Thanks!<p>\
+    //                The RGI Team."
+    //     }
+    // }, function (error, response) {
+    //     //uh oh, there was an error
+    //     if (error) console.log( JSON.stringify(error) );
+
+    //     //everything's good, lets see what mandrill said
+    //     else console.log(response);
+    // });
     res.send();
 };
 
 exports.deleteUser = function (req, res) {
+    // var userUpdates = req.body;
+        // rec_email = userData.email,
+        // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
+        // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
+        // rec_username = userData.username,
+        // rec_password = userData.password,
+        // send_name = req.user.firstName + " " + req.user.lastName;;
 
     User.remove({_id: req.params.id}, function (err) {
         if (!err) {
@@ -113,5 +160,25 @@ exports.deleteUser = function (req, res) {
             return res.send({ reason: err.toString() });
         }
     });
+    // // //send an e-mail to jim rubenstein
+    // mandrill('/messages/send', {
+    //     message: {
+    //         to: [{email: rec_email, name: rec_name}],
+    //         from_email: 'cperry@resourcegovernance.org',
+    //         subject: rec_role + ' account created!',
+    //         html: "Hello " + rec_name + ",<p>\
+    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+    //                Thanks!<p>\
+    //                The RGI Team."
+    //     }
+    // }, function (error, response) {
+    //     //uh oh, there was an error
+    //     if (error) console.log( JSON.stringify(error) );
+
+    //     //everything's good, lets see what mandrill said
+    //     else console.log(response);
+    // });
     res.send();
 };
