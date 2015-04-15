@@ -1,7 +1,7 @@
 //- answer page
 .container.top-padding-med
 	.well
-		legend.h2 {{assessment.country}} 2015 Assessment
+		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} Assessment
 		.row.left-padding-lg.bottom-padding-med
 			h3 Question {{answer.question_order}}. {{answer.question_text}}
 			h5 Researcher score:
@@ -71,37 +71,29 @@
 											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
 											
 						
-					//- div(id="bibliography").bottom-padding-med
-					//- 	legend Bibliograpical reference:
-					//- 	div(id="prevBib")
-					//- 		.row.left-padding-lg(ng-repeat="reference in answer.references", ng-show="answer.references.length")
-					//- 			.row
-					//- 				b {{reference.author}} ({{reference.role}}):
-					//- 			.row.col-md-11
-					//- 				a(href="{{reference.URL}}"){{reference.tex_ref}}
-					//- 			.row.col-md-11
-					//- 				em Comment:
-					//- 				text  {{reference.note}}
-					//- 			.row.col-md-offset-8.col-md-3
-					//- 				date
-					//- 					small
-					//- 						em {{reference.date}}
-					//- 		.row.left-padding-lg.bottom-padding-med( ng-if="!answer.references.length")
-					//- 			.row
-					//- 				b No references.
-
-
-					//- div(id="validation").bottom-padding-med
-					//- 	legend Validation:
-					//- 	div(id="currentValidation")
-					//- 		.row.left-padding-lg
-					//- 			ul
-					//- 				li {role} {agrees/disagrees} with {other role}
-					//- 		.row.top-padding-med.left-padding-lg
-					//- 			b Do you agree with the {other role}?
-					//- 			.form-group.left-padding-lg
-					//- 				input(type="radio", name="agreeement_choice", value="1", checked="")
-					//- 				text.left-padding-med Agree
-					//- 				br
-					//- 				input(type="radio", name="agreeement_choice", value="1", checked="")
-					//- 				text.left-padding-med Disagree
+					div(id="bibliography").bottom-padding-med
+						legend Bibliograpical citations:
+						div(id="prev_bib")
+							.row.left-padding-lg(ng-repeat="citation in answer.citations")
+								.row
+									text Uploaded by {{citation.upload_user_id}} on {{citation.upload_date | date}}
+									text Originally found at {{citation.upload_URL}}
+								.row
+									b Author: 
+									text {{citation.citation.authors}}
+								.row
+									b Title: 
+									text {{citation.citation.title}}
+								.row
+									b Published: 
+									text {{citation.citation.publish_year}}
+								.row.col-md-11
+									a(href="{{citation.upload_URL}}") View here
+								.row.col-md-11
+									em Comment:
+									text  {{citation.note.content}}
+								.row.col-md-offset-8.col-md-3
+									date
+										small
+											text {{citation.note.author_name}}
+											em {{citation.note.date | date}}

@@ -21,7 +21,8 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
     $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID});
 
     // get questions for insertion into answers collection
-    $scope.questions = rgiQuestionSrvc.query();
+    $scope.questions = rgiQuestionSrvc.query({assessment_ID: $routeParams.assessment_ID.substr(3)});
+    // console.log($routeParams.assessment_ID.substr(3));
 
     $scope.assessmentAssign = function () {
         // update users

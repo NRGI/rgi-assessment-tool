@@ -48,7 +48,7 @@ var answerSchema = mongoose.Schema({
     component_text: {type: String, required: '{PATH} is required'}, // generated from Question Model
     nrc_precept: Number,
     question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
-    status: {type: String, default: 'assigned'}, // saved, submitted, reviewed, approved
+    status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
 
     assigned: {assignedBy: ObjectId, assignedDate: {type: Date, default: Date.now}},
 

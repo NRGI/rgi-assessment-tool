@@ -1,8 +1,8 @@
 .container
 	.well
+		img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
 		legend 
 			h1{{assessment.country}}
-		img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase}}/vector.svg")
 		.pull-right
 			form.form-inline
 				.form-group

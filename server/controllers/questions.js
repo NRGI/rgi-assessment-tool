@@ -28,6 +28,7 @@ exports.createQuestions = function (req, res, next) {
     var new_questions, i;
 
     new_questions = req.body;
+    console.log(req.body);
 
     for (i = 0; i < new_questions.length; i += 1) {
         Question.create(new_questions[i], function (err, question) {

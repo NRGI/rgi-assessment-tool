@@ -102,7 +102,9 @@ angular.module('app').controller('assessmentDialogCtrl', function ($scope, $loca
 
             data.forEach(function (el, i) {
                 newQuestionData.push({
-                    root_QID: el._id,
+                    root_question_ID: el._id,
+                    year: String($scope.new_assessment.year),
+                    version: $scope.new_assessment.version,
                     assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
                     component: el.component,
                     component_text: el.component_text,
