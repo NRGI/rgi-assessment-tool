@@ -29,9 +29,9 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
             new_answer_set = [];
-
-        new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
-        new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country});
+        console.log($scope.assessment);
+        new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
+        new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
         // update assessment
         new_assessment_data.status = 'assigned';

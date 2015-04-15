@@ -13,7 +13,7 @@
 					th Name
 					th Username
 					th Role
-					th Countries
+					th Assessments
 					th Assigned
 					th Started
 					th Submitted
@@ -29,7 +29,7 @@
 					td {{user.role}}
 					td
 						p(ng-repeat="assessment in user.assessments")
-							text {{assessment.country_name}}
+							text {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
 					td
 						p(ng-repeat="assessment in user.assessments")
 							em(ng-if="assessment.details.assignment") {{assessment.details.assignment.assigned_date | date}}
