@@ -1,8 +1,9 @@
 .container.top-padding-med
-	.well
-		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} Assessment
+	.well.left-padding-lg.right-padding-lg
+		legend {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
 		.row.left-padding-lg.bottom-padding-med
-			h3 Question {{answer.question_order}}. {{answer.question_text}}
+			h3
+				em Question {{answer.question_order}}. {{answer.question_text}}
 			h5 Researcher score:
 			em(ng-if="!answer.researcher_score") Not submitted
 			strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
@@ -31,7 +32,7 @@
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 
-		.row.left-padding-lg
+		.row.left-padding-lg.right-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset
 					div(id="answer_choice_div").bottom-padding-med
@@ -40,21 +41,14 @@
 							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices", required)
 								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.role + '_score']")
 								text.left-padding-med {{choice.criteria}}
+					div(id="answer_justification_div").bottom-padding-med
+						ng-form(name="answer_justification_form")
+							.form-group.top-padding-med
+								.row.left-padding-lg
+									.col-md-11
+										textarea.form-control(name="justification" type="text" ng-model="answer[current_user.role + '_justification']" placeholder="Please provide your justification..." required)
 
-					//- Active and View options needs to play wiht form reset
-					//- div(id="answer_choice_div" ng-if="assessment.edit_control===current_user.role").bottom-padding-med
-					//- 	legend Choose one of the following answers:
-					//- 	ng-form(name="answer_choice_form" required)
-					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
-					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.role + '_score']")
-					//- 			text.left-padding-med {{choice.criteria}}
-					//- div(id="answer_choice_div" ng-if="assessment.edit_control!==current_user.role").bottom-padding-med
-					//- 	legend Choose one of the following answers:
-					//- 	ng-form
-					//- 		.form-group.left-padding-lg(ng-repeat="choice in question.question_choices")
-					//- 			input(type="radio" name="choice.choice_name" value="{{choice.order}}" checked="" ng-model="answer[current_user.role + '_score']" disabled)
-					//- 			text.left-padding-med {{choice.criteria}}
-					
+
 					div(id="comments_div").bottom-padding-med
 						legend Comments:
 
@@ -74,9 +68,8 @@
 							ng-form(name="new_comment_form")
 								.form-group.top-padding-med
 									.row.left-padding-lg
-										label.col-md-1 New comment
-										.col-md-8
-											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" required)
+										.col-md-10
+											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" placeholder="New comment..." required)
 										.col-md-1
 											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
 

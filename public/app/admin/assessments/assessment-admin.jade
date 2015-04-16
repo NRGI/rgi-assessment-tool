@@ -1,6 +1,6 @@
 //- admin assessment assignment page
 .container.top-padding-med
-	.well
+	.well.left-padding-lg.right-padding-lg
 		legend Assessment Status Dashboard
 		.pull-left
 			.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="false", tooltip="yes") Deploy Assessment
@@ -23,6 +23,7 @@
 					th Edit control
 					th Version
 					th.text-center Assign
+					th.text-center Review
 			tbody
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
@@ -43,5 +44,8 @@
 					td {{assessment.edit_control}}
 					td {{assessment.version | capitalize}} {{assessment.year}}
 					td
-						a.btn.center-block.btn-default(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
+						a.btn.center-block.btn-primary(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
 						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned
+					td
+						a.btn.center-block.btn-primary(href="/admin/assessment-review/{{assessment.assessment_ID}}", ng-if="assessment.status=='submitted'") Review
+						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='submitted'") Review

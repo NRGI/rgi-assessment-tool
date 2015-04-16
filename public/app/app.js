@@ -97,6 +97,19 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentAdminDetailCtrl',
             resolve: routeRoleChecks.user
         })
+        .when('/admin/assessment-review/:assessment_ID', {
+            templateUrl: '/partials/admin/assessments/assessment-admin-review',
+            controller:  'rgiAssessmentAdminReviewCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
+        .when('/admin/assessment-review/answer-review-view/:answer_ID', {
+            templateUrl: '/partials/admin/assessments/answer-page-view',
+            controller:  'rgiAnswerCtrl'
+        })
+        .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
+            templateUrl: '/partials/admin/assessments/answer-page-edit',
+            controller:  'rgiAnswerCtrl'
+        })
 
         // Assessment overview routes
         .when('/assessments', {

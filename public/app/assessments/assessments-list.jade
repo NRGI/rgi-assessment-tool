@@ -29,10 +29,10 @@
 						text(ng-if="assessment.status=='assigned'") {{assessment.country}}
 						a(ng-if="assessment.status!='assigned'" href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
 					td.col-md-2
-						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id&&assessment.status!=='assigned'")
+						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted'")
 						a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
 					td.col-md-2
-						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id&&assessment.status!=='assigned'")
+						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted'")
 						a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
 					td.col-md-1 
 						text(ng-if="!assessment.start_date") No
@@ -52,9 +52,14 @@
 						text - 
 						span(ng-repeat="mod in assessment.modified")
 							em(ng-show="$last") {{mod.modified_date | date}}
-					td.col-md-1 {{assessment.status | capitalize}}
+					td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted'") {{assessment.status | capitalize}}
+					td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length") Ready to submit
 					td.text-center.col-md-1
-						text(ng-if="assessment.status!=='assigned'") {{assessment.questions_complete}}
-						text(ng-if="assessment.status==='assigned'") 
+						text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_complete}}
+						text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'") 
 					td.col-md-1
-						button.btn.btn-success(ng-click="assessmentStart(assessment)", ng-if="assessment.status=='assigned'") Start assessment
+						button.btn.btn-success(ng-click="assessmentStart(assessment)", ng-if="assessment.status === 'assigned'") Start assessment
+						//- a(href="/assessments/{{assessment.assessment_ID}}" ng-if="assessment.status !== 'assigned' && assessment.questions_complete !== assessment.question_length"))
+						//- 	button.btn.btn-primary Open assessment
+						a.btn.center-block.btn-primary(href="/assessments/{{assessment.assessment_ID}}" ng-if="assessment.status !== 'assigned' && assessment.status !== 'submitted' && assessment.questions_complete !== assessment.question_length") Open assessment
+						//- button.btn.btn-success(ng-click="assessmentSubmit()", ng-if="assessment.status !== 'assigned' && assessment.questions_complete === assessment.question_length") Submit assessment

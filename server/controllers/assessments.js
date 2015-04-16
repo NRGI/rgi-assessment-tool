@@ -62,6 +62,7 @@ exports.updateAssessment = function (req, res) {
                 var editor_firstName = user_editor.firstName,
                     editor_lastName = user_editor.lastName,
                     editor_fullName = user_editor.firstName + " " + user_editor.lastName,
+                    editor_role = user_editor.role,
                     editor_email = user_editor.email;
 
                 if (String(req.user._id) !== String(assessmentUpdates.researcher_ID) && String(req.user._id) !== String(assessmentUpdates.reviewer_ID) && !req.user.hasRole('supervisor')) {
@@ -177,11 +178,35 @@ exports.updateAssessment = function (req, res) {
                     //     //everything's good, lets see what mandrill said
                     //     else console.log(response);
                     // });
-                // assignment flow
+                // submission flow
                 } else if (assessmentUpdates.status === 'submitted') {
+                    //send an researcher notification e-mail
+                    mandrill('/messages/send', {
+                        message: {
+                            to: [{email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'}],
+                            from_email: 'cperry@resourcegovernance.org',
+                            subject: assessment_title + ' submitted by ' + editor_role + editor_fullName,
+                            html: "Hi,<p>" + editor_fullName + " just submitted the " + assessment_title + " assessment for review.\
+                                   Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>\
+                                   Thanks!<p>\
+                                   The RGI Team."
+
+                                   // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                                   // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                                   // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                                   // Thanks!<p>\
+                                   // The RGI Team."
+                        }
+                    }, function (error, response) {
+                        //uh oh, there was an error
+                        if (error) console.log( JSON.stringify(error) );
+
+                        //everything's good, lets see what mandrill said
+                        else console.log(response);
+                    });
+                } else {
 
                 }
-
             });
         });
     });

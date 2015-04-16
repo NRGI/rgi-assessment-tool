@@ -45,6 +45,10 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         });
     }
 
+    $scope.go = function (path) {
+      $location.path(path);
+    };
+
     $scope.assessmentStart = function (assessment) {
 
         var newAssessmentData = new rgiAssessmentSrvc(assessment);
@@ -59,6 +63,14 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
             rgiNotifier.error(reason);
         });
     };
+
+    // $scope.assessmentSubmit = function () {
+        
+    //     var newAssessmentData = new rgiAssessmentSrvc($scope.assessment);
+
+    //     newAssessmentData.status = 'started';
+    //     console.log($scope.answers);
+    // };
 });
 
 // Angular capitilaize filter
