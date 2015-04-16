@@ -1,10 +1,10 @@
-//- answer page
 .container.top-padding-med
 	.well.left-padding-lg.right-padding-lg
-		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 		.row.left-padding-lg.bottom-padding-med
 			h3
 				em Question {{answer.question_order}}. {{answer.question_text}}
+			br
 			div(ng-if="!answer.researcher_score")
 				h5 Researcher score:
 				em Not submitted
@@ -27,18 +27,20 @@
 				br
 			br
 
+		//- View only buttons
 		.row.left-padding-lg.bottom-padding-lg
-			.col-md-pull-2
-				a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
+				button.btn.btn-success Approve answer
 				| &nbsp;
-				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
-		
-		.row.left-padding-lg.right-padding-lg
+				button.btn.btn-danger Flag answer
+				| &nbsp;
+				a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
+
+		.row.left-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset
 					
 					div(id="comments_div").bottom-padding-med
-						legend General comments:
+						legend Comments:
 
 						div(id="prev_comments_div" ng-if="answer.comments.length!==0")
 							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
@@ -60,8 +62,8 @@
 											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" placeholder="New comment..." required)
 										.col-md-1
 											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
-											
-						
+
+
 					div(id="bibliography").bottom-padding-med
 						legend Bibliograpical citations:
 						div(id="prev_bib")

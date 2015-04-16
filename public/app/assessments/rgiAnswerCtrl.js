@@ -122,6 +122,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
             rgiNotifier.notify('Comment added');
+            $scope.answer.new_comment = undefined;
         }, function (reason) {
             rgiNotifier.notify(reason);
         });

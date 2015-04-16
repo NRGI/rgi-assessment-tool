@@ -41,9 +41,11 @@ angular.module('app').controller('assessmentDialogCtrl', function ($scope, $loca
                     ISO3: el.country.iso3,
                     year: $scope.new_assessment.year,
                     version: $scope.new_assessment.version,
-                    country: el.country.country
+                    country: el.country.country,
+                    question_length: data.length
                 });
             });
+            console.log($scope.new_assessment);
 
             data.forEach(function (el, i) {
                 newQuestionData.push({

@@ -53,9 +53,11 @@ var answerSchema = mongoose.Schema({
 
     assigned: {assignedBy: ObjectId, assignedDate: {type: Date, default: Date.now}},
     researcher_score: Number,
+    researcher_justification: String,
     /////ERROR CALCULATION
     researcher_score_history: [scoreHistorySchema],
     reviewer_score: Number,
+    reviewer_justification: String,
     /////ERROR CALCULATION
     reviewer_score_history: [scoreHistorySchema],
     comments: [commentSchema],

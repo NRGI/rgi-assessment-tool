@@ -112,10 +112,12 @@ exports.updateAnswer = function (req, res) {
         if (answer_update.hasOwnProperty('researcher_score')) {
             answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score});
             answer.researcher_score = answer_update.researcher_score;
+            answer.researcher_justification = answer_update.researcher_justification;
         }
         if (answer_update.hasOwnProperty('reviewer_score')) {
             answer.reviewer_score_history.push({date: timestamp, order: answer.reviewer_score_history.length + 1, score: answer.reviewer_score});
             answer.reviewer_score = answer_update.reviewer_score;
+            answer.reviewer_justification = answer_update.reviewer_justification;
         }
 
         answer.save(function (err) {

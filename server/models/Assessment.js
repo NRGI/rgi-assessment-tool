@@ -29,7 +29,8 @@ var assessmentSchema = mongoose.Schema({
     review_date: {reviewed_by: ObjectId, reviewed_date: Date},
     approval: {approved_by: ObjectId, approved_date: Date},
     modified: [modificationSchema],
-    questions_complete: {type: Number, default: 0}
+    questions_complete: {type: Number, default: 0},
+    question_length: {type: Number, required: '{PATH} is required'}
 });
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);

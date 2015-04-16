@@ -2,7 +2,7 @@
 	.well
 		img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
 		legend 
-			h1{{assessment.country}}
+			h1 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
 		.pull-right
 			form.form-inline
 				.form-group
@@ -10,8 +10,8 @@
 				.form-group.margin-left-med
 					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
 			br
-			button.btn.btn-success.pull-right(ng-click="" ng-if="assessment.questions_complete===answers.length") Submit assessment
-			button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length").disabled Submit assessment
+			button.btn.btn-success.pull-right(ng-click="assessmentSubmit()" ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id") Submit assessment
+			button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
 
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
