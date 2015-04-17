@@ -1,0 +1,39 @@
+div.top-padding-med
+	.well
+		legend Assessment administration flow
+		.row.left-padding-lg
+			.form-horizontal
+				form.form-horizontal(name="reassignAssessment")
+					fieldset
+						.row
+							label.col-md-4  Action
+							.form-group.col-md-8
+								select.form-group.form-control.right-padding-med(name="action" ng-model="action" required)
+									option(value="" selected disabled) Select action
+									option(ng-repeat="opt in workflowOpts" value="{{opt.value}}") {{opt.text}}
+						.row.top-padding-lg
+							button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
+							| &nbsp;
+							button.btn.btn-danger(ng-click="closeDialog()") Cancel
+
+						//- .row
+						//- 	label.col-md-4  Individual
+						//- 	.form-group.col-md-5
+						//- 		select.form-group.form-control.right-padding-med(name="version" ng-model="new_assessment.version" required)
+						//- 			option(value="" selected disabled) Select version
+						//- 			option(ng-repeat="i in ['pilot','main']" value="{{i}}") {{i | capitalize}}
+
+		//- 				.row(ng-repeat="country in new_assessment.assessment_countries")
+		//- 					label.col-md-4  country {{$index+1}}
+		//- 					.form-group.col-md-5(class="nullable")
+		//- 						select.form-group.form-control.right-padding-med(name="country_selector" ng-model="country.country" required ng-options="c.country for c in countries")
+		//- 							option(value="" selected disabled) Select country
+		//- 					.col-md-1
+		//- 						button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
+						
+		//- 				.row.top-padding-lg
+		//- 					button.btn.btn-success(ng-click="assessmentDeploy()" ng-disabled="deployAssessment.$invalid") Deploy new assessment
+		//- 					| &nbsp;
+		//- 					button.btn.btn-danger(ng-click="closeDialog()") Cancel
+		//- 					| &nbsp;
+		//- 					button.btn.btn-warning(ng-click="countryAdd()") Add country

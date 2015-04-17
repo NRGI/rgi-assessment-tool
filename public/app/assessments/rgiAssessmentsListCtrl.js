@@ -45,10 +45,6 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         });
     }
 
-    $scope.go = function (path) {
-      $location.path(path);
-    };
-
     $scope.assessmentStart = function (assessment) {
 
         var newAssessmentData = new rgiAssessmentSrvc(assessment);
@@ -57,20 +53,20 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         newAssessmentData.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
 
         rgiAssessmentMethodSrvc.updateAssessment(newAssessmentData).then(function () {
-            $location.path('/assessments/assessment-edit/' + newAssessmentData.assessment_ID + '-' + '001');
+            $location.path('/assessments/assessment-edit/' + newAssessmentData.assessment_ID + '-001');
             rgiNotifier.notify('Assessment started!');
         }, function (reason) {
             rgiNotifier.error(reason);
         });
     };
 
-    // $scope.assessmentSubmit = function () {
+    $scope.assessmentSubmit = function () {
         
-    //     var newAssessmentData = new rgiAssessmentSrvc($scope.assessment);
+        var newAssessmentData = new rgiAssessmentSrvc($scope.assessment);
 
-    //     newAssessmentData.status = 'started';
-    //     console.log($scope.answers);
-    // };
+        newAssessmentData.status = 'started';
+        console.log($scope.answers);
+    };
 });
 
 // Angular capitilaize filter

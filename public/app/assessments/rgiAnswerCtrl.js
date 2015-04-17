@@ -2,6 +2,14 @@
 var angular;
 /*jslint nomen: true*/
 
+function zeroFill(number, width) {
+    width -= number.toString().length;
+    if (width > 0) {
+        return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
+    }
+    return number + ""; // always return a string
+}
+
 angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
@@ -12,46 +20,20 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_start = angular.copy($scope.answer);
         $scope.answer_start = angular.copy($scope.answer);
-        // $scope.$watch('files', function () {
-        //     $scope.upload($scope.files);
-        // });
-        // // $scope.upload = function (files) {
-        //     if (files && files.length) {
-        //         var i = 0;
-        //         for (i; i < files.length; i++) {
-        //             var file = files[i];
-        //             $upload.upload({
-        //                 url: $'https://s3.amazonaws.com/rgi-upload-test/',
-        //                 method: 'POST',
-        //                 key: file.name,
-        //                 AWSAccessKeyId:
 
-
-        //                 url: 'upload/url',
-        //                 fields: {'username': $scope.username},
-        //                 file: file
-        //             }).progress(function (evt) {
-        //                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-        //                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-        //             }).success(function (data, status, headers, config) {
-        //                 console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-        //             });
-        //         }
-        //     }
-        // };
-        // $scope.uploader = new rgiFileUploader();
-        // console.log($scope.uploader);
     });
 
-    // var uploader = $scope.uploader = new FileUploader({
-    //         url: 'upload'
-    //     });
-    // uploader.filters.push({
-    //     name: 'customFilter',
-    //     fn: function (item /*{File|FileLikeObject}*/, options) {
-    //         return this.queue.length < 10;
-    //     }
-    // });
+    $scope.flagCheck = function (flags) {
+        var disabled = false;
+        if (flags.length !== 0) {
+            flags.forEach(function (el, i) {
+                if (el.addressed === false) {
+                    disabled = true;
+                }
+            });
+        }
+        return disabled;
+    }
 
     $scope.answerClear = function () {
         $scope.answer = angular.copy($scope.answer_start);
@@ -73,13 +55,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
     $scope.answerSubmit = function () {
         var new_answer_data, new_assessment_data;
-        function zeroFill(number, width) {
-            width -= number.toString().length;
-            if (width > 0) {
-                return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
-            }
-            return number + ""; // always return a string
-        }
 
         new_answer_data = $scope.answer;
         new_assessment_data = $scope.assessment;
@@ -102,6 +77,73 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             }, function (reason) {
                 rgiNotifier.notify(reason);
             });
+    };
+
+    $scope.answerApprove = function () {
+        var new_answer_data, new_assessment_data;
+
+        new_answer_data = $scope.answer;
+        new_assessment_data = $scope.assessment;
+
+        if (new_answer_data.status === 'submitted') {
+            new_answer_data.status = 'approved';
+            new_assessment_data.questions_complete += 1;
+        } else if (new_answer_data.status === 'flagged') {
+            new_answer_data.status = 'approved';
+            new_assessment_data.questions_flagged -= 1;
+        }
+
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+            .then(function () {
+                if (new_answer_data.question_order !== 4) {
+                    $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
+                } else {
+                    $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
+                }
+                // $location.path();
+                rgiNotifier.notify('Answer approved');
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+            });
+    };
+
+    $scope.answerFlag = function (current_user) {
+        var new_answer_data = $scope.answer, 
+            new_assessment_data = $scope.assessment,
+            new_flag_data = {
+                content: $scope.answer.new_flag,
+                author_name: current_user.firstName + ' ' + current_user.lastName,
+                author: current_user._id,
+                role: current_user.role,
+                date: new Date().toISOString(),
+                addressed: false
+            };
+        new_answer_data.flags.push(new_flag_data);
+
+        if (new_answer_data.status === 'submitted') {
+            new_answer_data.status = 'flagged';
+            new_assessment_data.questions_complete += 1;
+            new_assessment_data.questions_flagged += 1;
+        } else if (new_answer_data.status === 'approved') {
+            new_answer_data.status = 'flagged';
+            new_assessment_data.questions_flagged += 1;
+        }
+
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+            .then(function () {
+                if (new_answer_data.question_order !== 4) {
+                    $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
+                } else {
+                    $location.path('/assessments/' + new_answer_data.assessment_ID);
+                }
+                // $location.path();
+                rgiNotifier.notify('Answer flagged');
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+            });
+        
     };
 
     $scope.commentSubmit = function (current_user) {

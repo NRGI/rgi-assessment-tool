@@ -6,19 +6,25 @@
 		.pull-right
 			form.form-inline
 				.form-group
-					input.form-control(ng-model="searchText", placeholder="Filter")
+					input.form-control(
+						ng-model="searchText"
+						placeholder="Filter")
 				.form-group.margin-left-med
-					select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
+					select.form-control(
+						ng-model="sort_order"
+						ng-options="item.value as item.text for item in sort_options")
 			br
-			button.btn.btn-danger(ng-click="returnAssessment()" ng-if="assessment.questions_complete===answers.length && assessment.status==='submitted'") Return for revision
-			button.btn.btn-danger(ng-click="returnAssessment()" ng-if="assessment.questions_complete!==answers.length || assessment.status!=='submitted'").disabled Return for revision
-			| &nbsp;
-			button.btn.btn-success(ng-click="approveAssessment()" ng-if="assessment.questions_complete===answers.length && assessment.status==='submitted'") Approve
-			button.btn.btn-success(ng-click="approveAssessment()" ng-if="assessment.questions_complete!==answers.length || assessment.status!=='submitted'").disabled Approve
+			button.btn.btn-primary(
+				ng-click="moveAssessmentDialog()"
+				ng-disabled="assessment.questions_complete!==assessment.question_list.length || assessment.status!=='under_review'"
+				) Move assessment along
+			//- ng-click="returnAssessment()"
+			//- | &nbsp;
+			//- button.btn.btn-success(
+			//- 	ng-click="approveAssessment()" 
+			//- 	ng-disabled="assessment.questions_complete!==assessment.question_list.length || assessment.status!=='under_review'"
+			//- 	) Approve
 
-			//- button.btn.btn-success.pull-right(ng-click="assessmentSubmit()" ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id") Submit assessment
-			//- button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
-		text {{}}
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
 				text Researcher:
@@ -39,12 +45,6 @@
 				text on 
 				span(ng-repeat="mod in assessment.modified")
 					em(ng-show="$last") {{mod.modified_date | date}}
-			//- .row(ng-if="assessment.questions_complete===0")
-			//- 	text(ng) Number of questions complete: {{assessment.questions_complete}} (0%)
-			//- .row(ng-if="assessment.questions_complete!==0")
-			//- 	text Number of questions complete: {{assessment.questions_complete}} (
-			//- 	text {{((assessment.questions_complete/answers.length)*100 | number :2)}}
-			//- 	text % complete)
 
 		table.table.table-hover.table-striped.table-condensed
 			thead
@@ -60,10 +60,13 @@
 					td.col-md-1 {{answer.component_text}}
 					td.col-md-5 {{answer.question_text}})
 					td
-						text {{answer.status | capitalize}}
+						text.text-danger(ng-if="answer.status==='flagged'") {{answer.status | capitalize}}
+						text.text-success(ng-if="answer.status==='approved'") {{answer.status | capitalize}}
+						text(ng-if="answer.status!=='flagged' && answer.status!=='approved'") {{answer.status | capitalize}}
+
 					td
 						a.btn.center-block.btn-primary(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status==='submitted' || answer.status=='saved'") Review
-						a.btn.center-block.btn-default(href="/admin/assessment-review/answer-review-view{{answer.answer_ID}}" ng-if="answer.status!=='submitted'") View to answer
+						a.btn.center-block.btn-default(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status!=='submitted'") Edit
 
 					//- td(ng-if="answer.edit_control===identity.currentUser._id")
 					//- 	a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status=='saved'") Jump to question
