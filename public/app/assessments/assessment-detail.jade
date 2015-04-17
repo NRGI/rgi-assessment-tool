@@ -6,12 +6,20 @@
 		.pull-right
 			form.form-inline
 				.form-group
-					input.form-control(ng-model="searchText", placeholder="Filter")
+					input.form-control(
+						ng-model="searchText"
+						placeholder="Filter")
 				.form-group.margin-left-med
-					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
+					select.form-control(
+						ng-model="sortOrder"
+						ng-options="item.value as item.text for item in sortOptions")
 			br
-			button.btn.btn-success.pull-right(ng-click="assessmentSubmit()" ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id") Submit assessment
-			button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
+			button.btn.btn-success.pull-right(
+				ng-click="assessmentSubmit()"
+				ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id"
+				ng-disabled="assessment.questions_complete!==answers.length || answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
+				) Submit assessment
+			//- button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
 
 		.pull-left.left-padding-lg.bottom-padding-lg
 			.row
