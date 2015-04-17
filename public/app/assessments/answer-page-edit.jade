@@ -20,13 +20,7 @@
 					) Save answer
 				| &nbsp;
 				button.btn.btn-success(
-					ng-click="answerSubmit()" 
-					ng-if="!answer[current_user.role + '_score']" 
-					ng-disabled="assessment.edit_control!==current_user._id"
-					) Submit answer
-				button.btn.btn-success(
-					ng-click="answerSubmit()" 
-					ng-if="answer[current_user.role + '_score']" 
+					ng-click="answerSubmit()"
 					ng-disabled="answer_justification_form.$invalid || !answer[current_user.role + '_score'] || assessment.edit_control!==current_user._id"
 					) Submit answer
 				| &nbsp;

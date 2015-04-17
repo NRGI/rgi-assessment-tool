@@ -1,6 +1,14 @@
 .container.top-padding-med
 	.well.left-padding-lg.right-padding-lg
-		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
+		legend
+			.row
+				h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
+				h2.text-success(ng-if="answer.status==='approved'") Approved
+				h2.text-danger(ng-if="answer.status==='flagged'") Flagged
+		text {{answer.status}}
+		//- text yes
+		//- legend.h2(ng-if="answer.status==='approved'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
+		//- legend.h2(ng-if="answer.status!=='flagged'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 		.row.left-padding-lg.bottom-padding-med
 			h3
 				em Question {{answer.question_order}}. {{answer.question_text}}
@@ -29,12 +37,9 @@
 
 		//- View only buttons
 		.row.left-padding-lg.bottom-padding-lg
-			button.btn.btn-success(ng-click="approve()") Approve answer
+			button.btn.btn-success(ng-click="answerApprove()" ng-disabled="flagCheck(answer.flags)") Approve answer
 			| &nbsp;
-			button.btn.btn-danger(
-				ng-click="flag()"
-				ng-disabled="new_flag_text_form.$invalid"
-				) Flag answer
+			button.btn.btn-danger(ng-click="answerFlag(current_user)" ng-disabled="new_flag_text_form.$invalid") Flag answer
 			| &nbsp;
 			a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
 
@@ -47,12 +52,21 @@
 						.row
 							b {{flag.author_name}} (
 							b {{flag.role}}
-							b ):
-						.row.col-md-11 {{flag.content}}
-						.row.col-md-offset-9.col-md-3
-							date
-								small
-									em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+							b )
+						.row
+							em {{flag.date | date:'MM/dd/yyyy'}}
+						.row
+							div
+								text Addressed? 
+								input(type="checkbox" ng-model="flag.addressed")
+
+						div(ng-if="flag.addressed!==true")
+							.row.col-md-11 
+								text.text-danger {{flag.content}}
+							.row.col-md-offset-9.col-md-3
+								date
+									small
+										em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
 						br
 			div(id="flag_text_div").bottom-padding-med
 				ng-form(name="new_flag_text_form")

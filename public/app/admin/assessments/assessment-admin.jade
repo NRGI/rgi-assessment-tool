@@ -44,8 +44,9 @@
 					td {{assessment.edit_control}}
 					td {{assessment.version | capitalize}} {{assessment.year}}
 					td
-						a.btn.center-block.btn-primary(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
-						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned
+						a.btn.btn-col.center-block.btn-primary(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
+						a.btn.btn-col.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned
 					td
-						a.btn.center-block.btn-primary(href="/admin/assessment-review/{{assessment.assessment_ID}}", ng-if="assessment.status=='submitted'") Review
-						a.btn.center-block.btn-default.disabled(href="", ng-if="assessment.status!='submitted'") Review
+						button.btn.btn-col.btn-primary(ng-click="assessmentStartReview(assessment.assessment_ID)" ng-if="assessment.status === 'submitted'") Start Review
+						a.btn.btn-col.center-block.btn-primary(href="/admin/assessment-review/{{assessment.assessment_ID}}" ng-if="assessment.status=='under_review'") Continue review
+						a.btn.center-block.btn-default.disabled(href="" ng-if="assessment.status!=='submitted' && assessment.status!=='under_review'") Not submitted

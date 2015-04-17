@@ -23,8 +23,8 @@ var commentSchema = new mongoose.Schema({
     content: String,
     author: ObjectId, // Pull from curretn user _id value
     author_name: String,
-    // ACTUAL CHANGE
-    role: String
+    role: String,
+    addressed: Boolean
 });
 
 var scoreHistorySchema = new mongoose.Schema({

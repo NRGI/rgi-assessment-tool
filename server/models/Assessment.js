@@ -30,6 +30,7 @@ var assessmentSchema = mongoose.Schema({
     approval: {approved_by: ObjectId, approved_date: Date},
     modified: [modificationSchema],
     questions_complete: {type: Number, default: 0},
+    questions_flagged: {type: Number, default: 0},
     question_length: {type: Number, required: '{PATH} is required'}
 });
 

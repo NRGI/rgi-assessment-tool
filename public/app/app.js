@@ -102,10 +102,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentAdminReviewCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/admin/assessment-review/answer-review-view/:answer_ID', {
-            templateUrl: '/partials/admin/assessments/answer-page-view',
-            controller:  'rgiAnswerCtrl'
-        })
+        // .when('/admin/assessment-review/answer-review-view/:answer_ID', {
+        //     templateUrl: '/partials/admin/assessments/answer-page-view',
+        //     controller:  'rgiAnswerCtrl'
+        // })
         .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
             templateUrl: '/partials/admin/assessments/answer-page-edit',
             controller:  'rgiAnswerCtrl'

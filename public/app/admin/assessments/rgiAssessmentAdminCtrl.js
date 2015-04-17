@@ -2,7 +2,7 @@
 var angular;
 /*jslint nomen: true unparam: true regexp: true*/
 
-angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, ngDialog, rgiAssessmentSrvc, rgiUserListSrvc) {
+angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, $scope, rgiNotifier, ngDialog, rgiAssessmentSrvc, rgiUserListSrvc, rgiAssessmentMethodSrvc) {
     // filtering options
     $scope.sortOptions = [
         {value: 'country', text: 'Sort by Country'},
@@ -41,12 +41,26 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($scope, ngD
         });
     });
 
+    $scope.assessmentStartReview = function (assessment_ID) {
+
+        rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
+            new_assessment_data.status = 'under_review';
+            console.log(new_assessment_data);
+            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
+                $location.path('/admin/assessment-review/answer-review-edit/' + assessment_ID + '-001');
+                rgiNotifier.notify('Assessment review started!');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+        });
+    };
+
     // Deploy new assessment
     $scope.newAssessmentDialog = function () {
         $scope.value = true;
         ngDialog.open({
             template: 'partials/admin/assessments/new-assessment-dialog',
-            controller: 'assessmentDialogCtrl',
+            controller: 'rgiNewAssessmentDialogCtrl',
             className: 'ngdialog-theme-plain',
             scope: $scope
         });
