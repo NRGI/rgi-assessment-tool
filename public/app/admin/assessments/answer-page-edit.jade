@@ -29,11 +29,43 @@
 
 		//- View only buttons
 		.row.left-padding-lg.bottom-padding-lg
-				button.btn.btn-success Approve answer
-				| &nbsp;
-				button.btn.btn-danger Flag answer
-				| &nbsp;
-				a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
+			button.btn.btn-success(ng-click="approve()") Approve answer
+			| &nbsp;
+			button.btn.btn-danger(
+				ng-click="flag()"
+				ng-disabled="new_flag_text_form.$invalid"
+				) Flag answer
+			| &nbsp;
+			a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
+
+		.row.left-padding-lg.bottom-padding-lg
+			div(id="flags_div").bottom-padding-med
+				legend Flags:
+
+				div(id="prev_flags_div" ng-if="answer.flags.length!==0")
+					.row.left-padding-lg.bottom-padding-med(ng-repeat="flag in answer.flags")
+						.row
+							b {{flag.author_name}} (
+							b {{flag.role}}
+							b ):
+						.row.col-md-11 {{flag.content}}
+						.row.col-md-offset-9.col-md-3
+							date
+								small
+									em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+						br
+			div(id="flag_text_div").bottom-padding-med
+				ng-form(name="new_flag_text_form")
+					.form-group.top-padding-med
+						.row.left-padding-lg
+							.col-md-11
+								textarea.form-control(
+									name="flag"
+									type="text"
+									ng-model="answer.new_flag"
+									placeholder="Flag text..."
+									required)
+
 
 		.row.left-padding-lg
 			.form-horizontal(name="answer_form")
@@ -59,9 +91,17 @@
 								.form-group.top-padding-med
 									.row.left-padding-lg
 										.col-md-10
-											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" placeholder="New comment..." required)
+											textarea.form-control(
+												name="comment"
+												type="text"
+												ng-model="answer.new_comment"
+												placeholder="New comment..."
+												required)
 										.col-md-1
-											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
+											button.btn.btn-success(
+												ng-click="commentSubmit(current_user)"
+												ng-disabled="new_comment_form.$invalid"
+												) Submit comment
 
 
 					div(id="bibliography").bottom-padding-med

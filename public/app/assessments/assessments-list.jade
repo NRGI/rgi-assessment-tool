@@ -13,6 +13,7 @@
 			thead
 				tr
 					th.col-md-1 Country
+					th.col-md-1 Version
 					th.col-md-2 Researcher
 					th.col-md-2 Reviewer
 					th.col-md-1 Started
@@ -28,6 +29,8 @@
 					td.col-md-1
 						text(ng-if="assessment.status=='assigned'") {{assessment.country}}
 						a(ng-if="assessment.status!='assigned'" href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+					td.col-md-1
+						text {{assessment.year}} {{assessment.version}}
 					td.col-md-2
 						span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted'")
 						a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}

@@ -12,23 +12,28 @@
 			strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
 
 		//- Active buttons
-		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id")
+		.row.left-padding-lg.bottom-padding-lg
 			.col-md-pull-2
-				button.btn.btn-primary(ng-click="answerSave()", ng-disabled="answer_form.$invalid") Save answer
+				button.btn.btn-primary(
+					ng-click="answerSave()"
+					ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
+					) Save answer
 				| &nbsp;
-				button.btn.btn-success(ng-click="answerSubmit()" ng-if="!answer[current_user.role + '_score']" disabled) Submit answer
-				button.btn.btn-success(ng-click="answerSubmit()" ng-if="answer[current_user.role + '_score']" ) Submit answer
+				button.btn.btn-success(
+					ng-click="answerSubmit()" 
+					ng-if="!answer[current_user.role + '_score']" 
+					ng-disabled="assessment.edit_control!==current_user._id"
+					) Submit answer
+				button.btn.btn-success(
+					ng-click="answerSubmit()" 
+					ng-if="answer[current_user.role + '_score']" 
+					ng-disabled="answer_justification_form.$invalid || !answer[current_user.role + '_score'] || assessment.edit_control!==current_user._id"
+					) Submit answer
 				| &nbsp;
-				button.btn.btn-danger(ng-click="answerClear()") Clear answer
-				| &nbsp;
-				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
-		//- View only buttons
-		.row.left-padding-lg.bottom-padding-lg(ng-if="assessment.edit_control!==current_user._id")
-				button.btn.btn-primary.disabled Save answer
-				| &nbsp;
-				button.btn.btn-success.disabled Submit answer
-				| &nbsp;
-				button.btn.btn-danger.disabled Clear answer
+				button.btn.btn-danger(
+					ng-click="answerClear()"
+					ng-disabled="assessment.edit_control!==current_user._id"
+					) Clear answer
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
 
@@ -38,15 +43,27 @@
 					div(id="answer_choice_div").bottom-padding-med
 						legend Choose one of the following answers:
 						ng-form(name="answer_choice_form")
-							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices", required)
-								input(type="radio", name="choice.choice_name", value="{{choice.order}}", checked="", ng-model="answer[current_user.role + '_score']")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+									type="radio"
+									name="choice.choice_name"
+									value="{{choice.order}}"
+									checked=""
+									ng-model="answer[current_user.role + '_score']"
+									ng-disabled="assessment.edit_control!==current_user._id")
 								text.left-padding-med {{choice.criteria}}
 					div(id="answer_justification_div").bottom-padding-med
 						ng-form(name="answer_justification_form")
 							.form-group.top-padding-med
 								.row.left-padding-lg
 									.col-md-11
-										textarea.form-control(name="justification" type="text" ng-model="answer[current_user.role + '_justification']" placeholder="Please provide your justification..." required)
+										textarea.form-control(
+											name="justification"
+											type="text"
+											ng-model="answer[current_user.role + '_justification']"
+											placeholder="Please provide your justification..."
+											required
+											ng-disabled="assessment.edit_control!==current_user._id")
 
 
 					div(id="comments_div").bottom-padding-med
@@ -69,9 +86,17 @@
 								.form-group.top-padding-med
 									.row.left-padding-lg
 										.col-md-10
-											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" placeholder="New comment..." required)
+											textarea.form-control(
+												name="comment"
+												type="text"
+												ng-model="answer.new_comment"
+												placeholder="New comment..."
+												required)
 										.col-md-1
-											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
+											button.btn.btn-success(
+												ng-click="commentSubmit(current_user)"
+												ng-disabled="new_comment_form.$invalid"
+												) Submit comment
 
 					div(id="bibliography").bottom-padding-med
 						legend Bibliograpical citations:
@@ -106,11 +131,11 @@
 									.col-md-9
 										b New document:
 									.pull-right.col-md-3
-										div(flow-init="{target: '/upload'}", flow-files-submitted="$flow.upload()", flow-file-success="$file.msg = $message")
-											input(type='file' flow-btn)
-											div(class="alert" flow-drop) Drag And Drop your file here
-										
-										//- form(ng-controller="uploader")
-											//- input(type="file", name="citation_file", ng-model="file_upload")
-												//- button.btn.btn-success.btn-file(ng-click="fileUpload()") Select File
-												li {{file_upload.name}}
+										div(flow-init="{target: '/upload'}"
+											flow-files-submitted="$flow.upload()"
+											flow-file-success="$file.msg = $message")
+
+											input(
+												type='file'
+												flow-btn
+												ng-disabled="assessment.edit_control!==current_user._id")

@@ -14,7 +14,7 @@ var referenceSchema = new mongoose.Schema({
     tex_ref: String,
     URL: String, // generated from upload path in S3
     note: String,
-    author: String, // Pull from curretn user _id value
+    author: ObjectId, // Pull from curretn user _id value
     role: String
 });
 
@@ -50,7 +50,7 @@ var answerSchema = mongoose.Schema({
     question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
     root_question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
-
+    flags: [commentSchema],
     assigned: {assignedBy: ObjectId, assignedDate: {type: Date, default: Date.now}},
     researcher_score: Number,
     researcher_justification: String,
