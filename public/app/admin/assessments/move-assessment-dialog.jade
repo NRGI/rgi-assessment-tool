@@ -11,6 +11,8 @@ div.top-padding-med
 								select.form-group.form-control.right-padding-med(name="action" ng-model="action" required)
 									option(value="" selected disabled) Select action
 									option(ng-repeat="opt in workflowOpts" value="{{opt.value}}") {{opt.text}}
+						.row
+							text {{action}}
 						.row.top-padding-lg
 							button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
 							| &nbsp;
