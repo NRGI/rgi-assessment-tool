@@ -79,6 +79,27 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             });
     };
 
+    $scope.answerResubmit = function () {
+        var new_answer_data, new_assessment_data;
+
+        new_answer_data = $scope.answer;
+        new_assessment_data = $scope.assessment;
+
+        if (new_answer_data.status === 'flagged') {
+            new_answer_data.status = 'resubmitted';
+            new_assessment_data.questions_resubmitted += 1;
+        }
+
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+            .then(function () {
+                $location.path('/assessments-review/' + new_answer_data.assessment_ID);
+                rgiNotifier.notify('Answer resubmitted');
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+            });
+    };
+
     $scope.answerApprove = function () {
         var new_answer_data, new_assessment_data;
 
@@ -88,7 +109,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         if (new_answer_data.status === 'submitted') {
             new_answer_data.status = 'approved';
             new_assessment_data.questions_complete += 1;
-        } else if (new_answer_data.status === 'flagged') {
+        } else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
             new_answer_data.status = 'approved';
             new_assessment_data.questions_flagged -= 1;
         }
@@ -96,7 +117,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
-                if (new_answer_data.question_order !== 4) {
+                if (new_answer_data.question_order !== 4 || new_assessment_data.status === 'resubmitted') {
                     $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
                     $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
@@ -125,6 +146,9 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             new_answer_data.status = 'flagged';
             new_assessment_data.questions_complete += 1;
             new_assessment_data.questions_flagged += 1;
+        } else if (new_answer_data.status === 'resubmitted') {
+            new_answer_data.status = 'flagged';
+
         } else if (new_answer_data.status === 'approved') {
             new_answer_data.status = 'flagged';
             new_assessment_data.questions_flagged += 1;
@@ -133,10 +157,10 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
-                if (new_answer_data.question_order !== 4) {
+                if (new_answer_data.question_order !== 4 || new_assessment_data.status === 'resubmitted') {
                     $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
-                    $location.path('/assessments/' + new_answer_data.assessment_ID);
+                    $location.path('/assessment-review/' + new_answer_data.assessment_ID);
                 }
                 // $location.path();
                 rgiNotifier.notify('Answer flagged');

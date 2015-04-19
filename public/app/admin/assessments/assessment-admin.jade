@@ -44,9 +44,31 @@
 					td {{assessment.edit_control}}
 					td {{assessment.version | capitalize}} {{assessment.year}}
 					td
-						a.btn.btn-col.center-block.btn-primary(href="/admin/assessment-assign/{{assessment.assessment_ID}}", ng-if="assessment.status=='unassigned'") Assign
-						a.btn.btn-col.center-block.btn-default.disabled(href="", ng-if="assessment.status!='unassigned'") Assigned
+						a.btn.btn-col.center-block.btn-primary(
+							href="/admin/assessment-assign/{{assessment.assessment_ID}}"
+							ng-if="assessment.status=='unassigned'"
+							) Assign
+						a.btn.btn-col.center-block.btn-default.disabled(
+							href=""
+							ng-if="assessment.status!='unassigned'"
+							) Assigned
 					td
-						button.btn.btn-col.btn-primary(ng-click="assessmentStartReview(assessment.assessment_ID)" ng-if="assessment.status === 'submitted'") Start Review
-						a.btn.btn-col.center-block.btn-primary(href="/admin/assessment-review/{{assessment.assessment_ID}}" ng-if="assessment.status=='under_review'") Continue review
-						a.btn.center-block.btn-default.disabled(href="" ng-if="assessment.status!=='submitted' && assessment.status!=='under_review'") Not submitted
+						button.btn.btn-col.btn-primary(
+							ng-click="assessmentStartReview(assessment.assessment_ID)"
+							ng-if="assessment.status === 'submitted'"
+							) Start Review
+						a.btn.btn-col.center-block.btn-primary(
+							href="/admin/assessment-review/{{assessment.assessment_ID}}"
+							ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
+							) Continue review
+						a.btn.center-block.btn-default.disabled(
+							href=""
+							ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
+							) Under review
+						a.btn.center-block.btn-default.disabled(
+							href=""
+							ng-if="assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer'"
+							) Not submitted
+
+
+

@@ -16,7 +16,7 @@
 			br
 			button.btn.btn-primary(
 				ng-click="moveAssessmentDialog()"
-				ng-disabled="assessment.questions_complete!==assessment.question_list.length || assessment.status!=='under_review'"
+				ng-disabled="assessment.questions_complete!==assessment.question_list.length || (assessment.status!=='under_review' && assessment.status!=='resubmitted')"
 				) Move assessment along
 			//- ng-click="returnAssessment()"
 			//- | &nbsp;
@@ -45,6 +45,12 @@
 				text on 
 				span(ng-repeat="mod in assessment.modified")
 					em(ng-show="$last") {{mod.modified_date | date}}
+			.row
+				text Number of questions complete: {{assessment.questions_complete}}
+			.row
+				text Number of questions flagged: {{assessment.questions_flagged}}
+			.row
+				text Number of questions resubmitted: {{assessment.questions_resubmitted}}
 
 		table.table.table-hover.table-striped.table-condensed
 			thead
@@ -62,11 +68,12 @@
 					td
 						text.text-danger(ng-if="answer.status==='flagged'") {{answer.status | capitalize}}
 						text.text-success(ng-if="answer.status==='approved'") {{answer.status | capitalize}}
-						text(ng-if="answer.status!=='flagged' && answer.status!=='approved'") {{answer.status | capitalize}}
+						text.text-warning(ng-if="answer.status==='resubmitted'") {{answer.status | capitalize}}
+						text(ng-if="answer.status!=='flagged' && answer.status!=='approved' && answer.status!=='resubmitted'") {{answer.status | capitalize}}
 
 					td
-						a.btn.center-block.btn-primary(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status==='submitted' || answer.status=='saved'") Review
-						a.btn.center-block.btn-default(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status!=='submitted'") Edit
+						a.btn.center-block.btn-primary(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status==='submitted' || answer.status=='saved' || answer.status==='resubmitted'") Review
+						a.btn.center-block.btn-default(href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}" ng-if="answer.status!=='submitted' && answer.status!=='resubmitted'") Edit
 
 					//- td(ng-if="answer.edit_control===identity.currentUser._id")
 					//- 	a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status=='saved'") Jump to question

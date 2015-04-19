@@ -1,14 +1,12 @@
-angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiUserListSrvc) {
+angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiUserListSrvc, rgiAssessmentSrvc) {
 
 	// get current control profile onto scope and use it to populate workflowopts
-    console.log($scope.$parent.assessment.questions_flagged);
-    console.log($scope.$parent.assessment.edit_control);
     
 
     rgiUserListSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
         var workflowOpts = [];
         workflowOpts.push({
-            text: 'Send back to ' + control_profile.firstName + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+            text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
             value: 'review_' + control_profile.role
         });
 
@@ -28,6 +26,11 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
             });
         }
 
+        // workflowOpts.push({
+        //     text: 'Move to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ').',
+        //     value: ''
+        // }); 
+
         if ($scope.$parent.assessment.status === 'approved') {
             workflowOpts.push({
                 text: 'Move to internal review',
@@ -42,6 +45,20 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
                 value: 'final_approval'
             });
         }
+        // } else {
+        //     workflowOpts.push({
+        //         text: 'Move to internal review',
+        //         value: ''
+        //     });
+        //     workflowOpts.push({
+        //         text: 'Move to external review',
+        //         value: ''
+        //     });
+        //     workflowOpts.push({
+        //         text: 'Final approval',
+        //         value: ''
+        //     });
+        // }
         
         $scope.workflowOpts = workflowOpts;
 
@@ -54,46 +71,109 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
     $scope.assessmentMove = function () {
     	switch($scope.action){
     		case 'review_researcher':
-    			console.log('send back to researcher');
-    			// check if current edit control = researcher id
-    				// if not reply that 
+                var r = confirm('Send back to researcher?');
+                if (r===true) {
+                    var new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+
+                    new_assessment_data.status = 'review_researcher';
+                    // new_assessment_data.questions_complete = 0;
+                    // new_assessment_data.edit_control = new_assessment_data.researcher_ID;
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment returned!');
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                }
+                // send email to researcher
     			// update assessments
     			break;
     		case 'review_reviewer':
-    			console.log('send back to reviewer');
-    			// check if current edit control = reviewer id
+    			var r = confirm('Send back to reviewer?');
+                if (r===true) {
+                    var new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+
+                    new_assessment_data.status = 'review_reviewer';
+                    // new_assessment_data.questions_complete = 0;
+                    // new_assessment_data.edit_control = new_assessment_data.researcher_ID;
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment returned!');
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                }
+                // send email to reviewer
     			// update assessments
     			break;
     		case 'assigned_researcher':
-    			console.log('send over to researcher');
+                var r = confirm('Send on to researcher?');
+                if (r===true) {
+                    var new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+
+                    new_assessment_data.status = 'assigned_researcher';
+                    new_assessment_data.questions_complete = 0;
+                    new_assessment_data.edit_control = new_assessment_data.researcher_ID;
+                    new_assessment_data.first_pass = false;
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment moved forward!');
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                }
+                // send email to researcher
+                // update assessments
     			break;
     		case 'assigned_reviewer':
-    			console.log('send over to reviewer');
-    			// check if current edit control = researcher id
-    			// update assessments
+                var r = confirm('Send on to reviewer?');
+                if (r===true) {
+                    var new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+
+                    new_assessment_data.status = 'assigned_reviewer';
+                    new_assessment_data.questions_complete = 0;
+                    new_assessment_data.edit_control = new_assessment_data.reviewer_ID;
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment moved forward!');
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                }
+                // send email to reviewer
+                // update assessments
     			break;
     		case 'internal_review':
-    			console.log('send over to internal review');
+                var r = confirm('Send to internal reviewer?');
+                if (r===true) {
+                    console.log(r);
+
+                    new_assessment_data.first_pass = false;
+
+                }
     			break;
     		case 'external_review':
-    			console.log('send over to external review');
+                var r = confirm('Send to external reviewer?');
+                if (r===true) {
+                    console.log(r);
+                }
     			break;
     		case 'final_approval':
-    			console.log('final approval');
+                var r = confirm('Final approval?');
+                if (r===true) {
+                    console.log(r);
+                }
     			break;
     		default:
     			console.log('broke');
     			break;
-    	}
+    	};
+        ngDialog.close();
     };
-
-    // $scope.returnAssessment = function () {
-    //     console.log('return');
-    // };
-    
-    // $scope.approveAssessment = function () {
-    //     console.log('approve');
-    // };
 
     // // Deploy new assessment
     // $scope.newAssessmentDialog = function () {
