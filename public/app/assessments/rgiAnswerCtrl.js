@@ -160,7 +160,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                 if (new_answer_data.question_order !== 4 || new_assessment_data.status === 'resubmitted') {
                     $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
-                    $location.path('/assessment-review/' + new_answer_data.assessment_ID);
+                    $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
                 }
                 // $location.path();
                 rgiNotifier.notify('Answer flagged');
