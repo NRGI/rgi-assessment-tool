@@ -5,7 +5,6 @@
 				h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 				h2.text-success(ng-if="answer.status==='approved'") Approved
 				h2.text-danger(ng-if="answer.status==='flagged'") Flagged
-
 		//- text yes
 		//- legend.h2(ng-if="answer.status==='approved'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 		//- legend.h2(ng-if="answer.status!=='flagged'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
@@ -35,13 +34,25 @@
 				br
 			br
 
-		//- View only buttons
+		//- Active buttons
 		.row.left-padding-lg.bottom-padding-lg
-			button.btn.btn-success(ng-click="answerApprove()" ng-disabled="flagCheck(answer.flags)") Approve answer
-			| &nbsp;
-			button.btn.btn-danger(ng-click="answerFlag(current_user)" ng-disabled="!(flagCheck(answer.flags)) && new_flag_text_form.$invalid ") Flag answer
-			| &nbsp;
-			a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
+			.col-md-pull-2
+				button.btn.btn-primary(
+					ng-click="answerSave()"
+					ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
+					) Save answer
+				| &nbsp;
+				button.btn.btn-success(
+					ng-click="answerResubmit()"
+					ng-disabled="answer_justification_form.$invalid || !answer[current_user.role + '_score'] || assessment.edit_control!==current_user._id"
+					) Re-submit answer
+				| &nbsp;
+				button.btn.btn-danger(
+					ng-click="answerClear()"
+					ng-disabled="assessment.edit_control!==current_user._id"
+					) Clear answer
+				| &nbsp;
+				a.btn.btn-default(href="/assessments-review/{{answer.assessment_ID}}") Return to assessment menu
 
 		.row.left-padding-lg.bottom-padding-lg
 			div(id="flags_div").bottom-padding-med
@@ -58,7 +69,7 @@
 						.row
 							div
 								text Addressed? 
-								input(type="checkbox" ng-model="flag.addressed")
+								input(type="checkbox" ng-model="flag.addressed" disabled)
 
 						div(ng-if="flag.addressed!==true")
 							.row.col-md-11 
@@ -67,19 +78,34 @@
 								date
 									small
 										em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
-						br
-			div(id="flag_text_div").bottom-padding-med
-				ng-form(name="new_flag_text_form")
-					.form-group.top-padding-med
-						.row.left-padding-lg
-							.col-md-11
-								textarea.form-control(
-									name="flag"
-									type="text"
-									ng-model="answer.new_flag"
-									placeholder="Flag text..."
-									required)
 
+		.row.left-padding-lg.right-padding-lg
+			.form-horizontal(name="answer_form")
+				fieldset
+					div(id="answer_choice_div").bottom-padding-med
+						legend Choose one of the following answers:
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+									type="radio"
+									name="choice.choice_name"
+									value="{{choice.order}}"
+									checked=""
+									ng-model="answer[current_user.role + '_score']"
+									ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
+					div(id="answer_justification_div").bottom-padding-med
+						ng-form(name="answer_justification_form")
+							.form-group.top-padding-med
+								.row.left-padding-lg
+									.col-md-11
+										textarea.form-control(
+											name="justification"
+											type="text"
+											ng-model="answer[current_user.role + '_justification']"
+											placeholder="Please provide your justification..."
+											required
+											ng-disabled="assessment.edit_control!==current_user._id")
 
 		.row.left-padding-lg
 			.form-horizontal(name="answer_form")
@@ -144,3 +170,18 @@
 										small
 											text {{citation.note.author_name}}
 											em {{citation.note.date | date}}
+
+						div(id="new_bib").bottom-padding-med
+							ng-form(name="new_citation_form")
+								.row.left-padding-med
+									.col-md-9
+										b New document:
+									.pull-right.col-md-3
+										div(flow-init="{target: '/upload'}"
+											flow-files-submitted="$flow.upload()"
+											flow-file-success="$file.msg = $message")
+
+											input(
+												type='file'
+												flow-btn
+												ng-disabled="assessment.edit_control!==current_user._id")

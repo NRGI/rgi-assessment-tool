@@ -16,6 +16,7 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
         $scope.assessment = assessment_data;
         $scope.assessment.reviewer = rgiUserListSrvc.get({_id: assessment_data.reviewer_ID});
         $scope.assessment.researcher = rgiUserListSrvc.get({_id: assessment_data.researcher_ID});
+        $scope.assessment.edited_by = rgiUserListSrvc.get({_id: assessment_data.modified[assessment_data.modified.length - 1].modified_by});
         $scope.answers = rgiAnswerSrvc.query({assessment_ID: assessment_data.assessment_ID});
     });
 
@@ -39,6 +40,20 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
 
         new_assessment_data.status = 'submitted';
         new_assessment_data.questions_complete = 0;
+
+        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+            .then(function () {
+                $location.path('/assessments');
+                rgiNotifier.notify('Assessment submitted!');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+    };
+
+    $scope.assessmentResubmit = function () {
+        var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
+
+        new_assessment_data.status = 'resubmitted';
 
         rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
             .then(function () {

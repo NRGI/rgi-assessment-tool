@@ -21,6 +21,7 @@ var assessmentSchema = mongoose.Schema({
     reviewer_ID: {type: ObjectId, index: true}, // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
     status: {type: String, required: '{PATH} is required', default: 'unassigned'}, // unassigned, assigned, started, submitted, review, reassigned, approved
+    first_pass: {type: Boolean, default: true},
 
 
     assignment: {assigned_by: ObjectId, assigned_date: Date},
@@ -31,6 +32,7 @@ var assessmentSchema = mongoose.Schema({
     modified: [modificationSchema],
     questions_complete: {type: Number, default: 0},
     questions_flagged: {type: Number, default: 0},
+    questions_resubmitted: {type: Number, default: 0},
     question_length: {type: Number, required: '{PATH} is required'}
 });
 

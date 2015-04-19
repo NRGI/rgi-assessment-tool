@@ -122,12 +122,21 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
+        .when('/assessments-review/:assessment_ID', {
+            templateUrl: '/partials/assessments/assessment-review',
+            controller:  'rgiAssessmentDetailCtrl',
+            resolve: routeRoleChecks.user
+        })
         .when('/assessments/assessment-view/:answer_ID', {
             templateUrl: '/partials/assessments/answer-page-view',
             controller:  'rgiAnswerCtrl'
         })
         .when('/assessments/assessment-edit/:answer_ID', {
             templateUrl: '/partials/assessments/answer-page-edit',
+            controller:  'rgiAnswerCtrl'
+        })
+        .when('/assessment-review/answer-page-review-edit/:answer_ID', {
+            templateUrl: '/partials/assessments/answer-page-review-edit',
             controller:  'rgiAnswerCtrl'
         });
 
