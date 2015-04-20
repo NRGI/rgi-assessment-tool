@@ -121,6 +121,11 @@ exports.updateAnswer = function (req, res) {
             answer.reviewer_score = answer_update.reviewer_score;
             answer.reviewer_justification = answer_update.reviewer_justification;
         }
+        if (answer_update.hasOwnProperty('final_score')) {
+            answer.final_score = answer_update.final_score;
+            answer.final_role = answer_update.final_role;
+            answer.final_justification = answer_update.final_justification;
+        }
 
         answer.save(function (err) {
             if (err) {

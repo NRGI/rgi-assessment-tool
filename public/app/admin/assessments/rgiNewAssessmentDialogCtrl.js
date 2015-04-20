@@ -46,6 +46,7 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
                     year: $scope.new_assessment.year,
                     version: $scope.new_assessment.version,
                     country: el.country.country,
+                    questions_unfinalized: data.length,
                     question_length: data.length
                 });
             });

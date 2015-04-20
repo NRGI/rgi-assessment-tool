@@ -4,12 +4,34 @@
 		.row.left-padding-lg.bottom-padding-med
 			h3
 				em Question {{answer.question_order}}. {{answer.question_text}}
-			h5 Researcher score:
-			em(ng-if="!answer.researcher_score") Not submitted
-			strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
-			h5 Reviewer score:
-			em(ng-if="!answer.reviewer_score") Not submitted
-			strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
+			div(ng-if="current_user.role === 'researcher'")
+				h5 Researcher score:
+				em(ng-if="!answer.researcher_score") Not submitted
+				strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
+				br
+				h5 Reviewer score:
+				em(ng-if="!answer.reviewer_score") Not submitted
+				em(ng-if="answer.reviewer_score"
+					ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Reviewer justification:
+				em {{answer.reviewer_justification}}
+				br
+				br
+
+			div(ng-if="current_user.role === 'reviewer'")
+				h5 Researcher score:
+				em(ng-if="!answer.researcher_score") Not submitted
+				em(ng-if="answer.researcher_score"
+					ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Researcher justification:
+				em {{answer.researcher_justification}}
+				br
+				br
+				h5 Reviewer score:
+				em(ng-if="!answer.reviewer_score") Not submitted
+				strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
+				br
+				br
 
 		//- Active buttons
 		.row.left-padding-lg.bottom-padding-lg

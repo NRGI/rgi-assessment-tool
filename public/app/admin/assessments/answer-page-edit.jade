@@ -41,7 +41,7 @@
 			| &nbsp;
 			button.btn.btn-danger(ng-click="answerFlag(current_user)" ng-disabled="!(flagCheck(answer.flags)) && new_flag_text_form.$invalid ") Flag answer
 			| &nbsp;
-			button.btn.btn-primary(ng-click="finalChoiceDialog()" ng-disabled="!answer.reviewer_score && !answer.researcher_score") Choose final answer
+			button.btn.btn-primary(ng-click="finalChoiceDialog()" ng-disabled="!answer.reviewer_score || !answer.researcher_score || answer.status !== 'approved'") Choose final answer
 			| &nbsp;
 			a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
 			

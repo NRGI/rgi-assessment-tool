@@ -2,31 +2,42 @@
 var angular;
 /*jslint nomen: true newcap: true unparam: true*/
 
-angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiAnswerSrvc, rgiUserListSrvc, rgiAssessmentSrvc, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiIdentitySrvc, rgiAssessmentMethodSrvc, rgiAnswerSrvc, rgiUserListSrvc, rgiAssessmentSrvc, rgiAnswerMethodSrvc) {
 
     // get current control profile onto scope and use it to populate workflowopts
 
 
     rgiUserListSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
         var workflowOpts = [];
-        workflowOpts.push({
-            text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
-            value: 'review_' + control_profile.role
-        });
-
-        if (control_profile.role === 'researcher' && $scope.$parent.assessment.questions_flagged === 0) {
-            rgiUserListSrvc.get({_id: $scope.$parent.assessment.reviewer_ID}, function (new_profile) {
-                workflowOpts.push({
-                    text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
-                    value: 'assigned_' + new_profile.role
-                });
+        if ($scope.$parent.assessment.status !== 'approved') {
+            workflowOpts.push({
+                text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+                value: 'review_' + control_profile.role
             });
-        } else if (control_profile.role === 'reviewer' && $scope.$parent.assessment.questions_flagged === 0) {
-            rgiUserListSrvc.get({_id: $scope.$parent.assessment.researcher_ID}, function (new_profile) {
-                workflowOpts.push({
-                    text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
-                    value: 'assigned_' + new_profile.role
+
+            if (control_profile.role === 'researcher' && $scope.$parent.assessment.questions_flagged === 0) {
+                rgiUserListSrvc.get({_id: $scope.$parent.assessment.reviewer_ID}, function (new_profile) {
+                    workflowOpts.push({
+                        text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
+                        value: 'assigned_' + new_profile.role
+                    });
                 });
+            } else if (control_profile.role === 'reviewer' && $scope.$parent.assessment.questions_flagged === 0) {
+                rgiUserListSrvc.get({_id: $scope.$parent.assessment.researcher_ID}, function (new_profile) {
+                    workflowOpts.push({
+                        text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
+                        value: 'assigned_' + new_profile.role
+                    });
+                });
+            }
+        }
+
+       
+
+        if ($scope.$parent.assessment.questions_flagged === 0 && $scope.$parent.assessment.questions_unfinalized === 0 && $scope.$parent.assessment.status !== 'approved') {
+             workflowOpts.push({
+                text: 'Approve assessment',
+                value: 'approved'
             });
         }
 
@@ -35,7 +46,7 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
         //     value: ''
         // }); 
 
-        if ($scope.$parent.assessment.status === 'approved') {
+        if ($scope.$parent.assessment.status === 'approved' || ($scope.$parent.assessment.questions_flagged === 0 && $scope.$parent.assessment.status === 'under_review')) {
             workflowOpts.push({
                 text: 'Move to internal review',
                 value: 'internal_review'
@@ -120,27 +131,48 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
 
         case 'assigned_researcher':
             r = confirm('Send on to researcher?');
+            if (r === true) {
+                new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
 
-            // if (r === true) {
-            //     new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+                new_assessment_data.status = 'assigned_researcher';
+                new_assessment_data.questions_complete = 0;
+                new_assessment_data.edit_control = new_assessment_data.researcher_ID;
 
-            //     new_assessment_data.status = 'assigned_researcher';
-            //     new_assessment_data.questions_complete = 0;
-            //     new_assessment_data.edit_control = new_assessment_data.researcher_ID;
-            //     new_assessment_data.first_pass = false;
+                rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
+                    new_answer_data.forEach(function (el, i) {
+                        el.status = 'assigned';
+                    });
 
-                
-            //     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-            //         .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
-            //         .then(function () {
-            //             $location.path('/admin/assessment-admin');
-            //             rgiNotifier.notify('Assessment moved forward!');
-            //         }, function (reason) {
-            //             rgiNotifier.error(reason);
-            //         });
-            // }
-            // send email to researcher
-            // update assessments
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment moved forward!');
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                });
+            }
+
+            break;
+
+        case 'approved':
+            r = confirm('Approve assessment?');
+            if (r === true) {
+                new_assessment_data = new rgiAssessmentSrvc($scope.$parent.assessment);
+
+                new_assessment_data.status = 'approved';
+                new_assessment_data.edit_control = rgiIdentitySrvc.currentUser._id;
+
+                rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                    .then(function () {
+                        $location.path('/admin/assessment-admin');
+                        rgiNotifier.notify('Assessment moved forward!');
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    });
+            }
+
             break;
 
         case 'assigned_reviewer':
