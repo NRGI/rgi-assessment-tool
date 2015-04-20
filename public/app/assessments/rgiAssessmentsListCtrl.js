@@ -11,10 +11,10 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         {value: 'status', text: 'Status'}];
     $scope.sortOrder = $scope.sortOptions[0].value;
 
-    var current_user = rgiIdentitySrvc.currentUser;
+    $scope.current_user = rgiIdentitySrvc.currentUser;
 
-    if (current_user.role === 'researcher') {
-        rgiAssessmentSrvc.query({researcher_ID: current_user._id}, function (data) {
+    if ($scope.current_user.role === 'researcher') {
+        rgiAssessmentSrvc.query({researcher_ID: $scope.current_user._id}, function (data) {
             // pull assessment list from collection and adds user name to match reviewer id and researcher id
             $scope.assessments = [];
             var i, assessment;
@@ -28,8 +28,8 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
                 $scope.assessments.push(assessment);
             }
         });
-    } else if (current_user.role === 'reviewer') {
-        rgiAssessmentSrvc.query({reviewer_ID: current_user._id}, function (data) {
+    } else if ($scope.current_user.role === 'reviewer') {
+        rgiAssessmentSrvc.query({reviewer_ID: $scope.current_user._id}, function (data) {
             // pull assessment list from collection and adds user name to match reviewer id and researcher id
             $scope.assessments = [];
             var i, assessment;

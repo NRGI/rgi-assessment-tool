@@ -67,8 +67,8 @@
 							) Under review
 						a.btn.center-block.btn-default.disabled(
 							href=""
-							ng-if="assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer'"
-							) Not submitted
+							ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer'"
+							) Waiting for submission
 
 
 

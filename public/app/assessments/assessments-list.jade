@@ -29,7 +29,8 @@
 				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
 					td.col-md-1
 						text(ng-if="assessment.status=='assigned'") {{assessment.country}}
-						a(ng-if="assessment.status!='assigned'" href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+						a(ng-if="assessment.status!='assigned'"
+							href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
 					td.col-md-1
 						text {{assessment.year}} {{assessment.version}}
 					td.col-md-2
@@ -65,10 +66,28 @@
 						text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
 						text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
 					td.col-md-1
-						button.btn.btn-success(ng-click="assessmentStart(assessment)" ng-if="assessment.status === 'assigned'") Start assessment
-						//- a(href="/assessments/{{assessment.assessment_ID}}" ng-if="assessment.status !== 'assigned' && assessment.questions_complete !== assessment.question_length"))
+						//- researcher start button
+						button.btn.btn-col.btn-success(ng-if="assessment.status === 'assigned' && assessment.edit_control===current_user._id"
+							ng-click="assessmentStart(assessment)") Start assessment
+						//- review answers sent back button
+						a.btn.btn-col.center-block.btn-warning(ng-if="assessment.questions_flagged !== 0 && assessment.status !== 'resubmitted' && assessment.status !== 'under_review'"
+							href="/assessments-review/{{assessment.assessment_ID}}") Review answers
+						//- disabled for admin review
+						a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'submitted' || assessment.status === 'resubmitted' || assessment.status === 'under_review'"
+							href="/assessments-review/{{assessment.assessment_ID}}"
+							disabled) Under Admin review
+						//- disabled for researcher control
+						a.btn.btn-col.center-block.btn-default(ng-if="(assessment.status === 'assigned_researcher' || assessment.status === 'assigned' || assessment.status === 'started') && current_user.role === 'reviewer'"
+							href="/assessments-review/{{assessment.assessment_ID}}"
+							disabled) Under researcher control
+						//- disabled for reviewer control
+						a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'assigned_reviewer' && current_user.role === 'researcher'"
+							href="/assessments-review/{{assessment.assessment_ID}}"
+							disabled) Under reviewer control
+
+						a.btn.btn-col.center-block.btn-primary(ng-if="assessment.status !== 'assigned' && assessment.status !== 'submitted' && assessment.status !== 'under_review' && assessment.questions_complete !== assessment.question_length && assessment.edit_control===current_user._id"
+							href="/assessments/{{assessment.assessment_ID}}") Open assessment
+						//- a(href="/assessments/{{assessment.assessment_ID}}"
+						//- 	ng-if="assessment.status !== 'assigned' && assessment.questions_complete !== assessment.question_length"))
 						//- 	button.btn.btn-primary Open assessment
-						a.btn.center-block.btn-warning(href="/assessments-review/{{assessment.assessment_ID}}" ng-if="assessment.questions_flagged !== 0 && assessment.status !== 'resubmitted'") Review answers
-						a.btn.center-block.btn-default(href="/assessments-review/{{assessment.assessment_ID}}" ng-if="assessment.status === 'resubmitted'" disabled) Under Review
-						a.btn.center-block.btn-primary(href="/assessments/{{assessment.assessment_ID}}" ng-if="assessment.status !== 'assigned' && assessment.status !== 'submitted' && assessment.questions_complete !== assessment.question_length") Open assessment
 						//- button.btn.btn-success(ng-click="assessmentSubmit()", ng-if="assessment.status !== 'assigned' && assessment.questions_complete === assessment.question_length") Submit assessment

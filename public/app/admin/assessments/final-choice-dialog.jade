@@ -1,0 +1,24 @@
+div.top-padding-med
+	.well
+		legend Final choice for question
+		.row.left-padding-lg
+			.form-horizontal
+				form.form-horizontal(name="finalChoice")
+					fieldset
+						.row
+							label.col-md-4  Final Choice
+							.form-group.col-md-8
+								select.form-group.form-control.right-padding-med(name="fin_choice" ng-model="fin_choice" required)
+									option(value="" selected disabled) Select correct answer
+									option(ng-repeat="opt in ['researcher', 'reviewer', 'other']" value="{{opt}}") {{opt}}
+									//- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
+						.row(ng-if="fin_choice==='other'")
+							label Reasoning
+						.row(ng-if="fin_choice==='other'")
+							textarea.col-md-6
+						.row
+							{{$parent}}
+						.row.top-padding-lg
+							button.btn.btn-success(ng-click="" disabled) Confirm action
+							| &nbsp;
+							button.btn.btn-danger(ng-click="closeDialog()") Cancel

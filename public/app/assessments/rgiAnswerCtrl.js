@@ -10,7 +10,7 @@ function zeroFill(number, width) {
     return number + ""; // always return a string
 }
 
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, ngDialog, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
     rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
@@ -191,6 +191,17 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             $scope.answer.new_comment = undefined;
         }, function (reason) {
             rgiNotifier.notify(reason);
+        });
+    };
+
+    // make final choice
+    $scope.finalChoiceDialog = function () {
+        $scope.value = true;
+        ngDialog.open({
+            template: 'partials/admin/assessments/final-choice-dialog',
+            controller: 'rgiFinalChoiceDialogCtrl',
+            className: 'ngdialog-theme-plain',
+            scope: $scope
         });
     };
 });

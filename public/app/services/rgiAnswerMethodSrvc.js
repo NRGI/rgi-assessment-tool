@@ -23,6 +23,30 @@ angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc
                 dfd.reject(response.data.reason);
             });
             return dfd.promise;
+        },
+        updateAnswerSet: function (new_answer_data) {
+            var dfd = $q.defer();
+            new_answer_data.forEach(function (el, i) {
+                el.$update().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    dfd.reject(response.data.reason);
+                });
+            });
+            return dfd.promise;
         }
+        // updateAnswerSet: function (new_answer_data) {
+        //     console.log(new_answer_data);
+        //     var dfd = $q.defer(),
+        //         newAnswers = new rgiAnswerSrvc(new_answer_data);
+        //     newAnswers.length = new_answer_data.length;
+        //     console.log(newAnswers);
+        //     // newAnswers.$update().then(function () {
+        //     //     dfd.resolve();
+        //     // }, function (response) {
+        //     //     dfd.reject(response.data.reason);
+        //     // });
+        //     return dfd.promise;
+        // }
     };
 });

@@ -22,7 +22,7 @@ angular.module('app').controller('rgiAssessmentAdminReviewCtrl', function ($scop
         $scope.assessment = data;
 
     });
-    
+
     $scope.moveAssessmentDialog = function () {
         $scope.value = true;
         ngDialog.open({

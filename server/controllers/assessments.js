@@ -132,238 +132,239 @@ exports.updateAssessment = function (req, res) {
                 // MAIL OPTIONS
                 ///////////////////////////////
                 // assignment flow
-                switch(assessmentUpdates.status){
-                    case 'assigned':
-                        console.log('assigned email');
-                        // //send an researcher notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: researcher_email, name: researcher_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment assigned!',
-                        //         html: "Hello " + researcher_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just assigned the " + assessment_title + " assessement to you.<p>\
-                        //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to start the assessment.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
+                switch (assessmentUpdates.status) {
 
-                        //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                        //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                        //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                        //                // Thanks!<p>\
-                        //                // The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                case 'assigned':
+                    console.log('assigned email');
+                    // //send an researcher notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: researcher_email, name: researcher_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment assigned!',
+                    //         html: "Hello " + researcher_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just assigned the " + assessment_title + " assessement to you.<p>\
+                    //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to start the assessment.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        // //send an reviewr notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: reviewer_email, name: reviewer_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment assigned!',
-                        //         html: "Hello " + reviewer_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just assigned the " + assessment_title + " assessement to you.<p>\
-                        //                Please hold tight while the researcher completes the initial assessment.<p>\
-                        //                Once that is complete you will be notified that it is time to review.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
+                    //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                    //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                    //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                    //                // Thanks!<p>\
+                    //                // The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                        //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                        //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                        //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                        //                // Thanks!<p>\
-                        //                // The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    // //send an reviewr notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: reviewer_email, name: reviewer_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment assigned!',
+                    //         html: "Hello " + reviewer_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just assigned the " + assessment_title + " assessement to you.<p>\
+                    //                Please hold tight while the researcher completes the initial assessment.<p>\
+                    //                Once that is complete you will be notified that it is time to review.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
+                    //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                    //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                    //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                    //                // Thanks!<p>\
+                    //                // The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'submitted':
-                        console.log('submitted email');
-                        // //send an researcher notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [
-                        //                 {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
-                        //                 {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
-                        //                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
-                        //                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
-                        //             ],
-                        //         from_email: 'cperry@resourcegovernance.org',
-                        //         subject: assessment_title + ' submitted by ' + editor_role + editor_fullName,
-                        //         html: "Hi,<p>" + editor_fullName + " just submitted the " + assessment_title + " assessment for review.\
-                        //                Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team.<p>\
-                        //                SORRY WE NEED TO GET THE SENDER WHITE LISTED BY OUTLOOK TO GET IT TO SEND TO THE GROUP EMAIL."
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                        //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                        //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                        //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                        //                // Thanks!<p>\
-                        //                // The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                case 'submitted':
+                    console.log('submitted email');
+                    // //send an researcher notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [
+                    //                 {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
+                    //                 {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
+                    //                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
+                    //                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
+                    //             ],
+                    //         from_email: 'cperry@resourcegovernance.org',
+                    //         subject: assessment_title + ' submitted by ' + editor_role + editor_fullName,
+                    //         html: "Hi,<p>" + editor_fullName + " just submitted the " + assessment_title + " assessment for review.\
+                    //                Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team.<p>\
+                    //                SORRY WE NEED TO GET THE SENDER WHITE LISTED BY OUTLOOK TO GET IT TO SEND TO THE GROUP EMAIL."
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
+                    //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                    //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                    //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                    //                // Thanks!<p>\
+                    //                // The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'resubmitted':
-                        console.log('resubmitted email');
-                        // //send an researcher notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [
-                        //                 {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
-                        //                 {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
-                        //                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
-                        //                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
-                        //             ],
-                        //         from_email: 'cperry@resourcegovernance.org',
-                        //         subject: assessment_title + ' submitted by ' + editor_role + editor_fullName,
-                        //         html: "Hi,<p>" + editor_fullName + " just resubmitted the " + assessment_title + " assessment for review.\
-                        //                Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team.<p>"
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                        //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                        //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                        //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                        //                // Thanks!<p>\
-                        //                // The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                case 'resubmitted':
+                    console.log('resubmitted email');
+                    // //send an researcher notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [
+                    //                 {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
+                    //                 {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
+                    //                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
+                    //                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
+                    //             ],
+                    //         from_email: 'cperry@resourcegovernance.org',
+                    //         subject: assessment_title + ' submitted by ' + editor_role + editor_fullName,
+                    //         html: "Hi,<p>" + editor_fullName + " just resubmitted the " + assessment_title + " assessment for review.\
+                    //                Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team.<p>"
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
-                    
-                    case 'review_researcher':
-                        console.log('send back to researcher email');
-                        // //send an researcher notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: researcher_email, name: researcher_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment returned for review!',
-                        //         html: "Hello " + researcher_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to you. \
-                        //                There are a few errors we'd like you to address before moving the assessment on.<p>\
-                        //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                    //                // "an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                    //                // The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                    //                // Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                    //                // Thanks!<p>\
+                    //                // The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
-                    
-                    case 'review_reviewer':
-                        console.log('send back to reviewer email');
-                        // //send an reviewer notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: reviewer_email, name: reviewer_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment returned for review!',
-                        //         html: "Hello " + reviewer_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to you. \
-                        //                There are a few errors we'd like you to address before moving the assessment on.<p>\
-                        //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
+                case 'review_researcher':
+                    console.log('send back to researcher email');
+                    // //send an researcher notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: researcher_email, name: researcher_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment returned for review!',
+                    //         html: "Hello " + researcher_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to you. \
+                    //                There are a few errors we'd like you to address before moving the assessment on.<p>\
+                    //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'assigned_researcher':
-                        console.log('send over to researcher email');
-                        // //send an researcher notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: researcher_email, name: researcher_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment returned for review!',
-                        //         html: "Hello " + researcher_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to your control.<p>\
-                        //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
+                case 'review_reviewer':
+                    console.log('send back to reviewer email');
+                    // //send an reviewer notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: reviewer_email, name: reviewer_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment returned for review!',
+                    //         html: "Hello " + reviewer_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to you. \
+                    //                There are a few errors we'd like you to address before moving the assessment on.<p>\
+                    //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'assigned_reviewer':
-                        console.log('send over to reviewer email');
-                        // //send an reviewer notification e-mail
-                        // mandrill('/messages/send', {
-                        //     message: {
-                        //         to: [{email: reviewer_email, name: reviewer_fullName}],
-                        //         from_email: 'rgi-admin@resourcegovernance.org',
-                        //         subject: assessment_title + ' assessment returned for review!',
-                        //         html: "Hello " + researcher_firstName + ",<p>\
-                        //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to your control.<p>\
-                        //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>\
-                        //                Thanks!<p>\
-                        //                The RGI Team."
-                        //     }
-                        // }, function (error, response) {
-                        //     //uh oh, there was an error
-                        //     if (error) console.log( JSON.stringify(error) );
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                        //     //everything's good, lets see what mandrill said
-                        //     else console.log(response);
-                        // });
-                        break;
+                case 'assigned_researcher':
+                    console.log('send over to researcher email');
+                    // //send an researcher notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: researcher_email, name: researcher_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment returned for review!',
+                    //         html: "Hello " + researcher_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to your control.<p>\
+                    //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'internal_review':
-                        console.log('send over to internal review email');
-                        break;
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                    case 'external_review':
-                        console.log('send over to external review email');
-                        break;
+                case 'assigned_reviewer':
+                    console.log('send over to reviewer email');
+                    // //send an reviewer notification e-mail
+                    // mandrill('/messages/send', {
+                    //     message: {
+                    //         to: [{email: reviewer_email, name: reviewer_fullName}],
+                    //         from_email: 'rgi-admin@resourcegovernance.org',
+                    //         subject: assessment_title + ' assessment returned for review!',
+                    //         html: "Hello " + researcher_firstName + ",<p>\
+                    //                <a href='" + admin_email + "'>" + admin_name + "</a> just returned the " + assessment_title + " assessement to your control.<p>\
+                    //                Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>\
+                    //                Thanks!<p>\
+                    //                The RGI Team."
+                    //     }
+                    // }, function (error, response) {
+                    //     //uh oh, there was an error
+                    //     if (error) console.log( JSON.stringify(error) );
 
-                    case 'final_approval':
-                        console.log('final approval email');
-                        break;
+                    //     //everything's good, lets see what mandrill said
+                    //     else console.log(response);
+                    // });
+                    break;
 
-                    default:
-                        console.log('no email action');
-                        break;
+                case 'internal_review':
+                    console.log('send over to internal review email');
+                    break;
+
+                case 'external_review':
+                    console.log('send over to external review email');
+                    break;
+
+                case 'final_approval':
+                    console.log('final approval email');
+                    break;
+
+                default:
+                    console.log('no email action');
+                    break;
                 }
             });
         });
