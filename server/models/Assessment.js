@@ -33,6 +33,7 @@ var assessmentSchema = mongoose.Schema({
     questions_complete: {type: Number, default: 0},
     questions_flagged: {type: Number, default: 0},
     questions_resubmitted: {type: Number, default: 0},
+    questions_unfinalized: {type: Number, required: '{PATH} is required'},
     question_length: {type: Number, required: '{PATH} is required'}
 });
 

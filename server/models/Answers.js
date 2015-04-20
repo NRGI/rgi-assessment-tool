@@ -61,6 +61,7 @@ var answerSchema = mongoose.Schema({
     /////ERROR CALCULATION
     reviewer_score_history: [scoreHistorySchema],
     final_score: Number,
+    final_role: String,
     final_justification: String,
     comments: [commentSchema],
     references: [referenceSchema],

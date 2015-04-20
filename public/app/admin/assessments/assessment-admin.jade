@@ -61,13 +61,17 @@
 							href="/admin/assessment-review/{{assessment.assessment_ID}}"
 							ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
 							) Continue review
+						a.btn.btn-col.center-block.btn-primary(
+							href="/admin/assessment-review/{{assessment.assessment_ID}}"
+							ng-if="assessment.status=='approved'"
+							) Send to external
 						a.btn.center-block.btn-default.disabled(
 							href=""
 							ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
 							) Under review
 						a.btn.center-block.btn-default.disabled(
 							href=""
-							ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer'"
+							ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
 							) Waiting for submission
 
 
