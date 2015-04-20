@@ -66,7 +66,7 @@ function createDefaultUsers() {
             hash = encrypt.hashPwd(salt, 'ahasermann');
             User.create({firstName: 'Anna', lastName: 'Hasermann', username: 'ahasermann', email: 'ahasermann@resourcegovernance.org', salt:  salt, hashed_pwd:  hash, role: 'researcher', assessments: [], language:  'English'});
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'mkauffmann');
+            hash = encrypt.hashPwd(salt, 'dmihalyi');
             User.create({firstName: 'David', lastName: 'Mihalyi', username: 'dmihalyi', email: 'dmihalyi@resourcegovernance.org', salt: salt, hashed_pwd:  hash, role: 'reviewer', assessments: [], language:  'English'});
         }
     });

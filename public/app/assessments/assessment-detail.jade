@@ -15,10 +15,9 @@
 						ng-options="item.value as item.text for item in sortOptions")
 			br
 			button.btn.btn-success.pull-right(
-				ng-click="assessmentSubmit()"
-				ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id"
+				ng-if="assessment.edit_control===identity.currentUser._id"
 				ng-disabled="assessment.questions_complete!==answers.length || answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
-				) Submit assessment
+				ng-click="assessmentSubmit()") Submit assessment
 			//- assessment.first_pass = true;
 
 			//- button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
@@ -64,9 +63,13 @@
 					td.col-md-5 {{answer.question_text}})
 					td
 						text {{answer.status | capitalize}}
-					td(ng-if="answer.edit_control===identity.currentUser._id")
-						a.btn.center-block.btn-success(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status=='saved'") Jump to question
-						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status==='submitted'") View to answer
-					td(ng-if="answer.edit_control!==identity.currentUser._id")
-						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status!=='assigned' && answer.status!=='saved'") View answer
-						a.btn.center-block.btn-success.disabled(href="/assessments/assessment-view/{{answer.answer_ID}}" ng-if="answer.status==='assigned' || answer.status==='saved'") No data
+					td(ng-if="assessment.edit_control===identity.currentUser._id")
+						a.btn.center-block.btn-success(ng-if="answer.status==='assigned' || answer.status=='saved' || answer.status=='saved'"
+							href="/assessments/assessment-edit/{{answer.answer_ID}}" ) Jump to question
+						a.btn.center-block.btn-default(ng-if="answer.status==='submitted'"
+							href="/assessments/assessment-view/{{answer.answer_ID}}") View to answer
+					td(ng-if="assessment.edit_control!==identity.currentUser._id")
+						a.btn.center-block.btn-default(ng-if="answer.status!=='assigned' && answer.status!=='saved'"
+							href="/assessments/assessment-view/{{answer.answer_ID}}") View answer
+						a.btn.center-block.btn-success.disabled(ng-if="answer.status==='assigned' || answer.status==='saved'"
+							href="/assessments/assessment-view/{{answer.answer_ID}}") No data
