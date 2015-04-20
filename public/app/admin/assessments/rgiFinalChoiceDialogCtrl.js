@@ -3,7 +3,25 @@ var angular;
 /*jslint nomen: true newcap: true unparam: true*/
 
 angular.module('app').controller('rgiFinalChoiceDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiAnswerSrvc, rgiUserListSrvc, rgiAssessmentSrvc, rgiAnswerMethodSrvc) {
-
+    $scope.final_choice_set = [
+        {
+            text: 'Agree with researcher score',
+            value: $scope.$parent.answer.researcher_score,
+            role: 'researcher'
+        },
+        {
+            text: 'Agree with reviewer score',
+            value: $scope.$parent.answer.reviewer_score,
+            role: 'researcher'
+        },
+        {
+            text: 'Other score',
+            value: 'other',
+            role: 'admin'
+        }
+    ];
+    $scope.question_choices = $scope.$parent.question.question_choices;
+    // console.log($scope.$parent.answer.researcher_score);
     // get current control profile onto scope and use it to populate workflowopts
 
 
