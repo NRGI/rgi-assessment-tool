@@ -7,7 +7,9 @@ var auth = require('./auth'),
     mendeley = require('../controllers/mendeley.js'),
     answers = require('../controllers/answers'),
     questions = require('../controllers/questions'),
-    assessments = require('../controllers/assessments');
+    assessments = require('../controllers/assessments'),
+    multipart = require('connect-multiparty'),
+    multipartMiddleware = multipart();
 
 module.exports = function (app) {
 
@@ -69,6 +71,20 @@ module.exports = function (app) {
 
     // PUT
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
+
+    /////////////////////////
+    //// DOCUMNETS  /////////
+    /////////////////////////
+    // GET
+    // POST
+    // PUT
+
+
+    /////////////////////////
+    //// UPLOAD DOCUMENTS ///
+    /////////////////////////
+
+    app.post('/file-upload', multipartMiddleware, mendeley.fileUpload);
 
     ////////////////////
     ///// OTHER ////////

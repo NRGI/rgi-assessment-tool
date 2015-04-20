@@ -8,7 +8,7 @@ var modificationSchema = new mongoose.Schema({
 });
 
 var documentSchema = mongoose.Schema({
-    mendeley_id: String,
+    mendeley_ID: String,
     file_hash: String,
     s3_url: String,
     metadata: {
@@ -23,4 +23,4 @@ var documentSchema = mongoose.Schema({
     creationDate: {type: Date, default: Date.now},
 });
 
-var Document = mongoose.model('Document', documentSchema);
+var Documents = mongoose.model('Documents', documentSchema);
