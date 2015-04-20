@@ -1,8 +1,8 @@
 'use strict';
 var oauth2 = require('simple-oauth2');
 var mendeley = require('../controllers/mendeley');
-var clientId = 1560;
-var clientCredential = 'WHqPESIwLcyTFMtd';
+var clientId = process.env.MENDELEY_CLIENTID;
+var clientCredential = process.env.MENDELEY_CLIENTCRED;
 var endPoint = 'https://api.mendeley.com';
 
 exports.getToken = function (req, res, next) {

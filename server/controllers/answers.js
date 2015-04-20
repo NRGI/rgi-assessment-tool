@@ -3,7 +3,11 @@
 
 var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
-    Assessment = require('mongoose').model('Assessment');
+    Assessment = require('mongoose').model('Assessment'),
+    MendeleyToken = require('mongoose').model('MendeleyToken');
+
+
+
 
 exports.getAnswers = function (req, res, next) {
 
@@ -89,6 +93,11 @@ exports.createAnswers = function (req, res, next) {
     });
     res.send();
 };
+
+
+        // MendeleyToken.findOne({}).exec(function(err, token) {
+        //     console.log(token);
+        // });
 
 exports.updateAnswer = function (req, res) {
     var answer_update = req.body,

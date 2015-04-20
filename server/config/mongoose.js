@@ -24,5 +24,5 @@ module.exports = function (config, user, pass, env) {
     // import data
     userModel.createDefaultUsers();
     questionModel.createDefaultQuestions();
-    assessmentModel.createDefaultAssessments();
+    // assessmentModel.createDefaultAssessments();
 };
