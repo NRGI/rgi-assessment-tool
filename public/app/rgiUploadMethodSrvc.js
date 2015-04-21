@@ -4,16 +4,13 @@ var angular;
 angular.module('app').factory('rgiUploadMethodSrvc', function ($q, rgiUploadSrvc) {
     return {
         upload: function (fileItem) {
-            console.log('.url');
-            var newUpload = new rgiUploadSrvc(fileItem),
-                dfd = $q.defer();
-            newUpload.test = 'test';
-            console.log(newUpload);
+            var newUpload = new rgiUploadSrvc(fileItem);
+            var dfd = $q.defer();
 
             newUpload.$save().then(function () {
                 dfd.resolve();
-            }, function (res) {
-                dfd.reject(res.data.reason);
+            }, function (response) {
+                dfd.reject(response.data.reason);
             });
             return dfd.promise;
         }

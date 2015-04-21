@@ -10,13 +10,18 @@ function zeroFill(number, width) {
     return number + ""; // always return a string
 }
 
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, ngDialog, FileUploader, rgiUploadMethodSrvc, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, ngDialog, FileUploader, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
+    console.log($scope.assessment.assessment_ID);
 
     var uploader = $scope.uploader = new FileUploader({
         isHTML5: true,
         withCredentials: true,
+<<<<<<< HEAD
         url: 'file-upload?assessment_id=question_id='
+=======
+        url: 'file-upload?assessment_id=' + $scope.assessment.assessment_ID + '&question_id=' + $scope.question._id
+>>>>>>> master
     });
 //     uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
 //         console.info('onWhenAddingFileFailed', item, filter, options);
@@ -81,7 +86,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             });
         }
         return disabled;
-    }
+    };
 
     $scope.answerClear = function () {
         $scope.answer = angular.copy($scope.answer_start);
