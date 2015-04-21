@@ -12,6 +12,7 @@ RUN		npm install -g bower
 RUN		git clone https://github.com/NRGI/rgi-assessment-tool /rgi-assessment-tool
 RUN		cd /rgi-assessment-tool && npm install --production
 RUN		cd /rgi-assessment-tool && bower install --allow-root
+RUN     npm build
 
 EXPOSE  80
 
