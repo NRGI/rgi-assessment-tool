@@ -9,15 +9,6 @@ var modificationSchema = new mongoose.Schema({
     modifiedDate: {type: Date, default: Date.now}
 });
 
-var referenceSchema = new mongoose.Schema({
-    date: {type: Date, default: Date.now},
-    tex_ref: String,
-    URL: String, // generated from upload path in S3
-    note: String,
-    author: ObjectId, // Pull from curretn user _id value
-    role: String
-});
-
 var commentSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     content: String,
@@ -25,6 +16,26 @@ var commentSchema = new mongoose.Schema({
     author_name: String,
     role: String,
     addressed: Boolean
+});
+
+var referenceSchema = new mongoose.Schema({
+    date: {type: Date, default: Date.now},
+    title: String,
+    URL: String, // generated from upload path in S3
+    document_ID: String,
+    mendeley_ID: String,
+    file_hash: String,
+    note: String,
+    author: ObjectId, // Pull from curretn user _id value
+    role: String,
+    comment: {
+        date: {type: Date, default: Date.now},
+        content: String,
+        author: ObjectId, // Pull from curretn user _id value
+        author_name: String,
+        role: String,
+        addressed: Boolean
+    }
 });
 
 var scoreHistorySchema = new mongoose.Schema({

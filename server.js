@@ -1,12 +1,13 @@
 var express         = require('express');
 
-var env             = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var env             = process.env.NODE_ENV = process.env.NODE_ENV || 'development_local';
 
 var app             = express();
 
 var config          = require('./server/config/config')[env];
 
-if (env === 'development' || env === 'local') {
+
+if (env === 'development_local' || env === 'development_server' || env === 'local') {
     var user = process.env.USER_DEV_ID;
     var pass = process.env.USER_DEV_KEY;
 } else if (env === 'production') {

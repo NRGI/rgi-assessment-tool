@@ -16,7 +16,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     var uploader = $scope.uploader = new FileUploader({
         isHTML5: true,
         withCredentials: true,
-        url: 'file-upload'
+        url: 'file-upload?assessment_id=question_id='
     });
 //     uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
 //         console.info('onWhenAddingFileFailed', item, filter, options);
