@@ -148,8 +148,13 @@ exports.fileUpload = function (req, res, next) {
                     if (doc_record !== null) {
                         console.log('In doc collection');
                         // // update
+<<<<<<< HEAD
                         // doc_record.assessments.push(req.query.assessment_id);
                         // doc_record.questions.push(req.query.question_id);
+=======
+                        // **doc_record.assessments.push();
+                        // **doc_record.questions.push(ObjectId);
+>>>>>>> master
                         // doc_record.users.push(req.user._id);
                         // doc_record.modified.push({
                         //     modifiedBy: req.user._id,
@@ -163,6 +168,7 @@ exports.fileUpload = function (req, res, next) {
 
                         // // update 
                         // answer.references.push({
+<<<<<<< HEAD
                         //     title: doc_record.,
                         //     **author: ,
                         //     **URL: , // generated from upload path in S3
@@ -175,6 +181,20 @@ exports.fileUpload = function (req, res, next) {
                         //         author: req.user._id,
                         //         author_name: req.user.firstName + ' ' + req.user.lastName,
                         //         role: req.user.role
+=======
+                        //     title: ,
+                        //     author: ,
+                        //     URL: , // generated from upload path in S3
+                        //     document_ID: ,
+                        //     mendeley_ID: ,
+                        //     file_hash: ,
+                        //     comment: {
+                        //         date: timestamp,
+                        //         content: ,
+                        //         author: ObjectId,
+                        //         author_name: ,
+                        //         role: 
+>>>>>>> master
                         //     }
                         // });
                     } else {
