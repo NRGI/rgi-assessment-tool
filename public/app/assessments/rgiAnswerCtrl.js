@@ -235,7 +235,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             new_ref_data = {
                 document_ID: new_doc_data._id,
                 // mendeley_ID
-                file_hash: new_doc_data.file_hash;
+                file_hash: new_doc_data.file_hash,
                     comment: {
                         date: new Date().toISOString(),
                         author: current_user._id,
