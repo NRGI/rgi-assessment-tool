@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NRGI/rgi-assessment-tool",
   "dependencies": {
+    "aws-sdk": "^2.1.24",
     "body-parser": "^1.9.2",
     "bootstrap": "^3.3.1",
     "campaign": "^1.7.0",
@@ -29,7 +30,7 @@
     "express-sessions": "^1.0.5",
     "grunt-cli": "^0.1.13",
     "jade": "^1.7.0",
-    "mongoose": "^3.8.19",
+    "mongoose": "^4.0.1",
     "morgan": "^1.5.0",
     "node-mandrill": "^1.0.1",
     "passport": "^0.2.1",

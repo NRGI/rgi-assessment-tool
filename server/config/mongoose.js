@@ -9,6 +9,7 @@ var mongoose = require('mongoose'),
 
 module.exports = function (config, user, pass, env) {
     // connect to mongo
+
     if (env === 'local') {
         mongoose.connect(config.db);
     } else {
