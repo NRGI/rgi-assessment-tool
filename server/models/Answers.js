@@ -18,16 +18,10 @@ var commentSchema = new mongoose.Schema({
     addressed: Boolean
 });
 
-var referenceSchema = new mongoose.Schema({
-    date: {type: Date, default: Date.now},
-    title: String,
-    URL: String, // generated from upload path in S3
+var citationSchema = new mongoose.Schema({
     document_ID: String,
     mendeley_ID: String,
     file_hash: String,
-    note: String,
-    author: ObjectId, // Pull from curretn user _id value
-    role: String,
     comment: {
         date: {type: Date, default: Date.now},
         content: String,
@@ -36,6 +30,41 @@ var referenceSchema = new mongoose.Schema({
         role: String,
         addressed: Boolean
     }
+});
+
+var webSchema = new mongoose.Schema({
+    title: String,
+    URL: String, // generated from upload path in S3
+    comment: {
+        date: {type: Date, default: Date.now},
+        content: String,
+        author: ObjectId, // Pull from curretn user _id value
+        author_name: String,
+        role: String,
+        addressed: Boolean
+    }
+});
+
+var humanSchema = new mongoose.Schema({
+    first_name: String,
+    last_name: String, // generated from upload path in S3
+    phone: String,
+    email: String,
+    contact_date: {type: Date, default: Date.now},
+    comment: {
+        date: {type: Date, default: Date.now},
+        content: String,
+        author: ObjectId, // Pull from curretn user _id value
+        author_name: String,
+        role: String,
+        addressed: Boolean
+    }
+});
+
+var referenceSchema = new mongoose.Schema({
+    citation: [citationSchema],
+    web: [webSchema],
+    human: [humanSchema]
 });
 
 var scoreHistorySchema = new mongoose.Schema({
@@ -75,7 +104,11 @@ var answerSchema = mongoose.Schema({
     final_role: String,
     final_justification: String,
     comments: [commentSchema],
-    references: [referenceSchema],
+    references: {
+        citation: [citationSchema],
+        web: [webSchema],
+        human: [humanSchema]
+    },
     modified: [modificationSchema],
 });
 

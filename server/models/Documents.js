@@ -7,14 +7,35 @@ var modificationSchema = new mongoose.Schema({
     modifiedDate: {type: Date, default: Date.now}
 });
 
+var authorSchema = new mongoose.Schema({
+    first_name: String,
+    last_name: String
+});
+
 var documentSchema = mongoose.Schema({
-    mendeley_ID: String,
     file_hash: String,
     s3_url: String,
-    metadata: {
-        author: String,
-        title: String
-    },
+    mendeley_ID: String,
+    mendeley_url: String,
+    title: String,
+    author: [authorSchema],
+    type: String,
+    source: String,
+    year: Number,
+    pages: String,
+    volume: String,
+    issue: String,
+    websites: String,
+    publisher: String,
+    city: String,
+    edition: String,
+    institution: String,
+    series: String,
+    chapter: String,
+    editors: [authorSchema],
+    country: String,
+    translators: String,
+    series_editor: String,
     assessments: [ObjectId],
     questions: [ObjectId],
     users: [ObjectId],
