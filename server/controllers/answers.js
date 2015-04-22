@@ -5,9 +5,6 @@ var Answer = require('mongoose').model('Answer'),
     Question = require('mongoose').model('Question'),
     Assessment = require('mongoose').model('Assessment');
 
-
-
-
 exports.getAnswers = function (req, res, next) {
 
     if (req.user.hasRole('supervisor')) {
@@ -105,6 +102,7 @@ exports.updateAnswer = function (req, res) {
     Answer.findOne({answer_ID: answer_update.answer_ID}, function (err, answer) {
         answer.status = answer_update.status;
         answer.comments = answer_update.comments;
+        answer.refereces = answer_update.refereces;
         answer.flags = answer_update.flags;
         answer.questions_flagged = answer.questions_flagged;
         answer.references = answer_update.references;
@@ -132,7 +130,7 @@ exports.updateAnswer = function (req, res) {
 
         answer.save(function (err) {
             if (err) {
-                return res.send({ reason: err.toString() });
+                res.send({ reason: err.toString() });
             }
         });
     });

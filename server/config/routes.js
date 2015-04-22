@@ -8,6 +8,7 @@ var auth = require('./auth'),
     answers = require('../controllers/answers'),
     questions = require('../controllers/questions'),
     assessments = require('../controllers/assessments'),
+    documents = require('../controllers/documents'),
     multipart = require('connect-multiparty'),
     multipartMiddleware = multipart();
 
@@ -84,7 +85,7 @@ module.exports = function (app) {
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
 
-    app.post('/file-upload', multipartMiddleware, mendeley.fileUpload);
+    app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
     ////////////////////
     ///// OTHER ////////
@@ -93,7 +94,7 @@ module.exports = function (app) {
         res.render('../../public/app/' + req.params[0]);
     });
 
-    app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken, 
+    app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken,
         authMendeley.getToken, mendeley.updateToken, auth.passUser);
 
     app.post('/logout', function (req, res) {
