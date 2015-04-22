@@ -9,8 +9,8 @@ RUN		yum install -y git
 RUN		npm install -g bower
 
 # Build src
-RUN		git clone https://github.com/NRGI/rgi-assessment-tool /rgi-assessment-tool
-RUN		cd /rgi-assessment-tool && npm install --production
+RUN		git clone -b bug-docker-refinement https://github.com/NRGI/rgi-assessment-tool /rgi-assessment-tool
+RUN		cd /rgi-assessment-tool && npm install
 RUN		cd /rgi-assessment-tool && bower install --allow-root
 RUN     cd /rgi-assessment-tool && npm install request --save
 
