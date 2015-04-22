@@ -13,7 +13,7 @@ RUN		git clone -b bug-docker-refinement https://github.com/NRGI/rgi-assessment-t
 RUN		cd /rgi-assessment-tool && npm install
 RUN		cd /rgi-assessment-tool && bower install --allow-root
 RUN     cd /rgi-assessment-tool && npm install request --save
-RUN     cd /rgi-assessment-tool && npm install karma-phantomjs-launcher --save-dev
+RUN     cd /rgi-assessment-tool && npm install phantomjs --save
 
 EXPOSE  80
 
