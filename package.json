@@ -36,6 +36,7 @@
     "node-mandrill": "^1.0.1",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
+    "phantomjs": "^1.9.16",
     "request": "^2.55.0",
     "s3": "^4.3.1",
     "simple-oauth2": "^0.2.1",
