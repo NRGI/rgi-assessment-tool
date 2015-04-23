@@ -12,8 +12,6 @@ RUN		npm install -g bower
 RUN		git clone -b bug-docker-refinement https://github.com/NRGI/rgi-assessment-tool /rgi-assessment-tool
 RUN		cd /rgi-assessment-tool && npm install
 RUN		cd /rgi-assessment-tool && bower install --allow-root
-RUN     cd /rgi-assessment-tool && npm install request --save
-RUN     cd /rgi-assessment-tool && npm install phantomjs --save
 
 EXPOSE  80
 
