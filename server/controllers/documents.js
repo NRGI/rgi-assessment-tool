@@ -4,11 +4,13 @@
 var crypto                 = require('crypto'),
     fs                     = require('fs'),
     request                = require('request'),
-    aws                    = require('aws-sdk'),
+    AWS                    = require('aws-sdk'),
     Document               = require('mongoose').model('Documents'),
     Answer                 = require('mongoose').model('Answer'),
     MendeleyToken          = require('mongoose').model('MendeleyToken');
 
+
+AWS.config.region = 'us-west-2';
 
 
 exports.fileCheck = function (req, res, next) {
