@@ -12,7 +12,7 @@ RUN		yum install -y git
 RUN		git clone https://github.com/NRGI/rgi-assessment-tool /src
 
 # Install APP
-RUN		cd /src && npm install --production
+RUN		cd /src && npm install
 RUN		cd /src && bower install --allow-root
 RUN		npm install karma-phantomjs-launcher --save
 
