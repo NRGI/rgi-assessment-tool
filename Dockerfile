@@ -14,8 +14,8 @@ RUN		git clone https://github.com/NRGI/rgi-assessment-tool /src
 # Install APP
 RUN		cd /src && npm install
 RUN		cd /src && bower install --allow-root
-RUN     cd /rgi-assessment-tool && npm install phantomjs --save
-RUN     cd /rgi-assessment-tool && npm install request --save
+#RUN     cd /rgi-assessment-tool && npm install phantomjs --save
+#RUN     cd /rgi-assessment-tool && npm install request --save
 
 EXPOSE  80
 
