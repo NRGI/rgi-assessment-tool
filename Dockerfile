@@ -25,9 +25,9 @@ COPY	. /src
 
 # Install APP
 # RUN		npm cache clean
-RUN		cd /src && npm install
+RUN		cd /src && npm install --allow-root
 RUN		cd /src && bower install --allow-root
 
 EXPOSE  80
 
-CMD		["node", "/rgi-assessment-tool/server.js"]
+CMD		["node", "/src/server.js"]
