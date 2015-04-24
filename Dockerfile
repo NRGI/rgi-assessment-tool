@@ -13,7 +13,6 @@ RUN		yum install -y git
 COPY		. /src
 
 # Install APP
-#RUN		cd /src && npm install --production
 RUN		cd /src && npm install
 RUN		cd /src && bower install --allow-root
 #RUN	cd /src && npm install -g phantomjs
