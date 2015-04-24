@@ -1,0 +1,60 @@
+div.top-padding-med
+	.well
+		legend Final choice for question
+		.row.left-padding-lg
+			.form-horizontal
+				form.form-horizontal(name="finalChoice")
+					fieldset
+						.row
+							label.col-md-4  Final Choice
+							.form-group.col-md-8
+								select.form-group.form-control.right-padding-med(name="final_choice"
+									ng-model="final_choice" 
+									ng-options="opt.text for opt in final_choice_set"
+									required)
+									option(value="" selected disabled) Select final answer
+						//- no agreement
+						.row(ng-if="final_choice.value==='other' || final_choice.role === 'admin'")
+							ng-form(name="new_comment_form")
+								.form-group.top-padding-med
+									.row.left-padding-lg
+										.col-md-10
+											textarea.form-control(
+												name="comment"
+												type="text"
+												ng-model="final_choice.final_justification"
+												placeholder="Justification...",
+												required)
+						div(id="answer_choice_div" ng-if="final_choice.value==='other' || final_choice.role === 'admin'" required).bottom-padding-med
+							legend Choose one of the following answers:
+							ng-form(name="answer_choice_form")
+								.form-group.left-padding-lg.right-padding-lg(ng-repeat="choice in question_choices" required)
+									input(
+										type="radio"
+										name="choice.choice_name"
+										value="{{choice.order}}"
+										checked=""
+										ng-model="final_choice.value")
+									text.left-padding-med {{choice.criteria}}
+						//- agree
+						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
+							em {{final_choice.role | capitalize}}: {{final_choice.value}} - 
+							em(ng-init="i = final_choice.value") {{question_choices[i-1].criteria}}
+						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
+							ng-form(name="new_comment_form")
+								.form-group.top-padding-med
+									.row.left-padding-lg
+										.col-md-10
+											textarea.form-control(
+												name="comment"
+												type="text"
+												ng-model="final_choice.final_justification"
+												placeholder="Comment...")
+
+
+						.row.top-padding-lg
+							button.btn.btn-success(ng-click="finalChoiceSubmit()" ng-disabled="finalChoice.$invalid || answer_choice_form.$invalid") Finalize choice
+							| &nbsp;
+							button.btn.btn-danger(ng-click="closeDialog()") Cancel
+
+

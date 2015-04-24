@@ -1,0 +1,426 @@
+.container.top-padding-med
+	.well.left-padding-lg.right-padding-lg
+		legend {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+		.row.left-padding-lg.bottom-padding-med
+			h3
+				em Question {{answer.question_order}}. {{answer.question_text}}
+			div(ng-if="current_user.role === 'researcher'")
+				h5 Researcher score:
+				em(ng-if="!answer.researcher_score") Not submitted
+				strong(ng-if="answer.researcher_score") {{answer.researcher_score}}
+				br
+				h5 Reviewer score:
+				em(ng-if="!answer.reviewer_score") Not submitted
+				em(ng-if="answer.reviewer_score"
+					ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Reviewer justification:
+				em {{answer.reviewer_justification}}
+				br
+				br
+
+			div(ng-if="current_user.role === 'reviewer'")
+				h5 Researcher score:
+				em(ng-if="!answer.researcher_score") Not submitted
+				em(ng-if="answer.researcher_score"
+					ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Researcher justification:
+				em {{answer.researcher_justification}}
+				br
+				br
+				h5 Reviewer score:
+				em(ng-if="!answer.reviewer_score") Not submitted
+				strong(ng-if="answer.reviewer_score") {{answer.reviewer_score}}
+				br
+				br
+
+		//- Active buttons
+		.row.left-padding-lg.bottom-padding-lg
+			.col-md-pull-2
+				button.btn.btn-primary(
+					ng-click="answerSave()"
+					ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
+					) Save answer
+				| &nbsp;
+				button.btn.btn-success(
+					ng-click="answerSubmit()"
+					ng-disabled="answer_justification_form.$invalid || !answer[current_user.role + '_score'] || assessment.edit_control!==current_user._id"
+					) Submit answer
+				| &nbsp;
+				button.btn.btn-danger(
+					ng-click="answerClear()"
+					ng-disabled="assessment.edit_control!==current_user._id"
+					) Clear answer
+				| &nbsp;
+				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
+
+		.row.left-padding-lg.right-padding-lg
+			.form-horizontal(name="answer_form")
+				fieldset
+					div(id="answer_choice_div").bottom-padding-med
+						legend Choose one of the following answers:
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+									type="radio"
+									name="choice.choice_name"
+									value="{{choice.order}}"
+									checked=""
+									ng-model="answer[current_user.role + '_score']"
+									ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
+					div(id="answer_justification_div").bottom-padding-med
+						ng-form(name="answer_justification_form")
+							.form-group.top-padding-med
+								.row.left-padding-lg
+									.col-md-11
+										textarea.form-control(
+											name="justification"
+											type="text"
+											ng-model="answer[current_user.role + '_justification']"
+											placeholder="Please provide your justification..."
+											required
+											ng-disabled="assessment.edit_control!==current_user._id")
+		div(id="comments_div").bottom-padding-med
+			legend Comments:
+
+			div(id="prev_comments_div" ng-if="answer.comments.length!==0")
+				.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+					.row
+						b {{comment.author_name}} (
+						b {{comment.role}}
+						b ):
+					.row.col-md-11 {{comment.content}}
+					.row.col-md-offset-9.col-md-3
+						date
+							small
+								em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+			br
+			div(id="new_comment_div").bottom-padding-med
+				ng-form(name="new_comment_form")
+					.form-group.top-padding-med
+						.row.left-padding-lg
+							.col-md-10
+								textarea.form-control(
+									name="comment"
+									type="text"
+									ng-model="answer.new_comment"
+									placeholder="New comment..."
+									required)
+							.col-md-1
+								button.btn.btn-success(
+									ng-click="commentSubmit(current_user)"
+									ng-disabled="new_comment_form.$invalid"
+									) Submit comment
+
+		div(id="biblio_div").bottom-padding-med
+			legend References:
+			.row
+				.col-md-5.pull-left.top-padding-med
+					select.form-group.form-control.pull-left(ng-model="ref_selection")
+						option(value="" selected disabled) Select action
+						option(ng-repeat="ref in ref_type" value="{{ref.value}}") {{ref.text}}
+
+				.col-md-1.pull-left(ng-if="ref_selection==='document'")
+					div.fileUpload.btn.btn-default
+						span Select File
+						input.upload(type="file" nv-file-select uploader="uploader")
+
+			//- DOCUMENT UPLOAD
+			.row.left-padding-lg.right-padding-lg(ng-if="uploader.queue.length>0")
+				h3 Upload queue
+				p Queue length: {{ uploader.queue.length }}
+				table.table
+					thead
+						tr
+							th(width="50%") Name
+							th(ng-show="uploader.isHTML5") Size
+							th(ng-show="uploader.isHTML5") Progress
+							th Status
+							th Actions
+					tbody
+						tr(ng-repeat="item in uploader.queue")
+							td
+								strong(ng-if="!new_document") {{ item.file.name }}
+								strong
+									a(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name }}
+							td(ng-show="uploader.isHTML5" nowrap) {{ item.file.size/1024/1024|number:2 }} MB
+							td(ng-show="uploader.isHTML5")
+								div.progress(style="margin-bottom: 0;")
+									div.progress-bar(role="progressbar" ng-style="{ 'width': item.progress + '%' }")
+							td.text-center
+								span(ng-show="item.isSuccess")
+									i.glyphicon.glyphicon-ok
+								span(ng-show="item.isCancel")
+									i.glyphicon.glyphicon-ban-circle
+								span(ng-show="item.isError")
+									i.glyphicon.glyphicon-remove
+							td(nowrap)
+								button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
+									span.glyphicon.glyphicon-upload Upload
+								| &nbsp;
+								button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+									span.glyphicon.glyphicon-ban-circle Cancel
+								| &nbsp;
+								button.btn.btn-danger.btn-xs(ng-click="item.remove()")
+									span.glyphicon.glyphicon-trash Remove
+
+			.row.bottom-padding-med(ng-if="new_document && ref_selection==='document'" id="new_document_form")
+				ng-form.form-horizontal(name="new_document_form")
+					fieldset
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="title"
+								type="text"
+								placeholder="Title (required)..."
+								ng-model="new_document.title"
+								required)
+						.row.pull-right.left-padding-lg.col-lg-6
+							select.form-group.form-control(ng-model="new_document.type" required)
+								option(value="" selected disabled) Select type (required)
+								option(value="journal") Journal
+								option(value="book") Book
+								option(value="generic") Generic
+								option(value="book_section") Book Section
+								option(value="conference_proceedings") Conference Proceedings
+								option(value="working_paper") Working Paper
+								option(value="report") Report
+								option(value="web_page") Web Page
+								option(value="thesis") Thesis
+								option(value="magazine_article") Magazine Article
+								option(value="statute") Statute
+								option(value="patent") Patent
+								option(value="newspaper_article") Newspaper Article
+								option(value="computer_program") Computer Program
+								option(value="hearing") Hearing
+								option(value="television_broadcast") Television Broadcast
+								option(value="encyclopedia_article") Encyclopedia Article
+								option(value="case") Case
+								option(value="film") Film
+								option(value="bill") Bill
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="authors"
+								type="text"
+								placeholder="Authors (required)..."
+								ng-model="new_document.authors"
+								required)
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="editors"
+								type="text"
+								placeholder="Editors..."
+								ng-model="new_document.editors")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="source"
+								type="text"
+								placeholder="Source URL..."
+								ng-model="new_document.source")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="year"
+								type="text"
+								placeholder="Year published..."
+								ng-model="new_document.year")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="pages"
+								type="text"
+								placeholder="Pages..."
+								ng-model="new_document.pages")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="volume"
+								type="text"
+								placeholder="Volume..."
+								ng-model="new_document.volume")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="issue"
+								type="text"
+								placeholder="Issue..."
+								ng-model="new_document.issue")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="publisher"
+								type="text"
+								placeholder="Publisher..."
+								ng-model="new_document.publisher")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="city"
+								type="text"
+								placeholder="City..."
+								ng-model="new_document.city")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="edition"
+								type="text"
+								placeholder="Edition..."
+								ng-model="new_document.edition")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="institution"
+								type="text"
+								placeholder="Institution..."
+								ng-model="new_document.institution")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="series"
+								type="text"
+								placeholder="Series..."
+								ng-model="new_document.series")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="chapter"
+								type="text"
+								placeholder="Chapter..."
+								ng-model="new_document.chapter")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="country"
+								type="text"
+								placeholder="Country..."
+								ng-model="new_document.country")
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="translators"
+								type="text"
+								placeholder="Translators..."
+								ng-model="new_document.translators")
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="series_editor"
+								type="text"
+								placeholder="Series editor..."
+								ng-model="new_document.series_editor")
+						.row.form-group.pull-right.col-lg-12
+							textarea.form-control(
+								name="comment"
+								type="text"
+								placeholder="Comments..."
+								ng-model="answer.new_ref_comment")
+				
+				.col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='document'")
+					button.btn.btn-success(
+						ng-click="documentRefSubmit(current_user)"
+						ng-disabled=""
+						) Create reference
+			//- ADD WEBSITE
+			.row.bottom-padding-med(ng-if="ref_selection==='web'" id="new_web_form")
+				ng-form.form-horizontal(name="new_web_form")
+					fieldset
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="title"
+								type="text"
+								placeholder="Website title (required)..."
+								ng-model="answer.web_ref_title"
+								required)
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="url"
+								type="text"
+								placeholder="Website URL (required)..."
+								ng-model="answer.web_ref_url"
+								required)
+						.row.form-group.pull-right.col-lg-12
+							textarea.form-control(
+								name="comment"
+								type="text"
+								placeholder="Comments..."
+								ng-model="answer.web_ref_comment")
+				
+				.col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='web'")
+					button.btn.btn-success(
+						ng-click="webRefSubmit(current_user)"
+						ng-disabled=""
+						) Create reference
+
+			//- ADD HUMAN
+			.row.bottom-padding-med(ng-if="ref_selection==='human'" id="new_human_form")
+				ng-form.form-horizontal(name="new_human_form")
+					fieldset
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="first_name"
+								type="text"
+								placeholder="First name (required)..."
+								ng-model="answer.human_ref_first_name"
+								required)
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="last_name"
+								type="text"
+								placeholder="Last name (required)..."
+								ng-model="answer.human_ref_last_name"
+								required)
+						.row.form-group.pull-left.left-padding-lg.col-lg-6
+							input.form-control(
+								name="email"
+								type="text"
+								placeholder="Email address (required)..."
+								ng-model="answer.human_ref_email"
+								required)
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="phone"
+								type="text"
+								placeholder="Phone number (required)..."
+								ng-model="answer.human_ref_phone"
+								required)
+						.row.form-group.pull-right.left-padding-lg.col-lg-6
+							input.form-control(
+								name="date"
+								type="text"
+								placeholder="Date contacted (required)..."
+								ng-model="answer.human_ref_contact_date"
+								required)
+						.row.form-group.pull-right.col-lg-12
+							textarea.form-control(
+								name="comment"
+								type="text"
+								placeholder="Comments..."
+								ng-model="answer.human_ref_comment")
+				
+				.col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='human'")
+					button.btn.btn-success(
+						ng-click="humanRefSubmit(current_user)"
+						ng-disabled=""
+						) Create reference
+			br
+			br
+
+
+			//- ADD PERSON
+			//- BILBLIO LIST
+			div(id="prev_bib")
+				.row.left-padding-lg
+					label Citations
+					.row.left-padding-lg
+						.row Author: DOC.AUTHOR
+						.row Title: DOC.TITLE (
+							a(href="{{DOC.s3_url}}") View here
+							text )
+						.row Published: DOC.YEAR
+						.row Cited by ANSWER.REFERENCES.CITATION.COMMENT.AUTHOR_NAME on ANSWER.REFERENCES.CITATION.COMMENT.DATE
+						.row Comments: ANSWER.REFERENCES.CITATION.COMMENT.CONTENT
+						br
+						
+				.row.left-padding-lg
+					label Websites
+					.row.left-padding-lg(ng-repeat="ref in answer.references.web")
+						.row Website: {{ref.title}} (
+							a(href="{{ref.url}}") View here
+							text )
+						.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+						.row Comments: {{ref.comment.content}}
+						br
+				.row.left-padding-lg
+					label Humans
+					.row.left-padding-lg(ng-repeat="ref in answer.references.human")
+						.row Contact: {{ref.first_name}} {{ref.last_name}}
+						.row Contacted: {{ref.contact_date | date:'MM/dd/yyyy'}}
+						.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+						.row Comments: {{ref.comment.content}}
+						br
