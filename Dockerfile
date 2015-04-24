@@ -12,7 +12,7 @@ RUN		yum install -y git
 RUN		git clone https://github.com/NRGI/rgi-assessment-tool /src
 
 # Install APP
-RUN		cd /src && npm build
+RUN		cd /src && npm install --production
 RUN		cd /src && bower install --allow-root
 #RUN	cd /src && npm install -g phantomjs
 #RUN	cd /src && npm install request --save

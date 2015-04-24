@@ -26,6 +26,8 @@ before_script:
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
 
+script:
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
 
 after_success:
   - eb init && eb deploy rgi-assessment-tool-pr
