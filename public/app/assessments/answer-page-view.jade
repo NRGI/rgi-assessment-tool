@@ -1,0 +1,90 @@
+//- answer page
+.container.top-padding-med
+	.well.left-padding-lg.right-padding-lg
+		legend.h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+		.row.left-padding-lg.bottom-padding-med
+			h3
+				em Question {{answer.question_order}}. {{answer.question_text}}
+			div(ng-if="!answer.researcher_score")
+				h5 Researcher score:
+				em Not submitted
+			div(ng-if="answer.researcher_score")
+				h5 Researcher score:
+				em(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Researcher justification:
+				em {{answer.researcher_justification}}
+				br
+				br
+			div(ng-if="!answer.reviewer_score")
+				h5 Researcher score:
+				em Not submitted
+			div(ng-if="answer.reviewer_score")
+				h5 Researcher score:
+				em(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+				h5 Researcher justification:
+				em {{answer.reviewer_justification}}
+				br
+				br
+			br
+
+		.row.left-padding-lg.bottom-padding-lg
+			.col-md-pull-2
+				a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
+				| &nbsp;
+				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
+		
+		.row.left-padding-lg.right-padding-lg
+			.form-horizontal(name="answer_form")
+				fieldset
+					
+					div(id="comments_div").bottom-padding-med
+						legend General comments:
+
+						div(id="prev_comments_div" ng-if="answer.comments.length!==0")
+							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+								.row
+									b {{comment.author_name}} (
+									b {{comment.role}}
+									b ):
+								.row.col-md-11 {{comment.content}}
+								.row.col-md-offset-9.col-md-3
+									date
+										small
+											em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+						br
+						div(id="new_comment_div").bottom-padding-med
+							ng-form(name="new_comment_form")
+								.form-group.top-padding-med
+									.row.left-padding-lg
+										.col-md-10
+											textarea.form-control(name="comment" type="text" ng-model="answer.new_comment" placeholder="New comment..." required)
+										.col-md-1
+											button.btn.btn-success(ng-click="commentSubmit(current_user)" ng-disabled="new_comment_form.$invalid") Submit comment
+											
+						
+					div(id="bibliography").bottom-padding-med
+						legend Bibliograpical citations:
+						div(id="prev_bib")
+							.row.left-padding-lg(ng-repeat="citation in answer.citations")
+								.row
+									text Uploaded by {{citation.upload_user_id}} on {{citation.upload_date | date}}
+									text Originally found at {{citation.upload_URL}}
+								.row
+									b Author: 
+									text {{citation.citation.authors}}
+								.row
+									b Title: 
+									text {{citation.citation.title}}
+								.row
+									b Published: 
+									text {{citation.citation.publish_year}}
+								.row.col-md-11
+									a(href="{{citation.upload_URL}}") View here
+								.row.col-md-11
+									em Comment:
+									text  {{citation.note.content}}
+								.row.col-md-offset-8.col-md-3
+									date
+										small
+											text {{citation.note.author_name}}
+											em {{citation.note.date | date}}

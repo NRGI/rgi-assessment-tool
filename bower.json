@@ -1,0 +1,28 @@
+{
+  "name": "rgi-assessment-tool",
+  "version": "0.0.0",
+  "homepage": "https://github.com/NRGI/rgi-assessment-tool",
+  "authors": [
+    "Chris Perry <byndcivilization@gmail.com>"
+  ],
+  "description": "Assessment tool for the yearly Resource Governance Index",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "toastr": "~2.1.0",
+    "angular": "~1.3.2",
+    "angular-resource": "~1.3.2",
+    "angular-route": "~1.3.2",
+    "bootstrap": "~3.3.1",
+    "angular-mocks": "1.3.2",
+    "ngDialog": "~0.3.7",
+    "ng-form-group": "~1.2.11",
+    "ng-csv": "~0.3.1",
+    "iso-3166-country-codes-angular": "~1.1.1",
+    "angular-file-upload": "~1.1.5"
+  },
+  "moduleType": [
+    "node"
+  ]
+}
