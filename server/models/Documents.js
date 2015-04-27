@@ -18,10 +18,10 @@ var documentSchema = mongoose.Schema({
     mendeley_ID: String,
     mendeley_url: String,
     title: String,
-    author: [authorSchema],
+    authors: [authorSchema],
     type: String,
     source: String,
-    year: Number,
+    year: String,
     pages: String,
     volume: String,
     issue: String,
@@ -36,12 +36,14 @@ var documentSchema = mongoose.Schema({
     country: String,
     translators: String,
     series_editor: String,
-    assessments: [ObjectId],
+    assessments: String,
     questions: [ObjectId],
+    answers: String,
     users: [ObjectId],
     modified: [modificationSchema],
     createdBy: ObjectId,
     creationDate: {type: Date, default: Date.now},
+    status: {type: String, default: 'created'}
 });
 
 var Documents = mongoose.model('Documents', documentSchema);
