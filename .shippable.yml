@@ -9,7 +9,7 @@ branches:
     - master
 
 before_install:
-  pip install awsebcli
+  sudo pip install awsebcli
 
 env:
   global:
