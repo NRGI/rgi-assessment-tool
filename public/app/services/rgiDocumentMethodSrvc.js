@@ -17,7 +17,6 @@ angular.module('app').factory('rgiDocumentMethodSrvc', function ($q, rgiDocument
         // },
         updateDocument: function (new_doc_data) {
             var dfd = $q.defer();
-            console.log(new_doc_data);
 
             new_doc_data.$update().then(function () {
                 dfd.resolve();
