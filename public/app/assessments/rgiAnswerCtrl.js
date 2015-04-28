@@ -77,8 +77,10 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     });
     uploader.onCompleteItem = function (fileItem, response, status, headers) {
         $scope.new_document = response;
-        $scope.new_document.authors = [{first_name: "", last_name: ""}];
-        $scope.new_document.editors = [{first_name: "", last_name: ""}];
+        if ($scope.new_document.status === 'created') {
+            $scope.new_document.authors = [{first_name: "", last_name: ""}];
+            $scope.new_document.editors = [{first_name: "", last_name: ""}];
+        }
         $scope.uploader.queue = [];
     };
 
@@ -272,8 +274,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                     role: current_user_role
                 }
             };
-        console.log(new_doc_data);
-        console.log(new_document);
 
         if (new_doc_data.status === 'created') {
             new_doc_data.status = 'submitted';
@@ -303,6 +303,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             new_doc_data.users = [current_user_ID];
         }
 
+        console.log(new_ref_data);
         if ($scope.answer.new_ref_comment !== undefined) {
             new_ref_data.comment.content = $scope.answer.new_ref_comment;
         }
@@ -352,8 +353,9 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                     role: current_user.role
                 }
             };
+        console.log(new_ref_data);
         if ($scope.answer.web_ref_comment !== undefined) {
-            new_ref_data.comment.content = $scope.answer.human_ref_comment;
+            new_ref_data.comment.content = $scope.answer.web_ref_comment;
         }
         new_answer_data.references.web.push(new_ref_data);
 
@@ -386,6 +388,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                     role: current_user.role
                 }
             };
+        console.log(new_ref_data);
         if ($scope.answer.human_ref_comment !== undefined) {
             new_ref_data.comment.content = $scope.answer.human_ref_comment;
         }

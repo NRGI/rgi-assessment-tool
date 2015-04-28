@@ -4,16 +4,28 @@
 		//- country title
 		legend {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
 		form.form-horizontal(name='assign_assessment_form')
+
 			//- researcher selection dropdown
-			.form-group
-				label.col-md-4 Select Researcher
-				.col-md-12
-					select.form-control(ng-model="researcherSelect", ng-options="item as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in researchers", required)
+			.form-group.left-padding-lg
+				label.col-md-2 Select Researcher
+				.col-md-6.left-padding-lg
+					select.form-group.form-control.right-padding-med(
+						name="researcherSelect"
+						ng-model="researcherSelect"
+						ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in researchers"
+						required)
+						option(value="" selected disabled) Select researcher (required)...
+				
 			//- reviewer selection dropdown
-			.form-group
-				label.col-md-4 Select Reviewer
-				.col-md-12
-					select.form-control(ng-model="reviewerSelect", ng-options="item as (item.firstName + ' ' + item.lastName + ': number of assigned assessments - ' + item.assessments.length) for item in reviewers", required)
+			.form-group.left-padding-lg
+				label.col-md-2 Select Reviewer
+				.col-md-6.left-padding-lg
+					select.form-group.form-control.right-padding-med(
+						name="reviewerSelect"
+						ng-model="reviewerSelect"
+						ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in reviewers")
+						option(value="" selected disabled) Select reviewer...
+
 			.form-group
 				.col-md-10.col-md-offset-2
 					.pull-right
