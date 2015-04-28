@@ -94,7 +94,7 @@ exports.fileCheck = function (req, res, next) {
         // res.send({reason: 'Document not a pdf'});
     }
     // destroy temp file
-    fs.unlink(req.files.file.path);
+    // fs.unlink(req.files.file.path);
 };
 
 exports.getDocuments = function (req, res) {
