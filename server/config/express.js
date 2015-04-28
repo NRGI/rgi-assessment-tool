@@ -20,9 +20,14 @@ module.exports = function (app, config) {
     // authentication cofigs
     app.use(cookieParser());
 
-    app.use(bodyParser());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
 
-    app.use(session({secret: 'All your base are belong to us'}));
+    app.use(session({
+        secret: 'All your base are belong to us',
+        resave: true,
+        saveUninitialized: true
+    }));
     app.use(passport.initialize());
     app.use(passport.session());
 
