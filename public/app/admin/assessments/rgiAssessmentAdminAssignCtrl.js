@@ -2,7 +2,7 @@
 var angular;
 /*jslint nomen: true*/
 
-angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $location, rgiIdentitySrvc, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
 
     function zeroFill(number, width) {
         width -= number.toString().length;
@@ -29,14 +29,20 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
         var new_researcher_data = $scope.researcherSelect,
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
-            new_answer_set = [];
+            new_answer_set = [],
+            current_user = rgiIdentitySrvc.currentUser;
         new_researcher_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
-        new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
         // update assessment
         new_assessment_data.status = 'assigned';
         new_assessment_data.researcher_ID = $scope.researcherSelect._id;
-        new_assessment_data.reviewer_ID = $scope.reviewerSelect._id;
+        if ($scope.reviewerSelect !== undefined) {
+            new_assessment_data.reviewer_ID = $scope.reviewerSelect._id;
+            new_reviewer_data.assessments.push({assessment_id: $routeParams.assessment_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
+        } else {
+            new_assessment_data.reviewer_ID = current_user._id;
+        }
+
         new_assessment_data.edit_control = $scope.researcherSelect._id;
 
         // create new answer set
@@ -51,26 +57,41 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
                 new_answer_set[i].year = el.year;
                 new_answer_set[i].version = el.version;
                 new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
-                new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
                 new_answer_set[i].edit_control = $scope.researcherSelect._id;
                 new_answer_set[i].question_order = el.question_order;
                 new_answer_set[i].component_id = el.component;
                 new_answer_set[i].component_text = el.component_text;
                 new_answer_set[i].nrc_precept = el.nrc_precept;
             }
+            if ($scope.reviewerSelect !== undefined) {
+                new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
+            } else {
+                new_answer_set[i].reviewer_ID = current_user._id;
+            }
         });
-
-        // send to mongo
-        rgiUserMethodSrvc.updateUser(new_researcher_data)
-            .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
-            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-            .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
-            .then(function () {
-                $location.path('/admin/assessment-admin');
-                rgiNotifier.notify('Assessment created and assigned!');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
-
+        console.log(new_researcher_data);
+        console.log(new_reviewer_data);
+        if (new_reviewer_data !== undefined) {
+            rgiUserMethodSrvc.updateUser(new_researcher_data)
+                .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
+                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+                .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+                .then(function () {
+                    $location.path('/admin/assessment-admin');
+                    rgiNotifier.notify('Assessment created and assigned!');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+        } else if (new_reviewer_data === undefined) {
+            rgiUserMethodSrvc.updateUser(new_researcher_data)
+                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+                .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+                .then(function () {
+                    $location.path('/admin/assessment-admin');
+                    rgiNotifier.notify('Assessment created and assigned!');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+        }
     };
 });
