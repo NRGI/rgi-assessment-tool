@@ -9,8 +9,7 @@ RUN		npm install -g bower
 RUN		yum install -y git
 
 # Build src
-# RUN		git clone https://github.com/NRGI/rgi-assessment-tool /src
-COPY		. /src
+COPY	. /src
 
 # Install APP
 RUN		cd /src && npm install

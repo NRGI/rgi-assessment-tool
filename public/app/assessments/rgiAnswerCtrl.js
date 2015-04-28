@@ -10,12 +10,34 @@ function zeroFill(number, width) {
     return number + ""; // always return a string
 }
 
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, ngDialog, FileUploader, rgiAnswerSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, $q, ngDialog, FileUploader, rgiAnswerSrvc, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier, $location) {
     $scope.identity = rgiIdentitySrvc;
     $scope.ref_type = [
         {text: 'Add Document', value: 'document'},
         {text: 'Add Webpage', value: 'web'},
         {text: 'Add Human Reference', value: 'human'}
+    ];
+    $scope.new_doc_type = [
+        {value: 'journal', text: 'Journal'},
+        {value: 'book', text: 'Book'},
+        {value: 'generic', text: 'Generic'},
+        {value: 'book_section', text: 'Book Section'},
+        {value: 'conference_proceedings', text: 'Conference Proceedings'},
+        {value: 'working_paper', text: 'Working Paper'},
+        {value: 'report', text: 'Report'},
+        {value: 'web_page', text: 'Web Page'},
+        {value: 'thesis', text: 'Thesis'},
+        {value: 'magazine_article', text: 'Magazine Article'},
+        {value: 'statute', text: 'Statute'},
+        {value: 'patent', text: 'Patent'},
+        {value: 'newspaper_article', text: 'Newspaper Article'},
+        {value: 'computer_program', text: 'Computer Program'},
+        {value: 'hearing', text: 'Hearing'},
+        {value: 'television_broadcast', text: 'Television Broadcast'},
+        {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
+        {value: 'case', text: 'Case'},
+        {value: 'film', text: 'Film'},
+        {value: 'bill', text: 'Bill'}
     ];
 
     // var assessment_ID = $routeParams.answer_ID.substring(0,2);
@@ -27,6 +49,17 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.answer_start = angular.copy($scope.answer);
         $scope.answer_start = angular.copy($scope.answer);
 
+        var citations = [];
+
+        data.references.citation.forEach(function (el, i) {
+            rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
+                console.log(doc);
+                doc.comment = el.comment;
+                citations.push(doc);
+            });
+        });
+        $scope.citations = citations;
+
     });
 
     var question = rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID});
@@ -35,17 +68,18 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         isHTML5: true,
         withCredentials: true,
         url: 'file-upload'
-        // url: 'file-upload?assessment_id=' + $routeParams.answer_ID.substring(0, 10) + '&question_id=' + question._id + '&answer_id=' + $routeParams.answer_ID
-        // url: 'file-upload?assessment_id=' + $routeParams.answer_ID.substring(0, 2) + '&question_id=' + $scope.question._id
     });
     uploader.filters.push({
         name: 'customFilter',
         fn: function (item /*{File|FileLikeObject}*/, options) {
-            return this.queue.length < 10;
+            return this.queue.length < 1;
         }
     });
     uploader.onCompleteItem = function (fileItem, response, status, headers) {
         $scope.new_document = response;
+        $scope.new_document.authors = [{first_name: "", last_name: ""}];
+        $scope.new_document.editors = [{first_name: "", last_name: ""}];
+        $scope.uploader.queue = [];
     };
 
     $scope.flagCheck = function (flags) {
@@ -123,17 +157,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             }, function (reason) {
                 rgiNotifier.notify(reason);
             });
-    };
-
-    // make final choice
-    $scope.uploadDocumentDialog = function () {
-        $scope.value = true;
-        ngDialog.open({
-            template: 'partials/assessments/new-document-dialog',
-            controller: 'rgiNewDocumentDialogCtrl',
-            className: 'ngdialog-theme-plain',
-            scope: $scope
-        });
     };
 
     $scope.answerApprove = function () {
@@ -229,33 +252,91 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         });
     };
 
-    $scope.documentRefSubmit = function (current_user) {
-        var new_answer_data = $scope.answer,
-            new_doc_data = $scope.new_document,
+    $scope.documentRefSubmit = function (new_document) {
+        var assessment_ID = $scope.assessment.assessment_ID,
+            question_ID = $scope.question._id,
+            answer_ID = $scope.answer.answer_ID,
+            current_user_ID = $scope.current_user._id,
+            current_user_name = $scope.current_user.firstName + ' ' + $scope.current_user.lastName,
+            current_user_role = $scope.current_user.role,
+            new_answer_data = $scope.answer,
+            new_doc_data = new rgiDocumentSrvc(new_document),
             new_ref_data = {
-                document_ID: new_doc_data._id,
+                document_ID: new_document._id,
                 // mendeley_ID
-                file_hash: new_doc_data.file_hash,
-                    comment: {
-                        date: new Date().toISOString(),
-                        author: current_user._id,
-                        author_name: current_user.firstName + ' ' + current_user.lastName,
-                        role: current_user.role
-                    }
-                };
+                file_hash: new_document.file_hash,
+                comment: {
+                    date: new Date().toISOString(),
+                    author: current_user_ID,
+                    author_name: current_user_name,
+                    role: current_user_role
+                }
+            };
+        console.log(new_doc_data);
+        console.log(new_document);
+
+        if (new_doc_data.status === 'created') {
+            new_doc_data.status = 'submitted';
+        }
+
+        if (new_doc_data.assessments !== undefined) {
+            new_doc_data.assessments.push(assessment_ID);
+        } else {
+            new_doc_data.assessments = [assessment_ID];
+        }
+
+        if (new_doc_data.questions !== undefined) {
+            new_doc_data.questions.push(question_ID);
+        } else {
+            new_doc_data.questions = [question_ID];
+        }
+
+        if (new_doc_data.answers !== undefined) {
+            new_doc_data.answers.push(answer_ID);
+        } else {
+            new_doc_data.answers = [answer_ID];
+        }
+
+        if (new_doc_data.users !== undefined) {
+            new_doc_data.users.push(current_user_ID);
+        } else {
+            new_doc_data.users = [current_user_ID];
+        }
+
         if ($scope.answer.new_ref_comment !== undefined) {
             new_ref_data.comment.content = $scope.answer.new_ref_comment;
         }
-        new_answer_data.references.citation.push(new_ref_data);
 
-        // rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-        //     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
-        //     .then(function () {
-        //         rgiNotifier.notify('reference added');
-        //         $scope.answer.web_ref_comment = "";
-        //     }, function (reason) {
-        //         rgiNotifier.notify(reason);
-        //     });
+        new_answer_data.references.citation.push(new_ref_data);
+        new_ref_data = {};
+
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
+            .then(function () {
+                rgiNotifier.notify('reference added');
+                $scope.ref_selection = "";
+                $scope.new_document.title = "";
+                $scope.new_document.type = "";
+                $scope.new_document.authors = "";
+                $scope.new_document.editors = "";
+                $scope.new_document.source = "";
+                $scope.new_document.year = "";
+                $scope.new_document.pages = "";
+                $scope.new_document.volume = "";
+                $scope.new_document.issue = "";
+                $scope.new_document.publisher = "";
+                $scope.new_document.city = "";
+                $scope.new_document.edition = "";
+                $scope.new_document.institution = "";
+                $scope.new_document.series = "";
+                $scope.new_document.chapter = "";
+                $scope.new_document.country = "";
+                $scope.new_document.translators = "";
+                $scope.new_document.series_editor = "";
+                $scope.answer.new_ref_comment = "";
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+            });
     };
 
     $scope.webRefSubmit = function (current_user) {
@@ -278,14 +359,14 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
             rgiNotifier.notify('reference added');
+            $scope.ref_selection = "";
+            $scope.answer.web_ref_title = "";
+            $scope.answer.web_ref_url = "";
+            $scope.answer.web_ref_comment = "";
             $scope.answer.web_ref_comment = "";
         }, function (reason) {
             rgiNotifier.notify(reason);
         });
-        // $scope.ref_selection = "";
-        // $scope.answer.web_ref_title = "";
-        // $scope.answer.web_ref_url = "";
-        // $scope.answer.web_ref_comment = "";
     };
 
     $scope.humanRefSubmit = function (current_user) {
@@ -313,12 +394,12 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
             rgiNotifier.notify('reference added');
-            // $scope.answer.human_ref_first_name = "";
-            // $scope.answer.human_ref_last_name = "";
-            // $scope.answer.human_ref_phone = "";
-            // $scope.answer.human_ref_email = "";
-            // $scope.answer.human_ref_contact_date = "";
-            // $scope.answer.human_ref_comment = "";
+            $scope.answer.human_ref_first_name = "";
+            $scope.answer.human_ref_last_name = "";
+            $scope.answer.human_ref_phone = "";
+            $scope.answer.human_ref_email = "";
+            $scope.answer.human_ref_contact_date = "";
+            $scope.answer.human_ref_comment = "";
             $scope.ref_selection = "";
         }, function (reason) {
             rgiNotifier.notify(reason);

@@ -20,13 +20,13 @@ module.exports = function (app) {
     // GET
     app.get('/api/users', auth.requiresApiLogin, users.getUsers);
     app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUsersByID);
-    app.get('/api/user-list/:id', users.getUsersListByID);
+    app.get('/api/user-list/:id', auth.requiresApiLogin, users.getUsersListByID);
 
     // POST
-    app.post('/api/users', auth.requiresApiLogin, auth.requiresRole('supervisor'), users.createUser);
+    app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
 
     // PUT
-    app.put('/api/users', users.updateUser);
+    app.put('/api/users', auth.requiresApiLogin, users.updateUser);
 
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
@@ -35,14 +35,14 @@ module.exports = function (app) {
     ///// QUESTIONS CRUD ////////
     /////////////////////////////
     // GET
-    app.get('/api/questions', questions.getQuestions);
-    app.get('/api/questions/:id', questions.getQuestionsByID);
+    app.get('/api/questions', auth.requiresApiLogin, questions.getQuestions);
+    app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionsByID);
 
     // POST
     app.post('/api/questions', auth.requiresRole('supervisor'), questions.createQuestions);
 
     // PUT
-    app.put('/api/questions', questions.updateQuestion);
+    app.put('/api/questions', auth.requiresApiLogin, questions.updateQuestion);
 
     // DELETE
     app.delete('/api/questions/:id', auth.requiresRole('supervisor'), questions.deleteQuestion);
@@ -58,7 +58,7 @@ module.exports = function (app) {
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
 
     // PUT
-    app.put('/api/answers/:answer_ID', answers.updateAnswer);
+    app.put('/api/answers/:answer_ID', auth.requiresApiLogin, answers.updateAnswer);
 
     ///////////////////////////////////////
     ///// ASSESSMENT OVERVIEW CRUD/////////
@@ -77,8 +77,14 @@ module.exports = function (app) {
     //// DOCUMNETS  /////////
     /////////////////////////
     // GET
-    // POST
+    app.get('/api/documents', auth.requiresApiLogin, documents.getDocuments);
+    app.get('/api/documents/:id', auth.requiresApiLogin, documents.getDocumentsByID);
+
+    // // POST
+    // app.post('/api/documents', auth.requiresApiLogin, documents.createDocuments);
+
     // PUT
+    app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
 
 
     /////////////////////////
