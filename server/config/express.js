@@ -20,7 +20,10 @@ module.exports = function (app, config) {
     // authentication cofigs
     app.use(cookieParser());
 
-    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.urlencoded({
+        extended: true,
+        limit: 100000000
+    }));
     app.use(bodyParser.json());
 
     app.use(session({
