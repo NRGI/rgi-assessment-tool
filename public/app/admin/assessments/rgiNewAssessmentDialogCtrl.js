@@ -20,6 +20,7 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
     }
 
     $scope.years = years;
+    console.log($scope);
 
 
     $scope.closeDialog = function () {

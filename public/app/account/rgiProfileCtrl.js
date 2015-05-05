@@ -8,7 +8,7 @@ angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentity
     $scope.lname = rgiIdentitySrvc.currentUser.lastName;
     $scope.email = rgiIdentitySrvc.currentUser.email;
     $scope.username = rgiIdentitySrvc.currentUser.username;
-    $scope.roles = rgiIdentitySrvc.currentUser.roles;
+    $scope.role = rgiIdentitySrvc.currentUser.role;
     // update functinonality for update button
     $scope.update = function () {
         // pass in update data
