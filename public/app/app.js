@@ -1,7 +1,9 @@
 'use strict';
 var angular;
+/*jslint unparam: true */
+
 // angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv','angularFileUpload']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
@@ -84,7 +86,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/admin/assessment-admin/subs/:version', {
             templateUrl: '/partials/admin/assessments/assessment-admin',
-            controller:  'rgiAssessmentAdminSubsCtrl',
+            controller:  'rgiAssessmentAdminCtrl',
             resolve: routeRoleChecks.supervisor
         })
         .when('/admin/assessment-assign/:assessment_ID', {
@@ -144,7 +146,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
 angular.module('app').run(function ($rootScope, $location) {
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
-        if(rejection === 'not authorized') {
+        if (rejection === 'not authorized') {
             $location.path('/');
         }
     });
