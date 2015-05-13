@@ -7,7 +7,6 @@ angular.module('app').factory('rgiQuestionMethodSrvc', function ($q, rgiQuestion
         insertQuestionSet: function (new_question_set) {
             var dfd = $q.defer(),
                 newQuestions = new rgiQuestionSrvc(new_question_set);
-
             newQuestions.length = new_question_set.length;
             newQuestions.$save().then(function () {
                 dfd.resolve();
@@ -16,6 +15,21 @@ angular.module('app').factory('rgiQuestionMethodSrvc', function ($q, rgiQuestion
             });
             return dfd.promise;
         },
+        // insertQuestionSet: function (new_question_set) {
+        //     var dfd = $q.defer(),
+        //         // new_question;
+        //         newQuestions = new rgiQuestionSrvc(new_question_set);
+
+        //     new_question_set.forEach(function (el, i) {
+        //         new_question = new rgiQuestionSrvc(el);
+        //         new_question.$save().then(function () {
+        //             dfd.resolve();
+        //         }, function (response) {
+        //             dfd.reject(response.data.reason);
+        //         });
+        //     });
+        //     return dfd.promise;
+        // },
         updateQuestion: function (new_question_data) {
             var dfd = $q.defer();
 

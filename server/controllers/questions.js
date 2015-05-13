@@ -40,7 +40,6 @@ exports.createQuestions = function (req, res, next) {
     }
     res.send();
 };
-
 exports.updateQuestion = function (req, res) {
     var question_update, timestamp;
 

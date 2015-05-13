@@ -20,8 +20,6 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
     }
 
     $scope.years = years;
-    console.log($scope);
-
 
     $scope.closeDialog = function () {
         ngDialog.close();
@@ -60,20 +58,16 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
                     assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
                     component: el.component,
                     component_text: el.component_text,
-                    indicator_name: el.indicator_name,
-                    nrc_precept: el.nrc_precept,
-                    old_reference: el.old_reference,
+                    indicator: el.indicator,
+                    sub_indicator_name: el.sub_indicator_name,
+                    precept: el.precept,
+                    // old_reference: el.old_reference,
                     question_order: el.question_order,
-                    question_choices: [],
+                    question_choices: el.question_choices,
                     question_text: el.question_text,
-                    section_name: el.section_name,
-                    sub_indicator_name: el.sub_indicator_name
+                    section_name: el.section_name
                 });
-
-                el.question_choices.forEach(function (q_el, j) {
-                    newQuestionData[newQuestionData.length - 1].question_choices.push({'criteria': q_el.criteria, 'name': q_el.name, 'order': q_el.order});
-                });
-            });
+             });
 
             // send to mongo
             rgiAssessmentMethodSrvc.createAssessment(newAssessmentData)

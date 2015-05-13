@@ -22,9 +22,9 @@ module.exports = function (app, config) {
 
     app.use(bodyParser.urlencoded({
         extended: true,
-        limit: 100000000
+        limit: '50mb'
     }));
-    app.use(bodyParser.json());
+    app.use(bodyParser.json({limit: '50mb'}));
 
     app.use(session({
         secret: 'All your base are belong to us',

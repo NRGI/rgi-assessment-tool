@@ -69,8 +69,7 @@ angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scop
                 new_answer_set[i].reviewer_ID = current_user._id;
             }
         });
-        console.log(new_researcher_data);
-        console.log(new_reviewer_data);
+
         if (new_reviewer_data !== undefined) {
             rgiUserMethodSrvc.updateUser(new_researcher_data)
                 .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
