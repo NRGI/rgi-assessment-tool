@@ -15,6 +15,7 @@ var commentSchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     content: String,
     author: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
+    // author: ObjectId, // Pull from curretn user _id value but needs to handle legacy comments
     author_name: String,
     // ACTUAL CHANGE
     role: String
@@ -44,7 +45,7 @@ var questionSchema = mongoose.Schema({
     version: String,
     root_question_ID: ObjectId,
     assessment_ID: {type: String, required: '{PATH} is required'},
-    sub_indicator_name: String,
+    sub_indicator_namw: String,
     minstry_if_applicable: String,
     section_name: String,
     outcome_primary_q: String,

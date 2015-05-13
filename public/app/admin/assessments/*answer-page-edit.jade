@@ -6,9 +6,6 @@
 				h2.text-success(ng-if="answer.status==='approved'") Approved
 				h2.text-danger(ng-if="answer.status==='flagged'") Flagged
 
-		//- text yes
-		//- legend.h2(ng-if="answer.status==='approved'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
-		//- legend.h2(ng-if="answer.status!=='flagged'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 		.row.left-padding-lg.bottom-padding-med
 			h3
 				em Question {{answer.question_order}}. {{answer.question_text}}
