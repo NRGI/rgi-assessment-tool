@@ -17,5 +17,10 @@ module.exports = {
         db: '@candidate.32.mongolayer.com:10582/rgi2015_production',
         rootPath: rootPath,
         port: process.env.PORT || 80
+    },
+    pilot: {
+        db: '@candidate.32.mongolayer.com:10582/rgi_pilot',
+        rootPath: rootPath,
+        port: process.env.PORT || 80
     }
 };
