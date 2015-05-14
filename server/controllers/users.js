@@ -121,26 +121,26 @@ exports.updateUser = function (req, res) {
             }
         });
     });
-    // // //send an e-mail to jim rubenstein
-    // mandrill('/messages/send', {
-    //     message: {
-    //         to: [{email: rec_email, name: rec_name}],
-    //         from_email: 'cperry@resourcegovernance.org',
-    //         subject: rec_role + ' account created!',
-    //         html: "Hello " + rec_name + ",<p>\
-    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //                Thanks!<p>\
-    //                The RGI Team."
-    //     }
-    // }, function (error, response) {
-    //     //uh oh, there was an error
-    //     if (error) console.log( JSON.stringify(error) );
+    // //send an e-mail to jim rubenstein
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: rec_email, name: rec_name}],
+            from_email: 'cperry@resourcegovernance.org',
+            subject: rec_role + ' account created!',
+            html: "Hello " + rec_name + ",<p>\
+                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                   Thanks!<p>\
+                   The RGI Team."
+        }
+    }, function (error, response) {
+        //uh oh, there was an error
+        if (error) console.log( JSON.stringify(error) );
 
-    //     //everything's good, lets see what mandrill said
-    //     else console.log(response);
-    // });
+        //everything's good, lets see what mandrill said
+        else console.log(response);
+    });
     res.send();
 };
 
