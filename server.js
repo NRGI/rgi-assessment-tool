@@ -6,7 +6,6 @@ var app             = express();
 
 var config          = require('./server/config/config')[env];
 
-
 if (env === 'development' || env === 'local') {
     var user = process.env.USER_DEV_ID;
     var pass = process.env.USER_DEV_KEY;
