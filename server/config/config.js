@@ -2,7 +2,6 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../');
 
-
 module.exports = {
     local: {
         db: 'mongodb://localhost/rgi2015_dev',
