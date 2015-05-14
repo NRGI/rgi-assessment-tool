@@ -25,6 +25,7 @@ before_script:
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
   - npm install phantomjs
+  - npm install karma-phantomjs-launcher
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
