@@ -24,7 +24,8 @@ module.exports = function (app, config) {
         extended: true,
         limit: 100000000
     }));
-    app.use(bodyParser.json());
+
+    app.use(bodyParser.json({limit: '50mb'}));
 
     app.use(session({
         secret: 'All your base are belong to us',
