@@ -27,8 +27,7 @@ before_script:
   - npm install phantomjs -g
   - npm install karma-phantomjs-launcher -g
 
-script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
+
 
 after_success:
   - eb init && eb deploy rgi-assessment-tool-pr
