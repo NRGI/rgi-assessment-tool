@@ -31,6 +31,7 @@
     "express-sessions": "^1.0.5",
     "grunt-cli": "^0.1.13",
     "jade": "^1.7.0",
+    "karma": "^0.12.32",
     "karma-phantomjs-launcher": "^0.1.4",
     "mongoose": "^4.0.0",
     "morgan": "^1.5.0",
