@@ -7,7 +7,6 @@ branches:
   only:
     - master
 
-
 before_install:
   sudo pip install awsebcli
 
