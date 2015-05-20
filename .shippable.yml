@@ -10,8 +10,8 @@ branches:
 before_install:
   sudo pip install awsebcli
 
-# install:
-#   - npm install -g karma karma-cli phantomjs karma-phantomjs-launcher
+install:
+  - npm install -g karma karma-cli phantomjs karma-phantomjs-launcher
 
 env:
   global:
