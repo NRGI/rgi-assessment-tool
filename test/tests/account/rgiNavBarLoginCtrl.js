@@ -33,7 +33,7 @@ describe('rgiNavBarLoginCtrl', function () {
             mocks.rgiAuthSrvc = sinon.mock(rgiAuthSrvc);
             mocks.rgiAuthSrvc.expects('logoutUser').
                 returns({
-                    then: function(callback) {
+                    then: function (callback) {
                         callback();
                     }
                 });
@@ -51,7 +51,7 @@ describe('rgiNavBarLoginCtrl', function () {
         });
 
         afterEach(function () {
-            for(var mockIndex in mocks) {
+            for (var mockIndex in mocks) {
                 mocks[mockIndex].verify();
                 mocks[mockIndex].restore();
             }
