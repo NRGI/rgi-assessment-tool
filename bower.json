@@ -24,5 +24,8 @@
   },
   "moduleType": [
     "node"
-  ]
+  ],
+  "devDependencies": {
+    "lodash": "~3.9.0"
+  }
 }
