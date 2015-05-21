@@ -8,7 +8,8 @@ branches:
     - master
 
 before_install:
-  sudo pip install awsebcli
+  - sudo pip install awsebcli
+  - sudo apt-get phantomjs
 
 env:
   global:
