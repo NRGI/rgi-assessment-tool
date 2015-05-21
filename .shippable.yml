@@ -27,9 +27,11 @@ before_script:
   - echo $AWSSecretKeys
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
+  - npm install phantomjs -g
 
 
 script:
+  - npm install phantomjs -g
   - npm test
 
 after_success:
