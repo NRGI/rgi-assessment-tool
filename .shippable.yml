@@ -10,8 +10,8 @@ branches:
 before_install:
   sudo pip install awsebcli
 
-install:
-  - npm install -g karma karma-cli phantomjs karma-phantomjs-launcher
+# install:
+#   - npm install -g karma karma-cli phantomjs karma-phantomjs-launcher
 
 env:
   global:
@@ -27,11 +27,9 @@ before_script:
   - echo $AWSSecretKeys
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
-  - npm install phantomjs -g
 
 
 script:
-  - npm install phantomjs -g
   - npm test
 
 after_success:
