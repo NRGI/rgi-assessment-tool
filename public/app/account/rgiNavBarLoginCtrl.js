@@ -27,7 +27,7 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $locati
                     });
                 });
             } else {
-                rgiNotifier.notify('Username/Password combination incorrect');
+                rgiNotifier.error('Username/Password combination incorrect');
             }
         });
     };
