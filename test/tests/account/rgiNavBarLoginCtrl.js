@@ -6,7 +6,7 @@ describe('rgiNavBarLoginCtrl', function () {
     beforeEach(module('app'));
 
     var $scope, $location, rgiAuthSrvc, rgiAssessmentSrvc, rgiNotifier;
-    var rgiNotifierNotifyStub, rgiNotifierNotifySpy;
+    var rgiNotifierNotifyStub, rgiNotifierErrorStub, rgiNotifierNotifySpy, rgiNotifierErrorSpy;
 
     beforeEach(inject(
         function ($rootScope, $controller, _$location_, _rgiAssessmentSrvc_, _rgiAuthSrvc_, _rgiNotifier_) {
@@ -17,7 +17,9 @@ describe('rgiNavBarLoginCtrl', function () {
             rgiNotifier = _rgiNotifier_;
 
             rgiNotifierNotifySpy = sinon.spy();
+            rgiNotifierErrorSpy = sinon.spy();
             rgiNotifierNotifyStub = sinon.stub(rgiNotifier, 'notify', rgiNotifierNotifySpy);
+            rgiNotifierErrorStub = sinon.stub(rgiNotifier, 'error', rgiNotifierErrorSpy);
 
             $controller('rgiNavBarLoginCtrl', {$scope: $scope});
         }
@@ -78,7 +80,7 @@ describe('rgiNavBarLoginCtrl', function () {
             });
 
             it('shows a notification message', function () {
-                rgiNotifierNotifySpy.withArgs('Username/Password combination incorrect').called.should.be.equal(true);
+                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect').called.should.be.equal(true);
             });
 
             it('clears the version list', function () {
