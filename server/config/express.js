@@ -24,6 +24,7 @@ module.exports = function (app, config) {
         extended: true,
         limit: '50mb'
     }));
+
     app.use(bodyParser.json({limit: '50mb'}));
 
     app.use(session({

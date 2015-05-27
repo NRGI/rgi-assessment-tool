@@ -4,7 +4,8 @@
   "description": "Assessment tool for the yearly Resource Governance Index",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
@@ -30,13 +31,14 @@
     "express-sessions": "^1.0.5",
     "grunt-cli": "^0.1.13",
     "jade": "^1.7.0",
+    "karma": "^0.12.32",
     "karma-phantomjs-launcher": "^0.1.4",
     "mongoose": "^4.0.0",
     "morgan": "^1.5.0",
     "node-mandrill": "^1.0.1",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
-    "phantomjs": "^1.9.16",
+    "phantomjs": "^1.9.17",
     "request": "^2.55.0",
     "s3": "^4.3.1",
     "simple-oauth2": "^0.2.1",

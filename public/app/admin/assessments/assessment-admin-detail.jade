@@ -51,5 +51,4 @@
 					td.col-md-5 {{question.question_text}}
 					td.col-md-1 {{question.status | capitalize}}
 					td
-						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{question.answer_ID}}", ng-if="question.status!='assigned'") Go to answer page
-						a.btn.center-block.btn-default.disabled(href="", ng-if="question.status=='assigned'") No data
+						a.btn.center-block.btn-default(href="/assessments/assessment-view/{{question.answer_ID}}") Go to answer page

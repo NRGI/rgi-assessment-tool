@@ -47,7 +47,7 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $locati
                 rgiNotifier.notify('You have successfully signed in!');
                 $location.path('/');
             } else {
-                rgiNotifier.notify('Username/Password combination incorrect');
+                rgiNotifier.error('Username/Password combination incorrect');
             }
         });
     };

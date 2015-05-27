@@ -1,4 +1,3 @@
-
 language: node_js
 node_js:
 - '0.10'
@@ -9,7 +8,7 @@ branches:
     - master
 
 before_install:
-  sudo pip install awsebcli
+  - sudo pip install awsebcli
 
 env:
   global:
@@ -25,10 +24,10 @@ before_script:
   - echo $AWSSecretKeys
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
-  - npm install phantomjs
+  - npm install phantomjs --save
 
 script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
+  - npm test
 
 after_success:
   - eb init && eb deploy rgi-assessment-tool-pr
