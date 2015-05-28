@@ -4,7 +4,7 @@ var rootPath = path.normalize(__dirname + '/../../');
 
 module.exports = {
     local: {
-        db: 'mongodb://localhost/rgi2015_dev',
+        db: 'mongodb://localhost/rgi_local',
         rootPath: rootPath,
         port: process.env.PORT || 3030
     },
