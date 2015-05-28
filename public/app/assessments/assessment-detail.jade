@@ -15,9 +15,12 @@
 						ng-options="item.value as item.text for item in sortOptions")
 			br
 			button.btn.btn-success.pull-right(
-				ng-if="assessment.edit_control===identity.currentUser._id"
-				ng-disabled="assessment.questions_complete!==answers.length || answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
+				ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete===answers.length"
+				ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
 				ng-click="assessmentSubmit()") Submit assessment
+			button.btn.btn-warning.pull-right(
+				ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete!==answers.length"
+				disabled) YEs
 			//- assessment.first_pass = true;
 
 			//- button.btn.btn-success.pull-right(ng-if="assessment.questions_complete!==answers.length && answer.edit_control===identity.currentUser._id").disabled Submit assessment
