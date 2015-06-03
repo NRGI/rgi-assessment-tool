@@ -6,29 +6,11 @@ describe('rgiAnswerMethodSrvc', function () {
     beforeEach(module('app'));
 
     var rgiAnswerMethodSrvc;
-    var $q, rgiAnswerSrvcBackup;
-    var REJECT_INSERTION_RESPONSE = {
-        data: {reason: 'REJECT_INSERTION'}
-    };
+    var $q, rgiAnswerSrvc;
 
-    beforeEach(inject(function(_rgiAnswerSrvc_) {
-        rgiAnswerSrvcBackup = _rgiAnswerSrvc_;
-
-        angular.module('app').service('rgiAnswerSrvc',function () {
-            return function(answers) {
-                this.$save = function() {
-                    return {
-                        then: function(callbackPositive, callbackNegative) {
-                            answers.indexOf('POSITIVE') > -1 ? callbackPositive() : callbackNegative(REJECT_INSERTION_RESPONSE);
-                        }
-                    };
-                };
-            };
-        });
-    }));
-
-    beforeEach(inject(function (_rgiAnswerMethodSrvc_, _$q_) {
+    beforeEach(inject(function (_rgiAnswerMethodSrvc_, _$q_, _rgiAnswerSrvc_) {
         $q = _$q_;
+        rgiAnswerSrvc = _rgiAnswerSrvc_;
         rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
     }));
 
@@ -177,10 +159,18 @@ describe('rgiAnswerMethodSrvc', function () {
     });
 
     describe('#insertAnswerSet', function () {
-        var $qDeferStub, $qDeferSpy, expectedPromise;
+        var $qDeferStub, rgiAnswerSrvcStub, $qDeferSpy, expectedPromise;
 
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
+
+            rgiAnswerSrvcStub = sinon.stub(rgiAnswerSrvc.prototype, '$save', function() {
+                return {
+                    then: function(callback) {
+                        callback();
+                    }
+                };
+            });
 
             $qDeferSpy = sinon.spy();
             $qDeferStub = sinon.stub($q, 'defer', function() {
@@ -196,6 +186,17 @@ describe('rgiAnswerMethodSrvc', function () {
 
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'NEGATIVE';
+            var REJECT_INSERTION_RESPONSE = {
+                data: {reason: 'REJECT_INSERTION'}
+            };
+
+            rgiAnswerSrvcStub = sinon.stub(rgiAnswerSrvc.prototype, '$save', function() {
+                return {
+                    then: function(callbackPositive, callbackNegative) {
+                        callbackNegative(REJECT_INSERTION_RESPONSE);
+                    }
+                };
+            });
 
             $qDeferSpy = sinon.spy();
             $qDeferStub = sinon.stub($q, 'defer', function() {
@@ -211,11 +212,8 @@ describe('rgiAnswerMethodSrvc', function () {
 
         afterEach(function () {
             $qDeferStub.restore();
+            rgiAnswerSrvcStub.restore();
         });
-    });
-
-    after(function () {
-        angular.module('app').service('rgiAnswerSrvc', rgiAnswerSrvcBackup);
     });
 
 });
