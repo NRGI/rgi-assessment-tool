@@ -97,6 +97,33 @@ describe('rgiAssessmentMethodSrvc', function () {
             $qDeferSpy.called.should.be.equal(true);
         });
 
+        it('rejects the deferred in negative case', function () {
+            expectedPromise = 'NEGATIVE';
+            var REASON = 'REASON';
+
+            $qDeferSpy = sinon.spy();
+            $qDeferStub = sinon.stub($q, 'defer', function() {
+                return {
+                    reject: $qDeferSpy,
+                    promise: expectedPromise
+                };
+            });
+
+            rgiAssessmentMethodSrvc.updateAssessment({
+                $update: function() {
+                    return {
+                        then: function(uselessCallbackPositive, callbackNegative) {
+                            callbackNegative({
+                                data: {reason: REASON}
+                            });
+                        }
+                    };
+                }
+            }).should.be.equal(expectedPromise);
+
+            $qDeferSpy.should.have.been.calledWith(REASON);
+        });
+
     });
 
     afterEach(function () {
