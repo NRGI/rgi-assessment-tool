@@ -99,6 +99,32 @@ describe('rgiUserMethodSrvc', function () {
             $qDeferSpy.called.should.be.equal(true);
         });
 
+        it('resolves the deferred in positive case', function () {
+            expectedPromise = 'NEGATIVE';
+            var REJECT_RESPONSE = {
+                data: {reason: 'REJECT_INSERTION'}
+            };
+
+            rgiUserSrvcStub = sinon.stub(rgiUserSrvc.prototype, '$delete', function() {
+                return {
+                    then: function(callbackPositive, callbackNegative) {
+                        callbackNegative(REJECT_RESPONSE);
+                    }
+                };
+            });
+
+            $qDeferSpy = sinon.spy();
+            $qDeferStub = sinon.stub($q, 'defer', function() {
+                return {
+                    reject: $qDeferSpy,
+                    promise: expectedPromise
+                };
+            });
+
+            rgiUserMethodSrvc.deleteUser([expectedPromise]).should.be.equal(expectedPromise);
+            $qDeferSpy.should.have.been.calledWith(REJECT_RESPONSE.data.reason);
+        });
+
         afterEach(function () {
             $qDeferStub.restore();
             rgiUserSrvcStub.restore();
@@ -128,6 +154,33 @@ describe('rgiUserMethodSrvc', function () {
             }).should.be.equal(expectedPromise);
 
             $qDeferSpy.called.should.be.equal(true);
+        });
+
+        it('rejects the deferred in negative case', function () {
+            expectedPromise = 'NEGATIVE';
+            var REASON = 'REASON';
+
+            $qDeferSpy = sinon.spy();
+            $qDeferStub = sinon.stub($q, 'defer', function() {
+                return {
+                    reject: $qDeferSpy,
+                    promise: expectedPromise
+                };
+            });
+
+            rgiUserMethodSrvc.updateUser({
+                $update: function() {
+                    return {
+                        then: function(uselessCallbackPositive, callbackNegative) {
+                            callbackNegative({
+                                data: {reason: REASON}
+                            });
+                        }
+                    };
+                }
+            }).should.be.equal(expectedPromise);
+
+            $qDeferSpy.should.have.been.calledWith(REASON);
         });
 
         afterEach(function () {
