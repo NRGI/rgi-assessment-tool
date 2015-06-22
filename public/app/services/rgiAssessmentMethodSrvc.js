@@ -34,9 +34,9 @@ angular.module('app').factory('rgiAssessmentMethodSrvc', function ($http, $q, rg
 
             newAssessmentData.$update().then(function () {
                 dfd.resolve();
-            }), function(response) {
+            }, function(response) {
                 dfd.reject(response.data.reason);
-            };
+            });
             return dfd.promise;
         }
     }    
