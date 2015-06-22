@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf3e1e41-18a8-4885-8703-649d6e55ee15" name="Default" comment="refactored question admin">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/dialogs/delete-question-delete-confirmation-dialog.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/dialogs/rgiDeleteQuestionDialogCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/dialogs/rgiNewQuestionDialogCtrl.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/app/admin/questions/question-admin-view.jade" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/app/admin/questions/new-question-dialog.jade" afterPath="$PROJECT_DIR$/public/app/dialogs/new-question-dialog.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/includes/layout.html" afterPath="$PROJECT_DIR$/server/includes/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/questions/question-admin-edit.jade" afterPath="$PROJECT_DIR$/public/app/admin/questions/question-admin-edit.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/questions/question-admin.jade" afterPath="$PROJECT_DIR$/public/app/admin/questions/question-admin.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/questions/rgiQuestionAdminCtrl.js" afterPath="$PROJECT_DIR$/public/app/admin/questions/rgiQuestionAdminCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/questions/rgiQuestionAdminDetailCtrl.js" afterPath="$PROJECT_DIR$/public/app/admin/questions/rgiQuestionAdminDetailCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/includes/scripts.jade" afterPath="$PROJECT_DIR$/server/includes/scripts.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/site.css" afterPath="$PROJECT_DIR$/public/css/site.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rgi-assessment-tool.iws" />
@@ -488,6 +475,13 @@
       <option name="number" value="Default" />
       <updated>1434987207551</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactored question admin">
+      <created>1435012622834</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1435012622834</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -501,7 +495,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="289" y="23" width="2230" height="944" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
