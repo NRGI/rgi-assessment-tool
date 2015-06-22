@@ -128,7 +128,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
-                if (new_answer_data.question_order !== 4) {
+                if (new_assessment_data.questions_complete !== new_assessment_data.question_length && new_answer_data.question_order !== new_assessment_data.question_length) {
                     $location.path('/assessments/assessment-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
                     $location.path('/assessments/' + new_answer_data.assessment_ID);
