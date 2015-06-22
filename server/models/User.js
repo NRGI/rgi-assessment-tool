@@ -22,20 +22,16 @@ var userSchema = mongoose.Schema({
     email:  {type:  String, required: '{PATH} is required'},
     salt:  {type: String, required: '{PATH} is required!'},
     hashed_pwd:  {type: String, required: '{PATH} is required!'},
-    /////// Do we need to deal with multiple roles here ///////////////////
     role:  {type: String, required: '{PATH} is required!',  default: 'None'},
-    /////// Rename to assessments ///////////////////
     assessments: [{
         assessment_id:  String, // ISO3 Identifier
         country_name:  String // Text name of country
     }],
     createdBy:  ObjectId,
     creationDate:  {type:  Date, default: Date.now},
-    ///////////////////Add modification array on the ser update ctrl///////////////////
     modified:  [modificationSchema],
     address:  String,
     language:  String
-    // groups:  [String]
 });
 
 userSchema.methods = {
@@ -48,8 +44,6 @@ userSchema.methods = {
 };
 
 var User = mongoose.model('User', userSchema);
-
-User.find({}).exec(function (err, collection) {console.log(collection);});
 
 function createDefaultUsers() {
     User.find({}).exec(function (err, collection) {

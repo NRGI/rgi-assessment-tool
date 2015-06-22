@@ -1,12 +1,16 @@
 .container.top-padding-med
-	.well
-		legend Assessment tool users
+	.well.left-padding-lg.right-padding-lg
+		legend.h3 Assessment tool users
 		.pull-right
 			form.form-inline
 				.form-group
-					input.form-control(ng-model="searchText", placeholder="Filter")
+					input.form-control(
+					ng-model="search_text"
+					placeholder="Filter")
 				.form-group.margin-left-med
-					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
+					select.form-control(
+					ng-model="sort_order"
+					ng-options="item.value as item.text for item in sort_options")
 		table.table
 			thead
 				tr
@@ -22,7 +26,7 @@
 					th 
 					th 
 			tbody
-				tr(ng-repeat="user in users | filter:searchText | orderBy:sortOrder")
+				tr(ng-repeat="user in users | filter:search_text | orderBy:sort_order")
 					td
 						a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
 					td {{user.username}}

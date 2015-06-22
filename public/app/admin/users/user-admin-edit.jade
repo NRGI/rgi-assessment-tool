@@ -1,49 +1,74 @@
 .container.top-padding-med
-	.well
+	.well.left-padding-lg.right-padding-lg
 		form.form-horizontal(name='profileForm')
-			fieldset
-				legend {{user.firstName}} {{user.lastName}}'s Profile
+			fieldset.left-padding-lg.right-padding-lg
+				legend.h3 {{user.firstName}} {{user.lastName}}'s Profile
 				.form-group
 					label.col-md-2.control-label(form="") First Name *
 					.col-md-10
-						input.form-control(name="firstName", type="text", ng-model="user.firstName", required)
+						input.form-control(name="firstName"
+						type="text"
+						ng-model="user.firstName"
+						required)
 				.form-group
 					label.col-md-2.control-label(form="lastName") Last Name *
 					.col-md-10
-						input.form-control(name="lname", type="text", ng-model="user.lastName",required)
+						input.form-control(name="lname"
+						type="text"
+						ng-model="user.lastName"
+						required)
 				.form-group
 					label.col-md-2.control-label(form="username") Username
 					.col-md-10
-						input.form-control(name="username", type="text", ng-model="user.username", readonly)
+						input.form-control(name="username"
+						type="text"
+						ng-model="user.username"
+						readonly)
 				.form-group
 					label.col-md-2.control-label(form="email") Email *
 					.col-md-10
-						input.form-control(name="email", type="email", ng-model="user.email", required)
+						input.form-control(name="email"
+						type="email"
+						ng-model="user.email"
+						required)
 				.form-group
-					label.col-md-2.control-label(form="role") Role
+					label.col-md-2.control-label(form="role") Role *
 					.col-md-10
-						input.form-control(name="role", type="text", ng-model="user.role", readonly)
+						select.form-control(name="role"
+						ng-model="user.role"
+						ng-options="item.value as item.text for item in role_options"
+						required)
 				.form-group
-					label.col-md-2.control-label(form="address") Address *
+					label.col-md-2.control-label(form="email") Address
 					.col-md-10
-						input.form-control(name="address", type="text", ng-model="user.address", required)
-				.form-group
-					label.col-md-2.control-label(form="language") Preferred Language
-					.col-md-10
-						input.form-control(name="language", type="text", ng-model="user.language")
+						input.form-control(name="address"
+						type="text"
+						ng-model="user.address")
+				//.form-group
+				//	label.col-md-2.control-label(form="language") Preferred Language
+				//	.col-md-10
+				//		input.form-control(name="language"
+				//		type="text"
+				//		ng-model="user.language")
 				.form-group
 					label.col-md-2.control-label(form="password") Password
 					.col-md-10
-						input.form-control(name="password", type="password", ng-model="password")
+						input.form-control(name="password"
+						placeholder="New password"
+						type="password"
+						ng-model="password")
 				.form-group
 					label.col-md-2.control-label(form="password") Repeat Password
 					.col-md-10
-						input.form-control(name="password", type="password", ng-model="password_rep")
+						input.form-control(name="password"
+						placeholder="Repeat password"
+						type="password"
+						ng-model="password_rep")
 				.form-group
 					.col-md-10.col-md-offset-2
 						.pull-right
 							button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="") Save user
 							| &nbsp;
-							button.btn.btn-danger(ng-click="userDelete()", ng-disabled="") Delete user
+							button.btn.btn-danger(ng-click="deleteConfirmDialog()", ng-disabled="") Delete user
 							| &nbsp;
 							a.btn.btn-default(href="/admin/user-admin-view/{{user._id}}") Cancel

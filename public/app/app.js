@@ -1,5 +1,5 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint unparam: true */
 
 // angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
@@ -37,9 +37,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
         ///// Admin Routes
         // USERS
-        .when('/admin/create-user', {
+        .when('/admin/user-create', {
             templateUrl: '/partials/admin/users/user-create',
-            controller:  'rgiCreateUserCtrl',
+            controller: 'rgiUserCreateCtrl',
             resolve: routeRoleChecks.supervisor
         })
         .when('/admin/user-admin', {

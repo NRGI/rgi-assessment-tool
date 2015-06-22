@@ -1,9 +1,9 @@
-.container
-	.well
+.container.top-padding-med
+	.well.left-padding-lg.right-padding-lg
 		form.form-horizontal(name='profileForm')
-			fieldset
+			fieldset.left-padding-lg.right-padding-lg
 				//- Profile page
-				legend {{fullName}}'s {{role | capitalize}} Profile
+				legend.h3 {{fullName}}'s {{role | capitalize}} Profile
 				.row.right-padding-lg
 					.form-group
 						label.col-md-2.control-label(form="fname") First Name
@@ -48,6 +48,13 @@
 								name="password"
 								type="password"
 								ng-model="password")
+						label.col-md-2.control-label(form="address") Address
+						.col-md-4
+							input.form-control(
+							name="address"
+							type="address"
+							placeholder="Address"
+							ng-model="address")
 				.row.right-padding-lg
 					.form-group
 						label.col-md-2.control-label(form="password") Repeat Password

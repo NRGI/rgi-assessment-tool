@@ -78,6 +78,14 @@ footer p {
 .btn-col {
   width: 100%;
 }
+
+.callout {
+  z-index: 20;
+  position: absolute;
+  border: 0;
+  top: -14px;
+  left: 120px;
+}
 .fileUpload {
   position: relative;
   overflow: hidden;
