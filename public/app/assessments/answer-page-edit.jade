@@ -43,7 +43,7 @@
 				| &nbsp;
 				button.btn.btn-success(
 					ng-click="answerSubmit()"
-					ng-disabled="answer_justification_form.$invalid || !answer[current_user.role + '_score'] || assessment.edit_control!==current_user._id"
+					ng-if="!answer_justification_form.$invalid && answer[current_user.role + '_score'] && assessment.edit_control===current_user._id"
 					) Submit answer
 				| &nbsp;
 				button.btn.btn-danger(
@@ -58,7 +58,7 @@
 			.form-horizontal(name="answer_form")
 				fieldset
 					div(id="answer_choice_div").bottom-padding-med
-						legend Choose one of the following answers:
+						legend Choose one of the following answers (required):
 						ng-form(name="answer_choice_form")
 							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
 								input(
@@ -78,7 +78,7 @@
 											name="justification"
 											type="text"
 											ng-model="answer[current_user.role + '_justification']"
-											placeholder="Please provide your justification..."
+											placeholder="Please provide your justification... (required)"
 											required
 											ng-disabled="assessment.edit_control!==current_user._id")
 		div(id="comments_div").bottom-padding-med

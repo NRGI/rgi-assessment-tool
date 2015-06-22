@@ -18,11 +18,11 @@ angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentity
             email: $scope.email
         };
         // check if password update exists and pass it in
-        if ($scope.password && $scope.passowrd.length > 0) {
+        if ($scope.password && $scope.password.length > 0) {
             newUserData.password = $scope.password;
         }
         // use authorization service to update user data
-        rgiUserMethodSrvc.updateCurrentUser(newUserData).then(function () {
+        rgiUserMethodSrvc.updateUser(newUserData).then(function () {
             rgiNotifier.notify('Your user account has been updated');
         }, function (reason) {
             rgiNotifier.notify(reason);
