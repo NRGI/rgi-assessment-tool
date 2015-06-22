@@ -15,10 +15,10 @@
 						label.col-md-2.control-label(form="order") Question Order
 						.col-md-1
 							input.form-group.form-control(name="order" type="number" ng-model="question.question_order")
-
+						//TODO make component default at current value
 						label.col-md-2.control-label(form="component") Component
 						.col-md-7
-							select.form-group.form-control(ng-model="question.component" ng-options="item.value as item.text for item in componentOptions")
+							select.form-group.form-control(ng-model="question.component" ng-options="item.value as item.text for item in component_options")
 					br
 					div(id="question_options_div").row.top-padding-lg
 						.col-md-2
@@ -43,11 +43,11 @@
 									.pull-right
 										button.btn.btn-primary(ng-click="questionUpdate()" ng-disabled="profileForm.$invalid") Save question
 										| &nbsp;
-										button.btn.btn-danger(ng-click="questionDelete()") Delete question
+										button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete question
 										| &nbsp;
-										button.btn.btn-default(ng-click="questionClear()") Reset question
+										button.btn.btn-warning(ng-click="questionClear()") Reset question
 										| &nbsp;
-										a.btn.btn-default(href="/admin/question-admin-view/{{question._id}}") Cancel
+										a.btn.btn-default(href="/admin/question-admin") Cancel
 					br
 					div(id="comments_div")
 						legend NRGI Comments:

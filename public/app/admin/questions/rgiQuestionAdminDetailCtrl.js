@@ -1,8 +1,8 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true*/
 
-angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
+angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope, $routeParams, $location, ngDialog, rgiNotifier, rgiQuestionMethodSrvc, rgiQuestionSrvc, rgiIdentitySrvc) {
     rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
         $scope.question = data;
         $scope.question_start = angular.copy($scope.question);
@@ -10,7 +10,7 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
     $scope.current_user = rgiIdentitySrvc.currentUser;
 
-    $scope.componentOptions = [
+    $scope.component_options = [
         {value: 'context', text: 'Context'},
         {value: 'government_effectiveness', text: 'Government Effectiveness'},
         {value: 'institutional_and_legal_setting', text: 'Institutional and Legal Setting'},
@@ -34,7 +34,7 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     $scope.questionClear = function () {
         $scope.question = angular.copy($scope.question_start);
     };
-
+    //TODO fix reording questions
     $scope.questionUpdate = function () {
         var new_question_data = $scope.question;
 
@@ -45,15 +45,13 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
             rgiNotifier.error(reason);
         });
     };
-
-    $scope.questionDelete = function () {
-        var question_deletion = $scope.question._id;
-
-        rgiQuestionMethodSrvc.deleteQuestion(question_deletion).then(function () {
-            $location.path('/admin/question-admin');
-            rgiNotifier.notify('Question has been deleted');
-        }, function (reason) {
-            rgiNotifier.error(reason);
+    $scope.deleteConfirmDialog = function () {
+        $scope.value = true;
+        ngDialog.open({
+            template: 'partials/dialogs/delete-question-delete-confirmation-dialog',
+            controller: 'rgiDeleteQuestionDialogCtrl',
+            className: 'ngdialog-theme-plain',
+            scope: $scope
         });
     };
 

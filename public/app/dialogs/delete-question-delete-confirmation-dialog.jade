@@ -1,0 +1,10 @@
+div.top-padding-med
+    .well
+        .row.left-padding-lg.bottom-padding-med
+            text Are you sure you want to delete this question?
+        .row.left-padding-lg
+            .col-md-10.col-md-offset-2
+                .pull-right
+                    a.btn.btn-danger(ng-click="questionDelete()") Confirm
+                    | &nbsp;
+                    a.btn.btn-default(ng-click="closeDialog()") Cancel
