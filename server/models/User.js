@@ -49,6 +49,8 @@ userSchema.methods = {
 
 var User = mongoose.model('User', userSchema);
 
+User.find({}).exec(function (err, collection) {console.log(collection);});
+
 function createDefaultUsers() {
     User.find({}).exec(function (err, collection) {
         if (collection.length === 0) {

@@ -12,8 +12,8 @@
                 ng-model="password")
         button.btn.btn-primary(ng-click="signin(username, password)")
             span.glyphicon.glyphicon-log-in(title="Login")  Login
-        //- ADD FORGOT PASSWORD FUNCTIONALITY
-        //- button.btn.btn-warning(ng-click="") Forgot Password
+        //- TODO add forgot password functionality
+        button.btn.btn-warning(ng-click="" disabled) Forgot Password
 
 
     //- AUTHENTICATED NAVBAR
@@ -49,6 +49,8 @@
                         a(href="/admin/user-admin") User Admin
                     li
                         a(href="/admin/question-admin") Questions Admin
+                    li
+                        a(href="/admin/documents-admin") Document Admin
       
         //- PROFILE
         ul.nav.navbar-nav

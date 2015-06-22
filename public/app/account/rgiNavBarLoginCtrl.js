@@ -2,12 +2,13 @@
 var angular;
 /*jslint newcap: true unparam: true*/
 
-angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc, rgiAssessmentSrvc) {
+angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc, rgiAssessmentSrvc) {
     // assign the identity resource with the current identity using identity service
     $scope.identity = rgiIdentitySrvc;
     $scope.versions = [];
+    var url_array = [];
     if (rgiIdentitySrvc.currentUser !== undefined && rgiIdentitySrvc.currentUser.role === 'supervisor') {
-        var url_array = [];
+
         rgiAssessmentSrvc.query({}, function (data) {
             data.forEach(function (el, i) {
                 if (url_array.indexOf(el.year + '_' + el.version) < 0) {

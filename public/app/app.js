@@ -38,7 +38,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         ///// Admin Routes
         // USERS
         .when('/admin/create-user', {
-            templateUrl: '/partials/admin/users/create-user',
+            templateUrl: '/partials/admin/users/user-create',
             controller:  'rgiCreateUserCtrl',
             resolve: routeRoleChecks.supervisor
         })
