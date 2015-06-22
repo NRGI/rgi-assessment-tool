@@ -23,18 +23,18 @@ angular.module('app').factory('rgiUserMethodSrvc', function ($http, $q, rgiIdent
 
             deleteID.$delete().then(function () {
                 dfd.resolve();
-            }), function (response) {
+            }, function (response) {
                 dfd.reject(response.data.reason);
-            };
+            });
             return dfd.promise;
         },
         updateUser: function (newUserData) {
             var dfd = $q.defer();
             newUserData.$update().then(function () {
                 dfd.resolve();
-            }), function (response) {
+            }, function (response) {
                 dfd.reject(response.data.reason);
-            };
+            });
             return dfd.promise;
         }
     }
