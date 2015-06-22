@@ -1,39 +1,40 @@
 .container.top-padding-med
-	.well
+	.well.left-padding-lg.right-padding-lg
 		form.form-horizontal(name='profileForm')
-			fieldset
-				legend {{user.firstName}} {{user.lastName}}'s Profile
-				.form-group
-					label.col-md-2.control-label(form="") First Name *
-					.col-md-10
-						input.form-control(name="firstName", type="text", ng-model="user.firstName", readonly)
-				.form-group
-					label.col-md-2.control-label(form="lastName") Last Name *
-					.col-md-10
-						input.form-control(name="lname", type="text", ng-model="user.lastName",readonly)
-				.form-group
-					label.col-md-2.control-label(form="username", readonly) Username
-					.col-md-10
-						input.form-control(name="username", type="text", ng-model="user.username", readonly)
-				.form-group
-					label.col-md-2.control-label(form="email") Email *
-					.col-md-10
-						input.form-control(name="email", type="email", ng-model="user.email", readonly)
-				.form-group
-					label.col-md-2.control-label(form="role") Role
-					.col-md-10
-						input.form-control(name="role", type="text", ng-model="user.role", readonly)
-				.form-group
-					label.col-md-2.control-label(form="address") Address *
-					.col-md-10
-						input.form-control(name="address", type="text", ng-model="user.address", readonly)
-				.form-group
-					label.col-md-2.control-label(form="language", readonly) Preferred Language
-					.col-md-10
-						input.form-control(name="language", type="text", ng-model="user.language", readonly)
+			fieldset.left-padding-lg.right-padding-lg
+				legend.h3 {{user.firstName}} {{user.lastName}}'s Profile
+
 				.form-group
 					.col-md-10.col-md-offset-2
 						.pull-right
 							a.btn.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit user
 							| &nbsp;
 							a.btn.btn-default(href="/admin/user-admin") Cancel
+				.row
+					label.col-md-2 First Name:
+					.col-md-10 {{user.firstName}}
+				.row
+					label.col-md-2 Last Name:
+					.col-md-10 {{user.lastName}}
+				.row
+					label.col-md-2 Username:
+					.col-md-10 {{user.username}}
+				.row
+					label.col-md-2 Email:
+					.col-md-10 {{user.email}}
+				.row
+					label.col-md-2 Role:
+					.col-md-10 {{user.role}}
+				.row
+					label.col-md-2 Address:
+					.col-md-10 {{user.address}}
+				.row
+					label.col-md-2 Assessments:
+					.col-lg-10
+						.row.left-padding-med(ng-repeat="assessment in user.assessments" ng-if="user.assessments.length > 0")
+							a(href="assessments/{{assessment.assessment_id}}") {{assessment.country_name}} - {{assessment.assessment_id}}
+						.row.left-padding-med(ng-if="user.assessments.length < 1") None
+				//.row
+				//	label.col-md-2 Preferred Language
+				//	.col-md-10 {{user.language}}
+

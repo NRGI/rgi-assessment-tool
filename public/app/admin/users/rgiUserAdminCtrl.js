@@ -1,9 +1,9 @@
 'use strict';
-var angular;
+//var angular;
 
 angular.module('app').controller('rgiUserAdminCtrl', function ($scope, rgiUserSrvc, rgiAssessmentSrvc) {
     // filtering options
-    $scope.sortOptions = [
+    $scope.sort_options = [
         {value: "firstName", text: "Sort by First Name"},
         {value: "lastName", text: "Sort by Last Name"},
         {value: "username", text: "Sort by Username"},
@@ -11,7 +11,7 @@ angular.module('app').controller('rgiUserAdminCtrl', function ($scope, rgiUserSr
         {value: "approved", text: "Sort by Approved"},
         {value: "submitted", text: "Sort by Submitted"}
     ];
-    $scope.sortOrder = $scope.sortOptions[1].value;
+    $scope.sort_order = $scope.sort_options[1].value;
 
     rgiUserSrvc.query({}, function (data) {
         $scope.users = [];

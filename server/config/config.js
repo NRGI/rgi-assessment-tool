@@ -21,6 +21,6 @@ module.exports = {
     pilot: {
         db: '@c726.candidate.19.mongolayer.com:10726/rgi_pilot',
         rootPath: rootPath,
-        port: process.env.PORT || 3030
+        port: process.env.PORT || 80
     }
 };
