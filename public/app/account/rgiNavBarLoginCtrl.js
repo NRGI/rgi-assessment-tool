@@ -4,10 +4,11 @@ var angular;
 
 angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route, $location, rgiNotifier, rgiIdentitySrvc, rgiAuthSrvc, rgiAssessmentSrvc) {
     // assign the identity resource with the current identity using identity service
+    var url_array = [];
     $scope.identity = rgiIdentitySrvc;
     $scope.versions = [];
-    var url_array = [];
-    if (rgiIdentitySrvc.currentUser !== undefined && rgiIdentitySrvc.currentUser.role === 'supervisor') {
+
+    if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
 
         rgiAssessmentSrvc.query({}, function (data) {
             data.forEach(function (el, i) {
@@ -29,7 +30,7 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route,
         rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
             $scope.versions = [];
             if (success) {
-                if (rgiIdentitySrvc.currentUser !== undefined && rgiIdentitySrvc.currentUser.role === 'supervisor') {
+                if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
                     var url_array = [];
                     rgiAssessmentSrvc.query({}, function (data) {
                         data.forEach(function (el, i) {
