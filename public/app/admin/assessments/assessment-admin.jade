@@ -1,78 +1,81 @@
-//- admin assessment assignment page
 .container.top-padding-med
 	.well.left-padding-lg.right-padding-lg
-		legend Assessment Status Dashboard
-		.pull-left
-			.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="false", tooltip="yes") Deploy Assessment
-		.pull-right
-			form.form-inline
-				.form-group
-					input.form-control(ng-model="searchText", placeholder="Filter")
-				.form-group.margin-left-med
-					select.form-control(ng-model="sortOrder", ng-options="item.value as item.text for item in sortOptions")
+		div.left-padding-lg.right-padding-lg.top-padding-med
+			legend.h3 Assessment Status Dashboard
+			div.left-padding-lg.right-padding-lg.top-padding-med
+				.row.pull-left.left-padding-lg.right-padding-lg
+					.btn.btn-success(ng-click="newAssessmentDialog()", ng-disabled="false", tooltip="yes") Deploy Assessment
+				.pull-right
+					form.form-inline
+						.form-group
+							input.form-control(ng-model="search_text", placeholder="Filter")
+						.form-group.margin-left-med
+							select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
 
-		table.table.table-hover
-			thead
-				tr
-					th Country
-					th Researcher
-					th Reviewer
-					th Started
-					th Last Edit
-					th Status
-					th Edit control
-					th Version
-					th.text-center Assign
-					th.text-center Review
-			tbody
-				tr(ng-repeat="assessment in assessments | filter: searchText | orderBy:sortOrder")
-					td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
-					td(ng-if="assessment.status!='unassigned'")
-						a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.country}}
-					td 
-						a(href="mailto:{{assessment.researcher.email}}") {{assessment.researcher.firstName}} {{assessment.researcher.lastName}} 
-					td
-						a(href="mailto:{{assessment.reviewer.email}}") {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}} 
-					td {{assessment.start_date.started_date | date}}
-					td(ng-if="assessment.edited_by")
-						a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}} 
-						text - 
-						span(ng-repeat="mod in assessment.modified")
-							em(ng-show="$last") {{mod.modified_date | date}}
-					td(ng-if="!assessment.edited_by")
-					td {{assessment.status | capitalize}}
-					td {{assessment.edit_control}}
-					td {{assessment.version | capitalize}} {{assessment.year}}
-					td
-						a.btn.btn-col.center-block.btn-primary(
-							href="/admin/assessment-assign/{{assessment.assessment_ID}}"
-							ng-if="assessment.status=='unassigned'"
-							) Assign
-						a.btn.btn-col.center-block.btn-default.disabled(
-							href=""
-							ng-if="assessment.status!='unassigned'"
-							) Assigned
-					td
-						button.btn.btn-col.btn-primary(
-							ng-click="assessmentStartReview(assessment.assessment_ID)"
-							ng-if="assessment.status === 'submitted'"
-							) Start Review
-						a.btn.btn-col.center-block.btn-primary(
-							href="/admin/assessment-review/{{assessment.assessment_ID}}"
-							ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
-							) Continue review
-						a.btn.btn-col.center-block.btn-primary(
-							href="/admin/assessment-review/{{assessment.assessment_ID}}"
-							ng-if="assessment.status=='approved'"
-							) Send to external
-						a.btn.center-block.btn-default.disabled(
-							href=""
-							ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
-							) Under review
-						a.btn.center-block.btn-default.disabled(
-							href=""
-							ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
-							) Waiting for submission
+				div.top-padding-lg
+					table.table.table-hover
+						thead
+							tr
+								th Country
+								th Researcher
+								th Reviewer
+								th Started
+								th Last Edit
+								th Status
+								th Version
+								th
+								th
+						tbody
+							tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+								td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
+								td(ng-if="assessment.status!='unassigned'")
+									a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.country}}
+								td.col-md-3
+									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+									a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+								td.col-md-3
+									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+									a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+								td {{assessment.start_date.started_date | date}}
+								td(ng-if="assessment.edited_by")
+									a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
+									text -
+									span(ng-repeat="mod in assessment.modified")
+										em(ng-show="$last") {{mod.modified_date | date}}
+								td(ng-if="!assessment.edited_by")
+								td {{assessment.status | ucfirst}}
+								td {{assessment.version | ucfirst}} {{assessment.year}}
+								td
+									//TODO change to dialog box
+									a.btn.btn-col.center-block.btn-primary(
+									href="/admin/assessment-assign/{{assessment.assessment_ID}}"
+									ng-if="assessment.status=='unassigned'"
+									) Assign
+									a.btn.btn-col.center-block.btn-default.disabled(
+									href=""
+									ng-if="assessment.status!='unassigned'"
+									) Assigned
+								td
+									button.btn.btn-col.btn-primary(
+									ng-click="assessmentStartReview(assessment.assessment_ID)"
+									ng-if="assessment.status === 'submitted'"
+									) Start Review
+									a.btn.btn-col.center-block.btn-primary(
+									href="/admin/assessment-review/{{assessment.assessment_ID}}"
+									ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
+									) Continue review
+									a.btn.btn-col.center-block.btn-primary(
+									href="/admin/assessment-review/{{assessment.assessment_ID}}"
+									ng-if="assessment.status=='approved'"
+									) Send to external
+									a.btn.center-block.btn-default.disabled(
+									href=""
+									ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
+									) Under review
+									a.btn.center-block.btn-default.disabled(
+									href=""
+									ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
+									) Waiting for submission
 
 
 

@@ -1,1 +1,72 @@
-<div class="container top-padding-med"><div class="well left-padding-lg right-padding-lg"><form name="profileForm" class="form-horizontal"><fieldset class="left-padding-lg right-padding-lg"><legend class="h3">{{user.firstName}} {{user.lastName}}'s Profile</legend><div class="form-group"><label form="" class="col-md-2 control-label">First Name *</label><div class="col-md-10"><input name="firstName" type="text" ng-model="user.firstName" required="required" class="form-control"/></div></div><div class="form-group"><label form="lastName" class="col-md-2 control-label">Last Name *</label><div class="col-md-10"><input name="lname" type="text" ng-model="user.lastName" required="required" class="form-control"/></div></div><div class="form-group"><label form="username" class="col-md-2 control-label">Username</label><div class="col-md-10"><input name="username" type="text" ng-model="user.username" readonly="readonly" class="form-control"/></div></div><div class="form-group"><label form="email" class="col-md-2 control-label">Email *</label><div class="col-md-10"><input name="email" type="email" ng-model="user.email" required="required" class="form-control"/></div></div><div class="form-group"><label form="role" class="col-md-2 control-label">Role *</label><div class="col-md-10"><select name="role" ng-model="user.role" ng-options="item.value as item.text for item in role_options" required="required" class="form-control"></select></div></div><div class="form-group"><label form="email" class="col-md-2 control-label">Address</label><div class="col-md-10"><input name="address" type="text" ng-model="user.address" class="form-control"/></div></div><!--.form-group--><!--	label.col-md-2.control-label(form="language") Preferred Language--><!--	.col-md-10--><!--		input.form-control(name="language"--><!--		type="text"--><!--		ng-model="user.language")--><div class="form-group"><label form="password" class="col-md-2 control-label">Password</label><div class="col-md-10"><input name="password" placeholder="New password" type="password" ng-model="password" class="form-control"/></div></div><div class="form-group"><label form="password" class="col-md-2 control-label">Repeat Password</label><div class="col-md-10"><input name="password" placeholder="Repeat password" type="password" ng-model="password_rep" class="form-control"/></div></div><div class="form-group"><div class="col-md-10 col-md-offset-2"><div class="pull-right"><button ng-click="userUpdate()" ng-disabled="" class="btn btn-primary">Save user</button>&nbsp;<button ng-click="deleteConfirmDialog()" ng-disabled="" class="btn btn-danger">Delete user</button>&nbsp;<a href="/admin/user-admin-view/{{user._id}}" class="btn btn-default">Cancel</a></div></div></div></fieldset></form></div></div>
+<div class="container top-padding-med">
+    <div class="well left-padding-lg">
+        <div class="left-padding-lg right-padding-lg top-padding-med">
+            <form name="profileForm" class="form-horizontal">
+                <fieldset class="left-padding-lg right-padding-lg">
+                    <legend class="h3">{{user.firstName}} {{user.lastName}}'s Profile</legend>
+                    <div class="top-padding-med right-padding-lg">
+                        <div class="form-group"><label form="" class="col-md-2 control-label">First Name *</label>
+
+                            <div class="col-md-10"><input name="firstName" type="text" ng-model="user.firstName"
+                                                          required="required" class="form-control"/></div>
+                        </div>
+                        <div class="form-group"><label form="lastName" class="col-md-2 control-label">Last Name
+                            *</label>
+
+                            <div class="col-md-10"><input name="lname" type="text" ng-model="user.lastName"
+                                                          required="required" class="form-control"/></div>
+                        </div>
+                        <div class="form-group"><label form="username" class="col-md-2 control-label">Username</label>
+
+                            <div class="col-md-10"><input name="username" type="text" ng-model="user.username"
+                                                          readonly="readonly" class="form-control"/></div>
+                        </div>
+                        <div class="form-group"><label form="email" class="col-md-2 control-label">Email *</label>
+
+                            <div class="col-md-10"><input name="email" type="email" ng-model="user.email"
+                                                          required="required" class="form-control"/></div>
+                        </div>
+                        <div class="form-group"><label form="role" class="col-md-2 control-label">Role *</label>
+
+                            <div class="col-md-10"><select name="role" ng-model="user.role"
+                                                           ng-options="item.value as item.text for item in role_options"
+                                                           required="required" class="form-control"></select></div>
+                        </div>
+                        <div class="form-group"><label form="email" class="col-md-2 control-label">Address</label>
+
+                            <div class="col-md-10"><input name="address" type="text" ng-model="user.address"
+                                                          class="form-control"/></div>
+                        </div>
+                        <!--.form-group--><!--	label.col-md-2.control-label(form="language") Preferred Language-->
+                        <!--	.col-md-10--><!--		input.form-control(name="language"--><!--		type="text"-->
+                        <!--		ng-model="user.language")-->
+                        <div class="form-group"><label form="password" class="col-md-2 control-label">Password</label>
+
+                            <div class="col-md-10"><input name="password" placeholder="New password" type="password"
+                                                          ng-model="password" class="form-control"/></div>
+                        </div>
+                        <div class="form-group"><label form="password" class="col-md-2 control-label">Repeat
+                            Password</label>
+
+                            <div class="col-md-10"><input name="password" placeholder="Repeat password" type="password"
+                                                          ng-model="password_rep" class="form-control"/></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <div class="pull-right">
+                                    <button ng-click="userUpdate()" ng-disabled="" class="btn btn-primary">Save user
+                                    </button>
+                                    &nbsp;
+                                    <button ng-click="deleteConfirmDialog()" ng-disabled="" class="btn btn-danger">
+                                        Delete user
+                                    </button>
+                                    &nbsp;<a href="/admin/user-admin-view/{{user._id}}"
+                                             class="btn btn-default">Cancel</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
