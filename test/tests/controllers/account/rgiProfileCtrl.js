@@ -13,7 +13,8 @@ describe('rgiProfileCtrl', function () {
         lastName: 'LAST NAME',
         email: 'EMAIL',
         username: 'USERNAME',
-        roles: 'USER'
+        role: 'USER',
+        address: 'ADDRESS'
     };
 
     beforeEach(inject(
@@ -32,20 +33,22 @@ describe('rgiProfileCtrl', function () {
 
     it('initialize the fields by values got from identity service', function () {
         $scope.fullName.should.be.equal(dummyCurrentUser.firstName + ' ' + dummyCurrentUser.lastName);
-        $scope.fname.should.be.equal(dummyCurrentUser.firstName);
-        $scope.lname.should.be.equal(dummyCurrentUser.lastName);
+        $scope.first_name.should.be.equal(dummyCurrentUser.firstName);
+        $scope.last_name.should.be.equal(dummyCurrentUser.lastName);
         $scope.email.should.be.equal(dummyCurrentUser.email);
-        $scope.roles.should.be.equal(dummyCurrentUser.roles);
+        $scope.role.should.be.equal(dummyCurrentUser.role);
         $scope.username.should.be.equal(dummyCurrentUser.username);
+        $scope.address.should.be.equal(dummyCurrentUser.address);
     });
 
     describe('#update', function() {
         var userMethodUpdateCurrentUserStub, userMethodUpdateCurrentUserSpy, notifierMock;
 
         beforeEach(function () {
-            $scope.fname = 'UPDATED FIRST NAME';
-            $scope.lname = 'UPDATED LAST NAME';
+            $scope.first_name = 'UPDATED FIRST NAME';
+            $scope.last_name = 'UPDATED LAST NAME';
             $scope.email = 'UPDATED EMAIL';
+            $scope.address = 'UPDATED ADDRESS';
             $scope.password = null;
             notifierMock = sinon.mock(rgiNotifier);
         });
@@ -66,24 +69,28 @@ describe('rgiProfileCtrl', function () {
             it('submits updated user data & shows success notification', function() {
                 $scope.update();
                 userMethodUpdateCurrentUserSpy.withArgs({
-                    firstName: $scope.fname,
-                    lastName: $scope.lname,
-                    email: $scope.email
+                    firstName: $scope.first_name,
+                    lastName: $scope.last_name,
+                    email: $scope.email,
+                    address: $scope.address
                 }).called.should.be.equal(true);
             });
 
             it('submits updated user data (including password, if it is not empty) & shows success notification', function() {
                 $scope.password = 'PASSWORD';
+                $scope.password_rep = 'PASSWORD';
                 $scope.update();
                 userMethodUpdateCurrentUserSpy.withArgs({
-                    firstName: $scope.fname,
-                    lastName: $scope.lname,
+                    firstName: $scope.first_name,
+                    lastName: $scope.last_name,
                     email: $scope.email,
+                    address: $scope.address,
                     password: $scope.password
                 }).called.should.be.equal(true);
             });
         });
 
+        //TODO add test for mismatched passwords
         describe('NEGATIVE CASE', function() {
             var FAILURE_REASON = 'FAILURE REASON';
 
@@ -102,19 +109,22 @@ describe('rgiProfileCtrl', function () {
             it('submits updated user data & shows failure notification', function() {
                 $scope.update();
                 userMethodUpdateCurrentUserSpy.withArgs({
-                    firstName: $scope.fname,
-                    lastName: $scope.lname,
-                    email: $scope.email
+                    firstName: $scope.first_name,
+                    lastName: $scope.last_name,
+                    email: $scope.email,
+                    address: $scope.address
                 }).called.should.be.equal(true);
             });
 
             it('submits updated user data (including password, if it is not empty) & shows failure notification', function() {
                 $scope.password = 'PASSWORD';
+                $scope.password_rep = 'PASSWORD';
                 $scope.update();
                 userMethodUpdateCurrentUserSpy.withArgs({
-                    firstName: $scope.fname,
-                    lastName: $scope.lname,
+                    firstName: $scope.first_name,
+                    lastName: $scope.last_name,
                     email: $scope.email,
+                    address: $scope.address,
                     password: $scope.password
                 }).called.should.be.equal(true);
             });
