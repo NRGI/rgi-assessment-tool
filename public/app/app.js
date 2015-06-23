@@ -3,7 +3,7 @@
 /*jslint unparam: true */
 
 // angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload', 'angular.filter']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
@@ -52,11 +52,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiUserAdminUpdateCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/admin/user-admin-view/:id', {
-            templateUrl: '/partials/admin/users/user-admin-view',
-            controller:  'rgiUserAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
         .when('/admin/user-admin-edit/:id', {
             templateUrl: '/partials/admin/users/user-admin-edit',
             controller:  'rgiUserAdminDetailCtrl',
@@ -72,6 +67,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/questions/question-admin-edit',
             controller:  'rgiQuestionAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
+        })
+        // DOCUMENTS
+        .when('/admin/documents-admin', {
+            templateUrl: '/partials/admin/documents/document-admin',
+            controller: 'rgiDocumentAdminCtrl'
+        })
+        .when('/admin/documents-admin/:document_ID', {
+            templateUrl: '/partials/admin/documents/document-admin-detail',
+            controller: 'rgiDocumentAdminDetailCtrl'
         })
         // ASSESSMENTS
         .when('/admin/assessment-admin', {

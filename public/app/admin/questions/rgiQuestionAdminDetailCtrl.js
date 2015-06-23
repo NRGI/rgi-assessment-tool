@@ -13,10 +13,11 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     $scope.component_options = [
         {value: 'context', text: 'Context'},
         {value: 'government_effectiveness', text: 'Government Effectiveness'},
-        {value: 'institutional_and_legal_setting', text: 'Institutional and Legal Setting'},
-        {value: 'reporting_practices', text: 'Reporting Practices'},
+        {value: 'legal', text: 'Institutional and Legal Setting'},
+        {value: 'reporting', text: 'Reporting Practices'},
         {value: 'safeguard_and_quality_control', text: 'Safeguard and Quality Control'},
-        {value: 'enabling_environment', text: 'Enabling Environment'}
+        {value: 'enabling_environment', text: 'Enabling Environment'},
+        {value: 'oversight', text: 'Oversight'}
     ];
 
     $scope.questionOptionAdd = function () {
@@ -34,7 +35,7 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     $scope.questionClear = function () {
         $scope.question = angular.copy($scope.question_start);
     };
-    //TODO fix reording questions
+    //TODO fix reording questions---update happens in question controller
     $scope.questionUpdate = function () {
         var new_question_data = $scope.question;
 

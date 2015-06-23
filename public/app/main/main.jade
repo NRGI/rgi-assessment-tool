@@ -4,7 +4,7 @@
 		p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the assessment to RGI Assessment Tool Portal.
 		p(ng-show="!identity.isAuthenticated()") Please log in. 
 
-	div(ng-show="identity.isAuthenticated()").left-padding-lg.right-padding-lg
+	div(ng-show="identity.isAuthenticated()").right-padding-lg.left-padding-lg
 		h4 Welcome to the RGI Assessment tool.
 		p The questionnaire consists of 135 questions.
 		p You can navigate through the questionnaire by sorting it according to question order or status (i.e. whether you have completed a question or not).
