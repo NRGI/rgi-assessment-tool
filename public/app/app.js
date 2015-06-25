@@ -88,11 +88,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentAdminCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/admin/assessment-assign/:assessment_ID', {
-            templateUrl: '/partials/admin/assessments/assessment-admin-assign',
-            controller:  'rgiAssessmentAdminAssignCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
         .when('/admin/assessments-admin/:assessment_ID', {
             templateUrl: '/partials/admin/assessments/assessment-admin-detail',
             controller:  'rgiAssessmentAdminDetailCtrl',

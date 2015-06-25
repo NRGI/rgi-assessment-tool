@@ -22,8 +22,6 @@ var assessmentSchema = mongoose.Schema({
     edit_control: ObjectId, // user_ID of editing rights
     status: {type: String, required: '{PATH} is required', default: 'unassigned'}, // unassigned, assigned, started, submitted, review, reassigned, approved
     first_pass: {type: Boolean, default: true},
-
-
     assignment: {assigned_by: ObjectId, assigned_date: Date},
     start_date: {started_by: ObjectId, started_date: Date},
     submit_date: {submitted_by: ObjectId, submitted_date: Date},

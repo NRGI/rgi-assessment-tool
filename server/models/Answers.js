@@ -61,12 +61,6 @@ var humanSchema = new mongoose.Schema({
     }
 });
 
-var referenceSchema = new mongoose.Schema({
-    citation: [citationSchema],
-    web: [webSchema],
-    human: [humanSchema]
-});
-
 var scoreHistorySchema = new mongoose.Schema({
     date: {type: Date, default: Date.now},
     order: Number,
@@ -84,7 +78,7 @@ var answerSchema = mongoose.Schema({
     edit_control: ObjectId, // user_ID of editing rights
     question_order: {type: Number, required: '{PATH} is required'}, // generated from the order_ID of Question Model
     question_text: String, // 
-    component_id: {type: String, required: '{PATH} is required'}, // generated from Question Model
+    component: {type: String, required: '{PATH} is required'}, // generated from Question Model
     component_text: {type: String, required: '{PATH} is required'}, // generated from Question Model
     nrc_precept: Number,
     question_ID: {type: ObjectId, required: '{PATH} is required', index: true}, // generated from _id value of Question Model
@@ -109,7 +103,7 @@ var answerSchema = mongoose.Schema({
         web: [webSchema],
         human: [humanSchema]
     },
-    modified: [modificationSchema],
+    modified: [modificationSchema]
 });
 
 var Answer = mongoose.model('Answer', answerSchema);

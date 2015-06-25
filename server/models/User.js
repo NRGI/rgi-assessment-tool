@@ -24,7 +24,7 @@ var userSchema = mongoose.Schema({
     hashed_pwd:  {type: String, required: '{PATH} is required!'},
     role:  {type: String, required: '{PATH} is required!',  default: 'None'},
     assessments: [{
-        assessment_id:  String, // ISO3 Identifier
+        assessment_ID:  String, // ISO3 Identifier
         country_name:  String // Text name of country
     }],
     createdBy:  ObjectId,

@@ -47,14 +47,11 @@
 								td {{assessment.version | ucfirst}} {{assessment.year}}
 								td
 									//TODO change to dialog box
-									a.btn.btn-col.center-block.btn-primary(
-									href="/admin/assessment-assign/{{assessment.assessment_ID}}"
+									button.btn.btn-col.center-block.btn-primary(
+									ng-click="assignAssessmentDialog(assessment)"
 									ng-if="assessment.status=='unassigned'"
 									) Assign
-									a.btn.btn-col.center-block.btn-default.disabled(
-									href=""
-									ng-if="assessment.status!='unassigned'"
-									) Assigned
+									button.btn.btn-col.center-block.btn-default.disabled(ng-if="assessment.status!='unassigned'") Assigned
 								td
 									button.btn.btn-col.btn-primary(
 									ng-click="assessmentStartReview(assessment.assessment_ID)"
