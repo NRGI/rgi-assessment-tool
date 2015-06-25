@@ -94,4 +94,15 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
             scope: $scope
         });
     };
+
+    $scope.assignAssessmentDialog = function (assessment) {
+        $scope.value = true;
+        $scope.assessment_update_ID = assessment.assessment_ID;
+        ngDialog.open({
+            template: 'partials/dialogs/assign-assessment-dialog',
+            controller: 'rgiAssignAssessmentDialogCtrl',
+            className: 'ngdialog-theme-plain',
+            scope: $scope
+        });
+    }
 });

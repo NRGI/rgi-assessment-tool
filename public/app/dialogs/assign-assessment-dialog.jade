@@ -1,0 +1,31 @@
+div.top-padding-med
+   .well
+      legend {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+      .row.left-padding-lg
+         .form-horizontal
+            form.form-horizontal(name="assignAssessment")
+               fieldset
+                  .row.right-padding-lg.left-padding-lg
+                     b Instructions
+                     p You must assign the assessment to a researcher. You can assign to a reviewer at a later data if need be.
+                  .row
+                     label.col-md-4  Reviewer
+                     .form-group.col-md-8
+                        select.form-group.form-control.right-padding-med(
+                        name="researcherSelect"
+                        ng-model="researcherSelect"
+                        ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in researchers"
+                        required)
+                           option(value="" selected disabled) Select researcher (required)...
+                     label.col-md-4  Reviewer
+                     .form-group.col-md-8
+                        select.form-group.form-control.right-padding-med(
+                        name="reviewerSelect"
+                        ng-model="reviewerSelect"
+                        ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in reviewers")
+                           option(value="" selected disabled) Select reviewer (default admin)
+
+                  .row.right-padding-lg.pull-right
+                     button.btn.btn-success(ng-click="assessmentAssign()" ng-disabled="assignAssessment.$invalid") Assign user to assessment
+                     | &nbsp;
+                     button.btn.btn-danger(ng-click="closeDialog()") Cancel

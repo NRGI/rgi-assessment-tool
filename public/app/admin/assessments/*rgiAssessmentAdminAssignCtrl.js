@@ -1,5 +1,5 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true*/
 
 angular.module('app').controller('rgiAssessmentAdminAssignCtrl', function ($scope, $routeParams, $location, rgiIdentitySrvc, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc) {
