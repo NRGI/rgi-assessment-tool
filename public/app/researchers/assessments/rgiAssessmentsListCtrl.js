@@ -1,15 +1,15 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true regexp: true newcap: true*/
 
 angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $location, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiIdentitySrvc, rgiAssessmentMethodSrvc) {
 
     // filtering options
-    $scope.sortOptions = [
+    $scope.sort_options = [
         {value: 'country', text: 'Sort by Country'},
         {value: 'start_date', text: 'Date started'},
         {value: 'status', text: 'Status'}];
-    $scope.sortOrder = $scope.sortOptions[0].value;
+    $scope.sort_order = $scope.sort_options[0].value;
 
     $scope.current_user = rgiIdentitySrvc.currentUser;
 
@@ -65,13 +65,5 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         var newAssessmentData = new rgiAssessmentSrvc($scope.assessment);
 
         newAssessmentData.status = 'started';
-        console.log($scope.answers);
-    };
-});
-
-// Angular capitilaize filter
-angular.module('app').filter('capitalize', function () {
-    return function (input) {
-        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }) :  '';
     };
 });
