@@ -129,15 +129,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         // Answers
         .when('/assessments/assessment-view/:answer_ID', {
-            templateUrl: '/partials/researchers/answer-page-view',
+            templateUrl: '/partials/researchers/answers/answer-page-view',
             controller:  'rgiAnswerCtrl'
         })
         .when('/assessments/assessment-edit/:answer_ID', {
-            templateUrl: '/partials/researchers/answer-page-edit',
+            templateUrl: '/partials/researchers/answers/answer-page-edit',
             controller:  'rgiAnswerCtrl'
         })
         .when('/assessment-review/answer-page-review-edit/:answer_ID', {
-            templateUrl: '/partials/researchers/answer-page-review-edit',
+            templateUrl: '/partials/researchers/answers/answer-page-review-edit',
             controller:  'rgiAnswerCtrl'
         });
 

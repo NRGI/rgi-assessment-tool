@@ -1,0 +1,371 @@
+div.top-padding-med
+    .well
+        legend New Document creation (PDF only)
+        .row.left-padding-lg(id="new_document_form")
+            .form-horizontal
+                // NEW DOC
+                fieldset
+                    div(ng-if="new_document.status!=='submitted'")
+                        // TITLE
+                        .row.form-group.right-padding-lg
+                            input.form-control(
+                            name="title"
+                            type="text"
+                            placeholder="Title (required)..."
+                            ng-model="new_document.title"
+                            autocomplete="off"
+                            required)
+
+                        // DOC TYPE
+                        .row.form-group.right-padding-lg
+                            select.form-control(
+                            ng-model="new_document.type"
+                            required)
+                                option(value="" selected disabled) Select type (required)...
+                                option(ng-repeat="type in new_doc_type" value="{{type.value}}") {{type.text}}
+                        // AUTHOR
+                        div(ng-repeat="author in new_document.authors")
+                            .row
+                                .form-group
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="author_first"
+                                        type="text"
+                                        placeholder="Author first name (required)..."
+                                        ng-model="author.first_name"
+                                        autocomplete="off"
+                                        required)
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="author_last"
+                                        type="text"
+                                        placeholder="Author last name (required)..."
+                                        ng-model="author.last_name"
+                                        autocomplete="off"
+                                        required)
+                                    .pull-left.col-lg-1.right-padding-med(ng-if="$last")
+                                        glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
+                                    .pull-left.col-lg-1(ng-if="!$last")
+                                        glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
+
+                        // EDITORS
+                        div(ng-repeat="editor in new_document.editors")
+                            .row
+                                .form-group
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="editor_first"
+                                        type="text"
+                                        placeholder="Editor first name..."
+                                        ng-model="editor.first_name"
+                                        autocomplete="off")
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="editor_last"
+                                        type="text"
+                                        placeholder="Editor last name..."
+                                        ng-model="editor.last_name"
+                                        autocomplete="off")
+                                    .pull-left.col-lg-1.right-padding-med(ng-if="$last")
+                                        glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="editorPush()")
+                                    .pull-left.col-lg-1(ng-if="!$last")
+                                        glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="editorPop($index)")
+
+                        // SOURCE
+                        div
+                            .row
+                                .form-group
+                                    .col-lg-11
+                                        input.form-control.right-padding-med(
+                                        name="source"
+                                        type="text"
+                                        placeholder="Source URL..."
+                                        ng-model="new_document.source"
+                                        autocomplete="off")
+
+
+                        div
+                            .row
+                                .form-group
+                                    // YEAR
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="year"
+                                        type="text"
+                                        placeholder="Year published..."
+                                        ng-model="new_document.year"
+                                        autocomplete="off")
+
+                                    // PAGES
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="pages"
+                                        type="text"
+                                        placeholder="Pages..."
+                                        ng-model="new_document.pages"
+                                        autocomplete="off")
+
+                        div
+                            .row
+                                .form-group
+                                    // VOLUME
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="volume"
+                                        type="text"
+                                        placeholder="Volume..."
+                                        ng-model="new_document.volume"
+                                        autocomplete="off")
+
+                                    //ISSUE
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="issue"
+                                        type="text"
+                                        placeholder="Issue..."
+                                        ng-model="new_document.issue"
+                                        autocomplete="off")
+
+                        div
+                            .row
+                                .form-group
+                                    // PUBLISHER
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="publisher"
+                                        type="text"
+                                        placeholder="Publisher..."
+                                        ng-model="new_document.publisher"
+                                        autocomplete="off")
+
+                                    // CITY
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="city"
+                                        type="text"
+                                        placeholder="City..."
+                                        ng-model="new_document.city"
+                                        autocomplete="off")
+
+                        div
+                            .row
+                                .form-group
+                                    // EDITION
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="edition"
+                                        type="text"
+                                        placeholder="Edition..."
+                                        ng-model="new_document.edition"
+                                        autocomplete="off")
+
+                                    // INSTITUTION
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="institution"
+                                        type="text"
+                                        placeholder="Institution..."
+                                        ng-model="new_document.institution"
+                                        autocomplete="off")
+
+                        div
+                            .row
+                                .form-group
+                                    // SERIES
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="series"
+                                        type="text"
+                                        placeholder="Series..."
+                                        ng-model="new_document.series"
+                                        autocomplete="off")
+
+                                    // CHAPTER
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="chapter"
+                                        type="text"
+                                        placeholder="Chapter..."
+                                        ng-model="new_document.chapter"
+                                        autocomplete="off")
+
+                        div
+                            .row
+                                .form-group
+                                    // COUNTRY
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="country"
+                                        type="text"
+                                        placeholder="Country..."
+                                        ng-model="new_document.country"
+                                        autocomplete="off")
+
+                                    // TRANSLATORS
+                                    .pull-left.col-lg-6
+                                        input.form-control(
+                                        name="translators"
+                                        type="text"
+                                        placeholder="Translators..."
+                                        ng-model="new_document.translators"
+                                        autocomplete="off")
+                        // SERIES EDITOR
+                        div
+                            .row
+                                .form-group
+
+                                    .col-lg-11
+                                        input.form-control.right-padding-med(
+                                        name="series_editor"
+                                        type="text"
+                                        placeholder="Series editor..."
+                                        ng-model="new_document.series_editor"
+                                        autocomplete="off")
+
+                    // EXISTING DOC
+                    div(ng-if="new_document.status==='submitted'")
+                        .row
+                            // TITILE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Title:
+                                    text(ng-if="new_document.title")  {{new_document.title | ucfirst}}
+                                    text(ng-if="!new_document.title")  N/A
+                            // DOC TYPE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Type:
+                                    text(ng-if="new_document.type")  {{new_document.type| ucfirst}}
+                                    text(ng-if="!new_document.type")  N/A
+                        //- AUTHOR
+                        .row
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Author(s):
+                                    text(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                    text(ng-if="!new_document.authors")  N/A
+                        //- EDITORS
+                        .row
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Editor(s):
+                                    text(ng-repeat="editor in new_document.editors" ng-if="new_document.editors[0].first_name !== ''")  {{editor.first_name | ucfirst}} {{editor.last_name| ucfirst}},
+                                    text(ng-if="new_document.editors[0].first_name === ''")  N/A
+
+                        .row
+                            // SOURCE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Source:
+                                    text(ng-if="new_document.source")  {{new_document.source}}
+                                    text(ng-if="!new_document.source")  N/A
+                            // YEAR
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Year:
+                                    text(ng-if="new_document.year")  {{new_document.year}}
+                                    text(ng-if="!new_document.year")  N/A
+
+                        .row
+                            // PAGES
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Pages:
+                                    text(ng-if="new_document.pages")  {{new_document.pages}}
+                                    text(ng-if="!new_document.pages")  N/A
+                            // VOLUME
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Volume:
+                                    text(ng-if="new_document.volume")  {{new_document.volume}}
+                                    text(ng-if="!new_document.volume")  N/A
+
+                        .row
+                            // ISSUE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Issue:
+                                    text(ng-if="new_document.issue")  {{new_document.issue}}
+                                    text(ng-if="!new_document.issue")  N/A
+                            // PUBLISHER
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Publisher:
+                                    text(ng-if="new_document.publisher")  {{new_document.publisher}}
+                                    text(ng-if="!new_document.publisher")  N/A
+
+                        .row
+                            // CITY
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b City:
+                                    text(ng-if="new_document.city")  {{new_document.city}}
+                                    text(ng-if="!new_document.city")  N/A
+                            // EDITION
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Edition:
+                                    text(ng-if="new_document.edition")  {{new_document.edition}}
+                                    text(ng-if="!new_document.edition")  N/A
+
+                        .row
+                            // INSTITUTION
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Institution:
+                                    text(ng-if="new_document.institution")  {{new_document.institution}}
+                                    text(ng-if="!new_document.institution")  N/A
+                            // SERIES
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Series:
+                                    text(ng-if="new_document.series")  {{new_document.series}}
+                                    text(ng-if="!new_document.series")  N/A
+
+                        .row
+                            // CHAPTER
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Chapter:
+                                    text(ng-if="new_document.chapter")  {{new_document.chapter}}
+                                    text(ng-if="!new_document.chapter")  N/A
+                            // COUNTRY
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Country:
+                                    text(ng-if="new_document.country")  {{new_document.country}}
+                                    text(ng-if="!new_document.country")  N/A
+                        .row
+                            // TRANSLATORS
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Translators:
+                                    text(ng-if="new_document.translators")  {{new_document.translators}}
+                                    text(ng-if="!new_document.translators")  N/A
+                            // SERIES EDITOR
+                            div.col-md-6
+                                .form-group.pull-left
+                                    b Series editor:
+                                    text(ng-if="new_document.series_editor")  {{new_document.series_editor}}
+                                    text(ng-if="!new_document.series_editor")  N/A
+
+
+
+                    //- COMMENT
+                    div(id="comment")
+                        .row
+                            .form-group
+                                .col-lg-11
+                                    textarea.form-control(
+                                    name="comment"
+                                    type="text"
+                                    placeholder="Comments..."
+                                    ng-model="answer.new_ref_comment"
+                                    autocomplete="off")
+
+                    //- BUTTON CONTROL
+                    div
+                        .col-lg-11
+                            button.btn.btn-block.btn-success(
+                            ng-click="documentRefSubmit(new_document)"
+                            ) Create reference

@@ -26,15 +26,7 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
     };
     // TODO remove country from countries scope when added to new assessments
     $scope.countryAdd = function (country_pop) {
-        //function removeFunction (myObjects,prop,valu) {
-        //    return myObjects.filter(function (val) {
-        //        return val[prop] !== valu;
-        //    });
-        //
-        //}
         $scope.new_assessment.assessment_countries.push({country: ""});
-        //$scope.countries = removeFunction($scope.countries, "country", country_pop.country);
-
     };
 
     $scope.countryDelete = function (index) {

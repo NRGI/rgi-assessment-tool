@@ -90,8 +90,8 @@ exports.fileCheck = function (req, res, next) {
             });
         });
     } else {
-        // res.status(400);
-        // res.send({reason: 'Document not a pdf'});
+        res.status(400);
+        res.send({reason: 'Document not a pdf'});
     }
     // destroy temp file
     // fs.unlink(req.files.file.path);
@@ -139,7 +139,7 @@ exports.updateDocument = function (req, res) {
         });
 
         var input_array = ['source', 'year', 'pages', 'volume', 'issue', 'websites', 'publisher', 'city', 'edition', 'institution', 'series', 'chapter', 'editors', 'country', 'translators', 'series_editor'];
-        input_array.forEach(function (el, i) {
+        input_array.forEach(function (el) {
             if (el in document_update) {
                 document[el] = document_update[el];
             }
