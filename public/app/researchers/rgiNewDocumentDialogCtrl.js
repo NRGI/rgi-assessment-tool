@@ -1,8 +1,8 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true newcap: true unparam: true*/
 
-angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $routeParams, ngDialog, FileUploader, rgiAnswerSrvc, rgiUserListSrvc) {
+angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $routeParams, ngDialog, FileUploader, rgiAnswerSrvc) {
 
 
     var question = rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID});

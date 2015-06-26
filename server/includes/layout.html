@@ -1,1 +1,74 @@
-<!DOCTYPE html><html><head><title>RGI Assessment Tool</title><link rel="stylesheet" href="/css/site.css"><link rel="stylesheet" href="/css/ngDialog-theme-plain.css"><link rel="stylesheet" href="/vendor/ngDialog/css/ngDialog.css"><link rel="stylesheet" href="/vendor/ngDialog/css/ngDialog-theme-default.css"><link rel="stylesheet" href="/vendor/toastr/toastr.css"><link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css"><link rel="stylesheet" href="/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" type="text/css"></head><base href="/"><body ng-app="app"><script type="text/javascript" src="/vendor/jquery/dist/jquery.js"></script><script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.js"></script><script type="text/javascript" src="/vendor/toastr/toastr.js"></script><script type="text/javascript" src="/vendor/angular/angular.js"></script><script type="text/javascript" src="/vendor/angular-resource/angular-resource.js"></script><script type="text/javascript" src="/vendor/angular-route/angular-route.js"></script><script type="text/javascript" src="/vendor/ngDialog/js/ngDialog.js"></script><script type="text/javascript" src="/vendor/ng-form-group/index.js"></script><script type="text/javascript" src="/vendor/ng-csv/build/ng-csv.js"></script><script type="text/javascript" src="/vendor/angular-sanitize/angular-sanitize.js"></script><script type="text/javascript" src="/vendor/angular-file-upload/angular-file-upload.js"></script><script type="text/javascript" src="/vendor/angular-filter/dist/angular-filter.js"></script><script type="text/javascript" src="/app/app.js"></script><script type="text/javascript" src="/app/common/rgiNotifier.js"></script><script type="text/javascript" src="/app/common/rgiUtils.js"></script><script type="text/javascript" src="/app/main/rgiMainCtrl.js"></script><script type="text/javascript" src="/app/services/rgiAuthSrvc.js"></script><script type="text/javascript" src="/app/services/rgiIdentitySrvc.js"></script><script type="text/javascript" src="/app/services/rgiUserSrvc.js"></script><script type="text/javascript" src="/app/services/rgiUserListSrvc.js"></script><script type="text/javascript" src="/app/services/rgiQuestionSrvc.js"></script><script type="text/javascript" src="/app/services/rgiAssessmentSrvc.js"></script><script type="text/javascript" src="/app/services/rgiQuestionTextSrvc.js"></script><script type="text/javascript" src="/app/services/rgiAnswerSrvc.js"></script><script type="text/javascript" src="/app/services/rgiUploadSrvc.js"></script><script type="text/javascript" src="/app/services/rgiDocumentSrvc.js"></script><script type="text/javascript" src="/app/services/rgiCountrySrvc.js"></script><script type="text/javascript" src="/app/services/rgiUserMethodSrvc.js"></script><script type="text/javascript" src="/app/services/rgiQuestionMethodSrvc.js"></script><script type="text/javascript" src="/app/services/rgiAssessmentMethodSrvc.js"></script><script type="text/javascript" src="/app/services/rgiAnswerMethodSrvc.js"></script><script type="text/javascript" src="/app/services/rgiUploadMethodSrvc.js"></script><script type="text/javascript" src="/app/services/rgiDocumentMethodSrvc.js"></script><script type="text/javascript" src="/app/account/rgiNavBarLoginCtrl.js"></script><script type="text/javascript" src="/app/account/rgiProfileCtrl.js"></script><script type="text/javascript" src="/app/admin/users/rgiUserCreateCtrl.js"></script><script type="text/javascript" src="/app/admin/users/rgiUserAdminCtrl.js"></script><script type="text/javascript" src="/app/admin/users/rgiUserAdminDetailCtrl.js"></script><script type="text/javascript" src="/app/admin/questions/rgiQuestionAdminCtrl.js"></script><script type="text/javascript" src="/app/admin/questions/rgiQuestionAdminDetailCtrl.js"></script><script type="text/javascript" src="/app/admin/documents/rgiDocumentAdminCtrl.js"></script><script type="text/javascript" src="/app/admin/documents/rgiDocumentAdminDetailCtrl.js"></script><script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminReviewCtrl.js"></script><script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminCtrl.js"></script><script type="text/javascript" src="/app/admin/assessments/rgiMoveAssessmentDialogCtrl.js"></script><script type="text/javascript" src="/app/admin/assessments/rgiFinalChoiceDialogCtrl.js"></script><script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js"></script><script type="text/javascript" src="/app/dialogs/rgiDeleteProfileDialogCtrl.js"></script><script type="text/javascript" src="/app/dialogs/rgiDeleteQuestionDialogCtrl.js"></script><script type="text/javascript" src="/app/dialogs/rgiNewQuestionDialogCtrl.js"></script><script type="text/javascript" src="/app/dialogs/rgiNewAssessmentDialogCtrl.js"></script><script type="text/javascript" src="/app/dialogs/rgiAssignAssessmentDialogCtrl.js"></script><!--script(type="text/javascript", src="/app/dialogs/mgaFlagQuestionDialogCtrl.js")--><script type="text/javascript" src="/app/dialogs/rgiEditDocumentDialogCtrl.js"></script><!--script(type="text/javascript", src="/app/dialogs/mgaNewIntervieweeDialogCtrl.js")--><script type="text/javascript" src="/app/assessments/rgiAssessmentsListCtrl.js"></script><script type="text/javascript" src="/app/assessments/rgiAssessmentDetailCtrl.js"></script><script type="text/javascript" src="/app/assessments/rgiAnswerCtrl.js"></script><script type="text/javascript" src="/app/assessments/rgiNewDocumentDialogCtrl.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<head><title>RGI Assessment Tool</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" href="/vendor/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" href="/vendor/ngDialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="/vendor/toastr/toastr.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" type="text/css">
+</head>
+<base href="/">
+<body ng-app="app">
+<script type="text/javascript" src="/vendor/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/vendor/toastr/toastr.js"></script>
+<script type="text/javascript" src="/vendor/angular/angular.js"></script>
+<script type="text/javascript" src="/vendor/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="/vendor/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/vendor/ngDialog/js/ngDialog.js"></script>
+<script type="text/javascript" src="/vendor/ng-form-group/index.js"></script>
+<script type="text/javascript" src="/vendor/ng-csv/build/ng-csv.js"></script>
+<script type="text/javascript" src="/vendor/angular-sanitize/angular-sanitize.js"></script>
+<script type="text/javascript" src="/vendor/angular-file-upload/angular-file-upload.js"></script>
+<script type="text/javascript" src="/vendor/angular-filter/dist/angular-filter.js"></script>
+<script type="text/javascript" src="/app/app.js"></script>
+<script type="text/javascript" src="/app/common/rgiNotifier.js"></script>
+<script type="text/javascript" src="/app/common/rgiUtils.js"></script>
+<script type="text/javascript" src="/app/main/rgiMainCtrl.js"></script>
+<script type="text/javascript" src="/app/services/rgiAuthSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiIdentitySrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiUserSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiUserListSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiQuestionSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiAssessmentSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiQuestionTextSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiAnswerSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiUploadSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiDocumentSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiCountrySrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiUserMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiQuestionMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiAssessmentMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiAnswerMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiUploadMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/services/rgiDocumentMethodSrvc.js"></script>
+<script type="text/javascript" src="/app/account/rgiNavBarLoginCtrl.js"></script>
+<script type="text/javascript" src="/app/account/rgiProfileCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/users/rgiUserCreateCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/users/rgiUserAdminCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/users/rgiUserAdminDetailCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/questions/rgiQuestionAdminCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/questions/rgiQuestionAdminDetailCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/documents/rgiDocumentAdminCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/documents/rgiDocumentAdminDetailCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminReviewCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/assessments/rgiMoveAssessmentDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/assessments/rgiFinalChoiceDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js"></script>
+<script type="text/javascript" src="/app/dialogs/rgiDeleteProfileDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/dialogs/rgiDeleteQuestionDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/dialogs/rgiNewQuestionDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/dialogs/rgiNewAssessmentDialogCtrl.js"></script>
+<script type="text/javascript" src="/app/dialogs/rgiAssignAssessmentDialogCtrl.js"></script>
+<!--script(type="text/javascript", src="/app/dialogs/mgaFlagQuestionDialogCtrl.js")-->
+<script type="text/javascript" src="/app/dialogs/rgiEditDocumentDialogCtrl.js"></script>
+<!--script(type="text/javascript", src="/app/dialogs/mgaNewIntervieweeDialogCtrl.js")-->
+<script type="text/javascript" src="/app/researchers/assessments/rgiAssessmentsListCtrl.js"></script>
+<script type="text/javascript" src="/app/researchers/assessments/rgiAssessmentDetailCtrl.js"></script>
+<script type="text/javascript" src="/app/researchers/rgiAnswerCtrl.js"></script>
+<script type="text/javascript" src="/app/researchers/rgiNewDocumentDialogCtrl.js"></script>
+</body>
+</html>

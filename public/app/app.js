@@ -93,6 +93,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentAdminDetailCtrl',
             resolve: routeRoleChecks.user
         })
+        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
         .when('/admin/assessment-review/:assessment_ID', {
             templateUrl: '/partials/admin/assessments/assessment-admin-review',
             controller:  'rgiAssessmentAdminReviewCtrl',
@@ -104,35 +106,38 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         // })
         .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
             templateUrl: '/partials/admin/assessments/answer-page-edit',
-            controller:  'rgiAnswerCtrl'
+            controller: 'rgiAnswerCtrl'
         })
-
-        // Assessment overview routes
+        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
+        ///// researcher Routes
+        // Assessments
         .when('/assessments', {
-            templateUrl: '/partials/assessments/assessments-list',
+            templateUrl: '/partials/researchers/assessments/assessments-list',
             controller:  'rgiAssessmentsListCtrl',
             resolve: routeRoleChecks.user
         })
         .when('/assessments/:assessment_ID', {
-            templateUrl: '/partials/assessments/assessment-detail',
+            templateUrl: '/partials/researchers/assessments/assessment-detail',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
         .when('/assessments-review/:assessment_ID', {
-            templateUrl: '/partials/assessments/assessment-review',
+            templateUrl: '/partials/researchers/assessments/assessment-review',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
+        // Answers
         .when('/assessments/assessment-view/:answer_ID', {
-            templateUrl: '/partials/assessments/answer-page-view',
+            templateUrl: '/partials/researchers/answer-page-view',
             controller:  'rgiAnswerCtrl'
         })
         .when('/assessments/assessment-edit/:answer_ID', {
-            templateUrl: '/partials/assessments/answer-page-edit',
+            templateUrl: '/partials/researchers/answer-page-edit',
             controller:  'rgiAnswerCtrl'
         })
         .when('/assessment-review/answer-page-review-edit/:answer_ID', {
-            templateUrl: '/partials/assessments/answer-page-review-edit',
+            templateUrl: '/partials/researchers/answer-page-review-edit',
             controller:  'rgiAnswerCtrl'
         });
 

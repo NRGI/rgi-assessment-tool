@@ -1,5 +1,5 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true*/
 
 function zeroFill(number, width) {
@@ -51,7 +51,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         var citations = [];
 
-        data.references.citation.forEach(function (el, i) {
+        data.references.citation.forEach(function (el) {
             rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
                 console.log(doc);
                 doc.comment = el.comment;
@@ -87,7 +87,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     $scope.flagCheck = function (flags) {
         var disabled = false;
         if (flags.length !== 0) {
-            flags.forEach(function (el, i) {
+            flags.forEach(function (el) {
                 if (el.addressed === false) {
                     disabled = true;
                 }
