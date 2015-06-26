@@ -12,7 +12,10 @@
                                                                     ng-options="item.value as item.text for item in sortOptions"
                                                                     class="form-control"></select></div>
                 </form>
-                <br/><!--button.btn.btn-success.pull-right(-->
+                <br/>
+                <button ng-if="assessment.edit_control===identity.currentUser._id &amp;&amp; assessment.questions_complete===answers.length"
+                        ng-click="assessmentSubmit()" class="btn btn-success pull-right">Submit assessment
+                </button>
                 <!--ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete===answers.length"-->
                 <!--ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"-->
                 <!--ng-click="assessmentSubmit()") Submit assessment--><!--button.btn.btn-warning.pull-right(-->
@@ -55,7 +58,7 @@
                     <th class="col-md-1 text-center">Question number</th>
                     <th class="col-md-1">Component</th>
                     <th class="col-md-5 text-center">Question</th>
-                    <th class="col-md-1">Status</th>
+                    <th class="col-md-2 text-center">Status</th>
                     <th class="col-md-1 text-center">Researcher Score</th>
                     <th class="col-md-1 text-center">Reviewer Score</th>
                     <th class="col-md-1 text-center"></th>
@@ -66,15 +69,27 @@
                     <td class="col-md-1 text-center">{{answer.question_order}}</td>
                     <td class="col-md-1">{{answer.component_text}}</td>
                     <td class="col-md-5">{{answer.question_text}})</td>
-                    <td class="col-md-1">{{answer.status | ucfirst}}</td>
+                    <td class="col-md-2 text-center">
+                        <div ng-if="answer.status==='submitted'" class="text-success glyphicon glyphicon-check">
+                            {{answer.status | ucfirst}}
+                        </div>
+                        <div ng-if="answer.status==='saved'" class="text-info glyphicon glyphicon-floppy-saved">
+                            {{answer.status | ucfirst}}
+                        </div>
+                        <div ng-if="answer.status==='flagged'" class="text-danger glyphicon glyphicon-flag">
+                            {{answer.status | ucfirst}}
+                        </div>
+                        <div ng-if="answer.status==='assigned'" class="text"> {{answer.status | ucfirst}}</div>
+                    </td>
                     <td class="col-md-1 text-center">{{answer.researcher_score}}</td>
                     <td class="col-md-1 text-center">{{answer.reviewer_score}}</td>
                     <td ng-if="assessment.edit_control===identity.currentUser._id"><a
-                            ng-if="answer.status==='assigned' || answer.status=='saved' || answer.status=='saved'"
+                            ng-if="answer.status!=='flagged' &amp;&amp; assessment.status!=='submitted'"
                             href="/assessments/assessment-edit/{{answer.answer_ID}}"
-                            class="btn center-block btn-success">Jump to question</a><a
-                            ng-if="answer.status==='submitted'" href="/assessments/assessment-view/{{answer.answer_ID}}"
-                            class="btn center-block btn-default">View to answer</a></td>
+                            class="btn center-block btn-primary">Edit question</a><a ng-if="answer.status==='flagged'"
+                                                                                     href="/assessments/assessment-edit/{{answer.answer_ID}}"
+                                                                                     class="btn center-block btn-danger">Edit
+                        to answer</a></td>
                     <td ng-if="assessment.edit_control!==identity.currentUser._id"><a
                             ng-if="answer.status!=='assigned' &amp;&amp; answer.status!=='saved'"
                             href="/assessments/assessment-view/{{answer.answer_ID}}"

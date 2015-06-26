@@ -1,5 +1,5 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true newcap: true unparam: true*/
 
 angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope, $location, rgiNotifier, ngDialog, rgiIdentitySrvc, rgiAssessmentMethodSrvc, rgiAnswerSrvc, rgiUserListSrvc, rgiAssessmentSrvc, rgiAnswerMethodSrvc) {
@@ -85,7 +85,7 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
     };
 
     $scope.assessmentMove = function () {
-        var r, new_assessment_data, new_answer_data;
+        var r, new_assessment_data;
 
         switch ($scope.action) {
 
@@ -139,7 +139,7 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
                 new_assessment_data.edit_control = new_assessment_data.researcher_ID;
 
                 rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
-                    new_answer_data.forEach(function (el, i) {
+                    new_answer_data.forEach(function (el) {
                         el.status = 'assigned';
                     });
 
@@ -185,7 +185,7 @@ angular.module('app').controller('rgiMoveAssessmentDialogCtrl', function ($scope
                 new_assessment_data.edit_control = new_assessment_data.reviewer_ID;
 
                 rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
-                    new_answer_data.forEach(function (el, i) {
+                    new_answer_data.forEach(function (el) {
                         el.status = 'assigned';
                     });
 
