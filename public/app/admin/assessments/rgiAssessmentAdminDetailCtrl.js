@@ -1,15 +1,15 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint nomen: true regexp: true*/
 
-angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, ngDialog, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
     // filtering options
     $scope.sort_options = [
         {value: "question_order", text: "Sort by Question Number"},
         {value: "component_id", text: "Sort by Component"},
         {value: "status", text: "Sort by Status"}
     ];
-    $scope.sortOrder = $scope.sort_options[0].value;
+    $scope.sort_order = $scope.sort_options[0].value;
 
     // pull assessment data and add
     rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (data) {
@@ -22,11 +22,14 @@ angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scop
         $scope.assessment = data;
 
     });
-});
 
-// Angular capitilaize filter
-angular.module('app').filter('capitalize', function () {
-    return function (input) {
-        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function (txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }) :  '';
+    $scope.moveAssessmentDialog = function () {
+        $scope.value = true;
+        ngDialog.open({
+            template: 'partials/dialogs/move-assessment-dialog',
+            controller: 'rgiMoveAssessmentDialogCtrl',
+            className: 'ngdialog-theme-plain',
+            scope: $scope
+        });
     };
 });

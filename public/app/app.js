@@ -96,8 +96,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         .when('/admin/assessment-review/:assessment_ID', {
-            templateUrl: '/partials/admin/assessments/assessment-admin-review',
-            controller:  'rgiAssessmentAdminReviewCtrl',
+            templateUrl: '/partials/admin/assessments/review/assessment-review',
+            controller: 'rgiAssessmentAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
         // .when('/admin/assessment-review/answer-review-view/:answer_ID', {
@@ -105,7 +105,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         //     controller:  'rgiAnswerCtrl'
         // })
         .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
-            templateUrl: '/partials/admin/assessments/answer-page-edit',
+            templateUrl: '/partials/admin/assessments/review/answer-page-review',
             controller: 'rgiAnswerCtrl'
         })
         //////////////////////////////////////////////////////////////

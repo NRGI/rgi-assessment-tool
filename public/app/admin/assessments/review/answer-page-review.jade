@@ -1,0 +1,144 @@
+.container.top-padding-med
+	.well.left-padding-lg
+		div.left-padding-lg.right-padding-lg.top-padding-med
+			legend.h3
+				.row
+					h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
+						.text-success.pull-right(ng-if="answer.status==='approved'")  (approved)
+						.text-danger.pull-right(ng-if="answer.status==='flagged'")  (flagged)
+
+			.row.left-padding-lg.bottom-padding-med
+				h3
+					em Question {{answer.question_order}}. {{answer.question_text}}
+				br
+				div(ng-if="!answer.researcher_score")
+					h5 Researcher score:
+					em Not submitted
+				div(ng-if="answer.researcher_score")
+					h5 Researcher score:
+					em(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+					h5 Researcher justification:
+					em {{answer.researcher_justification}}
+					br
+					br
+				div(ng-if="!answer.reviewer_score")
+					h5 Researcher score:
+					em Not submitted
+				div(ng-if="answer.reviewer_score")
+					h5 Researcher score:
+					em(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+					h5 Researcher justification:
+					em {{answer.reviewer_justification}}
+					br
+					br
+				br
+
+			//- View only buttons
+			.row.left-padding-lg.bottom-padding-lg
+				button.btn.btn-success(ng-click="answerApprove()" ng-disabled="flagCheck(answer.flags)") Approve answer
+				| &nbsp;
+				button.btn.btn-warning(ng-click="answerFlag(current_user)") Flag answer
+				| &nbsp;
+				button.btn.btn-primary(ng-click="finalChoiceDialog()" ng-disabled="!answer.reviewer_score || !answer.researcher_score || answer.status !== 'approved'") Choose final answer
+				| &nbsp;
+				a.btn.btn-default(href="/admin/assessment-review/{{assessment.assessment_ID}}") Return to assessment menu
+
+
+
+			.row.left-padding-lg.bottom-padding-lg
+				div(id="flags_div").bottom-padding-med
+					legend Flags:
+
+					div(id="prev_flags_div" ng-if="answer.flags.length!==0")
+						.row.left-padding-lg.bottom-padding-med(ng-repeat="flag in answer.flags")
+							.row
+								b {{flag.author_name}} (
+								b {{flag.role}}
+								b )
+							.row
+								em {{flag.date | date:'MM/dd/yyyy'}}
+							.row
+								div
+									text Addressed?
+									input(type="checkbox" ng-model="flag.addressed")
+
+							div(ng-if="flag.addressed!==true")
+								.row.col-md-11
+									text.text-danger {{flag.content}}
+								.row.col-md-offset-9.col-md-3
+									date
+										small
+											em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+			.row.left-padding-lg
+				.form-horizontal(name="answer_form")
+					fieldset
+
+						div(id="comments_div").bottom-padding-med
+							legend Comments:
+
+							div(id="prev_comments_div" ng-if="answer.comments.length!==0")
+								.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+									.row
+										b {{comment.author_name}} (
+										b {{comment.role}}
+										b ):
+									.row.col-md-11 {{comment.content}}
+									.row.col-md-offset-9.col-md-3
+										date
+											small
+												em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+							br
+							div(id="new_comment_div").bottom-padding-med
+								ng-form(name="new_comment_form")
+									.form-group.top-padding-med
+										.row.left-padding-lg
+											.col-md-10
+												textarea.form-control(
+												name="comment"
+												type="text"
+												ng-model="answer.new_comment"
+												placeholder="New comment..."
+												required)
+											.col-md-1
+												button.btn.btn-success(
+												ng-click="commentSubmit(current_user)"
+												ng-disabled="new_comment_form.$invalid"
+												) Submit comment
+
+
+						//- BILBLIO LIST
+						div(id="prev_bib")
+							.row.left-padding-lg
+								label Citations
+								.row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
+									.row Author(s):
+										text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
+											text(ng-if="!$last") ;
+										text(ng-if="ref.author.length === 0")  N/A
+									.row Title: {{ref.title}} (
+										a(href="{{ref.s3_url}}" target="_blank") View here
+										text )
+									.row Published:
+										text(ng-if="ref.year")  {{ref.year}}
+										text(ng-if="!ref.year")  N/A
+									.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date: 'MM/dd/yyyy'}}
+									.row Commnets:
+										text(ng-if="ref.comment.content")  {{ref.comment.content}}
+										text(ng-if="!ref.comment.content")  N/A
+									//br
+							.row.left-padding-lg
+								label Websites
+								.row.left-padding-lg(ng-repeat="ref in answer.references.web")
+									.row Website: {{ref.title}} (
+										a(href="{{ref.URL}}" target="_blank") View here
+										text )
+									.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+									.row Comments: {{ref.comment.content}}
+									br
+							.row.left-padding-lg
+								label Humans
+								.row.left-padding-lg(ng-repeat="ref in answer.references.human")
+									.row Contact: {{ref.first_name}} {{ref.last_name}}
+									.row Contacted: {{ref.contact_date | date:'MM/dd/yyyy'}}
+									.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+									.row Comments: {{ref.comment.content}}

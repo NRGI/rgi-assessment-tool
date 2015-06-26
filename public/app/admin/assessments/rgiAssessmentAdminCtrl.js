@@ -104,5 +104,5 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
             className: 'ngdialog-theme-plain',
             scope: $scope
         });
-    }
+    };
 });
