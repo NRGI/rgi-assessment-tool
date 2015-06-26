@@ -12,12 +12,10 @@
                                                                     ng-options="item.value as item.text for item in sortOptions"
                                                                     class="form-control"></select></div>
                 </form>
-                <br/>
-                <button ng-if="assessment.edit_control===identity.currentUser._id &amp;&amp;&amp; assessment.questions_complete===answers.length"
-                        ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
-                        ng-click="assessmentSubmit()" class="btn btn-success pull-right">Submit assessment
-                </button>
-                <!--button.btn.btn-warning.pull-right(-->
+                <br/><!--button.btn.btn-success.pull-right(-->
+                <!--ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete===answers.length"-->
+                <!--ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"-->
+                <!--ng-click="assessmentSubmit()") Submit assessment--><!--button.btn.btn-warning.pull-right(-->
                 <!--	ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete!==answers.length"-->
                 <!--	disabled)--></div>
             <div class="pull-left left-padding-lg bottom-padding-lg">
@@ -58,8 +56,8 @@
                     <th class="col-md-1">Component</th>
                     <th class="col-md-5 text-center">Question</th>
                     <th class="col-md-1">Status</th>
-                    <th class="col-md-1">Researcher Score</th>
-                    <th class="col-md-1">Reviewer Score</th>
+                    <th class="col-md-1 text-center">Researcher Score</th>
+                    <th class="col-md-1 text-center">Reviewer Score</th>
                     <th class="col-md-1 text-center"></th>
                 </tr>
                 </thead>
@@ -69,8 +67,8 @@
                     <td class="col-md-1">{{answer.component_text}}</td>
                     <td class="col-md-5">{{answer.question_text}})</td>
                     <td class="col-md-1">{{answer.status | ucfirst}}</td>
-                    <td class="col-md-1">{{answer.researcher_score}}</td>
-                    <td class="col-md-1">{{answer.reviewer_score}}</td>
+                    <td class="col-md-1 text-center">{{answer.researcher_score}}</td>
+                    <td class="col-md-1 text-center">{{answer.reviewer_score}}</td>
                     <td ng-if="assessment.edit_control===identity.currentUser._id"><a
                             ng-if="answer.status==='assigned' || answer.status=='saved' || answer.status=='saved'"
                             href="/assessments/assessment-edit/{{answer.answer_ID}}"

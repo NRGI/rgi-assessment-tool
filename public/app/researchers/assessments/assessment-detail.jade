@@ -15,10 +15,10 @@
                         ng-model="sortOrder"
                         ng-options="item.value as item.text for item in sortOptions")
                 br
-                button.btn.btn-success.pull-right(
-                ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete===answers.length"
-                ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
-                ng-click="assessmentSubmit()") Submit assessment
+                //button.btn.btn-success.pull-right(
+                //ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete===answers.length"
+                //ng-disabled="answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
+                //ng-click="assessmentSubmit()") Submit assessment
                 //button.btn.btn-warning.pull-right(
                 //	ng-if="assessment.edit_control===identity.currentUser._id &&& assessment.questions_complete!==answers.length"
                 //	disabled)
@@ -55,8 +55,8 @@
                         th.col-md-1 Component
                         th.col-md-5.text-center Question
                         th.col-md-1 Status
-                        th.col-md-1 Researcher Score
-                        th.col-md-1 Reviewer Score
+                        th.col-md-1.text-center Researcher Score
+                        th.col-md-1.text-center Reviewer Score
                         th.col-md-1.text-center
                 tbody
                     tr(ng-repeat="answer in answers | filter: search_text | orderBy:sortOrder")
@@ -64,8 +64,8 @@
                         td.col-md-1 {{answer.component_text}}
                         td.col-md-5 {{answer.question_text}})
                         td.col-md-1 {{answer.status | ucfirst}}
-                        td.col-md-1 {{answer.researcher_score}}
-                        td.col-md-1 {{answer.reviewer_score}}
+                        td.col-md-1.text-center {{answer.researcher_score}}
+                        td.col-md-1.text-center {{answer.reviewer_score}}
                         td(ng-if="assessment.edit_control===identity.currentUser._id")
                             a.btn.center-block.btn-success(ng-if="answer.status==='assigned' || answer.status=='saved' || answer.status=='saved'"
                             href="/assessments/assessment-edit/{{answer.answer_ID}}" ) Jump to question
