@@ -61,9 +61,31 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
     };
 
     $scope.assessmentSubmit = function () {
-        
-        var newAssessmentData = new rgiAssessmentSrvc($scope.assessment);
+        var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
 
-        newAssessmentData.status = 'started';
+        new_assessment_data.status = 'submitted';
+        new_assessment_data.questions_complete = 0;
+
+        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+            .then(function () {
+                $location.path('/assessments');
+                rgiNotifier.notify('Assessment submitted!');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+    };
+
+    $scope.assessmentResubmit = function () {
+        var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
+
+        new_assessment_data.status = 'resubmitted';
+
+        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+            .then(function () {
+                $location.path('/assessments');
+                rgiNotifier.notify('Assessment submitted!');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
     };
 });
