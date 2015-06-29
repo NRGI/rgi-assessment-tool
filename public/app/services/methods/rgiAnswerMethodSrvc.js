@@ -1,5 +1,5 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint newcap: true */
 
 angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc) {
@@ -26,7 +26,7 @@ angular.module('app').factory('rgiAnswerMethodSrvc', function ($q, rgiAnswerSrvc
         },
         updateAnswerSet: function (new_answer_data) {
             var dfd = $q.defer();
-            new_answer_data.forEach(function (el, i) {
+            new_answer_data.forEach(function (el) {
                 el.$update().then(function () {
                     dfd.resolve();
                 }, function (response) {

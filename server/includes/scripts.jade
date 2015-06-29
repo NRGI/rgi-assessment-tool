@@ -10,12 +10,12 @@ script(type="text/javascript", src="/vendor/ng-form-group/index.js")
 script(type="text/javascript", src="/vendor/ng-csv/build/ng-csv.js")
 script(type="text/javascript", src="/vendor/angular-sanitize/angular-sanitize.js")
 script(type="text/javascript", src="/vendor/angular-file-upload/angular-file-upload.js")
-script(type = "text/javascript", src = "/vendor/angular-filter/dist/angular-filter.js")
+script(type="text/javascript", src = "/vendor/angular-filter/dist/angular-filter.js")
 
 //- MAIN APP
 script(type="text/javascript", src="/app/app.js")
 script(type="text/javascript", src="/app/common/rgiNotifier.js")
-script(type="text/javascript", src="/app/common/rgiUtils.js")
+script(type="text/javascript", src="/app/common/rgiFilters.js")
 script(type="text/javascript", src="/app/main/rgiMainCtrl.js")
 
 //- SERVICES
@@ -30,12 +30,12 @@ script(type="text/javascript", src="/app/services/rgiAnswerSrvc.js")
 script(type="text/javascript", src="/app/services/rgiUploadSrvc.js")
 script(type="text/javascript", src="/app/services/rgiDocumentSrvc.js")
 script(type="text/javascript", src="/app/services/rgiCountrySrvc.js")
-script(type="text/javascript", src="/app/services/rgiUserMethodSrvc.js")
-script(type="text/javascript", src="/app/services/rgiQuestionMethodSrvc.js")
-script(type="text/javascript", src="/app/services/rgiAssessmentMethodSrvc.js")
-script(type="text/javascript", src="/app/services/rgiAnswerMethodSrvc.js")
-script(type="text/javascript", src="/app/services/rgiUploadMethodSrvc.js")
-script(type="text/javascript", src="/app/services/rgiDocumentMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiUserMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiQuestionMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiAssessmentMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiAnswerMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiUploadMethodSrvc.js")
+script(type="text/javascript", src="/app/services/methods/rgiDocumentMethodSrvc.js")
 
 //- ACCT CTRLS
 script(type="text/javascript", src="/app/account/rgiNavBarLoginCtrl.js")
@@ -50,6 +50,7 @@ script(type="text/javascript", src="/app/admin/questions/rgiQuestionAdminDetailC
 script(type="text/javascript", src="/app/admin/documents/rgiDocumentAdminCtrl.js")
 script(type="text/javascript", src="/app/admin/documents/rgiDocumentAdminDetailCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminCtrl.js")
+script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiFinalChoiceDialogCtrl.js")
 script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
 

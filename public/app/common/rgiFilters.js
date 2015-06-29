@@ -38,24 +38,3 @@ angular.module('app')
             return num;
         };
     });
-//.filter('zpad', function() {
-//    return function(input, n) {
-//        //return String(input).length;
-//        //return n;
-//        if (input=== undefined) {
-//            input = "";
-//        }
-//        if (String(input).length >= n) {
-//            return input;
-//        } else {
-//            var zeros = 'abc'.repeat(1);
-//            return zeros;
-//        }
-//        //if(input === undefined)
-//        //    input = ""
-//        //if(input.length >= n)
-//        //    return input
-//        //var zeros = "0".repeat(n);
-//        //return (zeros + input).slice(-1 * n)
-//    };
-//});

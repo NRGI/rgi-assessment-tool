@@ -1,1 +1,73 @@
-<div class="container top-padding-med"><div class="well left-padding-lg right-padding-lg"><div class="left-padding-lg right-padding-lg top-padding-med"><img src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg" class="mapsicon"/><legend>{{assessment.country}} {{assessment.year}} {{assessment.version}} assessment</legend><div class="pull-right"><form class="form-inline"><div class="form-group"><input ng-model="searchText" placeholder="Filter" class="form-control"/></div><div class="form-group margin-left-med"><select ng-model="sortOrder" ng-options="item.value as item.text for item in sort_options" class="form-control"></select></div></form></div><div class="pull-left left-padding-lg bottom-padding-lg"><div class="row"><text>Researcher:</text><a href="mailto:{{assessment.researcher.email}}"> {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}</a></div><div class="row"><text>Reviewer:</text><a href="mailto:{{assessment.reviewer.email}}"> {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}</a></div><div class="row"><text>Status: {{assessment.status | capitalize}}</text></div><div class="row"><text>{{assessment.status | capitalize}} by</text><a href="mailto:{{assessment.assigned_by.email}}">{{assessment.assigned_by.firstName}} {{assessment.assigned_by.lastName}}</a><text>on</text><em>{{assessment.assignment.assigned_date | date}}</em></div><div class="row"><text>Last edited by</text><a href="mailto:{{assessment.edited_by.email}}"> {{assessment.edited_by.firstName}}  {{assessment.edited_by.lastName}}</a><text>on</text><span ng-repeat="mod in assessment.modified"><em ng-show="$last">{{mod.modified_date | date}}</em></span></div><div ng-if="assessment.questions_complete===0" class="row"><text ng="ng">Number of questions complete: {{assessment.questions_complete}} (0%)</text></div><div ng-if="assessment.questions_complete!==0" class="row"><text>Number of questions complete: {{assessment.questions_complete}} (</text><text>{{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}}</text><text>% complete)</text></div></div><table class="table table-hover table-striped table-condensed"><thead><tr><th class="col-md-1 text-center">Question number</th><th class="col-md-1">Component</th><th class="col-md-5 text-center">Question</th><th class="col-md-1">Status</th><th class="col-md-1 text-center"></th></tr></thead><tbody><tr ng-repeat="question in assessment.question_list | filter: searchText | orderBy:sortOrder"><td class="col-md-1 text-center">{{question.question_order}}</td><td class="col-md-1">{{question.component_text}}</td><td class="col-md-5">{{question.question_text}}</td><td class="col-md-1">{{question.status | capitalize}}</td><td><a href="/assessments/assessment-view/{{question.answer_ID}}" class="btn center-block btn-default">Go to answer page</a></td></tr></tbody></table></div></div></div>
+<div class="container top-padding-med">
+    <div class="well left-padding-lg right-padding-lg">
+        <div class="left-padding-lg right-padding-lg top-padding-med"><img
+                src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg"
+                class="mapsicon"/>
+            <legend>{{assessment.country}} {{assessment.year}} {{assessment.version}} assessment</legend>
+            <div class="pull-right">
+                <form class="form-inline">
+                    <div class="form-group"><input ng-model="searchText" placeholder="Filter" class="form-control"/>
+                    </div>
+                    <div class="form-group margin-left-med"><select ng-model="sortOrder"
+                                                                    ng-options="item.value as item.text for item in sort_options"
+                                                                    class="form-control"></select></div>
+                </form>
+            </div>
+            <div class="pull-left left-padding-lg bottom-padding-lg">
+                <div class="row">
+                    <text>Researcher:</text>
+                    <a href="mailto:{{assessment.researcher.email}}"> {{assessment.researcher.firstName}}
+                        {{assessment.researcher.lastName}}</a></div>
+                <div class="row">
+                    <text>Reviewer:</text>
+                    <a href="mailto:{{assessment.reviewer.email}}"> {{assessment.reviewer.firstName}}
+                        {{assessment.reviewer.lastName}}</a></div>
+                <div class="row">
+                    <text>Status: {{assessment.status | ucfirst}}</text>
+                </div>
+                <div class="row">
+                    <text>{{assessment.status | ucfirst}} by</text>
+                    <a href="mailto:{{assessment.assigned_by.email}}">{{assessment.assigned_by.firstName}}
+                        {{assessment.assigned_by.lastName}}</a>
+                    <text>on</text>
+                    <em>{{assessment.assignment.assigned_date | date}}</em></div>
+                <div class="row">
+                    <text>Last edited by</text>
+                    <a href="mailto:{{assessment.edited_by.email}}"> {{assessment.edited_by.firstName}}
+                        {{assessment.edited_by.lastName}}</a>
+                    <text>on</text>
+                    <span ng-repeat="mod in assessment.modified"><em ng-show="$last">{{mod.modified_date |
+                        date}}</em></span></div>
+                <div ng-if="assessment.questions_complete===0" class="row">
+                    <text ng="ng">Number of questions complete: {{assessment.questions_complete}} (0%)</text>
+                </div>
+                <div ng-if="assessment.questions_complete!==0" class="row">
+                    <text>Number of questions complete: {{assessment.questions_complete}} (</text>
+                    <text>{{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}}</text>
+                    <text>% complete)</text>
+                </div>
+            </div>
+            <table class="table table-hover table-striped table-condensed">
+                <thead>
+                <tr>
+                    <th class="col-md-1 text-center">Question number</th>
+                    <th class="col-md-1">Component</th>
+                    <th class="col-md-5 text-center">Question</th>
+                    <th class="col-md-1">Status</th>
+                    <th class="col-md-1 text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="question in assessment.question_list | filter: searchText | orderBy:sortOrder">
+                    <td class="col-md-1 text-center">{{question.question_order}}</td>
+                    <td class="col-md-1">{{question.component_text}}</td>
+                    <td class="col-md-5">{{question.question_text}}</td>
+                    <td class="col-md-1">{{question.status | ucfirst}}</td>
+                    <td><a href="/assessments/assessment-view/{{question.answer_ID}}"
+                           class="btn center-block btn-default">Go to answer page</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
