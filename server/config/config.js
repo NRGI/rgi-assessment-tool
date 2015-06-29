@@ -11,7 +11,7 @@ module.exports = {
     development: {
         db: '@candidate.32.mongolayer.com:10582/rgi_dev',
         rootPath: rootPath,
-        port: process.env.PORT || 8080
+        port: process.env.PORT || 80
     },
     production: {
         db: '@candidate.32.mongolayer.com:10582/rgi_production',
