@@ -9,11 +9,12 @@ RUN		npm install -g bower
 RUN		yum install -y git
 
 # Build src
+ADD     package.json /tmp/package.json
+RUN     cd /tmp && npm install
+RUN		cd /src && bower install --allow-root
+RUN     mkdir -p /src && cp -a /tmp/node_modules /src
 COPY	. /src
 
-# Install APP
-RUN		cd /src && npm install
-RUN		cd /src && bower install --allow-root
 
 EXPOSE  80
 

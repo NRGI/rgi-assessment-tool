@@ -28,7 +28,6 @@
     "email-templates": "^1.1.2",
     "express": "^4.10.2",
     "express-session": "^1.9.1",
-    "express-sessions": "^1.0.5",
     "grunt-cli": "^0.1.13",
     "jade": "^1.7.0",
     "karma": "^0.12.32",
