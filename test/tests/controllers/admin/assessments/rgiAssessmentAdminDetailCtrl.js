@@ -68,7 +68,7 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
     });
 
     it('initializes sorting order', function () {
-        $scope.sortOrder.should.be.equal('question_order');
+        $scope.sort_order.should.be.equal('question_order');
     });
 
     it('loads assessment data', function () {
