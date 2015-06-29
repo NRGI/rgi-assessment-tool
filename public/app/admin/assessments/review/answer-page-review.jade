@@ -16,7 +16,17 @@
 					em Not submitted
 				div(ng-if="answer.researcher_score")
 					h5 Researcher score:
-					em(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+					div(ng-if="answer.researcher_score")
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+								type="radio"
+								name="choice.choice_name"
+								value="{{choice.order}}"
+								checked=""
+								ng-model="answer.researcher_score"
+								ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
 					h5 Researcher justification:
 					em {{answer.researcher_justification}}
 					br
@@ -26,7 +36,17 @@
 					em Not submitted
 				div(ng-if="answer.reviewer_score")
 					h5 Researcher score:
-					em(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+					div(ng-if="answer.reviewer_score")
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+								type="radio"
+								name="choice.choice_name"
+								value="{{choice.order}}"
+								checked=""
+								ng-model="answer.reviewer_score"
+								ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
 					h5 Researcher justification:
 					em {{answer.reviewer_justification}}
 					br
