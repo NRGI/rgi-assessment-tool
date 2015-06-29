@@ -49,7 +49,7 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
     $scope.deleteConfirmDialog = function () {
         $scope.value = true;
         ngDialog.open({
-            template: 'partials/dialogs/delete-question-delete-confirmation-dialog',
+            template: 'partials/dialogs/delete-question-confirmation-dialog',
             controller: 'rgiDeleteQuestionDialogCtrl',
             className: 'ngdialog-theme-plain',
             scope: $scope

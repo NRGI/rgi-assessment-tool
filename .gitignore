@@ -23,7 +23,7 @@ Temporary Items
 
 # Logs
 logs
-*.log
+*.logg c
 
 # archives
 *.tar

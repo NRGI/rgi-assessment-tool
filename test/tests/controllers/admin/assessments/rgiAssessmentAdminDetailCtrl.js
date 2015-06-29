@@ -5,7 +5,7 @@ var describe, beforeEach, afterEach, it, inject, expect, sinon;
 describe('rgiAssessmentAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, rgiAnswerSrvc, rgiAssessmentSrvc, rgiUserListSrvc;
+    var $scope, $routeParams, ngDialog, rgiAnswerSrvc, rgiAssessmentSrvc, rgiUserListSrvc;
     var assessment_ID = 'assessment_ID', $routeParamsAssessment_ID;
     var answerQueryStub, answerQuerySpy;
     var userListGetStub, userListGetSpy;
@@ -24,8 +24,9 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
     };
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$routeParams_, _rgiAnswerSrvc_, _rgiAssessmentSrvc_, _rgiUserListSrvc_) {
+        function ($rootScope, $controller, _$routeParams_, _ngDialog_, _rgiAnswerSrvc_, _rgiAssessmentSrvc_, _rgiUserListSrvc_) {
             $routeParams = _$routeParams_;
+            ngDialog = _ngDialog_;
             rgiAnswerSrvc = _rgiAnswerSrvc_;
             rgiAssessmentSrvc = _rgiAssessmentSrvc_;
             rgiUserListSrvc = _rgiUserListSrvc_;
@@ -85,6 +86,24 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
         _.isEqual($scope.assessment.assignment, {assigned_by: 'assignee'}).should.be.equal(true);
         _.isEqual($scope.assessment.modified, [{modified_by: 'modifier'}]).should.be.equal(true);
         assessmentGetSpy.withArgs({assessment_ID: assessment_ID}).called.should.be.equal(true);
+    });
+
+    describe('#moveAssessmentDialog', function() {
+        it('calls dialog service with defined parameters', function() {
+            var ngDialogMock = sinon.mock(ngDialog);
+            ngDialogMock.expects('open').withArgs({
+                template: 'partials/dialogs/move-assessment-dialog',
+                controller: 'rgiMoveAssessmentDialogCtrl',
+                className: 'ngdialog-theme-plain',
+                scope: $scope
+            });
+
+            $scope.moveAssessmentDialog();
+
+            $scope.value.should.be.equal(true);
+            ngDialogMock.verify();
+            ngDialogMock.restore();
+        });
     });
 
     afterEach(function () {
