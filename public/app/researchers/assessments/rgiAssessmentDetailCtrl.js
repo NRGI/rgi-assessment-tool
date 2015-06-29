@@ -17,6 +17,12 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
         $scope.assessment.reviewer = rgiUserListSrvc.get({_id: assessment_data.reviewer_ID});
         $scope.assessment.researcher = rgiUserListSrvc.get({_id: assessment_data.researcher_ID});
         $scope.assessment.edited_by = rgiUserListSrvc.get({_id: assessment_data.modified[assessment_data.modified.length - 1].modified_by});
+        //$scope.answers = [];
+        //$scope.answers = rgiAnswerSrvc.query({assessment_ID: assessment_data.assessment_ID}, function (answers) {
+        //    answers.forEach(function (el) {
+        //        $scope.answers.push(el);
+        //    });
+        //});
         $scope.answers = rgiAnswerSrvc.query({assessment_ID: assessment_data.assessment_ID});
     });
 

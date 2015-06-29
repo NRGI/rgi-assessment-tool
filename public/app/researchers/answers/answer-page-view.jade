@@ -1,7 +1,7 @@
 .container.top-padding-med
 	.well.left-padding-lg
 		div.left-padding-lg.right-padding-lg.top-padding-med
-			legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+			legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment view
 
 				a.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
 				href="assessments/assessment-view/{{assessment.assessment_ID}}-{{assessment.question_length | zpad:3}}"
@@ -40,27 +40,44 @@
 				div.bottom-padding-med
 					h5 Researcher score:
 					div(ng-if="!answer.researcher_score")
-						em Not submitted
+						em.left-padding-lg Not submitted
 					div(ng-if="answer.researcher_score")
-						em(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+								type="radio"
+								name="choice.choice_name"
+								value="{{choice.order}}"
+								checked=""
+								ng-model="answer.researcher_score"
+								ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
 						h5 Researcher justification:
-						em {{answer.researcher_justification}}
+						em.left-padding-lg {{answer.researcher_justification}}
 				div.bottom-padding-med
 					h5 Reviewer score:
 					div(ng-if="!answer.reviewer_score")
-						em Not submitted
+						em.left-padding-lg Not submitted
 					div(ng-if="answer.reviewer_score")
-						em(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+						ng-form(name="answer_choice_form")
+							.form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+								input(
+								type="radio"
+								name="choice.choice_name"
+								value="{{choice.order}}"
+								checked=""
+								ng-model="answer.reviewer_score"
+								ng-disabled="assessment.edit_control!==current_user._id")
+								text.left-padding-med {{choice.criteria}}
 						h5 Reviewer justification:
-						em {{answer.reviewer_justification}}
+						em.left-padding-lg {{answer.reviewer_justification}}
 
 
 		.row.left-padding-lg.bottom-padding-lg
-			.col-md-pull-2
+			.col-md-pull-2.left-padding-lg
 				a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
 				| &nbsp;
 				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
-		
 		.row.left-padding-lg.right-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset

@@ -6,6 +6,7 @@
 					h2 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 						.text-success.pull-right(ng-if="answer.status==='approved'")  (approved)
 						.text-danger.pull-right(ng-if="answer.status==='flagged'")  (flagged)
+				.row {{flagged_answers}}
 			//- text yes
 			//- legend.h2(ng-if="answer.status==='approved'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review
 			//- legend.h2(ng-if="answer.status!=='flagged'") {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment review

@@ -24,6 +24,7 @@
                 //- 	) Approve
 
             .pull-left.left-padding-lg.bottom-padding-lg
+                .row {{2|zpad:2}}
                 .row
                     text Researcher:
                     a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}
@@ -67,6 +68,7 @@
                             .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                             .text(ng-if="answer.status!=='flagged' && answer.status!=='approved' && answer.status!=='resubmitted'")  {{answer.status | ucfirst}}
                         td
-                            a.btn.center-block.btn-primary(ng-if="assessment.status==='under_review'"
+                            a.btn.center-block.btn-primary(
+                            ng-if="assessment.status==='under_review' || assessment.status==='resubmitted'"
                             href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}") Review
                             text.text-success(ng-if="answer.status==='final'") Final score: {{answer.final_score}}

@@ -132,8 +132,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/researchers/answers/answer-page-edit',
             controller:  'rgiAnswerCtrl'
         })
-        .when('/assessment-review/answer-page-review-edit/:answer_ID', {
-            templateUrl: '/partials/researchers/answers/answer-page-review-edit',
+        .when('/assessment-review/answer-review/:answer_ID', {
+            templateUrl: '/partials/researchers/answers/answer-page-review',
             controller:  'rgiAnswerCtrl'
         });
 
