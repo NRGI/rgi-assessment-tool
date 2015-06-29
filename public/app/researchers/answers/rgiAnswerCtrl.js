@@ -239,7 +239,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         $scope.value = true;
         ngDialog.open({
             template: 'partials/dialogs/flag-question-dialog',
-            controller: 'rgiFlagQuestionDialogCtrl',
+            controller: 'rgiFlagAnswerDialogCtrl',
             className: 'ngdialog-theme-plain',
             scope: $scope
         });
@@ -254,6 +254,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         if (new_answer_data.status === 'flagged') {
             new_answer_data.status = 'resubmitted';
             new_assessment_data.questions_resubmitted += 1;
+            new_assessment_data.questions_complete += 1;
         }
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
@@ -268,19 +269,24 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
     $scope.answerApprove = function () {
         var new_answer_data, new_assessment_data;
-
-        if (new_answer_data.status === 'flagged') {
-            new_answer_data.status = 'approved';
-            new_assessment_data.questions_flagged -= 1;
-            new_assessment_data.questions_complete += 1;
-        } else if (new_answer_data.status !== 'approved') {
-            new_answer_data.status = 'approved';
-            new_assessment_data.questions_complete += 1;
-        }
-
         new_answer_data = $scope.answer;
         new_assessment_data = $scope.assessment;
 
+        if (new_assessment_data.status === 'submitted') {
+            if (new_answer_data.status === 'flagged') {
+                new_answer_data.status = 'approved';
+                new_assessment_data.questions_flagged -= 1;
+                new_assessment_data.questions_complete += 1;
+            } else if (new_answer_data.status !== 'approved') {
+                new_answer_data.status = 'approved';
+                new_assessment_data.questions_complete += 1;
+            }
+        } else if (new_assessment_data.status === 'resubmitted') {
+            if (new_answer_data.status === 'flagged') {
+                new_answer_data.status = 'approved';
+                new_assessment_data.questions_flagged -= 1;
+            }
+        }
         if (new_answer_data.status === 'submitted') {
             new_answer_data.status = 'approved';
             new_assessment_data.questions_complete += 1;
@@ -292,7 +298,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
-                if (new_answer_data.question_order !== new_assessment_data.question_length || new_assessment_data.status === 'resubmitted') {
+                if (new_answer_data.question_order !== new_assessment_data.question_length && new_assessment_data.status !== 'resubmitted') {
                     $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
                     $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
