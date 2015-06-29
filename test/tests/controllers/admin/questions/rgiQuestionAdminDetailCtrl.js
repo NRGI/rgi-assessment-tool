@@ -5,7 +5,7 @@ var describe, beforeEach, afterEach, it, inject, expect, sinon;
 describe('rgiQuestionAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier;
+    var $scope, $location, $routeParams, ngDialog, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier;
     var questionGetStub, questionGetSpy;
     var $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID';
     var identityCurrentUserBackUp, identityCurrentUser = 'CURRENT USER';
@@ -19,9 +19,10 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     };
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _$routeParams_, _rgiIdentitySrvc_, _rgiQuestionSrvc_, _rgiQuestionMethodSrvc_, _rgiNotifier_) {
+        function ($rootScope, $controller, _$location_, _$routeParams_, _ngDialog_, _rgiIdentitySrvc_, _rgiQuestionSrvc_, _rgiQuestionMethodSrvc_, _rgiNotifier_) {
             $location = _$location_;
             $routeParams = _$routeParams_;
+            ngDialog = _ngDialog_;
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             rgiQuestionMethodSrvc = _rgiQuestionMethodSrvc_;
@@ -145,7 +146,25 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             notifierMock.restore();
         });
     });
-    //TODO  FIX TO ACCOMODATE DIALOG
+
+    describe('#deleteConfirmDialog', function() {
+        it('calls dialog service with defined parameters', function() {
+            var ngDialogMock = sinon.mock(ngDialog);
+            ngDialogMock.expects('open').withArgs({
+                template: 'partials/dialogs/delete-question-confirmation-dialog',
+                controller: 'rgiDeleteQuestionDialogCtrl',
+                className: 'ngdialog-theme-plain',
+                scope: $scope
+            });
+
+            $scope.deleteConfirmDialog();
+
+            $scope.value.should.be.equal(true);
+            ngDialogMock.verify();
+            ngDialogMock.restore();
+        });
+    });
+    //TODO move to dialog test
     //describe('#questionDelete', function() {
     //    var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy, notifierMock;
     //
