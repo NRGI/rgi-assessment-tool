@@ -1,5 +1,6 @@
 'use strict';
-var angular;
+//var angular;
+
 
 angular.module('app').factory('rgiUploadMethodSrvc', function ($q, rgiUploadSrvc) {
     return {

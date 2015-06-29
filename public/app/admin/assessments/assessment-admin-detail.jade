@@ -18,9 +18,9 @@
 					text Reviewer:
 					a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}
 				.row
-					text Status: {{assessment.status | capitalize}}
+					text Status: {{assessment.status | ucfirst}}
 				.row
-					text {{assessment.status | capitalize}} by
+					text {{assessment.status | ucfirst}} by
 					a(href="mailto:{{assessment.assigned_by.email}}") {{assessment.assigned_by.firstName}} {{assessment.assigned_by.lastName}}
 					text on
 					em {{assessment.assignment.assigned_date | date}}
@@ -50,6 +50,6 @@
 						td.col-md-1.text-center {{question.question_order}}
 						td.col-md-1 {{question.component_text}}
 						td.col-md-5 {{question.question_text}}
-						td.col-md-1 {{question.status | capitalize}}
+						td.col-md-1 {{question.status | ucfirst}}
 						td
 							a.btn.center-block.btn-default(href="/assessments/assessment-view/{{question.answer_ID}}") Go to answer page

@@ -1,8 +1,8 @@
 'use strict';
-var angular;
+//var angular;
 /*jslint newcap: true */
 
-angular.module('app').factory('rgiDocumentMethodSrvc', function ($q, rgiDocumentSrvc) {
+angular.module('app').factory('rgiDocumentMethodSrvc', function ($q) {
     return {
         // insertAnswerSet: function (new_answer_set) {
         //     var dfd = $q.defer(),

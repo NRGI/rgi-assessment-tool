@@ -5,7 +5,6 @@ var crypto                 = require('crypto'),
     fs                     = require('fs'),
     request                = require('request'),
     s3                     = require('s3'),
-    MendeleyToken          = require('mongoose').model('MendeleyToken'),
     Document               = require('mongoose').model('Documents'),
     Answer                 = require('mongoose').model('Answer'),
     client                 = s3.createClient({
@@ -21,6 +20,7 @@ var crypto                 = require('crypto'),
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
                                 }
                             });
+//MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
 exports.fileCheck = function (req, res, next) {
     // get temp path of file upload
@@ -54,7 +54,7 @@ exports.fileCheck = function (req, res, next) {
                         Key: String(file_hash) + '.pdf'
                         // other options supported by putObject, except Body and ContentLength. 
                         // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
-                      },
+                      }
                     };
 
                     var uploader = client.uploadFile(params);

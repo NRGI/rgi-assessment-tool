@@ -1,10 +1,8 @@
 'use strict';
 
 var auth = require('./auth'),
-    authMendeley = require('./authMendeley'),
     bodyParser = require('body-parser'),
     users = require('../controllers/users'),
-    mendeley = require('../controllers/mendeley.js'),
     answers = require('../controllers/answers'),
     questions = require('../controllers/questions'),
     assessments = require('../controllers/assessments'),
@@ -12,6 +10,8 @@ var auth = require('./auth'),
     countries = require('../controllers/countries'),
     multipart = require('connect-multiparty'),
     multipartMiddleware = multipart();
+//authMendeley = require('./authMendeley'),
+//mendeley = require('../controllers/mendeley.js'),
 
 module.exports = function (app) {
 
@@ -108,8 +108,9 @@ module.exports = function (app) {
     });
 
 
-    app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken,
-        authMendeley.getToken, mendeley.updateToken, auth.passUser);
+    app.post('/login', auth.authenticate, auth.passUser);
+    //app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken,
+    //    authMendeley.getToken, mendeley.updateToken, auth.passUser);
 
     app.post('/logout', function (req, res) {
         req.logout();
