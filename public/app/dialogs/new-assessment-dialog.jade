@@ -17,7 +17,7 @@ div.top-padding-med
 							.form-group.col-md-5
 								select.form-group.form-control.right-padding-med(name="version" ng-model="new_assessment.version" required)
 									option(value="" selected disabled) Select version
-									option(ng-repeat="i in ['pilot','main']" value="{{i}}") {{i | capitalize}}
+									option(ng-repeat="i in ['pilot','main']" value="{{i}}") {{i | ucfirst}}
 
 						.row(ng-repeat="country in new_assessment.assessment_countries")
 							label.col-md-4  country {{$index+1}}

@@ -54,6 +54,7 @@ build/Release
 config.config
 
 # Elastic Beanstalk Files
-#.elasticbeanstalk/*
-#!.elasticbeanstalk/*.cfg.yml
-#!.elasticbeanstalk/*.global.yml
+.elasticbeanstalk/*
+.elasticbeanstalk/config.yml
+.elasticbeanstalk/*.cfg.yml
+.elasticbeanstalk/*.global.yml
