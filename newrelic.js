@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['RGI Assessment Tool'],
+  app_name: ['RGI Assessment Tool Dev'],
   /**
    * Your New Relic license key.
    */
