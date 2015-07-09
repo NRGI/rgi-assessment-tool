@@ -14,8 +14,8 @@ var crypto                 = require('crypto'),
                                 multipartUploadThreshold: 20971520, // this is the default (20 MB) 
                                 multipartUploadSize: 15728640, // this is the default (15 MB) 
                                 s3Options: {
-                                    accessKeyId: process.env.RGI_AWS_ACCESS_KEY,
-                                    secretAccessKey: process.env.RGI_AWS_SECRET_KEY
+                                    accessKeyId: process.env.DOC_AWS_ACCESS_KEY,
+                                    secretAccessKey: process.env.DOC_AWS_SECRET_KEY
                                     // any other options are passed to new AWS.S3() 
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
                                 }
@@ -50,7 +50,7 @@ exports.fileCheck = function (req, res, next) {
                     var params = {
                       localFile: file_path,
                       s3Params: {
-                        Bucket: 'rgi-upload-test',
+                        Bucket: process.env.DOC_BUCKET,
                         Key: String(file_hash) + '.pdf'
                         // other options supported by putObject, except Body and ContentLength. 
                         // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
