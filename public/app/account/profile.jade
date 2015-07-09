@@ -4,7 +4,7 @@
 			form.form-horizontal(name='profileForm')
 				fieldset.left-padding-lg.right-padding-lg
 					//- Profile page
-					legend.h3 {{fullName}}'s {{role | capitalize}} Profile
+					legend.h3 {{fullName}}'s {{role | ucfirst}} Profile
 					.row.right-padding-lg.top-padding-med
 						.form-group
 							label.col-md-2.control-label(form="first_name") First Name
