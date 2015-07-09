@@ -2,7 +2,7 @@ branch-defaults:
   master:
     environment: rgi-assessment-tool-pr
   staging:
-    environment: staging-env
+    environment: null
 global:
   application_name: rgi-assessment-tool
   default_ec2_keyname: rgi-tool
