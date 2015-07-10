@@ -5,6 +5,7 @@ require('newrelic');
 var express         = require('express');
 
 var env             = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+// var env             = 'development';
 
 var app             = express();
 
@@ -30,4 +31,5 @@ require('./server/config/passport')();
 require('./server/config/routes')(app);
 
 app.listen(config.port);
+// app.listen(3030);
 console.log('Listening on port ' + config.port + '...');
