@@ -19,7 +19,8 @@ var crypto                 = require('crypto'),
                                     // any other options are passed to new AWS.S3() 
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
                                 }
-                            });
+                            }),
+    upload_bucket          = process.env.DOC_BUCKET;
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
 exports.fileCheck = function (req, res, next) {
@@ -50,7 +51,7 @@ exports.fileCheck = function (req, res, next) {
                     var params = {
                       localFile: file_path,
                       s3Params: {
-                        Bucket: process.env.DOC_BUCKET,
+                        Bucket: upload_bucket,
                         Key: String(file_hash) + '.pdf'
                         // other options supported by putObject, except Body and ContentLength. 
                         // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
