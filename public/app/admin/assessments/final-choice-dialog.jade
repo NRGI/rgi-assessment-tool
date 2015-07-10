@@ -38,7 +38,7 @@ div.top-padding-med
 									text.left-padding-med {{choice.criteria}}
 						//- agree
 						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
-							em {{final_choice.role | capitalize}}: {{final_choice.value}} - 
+							em {{final_choice.role | ucfirst}}: {{final_choice.value}} - 
 							em(ng-init="i = final_choice.value") {{question_choices[i-1].criteria}}
 						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
 							ng-form(name="new_comment_form")
