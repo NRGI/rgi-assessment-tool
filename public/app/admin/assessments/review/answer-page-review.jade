@@ -55,6 +55,8 @@
 
 			//- View only buttons
 			.row.left-padding-lg.bottom-padding-lg
+				button.btn.btn-primary(ng-click="answerSave()") Save answer
+				| &nbsp;
 				button.btn.btn-success(ng-click="answerApprove()" ng-disabled="flagCheck(answer.flags)") Approve answer
 				| &nbsp;
 				button.btn.btn-warning(ng-click="answerFlag(current_user)") Flag answer
@@ -71,7 +73,6 @@
 
 					div(id="prev_flags_div" ng-if="answer.flags.length!==0")
 						.row.left-padding-lg.bottom-padding-med(ng-repeat="flag in answer.flags")
-							.row {{flag}}
 							.row
 								b {{flag.author_name}} (
 								b {{flag.role}}
