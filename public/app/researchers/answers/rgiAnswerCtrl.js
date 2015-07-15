@@ -238,7 +238,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     $scope.answerFlag = function () {
         $scope.value = true;
         ngDialog.open({
-            template: 'partials/dialogs/flag-question-dialog',
+            template: 'partials/dialogs/flag-answer-dialog',
             controller: 'rgiFlagAnswerDialogCtrl',
             className: 'ngdialog-theme-plain',
             scope: $scope
