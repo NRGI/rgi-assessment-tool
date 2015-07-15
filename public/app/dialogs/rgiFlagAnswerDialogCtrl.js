@@ -9,13 +9,14 @@ angular.module('app').controller('rgiFlagAnswerDialogCtrl', function ($scope, $r
             current_user = $scope.$parent.identity.currentUser,
             new_assessment_data = $scope.$parent.assessment,
             new_flag_data = {
-                content: $scope.$parent.answer.new_flag,
+                content: $scope.flag_content,
                 author_name: current_user.firstName + ' ' + current_user.lastName,
                 author: current_user._id,
                 role: current_user.role,
                 date: new Date().toISOString(),
                 addressed: false
             };
+        console.log(new_flag_data);
 
         new_answer_data.flags.push(new_flag_data);
 
