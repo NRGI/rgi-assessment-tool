@@ -51,6 +51,8 @@ node_modules/*
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+newrelic_agent.log
+
 config.config
 
 # Elastic Beanstalk Files
