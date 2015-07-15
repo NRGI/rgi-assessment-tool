@@ -374,3 +374,8 @@
 {"v":0,"level":50,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":7985,"time":"2015-07-15T14:50:44.327Z","msg":"New Relic for Node.js halted startup due to an error:","class":"RuntimeError","statusCode":200}
 {"v":0,"level":30,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":17792,"time":"2015-07-15T17:08:23.728Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":40,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":17792,"time":"2015-07-15T17:08:24.030Z","msg":"Unrecognized version NaN of Express detected; not instrumenting","component":"express"}
+{"v":0,"level":40,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":17792,"time":"2015-07-15T17:09:27.390Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":17792,"time":"2015-07-15T17:12:28.860Z","msg":"New Relic for Node.js halted startup due to an error:","class":"RuntimeError","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":18049,"time":"2015-07-15T17:12:30.311Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":18049,"time":"2015-07-15T17:12:30.558Z","msg":"Unrecognized version NaN of Express detected; not instrumenting","component":"express"}
+{"v":0,"level":40,"name":"newrelic","hostname":"Chriss-MacBook-Pro.local","pid":18049,"time":"2015-07-15T17:13:40.273Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
