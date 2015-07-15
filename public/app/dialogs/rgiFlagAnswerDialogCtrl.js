@@ -2,7 +2,7 @@
 /*jslint unparam: true nomen: true*/
 //var angular;
 
-angular.module('app').controller('rgiFlagQuestionDialogCtrl', function ($scope, $route, $location, ngDialog, rgiNotifier, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc) {
+angular.module('app').controller('rgiFlagAnswerDialogCtrl', function ($scope, $route, $location, ngDialog, rgiNotifier, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc) {
 
     $scope.flagAnswer = function () {
         var new_answer_data = $scope.$parent.answer,

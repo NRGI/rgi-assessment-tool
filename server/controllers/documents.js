@@ -71,7 +71,7 @@ exports.fileCheck = function (req, res, next) {
                     });
 
                     new_document.file_hash = file_hash;
-                    new_document.s3_url = 'https://s3.amazonaws.com/rgi-upload-test/' + file_hash + '.pdf';
+                    new_document.s3_url = 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.pdf';
                     new_document.modified = [{
                         modifiedBy: req.user._id,
                         modifiedDate: timestamp

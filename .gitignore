@@ -53,6 +53,9 @@ build/Release
 
 config.config
 
+newrelic_agent.log
+
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 .elasticbeanstalk/config.yml
