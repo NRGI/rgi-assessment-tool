@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: rgi-assessment-tool-pr
+    environment: rgi-prod-env
   staging:
     environment: null
 global:
