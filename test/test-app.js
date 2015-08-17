@@ -1,1 +1,1 @@
-angular.module('app', ['ngDialog', 'ngResource', 'ngRoute']);
+angular.module('app', ['angularFileUpload', 'ngDialog', 'ngResource', 'ngRoute']);
