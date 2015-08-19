@@ -1,15 +1,9 @@
 'use strict';
 var angular;
 
-angular.module('app').controller('rgiContactCtrl', function ($scope) {
+angular.module('app').controller('rgiContactCtrl', function ($scope, $location, rgiNotifier, rgiContactMethodSrvc) {
 
-    $scope.request = {
-        first_name: '',
-        last_name: '',
-        email: '',
-        issue: {},
-        issue_description: ''
-    }
+    $scope.request = {tool: 'rgi'}
 
     $scope.issue_selection = [
         {name: 'Trouble logging in.', value: 'login'},
@@ -50,16 +44,17 @@ angular.module('app').controller('rgiContactCtrl', function ($scope) {
     ];
 
     $scope.sendRequest = function() {
-        console.log($scope.request);
+        var contactInfo = $scope.request;
+
+        rgiContactMethodSrvc.contact(contactInfo).then(function () {
+            rgiNotifier.notify('Request sent.');
+            //$location.path('/');
+        }, function (reason) {
+            rgiNotifier.error(reason);
+        });
     };
 
     $scope.clearRequest = function () {
-        $scope.request = {
-            first_name: '',
-            last_name: '',
-            email: '',
-            issue: {},
-            issue_description: ''
-        }
+        $scope.request = {tool: 'rgi'}
     };
 });
