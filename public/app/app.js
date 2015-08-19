@@ -28,6 +28,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/main/main',
             controller: 'rgiMainCtrl'
         })
+        .when('/contact', {
+            templateUrl: '/partials/main/contact',
+            controller: 'rgiContactCtrl'
+        })
         // User Account Routes
         .when('/profile', {
             templateUrl: '/partials/account/profile',
