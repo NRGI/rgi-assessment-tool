@@ -57,7 +57,7 @@
                            select.form-group.form-control.pull-left(ng-model="request.os")
                                option(value="" selected disabled)
                                option(ng-repeat="os in os_selection" value="{{os.value}}") {{os.name}}
-                           input.form-control(
+                           input.form-group.form-control(
                            name="os_text"
                            type="text"
                            ng-model="request.os_text"
@@ -69,7 +69,7 @@
                            select.form-group.form-control.pull-left(ng-model="request.browser")
                                option(value="" selected disabled)
                                option(ng-repeat="browser in browser_selection" value="{{browser.value}}") {{browser.name}}
-                           input.form-control(
+                           input.form-group.form-control(
                            name="browser_text"
                            type="text"
                            ng-model="request.browser_text"

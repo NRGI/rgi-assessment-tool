@@ -8,6 +8,7 @@ var auth = require('./auth'),
     assessments = require('../controllers/assessments'),
     documents = require('../controllers/documents'),
     countries = require('../controllers/countries'),
+    contact = require('../utilities/contact'),
     multipart = require('connect-multiparty'),
     multipartMiddleware = multipart();
 //authMendeley = require('./authMendeley'),
@@ -103,9 +104,9 @@ module.exports = function (app) {
     // GET COUNTRY
     app.get('/api/countries', countries.getCountries);
     app.get('/api/countries/:country_ID', countries.getCountriesByID);
-    app.get('/partials/*', function (req, res) {
-        res.render('../../public/app/' + req.params[0]);
-    });
+
+    // Send contact
+    app.post('/contact', contact.tech_send);
 
 
     app.post('/login', auth.authenticate, auth.passUser);
