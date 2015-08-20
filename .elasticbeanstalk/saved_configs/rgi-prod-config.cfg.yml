@@ -1,0 +1,39 @@
+EnvironmentConfigurationMetadata:
+  Description: Configuration created from the EB CLI using "eb config save".
+  DateModified: '1436537360000'
+  DateCreated: '1436537360000'
+AWSConfigurationTemplateVersion: 1.1.0.0
+EnvironmentTier:
+  Name: WebServer
+  Type: Standard
+SolutionStack: 64bit Amazon Linux 2014.09 v1.2.1 running Docker 1.5.0
+OptionSettings:
+  aws:elb:loadbalancer:
+    CrossZone: true
+  aws:elasticbeanstalk:command:
+    BatchSize: '30'
+    BatchSizeType: Percentage
+  aws:autoscaling:launchconfiguration:
+    IamInstanceProfile: aws-elasticbeanstalk-ec2-role
+    EC2KeyName: rgi-tool
+  aws:elb:policies:
+    ConnectionDrainingEnabled: true
+  aws:autoscaling:updatepolicy:rollingupdate:
+    RollingUpdateType: Health
+    RollingUpdateEnabled: true
+  aws:elasticbeanstalk:application:environment:
+    DOC_AWS_ACCESS_KEY: AKIAJCWCQOFRXZYSRWJA
+    DOC_AWS_SECRET_KEY: 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
+    NEWRELIC_APP_NAME: RGI Assessment Tool
+    MENDELEY_CLIENTCRED: WHqPESIwLcyTFMtd
+    RGI_AWS_ACCESS_KEY: AKIAJCWCQOFRXZYSRWJA
+    DOC_BUCKET: rgi-upload-test
+    RGI_AWS_SECRET_KEY: 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
+    NODE_ENV: pilot
+    MANDRILL_APIKEY: PqvYx6lRlE5LqxGRKF20Og
+    NEWRELIC_KEY: 69a422448cd1ac990ca9c367a0e486853a2afa61
+    USER_PROD_KEY: noVISEmpONwe
+    USER_PROD_ID: rgi_pilot_db_access
+    RGI_NEWRELIC_KEY: 69a422448cd1ac990ca9c367a0e486853a2afa61
+  aws:elb:healthcheck:
+    Interval: '30'
