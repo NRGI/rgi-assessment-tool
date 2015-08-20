@@ -21,9 +21,6 @@
                             th.col-md-1 Researcher
                             th.col-md-1 Reviewer
                             th.col-md-1 Started
-                            //th.col-md-1 Submitted
-                            //th.col-md-1 Reviewed
-                            //th.col-md-1 Approval
                             th.col-md-1 Last Edited
                             th.col-md-1 Status
                             th.col-md-1.text-center Questions Complete
@@ -31,36 +28,33 @@
                             th.col-md-1
                     tbody
                         tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+                            //COUNTRY
                             td.col-md-1
                                 text(ng-if="assessment.status=='assigned'") {{assessment.country}}
                                 a(ng-if="assessment.status!='assigned'"
                                 href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+                            //VERSION
                             td.col-md-1
                                 text {{assessment.year}} {{assessment.version}}
+                            //RESEARCHER
                             td.col-md-2
                                 span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted'")
                                 a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+                            //REVIEWER
                             td.col-md-2
                                 span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted'")
                                 a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+                            //START DATE
                             td.col-md-1
                                 text(ng-if="!assessment.start_date") No
                                 text(ng-if="assessment.start_date") {{assessment.start_date.started_date | date}}
-                            //td.col-md-1
-                            //    text(ng-if="!assessment.submit_date") No
-                            //    text(ng-if="assessment.submit_date") {{assessment.submit_date.submitted_date | date}}
-                            //td.col-md-1
-                            //    text(ng-if="!assessment.review_date") No
-                            //    text(ng-if="assessment.review_date") {{assessment.review_date.reviewed_date | date}}
-                            //td.col-md-1
-                            //    text(ng-if="!assessment.approval_date") No
-                            //    text(ng-if="assessment.approval_date") {{assessment.approval_date.approved_date | date}}
-
+                            //LAST EDIT DATE
                             td.col-md-2(ng-if="assessment.edited_by")
                                 a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
                                 text -
                                 span(ng-repeat="mod in assessment.modified")
                                     em(ng-show="$last") {{mod.modified_date | date}}
+                            //STATUS
                             td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
                             td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
                             td.text-center.col-md-1
