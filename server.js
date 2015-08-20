@@ -1,6 +1,9 @@
 'use strict';
 
-require('newrelic');
+if (env === 'production' || env === 'pilot') {
+    require('newrelic');
+ }
+
 
 var express         = require('express');
 
