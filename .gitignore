@@ -62,5 +62,6 @@ newrelic_agent.log
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 .elasticbeanstalk/config.yml
+.elasticbeanstalk/saved_configs
 .elasticbeanstalk/*.cfg.yml
 .elasticbeanstalk/*.global.yml
