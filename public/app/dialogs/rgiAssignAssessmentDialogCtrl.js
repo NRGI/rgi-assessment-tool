@@ -33,21 +33,19 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
             new_assessment_data = $scope.assessment,
             new_answer_set = [],
             current_user = rgiIdentitySrvc.currentUser;
-        new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
-        // update assessment
+        // UPDATE ASSESSMENT AND ASSIGN
         new_assessment_data.status = 'assigned';
-        new_assessment_data.researcher_ID = $scope.researcherSelect._id;
-        if ($scope.reviewerSelect !== undefined) {
-            new_assessment_data.reviewer_ID = $scope.reviewerSelect._id;
+        new_assessment_data.researcher_ID = new_researcher_data._id;
+        new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
+        //if reviewer is selected
+        if (new_reviewer_data) {
+            new_assessment_data.reviewer_ID = new_reviewer_data._id;
             new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
-        } else {
-            new_assessment_data.reviewer_ID = current_user._id;
         }
 
-        new_assessment_data.edit_control = $scope.researcherSelect._id;
-
-        // create new answer set
+        //TODO HANDLE NEW QUESTION TYPES
+        // CREATE NEW ANSWER SET
         $scope.questions.forEach(function (el, i) {
             new_answer_set.push({});
 
@@ -71,12 +69,8 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 new_answer_set[i].reviewer_ID = current_user._id;
             }
         });
-        //console.log(new_reviewer_data);
-        //console.log(new_assessment_data);
-        //console.log(new_answer_set);
-        //console.log(current_user);
-        //
-        if (new_reviewer_data !== undefined) {
+        //TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
+        if (new_reviewer_data) {
             rgiUserMethodSrvc.updateUser(new_researcher_data)
                 .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
                 .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
@@ -88,7 +82,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
-        } else if (new_reviewer_data === undefined) {
+        } else if (!new_reviewer_data) {
             rgiUserMethodSrvc.updateUser(new_researcher_data)
                 .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                 .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
@@ -102,56 +96,3 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
         }
     };
 });
-
-
-
-
-    //mgaUserSrvc.query({}, function (data) {
-    //    $scope.assessment = mgaAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_ID});
-    //    $scope.users = [];
-    //    data.forEach(function (el) {
-    //        var seen = false;
-    //        if (el.role !== 'supervisor') {
-    //            el.assessments.forEach(function (element) {
-    //                if (element.assessment_ID === $scope.$parent.assessment_ID) {
-    //                    seen = true;
-    //                }
-    //            });
-    //            if(!seen) {$scope.users.push(el)}
-    //        }
-    //    });
-    //});
-    //
-    //$scope.closeDialog = function () {
-    //    ngDialog.close();
-    //};
-    //
-    //$scope.assessmentAssign = function () {
-    //    var new_assessment_data, new_user_data;
-    //
-    //    mgaUserSrvc.get({_id: $scope.new_assignment}, function (data) {
-    //        new_assessment_data = $scope.assessment;
-    //        new_user_data = data;
-    //
-    //        new_assessment_data.users.push($scope.new_assignment);
-    //        new_user_data.assessments.push({
-    //            _id: $scope.assessment._id,
-    //            assessment_ID: $scope.assessment.assessment_ID,
-    //            country: $scope.assessment.country,
-    //            year: $scope.assessment.year
-    //        });
-    //
-    //        mgaUserMethodSrvc.updateUser(new_user_data)
-    //            .then(mgaAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-    //            .then(function () {
-    //                mgaNotifier.notify('Assessment assigned!');
-    //                new_assessment_data = undefined;
-    //                new_user_data = undefined;
-    //                $scope.closeThisDialog();
-    //                $route.reload();
-    //            }, function (reason) {
-    //                mgaNotifier.error(reason);
-    //            });
-//        });
-//    };
-//});
