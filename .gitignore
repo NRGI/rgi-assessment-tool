@@ -58,6 +58,7 @@ config.config
 
 newrelic_agent.log
 
+travis.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
