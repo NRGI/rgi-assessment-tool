@@ -79,6 +79,9 @@ exports.createAnswers = function (req, res, next) {
                     new_answers[j].question_text = questions[i].question_text;
                     Answer.create(new_answers[j], function (err, answer) {
                         if (err) {
+                            if (err.toString().indexOf('E11000') > -1) {
+                                err = new Error('Duplicate answers');
+                            }
                             res.status(400);
                             return res.send({reason: err.toString()});
                         }
