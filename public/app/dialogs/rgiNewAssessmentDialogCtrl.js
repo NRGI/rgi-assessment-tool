@@ -3,8 +3,22 @@
 /*jslint unparam: true nomen: true*/
 
 angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope, $route, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiCountrySrvc) {
+    var countries = rgiCountrySrvc.query();
+    //TODO
+    //rgiCountrySrvc.query({}, function (countries) {
+    //    var country_values = {},
+    //        country_selector = [];
+    //
+    //    countries.forEach(function (el) {
+    //        var add_obj = {value: el.iso2, name: el.country};
+    //        country_values[el.iso2] = el;
+    //        country_values[el.iso2].index = country_selector.length;
+    //        country_selector.push(add_obj);
+    //    });
+    //    $scope.country_values = country_values;
+    //    $scope.country_selector = country_selector;
+    //});
 
-    $scope.countries = rgiCountrySrvc.query();
     $scope.new_assessment = {
         year: "",
         version: "",
@@ -27,6 +41,16 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
     // TODO remove country from countries scope when added to new assessments
     $scope.countryAdd = function (country_pop) {
         $scope.new_assessment.assessment_countries.push({country: ""});
+        //var country_id = $scope.new_assessment.assessment_countries[$scope.new_assessment.assessment_countries.length - 2].country.iso2,
+        //    country_array = $scope.countries;
+        //
+        //for (var i = 0; i < country_array.length; i++) {
+        //    console.log(country_array[i].iso2);
+        ////    //if(country_array[i].iso2 == country_id) {
+        ////    //    country_array.splice(i, 1);
+        ////    //    break;
+        ////    //}
+        //}
     };
 
     $scope.countryDelete = function (index) {
