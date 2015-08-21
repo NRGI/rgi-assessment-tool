@@ -3,7 +3,7 @@
 /*jslint unparam: true nomen: true*/
 
 angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope, $route, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiCountrySrvc) {
-    var countries = rgiCountrySrvc.query();
+    $scope.countries = rgiCountrySrvc.query();
     //TODO
     //rgiCountrySrvc.query({}, function (countries) {
     //    var country_values = {},
