@@ -1,7 +1,7 @@
 'use strict';
 var angular;
 
-angular.module('app').controller('rgiContactCtrl', function ($scope, $location, rgiNotifier, rgiContactMethodSrvc) {
+angular.module('app').controller('rgiContactTechCtrl', function ($scope, $location, rgiNotifier, rgiContactMethodSrvc) {
 
     $scope.request = {tool: 'rgi'}
 

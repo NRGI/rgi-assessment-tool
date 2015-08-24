@@ -30,7 +30,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/contact', {
             templateUrl: '/partials/main/contact',
-            controller: 'rgiContactCtrl'
+            controller: 'rgiContactTechCtrl'
         })
         // User Account Routes
         .when('/profile', {
