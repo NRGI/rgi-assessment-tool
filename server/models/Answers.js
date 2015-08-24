@@ -102,7 +102,7 @@ var answerSchema = mongoose.Schema({
         index: true}, // generated from _id value of User Model
     year: String,
     version: String,  // pilot or main
-    edit_control: ObjectId, // user_ID of editing rights
+    //edit_control: ObjectId, // user_ID of editing rights
     question_order: {
         type: Number,
         required: '{PATH} is required'}, // generated from the order_ID of Question Model
