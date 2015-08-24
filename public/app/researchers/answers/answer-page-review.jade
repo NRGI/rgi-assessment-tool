@@ -146,44 +146,175 @@
 												) Submit comment
 
 
-						div(id="bibliography").bottom-padding-med
-							legend Bibliograpical citations:
+						div(id="biblio_div").bottom-padding-med
+							legend References:
+							.row
+								.col-md-5.pull-left.top-padding-med
+									select.form-group.form-control.pull-left(ng-model="ref_selection")
+										option(value="" selected disabled) Select action
+										option(ng-repeat="ref in ref_type" value="{{ref.value}}") {{ref.text}}
+
+								.col-md-1.pull-left(ng-if="ref_selection==='document'")
+									div.fileUpload.btn.btn-default
+										span Select File
+										input.upload(type="file" nv-file-select uploader="uploader")
+
+							//- DOCUMENT UPLOAD
+							.row.left-padding-lg.right-padding-lg(ng-if="uploader.queue.length>0")
+								//h3 Upload queue
+								//p Queue length: {{ uploader.queue.length }}
+								table.table
+									thead
+										tr
+											th(width="50%") Name
+											th(ng-show="uploader.isHTML5") Size
+											th(ng-show="uploader.isHTML5") Progress
+											th Status
+											th Actions
+									tbody
+										tr(ng-repeat="item in uploader.queue")
+											td
+												strong(ng-if="!new_document") {{ item.file.name }}
+												strong
+													a(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name }}
+											td(ng-show="uploader.isHTML5" nowrap) {{ item.file.size/1024/1024|number:2 }} MB
+											td(ng-show="uploader.isHTML5")
+												div.progress(style="margin-bottom: 0;")
+													div.progress-bar(role="progressbar" ng-style="{ 'width': item.progress + '%' }")
+											td.text-center
+												span(ng-show="item.isSuccess")
+													i.glyphicon.glyphicon-ok
+												span(ng-show="item.isCancel")
+													i.glyphicon.glyphicon-ban-circle
+												span(ng-show="item.isError")
+													i.glyphicon.glyphicon-remove
+											td(nowrap)
+												button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
+													span.glyphicon.glyphicon-upload Upload
+												| &nbsp;
+												button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+													span.glyphicon.glyphicon-ban-circle Cancel
+												| &nbsp;
+												button.btn.btn-danger.btn-xs(ng-click="item.remove()")
+													span.glyphicon.glyphicon-trash Remove
+							//- ADD WEBSITE
+							.row.bottom-padding-med(ng-if="ref_selection==='web'" id="new_web_form")
+								ng-form.form-horizontal(name="new_web_form")
+									fieldset
+										.row.form-group.pull-left.left-padding-lg.col-lg-6
+											input.form-control(
+											name="title"
+											type="text"
+											placeholder="Website title (required)..."
+											ng-model="answer.web_ref_title"
+											required)
+										.row.form-group.pull-right.left-padding-lg.col-lg-6
+											input.form-control(
+											name="url"
+											type="text"
+											placeholder="Website URL (required)..."
+											ng-model="answer.web_ref_url"
+											required)
+										.row.form-group.pull-right.col-lg-12
+											textarea.form-control(
+											name="comment"
+											type="text"
+											placeholder="Comments..."
+											ng-model="answer.web_ref_comment")
+
+								.col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='web'")
+									button.btn.btn-success(
+									ng-click="webRefSubmit(current_user)"
+									ng-disabled="new_web_form.$invalid"
+									) Create reference
+
+							//- ADD HUMAN
+							.row.bottom-padding-med(ng-if="ref_selection==='human'" id="new_human_form")
+								ng-form.form-horizontal(name="new_human_form")
+									fieldset
+										.row.form-group.pull-left.left-padding-lg.col-lg-6
+											input.form-control(
+											name="first_name"
+											type="text"
+											placeholder="First name (required)..."
+											ng-model="answer.human_ref_first_name"
+											required)
+										.row.form-group.pull-right.left-padding-lg.col-lg-6
+											input.form-control(
+											name="last_name"
+											type="text"
+											placeholder="Last name (required)..."
+											ng-model="answer.human_ref_last_name"
+											required)
+										.row.form-group.pull-left.left-padding-lg.col-lg-6
+											input.form-control(
+											name="email"
+											type="text"
+											placeholder="Email address (required)..."
+											ng-model="answer.human_ref_email"
+											required)
+										.row.form-group.pull-right.left-padding-lg.col-lg-6
+											input.form-control(
+											name="phone"
+											type="text"
+											placeholder="Phone number (required)..."
+											ng-model="answer.human_ref_phone"
+											required)
+										.row.form-group.pull-right.left-padding-lg.col-lg-6
+											input.form-control(
+											name="date"
+											type="text"
+											placeholder="Date contacted (required)..."
+											ng-model="answer.human_ref_contact_date"
+											required)
+										.row.form-group.pull-right.col-lg-12
+											textarea.form-control(
+											name="comment"
+											type="text"
+											placeholder="Comments..."
+											ng-model="answer.human_ref_comment")
+
+								.col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='human'")
+									button.btn.btn-success(
+									ng-click="humanRefSubmit(current_user)"
+									ng-disabled="new_human_form.$invalid"
+									) Create reference
+
+							//- BILBLIO LIST
 							div(id="prev_bib")
-								.row.left-padding-lg(ng-repeat="citation in answer.citations")
-									.row
-										text Uploaded by {{citation.upload_user_id}} on {{citation.upload_date | date}}
-										text Originally found at {{citation.upload_URL}}
-									.row
-										b Author:
-										text {{citation.citation.authors}}
-									.row
-										b Title:
-										text {{citation.citation.title}}
-									.row
-										b Published:
-										text {{citation.citation.publish_year}}
-									.row.col-md-11
-										a(href="{{citation.upload_URL}}") View here
-									.row.col-md-11
-										em Comment:
-										text  {{citation.note.content}}
-									.row.col-md-offset-8.col-md-3
-										date
-											small
-												text {{citation.note.author_name}}
-												em {{citation.note.date | date}}
+								.row.left-padding-lg
+									label Citations
+									.row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
+										.row Author(s):
+											text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
+												text(ng-if="!$last") ;
+											text(ng-if="ref.author.length === 0")  N/A
+										.row Title: {{ref.title}} (
+											a(href="{{ref.s3_url}}" target="_blank") View here
+											text )
+										.row Published:
+											text(ng-if="ref.year")  {{ref.year}}
+											text(ng-if="!ref.year")  N/A
+										.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date: 'MM/dd/yyyy'}}
+										.row Commnets:
+											text(ng-if="ref.comment.content")  {{ref.comment.content}}
+											text(ng-if="!ref.comment.content")  N/A
+										//br
 
-							div(id="new_bib").bottom-padding-med
-								ng-form(name="new_citation_form")
-									.row.left-padding-med
-										.col-md-9
-											b New document:
-										.pull-right.col-md-3
-											div(flow-init="{target: '/upload'}"
-											flow-files-submitted="$flow.upload()"
-											flow-file-success="$file.msg = $message")
-
-												input(
-												type='file'
-												flow-btn
-												ng-disabled="assessment.edit_control!==current_user._id")
+								.row.left-padding-lg
+									label Websites
+									.row.left-padding-lg(ng-repeat="ref in answer.references.web")
+										.row Website: {{ref.title}} (
+											a(href="{{ref.URL}}" target="_blank") View here
+											text )
+										.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+										.row Comments: {{ref.comment.content}}
+										br
+								.row.left-padding-lg
+									label Humans
+									.row.left-padding-lg(ng-repeat="ref in answer.references.human")
+										.row Contact: {{ref.first_name}} {{ref.last_name}}
+										.row Contacted: {{ref.contact_date | date:'MM/dd/yyyy'}}
+										.row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+										.row Comments: {{ref.comment.content}}
+										br

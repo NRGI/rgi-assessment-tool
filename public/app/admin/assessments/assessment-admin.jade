@@ -30,16 +30,18 @@
 							tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
 								//COUNTRY
 								td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
-								//RESEARCHER
 								td(ng-if="assessment.status!='unassigned'")
 									a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.country}}
-								td.col-md-3
+								//RESEARCHER
+								td.col-md-3(ng-if="assessment.researcher!==undefined")
 									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
 									a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+								td.col-md-3(ng-if="assessment.researcher===undefined") Not assigned
 								//REVIEWER
-								td.col-md-3
+								td.col-md-3(ng-if="assessment.reviewer!==undefined")
 									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
 									a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+								td.col-md-3(ng-if="assessment.reviewer===undefined") Not assigned
 								//START DATE
 								td {{assessment.start_date.started_date | date}}
 								//LAST EDIT

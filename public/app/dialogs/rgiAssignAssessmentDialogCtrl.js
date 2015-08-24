@@ -2,7 +2,7 @@
 /*jslint unparam: true nomen: true*/
 //var angular;
 
-angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiAnswerMethodSrvc, rgiQuestionSrvc) {
+angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($scope, $route, $location, ngDialog, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserSrvc, rgiUserMethodSrvc, rgiAnswerMethodSrvc, rgiQuestionSrvc) {
     function zeroFill(number, width) {
         width -= number.toString().length;
         if (width > 0) {
@@ -31,14 +31,16 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
         var new_researcher_data = $scope.researcherSelect,
             new_reviewer_data = $scope.reviewerSelect,
             new_assessment_data = $scope.assessment,
-            new_answer_set = [],
-            current_user = rgiIdentitySrvc.currentUser;
+            new_answer_set = [];
+            //current_user = rgiIdentitySrvc.currentUser;
 
-        // UPDATE ASSESSMENT AND ASSIGN
+        // UPDATE ASSESSMENT AND ASSIGN ALL SCENERIOS
         new_assessment_data.status = 'assigned';
         new_assessment_data.researcher_ID = new_researcher_data._id;
+        new_assessment_data.edit_control = new_researcher_data._id;
         new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
-        //if reviewer is selected
+
+        //IF REVIEWER SELECTED
         if (new_reviewer_data) {
             new_assessment_data.reviewer_ID = new_reviewer_data._id;
             new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
@@ -56,19 +58,18 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 new_answer_set[i].assessment_ID = $scope.$parent.assessment_update_ID;
                 new_answer_set[i].year = el.year;
                 new_answer_set[i].version = el.version;
-                new_answer_set[i].researcher_ID = $scope.researcherSelect._id;
-                new_answer_set[i].edit_control = $scope.researcherSelect._id;
+                new_answer_set[i].researcher_ID = new_researcher_data._id;
+                new_answer_set[i].edit_control = new_researcher_data._id;
                 new_answer_set[i].question_order = el.question_order;
                 new_answer_set[i].component = el.component;
                 new_answer_set[i].component_text = el.component_text;
                 new_answer_set[i].nrc_precept = el.nrc_precept;
             }
-            if ($scope.reviewerSelect !== undefined) {
-                new_answer_set[i].reviewer_ID = $scope.reviewerSelect._id;
-            } else {
-                new_answer_set[i].reviewer_ID = current_user._id;
+            if (new_reviewer_data) {
+                new_answer_set[i].reviewer_ID = new_reviewer_data._id;
             }
         });
+
         //TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
         if (new_reviewer_data) {
             rgiUserMethodSrvc.updateUser(new_researcher_data)
@@ -79,6 +80,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                     rgiNotifier.notify('Assessment created and assigned!');
                     $scope.closeThisDialog();
                     $route.reload();
+                    $location.path('admin/assessment-admin');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
@@ -90,6 +92,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                     rgiNotifier.notify('Assessment created and assigned!');
                     $scope.closeThisDialog();
                     $route.reload();
+                    $location.path('admin/assessment-admin');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
