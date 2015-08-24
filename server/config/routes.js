@@ -106,7 +106,8 @@ module.exports = function (app) {
     app.get('/api/countries/:country_ID', countries.getCountriesByID);
 
     // Send contact
-    app.post('/contact', contact.tech_send);
+    app.post('/contact_tech', contact.techSend);
+    app.post('/contact', auth.requiresApiLogin, contact.contactSend);
 
 
     app.post('/login', auth.authenticate, auth.passUser);

@@ -36,19 +36,21 @@ exports.getUsersListByID = function (req, res) {
 
 exports.createUser = function (req, res, next) {
     var userData = req.body,
-        rec_email = userData.email,
-        rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
-        rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
-        rec_username = userData.username,
-        rec_password = userData.password,
-        send_name = req.user.firstName + " " + req.user.lastName;
+        contact_packet = {};
+
+    contact_packet.rec_email = userData.email;
+    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    contact_packet. rec_username = userData.username;
+    contact_packet.rec_password = userData.password;
+    contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
 
     userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
     userData.createdBy = req.user._id;
 
-    User.create(userData, function (err, user) {
+    User.create(userData, function (err, user, next) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
@@ -56,12 +58,11 @@ exports.createUser = function (req, res, next) {
             res.status(400);
             return res.send({reason: err.toString()});
         }
+        next();
     });
 
-    contact.new_user();
-
-
-    // //send an e-mail to jim rubenstein
+    //TODO refator this into ./server/utiliies/contact.js
+    //send confirmation email to new user
     mandrill('/messages/send', {
         message: {
             to: [{email: rec_email, name: rec_name}],
@@ -125,7 +126,8 @@ exports.updateUser = function (req, res) {
             }
         });
     });
-    // // //send an e-mail to jim rubenstein
+    //TODO refator this into ./server/utiliies/contact.js
+    // // send an update email to user
     // mandrill('/messages/send', {
     //     message: {
     //         to: [{email: rec_email, name: rec_name}],
@@ -148,6 +150,8 @@ exports.updateUser = function (req, res) {
     res.send();
 };
 
+//TODO send deleted user information to 'purgatory for a period in case admin needs to undo
+//TODO remove associated data
 exports.deleteUser = function (req, res) {
     // var userUpdates = req.body;
         // rec_email = userData.email,
@@ -164,7 +168,8 @@ exports.deleteUser = function (req, res) {
             return res.send({ reason: err.toString() });
         }
     });
-    // // //send an e-mail to jim rubenstein
+    //TODO refator this into ./server/utiliies/contact.js
+    // // send notificatino to user that theyve been deleted
     // mandrill('/messages/send', {
     //     message: {
     //         to: [{email: rec_email, name: rec_name}],

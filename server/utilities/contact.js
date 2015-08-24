@@ -1,7 +1,7 @@
 'use strict'
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
 
-exports.tech_send = function (req, res) {
+exports.techSend = function (req, res) {
     var issue_os, issue_browser, issue_browser_ver,
         message_content = req.body,
         issue_tool = message_content.tool.toUpperCase(),
@@ -52,7 +52,8 @@ exports.tech_send = function (req, res) {
     res.send();
 };
 
-//exports.new_user = function (req, res, next) {
+exports.contactSend = function (req, res, next) {
+    console.log(req);
 //
 //    // send email to new user
 //    mandrill('/messages/send', {
@@ -75,4 +76,4 @@ exports.tech_send = function (req, res) {
 //        else console.log(response);
 //    });
 //
-//}
+};
