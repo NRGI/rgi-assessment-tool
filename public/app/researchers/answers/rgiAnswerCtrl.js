@@ -17,6 +17,14 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         {text: 'Add Webpage', value: 'web'},
         {text: 'Add Human Reference', value: 'human'}
     ];
+    //DATEPICKER OPTS
+    $scope.date_format = 'MMMM d, yyyy';
+    var today = new Date();
+    $scope.date_default = today;
+    $scope.date_max_limit = today;
+
+
+
     $scope.moveForward = function () {
         if ($scope.identity.currentUser._id === $scope.assessment.edit_control) {
             $location.path('/assessments/assessment-edit/' + $scope.assessment.assessment_ID + "-" + String(zeroFill($scope.answer.question_order + 1, 3)));
@@ -192,8 +200,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                 last_name: $scope.answer.human_ref_last_name,
                 phone: $scope.answer.human_ref_phone,
                 email: $scope.answer.human_ref_email,
-                // contact_date: $scope.answer.human_ref_contact_date,
-                contact_date: new Date().toISOString(),
+                contact_date: new Date($scope.answer.human_ref_contact_date).toISOString(),
                 comment: {
                     date: new Date().toISOString(),
                     author: current_user._id,
@@ -206,7 +213,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             new_ref_data.comment.content = $scope.answer.human_ref_comment;
         }
         new_answer_data.references.human.push(new_ref_data);
-
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
             rgiNotifier.notify('reference added');
