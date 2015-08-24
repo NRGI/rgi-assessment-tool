@@ -18,7 +18,7 @@ angular.module('app').controller('rgiUserAdminCtrl', function ($scope, rgiUserSr
         var i, j;
         for (i = data.length - 1; i >= 0; i -= 1) {
             for (j = data[i].assessments.length - 1; j >= 0; j -= 1) {
-                data[i].assessments[j].details = rgiAssessmentSrvc.get({assessment_ID: data[i].assessments[j].assessment_id});
+                data[i].assessments[j].details = rgiAssessmentSrvc.get({assessment_ID: data[i].assessments[j].assessment_ID});
             }
             $scope.users.push(data[i]);
         }

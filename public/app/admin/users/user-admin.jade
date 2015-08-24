@@ -1,56 +1,58 @@
 .container.top-padding-med
-	.well.left-padding-lg
-		div.left-padding-lg.right-padding-lg.top-padding-med
-			legend.h3 Assessment tool users
-			div.top-padding-med.right-padding-lg
-				.pull-right.top-padding-med.bottom-padding-lg
-					form.form-inline
-						.form-group
-							input.form-control(
-							ng-model="search_text"
-							placeholder="Filter")
-						.form-group.margin-left-med
-							select.form-control(
-							ng-model="sort_order"
-							ng-options="item.value as item.text for item in sort_options")
-				table.table
-					thead
-						tr
-							th Name
-							th Username
-							th Role
-							th Assessments
-							th Assigned
-							th Started
-							th Submitted
-							th Reviewed
-							th Approved
-							th
-					tbody
-						tr(ng-repeat="user in users | filter:search_text | orderBy:sort_order")
-							td
-								a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-							td {{user.username}}
-							td {{user.role}}
-							td
-								p(ng-repeat="assessment in user.assessments")
-									text {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
-							td
-								p(ng-repeat="assessment in user.assessments")
-									em(ng-if="assessment.details.assignment") {{assessment.details.assignment.assigned_date | date}}
-							td
-								p(ng-repeat="assessment in user.assessments")
-									em(ng-if="assessment.details.start_date") {{assessment.details.start_date.started_date | date}}
+    .well.left-padding-lg
+        div.left-padding-lg.right-padding-lg.top-padding-med
+            legend.h3 Assessment tool users
+            div.top-padding-med.right-padding-lg
+                .pull-right.top-padding-med.bottom-padding-lg
+                    form.form-inline
+                        .form-group
+                            input.form-control(
+                            ng-model="search_text"
+                            placeholder="Filter")
+                        .form-group.margin-left-med
+                            select.form-control(
+                            ng-model="sort_order"
+                            ng-options="item.value as item.text for item in sort_options")
+                table.table
+                    thead
+                        tr
+                            th.col-md-1 Name
+                            th.col-md-1 Username
+                            th.col-md-1 Role
+                            th
+                                table
+                                    th.col-md-3 Assessments
+                                    th.col-md-1 Assigned
+                                    th.col-md-1 Started
+                                    th.col-md-1 Submitted
+                                    th.col-md-1 Reviewed
+                                    th.col-md-1 Approved
+                                    th.col-md-1
+                    tbody
+                        tr(ng-repeat="user in users | filter:search_text | orderBy:sort_order")
+                            td.col-md-1
+                                a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                            td.col-md-1 {{user.username}}
+                            td.col-md-1 {{user.role | ucfirst}}
+                            td
+                                table.table(style="margin-top: -9px; margin-bottom: -9px")
+                                    tr(ng-repeat="assessment in user.assessments")
+                                        td.col-md-3 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
+                                        td.col-md-1
+                                            em(ng-if="assessment.details.assignment") {{assessment.details.assignment.assigned_date | date:'MM/dd/yyyy'}}
+                                            em(ng-if="!assessment.details.assignment") none
+                                        td.col-md-1
+                                            em(ng-if="assessment.details.start_date") {{assessment.details.start_date.started_date | date:'MM/dd/yyyy'}}
+                                            em(ng-if="!assessment.details.start_date") none
+                                        td.col-md-1
+                                            em(ng-if="assessment.details.submit_date") {{assessment.details.submit_date.submitted_date | date:'MM/dd/yyyy'}}
+                                            em(ng-if="!assessment.details.submit_date") none
+                                        td.col-md-1
+                                            em(ng-if="assessment.details.review_date") {{assessment.details.review_date.reviewed_date | date:'MM/dd/yyyy'}}
+                                            em(ng-if="!assessment.details.review_date") none
+                                        td.col-md-1
+                                            em(ng-if="assessment.details.approval") {{assessment.details.approval.approved_date | date:'MM/dd/yyyy'}}
+                                            em(ng-if="!assessment.details.approval") none
+                                        td.col-md-1
+                                            a.btn.center-block.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit
 
-							td
-								p(ng-repeat="assessment in user.assessments")
-									em(ng-if="assessment.details.submit_date") {{assessment.details.submit_date.submitted_date | date}}
-
-							td
-								p(ng-repeat="assessment in user.assessments")
-									em(ng-if="assessment.details.review_date") {{assessment.details.review_date.reviewed_date | date}}
-							td
-								p(ng-repeat="assessment in user.assessments")
-									em(ng-if="assessment.details.approval") {{assessment.details.approval.approved_date | date}}
-							td
-								a.btn.center-block.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit
