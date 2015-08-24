@@ -18,7 +18,7 @@
 				button.btn.btn-success.pull-right(
 				ng-click="assessmentResubmit()"
 				ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id"
-				ng-disabled="assessment.questions_flagged!==assessment.questions_resubmitted || answer.edit_control===identity.currentUser._id || assessment.status==='submitted'"
+				ng-disabled="assessment.questions_flagged!==assessment.questions_resubmitted || anssessment.edit_control===identity.currentUser._id || assessment.status==='submitted'"
 				) Resubmit assessment
 
 			.pull-left.left-padding-lg.bottom-padding-lg

@@ -2,7 +2,7 @@
 //var angular;
 /*jslint unparam: true nomen: true*/
 
-angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope, $route, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiCountrySrvc) {
+angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope, $route, $location, rgiNotifier, ngDialog, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiCountrySrvc) {
     $scope.countries = rgiCountrySrvc.query();
     //TODO
     //rgiCountrySrvc.query({}, function (countries) {
@@ -103,6 +103,7 @@ angular.module('app').controller('rgiNewAssessmentDialogCtrl', function ($scope,
                             rgiNotifier.notify('Assessment deployed!');
                             $scope.closeThisDialog();
                             $route.reload();
+                            $location.path('admin/assessment-admin');
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });

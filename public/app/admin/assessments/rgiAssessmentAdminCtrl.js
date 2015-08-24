@@ -34,9 +34,13 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
                     assessment.modified = el.modified;
                     assessment.edited_by = rgiUserListSrvc.get({_id: el.modified[el.modified.length - 1].modified_by});
                 }
-                if (assessment.reviewer_ID !== undefined) {
-                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+
+                if(assessment.researcher_ID) {
                     assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                }
+
+                if(assessment.reviewer_ID) {
+                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                 }
                 $scope.assessments.push(assessment);
             });
