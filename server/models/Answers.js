@@ -41,6 +41,9 @@ var citationSchema = new mongoose.Schema({
 var webSchema = new mongoose.Schema({
     title: String,
     URL: String, // generated from upload path in S3
+    access_date: {
+        type: Date,
+        default: Date.now},
     comment: {
         date: {
             type: Date,

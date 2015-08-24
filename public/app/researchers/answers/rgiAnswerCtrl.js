@@ -15,7 +15,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     $scope.ref_type = [
         {text: 'Add Document', value: 'document'},
         {text: 'Add Webpage', value: 'web'},
-        {text: 'Add Human Reference', value: 'human'}
+        {text: 'Add Interview', value: 'human'}
     ];
     //DATEPICKER OPTS
     $scope.date_format = 'MMMM d, yyyy';
@@ -126,6 +126,10 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         }, function (reason) {
             rgiNotifier.notify(reason);
         });
+    };
+    //TODO Generate Dialog based on change and handle upload process via dialogs
+    $scope.select_ref_dialog = function(value) {
+        console.log($scope.ref_selection);
     };
 
     //Citation functions
