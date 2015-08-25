@@ -63,7 +63,7 @@ div.top-padding-med
                     div.col-lg-5
                         button.btn.btn-block.btn-success(
                         ng-click="humanRefSubmit()"
-                        ng-disabled="new_human_form.$invalid"
+                        ng-disabled="!answer.human_ref_first_name || !answer.human_ref_last_name || !answer.human_ref_email || !answer.human_ref_phone"
                         ) Create reference
                     div.col-lg-5
                         button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
