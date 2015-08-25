@@ -3,8 +3,15 @@ div.top-padding-med
       legend New webpage reference
       .row.left-padding-lg(id="new_document_form")
          .form-horizontal
-            // NEW DOC
             fieldset
+                // EXISTING DOC
+                //TODO ALLOW USER TO SELECT FROM EXISTING REFERENCE SET
+                //div.row.form-group.col-lg-11
+                //    label Existing reference
+                //    select.form-group.form-control.pull-left(ng-model="existing_ref")
+                //        option(ng-repeat="ref in existing_ref" value="{{ref.value}}") {{ref.text}}
+                // NEW DOC
+                label New reference
                 div.row.form-group.col-lg-11
                     input.form-control.right-padding-med(
                     name="title"
@@ -30,10 +37,12 @@ div.top-padding-med
                     autocomplete="off")
 
                 div.row.form-group.col-lg-11
-                    label Date accessed:
-                        datepicker(
-                        date-format="{{date_format}}")
-                            input.form-control(ng-model="answer.web_ref_access_date" type="text")
+                    datepicker(
+                    date-format="{{date_format}}")
+                        input.form-control(
+                        ng-model="answer.web_ref_access_date"
+                        type="text"
+                        placeholder="Date accessed...")
 
                 //- BUTTON CONTROL
                 div.col-lg-5
