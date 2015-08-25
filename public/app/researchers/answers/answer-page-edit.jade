@@ -241,7 +241,7 @@
                             .row Comments: {{ref.comment.content}}
                             br
                     .row.left-padding-lg
-                        label Humans
+                        label Interviews
                         .row.left-padding-lg(ng-repeat="ref in answer.references.human")
                             .row Contact: {{ref.first_name}} {{ref.last_name}}
                             .row Interviewed: {{ref.contact_date | date:'MM/dd/yyyy'}}
