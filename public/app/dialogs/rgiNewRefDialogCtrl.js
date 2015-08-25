@@ -4,6 +4,12 @@
 //angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc) {
 angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, $http, ngDialog, rgiNotifier, rgiAnswerMethodSrvc) {
     $scope.answer_update = $scope.$parent.answer;
+    ////TODO REPLACE WITH EXISITING REFERENCE SET
+    //$scope.existing_ref = [
+    //    {text: 'Add Document', value: 'document'},
+    //    {text: 'Add Webpage', value: 'webpage'},
+    //    {text: 'Add Interview', value: 'interview'}
+    //];
 
     function isURLReal(fullyQualifiedURL) {
         var URL = encodeURIComponent(fullyQualifiedURL),
