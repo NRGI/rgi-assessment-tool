@@ -1,0 +1,45 @@
+div.top-padding-med
+   .well
+      legend New webpage reference
+      .row.left-padding-lg(id="new_document_form")
+         .form-horizontal
+            // NEW DOC
+            fieldset
+                div.row.form-group.col-lg-11
+                    input.form-control.right-padding-med(
+                    name="title"
+                    type="text"
+                    placeholder="Website title (required)..."
+                    ng-model="answer.web_ref_title"
+                    autocomplete="off"
+                    required)
+                div.row.form-group.col-lg-11
+                    input.form-control.right-padding-med(
+                    name="url"
+                    type="text"
+                    placeholder="Website URL (required)..."
+                    ng-model="answer.web_ref_url"
+                    autocomplete="off"
+                    required)
+                div.row.form-group.col-lg-11
+                    input.form-control.right-padding-med(
+                    name="comment"
+                    type="text"
+                    placeholder="Comments..."
+                    ng-model="answer.web_ref_comment"
+                    autocomplete="off")
+
+                div.row.form-group.col-lg-11
+                    label Date accessed:
+                        datepicker(
+                        date-format="{{date_format}}")
+                            input.form-control(ng-model="answer.web_ref_access_date" type="text")
+
+                //- BUTTON CONTROL
+                div.col-lg-5
+                    button.btn.btn-block.btn-success(
+                    ng-click="webRefSubmit()"
+                    ng-disabled="new_web_form.$invalid"
+                    ) Create reference
+                div.col-lg-5
+                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

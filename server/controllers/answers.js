@@ -109,6 +109,7 @@ exports.updateAnswer = function (req, res) {
         answer.flags = answer_update.flags;
         answer.questions_flagged = answer_update.questions_flagged;
         answer.references = answer_update.references;
+        console.log(answer_update.references);
         if (answer.modified) {
             answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
         } else {

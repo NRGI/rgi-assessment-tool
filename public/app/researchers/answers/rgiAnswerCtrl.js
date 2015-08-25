@@ -14,8 +14,8 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     $scope.identity = rgiIdentitySrvc;
     $scope.ref_type = [
         {text: 'Add Document', value: 'document'},
-        {text: 'Add Webpage', value: 'web'},
-        {text: 'Add Interview', value: 'human'}
+        {text: 'Add Webpage', value: 'webpage'},
+        {text: 'Add Interview', value: 'interview'}
     ];
     //DATEPICKER OPTS
     $scope.date_format = 'MMMM d, yyyy';
@@ -129,7 +129,14 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     };
     //TODO Generate Dialog based on change and handle upload process via dialogs
     $scope.select_ref_dialog = function(value) {
-        console.log($scope.ref_selection);
+        var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog';
+        //console.log(template);
+        ngDialog.open({
+            template: template,
+            controller: 'rgiNewRefDialogCtrl',
+            className: 'ngdialog-theme-plain',
+            scope: $scope
+        });
     };
 
     //Citation functions
@@ -145,11 +152,11 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             return this.queue.length < 1;
         }
     });
-
+    //TODO handle doc and txt documents
     uploader.onCompleteItem = function (fileItem, response, status, headers) {
         if (status === 400) {
             $scope.uploader.queue = [];
-            mgaNotifier.error(response.reason);
+            rgiNotifier.error(response.reason);
         } else {// TODO add cancel upload after initial document pass
             $scope.new_document = response;
 
@@ -164,36 +171,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
             });
         }
 
-    };
-
-    $scope.webRefSubmit = function (current_user) {
-        var new_answer_data = $scope.answer,
-
-            new_ref_data = {
-                title: $scope.answer.web_ref_title,
-                URL: $scope.answer.web_ref_url,
-                comment: {
-                    date: new Date().toISOString(),
-                    author: current_user._id,
-                    author_name: current_user.firstName + ' ' + current_user.lastName,
-                    role: current_user.role
-                }
-            };
-        if ($scope.answer.web_ref_comment !== undefined) {
-            new_ref_data.comment.content = $scope.answer.web_ref_comment;
-        }
-        new_answer_data.references.web.push(new_ref_data);
-
-        rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-            rgiNotifier.notify('reference added');
-            $scope.ref_selection = "";
-            $scope.answer.web_ref_title = "";
-            $scope.answer.web_ref_url = "";
-            $scope.answer.web_ref_comment = "";
-            $scope.answer.web_ref_comment = "";
-        }, function (reason) {
-            rgiNotifier.notify(reason);
-        });
     };
 
     $scope.humanRefSubmit = function (current_user) {
