@@ -208,36 +208,6 @@
                                     | &nbsp;
                                     button.btn.btn-danger.btn-xs(ng-click="item.remove()")
                                         span.glyphicon.glyphicon-trash Remove
-                //- ADD WEBSITE
-                .row.bottom-padding-med(ng-if="ref_selection==='web'" id="new_web_form")
-                    ng-form.form-horizontal(name="new_web_form")
-                        fieldset
-                            .row.form-group.pull-left.left-padding-lg.col-lg-6
-                                input.form-control(
-                                name="title"
-                                type="text"
-                                placeholder="Website title (required)..."
-                                ng-model="answer.web_ref_title"
-                                required)
-                            .row.form-group.pull-right.left-padding-lg.col-lg-6
-                                input.form-control(
-                                name="url"
-                                type="text"
-                                placeholder="Website URL (required)..."
-                                ng-model="answer.web_ref_url"
-                                required)
-                            .row.form-group.pull-right.col-lg-12
-                                textarea.form-control(
-                                name="comment"
-                                type="text"
-                                placeholder="Comments..."
-                                ng-model="answer.web_ref_comment")
-
-                    .col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='web'")
-                        button.btn.btn-success(
-                        ng-click="webRefSubmit(current_user)"
-                        ng-disabled="new_web_form.$invalid"
-                        ) Create reference
 
                 //- ADD HUMAN
                 h4 Interview:
@@ -326,7 +296,7 @@
                             .row Website: {{ref.title}} (
                                 a(href="{{ref.URL}}" target="_blank") View here
                                 text )
-                            .row Accessed: {{rev.access_date}}
+                            .row Accessed: {{ref.access_date| date:'MM/dd/yyyy'}}
                             .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
                             .row Comments: {{ref.comment.content}}
                             br
