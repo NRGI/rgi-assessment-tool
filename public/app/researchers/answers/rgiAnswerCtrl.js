@@ -173,41 +173,41 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
     };
 
-    $scope.humanRefSubmit = function (current_user) {
-        var new_answer_data = $scope.answer,
-
-            new_ref_data = {
-                first_name: $scope.answer.human_ref_first_name,
-                last_name: $scope.answer.human_ref_last_name,
-                phone: $scope.answer.human_ref_phone,
-                email: $scope.answer.human_ref_email,
-                contact_date: new Date($scope.answer.human_ref_contact_date).toISOString(),
-                comment: {
-                    date: new Date().toISOString(),
-                    author: current_user._id,
-                    author_name: current_user.firstName + ' ' + current_user.lastName,
-                    role: current_user.role
-                }
-            };
-
-        if ($scope.answer.human_ref_comment !== undefined) {
-            new_ref_data.comment.content = $scope.answer.human_ref_comment;
-        }
-        new_answer_data.references.human.push(new_ref_data);
-
-        rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-            rgiNotifier.notify('reference added');
-            $scope.answer.human_ref_first_name = "";
-            $scope.answer.human_ref_last_name = "";
-            $scope.answer.human_ref_phone = "";
-            $scope.answer.human_ref_email = "";
-            $scope.answer.human_ref_contact_date = "";
-            $scope.answer.human_ref_comment = "";
-            $scope.ref_selection = "";
-        }, function (reason) {
-            rgiNotifier.notify(reason);
-        });
-    };
+    //$scope.humanRefSubmit = function (current_user) {
+    //    var new_answer_data = $scope.answer,
+    //
+    //        new_ref_data = {
+    //            first_name: $scope.answer.human_ref_first_name,
+    //            last_name: $scope.answer.human_ref_last_name,
+    //            phone: $scope.answer.human_ref_phone,
+    //            email: $scope.answer.human_ref_email,
+    //            contact_date: new Date($scope.answer.human_ref_contact_date).toISOString(),
+    //            comment: {
+    //                date: new Date().toISOString(),
+    //                author: current_user._id,
+    //                author_name: current_user.firstName + ' ' + current_user.lastName,
+    //                role: current_user.role
+    //            }
+    //        };
+    //
+    //    if ($scope.answer.human_ref_comment !== undefined) {
+    //        new_ref_data.comment.content = $scope.answer.human_ref_comment;
+    //    }
+    //    new_answer_data.references.human.push(new_ref_data);
+    //
+    //    rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+    //        rgiNotifier.notify('reference added');
+    //        $scope.answer.human_ref_first_name = "";
+    //        $scope.answer.human_ref_last_name = "";
+    //        $scope.answer.human_ref_phone = "";
+    //        $scope.answer.human_ref_email = "";
+    //        $scope.answer.human_ref_contact_date = "";
+    //        $scope.answer.human_ref_comment = "";
+    //        $scope.ref_selection = "";
+    //    }, function (reason) {
+    //        rgiNotifier.notify(reason);
+    //    });
+    //};
 
     // Review functions
     $scope.flagCheck = function (flags) {

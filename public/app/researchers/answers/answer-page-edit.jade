@@ -209,65 +209,65 @@
                                     button.btn.btn-danger.btn-xs(ng-click="item.remove()")
                                         span.glyphicon.glyphicon-trash Remove
 
-                //- ADD HUMAN
-                h4 Interview:
-                .row.bottom-padding-med(ng-if="ref_selection==='human'" id="new_human_form")
-                    ng-form.form-horizontal.left-padding-lg.right-padding-lg(name="new_human_form")
-                        fieldset
-                            div.row.left-padding-lg
-                                .form-group.left-padding-lg.col-md-4
-                                    label First name:
-                                    input.form-control(
-                                    name="first_name"
-                                    type="text"
-                                    placeholder="First name (required)..."
-                                    ng-model="answer.human_ref_first_name"
-                                    required)
-                                .form-group.left-padding-lg.col-md-4
-                                    label Last name:
-                                    input.form-control(
-                                    name="last_name"
-                                    type="text"
-                                    placeholder="Last name (required)..."
-                                    ng-model="answer.human_ref_last_name"
-                                    required)
-                            div.row.left-padding-lg
-                                .form-group.left-padding-lg.col-md-4
-                                    label Email address:
-                                    input.form-control(
-                                    name="email"
-                                    type="text"
-                                    placeholder="Email address (required)..."
-                                    ng-model="answer.human_ref_email"
-                                    required)
-                                .form-group.left-padding-lg.col-md-4
-                                    label Phone number:
-                                    input.form-control(
-                                    name="phone"
-                                    type="text"
-                                    placeholder="Phone number (required)..."
-                                    ng-model="answer.human_ref_phone"
-                                    required)
-
-                            div.row.left-padding-lg
-                                .form-group.left-padding-lg.col-md-4
-                                    label Date contacted:
-                                    datepicker(
-                                    date-format="{{date_format}}")
-                                        input.form-control(ng-model="answer.human_ref_contact_date" type="text")
-
-                            .row.form-group.pull-right.col-lg-12
-                                textarea.form-control(
-                                name="comment"
-                                type="text"
-                                placeholder="Comments..."
-                                ng-model="answer.human_ref_comment")
-
-                    .col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='human'")
-                        button.btn.btn-success(
-                        ng-click="humanRefSubmit(current_user)"
-                        ng-disabled="new_human_form.$invalid"
-                        ) Create reference
+                ////- ADD HUMAN
+                //h4 Interview:
+                //.row.bottom-padding-med(ng-if="ref_selection==='human'" id="new_human_form")
+                //    ng-form.form-horizontal.left-padding-lg.right-padding-lg(name="new_human_form")
+                //        fieldset
+                //            div.row.left-padding-lg
+                //                .form-group.left-padding-lg.col-md-4
+                //                    label First name:
+                //                    input.form-control(
+                //                    name="first_name"
+                //                    type="text"
+                //                    placeholder="First name (required)..."
+                //                    ng-model="answer.human_ref_first_name"
+                //                    required)
+                //                .form-group.left-padding-lg.col-md-4
+                //                    label Last name:
+                //                    input.form-control(
+                //                    name="last_name"
+                //                    type="text"
+                //                    placeholder="Last name (required)..."
+                //                    ng-model="answer.human_ref_last_name"
+                //                    required)
+                //            div.row.left-padding-lg
+                //                .form-group.left-padding-lg.col-md-4
+                //                    label Email address:
+                //                    input.form-control(
+                //                    name="email"
+                //                    type="text"
+                //                    placeholder="Email address (required)..."
+                //                    ng-model="answer.human_ref_email"
+                //                    required)
+                //                .form-group.left-padding-lg.col-md-4
+                //                    label Phone number:
+                //                    input.form-control(
+                //                    name="phone"
+                //                    type="text"
+                //                    placeholder="Phone number (required)..."
+                //                    ng-model="answer.human_ref_phone"
+                //                    required)
+                //
+                //            div.row.left-padding-lg
+                //                .form-group.left-padding-lg.col-md-4
+                //                    label Date contacted:
+                //                    datepicker(
+                //                    date-format="{{date_format}}")
+                //                        input.form-control(ng-model="answer.human_ref_contact_date" type="text")
+                //
+                //            .row.form-group.pull-right.col-lg-12
+                //                textarea.form-control(
+                //                name="comment"
+                //                type="text"
+                //                placeholder="Comments..."
+                //                ng-model="answer.human_ref_comment")
+                //
+                //    .col-md-1.pull-left.top-padding-med.left-padding-lg(ng-if="ref_selection==='human'")
+                //        button.btn.btn-success(
+                //        ng-click="humanRefSubmit(current_user)"
+                //        ng-disabled="new_human_form.$invalid"
+                //        ) Create reference
 
                 //- BILBLIO LIST
                 div(id="prev_bib")

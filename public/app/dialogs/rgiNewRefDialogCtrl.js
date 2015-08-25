@@ -79,8 +79,61 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
             });
     };
 
+    $scope.humanRefSubmit = function (current_user) {
+        var new_ref_data,
+            new_answer_data = $scope.answer_update,
+            current_user = $scope.$parent.current_user,
+            email_domain = 'http://' + $scope.answer_update.human_ref_email.split('@')[1];
+
+        isURLReal(email_domain)
+            .fail(function (res) {
+                rgiNotifier.error('Email Domain does not appear to be valid');
+            })
+            .done(function (res) {
+                console.log(res);
+            });
+
+
+
+        //new_ref_data = {
+            //    first_name: $scope.answer_update.human_ref_first_name,
+            //    last_name: $scope.answer_update.human_ref_last_name,
+            //    phone: $scope.answer_update.human_ref_phone,
+            //    email: $scope.answer_update.human_ref_email,
+            //    contact_date: new Date($scope.answer_update.human_ref_contact_date).toISOString(),
+            //    comment: {
+            //        date: new Date().toISOString(),
+            //        author: $scope.$parent.current_user._id,
+            //        author_name: $scope.$parent.current_user.firstName + ' ' + $scope.$parent.current_user.lastName,
+            //        role: $scope.$parent.current_user.role
+            //    }
+            //};
+
+        //if ($scope.answer.human_ref_comment !== undefined) {
+        //    new_ref_data.comment.content = $scope.answer.human_ref_comment;
+        //}
+        //new_answer_data.references.human.push(new_ref_data);
+        //console.log(new_answer_data);
+
+        //rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+        //    rgiNotifier.notify('reference added');
+        //    $scope.answer.human_ref_first_name = "";
+        //    $scope.answer.human_ref_last_name = "";
+        //    $scope.answer.human_ref_phone = "";
+        //    $scope.answer.human_ref_email = "";
+        //    $scope.answer.human_ref_contact_date = "";
+        //    $scope.answer.human_ref_comment = "";
+        //    $scope.ref_selection = "";
+        //}, function (reason) {
+        //    rgiNotifier.notify(reason);
+        //});
+    };
+
     $scope.closeDialog = function () {
         $scope.$parent.ref_selection = '';
         ngDialog.close();
     };
 });
+
+
+
