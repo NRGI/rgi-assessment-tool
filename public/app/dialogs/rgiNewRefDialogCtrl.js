@@ -85,13 +85,15 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
             current_user = $scope.$parent.current_user,
             email_domain = 'http://' + $scope.answer_update.human_ref_email.split('@')[1];
 
-        isURLReal(email_domain)
-            .fail(function (res) {
-                rgiNotifier.error('Email Domain does not appear to be valid');
-            })
-            .done(function (res) {
-                console.log(res);
-            });
+        console.log(email_domain);
+
+        //isURLReal(email_domain)
+        //    .fail(function (res) {
+        //        rgiNotifier.error('Email Domain does not appear to be valid');
+        //    })
+        //    .done(function (res) {
+        //        console.log(res);
+        //    });
 
 
 
