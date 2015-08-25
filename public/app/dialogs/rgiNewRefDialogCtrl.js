@@ -40,11 +40,16 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
     $scope.webRefSubmit = function (current_user) {
         var new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
-            url;
+            url, access_date;
         if ($scope.answer.web_ref_url.split('://')[0] === 'http' || $scope.answer.web_ref_url.split('://')[0] === 'https') {
             url = $scope.answer.web_ref_url;
         } else {
             url = 'http://' + $scope.answer.web_ref_url;
+        }
+        if(!$scope.answer.web_ref_access_date) {
+            access_date = $scope.date_default.toISOString();
+        } else {
+            access_date = new Date($scope.answer.web_ref_access_date).toISOString();
         }
 
         isURLReal(url)
@@ -58,7 +63,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
                     URL: url,
                     access_date: new Date($scope.answer.web_ref_access_date).toISOString(),
                     comment: {
-                        date: new Date().toISOString(),
+                        date: access_date,
                         author: current_user._id,
                         author_name: current_user.firstName + ' ' + current_user.lastName,
                         role: current_user.role
@@ -84,6 +89,10 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
             new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
             email_domain = 'http://' + $scope.answer_update.human_ref_email.split('@')[1];
+
+        if (email_domain === 'http://undefined') {
+            rgiNotifier.error('You must enter a valid email address!')
+        }
 
         console.log(email_domain);
 

@@ -1,7 +1,7 @@
 div.top-padding-med
     .well
         legend New interview reference
-        .row.left-padding-lg(id="new_document_form")
+        .row.left-padding-lg(id="new_human_form")
             .form-horizontal
                 fieldset
                     // EXISTING INTERVIEWEE
@@ -63,7 +63,7 @@ div.top-padding-med
                     div.col-lg-5
                         button.btn.btn-block.btn-success(
                         ng-click="humanRefSubmit()"
-                        ng-disabled="new_web_form.$invalid"
+                        ng-disabled="new_human_form.$invalid"
                         ) Create reference
                     div.col-lg-5
                         button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
