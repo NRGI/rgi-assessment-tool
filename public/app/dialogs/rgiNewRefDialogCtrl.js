@@ -2,7 +2,7 @@
 //var angular;
 
 //angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc) {
-angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, $http, ngDialog, rgiNotifier, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, $http, ngDialog, rgiNotifier, FileUploader, rgiAnswerMethodSrvc) {
     $scope.answer_update = $scope.$parent.answer;
     ////TODO REPLACE WITH EXISITING REFERENCE SET
     //$scope.existing_ref = [
@@ -36,6 +36,42 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
     var today = new Date();
     $scope.date_default = today;
     $scope.date_max_limit = today;
+
+    var uploader = $scope.uploader = new FileUploader({
+        isHTML5: true,
+        withCredentials: true,
+        url: 'file-upload'
+    });
+    uploader.filters.push({
+        name: 'customFilter',
+        fn: function (item /*{File|FileLikeObject}*/, options) {
+            return this.queue.length < 1;
+        }
+    });
+    //TODO handle doc and txt documents
+    uploader.onCompleteItem = function (fileItem, response, status, headers) {
+        if (status === 400) {
+            $scope.uploader.queue = [];
+            rgiNotifier.error(response.reason);
+        } else {// TODO add cancel upload after initial document pass
+            $scope.new_document = response;
+
+            $scope.uploader.queue = [];
+
+            $scope.value = true;
+            //TODO handle overlapping dialogs
+            var scope = $scope.$parent;
+            scope.new_document = $scope.new_document;
+            ngDialog.close('ngdialog1');
+            ngDialog.open({
+                template: 'partials/dialogs/new-document-dialog',
+                controller: 'rgiNewDocumentDialogCtrl',
+                className: 'ngdialog-theme-default',
+                scope: scope
+            });
+        }
+
+    };
 
     $scope.webRefSubmit = function (current_user) {
         var new_answer_data = $scope.answer_update,

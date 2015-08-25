@@ -23,8 +23,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     $scope.date_default = today;
     $scope.date_max_limit = today;
 
-
-
     $scope.moveForward = function () {
         if ($scope.identity.currentUser._id === $scope.assessment.edit_control) {
             $location.path('/assessments/assessment-edit/' + $scope.assessment.assessment_ID + "-" + String(zeroFill($scope.answer.question_order + 1, 3)));
@@ -129,48 +127,20 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     };
     //TODO Generate Dialog based on change and handle upload process via dialogs
     $scope.select_ref_dialog = function(value) {
-        var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog';
+        var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog',
+            className;
+        if ($scope.ref_selection === 'document') {
+            className = 'ngdialog-theme-default dialogwidth800';
+        } else {
+            className = 'ngdialog-theme-default';
+        }
         //console.log(template);
         ngDialog.open({
             template: template,
             controller: 'rgiNewRefDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: className,
             scope: $scope
         });
-    };
-
-    //Citation functions
-    // Doc Upload specs
-    var uploader = $scope.uploader = new FileUploader({
-        isHTML5: true,
-        withCredentials: true,
-        url: 'file-upload'
-    });
-    uploader.filters.push({
-        name: 'customFilter',
-        fn: function (item /*{File|FileLikeObject}*/, options) {
-            return this.queue.length < 1;
-        }
-    });
-    //TODO handle doc and txt documents
-    uploader.onCompleteItem = function (fileItem, response, status, headers) {
-        if (status === 400) {
-            $scope.uploader.queue = [];
-            rgiNotifier.error(response.reason);
-        } else {// TODO add cancel upload after initial document pass
-            $scope.new_document = response;
-
-            $scope.uploader.queue = [];
-
-            $scope.value = true;
-            ngDialog.open({
-                template: 'partials/dialogs/new-document-dialog',
-                controller: 'rgiNewDocumentDialogCtrl',
-                className: 'ngdialog-theme-plain',
-                scope: $scope
-            });
-        }
-
     };
 
     // Review functions
