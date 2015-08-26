@@ -15,9 +15,7 @@
                         ng-model="sortOrder"
                         ng-options="item.value as item.text for item in sortOptions")
                 br
-                button.btn.btn-success.pull-right(
-                ng-if="assessment.edit_control===identity.currentUser._id && assessment.questions_complete===answers.length"
-                ng-click="assessmentSubmit()") Submit assessment
+                button.btn.btn-success.pull-right(ng-click="assessmentSubmit()") Submit assessment
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row

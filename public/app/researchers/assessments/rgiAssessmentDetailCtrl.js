@@ -2,7 +2,7 @@
 //var angular;
 /*jslint nomen: true regexp: true*/
 
-angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, $location, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, rgiAssessmentMethodSrvc) {
+angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $routeParams, $location, ngDialog, rgiNotifier, rgiIdentitySrvc, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, rgiAssessmentMethodSrvc) {
     // filtering options
     $scope.sortOptions = [
         {value: "question_order", text: "Sort by Question Number"},
@@ -27,19 +27,20 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
     });
 
     $scope.assessmentSubmit = function () {
-        var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
-
-        new_assessment_data.status = 'submitted';
-        new_assessment_data.questions_complete = 0;
-
-        //rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-        //    .then(function () {
-        //        $location.path('/assessments');
-        //        rgiNotifier.notify('Assessment submitted!');
-        //    }, function (reason) {
-        //        rgiNotifier.error(reason);
-        //    });
+        if ($scope.answers.length !== $scope.assessment.questions_complete) {
+            rgiNotifier.error('You must complete all assessment questions')
+        } else {
+            $scope.value = true;
+            ngDialog.open({
+                template: 'partials/dialogs/submit-confirmation-dialog',
+                controller: 'rgiSubmitConfirmationDialogCtrl',
+                className: 'ngdialog-theme-default',
+                scope: $scope
+            });
+        }
     };
+
+
 
     $scope.assessmentResubmit = function () {
         var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);

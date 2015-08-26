@@ -7,7 +7,7 @@ angular.module('app').controller('rgiDeleteProfileDialogCtrl', function ($scope,
         var user_deletion = $scope.$parent.user._id;
 
         rgiUserMethodSrvc.deleteUser(user_deletion).then(function () {
-            $scope.closeThisDialog();
+            $scope.closeDialog();
             $location.path('/admin/user-admin');
             rgiNotifier.notify('User account has been deleted');
         }, function (reason) {
