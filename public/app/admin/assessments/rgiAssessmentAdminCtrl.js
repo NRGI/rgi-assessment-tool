@@ -76,7 +76,6 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
     }
 
     $scope.assessmentStartReview = function (assessment_ID) {
-
         rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
             new_assessment_data.status = 'under_review';
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
