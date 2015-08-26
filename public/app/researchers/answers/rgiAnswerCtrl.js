@@ -10,7 +10,7 @@ function zeroFill(number, width) {
     return number + ""; // always return a string
 }
 
-angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, $q, $location, ngDialog, FileUploader, rgiAnswerSrvc, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier) {
+angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams, $q, $location, $route, ngDialog, FileUploader, rgiAnswerSrvc, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiIdentitySrvc, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiQuestionSrvc, rgiAnswerMethodSrvc, rgiNotifier) {
     $scope.identity = rgiIdentitySrvc;
     $scope.ref_type = [
         {text: 'Add Document', value: 'document'},
@@ -223,8 +223,8 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                     $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
                 } else {
                     $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
+                    $route.reload();
                 }
-                // $location.path();
                 rgiNotifier.notify('Answer approved');
             }, function (reason) {
                 rgiNotifier.notify(reason);
