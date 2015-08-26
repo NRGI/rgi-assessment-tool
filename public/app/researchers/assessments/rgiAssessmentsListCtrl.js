@@ -59,17 +59,6 @@ angular.module('app').controller('rgiAssessmentsListCtrl', function ($scope, $lo
         });
     };
 
-    //$scope.assessmentSubmit = function () {
-    //    console.log($scope);
-    //    //$scope.value = true;
-    //    //ngDialog.open({
-    //    //    template: 'partials/dialogs/submit-confirmation-dialog',
-    //    //    controller: 'rgiSubmitConfirmationDialogCtrl',
-    //    //    className: 'ngdialog-theme-default',
-    //    //    scope: $scope
-    //    //});
-    //};
-
     $scope.assessmentResubmit = function () {
         var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
 
