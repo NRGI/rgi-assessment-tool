@@ -94,7 +94,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
         ngDialog.open({
             template: 'partials/dialogs/new-assessment-dialog',
             controller: 'rgiNewAssessmentDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default',
             scope: $scope
         });
     };
@@ -105,7 +105,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
         ngDialog.open({
             template: 'partials/dialogs/assign-assessment-dialog',
             controller: 'rgiAssignAssessmentDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default dialogwidth800',
             scope: $scope
         });
     };
