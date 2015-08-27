@@ -8,7 +8,7 @@ div.left-padding-lg.right-padding-lg
                         .form-group.col-md-8
                             select.form-group.form-control(name="action" ng-model="action" required)
                                 option(value="" selected disabled) Select action
-                                option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
+                                option(ng-repeat="opt in workflow_opts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
                                 //- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
                     .row
                         button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
