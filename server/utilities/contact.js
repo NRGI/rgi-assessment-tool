@@ -1,6 +1,6 @@
 'use strict'
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
-
+// send email to tech support
 exports.techSend = function (req, res) {
     var issue_os, issue_browser, issue_browser_ver,
         message_content = req.body,
@@ -72,29 +72,22 @@ exports.techSend = function (req, res) {
     res.send();
 };
 
+// send email to new user
 exports.new_user_confirmation = function (contact_packet) {
-    console.log(contact_packet);
-//
-////
-////    // send email to new user
-////    mandrill('/messages/send', {
-////        message: {
-////            to: [{email: rec_email, name: rec_name}],
-////            from_email: 'cperry@resourcegovernance.org',
-////            subject: rec_role + ' account created!',
-////            html: "Hello " + rec_name + ",<p>\
-////                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-////                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-////                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-////                   Thanks!<p>\
-////                   The RGI Team."
-////        }
-////    }, function (error, response) {
-////        //uh oh, there was an error
-////        if (error) console.log( JSON.stringify(error) );
-////
-////        //everything's good, lets see what mandrill said
-////        else console.log(response);
-////    });
-////
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.rec_email, name: contact_packet.rec_name}],
+            from_email: contact_packet.send_email,
+            subject: contact_packet.rec_role + ' account created!',
+            html: "Hello " + contact_packet.rec_name + ",<p>\
+                   an RGI " + contact_packet.rec_role + "account was just set up for you by <a href='" + contact_packet.send_email + "'>" + contact_packet.send_name + "</a>.<p>\
+                   The user name is <b>" + contact_packet.rec_username + "</b> and the password is <b>" + contact_packet.rec_password + "</b>.\
+                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+                   Thanks!<p>\
+                   The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
 };
