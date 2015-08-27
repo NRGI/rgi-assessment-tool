@@ -55,9 +55,9 @@ exports.techSend = function (req, res) {
         message: {
             to: [{email: message_content.email, name: issue_full_name}],
             from_email: [{email: 'tech-support@resourcegovernance.org', name: 'Assessment tool tech support'}],
-            subject: 'Confirmation of ' + message_content.issue.value + ' support ticket'
-            html: "Hi " + issue_full_name + ",<p>"
-            + "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience, we will contact you shortly. "
+            subject: 'Confirmation of ' + message_content.issue.value + ' support ticket',
+            html: "Hi " + issue_full_name + "\,<p>"
+            + "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience\, we will contact you shortly. "
             + "In the meantime please look at the info you supplied below and let us know if any of it is incorrect.<p>"
             + "<ul><li><b>Issue</b>: " + message_content.issue.name + "</li><<li><b>Issue description</b>: " + message_content.issue_description + "</li>"
             + "<li><b>OS</b>: " + issue_os + "</li><li><b>Browser</b>: " + issue_browser + "</li><li><b>Browser version</b>: " + issue_browser_ver + "</li></ul>"
@@ -74,27 +74,27 @@ exports.techSend = function (req, res) {
 
 exports.new_user_confirmation = function (contact_packet) {
     console.log(contact_packet);
-
 //
-//    // send email to new user
-//    mandrill('/messages/send', {
-//        message: {
-//            to: [{email: rec_email, name: rec_name}],
-//            from_email: 'cperry@resourcegovernance.org',
-//            subject: rec_role + ' account created!',
-//            html: "Hello " + rec_name + ",<p>\
-//                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-//                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-//                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-//                   Thanks!<p>\
-//                   The RGI Team."
-//        }
-//    }, function (error, response) {
-//        //uh oh, there was an error
-//        if (error) console.log( JSON.stringify(error) );
-//
-//        //everything's good, lets see what mandrill said
-//        else console.log(response);
-//    });
-//
+////
+////    // send email to new user
+////    mandrill('/messages/send', {
+////        message: {
+////            to: [{email: rec_email, name: rec_name}],
+////            from_email: 'cperry@resourcegovernance.org',
+////            subject: rec_role + ' account created!',
+////            html: "Hello " + rec_name + ",<p>\
+////                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+////                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+////                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+////                   Thanks!<p>\
+////                   The RGI Team."
+////        }
+////    }, function (error, response) {
+////        //uh oh, there was an error
+////        if (error) console.log( JSON.stringify(error) );
+////
+////        //everything's good, lets see what mandrill said
+////        else console.log(response);
+////    });
+////
 };

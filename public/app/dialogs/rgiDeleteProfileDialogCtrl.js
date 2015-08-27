@@ -4,15 +4,21 @@
 
 angular.module('app').controller('rgiDeleteProfileDialogCtrl', function ($scope, $location, ngDialog, rgiUserMethodSrvc, rgiNotifier) {
     $scope.userDelete = function () {
-        var user_deletion = $scope.$parent.user._id;
+        var user_deletion = $scope.$parent.user;
 
-        rgiUserMethodSrvc.deleteUser(user_deletion).then(function () {
-            $scope.closeDialog();
-            $location.path('/admin/user-admin');
-            rgiNotifier.notify('User account has been deleted');
-        }, function (reason) {
-            rgiNotifier.error(reason);
-        });
+        if (user_deletion.assessments.length > 0) {
+            rgiNotifier.error('You cannot delete a user with open assessments!');
+        } else if (user_deletion.role === 'supervisor') {
+            rgiNotifier.error('You cannot delete a supervisor!');
+        } else {
+            rgiUserMethodSrvc.deleteUser(user_deletion._id).then(function () {
+                $scope.closeDialog();
+                $location.path('/admin/user-admin');
+                rgiNotifier.notify('User account has been deleted');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+        }
     };
     $scope.closeDialog = function () {
         ngDialog.close();
