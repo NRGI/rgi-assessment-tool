@@ -189,9 +189,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         if (new_answer_data.status === 'flagged') {
             new_answer_data.status = 'resubmitted';
             new_assessment_data.questions_resubmitted += 1;
-            new_assessment_data.questions_complete += 1;
         }
-
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
             .then(function () {
@@ -260,10 +258,6 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         //        new_assessment_data.questions_flagged -= 1;
         //    }
         //}
-
-
-
-
 
     };
 
