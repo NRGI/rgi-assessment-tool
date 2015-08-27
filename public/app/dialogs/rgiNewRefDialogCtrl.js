@@ -59,7 +59,6 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
             $scope.uploader.queue = [];
 
             $scope.value = true;
-            //TODO handle overlapping dialogs
             var scope = $scope.$parent;
             scope.new_document = $scope.new_document;
             ngDialog.close('ngdialog1');
