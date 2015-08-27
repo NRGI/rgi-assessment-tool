@@ -37,33 +37,33 @@ exports.getUsersListByID = function (req, res) {
 exports.createUser = function (req, res, next) {
     var userData = req.body,
         contact_packet = {};
-    console.log(userData);
 
-    //contact_packet.rec_email = userData.email;
-    //contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
-    //contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
-    //contact_packet.rec_username = userData.username;
-    //contact_packet.rec_password = userData.password;
-    //contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
-    //
-    //userData.username = userData.username.toLowerCase();
-    //userData.salt = encrypt.createSalt();
-    //userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
-    //userData.createdBy = req.user._id;
-    //
-    //User.create(userData, function (err, user, next) {
-    //    if (err) {
-    //        if (err.toString().indexOf('E11000') > -1) {
-    //            err = new Error('Duplicate Username');
-    //        }
-    //        res.status(400);
-    //        return res.send({reason: err.toString()});
-    //    }
-    //    next();
-    //});
-    //
-    //contact.new_user_confirmation(contact_packet);
-    //
+    contact_packet.rec_email = userData.email;
+    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    contact_packet.rec_username = userData.username;
+    contact_packet.rec_password = userData.password;
+    contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
+    contact_packet.send_email = req.user.email;
+
+    userData.username = userData.username.toLowerCase();
+    userData.salt = encrypt.createSalt();
+    userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
+    userData.createdBy = req.user._id;
+
+    User.create(userData, function (err, user, next) {
+        if (err) {
+            if (err.toString().indexOf('E11000') > -1) {
+                err = new Error('Duplicate Username');
+            }
+            res.status(400);
+            return res.send({reason: err.toString()});
+        }
+        next();
+    });
+
+    contact.new_user_confirmation(contact_packet);
+
     ////TODO refator this into ./server/utiliies/contact.js
     ////send confirmation email to new user
     //mandrill('/messages/send', {
