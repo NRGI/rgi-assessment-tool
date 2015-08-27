@@ -68,8 +68,15 @@
                             .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                             .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                             .text(ng-if="answer.status!=='flagged' && answer.status!=='approved' && answer.status!=='resubmitted'")  {{answer.status | ucfirst}}
-                        td
+                        td(ng-if="assessment.status==='under_review' || assessment.status==='resubmitted'")
                             a.btn.center-block.btn-primary(
-                            ng-if="assessment.status==='under_review' || assessment.status==='resubmitted'"
+                            ng-if="answer.status==='submitted'"
                             href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}") Review
-                            text.text-success(ng-if="answer.status==='final'") Final score: {{answer.final_score}}
+                            a.btn.center-block.btn-danger(
+                            ng-if="answer.status==='resubmitted'"
+                            href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}") Review
+                            a.btn.center-block.btn-default(
+                            ng-if="answer.status==='approved'"
+                            href="/admin/assessment-review/answer-review-edit/{{answer.answer_ID}}") Review
+                        tc(ng-if="answer.status==='final'")
+                            text.text-success Final score: {{answer.final_score}}
