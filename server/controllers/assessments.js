@@ -142,48 +142,48 @@ exports.updateAssessment = function (req, res) {
                 ///////////////////////////////
                 // MAIL ROUTING
                 ///////////////////////////////
-                // assignment flow
-                //contact_packet - assessmentUpdates.status
-                switch (assessmentUpdates.status) {
+                if (assessmentUpdates.mail == true) {
+                    switch (assessmentUpdates.status) {
 
-                case 'assigned':
-                    contact.new_assessment_assignment(contact_packet, 'researcher');
-                    if (contact_packet.reviewer_role !== 'supervisor') {
-                        contact.new_assessment_assignment(contact_packet, 'reviewer');
+                        case 'assigned':
+                            contact.new_assessment_assignment(contact_packet, 'researcher');
+                            if (contact_packet.reviewer_role !== 'supervisor') {
+                                contact.new_assessment_assignment(contact_packet, 'reviewer');
+                            }
+                            break;
+
+                        //TODO Need to handle group emails
+                        case 'submitted':
+                        case 'resubmitted':
+                            contact.assessment_submission(contact_packet, 'researcher');
+                            break;
+
+                        case 'review_researcher':
+                        case 'review_reviewer':
+                            contact.flag_review(contact_packet);
+                            break;
+
+                        case 'assigned_researcher':
+                        case 'assigned_reviewer':
+                            contact.assessment_reassignment(contact_packet);
+                            break;
+
+                        case 'internal_review':
+                            console.log('send over to internal review email');
+                            break;
+
+                        case 'external_review':
+                            console.log('send over to external review email');
+                            break;
+
+                        case 'final_approval':
+                            console.log('final approval email');
+                            break;
+
+                        default:
+                            console.log('no email action');
+                            break;
                     }
-                    break;
-
-                //TODO Need to handle group emails
-                case 'submitted':
-                case 'resubmitted':
-                    contact.assessment_submission(contact_packet, 'researcher');
-                    break;
-
-                case 'review_researcher':
-                case 'review_reviewer':
-                    contact.flag_review(contact_packet);
-                    break;
-
-                case 'assigned_researcher':
-                case 'assigned_reviewer':
-                    contact.assessment_reassignment(contact_packet);
-                    break;
-
-                case 'internal_review':
-                    console.log('send over to internal review email');
-                    break;
-
-                case 'external_review':
-                    console.log('send over to external review email');
-                    break;
-
-                case 'final_approval':
-                    console.log('final approval email');
-                    break;
-
-                default:
-                    console.log('no email action');
-                    break;
                 }
             });
         });

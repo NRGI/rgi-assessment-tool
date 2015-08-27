@@ -22,6 +22,8 @@ angular.module('app').controller('rgiMoveAssessmentConfirmationDialogCtrl', func
 
     $scope.assessmentmove = function () {
         var new_assessment_data;
+        //MAIL NOTIFICATION
+        new_assessment_data.mail = true;
 
         switch ($scope.action) {
             case 'review_researcher':

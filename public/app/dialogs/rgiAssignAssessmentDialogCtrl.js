@@ -34,6 +34,9 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
             new_answer_set = [];
             //current_user = rgiIdentitySrvc.currentUser;
 
+        //MAIL NOTIFICATION
+        new_assessment_data.mail = true;
+
         // UPDATE ASSESSMENT AND ASSIGN ALL SCENERIOS
         new_assessment_data.status = 'assigned';
         new_assessment_data.researcher_ID = new_researcher_data._id;

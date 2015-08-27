@@ -11,6 +11,8 @@ angular.module('app').controller('rgiSubmitConfirmationDialogCtrl', function ($s
 
         new_assessment_data.status = 'submitted';
         new_assessment_data.questions_complete = 0;
+        //MAIL NOTIFICATION
+        new_assessment_data.mail = true;
 
         rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
             .then(function () {
