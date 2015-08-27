@@ -19,7 +19,7 @@ angular.module('app').controller('rgiDocumentAdminDetailCtrl', function ($scope,
         ngDialog.open({
             template: 'partials/dialogs/edit-document-dialog',
             controller: 'rgiEditDocumentDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default',
             scope: $scope
         });
     };

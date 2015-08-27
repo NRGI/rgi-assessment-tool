@@ -25,33 +25,46 @@
 								th Version
 								th
 								th
+								th
 						tbody
 							tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+								//COUNTRY
 								td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
 								td(ng-if="assessment.status!='unassigned'")
 									a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.country}}
-								td.col-md-3
+								//RESEARCHER
+								td.col-md-3(ng-if="assessment.researcher!==undefined")
 									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
 									a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
-								td.col-md-3
+								td.col-md-3(ng-if="assessment.researcher===undefined") Not assigned
+								//REVIEWER
+								td.col-md-3(ng-if="assessment.reviewer!==undefined")
 									span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
 									a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+								td.col-md-3(ng-if="assessment.reviewer===undefined") Not assigned
+								//START DATE
 								td {{assessment.start_date.started_date | date}}
+								//LAST EDIT
 								td(ng-if="assessment.edited_by")
 									a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
 									text -
 									span(ng-repeat="mod in assessment.modified")
 										em(ng-show="$last") {{mod.modified_date | date}}
 								td(ng-if="!assessment.edited_by")
+								//STATUS
 								td {{assessment.status | ucfirst}}
+								//VERSION
 								td {{assessment.version | ucfirst}} {{assessment.year}}
 								td
-									//TODO change to dialog box
 									button.btn.btn-col.center-block.btn-primary(
 									ng-click="assignAssessmentDialog(assessment)"
 									ng-if="assessment.status=='unassigned'"
 									) Assign
-									button.btn.btn-col.center-block.btn-default.disabled(ng-if="assessment.status!='unassigned'") Assigned
+									//TODO add reassign assessment dialog
+									button.btn.btn-col.center-block.btn-warning(
+									ng-click="reassignAssessmentDialog(assessment)"
+									ng-if="assessment.status!='unassigned'"
+									disabled) Reassign
 								td
 									button.btn.btn-col.btn-primary(
 									ng-click="assessmentStartReview(assessment.assessment_ID)"

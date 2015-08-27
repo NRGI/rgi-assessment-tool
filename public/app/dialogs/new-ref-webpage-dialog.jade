@@ -1,0 +1,54 @@
+div.left-padding-lg.right-padding-lg
+    h2 New webpage reference
+    .row(id="new_web_form")
+        .form-horizontal
+            fieldset
+                // EXISTING WEBPAGE
+                //TODO ALLOW USER TO SELECT FROM EXISTING REFERENCE SET
+                //div.row.form-group.col-lg-11
+                //    label Existing interviewee
+                //    select.form-group.form-control.pull-left(ng-model="existing_ref")
+                //        option(ng-repeat="ref in existing_ref" value="{{ref.value}}") {{ref.text}}
+                // NEW WEBPAGE
+                h4 New webpage
+                div.left-padding-lg.right-padding-lg
+                    div.row.form-group
+                        input.form-control(
+                        name="title"
+                        type="text"
+                        placeholder="Website title (required)..."
+                        ng-model="answer.web_ref_title"
+                        autocomplete="off"
+                        required)
+                    div.row.form-group
+                        input.form-control(
+                        name="url"
+                        type="text"
+                        placeholder="Website URL (required)..."
+                        ng-model="answer.web_ref_url"
+                        autocomplete="off"
+                        required)
+                    div.row.form-group
+                        input.form-control(
+                        name="comment"
+                        type="text"
+                        placeholder="Comments..."
+                        ng-model="answer.web_ref_comment"
+                        autocomplete="off")
+
+                    div.row.form-group
+                        datepicker(
+                        date-format="{{date_format}}")
+                            input.form-control(
+                            ng-model="answer.web_ref_access_date"
+                            type="text"
+                            placeholder="Date accessed...")
+
+                //- BUTTON CONTROL
+                div.col-lg-6
+                    button.btn.btn-block.btn-success(
+                    ng-click="webRefSubmit()"
+                    ng-disabled="!answer.web_ref_title || !answer.web_ref_url"
+                    ) Create reference
+                div.col-lg-6
+                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

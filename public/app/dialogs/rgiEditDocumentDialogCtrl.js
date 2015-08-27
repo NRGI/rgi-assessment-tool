@@ -27,6 +27,21 @@ angular.module('app').controller('rgiEditDocumentDialogCtrl', function ($scope, 
         {value: 'film', text: 'Film'},
         {value: 'bill', text: 'Bill'}
     ];
+    $scope.authorPush = function () {
+        $scope.new_doc_data.authors.push({first_name: "", last_name: ""});
+    };
+
+    $scope.editorPush = function () {
+        $scope.new_doc_data.editors.push({first_name: "", last_name: ""});
+    };
+
+    $scope.authorPop = function (index) {
+        $scope.new_doc_data.authors.splice(index, 1);
+    };
+
+    $scope.editorPop = function (index) {
+        $scope.new_doc_data.editors.splice(index, 1);
+    };
 
     $scope.documentSave = function (new_doc_data) {
         rgiDocumentMethodSrvc.updateDocument(new_doc_data).then(function () {

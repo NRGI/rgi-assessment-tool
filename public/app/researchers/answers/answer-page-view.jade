@@ -50,7 +50,7 @@
 								value="{{choice.order}}"
 								checked=""
 								ng-model="answer.researcher_score"
-								ng-disabled="assessment.edit_control!==current_user._id")
+								disabled)
 								text.left-padding-med {{choice.criteria}}
 						h5 Researcher justification:
 						em.left-padding-lg {{answer.researcher_justification}}
@@ -75,9 +75,10 @@
 
 		.row.left-padding-lg.bottom-padding-lg
 			.col-md-pull-2.left-padding-lg
-				a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
-				| &nbsp;
-				a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
+				//TODO figure out if we want editing of non-flagged questions
+				//a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
+				//| &nbsp;
+				a.btn.btn-default(href="/assessments-review/{{answer.assessment_ID}}") Return to assessment menu
 		.row.left-padding-lg.right-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset

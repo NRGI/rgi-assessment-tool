@@ -60,6 +60,8 @@ config.config
 newrelic_agent.log
 newrelic_agent.log
 
+travis.yml
+shippable.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
