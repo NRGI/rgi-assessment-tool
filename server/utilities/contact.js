@@ -72,6 +72,10 @@ exports.techSend = function (req, res) {
     res.send();
 };
 
+/////////////////////////////////
+///////USER RECORD EMAILS////////
+/////////////////////////////////
+
 // send email to new user
 exports.new_user_confirmation = function (contact_packet) {
     mandrill('/messages/send', {
@@ -79,12 +83,12 @@ exports.new_user_confirmation = function (contact_packet) {
             to: [{email: contact_packet.rec_email, name: contact_packet.rec_name}],
             from_email: contact_packet.send_email,
             subject: contact_packet.rec_role + ' account created!',
-            html: "Hello " + contact_packet.rec_name + ",<p>\
-                   an RGI " + contact_packet.rec_role + "account was just set up for you by <a href='" + contact_packet.send_email + "'>" + contact_packet.send_name + "</a>.<p>\
-                   The user name is <b>" + contact_packet.rec_username + "</b> and the password is <b>" + contact_packet.rec_password + "</b>.\
-                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                   Thanks!<p>\
-                   The RGI Team."
+            html: "Hello " + contact_packet.rec_name + ",<p>"
+                + "an RGI " + contact_packet.rec_role + "account was just set up for you by <a href='" + contact_packet.send_email + "'>" + contact_packet.send_name + "</a>.<p>"
+                + "The user name is <b>" + contact_packet.rec_username + "</b> and the password is <b>" + contact_packet.rec_password + "</b>."
+                + "Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>"
+                + "Thanks!<p>"
+                + "The RGI Team."
         }
     }, function (err, res) {
         if (err) console.log( JSON.stringify(err) );
@@ -95,3 +99,123 @@ exports.new_user_confirmation = function (contact_packet) {
 exports.delete_user_confirmation = function (contact_packet) {
 
 };
+
+////////////////////////////////////////
+///////ASSESSMENT RECORD EMAILS////////
+////////////////////////////////////////
+
+// email when assessment is assigned
+exports.new_assessment_assignment = function (contact_packet, type) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet[type + '_email'], name: contact_packet[type + '_fullName']}],
+            from_email: 'rgi-admin@resourcegovernance.org',
+            subject: contact_packet.assessment_title + ' assessment assigned!',
+            html: "Hello " + contact_packet[type + '_firstName'] + ",<p>"
+                + "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just assigned the " + contact_packet.assessment_title + " assessement to you.<p>"
+                + "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to start the assessment.<p>"
+                + "Thanks!<p>"
+                + "The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+// email when assessment is submitted or resubmitted
+exports.assessment_submission = function (contact_packet) {
+    //send an email to team that assessment is ready
+    mandrill('/messages/send', {
+        message: {
+            to: [
+                {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
+                {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
+                {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
+                {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
+            ],
+            from_email: [{email: contact_packet.editor_email, name: contact_packeteditor_fullName}],
+            subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
+            html: "Hi team,<p>"
+                + contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " assessment for review."
+                + "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>"
+                + "Thanks!<p>"
+                + "The RGI Team.<p>"
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+    //send email to submitter that it went through
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packeteditor_fullName}],
+            from_email: "rgi-admin@resourcegovernance.org",
+            subject: contact_packet.assessment_title + " recieved.",
+            html: "Hi "+ contact_packet.editor_fullName + ",<p>"
+            + "Your submission of the " + contact_packet.assessment_title + " assessment was sent to the admin team. We will be in contact shortly with next steps."
+            + "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> if you want to check the status.<p>"
+            + "Thanks!<p>"
+            + "The RGI Team.<p>"
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+// email when flags need to be reviewed by researcher or reviewer
+exports.flag_review = function (contact_packet) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: [{email: contact_packet.admin_email, name: contact_packet.admin_name}],
+            subject: contact_packet.assessment_title + ' assessment returned for review!',
+            html: "Hello " + contact_packet.editor_firstName + ",<p>"
+                + "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. "
+                + "There are a few errors we'd like you to address before moving the assessment on.<p>"
+                + "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>"
+                + "Thanks!<p>"
+                + "The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+// email when reassigning to researcher or reviewer
+exports.assessment_reassignment = function (contact_packet) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: [{email: contact_packet.admin_email, name: contact_packet.admin_name}],
+            subject: "Please begin work on the " + contact_packet.assessment_title + " assessment!",
+            html: "Hello " + contact_packet.editor_firstName + ",<p>"
+                + "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>"
+                + "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>"
+                + "Thanks!<p>"
+                + "The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+
+
+//// email when
+//exports. = function (contact_packet) {
+//    mandrill('/messages/send', {
+//        message: {
+//            to: [{email: , name: }],
+//            from_email: [{email: , name: }],
+//            subject: ,
+//            html: ""
+//        }
+//    }, function (err, res) {
+//        if (err) console.log( JSON.stringify(err) );
+//        else console.log(res);
+//    });
+//};

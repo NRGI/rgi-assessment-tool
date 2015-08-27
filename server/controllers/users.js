@@ -3,7 +3,6 @@
 
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption'),
-    mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY),
     contact = require('../utilities/contact');
     // client = require('campaign')();
     // client.send(template, options, done);
