@@ -41,18 +41,23 @@ angular.module('app').controller('rgiAssessmentDetailCtrl', function ($scope, $r
     };
 
 
-
+    //ng-if="assessment.questions_complete===answers.length && assessment.edit_control===identity.currentUser._id"
+    //    ng-disabled="assessment.questions_flagged!==assessment.questions_resubmitted || anssessment.edit_control===identity.currentUser._id || assessment.status==='submitted'"
     $scope.assessmentResubmit = function () {
-        var new_assessment_data = new rgiAssessmentSrvc($scope.assessment);
+        var new_assessment_data = $scope.assessment;
 
-        new_assessment_data.status = 'resubmitted';
+        if(new_assessment_data.questions_resubmitted !== new_assessment_data.questions_flagged) {
+            rgiNotifier.error('You must resubmit all flagged answers!')
+        } else {
+            new_assessment_data.status = 'resubmitted';
 
-        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-            .then(function () {
-                $location.path('/assessments');
-                rgiNotifier.notify('Assessment submitted!');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
+            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                .then(function () {
+                    $location.path('/assessments');
+                    rgiNotifier.notify('Assessment submitted!');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+        }
     };
 });
