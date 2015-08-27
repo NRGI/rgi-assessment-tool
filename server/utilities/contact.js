@@ -134,7 +134,7 @@ exports.assessment_submission = function (contact_packet) {
                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
             ],
-            from_email: [{email: contact_packet.editor_email, name: contact_packeteditor_fullName}],
+            from_email: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>"
                 + contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " assessment for review."
@@ -149,7 +149,7 @@ exports.assessment_submission = function (contact_packet) {
     //send email to submitter that it went through
     mandrill('/messages/send', {
         message: {
-            to: [{email: contact_packet.editor_email, name: contact_packeteditor_fullName}],
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
             from_email: "rgi-admin@resourcegovernance.org",
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>"
