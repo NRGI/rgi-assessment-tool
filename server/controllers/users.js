@@ -63,33 +63,12 @@ exports.createUser = function (req, res, next) {
     });
 
     contact.new_user_confirmation(contact_packet);
-
-    ////TODO refator this into ./server/utiliies/contact.js
-    ////send confirmation email to new user
-    //mandrill('/messages/send', {
-    //    message: {
-    //        to: [{email: rec_email, name: rec_name}],
-    //        from_email: 'cperry@resourcegovernance.org',
-    //        subject: rec_role + ' account created!',
-    //        html: "Hello " + rec_name + ",<p>\
-    //               an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //               The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //               Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //               Thanks!<p>\
-    //               The RGI Team."
-    //    }
-    //}, function (error, response) {
-    //    //uh oh, there was an error
-    //    if (error) console.log( JSON.stringify(error) );
-    //
-    //    //everything's good, lets see what mandrill said
-    //    else console.log(response);
-    //});
     res.send();
 };
-
+//TODO update user email
 exports.updateUser = function (req, res) {
-    var userUpdates = req.body;
+    var userUpdates = req.body,
+        contact_packet = {};
         // rec_email = userData.email,
         // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
         // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
@@ -129,40 +108,20 @@ exports.updateUser = function (req, res) {
             }
         });
     });
-    //TODO refator this into ./server/utiliies/contact.js
-    // // send an update email to user
-    // mandrill('/messages/send', {
-    //     message: {
-    //         to: [{email: rec_email, name: rec_name}],
-    //         from_email: 'cperry@resourcegovernance.org',
-    //         subject: rec_role + ' account created!',
-    //         html: "Hello " + rec_name + ",<p>\
-    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //                Thanks!<p>\
-    //                The RGI Team."
-    //     }
-    // }, function (error, response) {
-    //     //uh oh, there was an error
-    //     if (error) console.log( JSON.stringify(error) );
-
-    //     //everything's good, lets see what mandrill said
-    //     else console.log(response);
-    // });
     res.send();
 };
 
 //TODO send deleted user information to 'purgatory for a period in case admin needs to undo
 //TODO remove associated data
 exports.deleteUser = function (req, res) {
-    // var userUpdates = req.body;
-        // rec_email = userData.email,
-        // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
-        // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
-        // rec_username = userData.username,
-        // rec_password = userData.password,
-        // send_name = req.user.firstName + " " + req.user.lastName;;
+     //var user_delete = req.body,
+     //    contact_packet = {};
+     //   // rec_email = userData.email,
+     //   // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
+     //   // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
+     //   // rec_username = userData.username,
+     //   // rec_password = userData.password,
+     //   // send_name = req.user.firstName + " " + req.user.lastName;;
 
     User.remove({_id: req.params.id}, function (err) {
         if (!err) {
@@ -171,26 +130,6 @@ exports.deleteUser = function (req, res) {
             return res.send({ reason: err.toString() });
         }
     });
-    //TODO refator this into ./server/utiliies/contact.js
-    // // send notificatino to user that theyve been deleted
-    // mandrill('/messages/send', {
-    //     message: {
-    //         to: [{email: rec_email, name: rec_name}],
-    //         from_email: 'cperry@resourcegovernance.org',
-    //         subject: rec_role + ' account created!',
-    //         html: "Hello " + rec_name + ",<p>\
-    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //                Thanks!<p>\
-    //                The RGI Team."
-    //     }
-    // }, function (error, response) {
-    //     //uh oh, there was an error
-    //     if (error) console.log( JSON.stringify(error) );
-
-    //     //everything's good, lets see what mandrill said
-    //     else console.log(response);
-    // });
+    //contact.delete_user_confirmation(contact_packet);
     res.send();
 };
