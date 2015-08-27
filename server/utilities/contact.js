@@ -91,3 +91,7 @@ exports.new_user_confirmation = function (contact_packet) {
         else console.log(res);
     });
 };
+//TODO delete user confirmation
+exports.delete_user_confirmation = function (contact_packet) {
+
+};
