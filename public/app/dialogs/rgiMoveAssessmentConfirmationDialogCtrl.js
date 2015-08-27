@@ -21,15 +21,14 @@ angular.module('app').controller('rgiMoveAssessmentConfirmationDialogCtrl', func
     $scope.current_user = rgiIdentitySrvc.currentUser;
 
     $scope.assessmentmove = function () {
-        var new_assessment_data;
+        var new_assessment_data = $scope.$parent.assessment;
+        new_assessment_data.status = $scope.action;
         //MAIL NOTIFICATION
         new_assessment_data.mail = true;
 
         switch ($scope.action) {
             case 'review_researcher':
             case 'review_researcher':
-                new_assessment_data = $scope.$parent.assessment;
-                new_assessment_data.status = $scope.action;
                 new_assessment_data.questions_resubmitted = 0;
 
                 rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
@@ -45,8 +44,6 @@ angular.module('app').controller('rgiMoveAssessmentConfirmationDialogCtrl', func
 
             case 'assigned_researcher':
             case 'assigned_reviewer':
-                new_assessment_data = $scope.$parent.assessment;
-                new_assessment_data.status = $scope.action;
                 new_assessment_data.questions_complete = 0;
 
                 if ($scope.action === 'assigned_researcher') {
