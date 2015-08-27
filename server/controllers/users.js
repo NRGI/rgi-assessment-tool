@@ -37,51 +37,54 @@ exports.getUsersListByID = function (req, res) {
 exports.createUser = function (req, res, next) {
     var userData = req.body,
         contact_packet = {};
+    console.log(userData);
 
-    contact_packet.rec_email = userData.email;
-    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
-    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
-    contact_packet. rec_username = userData.username;
-    contact_packet.rec_password = userData.password;
-    contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
-
-    userData.username = userData.username.toLowerCase();
-    userData.salt = encrypt.createSalt();
-    userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
-    userData.createdBy = req.user._id;
-
-    User.create(userData, function (err, user, next) {
-        if (err) {
-            if (err.toString().indexOf('E11000') > -1) {
-                err = new Error('Duplicate Username');
-            }
-            res.status(400);
-            return res.send({reason: err.toString()});
-        }
-        next();
-    });
-
-    //TODO refator this into ./server/utiliies/contact.js
-    //send confirmation email to new user
-    mandrill('/messages/send', {
-        message: {
-            to: [{email: rec_email, name: rec_name}],
-            from_email: 'cperry@resourcegovernance.org',
-            subject: rec_role + ' account created!',
-            html: "Hello " + rec_name + ",<p>\
-                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                   Thanks!<p>\
-                   The RGI Team."
-        }
-    }, function (error, response) {
-        //uh oh, there was an error
-        if (error) console.log( JSON.stringify(error) );
-
-        //everything's good, lets see what mandrill said
-        else console.log(response);
-    });
+    //contact_packet.rec_email = userData.email;
+    //contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    //contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    //contact_packet.rec_username = userData.username;
+    //contact_packet.rec_password = userData.password;
+    //contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
+    //
+    //userData.username = userData.username.toLowerCase();
+    //userData.salt = encrypt.createSalt();
+    //userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
+    //userData.createdBy = req.user._id;
+    //
+    //User.create(userData, function (err, user, next) {
+    //    if (err) {
+    //        if (err.toString().indexOf('E11000') > -1) {
+    //            err = new Error('Duplicate Username');
+    //        }
+    //        res.status(400);
+    //        return res.send({reason: err.toString()});
+    //    }
+    //    next();
+    //});
+    //
+    //contact.new_user_confirmation(contact_packet);
+    //
+    ////TODO refator this into ./server/utiliies/contact.js
+    ////send confirmation email to new user
+    //mandrill('/messages/send', {
+    //    message: {
+    //        to: [{email: rec_email, name: rec_name}],
+    //        from_email: 'cperry@resourcegovernance.org',
+    //        subject: rec_role + ' account created!',
+    //        html: "Hello " + rec_name + ",<p>\
+    //               an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
+    //               The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
+    //               Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
+    //               Thanks!<p>\
+    //               The RGI Team."
+    //    }
+    //}, function (error, response) {
+    //    //uh oh, there was an error
+    //    if (error) console.log( JSON.stringify(error) );
+    //
+    //    //everything's good, lets see what mandrill said
+    //    else console.log(response);
+    //});
     res.send();
 };
 
