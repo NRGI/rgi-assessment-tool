@@ -35,7 +35,7 @@ exports.techSend = function (req, res) {
     mandrill('/messages/send', {
         message: {
             to: [{email: 'tech-support@resourcegovernance.org', name: 'Assessment tool tech support'}],
-            from_email: [{email: message_content.email, name: issue_full_name}],
+            from_email: message_content.email,
             subject: issue_tool + ' Issue: ' + message_content.issue.value,
             html: "Hi,<p>"
             + issue_full_name + " is having an issue with the " + issue_tool + " tool. Please find more info below.<p>"
@@ -54,7 +54,7 @@ exports.techSend = function (req, res) {
     mandrill('/messages/send', {
         message: {
             to: [{email: message_content.email, name: issue_full_name}],
-            from_email: [{email: 'tech-support@resourcegovernance.org', name: 'Assessment tool tech support'}],
+            from_email: 'tech-support@resourcegovernance.org',
             subject: 'Confirmation of ' + message_content.issue.value + ' support ticket',
             html: "Hi " + issue_full_name + "\,<p>"
             + "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience\, we will contact you shortly. "
@@ -134,7 +134,7 @@ exports.assessment_submission = function (contact_packet) {
                 {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
                 {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
             ],
-            from_email: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: contact_packet.editor_email,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>"
                 + contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " assessment for review."
@@ -169,7 +169,7 @@ exports.flag_review = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: [{email: contact_packet.admin_email, name: contact_packet.admin_name}],
+            from_email: contact_packet.admin_email,
             subject: contact_packet.assessment_title + ' assessment returned for review!',
             html: "Hello " + contact_packet.editor_firstName + ",<p>"
                 + "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. "
@@ -189,7 +189,7 @@ exports.assessment_reassignment = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: [{email: contact_packet.admin_email, name: contact_packet.admin_name}],
+            from_email: contact_packet.admin_email,
             subject: "Please begin work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>"
                 + "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>"
