@@ -48,7 +48,7 @@ angular.module('app').controller('rgiContactTechCtrl', function ($scope, $locati
 
         rgiContactMethodSrvc.contact(contactInfo).then(function () {
             rgiNotifier.notify('Request sent.');
-            //$location.path('/');
+            $location.path('/');
         }, function (reason) {
             rgiNotifier.error(reason);
         });
