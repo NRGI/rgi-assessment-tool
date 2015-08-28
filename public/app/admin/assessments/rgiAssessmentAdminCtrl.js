@@ -34,9 +34,13 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
                     assessment.modified = el.modified;
                     assessment.edited_by = rgiUserListSrvc.get({_id: el.modified[el.modified.length - 1].modified_by});
                 }
-                if (assessment.reviewer_ID !== undefined) {
-                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+
+                if(assessment.researcher_ID) {
                     assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                }
+
+                if(assessment.reviewer_ID) {
+                    assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                 }
                 $scope.assessments.push(assessment);
             });
@@ -72,7 +76,6 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
     }
 
     $scope.assessmentStartReview = function (assessment_ID) {
-
         rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
             new_assessment_data.status = 'under_review';
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
@@ -90,7 +93,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
         ngDialog.open({
             template: 'partials/dialogs/new-assessment-dialog',
             controller: 'rgiNewAssessmentDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default',
             scope: $scope
         });
     };
@@ -101,7 +104,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, 
         ngDialog.open({
             template: 'partials/dialogs/assign-assessment-dialog',
             controller: 'rgiAssignAssessmentDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default dialogwidth800',
             scope: $scope
         });
     };

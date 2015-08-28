@@ -1,18 +1,16 @@
-div.top-padding-med
-	.well
-		legend Assessment administration flow
-		.row.left-padding-lg
-			.form-horizontal
-				form.form-horizontal(name="reassignAssessment")
-					fieldset
-						.row
-							label.col-md-4  Action
-							.form-group.col-md-8
-								select.form-group.form-control.right-padding-med(name="action" ng-model="action" required)
-									option(value="" selected disabled) Select action
-									option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
-									//- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
-						.row.top-padding-lg
-							button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
-							| &nbsp;
-							button.btn.btn-danger(ng-click="closeDialog()") Cancel
+div.left-padding-lg.right-padding-lg
+    h3 Assessment administration flow
+        .row.top-padding-med.left-padding-lg
+            .form-horizontal
+                fieldset
+                    .row
+                        h5.col-md-4  Action
+                        .form-group.col-md-8
+                            select.form-group.form-control(name="action" ng-model="action" required)
+                                option(value="" selected disabled) Select action
+                                option(ng-repeat="opt in workflow_opts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
+                                //- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
+                    .row
+                        button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
+                        | &nbsp;
+                        button.btn.btn-danger(ng-click="closeDialog()") Cancel
