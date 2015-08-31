@@ -93,7 +93,10 @@
 										.row.left-padding-lg
 											text Addressed?
 											text
-											input(type="checkbox" ng-model="flag.addressed")
+											input(
+                                            type="checkbox"
+                                            ng-model="flag.addressed"
+                                            disabled)
 										.row.left-padding-lg.right-padding-lg
 											text {{flag.content}}
 							.panel-danger(ng-if="flag.addressed===false")
