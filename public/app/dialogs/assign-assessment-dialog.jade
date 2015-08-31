@@ -32,39 +32,3 @@ div.left-padding-lg.right-padding-lg
                 button.btn.btn-success(ng-click="assessmentAssign()" ng-disabled="assignAssessment.$invalid") Assign user to assessment
                 | &nbsp;
                 button.btn.btn-danger(ng-click="closeDialog()") Cancel
-
-//div.left-padding-lg.right-padding-lg.top-padding-med.bottom-padding-med
-//   h3 New interview reference {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
-//   .row.form-horizontal.left-padding-lg.right-padding-lg
-//       form.form-horizontal(name="assignAssessment")
-//           fieldset
-//               .row
-//                   strong Instructions:
-//                   em  You must assign the assessment to a researcher. You can assign to a reviewer at a later data if need be.
-//               .row.top-padding-med
-//                   label.col-md-4  Researcher
-//                   .form-group.col-md-8
-//                       select.form-group.form-control(
-//                       name="researcherSelect"
-//                       ng-model="researcherSelect"
-//                       ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in researchers"
-//                       required)
-//                       option(
-//                       value=""
-//                       selected
-//                       disabled) Select researcher (required)...
-//                   label.col-md-4  Reviewer
-//                   .form-group.col-md-8
-//                       select.form-group.form-control(
-//                       name="reviewerSelect"
-//                       ng-model="reviewerSelect"
-//                       ng-options="(r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in reviewers")
-//                       option(
-//                       value=""
-//                       selected
-//                       disabled) Select reviewer
-//
-//               .row.pull-right.bottom-padding-med
-//                   button.btn.btn-success(ng-click="assessmentAssign()" ng-disabled="assignAssessment.$invalid") Assign user to assessment
-//                   | &nbsp;
-//                   button.btn.btn-danger(ng-click="closeDialog()") Cancel
