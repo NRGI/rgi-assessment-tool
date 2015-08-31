@@ -60,26 +60,71 @@
 				div(id="flags_div").bottom-padding-med
 					legend Flags:
 
-					div(id="prev_flags_div" ng-if="answer.flags.length!==0")
-						.row.left-padding-lg.bottom-padding-med(ng-repeat="flag in answer.flags")
-							.row
-								b {{flag.author_name}} (
-								b {{flag.role}}
-								b )
-							.row
-								em {{flag.date | date:'MM/dd/yyyy'}}
-							.row
-								div
-									text Addressed?
-									input(type="checkbox" ng-model="flag.addressed" disabled)
 
-							div(ng-if="flag.addressed!==true")
-								.row.col-md-11
-									text.text-danger {{flag.content}}
-								.row.col-md-offset-9.col-md-3
-									date
-										small
-											em {{flag.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+					div.panel-group(
+					id="prev_flags_div"
+					ng-if="answer.flags.length!==0"
+					role="tablist"
+					aria-multiselectable="true")
+						div.panel(ng-repeat="flag in answer.flags")
+							.panel-success(ng-if="flag.addressed===true")
+								div.panel-heading(
+								role="tab"
+								id="heading{{$index}}")
+									h4.panel-title
+										a.btn.btn-block.button.button-success(
+										style="text-align: left;"
+										role="button"
+										data-toggle="collapse"
+										data-parent="#accordion"
+										href="#collapse{{$index}}"
+										aria-expanded="false"
+										aria-controls="collapse{{$index}}")
+											b Flag {{$index+1}} - {{flag.author_name}} (
+											b {{flag.role}}
+											b ):
+											em  {{flag.date | date:'MM/dd/yyyy'}}
+								div(
+								id="collapse{{$index}}"
+								class="panel-collapse collapse in"
+								role="tabpanel"
+								aria-labelledby="heading{{$index}}")
+									div.panel-body
+										.row.left-padding-lg
+											text Addressed?
+											text
+											input(type="checkbox" ng-model="flag.addressed")
+										.row.left-padding-lg.right-padding-lg
+											text {{flag.content}}
+							.panel-danger(ng-if="flag.addressed===false")
+								div.panel-heading(
+								role="tab"
+								id="heading{{$index}}")
+									h4.panel-title
+										a.btn.btn-block.button.button-success(
+										style="text-align: left;"
+										role="button"
+										data-toggle="collapse"
+										data-parent="#accordion"
+										href="#collapse{{$index}}"
+										aria-expanded="false"
+										aria-controls="collapse{{$index}}")
+											b Flag {{$index+1}} - {{flag.author_name}} (
+											b {{flag.role}}
+											b ):
+											em  {{flag.date | date:'MM/dd/yyyy'}}
+								div(
+								id="collapse{{$index}}"
+								class="panel-collapse collapse in"
+								role="tabpanel"
+								aria-labelledby="heading{{$index}}")
+									div.panel-body
+										.row.left-padding-lg
+											text Addressed?
+											text
+											input(type="checkbox" ng-model="flag.addressed")
+										.row.left-padding-lg.right-padding-lg
+											text {{flag.content}}
 
 			.row.left-padding-lg.right-padding-lg
 				.form-horizontal(name="answer_form")
