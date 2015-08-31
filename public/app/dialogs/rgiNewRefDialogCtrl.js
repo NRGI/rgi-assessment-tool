@@ -76,38 +76,93 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
         var new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
             url, access_date;
-        if ($scope.answer.web_ref_url.split('://')[0] === 'http' || $scope.answer.web_ref_url.split('://')[0] === 'https') {
-            url = $scope.answer.web_ref_url;
-        } else {
-            url = 'http://' + $scope.answer.web_ref_url;
-        }
-        if(!$scope.answer.web_ref_access_date) {
-            access_date = $scope.date_default.toISOString();
-        } else {
-            access_date = new Date($scope.answer.web_ref_access_date).toISOString();
-        }
 
-        isURLReal(url)
-            .fail(function (res) {
-                rgiNotifier.error('Website does not exists');
-            })
-            //TODO Take a snapshot of url and add as a document ref
-            .done(function (res) {
-                var new_ref_data = {
-                    title: $scope.answer.web_ref_title,
-                    URL: url,
-                    access_date: new Date($scope.answer.web_ref_access_date).toISOString(),
+        if(!new_answer_data.web_ref_url || !new_answer_data.web_ref_title) {
+            rgiNotifier.error('You must enter a title and a url!')
+        } else {
+            if (new_answer_data.web_ref_url.split('://')[0] === 'http' || new_answer_data.web_ref_url.split('://')[0] === 'https') {
+                url = new_answer_data.web_ref_url;
+            } else {
+                url = 'http://' + new_answer_data.web_ref_url;
+            }
+            if(!new_answer_data.web_ref_access_date) {
+                access_date = $scope.date_default.toISOString();
+            } else {
+                access_date = new Date(new_answer_data.web_ref_access_date).toISOString();
+            }
+            isURLReal(url)
+                .fail(function (res) {
+                    rgiNotifier.error('Website does not exists');
+                })
+                //TODO Take a snapshot of url and add as a document ref
+                .done(function (res) {
+                    var new_ref_data = {
+                        title: new_answer_data.web_ref_title,
+                        URL: url,
+                        access_date: access_date,
+                        comment: {
+                            date: new Date().toISOString(),
+                            author: current_user._id,
+                            author_name: current_user.firstName + ' ' + current_user.lastName,
+                            role: current_user.role
+                        }
+                    };
+                    if ($scope.answer_update.web_ref_comment !== undefined) {
+                        new_ref_data.comment.content = $scope.answer_update.web_ref_comment;
+                    }
+                    new_answer_data.references.web.push(new_ref_data);
+
+                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+                        $scope.closeThisDialog();
+                        rgiNotifier.notify('Reference added!');
+                        $route.reload();
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    });
+                });
+        }
+    };
+
+    $scope.humanRefSubmit = function (current_user) {
+
+        var new_answer_data = $scope.answer_update,
+            current_user = $scope.$parent.current_user,
+            new_ref_data, contact_date;
+
+
+        if (!new_answer_data.human_ref_first_name || !new_answer_data.human_ref_first_name) {
+            rgiNotifier.error('You must enter an interviewee first and last name!')
+        } else if (!new_answer_data.human_ref_email) {
+            rgiNotifier.error('You must enter a valid email address!')
+        } else {
+            var email_domain = 'http://' + new_answer_data.human_ref_email.split('@')[1];
+            if (email_domain === 'http://undefined') {
+                rgiNotifier.error('You must enter a valid email address!');
+            } else {
+                if(!new_answer_data.human_ref_contact_date) {
+                    contact_date = $scope.date_default.toISOString();
+                } else {
+                    contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
+                }
+                new_ref_data = {
+                    first_name: new_answer_data.human_ref_first_name,
+                    last_name: new_answer_data.human_ref_last_name,
+                    phone: new_answer_data.human_ref_phone,
+                    email: new_answer_data.human_ref_email,
+                    contact_date: contact_date,
                     comment: {
-                        date: access_date,
+                        date: new Date().toISOString(),
                         author: current_user._id,
                         author_name: current_user.firstName + ' ' + current_user.lastName,
                         role: current_user.role
                     }
                 };
-                if ($scope.answer_update.web_ref_comment !== undefined) {
-                    new_ref_data.comment.content = $scope.answer_update.web_ref_comment;
+
+                if (new_answer_data.human_ref_comment !== undefined) {
+                    new_ref_data.comment.content = new_answer_data.human_ref_comment;
                 }
-                new_answer_data.references.web.push(new_ref_data);
+
+                new_answer_data.references.human.push(new_ref_data);
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
                     $scope.closeThisDialog();
@@ -116,62 +171,23 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
-            });
-    };
-
-    $scope.humanRefSubmit = function (current_user) {
-
-        var new_answer_data = $scope.answer_update,
-            current_user = $scope.$parent.current_user,
-            email_domain = 'http://' + $scope.answer_update.human_ref_email.split('@')[1],
-            new_ref_data, contact_date;
-
-        if(!$scope.answer.web_ref_access_date) {
-            contact_date = $scope.date_default.toISOString();
-        } else {
-            contact_date = new Date($scope.answer.web_ref_access_date).toISOString();
-        }
-
-        //TODO validate that email domain exists
-        if (email_domain === 'http://undefined') {
-            rgiNotifier.error('You must enter a valid email address!')
-        } else {
-            //isURLReal(email_domain)
-            //    .fail(function (res) {
-            //        console.log(res);
-            //        rgiNotifier.error('Email Domain does not appear to be valid');
-            //    })
-            //    .done(function (res) {
-            //        console.log(res);
-            //    });
-            new_ref_data = {
-                first_name: new_answer_data.human_ref_first_name,
-                last_name: new_answer_data.human_ref_last_name,
-                phone: new_answer_data.human_ref_phone,
-                email: new_answer_data.human_ref_email,
-                contact_date: contact_date,
-                comment: {
-                    date: new Date().toISOString(),
-                    author: current_user._id,
-                    author_name: current_user.firstName + ' ' + current_user.lastName,
-                    role: current_user.role
-                }
-            };
-
-            if ($scope.answer.human_ref_comment !== undefined) {
-                new_ref_data.comment.content = $scope.answer.human_ref_comment;
             }
-
-            new_answer_data.references.human.push(new_ref_data);
-
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                $scope.closeThisDialog();
-                rgiNotifier.notify('Reference added!');
-                $route.reload();
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
         }
+        //
+        ////TODO validate that email domain exists
+        //if (email_domain === 'http://undefined') {
+        //    rgiNotifier.error('You must enter a valid email address!')
+        //} else {
+        //    //isURLReal(email_domain)
+        //    //    .fail(function (res) {
+        //    //        console.log(res);
+        //    //        rgiNotifier.error('Email Domain does not appear to be valid');
+        //    //    })
+        //    //    .done(function (res) {
+        //    //        console.log(res);
+        //    //    });
+        //
+        //}
     };
 
     $scope.closeDialog = function () {

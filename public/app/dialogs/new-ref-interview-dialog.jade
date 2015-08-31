@@ -17,7 +17,7 @@ div.left-padding-lg.right-padding-lg
                         name="first_name"
                         type="text"
                         placeholder="First name (required)..."
-                        ng-model="answer.human_ref_first_name"
+                        ng-model="answer_update.human_ref_first_name"
                         autocomplete="off"
                         required)
                     div.row.form-group
@@ -25,7 +25,7 @@ div.left-padding-lg.right-padding-lg
                         name="last_name"
                         type="text"
                         placeholder="Last name (required)..."
-                        ng-model="answer.human_ref_last_name"
+                        ng-model="answer_update.human_ref_last_name"
                         autocomplete="off"
                         required)
                     div.row.form-group
@@ -33,36 +33,34 @@ div.left-padding-lg.right-padding-lg
                         name="email"
                         type="text"
                         placeholder="Email address (required)..."
-                        ng-model="answer.human_ref_email"
+                        ng-model="answer_update.human_ref_email"
                         autocomplete="off"
                         required)
                     div.row.form-group
                         input.form-control(
                         name="phone"
                         type="text"
-                        placeholder="Phone number (required)..."
-                        ng-model="answer.human_ref_phone"
-                        autocomplete="off"
-                        required)
+                        placeholder="Phone number..."
+                        ng-model="answer_update.human_ref_phone"
+                        autocomplete="off")
                     div.row.form-group
                         input.form-control(
                         name="comment"
                         type="text"
                         placeholder="Comments..."
-                        ng-model="answer.human_ref_comment"
+                        ng-model="answer_update.human_ref_comment"
                         autocomplete="off")
                     div.row.form-group
                         datepicker(
                         date-format="{{date_format}}")
                             input.form-control(
-                            ng-model="answer.human_ref_contact_date"
+                            ng-model="answer_update.human_ref_contact_date"
                             type="text"
                             placeholder="Date interviewed...")
                 //- BUTTON CONTROL
                 div.col-lg-6
                     button.btn.btn-block.btn-success(
-                    ng-click="webRefSubmit()"
-                    ng-disabled="!answer.web_ref_title || !answer.web_ref_url"
+                    ng-click="humanRefSubmit()"
                     ) Create reference
                 div.col-lg-6
                     button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
