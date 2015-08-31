@@ -4,7 +4,7 @@
 angular.module('app').factory('rgiContactMethodSrvc', function ($q, rgiContactTechSrvc) {
     return {
         contact: function (contactInfo) {
-            var newContact = new rgiContactSrvc(contactInfo),
+            var newContact = new rgiContactTechSrvc(contactInfo),
                 dfd = $q.defer();
 
             newContact.$save().then(function () {
