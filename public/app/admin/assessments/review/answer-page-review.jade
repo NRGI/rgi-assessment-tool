@@ -141,6 +141,8 @@
                                             input(type="checkbox" ng-model="flag.addressed")
                                         .row.left-padding-lg.right-padding-lg
                                             text {{flag.content}}
+                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
                             .panel-danger(ng-if="flag.addressed===false")
                                 div.panel-heading(
                                 role="tab"
@@ -170,6 +172,8 @@
                                             input(type="checkbox" ng-model="flag.addressed")
                                         .row.left-padding-lg.right-padding-lg
                                             text {{flag.content}}
+                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
 
 
             .row.left-padding-lg
