@@ -247,6 +247,21 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                 });
         }
     };
+    $scope.commentEdit = function (comment, index) {
+        $scope.value = true;
+        var scope = $scope;
+        scope.index = index;
+        scope.comment = comment;
+
+        ngDialog.open({
+            template: 'partials/dialogs/comment-edit-dialog',
+            controller: 'rgiCommentEditDialogCtrl',
+            className: 'ngdialog-theme-default',
+            scope: scope
+        });
+
+
+    };
 
     // make final choice
     $scope.finalChoiceDialog = function () {
