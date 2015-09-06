@@ -1,12 +1,12 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiUserAdminDetailCtrl', function () {
     beforeEach(module('app'));
-    var $scope, $routeParams, ngDialog, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc;
-    var userGetStub, userGetSpy;
-    var userIdBackup, userId = 'USER_ID', userData = {_id: 'USER'};
+    var $scope, $routeParams, ngDialog, rgiNotifier, rgiUserSrvc, rgiUserMethodSrvc,
+        userGetStub, userGetSpy, userIdBackup, userId = 'USER_ID', userData = {_id: 'USER'};
 
     beforeEach(inject(
         function ($rootScope, $controller, _$routeParams_, _ngDialog_, _rgiNotifier_, _rgiUserSrvc_, _rgiUserMethodSrvc_) {
@@ -20,7 +20,7 @@ describe('rgiUserAdminDetailCtrl', function () {
             userIdBackup = $routeParams.id;
             $routeParams.id = userId;
 
-            userGetSpy = sinon.spy(function() {
+            userGetSpy = sinon.spy(function () {
                 return userData;
             });
             userGetStub = sinon.stub(rgiUserSrvc, 'get', userGetSpy);
@@ -42,7 +42,7 @@ describe('rgiUserAdminDetailCtrl', function () {
         userGetSpy.withArgs({_id: userId}).called.should.be.equal(true);
     });
 
-    describe('#deleteConfirmDialog', function() {
+    describe('#deleteConfirmDialog', function () {
         it('sets the value to TRUE', function () {
             $scope.deleteConfirmDialog();
             $scope.value.should.be.equal(true);
@@ -53,7 +53,7 @@ describe('rgiUserAdminDetailCtrl', function () {
             ngDialogMock.expects('open').withArgs({
                 template: 'partials/dialogs/delete-profile-confirmation-dialog',
                 controller: 'rgiDeleteProfileDialogCtrl',
-                className: 'ngdialog-theme-plain',
+                className: 'ngdialog-theme-default',
                 scope: $scope
             });
 
@@ -62,33 +62,36 @@ describe('rgiUserAdminDetailCtrl', function () {
             ngDialogMock.verify();
             ngDialogMock.restore();
         });
+
     });
 
-    describe('#userUpdate', function() {
-        var notifierMock, userMethodUpdateUserStub, userMethodUpdateUserSpy;
-        var REASON = 'REASON';
-
-        var setNegativeStub = function() {
-            userMethodUpdateUserSpy = sinon.spy(function() {
-                return {
-                    then: function(callbackPositive, callbackNegative) {
-                        callbackNegative(REASON);
-                    }
-                };
-            });
-            userMethodUpdateUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateUserSpy);
-        };
-
-        var setPositiveStub = function() {
-            userMethodUpdateUserSpy = sinon.spy(function() {
-                return {
-                    then: function(callback) {
-                        callback();
-                    }
-                };
-            });
-            userMethodUpdateUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateUserSpy);
-        };
+    describe('#userUpdate', function () {
+        var notifierMock, userMethodUpdateUserStub, userMethodUpdateUserSpy,
+            REASON = 'REASON',
+            setNegativeStub = function () {
+                /*jshint unused: true*/
+                /*jslint unparam: true*/
+                userMethodUpdateUserSpy = sinon.spy(function () {
+                    return {
+                        then: function (callbackPositive, callbackNegative) {
+                            callbackNegative(REASON);
+                        }
+                    };
+                });
+                /*jshint unused: false*/
+                /*jslint unparam: false*/
+                userMethodUpdateUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateUserSpy);
+            },
+            setPositiveStub = function () {
+                userMethodUpdateUserSpy = sinon.spy(function () {
+                    return {
+                        then: function (callback) {
+                            callback();
+                        }
+                    };
+                });
+                userMethodUpdateUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateUserSpy);
+            };
 
         beforeEach(function () {
             notifierMock = sinon.mock(rgiNotifier);
