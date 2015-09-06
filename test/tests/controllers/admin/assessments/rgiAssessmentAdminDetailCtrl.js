@@ -1,27 +1,27 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiAssessmentAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, ngDialog, rgiAnswerSrvc, rgiAssessmentSrvc, rgiUserListSrvc;
-    var assessment_ID = 'assessment_ID', $routeParamsAssessment_ID;
-    var answerQueryStub, answerQuerySpy;
-    var userListGetStub, userListGetSpy;
-    var assessmentGetStub, assessmentGetSpy;
-
-    var assessment = {
-        reviewer_ID: 'reviewer',
-        researcher_ID: 'researcher',
-        assignment: {
-            assigned_by: 'assignee'
-        },
-        modified: [{
-            modified_by: 'modifier'
-        }],
-        assessment_ID: 'assessment'
-    };
+    var $scope, $routeParams, ngDialog, rgiAnswerSrvc, rgiAssessmentSrvc, rgiUserListSrvc,
+        assessment_ID = 'assessment_ID', $routeParamsAssessment_ID,
+        answerQueryStub, answerQuerySpy,
+        userListGetStub, userListGetSpy,
+        assessmentGetStub, assessmentGetSpy,
+        assessment = {
+            reviewer_ID: 'reviewer',
+            researcher_ID: 'researcher',
+            assignment: {
+                assigned_by: 'assignee'
+            },
+            modified: [{
+                modified_by: 'modifier'
+            }],
+            assessment_ID: 'assessment'
+        };
 
     beforeEach(inject(
         function ($rootScope, $controller, _$routeParams_, _ngDialog_, _rgiAnswerSrvc_, _rgiAssessmentSrvc_, _rgiUserListSrvc_) {
@@ -31,12 +31,12 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
             rgiAssessmentSrvc = _rgiAssessmentSrvc_;
             rgiUserListSrvc = _rgiUserListSrvc_;
 
-            answerQuerySpy = sinon.spy(function() {
+            answerQuerySpy = sinon.spy(function () {
                 return 'QUESTION LIST';
             });
             answerQueryStub = sinon.stub(rgiAnswerSrvc, 'query', answerQuerySpy);
 
-            userListGetSpy = sinon.spy(function(object) {
+            userListGetSpy = sinon.spy(function (object) {
                 var dataMap = {
                     reviewer: 'REVIEWER',
                     researcher: 'RESEARCHER',
@@ -47,10 +47,13 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
                 return dataMap[object._id];
             });
             userListGetStub = sinon.stub(rgiUserListSrvc, 'get', userListGetSpy);
-
-            assessmentGetSpy = sinon.spy(function(uselessAssessmentParams, callback) {
+            /*jshint unused: true*/
+            /*jslint unparam: true*/
+            assessmentGetSpy = sinon.spy(function (uselessAssessmentParams, callback) {
                 callback(assessment);
             });
+            /*jshint unused: false*/
+            /*jslint unparam: false*/
             assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'get', assessmentGetSpy);
 
             $routeParamsAssessment_ID = $routeParams.assessment_ID;
@@ -88,13 +91,13 @@ describe('rgiAssessmentAdminDetailCtrl', function () {
         assessmentGetSpy.withArgs({assessment_ID: assessment_ID}).called.should.be.equal(true);
     });
 
-    describe('#moveAssessmentDialog', function() {
-        it('calls dialog service with defined parameters', function() {
+    describe('#moveAssessmentDialog', function () {
+        it('calls dialog service with defined parameters', function () {
             var ngDialogMock = sinon.mock(ngDialog);
             ngDialogMock.expects('open').withArgs({
                 template: 'partials/dialogs/move-assessment-dialog',
                 controller: 'rgiMoveAssessmentDialogCtrl',
-                className: 'ngdialog-theme-plain',
+                className: 'ngdialog-theme-default',
                 scope: $scope
             });
 
