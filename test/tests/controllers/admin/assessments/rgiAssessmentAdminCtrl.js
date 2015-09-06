@@ -1,37 +1,38 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiAssessmentAdminCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserListSrvc;
-    var assessmentQueryStub, assessmentQuerySpy;
-    var userListGetStub, userListGetSpy;
-    var assessments = [
-        {
-            assessment_ID: 'assessment-authorized',
-            country: 'country-authorized',
-            edit_control: 'edit-control-authorized',
-            start_date: 'start-date-authorized',
-            version: 'version-authorized',
-            year: 'year-authorized',
-            status: 'authorized',
-            modified: [{modified_by: 'author-id'}]
-        },
-        {
-            assessment_ID: 'assessment-published',
-            country: 'country-published',
-            edit_control: 'edit-control-published',
-            researcher_ID: 'researcher-id',
-            reviewer_ID: 'reviewer-id',
-            start_date: 'start-date-published',
-            version: 'version-published',
-            year: 'year-published',
-            status: 'published',
-            modified: []
-        }
-    ];
+    var $scope, $location, $routeParams, ngDialog, rgiNotifier, rgiAssessmentSrvc, rgiAssessmentMethodSrvc, rgiUserListSrvc,
+        assessmentQueryStub, assessmentQuerySpy,
+        userListGetStub, userListGetSpy,
+        assessments = [
+            {
+                assessment_ID: 'assessment-authorized',
+                country: 'country-authorized',
+                edit_control: 'edit-control-authorized',
+                start_date: 'start-date-authorized',
+                version: 'version-authorized',
+                year: 'year-authorized',
+                status: 'authorized',
+                modified: [{modified_by: 'author-id'}]
+            },
+            {
+                assessment_ID: 'assessment-published',
+                country: 'country-published',
+                edit_control: 'edit-control-published',
+                researcher_ID: 'researcher-id',
+                reviewer_ID: 'reviewer-id',
+                start_date: 'start-date-published',
+                version: 'version-published',
+                year: 'year-published',
+                status: 'published',
+                modified: []
+            }
+        ];
 
     beforeEach(inject(
         function ($rootScope, _$location_, _$routeParams_, _ngDialog_, _rgiNotifier_, _rgiAssessmentSrvc_, _rgiAssessmentMethodSrvc_, _rgiUserListSrvc_) {
@@ -44,7 +45,7 @@ describe('rgiAssessmentAdminCtrl', function () {
             rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
             rgiUserListSrvc = _rgiUserListSrvc_;
 
-            userListGetSpy = sinon.spy(function(criterion) {
+            userListGetSpy = sinon.spy(function (criterion) {
                 var users = {
                     'author-id': 'author',
                     'researcher-id': 'researcher',
@@ -57,10 +58,10 @@ describe('rgiAssessmentAdminCtrl', function () {
         }
     ));
 
-    describe('NO route params', function() {
+    describe('NO route params', function () {
         beforeEach(inject(
             function ($controller) {
-                assessmentQuerySpy = sinon.spy(function(callback) {
+                assessmentQuerySpy = sinon.spy(function (callback) {
                     callback(assessments);
                 });
                 assessmentQueryStub = sinon.stub(rgiAssessmentSrvc, 'query', assessmentQuerySpy);
@@ -113,27 +114,31 @@ describe('rgiAssessmentAdminCtrl', function () {
             ]).should.be.equal(true);
         });
 
-        describe('#assessmentStartReview', function() {
-            var assessmentGetStub, assessmentGetSpy, notifierMock;
-            var assessmentMethodUpdateAssessmentStub, assessmentMethodUpdateAssessmentSpy;
-            var assessment_ID = 'assessment-id';
+        describe('#assessmentStartReview', function () {
+            var assessmentGetStub, assessmentGetSpy, notifierMock,
+                assessmentMethodUpdateAssessmentStub, assessmentMethodUpdateAssessmentSpy,
+                assessment_ID = 'assessment-id';
 
             beforeEach(function () {
-                assessmentGetSpy = sinon.spy(function(criterion, callback) {
+                /*jshint unused: true*/
+                /*jslint unparam: true*/
+                assessmentGetSpy = sinon.spy(function (criterion, callback) {
                     callback({});
                 });
+                /*jshint unused: false*/
+                /*jslint unparam: false*/
                 assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'get', assessmentGetSpy);
                 notifierMock = sinon.mock(rgiNotifier);
             });
 
-            describe('SUCCESS', function() {
-                it('changes the location & shows a notification', function() {
-                    assessmentMethodUpdateAssessmentSpy = sinon.spy(function() {
+            describe('SUCCESS', function () {
+                it('changes the location & shows a notification', function () {
+                    assessmentMethodUpdateAssessmentSpy = sinon.spy(function () {
                         return {
-                            then: function(callback) {
+                            then: function (callback) {
                                 callback();
                             }
-                        }
+                        };
                     });
                     assessmentMethodUpdateAssessmentStub = sinon.stub(rgiAssessmentMethodSrvc, 'updateAssessment', assessmentMethodUpdateAssessmentSpy);
                     var $locationMock = sinon.mock($location);
@@ -147,17 +152,21 @@ describe('rgiAssessmentAdminCtrl', function () {
                 });
             });
 
-            describe('FAILURE', function() {
-                it('changes the location & shows a notification', function() {
+            describe('FAILURE', function () {
+                it('changes the location & shows a notification', function () {
                     var reason = 'REASON';
 
-                    assessmentMethodUpdateAssessmentSpy = sinon.spy(function() {
+                    assessmentMethodUpdateAssessmentSpy = sinon.spy(function () {
+                        /*jshint unused: true*/
+                        /*jslint unparam: true*/
                         return {
-                            then: function(uselesscallbackSuccess, callbackFailure) {
+                            then: function (uselesscallbackSuccess, callbackFailure) {
                                 callbackFailure(reason);
                             }
-                        }
+                        };
                     });
+                    /*jshint unused: false*/
+                    /*jslint unparam: false*/
                     assessmentMethodUpdateAssessmentStub = sinon.stub(rgiAssessmentMethodSrvc, 'updateAssessment', assessmentMethodUpdateAssessmentSpy);
 
                     notifierMock.expects('error').withArgs(reason);
@@ -175,18 +184,18 @@ describe('rgiAssessmentAdminCtrl', function () {
             });
         });
 
-        describe('#newAssessmentDialog', function() {
-            it('sets the value to TRUE', function() {
+        describe('#newAssessmentDialog', function () {
+            it('sets the value to TRUE', function () {
                 $scope.newAssessmentDialog();
                 $scope.value.should.be.equal(true);
             });
 
-            it('opens a dialog', function() {
+            it('opens a dialog', function () {
                 var ngDialogMock = sinon.mock(ngDialog);
                 ngDialogMock.expects('open').withArgs({
                     template: 'partials/dialogs/new-assessment-dialog',
                     controller: 'rgiNewAssessmentDialogCtrl',
-                    className: 'ngdialog-theme-plain',
+                    className: 'ngdialog-theme-default',
                     scope: $scope
                 });
 
@@ -197,25 +206,25 @@ describe('rgiAssessmentAdminCtrl', function () {
             });
         });
 
-        describe('#assignAssessmentDialog', function() {
+        describe('#assignAssessmentDialog', function () {
             var assessment = {assessment_ID: 'assessment-id'};
 
-            it('sets the value to TRUE', function() {
+            it('sets the value to TRUE', function () {
                 $scope.assignAssessmentDialog(assessment);
                 $scope.value.should.be.equal(true);
             });
 
-            it('updates the assessment', function() {
+            it('updates the assessment', function () {
                 $scope.assignAssessmentDialog(assessment);
                 $scope.assessment_update_ID.should.be.equal(assessment.assessment_ID);
             });
 
-            it('opens a dialog', function() {
+            it('opens a dialog', function () {
                 var ngDialogMock = sinon.mock(ngDialog);
                 ngDialogMock.expects('open').withArgs({
                     template: 'partials/dialogs/assign-assessment-dialog',
                     controller: 'rgiAssignAssessmentDialogCtrl',
-                    className: 'ngdialog-theme-plain',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: $scope
                 });
 
@@ -227,14 +236,18 @@ describe('rgiAssessmentAdminCtrl', function () {
         });
     });
 
-    describe('route params set', function() {
+    describe('route params set', function () {
         var version = '2015-1', $routeParamsVersion;
 
         beforeEach(inject(
             function ($controller) {
-                assessmentQuerySpy = sinon.spy(function(options, callback) {
+                /*jshint unused: true*/
+                /*jslint unparam: true*/
+                assessmentQuerySpy = sinon.spy(function (options, callback) {
                     callback(assessments);
                 });
+                /*jshint unused: false*/
+                /*jslint unparam: false*/
                 assessmentQueryStub = sinon.stub(rgiAssessmentSrvc, 'query', assessmentQuerySpy);
 
                 $routeParamsVersion = $routeParams.version;
