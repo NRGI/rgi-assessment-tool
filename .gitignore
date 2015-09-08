@@ -52,12 +52,16 @@ public/vendor
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-newrelic_agent.log
+shippable.yml
+travis.yml
 
 config.config
 
 newrelic_agent.log
+newrelic_agent.log
 
+travis.yml
+shippable.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

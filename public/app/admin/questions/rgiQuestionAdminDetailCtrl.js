@@ -51,7 +51,7 @@ angular.module('app').controller('rgiQuestionAdminDetailCtrl', function ($scope,
         ngDialog.open({
             template: 'partials/dialogs/delete-question-confirmation-dialog',
             controller: 'rgiDeleteQuestionDialogCtrl',
-            className: 'ngdialog-theme-plain',
+            className: 'ngdialog-theme-default',
             scope: $scope
         });
     };

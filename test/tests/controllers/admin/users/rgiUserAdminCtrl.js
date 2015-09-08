@@ -1,6 +1,7 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiUserAdminCtrl', function () {
     beforeEach(module('app'));
@@ -11,37 +12,36 @@ describe('rgiUserAdminCtrl', function () {
             $scope = $rootScope.$new();
             rgiUserSrvc = _rgiUserSrvc_;
             rgiAssessmentSrvc = _rgiAssessmentSrvc_;
-
+            /*jshint unused: true*/
+            /*jslint unparam: true*/
             var data = [
                 {
                     assessments: [
-                        {assessment_id: 'assessment-0-0'},
-                        {assessment_id: 'assessment-0-1'}
+                        {assessment_ID: 'assessment-0-0'},
+                        {assessment_ID: 'assessment-0-1'}
                     ]
                 },
                 {
                     assessments: [
-                        {assessment_id: 'assessment-1-0'},
-                        {assessment_id: 'assessment-1-1'}
+                        {assessment_ID: 'assessment-1-0'},
+                        {assessment_ID: 'assessment-1-1'}
                     ]
                 }
-            ];
-            var userQuerySpy = sinon.spy(function(uselessOptions, callback) {
+            ], userQuerySpy = sinon.spy(function (uselessOptions, callback) {
                 callback(data);
-            });
-            var userQueryStub = sinon.stub(rgiUserSrvc, 'query', userQuerySpy);
+            }), userQueryStub = sinon.stub(rgiUserSrvc, 'query', userQuerySpy), assessmentGetSpy =
+                function (assessment) {
+                    var detailsMap = {
+                        'assessment-0-0': 'details-0-0',
+                        'assessment-0-1': 'details-0-1',
+                        'assessment-1-0': 'details-1-0',
+                        'assessment-1-1': 'details-1-1'
+                    };
 
-            var assessmentGetSpy = function(assessment) {
-                var detailsMap = {
-                    'assessment-0-0': 'details-0-0',
-                    'assessment-0-1': 'details-0-1',
-                    'assessment-1-0': 'details-1-0',
-                    'assessment-1-1': 'details-1-1'
-                };
-
-                return detailsMap[assessment.assessment_ID];
-            };
-            var assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'get', assessmentGetSpy);
+                    return detailsMap[assessment.assessment_ID];
+                }, assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'get', assessmentGetSpy);
+            /*jshint unused: false*/
+            /*jslint unparam: false*/
 
             $controller('rgiUserAdminCtrl', {$scope: $scope});
             userQueryStub.restore();
@@ -64,18 +64,18 @@ describe('rgiUserAdminCtrl', function () {
         $scope.sort_order.should.be.equal('lastName');
     });
 
-    it('loads assessments data', function() {
+    it('loads assessments data', function () {
         _.isEqual($scope.users, [
             {
                 assessments: [
-                    {assessment_id: 'assessment-1-0', details: 'details-1-0'},
-                    {assessment_id: 'assessment-1-1', details: 'details-1-1'}
+                    {assessment_ID: 'assessment-1-0', details: 'details-1-0'},
+                    {assessment_ID: 'assessment-1-1', details: 'details-1-1'}
                 ]
             },
             {
                 assessments: [
-                    {assessment_id: 'assessment-0-0', details: 'details-0-0'},
-                    {assessment_id: 'assessment-0-1', details: 'details-0-1'}
+                    {assessment_ID: 'assessment-0-0', details: 'details-0-0'},
+                    {assessment_ID: 'assessment-0-1', details: 'details-0-1'}
                 ]
             }
         ]).should.be.equal(true);

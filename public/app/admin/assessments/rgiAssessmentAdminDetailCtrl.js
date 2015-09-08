@@ -2,7 +2,7 @@
 //var angular;
 /*jslint nomen: true regexp: true*/
 
-angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, ngDialog, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, ngDialog, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
     // filtering options
     $scope.sort_options = [
         {value: "question_order", text: "Sort by Question Number"},
@@ -24,12 +24,16 @@ angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scop
     });
 
     $scope.moveAssessmentDialog = function () {
-        $scope.value = true;
-        ngDialog.open({
-            template: 'partials/dialogs/move-assessment-dialog',
-            controller: 'rgiMoveAssessmentDialogCtrl',
-            className: 'ngdialog-theme-plain',
-            scope: $scope
-        });
+        if ($scope.assessment.questions_complete !== $scope.assessment.question_length) {
+            rgiNotifier.error('You must approve or flag all questions!');
+        } else {
+            $scope.value = true;
+            ngDialog.open({
+                template: 'partials/dialogs/move-assessment-dialog',
+                controller: 'rgiMoveAssessmentDialogCtrl',
+                className: 'ngdialog-theme-default',
+                scope: $scope
+            });
+        }
     };
 });

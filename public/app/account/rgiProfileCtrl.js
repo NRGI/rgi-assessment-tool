@@ -10,6 +10,7 @@ angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentity
     $scope.username = rgiIdentitySrvc.currentUser.username;
     $scope.role = rgiIdentitySrvc.currentUser.role;
     $scope.address = rgiIdentitySrvc.currentUser.address;
+
     // update functinonality for update button
     $scope.update = function () {
         // pass in update data
@@ -31,7 +32,7 @@ angular.module('app').controller('rgiProfileCtrl', function ($scope, rgiIdentity
         rgiUserMethodSrvc.updateUser(newUserData).then(function () {
             rgiNotifier.notify('Your user account has been updated');
         }, function (reason) {
-            rgiNotifier.notify(reason);
+            rgiNotifier.error(reason);
         });
     };
 });

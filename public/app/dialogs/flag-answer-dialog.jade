@@ -1,18 +1,14 @@
-div.top-padding-med
-    .well
-        .row.left-padding-lg.bottom-padding-med.right-padding-lg
-            legend Please add text describing flag.
-
-            .row.left-padding-lg.right-padding-lg
-                .form-horizontal
-                    fieldset
-                        .row
-                            .form-group(required).col-md-12
-                                textarea.form-control(name="question_text" type="textbox" ng-model="flag_content")
-
+div.left-padding-lg.right-padding-lg
+    h3 Please add text describing flag.
+        .row.top-padding-med.left-padding-lg
+            .form-horizontal
+                fieldset
+                    .row
+                        .form-group(required).col-md-12
+                            textarea.form-control(name="question_text" type="textbox" ng-model="flag_content")
         .row.left-padding-lg
             .col-md-10.col-md-offset-2
                 .pull-right
-                    a.btn.btn-success(ng-click="flagAnswer()") Flag
+                    a.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
                     | &nbsp;
                     a.btn.btn-default(ng-click="closeDialog()") Cancel
