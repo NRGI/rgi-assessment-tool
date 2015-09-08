@@ -79,12 +79,87 @@
 				//a.btn.btn-default(href="/assessments/assessment-edit/{{answer.answer_ID}}" ng-if="assessment.edit_control===current_user._id") Edit answer
 				//| &nbsp;
 				a.btn.btn-default(href="/assessments-review/{{answer.assessment_ID}}") Return to assessment menu
+
+		.row.left-padding-lg.right-padding-lg(ng-if="answer.flags.length!==0")
+			div(id="flags_div").bottom-padding-med
+				legend Flags:
+				div.panel-group(
+				id="prev_flags_div"
+				role="tablist"
+				aria-multiselectable="true")
+					div.panel(ng-repeat="flag in answer.flags")
+						.panel-success(ng-if="flag.addressed===true")
+							div.panel-heading(
+							role="tab"
+							id="heading{{$index}}")
+								h4.panel-title
+									a.btn.btn-block.button.button-success(
+									style="text-align: left;"
+									role="button"
+									data-toggle="collapse"
+									data-parent="#accordion"
+									href="#collapse{{$index}}"
+									aria-expanded="false"
+									aria-controls="collapse{{$index}}")
+										b Flag {{$index+1}} - {{flag.author_name}} (
+										b {{flag.role}}
+										b ):
+										em  {{flag.date | date:'MM/dd/yyyy'}}
+							div(
+							id="collapse{{$index}}"
+							class="panel-collapse collapse in"
+							role="tabpanel"
+							aria-labelledby="heading{{$index}}")
+								div.panel-body
+									.row.left-padding-lg
+										text Addressed?
+										text
+										input(
+										type="checkbox"
+										ng-model="flag.addressed"
+										disabled)
+									.row.left-padding-lg.right-padding-lg
+										text {{flag.content}}
+									.row {{flag}}
+									.row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+										button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
+						.panel-danger(ng-if="flag.addressed===false")
+							div.panel-heading(
+							role="tab"
+							id="heading{{$index}}")
+								h4.panel-title
+									a.btn.btn-block.button.button-success(
+									style="text-align: left;"
+									role="button"
+									data-toggle="collapse"
+									data-parent="#accordion"
+									href="#collapse{{$index}}"
+									aria-expanded="false"
+									aria-controls="collapse{{$index}}")
+										b Flag {{$index+1}} - {{flag.author_name}} (
+										b {{flag.role}}
+										b ):
+										em  {{flag.date | date:'MM/dd/yyyy'}}
+							div(
+							id="collapse{{$index}}"
+							class="panel-collapse collapse in"
+							role="tabpanel"
+							aria-labelledby="heading{{$index}}")
+								div.panel-body
+									.row.left-padding-lg
+										text Addressed?
+										text
+										input(type="checkbox" ng-model="flag.addressed")
+									.row.left-padding-lg.right-padding-lg
+										text {{flag.content}}
+									.row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+										button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
 		.row.left-padding-lg.right-padding-lg
 			.form-horizontal(name="answer_form")
 				fieldset
-					
+
 					div(id="comments_div").bottom-padding-med
-						legend General comments:
+						legend Comments:
 
 						div(id="prev_comments_div" ng-if="answer.comments.length!==0")
 							.row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
@@ -92,11 +167,13 @@
 									b {{comment.author_name}} (
 									b {{comment.role}}
 									b ):
-								.row.col-md-11 {{comment.content}}
-								.row.col-md-offset-9.col-md-3
+								.row
 									date
 										small
-											em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+											em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+								.row.col-md-11 {{comment.content}}
+								.row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
+									button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
 						br
 						div(id="new_comment_div").bottom-padding-med
 							ng-form(name="new_comment_form")

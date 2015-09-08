@@ -4,7 +4,7 @@
 
 angular.module('app').controller('rgiFlagAnswerDialogCtrl', function ($scope, $route, $location, ngDialog, rgiNotifier, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc) {
 
-    $scope.flagAnswer = function () {
+    $scope.saveFlag = function () {
         var new_answer_data = $scope.$parent.answer,
             current_user = $scope.$parent.identity.currentUser,
             new_assessment_data = $scope.$parent.assessment,

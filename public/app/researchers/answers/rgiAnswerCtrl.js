@@ -189,6 +189,19 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         });
     };
 
+    $scope.flagEdit = function (flag, index) {
+        $scope.value = true;
+        var scope = $scope;
+        scope.index = index;
+        scope.flag = flag;
+        ngDialog.open({
+            template: 'partials/dialogs/flag-answer-dialog',
+            controller: 'rgiFlagEditDialogCtrl',
+            className: 'ngdialog-theme-default',
+            scope: scope
+        });
+    };
+
     $scope.answerResubmit = function () {
         var new_answer_data, new_assessment_data;
 
@@ -246,6 +259,21 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
                     rgiNotifier.notify(reason);
                 });
         }
+    };
+    $scope.commentEdit = function (comment, index) {
+        $scope.value = true;
+        var scope = $scope;
+        scope.index = index;
+        scope.comment = comment;
+
+        ngDialog.open({
+            template: 'partials/dialogs/comment-edit-dialog',
+            controller: 'rgiCommentEditDialogCtrl',
+            className: 'ngdialog-theme-default',
+            scope: scope
+        });
+
+
     };
 
     // make final choice

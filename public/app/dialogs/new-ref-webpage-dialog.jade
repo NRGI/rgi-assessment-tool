@@ -17,7 +17,7 @@ div.left-padding-lg.right-padding-lg
                         name="title"
                         type="text"
                         placeholder="Website title (required)..."
-                        ng-model="answer.web_ref_title"
+                        ng-model="answer_update.web_ref_title"
                         autocomplete="off"
                         required)
                     div.row.form-group
@@ -25,7 +25,7 @@ div.left-padding-lg.right-padding-lg
                         name="url"
                         type="text"
                         placeholder="Website URL (required)..."
-                        ng-model="answer.web_ref_url"
+                        ng-model="answer_update.web_ref_url"
                         autocomplete="off"
                         required)
                     div.row.form-group
@@ -33,22 +33,19 @@ div.left-padding-lg.right-padding-lg
                         name="comment"
                         type="text"
                         placeholder="Comments..."
-                        ng-model="answer.web_ref_comment"
+                        ng-model="answer_update.web_ref_comment"
                         autocomplete="off")
 
                     div.row.form-group
                         datepicker(
                         date-format="{{date_format}}")
                             input.form-control(
-                            ng-model="answer.web_ref_access_date"
+                            ng-model="answer_update.web_ref_access_date"
                             type="text"
                             placeholder="Date accessed...")
 
                 //- BUTTON CONTROL
                 div.col-lg-6
-                    button.btn.btn-block.btn-success(
-                    ng-click="webRefSubmit()"
-                    ng-disabled="!answer.web_ref_title || !answer.web_ref_url"
-                    ) Create reference
+                    button.btn.btn-block.btn-success(ng-click="webRefSubmit()") Create reference
                 div.col-lg-6
                     button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

@@ -55,7 +55,7 @@
 					tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
 						td.col-md-1.text-center {{answer.question_order}}
 						td.col-md-1 {{answer.component_text}}
-						td.col-md-5 {{answer.question_text}})
+						td.col-md-5 {{answer.question_text}}
 						td
 							text.text-success(ng-if="answer.status==='approved'") {{answer.status | ucfirst}}
 							text.text-danger(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}

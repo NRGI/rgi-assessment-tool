@@ -102,14 +102,13 @@
 
 
 
-            .row.left-padding-lg.bottom-padding-lg
+            .row.left-padding-lg.bottom-padding-lg(ng-if="answer.flags.length!==0")
                 div(id="flags_div").bottom-padding-med
                     legend Flags:
 
 
                     div.panel-group(
                     id="prev_flags_div"
-                    ng-if="answer.flags.length!==0"
                     role="tablist"
                     aria-multiselectable="true")
                         div.panel(ng-repeat="flag in answer.flags")
@@ -142,6 +141,8 @@
                                             input(type="checkbox" ng-model="flag.addressed")
                                         .row.left-padding-lg.right-padding-lg
                                             text {{flag.content}}
+                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
                             .panel-danger(ng-if="flag.addressed===false")
                                 div.panel-heading(
                                 role="tab"
@@ -171,10 +172,12 @@
                                             input(type="checkbox" ng-model="flag.addressed")
                                         .row.left-padding-lg.right-padding-lg
                                             text {{flag.content}}
+                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
 
 
             .row.left-padding-lg
-                .form-horizontal(name="answer_form")
+                .form-horizontal(name="comment_form")
                     fieldset
 
                         div(id="comments_div").bottom-padding-med
@@ -186,11 +189,13 @@
                                         b {{comment.author_name}} (
                                         b {{comment.role}}
                                         b ):
-                                    .row.col-md-11 {{comment.content}}
-                                    .row.col-md-offset-9.col-md-3
+                                    .row
                                         date
                                             small
-                                                em {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+                                                em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+                                    .row.col-md-11 {{comment.content}}
+                                    .row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
+                                        button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
                             br
                             div(id="new_comment_div").bottom-padding-med
                                 ng-form(name="new_comment_form")
