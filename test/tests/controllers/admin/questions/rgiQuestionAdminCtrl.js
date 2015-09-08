@@ -1,39 +1,42 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiQuestionAdminCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, ngDialog, rgiQuestionSrvc;
-    var questionQueryStub, questionQuerySpy;
-    var questionsData = [
-        {
-            question_order: 'QUESTION ORDER',
-            question_text: 'QUESTION TEXT',
-            component_text: 'COMPONENT TEXT',
-            indicator_name: 'INDICATOR NAME',
-            sub_indicator_name: 'SUBINDICATOR NAME',
-            minstry_if_applicable: 'MINISTRY IF APPLICABLE',
-            section_name: 'SECTION NAME',
-            child_question: 'CHILD QUESTION',
-            nrc_precept: 'NRC PRECEPT',
-            question_choices: [
-                {name: 'Yes', criteria: 'yes'},
-                {name: 'No', criteria: 'no'}
-            ]
-        }
-    ];
+    var $scope, ngDialog, rgiQuestionSrvc, questionQueryStub, questionQuerySpy,
+        questionsData = [
+            {
+                question_order: 'QUESTION ORDER',
+                question_text: 'QUESTION TEXT',
+                component_text: 'COMPONENT TEXT',
+                indicator_name: 'INDICATOR NAME',
+                sub_indicator_name: 'SUBINDICATOR NAME',
+                minstry_if_applicable: 'MINISTRY IF APPLICABLE',
+                section_name: 'SECTION NAME',
+                child_question: 'CHILD QUESTION',
+                nrc_precept: 'NRC PRECEPT',
+                question_choices: [
+                    {name: 'Yes', criteria: 'yes'},
+                    {name: 'No', criteria: 'no'}
+                ]
+            }
+        ];
 
     beforeEach(inject(
         function ($rootScope, $controller, _ngDialog_, _rgiQuestionSrvc_) {
             ngDialog = _ngDialog_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             $scope = $rootScope.$new();
-
-            questionQuerySpy = sinon.spy(function(uselessObject, callback) {
+            /*jshint unused: true*/
+            /*jslint unparam: true*/
+            questionQuerySpy = sinon.spy(function (uselessObject, callback) {
                 callback(questionsData);
             });
+            /*jshint unused: false*/
+            /*jslint unparam: false*/
             questionQueryStub = sinon.stub(rgiQuestionSrvc, 'query', questionQuerySpy);
 
             $controller('rgiQuestionAdminCtrl', {$scope: $scope});
@@ -89,18 +92,18 @@ describe('rgiQuestionAdminCtrl', function () {
         ], $scope.getArray).should.be.equal(true);
     });
 
-    describe('#newQuestionDialog', function() {
-        it('sets the value to TRUE', function() {
+    describe('#newQuestionDialog', function () {
+        it('sets the value to TRUE', function () {
             $scope.newQuestionDialog();
             $scope.value.should.be.equal(true);
         });
 
-        it('opens a dialog', function() {
+        it('opens a dialog', function () {
             var ngDialogMock = sinon.mock(ngDialog);
             ngDialogMock.expects('open').withArgs({
                 template: 'partials/dialogs/new-question-dialog',
                 controller: 'rgiNewQuestionDialogCtrl',
-                className: 'ngdialog-theme-plain width750',
+                className: 'ngdialog-theme-plain dialogwidth800',
                 scope: $scope
             });
 
@@ -109,6 +112,7 @@ describe('rgiQuestionAdminCtrl', function () {
             ngDialogMock.verify();
             ngDialogMock.restore();
         });
+
     });
 
     afterEach(function () {
