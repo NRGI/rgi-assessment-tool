@@ -58,9 +58,12 @@ travis.yml
 config.config
 
 newrelic_agent.log
+<<<<<<< HEAD
 
 travis.yml
 shippable.yml
+=======
+>>>>>>> bugs
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
