@@ -22,7 +22,7 @@ Icon
 
 # Logs
 logs
-*.logg c
+*.logg crgi
 
 # archives
 *.tar
