@@ -1,6 +1,14 @@
+
+#Mac stuff
 .DS_Store
 .AppleDouble
 .LSOverride
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 # Icon must end with two \r
 Icon
@@ -11,14 +19,6 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
 
 # Logs
 logs
@@ -44,18 +44,23 @@ coverage
 # node-waf configuration
 .lock-wscript
 
+#Node and bower bin files
 node_modules
 public/vendor
-.idea/*
+
+#Webstorm files
+.idea
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+#CI stuff
 shippable.yml
 travis.yml
 
 config.config
 
+#New relic
 newrelic_agent.log
 
 # Elastic Beanstalk Files
