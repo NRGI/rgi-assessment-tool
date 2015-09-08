@@ -57,7 +57,6 @@ travis.yml
 config.config
 
 newrelic_agent.log
-newrelic_agent.log
 
 travis.yml
 shippable.yml
