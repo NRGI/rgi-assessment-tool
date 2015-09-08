@@ -5,8 +5,8 @@
 # Icon must end with two \r
 Icon
 
-#WebStorm project files
-.idea/
+# Compiled HTML Files
+public/app/**/*.html
 
 # Thumbnails
 ._*
@@ -60,14 +60,9 @@ travis.yml
 config.config
 
 newrelic_agent.log
-newrelic_agent.log
-
-travis.yml
-shippable.yml
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
-.elasticbeanstalk/config.yml
 .elasticbeanstalk/saved_configs
 .elasticbeanstalk/*.cfg.yml
 .elasticbeanstalk/*.global.yml
