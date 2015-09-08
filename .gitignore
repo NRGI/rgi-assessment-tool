@@ -69,3 +69,4 @@ newrelic_agent.log
 .elasticbeanstalk/saved_configs
 .elasticbeanstalk/*.cfg.yml
 .elasticbeanstalk/*.global.yml
+
