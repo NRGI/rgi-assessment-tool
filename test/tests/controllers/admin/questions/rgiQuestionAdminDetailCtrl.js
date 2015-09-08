@@ -1,22 +1,23 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, angular, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiQuestionAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier;
-    var questionGetStub, questionGetSpy;
-    var $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID';
-    var identityCurrentUserBackUp, identityCurrentUser = 'CURRENT USER';
-    var questionData = {
-        _id: 'QUESTION-ID',
-        comments: [],
-        question_choices: [
-            {order: 1, criteria: 'yes'},
-            {order: 2, criteria: 'no'}
-        ]
-    };
+    var $scope, $location, $routeParams, ngDialog, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
+        questionGetStub, questionGetSpy,
+        $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID',
+        identityCurrentUserBackUp, identityCurrentUser = 'CURRENT USER',
+        questionData = {
+            _id: 'QUESTION-ID',
+            comments: [],
+            question_choices: [
+                {order: 1, criteria: 'yes'},
+                {order: 2, criteria: 'no'}
+            ]
+        };
 
     beforeEach(inject(
         function ($rootScope, $controller, _$location_, _$routeParams_, _ngDialog_, _rgiIdentitySrvc_, _rgiQuestionSrvc_, _rgiQuestionMethodSrvc_, _rgiNotifier_) {
@@ -33,10 +34,13 @@ describe('rgiQuestionAdminDetailCtrl', function () {
 
             $routeParamsIdBackUp = $routeParams.id;
             $routeParams.id = $routeParamsId;
-
-            questionGetSpy = sinon.spy(function(question, callback) {
+            /*jshint unused: true*/
+            /*jslint unparam: true*/
+            questionGetSpy = sinon.spy(function (question, callback) {
                 return callback ? callback(questionData) : questionData;
             });
+            /*jshint unused: false*/
+            /*jslint unparam: false*/
             questionGetStub = sinon.stub(rgiQuestionSrvc, 'get', questionGetSpy);
 
             $scope = $rootScope.$new();
@@ -66,49 +70,48 @@ describe('rgiQuestionAdminDetailCtrl', function () {
         ]).should.be.equal(true);
     });
 
-    describe('#questionOptionAdd', function() {
-        it('adds a placeholder to add a new option', function() {
-            var originalItemsNumber = $scope.question.question_choices.length;
+    describe('#questionOptionAdd', function () {
+        it('adds a placeholder to add a new option', function () {
+            var questionChoice, originalItemsNumber = $scope.question.question_choices.length;
             $scope.questionOptionAdd();
 
-            var questionChoice = $scope.question.question_choices[$scope.question.question_choices.length - 1];
+            questionChoice = $scope.question.question_choices[$scope.question.question_choices.length - 1];
             questionChoice.order.should.be.equal(originalItemsNumber + 1);
             questionChoice.criteria.should.be.equal('Enter text');
         });
     });
 
-    describe('#questionOptionDelete', function() {
-        it('removes choice data', function() {
-            var choiceIndex = 0;
-            var choiceData = angular.copy($scope.question.question_choices[choiceIndex]);
+    describe('#questionOptionDelete', function () {
+        it('removes choice data', function () {
+            var choiceIndex = 0, choiceData = angular.copy($scope.question.question_choices[choiceIndex]);
             $scope.questionOptionDelete();
             _.isEqual($scope.question.question_choices[choiceIndex], choiceData).should.be.equal(false);
         });
     });
 
-    describe('#questionClear', function() {
-        it('re-initializes the question data', function() {
+    describe('#questionClear', function () {
+        it('re-initializes the question data', function () {
             $scope.question.question_choices[0].criteria = 'Yes, of course';
             $scope.questionClear();
             _.isEqual($scope.question, $scope.question_start).should.be.equal(true);
         });
     });
 
-    describe('#questionUpdate', function() {
+    describe('#questionUpdate', function () {
         var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy, notifierMock;
 
         beforeEach(function () {
             notifierMock = sinon.mock(rgiNotifier);
         });
 
-        describe('POSITIVE CASE', function() {
-            it('shows message and redirects', function() {
-                questionMethodDeleteQuestionSpy = sinon.spy(function() {
+        describe('POSITIVE CASE', function () {
+            it('shows message and redirects', function () {
+                questionMethodDeleteQuestionSpy = sinon.spy(function () {
                     return {
-                        then: function(callback) {
+                        then: function (callback) {
                             callback();
                         }
-                    }
+                    };
                 });
                 questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
 
@@ -122,16 +125,20 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             });
         });
 
-        describe('NEGATIVE CASE', function() {
-            it('shows error message', function() {
+        describe('NEGATIVE CASE', function () {
+            it('shows error message', function () {
                 var failureReason = 'REASON';
-                questionMethodDeleteQuestionSpy =  sinon.spy(function() {
+                questionMethodDeleteQuestionSpy =  sinon.spy(function () {
+                    /*jshint unused: true*/
+                    /*jslint unparam: true*/
                     return {
-                        then: function(uselessCallbackPositive, callbackNegative) {
+                        then: function (uselessCallbackPositive, callbackNegative) {
                             callbackNegative(failureReason);
                         }
-                    }
+                    };
                 });
+                /*jshint unused: false*/
+                /*jslint unparam: false*/
                 questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
 
                 notifierMock.expects('error').withArgs(failureReason);
@@ -147,13 +154,13 @@ describe('rgiQuestionAdminDetailCtrl', function () {
         });
     });
 
-    describe('#deleteConfirmDialog', function() {
-        it('calls dialog service with defined parameters', function() {
+    describe('#deleteConfirmDialog', function () {
+        it('calls dialog service with defined parameters', function () {
             var ngDialogMock = sinon.mock(ngDialog);
             ngDialogMock.expects('open').withArgs({
                 template: 'partials/dialogs/delete-question-confirmation-dialog',
                 controller: 'rgiDeleteQuestionDialogCtrl',
-                className: 'ngdialog-theme-plain',
+                className: 'ngdialog-theme-default',
                 scope: $scope
             });
 
@@ -164,63 +171,33 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             ngDialogMock.restore();
         });
     });
-    //TODO move to dialog test
-    //describe('#questionDelete', function() {
-    //    var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy, notifierMock;
-    //
-    //    beforeEach(function () {
-    //        notifierMock = sinon.mock(rgiNotifier);
-    //    });
-    //
-    //    describe('POSITIVE CASE', function() {
-    //        it('shows message and redirects', function() {
-    //            questionMethodDeleteQuestionSpy = sinon.spy(function() {
-    //                return {
-    //                    then: function(callback) {
-    //                        callback();
-    //                    }
-    //                }
-    //            });
-    //            questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'deleteQuestion', questionMethodDeleteQuestionSpy);
-    //
-    //            notifierMock.expects('notify').withArgs('Question has been deleted');
-    //            var $locationMock = sinon.mock($location);
-    //            $locationMock.expects('path').withArgs('/admin/question-admin');
-    //
-    //            $scope.questionDelete();
-    //            $locationMock.verify();
-    //            $locationMock.restore();
-    //        });
-    //    });
-    //
-    //    describe('NEGATIVE CASE', function() {
-    //        it('shows error message', function() {
-    //            var failureReason = 'REASON';
-    //            questionMethodDeleteQuestionSpy =  sinon.spy(function() {
-    //                return {
-    //                    then: function(uselessCallbackPositive, callbackNegative) {
-    //                        callbackNegative(failureReason);
-    //                    }
-    //                }
-    //            });
-    //            questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'deleteQuestion', questionMethodDeleteQuestionSpy);
-    //
-    //            notifierMock.expects('error').withArgs(failureReason);
-    //            $scope.questionDelete();
-    //        });
-    //    });
-    //
-    //    afterEach(function () {
-    //        questionMethodDeleteQuestionSpy.withArgs($scope.question._id).called.should.be.equal(true);
-    //        questionMethodDeleteQuestionStub.restore();
-    //        notifierMock.verify();
-    //        notifierMock.restore();
-    //    });
-    //});
 
-    describe('#questionDelete', function() {
-        var questionMethodUpdateQuestionStub, questionMethodUpdateQuestionSpy, notifierMock;
-        var currentUser;
+    describe('#deleteConfirmDialog', function () {
+        it('sets the value to TRUE', function () {
+            $scope.deleteConfirmDialog();
+            $scope.value.should.be.equal(true);
+        });
+
+        it('opens a dialog', function () {
+            var ngDialogMock = sinon.mock(ngDialog);
+            ngDialogMock.expects('open').withArgs({
+                template: 'partials/dialogs/delete-question-confirmation-dialog',
+                controller: 'rgiDeleteQuestionDialogCtrl',
+                className: 'ngdialog-theme-default',
+                scope: $scope
+            });
+
+            $scope.deleteConfirmDialog();
+
+            ngDialogMock.verify();
+            ngDialogMock.restore();
+        });
+
+    });
+
+    describe('#questionDelete', function () {
+        var questionMethodUpdateQuestionStub, questionMethodUpdateQuestionSpy, notifierMock,
+            currentUser;
 
         beforeEach(function () {
             notifierMock = sinon.mock(rgiNotifier);
@@ -233,30 +210,34 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             };
         });
 
-        describe('POSITIVE CASE', function() {
-            it('sends a request and displays a success message', function() {
-                questionMethodUpdateQuestionSpy = sinon.spy(function() {
+        describe('POSITIVE CASE', function () {
+            it('sends a request and displays a success message', function () {
+                questionMethodUpdateQuestionSpy = sinon.spy(function () {
                     return {
-                        then: function(callback) {
+                        then: function (callback) {
                             callback();
                         }
-                    }
+                    };
                 });
 
                 notifierMock.expects('notify').withArgs('Comment added');
             });
         });
 
-        describe('NEGATIVE CASE', function() {
-            it('shows error message', function() {
+        describe('NEGATIVE CASE', function () {
+            it('shows error message', function () {
                 var failureReason = 'REASON';
-                questionMethodUpdateQuestionSpy =  sinon.spy(function() {
+                /*jshint unused: true*/
+                /*jslint unparam: true*/
+                questionMethodUpdateQuestionSpy =  sinon.spy(function () {
                     return {
-                        then: function(uselessCallbackPositive, callbackNegative) {
+                        then: function (uselessCallbackPositive, callbackNegative) {
                             callbackNegative(failureReason);
                         }
-                    }
+                    };
                 });
+                /*jshint unused: true*/
+                /*jslint unparam: true*/
 
                 notifierMock.expects('notify').withArgs(failureReason);
             });
@@ -266,9 +247,9 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             questionMethodUpdateQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodUpdateQuestionSpy);
             $scope.commentSubmit(currentUser);
 
-            var questionCopy = angular.copy($scope.question);
+            var questionCopy = angular.copy($scope.question),
+                spyArgs = questionMethodUpdateQuestionSpy.args[0][0];
             delete questionCopy.new_comment;
-            var spyArgs = questionMethodUpdateQuestionSpy.args[0][0];
 
             questionCopy.comments[0].date.substring(0, questionCopy.comments[0].date.length - 4);
             spyArgs.comments[0].date.substring(0, spyArgs.comments[0].date.length - 4);
@@ -285,5 +266,6 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     afterEach(function () {
         $routeParams.id = $routeParamsIdBackUp;
         rgiIdentitySrvc.currentUser = identityCurrentUserBackUp;
+        questionGetStub.restore();
     });
 });

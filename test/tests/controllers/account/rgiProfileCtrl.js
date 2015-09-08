@@ -103,7 +103,7 @@ describe('rgiProfileCtrl', function () {
                     };
                 });
                 userMethodUpdateCurrentUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateCurrentUserSpy);
-                notifierMock.expects('notify').withArgs(FAILURE_REASON);
+                notifierMock.expects('error').withArgs(FAILURE_REASON);
             });
 
             it('submits updated user data & shows failure notification', function() {

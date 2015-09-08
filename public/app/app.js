@@ -3,7 +3,7 @@
 /*jslint unparam: true */
 
 // angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload', 'angular.filter']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload', 'angular.filter', '720kb.datepicker']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
@@ -30,7 +30,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/contact', {
             templateUrl: '/partials/main/contact',
-            controller: 'rgiContactCtrl'
+            controller: 'rgiContactTechCtrl'
         })
         // User Account Routes
         .when('/profile', {

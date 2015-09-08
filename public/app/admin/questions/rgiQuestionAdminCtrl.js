@@ -47,7 +47,7 @@ angular.module('app').controller('rgiQuestionAdminCtrl', function ($scope, rgiQu
         ngDialog.open({
             template: 'partials/dialogs/new-question-dialog',
             controller: 'rgiNewQuestionDialogCtrl',
-            className: 'ngdialog-theme-plain width750',
+            className: 'ngdialog-theme-plain dialogwidth800',
             scope: $scope
         });
     };

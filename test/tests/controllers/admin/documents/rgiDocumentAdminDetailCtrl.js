@@ -1,15 +1,16 @@
+/*jslint node: true */
 'use strict';
 /*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
+var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiDocumentAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, ngDialog, rgiDocumentSrvc, rgiUserListSrvc;
-    var documentGetStub, documentGetSpy;
-    var userListGetStub, userListGetSpy;
-    var document_ID = 'document id', $routeParamsDocument_ID;
-    var document = {users: ['user-id-1', 'user-id-2']};
+    var $scope, $routeParams, ngDialog, rgiDocumentSrvc, rgiUserListSrvc,
+        documentGetStub, documentGetSpy,
+        userListGetStub, userListGetSpy,
+        document_ID = 'document id', $routeParamsDocument_ID,
+        document = {users: ['user-id-1', 'user-id-2']};
 
     beforeEach(inject(
         function ($rootScope, $controller, _$routeParams_, _ngDialog_, _rgiDocumentSrvc_, _rgiUserListSrvc_) {
@@ -21,13 +22,16 @@ describe('rgiDocumentAdminDetailCtrl', function () {
             $scope = $rootScope.$new();
             $routeParamsDocument_ID = $routeParams.document_ID;
             $routeParams.document_ID = document_ID;
-
-            documentGetSpy = sinon.spy(function(object, callback) {
+            /*jshint unused: true*/
+            /*jslint unparam: true*/
+            documentGetSpy = sinon.spy(function (object, callback) {
                 callback(document);
             });
+            /*jshint unused: false*/
+            /*jslint unparam: false*/
             documentGetStub = sinon.stub(rgiDocumentSrvc, 'get', documentGetSpy);
 
-            userListGetSpy = sinon.spy(function(criterion, callback) {
+            userListGetSpy = sinon.spy(function (criterion, callback) {
                 callback(criterion._id.replace('-id', ''));
             });
             userListGetStub = sinon.stub(rgiUserListSrvc, 'get', userListGetSpy);
@@ -45,13 +49,13 @@ describe('rgiDocumentAdminDetailCtrl', function () {
         _.isEqual(document, $scope.document).should.be.equal(true);
     });
 
-    describe('#editDocumentDialog', function() {
-        it('calls dialog service with defined parameters', function() {
+    describe('#editDocumentDialog', function () {
+        it('calls dialog service with defined parameters', function () {
             var ngDialogMock = sinon.mock(ngDialog);
             ngDialogMock.expects('open').withArgs({
                 template: 'partials/dialogs/edit-document-dialog',
                 controller: 'rgiEditDocumentDialogCtrl',
-                className: 'ngdialog-theme-plain',
+                className: 'ngdialog-theme-default',
                 scope: $scope
             });
 
@@ -61,7 +65,7 @@ describe('rgiDocumentAdminDetailCtrl', function () {
             ngDialogMock.restore();
         });
 
-        it('sets the value to TRUE', function() {
+        it('sets the value to TRUE', function () {
             $scope.editDocumentDialog();
             $scope.value.should.be.equal(true);
         });

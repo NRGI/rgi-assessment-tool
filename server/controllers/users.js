@@ -3,7 +3,7 @@
 
 var User = require('mongoose').model('User'),
     encrypt = require('../utilities/encryption'),
-    mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
+    contact = require('../utilities/contact');
     // client = require('campaign')();
     // client.send(template, options, done);
 
@@ -35,19 +35,22 @@ exports.getUsersListByID = function (req, res) {
 
 exports.createUser = function (req, res, next) {
     var userData = req.body,
-        rec_email = userData.email,
-        rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
-        rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
-        rec_username = userData.username,
-        rec_password = userData.password,
-        send_name = req.user.firstName + " " + req.user.lastName;
+        contact_packet = {};
+
+    contact_packet.rec_email = userData.email;
+    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    contact_packet.rec_username = userData.username;
+    contact_packet.rec_password = userData.password;
+    contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
+    contact_packet.send_email = req.user.email;
 
     userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
     userData.createdBy = req.user._id;
 
-    User.create(userData, function (err, user) {
+    User.create(userData, function (err, user, next) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
@@ -55,33 +58,16 @@ exports.createUser = function (req, res, next) {
             res.status(400);
             return res.send({reason: err.toString()});
         }
+        next();
     });
 
-    // //send an e-mail to jim rubenstein
-    mandrill('/messages/send', {
-        message: {
-            to: [{email: rec_email, name: rec_name}],
-            from_email: 'cperry@resourcegovernance.org',
-            subject: rec_role + ' account created!',
-            html: "Hello " + rec_name + ",<p>\
-                   an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-                   The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-                   Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-                   Thanks!<p>\
-                   The RGI Team."
-        }
-    }, function (error, response) {
-        //uh oh, there was an error
-        if (error) console.log( JSON.stringify(error) );
-
-        //everything's good, lets see what mandrill said
-        else console.log(response);
-    });
+    contact.new_user_confirmation(contact_packet);
     res.send();
 };
-
+//TODO update user email
 exports.updateUser = function (req, res) {
-    var userUpdates = req.body;
+    var userUpdates = req.body,
+        contact_packet = {};
         // rec_email = userData.email,
         // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
         // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
@@ -121,37 +107,20 @@ exports.updateUser = function (req, res) {
             }
         });
     });
-    // // //send an e-mail to jim rubenstein
-    // mandrill('/messages/send', {
-    //     message: {
-    //         to: [{email: rec_email, name: rec_name}],
-    //         from_email: 'cperry@resourcegovernance.org',
-    //         subject: rec_role + ' account created!',
-    //         html: "Hello " + rec_name + ",<p>\
-    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //                Thanks!<p>\
-    //                The RGI Team."
-    //     }
-    // }, function (error, response) {
-    //     //uh oh, there was an error
-    //     if (error) console.log( JSON.stringify(error) );
-
-    //     //everything's good, lets see what mandrill said
-    //     else console.log(response);
-    // });
     res.send();
 };
 
+//TODO send deleted user information to 'purgatory for a period in case admin needs to undo
+//TODO remove associated data
 exports.deleteUser = function (req, res) {
-    // var userUpdates = req.body;
-        // rec_email = userData.email,
-        // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
-        // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
-        // rec_username = userData.username,
-        // rec_password = userData.password,
-        // send_name = req.user.firstName + " " + req.user.lastName;;
+     //var user_delete = req.body,
+     //    contact_packet = {};
+     //   // rec_email = userData.email,
+     //   // rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1),
+     //   // rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1),
+     //   // rec_username = userData.username,
+     //   // rec_password = userData.password,
+     //   // send_name = req.user.firstName + " " + req.user.lastName;;
 
     User.remove({_id: req.params.id}, function (err) {
         if (!err) {
@@ -160,25 +129,6 @@ exports.deleteUser = function (req, res) {
             return res.send({ reason: err.toString() });
         }
     });
-    // // //send an e-mail to jim rubenstein
-    // mandrill('/messages/send', {
-    //     message: {
-    //         to: [{email: rec_email, name: rec_name}],
-    //         from_email: 'cperry@resourcegovernance.org',
-    //         subject: rec_role + ' account created!',
-    //         html: "Hello " + rec_name + ",<p>\
-    //                an RGI " + rec_role + "account was just set up for you by <a href='" + req.user.email + "'>" + send_name + "</a>.<p>\
-    //                The user name is <b>" + rec_username + "</b> and the password is <b>" + rec_password + "</b>.\
-    //                Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>\
-    //                Thanks!<p>\
-    //                The RGI Team."
-    //     }
-    // }, function (error, response) {
-    //     //uh oh, there was an error
-    //     if (error) console.log( JSON.stringify(error) );
-
-    //     //everything's good, lets see what mandrill said
-    //     else console.log(response);
-    // });
+    //contact.delete_user_confirmation(contact_packet);
     res.send();
 };

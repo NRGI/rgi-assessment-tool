@@ -1,13 +1,12 @@
-div.top-padding-med
-    .well
-        legend New Document creation (PDF only)
+div.left-padding-lg.right-padding-lg
+    h3 New document (PDF only)
         .row.left-padding-lg(id="new_document_form")
             .form-horizontal
                 // NEW DOC
                 fieldset
                     div(ng-if="new_document.status!=='submitted'")
                         // TITLE
-                        .row.form-group.right-padding-lg
+                        .row.form-group.right-padding-lg.top-padding-med
                             input.form-control(
                             name="title"
                             type="text"
@@ -228,126 +227,144 @@ div.top-padding-med
                             // TITILE
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Title:
-                                    text(ng-if="new_document.title")  {{new_document.title | ucfirst}}
-                                    text(ng-if="!new_document.title")  N/A
+                                    h5
+                                        b Title:
+                                    h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
+                                    h5(ng-if="!new_document.title")   N/A
                             // DOC TYPE
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Type:
-                                    text(ng-if="new_document.type")  {{new_document.type| ucfirst}}
-                                    text(ng-if="!new_document.type")  N/A
+                                    h5
+                                        b Type:
+                                    h5(ng-if="new_document.type")  {{new_document.type| ucfirst}}
+                                    h5(ng-if="!new_document.type")  N/A
                         //- AUTHOR
                         .row
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Author(s):
-                                    text(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
-                                    text(ng-if="!new_document.authors")  N/A
+                                    h5
+                                        b Author(s):
+                                    h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                    h5(ng-if="!new_document.authors")  N/A
                         //- EDITORS
                         .row
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Editor(s):
-                                    text(ng-repeat="editor in new_document.editors" ng-if="new_document.editors[0].first_name !== ''")  {{editor.first_name | ucfirst}} {{editor.last_name| ucfirst}},
-                                    text(ng-if="new_document.editors[0].first_name === ''")  N/A
+                                    h5
+                                        b Editor(s):
+                                    h5(ng-repeat="editor in new_document.editors" ng-if="new_document.editors[0].first_name !== ''")  {{editor.first_name | ucfirst}} {{editor.last_name| ucfirst}},
+                                    h5(ng-if="new_document.editors[0].first_name === ''")  N/A
 
                         .row
                             // SOURCE
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Source:
-                                    text(ng-if="new_document.source")  {{new_document.source}}
-                                    text(ng-if="!new_document.source")  N/A
+                                    h5
+                                        b Source:
+                                    h5(ng-if="new_document.source")  {{new_document.source}}
+                                    h5(ng-if="!new_document.source")  N/A
                             // YEAR
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Year:
-                                    text(ng-if="new_document.year")  {{new_document.year}}
-                                    text(ng-if="!new_document.year")  N/A
+                                    h5
+                                        b Year:
+                                    h5(ng-if="new_document.year")  {{new_document.year}}
+                                    h5(ng-if="!new_document.year")  N/A
 
                         .row
                             // PAGES
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Pages:
-                                    text(ng-if="new_document.pages")  {{new_document.pages}}
-                                    text(ng-if="!new_document.pages")  N/A
+                                    h5
+                                        b Pages:
+                                    h5(ng-if="new_document.pages")  {{new_document.pages}}
+                                    h5(ng-if="!new_document.pages")  N/A
                             // VOLUME
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Volume:
-                                    text(ng-if="new_document.volume")  {{new_document.volume}}
-                                    text(ng-if="!new_document.volume")  N/A
+                                    h5
+                                        b Volume:
+                                    h5(ng-if="new_document.volume")  {{new_document.volume}}
+                                    h5(ng-if="!new_document.volume")  N/A
 
                         .row
                             // ISSUE
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Issue:
-                                    text(ng-if="new_document.issue")  {{new_document.issue}}
-                                    text(ng-if="!new_document.issue")  N/A
+                                    h5
+                                        b Issue:
+                                    h5(ng-if="new_document.issue")  {{new_document.issue}}
+                                    h5(ng-if="!new_document.issue")  N/A
                             // PUBLISHER
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Publisher:
-                                    text(ng-if="new_document.publisher")  {{new_document.publisher}}
-                                    text(ng-if="!new_document.publisher")  N/A
+                                    h5
+                                        b Publisher:
+                                    h5(ng-if="new_document.publisher")  {{new_document.publisher}}
+                                    h5(ng-if="!new_document.publisher")  N/A
 
                         .row
                             // CITY
                             div.col-md-6
                                 .form-group.pull-left
-                                    b City:
-                                    text(ng-if="new_document.city")  {{new_document.city}}
-                                    text(ng-if="!new_document.city")  N/A
+                                    h5
+                                        b City:
+                                    h5(ng-if="new_document.city")  {{new_document.city}}
+                                    h5(ng-if="!new_document.city")  N/A
                             // EDITION
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Edition:
-                                    text(ng-if="new_document.edition")  {{new_document.edition}}
-                                    text(ng-if="!new_document.edition")  N/A
+                                    h5
+                                        b Edition:
+                                    h5(ng-if="new_document.edition")  {{new_document.edition}}
+                                    h5(ng-if="!new_document.edition")  N/A
 
                         .row
                             // INSTITUTION
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Institution:
-                                    text(ng-if="new_document.institution")  {{new_document.institution}}
-                                    text(ng-if="!new_document.institution")  N/A
+                                    h5
+                                        b Institution:
+                                    h5(ng-if="new_document.institution")  {{new_document.institution}}
+                                    h5(ng-if="!new_document.institution")  N/A
                             // SERIES
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Series:
-                                    text(ng-if="new_document.series")  {{new_document.series}}
-                                    text(ng-if="!new_document.series")  N/A
+                                    h5
+                                        b Series:
+                                    h5(ng-if="new_document.series")  {{new_document.series}}
+                                    h5(ng-if="!new_document.series")  N/A
 
                         .row
                             // CHAPTER
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Chapter:
-                                    text(ng-if="new_document.chapter")  {{new_document.chapter}}
-                                    text(ng-if="!new_document.chapter")  N/A
+                                    h5
+                                        b Chapter:
+                                    h5(ng-if="new_document.chapter")  {{new_document.chapter}}
+                                    h5(ng-if="!new_document.chapter")  N/A
                             // COUNTRY
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Country:
-                                    text(ng-if="new_document.country")  {{new_document.country}}
-                                    text(ng-if="!new_document.country")  N/A
+                                    h5
+                                        b Country:
+                                    h5(ng-if="new_document.country")  {{new_document.country}}
+                                    h5(ng-if="!new_document.country")  N/A
                         .row
                             // TRANSLATORS
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Translators:
-                                    text(ng-if="new_document.translators")  {{new_document.translators}}
-                                    text(ng-if="!new_document.translators")  N/A
+                                    h5
+                                        b Translators:
+                                    h5(ng-if="new_document.translators")  {{new_document.translators}}
+                                    h5(ng-if="!new_document.translators")  N/A
                             // SERIES EDITOR
                             div.col-md-6
                                 .form-group.pull-left
-                                    b Series editor:
-                                    text(ng-if="new_document.series_editor")  {{new_document.series_editor}}
-                                    text(ng-if="!new_document.series_editor")  N/A
+                                    h5
+                                        b Series editor:
+                                    h5(ng-if="new_document.series_editor")  {{new_document.series_editor}}
+                                    h5(ng-if="!new_document.series_editor")  N/A
 
 
 
