@@ -124,6 +124,8 @@ exports.updateAssessment = function (req, res) {
                     assessment.questions_unfinalized = assessmentUpdates.questions_unfinalized;
                     assessment.edit_control = assessmentUpdates.edit_control;
                     assessment.status = assessmentUpdates.status;
+                    assessment.documents = assessmentUpdates.documents;
+                    assessment.interviewees = assessmentUpdates.interviewees;
 
                     if (assessment.modified) {
                         assessment.modified.push({modified_by: req.user._id, modified_date: timestamp});
