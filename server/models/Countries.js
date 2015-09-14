@@ -9,7 +9,6 @@ var countrySchema = mongoose.Schema({
     country_use: {
         type: Boolean,
         default: true}
-
 });
 
 var Country = mongoose.model('Country', countrySchema);
