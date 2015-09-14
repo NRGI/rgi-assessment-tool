@@ -1,12 +1,11 @@
 'use strict';
 var mongoose = require('mongoose'),
-    userModel = require('../models/User'),
-    questionModel = require('../models/Question'),
     countryModel = require('../models/Countries'),
-    answerModel = require('../models/Answers'),
-    documentModel = require('../models/Documents'),
-    assessmentModel = require('../models/Assessment');
-//mendelyTokenModel = require('../models/MendeleyToken'),
+    userModel = require('../models/User');
+
+['Answers', 'Assessment', 'Documents', 'Question', 'ResetPasswordToken'].forEach(function(modelName) {
+    require('../models/' + modelName);
+});
 
 module.exports = function (config, user, pass, env) {
     // connect to mongo
