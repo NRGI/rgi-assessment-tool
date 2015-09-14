@@ -41,7 +41,7 @@ var userSchema = mongoose.Schema({
     }],
     documents: [ObjectId],
     interviewees: [ObjectId],
-    createdBy: ObjectId,
+    createdBy: [ObjectId],
     creationDate: {
         type:  Date,
         default: Date.now},
