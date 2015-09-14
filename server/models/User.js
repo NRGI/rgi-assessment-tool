@@ -40,6 +40,11 @@ userSchema.methods = {
     },
     hasRole:  function (role) {
         return this.role === role;
+    },
+    setPassword: function (password, callback) {
+        this.salt = encrypt.createSalt();
+        this.hashed_pwd = encrypt.hashPwd(this.salt, password);
+        this.save(callback);
     }
 };
 

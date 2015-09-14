@@ -94,6 +94,7 @@ module.exports = function (app) {
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
     ////////////////////
     ///// OTHER ////////
