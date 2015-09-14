@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 var countrySchema = mongoose.Schema({
     country: String,
     iso2: String,
-    country_ID: String
+    country_ID: String,
+
 });
 
 var Country = mongoose.model('Country', countrySchema);
