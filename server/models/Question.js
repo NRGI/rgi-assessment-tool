@@ -77,7 +77,6 @@ var questionSchema = mongoose.Schema({
 
 var Question = mongoose.model('Question', questionSchema);
 
-<<<<<<< 49416c3738206395cf696b352c54505b492ef5dd
 function createDefaultQuestions() {
     Question.find({}).exec(function (err, collection) {
         if (collection.length === 0) {

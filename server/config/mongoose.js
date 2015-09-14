@@ -1,14 +1,15 @@
 'use strict';
 var mongoose = require('mongoose'),
+    userModel = require('../models/User'),
     countryModel = require('../models/Countries'),
-    userModel = require('../models/User');
+    questionModel = require('../models/Question'),
+    intervieweeModel = require('../models/Interviewees');
 
 [
     'Answers',
     'Assessment',
     'AuthLog',
     'Documents',
-    'Question',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
     require('../models/' + modelName);
