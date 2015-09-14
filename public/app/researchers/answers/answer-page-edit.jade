@@ -29,7 +29,6 @@
                 glyphicon.text-muted.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
                 ng-if="answer.question_order===1"
                 disabled)
-
             .row.left-padding-lg.bottom-padding-med
                 h3
                     em Question {{answer.question_order}}. {{answer.question_text}}
@@ -195,8 +194,23 @@
                                 text(ng-if="!ref.comment")  N/A
                             //br
 
+<<<<<<< f54a011a880fff65899d8a8deedf70ff28dd6926
                     .row.left-padding-lg
                         h4 Interviews
+=======
+                    //.row.left-padding-lg
+                    //    label Websites
+                    //    .row.left-padding-lg(ng-repeat="ref in answer.references.web")
+                    //        .row Website: {{ref.title}} (
+                    //            a(href="{{ref.URL}}" target="_blank") View here
+                    //            text )
+                    //        .row Accessed: {{ref.access_date| date:'MM/dd/yyyy'}}
+                    //        .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+                    //        .row Comments: {{ref.comment.content}}
+                    //        br
+                    .row.left-padding-lg
+                        label Interviews
+>>>>>>> SAVEPOINT
                         .row.left-padding-lg(ng-repeat="ref in answer.references.human")
                             .row Contact: {{ref.first_name}} {{ref.last_name}}
                             .row Interviewed: {{ref.contact_date | date:'MM/dd/yyyy'}}
