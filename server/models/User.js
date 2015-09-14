@@ -7,31 +7,48 @@ var mongoose    = require('mongoose'),
 var ObjectId    = mongoose.Schema.Types.ObjectId;
 
 var modificationSchema = new mongoose.Schema({
-    modifiedBy:  String,
-    modifiedDate:  {type:  Date, default: Date.now}
+    modifiedBy: String,
+    modifiedDate: {
+        type:  Date,
+        default: Date.now}
 });
 
 var userSchema = mongoose.Schema({
-    firstName:  {type: String, required: '{PATH} is required!'},
-    lastName:  {type: String, required: '{PATH} is required!'},
-    username:  {
+    firstName: {
+        type: String,
+        required: '{PATH} is required!'},
+    lastName: {
+        type: String,
+        required: '{PATH} is required!'},
+    username: {
         type: String,
         required:  '{PATH} is required!',
-        unique: true
-    },
-    email:  {type:  String, required: '{PATH} is required'},
-    salt:  {type: String, required: '{PATH} is required!'},
-    hashed_pwd:  {type: String, required: '{PATH} is required!'},
-    role:  {type: String, required: '{PATH} is required!',  default: 'None'},
+        unique: true},
+    email: {
+        type:  String,
+        required: '{PATH} is required'},
+    salt: {
+        type: String,
+        required: '{PATH} is required!'},
+    hashed_pwd: {
+        type: String,
+        required: '{PATH} is required!'},
+    role: {
+        type: String, required: '{PATH} is required!',
+        default: 'None'},
     assessments: [{
         assessment_ID:  String, // ISO3 Identifier
         country_name:  String // Text name of country
     }],
-    createdBy:  ObjectId,
-    creationDate:  {type:  Date, default: Date.now},
-    modified:  [modificationSchema],
-    address:  String,
-    language:  String
+    documents: [ObjectId],
+    interviewees: [ObjectId],
+    createdBy: ObjectId,
+    creationDate: {
+        type:  Date,
+        default: Date.now},
+    modified: [modificationSchema],
+    address: String,
+    language: String
 });
 
 userSchema.methods = {
