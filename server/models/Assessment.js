@@ -36,6 +36,8 @@ var assessmentSchema = mongoose.Schema({
         type: ObjectId,
         index: true}, // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
+    documents: [ObjectId],
+    interviewees: [ObjectId],
     status: {
         type: String,
         required: '{PATH} is required',
