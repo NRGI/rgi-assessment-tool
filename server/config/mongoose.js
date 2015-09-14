@@ -30,7 +30,7 @@ module.exports = function (config, user, pass, env) {
         console.log('rgi db opened');
     });
 
-    // import data
+    // import default data
     userModel.createDefaultUsers();
     countryModel.createDefaultCountries();
     questionModel.createDefaultQuestions();

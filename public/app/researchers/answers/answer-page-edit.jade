@@ -192,18 +192,7 @@
                                 b Comments:
                                 text(ng-if="ref.comment")  {{ref.comment.comment}}
                                 text(ng-if="!ref.comment")  N/A
-                            //br
 
-                    //.row.left-padding-lg
-                    //    label Websites
-                    //    .row.left-padding-lg(ng-repeat="ref in answer.references.web")
-                    //        .row Website: {{ref.title}} (
-                    //            a(href="{{ref.URL}}" target="_blank") View here
-                    //            text )
-                    //        .row Accessed: {{ref.access_date| date:'MM/dd/yyyy'}}
-                    //        .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
-                    //        .row Comments: {{ref.comment.content}}
-                    //        br
                     .row.left-padding-lg
                         h4 Interviews
                         .row.left-padding-lg(ng-repeat="ref in answer.references.human")
