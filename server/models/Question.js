@@ -78,7 +78,6 @@ var Question = mongoose.model('Question', questionSchema);
 
 function createDefaultQuestions() {
     Question.find({}).exec(function (err, collection) {
-        if (collection.length === 0) {
             Question.create({
                 "precept" : [ 2 ],
                 "indicator" : "EITI in national legislation",
@@ -207,7 +206,6 @@ function createDefaultQuestions() {
                 "component_text" : "Reporting practice",
                 "options" : 4
             });
-        }
     });
 }
 
