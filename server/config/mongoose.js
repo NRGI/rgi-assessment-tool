@@ -1,7 +1,7 @@
 'use strict';
 var mongoose = require('mongoose'),
     countryModel = require('../models/Countries'),
-    //questionModel = require('../models/Question'),
+    questionModel = require('../models/Question'),
     userModel = require('../models/User');
 
 [
@@ -10,7 +10,6 @@ var mongoose = require('mongoose'),
     'AuthLog',
     'Documents',
     'FileUploadStatus',
-    'Question',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
     require('../models/' + modelName);
@@ -35,4 +34,5 @@ module.exports = function (config, user, pass, env) {
     userModel.createDefaultUsers();
     countryModel.createDefaultCountries();
     questionModel.createDefaultQuestions();
+    intervieweeModel.createDefaultInterviewees();
 };
