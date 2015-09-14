@@ -58,9 +58,26 @@ var webSchema = new mongoose.Schema({
 
 var humanSchema = new mongoose.Schema({
     first_name: String,
-    last_name: String, // generated from upload path in S3
+    last_name: String,
     phone: String,
     email: String,
+    contact_date: {
+        type: Date,
+        default: Date.now},
+    comment: {
+        date: {
+            type: Date,
+            default: Date.now},
+        content: String,
+        author: ObjectId, // Pull from curretn user _id value
+        author_name: String,
+        role: String,
+        addressed: Boolean
+    }
+});
+
+var interviewSchema = new mongoose.Schema({
+    interviewee_ID: ObjectId,
     contact_date: {
         type: Date,
         default: Date.now},
