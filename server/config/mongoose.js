@@ -33,4 +33,5 @@ module.exports = function (config, user, pass, env) {
     userModel.createDefaultUsers();
     countryModel.createDefaultCountries();
     questionModel.createDefaultQuestions();
+    intervieweeModel.createDefaultInterviewees();
 };
