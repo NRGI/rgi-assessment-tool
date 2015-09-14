@@ -19,13 +19,14 @@ var commentSchema = new mongoose.Schema({
         default: Date.now},
     content: String,
     author: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
-    // author: ObjectId, // Pull from curretn user _id value but needs to handle legacy comments
     author_name: String,
-    // ACTUAL CHANGE
     role: String
 });
 
 var questionSchema = mongoose.Schema({
+    question_use: {
+        type: Boolean,
+        default: true},
     question_order: {
         type: Number,
         required: '{PATH} is required'},
