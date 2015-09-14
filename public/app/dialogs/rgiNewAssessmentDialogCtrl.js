@@ -1,3 +1,4 @@
+
 angular
     .module('app')
     .controller('rgiNewAssessmentDialogCtrl', function (
