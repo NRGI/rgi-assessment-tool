@@ -96,6 +96,8 @@ exports.updateUser = function (req, res) {
         user.hashed_pwd = userUpdates.hashed_pwd;
         user.language = userUpdates.language;
         user.assessments = userUpdates.assessments;
+        user.documents = userUpdates.documents;
+        user.interviewees = userUpdates.interviewees;
         if (user.modified) {
             user.modified.push({modifiedBy: req.user._id});
         } else {
