@@ -1,14 +1,15 @@
 'use strict';
 var mongoose = require('mongoose'),
+    userModel = require('../models/User'),
     countryModel = require('../models/Countries'),
-    userModel = require('../models/User');
+    questionModel = require('../models/Question'),
+    intervieweeModel = require('../models/Interviewees');
 
 [
     'Answers',
     'Assessment',
     'AuthLog',
     'Documents',
-    'Question',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
     require('../models/' + modelName);
@@ -29,9 +30,9 @@ module.exports = function (config, user, pass, env) {
         console.log('rgi db opened');
     });
 
-    // import data
+    // import default data
     userModel.createDefaultUsers();
     countryModel.createDefaultCountries();
     questionModel.createDefaultQuestions();
-    // assessmentModel.createDefaultAssessments();
+    intervieweeModel.createDefaultInterviewees();
 };

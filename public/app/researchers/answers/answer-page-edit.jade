@@ -128,22 +128,19 @@
             div(id="comments_div").bottom-padding-med
                 legend Comments:
 
-                div(id="comments_div").bottom-padding-med
-                    legend Comments:
-
-                    div(id="prev_comments_div" ng-if="answer.comments.length!==0")
-                        .row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
-                            .row
-                                b {{comment.author_name}} (
-                                b {{comment.role}}
-                                b ):
-                            .row
-                                date
-                                    small
-                                        em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
-                            .row.col-md-11 {{comment.content}}
-                            .row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
-                                button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
+                div(id="prev_comments_div" ng-if="answer.comments.length!==0")
+                    .row.left-padding-lg.bottom-padding-med(ng-repeat="comment in answer.comments")
+                        .row
+                            b {{comment.author_name}} (
+                            b {{comment.role}}
+                            b ):
+                        .row
+                            date
+                                small
+                                    em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+                        .row.col-md-11 {{comment.content}}
+                        .row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
+                            button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
                 br
                 div(id="new_comment_div").bottom-padding-med
                     ng-form(name="new_comment_form")
@@ -191,16 +188,16 @@
                                 text(ng-if="!ref.comment.content")  N/A
                             //br
 
-                    .row.left-padding-lg
-                        label Websites
-                        .row.left-padding-lg(ng-repeat="ref in answer.references.web")
-                            .row Website: {{ref.title}} (
-                                a(href="{{ref.URL}}" target="_blank") View here
-                                text )
-                            .row Accessed: {{ref.access_date| date:'MM/dd/yyyy'}}
-                            .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
-                            .row Comments: {{ref.comment.content}}
-                            br
+                    //.row.left-padding-lg
+                    //    label Websites
+                    //    .row.left-padding-lg(ng-repeat="ref in answer.references.web")
+                    //        .row Website: {{ref.title}} (
+                    //            a(href="{{ref.URL}}" target="_blank") View here
+                    //            text )
+                    //        .row Accessed: {{ref.access_date| date:'MM/dd/yyyy'}}
+                    //        .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
+                    //        .row Comments: {{ref.comment.content}}
+                    //        br
                     .row.left-padding-lg
                         label Interviews
                         .row.left-padding-lg(ng-repeat="ref in answer.references.human")
