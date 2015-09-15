@@ -228,14 +228,12 @@ exports.updateDocument = function (req, res) {
             modifiedDate: timestamp
         });
 
-        var input_array = ['source', 'year', 'pages', 'volume', 'issue', 'websites', 'publisher', 'city', 'edition', 'institution', 'series', 'chapter', 'editors', 'country', 'translators', 'series_editor'];
+        var input_array = ['source', 'year', 'date_published', 'pages', 'volume', 'issue', 'websites', 'publisher', 'city', 'edition', 'institution', 'series', 'chapter', 'editors', 'country', 'translators', 'series_editor'];
         input_array.forEach(function (el) {
             if (el in document_update) {
                 document[el] = document_update[el];
             }
         });
-
-        // console.log(document);
 
         document.save(function (err) {
             if (err) {
@@ -243,12 +241,6 @@ exports.updateDocument = function (req, res) {
                 console.log(err);
                 res.send({reason: err.toString()});
             }
-            // if (err) {
-            //     res.status(400);
-            //     res.send({reason: err.toString()});
-            // } else {
-            //     res.send(document);
-            // }
         });
     });
     // res.send();

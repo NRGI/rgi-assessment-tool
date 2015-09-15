@@ -29,6 +29,7 @@ var documentSchema = mongoose.Schema({
     type: String,
     source: String,
     year: String,
+    date_published: Date,
     pages: String,
     volume: String,
     issue: String,

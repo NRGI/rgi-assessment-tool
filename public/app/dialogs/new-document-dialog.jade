@@ -366,7 +366,17 @@ div.left-padding-lg.right-padding-lg
                                     h5(ng-if="new_document.series_editor")  {{new_document.series_editor}}
                                     h5(ng-if="!new_document.series_editor")  N/A
 
-
+                    //DATE ACCESSED
+                    div
+                        .row
+                            .form-group
+                                .col-lg-11
+                                    datepicker(
+                                    date-format="{{date_format}}")
+                                        input.form-control(
+                                        ng-model="ref_date_accessed"
+                                        type="text"
+                                        placeholder="Date accessed...")
 
                     //- COMMENT
                     div(id="comment")
