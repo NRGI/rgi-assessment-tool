@@ -77,7 +77,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         data.references.citation.forEach(function (el) {
             rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-                doc.comment = el.comment;
+                doc.comment = el;
                 citations.push(doc);
             });
         });
@@ -164,13 +164,8 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
     //TODO Generate Dialog based on change and handle upload process via dialogs
     $scope.select_ref_dialog = function(value) {
         var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog',
-            className;
-        if ($scope.ref_selection === 'document') {
             className = 'ngdialog-theme-default dialogwidth800';
-        } else {
-            className = 'ngdialog-theme-default';
-        }
-        //console.log(template);
+
         ngDialog.open({
             template: template,
             controller: 'rgiNewRefDialogCtrl',

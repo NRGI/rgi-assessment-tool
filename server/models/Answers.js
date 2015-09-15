@@ -26,16 +26,14 @@ var citationSchema = new mongoose.Schema({
     document_ID: String,
     mendeley_ID: String,
     file_hash: String,
-    comment: {
-        date: {
-            type: Date,
-            default: Date.now},
-        content: String,
-        author: ObjectId, // Pull from curretn user _id value
-        author_name: String,
-        role: String,
-        addressed: Boolean
-    }
+    date: {
+        type: Date,
+        default: Date.now},
+    date_accessed: Date,
+    author: ObjectId, // Pull from current user _id value
+    author_name: String,
+    role: String,
+    comment: String
 });
 
 var webSchema = new mongoose.Schema({
