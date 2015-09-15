@@ -5,6 +5,7 @@ var
     assessments = require('../controllers/assessments'),
     auth = require('./auth'),
     authLogs = require('../controllers/auth-logs'),
+    interviewees = require('../controllers/interviewees'),
     contact = require('../utilities/contact'),
     countries = require('../controllers/countries'),
     documents = require('../controllers/documents'),
@@ -102,6 +103,22 @@ module.exports = function (app) {
 
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);
     app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
+
+    /////////////////////////
+    ///// INTERVIEWEE CRUD ////////
+    /////////////////////////
+    // GET
+    app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
+    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
+
+    // POST
+    app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
+
+    // PUT
+    app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
+
+    // DELETE
+    app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
 
     ////////////////////
     ///// OTHER ////////

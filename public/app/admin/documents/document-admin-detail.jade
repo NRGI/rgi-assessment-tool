@@ -4,20 +4,165 @@
             legend.h3 {{document.title | ucfirst}}
             div.left-padding-lg.right-padding-lg.bottom-padding-lg
                 .row.left-padding-lg.right-padding-lg.top-padding-lg
-                    a(href="{{document.s3_url}}" target="_blank").btn.btn-primary Link to doc
+                    button.btn.btn-warning(ng-click="editDocumentDialog()") Edit metadata
                     | &nbsp;
-                    button.btn.btn-warning(ng-click="editDocumentDialog()") Edit doc metadata
+                    a(href="{{document.s3_url}}" target="_blank").btn.btn-default Link to document
                 .row.left-padding-lg.right-padding-lg.top-padding-lg
-                    label Linked assessments:
-                    .row(ng-repeat="assessment in document.assessments").left-padding-lg
-                        a(href="/admin/assessment-admin/{{assessment}}") {{assessment}}
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
-                    label Linked answers:
-                    .row(ng-repeat="answer in document.answers").left-padding-lg
-                        a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
-                    label Linked users:
-                    .row(ng-repeat="user in user_list").left-padding-lg
-                        a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                        text  - {{user.role}}
+                    table.table.table-hover.table-striped.table-condensed
+                        thead
+                            tr
+                                th Linked assessments
+                                th Linked answers
+                                th Linked users
+                        tbody
+                            tr
+                                td
+                                    .row(ng-repeat="assessment in document.assessments").left-padding-lg
+                                        a(href="/admin/assessment-admin/{{assessment}}") {{assessment}}
+                                td
+                                    .row(ng-repeat="answer in document.answers").left-padding-lg
+                                        a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
+                                td
+                                    .row(ng-repeat="user in user_list").left-padding-lg
+                                        a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                                        text  - {{user.role}}
 
+                h3.top-padding-lg Metadata
+                .row.left-padding-lg.right-padding-lg
+                    table.table.table-condensed
+                        tbody
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Title:
+                                    .row
+                                        text {{document.title}}
+                                td.col-med-3
+                                    .row
+                                        label Type:
+                                    .row
+                                        text {{document.type}}
+                                td.col-med-3
+                                    .row
+                                        label Author(s):
+                                    .row(ng-repeat="author in document.authors" ng-if="document.authors.length > 0")
+                                        text {{author.first_name}} {{author.last_name}}
+                                    .row(ng-if="document.authors.length < 1")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Editor(s):
+                                    .row(ng-repeat="editor in document.editors" ng-if="document.editors.length > 0")
+                                        text {{editor.first_name}} {{editor.last_name}}
+                                    .row(ng-if="document.editors.length < 1")
+                                        text N/A
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Source:
+                                    .row(ng-if="document.source")
+                                        a(href="document.source") {{document.source}}
+                                    .row(ng-if="!document.source")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Year:
+                                    .row(text-if="document.year")
+                                        test {{document.year}}
+                                    .row(ng-if="!document.year")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Date published:
+                                    .row(ng-if="document.date_published")
+                                        text {{document.date_published | date: 'MM/dd/yyyy'}}
+                                    .row(ng-if="!document.date_published")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Pages:
+                                    .row(ng-if="document.pages")
+                                        text {{document.pages}}
+                                    .row(ng-if="!document.pages")
+                                        text N/A
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Volume:
+                                    .row(ng-if="document.volume")
+                                        text {{document.volume}}
+                                    .row(ng-if="!document.volume")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Issue:
+                                    .row(text-if="document.issue")
+                                        text {{document.issue}}
+                                    .row(ng-if="!document.issue")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Publisher:
+                                    .row(ng-if="document.publisher")
+                                        text {{document.publisher}}
+                                    .row(ng-if="!document.publisher")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label City:
+                                    .row(ng-if="document.city")
+                                        text {{document.city}}
+                                    .row(ng-if="!document.city")
+                                        text N/A
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Edition:
+                                    .row(ng-if="document.edition")
+                                        text {{document.edition}}
+                                    .row(ng-if="!document.edition")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Institution:
+                                    .row(text-if="document.institution")
+                                        text {{document.institution}}
+                                    .row(ng-if="!document.institution")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Series:
+                                    .row(ng-if="document.series")
+                                        text {{document.series}}
+                                    .row(ng-if="!document.series")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Chapter:
+                                    .row(ng-if="document.chapter")
+                                        text {{document.chapter}}
+                                    .row(ng-if="!document.chapter")
+                                        text N/A
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Country:
+                                    .row(ng-if="document.country")
+                                        text {{document.country}}
+                                    .row(ng-if="!document.country")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Translators:
+                                    .row(text-if="document.translators")
+                                        text {{document.translators}}
+                                    .row(ng-if="!document.translators")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Series Editor:
+                                    .row(ng-if="document.series_editor")
+                                        text {{document.series_editor}}
+                                    .row(ng-if="!document.series_editor")
+                                        text N/A
+                                td

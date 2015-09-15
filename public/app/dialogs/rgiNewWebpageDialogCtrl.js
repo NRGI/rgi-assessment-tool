@@ -87,6 +87,8 @@ angular.module('app').controller('rgiNewWebpageDialogCtrl', function ($scope, $r
                             role: current_user_role
                         };
 
+                    new_doc_data.source = url;
+
                     if (new_doc_data.status === 'created') {
                         new_doc_data.status = 'submitted';
                     }

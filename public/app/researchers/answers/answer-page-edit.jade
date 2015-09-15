@@ -164,21 +164,24 @@
                 //- BILBLIO LIST
                 div(id="prev_bib")
                     .row.left-padding-lg
-                        label Citations
+                        h4 Citations
                         .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
                             .row
                                 b Author(s):
                                 text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
                                     text(ng-if="!$last") ;
                                 text(ng-if="ref.author.length === 0")  N/A
+                            .row
+                                b Type:
+                                text  {{ref.type}}
                             .row(ng-if="ref.type !== 'web_page'")
-                                b Title: {{ref.title}} (
+                                b Title:
+                                text  {{ref.title}} (
                                 a(href="{{ref.s3_url}}" target="_blank") View here
                                 text )
-                            //.row(ng-if="")
-                            //    b Title: {{ref.title}} (
-                            //    a(href="{{ref.s3_url}}" target="_blank") View here
-                            //    text )
+                            .row(ng-if="ref.type === 'web_page'")
+                                b Title:
+                                a(href="{{ref.source}}" target="_blank")  {{ref.title}}
                             .row
                                 b Published:
                                 text(ng-if="ref.year")  {{ref.year}}
@@ -202,7 +205,7 @@
                     //        .row Comments: {{ref.comment.content}}
                     //        br
                     .row.left-padding-lg
-                        label Interviews
+                        h4 Interviews
                         .row.left-padding-lg(ng-repeat="ref in answer.references.human")
                             .row Contact: {{ref.first_name}} {{ref.last_name}}
                             .row Interviewed: {{ref.contact_date | date:'MM/dd/yyyy'}}
