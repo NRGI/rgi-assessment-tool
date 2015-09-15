@@ -1,0 +1,26 @@
+.container
+   .well.left-padding-lg.right-padding-lg
+      legend.h3 {{interviewee.firstName | ucfirst}} {{interviewee.lastName | ucfirst}}
+      div.left-padding-lg.right-padding-lg
+      .row.left-padding-lg.right-padding-lg.top-padding-lg
+         button.btn.btn-warning(ng-click="editIntervieweeDialog()") Edit interviewee info
+      .row.left-padding-lg.right-padding-lg.top-padding-lg
+         label Linked assessments:
+         .row(ng-repeat="assessment in interviewee.assessments").left-padding-lg
+            a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
+         .row.left-padding-lg.right-padding-lg.top-padding-lg
+            em.pull-left Add to assessment
+            .form-group(name="add_assessment_form").col-md-4
+               select.form-control(
+               ng-model="add_assessment"
+               required)
+                  option(value="" selected disabled) Select assessment (required)...
+                  option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
+
+
+            button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
+      .row.left-padding-lg.right-padding-lg.top-padding-lg.bottom-padding-lg
+         label Linked answers:
+         .row(ng-repeat="answer in interviewee.answers" ng-if="interviewee.answers.length > 0").left-padding-lg
+            a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
+         .row(ng-if="interviewee.answers.length < 1").left-padding-lg None
