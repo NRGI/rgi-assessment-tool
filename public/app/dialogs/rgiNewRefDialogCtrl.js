@@ -113,6 +113,7 @@ angular
                     $timeout(function() {
                         rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + responseStatus.data._id).then(handleFileUploadStatus);
                     }, 1000);
+
                 } else {
                     rgiRequestSubmitterSrvc.get('/api/remote-file/document/' + responseStatus.data._id).then(function(responseDocument) {
                         $scope.fileUploading = false;

@@ -32,7 +32,7 @@ module.exports = function (app) {
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
 
-    // USER AUTH LOGS
+    // AUTH LOGS
     app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
     app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
 
@@ -103,22 +103,6 @@ module.exports = function (app) {
     app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
     app.get('/api/remote-file/document/:statusId', auth.requiresApiLogin,  documents.getUploadStatusDocument);
-
-    /////////////////////////
-    ///// INTERVIEWEE CRUD ////////
-    /////////////////////////
-    // GET
-    app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
-    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
-
-    // POST
-    app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
-
-    // PUT
-    app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
-
-    // DELETE
-    app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
 
     /////////////////////////
     ///// INTERVIEWEE CRUD ////////

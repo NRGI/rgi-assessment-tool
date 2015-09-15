@@ -60,7 +60,6 @@ exports.updateInterviewee = function (req, res) {
         interviewee.users = interviewee_updates.users;
         interviewee.questions = interviewee_updates.questions;
         interviewee.modified.push({modifiedBy: req.user._id});
-        console.log(interviewee);
 
         interviewee.save(function (err) {
             if (err) {

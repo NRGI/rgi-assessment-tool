@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .factory('rgiIntervieweeMethodSrvc', function (
@@ -5,7 +7,6 @@ angular
         $q,
         rgiIntervieweeSrvc
     ) {
-        'use strict';
         return {
             createInterviewee: function (new_interviewee_data) {
                 var new_interviewee = new rgiIntervieweeSrvc(new_interviewee_data),
@@ -23,6 +24,7 @@ angular
 
                 delete_ID.id = user_deletion;
 
+                //noinspection CommaExpressionJS
                 delete_ID.$delete().then(function () {
                     dfd.resolve();
                 }, function (response) {
@@ -33,6 +35,7 @@ angular
             updateInterviewee: function (new_interviewee_data) {
                 var dfd = $q.defer();
 
+                //noinspection CommaExpressionJS
                 new_interviewee_data.$update().then(function () {
                     dfd.resolve();
                 }, function (response) {
