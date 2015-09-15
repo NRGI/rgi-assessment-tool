@@ -81,9 +81,8 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                 .then(function () {
                     rgiNotifier.notify('Assessment created and assigned!');
-                    $scope.closeThisDialog();
                     $route.reload();
-                    $location.path('admin/assessment-admin');
+                    $scope.closeThisDialog();
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
@@ -93,9 +92,8 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                 .then(function () {
                     rgiNotifier.notify('Assessment created and assigned!');
-                    $scope.closeThisDialog();
                     $route.reload();
-                    $location.path('admin/assessment-admin');
+                    $scope.closeThisDialog();
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
