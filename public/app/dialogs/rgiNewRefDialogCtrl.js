@@ -83,7 +83,6 @@ angular
                 var scope = $scope.$parent;
                 scope.new_document = $scope.new_document;
 
-
                 if (scope.ref_selection === 'document') {
                     ngDialog.close('ngdialog1');
                     ngDialog.open({
