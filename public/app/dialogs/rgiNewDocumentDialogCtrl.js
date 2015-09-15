@@ -2,7 +2,7 @@
 //var angular;
 /*jslint nomen: true newcap: true unparam: true*/
 
-angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc, rgiUserMethodSrvc) {
     function isURLReal(fullyQualifiedURL) {
         var URL = encodeURIComponent(fullyQualifiedURL),
             dfd = $.Deferred(),
@@ -50,6 +50,12 @@ angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $
         {value: 'bill', text: 'Bill'}
     ];
 
+    //DATEPICKER OPTS
+    $scope.date_format = 'MMMM d, yyyy';
+    var today = new Date();
+    $scope.date_default = today;
+    $scope.date_max_limit = today;
+
     $scope.authorPush = function () {
         $scope.new_document.authors.push({first_name: "", last_name: ""});
     };
@@ -67,11 +73,22 @@ angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $
     };
 
     $scope.documentRefSubmit = function (new_document) {
-        var url;
+        var url, new_user_data = $scope.$parent.current_user;
         //check for minimum data
-        if ($scope.new_document.authors[0].first_name === "" || $scope.new_document.authors[0].last_name === "" || !$scope.new_document.title || !$scope.new_document.type) {
-            rgiNotifier.error('You must provide at least a title, author and publication type!');
+        if (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name) {
+            rgiNotifier.error('You must provide at least one author!');
+        } else if (!$scope.new_document.title) {
+            rgiNotifier.error('You must provide a title!');
+        } else if (!$scope.new_document.type) {
+            rgiNotifier.error('You must provide a document type!');
+        } else if (!$scope.ref_date_accessed) {
+            rgiNotifier.error('You must provide the date of access!');
         } else {
+            //if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
+            //    url = $scope.new_document.source;
+            //} else {
+            //    url = 'http://' + $scope.new_document.source;
+            //}
         ////TODO check for proper url
         //} else if ($scope.new_document.source !== undefined) {
         //    if ($scope.new_document.source.split('://')[0] === 'http' || $scope.answer.web_ref_url.split('://')[0] === 'https') {
@@ -103,12 +120,10 @@ angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $
                     document_ID: new_document._id,
                     // mendeley_ID
                     file_hash: new_document.file_hash,
-                    comment: {
-                        date: new Date().toISOString(),
-                        author: current_user_ID,
-                        author_name: current_user_name,
-                        role: current_user_role
-                    }
+                    date_accessed: new Date($scope.ref_date_accessed).toISOString(),
+                    author: current_user_ID,
+                    author_name: current_user_name,
+                    role: current_user_role
                 };
 
             if (new_doc_data.status === 'created') {
@@ -140,13 +155,20 @@ angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $
             }
 
             if ($scope.answer.new_ref_comment !== undefined) {
-                new_ref_data.comment.content = $scope.answer.new_ref_comment;
+                new_ref_data.comment = $scope.answer.new_ref_comment;
+            }
+
+            if (new_user_data.documents !== undefined && new_user_data.documents.indexOf(new_document._id) < 0) {
+                new_user_data.documents.push(new_document._id);
+            } else if (new_user_data.documents === undefined) {
+                new_user_data.documents = [new_document._id];
             }
 
             new_answer_data.references.citation.push(new_ref_data);
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
+                .then(rgiUserMethodSrvc.updateUser(new_user_data))
                 .then(function () {
                     $scope.closeThisDialog();
                     rgiNotifier.notify('Reference added!');
