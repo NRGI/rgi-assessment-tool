@@ -97,6 +97,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentAdminDetailCtrl',
             resolve: routeRoleChecks.user
         })
+        // INTERVIEWEES
+        .when('/admin/interviewees-admin', {
+            templateUrl: '/partials/admin/interviewees/interviewee-admin',
+            controller: 'rgiIntervieweeAdminCtrl'
+        })
+        .when('/admin/interviewees-admin/:interviewee_ID', {
+            templateUrl: '/partials/admin/interviewees/interviewee-admin-detail',
+            controller: 'rgiIntervieweeAdminDetailCtrl'
+        })
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         .when('/admin/assessment-review/:assessment_ID', {
