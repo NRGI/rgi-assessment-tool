@@ -6,9 +6,16 @@ var
     User = require('mongoose').model('User');
 
 exports.create = function (req, res, next) {
-    ResetPasswordToken.createByUser(req.body.user, function(error, token) {
-        if (error) next(error);
-        res.send({error: error, token: token});
+    User.findOne({email: req.body.email}, function(findUserError, user) {
+        if (findUserError || !user) {
+            next(findUserError);
+            res.send({error: 'USER_NOT_FOUND'});
+        } else {
+            ResetPasswordToken.createByUser(user._id, function(error, token) {
+                if (error) next(error);
+                res.send({error: error, token: token});
+            });
+        }
     });
 };
 
