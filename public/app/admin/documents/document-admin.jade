@@ -32,6 +32,6 @@
                                 td
                                     a(href="/admin/assessments-admin/{{assessment}}" ng-repeat="assessment in doc.assessments") {{assessment}}
                                 td
-                                    a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-primary View document
+                                    a(href="/admin/documents-admin/{{doc._id}}").btn-block.btn.btn-warning Metadata
                                 td
-                                    a(href="/admin/documents-admin/{{doc._id}}").btn-block.btn.btn-warning Edit metadata
+                                    a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-default Link to document

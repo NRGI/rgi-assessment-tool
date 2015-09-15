@@ -5,6 +5,7 @@ var
     assessments = require('../controllers/assessments'),
     auth = require('./auth'),
     authLogs = require('../controllers/auth-logs'),
+    interviewees = require('../controllers/interviewees'),
     contact = require('../utilities/contact'),
     countries = require('../controllers/countries'),
     documents = require('../controllers/documents'),
@@ -31,6 +32,14 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
+
+    // AUTH LOGS
+    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
+    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+
+    // PASSWORD HANDLING
+    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
     /////////////////////////////
     ///// QUESTIONS CRUD ////////
@@ -94,11 +103,21 @@ module.exports = function (app) {
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
-    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
-    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+    /////////////////////////
+    ///// INTERVIEWEE CRUD ////////
+    /////////////////////////
+    // GET
+    app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
+    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
 
-    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
-    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
+    // POST
+    app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
+
+    // PUT
+    app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
+
+    // DELETE
+    app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
 
     ////////////////////
     ///// OTHER ////////
