@@ -181,6 +181,7 @@
                                 text )
                             .row(ng-if="ref.type === 'web_page'")
                                 b Title:
+                                a(href="{{ref.source}}" target="_blank")  {{ref.title}}
                             .row
                                 b Published:
                                 text(ng-if="ref.year")  {{ref.year}}
@@ -191,7 +192,6 @@
                                 b Comments:
                                 text(ng-if="ref.comment")  {{ref.comment.comment}}
                                 text(ng-if="!ref.comment")  N/A
-
 
                     .row.left-padding-lg
                         h4 Interviews
