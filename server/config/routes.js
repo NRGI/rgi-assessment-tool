@@ -1,14 +1,14 @@
 'use strict';
 
-var
+var auth = require('./auth'),
+    multipartMiddleware = require('connect-multiparty')(),
     answers = require('../controllers/answers'),
     assessments = require('../controllers/assessments'),
-    auth = require('./auth'),
     authLogs = require('../controllers/auth-logs'),
-    contact = require('../utilities/contact'),
-    countries = require('../controllers/countries'),
+    interviewees = require('../controllers/interviewees'),
     documents = require('../controllers/documents'),
-    multipartMiddleware = require('connect-multiparty')(),
+    countries = require('../controllers/countries'),
+    contact = require('../utilities/contact'),
     questions = require('../controllers/questions'),
     resetPasswordTokens = require('../controllers/reset-password-tokens'),
     users = require('../controllers/users');
@@ -31,6 +31,14 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
+
+    // USER AUTH LOGS
+    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
+    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+
+    // PASSWORD TOKEN HANDLING
+    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
     /////////////////////////////
     ///// QUESTIONS CRUD ////////
@@ -75,7 +83,7 @@ module.exports = function (app) {
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
 
     /////////////////////////
-    //// DOCUMNETS  /////////
+    //// DOCUMENTS  /////////
     /////////////////////////
     // GET
     app.get('/api/documents', auth.requiresApiLogin, documents.getDocuments);
@@ -87,18 +95,27 @@ module.exports = function (app) {
     // PUT
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
 
-
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
-    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
-    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+    /////////////////////////
+    ///// INTERVIEWEE CRUD ////////
+    /////////////////////////
+    // GET
+    app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
+    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
 
-    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
-    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
+    // POST
+    app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
+
+    // PUT
+    app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
+
+    // DELETE
+    app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
 
     ////////////////////
     ///// OTHER ////////
