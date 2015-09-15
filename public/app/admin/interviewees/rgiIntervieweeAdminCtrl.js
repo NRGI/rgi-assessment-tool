@@ -1,10 +1,11 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiIntervieweeAdminCtrl', function (
         $scope,
         rgiIntervieweeSrvc
     ) {
-        'use strict';
         // filtering options
         $scope.sortOptions = [
             {value: 'lastName', text: 'Sort by last name'},

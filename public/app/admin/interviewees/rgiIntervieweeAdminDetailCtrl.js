@@ -32,6 +32,7 @@ angular
                         $scope.user_list.push(user);
                     });
                 });
+
             });
 
         });
