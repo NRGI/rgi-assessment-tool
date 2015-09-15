@@ -1,10 +1,7 @@
 'use strict';
 /*jslint nomen: true unparam: true regexp: true*/
-//var angular;
 
 angular.module('app').controller('rgiIntervieweeAdminDetailCtrl', function ($scope, $route, $routeParams, ngDialog, rgiNotifier, rgiUserListSrvc, rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc, rgiAssessmentSrvc) {
-
-
     rgiAssessmentSrvc.query({}, function (assessments) {
         rgiIntervieweeSrvc.get({_id: $routeParams.interviewee_ID}, function (interviewee) {
             $scope.interviewee = interviewee;
