@@ -91,7 +91,6 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
 
     };
 
-
     $scope.humanRefSubmit = function (current_user) {
 
         var new_answer_data = $scope.answer_update,
