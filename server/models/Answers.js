@@ -36,24 +36,6 @@ var citationSchema = new mongoose.Schema({
     comment: String
 });
 
-var webSchema = new mongoose.Schema({
-    title: String,
-    URL: String, // generated from upload path in S3
-    access_date: {
-        type: Date,
-        default: Date.now},
-    comment: {
-        date: {
-            type: Date,
-            default: Date.now},
-        content: String,
-        author: ObjectId, // Pull from curretn user _id value
-        author_name: String,
-        role: String,
-        addressed: Boolean
-    }
-});
-
 var humanSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,

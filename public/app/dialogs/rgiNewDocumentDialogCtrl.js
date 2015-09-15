@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc, rgiUserMethodSrvc) {
     function isURLReal(fullyQualifiedURL) {
         var URL = encodeURIComponent(fullyQualifiedURL),

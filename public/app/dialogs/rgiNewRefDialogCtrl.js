@@ -63,26 +63,59 @@ angular
             }
         });
 
-        uploader.onCompleteItem = function (fileItem, response, status) {
-            $scope.uploader.queue = [];
-
+        //uploader.onCompleteItem = function (fileItem, response, status) {
+        //    $scope.uploader.queue = [];
+        //
+        //    if (status === 400) {
+        //        rgiNotifier.error(response.reason);
+        //    } else {// TODO add cancel upload after initial document pass
+        //        //$scope.new_document = response;
+        //        //$scope.uploader.queue = [];
+        //        var scope = $scope.$parent;
+        //        scope.value = true;
+        //        scope.new_document = $scope.new_document;
+        //
+        //        ngDialog.close('ngdialog1');
+        //        ngDialog.open({
+        //            template: 'partials/dialogs/new-document-dialog',
+        //            controller: 'rgiNewDocumentDialogCtrl',
+        //            className: 'ngdialog-theme-default',
+        //            scope: scope
+        //        });
+        //    }
+        //};
+        //TODO handle doc and txt documents
+        uploader.onCompleteItem = function (fileItem, response, status, headers) {
             if (status === 400) {
+                $scope.uploader.queue = [];
                 rgiNotifier.error(response.reason);
             } else {// TODO add cancel upload after initial document pass
-                //$scope.new_document = response;
-                //$scope.uploader.queue = [];
+                $scope.new_document = response;
+                $scope.uploader.queue = [];
+                $scope.value = true;
                 var scope = $scope.$parent;
-                scope.value = true;
                 scope.new_document = $scope.new_document;
 
-                ngDialog.close('ngdialog1');
-                ngDialog.open({
-                    template: 'partials/dialogs/new-document-dialog',
-                    controller: 'rgiNewDocumentDialogCtrl',
-                    className: 'ngdialog-theme-default',
-                    scope: scope
-                });
+
+                if (scope.ref_selection === 'document') {
+                    ngDialog.close('ngdialog1');
+                    ngDialog.open({
+                        template: 'partials/dialogs/new-document-dialog',
+                        controller: 'rgiNewDocumentDialogCtrl',
+                        className: 'ngdialog-theme-default',
+                        scope: scope
+                    });
+                } else if (scope.ref_selection === 'webpage') {
+                    ngDialog.close('ngdialog1');
+                    ngDialog.open({
+                        template: 'partials/dialogs/new-webpage-dialog',
+                        controller: 'rgiNewWebpageDialogCtrl',
+                        className: 'ngdialog-theme-default',
+                        scope: scope
+                    });
+                }
             }
+
         };
 
         $scope.uploadFileByUrl = function() {
@@ -121,52 +154,6 @@ angular
             });
         };
 
-        $scope.webRefSubmit = function () {
-            var new_answer_data = $scope.answer_update,
-                current_user = $scope.$parent.current_user,
-                url, access_date;
-
-            if (!new_answer_data.web_ref_url || !new_answer_data.web_ref_title) {
-                rgiNotifier.error('You must enter a title and a url!');
-            } else {
-                if (new_answer_data.web_ref_url.split('://')[0] === 'http' || new_answer_data.web_ref_url.split('://')[0] === 'https') {
-                    url = new_answer_data.web_ref_url;
-                } else {
-                    url = 'http://' + new_answer_data.web_ref_url;
-                }
-                if (!new_answer_data.web_ref_access_date) {
-                    access_date = $scope.date_default.toISOString();
-                } else {
-                    access_date = new Date(new_answer_data.web_ref_access_date).toISOString();
-                }
-                isURLReal(url)
-                    .fail(function () {
-                        rgiNotifier.error('Website does not exists');
-                    })
-                    //TODO Take a snapshot of url and add as a document ref
-                    .done(function () {
-                        if ($scope.ref_selection === 'document') {
-                            ngDialog.close('ngdialog1');
-                            ngDialog.open({
-                                template: 'partials/dialogs/new-document-dialog',
-                                controller: 'rgiNewDocumentDialogCtrl',
-                                className: 'ngdialog-theme-default',
-                                scope: $scope
-                            });
-                        } else if ($scope.ref_selection === 'webpage') {
-                            ngDialog.close('ngdialog1');
-                            ngDialog.open({
-                                template: 'partials/dialogs/new-webpage-dialog',
-                                controller: 'rgiNewWebpageDialogCtrl',
-                                className: 'ngdialog-theme-default',
-                                scope: $scope
-                            });
-                        }
-                    });
-            }
-        };
-
-
         $scope.humanRefSubmit = function () {
 
             var new_answer_data = $scope.answer_update,
@@ -183,7 +170,7 @@ angular
                 if (email_domain === 'http://undefined') {
                     rgiNotifier.error('You must enter a valid email address!');
                 } else {
-                    if(!new_answer_data.human_ref_contact_date) {
+                    if (!new_answer_data.human_ref_contact_date) {
                         contact_date = $scope.date_default.toISOString();
                     } else {
                         contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
@@ -217,21 +204,6 @@ angular
                     });
                 }
             }
-            //
-            ////TODO validate that email domain exists
-            //if (email_domain === 'http://undefined') {
-            //    rgiNotifier.error('You must enter a valid email address!')
-            //} else {
-            //    //isURLReal(email_domain)
-            //    //    .fail(function (res) {
-            //    //        console.log(res);
-            //    //        rgiNotifier.error('Email Domain does not appear to be valid');
-            //    //    })
-            //    //    .done(function (res) {
-            //    //        console.log(res);
-            //    //    });
-            //
-            //}
         };
 
         $scope.closeDialog = function () {
