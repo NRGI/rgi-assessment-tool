@@ -56,8 +56,6 @@ exports.updateInterviewee = function (req, res) {
         interviewee.organization = interviewee_updates.organization;
         interviewee.assessments = interviewee_updates.assessments;
         interviewee.answers = interviewee_updates.answers;
-        interviewee.users = interviewee_updates.users;
-        interviewee.questions = interviewee_updates.questions;
         interviewee.modified.push({modifiedBy: req.user._id});
         console.log(interviewee);
 

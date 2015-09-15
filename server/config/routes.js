@@ -1,18 +1,17 @@
 'use strict';
 
-var
-    answers = require('../controllers/answers'),
-    assessments = require('../controllers/assessments'),
-    auth = require('./auth'),
-    authLogs = require('../controllers/auth-logs'),
-    interviewees = require('../controllers/interviewees'),
-    contact = require('../utilities/contact'),
-    countries = require('../controllers/countries'),
-    documents = require('../controllers/documents'),
+var auth                = require('./auth'),
+    contact             = require('../utilities/contact'),
     multipartMiddleware = require('connect-multiparty')(),
-    questions = require('../controllers/questions'),
+    answers             = require('../controllers/answers'),
+    assessments         = require('../controllers/assessments'),
+    authLogs            = require('../controllers/auth-logs'),
+    countries           = require('../controllers/countries'),
+    documents           = require('../controllers/documents'),
+    interviewees        = require('../controllers/interviewees'),
+    questions           = require('../controllers/questions'),
     resetPasswordTokens = require('../controllers/reset-password-tokens'),
-    users = require('../controllers/users');
+    users               = require('../controllers/users');
 
 module.exports = function (app) {
 
@@ -37,7 +36,7 @@ module.exports = function (app) {
     app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
     app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
 
-    // PASSWORD HANDLING
+    // PASSWORD TOKEN HANDLING
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);
     app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
@@ -84,7 +83,7 @@ module.exports = function (app) {
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
 
     /////////////////////////
-    //// DOCUMNETS  /////////
+    //// DOCUMENTS  /////////
     /////////////////////////
     // GET
     app.get('/api/documents', auth.requiresApiLogin, documents.getDocuments);
@@ -95,7 +94,6 @@ module.exports = function (app) {
 
     // PUT
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
-
 
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
