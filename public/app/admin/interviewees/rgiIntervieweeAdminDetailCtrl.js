@@ -32,12 +32,6 @@ angular
                         $scope.user_list.push(user);
                     });
                 });
-
-            });
-            interviewee.users.forEach(function (el) {
-                rgiUserListSrvc.get({_id: el}, function (user) {
-                    $scope.user_list.push(user);
-                });
             });
         });
 
