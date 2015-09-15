@@ -189,7 +189,6 @@ angular
                     });
             }
         };
-
         $scope.closeDialog = function () {
             ngDialog.close();
         };

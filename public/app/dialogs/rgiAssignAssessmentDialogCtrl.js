@@ -110,3 +110,34 @@ angular
             ngDialog.close();
         };
     });
+//=======
+//        });
+//
+//        //TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
+//        if (new_reviewer_data) {
+//            rgiUserMethodSrvc.updateUser(new_researcher_data)
+//                .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
+//                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+//                .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+//                .then(function () {
+//                    rgiNotifier.notify('Assessment created and assigned!');
+//                    $route.reload();
+//                    $scope.closeThisDialog();
+//                }, function (reason) {
+//                    rgiNotifier.error(reason);
+//                });
+//        } else if (!new_reviewer_data) {
+//            rgiUserMethodSrvc.updateUser(new_researcher_data)
+//                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+//                .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+//                .then(function () {
+//                    rgiNotifier.notify('Assessment created and assigned!');
+//                    $route.reload();
+//                    $scope.closeThisDialog();
+//                }, function (reason) {
+//                    rgiNotifier.error(reason);
+//                });
+//        }
+//    };
+//});
+//>>>>>>> combined webpage and document datamodels and upload proceses

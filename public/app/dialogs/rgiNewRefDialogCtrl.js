@@ -188,6 +188,7 @@ angular
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
+
                 }
             }
         };
@@ -199,8 +200,7 @@ angular
     });
 
 
-//<<<<<<< 4ec5f4a79fff6f34678574158482c11c0d029578
-//'use strict';
+
 //
 //=======
 //function isURLReal(fullyQualifiedURL) {

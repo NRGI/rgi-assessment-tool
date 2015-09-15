@@ -19,6 +19,7 @@ function flagCheck(flags) {
     }
     return disabled;
 }
+
 angular
     .module('app')
     .controller('rgiAnswerCtrl', function (
@@ -96,6 +97,7 @@ angular
                     doc.comment = el;
                     citations.push(doc);
                 });
+
             });
             $scope.citations = citations;
 
