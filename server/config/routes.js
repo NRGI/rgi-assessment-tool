@@ -4,9 +4,9 @@ var auth = require('./auth'),
     answers = require('../controllers/answers'),
     assessments = require('../controllers/assessments'),
     authLogs = require('../controllers/auth-logs'),
-    contact = require('../utilities/contact'),
-    countries = require('../controllers/countries'),
     documents = require('../controllers/documents'),
+    countries = require('../controllers/countries'),
+    contact = require('../utilities/contact'),
     interviewees = require('../controllers/interviewees'),
     questions = require('../controllers/questions'),
     users = require('../controllers/users'),
@@ -32,7 +32,11 @@ module.exports = function (app) {
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
 
-    // PASSWORD HANDLING
+    // USER AUTH LOGS
+    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
+    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+
+    // PASSWORD TOKEN HANDLING
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);
     app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
@@ -79,7 +83,7 @@ module.exports = function (app) {
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
 
     /////////////////////////
-    //// DOCUMNETS  /////////
+    //// DOCUMENTS  /////////
     /////////////////////////
     // GET
     app.get('/api/documents', auth.requiresApiLogin, documents.getDocuments);
@@ -91,7 +95,6 @@ module.exports = function (app) {
     // PUT
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
 
-
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
@@ -101,11 +104,21 @@ module.exports = function (app) {
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
     app.get('/api/remote-file/document/:statusId', auth.requiresApiLogin,  documents.getUploadStatusDocument);
 
-    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
-    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+    /////////////////////////
+    ///// INTERVIEWEE CRUD ////////
+    /////////////////////////
+    // GET
+    app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
+    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
 
-    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
-    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
+    // POST
+    app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
+
+    // PUT
+    app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
+
+    // DELETE
+    app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
 
     /////////////////////////
     ///// INTERVIEWEE CRUD ////////
