@@ -1,6 +1,7 @@
 'use strict';
 
-var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE_ENV || 'development'];
+var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE_ENV || 'development'],
+    siteEmail = 'tech-support@resourcegovernance.org';
 
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
 // send email to tech support
@@ -93,6 +94,25 @@ exports.new_user_confirmation = function (contact_packet, token) {
                 + 'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">set password</a> before login.<p>'
                 + 'Thanks!<p>'
                 + 'The RGI Team.'
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+exports.reset_password_confirmation = function (user, token) {
+    var fullName = user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1) + " "
+        + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1);
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: user.email, name: fullName}],
+            from_email: siteEmail,
+            subject: 'Password Recovery',
+            html: 'Hello ' + fullName + ',<p>'
+            + 'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">click here</a> to recover your password.<p>'
+            + 'Thanks!<p>'
+            + 'The RGI Team.'
         }
     }, function (err, res) {
         if (err) console.log( JSON.stringify(err) );

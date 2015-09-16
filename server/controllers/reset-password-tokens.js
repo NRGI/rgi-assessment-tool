@@ -2,6 +2,7 @@
 /*jslint nomen: true unparam: true*/
 
 var
+    contact = require('../utilities/contact'),
     ResetPasswordToken = require('mongoose').model('ResetPasswordToken'),
     User = require('mongoose').model('User');
 
@@ -11,6 +12,7 @@ exports.create = function (req, res) {
             res.send({error: 'USER_NOT_FOUND'});
         } else {
             ResetPasswordToken.createByUser(user._id, function(error, token) {
+                if(!error) contact.reset_password_confirmation(user, token.token);
                 res.send({error: error, token: token});
             });
         }
