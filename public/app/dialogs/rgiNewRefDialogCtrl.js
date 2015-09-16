@@ -12,7 +12,6 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
     //    {text: 'Add Webpage', value: 'webpage'},
     //    {text: 'Add Interview', value: 'interview'}
     //];
-
     //rgiIntervieweeSrvc.query({}, function (interviewees) {
     //    interviewees.forEach(function (el) {
     //        $scope.interviewees
@@ -20,9 +19,8 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
     //        //console.log(el);
     //    });
     //});
-
     $scope.interviewees = rgiIntervieweeSrvc.query({});
-
+    
     function isURLReal(fullyQualifiedURL) {
         var URL = encodeURIComponent(fullyQualifiedURL),
             dfd = $.Deferred(),
