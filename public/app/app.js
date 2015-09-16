@@ -1,7 +1,6 @@
 'use strict';
 /*jslint unparam: true */
 
-<<<<<<< 103fbf4fba3f4a694b95a13cbc7e0bbe43f025c5
 angular.module('app', [
     '720kb.datepicker',
     'angular.filter',
@@ -15,10 +14,6 @@ angular.module('app', [
     'ngRoute',
     'ngSanitize'
 ]);
-=======
-// angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload', 'angular.filter', '720kb.datepicker', 'angucomplete']);
->>>>>>> autocomplete wired up
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
