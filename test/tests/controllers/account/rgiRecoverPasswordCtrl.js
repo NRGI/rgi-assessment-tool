@@ -2,25 +2,24 @@
 /*jslint nomen: true newcap: true */
 var describe, beforeEach, afterEach, it, inject, expect, sinon;
 
-describe('rgiResetPasswordCtrl', function () {
+describe('rgiRecoverPasswordCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, rgiNotifier, rgiResetPasswordSrvc;
+    var $scope, rgiNotifier, rgiResetPasswordSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$routeParams_, _rgiNotifier_, _rgiResetPasswordSrvc_) {
+        function ($rootScope, $controller, _rgiNotifier_, _rgiResetPasswordSrvc_) {
             $scope = $rootScope.$new();
-            $routeParams = _$routeParams_;
             rgiNotifier = _rgiNotifier_;
             rgiResetPasswordSrvc = _rgiResetPasswordSrvc_;
-            $controller('rgiResetPasswordCtrl', {$scope: $scope});
+            $controller('rgiRecoverPasswordCtrl', {$scope: $scope});
         }
     ));
 
-    describe('#resetPassword', function () {
+    describe('#recoverPassword', function () {
         var rgiNotifierMock,
             executeAndValidateAndRestoreMock = function() {
-                $scope.resetPassword();
+                $scope.recoverPassword();
                 rgiNotifierMock.verify();
                 rgiNotifierMock.restore();
             };
@@ -30,15 +29,14 @@ describe('rgiResetPasswordCtrl', function () {
         });
 
         describe('INVALID CASE', function() {
-            it('shows an error message, if the password is too short', function () {
-                $scope.password = '';
-                rgiNotifierMock.expects('error').withArgs('The password cannot be empty');
+            it('shows an error message, if the email is empty', function () {
+                $scope.recoverPasswordForm = {email: {$pristine: true}};
+                rgiNotifierMock.expects('error').withArgs('The email is incorrect');
             });
 
-            it('shows an error message, if the passwords do not match', function () {
-                $scope.password = 'original password';
-                $scope.passwordRepeat = 'mismatched password';
-                rgiNotifierMock.expects('error').withArgs('The passwords must match');
+            it('shows an error message, if the email is invalid', function () {
+                $scope.recoverPasswordForm = {email: {$invalid: true}};
+                rgiNotifierMock.expects('error').withArgs('The email is incorrect');
             });
 
             afterEach(executeAndValidateAndRestoreMock);
@@ -47,17 +45,18 @@ describe('rgiResetPasswordCtrl', function () {
         describe('VALID CASE', function() {
             var resetPasswordStub, resetPasswordSpy,
                 response,
-                passwordBackup, passwordRepeatBackup, tokenBackup,
-                password = 'PASSWORD', token = 'TOKEN';
+                emailBackup, recoverPasswordFormBackup,
+                email = 'EMAIL';
 
             beforeEach(function () {
-                tokenBackup = $routeParams.token;
-                passwordBackup = $scope.password;
-                passwordRepeatBackup = $scope.passwordRepeat;
+                emailBackup = $scope.email;
+                recoverPasswordFormBackup = $scope.recoverPasswordForm;
 
-                $routeParams.token = token;
-                $scope.password = password;
-                $scope.passwordRepeat = password;
+                $scope.recoverPasswordForm = {email: {
+                    $invalid: false,
+                    $pristine: false
+                }};
+                $scope.email = email;
 
                 rgiNotifierMock = sinon.mock(rgiNotifier);
             });
@@ -81,19 +80,9 @@ describe('rgiResetPasswordCtrl', function () {
             describe('POSITIVE CASE', function() {
                 [
                     {
-                        code: 'TOKEN_NOT_FOUND',
-                        message: 'The token is not found',
-                        case: 'token is not found'
-                    },
-                    {
                         code: 'USER_NOT_FOUND',
                         message: 'The user is not found',
                         case: 'user is not found'
-                    },
-                    {
-                        code: 'SET_PASSWORD_ERROR',
-                        message: 'Unable to set password',
-                        case: 'password reset is failed'
                     },
                     {
                         code: 'SPECIAL_ERROR',
@@ -110,7 +99,7 @@ describe('rgiResetPasswordCtrl', function () {
                 it('shows a successful notification, if no error occurs', function () {
                     response = {data: {error: undefined}};
                     rgiNotifierMock.expects('notify')
-                        .withArgs('The password has been successfully reset. You can log in using your new password.');
+                        .withArgs('An email with instructions to recover your password has been sent to your email address.');
                 });
 
                 afterEach(function () {
@@ -125,16 +114,14 @@ describe('rgiResetPasswordCtrl', function () {
             });
 
             afterEach(function () {
-                resetPasswordStub = sinon.stub(rgiResetPasswordSrvc, 'reset', resetPasswordSpy);
+                resetPasswordStub = sinon.stub(rgiResetPasswordSrvc, 'recover', resetPasswordSpy);
                 executeAndValidateAndRestoreMock();
-                resetPasswordSpy.withArgs(token, password).called.should.be.equal(true);
-
+                resetPasswordSpy.withArgs(email).called.should.be.equal(true);
                 resetPasswordStub.restore();
-
-                $routeParams.token = tokenBackup;
-                $scope.password = passwordBackup;
-                $scope.passwordRepeat = passwordRepeatBackup;
+                $scope.recoverPasswordForm = recoverPasswordFormBackup;
+                $scope.email = emailBackup;
             });
         });
+
     });
 });
