@@ -28,88 +28,67 @@ describe('rgiUserCreateCtrl', function () {
 
     describe('#userCreate', function () {
         var rgiNotifierMock;
+        var userData, $locationMock, userMethodCreateUserStub, userMethodCreateUserSpy;
 
         beforeEach(function () {
             rgiNotifierMock = sinon.mock(rgiNotifier);
+
+            userData = {
+                firstName: 'FIRST NAME',
+                lastName: 'LAST NAME',
+                username: 'USERNAME',
+                email: 'EMAIL@DOMAIN.COM',
+                role: 'ROLE',
+                address: ['ADDRESS']
+            };
+
+            $scope.first_name = userData.firstName;
+            $scope.last_name = userData.lastName;
+            $scope.username = userData.username;
+            $scope.email = userData.email;
+            $scope.roleSelect = userData.role;
+            $scope.address = userData.address[0];
         });
 
-        describe('PASSWORDS DO NOT MATCH', function () {
-            it('shows error', function () {
-                $scope.password = 'PASSWORD';
-                $scope.password_repeat = 'DIFFERENT PASSWORD';
-                rgiNotifierMock.expects('error').withArgs('Passwords must match!');
-                $scope.userCreate();
-            });
-        });
+        it('shows notification and redirects on success', function() {
+            rgiNotifierMock.expects('notify').withArgs('User account created!' + userData.email);
+            $locationMock = sinon.mock($location);
+            $locationMock.expects('path').withArgs('/admin/user-admin');
 
-        describe('PASSWORDS MATCH', function () {
-            var userData, $locationMock, userMethodCreateUserStub, userMethodCreateUserSpy;
-
-            beforeEach(function () {
-                userData = {
-                    firstName: 'FIRST NAME',
-                    lastName: 'LAST NAME',
-                    username: 'USERNAME',
-                    email: 'EMAIL@DOMAIN.COM',
-                    password: 'PASSWORD',
-                    role: 'ROLE',
-                    address: ['ADDRESS']
+            userMethodCreateUserSpy = sinon.spy(function () {
+                return {
+                    then: function (callback) {
+                        callback();
+                    }
                 };
+            });
+            userMethodCreateUserStub = sinon.stub(rgiUserMethodSrvc, 'createUser', userMethodCreateUserSpy);
 
-                $scope.first_name = userData.firstName;
-                $scope.last_name = userData.lastName;
-                $scope.username = userData.username;
-                $scope.email = userData.email;
-                $scope.password = userData.password;
-                $scope.roleSelect = userData.role;
-                $scope.address = userData.address[0];
+            $scope.userCreate();
+
+            $locationMock.verify();
+            $locationMock.restore();
+        });
+
+        it('shows an error on failure', function() {
+            var reason = 'REASON';
+            rgiNotifierMock.expects('error').withArgs(reason);
+
+            userMethodCreateUserSpy = sinon.spy(function () {
+                return {
+                    then: function (uselessSuccessCallback, failureCallback) {
+                        failureCallback(reason);
+                    }
+                };
             });
 
-            it('shows notification and redirects on success', function() {
-                rgiNotifierMock.expects('notify').withArgs('User account created!' + userData.email);
-                $locationMock = sinon.mock($location);
-                $locationMock.expects('path').withArgs('/admin/user-admin');
-
-                userMethodCreateUserSpy = sinon.spy(function () {
-                    return {
-                        then: function (callback) {
-                            callback();
-                        }
-                    };
-                });
-                userMethodCreateUserStub = sinon.stub(rgiUserMethodSrvc, 'createUser', userMethodCreateUserSpy);
-
-                $scope.password_repeat = userData.password;
-                $scope.userCreate();
-
-                $locationMock.verify();
-                $locationMock.restore();
-            });
-
-            it('shows an error on failure', function() {
-                var reason = 'REASON';
-                rgiNotifierMock.expects('error').withArgs(reason);
-
-                userMethodCreateUserSpy = sinon.spy(function () {
-                    return {
-                        then: function (uselessSuccessCallback, failureCallback) {
-                            failureCallback(reason);
-                        }
-                    };
-                });
-                userMethodCreateUserStub = sinon.stub(rgiUserMethodSrvc, 'createUser', userMethodCreateUserSpy);
-
-                $scope.password_repeat = userData.password;
-                $scope.userCreate();
-            });
-
-            afterEach(function () {
-                userMethodCreateUserSpy.withArgs(userData).called.should.be.equal(true);
-                userMethodCreateUserStub.restore();
-            });
+            userMethodCreateUserStub = sinon.stub(rgiUserMethodSrvc, 'createUser', userMethodCreateUserSpy);
+            $scope.userCreate();
         });
 
         afterEach(function () {
+            userMethodCreateUserSpy.withArgs(userData).called.should.be.equal(true);
+            userMethodCreateUserStub.restore();
             rgiNotifierMock.verify();
             rgiNotifierMock.restore();
         });

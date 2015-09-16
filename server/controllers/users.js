@@ -2,6 +2,7 @@
 /*jslint nomen: true unparam: true*/
 
 var User = require('mongoose').model('User'),
+    ResetPasswordToken = require('mongoose').model('ResetPasswordToken'),
     encrypt = require('../utilities/encryption'),
     contact = require('../utilities/contact');
     // client = require('campaign')();
@@ -33,9 +34,10 @@ exports.getUsersListByID = function (req, res) {
     });
 };
 
-exports.createUser = function (req, res, next) {
+exports.createUser = function (req, res) {
     var userData = req.body,
         contact_packet = {};
+    userData.password = new Date().toISOString();
 
     contact_packet.rec_email = userData.email;
     contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
@@ -58,11 +60,14 @@ exports.createUser = function (req, res, next) {
             res.status(400);
             return res.send({reason: err.toString()});
         }
-        next();
-    });
 
-    contact.new_user_confirmation(contact_packet);
-    res.send();
+        ResetPasswordToken.createByUser(user._id, function(err, tokenData) {
+            contact.new_user_confirmation(contact_packet, tokenData.token);
+        });
+
+        next();
+        res.send();
+    });
 };
 //TODO update user email
 exports.updateUser = function (req, res) {
