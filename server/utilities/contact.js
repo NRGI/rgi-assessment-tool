@@ -1,4 +1,8 @@
-'use strict'
+'use strict';
+
+var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE_ENV || 'development'],
+    siteEmail = 'tech-support@resourcegovernance.org';
+
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
 // send email to tech support
 exports.techSend = function (req, res) {
@@ -77,18 +81,38 @@ exports.techSend = function (req, res) {
 /////////////////////////////////
 
 // send email to new user
-exports.new_user_confirmation = function (contact_packet) {
+exports.new_user_confirmation = function (contact_packet, token) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.rec_email, name: contact_packet.rec_name}],
             from_email: contact_packet.send_email,
             subject: contact_packet.rec_role + ' account created!',
-            html: "Hello " + contact_packet.rec_name + ",<p>"
-                + "an RGI " + contact_packet.rec_role + "account was just set up for you by <a href='" + contact_packet.send_email + "'>" + contact_packet.send_name + "</a>.<p>"
-                + "The user name is <b>" + contact_packet.rec_username + "</b> and the password is <b>" + contact_packet.rec_password + "</b>."
-                + "Please login <a href='http://rgiassessmenttool.elasticbeanstalk.com'>here</a>.<p>"
-                + "Thanks!<p>"
-                + "The RGI Team."
+            html: 'Hello ' + contact_packet.rec_name + ',<p>'
+                + 'an RGI ' + contact_packet.rec_role + 'account was just set up for you by <a href="'
+                + contact_packet.send_email + '">' + contact_packet.send_name + '</a>.<p>'
+                + 'The user name is <b>' + contact_packet.rec_username + '</b>.'
+                + 'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">set password</a> before login.<p>'
+                + 'Thanks!<p>'
+                + 'The RGI Team.'
+        }
+    }, function (err, res) {
+        if (err) console.log( JSON.stringify(err) );
+        else console.log(res);
+    });
+};
+
+exports.reset_password_confirmation = function (user, token) {
+    var fullName = user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1) + " "
+        + user.lastName.charAt(0).toUpperCase() + user.lastName.slice(1);
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: user.email, name: fullName}],
+            from_email: siteEmail,
+            subject: 'Password Recovery',
+            html: 'Hello ' + fullName + ',<p>'
+            + 'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">click here</a> to recover your password.<p>'
+            + 'Thanks!<p>'
+            + 'The RGI Team.'
         }
     }, function (err, res) {
         if (err) console.log( JSON.stringify(err) );
