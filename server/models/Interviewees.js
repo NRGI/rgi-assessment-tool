@@ -44,7 +44,7 @@ function createDefaultInterviewees() {
                 phone: "666-666-6666",
                 role:  "government", // gov, industry, CSO, expert or other
                 answers: [],
-                assessments: ["AF-2015"],
+                assessments: ["AF-2015-PI"],
                 creationDate: Date.now()
             });
             Interviewee.create({
@@ -54,7 +54,7 @@ function createDefaultInterviewees() {
                 phone: "666-666-6666",
                 role:  "industry", // gov, industry, CSO, expert or other
                 answers: [],
-                assessments: ["AF-2015"],
+                assessments: ["AF-2015-PI"],
                 creationDate: Date.now()
             });
             Interviewee.create({
@@ -64,7 +64,7 @@ function createDefaultInterviewees() {
                 phone: "666-666-6666",
                 role:  "cso", // gov, industry, CSO, expert or other
                 answers: [],
-                assessments: ["AF-2015"],
+                assessments: ["AF-2015-PI"],
                 creationDate: Date.now()
             });
             Interviewee.create({
@@ -84,7 +84,7 @@ function createDefaultInterviewees() {
                 phone: "666-666-6666",
                 role:  "other", // gov, industry, CSO, expert or other
                 answers: [],
-                assessments: ["AF-2015", "AL-2015"],
+                assessments: ["AF-2015-PI"],
                 creationDate: Date.now()
             });
         }
