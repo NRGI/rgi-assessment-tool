@@ -38,6 +38,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiProfileCtrl',
             resolve: routeRoleChecks.user
         })
+        .when('/reset-password/:token', {
+            templateUrl: '/partials/account/reset-password',
+            controller:  'rgiResetPasswordCtrl'
+        })
 
         ///// Admin Routes
         // USERS
