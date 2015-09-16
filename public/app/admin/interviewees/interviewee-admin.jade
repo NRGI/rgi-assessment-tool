@@ -1,42 +1,43 @@
-//- interviewee page
 .container.top-padding-med
-   .well.left-padding-lg.right-padding-lg
-      legend.h3 Interviewee Admin Dashboard
-      .pull-right
-         form.form-inline
-            .form-group
-               input.form-control(
-               ng-model="searchText"
-               ng-disabled="interviewees.length < 1"
-               placeholder="Filter")
-            .form-group.margin-left-med
-               select.form-control(
-               ng-model="sortOrder"
-               ng-disabled="interviewees.length < 1"
-               ng-options="item.value as item.text for item in sortOptions")
-      table.table.table-hover.table-striped.table-condensed.left-padding-lg.right-padding-lg(ng-if="interviewees.length > 0")
-         thead
-            tr
-               th.col-md-1 First name
-               th.col-md-1 Last name
-               th.col-md-1
-               th.col-md-1 Role
-               th.col-md-1 Title
-               th.col-md-1 Organization
-               th.col-md-1 Assessments
-               th.col-md-1
-         tbody
-            tr(ng-repeat="i in interviewees | filter:searchText | orderBy:sortOrder")
-               td.col-md-1 {{i.firstName}}
-               td.col-md-1 {{i.lastName}}
-               td.col-md-1
-                  a(href="mailto:i.lastName" ng-disabled="i.email===undefined").btn.btn-default Email
-               td.col-md-1 {{i.role}}
-               td.col-md-1 {{i.title}}
-               td.col-md-1 {{i.organization}}
-               td.col-md-1
-                  .row(ng-repeat="assessment in i.assessments")
-                     a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
-               td.col-md-1
-                  a(href="/admin/interviewees-admin/{{i._id}}").btn.btn-warning Edit
-      h1.text-danger(ng-if="interviewees.length < 1") No interviewees created
+   .well.left-padding-lg
+      div.left-padding-lg.right-padding-lg.top-padding-med
+         legend.h3 Interviewee Admin Dashboard
+         .pull-right
+            form.form-inline
+               .form-group
+                  input.form-control(
+                  ng-model="searchText"
+                  ng-disabled="interviewees.length < 1"
+                  placeholder="Filter")
+               .form-group.margin-left-med
+                  select.form-control(
+                  ng-model="sortOrder"
+                  ng-disabled="interviewees.length < 1"
+                  ng-options="item.value as item.text for item in sortOptions")
+         table.table.table-hover.table-striped.table-condensed.left-padding-lg.right-padding-lg(ng-if="interviewees.length > 0")
+            thead
+               tr
+                  th.col-md-1 First name
+                  th.col-md-1 Last name
+                  th.col-md-1
+                  th.col-md-1 Role
+                  th.col-md-1 Title
+                  th.col-md-1 Organization
+                  th.col-md-1 Assessments
+                  th.col-md-1
+            tbody
+               tr(ng-repeat="i in interviewees | filter:searchText | orderBy:sortOrder")
+                  td.col-md-1 {{i.firstName}}
+                  td.col-md-1 {{i.lastName}}
+                  td.col-md-1
+                     a(href="mailto:i.lastName" ng-disabled="i.email===undefined").btn.btn-default Email
+                  td.col-md-1 {{i.role}}
+                  td.col-md-1 {{i.title}}
+                  td.col-md-1 {{i.organization}}
+                  td.col-md-1
+                     .row(ng-repeat="assessment in i.assessments")
+                        a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
+                  td.col-md-1
+                     a(href="/admin/interviewees-admin/{{i._id}}").btn.btn-warning Edit
+         h1.text-danger(ng-if="interviewees.length < 1") No interviewees created
+

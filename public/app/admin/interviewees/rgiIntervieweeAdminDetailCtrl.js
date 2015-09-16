@@ -2,10 +2,13 @@
 /*jslint nomen: true unparam: true regexp: true*/
 //var angular;
 
-angular.module('app').controller('rgiIntervieweeAdminDetailCtrl', function ($scope, $route, $routeParams, ngDialog, rgiNotifier, rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc, rgiAssessmentSrvc) {
+angular.module('app').controller('rgiIntervieweeAdminDetailCtrl', function ($scope, $route, $routeParams, ngDialog, rgiNotifier, rgiUserListSrvc, rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc, rgiAssessmentSrvc) {
+
+
     rgiAssessmentSrvc.query({}, function (assessments) {
         rgiIntervieweeSrvc.get({_id: $routeParams.interviewee_ID}, function (interviewee) {
             $scope.interviewee = interviewee;
+            $scope.user_list = [];
             $scope.assessments = [];
             assessments.forEach(function (el) {
                 if (interviewee.assessments.indexOf(el.assessment_ID) < 0) {
@@ -15,7 +18,11 @@ angular.module('app').controller('rgiIntervieweeAdminDetailCtrl', function ($sco
                     });
                 }
             });
-
+            interviewee.users.forEach(function (el) {
+                rgiUserListSrvc.get({_id: el}, function (user) {
+                    $scope.user_list.push(user);
+                });
+            });
         });
 
     });
