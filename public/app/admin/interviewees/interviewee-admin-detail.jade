@@ -1,26 +1,203 @@
-.container
-   .well.left-padding-lg.right-padding-lg
-      legend.h3 {{interviewee.firstName | ucfirst}} {{interviewee.lastName | ucfirst}}
-      div.left-padding-lg.right-padding-lg
-      .row.left-padding-lg.right-padding-lg.top-padding-lg
-         button.btn.btn-warning(ng-click="editIntervieweeDialog()") Edit interviewee info
-      .row.left-padding-lg.right-padding-lg.top-padding-lg
-         label Linked assessments:
-         .row(ng-repeat="assessment in interviewee.assessments").left-padding-lg
-            a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
-         .row.left-padding-lg.right-padding-lg.top-padding-lg
-            em.pull-left Add to assessment
-            .form-group(name="add_assessment_form").col-md-4
-               select.form-control(
-               ng-model="add_assessment"
-               required)
-                  option(value="" selected disabled) Select assessment
-                  option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
+.container.top-padding-med
+    .well.left-padding-lg
+        div.left-padding-lg.right-padding-lg.top-padding-med
+            legend.h3 {{interviewee.firstName | ucfirst}} {{interviewee.lastName | ucfirst}}
+            div.left-padding-lg.right-padding-lg.bottom-padding-lg
+                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    button.btn.btn-warning(ng-click="editIntervieweeDialog()") Edit interviewee info
+                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    table.table.table-hover.table-striped.table-condensed
+                        thead
+                            tr
+                                th Linked assessments
+                                th Linked answers
+                                th Linked users
+                        tbody
+                            tr
+                                td(ng-if="interviewee.assessments.length > 0")
+                                    .row(ng-repeat="assessment in interviewee.assessments").left-padding-lg
+                                        a(href="/admin/assessment-admin/{{assessment}}") {{assessment}}
+                                td(ng-if="interviewee.answers.length > 0")
+                                    .row(ng-repeat="answer in interviewee.answers").left-padding-lg
+                                        a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
+                                td(ng-if="user_list > 0")
+                                    .row(ng-repeat="user in user_list").left-padding-lg
+                                        a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                                        text  - {{user.role}}
+                                td(ng-if="interviewee.assessments.length < 1") None
+                                td(ng-if="interviewee.answers.length < 1") None
+                                td(ng-if="user_list.length < 1") None
 
+                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    em.pull-left Add to assessment
+                    .form-group(name="add_assessment_form").col-md-4
+                        select.form-control(
+                        ng-model="add_assessment"
+                        required)
+                            option(value="" selected disabled) Select assessment
+                            option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
+                    button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
 
-            button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
-      .row.left-padding-lg.right-padding-lg.top-padding-lg.bottom-padding-lg
-         label Linked answers:
-         .row(ng-repeat="answer in interviewee.answers" ng-if="interviewee.answers.length > 0").left-padding-lg
-            a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
-         .row(ng-if="interviewee.answers.length < 1").left-padding-lg None
+            h3 Information
+            div.right-padding-lg
+                .row.left-padding-lg.right-padding-lg
+                    table.table.table-condensed
+                        tbody
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label First name:
+                                    .row
+                                        text {{interviewee.firstName | ucfirst}}
+                                td.col-med-3
+                                    .row
+                                        label Last name:
+                                    .row
+                                        text {{interviewee.lastName | ucfirst}}
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Role:
+                                    .row
+                                        text {{interviewee.role | ucfirst}}
+                                td.col-med-3
+                                    .row
+                                        label Title:
+                                    .row(ng-if="interviewee.title")
+                                        text {{interviewee.title | ucfirst}}
+                                    .row(ng-if="!interviewee.title")
+                                        text N/A
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Organization:
+                                    .row(ng-if="interviewee.organization")
+                                        text {{interviewee.organization}}
+                                    .row(ng-if="!interviewee.organization")
+                                        text N/A
+                                td
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Phone:
+                                    .row(ng-if="interviewee.phone")
+                                        text {{interviewee.phone}}
+                                    .row(ng-if="!interviewee.phone")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Email:
+                                    .row(ng-if="interviewee.email")
+                                        text {{interviewee.email}}
+                                    .row(ng-if="!interviewee.email")
+                                        text N/A
+                            //tr
+                            //    td.col-med-3
+                            //        .row
+                            //            label Source:
+                            //        .row(ng-if="document.source")
+                            //            a(href="document.source") {{document.source}}
+                            //        .row(ng-if="!document.source")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Year:
+                            //        .row(text-if="document.year")
+                            //            test {{document.year}}
+                            //        .row(ng-if="!document.year")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Date published:
+                            //        .row(ng-if="document.date_published")
+                            //            text {{document.date_published | date: 'MM/dd/yyyy'}}
+                            //        .row(ng-if="!document.date_published")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Pages:
+                            //        .row(ng-if="document.pages")
+                            //            text {{document.pages}}
+                            //        .row(ng-if="!document.pages")
+                            //            text N/A
+                            //tr
+                            //    td.col-med-3
+                            //        .row
+                            //            label Volume:
+                            //        .row(ng-if="document.volume")
+                            //            text {{document.volume}}
+                            //        .row(ng-if="!document.volume")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Issue:
+                            //        .row(text-if="document.issue")
+                            //            text {{document.issue}}
+                            //        .row(ng-if="!document.issue")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Publisher:
+                            //        .row(ng-if="document.publisher")
+                            //            text {{document.publisher}}
+                            //        .row(ng-if="!document.publisher")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label City:
+                            //        .row(ng-if="document.city")
+                            //            text {{document.city}}
+                            //        .row(ng-if="!document.city")
+                            //            text N/A
+                            //tr
+                            //    td.col-med-3
+                            //        .row
+                            //            label Edition:
+                            //        .row(ng-if="document.edition")
+                            //            text {{document.edition}}
+                            //        .row(ng-if="!document.edition")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Institution:
+                            //        .row(text-if="document.institution")
+                            //            text {{document.institution}}
+                            //        .row(ng-if="!document.institution")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Series:
+                            //        .row(ng-if="document.series")
+                            //            text {{document.series}}
+                            //        .row(ng-if="!document.series")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Chapter:
+                            //        .row(ng-if="document.chapter")
+                            //            text {{document.chapter}}
+                            //        .row(ng-if="!document.chapter")
+                            //            text N/A
+                            //tr
+                            //    td.col-med-3
+                            //        .row
+                            //            label Country:
+                            //        .row(ng-if="document.country")
+                            //            text {{document.country}}
+                            //        .row(ng-if="!document.country")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Translators:
+                            //        .row(text-if="document.translators")
+                            //            text {{document.translators}}
+                            //        .row(ng-if="!document.translators")
+                            //            text N/A
+                            //    td.col-med-3
+                            //        .row
+                            //            label Series Editor:
+                            //        .row(ng-if="document.series_editor")
+                            //            text {{document.series_editor}}
+                            //        .row(ng-if="!document.series_editor")
+                            //            text N/A
+                            //    td
