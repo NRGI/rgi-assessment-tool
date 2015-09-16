@@ -9,6 +9,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "angucomplete": "*",
     "angular": "~1.3.2",
     "angular-file-upload": "~1.1.5",
     "angular-filter": "~0.5.4",
