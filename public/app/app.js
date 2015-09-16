@@ -2,9 +2,10 @@
 /*jslint unparam: true */
 
 angular.module('app', [
+    '720kb.datepicker',
     'angular.filter',
     'angularFileUpload',
-    '720kb.datepicker',
+    'angucomplete',
     'infinite-scroll',
     'ng-form-group',
     'ngCsv',
