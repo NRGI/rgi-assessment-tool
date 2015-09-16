@@ -34,7 +34,11 @@ angular
                 });
 
             });
-
+            interviewee.users.forEach(function (el) {
+                rgiUserListSrvc.get({_id: el}, function (user) {
+                    $scope.user_list.push(user);
+                });
+            });
         });
 
         $scope.editIntervieweeDialog = function () {
