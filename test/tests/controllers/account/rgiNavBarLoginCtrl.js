@@ -25,6 +25,18 @@ describe('rgiNavBarLoginCtrl', function () {
         }
     ));
 
+    describe('#recoverPassword', function () {
+        it('redirects to a defined URI', function() {
+            var $locationMock = sinon.mock($location);
+            $locationMock.expects('path').withArgs('/recover-password');
+
+            $scope.recoverPassword();
+
+            $locationMock.verify();
+            $locationMock.restore();
+        });
+    });
+
     describe('#signout', function () {
         var mocks = {};
 
