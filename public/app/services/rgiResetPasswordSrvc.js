@@ -1,18 +1,13 @@
 'use strict';
 var angular;
 
-angular.module('app').factory('rgiResetPasswordSrvc', function ($http, $q) {
+angular.module('app').factory('rgiResetPasswordSrvc', function (rgiRequestSubmitterSrvc) {
     return {
-        reset: function(token, password) {
-            var dfd = $q.defer();
-
-            $http.post('/api/reset-password-token/reset', {token: token, password: password}).then(function (response) {
-                dfd.resolve(response);
-            }, function() {
-                dfd.reject();
-            });
-
-            return dfd.promise;
+        recover: function (email) {
+            return rgiRequestSubmitterSrvc.submit('/api/reset-password-token/add', {email: email});
+        },
+        reset: function (token, password) {
+            return rgiRequestSubmitterSrvc.submit('/api/reset-password-token/reset', {token: token, password: password});
         }
     };
 });
