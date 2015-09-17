@@ -62,7 +62,7 @@ exports.createUser = function (req, res) {
         }
 
         ResetPasswordToken.createByUser(user._id, function(err, tokenData) {
-            contact.new_user_confirmation(contact_packet, tokenData.token);
+            contact.new_user_confirmation(contact_packet, tokenData._id);
         });
 
         next();
