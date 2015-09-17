@@ -12,7 +12,9 @@ exports.create = function (req, res) {
             res.send({error: 'USER_NOT_FOUND'});
         } else {
             ResetPasswordToken.createByUser(user._id, function(error, token) {
-                if(!error) contact.reset_password_confirmation(user, token._id);
+                if(!error) {
+                    contact.reset_password_confirmation(user, token._id);
+                }
                 res.send({error: error, token: token});
             });
         }
