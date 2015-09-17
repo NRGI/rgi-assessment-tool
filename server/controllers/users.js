@@ -65,8 +65,8 @@ exports.createUser = function (req, res) {
             contact.new_user_confirmation(contact_packet, tokenData._id);
         });
 
-        next();
         res.send();
+        next();
     });
 };
 //TODO update user email
