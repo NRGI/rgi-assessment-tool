@@ -3,6 +3,7 @@ var angular;
 
 angular.module('app').controller('rgiRecoverPasswordCtrl', function (
     $scope,
+    $location,
     rgiNotifier,
     rgiResetPasswordSrvc
 ) {
@@ -20,6 +21,7 @@ angular.module('app').controller('rgiRecoverPasswordCtrl', function (
                 rgiNotifier.error(getErrorMessage(response.data.error));
             } else {
                 rgiNotifier.notify('An email with instructions to recover your password has been sent to your email address.');
+                $location.path('/');
             }
         }, function () {
             rgiNotifier.error(getErrorMessage('UNKNOWN_ERROR'));

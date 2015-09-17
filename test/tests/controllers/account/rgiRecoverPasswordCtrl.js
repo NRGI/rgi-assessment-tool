@@ -5,11 +5,12 @@ var describe, beforeEach, afterEach, it, inject, expect, sinon;
 describe('rgiRecoverPasswordCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, rgiNotifier, rgiResetPasswordSrvc;
+    var $scope, $location, rgiNotifier, rgiResetPasswordSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _rgiNotifier_, _rgiResetPasswordSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiResetPasswordSrvc_) {
             $scope = $rootScope.$new();
+            $location = _$location_;
             rgiNotifier = _rgiNotifier_;
             rgiResetPasswordSrvc = _rgiResetPasswordSrvc_;
             $controller('rgiRecoverPasswordCtrl', {$scope: $scope});
@@ -44,9 +45,8 @@ describe('rgiRecoverPasswordCtrl', function () {
 
         describe('VALID CASE', function() {
             var resetPasswordStub, resetPasswordSpy,
-                response,
-                emailBackup, recoverPasswordFormBackup,
-                email = 'EMAIL';
+                $locationMock, response, email = 'EMAIL',
+                emailBackup, recoverPasswordFormBackup;
 
             beforeEach(function () {
                 emailBackup = $scope.email;
@@ -59,6 +59,7 @@ describe('rgiRecoverPasswordCtrl', function () {
                 $scope.email = email;
 
                 rgiNotifierMock = sinon.mock(rgiNotifier);
+                $locationMock = sinon.mock($location);
             });
 
             describe('NEGATIVE CASE', function() {
@@ -98,6 +99,7 @@ describe('rgiRecoverPasswordCtrl', function () {
 
                 it('shows a successful notification, if no error occurs', function () {
                     response = {data: {error: undefined}};
+                    $locationMock.expects('path').withArgs('/');
                     rgiNotifierMock.expects('notify')
                         .withArgs('An email with instructions to recover your password has been sent to your email address.');
                 });
@@ -116,6 +118,8 @@ describe('rgiRecoverPasswordCtrl', function () {
             afterEach(function () {
                 resetPasswordStub = sinon.stub(rgiResetPasswordSrvc, 'recover', resetPasswordSpy);
                 executeAndValidateAndRestoreMock();
+                $locationMock.verify();
+                $locationMock.restore();
                 resetPasswordSpy.withArgs(email).called.should.be.equal(true);
                 resetPasswordStub.restore();
                 $scope.recoverPasswordForm = recoverPasswordFormBackup;
