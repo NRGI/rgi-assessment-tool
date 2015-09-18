@@ -114,10 +114,7 @@ module.exports = function (app) {
     //app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken,
     //    authMendeley.getToken, mendeley.updateToken, auth.passUser);
 
-    app.post('/logout', function (req, res) {
-        req.logout();
-        res.end();
-    });
+    app.post('/logout', auth.logout);
 
     app.all('/api/*', function (req, res) {
         res.sendStatus(404);

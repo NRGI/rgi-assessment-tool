@@ -1,5 +1,6 @@
 'use strict';
-var passport = require('passport');
+var passport = require('passport'),
+    AuthLog = require('mongoose').model('AuthLog');
 
 exports.authenticate = function (req, res, next) {
     req.body.username = req.body.username.toLowerCase();
@@ -10,6 +11,7 @@ exports.authenticate = function (req, res, next) {
             // if (err) {return next(err); }
             if (err) { res.send({success: false}); }
             req.user = user;
+            AuthLog.log(req.user._id, 'sign-in');
             req.clientId = 1560;
             // res.send({success: true, user: user});
             next();
@@ -18,7 +20,13 @@ exports.authenticate = function (req, res, next) {
     auth(req, res, next);
 };
 
-exports.passUser = function (req, res, next) {
+exports.logout = function (req, res) {
+    AuthLog.log(req.user._id, 'sign-out');
+    req.logout();
+    res.end();
+};
+
+exports.passUser = function (req, res) {
     return res.send({success: true, user: req.user});
 };
 

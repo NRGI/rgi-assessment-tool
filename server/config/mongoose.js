@@ -3,7 +3,14 @@ var mongoose = require('mongoose'),
     countryModel = require('../models/Countries'),
     userModel = require('../models/User');
 
-['Answers', 'Assessment', 'Documents', 'Question', 'ResetPasswordToken'].forEach(function(modelName) {
+[
+    'Answers',
+    'Assessment',
+    'AuthLog',
+    'Documents',
+    'Question',
+    'ResetPasswordToken'
+].forEach(function(modelName) {
     require('../models/' + modelName);
 });
 
