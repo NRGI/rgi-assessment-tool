@@ -8,3 +8,9 @@ exports.getNumber = function (req, res) {
         res.send({error: error, number: logsNumber});
     });
 };
+
+exports.list = function (req, res) {
+    AuthLog.list(req.params.user, req.params.itemsPerPage, req.params.page, function(error, logs) {
+        res.send({error: error, logs: logs});
+    });
+};
