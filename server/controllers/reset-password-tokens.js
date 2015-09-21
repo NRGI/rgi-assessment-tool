@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
 var
     contact = require('../utilities/contact'),
