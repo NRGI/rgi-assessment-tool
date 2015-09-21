@@ -4,6 +4,7 @@ var
     answers = require('../controllers/answers'),
     assessments = require('../controllers/assessments'),
     auth = require('./auth'),
+    authLogs = require('../controllers/auth-logs'),
     contact = require('../utilities/contact'),
     countries = require('../controllers/countries'),
     documents = require('../controllers/documents'),
@@ -92,6 +93,8 @@ module.exports = function (app) {
     /////////////////////////
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
+
+    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
 
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);
     app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);

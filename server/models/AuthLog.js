@@ -1,5 +1,4 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
 
 var mongoose = require('mongoose'),
     AuthLogSchema = mongoose.Schema({
@@ -10,6 +9,10 @@ var mongoose = require('mongoose'),
 
 AuthLogSchema.statics.log = function(userId, action) {
     this.create({user: userId, 'date-time': new Date(), action: action});
+};
+
+AuthLogSchema.statics.getNumber = function(userId, callback) {
+    this.count({user: userId}, callback);
 };
 
 module.exports = mongoose.model('AuthLog', AuthLogSchema);
