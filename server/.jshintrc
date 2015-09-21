@@ -1,0 +1,8 @@
+{
+  "node": true,
+  "strict": true,
+  "curly": true,
+  "globals": {
+    "require": false//here is what you need
+  }
+}
