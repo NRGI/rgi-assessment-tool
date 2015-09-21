@@ -3,6 +3,7 @@
   "strict": true,
   "curly": true,
   "globals": {
-    "require": false
+    "$": false,
+    "angular": false
   }
 }

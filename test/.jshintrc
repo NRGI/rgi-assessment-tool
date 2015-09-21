@@ -3,6 +3,8 @@
   "strict": true,
   "curly": true,
   "globals": {
-    "require": false
+    "afterEach": false,
+    "should": false,
+    "sinon": false
   }
 }
