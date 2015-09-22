@@ -1,6 +1,7 @@
 'use strict';
-/*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, inject, expect, module, sinon;
+/*jshint -W079 */
+
+var _, describe, beforeEach, afterEach, it, inject, expect, module, sinon;
 
 describe('rgiUserCreateCtrl', function () {
     beforeEach(module('app'));

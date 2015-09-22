@@ -2,6 +2,7 @@
   "node": true,
   "strict": true,
   "curly": true,
+  "newcap": false,
   "globals": {
     "_": false,
     "afterEach": false,

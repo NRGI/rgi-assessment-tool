@@ -1,6 +1,7 @@
 'use strict';
-/*jslint nomen: true newcap: true */
-var describe, beforeEach, it, inject, expect;
+/*jshint -W079 */
+
+var rgiNavBarLoginCtrl, describe, beforeEach, it, inject, expect;
 
 describe('rgiNavBarLoginCtrl', function () {
 
