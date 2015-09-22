@@ -4,6 +4,7 @@ var angular;
 angular.module('app').controller('rgiResetPasswordCtrl', function (
     $scope,
     $routeParams,
+    $location,
     rgiNotifier,
     rgiResetPasswordSrvc
 ) {
@@ -29,6 +30,7 @@ angular.module('app').controller('rgiResetPasswordCtrl', function (
                 rgiNotifier.error(getErrorMessage(response.data.error));
             } else {
                 rgiNotifier.notify('The password has been successfully reset. You can log in using your new password.');
+                $location.path('/');
             }
         }, function () {
             rgiNotifier.error(getErrorMessage('UNKNOWN_ERROR'));

@@ -10,7 +10,7 @@ module.exports = {
         port: process.env.PORT || 3030
     },
     development: {
-        baseUrl: 'http://rgiassessmenttool.elasticbeanstalk.com',
+        baseUrl: 'http://rgi-staging.elasticbeanstalk.com',
         db: '@c726.candidate.19.mongolayer.com:10726/rgi_dev',
         rootPath: rootPath,
         port: process.env.PORT || 80
