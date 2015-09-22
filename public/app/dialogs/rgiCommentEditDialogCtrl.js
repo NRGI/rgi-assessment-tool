@@ -1,32 +1,36 @@
-'use strict';
-/*jslint unparam: true nomen: true*/
-//var angular;
+angular
+    .module('app')
+    .controller('rgiCommentEditDialogCtrl', function (
+        $scope,
+        $route,
+        ngDialog,
+        rgiNotifier,
+        rgiAnswerMethodSrvc
+    ) {
+        'use strict';
+        $scope.comment_content = $scope.$parent.comment.content;
+        $scope.saveComment = function () {
+            var new_answer_data = $scope.$parent.answer,
+                new_comment_data = $scope.$parent.comment,
+                index = $scope.$parent.index,
+                answer_ID = $scope.$parent.answer.answer_ID;
+            if (new_comment_data.content === $scope.comment_content) {
+                rgiNotifier.error('Do you have edits to submit?');
+            } else {
+                new_answer_data.comments[index].content = $scope.comment_content;
 
-angular.module('app').controller('rgiCommentEditDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiAnswerMethodSrvc) {
-    console.log($scope.$parent.comment);
-    $scope.comment_content = $scope.$parent.comment.content;
-    $scope.saveComment = function () {
-        var new_answer_data = $scope.$parent.answer,
-            new_comment_data = $scope.$parent.comment,
-            index = $scope.$parent.index,
-            answer_ID = $scope.$parent.answer.answer_ID;
-        if (new_comment_data.content === $scope.comment_content) {
-            rgiNotifier.error('Do you have edits to submit?')
-        } else {
-            new_answer_data.comments[index].content = $scope.comment_content;
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                    .then(function () {
+                        rgiNotifier.notify('Comment edited');
+                        $scope.closeThisDialog();
+                        $route.reload();
+                    }, function (reason) {
+                        rgiNotifier.notify(reason);
+                    });
+            }
+        };
 
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(function () {
-                    rgiNotifier.notify('Comment edited');
-                    $scope.closeThisDialog();
-                    $route.reload();
-                }, function (reason) {
-                    rgiNotifier.notify(reason);
-                });
-        }
-    };
-
-    $scope.closeDialog = function () {
-        ngDialog.close();
-    };
-});
+        $scope.closeDialog = function () {
+            ngDialog.close();
+        };
+    });
