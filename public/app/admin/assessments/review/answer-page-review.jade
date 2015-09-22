@@ -104,70 +104,37 @@
                     id="prev_flags_div"
                     role="tablist"
                     aria-multiselectable="true")
-                        div.panel(ng-repeat="flag in answer.flags")
-                            .panel-success(ng-if="flag.addressed===true")
-                                div.panel-heading(
-                                role="tab"
-                                id="heading{{$index}}")
-                                    h4.panel-title
-                                        a.btn.btn-block.button.button-success(
-                                        style="text-align: left;"
-                                        role="button"
-                                        data-toggle="collapse"
-                                        data-parent="#accordion"
-                                        href="#collapse{{$index}}"
-                                        aria-expanded="false"
-                                        aria-controls="collapse{{$index}}")
-                                            b Flag {{$index+1}} - {{flag.author_name}} (
-                                            b {{flag.role}}
-                                            b ):
-                                            em  {{flag.date | date:'MM/dd/yyyy'}}
-                                div(
-                                id="collapse{{$index}}"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="heading{{$index}}")
-                                    div.panel-body
-                                        .row.left-padding-lg
-                                            text Addressed?
-                                            text
+                        div.panel(ng-repeat="flag in answer.flags")(ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
+                            div.panel-heading(
+                            role="tab"
+                            id="heading{{$index}}")
+                                h4.panel-title
+                                    div(
+                                    style="text-align: left;"
+                                    role="button"
+                                    data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    href="#collapse{{$index}}"
+                                    aria-expanded="false"
+                                    aria-controls="collapse{{$index}}")
+                                        b Flag {{$index+1}} - {{flag.author_name}} (
+                                        b {{flag.role}}
+                                        b ):
+                                        em  {{flag.date | date:'MM/dd/yyyy'}}
+                            div(
+                            id="collapse{{$index}}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel"
+                            aria-labelledby="heading{{$index}}")
+                                div.panel-body
+                                    .row.left-padding-lg
+                                        label Addressed?
                                             input(type="checkbox" ng-model="flag.addressed")
-                                        .row.left-padding-lg.right-padding-lg
-                                            text {{flag.content}}
-                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
-                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
-                            .panel-danger(ng-if="flag.addressed===false")
-                                div.panel-heading(
-                                role="tab"
-                                id="heading{{$index}}")
-                                    h4.panel-title
-                                        a.btn.btn-block.button.button-success(
-                                        style="text-align: left;"
-                                        role="button"
-                                        data-toggle="collapse"
-                                        data-parent="#accordion"
-                                        href="#collapse{{$index}}"
-                                        aria-expanded="false"
-                                        aria-controls="collapse{{$index}}")
-                                            b Flag {{$index+1}} - {{flag.author_name}} (
-                                            b {{flag.role}}
-                                            b ):
-                                            em  {{flag.date | date:'MM/dd/yyyy'}}
-                                div(
-                                id="collapse{{$index}}"
-                                class="panel-collapse collapse in"
-                                role="tabpanel"
-                                aria-labelledby="heading{{$index}}")
-                                    div.panel-body
-                                        .row.left-padding-lg
-                                            text Addressed?
-                                            text
-                                            input(type="checkbox" ng-model="flag.addressed")
-                                        .row.left-padding-lg.right-padding-lg
-                                            text {{flag.content}}
-                                        .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
-                                            button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
 
+                                    .row.left-padding-lg.right-padding-lg
+                                        text {{flag.content}}
+                                    .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                                        button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
 
             .row.left-padding-lg
                 .form-horizontal(name="comment_form")

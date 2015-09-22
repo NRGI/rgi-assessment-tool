@@ -1,19 +1,22 @@
 'use strict';
 
-var auth = require('./auth'),
-    bodyParser = require('body-parser'),
-    users = require('../controllers/users'),
+var
     answers = require('../controllers/answers'),
-    questions = require('../controllers/questions'),
     assessments = require('../controllers/assessments'),
+<<<<<<< HEAD
     interviewees = require('../controllers/interviewees'),
     documents = require('../controllers/documents'),
     countries = require('../controllers/countries'),
+=======
+    auth = require('./auth'),
+>>>>>>> features
     contact = require('../utilities/contact'),
-    multipart = require('connect-multiparty'),
-    multipartMiddleware = multipart();
-//authMendeley = require('./authMendeley'),
-//mendeley = require('../controllers/mendeley.js'),
+    countries = require('../controllers/countries'),
+    documents = require('../controllers/documents'),
+    multipartMiddleware = require('connect-multiparty')(),
+    questions = require('../controllers/questions'),
+    resetPasswordTokens = require('../controllers/reset-password-tokens'),
+    users = require('../controllers/users');
 
 module.exports = function (app) {
 
@@ -96,6 +99,7 @@ module.exports = function (app) {
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
+<<<<<<< HEAD
     /////////////////////////
     ///// INTERVIEWEE CRUD ////////
     /////////////////////////
@@ -111,6 +115,10 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
+=======
+    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
+>>>>>>> features
 
     ////////////////////
     ///// OTHER ////////

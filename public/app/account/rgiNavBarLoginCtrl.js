@@ -11,7 +11,7 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route,
     if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
 
         rgiAssessmentSrvc.query({}, function (data) {
-            data.forEach(function (el, i) {
+            data.forEach(function (el) {
                 if (url_array.indexOf(el.year + '_' + el.version) < 0) {
                     url_array.push(el.year + '_' + el.version);
                     $scope.versions.push({
@@ -25,6 +25,10 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route,
         });
     }
 
+    $scope.recoverPassword = function() {
+        $location.path('/recover-password');
+    };
+
     // signin function for signin button
     $scope.signin = function (username, password) {
         rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
@@ -33,7 +37,7 @@ angular.module('app').controller('rgiNavBarLoginCtrl', function ($scope, $route,
                 if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
                     var url_array = [];
                     rgiAssessmentSrvc.query({}, function (data) {
-                        data.forEach(function (el, i) {
+                        data.forEach(function (el) {
                             if (url_array.indexOf(el.year + '_' + el.version) < 0) {
                                 url_array.push(el.year + '_' + el.version);
                                 $scope.versions.push({
