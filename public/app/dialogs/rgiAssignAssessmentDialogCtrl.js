@@ -10,7 +10,6 @@ angular
     .module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
-        $route,
         $location,
         ngDialog,
         rgiNotifier,

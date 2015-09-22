@@ -1,13 +1,14 @@
 'use strict';
-
+/* global require */
 var crypto              =   require('crypto'),
     fs                  =   require('fs'),
     mime                =   require('mime'),
     request             =   require('request'),
     s3                  =   require('s3'),
     Answer              =   require('mongoose').model('Answer'),
-    Document            =   require('mongoose').model('Documents'),
+    Doc            =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
+    upload_bucket       =   process.env.DOC_BUCKET,
     client              =   s3.createClient({
                                 maxAsyncS3: 20,     // this is the default
                                 s3RetryCount: 3,    // this is the default
@@ -20,8 +21,8 @@ var crypto              =   require('crypto'),
                                     // any other options are passed to new AWS.S3()
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
                                 }
-                            }),
-    upload_bucket       =   process.env.DOC_BUCKET;
+                            });
+
 //=======
 ///* global require */
 //
@@ -29,7 +30,7 @@ var crypto              =   require('crypto'),
 //    fs                     = require('fs'),
 //    request                = require('request'),
 //    s3                     = require('s3'),
-//    Document               = require('mongoose').model('Documents'),
+//    Doc               = require('mongoose').model('Documents'),
 //    Answer                 = require('mongoose').model('Answer'),
 //    client                 = s3.createClient({
 //                                maxAsyncS3: 20,     // this is the default
@@ -61,7 +62,7 @@ var uploadFile = function(file, req, callback) {
         // get hashed value of file as fingerprint
         var file_hash = hash.digest('hex');
         // search documents for hashed file
-        Document.findOne({file_hash: file_hash}, function (err, document) {
+        Doc.findOne({file_hash: file_hash}, function (err, document) {
             // if file exists tag for reference
             if (document !== null) {
                 callback(null, document);
@@ -90,7 +91,7 @@ var uploadFile = function(file, req, callback) {
                     console.log("done uploading");
                 });
 
-                Document.create({
+                Doc.create({
                     file_hash: file_hash,
                     mime_type: file.type,
                     s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
@@ -195,7 +196,7 @@ exports.fileCheck = function (req, res) {
 };
 
 exports.getDocuments = function (req, res) {
-    var query = Document.find(req.query);
+    var query = Doc.find(req.query);
     query.exec(function (err, collection) {
         res.send(collection);
     });
@@ -203,7 +204,7 @@ exports.getDocuments = function (req, res) {
 
 exports.getDocumentsByID = function (req, res) {
     console.log(req.params);
-    Document.findOne({_id: req.params.id}).exec(function (err, document) {
+    Doc.findOne({_id: req.params.id}).exec(function (err, document) {
         res.send(document);
     });
 };
@@ -215,7 +216,7 @@ exports.getUploadStatusDocument = function (req, res) {
         } else if (!uploadStatus || (uploadStatus.document === undefined)) {
             res.status(404).send({reason: 'not found'});
         } else {
-            Document.findOne({_id: uploadStatus.document}).exec(function (errorDocument, document) {
+            Doc.findOne({_id: uploadStatus.document}).exec(function (errorDocument, document) {
                 if (errorDocument) {
                     res.status(500).send({reason: errorDocument.toString()});
                 } else if (!document) {
@@ -240,7 +241,7 @@ exports.updateDocument = function (req, res) {
     document_update = req.body;
     timestamp = new Date().toISOString();
 
-    Document.findOne({_id: document_update._id}).exec(function (err, document) {
+    Doc.findOne({_id: document_update._id}).exec(function (err, document) {
         document.title = document_update.title;
         document.authors = document_update.authors;
         document.type = document_update.type;
@@ -275,7 +276,7 @@ exports.updateDocument = function (req, res) {
 
 exports.deleteDocument = function (req, res) {
 
-    // Document.remove({_id: req.params.id}, function (err) {
+    // Doc.remove({_id: req.params.id}, function (err) {
     //     if (!err) {
     //         res.send();
     //     } else {
