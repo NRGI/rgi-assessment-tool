@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true regexp: true*/
+/* global require */
 
 var Question = require('mongoose').model('Question');
 
@@ -25,17 +25,19 @@ exports.getQuestionTextByID = function (req, res) {
 };
 
 exports.createQuestions = function (req, res, next) {
-    var new_questions, i;
+    var new_questions = req.body;
 
-    new_questions = req.body;
-
-    for (i = 0; i < new_questions.length; i += 1) {
-        Question.create(new_questions[i], function (err, question) {
+    function createNewQuestion (new_question) {
+        Question.create(new_question, function (err, question) {
             if (err) {
                 res.status(400);
                 return res.send({reason: err.toString()});
             }
         });
+    }
+
+    for (var i = 0; i < new_questions.length; i += 1) {
+        createNewQuestion(new_questions[i]);
     }
     res.send();
 };

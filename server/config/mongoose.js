@@ -1,10 +1,9 @@
 'use strict';
-var mongoose = require('mongoose'),
-    userModel = require('../models/User'),
-    countryModel = require('../models/Countries'),
-    questionModel = require('../models/Question'),
-    intervieweeModel = require('../models/Interviewees');
-
+var mongoose            = require('mongoose'),
+    userModel           = require('../models/User'),
+    countryModel        = require('../models/Countries'),
+    questionModel       = require('../models/Question'),
+    intervieweeModel    = require('../models/Interviewees');
 [
     'Answers',
     'Assessment',

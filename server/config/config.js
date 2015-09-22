@@ -1,6 +1,6 @@
-/*jslint nomen: true */
-var path = require('path');
-var rootPath = path.normalize(__dirname + '/../../');
+'use strict';
+var path        = require('path'),
+    rootPath    = path.normalize(__dirname + '/../../');
 
 module.exports = {
     local: {

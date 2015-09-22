@@ -1,9 +1,9 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
-var Assessment = require('mongoose').model('Assessment'),
-    User = require('mongoose').model('User'),
-    contact = require('../utilities/contact');
+var Assessment  = require('mongoose').model('Assessment'),
+    User        = require('mongoose').model('User'),
+    contact     = require('../utilities/contact');
 
 exports.getAssessments = function (req, res) {
     var query = Assessment.find(req.query);
@@ -20,12 +20,10 @@ exports.getAssessmentsByID = function (req, res) {
 };
 
 exports.createAssessments = function (req, res, next) {
-    var new_assessments, i;
+    var new_assessments = req.body;
 
-    new_assessments = req.body;
-
-    for (i = 0; i < new_assessments.length; i += 1) {
-        Assessment.create(new_assessments[i], function (err, assessment) {
+    function createNewAssessment (new_assessment) {
+        Assessment.create(new_assessment, function (err, assessment) {
             if (err) {
                 if (err.toString().indexOf('E11000') > -1) {
                     err = new Error('Duplicate Assessment');
@@ -34,6 +32,10 @@ exports.createAssessments = function (req, res, next) {
                 return res.send({reason: err.toString()});
             }
         });
+    }
+
+    for (var i = 0; i < new_assessments.length; i += 1) {
+        createNewAssessment(new_assessments[i]);
     }
     res.send();
 };
@@ -45,8 +47,6 @@ exports.updateAssessment = function (req, res) {
         researcher_id = assessmentUpdates.researcher_ID,
         reviewer_id = assessmentUpdates.reviewer_ID,
         contact_packet = {};
-        //admin_email,
-        //admin_name;
 
     contact_packet.assessment_title = assessmentUpdates.country + " " + assessmentUpdates.year + " " + assessmentUpdates.version;
 
@@ -144,7 +144,7 @@ exports.updateAssessment = function (req, res) {
                 ///////////////////////////////
                 // MAIL ROUTING
                 ///////////////////////////////
-                if (assessmentUpdates.mail == true) {
+                if (assessmentUpdates.mail === true) {
                     switch (assessmentUpdates.status) {
 
                         case 'assigned':

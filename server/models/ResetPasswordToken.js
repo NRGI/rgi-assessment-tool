@@ -1,5 +1,4 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
 
 var mongoose = require('mongoose'),
     ResetPasswordTokenSchema = mongoose.Schema({
