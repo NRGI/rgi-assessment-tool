@@ -9,7 +9,6 @@ angular.module('app').factory('rgiRequestSubmitterSrvc', function ($http, $q) {
         }, function () {
             dfd.reject();
         });
-
         return dfd.promise;
     };
 

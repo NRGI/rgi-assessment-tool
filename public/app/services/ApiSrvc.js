@@ -1,8 +1,5 @@
-'use strict';
-var angular;
-
-// Experiment in wrappin all the api services into a single service
 angular.module('app').factory('rgiApiSrvc', function ($resource) {
+    'use strict';
     console.log($resource);
 
     // function
@@ -25,6 +22,4 @@ angular.module('app').factory('rgiApiSrvc', function ($resource) {
     //   $scope.users = Api.Users.query();
     //   ...
     // }
-
-
 });

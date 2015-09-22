@@ -1,7 +1,5 @@
-'use strict';
-var angular;
-
 angular.module('app').factory('rgiResetPasswordSrvc', function (rgiRequestSubmitterSrvc) {
+    'use strict';
     return {
         recover: function (email) {
             return rgiRequestSubmitterSrvc.submit('/api/reset-password-token/add', {email: email});

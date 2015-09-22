@@ -1,8 +1,5 @@
-'use strict';
-var angular;
-/*jslint newcap: true */
-
 angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
+    'use strict';
     return {
         // AUTHENTICATION AND AUTHORIZATION
         //authentication

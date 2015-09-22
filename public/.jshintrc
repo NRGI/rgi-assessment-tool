@@ -2,8 +2,13 @@
   "node": true,
   "strict": true,
   "curly": true,
+  "newcap": false,
   "globals": {
-    "$": false,
-    "angular": false
-  }
+    "$": true,
+    "angular": true
+  },
+  "predef": [
+    "angular",
+    "$"
+  ]
 }

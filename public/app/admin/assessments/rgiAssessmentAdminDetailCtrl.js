@@ -1,8 +1,13 @@
-'use strict';
-//var angular;
-/*jslint nomen: true regexp: true*/
-
-angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function ($scope, ngDialog, rgiNotifier, rgiAssessmentSrvc, rgiUserListSrvc, rgiAnswerSrvc, $routeParams) {
+angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function (
+    $scope,
+    ngDialog,
+    rgiNotifier,
+    rgiAssessmentSrvc,
+    rgiUserListSrvc,
+    rgiAnswerSrvc,
+    $routeParams
+) {
+    'use strict';
     // filtering options
     $scope.sort_options = [
         {value: "question_order", text: "Sort by Question Number"},

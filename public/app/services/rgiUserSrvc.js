@@ -1,9 +1,5 @@
-'use strict';
-var angular;
-/*jslint nomen: true */
-
-// query user or get user by id
 angular.module('app').factory('rgiUserSrvc', function ($resource) {
+    'use strict';
     var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
         update: {method: 'PUT', isArray: false}
     });
