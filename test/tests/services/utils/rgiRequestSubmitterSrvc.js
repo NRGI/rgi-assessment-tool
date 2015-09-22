@@ -1,4 +1,7 @@
 'use strict';
+/*jshint -W030 */
+
+var describe, beforeEach, it, inject, expect;
 
 describe('rgiRequestSubmitterSrvc', function () {
     var rgiRequestSubmitterSrvc, $http, $q;

@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true newcap: true */
+
 var describe, beforeEach, it, inject, expect;
 
 describe('rgiDocumentSrvc', function () {

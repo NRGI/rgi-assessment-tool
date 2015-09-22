@@ -1,5 +1,6 @@
 'use strict';
-/*jslint nomen: true newcap: true */
+/*jshint -W030 */
+
 var describe, beforeEach, it, inject, expect;
 
 describe('rgiUserSrvcSpec', function () {

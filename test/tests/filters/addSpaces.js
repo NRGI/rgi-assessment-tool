@@ -1,6 +1,7 @@
 'use strict';
-/*jslint nomen: true newcap: true */
-var describe, beforeEach, afterEach, it, expect;
+/*jshint -W079 */
+
+var inject, describe, beforeEach, afterEach, it, expect;
 
 describe('addSpaces FILTER', function () {
     beforeEach(module('app'));
