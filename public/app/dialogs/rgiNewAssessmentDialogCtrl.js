@@ -1,3 +1,4 @@
+'use strict';
 
 angular
     .module('app')
@@ -12,7 +13,6 @@ angular
         rgiQuestionMethodSrvc,
         rgiCountrySrvc
     ) {
-        'use strict';
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         //TODO
         //rgiCountrySrvc.query({}, function (countries) {

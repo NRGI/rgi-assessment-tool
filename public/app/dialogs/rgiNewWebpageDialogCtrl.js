@@ -1,4 +1,3 @@
-
 function isURLReal(fullyQualifiedURL) {
     'use strict';
     var URL = encodeURIComponent(fullyQualifiedURL),
@@ -162,8 +161,6 @@ angular
                 //
                 ////TODO check for proper url
                 //} else if ($scope.new_document.source !== undefined) {
-
-
             }
         };
 

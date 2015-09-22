@@ -15,7 +15,6 @@ angular
                 USER_NOT_FOUND: 'The user is not found',
                 SET_PASSWORD_ERROR: 'Unable to set password'
             };
-
             return errorMessages[errorCode] === undefined ? 'An unknown error occurred' : errorMessages[errorCode];
         };
 

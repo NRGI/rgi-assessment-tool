@@ -103,7 +103,6 @@ angular
                     });
                 }
             }
-
         };
 
         $scope.uploadFileByUrl = function() {
@@ -190,9 +189,23 @@ angular
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
-
                 }
             }
+            //
+            ////TODO validate that email domain exists
+            //if (email_domain === 'http://undefined') {
+            //    rgiNotifier.error('You must enter a valid email address!')
+            //} else {
+            //    //isURLReal(email_domain)
+            //    //    .fail(function (res) {
+            //    //        console.log(res);
+            //    //        rgiNotifier.error('Email Domain does not appear to be valid');
+            //    //    })
+            //    //    .done(function (res) {
+            //    //        console.log(res);
+            //    //    });
+            //
+            //}
         };
 
         $scope.closeDialog = function () {
