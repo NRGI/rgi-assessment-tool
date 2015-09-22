@@ -1,10 +1,9 @@
 'use strict';
 /* global require */
 
-var
-    contact = require('../utilities/contact'),
-    ResetPasswordToken = require('mongoose').model('ResetPasswordToken'),
-    User = require('mongoose').model('User');
+var contact             = require('../utilities/contact'),
+    ResetPasswordToken  = require('mongoose').model('ResetPasswordToken'),
+    User                = require('mongoose').model('User');
 
 exports.create = function (req, res) {
     User.findOne({email: req.body.email}, function(findUserError, user) {

@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
 var crypto                 = require('crypto'),
     fs                     = require('fs'),
@@ -150,7 +150,7 @@ exports.updateDocument = function (req, res) {
             if (err) {
                 res.status(400);
                 console.log(err);
-                res.send({reason: err.toString()})
+                res.send({reason: err.toString()});
             }
         });
     });

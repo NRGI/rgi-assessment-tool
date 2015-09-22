@@ -1,13 +1,12 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
-var User = require('mongoose').model('User'),
-    ResetPasswordToken = require('mongoose').model('ResetPasswordToken'),
-    encrypt = require('../utilities/encryption'),
-    contact = require('../utilities/contact');
+var User                = require('mongoose').model('User'),
+    ResetPasswordToken  = require('mongoose').model('ResetPasswordToken'),
+    encrypt             = require('../utilities/encryption'),
+    contact             = require('../utilities/contact');
     // client = require('campaign')();
     // client.send(template, options, done);
-
 
 exports.getUsers = function (req, res) {
     var query;

@@ -10,7 +10,6 @@ angular
     .module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
-        $route,
         $location,
         ngDialog,
         rgiNotifier,
@@ -89,7 +88,7 @@ angular
                     .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                     .then(function () {
                         rgiNotifier.notify('Assessment created and assigned!');
-                        $route.reload();
+                        $location.path('/');
                         $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
@@ -100,7 +99,7 @@ angular
                     .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                     .then(function () {
                         rgiNotifier.notify('Assessment created and assigned!');
-                        $route.reload();
+                        $location.path('/');
                         $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);

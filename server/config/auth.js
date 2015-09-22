@@ -1,6 +1,6 @@
 'use strict';
-var passport = require('passport'),
-    AuthLog = require('mongoose').model('AuthLog');
+var passport    = require('passport'),
+    AuthLog     = require('mongoose').model('AuthLog');
 
 exports.authenticate = function (req, res, next) {
     req.body.username = req.body.username.toLowerCase();
