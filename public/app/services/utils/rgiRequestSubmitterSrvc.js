@@ -9,6 +9,13 @@ angular.module('app').factory('rgiRequestSubmitterSrvc', function ($http, $q) {
         }, function () {
             dfd.reject();
         });
+//=======
+//angular.module('app').factory('rgiRequestSubmitterSrvc', function ($http, $q) {
+//    'use strict';
+//    return {
+//        submit: function (uri, data) {
+//            var dfd = $q.defer();
+//>>>>>>> address jshint for public folder
 
         return dfd.promise;
     };

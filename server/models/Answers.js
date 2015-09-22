@@ -142,7 +142,6 @@ var answerSchema = mongoose.Schema({
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: {
         citation: [citationSchema],
-        web: [webSchema],
         human: [humanSchema]
     },
     modified: [modificationSchema]

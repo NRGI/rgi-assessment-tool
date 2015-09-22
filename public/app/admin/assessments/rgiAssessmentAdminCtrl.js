@@ -1,8 +1,14 @@
-'use strict';
-//var angular;
-/*jslint nomen: true unparam: true regexp: true*/
-
-angular.module('app').controller('rgiAssessmentAdminCtrl', function ($location, $routeParams, $scope, rgiNotifier, ngDialog, rgiAssessmentSrvc, rgiUserListSrvc, rgiAssessmentMethodSrvc) {
+angular.module('app').controller('rgiAssessmentAdminCtrl', function (
+    $location,
+    $routeParams,
+    $scope,
+    rgiNotifier,
+    ngDialog,
+    rgiAssessmentSrvc,
+    rgiUserListSrvc,
+    rgiAssessmentMethodSrvc
+) {
+    'use strict';
     // filtering options
     $scope.sort_options = [
         {value: 'country', text: 'Sort by Country'},
