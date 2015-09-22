@@ -1,4 +1,5 @@
 'use strict';
+/* global require */
 
 var Interviewee = require('mongoose').model('Interviewee');
 

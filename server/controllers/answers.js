@@ -1,9 +1,9 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
-var Answer = require('mongoose').model('Answer'),
-    Question = require('mongoose').model('Question'),
-    Assessment = require('mongoose').model('Assessment');
+var Answer      = require('mongoose').model('Answer'),
+    Question    = require('mongoose').model('Question'),
+    Assessment  = require('mongoose').model('Assessment');
 
 exports.getAnswers = function (req, res, next) {
 
@@ -68,7 +68,17 @@ exports.getAnswersByID = function (req, res, next) {
 exports.createAnswers = function (req, res, next) {
     var new_answers, i, j;
     new_answers = req.body;
-
+    function createNewAnswer(new_answer) {
+        Answer.create(new_answer, function (err, answer) {
+            if (err) {
+                if (err.toString().indexOf('E11000') > -1) {
+                    err = new Error('Duplicate answers');
+                }
+                res.status(400);
+                return res.send({reason: err.toString()});
+            }
+        });
+    }
 
     Question.find({}).exec(function (err, questions) {
         for (i = questions.length - 1; i >= 0; i -= 1) {
@@ -77,15 +87,7 @@ exports.createAnswers = function (req, res, next) {
 
                 if (questions[i]._id == new_answers[j].question_ID) {
                     new_answers[j].question_text = questions[i].question_text;
-                    Answer.create(new_answers[j], function (err, answer) {
-                        if (err) {
-                            if (err.toString().indexOf('E11000') > -1) {
-                                err = new Error('Duplicate answers');
-                            }
-                            res.status(400);
-                            return res.send({reason: err.toString()});
-                        }
-                    });
+                    createNewAnswer(new_answers[j]);
                 }
             }
         }

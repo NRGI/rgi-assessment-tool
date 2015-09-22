@@ -1,5 +1,4 @@
 'use strict';
-/*jslint unparam: true*/
 
 var mongoose = require('mongoose');
 var countrySchema = mongoose.Schema({

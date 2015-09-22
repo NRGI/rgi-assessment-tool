@@ -1,17 +1,17 @@
 'use strict';
 
-var auth = require('./auth'),
-    multipartMiddleware = require('connect-multiparty')(),
-    answers = require('../controllers/answers'),
-    assessments = require('../controllers/assessments'),
-    authLogs = require('../controllers/auth-logs'),
-    interviewees = require('../controllers/interviewees'),
-    documents = require('../controllers/documents'),
-    countries = require('../controllers/countries'),
-    contact = require('../utilities/contact'),
-    questions = require('../controllers/questions'),
-    users = require('../controllers/users'),
-    resetPasswordTokens = require('../controllers/reset-password-tokens');
+var auth                    = require('./auth'),
+    multipartMiddleware     = require('connect-multiparty')(),
+    contact                 = require('../utilities/contact'),
+    answers                 = require('../controllers/answers'),
+    assessments             = require('../controllers/assessments'),
+    authLogs                = require('../controllers/auth-logs'),
+    interviewees            = require('../controllers/interviewees'),
+    documents               = require('../controllers/documents'),
+    countries               = require('../controllers/countries'),
+    questions               = require('../controllers/questions'),
+    users                   = require('../controllers/users'),
+    resetPasswordTokens     = require('../controllers/reset-password-tokens');
 
 module.exports = function (app) {
 

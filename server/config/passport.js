@@ -1,6 +1,4 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
-
 var passport       = require('passport'),
     mongoose       = require('mongoose'),
     LocalStrategy  = require('passport-local').Strategy,

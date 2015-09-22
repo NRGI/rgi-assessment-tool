@@ -1,5 +1,6 @@
 'use strict';
-/*jslint nomen: true newcap: true */
+/*jshint -W079 */
+
 var describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiResetPasswordCtrl', function () {
@@ -73,7 +74,7 @@ describe('rgiResetPasswordCtrl', function () {
                             then: function(callbackPositive, callbackNegative) {
                                 callbackNegative();
                             }
-                        }
+                        };
                     });
                 });
             });
@@ -119,7 +120,7 @@ describe('rgiResetPasswordCtrl', function () {
                             then: function(callback) {
                                 callback(response);
                             }
-                        }
+                        };
                     });
                 });
             });
