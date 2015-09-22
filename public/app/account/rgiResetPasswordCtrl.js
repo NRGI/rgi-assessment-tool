@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiResetPasswordCtrl', function (
@@ -7,7 +9,6 @@ angular
         rgiNotifier,
         rgiResetPasswordSrvc
     ) {
-        'use strict';
         var getErrorMessage = function(errorCode) {
             var errorMessages = {
                 TOKEN_NOT_FOUND: 'The token is not found',
