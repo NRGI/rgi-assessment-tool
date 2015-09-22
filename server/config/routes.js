@@ -10,8 +10,8 @@ var auth = require('./auth'),
     countries = require('../controllers/countries'),
     contact = require('../utilities/contact'),
     questions = require('../controllers/questions'),
-    resetPasswordTokens = require('../controllers/reset-password-tokens'),
-    users = require('../controllers/users');
+    users = require('../controllers/users'),
+    resetPasswordTokens = require('../controllers/reset-password-tokens'),;
 
 module.exports = function (app) {
 
