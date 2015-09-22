@@ -36,10 +36,12 @@ var citationSchema = new mongoose.Schema({
     comment: String
 });
 
-var webSchema = new mongoose.Schema({
-    title: String,
-    URL: String, // generated from upload path in S3
-    access_date: {
+var humanSchema = new mongoose.Schema({
+    first_name: String,
+    last_name: String,
+    phone: String,
+    email: String,
+    contact_date: {
         type: Date,
         default: Date.now},
     comment: {
@@ -54,11 +56,8 @@ var webSchema = new mongoose.Schema({
     }
 });
 
-var humanSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String, // generated from upload path in S3
-    phone: String,
-    email: String,
+var interviewSchema = new mongoose.Schema({
+    interviewee_ID: ObjectId,
     contact_date: {
         type: Date,
         default: Date.now},
