@@ -28,7 +28,7 @@ angular
                 for (i = data.length - 1; i >= 0; i -= 1) {
                     assessment = data[i];
                     assessment.edited_by = rgiUserListSrvc.get({_id: data[i].modified[data[i].modified.length - 1].modified_by});
-                    if (assessment.reviewer_ID != undefined) {
+                    if (assessment.reviewer_ID) {
                         assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                         assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                     }
@@ -43,7 +43,7 @@ angular
                 for (i = data.length - 1; i >= 0; i -= 1) {
                     assessment = data[i];
                     assessment.edited_by = rgiUserListSrvc.get({_id: data[i].modified[data[i].modified.length - 1].modified_by});
-                    if (assessment.reviewer_ID != undefined) {
+                    if (assessment.reviewer_ID) {
                         assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                         assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                     }
