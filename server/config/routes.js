@@ -11,7 +11,7 @@ var auth = require('./auth'),
     contact = require('../utilities/contact'),
     questions = require('../controllers/questions'),
     users = require('../controllers/users'),
-    resetPasswordTokens = require('../controllers/reset-password-tokens'),;
+    resetPasswordTokens = require('../controllers/reset-password-tokens');
 
 module.exports = function (app) {
 
