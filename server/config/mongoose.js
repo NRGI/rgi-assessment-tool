@@ -1,19 +1,13 @@
 'use strict';
 var mongoose = require('mongoose'),
+    userModel = require('../models/User'),
     countryModel = require('../models/Countries'),
-<<<<<<< HEAD
-    answerModel = require('../models/Answers'),
-    documentModel = require('../models/Documents'),
-    intervieweeModel = require('../models/Interviewees'),
-    assessmentModel = require('../models/Assessment');
-//mendelyTokenModel = require('../models/MendeleyToken'),
-=======
-    userModel = require('../models/User');
+    questionModel = require('../models/Question'),
+    intervieweeModel = require('../models/Interviewees');
 
-['Answers', 'Assessment', 'Documents', 'Question', 'ResetPasswordToken'].forEach(function(modelName) {
+['Answers', 'Assessment', 'Documents', 'ResetPasswordToken'].forEach(function(modelName) {
     require('../models/' + modelName);
 });
->>>>>>> features
 
 module.exports = function (config, user, pass, env) {
     // connect to mongo

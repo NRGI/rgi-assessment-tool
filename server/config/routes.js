@@ -1,22 +1,16 @@
 'use strict';
 
-var
+var auth = require('./auth'),
     answers = require('../controllers/answers'),
     assessments = require('../controllers/assessments'),
-<<<<<<< HEAD
+    questions = require('../controllers/questions'),
+    users = require('../controllers/users'),
     interviewees = require('../controllers/interviewees'),
     documents = require('../controllers/documents'),
     countries = require('../controllers/countries'),
-=======
-    auth = require('./auth'),
->>>>>>> features
-    contact = require('../utilities/contact'),
-    countries = require('../controllers/countries'),
-    documents = require('../controllers/documents'),
-    multipartMiddleware = require('connect-multiparty')(),
-    questions = require('../controllers/questions'),
     resetPasswordTokens = require('../controllers/reset-password-tokens'),
-    users = require('../controllers/users');
+    contact = require('../utilities/contact'),
+    multipartMiddleware = require('connect-multiparty')();
 
 module.exports = function (app) {
 
@@ -36,6 +30,10 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
+
+    // PASSWORD HANDLING
+    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
     /////////////////////////////
     ///// QUESTIONS CRUD ////////
@@ -99,7 +97,6 @@ module.exports = function (app) {
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
 
-<<<<<<< HEAD
     /////////////////////////
     ///// INTERVIEWEE CRUD ////////
     /////////////////////////
@@ -115,10 +112,6 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
-=======
-    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
-    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
->>>>>>> features
 
     ////////////////////
     ///// OTHER ////////
