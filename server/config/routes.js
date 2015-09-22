@@ -1,18 +1,17 @@
 'use strict';
 
-var
+var auth = require('./auth'),
     answers = require('../controllers/answers'),
     assessments = require('../controllers/assessments'),
-    auth = require('./auth'),
     authLogs = require('../controllers/auth-logs'),
-    interviewees = require('../controllers/interviewees'),
     contact = require('../utilities/contact'),
     countries = require('../controllers/countries'),
     documents = require('../controllers/documents'),
-    multipartMiddleware = require('connect-multiparty')(),
+    interviewees = require('../controllers/interviewees'),
     questions = require('../controllers/questions'),
+    users = require('../controllers/users'),
     resetPasswordTokens = require('../controllers/reset-password-tokens'),
-    users = require('../controllers/users');
+    multipartMiddleware = require('connect-multiparty')();
 
 module.exports = function (app) {
 
@@ -32,6 +31,10 @@ module.exports = function (app) {
 
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
+
+    // PASSWORD HANDLING
+    app.post('/api/reset-password-token/add', resetPasswordTokens.create);
+    app.post('/api/reset-password-token/reset', resetPasswordTokens.reset);
 
     /////////////////////////////
     ///// QUESTIONS CRUD ////////
