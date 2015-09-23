@@ -1,6 +1,4 @@
 'use strict';
-/*jslint nomen: true newcap: true */
-var describe, beforeEach, it, inject, expect;
 
 describe('rgiRequestSubmitterSrvc', function () {
     var rgiRequestSubmitterSrvc, $http, $q;
@@ -28,7 +26,7 @@ describe('rgiRequestSubmitterSrvc', function () {
                     then: function(callback) {
                         callback(response);
                     }
-                }
+                };
             });
 
             deferredArgs = response;
@@ -47,7 +45,7 @@ describe('rgiRequestSubmitterSrvc', function () {
                     then: function(callbackPositive, callbackNegative) {
                         callbackNegative();
                     }
-                }
+                };
             });
 
             deferredArgs = undefined;
@@ -64,9 +62,12 @@ describe('rgiRequestSubmitterSrvc', function () {
             $httpPostStub = sinon.stub($http, 'post', $httpPostSpy);
             rgiRequestSubmitterSrvc.submit(uri, data).should.be.equal(promise);
 
-            deferredArgs
-                ? deferredSpy.withArgs(deferredArgs).called.should.be.equal(true)
-                : deferredSpy.called.should.be.equal(true);
+            if(deferredArgs) {
+                deferredSpy.withArgs(deferredArgs).called.should.be.equal(true);
+            } else {
+                deferredSpy.called.should.be.equal(true);
+            }
+
             $httpPostSpy.withArgs(uri, data).called.should.be.equal(true);
 
             $httpPostStub.restore();
