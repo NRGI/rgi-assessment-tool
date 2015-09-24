@@ -2,16 +2,18 @@
 script(type="text/javascript", src="/vendor/jquery/dist/jquery.js")
 script(type="text/javascript", src="/vendor/bootstrap/dist/js/bootstrap.js")
 script(type="text/javascript", src="/vendor/toastr/toastr.js")
+
 script(type="text/javascript", src="/vendor/angular/angular.js")
-script(type="text/javascript", src="/vendor/angular-resource/angular-resource.js")
-script(type="text/javascript", src="/vendor/angular-route/angular-route.js")
-script(type="text/javascript", src="/vendor/ngDialog/js/ngDialog.js")
-script(type="text/javascript", src="/vendor/ng-form-group/index.js")
-script(type="text/javascript", src="/vendor/ng-csv/build/ng-csv.js")
-script(type="text/javascript", src="/vendor/angular-sanitize/angular-sanitize.js")
 script(type="text/javascript", src="/vendor/angular-file-upload/angular-file-upload.js")
 script(type="text/javascript", src="/vendor/angular-filter/dist/angular-filter.js")
+script(type="text/javascript", src="/vendor/angular-resource/angular-resource.js")
+script(type="text/javascript", src="/vendor/angular-route/angular-route.js")
+script(type="text/javascript", src="/vendor/angular-sanitize/angular-sanitize.js")
 script(type="text/javascript", src="/vendor/angularjs-datepicker/src/js/angular-datepicker.js")
+script(type="text/javascript", src="/vendor/ngInfiniteScroll/build/ng-infinite-scroll.js")
+script(type="text/javascript", src="/vendor/ng-csv/build/ng-csv.js")
+script(type="text/javascript", src="/vendor/ng-form-group/index.js")
+script(type="text/javascript", src="/vendor/ngDialog/js/ngDialog.js")
 
 //- MAIN APP
 script(type="text/javascript", src="/app/app.js")
@@ -24,6 +26,7 @@ script(type="text/javascript", src="/app/main/rgiContactTechCtrl.js")
 script(type="text/javascript", src="/app/services/rgiAnswerSrvc.js")
 script(type="text/javascript", src="/app/services/rgiAssessmentSrvc.js")
 script(type="text/javascript", src="/app/services/rgiAuthSrvc.js")
+script(type="text/javascript", src="/app/services/rgiAuthLogsSrvc.js")
 script(type="text/javascript", src="/app/services/rgiContactTechSrvc.js")
 script(type="text/javascript", src="/app/services/rgiCountrySrvc.js")
 script(type="text/javascript", src="/app/services/rgiDocumentSrvc.js")
@@ -42,6 +45,12 @@ script(type="text/javascript", src="/app/services/rgiUploadSrvc.js")
 script(type="text/javascript", src="/app/services/rgiUserSrvc.js")
 script(type="text/javascript", src="/app/services/rgiUserListSrvc.js")
 script(type="text/javascript", src="/app/services/utils/rgiRequestSubmitterSrvc.js")
+
+//- DIRECTIVES
+script(type="text/javascript", src="/app/directives/rgi-auth-logs.js")
+
+//- DIRECTIVE CTRLS
+script(type="text/javascript", src="/app/directives/rgiAuthLogsCtrl.js")
 
 //- ACCT CTRLS
 script(type="text/javascript", src="/app/account/rgiNavBarLoginCtrl.js")

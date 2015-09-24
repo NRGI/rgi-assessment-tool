@@ -4,7 +4,11 @@
   "curly": true,
   "globals": {
     "afterEach": false,
-    "should": false,
+    "beforeEach": false,
+    "describe": false,
+    "expect": false,
+    "inject": false,
+    "it": false,
     "sinon": false
   }
 }
