@@ -16,6 +16,13 @@ module.exports = function (grunt) {
                         dest: "public/app",
                         expand: true,
                         ext: ".html"
+                    },
+                    {
+                        cwd: "server",
+                        src: "**/*.jade",
+                        dest: "server",
+                        expand: true,
+                        ext: ".html"
                     }
                 ]
             }

@@ -1,9 +1,18 @@
 'use strict';
-//var angular;
 /*jslint unparam: true */
 
-// angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'alasql', '']);
-angular.module('app', ['ngResource', 'ngRoute', 'ngDialog', 'ng-form-group', 'ngSanitize', 'ngCsv', 'angularFileUpload', 'angular.filter', '720kb.datepicker']);
+angular.module('app', [
+    'angular.filter',
+    'angularFileUpload',
+    '720kb.datepicker',
+    'infinite-scroll',
+    'ng-form-group',
+    'ngCsv',
+    'ngDialog',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize'
+]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   // role checks
