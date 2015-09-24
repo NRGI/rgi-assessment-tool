@@ -1,5 +1,5 @@
 'use strict';
-/*jshint -W030 */
+/*jshint -W079 */
 
 var describe, beforeEach, it, inject, expect;
 

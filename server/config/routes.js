@@ -32,7 +32,7 @@ module.exports = function (app) {
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
 
-    // AUTH LOGS
+    // USER AUTH LOGS
     app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
     app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
 

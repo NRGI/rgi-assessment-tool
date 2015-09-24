@@ -1,6 +1,7 @@
 'use strict';
+/*jshint -W079 */
 
-var describe, beforeEach, it, inject, expect;
+var describe, beforeEach, it, inject, expect, should;
 
 describe('rgiAuthSrvc', function () {
     var rgiAuthSrvc;

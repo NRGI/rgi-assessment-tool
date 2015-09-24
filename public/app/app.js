@@ -1,6 +1,4 @@
 'use strict';
-/*jslint unparam: true */
-
 angular.module('app', [
     '720kb.datepicker',
     'angular.filter',
