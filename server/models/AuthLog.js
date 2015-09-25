@@ -16,6 +16,11 @@ AuthLogSchema.statics.list = function(userId, itemsPerPage, page, callback) {
         .exec(callback);
 };
 
+AuthLogSchema.statics.getMostRecent = function(userId, action, callback) {
+    this.find({user: userId, action: action}).sort({'date-time': -1}).limit(1)
+        .exec(callback);
+};
+
 AuthLogSchema.statics.log = function(userId, action) {
     this.create({user: userId, 'date-time': new Date(), action: action});
 };

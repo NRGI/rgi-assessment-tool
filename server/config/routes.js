@@ -34,6 +34,7 @@ module.exports = function (app) {
 
     // USER AUTH LOGS
     app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
+    app.get('/api/auth-logs/recent/:user/:action', auth.requiresApiLogin, authLogs.getMostRecent);
     app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
 
     // PASSWORD TOKEN HANDLING
