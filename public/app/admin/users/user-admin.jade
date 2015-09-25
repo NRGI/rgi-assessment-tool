@@ -19,6 +19,7 @@
                             th.col-md-1 Name
                             th.col-md-1 Username
                             th.col-md-1 Role
+                            th.col-md-1 Last Login
                             th
                                 table
                                     th.col-md-3 Assessments
@@ -34,6 +35,7 @@
                                 a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
                             td.col-md-1 {{user.username}}
                             td.col-md-1 {{user.role | ucfirst}}
+                            td.col-md-1 {{user.last_sign_in["date-time"] | date:'MM/dd/yyyy'}}
                             td
                                 table.table(style="margin-top: -9px; margin-bottom: -9px")
                                     tr(ng-repeat="assessment in user.assessments")
@@ -55,4 +57,3 @@
                                             em(ng-if="!assessment.details.approval") none
                             td.col-md-1
                                 a.btn.center-block.btn-default(href="/admin/user-admin-edit/{{user._id}}") Edit
-

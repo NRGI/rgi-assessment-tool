@@ -3,7 +3,8 @@ angular
     .controller('rgiUserAdminCtrl', function (
         $scope,
         rgiUserSrvc,
-        rgiAssessmentSrvc
+        rgiAssessmentSrvc,
+        rgiAuthLogsSrvc
     ) {
         'use strict';
         // filtering options
@@ -17,14 +18,44 @@ angular
         ];
         $scope.sort_order = $scope.sort_options[1].value;
 
-        rgiUserSrvc.query({}, function (data) {
+        var ITEMS_PER_PAGE = 20, currentPage = 0;
+
+
+
+        rgiUserSrvc.query({}, function (users) {
             $scope.users = [];
-            var i, j;
-            for (i = data.length - 1; i >= 0; i -= 1) {
-                for (j = data[i].assessments.length - 1; j >= 0; j -= 1) {
-                    data[i].assessments[j].details = rgiAssessmentSrvc.get({assessment_ID: data[i].assessments[j].assessment_ID});
-                }
-                $scope.users.push(data[i]);
-            }
+            users.forEach(function (user) {
+                rgiAuthLogsSrvc.getMostRecent(user._id, 'sign-in')
+                    .then(function (log) {
+                        user.last_sign_in = log.data.logs[0];
+                    });
+
+                //get assessment info
+                user.assessments.forEach(function(el, i) {
+                    user.assessments[i].details = rgiAssessmentSrvc.get({assessment_ID: el.assessment_ID});
+                });
+                $scope.users.push(user);
+            });
         });
     });
+
+
+
+
+//$scope.logs = [];
+//
+//$scope.loadLogs = function() {
+//    if(currentPage < totalPages) {
+//        rgiAuthLogsSrvc.list(userId, ITEMS_PER_PAGE, currentPage++).then(function (logsResponse) {
+//            if(logsResponse.data.error) {
+//                rgiNotifier.error(logsResponse.data.error.message);
+//            } else {
+//                logsResponse.data.logs.forEach(function(log) {
+//                    $scope.logs.push(log);
+//                });
+//            }
+//        }, function() {
+//            rgiNotifier.error('Auth logs loading failure');
+//        });
+//    }
+//};

@@ -14,3 +14,9 @@ exports.list = function (req, res) {
         res.send({error: error, logs: logs});
     });
 };
+
+exports.getMostRecent = function (req, res) {
+    AuthLog.getMostRecent(req.params.user, req.params.action, function(error, logs) {
+        res.send({error: error, logs: logs});
+    });
+};
