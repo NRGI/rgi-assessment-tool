@@ -18,10 +18,6 @@ angular
         ];
         $scope.sort_order = $scope.sort_options[1].value;
 
-        var ITEMS_PER_PAGE = 20, currentPage = 0;
-
-
-
         rgiUserSrvc.query({}, function (users) {
             $scope.users = [];
             users.forEach(function (user) {
@@ -38,24 +34,3 @@ angular
             });
         });
     });
-
-
-
-
-//$scope.logs = [];
-//
-//$scope.loadLogs = function() {
-//    if(currentPage < totalPages) {
-//        rgiAuthLogsSrvc.list(userId, ITEMS_PER_PAGE, currentPage++).then(function (logsResponse) {
-//            if(logsResponse.data.error) {
-//                rgiNotifier.error(logsResponse.data.error.message);
-//            } else {
-//                logsResponse.data.logs.forEach(function(log) {
-//                    $scope.logs.push(log);
-//                });
-//            }
-//        }, function() {
-//            rgiNotifier.error('Auth logs loading failure');
-//        });
-//    }
-//};

@@ -23,9 +23,8 @@
                                     .row(ng-repeat="interviewee in user.interviewees").left-padding-lg {{interviewee}}
                                         //a(href="/admin/assessments-admin/interviewee/{{interviewee}}") {{interviewee}}
                                 td
-                                    .row(ng-repeat="document in user.documents").left-padding-lg {{document}}
-                                        //a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                                        //text  - {{user.role}}
+                                    .row(ng-repeat="document in user.document_details").left-padding-lg
+                                        a(href="/admin/documents-admin/{{document._id}}") {{document.title}}
             h3 Information
             div.right-padding-lg
                 .row.left-padding-lg.right-padding-lg
