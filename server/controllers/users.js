@@ -76,21 +76,23 @@ exports.updateUser = function (req, res) {
         res.status(404);
         return res.end();
     }
-    if (userUpdates.password && userUpdates.password.length > 0) {
-        userUpdates.salt = encrypt.createSalt();
-        userUpdates.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
-    }
+
 
     User.findOne({_id: req.body._id}).exec(function (err, user) {
         if (err) {
             res.status(400);
             return res.send({ reason: err.toString() });
         }
+        if (userUpdates.password && userUpdates.password.length > 0) {
+            user.setPassword(userUpdates.password, function (err) {
+                if (err) {
+                    return res.send({ reason: err.toString() });
+                }
+            });
+        }
         user.firstName = userUpdates.firstName;
         user.lastName = userUpdates.lastName;
         user.email = userUpdates.email;
-        user.salt = userUpdates.salt;
-        user.hashed_pwd = userUpdates.hashed_pwd;
         user.language = userUpdates.language;
         user.assessments = userUpdates.assessments;
         user.documents = userUpdates.documents;
