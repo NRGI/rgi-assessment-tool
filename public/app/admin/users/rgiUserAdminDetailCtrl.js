@@ -7,10 +7,10 @@ angular
         ngDialog,
         rgiNotifier,
         rgiUserSrvc,
+        rgiDocumentSrvc,
         rgiUserMethodSrvc
     ) {
         'use strict';
-        $scope.user = rgiUserSrvc.get({_id: $routeParams.id});
         $scope.role_options = [
             // {value: 'admin', text: 'Administrator'},
             {value: 'supervisor', text: 'Supervisor'},
@@ -18,6 +18,16 @@ angular
             {value: 'reviewer', text: 'Reviewer'}
         ];
 
+        rgiUserSrvc.get({_id: $routeParams.id}, function (user) {
+            $scope.user = user;
+            $scope.user.document_details = [];
+            console.log(user);
+            user.documents.forEach(function (doc_id) {
+                rgiDocumentSrvc.get({_id: doc_id}, function (doc) {
+                    $scope.user.document_details.push(doc);
+                });
+            });
+        });
 
         $scope.editUserDialog = function () {
             $scope.value = true;
