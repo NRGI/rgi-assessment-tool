@@ -1,77 +1,72 @@
 .container.top-padding-med
-	.well.left-padding-lg
-		div.left-padding-lg.right-padding-lg.top-padding-med
-			form.form-horizontal(name='profileForm')
-				fieldset.left-padding-lg.right-padding-lg
-					legend.h3 {{user.firstName}} {{user.lastName}}'s Profile
-					div.top-padding-med.right-padding-lg
-						.form-group
-							label.col-md-2.control-label(form="") First Name *
-							.col-md-10
-								input.form-control(name="firstName"
-								type="text"
-								ng-model="user.firstName"
-								required)
-						.form-group
-							label.col-md-2.control-label(form="lastName") Last Name *
-							.col-md-10
-								input.form-control(name="lname"
-								type="text"
-								ng-model="user.lastName"
-								required)
-						.form-group
-							label.col-md-2.control-label(form="username") Username
-							.col-md-10
-								input.form-control(name="username"
-								type="text"
-								ng-model="user.username"
-								readonly)
-						.form-group
-							label.col-md-2.control-label(form="email") Email *
-							.col-md-10
-								input.form-control(name="email"
-								type="email"
-								ng-model="user.email"
-								required)
-						.form-group
-							label.col-md-2.control-label(form="role") Role *
-							.col-md-10
-								select.form-control(name="role"
-								ng-model="user.role"
-								ng-options="item.value as item.text for item in role_options"
-								required)
-						.form-group
-							label.col-md-2.control-label(form="email") Address
-							.col-md-10
-								input.form-control(name="address"
-								type="text"
-								ng-model="user.address")
-						//.form-group
-						//	label.col-md-2.control-label(form="language") Preferred Language
-						//	.col-md-10
-						//		input.form-control(name="language"
-						//		type="text"
-						//		ng-model="user.language")
-						.form-group
-							label.col-md-2.control-label(form="password") Password
-							.col-md-10
-								input.form-control(name="password"
-								placeholder="New password"
-								type="password"
-								ng-model="password")
-						.form-group
-							label.col-md-2.control-label(form="password") Repeat Password
-							.col-md-10
-								input.form-control(name="password"
-								placeholder="Repeat password"
-								type="password"
-								ng-model="password_rep")
-						.form-group
-							.col-md-10.col-md-offset-2
-								.pull-right
-									button.btn.btn-primary(ng-click="userUpdate()", ng-disabled="") Save user
-									| &nbsp;
-									button.btn.btn-danger(ng-click="deleteConfirmDialog()", ng-disabled="") Delete user
-									| &nbsp;
-									a.btn.btn-default(href="/admin/user-admin") Cancel
-			rgi-auth-logs(user="user")
+    .well.left-padding-lg
+        div.left-padding-lg.right-padding-lg.top-padding-med
+            legend.h3 {{user.firstName}} {{user.lastName}}'s Profile
+            div.left-padding-lg.right-padding-lg
+                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    button.btn.btn-warning(ng-click="editUserDialog()") Edit user
+                    | &nbsp;
+                    a(href="mailto:{{user.email}}").btn.btn-default Email
+                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    table.table.table-hover.table-striped.table-condensed
+                        thead
+                            tr
+                                th Linked assessments
+                                th Linked interviewees
+                                th Linked documents
+                        tbody
+                            tr
+                                td
+                                    .row(ng-repeat="assessment in user.assessments").left-padding-lg
+                                        a(href="/admin/assessment-admin/{{assessment.assessment_ID}}") {{assessment.assessment_ID}}
+                                td
+                                    .row(ng-repeat="interviewee in user.interviewees").left-padding-lg {{interviewee}}
+                                        //a(href="/admin/assessments-admin/interviewee/{{interviewee}}") {{interviewee}}
+                                td
+                                    .row(ng-repeat="document in user.documents").left-padding-lg {{document}}
+                                        //a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                                        //text  - {{user.role}}
+            h3 Information
+            div.right-padding-lg
+                .row.left-padding-lg.right-padding-lg
+                    table.table.table-condensed
+                        tbody
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label First name:
+                                    .row
+                                        text {{user.firstName | ucfirst}}
+                                td.col-med-3
+                                    .row
+                                        label Last name:
+                                    .row
+                                        text {{user.lastName | ucfirst}}
+                                td.col-med-3
+                                    .row
+                                        label Username:
+                                    .row
+                                        text {{user.username}}
+                            tr
+                                td.col-med-3
+                                    .row
+                                        label Role:
+                                    .row
+                                        text {{user.role | ucfirst}}
+                                td.col-med-3
+                                    .row
+                                        label Email:
+                                    .row(ng-if="user.email")
+                                        text {{user.email}}
+                                    .row(ng-if="!user.email")
+                                        text N/A
+                                td.col-med-3
+                                    .row
+                                        label Address:
+                                    .row(ng-if="user.address")
+                                        text {{user.address}}
+                                    .row(ng-if="!user.address")
+                                        text N/A
+            h3 Login info
+            div
+                rgi-auth-logs(user="user")
