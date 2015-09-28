@@ -3,19 +3,22 @@ div.left-padding-lg.right-padding-lg
     .row(id="new_human_form")
         .form-horizontal
             fieldset
-                .row {{interviewees}}
-                    angucomplete(
-                    id="interviewee_search"
-                    placeholder="Search existing interviewees..."
-                    pause="300"
-                    selectedobject="selected_interviewee"
-                    localdata="interviewees"
-                    searchfields="firstName,lastName"
-                    titlefield="firstName,lastName"
-                    descriptionfield="assessments"
-                    minlength="1"
-                    inputclass="form-control form-control-small"
-                    matchclass="highlight")
+                .row.bottom-padding-lg
+                    div.col-md-9
+                        angucomplete(
+                        id="interviewee_search"
+                        placeholder="Search existing interviewees..."
+                        pause="300"
+                        selectedobject="selected_interviewee"
+                        localdata="interviewees"
+                        searchfields="firstName,lastName"
+                        titlefield="firstName,lastName"
+                        descriptionfield="assessments"
+                        minlength="1"
+                        inputclass="form-control form-control-small"
+                        matchclass="highlight")
+                    div.col-md-3
+                        button.btn.btn-block.btn-primary(ng-click="") New interviewee
 
                 // EXISTING INTERVIEWEE
                 //TODO ALLOW USER TO SELECT FROM EXISTING REFERENCE SET
@@ -58,20 +61,21 @@ div.left-padding-lg.right-padding-lg
                 //         placeholder="Phone number..."
                 //         ng-model="answer_update.human_ref_phone"
                 //         autocomplete="off")
-                //     div.row.form-group
-                //         input.form-control(
-                //         name="comment"
-                //         type="text"
-                //         placeholder="Comments..."
-                //         ng-model="answer_update.human_ref_comment"
-                //         autocomplete="off")
-                //     div.row.form-group
-                //         datepicker(
-                //         date-format="{{date_format}}")
-                //             input.form-control(
-                //             ng-model="answer_update.human_ref_contact_date"
-                //             type="text"
-                //             placeholder="Date interviewed...")
+                div.row.form-group.col-lg-6
+                    datepicker(
+                    date-format="{{date_format}}")
+                        input.form-control(
+                        ng-model="answer_update.human_ref_contact_date"
+                        type="text"
+                        placeholder="Date interviewed...")
+                div.row.form-group.col-lg-12
+                    textarea.form-control(
+                    name="comment"
+                    type="text"
+                    placeholder="Comments..."
+                    ng-model="answer_update.human_ref_comment"
+                    autocomplete="off")
+
                 //- BUTTON CONTROL
                 div.col-lg-6
                     button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
