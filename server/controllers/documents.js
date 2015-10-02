@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true*/
+/* global require */
 
 var crypto                 = require('crypto'),
     fs                     = require('fs'),
@@ -23,79 +23,69 @@ var crypto                 = require('crypto'),
     upload_bucket          = process.env.DOC_BUCKET;
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
-exports.fileCheck = function (req, res, next) {
-    // get temp path of file upload
-    var file_path = req.files.file.path,
-        // read_stream = fs.createReadStream(file_path),
+exports.fileCheck = function (req, res) {
+    var file = req.files.file,
         hash = crypto.createHash('sha1'),
         timestamp = new Date().toISOString(),
-        file_extension = file_path.split('.')[file_path.split('.').length - 1];
+        file_extension = file.path.split('.')[file.path.split('.').length - 1];
 
-    if (file_extension === 'pdf') {
-        fs.readFile(file_path, {encoding: 'utf8'}, function (err, data) {
-            // Use the 'data' string here.
-            hash.update(data);
-            // get hashed value of file as fingerprint
-            var file_hash = hash.digest('hex');
-            // search documents for hashed file
-            Document.findOne({file_hash: file_hash}, function (err, document) {
-                // if file exists tag for reference
-                if (document !== null) {
-                    res.send(document);
+    fs.readFile(file.path, {encoding: 'utf8'}, function (err, data) {
+        hash.update(data);
+        // get hashed value of file as fingerprint
+        var file_hash = hash.digest('hex');
+        // search documents for hashed file
+        Document.findOne({file_hash: file_hash}, function (err, document) {
+            // if file exists tag for reference
+            if (document !== null) {
+                res.send(document);
 
-                // if not upload to s3 with hashed value as file name,
-                // create record with hash value and end url
-                } else {
-                    var new_document = {};
-                    // upload parameters
-                    var params = {
-                      localFile: file_path,
-                      s3Params: {
-                        Bucket: upload_bucket,
-                        Key: String(file_hash) + '.pdf'
-                        // other options supported by putObject, except Body and ContentLength. 
-                        // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
-                      }
-                    };
+            // if not upload to s3 with hashed value as file name,
+            // create record with hash value and end url
+            } else {
+                // upload parameters
+                var params = {
+                  localFile: file.path,
+                  s3Params: {
+                    Bucket: upload_bucket,
+                    Key: String(file_hash) + '.' + file_extension
+                    // other options supported by putObject, except Body and ContentLength.
+                    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
+                  }
+                };
 
-                    var uploader = client.uploadFile(params);
-                    uploader.on('error', function(err) {
-                      console.error("unable to upload:", err.stack);
-                    });
-                    uploader.on('progress', function() {
-                      console.log("progress", uploader.progressMd5Amount,
-                                uploader.progressAmount, uploader.progressTotal);
-                    });
-                    uploader.on('end', function() {
-                      console.log("done uploading");
-                    });
+                var uploader = client.uploadFile(params);
+                uploader.on('error', function(err) {
+                  console.error("unable to upload:", err.stack);
+                });
+                uploader.on('progress', function() {
+                  console.log("progress", uploader.progressMd5Amount,
+                            uploader.progressAmount, uploader.progressTotal);
+                });
+                uploader.on('end', function() {
+                  console.log("done uploading");
+                });
 
-                    new_document.file_hash = file_hash;
-                    new_document.s3_url = 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.pdf';
-                    new_document.modified = [{
+                Document.create({
+                    file_hash: file_hash,
+                    mime_type: file.type,
+                    s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
+                    modified: [{
                         modifiedBy: req.user._id,
                         modifiedDate: timestamp
-                    }];
-                    new_document.createdBy = req.user._id;
-                    new_document.creationDate = timestamp;
-
-                    Document.create(new_document, function (err, document) {
-                        if (err) {
-                            res.status(400);
-                            res.send({reason: err.toString()});
-                        } else {
-                            res.send(document);
-                        }
-                    });
-                }
-            });
+                    }],
+                    createdBy: req.user._id,
+                    creationDate: timestamp
+                }, function (err, document) {
+                    if (err) {
+                        res.status(400);
+                        res.send({reason: err.toString()});
+                    } else {
+                        res.send(document);
+                    }
+                });
+            }
         });
-    } else {
-        res.status(400);
-        res.send({reason: 'Document not a pdf'});
-    }
-    // destroy temp file
-    // fs.unlink(req.files.file.path);
+    });
 };
 
 exports.getDocuments = function (req, res) {
@@ -152,7 +142,7 @@ exports.updateDocument = function (req, res) {
             if (err) {
                 res.status(400);
                 console.log(err);
-                res.send({reason: err.toString()})
+                res.send({reason: err.toString()});
             }
             // if (err) {
             //     res.status(400);

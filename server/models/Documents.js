@@ -40,6 +40,7 @@ var documentSchema = mongoose.Schema({
     questions: [ObjectId],
     answers: [String],
     users: [ObjectId],
+    mime_type: String,
     modified: [modificationSchema],
     createdBy: ObjectId,
     creationDate: {type: Date, default: Date.now},
