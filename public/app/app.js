@@ -123,19 +123,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/interviewees/interviewee-admin-detail',
             controller: 'rgiIntervieweeAdminDetailCtrl'
         })
-        //////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////
-        .when('/admin/assessment-review/:assessment_ID', {
-            templateUrl: '/partials/admin/assessments/review/assessment-review',
-            controller: 'rgiAssessmentAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
-        .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
-            templateUrl: '/partials/admin/assessments/review/answer-page-review',
-            controller: 'rgiAnswerCtrl'
-        })
-        //////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////
         ///// researcher Routes
         // Assessments
         .when('/assessments', {
@@ -153,6 +140,34 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
+
+
+
+        // Answers
+        .when('/admin/assessments-admin/answer/:answer_ID', {
+            templateUrl: '/partials/answers/answer',
+            controller: 'rgiAnswerCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
+        .when('/assessments/assessment/answer/:answer_ID', {
+            templateUrl: '/partials/answers/answer',
+            controller: 'rgiAnswerCtrl'
+        })
+
+
+
+        // Answers
+        .when('/admin/assessment-review/:assessment_ID', {
+            templateUrl: '/partials/admin/assessments/review/assessment-review',
+            controller: 'rgiAssessmentAdminDetailCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
+        .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
+            templateUrl: '/partials/admin/assessments/review/answer-page-review',
+            controller: 'rgiAnswerCtrl'
+        })
+        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
         // Answers
         .when('/assessments/assessment-view/:answer_ID', {
             templateUrl: '/partials/researchers/answers/answer-page-view',
