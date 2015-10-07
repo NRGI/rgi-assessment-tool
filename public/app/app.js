@@ -5,6 +5,7 @@ angular.module('app', [
     '720kb.datepicker',
     'angular.filter',
     'angularFileUpload',
+    'angular-redactor',
     'angucomplete',
     'infinite-scroll',
     'ng-form-group',

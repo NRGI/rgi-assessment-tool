@@ -1,6 +1,19 @@
 'use strict';
-
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+require('mongoose-html').loadType(mongoose);
+var Html = mongoose.Types.Html;
+
+var htmlSettings = {
+        type: Html,
+        setting: {
+            allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
+            allowedAttributes: {
+                'a': ['href']
+            }
+        }
+    };
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -15,7 +28,7 @@ var commentSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now},
-    content: String,
+    content: htmlSettings,
     author: ObjectId, // Pull from curretn user _id value
     author_name: String,
     role: String,
@@ -33,7 +46,7 @@ var citationSchema = new mongoose.Schema({
     author: ObjectId, // Pull from current user _id value
     author_name: String,
     role: String,
-    comment: String
+    comment: htmlSettings
 });
 
 var humanSchema = new mongoose.Schema({
@@ -48,7 +61,7 @@ var humanSchema = new mongoose.Schema({
         date: {
             type: Date,
             default: Date.now},
-        content: String,
+        content: htmlSettings,
         author: ObjectId, // Pull from curretn user _id value
         author_name: String,
         role: String,
@@ -82,7 +95,7 @@ var interviewSchema = new mongoose.Schema({
         date: {
             type: Date,
             default: Date.now},
-        content: String,
+        content: htmlSettings,
         author: ObjectId, // Pull from curretn user _id value
         author_name: String,
         role: String,
@@ -99,7 +112,7 @@ var scoreHistorySchema = new mongoose.Schema({
     /////ERROR CALCULATION
 });
 
-var answerSchema = mongoose.Schema({
+var answerSchema = Schema({
     answer_ID: {
         type: String,
         required: '{PATH} is required',
@@ -145,16 +158,16 @@ var answerSchema = mongoose.Schema({
             type: Date,
             default: Date.now}},
     researcher_score: Number,
-    researcher_justification: String,
+    researcher_justification: htmlSettings,
     /////ERROR CALCULATION
     researcher_score_history: [scoreHistorySchema],
     reviewer_score: Number,
-    reviewer_justification: String,
+    reviewer_justification: htmlSettings,
     /////ERROR CALCULATION
     reviewer_score_history: [scoreHistorySchema],
     final_score: Number,
     final_role: String,
-    final_justification: String,
+    final_justification: htmlSettings,
     comments: [commentSchema],
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: {
