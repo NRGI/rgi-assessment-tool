@@ -2,11 +2,11 @@
     .well.left-padding-lg
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment view
-                include ../../partials/question_navigation.jade
+                include ../../directives/rgi-answer-nav
 
             .row.left-padding-lg.bottom-padding-med
                 h3: em Question {{answer.question_order}}. {{answer.question_text}}
-                include ../../partials/prev_answers.jade
+                include ../../modules/prev_answers.jade
 
         .row.left-padding-lg.bottom-padding-lg
             .col-md-pull-2.left-padding-lg
@@ -92,7 +92,7 @@
         .row.left-padding-lg.right-padding-lg
             .form-horizontal(name="answer_form")
                 fieldset
-                    include ../../partials/comment_module
+                    include ../../modules/comment_module
 
 
                     //- BILBLIO LIST
