@@ -195,7 +195,7 @@ angular
             ngDialog.open({
                 template: 'partials/dialogs/flag-answer-dialog',
                 controller: 'rgiFlagAnswerDialogCtrl',
-                className: 'ngdialog-theme-default',
+                className: 'ngdialog-theme-default dialogwidth800',
                 scope: $scope
             });
         };
@@ -208,7 +208,7 @@ angular
             ngDialog.open({
                 template: 'partials/dialogs/flag-answer-dialog',
                 controller: 'rgiFlagEditDialogCtrl',
-                className: 'ngdialog-theme-default',
+                className: 'ngdialog-theme-default dialogwidth800',
                 scope: scope
             });
         };
@@ -280,7 +280,7 @@ angular
             ngDialog.open({
                 template: 'partials/dialogs/comment-edit-dialog',
                 controller: 'rgiCommentEditDialogCtrl',
-                className: 'ngdialog-theme-default',
+                className: 'ngdialog-theme-default dialogwidth800',
                 scope: scope
             });
 

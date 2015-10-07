@@ -1,11 +1,16 @@
 div.left-padding-lg.right-padding-lg
-   h3 Please edit comment.
+   h3 Please edit comment
       .row.top-padding-med.left-padding-lg
          .form-horizontal
             fieldset
                .row
                   .form-group(required).col-md-12
-                     textarea.form-control(name="comment_text" type="textbox" ng-model="comment_content")
+                     textarea.form-control(
+                     name="comment_text"
+                     type="textbox"
+                     ng-model="comment_content"
+                     redactor) {{comment_content}}
+
       .row.left-padding-lg
          .col-md-10.col-md-offset-2
             .pull-right

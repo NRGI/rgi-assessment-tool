@@ -9,6 +9,7 @@ angular
     ) {
         'use strict';
         $scope.comment_content = $scope.$parent.comment.content;
+        console.log($scope.$parent.comment.content);
         $scope.saveComment = function () {
             var new_answer_data = $scope.$parent.answer,
                 new_comment_data = $scope.$parent.comment,
