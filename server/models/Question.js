@@ -193,7 +193,7 @@ function createDefaultQuestions() {
                 "old_reference" : { "component_excel" : "Reporting practice" },
                 "question_choices" : [
                     { "criteria" : "Covers all topics relevant within country context", "name" : "criteria_a", "order" : 1 },
-                    { "criteria" : "Only includes resource revenue reconciliation", "name" : "criteria_c", "order" : 2 },
+                    { "criteria" : "Only partials resource revenue reconciliation", "name" : "criteria_c", "order" : 2 },
                     { "criteria" : "The country has not published an EITI report.", "name" : "criteria_d", "order" : 3 },
                     { "criteria" : "Not applicable/Other. (Explain in 'comments' box.)", "name" : "criteria_e", "order" : 4 }
                 ],
