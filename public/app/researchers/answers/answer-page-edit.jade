@@ -30,8 +30,7 @@
                 ng-if="answer.question_order===1"
                 disabled)
             .row.left-padding-lg.bottom-padding-med
-                h3
-                    em Question {{answer.question_order}}. {{answer.question_text}}
+                h3: em Question {{answer.question_order}}. {{answer.question_text}}
                 div(ng-if="current_user.role === 'researcher'")
                     div
                         h5 Previous score:
@@ -39,9 +38,9 @@
                         strong(
                         ng-if="answer.researcher_score"
                         ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
-                    div(ng-if="answer.researcher_score")
+                    div(ng-if!="answer.researcher_score")
                         h5 Previous justification:
-                        em {{answer.researcher_justification}}
+                        text(ng-bind-html="answer.researcher_justification")
                     div
                         h5 Reviewer score:
                         em(ng-if="!answer.reviewer_score") Not submitted
@@ -50,7 +49,7 @@
                         ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
                     div(ng-if="answer.reviewer_score")
                         h5 Reviewer justification:
-                        em {{answer.reviewer_justification}}
+                        text(ng-bind-html="answer.reviewer_justification")
 
                 div(ng-if="current_user.role === 'reviewer'")
                     div
@@ -61,7 +60,7 @@
                         ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
                     div(ng-if="answer.reviewer_score")
                         h5 Reviewer justification:
-                        em {{answer.reviewer_justification}}
+                        text(ng-bind-html="answer.reviewer_justification")
                     div
                         h5 Researcher score:
                         em(ng-if="!answer.researcher_score") Not submitted
@@ -70,7 +69,7 @@
                         ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
                     div(ng-if="answer.researcher_score")
                         h5 Researcher justification:
-                        em {{answer.researcher_justification}}
+                        text(ng-bind-html="answer.researcher_justification")
 
             //- Active buttons
             .row.left-padding-lg.bottom-padding-lg
@@ -117,8 +116,9 @@
                                             type="text"
                                             ng-model="answer[current_user.role + '_justification']"
                                             placeholder="Please provide your justification... (required)"
-                                            required
-                                            ng-disabled="assessment.edit_control!==current_user._id")
+                                            ng-disabled="assessment.edit_control!==current_user._id"
+                                            redactor
+                                            required)
             div(id="comments_div").bottom-padding-med
                 legend Comments:
 
@@ -132,7 +132,7 @@
                             date
                                 small
                                     em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
-                        .row.col-md-11 {{comment.content}}
+                        .row.col-md-11(ng-bind-html="comment.content")
                         .row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
                             button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
                 br
@@ -146,6 +146,7 @@
                                     type="text"
                                     ng-model="answer.new_comment"
                                     placeholder="New comment..."
+                                    redactor
                                     required)
                                 .col-md-1
                                     button.btn.btn-success(
