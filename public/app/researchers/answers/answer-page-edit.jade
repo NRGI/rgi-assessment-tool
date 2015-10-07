@@ -2,74 +2,11 @@
     .well.left-padding-lg
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+                include ../../partials/question_navigation.jade
 
-                //CONTROLS FOR ASSESSMENT NAVIGATION
-                a.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-                href="assessments/assessment-edit/{{assessment.assessment_ID}}-{{assessment.question_length | zpad:3}}"
-                ng-if="assessment.question_length!==answer.question_order")
-                glyphicon.text-muted.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-                ng-if="assessment.question_length===answer.question_order"
-                disabled)
-
-                glyphicon.text-info.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-                ng-click="moveForward()"
-                ng-if="answer.question_order!==assessment.question_length")
-                glyphicon.text-muted.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-                ng-if="answer.question_order===assessment.question_length"
-                disabled)
-
-                glyphicon.text-info.glyphicon.glyphicon-backward.pull-right.right-padding-med(
-                ng-click="moveBackward()"
-                ng-if="answer.question_order!==1")
-                glyphicon.text-muted.glyphicon.glyphicon-backward.pull-right.right-padding-med(ng-if="answer.question_order===1")
-
-                a.text-info.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-                href="assessments/assessment-edit/{{assessment.assessment_ID}}-001"
-                ng-if="answer.question_order!==1")
-                glyphicon.text-muted.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-                ng-if="answer.question_order===1"
-                disabled)
             .row.left-padding-lg.bottom-padding-med
                 h3: em Question {{answer.question_order}}. {{answer.question_text}}
-                div(ng-if="current_user.role === 'researcher'")
-                    div
-                        h5 Previous score:
-                        em(ng-if="!answer.researcher_score") Not submitted
-                        strong(
-                        ng-if="answer.researcher_score"
-                        ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
-                    div(ng-if!="answer.researcher_score")
-                        h5 Previous justification:
-                        text(ng-bind-html="answer.researcher_justification")
-                    div
-                        h5 Reviewer score:
-                        em(ng-if="!answer.reviewer_score") Not submitted
-                        strong(
-                        ng-if="answer.reviewer_score"
-                        ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
-                    div(ng-if="answer.reviewer_score")
-                        h5 Reviewer justification:
-                        text(ng-bind-html="answer.reviewer_justification")
-
-                div(ng-if="current_user.role === 'reviewer'")
-                    div
-                        h5 Previous score:
-                        em(ng-if="!answer.reviewer_score") Not submitted
-                        strong(
-                        ng-if="answer.reviewer_score"
-                        ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
-                    div(ng-if="answer.reviewer_score")
-                        h5 Reviewer justification:
-                        text(ng-bind-html="answer.reviewer_justification")
-                    div
-                        h5 Researcher score:
-                        em(ng-if="!answer.researcher_score") Not submitted
-                        strong(
-                        ng-if="answer.researcher_score"
-                        ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
-                    div(ng-if="answer.researcher_score")
-                        h5 Researcher justification:
-                        text(ng-bind-html="answer.researcher_justification")
+                include ../../partials/prev_answers.jade
 
             //- Active buttons
             .row.left-padding-lg.bottom-padding-lg
@@ -118,7 +55,7 @@
                                             placeholder="Please provide your justification... (required)"
                                             ng-disabled="assessment.edit_control!==current_user._id"
                                             redactor
-                                            required)
+                                            required) {{answer[current_user.role + '_justification']}}
             div(id="comments_div").bottom-padding-med
                 legend Comments:
 

@@ -1,0 +1,51 @@
+div(ng-if="current_user.role === 'researcher'")
+   div.bottom-padding-med
+      div(ng-if="!answer.researcher_score")
+         h5 Your previous score:
+         div.left-padding-lg
+            em Not submitted
+      div(ng-if="answer.researcher_score")
+         h5 Your previous score:
+         div.left-padding-lg
+            text(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+         h5 Your previous justification:
+         div.left-padding-lg
+            text(ng-bind-html="answer.researcher_justification")
+
+   div.bottom-padding-med
+      div(ng-if="!answer.reviewer_score")
+         h5 Reviewer score:
+         div.left-padding-lg
+            em Not submitted
+      div(ng-if="answer.reviewer_score")
+         h5 Reviewer score:
+         div.left-padding-lg
+            text(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+         div.left-padding-lg
+            text(ng-bind-html="answer.reviewer_justification")
+
+div(ng-if="current_user.role === 'reviewer'")
+   div.bottom-padding-lg(ng-if="!answer.reviewer_score")
+      h5 Your previous score:
+      div.left-padding-lg
+         em Not submitted
+   div(ng-if="answer.reviewer_score")
+      h5 Your previous score:
+      div.left-padding-lg
+         text(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+      h5 Your previous justification:
+      div.left-padding-lg
+         text(ng-bind-html="answer.reviewer_justification")
+
+   div(ng-if="!answer.researcher_score")
+      h5 Researcher score:
+      div.left-padding-lg
+         em Not submitted
+   div(ng-if="answer.researcher_score")
+      h5 Researcher score:
+      div.left-padding-lg
+         text(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+      div.left-padding-lg
+         text(ng-bind-html="answer.researcher_justification")
+div(ng-if="current_user.role === 'supervisor'")
+   | SUPERVISOR PLACEHOLDER
