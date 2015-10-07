@@ -17,14 +17,14 @@ var htmlSettings = {
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var modificationSchema = new mongoose.Schema({
+var modificationSchema = new Schema({
     modifiedBy: ObjectId,
     modifiedDate: {
         type: Date,
         default: Date.now}
 });
 
-var commentSchema = new mongoose.Schema({
+var commentSchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
@@ -35,7 +35,7 @@ var commentSchema = new mongoose.Schema({
     addressed: Boolean
 });
 
-var citationSchema = new mongoose.Schema({
+var citationSchema = new Schema({
     document_ID: String,
     mendeley_ID: String,
     file_hash: String,
@@ -49,7 +49,7 @@ var citationSchema = new mongoose.Schema({
     comment: htmlSettings
 });
 
-var humanSchema = new mongoose.Schema({
+var humanSchema = new Schema({
     first_name: String,
     last_name: String,
     phone: String,
@@ -68,25 +68,7 @@ var humanSchema = new mongoose.Schema({
         addressed: Boolean
     }
 });
-
-//var interviewSchema = new mongoose.Schema({
-//    interviewee_ID: ObjectId,
-//    contact_date: {
-//        type: Date,
-//        default: Date.now},
-//    comment: {
-//        date: {
-//            type: Date,
-//            default: Date.now},
-//        content: String,
-//        author: ObjectId, // Pull from curretn user _id value
-//        author_name: String,
-//        role: String,
-//        addressed: Boolean
-//    }
-//});
-
-var interviewSchema = new mongoose.Schema({
+var interviewSchema = new Schema({
     interviewee_ID: ObjectId,
     contact_date: {
         type: Date,
@@ -103,7 +85,7 @@ var interviewSchema = new mongoose.Schema({
     }
 });
 
-var scoreHistorySchema = new mongoose.Schema({
+var scoreHistorySchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
@@ -112,7 +94,7 @@ var scoreHistorySchema = new mongoose.Schema({
     /////ERROR CALCULATION
 });
 
-var answerSchema = Schema({
+var answerSchema = new Schema({
     answer_ID: {
         type: String,
         required: '{PATH} is required',
