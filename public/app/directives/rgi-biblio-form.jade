@@ -12,7 +12,7 @@ div(id="prev_bib")
       h4 Citations
       .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
          .row.pull-right.right-padding-lg(ng-if="ref.comment.author===current_user._id")
-            button.btn.btn-primary Edit reference
+            button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
          .row(ng-if="ref.type !== 'web_page'")
             b Title:
             text  {{ref.title}} (

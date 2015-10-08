@@ -11,7 +11,18 @@
 
                 .row.bottom-padding-med
                     h3: em.bottom-padding-med.col-md-11 Question {{answer.question_order}}. {{answer.question_text}}
-                    i.glyphicon.glyphicon-question-sign(popover="{{answer.question_text}}" popover-trigger="mouseenter")
+                    i.glyphicon.glyphicon-question-sign(
+                    popover-template="dynamicPopover.templateUrl"
+                    popover-title="Guidance note"
+                    popover-placement="bottom")
+                    script(type="text/ng-template" id="myPopoverTemplate.html")
+                        div(ng-bind-html="test_guidance")
+                    //i.glyphicon.glyphicon-question-sign(
+                    //popover-template="dynamicPopover.templateUrl"
+                    //popover-title="Guidance note"
+                    //popover-placement="bottom")
+                    //script(type="text/ng-template" id="myPopoverTemplate.html")
+                    //    div {{answer.guidance_text}}
 
                 // Previous answers
                 .row.bottom-padding-med
