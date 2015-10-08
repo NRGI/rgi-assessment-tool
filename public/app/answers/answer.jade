@@ -2,7 +2,8 @@
     .well.left-padding-lg
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
-            rgi-answer-nav.pull-right(user="answer")
+            rgi-answer-nav(assessment="assessment")
+            //| {{current_user.role}}
 
             //.row.left-padding-lg.bottom-padding-med
             //    h3: em Question {{answer.question_order}}. {{answer.question_text}}

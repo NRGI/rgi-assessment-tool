@@ -1,31 +1,32 @@
 //CONTROLS FOR ASSESSMENT NAVIGATION
-
-a.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-href="assessments/assessment/answer/{{assessment.assessment_ID}}-{{assessment.question_length | zpad:3}}"
-ng-if="assessment.question_length!==answer.question_order")
+glyphicon.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
+ng-if="assessment.question_length!==question_number"
+ng-click="fastForward()")
 
 glyphicon.text-muted.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-ng-if="assessment.question_length===answer.question_order"
+ng-if="assessment.question_length===question_number"
 disabled)
 
 glyphicon.text-info.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-ng-click="moveForward()"
-ng-if="answer.question_order!==assessment.question_length")
+ng-if="assessment.question_length!==question_number"
+ng-click="moveForward()")
 
 glyphicon.text-muted.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-ng-if="answer.question_order===assessment.question_length"
+ng-if="assessment.question_length===question_number"
 disabled)
 
 glyphicon.text-info.glyphicon.glyphicon-backward.pull-right.right-padding-med(
-ng-click="moveBackward()"
-ng-if="answer.question_order!==1")
+ng-if="question_number!==1"
+ng-click="moveBackward()")
 
-glyphicon.text-muted.glyphicon.glyphicon-backward.pull-right.right-padding-med(ng-if="answer.question_order===1")
+glyphicon.text-muted.glyphicon.glyphicon-backward.pull-right.right-padding-med(
+ng-if="question_number===1"
+disabled)
 
-a.text-info.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-href="assessments/assessment/answer/{{assessment.assessment_ID}}-001"
-ng-if="answer.question_order!==1")
+glyphicon.text-info.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
+ng-if="question_number!==1"
+ng-click="fastBackward()")
 
 glyphicon.text-muted.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-ng-if="answer.question_order===1"
+ng-if="question_number===1"
 disabled)
