@@ -107,6 +107,6 @@ input.upload {
   max-width: 30% !important;
 }
 .popover-content {
-  height: 300px;
+  max-height: 300px;
   overflow-y: scroll;
 }

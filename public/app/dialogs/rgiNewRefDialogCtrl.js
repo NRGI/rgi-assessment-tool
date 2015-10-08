@@ -43,11 +43,11 @@ angular
         //    });
         //});
 
-        //DATEPICKER OPTS
-        $scope.date_format = 'MMMM d, yyyy';
-        var today = new Date();
-        $scope.date_default = today;
-        $scope.date_max_limit = today;
+        ////DATEPICKER OPTS
+        //$scope.date_format = 'MMMM d, yyyy';
+        //var today = new Date();
+        //$scope.date_default = today;
+        //$scope.date_max_limit = today;
 
         var uploader = $scope.uploader = new FileUploader({
             isHTML5: true,

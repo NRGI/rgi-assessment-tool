@@ -379,13 +379,19 @@ div.left-padding-lg
                                     autocomplete="off")
 
                                 // DATE ACCESSED
-                                .pull-left.col-lg-6
-                                    datepicker(
-                                    date-format="{{date_format}}")
-                                        input.form-control(
-                                        ng-model="ref_date_accessed"
-                                        type="text"
-                                        placeholder="Date accessed...")
+                                .pull-left.col-lg-5.input-group
+                                    input.form-control(
+                                    type="text"
+                                    datepicker-popup="{{date_format}}"
+                                    ng-model="ref_date_accessed"
+                                    is-open="status.opened"
+                                    max-date="maxDate"
+                                    datepicker-options="date_options"
+                                    close-text="Close")
+                                    span.input-group-btn
+                                        button.btn.btn-default(ng-click="calendarOpen($event)")
+                                            i.glyphicon.glyphicon-calendar
+
                     //- COMMENT
                     div(id="comment")
                         .row
