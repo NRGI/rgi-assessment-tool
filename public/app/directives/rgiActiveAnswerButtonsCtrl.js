@@ -162,4 +162,15 @@ angular
             $location.path(root_url + '/' + $scope.answer.assessment_ID);
         };
 
+        //// make final choice
+        //$scope.finalChoiceDialog = function () {
+        //    $scope.value = true;
+        //    ngDialog.open({
+        //        template: 'partials/admin/assessments/final-choice-dialog',
+        //        controller: 'rgiFinalChoiceDialogCtrl',
+        //        className: 'ngdialog-theme-plain',
+        //        scope: $scope
+        //    });
+        //};
+
     });

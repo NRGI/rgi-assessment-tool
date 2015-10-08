@@ -74,6 +74,113 @@ angular
         $scope.date_default = today;
         $scope.date_max_limit = today;
 
+        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
+            $scope.answer = data;
+            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
+            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
+            $scope.current_user = rgiIdentitySrvc.currentUser;
+            $scope.answer_start = angular.copy($scope.answer);
+            $scope.answer_start = angular.copy($scope.answer);
+
+            var citations = [];
+
+            data.references.citation.forEach(function (el) {
+                rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
+                    doc.comment = el;
+                    citations.push(doc);
+                });
+            });
+            $scope.citations = citations;
+
+        });
+
+
+
+
+
+
+
+        ////TODO Generate Dialog based on change and handle upload process via dialogs
+        //$scope.select_ref_dialog = function(value) {
+        //    var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog',
+        //        className = 'ngdialog-theme-default dialogwidth800';
+        //
+        //    ngDialog.open({
+        //        template: template,
+        //        controller: 'rgiNewRefDialogCtrl',
+        //        className: className,
+        //        scope: $scope
+        //    });
+        //};
+
+        //$scope.answerFlag = function () {
+        //    $scope.value = true;
+        //    ngDialog.open({
+        //        template: 'partials/dialogs/flag-answer-dialog',
+        //        controller: 'rgiFlagAnswerDialogCtrl',
+        //        className: 'ngdialog-theme-default dialogwidth800',
+        //        scope: $scope
+        //    });
+        //};
+        //
+        //$scope.flagEdit = function (flag, index) {
+        //    $scope.value = true;
+        //    var scope = $scope;
+        //    scope.index = index;
+        //    scope.flag = flag;
+        //    ngDialog.open({
+        //        template: 'partials/dialogs/flag-answer-dialog',
+        //        controller: 'rgiFlagEditDialogCtrl',
+        //        className: 'ngdialog-theme-default dialogwidth800',
+        //        scope: scope
+        //    });
+        //};
+
+
+        //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //$scope.moveForward = function () {
         //    if ($scope.identity.currentUser._id === $scope.assessment.edit_control) {
         //        $location.path('/assessments/assessment-edit/' + $scope.assessment.assessment_ID + "-" + String(zeroFill($scope.answer.question_order + 1, 3)));
@@ -215,30 +322,16 @@ angular
         //};
         //
 
-        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
-            $scope.answer = data;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
-            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
-            $scope.current_user = rgiIdentitySrvc.currentUser;
-            $scope.answer_start = angular.copy($scope.answer);
-            $scope.answer_start = angular.copy($scope.answer);
-
-            var citations = [];
-
-            data.references.citation.forEach(function (el) {
-                rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-                    doc.comment = el;
-                    citations.push(doc);
-                });
-            });
-            $scope.citations = citations;
-
-        });
-
-
-
-
-
+        //// make final choice
+        //$scope.finalChoiceDialog = function () {
+        //    $scope.value = true;
+        //    ngDialog.open({
+        //        template: 'partials/admin/assessments/final-choice-dialog',
+        //        controller: 'rgiFinalChoiceDialogCtrl',
+        //        className: 'ngdialog-theme-plain',
+        //        scope: $scope
+        //    });
+        //};
 
         //$scope.commentSubmit = function (current_user) {
         //    var new_comment_data = {
@@ -263,44 +356,6 @@ angular
         //        rgiNotifier.notify(reason);
         //    });
         //};
-        ////TODO Generate Dialog based on change and handle upload process via dialogs
-        //$scope.select_ref_dialog = function(value) {
-        //    var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog',
-        //        className = 'ngdialog-theme-default dialogwidth800';
-        //
-        //    ngDialog.open({
-        //        template: template,
-        //        controller: 'rgiNewRefDialogCtrl',
-        //        className: className,
-        //        scope: $scope
-        //    });
-        //};
-
-        //$scope.answerFlag = function () {
-        //    $scope.value = true;
-        //    ngDialog.open({
-        //        template: 'partials/dialogs/flag-answer-dialog',
-        //        controller: 'rgiFlagAnswerDialogCtrl',
-        //        className: 'ngdialog-theme-default dialogwidth800',
-        //        scope: $scope
-        //    });
-        //};
-        //
-        //$scope.flagEdit = function (flag, index) {
-        //    $scope.value = true;
-        //    var scope = $scope;
-        //    scope.index = index;
-        //    scope.flag = flag;
-        //    ngDialog.open({
-        //        template: 'partials/dialogs/flag-answer-dialog',
-        //        controller: 'rgiFlagEditDialogCtrl',
-        //        className: 'ngdialog-theme-default dialogwidth800',
-        //        scope: scope
-        //    });
-        //};
-
-
-        //
 
         //$scope.commentEdit = function (comment, index) {
         //    $scope.value = true;
@@ -316,16 +371,5 @@ angular
         //    });
         //
         //
-        //};
-
-        //// make final choice
-        //$scope.finalChoiceDialog = function () {
-        //    $scope.value = true;
-        //    ngDialog.open({
-        //        template: 'partials/admin/assessments/final-choice-dialog',
-        //        controller: 'rgiFinalChoiceDialogCtrl',
-        //        className: 'ngdialog-theme-plain',
-        //        scope: $scope
-        //    });
         //};
     });
