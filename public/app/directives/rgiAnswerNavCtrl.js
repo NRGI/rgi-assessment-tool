@@ -21,8 +21,6 @@ angular.module('app').controller('rgiAnswerNavCtrl', function ($scope, $location
     answer_split = $routeParams.answer_ID.split('-');
     $scope.assessment_ID = answer_split.slice(0, answer_split.length - 1).join('-');
     $scope.question_number = Number(answer_split[3]);
-    //$scope.question_number = Number(answer_split[3]);
-    console.log($scope);
 
     $scope.moveForward = function () {
         $location.path(root_url + $scope.assessment_ID + "-" + String(zeroFill($scope.question_number + 1, 3)));
