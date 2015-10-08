@@ -59,7 +59,7 @@ angular
             new_assessment_data.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
 
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
-                $location.path('/assessments/assessment-edit/' + new_assessment_data.assessment_ID + '-001');
+                $location.path('/assessments/answer/' + new_assessment_data.assessment_ID + '-001');
                 rgiNotifier.notify('Assessment started!');
             }, function (reason) {
                 rgiNotifier.error(reason);
