@@ -2,7 +2,7 @@
 /*jslint unparam: true */
 
 angular.module('app', [
-    '720kb.datepicker',
+    //'720kb.datepicker',
     'angular.filter',
     'angularFileUpload',
     'angular-redactor',

@@ -54,11 +54,11 @@ angular
         //    {text: 'Add Interview', value: 'interview'}
         //];
 
-        //DATEPICKER OPTS
-        $scope.date_format = 'MMMM d, yyyy';
-        var today = new Date();
-        $scope.date_default = today;
-        $scope.date_max_limit = today;
+        ////DATEPICKER OPTS
+        //$scope.date_format = 'MMMM d, yyyy';
+        //var today = new Date();
+        //$scope.date_default = today;
+        //$scope.date_max_limit = today;
 
         $scope.fileUploading = false;
         $scope.fileUrl = '';
