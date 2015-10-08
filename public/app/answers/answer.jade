@@ -1,14 +1,20 @@
 .container.top-padding-med
     .well.left-padding-lg
         div.left-padding-lg.right-padding-lg.top-padding-med
+            //Navigation
+            .row.right-padding-lg
+                rgi-answer-nav(assessment="assessment")
+
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
             div.right-padding-lg.left-padding-lg
-                //Navigation
-                rgi-answer-nav(assessment="assessment")
+
+
+                .row.bottom-padding-med
+                    h3: em.bottom-padding-med.col-md-11 Question {{answer.question_order}}. {{answer.question_text}}
+                    i.glyphicon.glyphicon-question-sign(popover="{{answer.question_text}}" popover-trigger="mouseenter")
 
                 // Previous answers
                 .row.bottom-padding-med
-                    h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
                     rgi-prev-answers(answer="answer")
 
                 // Active buttons

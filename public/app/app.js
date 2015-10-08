@@ -11,7 +11,8 @@ angular.module('app', [
     'ngDialog',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.bootstrap'
 ]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
