@@ -69,31 +69,7 @@ angular
     });
 
 
-        ////DATEPICKER OPTS
-        //$scope.date_format = 'MMMM d, yyyy';
-        //var today = new Date();
-        //$scope.date_default = today;
-        //$scope.date_max_limit = today;
 
-        //rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
-        //    $scope.answer = data;
-        //    $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
-        //    $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
-        //    $scope.current_user = rgiIdentitySrvc.currentUser;
-        //    $scope.answer_start = angular.copy($scope.answer);
-        //    $scope.answer_start = angular.copy($scope.answer);
-        //
-        //    var citations = [];
-        //
-        //    data.references.citation.forEach(function (el) {
-        //        rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-        //            doc.comment = el;
-        //            citations.push(doc);
-        //        });
-        //    });
-        //    $scope.citations = citations;
-        //
-        //});
 
 
         ////TODO Generate Dialog based on change and handle upload process via dialogs
