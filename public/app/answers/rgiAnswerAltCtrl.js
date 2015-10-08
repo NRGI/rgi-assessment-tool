@@ -66,33 +66,34 @@ angular
             $scope.citations = citations;
 
         });
+    });
 
 
-        //DATEPICKER OPTS
-        $scope.date_format = 'MMMM d, yyyy';
-        var today = new Date();
-        $scope.date_default = today;
-        $scope.date_max_limit = today;
+        ////DATEPICKER OPTS
+        //$scope.date_format = 'MMMM d, yyyy';
+        //var today = new Date();
+        //$scope.date_default = today;
+        //$scope.date_max_limit = today;
 
-        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
-            $scope.answer = data;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
-            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
-            $scope.current_user = rgiIdentitySrvc.currentUser;
-            $scope.answer_start = angular.copy($scope.answer);
-            $scope.answer_start = angular.copy($scope.answer);
-
-            var citations = [];
-
-            data.references.citation.forEach(function (el) {
-                rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-                    doc.comment = el;
-                    citations.push(doc);
-                });
-            });
-            $scope.citations = citations;
-
-        });
+        //rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
+        //    $scope.answer = data;
+        //    $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
+        //    $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
+        //    $scope.current_user = rgiIdentitySrvc.currentUser;
+        //    $scope.answer_start = angular.copy($scope.answer);
+        //    $scope.answer_start = angular.copy($scope.answer);
+        //
+        //    var citations = [];
+        //
+        //    data.references.citation.forEach(function (el) {
+        //        rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
+        //            doc.comment = el;
+        //            citations.push(doc);
+        //        });
+        //    });
+        //    $scope.citations = citations;
+        //
+        //});
 
 
         ////TODO Generate Dialog based on change and handle upload process via dialogs
@@ -126,9 +127,7 @@ angular
 
         //
 
-
-
-
+      //};
 
 
 
@@ -307,7 +306,7 @@ angular
         //$scope.answerClear = function () {
         //    $scope.answer = angular.copy($scope.answer_start);
         //};
-        //
+
 
         //// make final choice
         //$scope.finalChoiceDialog = function () {
@@ -328,7 +327,7 @@ angular
         //        className: 'ngdialog-theme-default dialogwidth800',
         //        scope: $scope
         //    });
-        //};
+        //};      //
 
         //$scope.commentSubmit = function (current_user) {
         //    var new_comment_data = {
@@ -369,4 +368,3 @@ angular
         //
         //
         //};
-    });
