@@ -44,14 +44,8 @@ angular
         $scope.dynamicPopover = {
             content: 'Hello, World!',
             templateUrl: 'myPopoverTemplate.html',
-            title: 'Title',
-            width:"16"
+            title: 'Title'
         };
-        //DATEPICKER OPTS
-        $scope.date_format = 'MMMM d, yyyy';
-        var today = new Date();
-        $scope.date_default = today;
-        $scope.date_max_limit = today;
 
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
             $scope.answer = data;

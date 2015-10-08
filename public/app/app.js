@@ -152,7 +152,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/assessments/answer/:answer_ID', {
             templateUrl: '/partials/answers/answer',
-            controller: 'rgiAnswerCtrl',
+            controller: 'rgiAnswerAltCtrl',
             resolve: routeRoleChecks.user
         })
 
