@@ -162,6 +162,16 @@ angular
             $location.path(root_url + '/' + $scope.answer.assessment_ID);
         };
 
+        $scope.answerFlag = function () {
+            $scope.value = true;
+            ngDialog.open({
+                template: 'partials/dialogs/flag-answer-dialog',
+                controller: 'rgiFlagAnswerDialogCtrl',
+                className: 'ngdialog-theme-default dialogwidth800',
+                scope: $scope
+            });
+        };
+
         //// make final choice
         //$scope.finalChoiceDialog = function () {
         //    $scope.value = true;

@@ -21,7 +21,7 @@ function flagCheck(flags) {
 }
 angular
     .module('app')
-    .controller('rgiAnswerCtrl', function (
+    .controller('rgiAnswerAltCtrl', function (
         $scope,
         $routeParams,
         $q,
@@ -95,11 +95,6 @@ angular
         });
 
 
-
-
-
-
-
         ////TODO Generate Dialog based on change and handle upload process via dialogs
         //$scope.select_ref_dialog = function(value) {
         //    var template = 'partials/dialogs/new-ref-' + $scope.ref_selection + '-dialog',
@@ -113,15 +108,7 @@ angular
         //    });
         //};
 
-        //$scope.answerFlag = function () {
-        //    $scope.value = true;
-        //    ngDialog.open({
-        //        template: 'partials/dialogs/flag-answer-dialog',
-        //        controller: 'rgiFlagAnswerDialogCtrl',
-        //        className: 'ngdialog-theme-default dialogwidth800',
-        //        scope: $scope
-        //    });
-        //};
+
         //
         //$scope.flagEdit = function (flag, index) {
         //    $scope.value = true;
@@ -329,6 +316,16 @@ angular
         //        template: 'partials/admin/assessments/final-choice-dialog',
         //        controller: 'rgiFinalChoiceDialogCtrl',
         //        className: 'ngdialog-theme-plain',
+        //        scope: $scope
+        //    });
+        //};
+
+        //$scope.answerFlag = function () {
+        //    $scope.value = true;
+        //    ngDialog.open({
+        //        template: 'partials/dialogs/flag-answer-dialog',
+        //        controller: 'rgiFlagAnswerDialogCtrl',
+        //        className: 'ngdialog-theme-default dialogwidth800',
         //        scope: $scope
         //    });
         //};
