@@ -14,20 +14,20 @@ div(id="comments_div").bottom-padding-med
          .row.pull-right.right-padding-lg(ng-if="comment.author === current_user._id")
             button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit
 
-      div(id="new_comment_div").bottom-padding-med
-         ng-form(name="new_comment_form")
-            .form-group.top-padding-med
-               .row.left-padding-lg
-                  .col-md-10
-                     textarea.form-control(
-                     name="comment"
-                     type="text"
-                     ng-model="answer.new_comment"
-                     placeholder="New comment..."
-                     redactor
-                     required)
-                  .col-md-1
-                     button.btn.btn-success(
-                     ng-click="answerCommentSubmit()"
-                     ng-disabled="new_comment_form.$invalid"
-                     ) Submit comment
+   div(id="new_comment_div").bottom-padding-med
+      ng-form(name="new_comment_form")
+         .form-group.top-padding-med
+            .row.left-padding-lg
+               .col-md-10
+                  textarea.form-control(
+                  name="comment"
+                  type="text"
+                  ng-model="answer.new_comment"
+                  placeholder="New comment..."
+                  redactor
+                  required)
+               .col-md-1
+                  button.btn.btn-success(
+                  ng-click="answerCommentSubmit()"
+                  ng-disabled="new_comment_form.$invalid"
+                  ) Submit comment
