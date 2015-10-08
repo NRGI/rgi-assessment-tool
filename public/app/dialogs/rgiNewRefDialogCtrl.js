@@ -78,7 +78,7 @@ angular
                     ngDialog.open({
                         template: 'partials/dialogs/new-document-dialog',
                         controller: 'rgiNewDocumentDialogCtrl',
-                        className: 'ngdialog-theme-default',
+                        className: 'ngdialog-theme-default dialogwidth800',
                         scope: scope
                     });
                 } else if (scope.ref_selection === 'webpage') {

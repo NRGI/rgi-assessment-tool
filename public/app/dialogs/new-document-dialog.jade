@@ -1,4 +1,4 @@
-div.left-padding-lg.right-padding-lg
+div.left-padding-lg
     h3 New document (PDF only)
         .row.left-padding-lg(id="new_document_form")
             .form-horizontal
@@ -366,18 +366,26 @@ div.left-padding-lg.right-padding-lg
                                     h5(ng-if="new_document.series_editor")  {{new_document.series_editor}}
                                     h5(ng-if="!new_document.series_editor")  N/A
 
-                    //DATE ACCESSED
                     div
                         .row
                             .form-group
-                                .col-lg-11
+                                // LOCATION IN DOC
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="location"
+                                    type="text"
+                                    placeholder="Location in document..."
+                                    ng-model="new_ref_location"
+                                    autocomplete="off")
+
+                                // DATE ACCESSED
+                                .pull-left.col-lg-6
                                     datepicker(
                                     date-format="{{date_format}}")
                                         input.form-control(
                                         ng-model="ref_date_accessed"
                                         type="text"
                                         placeholder="Date accessed...")
-
                     //- COMMENT
                     div(id="comment")
                         .row

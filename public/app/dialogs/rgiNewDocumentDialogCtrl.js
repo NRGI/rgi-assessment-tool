@@ -117,6 +117,7 @@ angular
             //    //    .done(function (res) {
             //    //
             //    //    });
+
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
                     answer_ID = $scope.$parent.answer.answer_ID,
@@ -132,7 +133,8 @@ angular
                         date_accessed: new Date($scope.ref_date_accessed).toISOString(),
                         author: current_user_ID,
                         author_name: current_user_name,
-                        role: current_user_role
+                        role: current_user_role,
+                        location: $scope.new_ref_location
                     };
 
                 if (new_doc_data.status === 'created') {

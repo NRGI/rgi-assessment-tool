@@ -46,7 +46,8 @@ var citationSchema = new Schema({
     author: ObjectId, // Pull from current user _id value
     author_name: String,
     role: String,
-    comment: htmlSettings
+    comment: htmlSettings,
+    location: String
 });
 
 var humanSchema = new Schema({
