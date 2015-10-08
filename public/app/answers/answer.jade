@@ -16,85 +16,13 @@
                     rgi-active-answer-buttons
 
                 // Answer form
-                .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id")
+                .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
                     rgi-answer-form
-                //    .form-horizontal(name="answer_form")
-                //        fieldset
-                //            div(id="answer_choice_div").bottom-padding-med
-                //                legend Choose one of the following answers (required):
-                //                ng-form(name="answer_choice_form")
-                //                    .form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
-                //                        input(
-                //                        type="radio"
-                //                        name="choice.choice_name"
-                //                        value="{{choice.order}}"
-                //                        checked=""
-                //                        ng-model="answer[current_user.role + '_score']"
-                //                        ng-disabled="assessment.edit_control!==current_user._id")
-                //                        text.left-padding-med {{choice.criteria}}
-                //            div(id="answer_justification_div").bottom-padding-med
-                //                ng-form(name="answer_justification_form")
-                //                    .form-group.top-padding-med
-                //                        .row.left-padding-lg
-                //                            .col-md-11
-                //                                textarea.form-control(
-                //                                name="justification"
-                //                                type="text"
-                //                                ng-model="answer[current_user.role + '_justification']"
-                //                                placeholder="Please provide your justification... (required)"
-                //                                ng-disabled="assessment.edit_control!==current_user._id"
-                //                                redactor
-                //                                required) {{answer[current_user.role + '_justification']}}
-                //
-                //- Comments
-                .row.bottom-padding-lg
+
+                // Comments
+                .row.bottom-padding-med
                     rgi-comments
-            //
-            //div(id="biblio_div").bottom-padding-med
-            //    legend References:
-            //    .row
-            //        .col-md-5.pull-left.top-padding-med
-            //            select.form-group.form-control.pull-left(ng-model="ref_selection" ng-change="select_ref_dialog()")
-            //                option(value="" selected disabled) Select action
-            //                option(ng-repeat="ref in ref_type" value="{{ref.value}}") {{ref.text}}
-            //
-            //    //- BILBLIO LIST
-            //    div(id="prev_bib")
-            //        .row.left-padding-lg
-            //            h4 Citations
-            //            .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
-            //                .row
-            //                    b Author(s):
-            //                    text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
-            //                        text(ng-if="!$last") ;
-            //                    text(ng-if="ref.author.length === 0")  N/A
-            //                .row
-            //                    b Type:
-            //                    text  {{ref.type}}
-            //                .row(ng-if="ref.type !== 'web_page'")
-            //                    b Title:
-            //                    text  {{ref.title}} (
-            //                    a(href="{{ref.s3_url}}" target="_blank") View here
-            //                    text )
-            //                .row(ng-if="ref.type === 'web_page'")
-            //                    b Title:
-            //                    a(href="{{ref.source}}" target="_blank")  {{ref.title}}
-            //                .row
-            //                    b Published:
-            //                    text(ng-if="ref.year")  {{ref.year}}
-            //                    text(ng-if="!ref.year")  N/A
-            //                .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date: 'MM/dd/yyyy'}}
-            //                .row Accessed on {{ref.comment.date_accessed | date: 'MM/dd/yyyy'}}
-            //                .row
-            //                    b Comments:
-            //                    text(ng-if="ref.comment")  {{ref.comment.comment}}
-            //                    text(ng-if="!ref.comment")  N/A
-            //
-            //        .row.left-padding-lg
-            //            h4 Interviews
-            //            .row.left-padding-lg(ng-repeat="ref in answer.references.human")
-            //                .row Contact: {{ref.first_name}} {{ref.last_name}}
-            //                .row Interviewed: {{ref.contact_date | date:'MM/dd/yyyy'}}
-            //                .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
-            //                .row Comments: {{ref.comment.content}}
-            //                br
+
+                // Biblio
+                .row.bottom-padding-lg
+                    rgi-biblio-form
