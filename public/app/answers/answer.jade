@@ -2,66 +2,49 @@
     .well.left-padding-lg
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
-            rgi-answer-nav(assessment="assessment")
+            div.right-padding-lg.left-padding-lg
+                rgi-answer-nav(assessment="assessment")
 
-            .row.left-padding-lg.bottom-padding-med
-                h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
-                rgi-prev-answers(answer="answer")
+                .row.bottom-padding-med
+                    h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
+                    rgi-prev-answers(answer="answer")
 
-                //include ../modules/prev_answers.jade
+                //- Active buttons
+                .row.bottom-padding-lg
+                    rgi-active-answer-buttons
 
-            //- Active buttons
-            .row.left-padding-lg.bottom-padding-lg
-                rgi-active-answer-buttons
-                //.col-md-pull-2
-                //    button.btn.btn-primary(
-                //    ng-click="answerSave()"
-                //    ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
-                //    ) Save answer
-                //    | &nbsp;
-                //    button.btn.btn-success(
-                //    ng-click="answerSubmit()"
-                //    ng-if="!answer_justification_form.$invalid && answer[current_user.role + '_score'] && assessment.edit_control===current_user._id"
-                //    ) Submit answer
-                //    | &nbsp;
-                //    button.btn.btn-danger(
-                //    ng-click="answerClear()"
-                //    ng-disabled="assessment.edit_control!==current_user._id"
-                //    ) Clear answer
-                //    | &nbsp;
-                //    a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
-            //
-            //.row.left-padding-lg.right-padding-lg
-            //    .form-horizontal(name="answer_form")
-            //        fieldset
-            //            div(id="answer_choice_div").bottom-padding-med
-            //                legend Choose one of the following answers (required):
-            //                ng-form(name="answer_choice_form")
-            //                    .form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
-            //                        input(
-            //                        type="radio"
-            //                        name="choice.choice_name"
-            //                        value="{{choice.order}}"
-            //                        checked=""
-            //                        ng-model="answer[current_user.role + '_score']"
-            //                        ng-disabled="assessment.edit_control!==current_user._id")
-            //                        text.left-padding-med {{choice.criteria}}
-            //            div(id="answer_justification_div").bottom-padding-med
-            //                ng-form(name="answer_justification_form")
-            //                    .form-group.top-padding-med
-            //                        .row.left-padding-lg
-            //                            .col-md-11
-            //                                textarea.form-control(
-            //                                name="justification"
-            //                                type="text"
-            //                                ng-model="answer[current_user.role + '_justification']"
-            //                                placeholder="Please provide your justification... (required)"
-            //                                ng-disabled="assessment.edit_control!==current_user._id"
-            //                                redactor
-            //                                required) {{answer[current_user.role + '_justification']}}
-            //
-            //include ../../partials/comment_module
-            //
+                //.row.left-padding-lg.right-padding-lg
+                //    .form-horizontal(name="answer_form")
+                //        fieldset
+                //            div(id="answer_choice_div").bottom-padding-med
+                //                legend Choose one of the following answers (required):
+                //                ng-form(name="answer_choice_form")
+                //                    .form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+                //                        input(
+                //                        type="radio"
+                //                        name="choice.choice_name"
+                //                        value="{{choice.order}}"
+                //                        checked=""
+                //                        ng-model="answer[current_user.role + '_score']"
+                //                        ng-disabled="assessment.edit_control!==current_user._id")
+                //                        text.left-padding-med {{choice.criteria}}
+                //            div(id="answer_justification_div").bottom-padding-med
+                //                ng-form(name="answer_justification_form")
+                //                    .form-group.top-padding-med
+                //                        .row.left-padding-lg
+                //                            .col-md-11
+                //                                textarea.form-control(
+                //                                name="justification"
+                //                                type="text"
+                //                                ng-model="answer[current_user.role + '_justification']"
+                //                                placeholder="Please provide your justification... (required)"
+                //                                ng-disabled="assessment.edit_control!==current_user._id"
+                //                                redactor
+                //                                required) {{answer[current_user.role + '_justification']}}
+                //
+                //- Comments
+                .row.bottom-padding-lg
+                    rgi-comments
             //
             //div(id="biblio_div").bottom-padding-med
             //    legend References:
