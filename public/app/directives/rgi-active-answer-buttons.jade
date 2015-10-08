@@ -1,0 +1,46 @@
+//- Active buttons
+.col-md-pull-2
+    button.btn.btn-primary(
+    ng-click="answerSave()"
+    ng-if="(assessment.edit_control===current_user._id && assessment.status==='started') || (current_user.role==='supervisor' && assessment.status==='under_review')"
+    ) Save answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerResubmit()"
+    ng-if="assessment.edit_control===current_user._id && assessment.status==='review_' + current_user.role"
+    ) Re-submit answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerSubmit()"
+    ng-if="assessment.edit_control===current_user._id && assessment.status==='started'"
+    ) Submit answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerApprove()"
+    ng-if="current_user.role==='supervisor' && assessment.status==='under_review'"
+    ) Approve answer
+    | &nbsp;
+
+    button.btn.btn-danger(
+    ng-click="answerClear()"
+    ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && assessment.status=='under_review')"
+    ) Reset answer
+    | &nbsp;
+
+    button.btn.btn-warning(
+    ng-click="answerFlag(current_user)"
+    ng-if="current_user.role==='supervisor'"
+    ) Flag answer
+
+    button.btn.btn-primary(
+    ng-click="finalChoiceDialog()"
+    ng-if="current_user.role==='supervisor' && answer.reviewer_score && answer.researcher_score && answer.status==='approved'"
+    ) Choose final answer
+    | &nbsp;
+
+    button.btn.btn-default(
+    ng-click="answerReturn()"
+    ) Return to assessment menu

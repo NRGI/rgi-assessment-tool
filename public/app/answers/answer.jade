@@ -3,7 +3,6 @@
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
             rgi-answer-nav(assessment="assessment")
-            //| {{current_user.role}}
 
             .row.left-padding-lg.bottom-padding-med
                 h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
@@ -11,25 +10,26 @@
 
                 //include ../modules/prev_answers.jade
 
-            ////- Active buttons
-            //.row.left-padding-lg.bottom-padding-lg
-            //    .col-md-pull-2
-            //        button.btn.btn-primary(
-            //        ng-click="answerSave()"
-            //        ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
-            //        ) Save answer
-            //        | &nbsp;
-            //        button.btn.btn-success(
-            //        ng-click="answerSubmit()"
-            //        ng-if="!answer_justification_form.$invalid && answer[current_user.role + '_score'] && assessment.edit_control===current_user._id"
-            //        ) Submit answer
-            //        | &nbsp;
-            //        button.btn.btn-danger(
-            //        ng-click="answerClear()"
-            //        ng-disabled="assessment.edit_control!==current_user._id"
-            //        ) Clear answer
-            //        | &nbsp;
-            //        a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
+            //- Active buttons
+            .row.left-padding-lg.bottom-padding-lg
+                rgi-active-answer-buttons
+                //.col-md-pull-2
+                //    button.btn.btn-primary(
+                //    ng-click="answerSave()"
+                //    ng-disabled="answer_form.$invalid || assessment.edit_control!==current_user._id"
+                //    ) Save answer
+                //    | &nbsp;
+                //    button.btn.btn-success(
+                //    ng-click="answerSubmit()"
+                //    ng-if="!answer_justification_form.$invalid && answer[current_user.role + '_score'] && assessment.edit_control===current_user._id"
+                //    ) Submit answer
+                //    | &nbsp;
+                //    button.btn.btn-danger(
+                //    ng-click="answerClear()"
+                //    ng-disabled="assessment.edit_control!==current_user._id"
+                //    ) Clear answer
+                //    | &nbsp;
+                //    a.btn.btn-default(href="/assessments/{{answer.assessment_ID}}") Return to assessment menu
             //
             //.row.left-padding-lg.right-padding-lg
             //    .form-horizontal(name="answer_form")

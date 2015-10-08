@@ -151,9 +151,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiAnswerCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/assessments/assessment/answer/:answer_ID', {
+        .when('/assessments/answer/:answer_ID', {
             templateUrl: '/partials/answers/answer',
-            controller: 'rgiAnswerCtrl'
+            controller: 'rgiAnswerCtrl',
+            resolve: routeRoleChecks.user
         })
 
 
