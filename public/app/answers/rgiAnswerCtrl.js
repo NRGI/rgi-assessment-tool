@@ -103,30 +103,6 @@ angular
         //    }
         //};
 
-        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
-            $scope.answer = data;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
-            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
-            $scope.current_user = rgiIdentitySrvc.currentUser;
-            $scope.answer_start = angular.copy($scope.answer);
-            $scope.answer_start = angular.copy($scope.answer);
-
-            var citations = [];
-
-            data.references.citation.forEach(function (el) {
-                rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-                    doc.comment = el;
-                    citations.push(doc);
-                });
-            });
-            $scope.citations = citations;
-
-        });
-
-        //$scope.answerClear = function () {
-        //    $scope.answer = angular.copy($scope.answer_start);
-        //};
-        //
         //$scope.answerSave = function () {
         //    var new_answer_data = $scope.answer,
         //        new_assessment_data = $scope.assessment,
@@ -175,6 +151,94 @@ angular
         //            rgiNotifier.notify(reason);
         //        });
         //};
+
+        //$scope.answerResubmit = function () {
+        //    var new_answer_data, new_assessment_data;
+        //
+        //    new_answer_data = $scope.answer;
+        //    new_assessment_data = $scope.assessment;
+        //
+        //    if (new_answer_data.status === 'flagged') {
+        //        new_answer_data.status = 'resubmitted';
+        //        new_assessment_data.questions_resubmitted += 1;
+        //    }
+        //    rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+        //        .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+        //        .then(function () {
+        //            $location.path('/assessments-review/' + new_answer_data.assessment_ID);
+        //            rgiNotifier.notify('Answer resubmitted');
+        //        }, function (reason) {
+        //            rgiNotifier.notify(reason);
+        //        });
+        //};
+
+        //$scope.answerApprove = function () {
+        //    var new_answer_data = $scope.answer,
+        //        new_assessment_data = $scope.assessment,
+        //        flag_check = flagCheck(new_answer_data.flags);
+        //
+        //    if (new_answer_data.status !== 'approved' && flag_check === true) {
+        //        rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
+        //    } else {
+        //        if (new_answer_data.status === 'submitted') {
+        //            new_answer_data.status = 'approved';
+        //            new_assessment_data.questions_complete += 1;
+        //            //} else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
+        //        } else if (new_answer_data.status === 'flagged') {
+        //            new_answer_data.status = 'approved';
+        //            new_assessment_data.questions_flagged -= 1;
+        //        } else if (new_answer_data.status === 'approved' && flag_check === true) {
+        //            new_answer_data.status = 'flagged';
+        //            new_assessment_data.questions_flagged += 1;
+        //        } else if (new_answer_data.status === 'resubmitted') {
+        //            new_answer_data.status = 'approved';
+        //            new_assessment_data.questions_flagged -= 1;
+        //        }
+        //
+        //        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+        //            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+        //            .then(function () {
+        //                if (new_answer_data.question_order !== new_assessment_data.question_length && new_assessment_data.status !== 'resubmitted') {
+        //                    $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
+        //                } else {
+        //                    $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
+        //                    $route.reload();
+        //                }
+        //                rgiNotifier.notify('Answer approved');
+        //            }, function (reason) {
+        //                rgiNotifier.notify(reason);
+        //            });
+        //    }
+        //};
+        //$scope.answerClear = function () {
+        //    $scope.answer = angular.copy($scope.answer_start);
+        //};
+        //
+
+        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
+            $scope.answer = data;
+            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
+            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
+            $scope.current_user = rgiIdentitySrvc.currentUser;
+            $scope.answer_start = angular.copy($scope.answer);
+            $scope.answer_start = angular.copy($scope.answer);
+
+            var citations = [];
+
+            data.references.citation.forEach(function (el) {
+                rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
+                    doc.comment = el;
+                    citations.push(doc);
+                });
+            });
+            $scope.citations = citations;
+
+        });
+
+
+
+
+
 
         //$scope.commentSubmit = function (current_user) {
         //    var new_comment_data = {
@@ -235,64 +299,9 @@ angular
         //    });
         //};
 
-        //$scope.answerResubmit = function () {
-        //    var new_answer_data, new_assessment_data;
+
         //
-        //    new_answer_data = $scope.answer;
-        //    new_assessment_data = $scope.assessment;
-        //
-        //    if (new_answer_data.status === 'flagged') {
-        //        new_answer_data.status = 'resubmitted';
-        //        new_assessment_data.questions_resubmitted += 1;
-        //    }
-        //    rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-        //        .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-        //        .then(function () {
-        //            $location.path('/assessments-review/' + new_answer_data.assessment_ID);
-        //            rgiNotifier.notify('Answer resubmitted');
-        //        }, function (reason) {
-        //            rgiNotifier.notify(reason);
-        //        });
-        //};
-        //
-        //$scope.answerApprove = function () {
-        //    var new_answer_data = $scope.answer,
-        //        new_assessment_data = $scope.assessment,
-        //        flag_check = flagCheck(new_answer_data.flags);
-        //
-        //    if (new_answer_data.status !== 'approved' && flag_check === true) {
-        //        rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
-        //    } else {
-        //        if (new_answer_data.status === 'submitted') {
-        //            new_answer_data.status = 'approved';
-        //            new_assessment_data.questions_complete += 1;
-        //            //} else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
-        //        } else if (new_answer_data.status === 'flagged') {
-        //            new_answer_data.status = 'approved';
-        //            new_assessment_data.questions_flagged -= 1;
-        //        } else if (new_answer_data.status === 'approved' && flag_check === true) {
-        //            new_answer_data.status = 'flagged';
-        //            new_assessment_data.questions_flagged += 1;
-        //        } else if (new_answer_data.status === 'resubmitted') {
-        //            new_answer_data.status = 'approved';
-        //            new_assessment_data.questions_flagged -= 1;
-        //        }
-        //
-        //        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-        //            .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-        //            .then(function () {
-        //                if (new_answer_data.question_order !== new_assessment_data.question_length && new_assessment_data.status !== 'resubmitted') {
-        //                    $location.path('admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" +String(zeroFill((new_answer_data.question_order + 1), 3)));
-        //                } else {
-        //                    $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
-        //                    $route.reload();
-        //                }
-        //                rgiNotifier.notify('Answer approved');
-        //            }, function (reason) {
-        //                rgiNotifier.notify(reason);
-        //            });
-        //    }
-        //};
+
         //$scope.commentEdit = function (comment, index) {
         //    $scope.value = true;
         //    var scope = $scope;

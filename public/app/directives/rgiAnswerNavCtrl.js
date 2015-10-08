@@ -15,7 +15,7 @@ angular.module('app').controller('rgiAnswerNavCtrl', function ($scope, $location
     if ($scope.current_user === 'supervisor') {
         root_url = '/admin/assessments-admin/answer/';
     } else {
-        root_url = '/assessments/assessment/answer/';
+        root_url = '/assessments/answer/';
     }
 
     answer_split = $routeParams.answer_ID.split('-');
