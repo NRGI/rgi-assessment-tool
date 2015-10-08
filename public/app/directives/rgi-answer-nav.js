@@ -7,7 +7,7 @@ angular
             restrict: 'EA',
             controller: 'rgiAnswerNavCtrl',
             scope: {
-                answer: '='
+                assessment: '='
             },
             templateUrl: '/partials/directives/rgi-answer-nav'
         };
