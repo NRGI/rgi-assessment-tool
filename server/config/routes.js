@@ -93,6 +93,7 @@ module.exports = function (app) {
     /////////////////////////
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
+    app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
 
     app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
     app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);

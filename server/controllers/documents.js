@@ -23,11 +23,10 @@ var crypto                 = require('crypto'),
     upload_bucket          = process.env.DOC_BUCKET;
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
-exports.fileCheck = function (req, res) {
-    var file = req.files.file,
-        hash = crypto.createHash('sha1'),
+var uploadFile = function(file, req, res) {
+    var hash = crypto.createHash('sha1'),
         timestamp = new Date().toISOString(),
-        file_extension = file.path.split('.')[file.path.split('.').length - 1];
+        file_extension = getFileExtension(file.path);
 
     fs.readFile(file.path, {encoding: 'utf8'}, function (err, data) {
         hash.update(data);
@@ -39,30 +38,29 @@ exports.fileCheck = function (req, res) {
             if (document !== null) {
                 res.send(document);
 
-            // if not upload to s3 with hashed value as file name,
-            // create record with hash value and end url
+                // if not upload to s3 with hashed value as file name,
+                // create record with hash value and end url
             } else {
                 // upload parameters
                 var params = {
-                  localFile: file.path,
-                  s3Params: {
-                    Bucket: upload_bucket,
-                    Key: String(file_hash) + '.' + file_extension
-                    // other options supported by putObject, except Body and ContentLength.
-                    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
-                  }
+                    localFile: file.path,
+                    s3Params: {
+                        Bucket: upload_bucket,
+                        Key: String(file_hash) + '.' + file_extension
+                        // other options supported by putObject, except Body and ContentLength.
+                        // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
+                    }
                 };
 
                 var uploader = client.uploadFile(params);
                 uploader.on('error', function(err) {
-                  console.error("unable to upload:", err.stack);
+                    console.error("unable to upload:", err.stack);
                 });
                 uploader.on('progress', function() {
-                  console.log("progress", uploader.progressMd5Amount,
-                            uploader.progressAmount, uploader.progressTotal);
+                    console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
                 });
                 uploader.on('end', function() {
-                  console.log("done uploading");
+                    console.log("done uploading");
                 });
 
                 Document.create({
@@ -86,6 +84,50 @@ exports.fileCheck = function (req, res) {
             }
         });
     });
+};
+
+var getFileExtension = function(filePath) {
+    return filePath.split('.')[filePath.split('.').length - 1];
+};
+
+var getFileName = function(timestamp, user, extension) {
+    return user + '-' + timestamp + (extension ? ('.' + extension) : '');
+};
+
+exports.uploadRemoteFile = function (req, res) {
+    var now = new Date();
+
+    var notifyCompletionPercentage = function(ratio) {
+        console.log('received: ' + (ratio * 100) + ' %');
+    };
+
+
+    request({
+            method: 'GET',
+            uri: req.query.url
+        }, function () {})
+        .on('response', function(response) {
+            var fileTotalSize = parseInt(response.headers['content-length'], 10);
+            var receivedDataSized = 0;
+
+            response
+                .on('data', function(data) {
+                    receivedDataSized += data.length;
+                    notifyCompletionPercentage(receivedDataSized / fileTotalSize);
+                })
+                .on('end', function() {
+                    res.send('OK');
+                })
+            ;
+        });
+
+
+    //console.log( 'The file temporary name is ' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)) );
+    //uploadFile(req.files.file, req, res);
+};
+
+exports.fileCheck = function (req, res) {
+    uploadFile(req.files.file, req, res);
 };
 
 exports.getDocuments = function (req, res) {
