@@ -5,9 +5,11 @@
             rgi-answer-nav(assessment="assessment")
             //| {{current_user.role}}
 
-            //.row.left-padding-lg.bottom-padding-med
-            //    h3: em Question {{answer.question_order}}. {{answer.question_text}}
-            //    include ../modules/prev_answers.jade
+            .row.left-padding-lg.bottom-padding-med
+                h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
+                rgi-prev-answers(answer="answer")
+
+                //include ../modules/prev_answers.jade
 
             ////- Active buttons
             //.row.left-padding-lg.bottom-padding-lg
