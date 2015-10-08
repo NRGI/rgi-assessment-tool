@@ -3,17 +3,21 @@
         div.left-padding-lg.right-padding-lg.top-padding-med
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
             div.right-padding-lg.left-padding-lg
+                //Navigation
                 rgi-answer-nav(assessment="assessment")
 
+                // Previous answers
                 .row.bottom-padding-med
                     h3: em.bottom-padding-med Question {{answer.question_order}}. {{answer.question_text}}
                     rgi-prev-answers(answer="answer")
 
-                //- Active buttons
+                // Active buttons
                 .row.bottom-padding-lg
                     rgi-active-answer-buttons
 
-                //.row.left-padding-lg.right-padding-lg
+                // Answer form
+                .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id")
+                    rgi-answer-form
                 //    .form-horizontal(name="answer_form")
                 //        fieldset
                 //            div(id="answer_choice_div").bottom-padding-med
