@@ -1,7 +1,8 @@
 div.left-padding-lg.right-padding-lg
-    h2 New interview reference
-    .row.form-horizontal.left-padding-lg.right-padding-lg
-            fieldset
+    div.modal-header
+        h3 Assign Assessment
+    div.modal-body
+        fieldset
             .row
                 strong Instructions:
                 em  You must assign the assessment to a researcher. You can assign to a reviewer at a later data if need be.
@@ -27,8 +28,7 @@ div.left-padding-lg.right-padding-lg
                     value=""
                     selected
                     disabled) Select reviewer
-
-            .row.pull-right.bottom-padding-med
-                button.btn.btn-success(ng-click="assessmentAssign()" ng-disabled="assignAssessment.$invalid") Assign user to assessment
-                | &nbsp;
-                button.btn.btn-danger(ng-click="closeDialog()") Cancel
+    div.modal-footer
+        button.btn.btn-success(ng-click="assessmentAssign()" ng-disabled="assignAssessment.$invalid") Assign user to assessment
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel

@@ -1,9 +1,8 @@
-div.left-padding-lg.right-padding-lg.top-padding-med.bottom-padding-med
-   .row
-      text Are you sure you want to {{action_text}}?
-   .row.top-padding-med
-      .col-md-10.col-md-offset-2
-         .pull-right
-            a.btn.btn-danger(ng-click="assessmentmove()") Confirm
-            | &nbsp;
-            a.btn.btn-default(ng-click="closeDialog()") Cancel
+div
+   div.modal-header
+      h4 Are you sure you want to {{action_text}}?
+   //div.modal-body
+   div.modal-footer
+      button.btn.btn-danger(ng-click="assessmentmove()") Confirm
+      | &nbsp;
+      button.btn.btn-default(ng-click="closeDialog()") Cancel

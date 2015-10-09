@@ -1,5 +1,7 @@
 div.left-padding-lg.right-padding-lg
-   h3 New webpage (PDF version)
+   div.modal-header
+      h3 New Webpage (PDF screenshot)
+   div.modal-body
       .row.left-padding-lg(id="new_document_form")
          .form-horizontal
             // NEW DOC
@@ -44,17 +46,17 @@ div.left-padding-lg.right-padding-lg
                               glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
                            .pull-left.col-lg-1(ng-if="!$last")
                               glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
-                   //div
-                   //    .row
-                   //        .form-group
-                   //            // YEAR
-                   //            .pull-left.col-lg-5
-                   //                input.form-control(
-                   //                name="year"
-                   //                type="text"
-                   //                placeholder="Year published..."
-                   //                ng-model="new_document.year"
-                   //                autocomplete="off")
+                  //div
+                  //    .row
+                  //        .form-group
+                  //            // YEAR
+                  //            .pull-left.col-lg-5
+                  //                input.form-control(
+                  //                name="year"
+                  //                type="text"
+                  //                placeholder="Year published..."
+                  //                ng-model="new_document.year"
+                  //                autocomplete="off")
 
                   // SOURCE
                   div
@@ -73,18 +75,18 @@ div.left-padding-lg.right-padding-lg
                      .row
                         .form-group
                            .col-lg-10.input-group
-                               input.form-control(
-                               type="text"
-                               datepicker-popup="{{date_format}}"
-                               ng-model="new_document.date_published"
-                               placeholder="Date published..."
-                               is-open="pub_status.opened"
-                               max-date="maxDate"
-                               datepicker-options="date_options"
-                               close-text="Close")
-                               span.input-group-btn
-                                  button.btn.btn-default(ng-click="pubCalOpen($event)")
-                                     i.glyphicon.glyphicon-calendar
+                              input.form-control(
+                              type="text"
+                              datepicker-popup="{{date_format}}"
+                              ng-model="new_document.date_published"
+                              placeholder="Date published..."
+                              is-open="pub_status.opened"
+                              max-date="maxDate"
+                              datepicker-options="date_options"
+                              close-text="Close")
+                              span.input-group-btn
+                                 button.btn.btn-default(ng-click="pubCalOpen($event)")
+                                    i.glyphicon.glyphicon-calendar
 
 
 
@@ -151,7 +153,7 @@ div.left-padding-lg.right-padding-lg
 
 
 
-                //- COMMENT
+               //- COMMENT
                div(id="comment")
                   .row
                      .form-group
@@ -162,10 +164,7 @@ div.left-padding-lg.right-padding-lg
                            placeholder="Comments..."
                            ng-model="answer.new_ref_comment"
                            autocomplete="off")
-
-               //- BUTTON CONTROL
-               div
-                  .col-lg-11
-                     button.btn.btn-block.btn-success(
-                     ng-click="documentRefSubmit(new_document)"
-                     ) Create reference
+   div.modal-footer
+      button.btn.btn-block.btn-success(
+      ng-click="documentRefSubmit(new_document)"
+      ) Create reference
