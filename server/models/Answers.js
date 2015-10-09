@@ -50,19 +50,7 @@ var citationSchema = new Schema({
     location: String
 });
 
-var interviewSchema = new Schema({
-    interviewee_ID: ObjectId,
-    contact_date: {
-        type: Date,
-        default: Date.now},
-    date: {
-        type: Date,
-        default: Date.now},
-    comment: htmlSettings,
-    author: ObjectId, // Pull from curretn user _id value
-    author_name: String,
-    author_role: String
-});
+
 
 var scoreHistorySchema = new Schema({
     date: {

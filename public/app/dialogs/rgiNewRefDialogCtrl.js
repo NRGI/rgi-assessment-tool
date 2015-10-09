@@ -3,6 +3,7 @@
 angular
     .module('app')
     .controller('rgiNewRefDialogCtrl', function (
+        $q,
         $scope,
         $route,
         $timeout,
@@ -218,42 +219,26 @@ angular
                         if (email_domain === 'http://undefined') {
                             rgiNotifier.error('You must enter a valid email address!');
                         } else {
-
-                            console.log(contact_date);
-                            //new_ref_data = {
-                            //    first_name: new_interviewee.firstName,
-                            //    last_name: new_interviewee.lastName,
-                            //    phone: new_interviewee.phone,
-                            //    email: new_interviewee.email,
-                            //    contact_date: contact_date,
-                            //    comment: {
-                            //        date: new Date().toISOString(),
-                            //        author: current_user._id,
-                            //        author_name: current_user.firstName + ' ' + current_user.lastName,
-                            //        role: current_user.role,
-                            //        content: new_answer_data.human_ref_comment
-                            //    }
-                            //
-                            //    interviewee_ID: ObjectId,
-                            //    contact_date: {
-                            //        type: Date,
-                            //        default: Date.now},
-                            //    comment: htmlSettings,
-                            //    author: ObjectId, // Pull from curretn user _id value
-                            //    author_name: String,
-                            //    role: String
-                            //};
-
-                            //new_answer_data.references.human.push(new_ref_data);
-                            //
-                            //rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                            //    $scope.closeThisDialog();
-                            //    rgiNotifier.notify('Reference added!');
-                            //    $route.reload();
-                            //}, function (reason) {
-                            //    rgiNotifier.error(reason);
-                            //});
-
+                            rgiIntervieweeMethodSrvc.createInterviewee(new_interviewee)
+                                .then(function (interviewee) {
+                                    new_ref_data = {
+                                        interviewee_ID: interviewee._id,
+                                        contact_date: contact_date,
+                                        comment: new_answer_data.human_ref_comment,
+                                        author: current_user._id,
+                                        author_name: current_user.firstName + ' ' + current_user.lastName,
+                                        author_role: current_user.role
+                                    };
+                                    new_answer_data.references.human.push(new_ref_data);
+                                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
+                                })
+                                .then(function () {
+                                    $scope.closeThisDialog();
+                                    rgiNotifier.notify('Reference added');
+                                    $route.reload();
+                                }, function (reason) {
+                                    rgiNotifier.notify(reason);
+                                });
                         }
                     }
                 }

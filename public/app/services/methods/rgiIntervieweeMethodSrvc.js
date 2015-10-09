@@ -11,8 +11,8 @@ angular
             createInterviewee: function (new_interviewee_data) {
                 var new_interviewee = new rgiIntervieweeSrvc(new_interviewee_data),
                     dfd = $q.defer();
-                new_interviewee.$save().then(function () {
-                    dfd.resolve();
+                new_interviewee.$save().then(function (interviewee) {
+                    dfd.resolve(interviewee);
                 }, function (response) {
                     dfd.reject(response.data.reason);
                 });
@@ -23,10 +23,9 @@ angular
                     delete_ID = new rgiIntervieweeSrvc();
 
                 delete_ID.id = user_deletion;
-
                 //noinspection CommaExpressionJS
-                delete_ID.$delete().then(function () {
-                    dfd.resolve();
+                delete_ID.$delete().then(function (response) {
+                    dfd.resolve(response);
                 }, function (response) {
                     dfd.reject(response.data.reason);
                 });
