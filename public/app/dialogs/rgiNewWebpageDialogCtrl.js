@@ -37,10 +37,27 @@ angular
         $scope.new_document.type = 'web_page';
 
         //DATEPICKER OPTS
-        $scope.date_format = 'MMMM d, yyyy';
         var today = new Date();
         $scope.date_default = today;
         $scope.date_max_limit = today;
+        $scope.date_options = {
+            formatYear: 'yy',
+            startingDay: 1
+        };
+        $scope.date_formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.date_format = $scope.date_formats[0];
+        $scope.acc_status = {
+            opened: false
+        };
+        $scope.pub_status = {
+            opened: false
+        };
+        $scope.accCalOpen = function($event) {
+            $scope.acc_status.opened = true;
+        };
+        $scope.pubCalOpen = function($event) {
+            $scope.pub_status.opened = true;
+        };
 
         $scope.authorPush = function () {
             $scope.new_document.authors.push({first_name: "", last_name: ""});

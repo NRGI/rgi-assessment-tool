@@ -66,7 +66,7 @@
                         td.col-md-1.text-center {{answer.reviewer_score}}
                         td(ng-if="assessment.edit_control===identity.currentUser._id")
                             a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted'"
-                            href="/assessments/assessment-edit/{{answer.answer_ID}}") Edit question
+                            href="/assessments/answer/{{answer.answer_ID}}") Edit question
                             a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
                             href="/assessments/answer/{{answer.answer_ID}}") Edit to answer
                         td(ng-if="assessment.edit_control!==identity.currentUser._id")
