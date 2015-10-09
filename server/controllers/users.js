@@ -39,23 +39,44 @@ exports.createUser = function (req, res) {
     userData.password = new Date().toISOString();
 
     contact_packet.rec_email = userData.email;
-    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
-    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    try {
+        contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    }
+    catch(err) {
+        res.status(400);
+        return res.send({reason: 'first and last name is required'});
+    }
+    try {
+        userData.username = userData.username.toLowerCase();
+    }
+    catch(err) {
+        res.status(400);
+        return res.send({reason: 'username is required'});
+    }
+    try {
+        contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    }
+    catch(err) {
+        res.status(400);
+        return res.send({reason: 'user role is required'});
+    }
     contact_packet.rec_username = userData.username;
     contact_packet.rec_password = userData.password;
     contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
     contact_packet.send_email = req.user.email;
 
-    userData.username = userData.username.toLowerCase();
+
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
     userData.createdBy = req.user._id;
+    console.log(userData);
 
     User.create(userData, function (err, user, next) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
             }
+            //console.log(err);
             res.status(400);
             return res.send({reason: err.toString()});
         }

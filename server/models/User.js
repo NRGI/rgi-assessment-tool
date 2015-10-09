@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose    = require('mongoose'),
+    validate    = require('mongoose-validate'),
     encrypt     = require('../utilities/encryption');
 
 var ObjectId    = mongoose.Schema.Types.ObjectId;
@@ -15,7 +16,8 @@ var modificationSchema = new mongoose.Schema({
 var userSchema = mongoose.Schema({
     firstName: {
         type: String,
-        required: '{PATH} is required!'},
+        required: '{PATH} is required!'
+    },
     lastName: {
         type: String,
         required: '{PATH} is required!'},
@@ -25,7 +27,8 @@ var userSchema = mongoose.Schema({
         unique: true},
     email: {
         type:  String,
-        required: '{PATH} is required'},
+        required: true,
+        validate: [validate.email, 'invalid email address']},
     salt: {
         type: String,
         required: '{PATH} is required!'},
