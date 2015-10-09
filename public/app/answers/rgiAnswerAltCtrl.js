@@ -29,7 +29,8 @@ angular
         rgiDocumentSrvc,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
-        rgiQuestionSrvc
+        rgiQuestionSrvc,
+        rgiIntervieweeSrvc
     ) {
         'use strict';
         $scope.identity = rgiIdentitySrvc;
@@ -56,6 +57,7 @@ angular
 
 
             var citations = [];
+            var interviews = [];
 
             data.references.citation.forEach(function (el) {
                 rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
@@ -63,7 +65,16 @@ angular
                     citations.push(doc);
                 });
             });
+
+            data.references.human.forEach(function (el) {
+                rgiIntervieweeSrvc.get({_id: el.interviewee_ID}, function (interviewee) {
+                    interviewee.comment = el;
+                    interviews.push(interviewee);
+                });
+            });
+
             $scope.citations = citations;
+            $scope.interviews = interviews;
 
         });
     });

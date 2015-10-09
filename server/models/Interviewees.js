@@ -22,6 +22,7 @@ var intervieweeSchema = mongoose.Schema({
         type: String,
         required: '{PATH} is required!'}, // gov, industry, CSO, expert or other
     title: String,
+    salutation: String,
     organization: String,
     //tool mapping
     assessments: [String],

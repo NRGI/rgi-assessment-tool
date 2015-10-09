@@ -29,9 +29,17 @@ angular
         FileUploader,
         rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
-        rgiIntervieweeSrvc
+        rgiIntervieweeSrvc,
+        rgiIntervieweeMethodSrvc
     ) {
         'use strict';
+        $scope.role_opts = [
+            {text: 'Government', value: 'government'},
+            {text: 'CSO', value: 'cso'},
+            {text: 'Industry', value: 'industry'},
+            {text: 'Expert', value: 'expert'},
+            {text: 'Other', value: 'other'}];
+        $scope.salutation_opts = ['mr.', 'mrs.', 'ms.'];
 
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
@@ -118,71 +126,117 @@ angular
 
         $scope.newInterviewee = function () {
             $scope.new_interviewee = {};
+            $scope.sel_int = '';
             $scope.selected_interviewee = undefined;
         };
 
-        $scope.humanRefSubmit = function (current_user) {
-            var new_answer_data = $scope.answer_update,
-                new_ref_data, contact_date;
+        $scope.interviewRefSubmit = function () {
+            var new_answer_data, new_interviewee, contact_date, email_domain, new_ref_data, current_user, selected_interviewee;
 
-            if (!new_answer_data.human_ref_first_name || !new_answer_data.human_ref_first_name) {
-                rgiNotifier.error('You must enter an interviewee first and last name!');
-            } else if (!new_answer_data.human_ref_email) {
-                rgiNotifier.error('You must enter a valid email address!');
-            } else {
-                var email_domain = 'http://' + new_answer_data.human_ref_email.split('@')[1];
-                if (email_domain === 'http://undefined') {
-                    rgiNotifier.error('You must enter a valid email address!');
-                } else {
-                    if(!new_answer_data.human_ref_contact_date) {
-                        contact_date = $scope.date_default.toISOString();
-                    } else {
-                        contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
-                    }
-                    new_ref_data = {
-                        first_name: new_answer_data.human_ref_first_name,
-                        last_name: new_answer_data.human_ref_last_name,
-                        phone: new_answer_data.human_ref_phone,
-                        email: new_answer_data.human_ref_email,
-                        contact_date: contact_date,
-                        comment: {
-                            date: new Date().toISOString(),
-                            author: current_user._id,
-                            author_name: current_user.firstName + ' ' + current_user.lastName,
-                            role: current_user.role
+            new_answer_data = $scope.answer_update;
+            current_user = $scope.current_user;
+            contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
+
+            //error handling
+            if (!new_answer_data.human_ref_comment) {
+                rgiNotifier.error('You must enter interview content!');
+            } else if (!new_answer_data.human_ref_contact_date) {
+                rgiNotifier.error('You must enter interview date!');
+            } else if (!$scope.selected_interviewee && !$scope.new_interviewee) {
+                rgiNotifier.error('You must select an existing contact or create a new one!');
+            } else if ($scope.selected_interviewee) {    //EXISTING INTERVIEWEE
+
+                selected_interviewee = $scope.selected_interviewee.originalObject.id;
+                new_ref_data = {
+                    interviewee_ID: selected_interviewee,
+                    contact_date: contact_date,
+                    comment: new_answer_data.human_ref_comment,
+                    author: current_user._id,
+                    author_name: current_user.firstName + ' ' + current_user.lastName,
+                    author_role: current_user.role
+                };
+
+                new_answer_data.references.human.push(new_ref_data);
+
+                rgiIntervieweeSrvc.get({_id: selected_interviewee}, function (interviewee) {
+                    ['answer', 'assessment', 'question'].forEach(function (el) {
+                        if (interviewee[el+'s'] !== undefined && interviewee[el+'s'].indexOf(new_answer_data[el+'_ID']) < 0) {
+                            interviewee[el+'s'].push(new_answer_data[el+'_ID']);
+                        } else if (interviewee[el+'s'] === undefined) {
+                            interviewee[el+'s'] = [new_answer_data[el+'_ID']];
                         }
-                    };
-
-                    if (new_answer_data.human_ref_comment !== undefined) {
-                        new_ref_data.comment.content = new_answer_data.human_ref_comment;
+                    });
+                    if (interviewee.users !== undefined && interviewee.assessments.indexOf(new_answer_data.users) < 0) {
+                        interviewee.users.push(current_user._id);
+                    } else if (interviewee.users === undefined) {
+                        interviewee.users = [current_user._id];
                     }
-
-                    new_answer_data.references.human.push(new_ref_data);
-
                     rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+                        rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
                         $scope.closeThisDialog();
                         rgiNotifier.notify('Reference added!');
                         $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
+                });
+
+            } else if ($scope.new_interviewee && $scope.new_interviewee!=={}) {      //NEW INTERVIEWEE
+                new_interviewee = $scope.new_interviewee;
+                if (!new_interviewee.firstName || !new_interviewee.lastName) {
+                    rgiNotifier.error('You must enter a first and last name for new interviewees!');
+                } else if (!new_interviewee.role) {
+                    rgiNotifier.error('You must select a role for new interviewees!');
+                } else {
+                    if (!new_interviewee.email) {
+                        rgiNotifier.error('You must enter a valid email address!');
+                    } else {
+                        email_domain = 'http://' + new_interviewee.email.split('@')[1];
+                        if (email_domain === 'http://undefined') {
+                            rgiNotifier.error('You must enter a valid email address!');
+                        } else {
+
+                            console.log(contact_date);
+                            //new_ref_data = {
+                            //    first_name: new_interviewee.firstName,
+                            //    last_name: new_interviewee.lastName,
+                            //    phone: new_interviewee.phone,
+                            //    email: new_interviewee.email,
+                            //    contact_date: contact_date,
+                            //    comment: {
+                            //        date: new Date().toISOString(),
+                            //        author: current_user._id,
+                            //        author_name: current_user.firstName + ' ' + current_user.lastName,
+                            //        role: current_user.role,
+                            //        content: new_answer_data.human_ref_comment
+                            //    }
+                            //
+                            //    interviewee_ID: ObjectId,
+                            //    contact_date: {
+                            //        type: Date,
+                            //        default: Date.now},
+                            //    comment: htmlSettings,
+                            //    author: ObjectId, // Pull from curretn user _id value
+                            //    author_name: String,
+                            //    role: String
+                            //};
+
+                            //new_answer_data.references.human.push(new_ref_data);
+                            //
+                            //rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+                            //    $scope.closeThisDialog();
+                            //    rgiNotifier.notify('Reference added!');
+                            //    $route.reload();
+                            //}, function (reason) {
+                            //    rgiNotifier.error(reason);
+                            //});
+
+                        }
+                    }
                 }
+            } else {
+                rgiNotifier.error('Something happened!');
             }
-            //
-            ////TODO validate that email domain exists
-            //if (email_domain === 'http://undefined') {
-            //    rgiNotifier.error('You must enter a valid email address!')
-            //} else {
-            //    //isURLReal(email_domain)
-            //    //    .fail(function (res) {
-            //    //        console.log(res);
-            //    //        rgiNotifier.error('Email Domain does not appear to be valid');
-            //    //    })
-            //    //    .done(function (res) {
-            //    //        console.log(res);
-            //    //    });
-            //
-            //}
         };
         $scope.closeDialog = function () {
             $scope.$parent.ref_selection = '';
