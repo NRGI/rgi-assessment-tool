@@ -33,11 +33,11 @@ exports.createInterviewee = function (req, res, next) {
         if (err) {
             res.status(400);
             return res.send({reason: err.toString()});
+        } else {
+            res.send(interviewee._id);
         }
     });
-    res.send();
 };
-
 exports.updateInterviewee = function (req, res) {
     var interviewee_updates = req.body,
         query = Interviewee.findOne({_id: req.body._id});

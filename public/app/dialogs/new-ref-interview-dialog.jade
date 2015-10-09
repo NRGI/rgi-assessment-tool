@@ -92,11 +92,11 @@ div.left-padding-lg.right-padding-lg
                                 autocomplete="off")
                         .row.form-group.right-padding-med
                             .pull-left.col-lg-6
-                                select.form-control()
+                                select.form-control(ng-model="new_interviewee.role")
                                     option(value="" selected disabled) Select role (required)...
                                     option(ng-repeat="role in role_opts" value="{{role.value}}") {{role.text}}
                             .pull-left.col-lg-6
-                                select.form-control()
+                                select.form-control(ng-model="new_interviewee.salutation")
                                     option(value="" selected disabled) Select salutation (required)...
                                     option(ng-repeat="sal in salutation_opts" value="{{sal}}") {{sal | ucfirst}}
 
