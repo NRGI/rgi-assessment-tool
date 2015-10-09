@@ -11,48 +11,32 @@ angular
         rgiNotifier,
         FileUploader,
         rgiAnswerMethodSrvc,
-        rgiIntervieweeSrvc,
-        rgiRequestSubmitterSrvc
+        rgiAssessmentSrvc,
+        rgiIntervieweeSrvc
     ) {
-
-        function isURLReal(fullyQualifiedURL) {
-            var URL = encodeURIComponent(fullyQualifiedURL),
-                dfd = $.Deferred(),
-                checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
-
-            checkURLPromise
-                .done(function(res) {
-                    // results should be null if the page 404s or the domain doesn't work
-                    if (res.query.results) {
-                        dfd.resolve(true);
-                    } else {
-                        dfd.reject(false);
-                    }
-                })
-                .fail(function () {
-                    dfd.reject('failed');
-
-
-                });
-            return dfd.promise();
-        }
+        'use strict';
 
         $scope.answer_update = $scope.$parent.answer;
-        $scope.interviewees = rgiIntervieweeSrvc.query({});
-        //$scope.interviewee_list = [];
-        //rgiIntervieweeSrvc.query({}, function (interviewees) {
-        //    interviewees.forEach(function (el) {
-        //        $scope.interviewees
-        //        $scope.interviewee_list.push(el.firstName + ' ' + el.lastName);
-        //        //console.log(el);
-        //    });
-        //});
-        ////TODO REPLACE WITH EXISITING REFERENCE SET
-        //$scope.existing_ref = [
-        //    {text: 'Add Document', value: 'document'},
-        //    {text: 'Add Webpage', value: 'webpage'},
-        //    {text: 'Add Interview', value: 'interview'}
-        //];
+        $scope.interviewee_list = [];
+        //rgiIntervieweeSrvc.get({assessment_ID: 'DZ-2015-PI'}, function (interviewees) {
+        rgiIntervieweeSrvc.query({}, function (interviewees) {
+            interviewees.forEach(function (interviewee) {
+                var interviewee_add = {
+                    firstName: interviewee.firstName,
+                    lastName: interviewee.lastName,
+                    id: interviewee._id,
+                    assessments: interviewee.assessments,
+                    email: interviewee.email,
+                    assessment_countries: []
+                };
+                interviewee.assessments.forEach(function (assessment_ID) {
+                    rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
+                        interviewee_add.assessment_countries.push(assessment.country);
+                    });
+                });
+                $scope.interviewee_list.push(interviewee_add);
+            });
+        });
 
         //DATEPICKER OPTS
         var today = new Date();
