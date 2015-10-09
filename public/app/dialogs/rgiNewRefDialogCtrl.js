@@ -28,20 +28,32 @@ angular
         rgiNotifier,
         FileUploader,
         rgiAnswerMethodSrvc,
+        rgiAssessmentSrvc,
         rgiIntervieweeSrvc
     ) {
         'use strict';
-        $scope.answer_update = $scope.$parent.answer;
-        //$scope.interviewee_list = [];
-        $scope.interviewees = rgiIntervieweeSrvc.query({});
 
-        //rgiIntervieweeSrvc.query({}, function (interviewees) {
-        //    interviewees.forEach(function (el) {
-        //        $scope.interviewees
-        //        $scope.interviewee_list.push(el.firstName + ' ' + el.lastName);
-        //        //console.log(el);
-        //    });
-        //});
+        $scope.answer_update = $scope.$parent.answer;
+        $scope.interviewee_list = [];
+        //rgiIntervieweeSrvc.get({assessment_ID: 'DZ-2015-PI'}, function (interviewees) {
+        rgiIntervieweeSrvc.query({}, function (interviewees) {
+            interviewees.forEach(function (interviewee) {
+                var interviewee_add = {
+                    firstName: interviewee.firstName,
+                    lastName: interviewee.lastName,
+                    id: interviewee._id,
+                    assessments: interviewee.assessments,
+                    email: interviewee.email,
+                    assessment_countries: []
+                };
+                interviewee.assessments.forEach(function (assessment_ID) {
+                    rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
+                        interviewee_add.assessment_countries.push(assessment.country);
+                    });
+                });
+                $scope.interviewee_list.push(interviewee_add);
+            });
+        });
 
         //DATEPICKER OPTS
         var today = new Date();
@@ -102,6 +114,11 @@ angular
                     });
                 }
             }
+        };
+
+        $scope.newInterviewee = function () {
+            $scope.new_interviewee = {};
+            $scope.selected_interviewee = undefined;
         };
 
         $scope.humanRefSubmit = function (current_user) {

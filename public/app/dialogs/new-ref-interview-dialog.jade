@@ -8,26 +8,67 @@ div.left-padding-lg.right-padding-lg
                         angucomplete(
                         id="interviewee_search"
                         placeholder="Search existing interviewees..."
-                        pause="300"
                         selectedobject="selected_interviewee"
-                        localdata="interviewees"
-                        searchfields="firstName,lastName"
+                        localdata="interviewee_list"
+                        searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
                         titlefield="firstName,lastName"
-                        descriptionfield="assessments"
+                        descriptionfield="email"
                         minlength="1"
                         inputclass="form-control form-control-small"
                         matchclass="highlight")
+                        //angucomplete(
+                        //id="interviewee_search"
+                        //placeholder="Search existing interviewees..."
+                        //pause="300"
+                        //selectedobject="selected_interviewee"
+                        //localdata="interviewees"
+                        //searchfields="firstName,lastName"
+                        //titlefield="firstName,lastName"
+                        //descriptionfield="assessments"
+                        //minlength="1"
+                        //inputclass="form-control form-control-small"
+                        //matchclass="highlight")
                     div.col-md-3
-                        button.btn.btn-block.btn-primary(ng-click="") New interviewee
+                        button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+
+
+                // DATE ACCESSED
+                .row.bottom-padding-lg
+                    div.col-md-12
+                        .pull-left.col-lg-5.input-group
+                            input.form-control(
+                            type="text"
+                            datepicker-popup="{{date_format}}"
+                            placeholder="Date interviewed..."
+                            ng-model="answer_update.human_ref_contact_date"
+                            is-open="status.opened"
+                            max-date="maxDate"
+                            datepicker-options="date_options"
+                            close-text="Close")
+                            span.input-group-btn
+                                button.btn.btn-default(ng-click="calendarOpen($event)")
+                                    i.glyphicon.glyphicon-calendar
+                //INTERVIEWEE COMMENT
+                .row.bottom-padding-lg
+                    div.col-md-12
+                        textarea.form-control(
+                        name="comment"
+                        type="text"
+                        placeholder="Comments..."
+                        ng-model="answer_update.human_ref_comment"
+                        redactor
+                        autocomplete="off")
+
 
                 // EXISTING INTERVIEWEE
-                //TODO ALLOW USER TO SELECT FROM EXISTING REFERENCE SET
-                //div.row.form-group.col-lg-11
-                //    label Existing interviewee
-                //    select.form-group.form-control.pull-left(ng-model="existing_ref")
-                //        option(ng-repeat="ref in existing_ref" value="{{ref.value}}") {{ref.text}}
+                div(ng-if="selected_interviewee")
+                    h4 Existing interviewee
+                    .row {{selected_interviewee}}
+
+
                 // NEW INTERVIEWEE
-                // h4 New interviewee
+                div(ng-if="new_interviewee && !selected_interviewee")
+                    h4 New interviewee
                 // div {{interviewees}}
                 // div.left-padding-lg.right-padding-lg
                 //     div.row.form-group
@@ -61,23 +102,10 @@ div.left-padding-lg.right-padding-lg
                 //         placeholder="Phone number..."
                 //         ng-model="answer_update.human_ref_phone"
                 //         autocomplete="off")
-                div.row.form-group.col-lg-6
-                    datepicker(
-                    date-format="{{date_format}}")
-                        input.form-control(
-                        ng-model="answer_update.human_ref_contact_date"
-                        type="text"
-                        placeholder="Date interviewed...")
-                div.row.form-group.col-lg-12
-                    textarea.form-control(
-                    name="comment"
-                    type="text"
-                    placeholder="Comments..."
-                    ng-model="answer_update.human_ref_comment"
-                    autocomplete="off")
 
-                //- BUTTON CONTROL
-                div.col-lg-6
-                    button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
-                div.col-lg-6
-                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+                //
+                ////- BUTTON CONTROL
+                //div.col-lg-6
+                //    button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
+                //div.col-lg-6
+                //    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
