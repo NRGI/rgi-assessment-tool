@@ -68,17 +68,23 @@ div.left-padding-lg.right-padding-lg
                               ng-model="new_document.source"
                               autocomplete="off")
 
-                  //DATE PUBLISHED
-                  div
+                  // DATE PUBLISHED
+                  div.left-padding-med
                      .row
                         .form-group
-                           .col-lg-11
-                              datepicker(
-                              date-format="{{date_format}}")
-                                 input.form-control(
-                                 ng-model="new_document.date_published"
-                                 type="text"
-                                 placeholder="Date published...")
+                           .col-lg-10.input-group
+                               input.form-control(
+                               type="text"
+                               datepicker-popup="{{date_format}}"
+                               ng-model="new_document.date_published"
+                               placeholder="Date published..."
+                               is-open="pub_status.opened"
+                               max-date="maxDate"
+                               datepicker-options="date_options"
+                               close-text="Close")
+                               span.input-group-btn
+                                  button.btn.btn-default(ng-click="pubCalOpen($event)")
+                                     i.glyphicon.glyphicon-calendar
 
 
 
@@ -125,18 +131,25 @@ div.left-padding-lg.right-padding-lg
                            h5(ng-if="new_document.date_published")  {{new_document.date_published | date: 'MM/dd/yyyy'}}
                            h5(ng-if="!new_document.date_published")  N/A
 
-
-               //DATE ACCESSED
-               div
+               // DATE ACCESSED
+               div.left-padding-med
                   .row
                      .form-group
-                        .col-lg-11
-                           datepicker(
-                           date-format="{{date_format}}")
-                              input.form-control(
-                              ng-model="ref_date_accessed"
-                              type="text"
-                              placeholder="Date accessed...")
+                        .col-lg-10.input-group
+                           input.form-control(
+                           type="text"
+                           datepicker-popup="{{date_format}}"
+                           ng-model="ref_date_accessed"
+                           placeholder="Date accessed..."
+                           is-open="acc_status.opened"
+                           max-date="maxDate"
+                           datepicker-options="date_options"
+                           close-text="Close")
+                           span.input-group-btn
+                              button.btn.btn-default(ng-click="accCalOpen($event)")
+                                 i.glyphicon.glyphicon-calendar
+
+
 
                 //- COMMENT
                div(id="comment")

@@ -18,6 +18,9 @@ div(id="prev_bib")
             text  {{ref.title}} (
             a(href="{{ref.s3_url}}" target="_blank") View here
             text )
+         .row(ng-if="ref.type === 'web_page'")
+            b Title:
+            a(href="{{ref.source}}" target="_blank")  {{ref.title}}
          .row
             b Author(s):
             text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
@@ -26,9 +29,6 @@ div(id="prev_bib")
          .row
             b Type:
             text  {{ref.type}}
-         .row(ng-if="ref.type === 'web_page'")
-            b Title:
-            a(href="{{ref.source}}" target="_blank")  {{ref.title}}
          .row
             b Published:
             text(ng-if="ref.year")  {{ref.year}}
