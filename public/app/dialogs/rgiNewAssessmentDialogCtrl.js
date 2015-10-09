@@ -101,6 +101,7 @@ angular
                                 question_order: el.question_order,
                                 question_choices: el.question_choices,
                                 question_text: el.question_text,
+                                question_guidance_text: el.question_guidance_text,
                                 section_name: el.section_name
                             });
                         });
