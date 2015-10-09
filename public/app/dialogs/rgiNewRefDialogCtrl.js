@@ -219,8 +219,13 @@ angular
                         if (email_domain === 'http://undefined') {
                             rgiNotifier.error('You must enter a valid email address!');
                         } else {
+                            new_interviewee.answers = [new_answer_data.answer_ID];
+                            new_interviewee.assessments = [new_answer_data.assessment_ID];
+                            new_interviewee.questions = [new_answer_data.question_ID];
+                            new_interviewee.users = [current_user._id];
                             rgiIntervieweeMethodSrvc.createInterviewee(new_interviewee)
                                 .then(function (interviewee) {
+                                    console.log(interviewee._id);
                                     new_ref_data = {
                                         interviewee_ID: interviewee._id,
                                         contact_date: contact_date,

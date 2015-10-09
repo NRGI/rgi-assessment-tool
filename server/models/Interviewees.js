@@ -16,7 +16,11 @@ var intervieweeSchema = mongoose.Schema({
     lastName: {
         type: String,
         required: '{PATH} is required!'},
-    email: String,
+    email: {
+        type: String,
+        required: '{PATH} is required!',
+        unique: true
+    },
     phone: String,
     role: {
         type: String,
