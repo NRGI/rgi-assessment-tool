@@ -35,6 +35,7 @@ angular
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
         }
         $scope.new_document.type = 'web_page';
+        $scope.submit_disabled = false;
 
         //DATEPICKER OPTS
         var today = new Date();
@@ -95,6 +96,7 @@ angular
                         rgiNotifier.error('Website does not exists');
                     })
                     .done(function (res) {
+                        $scope.submit_disabled=true;
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,
                             question_ID = $scope.$parent.question._id,
                             answer_ID = $scope.$parent.answer.answer_ID,

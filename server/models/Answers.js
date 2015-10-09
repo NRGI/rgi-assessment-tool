@@ -50,40 +50,18 @@ var citationSchema = new Schema({
     location: String
 });
 
-var humanSchema = new Schema({
-    first_name: String,
-    last_name: String,
-    phone: String,
-    email: String,
-    contact_date: {
-        type: Date,
-        default: Date.now},
-    comment: {
-        date: {
-            type: Date,
-            default: Date.now},
-        content: htmlSettings,
-        author: ObjectId, // Pull from curretn user _id value
-        author_name: String,
-        role: String,
-        addressed: Boolean
-    }
-});
 var interviewSchema = new Schema({
     interviewee_ID: ObjectId,
     contact_date: {
         type: Date,
         default: Date.now},
-    comment: {
-        date: {
-            type: Date,
-            default: Date.now},
-        content: htmlSettings,
-        author: ObjectId, // Pull from curretn user _id value
-        author_name: String,
-        role: String,
-        addressed: Boolean
-    }
+    date: {
+        type: Date,
+        default: Date.now},
+    comment: htmlSettings,
+    author: ObjectId, // Pull from curretn user _id value
+    author_name: String,
+    author_role: String
 });
 
 var scoreHistorySchema = new Schema({
@@ -155,7 +133,7 @@ var answerSchema = new Schema({
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: {
         citation: [citationSchema],
-        human: [humanSchema]
+        human: [interviewSchema]
     },
     modified: [modificationSchema]
 });

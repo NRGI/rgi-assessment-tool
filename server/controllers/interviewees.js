@@ -54,6 +54,7 @@ exports.updateInterviewee = function (req, res) {
         interviewee.phone = interviewee_updates.phone;
         interviewee.role = interviewee_updates.role;
         interviewee.title = interviewee_updates.title;
+        interviewee.salutation = interviewee_updates.salutation;
         interviewee.organization = interviewee_updates.organization;
         interviewee.assessments = interviewee_updates.assessments;
         interviewee.answers = interviewee_updates.answers;
