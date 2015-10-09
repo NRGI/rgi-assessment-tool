@@ -1,6 +1,8 @@
 div.left-padding-lg.right-padding-lg
-    h2 New webage reference
-    .row(id="new_document_form")
+    div.modal-header
+        h3 New Webage Reference
+    div.modal-body
+        .row(id="new_document_form")
         .form-horizontal
             fieldset
                 // EXISTING DOC
@@ -58,3 +60,4 @@ div.left-padding-lg.right-padding-lg
                                     | &nbsp;
                                     button.btn.btn-danger.btn-xs(ng-click="item.remove()")
                                         span.glyphicon.glyphicon-trash Remove
+    div.modal-footer
