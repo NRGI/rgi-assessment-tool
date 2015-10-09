@@ -5,7 +5,7 @@ div.left-padding-lg.right-padding-lg
         div.modal-form(id="new_human_form")
             .form-horizontal
                 fieldset
-                    .row.bottom-padding-lg
+                    .row.bottom-padding-med
                         div.col-md-9
                             angucomplete(
                             id="interviewee_search"
@@ -17,7 +17,8 @@ div.left-padding-lg.right-padding-lg
                             descriptionfield="email"
                             minlength="1"
                             inputclass="form-control form-control-small"
-                            matchclass="highlight")
+                            matchclass="highlight"
+                            autocomplete="off")
                             //angucomplete(
                             //id="interviewee_search"
                             //placeholder="Search existing interviewees..."
@@ -33,9 +34,8 @@ div.left-padding-lg.right-padding-lg
                         div.col-md-3
                             button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
 
-
                     // DATE ACCESSED
-                    .row.bottom-padding-lg
+                    .row.bottom-padding-med
                         div.col-md-12
                             .pull-left.col-lg-5.input-group
                                 input.form-control(
@@ -51,7 +51,7 @@ div.left-padding-lg.right-padding-lg
                                     button.btn.btn-default(ng-click="calendarOpen($event)")
                                         i.glyphicon.glyphicon-calendar
                     //INTERVIEWEE COMMENT
-                    .row.bottom-padding-lg
+                    .row.bottom-padding-med
                         div.col-md-12
                             textarea.form-control(
                             name="comment"
@@ -61,16 +61,21 @@ div.left-padding-lg.right-padding-lg
                             redactor
                             autocomplete="off")
 
-
                     // EXISTING INTERVIEWEE
                     div(ng-if="selected_interviewee")
-                        h4 Existing interviewee
-                        .row {{selected_interviewee}}
-
+                        h4 Existing Interviewee
+                        .row.left-padding-lg
+                            h5: b Name:
+                            | {{selected_interviewee.title}}
+                            h5: b Email:
+                            | {{selected_interviewee.originalObject.email}}
 
                     // NEW INTERVIEWEE
                     div(ng-if="new_interviewee && !selected_interviewee")
                         h4 New interviewee
+
+
+
     div.modal-footer
         div.col-lg-6
             button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
