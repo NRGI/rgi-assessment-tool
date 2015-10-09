@@ -1,88 +1,82 @@
 div.left-padding-lg.right-padding-lg
     div.modal-header
-        h3
+        h3 New Interview Reference
     div.modal-body
-    div.modal-footer
-
-div.left-padding-lg.right-padding-lg
-        div.modal-header
-            h3 New Interview Reference
-        div.modal-body
-            | content
-            div.modal-form(id="new_human_form")
-                .form-horizontal
-                    fieldset
-                        .row.bottom-padding-lg
-                            div.col-md-9
-                                angucomplete(
-                                id="interviewee_search"
-                                placeholder="Search existing interviewees..."
-                                selectedobject="selected_interviewee"
-                                localdata="interviewee_list"
-                                searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
-                                titlefield="firstName,lastName"
-                                descriptionfield="email"
-                                minlength="1"
-                                inputclass="form-control form-control-small"
-                                matchclass="highlight")
-                                //angucomplete(
-                                //id="interviewee_search"
-                                //placeholder="Search existing interviewees..."
-                                //pause="300"
-                                //selectedobject="selected_interviewee"
-                                //localdata="interviewees"
-                                //searchfields="firstName,lastName"
-                                //titlefield="firstName,lastName"
-                                //descriptionfield="assessments"
-                                //minlength="1"
-                                //inputclass="form-control form-control-small"
-                                //matchclass="highlight")
-                            div.col-md-3
-                                button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+        div.modal-form(id="new_human_form")
+            .form-horizontal
+                fieldset
+                    .row.bottom-padding-lg
+                        div.col-md-9
+                            angucomplete(
+                            id="interviewee_search"
+                            placeholder="Search existing interviewees..."
+                            selectedobject="selected_interviewee"
+                            localdata="interviewee_list"
+                            searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
+                            titlefield="firstName,lastName"
+                            descriptionfield="email"
+                            minlength="1"
+                            inputclass="form-control form-control-small"
+                            matchclass="highlight")
+                            //angucomplete(
+                            //id="interviewee_search"
+                            //placeholder="Search existing interviewees..."
+                            //pause="300"
+                            //selectedobject="selected_interviewee"
+                            //localdata="interviewees"
+                            //searchfields="firstName,lastName"
+                            //titlefield="firstName,lastName"
+                            //descriptionfield="assessments"
+                            //minlength="1"
+                            //inputclass="form-control form-control-small"
+                            //matchclass="highlight")
+                        div.col-md-3
+                            button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
 
 
-                        // DATE ACCESSED
-                        .row.bottom-padding-lg
-                            div.col-md-12
-                                .pull-left.col-lg-5.input-group
-                                    input.form-control(
-                                    type="text"
-                                    datepicker-popup="{{date_format}}"
-                                    placeholder="Date interviewed..."
-                                    ng-model="answer_update.human_ref_contact_date"
-                                    is-open="status.opened"
-                                    max-date="maxDate"
-                                    datepicker-options="date_options"
-                                    close-text="Close")
-                                    span.input-group-btn
-                                        button.btn.btn-default(ng-click="calendarOpen($event)")
-                                            i.glyphicon.glyphicon-calendar
-                        //INTERVIEWEE COMMENT
-                        .row.bottom-padding-lg
-                            div.col-md-12
-                                textarea.form-control(
-                                name="comment"
+                    // DATE ACCESSED
+                    .row.bottom-padding-lg
+                        div.col-md-12
+                            .pull-left.col-lg-5.input-group
+                                input.form-control(
                                 type="text"
-                                placeholder="Comments..."
-                                ng-model="answer_update.human_ref_comment"
-                                redactor
-                                autocomplete="off")
+                                datepicker-popup="{{date_format}}"
+                                placeholder="Date interviewed..."
+                                ng-model="answer_update.human_ref_contact_date"
+                                is-open="status.opened"
+                                max-date="maxDate"
+                                datepicker-options="date_options"
+                                close-text="Close")
+                                span.input-group-btn
+                                    button.btn.btn-default(ng-click="calendarOpen($event)")
+                                        i.glyphicon.glyphicon-calendar
+                    //INTERVIEWEE COMMENT
+                    .row.bottom-padding-lg
+                        div.col-md-12
+                            textarea.form-control(
+                            name="comment"
+                            type="text"
+                            placeholder="Comments..."
+                            ng-model="answer_update.human_ref_comment"
+                            redactor
+                            autocomplete="off")
 
 
-                        // EXISTING INTERVIEWEE
-                        div(ng-if="selected_interviewee")
-                            h4 Existing interviewee
-                            .row {{selected_interviewee}}
+                    // EXISTING INTERVIEWEE
+                    div(ng-if="selected_interviewee")
+                        h4 Existing interviewee
+                        .row {{selected_interviewee}}
 
 
-                        // NEW INTERVIEWEE
-                        div(ng-if="new_interviewee && !selected_interviewee")
-                            h4 New interviewee
-        div.modal-footer
-            div.col-lg-6
-                button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
-            div.col-lg-6
-                button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+                    // NEW INTERVIEWEE
+                    div(ng-if="new_interviewee && !selected_interviewee")
+                        h4 New interviewee
+    div.modal-footer
+        div.col-lg-6
+            button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
+        div.col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+
 
 
 //

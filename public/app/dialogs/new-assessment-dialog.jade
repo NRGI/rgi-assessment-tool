@@ -1,12 +1,8 @@
-div.left-padding-lg.right-padding-lg
+div
     div.modal-header
-        h3
+        h3 New assessment deployment
     div.modal-body
-    div.modal-footer
-
-div.left-padding-lg.right-padding-lg
-    h3 New assessment deployment
-        .row.form-horizontal.left-padding-lg.top-padding-lg
+        .form-horizontal
             form.form-horizontal(name="deployAssessment")
                 fieldset
                     .row
@@ -31,13 +27,13 @@ div.left-padding-lg.right-padding-lg
                         .col-md-1
                             button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
 
-        .row.top-padding-lg
-            button.btn.btn-success(
-            ng-click="assessmentDeploy()"
-            ng-disabled="deployAssessment.$invalid") Deploy new assessment
-            | &nbsp;
-            button.btn.btn-danger(ng-click="closeDialog()") Cancel
-            | &nbsp;
-            button.btn.btn-warning(
-            ng-click="countryAdd(new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country)"
-            ng-disabled="!new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country") Add country
+    div.modal-footer
+        button.btn.btn-success(
+        ng-click="assessmentDeploy()"
+        ng-disabled="deployAssessment.$invalid") Deploy new assessment
+        | &nbsp;
+        button.btn.btn-warning(
+        ng-click="countryAdd(new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country)"
+        ng-disabled="!new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country") Add country
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel

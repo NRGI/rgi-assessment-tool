@@ -1,22 +1,18 @@
 div.left-padding-lg.right-padding-lg
     div.modal-header
-        h3
+        h3 Assessment Administration
     div.modal-body
-    div.modal-footer
+        .form-horizontal
+            fieldset
+                .row
+                    h5.col-md-4  Action
+                    .form-group.col-md-8
+                        select.form-group.form-control(name="action" ng-model="action" required)
+                            option(value="" selected disabled) Select action
+                            option(ng-repeat="opt in workflow_opts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
+                            //- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
 
-div.left-padding-lg.right-padding-lg
-    h3 Assessment administration flow
-        .row.top-padding-med.left-padding-lg
-            .form-horizontal
-                fieldset
-                    .row
-                        h5.col-md-4  Action
-                        .form-group.col-md-8
-                            select.form-group.form-control(name="action" ng-model="action" required)
-                                option(value="" selected disabled) Select action
-                                option(ng-repeat="opt in workflow_opts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
-                                //- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
-                    .row
-                        button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
-                        | &nbsp;
-                        button.btn.btn-danger(ng-click="closeDialog()") Cancel
+    div.modal-footer
+        button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel
