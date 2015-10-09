@@ -64,6 +64,7 @@ var questionSchema = mongoose.Schema({
     child_question: String,
     needs_revision: Boolean,
     question_text : String,
+    question_guidance_text: String,
     question_choices: [{
         name: String,
         order: Number,
@@ -83,6 +84,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "EITI in national legislation",
                 "question_text" : "Is the EITI ratified in national legislation?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : { "component_excel" : "Quality of legal structure" },
                 "question_choices" : [
                     { "criteria" : "Yes", "name" : "criteria_a", "order" : 1 },
@@ -103,6 +105,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "Contract Disclosure",
                 "question_text" : "Has this country adopted a rule or legisation that requires the publication of all contracts in the oil, gas, and mineral sectors?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : {
                     "original_question_if_changed" : "Are all contracts, agreements or negotiated terms for exploration and production, regardless of the way they are granted, disclosed to the public?",
                     "jan_2015_questionnaire_id" : "68",
@@ -127,6 +130,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "Contract Disclosure",
                 "question_text" : "Have all contracts between extraction companies and the government been disclosed?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : { "component_excel" : "Reporting practice" },
                 "question_choices" : [
                     { "criteria" : "Yes, in pdf, online.", "name" : "criteria_a", "order" : 1 },
@@ -145,6 +149,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "Freedom of Information law applied",
                 "question_text" : "Do citizens request and successfully receive information using the freedom of information law?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : { "component_excel" : "Oversight" },
                 "question_choices" : [
                     { "criteria" : "Yes", "name" : "criteria_a", "order" : 1 },
@@ -165,6 +170,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "EITI report",
                 "question_text" : "Has this country published an EITI report?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : {
                     "jan_2015_questionnaire_id" : "64",
                     "component_excel" : "Reporting practice"
@@ -190,6 +196,7 @@ function createDefaultQuestions() {
                 "precept" : [ 2 ],
                 "indicator" : "Quality of EITI data",
                 "question_text" : "If the country has published an EITI report, does it cover all topics in new standard?",
+                "question_guidance_text": "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "old_reference" : { "component_excel" : "Reporting practice" },
                 "question_choices" : [
                     { "criteria" : "Covers all topics relevant within country context", "name" : "criteria_a", "order" : 1 },

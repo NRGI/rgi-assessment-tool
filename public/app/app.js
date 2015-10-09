@@ -95,11 +95,13 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         // DOCUMENTS
         .when('/admin/documents-admin', {
             templateUrl: '/partials/admin/documents/document-admin',
-            controller: 'rgiDocumentAdminCtrl'
+            controller: 'rgiDocumentAdminCtrl',
+            resolve: routeRoleChecks.supervisor
         })
         .when('/admin/documents-admin/:document_ID', {
             templateUrl: '/partials/admin/documents/document-admin-detail',
-            controller: 'rgiDocumentAdminDetailCtrl'
+            controller: 'rgiDocumentAdminDetailCtrl',
+            resolve: routeRoleChecks.supervisor
         })
         // ASSESSMENTS
         .when('/admin/assessment-admin', {
@@ -115,16 +117,18 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/assessments-admin/:assessment_ID', {
             templateUrl: '/partials/admin/assessments/assessment-admin-detail',
             controller:  'rgiAssessmentAdminDetailCtrl',
-            resolve: routeRoleChecks.user
+            resolve: routeRoleChecks.supervisor
         })
         // INTERVIEWEES
         .when('/admin/interviewees-admin', {
             templateUrl: '/partials/admin/interviewees/interviewee-admin',
-            controller: 'rgiIntervieweeAdminCtrl'
+            controller: 'rgiIntervieweeAdminCtrl',
+            resolve: routeRoleChecks.supervisor
         })
         .when('/admin/interviewees-admin/:interviewee_ID', {
             templateUrl: '/partials/admin/interviewees/interviewee-admin-detail',
-            controller: 'rgiIntervieweeAdminDetailCtrl'
+            controller: 'rgiIntervieweeAdminDetailCtrl',
+            resolve: routeRoleChecks.supervisor
         })
         ///// researcher Routes
         // Assessments
