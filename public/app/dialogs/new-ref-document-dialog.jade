@@ -15,6 +15,15 @@ div.left-padding-lg.right-padding-lg
                     div.fileUpload.btn.btn-default
                         span Select File
                         input.upload(type="file" nv-file-select uploader="uploader")
+                h5 OR
+                .form-group
+                    .col-md-8
+                        input.form-control(
+                        type="text"
+                        placeholder="File URL"
+                        ng-model="fileUrl")
+                    .col-md-4
+                        input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl()")
                 div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
                     table.table
                         thead
