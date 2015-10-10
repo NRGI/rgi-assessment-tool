@@ -37,6 +37,7 @@ angular
                         rgiUserMethodSrvc.updateUser(new_user_data).then(function () {
                             rgiNotifier.notify('User account has been updated');
                             ngDialog.close();
+                            $route.reload();
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });
@@ -47,6 +48,7 @@ angular
                     rgiUserMethodSrvc.updateUser(new_user_data).then(function () {
                         rgiNotifier.notify('User account has been updated');
                         ngDialog.close();
+                        $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });

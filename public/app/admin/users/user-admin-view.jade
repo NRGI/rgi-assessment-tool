@@ -7,6 +7,8 @@
                     button.btn.btn-warning(ng-click="editUserDialog()") Edit user
                     | &nbsp;
                     a(href="mailto:{{user.email}}").btn.btn-default Email
+                    | &nbsp;
+                    button.btn.btn-danger.popover-dialog(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Delete
                 .row.left-padding-lg.right-padding-lg.top-padding-lg
                     table.table.table-hover.table-striped.table-condensed
                         thead

@@ -43,6 +43,7 @@ exports.createUser = function (req, res) {
         contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
     }
     catch(err) {
+        console.log(err);
         res.status(400);
         return res.send({reason: 'first and last name is required'});
     }
@@ -50,6 +51,7 @@ exports.createUser = function (req, res) {
         userData.username = userData.username.toLowerCase();
     }
     catch(err) {
+        console.log(err);
         res.status(400);
         return res.send({reason: 'username is required'});
     }
@@ -57,6 +59,7 @@ exports.createUser = function (req, res) {
         contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
     }
     catch(err) {
+        console.log(err);
         res.status(400);
         return res.send({reason: 'user role is required'});
     }
@@ -69,14 +72,13 @@ exports.createUser = function (req, res) {
     userData.salt = encrypt.createSalt();
     userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
     userData.createdBy = req.user._id;
-    console.log(userData);
 
     User.create(userData, function (err, user, next) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
             }
-            //console.log(err);
+            console.log(err);
             res.status(400);
             return res.send({reason: err.toString()});
         }
@@ -91,9 +93,9 @@ exports.createUser = function (req, res) {
 };
 //TODO update user email
 exports.updateUser = function (req, res) {
-    var userUpdates = req.body;
+    var user_update = req.body;
 
-    if (req.user._id != userUpdates._id && !req.user.hasRole('supervisor')) {
+    if (req.user._id != user_update._id && !req.user.hasRole('supervisor')) {
         res.status(404);
         return res.end();
     }
@@ -104,20 +106,20 @@ exports.updateUser = function (req, res) {
             res.status(400);
             return res.send({ reason: err.toString() });
         }
-        if (userUpdates.password && userUpdates.password.length > 0) {
-            user.setPassword(userUpdates.password, function (err) {
+        if (user_update.password && user_update.password.length > 0) {
+            user.setPassword(user_update.password, function (err) {
                 if (err) {
                     return res.send({ reason: err.toString() });
                 }
             });
         }
-        user.firstName = userUpdates.firstName;
-        user.lastName = userUpdates.lastName;
-        user.email = userUpdates.email;
-        user.language = userUpdates.language;
-        user.assessments = userUpdates.assessments;
-        user.documents = userUpdates.documents;
-        user.interviewees = userUpdates.interviewees;
+        user.firstName = user_update.firstName;
+        user.lastName = user_update.lastName;
+        user.email = user_update.email;
+        user.language = user_update.language;
+        user.assessments = user_update.assessments;
+        user.documents = user_update.documents;
+        user.interviewees = user_update.interviewees;
         if (user.modified) {
             user.modified.push({modifiedBy: req.user._id});
         } else {
