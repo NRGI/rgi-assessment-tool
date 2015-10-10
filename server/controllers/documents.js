@@ -1,26 +1,26 @@
 'use strict';
-/* global require */
 
-var crypto                 = require('crypto'),
-    fs                     = require('fs'),
-    request                = require('request'),
-    s3                     = require('s3'),
-    Document               = require('mongoose').model('Documents'),
-    Answer                 = require('mongoose').model('Answer'),
-    client                 = s3.createClient({
-                                maxAsyncS3: 20,     // this is the default 
-                                s3RetryCount: 3,    // this is the default 
-                                s3RetryDelay: 1000, // this is the default 
-                                multipartUploadThreshold: 20971520, // this is the default (20 MB) 
-                                multipartUploadSize: 15728640, // this is the default (15 MB) 
-                                s3Options: {
-                                    accessKeyId: process.env.DOC_AWS_ACCESS_KEY,
-                                    secretAccessKey: process.env.DOC_AWS_SECRET_KEY
-                                    // any other options are passed to new AWS.S3() 
-                                    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
-                                }
-                            }),
-    upload_bucket          = process.env.DOC_BUCKET;
+var crypto          =   require('crypto'),
+    fs              =   require('fs'),
+    mime            =   require('mime'),
+    request         =   require('request'),
+    s3              =   require('s3'),
+    Document        =   require('mongoose').model('Documents'),
+    Answer          =   require('mongoose').model('Answer'),
+    client          =   s3.createClient({
+                            maxAsyncS3: 20,     // this is the default
+                            s3RetryCount: 3,    // this is the default
+                            s3RetryDelay: 1000, // this is the default
+                            multipartUploadThreshold: 20971520, // this is the default (20 MB)
+                            multipartUploadSize: 15728640, // this is the default (15 MB)
+                            s3Options: {
+                                accessKeyId: process.env.DOC_AWS_ACCESS_KEY,
+                                secretAccessKey: process.env.DOC_AWS_SECRET_KEY
+                                // any other options are passed to new AWS.S3()
+                                // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
+                            }
+                        }),
+    upload_bucket   = process.env.DOC_BUCKET;
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
 var uploadFile = function(file, req, res) {
@@ -109,9 +109,9 @@ exports.uploadRemoteFile = function (req, res) {
             if (response.statusCode === 200) {
                 var fileTotalSize = parseInt(response.headers['content-length'], 10);
                 var receivedDataSized = 0;
+                var filePath = '/tmp/' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url));
 
-                var file = fs.createWriteStream( '/tmp/' +
-                getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)) );
+                var file = fs.createWriteStream(filePath);
                 response.pipe(file);
 
                 response
@@ -121,28 +121,24 @@ exports.uploadRemoteFile = function (req, res) {
                     })
                     .on('end', function() {
                         file.close(function() {
-                            res.send({error: null});
+                            uploadFile({path: filePath, type: mime.lookup(filePath)}, req, res);
                         });
                     })
-                    .on('error', function(error) {
+                    .on('error', function(err) {
                         file.close(function() {
-                            fs.unlink('/tmp/' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)));
-                            res.send({error: error});
+                            fs.unlink(filePath);
+                            res.send({reason: err.toString()});
                         });
                     })
                 ;
             } else {
-                res.send({error: 'FILE_NOT_FOUND'});
+                res.send({reason: 'The file is not found'});
             }
         })
-        .on('error', function(error) {
-            res.send({error: error});
+        .on('error', function(err) {
+            res.send({reason: err.toString()});
         })
     ;
-
-
-    //console.log( 'The file temporary name is ' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)) );
-    //uploadFile(req.files.file, req, res);
 };
 
 exports.fileCheck = function (req, res) {
