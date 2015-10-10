@@ -101,25 +101,44 @@ exports.uploadRemoteFile = function (req, res) {
         console.log('received: ' + (ratio * 100) + ' %');
     };
 
-
     request({
             method: 'GET',
             uri: req.query.url
         }, function () {})
         .on('response', function(response) {
-            var fileTotalSize = parseInt(response.headers['content-length'], 10);
-            var receivedDataSized = 0;
+            if (response.statusCode === 200) {
+                var fileTotalSize = parseInt(response.headers['content-length'], 10);
+                var receivedDataSized = 0;
 
-            response
-                .on('data', function(data) {
-                    receivedDataSized += data.length;
-                    notifyCompletionPercentage(receivedDataSized / fileTotalSize);
-                })
-                .on('end', function() {
-                    res.send('OK');
-                })
-            ;
-        });
+                var file = fs.createWriteStream( '/tmp/' +
+                getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)) );
+                response.pipe(file);
+
+                response
+                    .on('data', function(data) {
+                        receivedDataSized += data.length;
+                        notifyCompletionPercentage(receivedDataSized / fileTotalSize);
+                    })
+                    .on('end', function() {
+                        file.close(function() {
+                            res.send({error: null});
+                        });
+                    })
+                    .on('error', function(error) {
+                        file.close(function() {
+                            fs.unlink('/tmp/' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)));
+                            res.send({error: error});
+                        });
+                    })
+                ;
+            } else {
+                res.send({error: 'FILE_NOT_FOUND'});
+            }
+        })
+        .on('error', function(error) {
+            res.send({error: error});
+        })
+    ;
 
 
     //console.log( 'The file temporary name is ' + getFileName(now.getTime(), req.user._id, getFileExtension(req.query.url)) );
