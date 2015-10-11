@@ -37,8 +37,9 @@ var uploadFile = function(file, sendResponse, req, res) {
         Document.findOne({file_hash: file_hash}, function (err, document) {
             // if file exists tag for reference
             if (document !== null) {
-                res.send(document);
-
+                if(sendResponse) {
+                    res.send(document);
+                }
                 // if not upload to s3 with hashed value as file name,
                 // create record with hash value and end url
             } else {
@@ -95,6 +96,12 @@ var getFileExtension = function(filePath) {
 
 var getFileName = function(timestamp, user, extension) {
     return user + '-' + timestamp + (extension ? ('.' + extension) : '');
+};
+
+exports.getRemoteFileUploadStatus = function (req, res) {
+    FileUploadStatus.findOne({_id: req.params.statusId}, function(err, uploadStatus) {
+        res.send(uploadStatus);
+    });
 };
 
 exports.uploadRemoteFile = function (req, res) {

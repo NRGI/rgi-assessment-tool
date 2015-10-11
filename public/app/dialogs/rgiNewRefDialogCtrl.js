@@ -1,8 +1,15 @@
 'use strict';
-//var angular;
 
-//angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc) {
-angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route, $http, ngDialog, rgiNotifier, FileUploader, rgiAnswerMethodSrvc) {
+angular.module('app').controller('rgiNewRefDialogCtrl', function (
+    $scope,
+    $route,
+    $timeout,
+    FileUploader,
+    ngDialog,
+    rgiNotifier,
+    rgiAnswerMethodSrvc,
+    rgiRequestSubmitterSrvc
+) {
     $scope.answer_update = $scope.$parent.answer;
     ////TODO REPLACE WITH EXISITING REFERENCE SET
     //$scope.existing_ref = [
@@ -31,6 +38,24 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
         return dfd.promise();
     }
 
+    $scope.fileUrl = '';
+
+    $scope.uploadFileByUrl = function() {
+        var handleFileUploadStatus = function(response) {
+            console.log(response.data);
+
+            if(response.data.completion < 1) {
+                $timeout(function() {
+                    rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + response.data._id).then(handleFileUploadStatus);
+                });
+            }
+        };
+
+        rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
+            handleFileUploadStatus(response);
+        });
+    };
+
     //DATEPICKER OPTS
     $scope.date_format = 'MMMM d, yyyy';
     var today = new Date();
@@ -44,12 +69,12 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
     });
     uploader.filters.push({
         name: 'customFilter',
-        fn: function (item /*{File|FileLikeObject}*/, options) {
+        fn: function () {
             return this.queue.length < 1;
         }
     });
-    //TODO handle doc and txt documents
-    uploader.onCompleteItem = function (fileItem, response, status, headers) {
+
+    uploader.onCompleteItem = function (fileItem, response, status) {
         if (status === 400) {
             $scope.uploader.queue = [];
             rgiNotifier.error(response.reason);
@@ -72,13 +97,13 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
 
     };
 
-    $scope.webRefSubmit = function (current_user) {
+    $scope.webRefSubmit = function () {
         var new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
             url, access_date;
 
         if(!new_answer_data.web_ref_url || !new_answer_data.web_ref_title) {
-            rgiNotifier.error('You must enter a title and a url!')
+            rgiNotifier.error('You must enter a title and a url!');
         } else {
             if (new_answer_data.web_ref_url.split('://')[0] === 'http' || new_answer_data.web_ref_url.split('://')[0] === 'https') {
                 url = new_answer_data.web_ref_url;
@@ -91,11 +116,11 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
                 access_date = new Date(new_answer_data.web_ref_access_date).toISOString();
             }
             isURLReal(url)
-                .fail(function (res) {
+                .fail(function () {
                     rgiNotifier.error('Website does not exists');
                 })
                 //TODO Take a snapshot of url and add as a document ref
-                .done(function (res) {
+                .done(function () {
                     var new_ref_data = {
                         title: new_answer_data.web_ref_title,
                         URL: url,
@@ -123,7 +148,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
         }
     };
 
-    $scope.humanRefSubmit = function (current_user) {
+    $scope.humanRefSubmit = function () {
 
         var new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
@@ -131,9 +156,9 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function ($scope, $route
 
 
         if (!new_answer_data.human_ref_first_name || !new_answer_data.human_ref_first_name) {
-            rgiNotifier.error('You must enter an interviewee first and last name!')
+            rgiNotifier.error('You must enter an interviewee first and last name!');
         } else if (!new_answer_data.human_ref_email) {
-            rgiNotifier.error('You must enter a valid email address!')
+            rgiNotifier.error('You must enter a valid email address!');
         } else {
             var email_domain = 'http://' + new_answer_data.human_ref_email.split('@')[1];
             if (email_domain === 'http://undefined') {
