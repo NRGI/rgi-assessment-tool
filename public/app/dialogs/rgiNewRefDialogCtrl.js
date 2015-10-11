@@ -47,7 +47,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
             if(response.data.completion < 1) {
                 $timeout(function() {
                     rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + response.data._id).then(handleFileUploadStatus);
-                });
+                }, 1000);
             } else {
                 uploader.onCompleteItem({}, {}, null);
             }
