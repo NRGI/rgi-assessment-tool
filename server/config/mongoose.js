@@ -8,6 +8,7 @@ var mongoose = require('mongoose'),
     'Assessment',
     'AuthLog',
     'Documents',
+    'FileUploadStatus',
     'Question',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
