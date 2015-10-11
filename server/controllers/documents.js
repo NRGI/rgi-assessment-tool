@@ -116,27 +116,31 @@ exports.uploadRemoteFile = function (req, res) {
                     var receivedDataSized = 0;
                     var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
 
-                        var file = fs.createWriteStream(filePath);
-                        response.pipe(file);
+                    var file = fs.createWriteStream(filePath);
+                    response.pipe(file);
 
-                        response
-                            .on('data', function(data) {
-                                receivedDataSized += data.length;
-                                fileUploadStatus.setCompletion(receivedDataSized / fileTotalSize);
-                            })
-                            .on('end', function() {
-                                file.close(function() {
-                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, false, req, res);
-                                });
-                            })
-                            .on('error', function(err) {
-                                file.close(function() {
-                                    fs.unlink(filePath);
-                                    res.send({reason: err.toString()});
-                                });
+                    response
+                        .on('data', function(data) {
+                            receivedDataSized += data.length;
+                            fileUploadStatus.setCompletion(receivedDataSized / fileTotalSize);
+                        })
+                        .on('end', function() {
+                            file.close(function() {
+                                uploadFile({path: filePath, type: mime.lookup(filePath)}, false, req, res);
                             });
+                        })
+                        .on('error', function(err) {
+                            file.close(function() {
+                                fs.unlink(filePath);
+                                res.send({reason: err.toString()});
+                            });
+                        });
 
-                        res.send(fileUploadStatus);
+                    res.send({
+                        _id: fileUploadStatus._id,
+                        completion: fileUploadStatus.completion,
+                        size: fileTotalSize
+                    });
 
                 } else {
                     res.send({reason: 'The file is not found'});

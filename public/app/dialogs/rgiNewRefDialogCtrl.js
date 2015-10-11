@@ -42,18 +42,34 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
 
     $scope.uploadFileByUrl = function() {
         var handleFileUploadStatus = function(response) {
-            console.log(response.data);
+            $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = response.data.completion * 100;
 
             if(response.data.completion < 1) {
                 $timeout(function() {
                     rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + response.data._id).then(handleFileUploadStatus);
                 });
+            } else {
+                uploader.onCompleteItem({}, {}, null);
             }
         };
 
-        rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
-            handleFileUploadStatus(response);
-        });
+        isURLReal($scope.fileUrl)
+            .fail(function () {
+                rgiNotifier.error('The remote file is not found');
+            })
+            .done(function () {
+                rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
+                    $scope.uploader.queue.push({
+                        file: {
+                            name: $scope.fileUrl.split('/')[$scope.fileUrl.split('/').length - 1],
+                            size: response.data.size
+                        },
+                        isUploading: true,
+                        progress: response.data.completion * 100
+                    });
+                    handleFileUploadStatus(response);
+                });
+            });
     };
 
     //DATEPICKER OPTS
