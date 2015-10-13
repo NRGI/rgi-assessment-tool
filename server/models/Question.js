@@ -1,28 +1,42 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Schemalesss = mongoose.Schema.Types.Mixed;
+require('mongoose-html').loadType(mongoose);
+var Html = mongoose.Types.Html;
 
-var modificationSchema = new mongoose.Schema({
+var htmlSettings = {
+    type: Html,
+    setting: {
+        allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
+        allowedAttributes: {
+            'a': ['href']
+        }
+    }
+};
+
+var modificationSchema = new Schema({
     modifiedBy: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
     modifiedDate: {
         type: Date,
         default: Date.now}
 });
 
-var commentSchema = new mongoose.Schema({
+var commentSchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
-    content: String,
-    author: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
+    content: htmlSettings,
+    author: ObjectId, // Pull from curretn user _id value
     author_name: String,
-    role: String
+    role: String,
+    addressed: Boolean
 });
 
-var questionSchema = mongoose.Schema({
+var questionSchema = Schema({
     question_use: {
         type: Boolean,
         default: true},
