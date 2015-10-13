@@ -6,7 +6,9 @@ angular
         return {
             restrict: 'EA',
             controller: 'rgiCommentsCtrl',
-            scope: true,
+            scope: {
+                update: '='
+            },
             templateUrl: '/partials/directives/rgi-comments'
         };
     });
