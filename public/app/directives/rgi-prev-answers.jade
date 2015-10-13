@@ -49,6 +49,7 @@ div(ng-if="current_user.role === 'reviewer'")
       h5 Researcher justification:
       div.left-padding-lg
          text(ng-bind-html="answer.researcher_justification")
+
 div(ng-if="current_user.role === 'supervisor'")
    div(ng-if="!answer.researcher_score")
       h5 Researcher score:
@@ -70,6 +71,8 @@ div(ng-if="current_user.role === 'supervisor'")
       h5 Researcher justification:
       div.left-padding-lg
          text(ng-bind-html="answer.researcher_justification")
+      text.text-warning Last submitted {{answer.researcher_score_history[answer.researcher_score_history.length-1].date | date : 'medium'}}
+   hr
    div.bottom-padding-med
       div(ng-if="!answer.reviewer_score")
          h5 Reviewer score:
@@ -91,3 +94,4 @@ div(ng-if="current_user.role === 'supervisor'")
          h5 Reviewer justification:
          div.left-padding-lg
             text(ng-bind-html="answer.reviewer_justification")
+          text.text-warning Last submitted {{answer.reviewer_score_history[answer.reviewer_score_history.length-1].date | date : 'medium'}}
