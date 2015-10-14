@@ -33,6 +33,9 @@
                 .row.bottom-padding-lg
                     rgi-active-answer-buttons
 
+                .row.bottom-padding-lg(ng-if="answer.flags.length!==0")
+                    rgi-flag-tabs
+
                 // Answer form
                 .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
                     rgi-answer-form
