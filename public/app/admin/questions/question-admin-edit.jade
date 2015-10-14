@@ -64,20 +64,37 @@
                                         button.btn.btn-danger(
                                         ng-click="questionOptionDelete($index)"
                                         ng-disabled="question.question_choices.length==1") Delete
-                                .form-group(name="control_buttons").top-padding-med
-                                    .col-md-8.col-md-offset-2
-                                        .pull-right
-                                            button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
-                                        .pull-left
-                                            button.btn.btn-primary(
-                                            ng-click="questionUpdate()"
-                                            ng-disabled="profileForm.$invalid") Save question
-                                            | &nbsp;
-                                            button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete question
-                                            | &nbsp;
-                                            button.btn.btn-warning(ng-click="questionClear()") Reset question
-                                            | &nbsp;
-                                            a.btn.btn-default(href="/admin/question-admin") Cancel
+
+                        div.bottom-padding-med
+                            label Guidance Text
+                            //- ng-form(name="question_text_form")
+                            .form-group.left-padding-lg.right-padding-lg(required)
+                                textarea.form-control(
+                                name="question_text"
+                                type="text"
+                                ng-model="question.question_guidance_text"
+                                placeholder="question.question_guidance_text"
+                                redactor) {{question.question_guidance_text}}
+                        div {{question.question_guidance_text}}
+
+                        div
+                            .form-group(name="control_buttons").top-padding-med
+                                .col-md-8.col-md-offset-2
+                                    .pull-right
+                                        button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
+                                    .pull-left
+                                        button.btn.btn-primary(
+                                        ng-click="questionUpdate()"
+                                        ng-disabled="profileForm.$invalid") Save question
+                                        | &nbsp;
+                                        button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete question
+                                        | &nbsp;
+                                        button.btn.btn-warning(ng-click="questionClear()") Reset question
+                                        | &nbsp;
+                                        a.btn.btn-default(href="/admin/question-admin") Cancel
+
+
+
                         // Comments
                         .row.bottom-padding-med
                             rgi-comments(update="question")
