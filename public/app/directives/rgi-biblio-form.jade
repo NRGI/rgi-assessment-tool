@@ -1,11 +1,17 @@
-div(id="biblio_div").bottom-padding-med
-    legend References:
+legend References:
+div.bottom-padding-med(
+    ng-if="current_user._id===assessment.edit_control"
+    id="biblio_div")
     .row
         .col-md-5.pull-left.top-padding-med
-            select.form-group.form-control.pull-left(ng-model="ref_selection" ng-change="select_ref_dialog()")
-                option(value="" selected disabled) Select action
-                option(ng-repeat="ref in ref_type" value="{{ref.value}}") {{ref.text}}
-
+            select.form-group.form-control.pull-left(ng-model="ref_selection" ng-change="select_ref_dialog(ref_selection)")
+                option(
+                value=""
+                selected
+                disabled) Select action
+                option(
+                ng-repeat="ref in ref_type"
+                value="{{ref.value}}") {{ref.text}}
 //- BILBLIO LIST
 div(id="prev_bib")
     .row.left-padding-lg.right-padding-lg

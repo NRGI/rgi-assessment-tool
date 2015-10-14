@@ -103,6 +103,8 @@ angular
                 $scope.value = true;
                 var scope = $scope.$parent;
                 scope.new_document = $scope.new_document;
+                console.log(scope);
+                console.log($scope);
 
 
                 if (scope.ref_selection === 'document') {
