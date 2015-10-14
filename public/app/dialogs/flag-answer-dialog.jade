@@ -6,7 +6,11 @@ div.left-padding-lg.right-padding-lg
             fieldset
                 .row
                     .form-group(required).col-md-12
-                        textarea.form-control(name="question_text" type="textbox" ng-model="flag_content")
+                        textarea.form-control(
+                        name="question_text"
+                        type="textbox"
+                        ng-model="flag_content"
+                        redactor)
     div.modal-footer
         button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
         | &nbsp;

@@ -7,7 +7,6 @@ angular.module('app').controller('rgiBiblioFormCtrl', function ($scope, ngDialog
         {text: 'Add Webpage', value: 'webpage'},
         {text: 'Add Interview', value: 'interview'}
     ];
-    console.log($scope);
 
     //TODO Generate Dialog based on change and handle upload process via dialogs
     $scope.select_ref_dialog = function(value) {
