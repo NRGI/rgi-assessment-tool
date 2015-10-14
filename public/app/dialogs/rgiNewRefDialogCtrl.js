@@ -53,23 +53,21 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
             }
         };
 
-        isURLReal($scope.fileUrl)
-            .fail(function () {
-                rgiNotifier.error('The remote file is not found');
-            })
-            .done(function () {
-                rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
-                    $scope.uploader.queue.push({
-                        file: {
-                            name: $scope.fileUrl.split('/')[$scope.fileUrl.split('/').length - 1],
-                            size: response.data.size
-                        },
-                        isUploading: true,
-                        progress: response.data.completion * 100
-                    });
-                    handleFileUploadStatus(response);
+        rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
+            if(response.data.reason) {
+                rgiNotifier.error('The file cannot be uploaded');
+            } else {
+                $scope.uploader.queue.push({
+                    file: {
+                        name: $scope.fileUrl.split('/')[$scope.fileUrl.split('/').length - 1],
+                        size: response.data.size
+                    },
+                    isUploading: true,
+                    progress: response.data.completion * 100
                 });
-            });
+                handleFileUploadStatus(response);
+            }
+        });
     };
 
     //DATEPICKER OPTS
