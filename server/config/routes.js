@@ -32,10 +32,10 @@ module.exports = function (app) {
     // DELETE
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
 
-    // AUTH LOGS
-    app.get('/api/auth-logs/number/:user', auth.requiresApiLogin, authLogs.getNumber);
-    app.get('/api/auth-logs/recent/:user/:action', auth.requiresApiLogin, authLogs.getMostRecent);
-    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresApiLogin, authLogs.list);
+    // USER AUTH LOGS
+    app.get('/api/auth-logs/number/:user', auth.requiresRole('supervisor'),  authLogs.getNumber);
+    app.get('/api/auth-logs/recent/:user/:action', auth.requiresRole('supervisor'), authLogs.getMostRecent);
+    app.get('/api/auth-logs/list/:user/:itemsPerPage/:page', auth.requiresRole('supervisor'),  authLogs.list);
 
     // PASSWORD TOKEN HANDLING
     app.post('/api/reset-password-token/add', resetPasswordTokens.create);

@@ -21,12 +21,13 @@ angular
         rgiUserSrvc.get({_id: $routeParams.id}, function (user) {
             $scope.user = user;
             $scope.user.document_details = [];
-            console.log(user);
-            user.documents.forEach(function (doc_id) {
-                rgiDocumentSrvc.get({_id: doc_id}, function (doc) {
-                    $scope.user.document_details.push(doc);
+            if(user.documents) {
+                user.documents.forEach(function (doc_id) {
+                    rgiDocumentSrvc.get({_id: doc_id}, function (doc) {
+                        $scope.user.document_details.push(doc);
+                    });
                 });
-            });
+            }
         });
 
         $scope.editUserDialog = function () {
