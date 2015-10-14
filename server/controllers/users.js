@@ -37,6 +37,7 @@ exports.createUser = function (req, res, next) {
     var userData = req.body,
         contact_packet = {};
 
+
     contact_packet.rec_email = userData.email;
     contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
     contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
