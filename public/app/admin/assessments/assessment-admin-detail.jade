@@ -11,7 +11,7 @@
                     .form-group.margin-left-med
                         select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
 
-            .pull-left.left-padding-lg
+            .pull-left.left-padding-lg.bottom-padding-med
                 .row
                     | Researcher:
                     a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}
@@ -26,17 +26,18 @@
                     |  on
                     span(ng-repeat="mod in assessment.modified")
                         em(ng-show="$last")  {{mod.modified_date | date}}
-                .row(ng-if="assessment.questions_complete===0")
-                    | Number of questions complete: {{assessment.questions_complete}} (0%)
-                .row(ng-if="assessment.questions_complete!==0")
-                    | Number of questions complete: {{assessment.questions_complete}} ({{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}} % complete)
+                .row
+                    | Number of questions
+                    text(ng-if="assessment.status==='under_review'")  reviewed:
+                    text(ng-if="assessment.status!=='under_review'")  completed:
+                    text(ng-if="assessment.questions_complete===0")  {{assessment.questions_complete}} (0%)
+                    text(ng-if="assessment.questions_complete!==0")  {{assessment.questions_complete}} ({{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}} % complete)
                 .row
                     | Number of questions_flagged: {{assessment.questions_flagged}}
                 .row
                     | Number of questions_resubmitted: {{assessment.questions_resubmitted}}
                 .row
                     s Number of questions_unfinalized: {{assessment.questions_unfinalized}}
-                hr
 
             table.table.table-hover.table-striped.table-condensed
                 thead
