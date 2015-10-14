@@ -14,7 +14,7 @@ div.left-padding-lg.right-padding-lg
                 div.bottom-padding-med
                     div.fileUpload.btn.btn-default
                         span Select File
-                        input.upload(type="file" nv-file-select uploader="uploader")
+                        input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="fileUploading")
                 h5 OR
                 .form-group
                     .col-md-8
@@ -23,7 +23,7 @@ div.left-padding-lg.right-padding-lg
                         placeholder="File URL"
                         ng-model="fileUrl")
                     .col-md-4
-                        input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl()")
+                        input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl()", ng-disabled="fileUploading || (fileUrl.length == 0)")
                 div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
                     table.table
                         thead

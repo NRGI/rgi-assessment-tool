@@ -10,6 +10,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     rgiAnswerMethodSrvc,
     rgiRequestSubmitterSrvc
 ) {
+    $scope.fileUploading = false;
     $scope.answer_update = $scope.$parent.answer;
     ////TODO REPLACE WITH EXISITING REFERENCE SET
     //$scope.existing_ref = [
@@ -53,7 +54,10 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
             }
         };
 
+        $scope.fileUploading = true;
         rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
+            $scope.fileUploading = false;
+
             if(response.data.reason) {
                 rgiNotifier.error('The file cannot be uploaded');
             } else {
