@@ -1,0 +1,68 @@
+.container.top-padding-med
+	.well.left-padding-lg.right-padding-lg
+		div.left-padding-lg.right-padding-lg.top-padding-med
+			img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
+			legend
+				h1 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+			.pull-right
+				form.form-inline
+					.form-group
+						input.form-control(
+						ng-model="searchText"
+						placeholder="Filter")
+					.form-group.margin-left-med
+						select.form-control(
+						ng-model="sortOrder"
+						ng-options="item.value as item.text for item in sortOptions")
+				br
+				button.btn.btn-success.pull-right(ng-click="assessmentResubmit()") Resubmit assessment
+
+			.pull-left.left-padding-lg.bottom-padding-lg
+				.row
+					text Researcher:
+					a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}
+				.row
+					text Reviewer:
+					a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}
+				.row
+					text Status: {{assessment.status | ucfirst}}
+				.row
+					text Last edited by
+					a(href="mailto:{{assessment.edited_by.email}}")  {{assessment.edited_by.firstName}}  {{assessment.edited_by.lastName}}
+					text on
+					span(ng-repeat="mod in assessment.modified")
+						em(ng-show="$last") {{mod.modified_date | date}}
+				.row(ng-if="assessment.questions_complete===0")
+					text(ng) Number of questions complete: {{assessment.questions_complete}} (0%)
+				.row(ng-if="assessment.questions_complete!==0")
+					text Number of questions complete: {{assessment.questions_complete}} (
+					text {{((assessment.questions_complete/answers.length)*100 | number :2)}}
+					text % complete)
+				.row
+					text Number of questions flagged: {{assessment.questions_flagged}}
+				.row
+					text Number of questions resubmitted: {{assessment.questions_resubmitted}}
+
+			table.table.table-hover.table-striped.table-condensed
+				thead
+					tr
+						th.col-md-1.text-center Question number
+						th.col-md-1 Component
+						th.col-md-7.text-center Question
+						th.col-md-1 Status
+						th.col-md-1.text-center
+				tbody
+					tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
+						td.col-md-1.text-center {{answer.question_order}}
+						td.col-md-1 {{answer.component_text}}
+						td.col-md-5 {{answer.question_text}}
+						td
+							text.text-success(ng-if="answer.status==='approved'") {{answer.status | ucfirst}}
+							text.text-danger(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}
+							text.text-warning(ng-if="answer.status==='resubmitted'") {{answer.status | ucfirst}}
+						td(ng-if="answer.status==='flagged'")
+							a.btn.center-block.btn-danger(href="/assessment-review/answer-review/{{answer.answer_ID}}") Review answer
+						td(ng-if="answer.status==='resubmitted'")
+							a.btn.center-block.btn-primary(href="/assessment-review/answer-review/{{answer.answer_ID}}") Edit answer
+						td(ng-if="answer.status==='approved'")
+							a.btn.center-block.btn-success(href="/assessment-review/answer-review/{{answer.answer_ID}}") Edit answer

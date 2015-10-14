@@ -155,7 +155,8 @@ angular
             }
         };
         $scope.answerClear = function () {
-            $scope.answer = angular.copy($scope.answer_start);
+            console.log($scope.$parent.answer_start);
+            $scope.answer = angular.copy($scope.$parent.answer_start);
         };
 
         $scope.answerReturn = function () {

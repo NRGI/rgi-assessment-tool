@@ -130,25 +130,24 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiIntervieweeAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        ///// researcher Routes
+        ///// GENERAL ROUTES
         // Assessments
         .when('/assessments', {
-            templateUrl: '/partials/researchers/assessments/assessments-list',
+            templateUrl: '/partials/assessments/assessments-list',
             controller:  'rgiAssessmentsListCtrl',
             resolve: routeRoleChecks.user
         })
         .when('/assessments/:assessment_ID', {
-            templateUrl: '/partials/researchers/assessments/assessment-detail',
+            templateUrl: '/partials/assessments/assessment-detail',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
+
         .when('/assessments-review/:assessment_ID', {
             templateUrl: '/partials/researchers/assessments/assessment-review',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
-
-
 
         // Answers
         .when('/admin/assessments-admin/answer/:answer_ID', {
@@ -174,6 +173,16 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/assessments/review/answer-page-review',
             controller: 'rgiAnswerCtrl'
         })
+        //.when('/assessments', {
+        //    templateUrl: '/partials/researchers/assessments/assessments-list',
+        //    controller:  'rgiAssessmentsListCtrl',
+        //    resolve: routeRoleChecks.user
+        //})
+        //.when('/assessments/:assessment_ID', {
+        //    templateUrl: '/partials/researchers/assessments/assessment-detail',
+        //    controller:  'rgiAssessmentDetailCtrl',
+        //    resolve: routeRoleChecks.user
+        //})
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         // Answers
