@@ -14,7 +14,7 @@ angular.module('app').controller('rgiUserCreateCtrl', function ($scope, $locatio
         if ($scope.password !== $scope.password_repeat) {
             rgiNotifier.error('Passwords must match!')
         } else {
-            var newUserData = {
+            var new_user_data = {
                 firstName: $scope.first_name,
                 lastName: $scope.last_name,
                 username: $scope.username,
@@ -25,7 +25,7 @@ angular.module('app').controller('rgiUserCreateCtrl', function ($scope, $locatio
                 address: [$scope.address]
             };
 
-            rgiUserMethodSrvc.createUser(newUserData).then(function () {
+            rgiUserMethodSrvc.createUser(new_user_data).then(function () {
                 rgiNotifier.notify('User account created!' + $scope.email);
                 $location.path('/admin/user-admin');
             }, function (reason) {
