@@ -24,6 +24,7 @@ angular
     .controller('rgiActiveAnswerButtonsCtrl', function (
         $scope,
         $location,
+        ngDialog,
         rgiIdentitySrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
@@ -155,7 +156,6 @@ angular
             }
         };
         $scope.answerClear = function () {
-            console.log($scope.$parent.answer_start);
             $scope.answer = angular.copy($scope.$parent.answer_start);
         };
 
@@ -165,6 +165,7 @@ angular
 
         $scope.answerFlag = function () {
             $scope.value = true;
+            console.log($scope);
             ngDialog.open({
                 template: 'partials/dialogs/flag-answer-dialog',
                 controller: 'rgiFlagAnswerDialogCtrl',
