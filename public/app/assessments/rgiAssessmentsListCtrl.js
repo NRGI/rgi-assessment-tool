@@ -31,6 +31,8 @@ angular
                     if (assessment.reviewer_ID) {
                         assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                         assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                    } else {
+                        assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                     }
                     $scope.assessments.push(assessment);
                 }
