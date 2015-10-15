@@ -9,5 +9,6 @@
       "ContainerPort": "3030"
     }
   ],
+  "Volumes": [],
   "Logging": "/var/log/"
 }
