@@ -71,6 +71,7 @@ angular
                     new_answer_set[i].researcher_ID = new_researcher_data._id;
                     new_answer_set[i].edit_control = new_researcher_data._id;
                     new_answer_set[i].question_order = el.question_order;
+                    new_answer_set[i].question_text = el.question_text;
                     new_answer_set[i].component = el.component;
                     new_answer_set[i].component_text = el.component_text;
                     new_answer_set[i].nrc_precept = el.nrc_precept;
@@ -79,8 +80,12 @@ angular
                     new_answer_set[i].reviewer_ID = new_reviewer_data._id;
                 }
             });
+            console.log(new_reviewer_data);
+            console.log(new_researcher_data);
+            console.log(new_assessment_data);
+            console.log(new_answer_set);
 
-            //TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
+            ////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
             if (new_reviewer_data) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
                     .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
