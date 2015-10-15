@@ -50,15 +50,16 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
                     rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + response.data._id).then(handleFileUploadStatus);
                 }, 1000);
             } else {
+                $scope.fileUploading = false;
                 uploader.onCompleteItem({}, {}, null);
             }
         };
 
         $scope.fileUploading = true;
-        rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
-            $scope.fileUploading = false;
 
+        rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function(response) {
             if(response.data.reason) {
+                $scope.fileUploading = false;
                 rgiNotifier.error('The file cannot be uploaded');
             } else {
                 $scope.uploader.queue.push({
@@ -238,6 +239,3 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
         ngDialog.close();
     };
 });
-
-
-
