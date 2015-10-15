@@ -10,6 +10,10 @@
                         input.form-control(ng-model="search_text", placeholder="Filter")
                     .form-group.margin-left-med
                         select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
+                .row
+                    br
+                    button.btn.btn-success.pull-right(ng-click="assessmentSubmit()" disabled) Submit assessment
+
 
             .pull-left.left-padding-lg.bottom-padding-med
                 .row
@@ -38,6 +42,7 @@
                     | Number of questions_resubmitted: {{assessment.questions_resubmitted}}
                 .row
                     s Number of questions_unfinalized: {{assessment.questions_unfinalized}}
+
 
             table.table.table-hover.table-striped.table-condensed
                 thead
