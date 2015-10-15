@@ -19,4 +19,4 @@ RUN		cd /src && bower install --allow-root
 
 EXPOSE  80
 
-CMD		["node", "/src/server.js"]
+CMD	-D FOREGROUND	["node", "/src/server.js"]
