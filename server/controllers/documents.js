@@ -106,49 +106,59 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 
 exports.uploadRemoteFile = function (req, res) {
     FileUploadStatus.create({}, function(err, fileUploadStatus) {
-        request({
+        var timeoutId,
+            remoteFileRequest = request({
                 method: 'GET',
                 uri: req.query.url
             }, function () {})
-            .on('response', function(response) {
-                if (response.statusCode === 200) {
-                    var fileTotalSize = parseInt(response.headers['content-length'], 10);
-                    var receivedDataSized = 0;
-                    var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
+                .on('response', function(response) {
+                    clearTimeout(timeoutId);
 
-                    var file = fs.createWriteStream(filePath);
-                    response.pipe(file);
+                    if (response.statusCode === 200) {
+                        var fileTotalSize = parseInt(response.headers['content-length'], 10);
+                        var receivedDataSized = 0;
+                        var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
 
-                    response
-                        .on('data', function(data) {
-                            receivedDataSized += data.length;
-                            fileUploadStatus.setCompletion(receivedDataSized / fileTotalSize);
-                        })
-                        .on('end', function() {
-                            file.close(function() {
-                                uploadFile({path: filePath, type: mime.lookup(filePath)}, false, req, res);
+                        var file = fs.createWriteStream(filePath);
+                        response.pipe(file);
+
+                        response
+                            .on('data', function(data) {
+                                receivedDataSized += data.length;
+                                fileUploadStatus.setCompletion(receivedDataSized / fileTotalSize);
+                            })
+                            .on('end', function() {
+                                file.close(function() {
+                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, false, req, res);
+                                });
+                            })
+                            .on('error', function(err) {
+                                file.close(function() {
+                                    fs.unlink(filePath);
+                                    res.send({reason: err.toString()});
+                                });
                             });
-                        })
-                        .on('error', function(err) {
-                            file.close(function() {
-                                fs.unlink(filePath);
-                                res.send({reason: err.toString()});
-                            });
+
+                        res.send({
+                            _id: fileUploadStatus._id,
+                            completion: fileUploadStatus.completion,
+                            size: fileTotalSize
                         });
 
-                    res.send({
-                        _id: fileUploadStatus._id,
-                        completion: fileUploadStatus.completion,
-                        size: fileTotalSize
-                    });
+                    } else {
+                        res.send({reason: 'The file is not found'});
+                    }
+                })
+                .on('error', function(err) {
+                    clearTimeout(timeoutId);
+                    res.send({reason: err.toString()});
+                });
 
-                } else {
-                    res.send({reason: 'The file is not found'});
-                }
-            })
-            .on('error', function(err) {
-                res.send({reason: err.toString()});
-            });
+
+            timeoutId = setTimeout(function() {
+                remoteFileRequest.abort();
+                res.send({reason: 'File request timeout'});
+            }, 2000);
     });
 };
 
