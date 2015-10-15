@@ -53,6 +53,11 @@ angular
                     new_answer_data.status = 'flagged';
                     new_assessment_data.questions_flagged += 1;
                 }
+            } else {
+                if (new_answer_data.status === 'flagged') {
+                    new_answer_data.status = 'submitted';
+                    new_assessment_data.questions_flagged -= 1;
+                }
             }
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)

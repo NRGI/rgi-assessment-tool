@@ -7,6 +7,8 @@
 
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
                 text.pull-right.right-padding-lg.text-danger(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}
+                text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
+                text.pull-right.right-padding-lg.text-success(ng-if="answer.status==='approved'") {{answer.status | ucfirst}}
             div.right-padding-lg.left-padding-lg
 
 
