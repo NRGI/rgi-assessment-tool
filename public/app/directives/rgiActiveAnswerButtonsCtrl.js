@@ -34,7 +34,7 @@ angular
         var root_url;
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
-        if ($scope.current_user === 'supervisor') {
+        if ($scope.current_user.role === 'supervisor') {
             root_url = '/admin/assessments-admin';
         } else {
             root_url = '/assessments';
@@ -44,21 +44,95 @@ angular
                 new_assessment_data = $scope.assessment,
                 flag_check = flagCheck(new_answer_data.flags);
 
-            if (new_answer_data.status === 'assigned') {
-                new_answer_data.status = 'saved';
+            //if (new_answer_data.status === 'assigned') {
+            //    new_answer_data.status = 'saved';
+            //}
+            switch (new_answer_data.status) {
+                case 'assigned':
+                    new_answer_data.status = 'saved';
+                    break;
+                case 'saved':
+                    if (flag_check === true) {
+                        new_answer_data.status = 'flagged';
+                        new_assessment_data.questions_flagged += 1;
+                        new_assessment_data.questions_complete += 1;
+                    }
+                    break;
+                case 'approved':
+                    if (flag_check === true) {
+                        new_answer_data.status = 'flagged';
+                        new_assessment_data.questions_flagged += 1;
+                        new_assessment_data.questions_approved -= 1;
+                    }
+                    break;
+                case 'flagged':
+                    if(flag_check === false) {
+                        new_answer_data.status = 'saved';
+                        new_assessment_data.questions_flagged -= 1;
+                        new_assessment_data.questions_complete -= 1;
+                    }
+                    break;
+                default:
+                    console.log('unknown error');
+
             }
 
-            if (flag_check === true) {
-                if (new_answer_data.status !== 'flagged') {
-                    new_answer_data.status = 'flagged';
-                    new_assessment_data.questions_flagged += 1;
-                }
-            } else {
-                if (new_answer_data.status === 'flagged') {
-                    new_answer_data.status = 'submitted';
-                    new_assessment_data.questions_flagged -= 1;
-                }
-            }
+            //if (flag_check === true) {
+            //    switch (new_answer_data) {
+            //        //case 'saved':
+            //        //    new_answer_data.status = 'flagged';
+            //        //    new_assessment_data.questions_flagged += 1;
+            //        //    new_assessment_data.questions_complete += 1;
+            //        //    break;
+            //    //    case 'approved':
+            //    //        new_answer_data.status = 'flagged';
+            //    //        new_assessment_data.questions_flagged += 1;
+            //    //        new_assessment_data.questions_approved -= 1;
+            //    //        break;
+            //    //    case 'flagged':
+            //    //        if()
+            //    //        break;
+            //    //
+            //    //}
+            //
+            //    if (new_answer_data.status !== 'flagged') {
+            //        new_answer_data.status = 'flagged';
+            //        new_assessment_data.questions_flagged += 1;
+            //        if (new_answer_data.status === 'approved') {
+            //            new_assessment_data.questions_approved -= 1;
+            //        }
+            //        if(new_answer_data.status === 'saved') {
+            //            new_assessment_data.questions_complete += 1;
+            //        }
+            //    }
+            //} else {
+            //    if (new_answer_data.status === 'flagged') {
+            //        new_answer_data.status = 'saved';
+            //        new_assessment_data.questions_flagged -= 1;
+            //        new_assessment_data.questions_complete -= 1;
+            //    }
+            //}
+            //switch (new_answer_data.status) {
+            //    case 'assigned':
+            //        new_answer_data.status = 'saved';
+            //        break;
+            //    case 'flagged':
+            //        new_answer_data.status = 'approved';
+            //        new_assessment_data.questions_approved += 1;
+            //        new_assessment_data.questions_flagged -= 1;
+            //        break;
+            //    case 'saved':
+            //        new_assessment_data.questions_approved += 1;
+            //        new_answer_data.status = 'approved';
+            //        break;
+            //    //case 'resubmitted':
+            //    //    new_answer_data.status = 'approved';
+            //    //    new_assessment_data.questions_approved += 1;
+            //    //    new_assessment_data.questions_flagged -= 1;
+            //    //    break;
+            //    default:
+            //        console.log('unknown error');
+            //}
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
@@ -131,20 +205,45 @@ angular
             if (new_answer_data.status !== 'approved' && flag_check === true) {
                 rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
             } else {
-                if (new_answer_data.status === 'submitted') {
-                    new_answer_data.status = 'approved';
-                    new_assessment_data.questions_complete += 1;
-                    //} else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
-                } else if (new_answer_data.status === 'flagged') {
-                    new_answer_data.status = 'approved';
-                    new_assessment_data.questions_flagged -= 1;
-                } else if (new_answer_data.status === 'approved' && flag_check === true) {
-                    new_answer_data.status = 'flagged';
-                    new_assessment_data.questions_flagged += 1;
-                } else if (new_answer_data.status === 'resubmitted') {
-                    new_answer_data.status = 'approved';
-                    new_assessment_data.questions_flagged -= 1;
+                switch (new_answer_data.status) {
+                    case 'submitted':
+                        new_answer_data.status = 'approved';
+                        new_assessment_data.questions_approved += 1;
+                        new_assessment_data.questions_complete += 1;
+                        break;
+                    case 'flagged':
+                        new_answer_data.status = 'approved';
+                        new_assessment_data.questions_approved += 1;
+                        new_assessment_data.questions_flagged -= 1;
+                        break;
+                    case 'saved':
+                        new_assessment_data.questions_approved += 1;
+                        new_assessment_data.questions_complete += 1;
+                        new_answer_data.status = 'approved';
+                        break;
+                    //case 'resubmitted':
+                    //    new_answer_data.status = 'approved';
+                    //    new_assessment_data.questions_approved += 1;
+                    //    new_assessment_data.questions_flagged -= 1;
+                    //    break;
+                    default:
+                        console.log('unknown error');
                 }
+
+                //if (new_answer_data.status === 'submitted') {
+                //    new_answer_data.status = 'approved';
+                //    new_assessment_data.questions_complete += 1;
+                //    } else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
+                //} else if (new_answer_data.status === 'flagged') {
+                //    new_answer_data.status = 'approved';
+                //    new_assessment_data.questions_flagged -= 1;
+                //} else if (new_answer_data.status === 'approved' && flag_check === true) {
+                //    new_answer_data.status = 'flagged';
+                //    new_assessment_data.questions_flagged += 1;
+                //} else if (new_answer_data.status === 'resubmitted') {
+                //    new_answer_data.status = 'approved';
+                //    new_assessment_data.questions_flagged -= 1;
+                //} else
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
