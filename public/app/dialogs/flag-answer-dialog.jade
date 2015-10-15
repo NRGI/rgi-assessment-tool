@@ -10,7 +10,7 @@ div.left-padding-lg.right-padding-lg
                         name="question_text"
                         type="textbox"
                         ng-model="flag_content"
-                        redactor)
+                        redactor) {{flag_content}}
     div.modal-footer
         button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
         | &nbsp;
