@@ -6,6 +6,7 @@
                 rgi-answer-nav(assessment="assessment")
 
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+                text.pull-right.right-padding-lg.text-danger(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}
             div.right-padding-lg.left-padding-lg
 
 
