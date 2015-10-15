@@ -79,3 +79,97 @@ var assessmentSchema = mongoose.Schema({
 });
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);
+
+function createDefaultAssessments() {
+    Assessment.find({}).exec(function (err, assessments) {
+        if (assessments.length === 0) {
+            Assessment.create({
+                "assessment_ID": "AF-2015-PI",
+                "ISO3": "AFG",
+                "year": "2015",
+                "version": "pilot",
+                "country": "Afghanistan",
+                "questions_unfinalized": 6,
+                "question_length": 6,
+                "questions_resubmitted": 0,
+                "questions_flagged": 0,
+                "questions_complete": 0,
+                "modified": [],
+                "first_pass": true,
+                "status": "unassigned",
+                "interviewees": [],
+                "documents": []
+            });
+            Assessment.create({
+                "assessment_ID": "AL-2015-PI",
+                "ISO3": "ALB",
+                "year": "2015",
+                "version": "pilot",
+                "country": "Albania",
+                "questions_unfinalized": 6,
+                "question_length": 6,
+                "questions_resubmitted": 0,
+                "questions_flagged": 0,
+                "questions_complete": 0,
+                "modified": [],
+                "first_pass": true,
+                "status": "unassigned",
+                "interviewees": [],
+                "documents": []
+            });
+            Assessment.create({
+                "assessment_ID": "DZ-2015-PI",
+                "ISO3": "DZA",
+                "year": "2015",
+                "version": "pilot",
+                "country": "Algeria",
+                "questions_unfinalized": 6,
+                "question_length": 6,
+                "questions_resubmitted": 0,
+                "questions_flagged": 0,
+                "questions_complete": 0,
+                "modified": [],
+                "first_pass": true,
+                "status": "unassigned",
+                "interviewees": [],
+                "documents": []
+            });
+            Assessment.create({
+                "assessment_ID": "AM-2015-PI",
+                "ISO3": "ARM",
+                "year": "2015",
+                "version": "pilot",
+                "country": "Armenia",
+                "questions_unfinalized": 6,
+                "question_length": 6,
+                "questions_resubmitted": 0,
+                "questions_flagged": 0,
+                "questions_complete": 0,
+                "modified": [],
+                "first_pass": true,
+                "status": "unassigned",
+                "interviewees": [],
+                "documents": []
+            });
+            Assessment.create({
+                "assessment_ID": "AO-2015-PI",
+                "ISO3": "AGO",
+                "year": "2015",
+                "version": "pilot",
+                "country": "Angola",
+                "questions_unfinalized": 6,
+                "question_length": 6,
+                "questions_resubmitted": 0,
+                "questions_flagged": 0,
+                "questions_complete": 0,
+                "modified": [],
+                "first_pass": true,
+                "status": "unassigned",
+                "interviewees": [],
+                "documents": []
+            });
+        }
+    });
+}
+
+exports.createDefaultAssessments = createDefaultAssessments;

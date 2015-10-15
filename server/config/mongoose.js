@@ -3,7 +3,8 @@ var mongoose            = require('mongoose'),
     userModel           = require('../models/User'),
     countryModel        = require('../models/Countries'),
     questionModel       = require('../models/Question'),
-    intervieweeModel    = require('../models/Interviewees');
+    intervieweeModel    = require('../models/Interviewees'),
+    assessmentModel    = require('../models/Assessment');
 [
     'Answers',
     'Assessment',
@@ -34,4 +35,5 @@ module.exports = function (config, user, pass, env) {
     countryModel.createDefaultCountries();
     questionModel.createDefaultQuestions();
     intervieweeModel.createDefaultInterviewees();
+    assessmentModel.createDefaultAssessments();
 };
