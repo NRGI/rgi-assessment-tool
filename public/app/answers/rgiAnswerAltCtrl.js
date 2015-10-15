@@ -25,24 +25,76 @@ angular
         $scope,
         $routeParams,
         $q,
+        $timeout,
+        $route,
+        rgiNotifier,
+        ngDialog,
         rgiAnswerSrvc,
         rgiDocumentSrvc,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
+        rgiAssessmentMethodSrvc,
+        rgiAnswerMethodSrvc,
         rgiQuestionSrvc,
         rgiIntervieweeSrvc
     ) {
         'use strict';
         $scope.identity = rgiIdentitySrvc;
         $scope.page_type = 'answer';
+        $scope.isCollapsed = false;
 
-        //$scope.test_guidance = "<p>'Machine-readable' data refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.";
-        //$scope.test_guidance = "<p><ul><li>YEs</li><li>No</li></ul>"
         $scope.dynamicPopover = {
             content: 'Hello, World!',
             templateUrl: 'myPopoverTemplate.html',
             title: 'Title'
         };
+        //$scope.ngPopupConfig = {
+        //    modelName: "myNgPopup",
+        //    title: "RGI FLAGS",
+        //    width: 650,
+        //    height:350,
+        //    templateUrl:"partials/dialogs/flag-answer-dialog",
+        //    resizable:true,
+        //    draggable:true,
+        //    isShow: false,
+        //    position: { top : 300, left : 500},
+        //    onOpen: function(){
+        //        //    var new_answer_data = $scope.$parent.answer,
+        //        //        current_user = $scope.$parent.identity.currentUser,
+        //        //        new_assessment_data = $scope.$parent.assessment,
+        //        //        new_flag_data = {
+        //        //            content: $scope.flag_content,
+        //        //            author_name: current_user.firstName + ' ' + current_user.lastName,
+        //        //            author: current_user._id,
+        //        //            role: current_user.role,
+        //        //            date: new Date().toISOString(),
+        //        //            addressed: false
+        //        //        };
+        //        //
+        //        //    new_answer_data.flags.push(new_flag_data);
+        //        //
+        //        //    if (new_answer_data.status === 'approved') {
+        //        //        new_answer_data.status = 'flagged';
+        //        //        new_assessment_data.questions_flagged += 1;
+        //        //        new_assessment_data.questions_approved -= 1;
+        //        //    } else if (new_answer_data.status !== 'flagged') {
+        //        //        new_answer_data.status = 'flagged';
+        //        //        new_assessment_data.questions_complete += 1;
+        //        //        new_assessment_data.questions_flagged += 1;
+        //        //    }
+        //        //
+        //        //    rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+        //        //        .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+        //        //        .then(function () {
+        //        //            rgiNotifier.notify('Answer flagged');
+        //        //            $scope.closeThisDialog();
+        //        //            $route.reload();
+        //        //        }, function (reason) {
+        //        //            rgiNotifier.notify(reason);
+        //        //        });
+        //        //};
+        //    }
+        //}
 
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
             $scope.answer = data;

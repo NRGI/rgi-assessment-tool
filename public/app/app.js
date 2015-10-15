@@ -9,6 +9,7 @@ angular.module('app', [
     'ng-form-group',
     'ngCsv',
     'ngDialog',
+    'ngPopup',
     'ngResource',
     'ngRoute',
     'ngSanitize',
