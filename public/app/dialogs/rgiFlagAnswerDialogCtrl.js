@@ -39,6 +39,7 @@ angular
                 .then(function () {
                     rgiNotifier.notify('Answer flagged');
                     $scope.closeThisDialog();
+                    $route.reload();
                 }, function (reason) {
                     rgiNotifier.notify(reason);
                 });
