@@ -110,15 +110,19 @@ var answerSchema = new Schema({
         index: true}, // generated from _id value of User Model
     reviewer_ID: {
         type: ObjectId,
-        required: '{PATH} is required',
         index: true}, // generated from _id value of User Model
-    year: String,
-    version: String,  // pilot or main
-    //edit_control: ObjectId, // user_ID of editing rights
+    year: {
+        type: String,
+        required: '{PATH} is required'},
+    version: {
+        type: String,
+        required: '{PATH} is required'},  // pilot or main
     question_order: {
         type: Number,
         required: '{PATH} is required'}, // generated from the order_ID of Question Model
-    question_text: String, // 
+    question_text: {
+        type: String,
+        required: '{PATH} is required'},
     component: {
         type: String,
         required: '{PATH} is required'}, // generated from Question Model

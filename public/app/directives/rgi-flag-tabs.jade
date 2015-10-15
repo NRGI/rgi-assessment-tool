@@ -4,7 +4,7 @@ div(id="flags_div").bottom-padding-med
     id="prev_flags_div"
     role="tablist"
     aria-multiselectable="true")
-        div.panel(ng-repeat="flag in answer.flags")(ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
+        div.panel(ng-repeat="flag in answer.flags" ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
             id="heading{{$index}}")

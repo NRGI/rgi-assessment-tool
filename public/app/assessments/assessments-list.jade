@@ -41,9 +41,11 @@
                                 span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted'")
                                 a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
                             //REVIEWER
-                            td.col-md-2
+                            td.col-md-2(ng-if="assessment.reviewer")
                                 span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted'")
                                 a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+                            td.col-md-2(ng-if="!assessment.reviewer")
+                                em Not assigned
                             //START DATE
                             td.col-md-1
                                 text(ng-if="!assessment.start_date") No
