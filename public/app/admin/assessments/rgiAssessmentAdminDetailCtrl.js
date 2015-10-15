@@ -19,7 +19,9 @@ angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function (
     // pull assessment data and add
     rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (data) {
         data.reviewer = rgiUserListSrvc.get({_id: data.reviewer_ID});
-        data.researcher = rgiUserListSrvc.get({_id: data.researcher_ID});
+        if (data.researcher_ID) {
+            data.researcher = rgiUserListSrvc.get({_id: data.researcher_ID});
+        }
         data.assigned_by = rgiUserListSrvc.get({_id: data.assignment.assigned_by});
         data.edited_by = rgiUserListSrvc.get({_id: data.modified[data.modified.length - 1].modified_by});
         data.question_list = rgiAnswerSrvc.query({assessment_ID: data.assessment_ID});

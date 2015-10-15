@@ -21,7 +21,8 @@
                     a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}
                 .row
                     | Reviewer:
-                    a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}
+                    a(href="mailto:{{assessment.reviewer.email}}" ng-if="assessment.reviewer")  {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}
+                    em(ng-if="assessment.reviewer") Not assigned
                 .row
                     | Status: {{assessment.status | addSpaces | ucfirst}}
                 .row
@@ -37,11 +38,13 @@
                     text(ng-if="assessment.questions_complete===0")  {{assessment.questions_complete}} (0%)
                     text(ng-if="assessment.questions_complete!==0")  {{assessment.questions_complete}} ({{((assessment.questions_complete/assessment.question_list.length)*100 | number :2)}} % complete)
                 .row
-                    | Number of questions_flagged: {{assessment.questions_flagged}}
+                    | Number of questions flagged: {{assessment.questions_flagged}}
                 .row
-                    | Number of questions_resubmitted: {{assessment.questions_resubmitted}}
+                    | Number of questions approved: {{assessment.questions_approved}}
                 .row
-                    s Number of questions_unfinalized: {{assessment.questions_unfinalized}}
+                    | Number of questions resubmitted: {{assessment.questions_resubmitted}}
+                .row
+                    s Number of questions unfinalized: {{assessment.questions_unfinalized}}
 
 
             table.table.table-hover.table-striped.table-condensed
@@ -62,9 +65,10 @@
                             .text-warning.glyphicon.glyphicon-zoom-in(ng-if="question.status==='submitted'")  {{question.status | ucfirst}}
                             .text-warning.glyphicon.glyphicon-zoom-in(ng-if="question.status==='resubmitted'")  {{question.status | ucfirst}}
                             .text-danger.glyphicon.glyphicon-flag(ng-if="question.status==='flagged'")  {{question.status | ucfirst}}
-                            .text(ng-if="question.status!=='flagged' && question.status!=='approved' && question.status!=='resubmitted' && question.status!=='submitted'")  {{question.status | ucfirst}}
+                            .text-primary.glyphicon.glyphicon-floppy-disk(ng-if="question.status==='saved'")  {{question.status | ucfirst}}
+                            .text(ng-if="question.status!=='flagged' && question.status!=='approved' && question.status!=='resubmitted' && question.status!=='submitted' && question.status!=='saved'")  {{question.status | ucfirst}}
                         td(ng-if="question.status!=='under_review' && question.status!=='resubmitted' && question.status!=='submitted'")
-                            a.btn.center-block.btn-default(href="/assessments/answer/{{question.answer_ID}}") Go to answer page
+                            a.btn.center-block.btn-default(href="/admin/assessments-admin/answer/{{question.answer_ID}}") Go to answer page
                         td(ng-if="question.status!=='under_review' || question.status!=='resubmitted' || question.status!=='submitted'")
                             a.btn.center-block.btn-primary(
                             ng-if="question.status==='submitted'"
