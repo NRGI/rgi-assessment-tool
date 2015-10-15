@@ -23,15 +23,30 @@ div(id="flags_div").bottom-padding-med
                         em  {{flag.date | date:'MM/dd/yyyy'}}
             div(
             id="collapse{{$index}}"
-            class="panel-collapse collapse in"
+            class="panel-collapse collapse"
             role="tabpanel"
+            ng-if="flag.addressed"
             aria-labelledby="heading{{$index}}")
                 div.panel-body
                     .row.left-padding-lg
                         label Addressed?
+                            | &nbsp;
+                            input(type="checkbox" ng-model="flag.addressed")
+                    .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
+                    .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                        button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
+            div(
+            id="collapse{{$index}}"
+            class="panel-collapse collapse in"
+            role="tabpanel"
+            ng-if="!flag.addressed"
+            aria-labelledby="heading{{$index}}")
+                div.panel-body
+                    .row.left-padding-lg
+                        label Addressed?
+                            | &nbsp;
                             input(type="checkbox" ng-model="flag.addressed")
 
-                    .row.left-padding-lg.right-padding-lg
-                        text {{flag.content}}
+                    .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
                     .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
