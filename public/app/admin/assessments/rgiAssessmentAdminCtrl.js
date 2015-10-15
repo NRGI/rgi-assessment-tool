@@ -85,7 +85,7 @@ angular.module('app').controller('rgiAssessmentAdminCtrl', function (
         rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
             new_assessment_data.status = 'under_review';
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
-                $location.path('/admin/assessment-review/answer-review-edit/' + assessment_ID + '-001');
+                $location.path('/admin/assessment-review/answer/' + assessment_ID + '-001');
                 rgiNotifier.notify('Assessment review started!');
             }, function (reason) {
                 rgiNotifier.error(reason);
