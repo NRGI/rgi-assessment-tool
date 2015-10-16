@@ -104,7 +104,33 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiDocumentAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        // ASSESSMENTS
+        // INTERVIEWEES
+        .when('/admin/interviewees-admin', {
+            templateUrl: '/partials/admin/interviewees/interviewee-admin',
+            controller: 'rgiIntervieweeAdminCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
+        .when('/admin/interviewees-admin/:interviewee_ID', {
+            templateUrl: '/partials/admin/interviewees/interviewee-admin-detail',
+            controller: 'rgiIntervieweeAdminDetailCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
+        ///// GENERAL ROUTES
+
+        /// Assessments
+        // User
+        .when('/assessments', {
+            templateUrl: '/partials/assessments/assessments-list',
+            controller:  'rgiAssessmentsListCtrl',
+            resolve: routeRoleChecks.user
+        })
+        .when('/assessments/:assessment_ID', {
+            templateUrl: '/partials/assessments/assessment-detail',
+            controller:  'rgiAssessmentDetailCtrl',
+            resolve: routeRoleChecks.user
+        })
+        // Admin
+
         .when('/admin/assessment-admin', {
             templateUrl: '/partials/admin/assessments/assessment-admin',
             controller:  'rgiAssessmentAdminCtrl',
@@ -119,29 +145,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/admin/assessments/assessment-admin-detail',
             controller:  'rgiAssessmentAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
-        })
-        // INTERVIEWEES
-        .when('/admin/interviewees-admin', {
-            templateUrl: '/partials/admin/interviewees/interviewee-admin',
-            controller: 'rgiIntervieweeAdminCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
-        .when('/admin/interviewees-admin/:interviewee_ID', {
-            templateUrl: '/partials/admin/interviewees/interviewee-admin-detail',
-            controller: 'rgiIntervieweeAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
-        ///// GENERAL ROUTES
-        // Assessments
-        .when('/assessments', {
-            templateUrl: '/partials/assessments/assessments-list',
-            controller:  'rgiAssessmentsListCtrl',
-            resolve: routeRoleChecks.user
-        })
-        .when('/assessments/:assessment_ID', {
-            templateUrl: '/partials/assessments/assessment-detail',
-            controller:  'rgiAssessmentDetailCtrl',
-            resolve: routeRoleChecks.user
         })
 
         //.when('/assessments-review/:assessment_ID', {
