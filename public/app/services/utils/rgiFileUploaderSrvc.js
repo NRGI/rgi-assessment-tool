@@ -1,0 +1,9 @@
+'use strict';
+
+angular.module('app').factory('rgiFileUploaderSrvc', function (FileUploader) {
+    return {
+        get: function(options) {
+            return new FileUploader(options);
+        }
+    };
+});

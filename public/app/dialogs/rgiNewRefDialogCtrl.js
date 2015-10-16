@@ -4,10 +4,10 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     $scope,
     $route,
     $timeout,
-    FileUploader,
     ngDialog,
-    rgiNotifier,
     rgiAnswerMethodSrvc,
+    rgiFileUploaderSrvc,
+    rgiNotifier,
     rgiRequestSubmitterSrvc
 ) {
     $scope.fileUploading = false;
@@ -81,7 +81,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     $scope.date_default = today;
     $scope.date_max_limit = today;
 
-    var uploader = $scope.uploader = new FileUploader({
+    var uploader = $scope.uploader = rgiFileUploaderSrvc.get({
         isHTML5: true,
         withCredentials: true,
         url: 'file-upload'
