@@ -14,7 +14,12 @@
                         ng-model="sortOrder"
                         ng-options="item.value as item.text for item in sortOptions")
                 br
-                button.btn.btn-success.pull-right(ng-click="assessmentSubmit()") Submit assessment
+                button.btn.btn-success.pull-right(
+                ng-click="assessmentSubmit()"
+                ng-if="assessment.status==='started'") Submit assessment
+                button.btn.btn-success.pull-right(
+                ng-click="assessmentResubmit()"
+                ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'") Resubmit assessment
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row
@@ -57,9 +62,11 @@
                         td.col-md-1 {{answer.component_text}}
                         td.col-md-5 {{answer.question_text}})
                         td.col-md-2.text-center
+                            .text-success.glyphicon.glyphicon-check(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                             .text-success.glyphicon.glyphicon-check(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                             .text-info.glyphicon.glyphicon-floppy-saved(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                             .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                            .text-primary.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                             .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
                         td.col-md-1.text-center {{answer.researcher_score}}
                         td.col-md-1.text-center {{answer.reviewer_score}}

@@ -144,11 +144,11 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             resolve: routeRoleChecks.user
         })
 
-        .when('/assessments-review/:assessment_ID', {
-            templateUrl: '/partials/researchers/assessments/assessment-review',
-            controller:  'rgiAssessmentDetailCtrl',
-            resolve: routeRoleChecks.user
-        })
+        //.when('/assessments-review/:assessment_ID', {
+        //    templateUrl: '/partials/researchers/assessments/assessment-review',
+        //    controller:  'rgiAssessmentDetailCtrl',
+        //    resolve: routeRoleChecks.user
+        //})
 
         // Answers
         .when('/admin/assessments-admin/answer/:answer_ID', {
@@ -160,20 +160,20 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/answers/answer',
             controller: 'rgiAnswerAltCtrl',
             resolve: routeRoleChecks.user
-        })
+        });
 
 
 
         // Answers
-        .when('/admin/assessment-review/:assessment_ID', {
-            templateUrl: '/partials/admin/assessments/review/assessment-review',
-            controller: 'rgiAssessmentAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
-        .when('/admin/assessment-review/answer-review-edit/:answer_ID', {
-            templateUrl: '/partials/admin/assessments/review/answer-page-review',
-            controller: 'rgiAnswerCtrl'
-        })
+        //.when('/admin/assessment-review/:assessment_ID', {
+        //    templateUrl: '/partials/admin/assessments/review/assessment-review',
+        //    controller: 'rgiAssessmentAdminDetailCtrl',
+        //    resolve: routeRoleChecks.supervisor
+        //})
+        //.when('/admin/assessment-review/answer-review-edit/:answer_ID', {
+        //    templateUrl: '/partials/admin/assessments/review/answer-page-review',
+        //    controller: 'rgiAnswerCtrl'
+        //})
         //.when('/assessments', {
         //    templateUrl: '/partials/researchers/assessments/assessments-list',
         //    controller:  'rgiAssessmentsListCtrl',
@@ -187,18 +187,18 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         // Answers
-        .when('/assessments/assessment-view/:answer_ID', {
-            templateUrl: '/partials/researchers/answers/answer-page-view',
-            controller:  'rgiAnswerCtrl'
-        })
-        .when('/assessments/assessment-edit/:answer_ID', {
-            templateUrl: '/partials/researchers/answers/answer-page-edit',
-            controller:  'rgiAnswerCtrl'
-        })
-        .when('/assessment-review/answer-review/:answer_ID', {
-            templateUrl: '/partials/researchers/answers/answer-page-review',
-            controller:  'rgiAnswerCtrl'
-        });
+        //.when('/assessments/assessment-view/:answer_ID', {
+        //    templateUrl: '/partials/researchers/answers/answer-page-view',
+        //    controller:  'rgiAnswerCtrl'
+        //})
+        //.when('/assessments/assessment-edit/:answer_ID', {
+        //    templateUrl: '/partials/researchers/answers/answer-page-edit',
+        //    controller:  'rgiAnswerCtrl'
+        //})
+        //.when('/assessment-review/answer-review/:answer_ID', {
+        //    templateUrl: '/partials/researchers/answers/answer-page-review',
+        //    controller:  'rgiAnswerCtrl'
+        //});
 
 });
 

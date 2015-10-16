@@ -45,7 +45,10 @@ div(id="flags_div").bottom-padding-med
                     .row.left-padding-lg
                         label Addressed?
                             | &nbsp;
-                            input(type="checkbox" ng-model="flag.addressed")
+                            input(
+                            type="checkbox"
+                            ng-model="flag.addressed"
+                            ng-if="current_user.role==='supervisor'")
 
                     .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
                     .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")

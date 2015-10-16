@@ -50,12 +50,35 @@ angular
             }
         };
 
-        $scope.assessmentResubmit = function () {
-            var new_assessment_data = $scope.assessment;
+        //$scope.assessmentResubmit = function () {
+        //    var new_assessment_data = $scope.assessment;
+        //
+        //    if(new_assessment_data.questions_resubmitted !== new_assessment_data.questions_flagged) {
+        //        rgiNotifier.error('You must resubmit all flagged answers!');
+        //    } else {
+        //        new_assessment_data.status = 'resubmitted';
+        //
+        //        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+        //            .then(function () {
+        //                $location.path('/assessments');
+        //                rgiNotifier.notify('Assessment submitted!');
+        //            }, function (reason) {
+        //                rgiNotifier.error(reason);
+        //            });
+        //    }
+        //};
 
-            if(new_assessment_data.questions_resubmitted !== new_assessment_data.questions_flagged) {
+        $scope.assessmentResubmit = function () {
+            var flag_check = false;
+            $scope.answers.forEach(function (el) {
+               if (el.status === 'flagged') {
+                   return flag_check = true;
+               }
+            });
+            if (flag_check) {
                 rgiNotifier.error('You must resubmit all flagged answers!');
             } else {
+                var new_assessment_data = $scope.assessment;
                 new_assessment_data.status = 'resubmitted';
 
                 rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
