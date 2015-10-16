@@ -12,7 +12,7 @@
                         select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
                 .row
                     br
-                    button.btn.btn-success.pull-right(ng-click="assessmentSubmit()" disabled) Submit assessment
+                    button.btn.btn-success.pull-right(ng-click="moveAssessmentDialog()") Move assessment
 
 
             .pull-left.left-padding-lg.bottom-padding-med

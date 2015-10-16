@@ -78,11 +78,11 @@
 
                                 //- review answers sent back button
                                 a.btn.btn-col.center-block.btn-warning(ng-if="assessment.questions_flagged !== 0 && assessment.status !== 'resubmitted' && assessment.status !== 'under_review'"
-                                href="/assessments-review/{{assessment.assessment_ID}}") Review answers
+                                href="/assessments/{{assessment.assessment_ID}}") Review answers
 
                                 //- disabled for admin review
                                 a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'submitted' || assessment.status === 'resubmitted' || assessment.status === 'under_review'"
-                                href="/assessments-review/{{assessment.assessment_ID}}"
+                                href="/assessments/{{assessment.assessment_ID}}"
                                 disabled) Under Admin review
 
                                 ////- disabled for researcher control
