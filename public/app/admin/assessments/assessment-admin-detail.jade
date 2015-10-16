@@ -67,18 +67,18 @@
                             .text-danger.glyphicon.glyphicon-flag(ng-if="question.status==='flagged'")  {{question.status | ucfirst}}
                             .text-primary.glyphicon.glyphicon-floppy-disk(ng-if="question.status==='saved'")  {{question.status | ucfirst}}
                             .text(ng-if="question.status!=='flagged' && question.status!=='approved' && question.status!=='resubmitted' && question.status!=='submitted' && question.status!=='saved'")  {{question.status | ucfirst}}
-                        td(ng-if="question.status!=='under_review' && question.status!=='resubmitted' && question.status!=='submitted'")
+                        td(ng-if="question.status!=='under_review' && question.status!=='resubmitted' && question.status!=='submitted' && question.status!=='approved'")
                             a.btn.center-block.btn-default(href="/admin/assessments-admin/answer/{{question.answer_ID}}") Go to answer page
-                        td(ng-if="question.status!=='under_review' || question.status!=='resubmitted' || question.status!=='submitted'")
+                        td(ng-if="question.status==='under_review' || question.status==='resubmitted' || question.status==='submitted' || question.status==='approved'")
                             a.btn.center-block.btn-primary(
                             ng-if="question.status==='submitted'"
                             href="/admin/assessments-admin/answer/{{question.answer_ID}}") Review
                             a.btn.center-block.btn-warning(
-                            ng-if="answer.status==='resubmitted'"
+                            ng-if="question.status==='resubmitted'"
                             href="/admin/assessments-admin/answer/{{question.answer_ID}}") Review
                             a.btn.center-block.btn-danger(
-                            ng-if="answer.status==='flagged'"
+                            ng-if="question.status==='flagged'"
                             href="/admin/assessments-admin/answer/{{question.answer_ID}}") Review
                             a.btn.center-block.btn-default(
-                            ng-if="answer.status==='approved'"
+                            ng-if="question.status==='approved'"
                             href="/admin/assessments-admin/answer/{{question.answer_ID}}") Review
