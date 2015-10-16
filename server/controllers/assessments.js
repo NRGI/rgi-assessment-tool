@@ -118,11 +118,6 @@ exports.updateAssessment = function (req, res) {
                         }
                     }
 
-                    assessment.questions_complete = assessmentUpdates.questions_complete;
-                    assessment.questions_flagged = assessmentUpdates.questions_flagged;
-                    assessment.questions_approved = assessmentUpdates.questions_approved;
-                    assessment.questions_resubmitted = assessmentUpdates.questions_resubmitted;
-                    assessment.questions_unfinalized = assessmentUpdates.questions_unfinalized;
                     assessment.edit_control = assessmentUpdates.edit_control;
                     assessment.status = assessmentUpdates.status;
                     assessment.documents = assessmentUpdates.documents;

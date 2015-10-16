@@ -24,14 +24,17 @@ angular
     .controller('rgiActiveAnswerButtonsCtrl', function (
         $scope,
         $location,
+        $routeParams,
         ngDialog,
         rgiIdentitySrvc,
+        rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
         rgiNotifier
     ) {
         'use strict';
-        var root_url;
+        var root_url,
+            assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
         if ($scope.current_user.role === 'supervisor') {
@@ -39,38 +42,19 @@ angular
         } else {
             root_url = '/assessments';
         }
+        rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+            $scope.question_length = answers.length;
+        });
+
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
                 new_assessment_data = $scope.assessment,
                 flag_check = flagCheck(new_answer_data.flags);
 
-            switch (new_answer_data.status) {
-                case 'assigned':
-                    new_answer_data.status = 'saved';
-                    break;
-                case 'saved':
-                    if (flag_check === true) {
-                        new_answer_data.status = 'flagged';
-                        new_assessment_data.questions_flagged += 1;
-                        new_assessment_data.questions_complete += 1;
-                    }
-                    break;
-                case 'approved':
-                    if (flag_check === true) {
-                        new_answer_data.status = 'flagged';
-                        new_assessment_data.questions_flagged += 1;
-                        new_assessment_data.questions_approved -= 1;
-                    }
-                    break;
-                case 'flagged':
-                    if(flag_check === false) {
-                        new_answer_data.status = 'saved';
-                        new_assessment_data.questions_flagged -= 1;
-                        new_assessment_data.questions_complete -= 1;
-                    }
-                    break;
-                default:
-                    console.log('unknown error');
+            if (new_answer_data.status!=='flagged' && flag_check) {
+                new_answer_data.status = 'flagged';
+            } else if (new_answer_data.status==='flagged' && !flag_check) {
+                new_answer_data.status = 'saved';
             }
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
@@ -93,13 +77,12 @@ angular
             } else {
                 if (new_answer_data.status !== 'submitted') {
                     new_answer_data.status = 'submitted';
-                    new_assessment_data.questions_complete += 1;
                 }
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
-                        if (new_assessment_data.questions_complete !== new_assessment_data.question_length && new_answer_data.question_order !== new_assessment_data.question_length) {
+                        if (new_answer_data.question_order !== $scope.question_length) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
@@ -108,7 +91,6 @@ angular
                     }, function (reason) {
                         rgiNotifier.notify(reason);
                     });
-
             }
         };
 
@@ -121,14 +103,15 @@ angular
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
             } else {
-                if (new_answer_data.status === 'flagged') {
-                    new_answer_data.status = 'resubmitted';
-                    new_assessment_data.questions_resubmitted += 1;
-                }
+                new_answer_data.status = 'resubmitted';
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
-                        //$location.path('/assessments-review/' + new_answer_data.assessment_ID);
+                        if (new_answer_data.question_order !== $scope.question_length) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
+                        } else {
+                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                        }
                         rgiNotifier.notify('Answer resubmitted');
                     }, function (reason) {
                         rgiNotifier.notify(reason);
@@ -144,60 +127,22 @@ angular
             if (new_answer_data.status !== 'approved' && flag_check === true) {
                 rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
             } else {
-                switch (new_answer_data.status) {
-                    case 'submitted':
-                        new_answer_data.status = 'approved';
-                        new_assessment_data.questions_approved += 1;
-                        new_assessment_data.questions_complete += 1;
-                        break;
-                    case 'flagged':
-                        new_answer_data.status = 'approved';
-                        new_assessment_data.questions_approved += 1;
-                        new_assessment_data.questions_flagged -= 1;
-                        break;
-                    case 'saved':
-                        new_assessment_data.questions_approved += 1;
-                        new_assessment_data.questions_complete += 1;
-                        new_answer_data.status = 'approved';
-                        break;
-                    //case 'resubmitted':
-                    //    new_answer_data.status = 'approved';
-                    //    new_assessment_data.questions_approved += 1;
-                    //    new_assessment_data.questions_flagged -= 1;
-                    //    break;
-                    default:
-                        console.log('unknown error');
-                }
-
-                //if (new_answer_data.status === 'submitted') {
-                //    new_answer_data.status = 'approved';
-                //    new_assessment_data.questions_complete += 1;
-                //    } else if (new_answer_data.status === 'flagged' || new_answer_data.status === 'resubmitted') {
-                //} else if (new_answer_data.status === 'flagged') {
-                //    new_answer_data.status = 'approved';
-                //    new_assessment_data.questions_flagged -= 1;
-                //} else if (new_answer_data.status === 'approved' && flag_check === true) {
-                //    new_answer_data.status = 'flagged';
-                //    new_assessment_data.questions_flagged += 1;
-                //} else if (new_answer_data.status === 'resubmitted') {
-                //    new_answer_data.status = 'approved';
-                //    new_assessment_data.questions_flagged -= 1;
-                //} else
-
-                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                    .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                    .then(function () {
-                        if (new_assessment_data.questions_complete !== new_assessment_data.question_length && new_answer_data.question_order !== new_assessment_data.question_length) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
-                        } else {
-                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
-                        }
-                        rgiNotifier.notify('Answer approved');
-                    }, function (reason) {
-                        rgiNotifier.notify(reason);
-                    });
+                new_answer_data.status = 'approved';
             }
+            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+                .then(function () {
+                    if (new_answer_data.question_order !== $scope.question_length) {
+                        $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
+                    } else {
+                        $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                    }
+                    rgiNotifier.notify('Answer approved');
+                }, function (reason) {
+                    rgiNotifier.notify(reason);
+                });
         };
+
         $scope.answerClear = function () {
             $scope.answer = angular.copy($scope.$parent.answer_start);
         };
