@@ -4,17 +4,32 @@
 describe('rgiDeleteQuestionDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $timeout, rgiNotifier, rgiRequestSubmitterSrvc;
-    var ANSWER = 'ANSWER', now;
+    var $scope, $timeout, ngDialog, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc,
+        fileUploaderGetStub, fileUploaderGetSpy,
+        ANSWER = 'ANSWER', now;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$timeout_, _rgiNotifier_, _rgiRequestSubmitterSrvc_) {
+        function (
+            $rootScope,
+            $controller,
+            _$timeout_,
+            _ngDialog_,
+            _rgiNotifier_,
+            _rgiFileUploaderSrvc_,
+            _rgiRequestSubmitterSrvc_) {
             $timeout = _$timeout_;
+            ngDialog = _ngDialog_;
             rgiNotifier = _rgiNotifier_;
+            rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
             rgiRequestSubmitterSrvc = _rgiRequestSubmitterSrvc_;
 
             $scope = $rootScope.$new();
             $scope.$parent.answer = ANSWER;
+
+            fileUploaderGetSpy = sinon.spy(function() {
+                return {queue: [], filters: []};
+            });
+            fileUploaderGetStub = sinon.stub(rgiFileUploaderSrvc, 'get', fileUploaderGetSpy);
 
             now = new Date();
             $controller('rgiNewRefDialogCtrl', {$scope: $scope});
@@ -47,6 +62,86 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
     it('sets date limit', function () {
         compareDates($scope.date_max_limit, now).should.be.equal(true);
+    });
+
+    it('initializes file uploader', function() {
+        fileUploaderGetSpy.withArgs({isHTML5: true, withCredentials: true, url: 'file-upload'}).called.should.be.equal(true);
+    });
+
+    it('adds uploader filter', function() {
+        var filter = $scope.uploader.filters[$scope.uploader.filters.length - 1];
+
+        var emptyQueue = {queue: [], fn: filter.fn};
+        emptyQueue.fn().should.be.equal(true);
+
+        var nonEmptyQueue = {queue: [1], fn: filter.fn};
+        nonEmptyQueue.fn().should.be.equal(false);
+
+        filter.name.should.be.equal('customFilter');
+    });
+
+    describe('#uploader.onCompleteItem', function () {
+        var RESPONSE = 'RESPONSE';
+
+        it('cleans the queue', function () {
+            $scope.uploader.onCompleteItem();
+            $scope.uploader.queue.length.should.be.equal(0);
+        });
+
+        it('shows an error message if error status received', function () {
+            var REASON = 'REASON',
+                notifierMock = sinon.mock(rgiNotifier);
+
+            notifierMock.expects('error').withArgs(REASON);
+            $scope.uploader.onCompleteItem(null, {reason: REASON}, 400);
+
+            notifierMock.verify();
+            notifierMock.restore();
+        });
+
+        describe('SUCCESS CASE', function() {
+            beforeEach(function() {
+                $scope.uploader.onCompleteItem(null, RESPONSE, 200);
+            });
+
+            it('sets the document got from the response', function () {
+                $scope.new_document.should.be.equal(RESPONSE);
+            });
+
+            it('sets the value to true', function () {
+                $scope.value.should.be.equal(true);
+            });
+        });
+
+        describe('DIALOGS ON SUCCESS', function() {
+            var dialogMock;
+
+            beforeEach(function() {
+                dialogMock = sinon.mock(ngDialog);
+            });
+
+            it('closes the file upload dialog', function () {
+                dialogMock.expects('close').withArgs('ngdialog1');
+            });
+
+            it('opens a new document dialog', function () {
+                var dialogScope = $scope.$parent;
+                dialogScope.new_document = $scope.new_document;
+
+                dialogMock.expects('open').withArgs({
+                    template: 'partials/dialogs/new-document-dialog',
+                    controller: 'rgiNewDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: dialogScope
+                });
+            });
+
+            afterEach(function() {
+                $scope.uploader.onCompleteItem(null, RESPONSE, 200);
+                dialogMock.verify();
+                dialogMock.restore();
+            });
+        });
     });
 
     describe('#closeDialog', function () {
@@ -184,5 +279,9 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
             });
         });
 
+    });
+
+    afterEach(function() {
+        fileUploaderGetStub.restore();
     });
 });

@@ -94,17 +94,17 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     });
 
     uploader.onCompleteItem = function (fileItem, response, status) {
+        $scope.uploader.queue = [];
+
         if (status === 400) {
-            $scope.uploader.queue = [];
             rgiNotifier.error(response.reason);
         } else {// TODO add cancel upload after initial document pass
             $scope.new_document = response;
-
-            $scope.uploader.queue = [];
-
             $scope.value = true;
+
             var scope = $scope.$parent;
             scope.new_document = $scope.new_document;
+
             ngDialog.close('ngdialog1');
             ngDialog.open({
                 template: 'partials/dialogs/new-document-dialog',
@@ -113,7 +113,6 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
                 scope: scope
             });
         }
-
     };
 
     $scope.webRefSubmit = function () {
