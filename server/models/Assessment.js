@@ -60,25 +60,7 @@ var assessmentSchema = mongoose.Schema({
     approval: {
         approved_by: ObjectId,
         approved_date: Date},
-    modified: [modificationSchema],
-    questions_complete: {
-        type: Number,
-        default: 0},
-    questions_flagged: {
-        type: Number,
-        default: 0},
-    questions_approved: {
-        type: Number,
-        default: 0},
-    questions_resubmitted: {
-        type: Number,
-        default: 0},
-    questions_unfinalized: {
-        type: Number,
-        required: '{PATH} is required'},
-    question_length: {
-        type: Number,
-        required: '{PATH} is required'}
+    modified: [modificationSchema]
 });
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);
@@ -92,12 +74,6 @@ function createDefaultAssessments() {
                 "year": "2015",
                 "version": "pilot",
                 "country": "Afghanistan",
-                "questions_unfinalized": 6,
-                "question_length": 6,
-                "questions_resubmitted": 0,
-                "questions_flagged": 0,
-                "questions_approved": 0,
-                "questions_complete": 0,
                 "modified": [],
                 "first_pass": true,
                 "status": "unassigned",
@@ -110,12 +86,6 @@ function createDefaultAssessments() {
                 "year": "2015",
                 "version": "pilot",
                 "country": "Albania",
-                "questions_unfinalized": 6,
-                "question_length": 6,
-                "questions_resubmitted": 0,
-                "questions_flagged": 0,
-                "questions_approved": 0,
-                "questions_complete": 0,
                 "modified": [],
                 "first_pass": true,
                 "status": "unassigned",
@@ -128,12 +98,6 @@ function createDefaultAssessments() {
                 "year": "2015",
                 "version": "pilot",
                 "country": "Algeria",
-                "questions_unfinalized": 6,
-                "question_length": 6,
-                "questions_resubmitted": 0,
-                "questions_flagged": 0,
-                "questions_approved": 0,
-                "questions_complete": 0,
                 "modified": [],
                 "first_pass": true,
                 "status": "unassigned",
@@ -146,12 +110,6 @@ function createDefaultAssessments() {
                 "year": "2015",
                 "version": "pilot",
                 "country": "Armenia",
-                "questions_unfinalized": 6,
-                "question_length": 6,
-                "questions_resubmitted": 0,
-                "questions_flagged": 0,
-                "questions_approved": 0,
-                "questions_complete": 0,
                 "modified": [],
                 "first_pass": true,
                 "status": "unassigned",
@@ -164,12 +122,6 @@ function createDefaultAssessments() {
                 "year": "2015",
                 "version": "pilot",
                 "country": "Angola",
-                "questions_unfinalized": 6,
-                "question_length": 6,
-                "questions_resubmitted": 0,
-                "questions_flagged": 0,
-                "questions_approved": 0,
-                "questions_complete": 0,
                 "modified": [],
                 "first_pass": true,
                 "status": "unassigned",

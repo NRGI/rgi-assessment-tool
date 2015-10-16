@@ -81,9 +81,7 @@ angular
                                 ISO3: el.country.country_ID,
                                 year: $scope.new_assessment.year,
                                 version: $scope.new_assessment.version,
-                                country: el.country.country,
-                                questions_unfinalized: data.length,
-                                question_length: data.length
+                                country: el.country.country
                             });
                         });
 

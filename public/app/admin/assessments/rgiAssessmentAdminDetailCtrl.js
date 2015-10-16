@@ -17,16 +17,55 @@ angular.module('app').controller('rgiAssessmentAdminDetailCtrl', function (
     $scope.sort_order = $scope.sort_options[0].value;
 
     // pull assessment data and add
-    rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (data) {
-        data.reviewer = rgiUserListSrvc.get({_id: data.reviewer_ID});
-        if (data.researcher_ID) {
-            data.researcher = rgiUserListSrvc.get({_id: data.researcher_ID});
+    rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
+        assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+        if (assessment.researcher_ID) {
+            assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
         }
-        data.assigned_by = rgiUserListSrvc.get({_id: data.assignment.assigned_by});
-        data.edited_by = rgiUserListSrvc.get({_id: data.modified[data.modified.length - 1].modified_by});
-        data.question_list = rgiAnswerSrvc.query({assessment_ID: data.assessment_ID});
+        assessment.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
+        assessment.edited_by = rgiUserListSrvc.get({_id: assessment.modified[assessment.modified.length - 1].modified_by});
+        //assessment.question_list = rgiAnswerSrvc.query({assessment_ID: assessment.assessment_ID});
+        assessment.question_list = [];
+        rgiAnswerSrvc.query({assessment_ID: assessment.assessment_ID}, function (answers) {
+            assessment.counters = {
+                answers: answers.length,
+                complete: 0,
+                flagged: 0,
+                submitted: 0,
+                approved: 0,
+                resubmitted: 0,
+                assigned: 0,
+                saved: 0
+            };
+            answers.forEach(function (el) {
+                switch (el.status) {
+                    case 'flagged':
+                        assessment.counters.flagged +=1;
+                        assessment.counters.complete +=1;
+                        break;
+                    case 'submitted':
+                        assessment.counters.submitted +=1;
+                        assessment.counters.complete +=1;
+                        break;
+                    case 'approved':
+                        assessment.counters.approved +=1;
+                        assessment.counters.complete +=1;
+                        break;
+                    case 'resubmitted':
+                        assessment.counters.resubmitted +=1;
+                        break;
+                    case 'assigned':
+                        assessment.counters.assigned +=1;
+                        break;
+                    case 'saved':
+                        assessment.counters.saved +=1;
+                        break;
+                }
+            });
+            assessment.question_list = answers;
+        });
 
-        $scope.assessment = data;
+        $scope.assessment = assessment;
 
     });
 

@@ -80,11 +80,6 @@ angular
                     new_answer_set[i].reviewer_ID = new_reviewer_data._id;
                 }
             });
-            console.log(new_reviewer_data);
-            console.log(new_researcher_data);
-            console.log(new_assessment_data);
-            console.log(new_answer_set);
-
             ////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
             if (new_reviewer_data) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
