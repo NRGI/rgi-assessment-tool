@@ -55,6 +55,8 @@ angular
                 new_answer_data.status = 'flagged';
             } else if (new_answer_data.status==='flagged' && !flag_check) {
                 new_answer_data.status = 'saved';
+            } else if (new_answer_data.status==='assigned') {
+                new_answer_data.status = 'saved';
             }
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)

@@ -53,5 +53,5 @@ table.table.table-hover.table-striped.table-condensed
                 ng-if="answer.status==='approved'"
                 href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
                 a.btn.center-block.btn-default(
-                ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved'"
+                ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged'"
                 href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Go to answer page

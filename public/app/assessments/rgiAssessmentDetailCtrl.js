@@ -107,4 +107,18 @@ angular
                     });
             }
         };
+
+        $scope.moveAssessmentDialog = function () {
+            if ($scope.assessment_counters.length !== ($scope.assessment_counters.flagged + $scope.assessment_counters.approved)) {
+                rgiNotifier.error('You must approve or flag all questions!');
+            } else {
+                $scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/move-assessment-dialog',
+                    controller: 'rgiMoveAssessmentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            }
+        };
     });
