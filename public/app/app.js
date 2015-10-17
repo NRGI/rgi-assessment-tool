@@ -122,21 +122,22 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiAssessmentsListCtrl',
             resolve: routeRoleChecks.user
         })
+
         .when('/assessments/:assessment_ID', {
             templateUrl: '/partials/assessments/assessment-detail',
             controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.user
         })
         // Admin
-
         .when('/admin/assessment-admin', {
-            templateUrl: '/partials/admin/assessments/assessment-admin',
-            controller:  'rgiAssessmentAdminCtrl',
+            templateUrl: '/partials/assessments/assessments-list',
+            controller:  'rgiAssessmentsListCtrl',
             resolve: routeRoleChecks.supervisor
         })
+
         .when('/admin/assessment-admin/subs/:version', {
-            templateUrl: '/partials/admin/assessments/assessment-admin',
-            controller:  'rgiAssessmentAdminCtrl',
+            templateUrl: '/partials/assessments/assessments-list',
+            controller:  'rgiAssessmentsListCtrl',
             resolve: routeRoleChecks.supervisor
         })
         .when('/admin/assessments-admin/:assessment_ID', {
