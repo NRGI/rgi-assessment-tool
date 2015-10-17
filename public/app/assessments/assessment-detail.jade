@@ -23,26 +23,49 @@
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row
-                    text Researcher:
-                    a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}}  {{assessment.researcher.lastName}}
+                    | Researcher:
+                    a(href="mailto:{{researcher.email}}")  {{researcher.firstName}}  {{researcher.lastName}}
                 .row
-                    text Reviewer:
-                    a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}}  {{assessment.reviewer.lastName}}
+                    | Reviewer:
+                    a(
+                    ng-if="reviewer"
+                    href="mailto:{{reviewer.email}}")  {{reviewer.firstName}}  {{reviewer.lastName}}
+                    em(ng-if="!reviewer")  N/A
                 .row
-                    text Status: {{assessment.status | ucfirst}}
+                    | Status: {{assessment.status | addSpaces | ucfirst}}
                 .row
-                    text {{assessment.status | ucfirst}} on
-                    em  {{assessment.assignment.assigned_date | date}}
-                .row
-                    text Last edited by
-                    a(href="mailto:{{assessment.edited_by.email}}")  {{assessment.edited_by.firstName}}  {{assessment.edited_by.lastName}}
-                    text  on
+                    | Last edited by
+                    a(href="mailto:{{edited_by.email}}")  {{edited_by.firstName}}  {{edited_by.lastName}}
+                    |  on
                     span(ng-repeat="mod in assessment.modified")
                         em(ng-show="$last")  {{mod.modified_date | date}}
-                .row(ng-if="assessment.questions_complete===0")
-                    text(ng) Number of questions complete: {{assessment.questions_complete}} (0%)
-                .row(ng-if="assessment.questions_complete!==0")
-                    text Number of questions complete: {{assessment.questions_complete}} (
-                    text {{((assessment.questions_complete/answers.length)*100 | number :2)}}
-                    text % complete)
+                //.row
+                //    | {{assessment.status | ucfirst}} on
+                //    em  {{assessment.assignment.assigned_date | date}}
+                .row
+                    | Last edited by
+                    a(href="mailto:{{edited_by.email}}")  {{edited_by.firstName}}  {{edited_by.lastName}}
+                    |  on
+                    span(ng-repeat="mod in assessment.modified")
+                        em(ng-show="$last")  {{mod.modified_date | date}}
+                .row Assessment length: {{assessment_counters.length}}
+                .row
+                    | Number of questions
+                    text(ng-if="assessment.status==='under_review'")  reviewed:
+                    text(ng-if="assessment.status!=='under_review'")  completed:
+                    |  {{assessment_counters.complete}} (
+                    text(ng-if="assessment_counters.complete!==0") {{((assessment_counters.complete/assessment_counters.length)*100 | number :2)}}
+                    text(ng-if="assessment_counters.complete===0") 0
+                    | % complete)
+                .row
+                    | Number of questions flagged: {{assessment_counters.flagged}}
+                .row
+                    | Number of questions approved: {{assessment_counters.approved}}
+                .row
+                    | Number of questions resubmitted: {{assessment_counters.resubmitted}}
+                .row
+                    s Number of questions unfinalized: {{assessment_counters.unfinalized}}
+            .row {{assessment.counters}}
+
+
             rgi-assessment-detail-table
