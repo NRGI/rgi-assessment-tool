@@ -20,24 +20,59 @@ angular
             {value: "status", text: "Sort by Status"}];
         $scope.sortOrder = $scope.sortOptions[0].value;
 
-        $scope.identity = rgiIdentitySrvc;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
-        rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment_data) {
-            $scope.assessment = assessment_data;
-            $scope.assessment.reviewer = rgiUserListSrvc.get({_id: assessment_data.reviewer_ID});
-            $scope.assessment.researcher = rgiUserListSrvc.get({_id: assessment_data.researcher_ID});
-            $scope.assessment.edited_by = rgiUserListSrvc.get({_id: assessment_data.modified[assessment_data.modified.length - 1].modified_by});
-            //$scope.answers = [];
-            //$scope.answers = rgiAnswerSrvc.query({assessment_ID: assessment_data.assessment_ID}, function (answers) {
-            //    answers.forEach(function (el) {
-            //        $scope.answers.push(el);
-            //    });
-            //});
-            $scope.answers = rgiAnswerSrvc.query({assessment_ID: assessment_data.assessment_ID});
+        rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
+            $scope.assessment = assessment;
+            $scope.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+            if (assessment.reviewer_ID) {
+                $scope.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+            }
+            $scope.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
+            $scope.edited_by = rgiUserListSrvc.get({_id: assessment.modified[assessment.modified.length - 1].modified_by});
+            $scope.answers = [];
+            rgiAnswerSrvc.query({assessment_ID: assessment.assessment_ID}, function (answers) {
+                $scope.assessment_counters = {
+                    length: answers.length,
+                    complete: 0,
+                    flagged: 0,
+                    submitted: 0,
+                    approved: 0,
+                    resubmitted: 0,
+                    assigned: 0,
+                    saved: 0
+                };
+                answers.forEach(function (el) {
+                    switch (el.status) {
+                        case 'flagged':
+                            $scope.assessment_counters.flagged +=1;
+                            $scope.assessment_counters.complete +=1;
+                            break;
+                        case 'submitted':
+                            $scope.assessment_counters.submitted +=1;
+                            $scope.assessment_counters.complete +=1;
+                            break;
+                        case 'approved':
+                            $scope.assessment_counters.approved +=1;
+                            $scope.assessment_counters.complete +=1;
+                            break;
+                        case 'resubmitted':
+                            $scope.assessment_counters.resubmitted +=1;
+                            break;
+                        case 'assigned':
+                            $scope.assessment_counters.assigned +=1;
+                            break;
+                        case 'saved':
+                            $scope.assessment_counters.saved +=1;
+                            break;
+                    }
+                });
+                $scope.answers = answers;
+
+            });
         });
-
         $scope.assessmentSubmit = function () {
-            if ($scope.answers.length !== $scope.assessment.questions_complete) {
+            if ($scope.assessment_counters.length !== $scope.assessment_counters.complete) {
                 rgiNotifier.error('You must complete all assessment questions');
             } else {
                 $scope.value = true;
@@ -50,30 +85,12 @@ angular
             }
         };
 
-        //$scope.assessmentResubmit = function () {
-        //    var new_assessment_data = $scope.assessment;
-        //
-        //    if(new_assessment_data.questions_resubmitted !== new_assessment_data.questions_flagged) {
-        //        rgiNotifier.error('You must resubmit all flagged answers!');
-        //    } else {
-        //        new_assessment_data.status = 'resubmitted';
-        //
-        //        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-        //            .then(function () {
-        //                $location.path('/assessments');
-        //                rgiNotifier.notify('Assessment submitted!');
-        //            }, function (reason) {
-        //                rgiNotifier.error(reason);
-        //            });
-        //    }
-        //};
-
         $scope.assessmentResubmit = function () {
             var flag_check = false;
             $scope.answers.forEach(function (el) {
-               if (el.status === 'flagged') {
-                   return flag_check = true;
-               }
+                if (el.status === 'flagged') {
+                    return flag_check = true;
+                }
             });
             if (flag_check) {
                 rgiNotifier.error('You must resubmit all flagged answers!');
