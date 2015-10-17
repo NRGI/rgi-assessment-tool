@@ -20,6 +20,9 @@
                 button.btn.btn-success.pull-right(
                 ng-click="assessmentResubmit()"
                 ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'") Resubmit assessment
+                button.btn.btn-success.pull-right(
+                ng-click="moveAssessmentDialog()"
+                ng-if="current_user.role==='supervisor'") Move assessment
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row
@@ -42,21 +45,17 @@
                 //.row
                 //    | {{assessment.status | ucfirst}} on
                 //    em  {{assessment.assignment.assigned_date | date}}
-                .row
-                    | Last edited by
-                    a(href="mailto:{{edited_by.email}}")  {{edited_by.firstName}}  {{edited_by.lastName}}
-                    |  on
-                    span(ng-repeat="mod in assessment.modified")
-                        em(ng-show="$last")  {{mod.modified_date | date}}
+
                 .row Assessment length: {{assessment_counters.length}}
                 .row
                     | Number of questions
-                    text(ng-if="assessment.status==='under_review'")  reviewed:
-                    text(ng-if="assessment.status!=='under_review'")  completed:
-                    |  {{assessment_counters.complete}} (
-                    text(ng-if="assessment_counters.complete!==0") {{((assessment_counters.complete/assessment_counters.length)*100 | number :2)}}
-                    text(ng-if="assessment_counters.complete===0") 0
-                    | % complete)
+                    text(ng-if="assessment.status==='under_review'")  reviewed: {{assessment_counters.approved + assessment_counters.flagged}} (
+                        text(ng-if="assessment_counters.approved + assessment_counters.flagged!==0") {{(((assessment_counters.approved + assessment_counters.flagged)/assessment_counters.length)*100 | number :2)}}
+                        text(ng-if="assessment_counters.approved + assessment_counters.flagged===0") 0
+                    text(ng-if="assessment.status!=='under_review'")  completed: {{assessment_counters.complete}} (
+                        text(ng-if="assessment_counters.complete!==0") {{((assessment_counters.complete/assessment_counters.length)*100 | number :2)}}
+                        text(ng-if="assessment_counters.complete===0") 0
+                    | %)
                 .row
                     | Number of questions flagged: {{assessment_counters.flagged}}
                 .row

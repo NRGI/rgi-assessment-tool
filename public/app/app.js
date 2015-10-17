@@ -141,8 +141,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             resolve: routeRoleChecks.supervisor
         })
         .when('/admin/assessments-admin/:assessment_ID', {
-            templateUrl: '/partials/admin/assessments/assessment-admin-detail',
-            controller:  'rgiAssessmentAdminDetailCtrl',
+            templateUrl: '/partials/assessments/assessment-detail',
+            controller:  'rgiAssessmentDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
 
