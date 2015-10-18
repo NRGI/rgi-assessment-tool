@@ -10,6 +10,7 @@ angular
         rgiAssessmentSrvc,
         rgiUserListSrvc,
         rgiAnswerSrvc,
+        rgiDialogFactory,
         rgiAssessmentMethodSrvc
     ) {
         'use strict';
@@ -71,54 +72,63 @@ angular
 
             });
         });
-        $scope.assessmentSubmit = function () {
-            if ($scope.assessment_counters.length !== $scope.assessment_counters.complete) {
-                rgiNotifier.error('You must complete all assessment questions');
-            } else {
-                $scope.value = true;
-                ngDialog.open({
-                    template: 'partials/dialogs/submit-confirmation-dialog',
-                    controller: 'rgiSubmitConfirmationDialogCtrl',
-                    className: 'ngdialog-theme-default',
-                    scope: $scope
-                });
-            }
+        $scope.submitAssessmentDialog = function () {
+            rgiDialogFactory.assessmentSubmit($scope);
         };
-
-        $scope.assessmentResubmit = function () {
-            var flag_check = false;
-            $scope.answers.forEach(function (el) {
-                if (el.status === 'flagged') {
-                    return flag_check = true;
-                }
-            });
-            if (flag_check) {
-                rgiNotifier.error('You must resubmit all flagged answers!');
-            } else {
-                var new_assessment_data = $scope.assessment;
-                new_assessment_data.status = 'resubmitted';
-
-                rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-                    .then(function () {
-                        $location.path('/assessments');
-                        rgiNotifier.notify('Assessment submitted!');
-                    }, function (reason) {
-                        rgiNotifier.error(reason);
-                    });
-            }
+        $scope.resubmitAssessmentDialog = function () {
+            rgiDialogFactory.assessmentResubmit($scope);
         };
-
         $scope.moveAssessmentDialog = function () {
-            if ($scope.assessment_counters.length !== ($scope.assessment_counters.flagged + $scope.assessment_counters.approved)) {
-                rgiNotifier.error('You must approve or flag all questions!');
-            } else {
-                $scope.value = true;
-                ngDialog.open({
-                    template: 'partials/dialogs/move-assessment-dialog',
-                    controller: 'rgiMoveAssessmentDialogCtrl',
-                    className: 'ngdialog-theme-default',
-                    scope: $scope
-                });
-            }
+            rgiDialogFactory.assessmentMove($scope);
         };
+        //$scope.assessmentSubmit = function () {
+        //    if ($scope.assessment_counters.length !== $scope.assessment_counters.complete) {
+        //        rgiNotifier.error('You must complete all assessment questions');
+        //    } else {
+        //        $scope.value = true;
+        //        ngDialog.open({
+        //            template: 'partials/dialogs/submit-confirmation-dialog',
+        //            controller: 'rgiSubmitConfirmationDialogCtrl',
+        //            className: 'ngdialog-theme-default',
+        //            scope: $scope
+        //        });
+        //    }
+        //};
+
+        //$scope.assessmentResubmit = function () {
+        //    var flag_check = false;
+        //    $scope.answers.forEach(function (el) {
+        //        if (el.status === 'flagged') {
+        //            return flag_check = true;
+        //        }
+        //    });
+        //    if (flag_check) {
+        //        rgiNotifier.error('You must resubmit all flagged answers!');
+        //    } else {
+        //        var new_assessment_data = $scope.assessment;
+        //        new_assessment_data.status = 'resubmitted';
+        //
+        //        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+        //            .then(function () {
+        //                $location.path('/assessments');
+        //                rgiNotifier.notify('Assessment submitted!');
+        //            }, function (reason) {
+        //                rgiNotifier.error(reason);
+        //            });
+        //    }
+        //};
+
+        //$scope.moveAssessmentDialog = function () {
+        //    if ($scope.assessment_counters.length !== ($scope.assessment_counters.flagged + $scope.assessment_counters.approved)) {
+        //        rgiNotifier.error('You must approve or flag all questions!');
+        //    } else {
+        //        $scope.value = true;
+        //        ngDialog.open({
+        //            template: 'partials/dialogs/move-assessment-dialog',
+        //            controller: 'rgiMoveAssessmentDialogCtrl',
+        //            className: 'ngdialog-theme-default',
+        //            scope: $scope
+        //        });
+        //    }
+        //};
     });

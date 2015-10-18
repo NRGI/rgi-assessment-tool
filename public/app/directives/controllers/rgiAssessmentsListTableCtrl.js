@@ -41,10 +41,10 @@ angular
         };
 
         $scope.assignAssessmentDialog = function (assessment) {
-            rgiDialogFactory.assignAssessment($scope, assessment);
+            rgiDialogFactory.assessmentAssign($scope, assessment);
         };
 
         $scope.reassignAssessmentDialog = function (assessment) {
-            rgiDialogFactory.reassignAssessment($scope, assessment);
+            rgiDialogFactory.assessmentReassign($scope, assessment);
         };
     });
