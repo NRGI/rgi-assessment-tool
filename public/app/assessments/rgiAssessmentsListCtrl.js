@@ -27,7 +27,7 @@ angular
                 $scope.sort_options.push({value: 'year', text: 'Year of assessment'});
                 $scope.sort_options.push({value: 'version', text: 'Version'});
 
-                $scope.newAssessmentDialog = function ($scope) {
+                $scope.newAssessmentDialog = function () {
                     rgiDialogFactory.newAssessment($scope);
                 };
 
