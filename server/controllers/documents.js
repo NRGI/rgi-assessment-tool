@@ -121,7 +121,7 @@ exports.uploadRemoteFile = function (req, res) {
                                 file.close(function() {
                                     uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (err, doc) {
                                         if (!err) {
-                                            fileUploadStatus.setDocument(doc._id);
+                                            fileUploadStatus.setDocument(doc);
                                         }
                                     });
                                 });
@@ -178,6 +178,26 @@ exports.getDocumentsByID = function (req, res) {
     console.log(req.params);
     Document.findOne({_id: req.params.id}).exec(function (err, document) {
         res.send(document);
+    });
+};
+
+exports.getUploadStatusDocument = function (req, res) {
+    FileUploadStatus.findOne({_id: req.params.statusId}).exec(function (errorUploadStatus, uploadStatus) {
+        if (errorUploadStatus) {
+            res.status(500).send({reason: errorUploadStatus.toString()});
+        } else if (!uploadStatus || (uploadStatus.document === undefined)) {
+            res.status(404).send({reason: 'not found'});
+        } else {
+            Document.findOne({_id: uploadStatus.document}).exec(function (errorDocument, document) {
+                if (errorDocument) {
+                    res.status(500).send({reason: errorDocument.toString()});
+                } else if (!document) {
+                    res.status(404).send({reason: 'not found'});
+                } else {
+                    res.send(document);
+                }
+            });
+        }
     });
 };
 
