@@ -13,6 +13,4 @@
                             input.form-control(ng-model="search_text", placeholder="Filter")
                         .form-group.margin-left-med
                             select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
-            //rgi-assessments-admin-table(ng-if="current_user.role==='supervisor'")
-            //rgi-assessments-user-table(ng-if="current_user.role!=='supervisor'")
             rgi-assessments-list-table
