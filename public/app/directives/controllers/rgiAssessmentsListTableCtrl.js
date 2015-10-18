@@ -47,18 +47,4 @@ angular
         $scope.reassignAssessmentDialog = function (assessment) {
             rgiDialogFactory.reassignAssessment($scope, assessment);
         };
-
-        //$scope.assessmentResubmit = function () {
-        //    var new_assessment_data = $scope.assessment;
-        //
-        //    new_assessment_data.status = 'resubmitted';
-        //
-        //    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-        //        .then(function () {
-        //            $location.path('/assessments');
-        //            rgiNotifier.notify('Assessment submitted!');
-        //        }, function (reason) {
-        //            rgiNotifier.error(reason);
-        //        });
-        //};
     });
