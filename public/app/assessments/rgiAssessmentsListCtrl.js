@@ -28,7 +28,7 @@ angular
                 $scope.sort_options.push({value: 'version', text: 'Version'});
 
                 $scope.newAssessmentDialog = function () {
-                    rgiDialogFactory.newAssessment($scope);
+                    rgiDialogFactory.assessmentNew($scope);
                 };
 
                 if ($routeParams.version === undefined) {

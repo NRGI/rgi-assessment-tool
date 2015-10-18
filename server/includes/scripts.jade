@@ -57,6 +57,7 @@ script(type="text/javascript", src="/app/services/methods/rgiUserMethodSrvc.js")
 
 //- DIRECTIVES
 script(type="text/javascript", src="/app/directives/directives/rgi-assessments-list-table.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-assessment-detail-table.js")
 
 script(type="text/javascript", src="/app/directives/rgi-active-answer-buttons.js")
 script(type="text/javascript", src="/app/directives/rgi-answer-form.js")
@@ -68,11 +69,12 @@ script(type="text/javascript", src="/app/directives/rgi-prev-answers.js")
 script(type="text/javascript", src="/app/directives/rgi-flag-tabs.js")
 //script(type="text/javascript", src="/app/directives/rgi-assessments-admin-table.js")
 //script(type="text/javascript", src="/app/directives/rgi-assessments-user-table.js")
-script(type="text/javascript", src="/app/directives/rgi-assessment-detail-table.js")
+//script(type="text/javascript", src="/app/directives/rgi-assessment-detail-table.js")
 script(type="text/javascript", src="/app/directives/modalWindow.js")
 
 //- DIRECTIVE CTRLS
 script(type="text/javascript", src="/app/directives/controllers/rgiAssessmentsListTableCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiAssessmentDetailTableCtrl.js")
 
 script(type="text/javascript", src="/app/directives/rgiActiveAnswerButtonsCtrl.js")
 script(type="text/javascript", src="/app/directives/rgiAnswerFormCtrl.js")
@@ -84,7 +86,7 @@ script(type="text/javascript", src="/app/directives/rgiPrevAnswersCtrl.js")
 script(type="text/javascript", src="/app/directives/rgiFlagTabsCtrl.js")
 //script(type="text/javascript", src="/app/directives/rgiAssessmentsUserTableCtrl.js")
 //script(type="text/javascript", src="/app/directives/rgiAssessmentsAdminTableCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiAssessmentDetailTableCtrl.js")
+//script(type="text/javascript", src="/app/directives/rgiAssessmentDetailTableCtrl.js")
 
 //- ACCT CTRLS
 script(type="text/javascript", src="/app/account/rgiNavBarLoginCtrl.js")
@@ -118,8 +120,14 @@ script(type="text/javascript", src="/app/answers/rgiAnswerCtrl.js")
 
 //- DIALOG CTRLS
 script(type="text/javascript", src="/app/dialogs/rgiDialogFactory.js")
-script(type="text/javascript", src="/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/assessments/rgiAssignAssessmentDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/assessments/rgiMoveAssessmentDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/assessments/rgiMoveAssessmentConfirmationDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/assessments/rgiSubmitAssessmentConfirmationDialogCtrl.js")
+
+
+
 
 script(type="text/javascript", src="/app/dialogs/rgiDeleteProfileDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/rgiDeleteQuestionDialogCtrl.js")
@@ -131,8 +139,8 @@ script(type="text/javascript", src="/app/dialogs/rgiEditIntervieweeDialogCtrl.js
 script(type="text/javascript", src="/app/dialogs/rgiEditUserDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/rgiNewDocumentDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/rgiNewWebpageDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiMoveAssessmentDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiSubmitConfirmationDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiMoveAssessmentConfirmationDialogCtrl.js")
+
+
+//script(type="text/javascript", src="/app/dialogs/rgiMoveAssessmentConfirmationDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/rgiCommentEditDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/rgiFlagEditDialogCtrl.js")

@@ -15,10 +15,10 @@
                         ng-options="item.value as item.text for item in sortOptions")
                 br
                 button.btn.btn-success.pull-right(
-                ng-click="assessmentSubmit()"
+                ng-click="submitAssessmentDialog()"
                 ng-if="assessment.status==='started'") Submit assessment
                 button.btn.btn-success.pull-right(
-                ng-click="assessmentResubmit()"
+                ng-click="resubmitAssessmentDialog()"
                 ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'") Resubmit assessment
                 button.btn.btn-success.pull-right(
                 ng-click="moveAssessmentDialog()"
