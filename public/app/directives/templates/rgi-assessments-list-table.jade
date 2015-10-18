@@ -1,0 +1,162 @@
+div.top-padding-lg
+    table.table.table-hover(ng-if="current_user.role==='supervisor'")
+        thead
+            tr
+                th Country
+                th Researcher
+                th Reviewer
+                th Started
+                th Last Edit
+                th Status
+                th Version
+                th
+                th
+                th
+        tbody
+            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+                //COUNTRY
+                td(ng-if="assessment.status=='unassigned'") {{assessment.country}}
+                td(ng-if="assessment.status!='unassigned'")
+                    a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.country}}
+                //RESEARCHER
+                td.col-md-3(ng-if="assessment.researcher!==undefined")
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+                    a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+                td.col-md-3(ng-if="assessment.researcher===undefined") Not assigned
+                //REVIEWER
+                td.col-md-3(ng-if="assessment.reviewer!==undefined")
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+                    a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+                td.col-md-3(ng-if="assessment.reviewer===undefined") Not assigned
+                //START DATE
+                td {{assessment.start_date.started_date | date}}
+                //LAST EDIT
+                td(ng-if="assessment.edited_by")
+                    a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
+                    text -
+                    span(ng-repeat="mod in assessment.modified")
+                        em(ng-show="$last") {{mod.modified_date | date}}
+                td(ng-if="!assessment.edited_by")
+                //STATUS
+                td {{assessment.status | ucfirst}}
+                //VERSION
+                td {{assessment.version | ucfirst}} {{assessment.year}}
+                td
+                    button.btn.btn-col.center-block.btn-primary(
+                    ng-click="assignAssessmentDialog(assessment)"
+                    ng-if="assessment.status=='unassigned'"
+                    ) Assign
+                    //TODO add reassign assessment dialog
+                    button.btn.btn-col.center-block.btn-warning(
+                    ng-click="reassignAssessmentDialog(assessment)"
+                    ng-if="assessment.status!='unassigned'"
+                    disabled) Reassign
+                td
+                    button.btn.btn-col.btn-primary(
+                    ng-click="assessmentStartReview(assessment.assessment_ID)"
+                    ng-if="assessment.status === 'submitted'"
+                    ) Start Review
+                    a.btn.btn-col.center-block.btn-primary(
+                    href="/admin/assessments-admin/{{assessment.assessment_ID}}"
+                    ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
+                    ) Continue review
+                    a.btn.btn-col.center-block.btn-primary(
+                    href="/admin/assessment-review/{{assessment.assessment_ID}}"
+                    ng-if="assessment.status=='approved'"
+                    ) Send to external
+                    a.btn.center-block.btn-default.disabled(
+                    href=""
+                    ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
+                    ) Under review
+                    a.btn.center-block.btn-default.disabled(
+                    href=""
+                    ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
+                    ) Waiting for submission
+
+    table.table.table-hover(ng-if="current_user.role!=='supervisor'")
+        thead
+            tr
+                th.col-md-1 Country
+                th.col-md-1 Version
+                th.col-md-1 Researcher
+                th.col-md-1 Reviewer
+                th.col-md-1 Started
+                th.col-md-1 Last Edited
+                th.col-md-1 Status
+                th.col-md-1.text-center Questions Complete
+                th.col-md-1.text-center Questions Flagged
+                th.col-md-1
+
+        tbody
+            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+                //COUNTRY
+                td.col-md-1
+                    text(ng-if="assessment.status=='assigned'") {{assessment.country}}
+                    a(ng-if="assessment.status!='assigned'"
+                    href="/assessments/{{assessment.assessment_ID}}") {{assessment.country}}
+                //VERSION
+                td.col-md-1
+                    text {{assessment.year}} {{assessment.version}}
+                //RESEARCHER
+                td.col-md-2
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted'")
+                    a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
+                //REVIEWER
+                td.col-md-2(ng-if="assessment.reviewer")
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted'")
+                    a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
+                td.col-md-2(ng-if="!assessment.reviewer")
+                    em Not assigned
+                //START DATE
+                td.col-md-1
+                    text(ng-if="!assessment.start_date") No
+                    text(ng-if="assessment.start_date") {{assessment.start_date.started_date | date}}
+                //LAST EDIT DATE
+                td.col-md-2(ng-if="assessment.edited_by")
+                    a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
+                    text -
+                    span(ng-repeat="mod in assessment.modified")
+                        em(ng-show="$last") {{mod.modified_date | date}}
+                //STATUS
+                td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
+                td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
+                td.text-center.col-md-1
+                    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_complete}}
+                    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
+                td.text-center.col-md-1
+                    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
+                    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
+                td.col-md-1
+                    //- researcher start button
+                    button.btn.btn-col.btn-success(
+                    ng-if="assessment.status === 'assigned' && assessment.edit_control===current_user._id"
+                    ng-click="assessmentStart(assessment)") Start assessment
+
+                    //- review answers sent back button
+                    a.btn.btn-col.center-block.btn-warning(
+                    ng-if="(assessment.status === 'review_researcher' || assessment.status === 'review_reviewer') && assessment.edit_control===current_user._id"
+                    href="/assessments/{{assessment.assessment_ID}}") Review answers
+
+                    //- disabled for admin review
+                    a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'submitted' || assessment.status === 'resubmitted' || assessment.status === 'under_review'"
+                    href="/assessments/{{assessment.assessment_ID}}"
+                    disabled) Under Admin review
+
+                    a.btn.btn-col.center-block.btn-primary(ng-if="assessment.status === 'started' && assessment.edit_control===current_user._id"
+                    href="/assessments/{{assessment.assessment_ID}}") Open assessment
+
+                    //TODO add submssion fuction for this page
+                    ////- assessment submission
+                    //button.btn.btn-success.pull-right(
+                    //ng-if="assessment.edit_control===identity.currentUser._id && assessment.questions_complete === assessment.question_length"
+                    //ng-click="assessmentSubmit()") Submit assessment
+
+                    ////- disabled for researcher control
+                    //a.btn.btn-col.center-block.btn-default(ng-if="(assessment.status === 'assigned_researcher' || assessment.status === 'assigned' || assessment.status === 'started') && current_user.role === 'reviewer'"
+                    //href="/assessments-review/{{assessment.assessment_ID}}"
+                    //disabled) Under researcher control
+                    //
+                    ////- disabled for reviewer control
+                    //a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'assigned_reviewer' && current_user.role === 'researcher'"
+                    //href="/assessments-review/{{assessment.assessment_ID}}"
+                    //disabled) Under reviewer control
