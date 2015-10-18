@@ -9,9 +9,11 @@ angular
         rgiNotifier,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
+        rgiDialogFactory,
         rgiAssessmentMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
+
         $scope.assessmentStartReview = function (assessment_ID) {
             rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
                 new_assessment_data.status = 'under_review';
@@ -24,27 +26,6 @@ angular
             });
         };
 
-        $scope.assignAssessmentDialog = function (assessment) {
-            $scope.value = true;
-            $scope.assessment_update_ID = assessment.assessment_ID;
-            ngDialog.open({
-                template: 'partials/dialogs/assign-assessment-dialog',
-                controller: 'rgiAssignAssessmentDialogCtrl',
-                className: 'ngdialog-theme-default dialogwidth800',
-                scope: $scope
-            });
-        };
-        //TODO fix rgiAssignAssessmentDialogCtrl to reassign
-        $scope.reassignAssessmentDialog = function (assessment) {
-            $scope.value = true;
-            $scope.assessment_update_ID = assessment.assessment_ID;
-            ngDialog.open({
-                template: 'partials/dialogs/assign-assessment-dialog',
-                controller: 'rgiAssignAssessmentDialogCtrl',
-                className: 'ngdialog-theme-default dialogwidth800',
-                scope: $scope
-            });
-        };
         $scope.assessmentStart = function (assessment) {
             var new_assessment_data = assessment;
 
@@ -58,17 +39,26 @@ angular
                 rgiNotifier.error(reason);
             });
         };
-        $scope.assessmentResubmit = function () {
-            var new_assessment_data = $scope.assessment;
 
-            new_assessment_data.status = 'resubmitted';
-
-            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-                .then(function () {
-                    $location.path('/assessments');
-                    rgiNotifier.notify('Assessment submitted!');
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                });
+        $scope.assignAssessmentDialog = function (assessment) {
+            rgiDialogFactory.assignAssessment($scope, assessment);
         };
+
+        $scope.reassignAssessmentDialog = function (assessment) {
+            rgiDialogFactory.reassignAssessment($scope, assessment);
+        };
+
+        //$scope.assessmentResubmit = function () {
+        //    var new_assessment_data = $scope.assessment;
+        //
+        //    new_assessment_data.status = 'resubmitted';
+        //
+        //    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+        //        .then(function () {
+        //            $location.path('/assessments');
+        //            rgiNotifier.notify('Assessment submitted!');
+        //        }, function (reason) {
+        //            rgiNotifier.error(reason);
+        //        });
+        //};
     });
