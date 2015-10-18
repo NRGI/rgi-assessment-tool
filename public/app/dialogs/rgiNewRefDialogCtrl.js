@@ -42,16 +42,18 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     $scope.fileUrl = '';
 
     $scope.uploadFileByUrl = function() {
-        var handleFileUploadStatus = function(response) {
-            $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = response.data.completion * 100;
+        var handleFileUploadStatus = function(responseStatus) {
+            $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 
-            if(response.data.completion < 1) {
+            if(responseStatus.data.completion < 1) {
                 $timeout(function() {
-                    rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + response.data._id).then(handleFileUploadStatus);
+                    rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + responseStatus.data._id).then(handleFileUploadStatus);
                 }, 1000);
             } else {
-                $scope.fileUploading = false;
-                uploader.onCompleteItem({}, {}, null);
+                rgiRequestSubmitterSrvc.get('/api/remote-file/document/' + responseStatus.data._id).then(function(responseDocument) {
+                    $scope.fileUploading = false;
+                    uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
+                });
             }
         };
 

@@ -226,7 +226,8 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                                 size: SIZE,
                                 _id: ID,
                                 completion: completion
-                            }
+                            },
+                            status: 200
                         };
                     };
 
@@ -255,20 +256,27 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 });
 
                 describe('COMPLETE CASE', function() {
-                    var uploaderMock;
+                    var uploaderMock, uploadCompletionResponse = generateResponse(1);
 
                     beforeEach(function() {
                         uploaderMock = sinon.mock($scope.uploader);
-                        uploaderMock.expects('onCompleteItem');
-                        uploadFile(generateResponse(1));
+                        uploaderMock.expects('onCompleteItem').withArgs({}, uploadCompletionResponse.data, uploadCompletionResponse.status);
+                        uploadFile(uploadCompletionResponse);
+                    });
+
+                    it('gets the document data by its upload status', function () {
+                        requestSubmitterGetSpy.withArgs('/api/remote-file/document/' + ID).called.should.be.equal(true);
                     });
 
                     it('unsets file uploading flag', function () {
                         $scope.fileUploading.should.be.equal(false);
                     });
 
-                    afterEach(function() {
+                    it('submits the document to the document processing dialog', function () {
                         uploaderMock.verify();
+                    });
+
+                    afterEach(function() {
                         uploaderMock.restore();
                     });
                 });
