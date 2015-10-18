@@ -1,0 +1,39 @@
+div
+    div.modal-header
+        h3 New assessment deployment
+    div.modal-body
+        .form-horizontal
+            form.form-horizontal(name="deployAssessment")
+                fieldset
+                    .row
+                        h4.col-md-4  Year
+                        .form-group.col-md-5
+                            select.form-group.form-control.right-padding-med(name="year" ng-model="new_assessment.year" required)
+                                option(value="" selected disabled) Select year
+                                option(ng-repeat="year in years" value="{{year}}") {{year}}
+
+                    .row
+                        h4.col-md-4  Version
+                        .form-group.col-md-5
+                            select.form-group.form-control.right-padding-med(name="version" ng-model="new_assessment.version" required)
+                                option(value="" selected disabled) Select version
+                                option(ng-repeat="i in ['pilot','hydrocarbons', 'mining']" value="{{i}}") {{i | ucfirst}}
+
+                    .row(ng-repeat="country in new_assessment.assessment_countries")
+                        h4.col-md-4  Country {{$index+1}}
+                        .form-group.col-md-5(class="nullable")
+                            select.form-group.form-control.right-padding-med(name="country_selector" ng-model="country.country" required ng-options="c.country for c in countries")
+                                option(value="" selected disabled) Select country
+                        .col-md-1
+                            button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
+
+    div.modal-footer
+        button.btn.btn-success(
+        ng-click="assessmentDeploy()"
+        ng-disabled="deployAssessment.$invalid") Deploy new assessment
+        | &nbsp;
+        button.btn.btn-warning(
+        ng-click="countryAdd(new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country)"
+        ng-disabled="!new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country") Add country
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel

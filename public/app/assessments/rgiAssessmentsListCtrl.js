@@ -4,6 +4,7 @@ angular
         $scope,
         $location,
         $routeParams,
+        rgiDialogFactory,
         ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
@@ -26,15 +27,8 @@ angular
                 $scope.sort_options.push({value: 'year', text: 'Year of assessment'});
                 $scope.sort_options.push({value: 'version', text: 'Version'});
 
-                // Deploy new assessment
-                $scope.newAssessmentDialog = function () {
-                    $scope.value = true;
-                    ngDialog.open({
-                        template: 'partials/dialogs/new-assessment-dialog',
-                        controller: 'rgiNewAssessmentDialogCtrl',
-                        className: 'ngdialog-theme-default',
-                        scope: $scope
-                    });
+                $scope.newAssessmentDialog = function ($scope) {
+                    rgiDialogFactory.newAssessment($scope);
                 };
 
                 if ($routeParams.version === undefined) {
