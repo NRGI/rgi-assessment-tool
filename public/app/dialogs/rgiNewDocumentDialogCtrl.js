@@ -1,27 +1,6 @@
 'use strict';
-//var angular;
-/*jslint nomen: true newcap: true unparam: true*/
 
 angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $route, ngDialog, rgiNotifier, rgiDocumentSrvc, rgiDocumentMethodSrvc, rgiAnswerMethodSrvc) {
-    function isURLReal(fullyQualifiedURL) {
-        var URL = encodeURIComponent(fullyQualifiedURL),
-            dfd = $.Deferred(),
-            checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
-
-        checkURLPromise
-            .done(function(res) {
-                // results should be null if the page 404s or the domain doesn't work
-                if (res.query.results) {
-                    dfd.resolve(true);
-                } else {
-                    dfd.reject(false);
-                }
-            })
-            .fail(function () {
-                dfd.reject('failed');
-            });
-        return dfd.promise();
-    }
     if ($scope.new_document.status === 'created') {
         $scope.new_document.authors = [{first_name: "", last_name: ""}];
         $scope.new_document.editors = [{first_name: "", last_name: ""}];
@@ -67,7 +46,6 @@ angular.module('app').controller('rgiNewDocumentDialogCtrl', function ($scope, $
     };
 
     $scope.documentRefSubmit = function (new_document) {
-        var url;
         //check for minimum data
         if ($scope.new_document.authors[0].first_name === "" || $scope.new_document.authors[0].last_name === "" || !$scope.new_document.title || !$scope.new_document.type) {
             rgiNotifier.error('You must provide at least a title, author and publication type!');
