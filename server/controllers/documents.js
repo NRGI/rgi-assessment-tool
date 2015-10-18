@@ -24,7 +24,7 @@ var crypto              =   require('crypto'),
     upload_bucket       =   process.env.DOC_BUCKET;
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
-var uploadFile = function(file, sendResponse, req, res) {
+var uploadFile = function(file, req, callback) {
     var hash = crypto.createHash('sha1'),
         timestamp = new Date().toISOString(),
         file_extension = getFileExtension(file.path);
@@ -37,9 +37,7 @@ var uploadFile = function(file, sendResponse, req, res) {
         Document.findOne({file_hash: file_hash}, function (err, document) {
             // if file exists tag for reference
             if (document !== null) {
-                if(sendResponse) {
-                    res.send(document);
-                }
+                callback(null, document);
                 // if not upload to s3 with hashed value as file name,
                 // create record with hash value and end url
             } else {
@@ -75,16 +73,7 @@ var uploadFile = function(file, sendResponse, req, res) {
                     }],
                     createdBy: req.user._id,
                     creationDate: timestamp
-                }, function (err, document) {
-                    if(sendResponse) {
-                        if (err) {
-                            res.status(400);
-                            res.send({reason: err.toString()});
-                        } else {
-                            res.send(document);
-                        }
-                    }
-                });
+                }, callback);
             }
         });
     });
@@ -117,7 +106,8 @@ exports.uploadRemoteFile = function (req, res) {
                     if (response.statusCode === 200) {
                         var fileTotalSize = parseInt(response.headers['content-length'], 10);
                         var receivedDataSized = 0;
-                        var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
+                        var filePath = '/tmp/' +
+                            getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
 
                         var file = fs.createWriteStream(filePath);
                         response.pipe(file);
@@ -129,7 +119,11 @@ exports.uploadRemoteFile = function (req, res) {
                             })
                             .on('end', function() {
                                 file.close(function() {
-                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, false, req, res);
+                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (err, doc) {
+                                        if (!err) {
+                                            fileUploadStatus.setDocument(doc._id);
+                                        }
+                                    });
                                 });
                             })
                             .on('error', function(err) {
@@ -163,7 +157,14 @@ exports.uploadRemoteFile = function (req, res) {
 };
 
 exports.fileCheck = function (req, res) {
-    uploadFile(req.files.file, true, req, res);
+    uploadFile(req.files.file, req, function (err, document) {
+        if (err) {
+            res.status(400);
+            res.send({reason: err.toString()});
+        } else {
+            res.send(document);
+        }
+    });
 };
 
 exports.getDocuments = function (req, res) {
