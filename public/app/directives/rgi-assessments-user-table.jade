@@ -60,7 +60,7 @@ div.top-padding-lg
 
                     //- review answers sent back button
                     a.btn.btn-col.center-block.btn-warning(
-                    ng-if="assessment.status === 'review_[current_user.role]' && assessment.edit_control===current_user._id"
+                    ng-if="(assessment.status === 'review_researcher' || assessment.status === 'review_reviewer') && assessment.edit_control===current_user._id"
                     href="/assessments/{{assessment.assessment_ID}}") Review answers
 
                     //- disabled for admin review

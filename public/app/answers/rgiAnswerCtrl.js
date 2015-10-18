@@ -21,7 +21,7 @@ function flagCheck(flags) {
 }
 angular
     .module('app')
-    .controller('rgiAnswerAltCtrl', function (
+    .controller('rgiAnswerCtrl', function (
         $scope,
         $routeParams,
         $q,

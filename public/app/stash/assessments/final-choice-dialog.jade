@@ -9,7 +9,7 @@ div.top-padding-med
 							label.col-md-4  Final Choice
 							.form-group.col-md-8
 								select.form-group.form-control.right-padding-med(name="final_choice"
-									ng-model="final_choice" 
+									ng-model="final_choice"
 									ng-options="opt.text for opt in final_choice_set"
 									required)
 									option(value="" selected disabled) Select final answer
@@ -38,7 +38,7 @@ div.top-padding-med
 									text.left-padding-med {{choice.criteria}}
 						//- agree
 						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
-							em {{final_choice.role | ucfirst}}: {{final_choice.value}} - 
+							em {{final_choice.role | ucfirst}}: {{final_choice.value}} -
 							em(ng-init="i = final_choice.value") {{question_choices[i-1].criteria}}
 						.row(ng-if="final_choice.value!=='other' && final_choice && final_choice.role !== 'admin'")
 							ng-form(name="new_comment_form")
@@ -56,5 +56,3 @@ div.top-padding-med
 							button.btn.btn-success(ng-click="finalChoiceSubmit()" ng-disabled="finalChoice.$invalid || answer_choice_form.$invalid") Finalize choice
 							| &nbsp;
 							button.btn.btn-danger(ng-click="closeDialog()") Cancel
-
-

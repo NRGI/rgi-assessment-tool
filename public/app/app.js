@@ -155,12 +155,12 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         // Answers
         .when('/admin/assessments-admin/answer/:answer_ID', {
             templateUrl: '/partials/answers/answer',
-            controller: 'rgiAnswerAltCtrl',
+            controller: 'rgiAnswerCtrl',
             resolve: routeRoleChecks.supervisor
         })
         .when('/assessments/answer/:answer_ID', {
             templateUrl: '/partials/answers/answer',
-            controller: 'rgiAnswerAltCtrl',
+            controller: 'rgiAnswerCtrl',
             resolve: routeRoleChecks.user
         });
 
