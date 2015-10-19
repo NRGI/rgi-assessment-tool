@@ -74,13 +74,14 @@ angular
             },
             assessmentSubmit: function ($scope) {
                 var scope = $scope;
+                console.log(scope);
                 if (scope.assessment_counters.length !== scope.assessment_counters.complete) {
                     rgiNotifier.error('You must complete all assessment questions');
                 } else {
                     scope.value = true;
                     ngDialog.open({
                         template: 'partials/dialogs/assessments/submit-confirmation-dialog',
-                        controller: 'rgiSubmitConfirmationDialogCtrl',
+                        controller: 'rgiSubmitAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
                         scope: scope
                     });
