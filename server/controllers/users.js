@@ -137,24 +137,15 @@ exports.updateUser = function (req, res) {
 //TODO send deleted user information to 'purgatory for a period in case admin needs to undo
 //TODO remove associated data
 exports.deleteUser = function (req, res) {
-    //var user_delete = req.body,
-    //    contact_packet = {};
-    //
-    //contact_packet.rec_email = userData.email;
-    //contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
-    //contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
-    //contact_packet.rec_username = userData.username;
-    //contact_packet.rec_password = userData.password;
-    //contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
-    //contact_packet.send_email = req.user.email;
-    //
-    //User.remove({_id: req.params.id}, function (err) {
-    //    if (!err) {
-    //        res.send();
-    //    } else {
-    //        return res.send({ reason: err.toString() });
-    //    }
-    //});
-    //contact.delete_user_confirmation(contact_packet);
-    //res.send();
+    var user_delete = req.body,
+        contact_packet = {};
+
+    User.remove({_id: req.params.id}, function (err) {
+        if (!err) {
+            res.send();
+        } else {
+            return res.send({ reason: err.toString() });
+        }
+    });
+    res.send();
 };
