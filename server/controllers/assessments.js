@@ -69,12 +69,13 @@ exports.updateAssessment = function (req, res) {
         contact_packet.researcher_email = user_researcher.email;
 
         User.findOne({_id: reviewer_id}).exec(function (err, user_reviewer) {
-            contact_packet.reviewer_firstName = user_reviewer.firstName;
-            contact_packet.reviewer_lastName = user_reviewer.lastName;
-            contact_packet.reviewer_fullName = user_reviewer.firstName + " " + user_reviewer.lastName;
-            contact_packet.reviewer_email = user_reviewer.email;
-            contact_packet.reviewer_role = user_reviewer.role;
-
+            if (user_reviewer) {
+                contact_packet.reviewer_firstName = user_reviewer.firstName;
+                contact_packet.reviewer_lastName = user_reviewer.lastName;
+                contact_packet.reviewer_fullName = user_reviewer.firstName + " " + user_reviewer.lastName;
+                contact_packet.reviewer_email = user_reviewer.email;
+                contact_packet.reviewer_role = user_reviewer.role;
+            }
             User.findOne({_id: edit_control_id}).exec(function (err, user_editor) {
                 contact_packet.editor_firstName = user_editor.firstName;
                 contact_packet.editor_lastName = user_editor.lastName;
