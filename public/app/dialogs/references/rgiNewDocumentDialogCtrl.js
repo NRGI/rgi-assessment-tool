@@ -37,6 +37,7 @@ angular
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
             $scope.new_document.editors = [{first_name: "", last_name: ""}];
         }
+        $scope.new_document = $scope.$parent.new_document;
 
         $scope.new_doc_type = [
             {value: 'journal', text: 'Journal'},
