@@ -1,17 +1,12 @@
-function zeroFill(number, width) {
-    'use strict';
-    width -= number.toString().length;
-    if (width > 0) {
-        return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
-    }
-    return number + ""; // always return a string
-}
+'use strict';
+
 angular
     .module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
         $location,
         ngDialog,
+        rgiUtilsSrvc,
         rgiNotifier,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
@@ -21,7 +16,7 @@ angular
         rgiAnswerMethodSrvc,
         rgiQuestionSrvc
     ) {
-        'use strict';
+
         // get all researchers
         $scope.researchers = rgiUserSrvc.query({role: 'researcher'});
         // get all reviewers
@@ -62,7 +57,7 @@ angular
                 new_answer_set.push({});
 
                 if (el.hasOwnProperty('question_order')) {
-                    new_answer_set[i].answer_ID = $scope.$parent.assessment_update_ID + '-' + String(zeroFill(el.question_order, 3));
+                    new_answer_set[i].answer_ID = $scope.$parent.assessment_update_ID + '-' + String(rgiUtilsSrvc.zeroFill(el.question_order, 3));
                     new_answer_set[i].question_ID = el._id;
                     new_answer_set[i].root_question_ID = el.root_question_ID;
                     new_answer_set[i].assessment_ID = $scope.$parent.assessment_update_ID;

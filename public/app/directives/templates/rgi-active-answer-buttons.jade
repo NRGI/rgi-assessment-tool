@@ -1,0 +1,75 @@
+//- Active buttons
+.col-md-pull-2
+    button.btn.btn-primary(
+    ng-click="answerSave()"
+    ng-if="(assessment.edit_control===current_user._id && assessment.status==='started') || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ) Save answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerResubmit()"
+    ng-if="assessment.edit_control===current_user._id && assessment.status==='review_' + current_user.role"
+    ) Resubmit answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerSubmit()"
+    ng-if="assessment.edit_control===current_user._id && assessment.status==='started'"
+    ) Submit answer
+    | &nbsp;
+
+    button.btn.btn-success(
+    ng-click="answerApprove()"
+    ng-if="current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted')"
+    ) Approve answer
+    | &nbsp;
+
+    button.btn.btn-danger(
+    ng-click="answerClear()"
+    ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ) Reset answer
+    | &nbsp;
+
+    //a.btn.btn-warning(
+    //data-toggle="modal"
+    //href="#flagModal") Flag answer
+    button.btn.btn-warning(
+    ng-click="answerFlag(current_user)"
+    ng-if="current_user.role==='supervisor'"
+    ) Flag answer
+
+
+    button.btn.btn-primary(
+    ng-click="finalChoiceDialog()"
+    ng-if="current_user.role==='supervisor' && answer.reviewer_score && answer.researcher_score && answer.status==='approved'"
+    ) Choose final answer
+    | &nbsp;
+
+    button.btn.btn-default(
+    ng-click="answerReturn()"
+    ) Return to assessment menu
+
+.rows {{assessment_counters}}
+
+//.row
+//    div(aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" draggable="" id="flagModal" role="dialog" tabindex="-1")
+//        div.modal-dialog
+//            div.left-padding-lg.right-padding-lg
+//            div.modal-content
+//                div.modal-header
+//                    button.close(aria-hidden="true" data-dismiss="modal" type="button") x
+//                    h3 Please add text describing flag.
+//                div.modal-body
+//                    .form-horizontal.left-padding-lg
+//                        fieldset
+//                            .row
+//                                .form-group(required).col-md-12
+//                                    textarea.form-control(
+//                                    name="question_text"
+//                                    type="textbox"
+//                                    ng-model="flag_content"
+//                                    redactor) {{flag_content}}
+//                div.modal-footer
+//                    button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
+//                    | &nbsp;
+//                    button.btn.btn-default(data-dismiss="modal" type="button") Cancel

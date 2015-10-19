@@ -1,0 +1,63 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 Upload Webage Screenshot (PDF)
+    div.modal-body
+        .row(id="new_document_form")
+        .form-horizontal
+            fieldset
+                // EXISTING DOC
+                //TODO ALLOW USER TO SELECT FROM EXISTING REFERENCE SET
+                //div.row.form-group.col-lg-11
+                //    label Existing interviewee
+                //    select.form-group.form-control.pull-left(ng-model="existing_ref")
+                //        option(ng-repeat="ref in existing_ref" value="{{ref.value}}") {{ref.text}}
+                // NEW DOC
+                h4 New PDF capture of website
+                div.bottom-padding-med
+                    div.fileUpload.btn.btn-default
+                        span Select File
+                        input.upload(type="file" nv-file-select uploader="uploader")
+                div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
+                    table.table
+                        thead
+                            tr
+                                th
+                                    h4 Name
+                                th(ng-show="uploader.isHTML5")
+                                    h4 Size
+                                th(ng-show="uploader.isHTML5")
+                                    h4 Progress
+                                th
+                                    h4 Status
+                                th
+                                    h4 Actions
+                        tbody
+                            tr(ng-repeat="item in uploader.queue")
+                                td
+                                    h6(ng-if="!new_document")
+                                        strong {{ item.file.name }}
+                                    h6
+                                        strong
+                                            a(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name }}
+                                td(ng-show="uploader.isHTML5" nowrap)
+                                    h6 {{ item.file.size/1024/1024|number:2 }} MB
+                                td(ng-show="uploader.isHTML5")
+                                    div.progress(style="margin-bottom: 0;")
+                                        div.progress-bar(role="progressbar" ng-style="{ 'width': item.progress + '%' }")
+                                td.text-center
+                                    span(ng-show="item.isSuccess")
+                                        i.glyphicon.glyphicon-ok
+                                    span(ng-show="item.isCancel")
+                                        i.glyphicon.glyphicon-ban-circle
+                                    span(ng-show="item.isError")
+                                        i.glyphicon.glyphicon-remove
+                                td(nowrap)
+                                    button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
+                                        span.glyphicon.glyphicon-upload Upload
+                                    | &nbsp;
+                                    button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+                                        span.glyphicon.glyphicon-ban-circle Cancel
+                                    | &nbsp;
+                                    button.btn.btn-danger.btn-xs(ng-click="item.remove()")
+                                        span.glyphicon.glyphicon-trash Remove
+    div.modal-footer

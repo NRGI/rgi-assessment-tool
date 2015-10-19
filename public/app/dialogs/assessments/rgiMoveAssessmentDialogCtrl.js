@@ -8,7 +8,8 @@ angular
         rgiIdentitySrvc,
         rgiAssessmentMethodSrvc,
         rgiAnswerSrvc,
-        rgiUserListSrvc
+        rgiUserListSrvc,
+        rgiDialogFactory
     ) {
         'use strict';
         // get current control profile onto scope and use it to populate workflow_opts
@@ -84,19 +85,6 @@ angular
         };
 
         $scope.assessmentMove = function () {
-            if (!$scope.action) {
-                rgiNotifier.error('You must select an action!');
-            } else {
-                var scope = $scope.$parent;
-                scope.action = $scope.action;
-
-                ngDialog.close('ngdialog1');
-                ngDialog.open({
-                    template: 'partials/dialogs/move-assessment-confirmation-dialog',
-                    controller: 'rgiMoveAssessmentConfirmationDialogCtrl',
-                    className: 'ngdialog-theme-default',
-                    scope: scope
-                });
-            }
+            rgiDialogFactory.assessmentMoveConfirm($scope);
          };
     });

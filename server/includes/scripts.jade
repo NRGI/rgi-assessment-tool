@@ -45,6 +45,7 @@ script(type="text/javascript", src="/app/services/rgiUserSrvc.js")
 script(type="text/javascript", src="/app/services/rgiUserListSrvc.js")
 script(type="text/javascript", src="/app/services/utils/rgiFileUploaderSrvc.js")
 script(type="text/javascript", src="/app/services/utils/rgiRequestSubmitterSrvc.js")
+script(type="text/javascript", src="/app/services/utils/rgiUtilsSrvc.js")
 
 // METHODS
 script(type="text/javascript", src="/app/services/methods/rgiAnswerMethodSrvc.js")
@@ -57,37 +58,29 @@ script(type="text/javascript", src="/app/services/methods/rgiUploadMethodSrvc.js
 script(type="text/javascript", src="/app/services/methods/rgiUserMethodSrvc.js")
 
 //- DIRECTIVES
-script(type="text/javascript", src="/app/directives/directives/rgi-assessments-list-table.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-active-answer-buttons.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-answer-form.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-answer-nav.js")
 script(type="text/javascript", src="/app/directives/directives/rgi-assessment-detail-table.js")
-
-script(type="text/javascript", src="/app/directives/rgi-active-answer-buttons.js")
-script(type="text/javascript", src="/app/directives/rgi-answer-form.js")
-script(type="text/javascript", src="/app/directives/rgi-answer-nav.js")
-script(type="text/javascript", src="/app/directives/rgi-auth-logs.js")
-script(type="text/javascript", src="/app/directives/rgi-biblio-form.js")
-script(type="text/javascript", src="/app/directives/rgi-comments.js")
-script(type="text/javascript", src="/app/directives/rgi-prev-answers.js")
-script(type="text/javascript", src="/app/directives/rgi-flag-tabs.js")
-//script(type="text/javascript", src="/app/directives/rgi-assessments-admin-table.js")
-//script(type="text/javascript", src="/app/directives/rgi-assessments-user-table.js")
-//script(type="text/javascript", src="/app/directives/rgi-assessment-detail-table.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-assessments-list-table.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-auth-logs.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-biblio-form.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-comments.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-flag-tabs.js")
+script(type="text/javascript", src="/app/directives/directives/rgi-prev-answers.js")
 script(type="text/javascript", src="/app/directives/modalWindow.js")
 
 //- DIRECTIVE CTRLS
+script(type="text/javascript", src="/app/directives/controllers/rgiActiveAnswerButtonsCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiAnswerFormCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiAnswerNavCtrl.js")
 script(type="text/javascript", src="/app/directives/controllers/rgiAssessmentsListTableCtrl.js")
 script(type="text/javascript", src="/app/directives/controllers/rgiAssessmentDetailTableCtrl.js")
-
-script(type="text/javascript", src="/app/directives/rgiActiveAnswerButtonsCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiAnswerFormCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiAnswerNavCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiAuthLogsCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiBiblioFormCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiCommentsCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiPrevAnswersCtrl.js")
-script(type="text/javascript", src="/app/directives/rgiFlagTabsCtrl.js")
-//script(type="text/javascript", src="/app/directives/rgiAssessmentsUserTableCtrl.js")
-//script(type="text/javascript", src="/app/directives/rgiAssessmentsAdminTableCtrl.js")
-//script(type="text/javascript", src="/app/directives/rgiAssessmentDetailTableCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiAuthLogsCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiBiblioFormCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiCommentsCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiFlagTabsCtrl.js")
+script(type="text/javascript", src="/app/directives/controllers/rgiPrevAnswersCtrl.js")
 
 //- ACCT CTRLS
 script(type="text/javascript", src="/app/account/rgiNavBarLoginCtrl.js")
@@ -105,19 +98,11 @@ script(type="text/javascript", src="/app/admin/documents/rgiDocumentAdminCtrl.js
 script(type="text/javascript", src="/app/admin/documents/rgiDocumentAdminDetailCtrl.js")
 script(type="text/javascript", src="/app/admin/interviewees/rgiIntervieweeAdminCtrl.js")
 script(type="text/javascript", src="/app/admin/interviewees/rgiIntervieweeAdminDetailCtrl.js")
-//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminCtrl.js")
-//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
-//script(type="text/javascript", src="/app/admin/assessments/rgiFinalChoiceDialogCtrl.js")
-//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
 
 //- GENERAL CTRLS
 script(type="text/javascript", src="/app/assessments/rgiAssessmentsListCtrl.js")
 script(type="text/javascript", src="/app/assessments/rgiAssessmentDetailCtrl.js")
 script(type="text/javascript", src="/app/answers/rgiAnswerCtrl.js")
-//script(type="text/javascript", src="/app/researchers/answers/rgiAnswerCtrl.js")
-//script(type="text/javascript", src="/app/assessments/researchers/rgiAssessmentsListCtrl.js")
-//script(type="text/javascript", src="/app/assessments/researchers/rgiAssessmentDetailCtrl.js")
-
 
 //- DIALOG CTRLS
 script(type="text/javascript", src="/app/dialogs/rgiDialogFactory.js")
@@ -126,22 +111,27 @@ script(type="text/javascript", src="/app/dialogs/assessments/rgiMoveAssessmentDi
 script(type="text/javascript", src="/app/dialogs/assessments/rgiMoveAssessmentConfirmationDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js")
 script(type="text/javascript", src="/app/dialogs/assessments/rgiSubmitAssessmentConfirmationDialogCtrl.js")
-
-
-
-
-script(type="text/javascript", src="/app/dialogs/rgiDeleteProfileDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiDeleteQuestionDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiNewQuestionDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiNewRefDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiFlagAnswerDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiEditDocumentDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiEditIntervieweeDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiEditUserDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiNewDocumentDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiNewWebpageDialogCtrl.js")
-
-
+script(type="text/javascript", src="/app/dialogs/comments/rgiCommentEditDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/flags/rgiFlagAnswerDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/flags/rgiFlagEditDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/questions/rgiNewQuestionDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/questions/rgiDeleteQuestionDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/references/rgiEditDocumentDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/references/rgiEditIntervieweeDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/references/rgiNewRefDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/references/rgiNewDocumentDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/references/rgiNewWebpageDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/users/rgiDeleteUserDialogCtrl.js")
+script(type="text/javascript", src="/app/dialogs/users/rgiEditUserDialogCtrl.js")
 //script(type="text/javascript", src="/app/dialogs/rgiMoveAssessmentConfirmationDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiCommentEditDialogCtrl.js")
-script(type="text/javascript", src="/app/dialogs/rgiFlagEditDialogCtrl.js")
+
+
+
+////STASH
+//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminCtrl.js")
+//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
+//script(type="text/javascript", src="/app/admin/assessments/rgiFinalChoiceDialogCtrl.js")
+//script(type="text/javascript", src="/app/admin/assessments/rgiAssessmentAdminDetailCtrl.js")
+//script(type="text/javascript", src="/app/researchers/answers/rgiAnswerCtrl.js")
+//script(type="text/javascript", src="/app/assessments/researchers/rgiAssessmentsListCtrl.js")
+//script(type="text/javascript", src="/app/assessments/researchers/rgiAssessmentDetailCtrl.js")

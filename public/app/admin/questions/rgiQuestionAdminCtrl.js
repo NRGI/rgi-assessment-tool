@@ -3,6 +3,7 @@ angular
     .controller('rgiQuestionAdminCtrl', function (
         $scope,
         rgiQuestionSrvc,
+        rgiDialogFactory,
         ngDialog
     ) {
         'use strict';
@@ -43,15 +44,7 @@ angular
         });
 
         // $scope.questions = rgiQuestionSrvc.query();
-
         $scope.newQuestionDialog = function () {
-            $scope.value = true;
-            // ngDialog.open({ template: '/partials/admin/questions/test' });
-            ngDialog.open({
-                template: 'partials/dialogs/new-question-dialog',
-                controller: 'rgiNewQuestionDialogCtrl',
-                className: 'ngdialog-theme-plain dialogwidth800',
-                scope: $scope
-            });
+            rgiDialogFactory.questionNew($scope);
         };
     });

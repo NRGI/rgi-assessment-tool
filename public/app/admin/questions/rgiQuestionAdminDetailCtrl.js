@@ -8,7 +8,8 @@ angular
         rgiNotifier,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
-        rgiIdentitySrvc
+        rgiIdentitySrvc,
+        rgiDialogFactory
     ) {
         'use strict';
         rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
@@ -55,14 +56,9 @@ angular
                 rgiNotifier.error(reason);
             });
         };
+
         $scope.deleteConfirmDialog = function () {
-            $scope.value = true;
-            ngDialog.open({
-                template: 'partials/dialogs/delete-question-confirmation-dialog',
-                controller: 'rgiDeleteQuestionDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
+            rgiDialogFactory.questionDelete($scope);
         };
 
         //$scope.commentSubmit = function (current_user) {

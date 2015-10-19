@@ -5,7 +5,8 @@ angular
         $routeParams,
         ngDialog,
         rgiDocumentSrvc,
-        rgiUserListSrvc
+        rgiUserListSrvc,
+        rgiDialogFactory
     ) {
         'use strict';
         rgiDocumentSrvc.get({_id: $routeParams.document_ID}, function (document) {
@@ -20,13 +21,6 @@ angular
         });
 
         $scope.editDocumentDialog = function () {
-            $scope.value = true;
-            ngDialog.open({
-                template: 'partials/dialogs/edit-document-dialog',
-                controller: 'rgiEditDocumentDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
+            rgiDialogFactory.documentEdit($scope);
         };
-
     });

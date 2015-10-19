@@ -1,0 +1,262 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 Edit Document
+    div.modal-body
+        .form-horizontal
+            // NEW DOC
+            fieldset
+                div
+                    // TITLE
+                    .row.form-group.right-padding-lg
+                        label
+                            small Title:
+                        input.form-control(
+                        name="title"
+                        type="text"
+                        placeholder="Title (required)..."
+                        ng-model="new_doc_data.title"
+                        autocomplete="off"
+                        required)
+
+                    // DOC TYPE
+                    .row.form-group.right-padding-lg
+                        label
+                            small Document type:
+                        select.form-control(
+                        ng-model="new_doc_data.type"
+                        required)
+                            option(
+                            ng-selected="{{new_doc_data.type == type.value}}"
+                            ng-repeat="type in doc_type"
+                            autocomplete="off"
+                            value="{{type.value}}") {{type.text}}
+
+                    // AUTHOR
+                    label
+                        small Authors:
+                    div(ng-repeat="author in new_doc_data.authors")
+                        .row
+                            .form-group
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="author_first"
+                                    type="text"
+                                    placeholder="Author first name (required)..."
+                                    ng-model="author.first_name"
+                                    autocomplete="off"
+                                    required)
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="author_last"
+                                    type="text"
+                                    placeholder="Author last name (required)..."
+                                    ng-model="author.last_name"
+                                    autocomplete="off"
+                                    required)
+                                .pull-left.col-lg-1.right-padding-med(ng-if="$last")
+                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
+                                .pull-left.col-lg-1(ng-if="!$last")
+                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
+
+                    // EDITORS
+                    label
+                        small Editors:
+                    div(ng-repeat="editor in new_doc_data.editors")
+                        .row
+                            .form-group
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="editor_first"
+                                    type="text"
+                                    placeholder="Editor first name..."
+                                    ng-model="editor.first_name"
+                                    autocomplete="off")
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="editor_last"
+                                    type="text"
+                                    placeholder="Editor last name..."
+                                    ng-model="editor.last_name"
+                                    autocomplete="off")
+                                .pull-left.col-lg-1.right-padding-med(ng-if="$last")
+                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="editorPush()")
+                                .pull-left.col-lg-1(ng-if="!$last")
+                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="editorPop($index)")
+
+                    //SOURCE
+                    div
+                        .row
+                            .form-group
+                                .col-lg-11
+                                    label
+                                        small Source:
+                                    input.form-control.right-padding-med(
+                                    name="source"
+                                    type="text"
+                                    placeholder="Source URL..."
+                                    ng-model="new_doc_data.source"
+                                    autocomplete="off")
+                        div
+                            .row
+                                .form-group
+                                    // YEAR
+                                    .pull-left.col-lg-5
+                                        label
+                                            small Year:
+                                        input.form-control(
+                                        name="year"
+                                        type="text"
+                                        placeholder="Year published..."
+                                        ng-model="new_doc_data.year"
+                                        autocomplete="off")
+
+
+                                    // PAGES
+                                    .pull-left.col-lg-6
+                                        label
+                                            small Pages:
+                                        input.form-control(
+                                        name="pages"
+                                        type="text"
+                                        placeholder="Pages..."
+                                        ng-model="new_doc_data.pages"
+                                        autocomplete="off")
+
+
+                    div
+                        .row
+                            .form-group
+                                // VOLUME
+                                .pull-left.col-lg-5
+                                    label
+                                        small Volume:
+                                    input.form-control(
+                                    name="volume"
+                                    type="text"
+                                    placeholder="Volume..."
+                                    ng-model="new_doc_data.volume"
+                                    autocomplete="off")
+
+                                //ISSUE
+                                .pull-left.col-lg-6
+                                    label
+                                        small Issue:
+                                    input.form-control(
+                                    name="issue"
+                                    type="text"
+                                    placeholder="Issue..."
+                                    ng-model="new_doc_data.issue"
+                                    autocomplete="off")
+
+                    div
+                        .row
+                            .form-group
+                                // PUBLISHER
+                                .pull-left.col-lg-5
+                                    label
+                                        small Publisher:
+                                    input.form-control(
+                                    name="publisher"
+                                    type="text"
+                                    placeholder="Publisher..."
+                                    ng-model="new_doc_data.publisher"
+                                    autocomplete="off")
+
+                                // CITY
+                                .pull-left.col-lg-6
+                                    label
+                                        small City:
+                                    input.form-control(
+                                    name="city"
+                                    type="text"
+                                    placeholder="City..."
+                                    ng-model="new_doc_data.city"
+                                    autocomplete="off")
+
+                    div
+                        .row
+                            .form-group
+                                // EDITION
+                                .pull-left.col-lg-5
+                                    label
+                                        small Edition:
+                                    input.form-control(
+                                    name="edition"
+                                    type="text"
+                                    placeholder="Edition..."
+                                    ng-model="new_doc_data.edition"
+                                    autocomplete="off")
+
+                                // INSTITUTION
+                                .pull-left.col-lg-6
+                                    label
+                                        small Institution:
+                                    input.form-control(
+                                    name="institution"
+                                    type="text"
+                                    placeholder="Institution..."
+                                    ng-model="new_doc_data.institution"
+                                    autocomplete="off")
+
+                    div
+                        .row
+                            .form-group
+                                // SERIES
+                                .pull-left.col-lg-5
+                                    input.form-control(
+                                    name="series"
+                                    type="text"
+                                    placeholder="Series..."
+                                    ng-model="new_doc_data.series"
+                                    autocomplete="off")
+
+                                // CHAPTER
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="chapter"
+                                    type="text"
+                                    placeholder="Chapter..."
+                                    ng-model="new_doc_data.chapter"
+                                    autocomplete="off")
+
+                    div
+                        .row
+                            .form-group
+                                // COUNTRY
+                                .pull-left.col-lg-5
+                                    label
+                                        small Series:
+                                    input.form-control(
+                                    name="country"
+                                    type="text"
+                                    placeholder="Country..."
+                                    ng-model="new_doc_data.country"
+                                    autocomplete="off")
+
+                                // TRANSLATORS
+                                .pull-left.col-lg-6
+                                    label
+                                        small Translators:
+                                    input.form-control(
+                                    name="translators"
+                                    type="text"
+                                    placeholder="Translators..."
+                                    ng-model="new_doc_data.translators"
+                                    autocomplete="off")
+                    // SERIES EDITOR
+                    div
+                        .row
+                            .form-group
+
+                                .col-lg-11
+                                    label
+                                        small Series Editor:
+                                    input.form-control.right-padding-med(
+                                    name="series_editor"
+                                    type="text"
+                                    placeholder="Series editor..."
+                                    ng-model="new_doc_data.series_editor"
+                                    autocomplete="off")
+    div.modal-footer
+        .col-lg-11
+            button.btn.btn-block.btn-success(ng-click="documentSave(new_doc_data)") Save document
