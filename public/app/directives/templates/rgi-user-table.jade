@@ -9,7 +9,7 @@ div.table-responsive
                 select.form-control(
                 ng-model="sort_order"
                 ng-options="item.value as item.text for item in sort_options")
-    table.table
+    table.table.table-hover.table-striped.table-condensed
         thead
             tr
                 th.col-sm-1 Name
@@ -19,12 +19,11 @@ div.table-responsive
                 th.col-sm-7
                     table
                         th.col-sm-2 Assessments
-                        th.col-sm-1 Assigned
-                        th.col-sm-1 Started
-                        th.col-sm-1 Submitted
-                        th.col-sm-1 Reviewed
-                        th.col-sm-1 Approved
-                        th.col-sm-1
+                        th.col-sm-1.text-center Assigned
+                        th.col-sm-1.text-center Started
+                        th.col-sm-1.text-center Submitted
+                        th.col-sm-1.text-center Reviewed
+                        th.col-sm-1.text-center Approved
                 th.col-sm-1
         tbody
             tr(ng-repeat="user in users | filter:search_text | orderBy:sort_order")
@@ -36,7 +35,7 @@ div.table-responsive
                 td.col-sm-7
                     table.table(
                     ng-if="user.role!=='supervisor'"
-                    style="margin-top: -9px; margin-bottom: -9px")
+                    style="margin-top: -6px; margin-bottom: -9px")
                         tr(ng-repeat="assessment in user.assessments")
                             td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
                             td.col-sm-1
