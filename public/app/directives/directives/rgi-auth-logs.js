@@ -9,7 +9,7 @@ angular
             scope: {
                 user: '='
             },
-            templateUrl: '/partials/directives/rgi-auth-logs'
+            templateUrl: '/partials/directives/templates/rgi-auth-logs'
         };
     })
 ;

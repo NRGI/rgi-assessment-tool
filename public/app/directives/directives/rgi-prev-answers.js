@@ -7,6 +7,6 @@ angular
             restrict: 'EA',
             controller: 'rgiPrevAnswersCtrl',
             scope: true,
-            templateUrl: '/partials/directives/rgi-prev-answers'
+            templateUrl: '/partials/directives/templates/rgi-prev-answers'
         };
     });

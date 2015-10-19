@@ -9,7 +9,8 @@ angular
         rgiUserListSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
-        rgiAssessmentSrvc
+        rgiAssessmentSrvc,
+        rgiDialogFactory
     ) {
         'use strict';
         rgiAssessmentSrvc.query({}, function (assessments) {
@@ -34,13 +35,7 @@ angular
         });
 
         $scope.editIntervieweeDialog = function () {
-            $scope.value = true;
-            ngDialog.open({
-                template: 'partials/dialogs/edit-interviewee-dialog',
-                controller: 'rgiEditIntervieweeDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
+            rgiDialogFactory.intervieweeEdit($scope);
         };
 
         $scope.addAssessment = function () {

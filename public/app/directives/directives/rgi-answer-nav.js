@@ -9,6 +9,6 @@ angular
             scope: {
                 assessment: '='
             },
-            templateUrl: '/partials/directives/rgi-answer-nav'
+            templateUrl: '/partials/directives/templates/rgi-answer-nav'
         };
     });

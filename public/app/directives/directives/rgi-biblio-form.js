@@ -7,6 +7,6 @@ angular
             restrict: 'EA',
             controller: 'rgiBiblioFormCtrl',
             scope: true,
-            templateUrl: '/partials/directives/rgi-biblio-form'
+            templateUrl: '/partials/directives/templates/rgi-biblio-form'
         };
     });

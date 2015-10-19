@@ -1,24 +1,26 @@
-function zeroFill(number, width) {
-    'use strict';
-    width -= number.toString().length;
-    if (width > 0) {
-        return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
-    }
-    return number + ""; // always return a string
-}
-// Review functions
-function flagCheck(flags) {
-    'use strict';
-    var disabled = false;
-    if (flags.length !== 0) {
-        flags.forEach(function (el) {
-            if (el.addressed === false) {
-                disabled = true;
-            }
-        });
-    }
-    return disabled;
-}
+//function zeroFill(number, width) {
+//    'use strict';
+//    width -= number.toString().length;
+//    if (width > 0) {
+//        return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
+//    }
+//    return number + ""; // always return a string
+//}
+//// Review functions
+//function flagCheck(flags) {
+//    'use strict';
+//    var disabled = false;
+//    if (flags.length !== 0) {
+//        flags.forEach(function (el) {
+//            if (el.addressed === false) {
+//                disabled = true;
+//            }
+//        });
+//    }
+//    return disabled;
+//}
+'use strict';
+
 angular
     .module('app')
     .controller('rgiAnswerCtrl', function (
@@ -29,6 +31,7 @@ angular
         $route,
         ngDialog,
         FileUploader,
+        rgiUtilsSrvc,
         rgiAnswerSrvc,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
@@ -111,7 +114,7 @@ angular
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
                 new_assessment_data = $scope.assessment,
-                flag_check = flagCheck(new_answer_data.flags);
+                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
 
             if (new_answer_data.status === 'assigned') {
                 new_answer_data.status = 'saved';

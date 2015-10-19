@@ -7,6 +7,6 @@ angular
             restrict: 'EA',
             controller: 'rgiActiveAnswerButtonsCtrl',
             scope: true,
-            templateUrl: '/partials/directives/rgi-active-answer-buttons'
+            templateUrl: '/partials/directives/templates/rgi-active-answer-buttons'
         };
     });

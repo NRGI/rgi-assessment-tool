@@ -1,24 +1,5 @@
-//  functions
-function flagCheck(flags) {
-    'use strict';
-    var disabled = false;
-    if (flags.length !== 0) {
-        flags.forEach(function (el) {
-            if (el.addressed === false) {
-                disabled = true;
-            }
-        });
-    }
-    return disabled;
-}
-function zeroFill(number, width) {
-    'use strict';
-    width -= number.toString().length;
-    if (width > 0) {
-        return new Array( width + (/\./.test(number) ? 2 : 1) ).join('0') + number;
-    }
-    return number + ""; // always return a string
-}
+'use strict';
+
 angular
     .module('app')
     .controller('rgiActiveAnswerButtonsCtrl', function (
@@ -26,13 +7,14 @@ angular
         $location,
         $routeParams,
         ngDialog,
+        rgiUtilsSrvc,
         rgiIdentitySrvc,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
-        rgiNotifier
+        rgiNotifier,
+        rgiDialogFactory
     ) {
-        'use strict';
         var root_url,
             assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
         $scope.current_user = rgiIdentitySrvc.currentUser;
@@ -49,7 +31,7 @@ angular
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
                 new_assessment_data = $scope.assessment,
-                flag_check = flagCheck(new_answer_data.flags);
+                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
 
             if (new_answer_data.status!=='flagged' && flag_check) {
                 new_answer_data.status = 'flagged';
@@ -85,7 +67,8 @@ angular
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
+
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
                         }
@@ -110,7 +93,7 @@ angular
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
                         }
@@ -124,25 +107,25 @@ angular
         $scope.answerApprove = function () {
             var new_answer_data = $scope.answer,
                 new_assessment_data = $scope.assessment,
-                flag_check = flagCheck(new_answer_data.flags);
+                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
 
             if (new_answer_data.status !== 'approved' && flag_check === true) {
                 rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
             } else {
                 new_answer_data.status = 'approved';
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                    .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
+                    .then(function () {
+                        if (new_answer_data.question_order !== $scope.question_length) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        } else {
+                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                        }
+                        rgiNotifier.notify('Answer approved');
+                    }, function (reason) {
+                        rgiNotifier.notify(reason);
+                    });
             }
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                .then(function () {
-                    if (new_answer_data.question_order !== $scope.question_length) {
-                        $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(zeroFill((new_answer_data.question_order + 1), 3)));
-                    } else {
-                        $location.path(root_url + '/' + new_answer_data.assessment_ID);
-                    }
-                    rgiNotifier.notify('Answer approved');
-                }, function (reason) {
-                    rgiNotifier.notify(reason);
-                });
         };
 
         $scope.answerClear = function () {
@@ -154,17 +137,8 @@ angular
         };
 
         $scope.answerFlag = function () {
-            //$scope.ngPopupConfig.isShow = true;
-            $scope.value = true;
-            console.log($scope);
-            ngDialog.open({
-                template: 'partials/dialogs/flag-answer-dialog',
-                controller: 'rgiFlagAnswerDialogCtrl',
-                className: 'ngdialog-theme-default dialogwidth800',
-                scope: $scope
-            });
+            rgiDialogFactory.flagCreate($scope);
         };
-
         //// make final choice
         //$scope.finalChoiceDialog = function () {
         //    $scope.value = true;

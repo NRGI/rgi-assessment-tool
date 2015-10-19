@@ -9,6 +9,6 @@ angular
             scope: {
                 update: '='
             },
-            templateUrl: '/partials/directives/rgi-comments'
+            templateUrl: '/partials/directives/templates/rgi-comments'
         };
     });

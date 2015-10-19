@@ -4,7 +4,8 @@ angular
     .module('app')
     .factory('rgiDialogFactory', function (
         ngDialog,
-        rgiNotifier
+        rgiNotifier,
+        rgiUtilsSrvc
     ) {
         return {
             assessmentAssign: function ($scope, assessment) {
@@ -19,18 +20,18 @@ angular
                 });
             },
             assessmentReassign: function ($scope) {
-                var scope = $scope;
-                if (scope.assessment_counters.length !== (scope.assessment_counters.flagged + scope.assessment_counters.approved)) {
-                    rgiNotifier.error('You must approve or flag all questions!');
-                } else {
-                    scope.value = true;
-                    ngDialog.open({
-                        template: 'partials/dialogs/move-assessment-dialog',
-                        controller: 'rgiMoveAssessmentDialogCtrl',
-                        className: 'ngdialog-theme-default',
-                        scope: scope
-                    });
-                }
+                //var scope = $scope;
+                //if (scope.assessment_counters.length !== (scope.assessment_counters.flagged + scope.assessment_counters.approved)) {
+                //    rgiNotifier.error('You must approve or flag all questions!');
+                //} else {
+                //    scope.value = true;
+                //    ngDialog.open({
+                //        template: 'partials/dialogs/move-assessment-dialog',
+                //        controller: 'rgiMoveAssessmentDialogCtrl',
+                //        className: 'ngdialog-theme-default',
+                //        scope: scope
+                //    });
+                //}
             },
             assessmentMove: function ($scope) {
                 var scope = $scope;
@@ -39,8 +40,23 @@ angular
                 } else {
                     scope.value = true;
                     ngDialog.open({
-                        template: 'partials/dialogs/move-assessment-dialog',
+                        template: 'partials/dialogs/assessments/move-assessment-dialog',
                         controller: 'rgiMoveAssessmentDialogCtrl',
+                        className: 'ngdialog-theme-default',
+                        scope: scope
+                    });
+                }
+            },
+            assessmentMoveConfirm: function ($scope) {
+                if (!$scope.action) {
+                    rgiNotifier.error('You must select an action!');
+                } else {
+                    var scope = $scope.$parent;
+                    scope.action = $scope.action;
+                    ngDialog.close('ngdialog1');
+                    ngDialog.open({
+                        template: 'partials/dialogs/assessments/move-assessment-confirmation-dialog',
+                        controller: 'rgiMoveAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
                         scope: scope
                     });
@@ -71,8 +87,8 @@ angular
                 }
             },
             assessmentResubmit: function ($scope) {
-            //    var scope = $scope,
-            //        flag_check = false;
+                var scope = $scope,
+                    flag_check = rgiUtilsSrvc.flagCheck();
             //    scope.answers.forEach(function (el) {
             //        if (el.status === 'flagged') {
             //            return flag_check = true;
@@ -99,6 +115,149 @@ angular
             //        //        rgiNotifier.error(reason);
             //        //    });
             //    }
+            },
+            commentEdit: function($scope, comment, index) {
+                var scope = $scope;
+                scope.value = true;
+                scope.index = index;
+                scope.comment = comment;
+                ngDialog.open({
+                    template: 'partials/dialogs/comments/comment-edit-dialog',
+                    controller: 'rgiCommentEditDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
+            documentCreate: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+
+                ngDialog.close('ngdialog1');
+                ngDialog.open({
+                    template: 'partials/dialogs/references/new-document-dialog',
+                    controller: 'rgiNewDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
+            webpageCreate: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+
+                ngDialog.close('ngdialog1');
+                ngDialog.open({
+                    template: 'partials/dialogs/references/new-webpage-dialog',
+                    controller: 'rgiNewWebpageDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
+            documentEdit: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/documents/edit-document-dialog',
+                    controller: 'rgiEditDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
+
+        //        if (scope.ref_selection === 'document') {
+
+        //} else if (scope.ref_selection === 'webpage') {
+        //    ngDialog.close('ngdialog1');
+        //    ngDialog.open({
+        //        template: 'partials/dialogs/new-webpage-dialog',
+        //        controller: 'rgiNewWebpageDialogCtrl',
+        //        className: 'ngdialog-theme-default',
+        //        scope: scope
+        //    });
+        //}
+            flagCreate: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/flags/flag-answer-dialog',
+                    controller: 'rgiFlagAnswerDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: $scope
+                });
+            },
+            flagEdit: function($scope, flag, index) {
+                var scope = $scope;
+                scope.value = true;
+                scope.index = index;
+                scope.flag = flag;
+                ngDialog.open({
+                    template: 'partials/dialogs/flags/flag-answer-dialog',
+                    controller: 'rgiFlagEditDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
+            intervieweeEdit: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/interviewees/edit-interviewee-dialog',
+                    controller: 'rgiEditIntervieweeDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
+            questionNew: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/questions/new-question-dialog',
+                    controller: 'rgiNewQuestionDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
+            questionDelete: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/questions/delete-question-confirmation-dialog',
+                    controller: 'rgiDeleteQuestionDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
+            referenceSelect: function ($scope, value) {
+                var template = 'partials/dialogs/references/new-ref-' + value + '-dialog',
+                    className = 'ngdialog-theme-default dialogwidth800',
+                    scope = $scope;
+                scope.value = true;
+                scope.ref_selection = value;
+                ngDialog.open({
+                    template: template,
+                    controller: 'rgiNewRefDialogCtrl',
+                    className: className,
+                    scope: $scope
+                });
+            },
+            userEdit: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/users/edit-user-dialog',
+                    controller: 'rgiEditUserDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
+            userDelete: function($scope) {
+                var scope = $scope;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/users/delete-user-confirmation-dialog',
+                    controller: 'rgiDeleteUserDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
             }
         };
     });

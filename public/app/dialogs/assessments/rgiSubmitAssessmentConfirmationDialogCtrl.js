@@ -1,23 +1,5 @@
-function isURLReal(fullyQualifiedURL) {
-    'use strict';
-    var URL = encodeURIComponent(fullyQualifiedURL),
-        dfd = $.Deferred(),
-        checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
+'use strict';
 
-    checkURLPromise
-        .done(function(res) {
-            // results should be null if the page 404s or the domain doesn't work
-            if (res.query.results) {
-                dfd.resolve(true);
-            } else {
-                dfd.reject(false);
-            }
-        })
-        .fail(function () {
-            dfd.reject('failed');
-        });
-    return dfd.promise();
-}
 angular
     .module('app')
     .controller('rgiSubmitAssessmentConfirmationDialogCtrl', function (
@@ -28,7 +10,6 @@ angular
         rgiNotifier,
         rgiAssessmentMethodSrvc
     ) {
-        'use strict';
         $scope.assessmentSubmit = function () {
             var new_assessment_data = $scope.$parent.assessment;
 

@@ -7,6 +7,6 @@ angular
             restrict: 'EA',
             controller: 'rgiFlagTabsCtrl',
             scope: true,
-            templateUrl: '/partials/directives/rgi-flag-tabs'
+            templateUrl: '/partials/directives/templates/rgi-flag-tabs'
         };
     });

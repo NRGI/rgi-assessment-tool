@@ -1,0 +1,266 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 New Interview Reference
+    div.modal-body
+        div.modal-form(id="new_human_form")
+            .form-horizontal
+                fieldset
+                    .row.bottom-padding-med
+                        div.col-md-9
+                            angucomplete(
+                            id="interviewee_search"
+                            placeholder="Search existing interviewees..."
+                            selectedobject="selected_interviewee"
+                            localdata="interviewee_list"
+                            searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
+                            titlefield="firstName,lastName"
+                            descriptionfield="email"
+                            minlength="1"
+                            inputclass="form-control form-control-small"
+                            matchclass="highlight"
+                            autocomplete="off")
+                            //angucomplete(
+                            //id="interviewee_search"
+                            //placeholder="Search existing interviewees..."
+                            //pause="300"
+                            //selectedobject="selected_interviewee"
+                            //localdata="interviewees"
+                            //searchfields="firstName,lastName"
+                            //titlefield="firstName,lastName"
+                            //descriptionfield="assessments"
+                            //minlength="1"
+                            //inputclass="form-control form-control-small"
+                            //matchclass="highlight")
+                        div.col-md-3
+                            button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+
+                    // DATE ACCESSED
+                    .row.bottom-padding-med
+                        div.col-md-12
+                            .pull-left.col-lg-5.input-group
+                                input.form-control(
+                                type="text"
+                                datepicker-popup="{{date_format}}"
+                                placeholder="Date interviewed..."
+                                ng-model="answer_update.human_ref_contact_date"
+                                is-open="status.opened"
+                                max-date="maxDate"
+                                datepicker-options="date_options"
+                                close-text="Close")
+                                span.input-group-btn
+                                    button.btn.btn-default(ng-click="calendarOpen($event)")
+                                        i.glyphicon.glyphicon-calendar
+                    //INTERVIEWEE COMMENT
+                    .row.bottom-padding-med
+                        div.col-md-12
+                            textarea.form-control(
+                            name="comment"
+                            type="text"
+                            placeholder="Comments..."
+                            ng-model="answer_update.human_ref_comment"
+                            redactor
+                            autocomplete="off")
+
+                    // EXISTING INTERVIEWEE
+                    div(ng-if="selected_interviewee")
+                        h4 Existing Interviewee
+                        .row.left-padding-lg
+                            h5: b Name:
+                            | {{selected_interviewee.title}}
+                            h5: b Email:
+                            | {{selected_interviewee.originalObject.email}}
+
+                    // NEW INTERVIEWEE
+                    div(ng-if="new_interviewee && !selected_interviewee")
+                        h4 New interviewee
+                        .row.form-group
+                            // FIRST NAME
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="firstName"
+                                type="text"
+                                placeholder="First name..."
+                                ng-model="new_interviewee.firstName"
+                                autocomplete="off")
+                            // LAST NAME
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="lastName"
+                                type="text"
+                                placeholder="Last name..."
+                                ng-model="new_interviewee.lastName"
+                                autocomplete="off")
+                        .row.form-group.right-padding-med
+                            .pull-left.col-lg-6
+                                select.form-control(ng-model="new_interviewee.role")
+                                    option(value="" selected disabled) Select role (required)...
+                                    option(ng-repeat="role in role_opts" value="{{role.value}}") {{role.text}}
+                            .pull-left.col-lg-6
+                                select.form-control(ng-model="new_interviewee.salutation")
+                                    option(value="" selected disabled) Select salutation (required)...
+                                    option(ng-repeat="sal in salutation_opts" value="{{sal}}") {{sal | ucfirst}}
+
+                        .row.form-group
+                            // EMAIL
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="email"
+                                type="text"
+                                placeholder="Email..."
+                                ng-model="new_interviewee.email"
+                                autocomplete="off")
+                            // PHONE
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="phone"
+                                type="text"
+                                placeholder="Phone number..."
+                                ng-model="new_interviewee.phone"
+                                autocomplete="off")
+
+                        .row.form-group
+                            // TITLE
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="title"
+                                type="text"
+                                placeholder="Title..."
+                                ng-model="new_interviewee.title"
+                                autocomplete="off")
+                            // ORGANIZATION
+                            .pull-left.col-lg-6
+                                input.form-control(
+                                name="organization"
+                                type="text"
+                                placeholder="Organization..."
+                                ng-model="new_interviewee.organization"
+                                autocomplete="off")
+
+
+                                //role: {
+                                    //type: String,
+                                    //required: '{PATH} is required!'}, // gov, industry, CSO, expert or other
+
+
+
+
+    div.modal-footer
+        div.col-lg-6
+            button.btn.btn-block.btn-success(ng-click="interviewRefSubmit()") Create reference
+        div.col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+
+
+
+//
+//div.left-padding-lg.right-padding-lg
+//    h2 New interview reference
+//    .row(id="new_human_form")
+//        .form-horizontal
+//            fieldset
+//                .row.bottom-padding-lg
+//                    div.col-md-9
+//                        angucomplete(
+//                        id="interviewee_search"
+//                        placeholder="Search existing interviewees..."
+//                        selectedobject="selected_interviewee"
+//                        localdata="interviewee_list"
+//                        searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
+//                        titlefield="firstName,lastName"
+//                        descriptionfield="email"
+//                        minlength="1"
+//                        inputclass="form-control form-control-small"
+//                        matchclass="highlight")
+//                        //angucomplete(
+//                        //id="interviewee_search"
+//                        //placeholder="Search existing interviewees..."
+//                        //pause="300"
+//                        //selectedobject="selected_interviewee"
+//                        //localdata="interviewees"
+//                        //searchfields="firstName,lastName"
+//                        //titlefield="firstName,lastName"
+//                        //descriptionfield="assessments"
+//                        //minlength="1"
+//                        //inputclass="form-control form-control-small"
+//                        //matchclass="highlight")
+//                    div.col-md-3
+//                        button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+//
+//
+//                // DATE ACCESSED
+//                .row.bottom-padding-lg
+//                    div.col-md-12
+//                        .pull-left.col-lg-5.input-group
+//                            input.form-control(
+//                            type="text"
+//                            datepicker-popup="{{date_format}}"
+//                            placeholder="Date interviewed..."
+//                            ng-model="answer_update.human_ref_contact_date"
+//                            is-open="status.opened"
+//                            max-date="maxDate"
+//                            datepicker-options="date_options"
+//                            close-text="Close")
+//                            span.input-group-btn
+//                                button.btn.btn-default(ng-click="calendarOpen($event)")
+//                                    i.glyphicon.glyphicon-calendar
+//                //INTERVIEWEE COMMENT
+//                .row.bottom-padding-lg
+//                    div.col-md-12
+//                        textarea.form-control(
+//                        name="comment"
+//                        type="text"
+//                        placeholder="Comments..."
+//                        ng-model="answer_update.human_ref_comment"
+//                        redactor
+//                        autocomplete="off")
+//
+//
+//                // EXISTING INTERVIEWEE
+//                div(ng-if="selected_interviewee")
+//                    h4 Existing interviewee
+//                    .row {{selected_interviewee}}
+//
+//
+//                // NEW INTERVIEWEE
+//                div(ng-if="new_interviewee && !selected_interviewee")
+//                    h4 New interviewee
+//                // div {{interviewees}}
+//                // div.left-padding-lg.right-padding-lg
+//                //     div.row.form-group
+//                //         input.form-control(
+//                //         name="first_name"
+//                //         type="text"
+//                //         placeholder="First name (required)..."
+//                //         ng-model="answer_update.human_ref_first_name"
+//                //         autocomplete="off"
+//                //         required)
+//                //     div.row.form-group
+//                //         input.form-control(
+//                //         name="last_name"
+//                //         type="text"
+//                //         placeholder="Last name (required)..."
+//                //         ng-model="answer_update.human_ref_last_name"
+//                //         autocomplete="off"
+//                //         required)
+//                //     div.row.form-group
+//                //         input.form-control(
+//                //         name="email"
+//                //         type="text"
+//                //         placeholder="Email address (required)..."
+//                //         ng-model="answer_update.human_ref_email"
+//                //         autocomplete="off"
+//                //         required)
+//                //     div.row.form-group
+//                //         input.form-control(
+//                //         name="phone"
+//                //         type="text"
+//                //         placeholder="Phone number..."
+//                //         ng-model="answer_update.human_ref_phone"
+//                //         autocomplete="off")
+//
+//                //
+//                //- BUTTON CONTROL
+//                div.col-lg-6
+//                    button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
+//                div.col-lg-6
+//                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
