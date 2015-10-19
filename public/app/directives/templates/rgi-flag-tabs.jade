@@ -4,9 +4,12 @@ div(id="flags_div").bottom-padding-med
     id="prev_flags_div"
     role="tablist"
     aria-multiselectable="true")
+
+        ///TODO Fix repeating imvisible panels
         div.panel(ng-repeat="flag in answer.flags" ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
+            ng-if="current_user.role==='supervisor' || (flag.addressed_to===current_user._id && !flag.addressed)"
             id="heading{{$index}}")
                 h4.panel-title
                     div(

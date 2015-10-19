@@ -5,26 +5,24 @@
             .row-fluid.right-padding-lg
                 rgi-answer-nav(assessment="assessment")
                 div(ng-if="current_user.role!=='supervisor'")
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'") {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted' || answer.status==='submitted'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
                     text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
-                div.right-padding-lg(ng-if="")
-                    text.pull-right.right-padding-lg.text-danger(ng-if="answer.status==='flagged'") {{answer.status | ucfirst}}
+                div(ng-if="current_user.role==='supervisor'")
+                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-success(ng-if="answer.status==='approved'") {{answer.status | ucfirst}}
 
             legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
 
             div.right-padding-lg.left-padding-lg
-
                 .row.bottom-padding-med
                     h3: em.bottom-padding-med.col-md-11 Question {{answer.question_order}}. {{answer.question_text}}
                     i.glyphicon.glyphicon-question-sign(
-                    ng-if="current_user.role!=='supervisor'"
                     popover-template="dynamicPopover.templateUrl"
                     popover-title="Guidance note"
                     popover-placement="bottom")

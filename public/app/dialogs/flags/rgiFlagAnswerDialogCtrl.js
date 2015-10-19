@@ -6,37 +6,26 @@ angular
         $location,
         ngDialog,
         rgiNotifier,
-        rgiAnswerMethodSrvc,
-        rgiAssessmentMethodSrvc
+        rgiAnswerMethodSrvc
     ) {
         'use strict';
         $scope.saveFlag = function () {
             var new_answer_data = $scope.$parent.answer,
                 current_user = $scope.$parent.identity.currentUser,
-                new_assessment_data = $scope.$parent.assessment,
                 new_flag_data = {
                     content: $scope.flag_content,
                     author_name: current_user.firstName + ' ' + current_user.lastName,
                     author: current_user._id,
                     role: current_user.role,
                     date: new Date().toISOString(),
-                    addressed: false
+                    addressed: false,
+                    addressed_to: $scope.$parent.assessment.edit_control
                 };
 
             new_answer_data.flags.push(new_flag_data);
-
-            if (new_answer_data.status === 'approved') {
-                new_answer_data.status = 'flagged';
-                new_assessment_data.questions_flagged += 1;
-                new_assessment_data.questions_approved -= 1;
-            } else if (new_answer_data.status !== 'flagged') {
-                new_answer_data.status = 'flagged';
-                new_assessment_data.questions_complete += 1;
-                new_assessment_data.questions_flagged += 1;
-            }
+            new_answer_data.status = 'flagged';
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                 .then(function () {
                     rgiNotifier.notify('Answer flagged');
                     $scope.closeThisDialog();

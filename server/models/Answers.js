@@ -32,7 +32,8 @@ var commentSchema = new Schema({
     author: ObjectId, // Pull from curretn user _id value
     author_name: String,
     role: String,
-    addressed: Boolean
+    addressed: Boolean,
+    addressed_to: ObjectId
 });
 
 var citationSchema = new Schema({

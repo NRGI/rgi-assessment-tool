@@ -26,7 +26,7 @@
 
     button.btn.btn-danger(
     ng-click="answerClear()"
-    ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ng-if="assessment.edit_control===current_user._id && current_user.role!=='supervisor' && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
     ) Reset answer
     | &nbsp;
 
@@ -34,10 +34,16 @@
     //data-toggle="modal"
     //href="#flagModal") Flag answer
     button.btn.btn-warning(
-    ng-click="answerFlag(current_user)"
+    ng-click="answerFlag()"
     ng-if="current_user.role==='supervisor'"
     ) Flag answer
+    | &nbsp;
 
+    button.btn.btn-danger(
+    ng-click="answerUnresolved()"
+    ng-if="current_user.role==='supervisor'"
+    ) Unresolved
+    | &nbsp;
 
     button.btn.btn-primary(
     ng-click="finalChoiceDialog()"

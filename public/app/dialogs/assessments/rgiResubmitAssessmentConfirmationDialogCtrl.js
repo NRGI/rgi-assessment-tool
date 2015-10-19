@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .controller('rgiSubmitAssessmentConfirmationDialogCtrl', function (
+    .controller('rgiResubmitAssessmentConfirmationDialogCtrl', function (
         $scope,
         $location,
         $route,
@@ -10,10 +10,10 @@ angular
         rgiNotifier,
         rgiAssessmentMethodSrvc
     ) {
-        $scope.assessmentSubmit = function () {
+        $scope.assessmentResubmit = function () {
             var new_assessment_data = $scope.$parent.assessment;
 
-            new_assessment_data.status = 'submitted';
+            new_assessment_data.status = 'resubmitted';
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
 
