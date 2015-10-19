@@ -1,0 +1,73 @@
+div.table-responsive
+    .pull-right.filter-form
+        form.form-inline
+            .form-group
+                input.form-control(
+                ng-model="search_text"
+                placeholder="Filter")
+            .form-group.margin-left-med
+                select.form-control(
+                ng-model="sort_order"
+                ng-options="item.value as item.text for item in sort_options")
+    table.table
+        thead
+            tr
+                th.col-sm-1 Name
+                th.col-sm-1 Username
+                th.col-sm-1 Role
+                th.col-sm-1 Last Login
+                th.col-sm-7
+                    table
+                        th.col-sm-2 Assessments
+                        th.col-sm-1 Assigned
+                        th.col-sm-1 Started
+                        th.col-sm-1 Submitted
+                        th.col-sm-1 Reviewed
+                        th.col-sm-1 Approved
+                        th.col-sm-1
+                th.col-sm-1
+        tbody
+            tr(ng-repeat="user in users | filter:search_text | orderBy:sort_order")
+                td.col-sm-1
+                    a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                td.col-sm-1 {{user.username}}
+                td.col-sm-1 {{user.role | ucfirst}}
+                td.col-sm-1 {{user.last_sign_in["date-time"] | date:'MM/dd/yyyy'}}
+                td.col-sm-7
+                    table.table(
+                    ng-if="user.role!=='supervisor'"
+                    style="margin-top: -9px; margin-bottom: -9px")
+                        tr(ng-repeat="assessment in user.assessments")
+                            td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
+                            td.col-sm-1
+                                i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.assignment"
+                                popover="{{assessment.details.assignment.assigned_date | date:'MM/dd/yyyy'}}"
+                                popover-trigger="mouseenter")
+                                em(ng-if="!assessment.details.assignment") N/A
+                            td.col-sm-1
+                                i.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.assignment.start_date"
+                                popover="{{assessment.details.assignment.start_date | date:'MM/dd/yyyy'}}"
+                                popover-trigger="mouseenter")
+                                em.text-center(ng-if="!assessment.details.assignment.start_date") N/A
+                            td.col-sm-1
+                                i.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.assignment.submit_date"
+                                popover="{{assessment.details.assignment.submit_date | date:'MM/dd/yyyy'}}"
+                                popover-trigger="mouseenter")
+                                em.text-center(ng-if="!assessment.details.assignment.submit_date") N/A
+                            td.col-sm-1
+                                i.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.assignment.review_date"
+                                popover="{{assessment.details.assignment.review_date | date:'MM/dd/yyyy'}}"
+                                popover-trigger="mouseenter")
+                                em.text-center(ng-if="!assessment.details.assignment.review_date") N/A
+                            td.col-sm-1
+                                i.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.assignment.approved_date"
+                                popover="{{assessment.details.assignment.approved_date | date:'MM/dd/yyyy'}}"
+                                popover-trigger="mouseenter")
+                                em.text-center(ng-if="!assessment.details.assignment.approved_date") N/A
+                td.col-sm-1
+                    a.btn.center-block.btn-primary(href="/admin/user-admin/{{user._id}}") View
