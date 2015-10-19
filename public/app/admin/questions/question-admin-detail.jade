@@ -1,0 +1,87 @@
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header Question {{question.question_order}}. {{question.question_text}}
+            //legend.h3.page-header Question {{question.question_label}}. {{question.question_text}}
+
+            .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
+                fieldset
+                    div(id="question_text_div").row-fluid.right-padding-lg.left-padding-lg
+                        label Question Text
+                        .form-group.left-padding-lg.right-padding-lg(required)
+                            textarea.form-control(
+                            name="question_text"
+                            type="textbox"
+                            ng-model="question.question_text")
+
+                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg
+                        label.col-md-2.control-label(form="order") Question Order
+                        .col-md-1
+                            input.form-group.form-control(
+                            name="order"
+                            type="number"
+                            ng-model="question.question_order")
+                        label.col-md-2.control-label(form="mode") Component
+                        .col-md-5
+                            select.form-group.form-control(
+                            ng-model="question.component"
+                            ng-options="item.value as item.text for item in component_options")
+                        //label.col-md-2.control-label(form="type") Data Type
+                        //.col-md-2
+                        //    select.form-group.form-control(
+                        //    ng-model="question.question_data_type"
+                        //    ng-options="item.value as item.text for item in typeOptions")
+                    div.row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
+                        .pull-left
+                            button.btn.btn-primary(
+                            ng-click="questionUpdate()"
+                            ng-disabled="profileForm.$invalid") Save question
+                            | &nbsp;
+                            button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete question
+                            | &nbsp;
+                            button.btn.btn-warning(ng-click="questionClear()") Reset question
+                            | &nbsp;
+                            a.btn.btn-default(href="/admin/question-admin") Cancel
+
+                    div(id="question_options_div").row-fluid.right-padding-lg.left-padding-lg
+                        .row.top-padding-lg
+                            .col-md-2: b: p.text-right Option Value
+                            .col-md-10: b: p Option Text
+                        .row.form-group(
+                        name="question_options_form"
+                        ng-repeat="choice in question.question_choices")
+                            .col-md-1
+                            .col-md-1
+                                input.form-control(
+                                name="choiceOrder"
+                                type="number"
+                                ng-model="choice.order"
+                                required)
+                            .col-md-8
+                                textarea.form-control(
+                                name="choice"
+                                type="textbox"
+                                ng-model="choice.criteria"
+                                required)
+                            .col-md-1
+                                button.btn.btn-danger(
+                                ng-click="questionOptionDelete($index)"
+                                ng-disabled="question.question_choices.length==1") Delete
+                    div.row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
+                        .pull-right
+                            button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
+
+                    div(id="guidance_text_div").row-fluid.right-padding-lg.left-padding-lg
+                        label Guidance Text
+                        //- ng-form(name="question_text_form")
+                        .form-group.left-padding-lg.right-padding-lg(required)
+                            textarea.form-control(
+                            name="question_text"
+                            type="text"
+                            ng-model="question.question_guidance_text"
+                            redactor) {{question.question_guidance_text}}
+                        div(ng-bind-html="question.question_guidance_text")
+
+                    div(id="comments").row-fluid.right-padding-lg.left-padding-lg
+                        rgi-comments(update="question")
+
