@@ -1,0 +1,40 @@
+div.table-responsive
+    .pull-right
+        form.form-inline
+            .form-group
+                input.form-control(
+                ng-model="search_text"
+                ng-disabled="documents.length < 1"
+                placeholder="Filter")
+            .form-group.margin-left-med
+                select.form-control(
+                ng-model="sort_order"
+                ng-disabled="documents.length < 1"
+                ng-options="item.value as item.text for item in sort_options")
+    table.table.table-hover.table-striped.table-condensed.left-padding-lg.right-padding-lg(ng-if="documents.length > 0")
+        thead
+            tr
+                th Title
+                th Authors
+                th Type
+                th Cited by
+                th Assessments
+                th
+                th
+        tbody
+            tr(ng-repeat="doc in documents | filter:search_text | orderBy:sort_order")
+                td {{doc.title}}
+                td
+                    .row(ng-repeat="author in doc.authors") {{author.first_name}} {{author.last_name}}
+                td {{doc.type}}
+                td
+                    .row(ng-repeat="user in doc.user_list")
+                        a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                td
+                    a(href="/admin/assessments-admin/{{assessment}}" ng-repeat="assessment in doc.assessments") {{assessment}}
+                td
+                    a(href="/admin/documents-admin/{{doc._id}}").btn-block.btn.btn-warning Metadata
+                td
+                    a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-default Link to document
+
+    h1.text-danger(ng-if="documents.length < 1") No documents uploaded

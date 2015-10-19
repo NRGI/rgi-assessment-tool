@@ -7,7 +7,7 @@ angular
         rgiIntervieweeSrvc
     ) {
         // filtering options
-        $scope.sortOptions = [
+        $scope.sort_options = [
             {value: 'lastName', text: 'Sort by last name'},
             {value: 'firstName', text: 'Sort by first name'},
             {value: 'role', text: 'Sort by interviewee role'},
@@ -15,7 +15,7 @@ angular
             {value: 'organization', text: 'Sort by interviewee organization'},
             {value: 'assessments', text: 'Sort by attached assessments'}
         ];
-        $scope.sortOrder = $scope.sortOptions[0].value;
+        $scope.sort_order = $scope.sort_options[0].value;
 
         $scope.interviewees = rgiIntervieweeSrvc.query({});
     });
