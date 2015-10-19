@@ -1,15 +1,15 @@
-.container.top-padding-med
-    .well.left-padding-lg
-        div.left-padding-lg.right-padding-lg.top-padding-med
-            legend.h3 {{user.firstName}} {{user.lastName}}'s Profile
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header {{user.firstName}} {{user.lastName}}'s Profile
             div.left-padding-lg.right-padding-lg
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                .row-fluid
                     button.btn.btn-warning(ng-click="editUserDialog()") Edit user
                     | &nbsp;
                     a(href="mailto:{{user.email}}").btn.btn-default Email
                     | &nbsp;
-                    button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    button.btn.btn-danger.popover-dialog(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Delete
+                .row-fluid.top-padding-med(ng-if="user.role!=='supervisor'")
                     table.table.table-hover.table-striped.table-condensed
                         thead
                             tr
@@ -27,9 +27,9 @@
                                 td
                                     .row(ng-repeat="document in user.document_details").left-padding-lg
                                         a(href="/admin/documents-admin/{{document._id}}") {{document.title}}
-            h3 Information
-            div.right-padding-lg
-                .row.left-padding-lg.right-padding-lg
+            div.left-padding-lg.right-padding-lg
+                h3 Information
+                .row-fluid.right-padding-med.left-padding-med
                     table.table.table-condensed
                         tbody
                             tr
@@ -68,6 +68,6 @@
                                         text {{user.address}}
                                     .row(ng-if="!user.address")
                                         text N/A
-            h3 Login info
-            div
+            div.left-padding-lg.right-padding-lg
+                h3 Login info
                 rgi-auth-logs(user="user")
