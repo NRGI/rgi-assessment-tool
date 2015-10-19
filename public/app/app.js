@@ -2,7 +2,6 @@
 /*jslint unparam: true */
 
 angular.module('app', [
-    //'720kb.datepicker',
     'angular.filter',
     'angularFileUpload',
     'angular-redactor',
@@ -11,7 +10,7 @@ angular.module('app', [
     'ng-form-group',
     'ngCsv',
     'ngDialog',
-    'ngPopup',
+    //'ngPopup',
     'ngResource',
     'ngRoute',
     'ngSanitize',

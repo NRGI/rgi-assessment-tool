@@ -1,10 +1,11 @@
+'use strict';
+
 angular
     .module('app')
     .factory('rgiRequestSubmitterSrvc', function (
         $http,
         $q
      ) {
-        'use strict';
         var submitRequest = function(type, uri, data) {
             var dfd = $q.defer();
 
