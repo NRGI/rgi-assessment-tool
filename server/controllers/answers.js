@@ -107,7 +107,7 @@ exports.updateAnswer = function (req, res) {
     Answer.findOne({answer_ID: answer_update.answer_ID}, function (err, answer) {
         answer.status = answer_update.status;
         answer.comments = answer_update.comments;
-        answer.refereces = answer_update.refereces;
+        answer.references = answer_update.references;
         answer.flags = answer_update.flags;
         if (answer.modified) {
             answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});

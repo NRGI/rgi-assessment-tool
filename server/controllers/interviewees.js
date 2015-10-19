@@ -44,7 +44,6 @@ exports.createInterviewee = function (req, res, next) {
 exports.updateInterviewee = function (req, res) {
     var interviewee_updates = req.body,
         query = Interviewee.findOne({_id: req.body._id});
-    console.log(req.body);
 
     query.exec(function (err, interviewee) {
         if (err) {

@@ -19,18 +19,6 @@ div.left-padding-lg.right-padding-lg
                             inputclass="form-control form-control-small"
                             matchclass="highlight"
                             autocomplete="off")
-                            //angucomplete(
-                            //id="interviewee_search"
-                            //placeholder="Search existing interviewees..."
-                            //pause="300"
-                            //selectedobject="selected_interviewee"
-                            //localdata="interviewees"
-                            //searchfields="firstName,lastName"
-                            //titlefield="firstName,lastName"
-                            //descriptionfield="assessments"
-                            //minlength="1"
-                            //inputclass="form-control form-control-small"
-                            //matchclass="highlight")
                         div.col-md-3
                             button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
 
@@ -136,24 +124,8 @@ div.left-padding-lg.right-padding-lg
                                 ng-model="new_interviewee.organization"
                                 autocomplete="off")
 
-
-                                //role: {
-                                    //type: String,
-                                    //required: '{PATH} is required!'}, // gov, industry, CSO, expert or other
-
-
-
-
     div.modal-footer
         div.col-lg-6
             button.btn.btn-block.btn-success(ng-click="interviewRefSubmit()") Create reference
         div.col-lg-6
             button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
-
-
-                //- BUTTON CONTROL
-                div.col-lg-6
-                    button.btn.btn-block.btn-success(ng-click="humanRefSubmit()") Create reference
-
-                div.col-lg-6
-                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

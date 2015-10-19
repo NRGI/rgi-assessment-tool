@@ -13,7 +13,7 @@ angular
         ];
 
         //TODO Generate Dialog based on change and handle upload process via dialogs
-        $scope.select_ref_dialog = function(value) {
+        $scope.selectRefDialog = function(value) {
             rgiDialogFactory.referenceSelect($scope, value);
         };
     });
