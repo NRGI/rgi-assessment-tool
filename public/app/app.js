@@ -82,8 +82,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiQuestionAdminCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/admin/question-admin-edit/:id', {
-            templateUrl: '/partials/admin/questions/question-admin-edit',
+        .when('/admin/question-admin/:id', {
+            templateUrl: '/partials/admin/questions/question-admin-detail',
             controller:  'rgiQuestionAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
