@@ -88,34 +88,28 @@ angular
                 }
             },
             assessmentResubmit: function ($scope) {
-                var scope = $scope,
-                    flag_check = rgiUtilsSrvc.flagCheck();
-            //    scope.answers.forEach(function (el) {
-            //        if (el.status === 'flagged') {
-            //            return flag_check = true;
-            //        }
-            //    });
-            //    if (flag_check) {
-            //        rgiNotifier.error('You must resubmit all flagged answers!');
-            //    } else {
-            //        scope.value = true;
-            //        ngDialog.open({
-            //            template: 'partials/dialogs/assessmentsresubmit-confirmation-dialog',
-            //            controller: 'rgiResubmitConfirmationDialogCtrl',
-            //            className: 'ngdialog-theme-default',
-            //            scope: scope
-            //        });
-            //        //var new_assessment_data = scope.assessment;
-            //        //new_assessment_data.status = 'resubmitted';
-            //        //
-            //        //rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-            //        //    .then(function () {
-            //        //        $location.path('/assessments');
-            //        //        rgiNotifier.notify('Assessment submitted!');
-            //        //    }, function (reason) {
-            //        //        rgiNotifier.error(reason);
-            //        //    });
-            //    }
+                var scope = $scope;
+                if (scope.assessment_counters.flagged != 0) {
+                    rgiNotifier.error('You must resubmit all flagged answers!');
+                } else {
+                    scope.value = true;
+                    ngDialog.open({
+                        template: 'partials/dialogs/assessments/resubmit-confirmation-dialog',
+                        controller: 'rgiResubmitAssessmentConfirmationDialogCtrl',
+                        className: 'ngdialog-theme-default',
+                        scope: scope
+                    });
+                    //var new_assessment_data = scope.assessment;
+                    //new_assessment_data.status = 'resubmitted';
+                    //
+                    //rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                    //    .then(function () {
+                    //        $location.path('/assessments');
+                    //        rgiNotifier.notify('Assessment submitted!');
+                    //    }, function (reason) {
+                    //        rgiNotifier.error(reason);
+                    //    });
+                }
             },
             commentEdit: function($scope, comment, index) {
                 var scope = $scope;

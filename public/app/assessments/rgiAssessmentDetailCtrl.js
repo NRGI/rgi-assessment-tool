@@ -41,7 +41,8 @@ angular
                     approved: 0,
                     resubmitted: 0,
                     assigned: 0,
-                    saved: 0
+                    saved: 0,
+                    unresolved: 0
                 };
                 answers.forEach(function (el) {
                     switch (el.status) {
@@ -66,6 +67,8 @@ angular
                         case 'saved':
                             $scope.assessment_counters.saved +=1;
                             break;
+                        case 'unresolved':
+                            $scope.assessment_counters.unresolved +=1;
                     }
                 });
                 $scope.answers = answers;

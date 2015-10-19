@@ -139,6 +139,10 @@ angular
         $scope.answerFlag = function () {
             rgiDialogFactory.flagCreate($scope);
         };
+
+        $scope.answerUnresolved = function() {
+
+        };
         //// make final choice
         //$scope.finalChoiceDialog = function () {
         //    $scope.value = true;
