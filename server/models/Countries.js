@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-var countrySchema = mongoose.Schema({
+var countrySchema = new mongoose.Schema({
     country: String,
     iso2: String,
     country_ID: String,

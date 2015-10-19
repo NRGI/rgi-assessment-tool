@@ -1,15 +1,16 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var ObjectId = mongoose.Schema.Types.ObjectId;
+var ObjectId = Schema.Types.ObjectId;
 
-var modificationSchema = new mongoose.Schema({
+var modificationSchema = new Schema({
     modifiedBy: ObjectId,
     modifiedDate: {type: Date, default: Date.now}
 });
 
-var intervieweeSchema = mongoose.Schema({
+var intervieweeSchema = new Schema({
     firstName: {
         type: String,
         required: '{PATH} is required!'},

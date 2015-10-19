@@ -2,16 +2,17 @@
 /*jslint unparam: true*/
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var modificationSchema = new mongoose.Schema({
+var modificationSchema = new Schema({
     modified_by: ObjectId,
     modified_date: Date
 });
 
 
-var assessmentSchema = mongoose.Schema({
+var assessmentSchema = new Schema({
     assessment_ID: {
         type: String,
         required: '{PATH} is required',

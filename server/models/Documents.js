@@ -1,22 +1,23 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var modificationSchema = new mongoose.Schema({
+var modificationSchema = new Schema({
     modifiedBy: ObjectId,
     modifiedDate: {
         type: Date,
         default: Date.now}
 });
 
-var authorSchema = new mongoose.Schema({
+var authorSchema = new Schema({
     first_name: String,
     last_name: String
 });
 
-var documentSchema = mongoose.Schema({
+var documentSchema = new Schema({
     file_hash: {
         type: String,
         required: '{PATH} is required!'},

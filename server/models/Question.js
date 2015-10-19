@@ -36,7 +36,7 @@ var commentSchema = new Schema({
     addressed: Boolean
 });
 
-var questionSchema = Schema({
+var questionSchema = new Schema({
     question_use: {
         type: Boolean,
         default: true},
@@ -95,6 +95,7 @@ function createDefaultQuestions() {
     Question.find({}).exec(function (err, questions) {
         if (questions.length === 0) {
             Question.create({
+                "_id": "561fe604f004cd4715705420",
                 "precept" : [ 2 ],
                 "indicator" : "EITI in national legislation",
                 "question_text" : "Is the EITI ratified in national legislation?",
@@ -116,7 +117,7 @@ function createDefaultQuestions() {
                 "options" : 4
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd4715705420"),
+                "root_question_ID": "561fe604f004cd4715705420",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -133,31 +134,28 @@ function createDefaultQuestions() {
                     {
                         "criteria": "Yes",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd4715705424")
+                        "order": 1
                     },
                     {
                         "criteria": "Partial",
                         "name": "criteria_b",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd4715705423")
+                        "order": 2
                     },
                     {
                         "criteria": "No",
                         "name": "criteria_d",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd4715705422")
+                        "order": 3
                     },
                     {
                         "criteria": "Not applicable/other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd4715705421")
+                        "order": 4
                     }
                 ],
                 "question_use": true
             });
             Question.create({
+                "_id": "561fe604f004cd4715705425",
                 "precept" : [ 2 ],
                 "indicator" : "Contract Disclosure",
                 "question_text" : "Has this country adopted a rule or legisation that requires the publication of all contracts in the oil, gas, and mineral sectors?",
@@ -183,7 +181,7 @@ function createDefaultQuestions() {
                 "options" : 4
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd4715705425"),
+                "root_question_ID": "561fe604f004cd4715705425",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -200,31 +198,28 @@ function createDefaultQuestions() {
                     {
                         "criteria": "Yes",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd4715705429")
+                        "order": 1
                     },
                     {
                         "criteria": "Partial",
                         "name": "criteria_b",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd4715705428")
+                        "order": 2
                     },
                     {
                         "criteria": "No",
                         "name": "criteria_d",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd4715705427")
+                        "order": 3
                     },
                     {
                         "criteria": "Not applicable/other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd4715705426")
+                        "order": 4
                     }
                 ],
                 "question_use": true
             });
             Question.create({
+                "_id": "561fe604f004cd471570542a",
                 "precept" : [ 2 ],
                 "indicator" : "Contract Disclosure",
                 "question_text" : "Have all contracts between extraction companies and the government been disclosed?",
@@ -244,7 +239,7 @@ function createDefaultQuestions() {
                 "options" : 4
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd471570542a"),
+                "root_question_ID": "561fe604f004cd471570542a",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -261,31 +256,28 @@ function createDefaultQuestions() {
                     {
                         "criteria": "Yes, in pdf, online.",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd471570542e")
+                        "order": 1
                     },
                     {
                         "criteria": "Yes, but only physical copies",
                         "name": "criteria_b",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd471570542d")
+                        "order": 2
                     },
                     {
                         "criteria": "No",
                         "name": "criteria_d",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd471570542c")
+                        "order": 3
                     },
                     {
                         "criteria": "Not applicable/other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd471570542b")
+                        "order": 4
                     }
                 ],
                 "question_use": true
             });
             Question.create({
+                "_id": "561fe604f004cd471570542f",
                 "precept" : [ 2 ],
                 "indicator" : "Freedom of Information law applied",
                 "question_text" : "Do citizens request and successfully receive information using the freedom of information law?",
@@ -307,7 +299,7 @@ function createDefaultQuestions() {
                 "options" : 4
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd471570542f"),
+                "root_question_ID": "561fe604f004cd471570542f",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -324,31 +316,28 @@ function createDefaultQuestions() {
                     {
                         "criteria": "Yes",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd4715705433")
+                        "order": 1
                     },
                     {
                         "criteria": "Partial",
                         "name": "criteria_b",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd4715705432")
+                        "order": 2
                     },
                     {
                         "criteria": "No",
                         "name": "criteria_d",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd4715705431")
+                        "order": 3
                     },
                     {
                         "criteria": "Not applicable/other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd4715705430")
+                        "order": 4
                     }
                 ],
                 "question_use": true
             });
             Question.create({
+                "_id": "561fe604f004cd4715705434",
                 "precept" : [ 2 ],
                 "indicator" : "EITI report",
                 "question_text" : "Has this country published an EITI report?",
@@ -375,7 +364,7 @@ function createDefaultQuestions() {
                 "options" : 5
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd4715705434"),
+                "root_question_ID": "561fe604f004cd4715705434",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -392,37 +381,33 @@ function createDefaultQuestions() {
                     {
                         "criteria": "The country has published an EITI report, including information on national revenue classification systems and international standards, such as the IMF Government Finance Statistics Manual; a summary of national audit procedures (including an analysis of whether audit procedures meet international standards); information about the contribution of the extractive industries to the economy for the year covered (including: size of the extractive industries in absolute terms, size of the extractive industries as percentage of GDP, an estimate of informal sector activity); exports from the extractive industries in absolute terms; exports from the extractive industries as percentage of total exports.",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd4715705439")
+                        "order": 1
                     },
                     {
                         "criteria": "The country has published an EITI report, but some essential information (described in full in Answer A) is missing (please explain).",
                         "name": "criteria_b",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd4715705438")
+                        "order": 2
                     },
                     {
                         "criteria": "The country has published an EITI report with only scant information.",
                         "name": "criteria_c",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd4715705437")
+                        "order": 3
                     },
                     {
                         "criteria": "The country has not published an EITI report.",
                         "name": "criteria_d",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd4715705436")
+                        "order": 4
                     },
                     {
                         "criteria": "Not applicable/Other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 5,
-                        "_id": ObjectId("561fe604f004cd4715705435")
+                        "order": 5
                     }
                 ],
                 "question_use": true
             });
             Question.create({
+                "_id": "561fe604f004cd471570543a",
                 "precept" : [ 2 ],
                 "indicator" : "Quality of EITI data",
                 "question_text" : "If the country has published an EITI report, does it cover all topics in new standard?",
@@ -445,7 +430,7 @@ function createDefaultQuestions() {
                 "options" : 4
             });
             Question.create({
-                "root_question_ID": ObjectId("561fe604f004cd471570543a"),
+                "root_question_ID": "561fe604f004cd471570543a",
                 "year": "2015",
                 "version": "pilot",
                 "assessment_ID": "2015-PI",
@@ -462,26 +447,22 @@ function createDefaultQuestions() {
                     {
                         "criteria": "Covers all topics relevant within country context",
                         "name": "criteria_a",
-                        "order": 1,
-                        "_id": ObjectId("561fe604f004cd471570543e")
+                        "order": 1
                     },
                     {
                         "criteria": "Only partials resource revenue reconciliation",
                         "name": "criteria_c",
-                        "order": 2,
-                        "_id": ObjectId("561fe604f004cd471570543d")
+                        "order": 2
                     },
                     {
                         "criteria": "The country has not published an EITI report.",
                         "name": "criteria_d",
-                        "order": 3,
-                        "_id": ObjectId("561fe604f004cd471570543c")
+                        "order": 3
                     },
                     {
                         "criteria": "Not applicable/Other. (Explain in 'comments' box.)",
                         "name": "criteria_e",
-                        "order": 4,
-                        "_id": ObjectId("561fe604f004cd471570543b")
+                        "order": 4
                     }
                 ],
                 "question_use": true
