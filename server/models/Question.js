@@ -472,3 +472,42 @@ function createDefaultQuestions() {
 }
 
 exports.createDefaultQuestions = createDefaultQuestions;
+
+
+//var questionSchema = new Schema({
+//    year: String,
+//    version: String,
+//    root_question_ID: ObjectId,
+//    assessment_ID: {
+//        type: String,
+//        required: '{PATH} is required'},
+//    question_use: {
+//        type: Boolean,
+//        default: true},
+//    question_order: {
+//        type: Number,
+//        required: '{PATH} is required'},
+//    qid: String,  //combination of ??? (question number column)
+//    question_label: String   //labeling schema for questionaire (Question Number (Continuous) column)
+//    precept: [Number] ///from precept column
+//    component: {
+//        type: String,
+//        required: '{PATH} is required'}, ///from Governance Component column
+//    component_text: {
+//        type: String,
+//        required: '{PATH} is required'}, ///from Governance Component column
+//    indicator: String,  ///from Indicator column
+//    dejure: Boolean, ///from "De Jure or De Facto" true=dejure
+//    question_text : String, ///from question column
+//    question_criteria: [{
+//        name: String,
+//        order: Number,
+//        criteria: String
+//    }],  ///from Criterion columns and used to be called question_choices
+//    question_dependancies: String, //from question dependancies column points to question label
+//    question_guidance_text: String, //from Guidance Notes column
+//    mapping_2013: String, ///from Mapping: RGI 2013 column
+//    mapping_external: String, ///Mapping: External
+//    comments: [commentSchema],
+//    modified: [modificationSchema],
+//});

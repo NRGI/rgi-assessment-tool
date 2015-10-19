@@ -13,7 +13,7 @@
 
                 .row.bottom-padding-med
                     h3: em.bottom-padding-med.col-md-11 Question {{answer.question_order}}. {{answer.question_text}}
-                    i.glyphicon.glyphicon-question-sign(
+                    span.text-center: i.glyphicon.show.glyphicon-question-sign(
                     ng-if="current_user.role!=='supervisor'"
                     popover-template="dynamicPopover.templateUrl"
                     popover-title="Guidance note"
