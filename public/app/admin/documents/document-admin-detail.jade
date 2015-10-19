@@ -1,13 +1,15 @@
-.container.top-padding-med
-    .well.left-padding-lg
-        div.left-padding-lg.right-padding-lg.top-padding-med
-            legend.h3 {{document.title | ucfirst}}
-            div.left-padding-lg.right-padding-lg.bottom-padding-lg
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header {{document.title | ucfirst}}
+            div.left-padding-lg.right-padding-lg
+                .row-fluid
                     button.btn.btn-warning(ng-click="editDocumentDialog()") Edit metadata
                     | &nbsp;
                     a(href="{{document.s3_url}}" target="_blank").btn.btn-default Link to document
-                .row.left-padding-lg.right-padding-lg.top-padding-lg
+                    | &nbsp;
+                    button.btn.btn-danger.popover-dialog(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Delete
+                .row-fluid.top-padding-med
                     table.table.table-hover.table-striped.table-condensed
                         thead
                             tr
@@ -25,10 +27,11 @@
                                 td
                                     .row(ng-repeat="user in user_list").left-padding-lg
                                         a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                                        text  - {{user.role}}
+                                        |  - {{user.role}}
 
-                h3.top-padding-lg Metadata
-                .row.left-padding-lg.right-padding-lg
+                div.left-padding-lg.right-padding-lg.top-padding-med
+                h3 Information
+                .row-fluid.right-padding-med.left-padding-med
                     table.table.table-condensed
                         tbody
                             tr
