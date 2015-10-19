@@ -3,7 +3,6 @@
 angular
     .module('app')
     .directive('draggable', function ($document) {
-        "use strict";
         return function (scope, element) {
             var startX = 0,
                 startY = 0,

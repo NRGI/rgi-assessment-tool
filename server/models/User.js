@@ -1,19 +1,20 @@
 'use strict';
 
 var mongoose    = require('mongoose'),
+    Schema      = mongoose.Schema,
     validate    = require('mongoose-validate'),
     encrypt     = require('../utilities/encryption');
 
-var ObjectId    = mongoose.Schema.Types.ObjectId;
+var ObjectId    = Schema.Types.ObjectId;
 
-var modificationSchema = new mongoose.Schema({
+var modificationSchema = new Schema({
     modifiedBy: String,
     modifiedDate: {
         type:  Date,
         default: Date.now}
 });
 
-var userSchema = mongoose.Schema({
+var userSchema = new Schema({
     firstName: {
         type: String,
         required: '{PATH} is required!'

@@ -12,7 +12,7 @@ angular
     ) {
         var root_url, answer_length,
             answer_split = $routeParams.answer_ID.split('-'),
-            assessment_ID = answer_split.slice(0, answer_split.length - 1).join('-');;
+            assessment_ID = answer_split.slice(0, answer_split.length - 1).join('-');
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_number = Number(answer_split[3]);
@@ -30,7 +30,7 @@ angular
             $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answer_number + 1, 3)));
         };
         $scope.fastForward = function () {
-            $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answers_length, 3)))
+            $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answers_length, 3)));
         };
         $scope.moveBackward = function () {
             $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answer_number - 1, 3)));
