@@ -12,7 +12,7 @@ angular
             var user_deletion = $scope.$parent.user;
 
             if (user_deletion.assessments.length > 0) {
-                rgiNotifier.error('You cannot delete a user with open assessments!');
+                rgiNotifier.error('You cannot delete a user with an assigned assessment!');
             } else if (user_deletion.role === 'supervisor') {
                 rgiNotifier.error('You cannot delete a supervisor!');
             } else {
