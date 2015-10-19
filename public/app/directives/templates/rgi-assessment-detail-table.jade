@@ -14,17 +14,17 @@ table.table.table-hover.table-striped.table-condensed
             td.col-md-1 {{answer.component_text}}
             td.col-md-5 {{answer.question_text}})
             td.col-md-2.text-center(ng-if="current_user.role!==supervisor")
-                .text-success.glyphicon.glyphicon-check(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-                .text-success.glyphicon.glyphicon-check(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
+                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
+                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
-                .text-primary.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
+                .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                .text(ng-if="answer.status==='unresolved' || answer.status==='assigned'")
             td.col-md-2.text-center(ng-if="current_user.role===supervisor")
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                .text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                 .text(ng-if="question.status!=='submitted' && question.status!=='resubmitted' && question.status!=='saved' && question.status!=='approved' && question.status!=='flagged'")  {{question.status | ucfirst}}
             td.col-md-1.text-center {{answer.researcher_score}}
