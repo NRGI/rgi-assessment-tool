@@ -4,24 +4,31 @@
 describe('rgiDeleteQuestionDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $timeout, ngDialog, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc,
-        fileUploaderGetStub, fileUploaderGetSpy,
-        ANSWER = 'ANSWER', now;
+    var $scope, $route, $timeout, ngDialog,
+        rgiAnswerMethodSrvc, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc, rgiUrlCheckSrvc,
+        fileUploaderGetStub, fileUploaderGetSpy, ANSWER = 'ANSWER', now;
 
     beforeEach(inject(
         function (
             $rootScope,
             $controller,
+            _$route_,
             _$timeout_,
             _ngDialog_,
+            _rgiAnswerMethodSrvc_,
             _rgiNotifier_,
             _rgiFileUploaderSrvc_,
-            _rgiRequestSubmitterSrvc_) {
+            _rgiRequestSubmitterSrvc_,
+            _rgiUrlCheckSrvc_
+        ) {
             $timeout = _$timeout_;
+            $route = _$route_;
             ngDialog = _ngDialog_;
+            rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
             rgiRequestSubmitterSrvc = _rgiRequestSubmitterSrvc_;
+            rgiUrlCheckSrvc = _rgiUrlCheckSrvc_;
 
             $scope = $rootScope.$new();
             $scope.$parent.answer = ANSWER;
@@ -146,8 +153,11 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
     describe('#closeDialog', function () {
         it('closes the dialog', function () {
-            var ngDialogMock = sinon.mock(rgiNotifier);
+            var ngDialogMock = sinon.mock(ngDialog);
+            ngDialogMock.expects('close');
+
             $scope.closeDialog();
+
             ngDialogMock.verify();
             ngDialogMock.restore();
         });
@@ -155,6 +165,158 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         it('clears reference selection', function () {
             $scope.closeDialog();
             $scope.$parent.ref_selection.should.be.equal('');
+        });
+    });
+
+    describe('#webRefSubmit', function () {
+        describe('EMPTY MANDATORY FIELD', function() {
+            var notifierMock;
+
+            beforeEach(function() {
+                notifierMock = sinon.mock(rgiNotifier);
+                notifierMock.expects('error').withArgs('You must enter a title and a url!');
+            });
+
+            it('shows an error message, if URL is not set', function () {
+                $scope.answer_update = {web_ref_url: '', web_ref_title: 'not empty'};
+                $scope.webRefSubmit();
+            });
+
+            it('shows an error message, if title is not set', function () {
+                $scope.answer_update = {web_ref_url: 'not empty', web_ref_title: ''};
+                $scope.webRefSubmit();
+            });
+
+            afterEach(function() {
+                notifierMock.verify();
+                notifierMock.restore();
+            });
+        });
+
+        describe('REQUEST SENT', function() {
+            var urlCheckIsRealStub, urlCheckIsRealSpy, notifierMock, url, user;
+
+            beforeEach(function() {
+                notifierMock = sinon.mock(rgiNotifier);
+            });
+
+            var initializeCheckUrlStub = function(callback) {
+                urlCheckIsRealSpy = sinon.spy(callback);
+                urlCheckIsRealStub = sinon.stub(rgiUrlCheckSrvc, 'isReal', urlCheckIsRealSpy);
+            };
+
+            var setAnswerData = function(currentUrl) {
+                url = currentUrl;
+                $scope.answer_update = {
+                    references: {web: []},
+                    web_ref_url: url,
+                    web_ref_title: 'title'
+                };
+            };
+
+            var setCurrentUser = function(currentUser) {
+                user = currentUser;
+                $scope.$parent.current_user = user;
+            };
+
+            it('shows an error message on failure', function() {
+                initializeCheckUrlStub(function() {
+                    return {
+                        then: function(callbackSuccess, callbackFailure) {
+                            callbackFailure();
+                        }
+                    };
+                });
+
+                notifierMock.expects('error').withArgs('Website does not exists');
+                setCurrentUser({});
+                setAnswerData('http://google.com');
+                $scope.webRefSubmit();
+            });
+
+            describe('URL exists', function() {
+                var answerMethodUpdateStub, answerMethodUpdateSpy,
+                    initializeUpdateAnswerStub = function(callback) {
+                        answerMethodUpdateSpy = sinon.spy(callback);
+                        answerMethodUpdateStub = sinon.stub(rgiAnswerMethodSrvc, 'updateAnswer', answerMethodUpdateSpy);
+                    };
+
+                beforeEach(function() {
+                    initializeCheckUrlStub(function() {
+                        return {
+                            then: function(callbackSuccess) {
+                                callbackSuccess();
+                            }
+                        };
+                    });
+
+                    setCurrentUser({});
+                });
+
+                describe('SUCCESSFUL UPDATE', function() {
+                    var closeThisDialogBackUp, $routeMock;
+
+                    beforeEach(function() {
+                        initializeUpdateAnswerStub(function() {
+                            return {
+                                then: function(callbackSuccess) {
+                                    callbackSuccess();
+                                }
+                            };
+                        });
+
+                        $routeMock = sinon.mock($route);
+                        $routeMock.expects('reload');
+                        notifierMock.expects('notify').withArgs('Reference added!');
+
+                        closeThisDialogBackUp = $scope.closeThisDialog;
+                        $scope.closeThisDialog = sinon.spy();
+                    });
+
+                    it('does something', function() {
+                        setAnswerData('http://google.com');
+                        $scope.webRefSubmit();
+                    });
+
+                    afterEach(function() {
+                        $routeMock.verify();
+                        $routeMock.restore();
+
+                        $scope.closeThisDialog.called.should.be.equal(true);
+                        $scope.closeThisDialog = closeThisDialogBackUp;
+                    });
+                });
+
+                it('shows an error message on update failure', function() {
+                    var UPDATE_FAILURE_REASON = 'UPDATE FAILURE REASON';
+
+                    initializeUpdateAnswerStub(function() {
+                        return {
+                            then: function(callbackSuccess, callbackFailure) {
+                                callbackFailure(UPDATE_FAILURE_REASON);
+                            }
+                        };
+                    });
+
+                    notifierMock.expects('error').withArgs(UPDATE_FAILURE_REASON);
+                    setAnswerData('http://google.com');
+
+                    $scope.webRefSubmit();
+                });
+
+                afterEach(function() {
+                    notifierMock.verify();
+                    notifierMock.restore();
+                    answerMethodUpdateStub.restore();
+                });
+            });
+
+            afterEach(function() {
+                urlCheckIsRealSpy.withArgs(url).called.should.be.equal(true);
+                notifierMock.verify();
+                notifierMock.restore();
+                urlCheckIsRealStub.restore();
+            });
         });
     });
 

@@ -8,7 +8,8 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     rgiAnswerMethodSrvc,
     rgiFileUploaderSrvc,
     rgiNotifier,
-    rgiRequestSubmitterSrvc
+    rgiRequestSubmitterSrvc,
+    rgiUrlCheckSrvc
 ) {
     $scope.fileUploading = false;
     $scope.answer_update = $scope.$parent.answer;
@@ -18,26 +19,6 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     //    {text: 'Add Webpage', value: 'webpage'},
     //    {text: 'Add Interview', value: 'interview'}
     //];
-
-    function isURLReal(fullyQualifiedURL) {
-        var URL = encodeURIComponent(fullyQualifiedURL),
-            dfd = $.Deferred(),
-            checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
-
-        checkURLPromise
-            .done(function(res) {
-                // results should be null if the page 404s or the domain doesn't work
-                if (res.query.results) {
-                    dfd.resolve(true);
-                } else {
-                    dfd.reject(false);
-                }
-            })
-            .fail(function () {
-                dfd.reject('failed');
-            });
-        return dfd.promise();
-    }
 
     $scope.fileUrl = '';
 
@@ -118,9 +99,7 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     };
 
     $scope.webRefSubmit = function () {
-        var new_answer_data = $scope.answer_update,
-            current_user = $scope.$parent.current_user,
-            url, access_date;
+        var new_answer_data = $scope.answer_update, current_user = $scope.$parent.current_user, url, access_date;
 
         if(!new_answer_data.web_ref_url || !new_answer_data.web_ref_title) {
             rgiNotifier.error('You must enter a title and a url!');
@@ -130,41 +109,43 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
             } else {
                 url = 'http://' + new_answer_data.web_ref_url;
             }
+
             if(!new_answer_data.web_ref_access_date) {
                 access_date = $scope.date_default.toISOString();
             } else {
                 access_date = new Date(new_answer_data.web_ref_access_date).toISOString();
             }
-            isURLReal(url)
-                .fail(function () {
-                    rgiNotifier.error('Website does not exists');
-                })
-                //TODO Take a snapshot of url and add as a document ref
-                .done(function () {
-                    var new_ref_data = {
-                        title: new_answer_data.web_ref_title,
-                        URL: url,
-                        access_date: access_date,
-                        comment: {
-                            date: new Date().toISOString(),
-                            author: current_user._id,
-                            author_name: current_user.firstName + ' ' + current_user.lastName,
-                            role: current_user.role
-                        }
-                    };
-                    if ($scope.answer_update.web_ref_comment !== undefined) {
-                        new_ref_data.comment.content = $scope.answer_update.web_ref_comment;
-                    }
-                    new_answer_data.references.web.push(new_ref_data);
 
-                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                        $scope.closeThisDialog();
-                        rgiNotifier.notify('Reference added!');
-                        $route.reload();
-                    }, function (reason) {
-                        rgiNotifier.error(reason);
-                    });
+            rgiUrlCheckSrvc.isReal(url).then(function () {
+                var new_ref_data = {
+                    title: new_answer_data.web_ref_title,
+                    URL: url,
+                    access_date: access_date,
+                    comment: {
+                        date: new Date().toISOString(),
+                        author: current_user._id,
+                        author_name: current_user.firstName + ' ' + current_user.lastName,
+                        role: current_user.role
+                    }
+                };
+
+                if ($scope.answer_update.web_ref_comment !== undefined) {
+                    new_ref_data.comment.content = $scope.answer_update.web_ref_comment;
+                }
+
+                new_answer_data.references.web.push(new_ref_data);
+
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+                    $scope.closeThisDialog();
+                    rgiNotifier.notify('Reference added!');
+                    $route.reload();
+                }, function (reason) {
+                    rgiNotifier.error(reason);
                 });
+
+            }, function () {
+                rgiNotifier.error('Website does not exists');
+            });
         }
     };
 
