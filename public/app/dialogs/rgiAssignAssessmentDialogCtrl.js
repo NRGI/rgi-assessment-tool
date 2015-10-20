@@ -62,7 +62,6 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                 new_answer_set[i].year = el.year;
                 new_answer_set[i].version = el.version;
                 new_answer_set[i].researcher_ID = new_researcher_data._id;
-                new_answer_set[i].edit_control = new_researcher_data._id;
                 new_answer_set[i].question_order = el.question_order;
                 new_answer_set[i].component = el.component;
                 new_answer_set[i].component_text = el.component_text;
@@ -73,7 +72,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
             }
         });
 
-        //TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
+        ////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
         if (new_reviewer_data) {
             rgiUserMethodSrvc.updateUser(new_researcher_data)
                 .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
@@ -83,7 +82,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                     rgiNotifier.notify('Assessment created and assigned!');
                     $scope.closeThisDialog();
                     $route.reload();
-                    $location.path('admin/assessment-admin');
+                    $location.path('/');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
@@ -95,7 +94,7 @@ angular.module('app').controller('rgiAssignAssessmentDialogCtrl', function ($sco
                     rgiNotifier.notify('Assessment created and assigned!');
                     $scope.closeThisDialog();
                     $route.reload();
-                    $location.path('admin/assessment-admin');
+                    $location.path('/');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });

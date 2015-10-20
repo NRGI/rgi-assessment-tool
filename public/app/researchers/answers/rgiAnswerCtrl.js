@@ -65,7 +65,7 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
         }
     };
 
-    rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
+    rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID}, function (data) {
         $scope.answer = data;
         $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
         $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});

@@ -77,6 +77,7 @@ exports.createAnswers = function (req, res, next) {
 
                 if (questions[i]._id == new_answers[j].question_ID) {
                     new_answers[j].question_text = questions[i].question_text;
+                    console.log(new_answers[j]);
                     Answer.create(new_answers[j], function (err, answer) {
                         if (err) {
                             if (err.toString().indexOf('E11000') > -1) {
