@@ -97,11 +97,9 @@ var answerSchema = mongoose.Schema({
         index: true}, // generated from assessment_ID value of Assessment Model (ISO3 country)
     researcher_ID: {
         type: ObjectId,
-        required: '{PATH} is required',
         index: true}, // generated from _id value of User Model
     reviewer_ID: {
         type: ObjectId,
-        required: '{PATH} is required',
         index: true}, // generated from _id value of User Model
     year: String,
     version: String,  // pilot or main
