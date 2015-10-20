@@ -141,6 +141,7 @@ angular
         };
 
         $scope.answerUnresolved = function() {
+            rgiNotifier.error('create function');
 
         };
         //// make final choice
