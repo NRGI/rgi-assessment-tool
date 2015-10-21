@@ -194,7 +194,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         });
 
         describe('REQUEST SENT', function() {
-            var urlCheckIsRealStub, urlCheckIsRealSpy, notifierMock, url, user;
+            var urlCheckIsRealStub, urlCheckIsRealSpy, notifierMock, updatedAnswer = {}, user;
 
             beforeEach(function() {
                 notifierMock = sinon.mock(rgiNotifier);
@@ -205,13 +205,11 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 urlCheckIsRealStub = sinon.stub(rgiUrlCheckSrvc, 'isReal', urlCheckIsRealSpy);
             };
 
-            var setAnswerData = function(currentUrl) {
-                url = currentUrl;
-                $scope.answer_update = {
-                    references: {web: []},
-                    web_ref_url: url,
-                    web_ref_title: 'title'
-                };
+            var setAnswerData = function(answer) {
+                updatedAnswer = answer;
+                $scope.answer_update = answer;
+                $scope.answer_update.references = {web: []};
+                $scope.answer_update.web_ref_title = 'title';
             };
 
             var setCurrentUser = function(currentUser) {
@@ -230,7 +228,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
                 notifierMock.expects('error').withArgs('Website does not exists');
                 setCurrentUser({});
-                setAnswerData('http://google.com');
+                setAnswerData({web_ref_url: 'http://google.com'});
                 $scope.webRefSubmit();
             });
 
@@ -273,9 +271,34 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                         $scope.closeThisDialog = sinon.spy();
                     });
 
-                    it('does something', function() {
-                        setAnswerData('http://google.com');
+                    it('keeps the URL unchanged, if the URL begins with HTTP', function() {
+                        setAnswerData({web_ref_url: 'http://google.com'});
                         $scope.webRefSubmit();
+                    });
+
+                    it('keeps the URL unchanged, if the URL begins with HTTPS', function() {
+                        setAnswerData({web_ref_url: 'https://google.com'});
+                        $scope.webRefSubmit();
+                    });
+
+                    it('sets HTTP protocol by default', function() {
+                        setAnswerData({web_ref_url: 'google.com'});
+                        updatedAnswer.web_ref_url = 'http://google.com';
+                        $scope.webRefSubmit();
+                    });
+
+                    it('sets access date, if the date is defined', function() {
+                        var date = new Date();
+                        setAnswerData({web_ref_url: 'http://google.com', web_ref_access_date: date});
+                        $scope.webRefSubmit();
+                        answerMethodUpdateSpy.args[0][0].references.web[0].access_date.should.be.equal(date.toISOString());
+                    });
+
+                    it('sets default access date, if the access date is not defined', function() {
+                        $scope.date_default = new Date();
+                        setAnswerData({web_ref_url: 'http://google.com'});
+                        $scope.webRefSubmit();
+                        answerMethodUpdateSpy.args[0][0].references.web[0].access_date.should.be.equal($scope.date_default.toISOString());
                     });
 
                     afterEach(function() {
@@ -299,7 +322,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                     });
 
                     notifierMock.expects('error').withArgs(UPDATE_FAILURE_REASON);
-                    setAnswerData('http://google.com');
+                    setAnswerData({web_ref_url: 'http://google.com'});
 
                     $scope.webRefSubmit();
                 });
@@ -312,7 +335,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
             });
 
             afterEach(function() {
-                urlCheckIsRealSpy.withArgs(url).called.should.be.equal(true);
+                urlCheckIsRealSpy.withArgs(updatedAnswer.web_ref_url).called.should.be.equal(true);
                 notifierMock.verify();
                 notifierMock.restore();
                 urlCheckIsRealStub.restore();
