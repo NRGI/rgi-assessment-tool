@@ -194,7 +194,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         });
 
         describe('REQUEST SENT', function() {
-            var urlCheckIsRealStub, urlCheckIsRealSpy, notifierMock, updatedAnswer = {}, user;
+            var urlCheckIsRealStub, urlCheckIsRealSpy, notifierMock, updatedAnswer = {}, TITLE = 'title', currentUser;
 
             beforeEach(function() {
                 notifierMock = sinon.mock(rgiNotifier);
@@ -209,12 +209,12 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 updatedAnswer = answer;
                 $scope.answer_update = answer;
                 $scope.answer_update.references = {web: []};
-                $scope.answer_update.web_ref_title = 'title';
+                $scope.answer_update.web_ref_title = TITLE;
             };
 
-            var setCurrentUser = function(currentUser) {
-                user = currentUser;
-                $scope.$parent.current_user = user;
+            var setCurrentUser = function(user) {
+                currentUser = user;
+                $scope.$parent.current_user = currentUser;
             };
 
             it('shows an error message on failure', function() {
@@ -248,7 +248,12 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                         };
                     });
 
-                    setCurrentUser({});
+                    setCurrentUser({
+                        _id: 'ID',
+                        firstName: 'First Name',
+                        lastName: 'Last Name',
+                        role: 'ROLE'
+                    });
                 });
 
                 describe('SUCCESSFUL UPDATE', function() {
@@ -271,34 +276,96 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                         $scope.closeThisDialog = sinon.spy();
                     });
 
-                    it('keeps the URL unchanged, if the URL begins with HTTP', function() {
-                        setAnswerData({web_ref_url: 'http://google.com'});
-                        $scope.webRefSubmit();
+                    describe('CHECK URL CORRECTNESS', function() {
+                        it('keeps the URL unchanged, if the URL begins with HTTP', function() {
+                            setAnswerData({web_ref_url: 'http://google.com'});
+                        });
+
+                        it('keeps the URL unchanged, if the URL begins with HTTPS', function() {
+                            setAnswerData({web_ref_url: 'https://google.com'});
+                        });
+
+                        it('sets HTTP protocol by default', function() {
+                            setAnswerData({web_ref_url: 'google.com'});
+                            updatedAnswer.web_ref_url = 'http://google.com';
+                        });
+
+                        afterEach(function() {
+                            $scope.webRefSubmit();
+                        });
                     });
 
-                    it('keeps the URL unchanged, if the URL begins with HTTPS', function() {
-                        setAnswerData({web_ref_url: 'https://google.com'});
-                        $scope.webRefSubmit();
+                    describe('CHECK SAVED URL', function() {
+                        var setCheckedUrls = function(rawUrl, expectedUrl) {
+                            setAnswerData({web_ref_url: rawUrl});
+                            updatedAnswer.web_ref_url = expectedUrl;
+                        };
+
+                        it('saves the URL unchanged, if the URL begins with HTTP', function() {
+                            setCheckedUrls('http://google.com', 'http://google.com');
+                        });
+
+                        it('saves the URL unchanged, if the URL begins with HTTPS', function() {
+                            setCheckedUrls('https://google.com', 'https://google.com');
+                        });
+
+                        it('saves the URL with HTTP protocol by default', function() {
+                            setCheckedUrls('google.com', 'http://google.com');
+                        });
+
+                        afterEach(function() {
+                            $scope.webRefSubmit();
+                            answerMethodUpdateSpy.args[0][0].references.web[0].URL.should.be.equal(updatedAnswer.web_ref_url);
+                        });
                     });
 
-                    it('sets HTTP protocol by default', function() {
-                        setAnswerData({web_ref_url: 'google.com'});
-                        updatedAnswer.web_ref_url = 'http://google.com';
-                        $scope.webRefSubmit();
-                    });
-
-                    it('sets access date, if the date is defined', function() {
+                    it('saves access date, if the date is defined', function() {
                         var date = new Date();
                         setAnswerData({web_ref_url: 'http://google.com', web_ref_access_date: date});
                         $scope.webRefSubmit();
                         answerMethodUpdateSpy.args[0][0].references.web[0].access_date.should.be.equal(date.toISOString());
                     });
 
-                    it('sets default access date, if the access date is not defined', function() {
+                    it('saves default access date, if the access date is not defined', function() {
                         $scope.date_default = new Date();
                         setAnswerData({web_ref_url: 'http://google.com'});
                         $scope.webRefSubmit();
                         answerMethodUpdateSpy.args[0][0].references.web[0].access_date.should.be.equal($scope.date_default.toISOString());
+                    });
+
+                    it('saves the answer title', function() {
+                        setAnswerData({web_ref_url: 'https://google.com'});
+                        $scope.webRefSubmit();
+                        answerMethodUpdateSpy.args[0][0].references.web[0].title.should.be.equal(TITLE);
+                    });
+
+                    it('saves the author attributes', function() {
+                        setAnswerData({web_ref_url: 'https://google.com'});
+                        $scope.webRefSubmit();
+                        answerMethodUpdateSpy.args[0][0].references.web[0].comment.author.should.be.equal(currentUser._id);
+                        answerMethodUpdateSpy.args[0][0].references.web[0].comment.role.should.be.equal(currentUser.role);
+                        answerMethodUpdateSpy.args[0][0].references.web[0].comment.author_name.should.be
+                            .equal(currentUser.firstName + ' ' + currentUser.lastName);
+                    });
+
+                    it('saves the comment content, if the comment is defined', function() {
+                        var COMMENT = 'COMMENT';
+                        setAnswerData({web_ref_url: 'https://google.com', web_ref_comment: COMMENT});
+                        $scope.webRefSubmit();
+                        answerMethodUpdateSpy.args[0][0].references.web[0].comment.content.should.be.equal(COMMENT);
+                    });
+
+                    it('leaves the comment content unset, if the comment is not defined', function() {
+                        setAnswerData({web_ref_url: 'https://google.com'});
+                        $scope.webRefSubmit();
+                        should.not.exist(answerMethodUpdateSpy.args[0][0].references.web[0].comment.content);
+                    });
+
+                    it('saves the comment date & time', function() {
+                        setAnswerData({web_ref_url: 'https://google.com'});
+                        $scope.webRefSubmit();
+                        var actualTimestamp = Date.parse(answerMethodUpdateSpy.args[0][0].references.web[0].comment.date);
+                        compareDates(new Date(), new Date(actualTimestamp)).should.be.equal(true);
                     });
 
                     afterEach(function() {
