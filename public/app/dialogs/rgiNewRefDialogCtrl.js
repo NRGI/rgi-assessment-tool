@@ -104,17 +104,10 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
         if(!new_answer_data.web_ref_url || !new_answer_data.web_ref_title) {
             rgiNotifier.error('You must enter a title and a url!');
         } else {
-            if (new_answer_data.web_ref_url.split('://')[0] === 'http' || new_answer_data.web_ref_url.split('://')[0] === 'https') {
-                url = new_answer_data.web_ref_url;
-            } else {
-                url = 'http://' + new_answer_data.web_ref_url;
-            }
-
-            if(!new_answer_data.web_ref_access_date) {
-                access_date = $scope.date_default.toISOString();
-            } else {
-                access_date = new Date(new_answer_data.web_ref_access_date).toISOString();
-            }
+            url = (['http', 'https'].indexOf(new_answer_data.web_ref_url.split('://')[0]) === -1 ? 'http://' : '') +
+                new_answer_data.web_ref_url;
+            access_date = (new_answer_data.web_ref_access_date ? new Date(new_answer_data.web_ref_access_date)
+                : $scope.date_default).toISOString();
 
             rgiUrlCheckSrvc.isReal(url).then(function () {
                 var new_ref_data = {
