@@ -1,6 +1,4 @@
 'use strict';
-/*jslint unparam: true */
-
 angular.module('app', [
     'angular.filter',
     'angularFileUpload',

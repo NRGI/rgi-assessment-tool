@@ -1,5 +1,5 @@
 'use strict';
-
+/*jshint -W079 */
 var describe, beforeEach, it, inject, expect;
 
 describe('rgiAnswerSrvc', function () {

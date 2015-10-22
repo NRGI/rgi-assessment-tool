@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiEditDocumentDialogCtrl', function (
@@ -8,7 +10,6 @@ angular
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc
     ) {
-        'use strict';
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [

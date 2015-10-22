@@ -8,7 +8,7 @@ angular
         $route,
         $timeout,
         $http,
-        //ngDialog,
+        ngDialog,
         rgiDialogFactory,
         rgiNotifier,
         rgiRequestSubmitterSrvc,
@@ -17,12 +17,13 @@ angular
         rgiFileUploaderSrvc,
         rgiUrlCheckSrvc,
         rgiAnswerMethodSrvc,
+        rgiAssessmentSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc
     ) {
-        ///////////////
-        //INTERVIEWEE
-        ///////////////
+        /////////////
+        INTERVIEWEE
+        /////////////
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
             {text: 'CSO', value: 'cso'},
@@ -68,7 +69,6 @@ angular
                 $scope.interviewee_list.push(interviewee_add);
             });
         });
-
         $scope.newInterviewee = function () {
             $scope.new_interviewee = {};
             $scope.sel_int = '';
@@ -90,7 +90,6 @@ angular
                 contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
 
                 if ($scope.selected_interviewee) {    //EXISTING INTERVIEWEE
-
                     selected_interviewee = $scope.selected_interviewee.originalObject.id;
                     new_ref_data = {
                         interviewee_ID: selected_interviewee,
@@ -110,7 +109,7 @@ angular
                             } else if (interviewee[el+'s'] === undefined) {
                                 interviewee[el+'s'] = [new_answer_data[el+'_ID']];
                             }
-                        })
+                        });
                         if (interviewee.users !== undefined && interviewee.users.indexOf(current_user._id) < 0) {
                             interviewee.users.push(current_user._id);
                         } else if (interviewee.users === undefined) {
@@ -197,7 +196,7 @@ angular
                 return this.queue.length < 1;
             }
         });
-        //TODO handle doc and txt documents
+        ////TODO handle doc and txt documents
         uploader.onCompleteItem = function (fileItem, response, status, headers) {
             $scope.uploader.queue = [];
             if (status === 400) {

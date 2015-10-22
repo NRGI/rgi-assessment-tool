@@ -50,6 +50,27 @@ var citationSchema = new Schema({
     comment: htmlSettings,
     location: String
 });
+//
+//var humanSchema = new Schema({
+//    first_name: String,
+//    last_name: String,
+//    phone: String,
+//    email: String,
+//    contact_date: {
+//        type: Date,
+//        default: Date.now},
+//    comment: {
+//        date: {
+//            type: Date,
+//            default: Date.now},
+//        content: htmlSettings,
+//        author: ObjectId, // Pull from curretn user _id value
+//        author_name: String,
+//        role: String,
+//        addressed: Boolean
+//    }
+//});
+
 
 var interviewSchema = new Schema({
     interviewee_ID: ObjectId,

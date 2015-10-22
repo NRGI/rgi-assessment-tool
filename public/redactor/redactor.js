@@ -2399,8 +2399,8 @@
 					html = html.replace(/<b(.*?)id="docs-internal-guid(.*?)">([\w\W]*?)<\/b>/gi, "$3");
 
 					// google docs styles
-					html = html.replace(/<span[^>]*(font-style: italic; font-weight: bold|font-weight: bold; font-style: italic)[^>]*>/gi, '<span style="font-weight: bold;"><span style="font-style: italic;">');
-					html = html.replace(/<span[^>]*font-style: italic[^>]*>/gi, '<span style="font-style: italic;">');
+			 		html = html.replace(/<span[^>]*(font-style: italic; font-weight: bold|font-weight: bold; font-style: italic)[^>]*>/gi, '<span style="font-weight: bold;"><span style="font-style: italic;">');
+			 		html = html.replace(/<span[^>]*font-style: italic[^>]*>/gi, '<span style="font-style: italic;">');
 					html = html.replace(/<span[^>]*font-weight: bold[^>]*>/gi, '<span style="font-weight: bold;">');
 					html = html.replace(/<span[^>]*text-decoration: underline[^>]*>/gi, '<span style="text-decoration: underline;">');
 
@@ -5779,10 +5779,10 @@
 					this.buffer.set();
 
 					var blocks = this.selection.getBlocks();
-					if (blocks[0] !== false && this.line.isExceptLastOrFirst(blocks))
-					{
-						if (!this.utils.browser('msie')) this.$editor.focus();
-						return;
+ 					if (blocks[0] !== false && this.line.isExceptLastOrFirst(blocks))
+	 				{
+	 					if (!this.utils.browser('msie')) this.$editor.focus();
+	 					return;
 					}
 
 					if (this.utils.browser('msie'))
@@ -6547,7 +6547,7 @@
 						image: String()
 						+ '<section id="redactor-modal-image-insert">'
 							+ '<div id="redactor-modal-image-droparea"></div>'
-						+ '</section>',
+ 						+ '</section>',
 
 						file: String()
 						+ '<section id="redactor-modal-file-insert">'
@@ -8420,10 +8420,10 @@
 						text = text.replace(/&nbsp;/gi, '');
 						text = text.replace(/\s/g, '');
 
-				if (text === '' && $el.children().length === 0)
-				{
-					$el.remove();
-				}
+		    	    	if (text === '' && $el.children().length === 0)
+		    	    	{
+			    	    	$el.remove();
+		    	    	}
 					});
 				},
 				removeParagraphsInLists: function()

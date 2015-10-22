@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiFlagAnswerDialogCtrl', function (
@@ -8,7 +10,6 @@ angular
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
-        'use strict';
         $scope.saveFlag = function () {
             var new_answer_data = $scope.$parent.answer,
                 current_user = $scope.$parent.identity.currentUser,

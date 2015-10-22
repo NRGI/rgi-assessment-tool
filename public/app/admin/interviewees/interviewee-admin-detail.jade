@@ -24,7 +24,7 @@
                                 td(ng-if="interviewee.answers.length > 0")
                                     .row(ng-repeat="answer in interviewee.answers").left-padding-lg
                                         a(href="/admin/assessments-admin/answer/{{answer}}") {{answer}}
-                                td(ng-if="user_list > 0")
+                                td(ng-if="user_list.length > 0")
                                     .row(ng-repeat="user in user_list").left-padding-lg
                                         a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
                                         text  - {{user.role}}

@@ -1,3 +1,4 @@
+'use strict';
 angular
     .module('app')
     .controller('rgiNewQuestionDialogCtrl', function (
@@ -5,7 +6,6 @@ angular
         ngDialog,
         rgiNotifier
     ) {
-        'use strict';
         $scope.new_question = {
             question_order: $scope.questions.length + 1,
             question_text: "Enter text",
