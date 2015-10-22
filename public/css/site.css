@@ -26,8 +26,14 @@ footer p {
   margin-left: 10px;
 }
 .page-container {
-  padding-top: 50px;
+  padding-top: 20px;
   min-width: 500px;
+}
+.page-well {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 70px;
 }
 .filter-form {
   padding-top: 20px;

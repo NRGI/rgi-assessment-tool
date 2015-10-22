@@ -1,7 +1,7 @@
-.container.top-padding-med
-    .well.left-padding-lg.right-padding-lg
-        div.left-padding-lg.right-padding-lg.top-padding-med
-            legend.h3
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header
                 text(ng-if="current_user.role==='supervisor'") Assessment Status Dashboard
                 text(ng-if="current_user.role!=='supervisor'") Open Assessments
             div.left-padding-lg.right-padding-lg.top-padding-med

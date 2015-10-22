@@ -1,8 +1,8 @@
-.container.top-padding-med
-    .well.left-padding-lg.right-padding-lg
-        div.left-padding-lg.right-padding-lg.top-padding-med
-            img.mapsicon(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
-            legend {{assessment.country}} {{assessment.year}} {{assessment.version | ucfirst}} Assessment
+.container-fluid.page-container
+    .well
+        div.page-well
+            img.mapsicon.left-padding-lg(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
+            legend.h3.page-header {{assessment.country}} {{assessment.year}} {{assessment.version | ucfirst}} Assessment
             .pull-right
                 form.form-inline
                     .form-group

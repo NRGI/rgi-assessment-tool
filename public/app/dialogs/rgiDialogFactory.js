@@ -15,7 +15,7 @@ angular
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assign-assessment-dialog',
                     controller: 'rgiAssignAssessmentDialogCtrl',
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
             },
