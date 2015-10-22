@@ -8,12 +8,12 @@ angular
     ) {
         'use strict';
         return {
-            createUser: function (newUserData) {
-                var newUser = new rgiUserSrvc(newUserData),
+            createUser: function (new_user_data) {
+                var new_user = new rgiUserSrvc(new_user_data),
                     dfd = $q.defer(),
                     error_message;
 
-                newUser.$save().then(function () {
+                new_user.$save().then(function () {
                     dfd.resolve();
                 }, function (response) {
                     error_message = response.data.reason.replace('ValidationError: ', '');
@@ -34,11 +34,12 @@ angular
                 });
                 return dfd.promise;
             },
-            updateUser: function (newUserData) {
+            updateUser: function (new_user_data) {
                 var dfd = $q.defer(),
                 error_message;
+                console.log(new_user_data);
 
-                newUserData.$update().then(function () {
+                new_user_data.$update().then(function () {
                     dfd.resolve();
                 }, function (response) {
                     error_message = response.data.reason.replace('ValidationError: ', '');

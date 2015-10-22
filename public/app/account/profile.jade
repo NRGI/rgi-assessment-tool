@@ -12,7 +12,7 @@
                                 name="first_name"
                                 type="text"
                                 placeholder="First Name"
-                                ng-model="first_name"
+                                ng-model="current_user.firstName"
                                 required)
                             label.col-md-2.control-label(form="last_name") Last Name
                             .col-md-4
@@ -20,7 +20,7 @@
                                 name="last_name"
                                 type="text"
                                 placeholder="Last Name"
-                                ng-model="last_name"
+                                ng-model="current_user.lastName"
                                 required)
                     .row.right-padding-lg
                         .form-group
@@ -30,7 +30,7 @@
                                 name="username"
                                 type="text"
                                 placeholder="Username"
-                                ng-model="username"
+                                ng-model="current_user.username"
                                 readonly)
                             label.col-md-2.control-label(form="email") Email
                             .col-md-4
@@ -38,7 +38,7 @@
                                 name="email"
                                 type="email"
                                 placeholder="Email"
-                                ng-model="email"
+                                ng-model="current_user.email"
                                 required)
                     .row.right-padding-lg
                         .form-group
@@ -54,7 +54,7 @@
                                 name="address"
                                 type="address"
                                 placeholder="Address"
-                                ng-model="address")
+                                ng-model="current_user.address")
                     .row.right-padding-lg
                         .form-group
                             label.col-md-2.control-label(form="password") Repeat Password
