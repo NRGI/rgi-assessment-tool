@@ -98,7 +98,7 @@ exports.updateAnswer = function (req, res) {
     var answer_update = req.body,
         timestamp = new Date().toISOString();
 
-    if (String(req.user._id) !== String(answer_update.researcher_ID) && String(req.user._id) !== String(answer_update.reviewer_ID) && !req.user.hasRole('supervisor')) {
+    if (String(req.user._id) !== String(answer_update.researcher_ID) && !req.user.hasRole('supervisor')) {
         res.sendStatus(404);
         return res.end();
     }
