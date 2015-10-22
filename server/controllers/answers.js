@@ -98,10 +98,10 @@ exports.updateAnswer = function (req, res) {
     var answer_update = req.body,
         timestamp = new Date().toISOString();
 
-    if (String(req.user._id) !== String(answer_update.researcher_ID) && !req.user.hasRole('supervisor')) {
-        res.sendStatus(404);
-        return res.end();
-    }
+    //if (String(req.user._id) !== String(answer_update.researcher_ID) && !req.user.hasRole('supervisor')) {
+    //    res.sendStatus(404);
+    //    return res.end();
+    //}
 
     Answer.findOne({answer_ID: answer_update.answer_ID}, function (err, answer) {
         answer.status = answer_update.status;

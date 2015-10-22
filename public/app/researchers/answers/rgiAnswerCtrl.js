@@ -156,9 +156,10 @@ angular.module('app').controller('rgiAnswerCtrl', function ($scope, $routeParams
 
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
             rgiNotifier.notify('Comment added');
+            //$route.reload();
             $scope.answer.new_comment = undefined;
         }, function (reason) {
-            rgiNotifier.notify(reason);
+            rgiNotifier.error(reason);
         });
     };
     //TODO Generate Dialog based on change and handle upload process via dialogs
