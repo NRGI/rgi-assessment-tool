@@ -221,17 +221,15 @@ angular
                     scope: scope
                 });
             },
-            referenceSelect: function ($scope, value) {
-                var template = 'partials/dialogs/references/new-ref-' + value + '-dialog',
-                    className = 'ngdialog-theme-default dialogwidth800',
-                    scope = $scope;
+            referenceSelect: function ($scope, value){
+                var scope = $scope;
                 scope.value = true;
                 scope.ref_selection = value;
                 ngDialog.open({
-                    template: template,
+                    template: 'partials/dialogs/references/new-ref-dialog',
                     controller: 'rgiNewRefDialogCtrl',
-                    className: className,
-                    scope: $scope
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
                 });
             },
             userEdit: function($scope) {

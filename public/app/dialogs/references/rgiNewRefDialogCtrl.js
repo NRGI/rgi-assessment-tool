@@ -15,14 +15,14 @@ angular
         FileUploader,
         rgiUtilsSrvc,
         rgiFileUploaderSrvc,
-        rgiUrlCheckSrvc,
+        //rgiUrlCheckSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc
     ) {
         /////////////
-        INTERVIEWEE
+        //INTERVIEWEE
         /////////////
         $scope.role_opts = [
             {text: 'Government', value: 'government'},

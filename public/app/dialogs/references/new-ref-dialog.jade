@@ -1,0 +1,198 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 New {{ref_selection | ucfirst}} Reference
+            text(ng-if="ref_selection!=='interview'")  (PDF)
+    div.modal-body
+        //DOCUMENTS UPLOAD
+        div(ng-if="ref_selection!=='interview'")
+            .form-horizontal
+                fieldset
+                    h4(ng-if="ref_selection==='website'") New PDF capture of website
+                    h4(ng-if="ref_selection==='document'") New document
+                    div.bottom-padding-med
+                        div.fileUpload.btn.btn-default
+                            span Select File
+                            input.upload(type="file" nv-file-select uploader="uploader")
+                    div(ng-if="ref_selection==='document'")
+                        h5 OR
+                        .form-group
+                            .col-md-8
+                                input.form-control(
+                                type="text"
+                                placeholder="File URL"
+                                ng-model="fileUrl")
+                            .col-md-4
+                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl()", ng-disabled="fileUploading || (fileUrl.length == 0)")
+                                //input.upload(type="file" nv-file-select uploader="uploader")
+                    div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
+                        table.table
+                            thead
+                                tr
+                                    th
+                                        h4 Name
+                                    th(ng-show="uploader.isHTML5")
+                                        h4 Size
+                                    th(ng-show="uploader.isHTML5")
+                                        h4 Progress
+                                    th
+                                        h4 Status
+                                    th
+                                        h4 Actions
+                            tbody
+                                tr(ng-repeat="item in uploader.queue")
+                                    td
+                                        h6(ng-if="!new_document")
+                                            strong {{ item.file.name }}
+                                        h6
+                                            strong
+                                                a(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name }}
+                                    td(ng-show="uploader.isHTML5" nowrap)
+                                        h6 {{ item.file.size/1024/1024|number:2 }} MB
+                                    td(ng-show="uploader.isHTML5")
+                                        div.progress(style="margin-bottom: 0;")
+                                            div.progress-bar(role="progressbar" ng-style="{ 'width': item.progress + '%' }")
+                                    td.text-center
+                                        span(ng-show="item.isSuccess")
+                                            i.glyphicon.glyphicon-ok
+                                        span(ng-show="item.isCancel")
+                                            i.glyphicon.glyphicon-ban-circle
+                                        span(ng-show="item.isError")
+                                            i.glyphicon.glyphicon-remove
+                                    td(nowrap)
+                                        button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
+                                            span.glyphicon.glyphicon-upload Upload
+                                        | &nbsp;
+                                        button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+                                            span.glyphicon.glyphicon-ban-circle Cancel
+                                        | &nbsp;
+                                        button.btn.btn-danger.btn-xs(ng-click="item.remove()")
+                                            span.glyphicon.glyphicon-trash Remove
+        //INTERVIEWS
+        div(ng-if="ref_selection==='interview'")
+            div.modal-form(id="new_human_form")
+                .form-horizontal
+                    fieldset
+                        .row.bottom-padding-med
+                            div.col-md-9
+                                angucomplete(
+                                id="interviewee_search"
+                                placeholder="Search existing interviewees..."
+                                selectedobject="selected_interviewee"
+                                localdata="interviewee_list"
+                                searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
+                                titlefield="firstName,lastName"
+                                descriptionfield="email"
+                                minlength="1"
+                                inputclass="form-control form-control-small"
+                                matchclass="highlight"
+                                autocomplete="off")
+                            div.col-md-3
+                                button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+
+                        // DATE ACCESSED
+                        .row.bottom-padding-med
+                            div.col-md-12
+                                .pull-left.col-lg-5.input-group
+                                    input.form-control(
+                                    type="text"
+                                    datepicker-popup="{{date_format}}"
+                                    placeholder="Date interviewed..."
+                                    ng-model="answer_update.human_ref_contact_date"
+                                    is-open="status.opened"
+                                    max-date="maxDate"
+                                    datepicker-options="date_options"
+                                    close-text="Close")
+                                    span.input-group-btn
+                                        button.btn.btn-default(ng-click="calendarOpen($event)")
+                                            i.glyphicon.glyphicon-calendar
+                        //INTERVIEWEE COMMENT
+                        .row.bottom-padding-med
+                            div.col-md-12
+                                textarea.form-control(
+                                name="comment"
+                                type="text"
+                                placeholder="Comments..."
+                                ng-model="answer_update.human_ref_comment"
+                                redactor
+                                autocomplete="off")
+
+                        // EXISTING INTERVIEWEE
+                        div(ng-if="selected_interviewee")
+                            h4 Existing Interviewee
+                            .row.left-padding-lg
+                                h5: b Name:
+                                | {{selected_interviewee.title}}
+                                h5: b Email:
+                                | {{selected_interviewee.originalObject.email}}
+
+                        // NEW INTERVIEWEE
+                        div(ng-if="new_interviewee && !selected_interviewee")
+                            h4 New interviewee
+                            .row.form-group
+                                // FIRST NAME
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="firstName"
+                                    type="text"
+                                    placeholder="First name..."
+                                    ng-model="new_interviewee.firstName"
+                                    autocomplete="off")
+                                // LAST NAME
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="lastName"
+                                    type="text"
+                                    placeholder="Last name..."
+                                    ng-model="new_interviewee.lastName"
+                                    autocomplete="off")
+                            .row.form-group.right-padding-med
+                                .pull-left.col-lg-6
+                                    select.form-control(ng-model="new_interviewee.role")
+                                        option(value="" selected disabled) Select role (required)...
+                                        option(ng-repeat="role in role_opts" value="{{role.value}}") {{role.text}}
+                                .pull-left.col-lg-6
+                                    select.form-control(ng-model="new_interviewee.salutation")
+                                        option(value="" selected disabled) Select salutation (required)...
+                                        option(ng-repeat="sal in salutation_opts" value="{{sal}}") {{sal | ucfirst}}
+
+                            .row.form-group
+                                // EMAIL
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="email"
+                                    type="text"
+                                    placeholder="Email..."
+                                    ng-model="new_interviewee.email"
+                                    autocomplete="off")
+                                // PHONE
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="phone"
+                                    type="text"
+                                    placeholder="Phone number..."
+                                    ng-model="new_interviewee.phone"
+                                    autocomplete="off")
+
+                            .row.form-group
+                                // TITLE
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="title"
+                                    type="text"
+                                    placeholder="Title..."
+                                    ng-model="new_interviewee.title"
+                                    autocomplete="off")
+                                // ORGANIZATION
+                                .pull-left.col-lg-6
+                                    input.form-control(
+                                    name="organization"
+                                    type="text"
+                                    placeholder="Organization..."
+                                    ng-model="new_interviewee.organization"
+                                    autocomplete="off")
+
+    div.modal-footer(ng-if="ref_selection==='interview'")
+        div.col-lg-6
+            button.btn.btn-block.btn-success(ng-click="interviewRefSubmit()") Create reference
+        div.col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
