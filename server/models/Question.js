@@ -1,7 +1,10 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose        = require('mongoose'),
+    mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema;
+
+var options = {customCollectionName: "question_hst"};
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Schemalesss = mongoose.Schema.Types.Mixed;
@@ -88,6 +91,8 @@ var questionSchema = new Schema({
     modified: [modificationSchema],
     precept: [Number]
 });
+
+questionSchema.plugin(mongooseHistory, options);
 
 var Question = mongoose.model('Question', questionSchema);
 

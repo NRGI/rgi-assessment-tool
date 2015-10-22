@@ -1,6 +1,9 @@
 'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose    = require('mongoose'),
+    mongooseHistory = require('mongoose-history'),
+    Schema      = mongoose.Schema;
+
+var options = {customCollectionName: "answer_hst"}
 
 require('mongoose-html').loadType(mongoose);
 var Html = mongoose.Types.Html;
@@ -164,5 +167,7 @@ var answerSchema = new Schema({
     },
     modified: [modificationSchema]
 });
+
+answerSchema.plugin(mongooseHistory, options);
 
 var Answer = mongoose.model('Answer', answerSchema);

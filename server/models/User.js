@@ -1,9 +1,11 @@
 'use strict';
-
-var mongoose    = require('mongoose'),
-    Schema      = mongoose.Schema,
+var mongoose        = require('mongoose'),
+    mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema,
     validate    = require('mongoose-validate'),
     encrypt     = require('../utilities/encryption');
+
+var options = {customCollectionName: "user_hst"};
 
 var ObjectId    = Schema.Types.ObjectId;
 
@@ -67,6 +69,8 @@ userSchema.methods = {
         this.save(callback);
     }
 };
+
+questionSchema.plugin(userSchema, options);
 
 var User = mongoose.model('User', userSchema);
 

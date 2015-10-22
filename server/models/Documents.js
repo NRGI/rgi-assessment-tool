@@ -1,7 +1,10 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose        = require('mongoose'),
+    //mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema;
+
+//var options = {customCollectionName: "document_hst"}
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -62,5 +65,7 @@ var documentSchema = new Schema({
         type: String,
         default: 'created'}
 });
+
+//documentSchema.plugin(mongooseHistory, options);
 
 var Documents = mongoose.model('Documents', documentSchema);

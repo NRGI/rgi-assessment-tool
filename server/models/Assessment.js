@@ -1,8 +1,11 @@
 'use strict';
 /*jslint unparam: true*/
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose        = require('mongoose'),
+    mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema;
+
+var options = {customCollectionName: "assessment_hst"}
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -63,6 +66,8 @@ var assessmentSchema = new Schema({
         approved_date: Date},
     modified: [modificationSchema]
 });
+
+assessmentSchema.plugin(mongooseHistory, options);
 
 var Assessment = mongoose.model('Assessment', assessmentSchema);
 

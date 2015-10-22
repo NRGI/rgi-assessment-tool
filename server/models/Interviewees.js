@@ -1,7 +1,10 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose        = require('mongoose'),
+    //mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema;
+
+//var options = {customCollectionName: "interviewee_hst"}
 
 var ObjectId = Schema.Types.ObjectId;
 
@@ -40,6 +43,8 @@ var intervieweeSchema = new Schema({
         default: Date.now},
     modified: [modificationSchema]
 });
+
+//intervieweeSchema.plugin(mongooseHistory, options);
 
 var Interviewee = mongoose.model('Interviewee', intervieweeSchema);
 
