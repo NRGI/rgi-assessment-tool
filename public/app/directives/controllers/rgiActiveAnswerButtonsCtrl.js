@@ -6,6 +6,7 @@ angular
         $scope,
         $location,
         $routeParams,
+        $route,
         ngDialog,
         rgiUtilsSrvc,
         rgiIdentitySrvc,
@@ -127,9 +128,10 @@ angular
                     });
             }
         };
-
+        //TODO fix
         $scope.answerClear = function () {
-            $scope.answer = angular.copy($scope.$parent.answer_start);
+            $route.reload();
+            //$scope.answer = angular.copy($scope.$parent.answer_start);
         };
 
         $scope.answerReturn = function () {

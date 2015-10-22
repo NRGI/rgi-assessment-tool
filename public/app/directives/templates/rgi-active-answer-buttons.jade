@@ -24,9 +24,16 @@
     ) Approve answer
     | &nbsp;
 
+    //with admin button
+    //button.btn.btn-danger(
+    //ng-click="answerClear()"
+    //ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    //) Reset answer
+    //| &nbsp;
+
     button.btn.btn-danger(
     ng-click="answerClear()"
-    ng-if="assessment.edit_control===current_user._id && current_user.role!=='supervisor' && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ng-if="assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)"
     ) Reset answer
     | &nbsp;
 

@@ -30,7 +30,6 @@ angular
                     new_user_data.password = $scope.password;
                 }
             }
-            console.log(new_user_data);
             // use authorization service to update user data
             rgiUserMethodSrvc.updateUser(new_user_data).then(function () {
                 rgiNotifier.notify('Your user account has been updated');
