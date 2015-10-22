@@ -121,11 +121,7 @@ exports.updateUser = function (req, res) {
         user.assessments = user_update.assessments;
         user.documents = user_update.documents;
         user.interviewees = user_update.interviewees;
-        if (user.modified) {
-            user.modified.push({modifiedBy: req.user._id});
-        } else {
-            user.modified = {modifiedBy: req.user._id};
-        }
+
         user.save(function (err) {
             if (err) {
                 return res.send({ reason: err.toString() });

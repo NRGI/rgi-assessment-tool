@@ -9,13 +9,6 @@ var options = {customCollectionName: "user_hst"};
 
 var ObjectId    = Schema.Types.ObjectId;
 
-var modificationSchema = new Schema({
-    modifiedBy: String,
-    modifiedDate: {
-        type:  Date,
-        default: Date.now}
-});
-
 var userSchema = new Schema({
     firstName: {
         type: String,
@@ -51,7 +44,6 @@ var userSchema = new Schema({
     creationDate: {
         type:  Date,
         default: Date.now},
-    modified: [modificationSchema],
     address: String,
     language: String
 });
