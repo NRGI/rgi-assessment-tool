@@ -116,6 +116,7 @@ exports.updateUser = function (req, res) {
         user.firstName = user_update.firstName;
         user.lastName = user_update.lastName;
         user.email = user_update.email;
+        user.address = user_update.address;
         user.language = user_update.language;
         user.assessments = user_update.assessments;
         user.documents = user_update.documents;
