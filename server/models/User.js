@@ -70,7 +70,7 @@ userSchema.methods = {
     }
 };
 
-questionSchema.plugin(userSchema, options);
+userSchema.plugin(mongooseHistory, options);
 
 var User = mongoose.model('User', userSchema);
 

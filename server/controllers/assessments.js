@@ -123,12 +123,7 @@ exports.updateAssessment = function (req, res) {
                     assessment.status = assessmentUpdates.status;
                     assessment.documents = assessmentUpdates.documents;
                     assessment.interviewees = assessmentUpdates.interviewees;
-
-                    if (assessment.modified) {
-                        assessment.modified.push({modified_by: req.user._id, modified_date: timestamp});
-                    } else {
-                        assessment.modified = [{modified_by: req.user._id, modified_date: timestamp}];
-                    }
+                    assessment.last_modified = {modified_by: req.user._id, modified_date: timestamp};
 
                     assessment.save(function (err) {
                         if (err) {

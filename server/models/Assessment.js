@@ -64,7 +64,7 @@ var assessmentSchema = new Schema({
     approval: {
         approved_by: ObjectId,
         approved_date: Date},
-    modified: [modificationSchema]
+    last_modified: modificationSchema
 });
 
 assessmentSchema.plugin(mongooseHistory, options);

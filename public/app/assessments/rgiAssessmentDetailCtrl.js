@@ -30,7 +30,7 @@ angular
                 $scope.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
             }
             $scope.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
-            $scope.edited_by = rgiUserListSrvc.get({_id: assessment.modified[assessment.modified.length - 1].modified_by});
+            $scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
             $scope.answers = [];
             rgiAnswerSrvc.query({assessment_ID: assessment.assessment_ID}, function (answers) {
                 $scope.assessment_counters = {

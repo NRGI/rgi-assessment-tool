@@ -20,13 +20,6 @@ var htmlSettings = {
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var modificationSchema = new Schema({
-    modifiedBy: ObjectId,
-    modifiedDate: {
-        type: Date,
-        default: Date.now}
-});
-
 var commentSchema = new Schema({
     date: {
         type: Date,
@@ -53,27 +46,6 @@ var citationSchema = new Schema({
     comment: htmlSettings,
     location: String
 });
-//
-//var humanSchema = new Schema({
-//    first_name: String,
-//    last_name: String,
-//    phone: String,
-//    email: String,
-//    contact_date: {
-//        type: Date,
-//        default: Date.now},
-//    comment: {
-//        date: {
-//            type: Date,
-//            default: Date.now},
-//        content: htmlSettings,
-//        author: ObjectId, // Pull from curretn user _id value
-//        author_name: String,
-//        role: String,
-//        addressed: Boolean
-//    }
-//});
-
 
 var interviewSchema = new Schema({
     interviewee_ID: ObjectId,
@@ -164,8 +136,7 @@ var answerSchema = new Schema({
     references: {
         citation: [citationSchema],
         human: [interviewSchema]
-    },
-    modified: [modificationSchema]
+    }
 });
 
 answerSchema.plugin(mongooseHistory, options);

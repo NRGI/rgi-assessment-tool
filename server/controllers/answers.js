@@ -99,7 +99,7 @@ exports.updateAnswer = function (req, res) {
     var answer_update = req.body,
         timestamp = new Date().toISOString();
 
-    if (String(req.user._id) !== String(answer_update.researcher_ID) && String(req.user._id) !== String(answer_update.reviewer_ID) && !req.user.hasRole('supervisor')) {
+    if (!req.user._id) {
         res.sendStatus(404);
         return res.end();
     }
@@ -109,11 +109,11 @@ exports.updateAnswer = function (req, res) {
         answer.comments = answer_update.comments;
         answer.references = answer_update.references;
         answer.flags = answer_update.flags;
-        if (answer.modified) {
-            answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
-        } else {
-            answer.modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
-        }
+        //if (answer.modified) {
+        //    answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
+        //} else {
+        //    answer.modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
+        //}
 
         if (answer_update.hasOwnProperty('researcher_score')) {
             answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score});
