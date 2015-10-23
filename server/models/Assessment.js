@@ -9,12 +9,6 @@ var options = {customCollectionName: "assessment_hst"}
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var modificationSchema = new Schema({
-    modified_by: ObjectId,
-    modified_date: Date
-});
-
-
 var assessmentSchema = new Schema({
     assessment_ID: {
         type: String,
@@ -64,7 +58,10 @@ var assessmentSchema = new Schema({
     approval: {
         approved_by: ObjectId,
         approved_date: Date},
-    last_modified: modificationSchema
+    last_modified: {
+        modified_by: ObjectId,
+        modified_date: Date
+    }
 });
 
 assessmentSchema.plugin(mongooseHistory, options);
