@@ -156,11 +156,9 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
             if (email_domain === 'http://undefined') {
                 rgiNotifier.error('You must enter a valid email address!');
             } else {
-                if(!new_answer_data.human_ref_contact_date) {
-                    contact_date = $scope.date_default.toISOString();
-                } else {
-                    contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
-                }
+                contact_date = (new_answer_data.human_ref_contact_date ? new Date(new_answer_data.human_ref_contact_date)
+                    : $scope.date_default).toISOString();
+
                 new_ref_data = {
                     first_name: new_answer_data.human_ref_first_name,
                     last_name: new_answer_data.human_ref_last_name,

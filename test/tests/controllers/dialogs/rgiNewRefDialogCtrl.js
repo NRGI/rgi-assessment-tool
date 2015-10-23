@@ -6,7 +6,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
     var $scope, $route, $timeout, ngDialog,
         rgiAnswerMethodSrvc, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc, rgiUrlCheckSrvc,
-        fileUploaderGetStub, fileUploaderGetSpy, ANSWER = 'ANSWER', now;
+        fileUploaderGetStub, fileUploaderGetSpy, ANSWER = {}, now;
 
     beforeEach(inject(
         function (
@@ -327,7 +327,6 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                     });
 
                     it('saves default access date, if the access date is not defined', function() {
-                        $scope.date_default = new Date();
                         setAnswerData({web_ref_url: 'http://google.com'});
                         $scope.webRefSubmit();
                         answerMethodUpdateSpy.args[0][0].references.web[0].access_date.should.be.equal($scope.date_default.toISOString());
@@ -542,8 +541,177 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
     });
 
     describe('#humanRefSubmit', function() {
-        it('does something', function() {
+        var notifierMock, LAST_NAME = 'Last Name', PHONE_NUMBER = 'PHONE NUMBER';
 
+        beforeEach(function() {
+            notifierMock = sinon.mock(rgiNotifier);
+        });
+
+        var setAnswerData = function(firstName, email) {
+            $scope.answer_update.human_ref_first_name = firstName;
+            $scope.answer_update.human_ref_email = email;
+            $scope.answer_update.human_ref_last_name = LAST_NAME;
+            $scope.answer_update.human_ref_phone = PHONE_NUMBER;
+            $scope.answer_update.references = {human: []};
+        };
+
+        it('shows an error message, if the first name is not set', function() {
+            setAnswerData('', undefined);
+            notifierMock.expects('error').withArgs('You must enter an interviewee first and last name!');
+            $scope.humanRefSubmit();
+        });
+
+        it('shows an error message, if the email is not set', function() {
+            setAnswerData('First Name', '');
+            notifierMock.expects('error').withArgs('You must enter a valid email address!');
+            $scope.humanRefSubmit();
+        });
+
+        it('shows an error message, if the email address is incorrect', function() {
+            setAnswerData('First Name', 'incorrect email');
+            notifierMock.expects('error').withArgs('You must enter a valid email address!');
+            $scope.humanRefSubmit();
+        });
+
+        describe('CORRECT DATA', function() {
+            var FIRST_NAME = 'First Name', EMAIL = 'name@domain.com',
+                CURRENT_USER = {
+                    _id: 'ID',
+                    firstName: 'First Name',
+                    lastName: 'Last Name',
+                    role: 'role'
+                },
+                answerMethodUpdateAnswerStub, answerMethodUpdateAnswerSpy;
+
+            beforeEach(function() {
+                setAnswerData(FIRST_NAME, EMAIL);
+                $scope.$parent.current_user = CURRENT_USER;
+            });
+
+            describe('FAILURE CASE', function() {
+                var REASON = 'REASON';
+
+                beforeEach(function() {
+                    answerMethodUpdateAnswerSpy = sinon.spy(function() {
+                        return {
+                            then: function(callbackSuccess, callbackFailure) {
+                                callbackFailure(REASON);
+                            }
+                        };
+                    });
+
+                    answerMethodUpdateAnswerStub = sinon.stub(rgiAnswerMethodSrvc, 'updateAnswer', answerMethodUpdateAnswerSpy);
+                    notifierMock.expects('error').withArgs(REASON);
+                });
+
+                it('shows an error message with the reason, on update answer failure', function() {
+                    $scope.humanRefSubmit();
+                });
+
+                var getSubmittedData = function() {
+                    return answerMethodUpdateAnswerSpy.args[0][0];
+                };
+
+                it('saves contact data', function() {
+                    $scope.humanRefSubmit();
+                    getSubmittedData().references.human[0].email.should.be.equal(EMAIL);
+                    getSubmittedData().references.human[0].phone.should.be.equal(PHONE_NUMBER);
+                });
+
+                it('saves the comment date', function() {
+                    $scope.humanRefSubmit();
+                    compareDates(new Date(getSubmittedData().references.human[0].comment.date), new Date()).should.be.equal(true);
+                });
+
+                it('saves the name', function() {
+                    $scope.humanRefSubmit();
+                    getSubmittedData().references.human[0].first_name.should.be.equal(FIRST_NAME);
+                    getSubmittedData().references.human[0].last_name.should.be.equal(LAST_NAME);
+                });
+
+                it('saves the author details', function() {
+                    $scope.humanRefSubmit();
+                    var commentData = getSubmittedData().references.human[0].comment;
+                    commentData.author.should.be.equal(CURRENT_USER._id);
+                    commentData.role.should.be.equal(CURRENT_USER.role);
+                    commentData.author_name.should.be.equal(CURRENT_USER.firstName + ' ' + CURRENT_USER.lastName);
+                });
+
+                it('saves comment content, if the content is defined', function() {
+                    var COMMENT = 'COMMENT';
+                    $scope.answer_update.human_ref_comment = COMMENT;
+                    $scope.humanRefSubmit();
+                    getSubmittedData().references.human[0].comment.content.should.be.equal(COMMENT);
+                });
+
+                it('saves undefined comment content, if the content is not defined', function() {
+                    $scope.answer_update.human_ref_comment = undefined;
+                    $scope.humanRefSubmit();
+                    should.not.exist(getSubmittedData().references.human[0].comment.content);
+                });
+
+                it('saves date, if the date is defined', function() {
+                    $scope.answer_update.human_ref_contact_date = new Date();
+                    $scope.humanRefSubmit();
+                    getSubmittedData().references.human[0].contact_date.should.be.equal($scope.answer_update.human_ref_contact_date.toISOString());
+                });
+
+                it('saves default date, if the date is not defined', function() {
+                    $scope.answer_update.human_ref_contact_date = false;
+                    $scope.humanRefSubmit();
+                    getSubmittedData().references.human[0].contact_date.should.be.equal($scope.date_default.toISOString());
+                });
+            });
+
+            describe('SUCCESS CASE', function() {
+                var $scopeCloseThisDialogBackUp, $routeMock;
+
+                beforeEach(function() {
+                    answerMethodUpdateAnswerSpy = sinon.spy(function() {
+                        return {
+                            then: function(callbackSuccess) {
+                                callbackSuccess();
+                            }
+                        };
+                    });
+
+                    answerMethodUpdateAnswerStub = sinon.stub(rgiAnswerMethodSrvc, 'updateAnswer', answerMethodUpdateAnswerSpy);
+                    notifierMock.expects('notify').withArgs('Reference added!');
+
+                    $scopeCloseThisDialogBackUp = $scope.closeThisDialog;
+                    $scope.closeThisDialog = sinon.spy();
+
+                    $routeMock = sinon.mock($route);
+                    $routeMock.expects('reload');
+
+                    $scope.humanRefSubmit();
+                });
+
+                it('closes the dialog', function() {
+                    $scope.closeThisDialog.called.should.be.equal(true);
+                });
+
+                it('shows success notification', function() {
+                    notifierMock.verify();
+                });
+
+                it('reloads the page', function() {
+                    $routeMock.verify();
+                });
+
+                afterEach(function() {
+                    $scope.closeThisDialog = $scopeCloseThisDialogBackUp;
+                });
+            });
+
+            afterEach(function() {
+                answerMethodUpdateAnswerStub.restore();
+            });
+        });
+
+        afterEach(function() {
+            notifierMock.verify();
+            notifierMock.restore();
         });
     });
 
