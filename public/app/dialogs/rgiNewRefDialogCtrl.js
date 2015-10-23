@@ -143,11 +143,9 @@ angular.module('app').controller('rgiNewRefDialogCtrl', function (
     };
 
     $scope.humanRefSubmit = function () {
-
         var new_answer_data = $scope.answer_update,
             current_user = $scope.$parent.current_user,
             new_ref_data, contact_date;
-
 
         if (!new_answer_data.human_ref_first_name || !new_answer_data.human_ref_first_name) {
             rgiNotifier.error('You must enter an interviewee first and last name!');

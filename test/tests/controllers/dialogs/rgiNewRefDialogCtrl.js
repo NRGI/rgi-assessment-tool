@@ -541,6 +541,12 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
     });
 
+    describe('#humanRefSubmit', function() {
+        it('does something', function() {
+
+        });
+    });
+
     afterEach(function() {
         fileUploaderGetStub.restore();
     });
