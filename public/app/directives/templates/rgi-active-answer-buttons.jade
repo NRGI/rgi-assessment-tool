@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && assessment.status==='started') || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ng-if="(assessment.edit_control===current_user._id && assessment.status==='started') || (current_user.isSupervisor() && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
     ) Save answer
     | &nbsp;
 
@@ -24,7 +24,7 @@
     ) Approve answer
     | &nbsp;
 
-    //with admin button
+    ////with admin button
     //button.btn.btn-danger(
     //ng-click="answerClear()"
     //ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
@@ -42,19 +42,19 @@
     //href="#flagModal") Flag answer
     button.btn.btn-warning(
     ng-click="answerFlag()"
-    ng-if="current_user.role==='supervisor'"
+    ng-if="current_user.isSupervisor()"
     ) Flag answer
     | &nbsp;
 
     button.btn.btn-danger(
     ng-click="answerUnresolved()"
-    ng-if="current_user.role==='supervisor'"
+    ng-if="current_user.isSupervisor() && assessment.status==='under_review'"
     ) Unresolved
     | &nbsp;
 
     button.btn.btn-primary(
     ng-click="finalChoiceDialog()"
-    ng-if="current_user.role==='supervisor' && answer.reviewer_score && answer.researcher_score && answer.status==='approved'"
+    ng-if="current_user.isSupervisor() && answer.reviewer_score && answer.researcher_score && answer.status==='approved'"
     ) Choose final answer
     | &nbsp;
 

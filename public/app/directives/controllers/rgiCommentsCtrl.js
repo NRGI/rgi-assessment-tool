@@ -27,7 +27,7 @@ angular
 
             new_update_data.comments.push(new_comment_data);
 
-            if (new_update_data.status === 'assigned') {
+            if (new_update_data.status === 'assigned' && !current_user.isSupervisor()) {
                 new_update_data.status = 'saved';
             }
 
@@ -64,6 +64,6 @@ angular
             //});
         };
         $scope.commentEdit = function (comment, index) {
-            rgiDialogFactory.assessmentMove($scope, comment, index);
+            rgiDialogFactory.commentEdit($scope, comment, index);
         };
     });
