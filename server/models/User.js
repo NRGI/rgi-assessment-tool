@@ -1,36 +1,37 @@
 'use strict';
-var mongoose        = require('mongoose'),
+var userSchema, User,
+    mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
+    options = {customCollectionName: "user_hst"},
     Schema          = mongoose.Schema,
-    validate    = require('mongoose-validate'),
-    encrypt     = require('../utilities/encryption');
+    validate        = require('mongoose-validate'),
+    encrypt         = require('../utilities/encryption'),
+    ObjectId    = Schema.Types.ObjectId;
 
-var options = {customCollectionName: "user_hst"};
-
-var ObjectId    = Schema.Types.ObjectId;
-
-var userSchema = new Schema({
+userSchema = new Schema({
     firstName: {
         type: String,
-        required: '{PATH} is required!'
-    },
+        required: 'first name is required',
+        validate: [validate.alpha, 'invalid first name']},
     lastName: {
         type: String,
-        required: '{PATH} is required!'},
+        required: 'last name is required',
+        validate: [validate.alpha, 'invalid first name']},
     username: {
         type: String,
         required:  '{PATH} is required!',
+        validate: [validate.alphanumeric, 'invalid {PATH} (alphanumeric only)'],
         unique: true},
     email: {
         type:  String,
-        required: true,
+        required: '{PATH} is required',
         validate: [validate.email, 'invalid email address']},
     salt: {
         type: String,
-        required: '{PATH} is required!'},
+        required: 'Your salt is missing'},
     hashed_pwd: {
         type: String,
-        required: '{PATH} is required!'},
+        required: 'your hash is missing'},
     role: {
         type: String, required: '{PATH} is required!',
         default: 'None'},
@@ -64,7 +65,7 @@ userSchema.methods = {
 
 userSchema.plugin(mongooseHistory, options);
 
-var User = mongoose.model('User', userSchema);
+User = mongoose.model('User', userSchema);
 
 function createDefaultUsers() {
     User.find({}).exec(function (err, collection) {

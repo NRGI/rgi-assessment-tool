@@ -30,7 +30,8 @@ angular
                 rgiNotifier.notify('User account created!' + $scope.email);
                 $location.path('/admin/user-admin');
             }, function (reason) {
-                rgiNotifier.error(reason+'!');
+                var err_str = reason.replace('Path ','');
+                rgiNotifier.error(err_str+'!');
             });
         };
     });
