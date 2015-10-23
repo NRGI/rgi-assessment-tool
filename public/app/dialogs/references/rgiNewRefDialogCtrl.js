@@ -79,9 +79,6 @@ angular
             var new_answer_data, new_interviewee, contact_date, email_domain, new_ref_data, current_user, selected_interviewee;
             new_answer_data = $scope.answer_update;
             current_user = $scope.current_user;
-            console.log(new_answer_data);
-            console.log(current_user);
-            console.log($scope);
             //error handling
             if (!new_answer_data.human_ref_comment) {
                 rgiNotifier.error('You must enter interview content!');

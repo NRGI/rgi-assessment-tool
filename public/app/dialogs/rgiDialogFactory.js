@@ -74,7 +74,6 @@ angular
             },
             assessmentSubmit: function ($scope) {
                 var scope = $scope;
-                console.log(scope);
                 if (scope.assessment_counters.length !== scope.assessment_counters.complete) {
                     rgiNotifier.error('You must complete all assessment questions');
                 } else {
@@ -151,7 +150,7 @@ angular
                 var scope = $scope;
                 scope.value = true;
                 ngDialog.open({
-                    template: 'partials/dialogs/documents/edit-document-dialog',
+                    template: 'partials/dialogs/references/edit-document-dialog',
                     controller: 'rgiEditDocumentDialogCtrl',
                     className: 'ngdialog-theme-default',
                     scope: scope
@@ -195,7 +194,7 @@ angular
                 var scope = $scope;
                 scope.value = true;
                 ngDialog.open({
-                    template: 'partials/dialogs/interviewees/edit-interviewee-dialog',
+                    template: 'partials/dialogs/references/edit-interviewee-dialog',
                     controller: 'rgiEditIntervieweeDialogCtrl',
                     className: 'ngdialog-theme-default',
                     scope: scope

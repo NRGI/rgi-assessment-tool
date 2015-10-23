@@ -43,7 +43,6 @@ exports.createUser = function (req, res) {
         contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
     }
     catch(err) {
-        console.log(err);
         res.status(400);
         return res.send({reason: 'first and last name is required'});
     }
@@ -51,7 +50,6 @@ exports.createUser = function (req, res) {
         userData.username = userData.username.toLowerCase();
     }
     catch(err) {
-        console.log(err);
         res.status(400);
         return res.send({reason: 'username is required'});
     }
@@ -59,7 +57,6 @@ exports.createUser = function (req, res) {
         contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
     }
     catch(err) {
-        console.log(err);
         res.status(400);
         return res.send({reason: 'user role is required'});
     }
@@ -78,7 +75,6 @@ exports.createUser = function (req, res) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
             }
-            console.log(err);
             res.status(400);
             return res.send({reason: err.toString()});
         }

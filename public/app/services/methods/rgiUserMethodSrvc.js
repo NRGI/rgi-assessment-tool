@@ -37,7 +37,6 @@ angular
             updateUser: function (new_user_data) {
                 var dfd = $q.defer(),
                 error_message;
-                console.log(new_user_data);
 
                 new_user_data.$update().then(function () {
                     dfd.resolve();

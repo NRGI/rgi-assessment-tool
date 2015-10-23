@@ -203,7 +203,6 @@ exports.getDocuments = function (req, res) {
 };
 
 exports.getDocumentsByID = function (req, res) {
-    console.log(req.params);
     Doc.findOne({_id: req.params.id}).exec(function (err, document) {
         res.send(document);
     });
@@ -266,7 +265,6 @@ exports.updateDocument = function (req, res) {
         document.save(function (err) {
             if (err) {
                 res.status(400);
-                console.log(err);
                 res.send({reason: err.toString()});
             }
         });
