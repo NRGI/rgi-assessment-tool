@@ -1,7 +1,7 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    AuthLogSchema = mongoose.Schema({
+var mongoose        = require('mongoose'),
+    AuthLogSchema   = mongoose.Schema({
         'action': String,
         'date-time': Date,
         'user': mongoose.Schema.Types.ObjectId

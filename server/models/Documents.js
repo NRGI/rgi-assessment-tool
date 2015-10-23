@@ -1,26 +1,22 @@
 'use strict';
 
-var mongoose        = require('mongoose'),
+var authorSchema, documentSchema, Documents,
+    mongoose        = require('mongoose'),
     //mongooseHistory = require('mongoose-history'),
-    Schema          = mongoose.Schema;
+    //options         = {customCollectionName: "document_hst"},
+    Schema          = mongoose.Schema,
+    ObjectId        = mongoose.Schema.Types.ObjectId,
+    modificationSchema = new Schema({
+        modifiedBy: ObjectId,
+        modifiedDate: {type: Date, default: Date.now}
+    });
 
-//var options = {customCollectionName: "document_hst"}
-
-var ObjectId = mongoose.Schema.Types.ObjectId;
-
-var modificationSchema = new Schema({
-    modifiedBy: ObjectId,
-    modifiedDate: {
-        type: Date,
-        default: Date.now}
-});
-
-var authorSchema = new Schema({
+authorSchema = new Schema({
     first_name: String,
     last_name: String
 });
 
-var documentSchema = new Schema({
+documentSchema = new Schema({
     file_hash: {
         type: String,
         required: '{PATH} is required!'},
@@ -68,4 +64,4 @@ var documentSchema = new Schema({
 
 //documentSchema.plugin(mongooseHistory, options);
 
-var Documents = mongoose.model('Documents', documentSchema);
+Documents = mongoose.model('Documents', documentSchema);

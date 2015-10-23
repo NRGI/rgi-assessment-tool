@@ -1,16 +1,17 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var countrySchema = new mongoose.Schema({
-    country: String,
-    iso2: String,
-    country_ID: String,
-    country_use: {
-        type: Boolean,
-        default: true}
-});
+var Country,
+    mongoose        = require('mongoose'),
+    countrySchema   = new mongoose.Schema({
+        country: String,
+        iso2: String,
+        country_ID: String,
+        country_use: {
+            type: Boolean,
+            default: true}
+    });
 
-var Country = mongoose.model('Country', countrySchema);
+Country = mongoose.model('Country', countrySchema);
 
 function createDefaultCountries() {
     Country.find({}).exec(function (err, collection) {

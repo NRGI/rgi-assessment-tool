@@ -1,15 +1,14 @@
 'use strict';
 /*jslint unparam: true*/
 
-var mongoose        = require('mongoose'),
+var assessmentSchema, Assessment,
+    mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
-    Schema          = mongoose.Schema;
+    Schema          = mongoose.Schema,
+    options = {customCollectionName: "assessment_hst"},
+    ObjectId = mongoose.Schema.Types.ObjectId;
 
-var options = {customCollectionName: "assessment_hst"}
-
-var ObjectId = mongoose.Schema.Types.ObjectId;
-
-var assessmentSchema = new Schema({
+assessmentSchema = new Schema({
     assessment_ID: {
         type: String,
         required: '{PATH} is required',
@@ -66,7 +65,7 @@ var assessmentSchema = new Schema({
 
 assessmentSchema.plugin(mongooseHistory, options);
 
-var Assessment = mongoose.model('Assessment', assessmentSchema);
+Assessment = mongoose.model('Assessment', assessmentSchema);
 
 function createDefaultAssessments() {
     Assessment.find({}).exec(function (err, assessments) {

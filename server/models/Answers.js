@@ -1,26 +1,24 @@
 'use strict';
-var mongoose    = require('mongoose'),
-    mongooseHistory = require('mongoose-history'),
-    Schema      = mongoose.Schema;
-
-var options = {customCollectionName: "answer_hst"}
-
+var mongoose    = require('mongoose');
 require('mongoose-html').loadType(mongoose);
-var Html = mongoose.Types.Html;
 
-var htmlSettings = {
-        type: Html,
+var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
+    mongooseHistory = require('mongoose-history'),
+    Schema          = mongoose.Schema,
+    options         = {customCollectionName: "answer_hst"},
+    HTML            = mongoose.Types.Html,
+    htmlSettings    = {
+        type: HTML,
         setting: {
             allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
             allowedAttributes: {
                 'a': ['href']
             }
         }
-    };
+    },
+    ObjectId        = mongoose.Schema.Types.ObjectId;
 
-var ObjectId = mongoose.Schema.Types.ObjectId;
-
-var commentSchema = new Schema({
+commentSchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
@@ -32,7 +30,7 @@ var commentSchema = new Schema({
     addressed_to: ObjectId
 });
 
-var citationSchema = new Schema({
+citationSchema = new Schema({
     document_ID: String,
     mendeley_ID: String,
     file_hash: String,
@@ -47,7 +45,7 @@ var citationSchema = new Schema({
     location: String
 });
 
-var interviewSchema = new Schema({
+interviewSchema = new Schema({
     interviewee_ID: ObjectId,
     contact_date: {
         type: Date,
@@ -61,7 +59,7 @@ var interviewSchema = new Schema({
     author_role: String
 });
 
-var scoreHistorySchema = new Schema({
+scoreHistorySchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
@@ -70,7 +68,7 @@ var scoreHistorySchema = new Schema({
     /////ERROR CALCULATION
 });
 
-var answerSchema = new Schema({
+answerSchema = new Schema({
     answer_ID: {
         type: String,
         required: '{PATH} is required',
@@ -141,4 +139,4 @@ var answerSchema = new Schema({
 
 answerSchema.plugin(mongooseHistory, options);
 
-var Answer = mongoose.model('Answer', answerSchema);
+Answer = mongoose.model('Answer', answerSchema);

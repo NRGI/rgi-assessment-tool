@@ -1,7 +1,7 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    FileUploadStatusSchema = mongoose.Schema({
+var mongoose                = require('mongoose'),
+    FileUploadStatusSchema  = mongoose.Schema({
         completion: {type: Number, default: 0},
         document: {type: mongoose.Schema.Types.ObjectId, ref: 'Documents'}
     });

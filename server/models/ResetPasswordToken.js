@@ -1,7 +1,7 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    ResetPasswordTokenSchema = mongoose.Schema({
+var mongoose                    = require('mongoose'),
+    ResetPasswordTokenSchema    = mongoose.Schema({
         user: mongoose.Schema.Types.ObjectId
     });
 

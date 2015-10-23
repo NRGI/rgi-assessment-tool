@@ -1,19 +1,17 @@
 'use strict';
 
-var mongoose        = require('mongoose'),
+var intervieweeSchema, Interviewee,
+    mongoose        = require('mongoose'),
     //mongooseHistory = require('mongoose-history'),
-    Schema          = mongoose.Schema;
+    //options = {customCollectionName: "interviewee_hst"},
+    Schema          = mongoose.Schema,
+    ObjectId        = Schema.Types.ObjectId,
+    modificationSchema = new Schema({
+        modifiedBy: ObjectId,
+        modifiedDate: {type: Date, default: Date.now}
+    });
 
-//var options = {customCollectionName: "interviewee_hst"}
-
-var ObjectId = Schema.Types.ObjectId;
-
-var modificationSchema = new Schema({
-    modifiedBy: ObjectId,
-    modifiedDate: {type: Date, default: Date.now}
-});
-
-var intervieweeSchema = new Schema({
+intervieweeSchema = new Schema({
     firstName: {
         type: String,
         required: '{PATH} is required!'},
@@ -46,7 +44,7 @@ var intervieweeSchema = new Schema({
 
 //intervieweeSchema.plugin(mongooseHistory, options);
 
-var Interviewee = mongoose.model('Interviewee', intervieweeSchema);
+Interviewee = mongoose.model('Interviewee', intervieweeSchema);
 
 function createDefaultInterviewees() {
     Interviewee.find({}).exec(function (err, collection) {
