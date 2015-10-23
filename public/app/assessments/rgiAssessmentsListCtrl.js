@@ -38,26 +38,10 @@ angular
                         $scope.assessments = [];
 
                         assessments.forEach(function (el) {
-                            console.log(el);
-                            assessment = {
-                                assessment_ID: el.assessment_ID,
-                                country: el.country,
-                                edit_control: el.edit_control,
-                                researcher_ID: el.researcher_ID,
-                                reviewer_ID: el.reviewer_ID,
-                                start_date: el.start_date,
-                                version: el.version,
-                                year: el.year,
-                                status: el.status,
-                                assignment: el.assignment,
-                                assignment: el.assignment,
-                                assignment: el.assignment,
-                                last_modified: el.last_modified
-                            };
+                            assessment = el;
                             if(el.last_modified) {
                                 assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
                             }
-
                             if(assessment.researcher_ID) {
                                 assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                             }
@@ -77,23 +61,15 @@ angular
                         $scope.assessments = [];
 
                         assessments.forEach(function (el) {
-                            assessment = {
-                                assessment_ID: el.assessment_ID,
-                                country: el.country,
-                                researcher_ID: el.researcher_ID,
-                                reviewer_ID: el.reviewer_ID,
-                                start_date: el.start_date,
-                                version: el.version,
-                                year: el.year,
-                                status: el.status
-                            };
+                            assessment = el;
                             if (el.last_modified) {
-                                assessment.last_modified = el.last_modified;
                                 assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
                             }
-                            if (assessment.reviewer_ID !== undefined) {
-                                assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+                            if(assessment.researcher_ID) {
                                 assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                            }
+                            if(assessment.reviewer_ID) {
+                                assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                             }
                             $scope.assessments.push(assessment);
                         });
@@ -104,34 +80,30 @@ angular
                 rgiAssessmentSrvc.query({researcher_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
                     $scope.assessments = [];
-                    var i, assessment;
-                    for (i = assessments.length - 1; i >= 0; i -= 1) {
-                        assessment = assessments[i];
-                        assessment.edited_by = rgiUserListSrvc.get({_id: assessments[i].last_modified.modified_by});
+                    var assessment;
+                    assessments.forEach(function (el) {
+                        assessment = el;
+                        assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
+                        assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                         if (assessment.reviewer_ID) {
-                            assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
-                            assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
-                        } else {
                             assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                         }
                         $scope.assessments.push(assessment);
-                    }
+                    });
                 });
                 break;
             case 'reviewer':
                 rgiAssessmentSrvc.query({reviewer_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
                     $scope.assessments = [];
-                    var i, assessment;
-                    for (i = assessments.length - 1; i >= 0; i -= 1) {
-                        assessment = assessments[i];
-                        assessment.edited_by = rgiUserListSrvc.get({_id: assessments[i].last_modified.modified_by});
-                        if (assessment.reviewer_ID) {
-                            assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
-                            assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
-                        }
+                    var assessment;
+                    assessments.forEach(function (el) {
+                        assessment = el;
+                        assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
+                        assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                        assessment.reviewer = rgiUserListSrvc.get({_id: assessment.review_ID});
                         $scope.assessments.push(assessment);
-                    }
+                    });
                 });
                 break;
         }
