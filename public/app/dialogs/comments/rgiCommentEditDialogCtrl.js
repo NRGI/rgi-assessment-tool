@@ -16,10 +16,6 @@ angular
                 new_comment_data = $scope.$parent.comment,
                 index = $scope.$parent.index,
                 answer_ID = $scope.$parent.update.answer_ID;
-            console.log(new_answer_data);
-            console.log(new_comment_data);
-            console.log(index);
-            console.log(answer_ID);
             if (new_comment_data.content === $scope.comment_content) {
                 rgiNotifier.error('Do you have edits to submit?');
             } else {
