@@ -5,10 +5,16 @@ angular
     .controller('rgiCommentEditDialogCtrl', function (
         $scope,
         $route,
+        $timeout,
         ngDialog,
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
+        $timeout(function() {
+            $('.ngdialog').draggable({
+                handle: '.ngdialog-content'
+            });
+        }, 500);
         $scope.comment_content = $scope.$parent.comment.content;
 
         $scope.saveComment = function () {
