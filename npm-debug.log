@@ -1,0 +1,1094 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'node-mongoose-validator' ]
+2 info using npm@2.14.3
+3 info using node@v4.1.0
+4 verbose install initial load of /Users/cperry/Developer/GitRepos/rgi-assessment-tool/package.json
+5 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/aws-sdk/package.json
+6 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/body-parser/package.json
+7 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/bootstrap/package.json
+8 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/campaign/package.json
+9 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/chai/package.json
+10 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/connect-multiparty/package.json
+11 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/cookie-parser/package.json
+12 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/countrycodes/package.json
+13 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/email-templates/package.json
+14 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/express/package.json
+15 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/express-session/package.json
+16 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt/package.json
+17 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt-contrib-jade/package.json
+18 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt-contrib-jshint/package.json
+19 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt-contrib-nodeunit/package.json
+20 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt-contrib-uglify/package.json
+21 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/grunt-contrib-watch/package.json
+22 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/jade/package.json
+23 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/jshint/package.json
+24 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/jshint-stylish/package.json
+25 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma/package.json
+26 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma-chai-plugins/package.json
+27 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma-chrome-launcher/package.json
+28 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma-mocha/package.json
+29 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma-phantomjs-launcher/package.json
+30 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/karma-safari-launcher/package.json
+31 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/load-grunt-tasks/package.json
+32 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mime/package.json
+33 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mocha/package.json
+34 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mongoose/package.json
+35 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mongoose-history/package.json
+36 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mongoose-html/package.json
+37 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/mongoose-validate/package.json
+38 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/morgan/package.json
+39 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/newrelic/package.json
+40 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mandrill/package.json
+41 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/passport/package.json
+42 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/passport-local/package.json
+43 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/request/package.json
+44 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/s3/package.json
+45 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/simple-oauth2/package.json
+46 verbose installManyTop reading scoped package data from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/stylus/package.json
+47 info package.json campaign@1.7.0 No license field.
+48 info package.json countrycodes@0.0.5 license should be a valid SPDX license expression
+49 info package.json email-templates@1.3.0 No license field.
+50 info package.json grunt-contrib-nodeunit@0.4.1 No license field.
+51 info package.json grunt-contrib-uglify@0.6.0 No license field.
+52 info package.json grunt@0.4.5 No license field.
+53 info package.json mime@1.3.4 No license field.
+54 info package.json mongoose-validate@0.0.5 No license field.
+55 info package.json node-mandrill@1.0.1 No license field.
+56 info package.json newrelic@1.21.2 No license field.
+57 info package.json passport-local@1.0.0 No license field.
+58 info package.json simple-oauth2@0.2.1 No license field.
+59 info package.json grunt-contrib-watch@0.6.1 No license field.
+60 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/package.json
+61 silly cache add args [ 'node-mongoose-validator', null ]
+62 verbose cache add spec node-mongoose-validator
+63 silly cache add parsed spec Result {
+63 silly cache add   raw: 'node-mongoose-validator',
+63 silly cache add   scope: null,
+63 silly cache add   name: 'node-mongoose-validator',
+63 silly cache add   rawSpec: '',
+63 silly cache add   spec: '*',
+63 silly cache add   type: 'range' }
+64 silly addNamed node-mongoose-validator@*
+65 verbose addNamed "*" is a valid semver range for node-mongoose-validator
+66 silly addNameRange { name: 'node-mongoose-validator', range: '*', hasData: false }
+67 silly mapToRegistry name node-mongoose-validator
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/node-mongoose-validator
+71 verbose addNameRange registry:https://registry.npmjs.org/node-mongoose-validator not in flight; fetching
+72 verbose request uri https://registry.npmjs.org/node-mongoose-validator
+73 verbose request no auth needed
+74 info attempt registry request try #1 at 9:04:16 PM
+75 verbose request id e812f88563f9bc20
+76 http request GET https://registry.npmjs.org/node-mongoose-validator
+77 http 200 https://registry.npmjs.org/node-mongoose-validator
+78 silly get cb [ 200,
+78 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+78 silly get     etag: '"1MWGGS7338TZXYG54O980CII8"',
+78 silly get     'content-type': 'application/json',
+78 silly get     'cache-control': 'max-age=60',
+78 silly get     'content-length': '11403',
+78 silly get     'accept-ranges': 'bytes',
+78 silly get     date: 'Sat, 24 Oct 2015 02:04:19 GMT',
+78 silly get     via: '1.1 varnish',
+78 silly get     age: '0',
+78 silly get     connection: 'keep-alive',
+78 silly get     'x-served-by': 'cache-dfw1822-DFW',
+78 silly get     'x-cache': 'MISS',
+78 silly get     'x-cache-hits': '0',
+78 silly get     'x-timer': 'S1445652259.073259,VS0,VE196',
+78 silly get     vary: 'Accept' } ]
+79 verbose get saving node-mongoose-validator to /Users/cperry/.npm/registry.npmjs.org/node-mongoose-validator/.cache.json
+80 silly addNameRange number 2 { name: 'node-mongoose-validator', range: '*', hasData: true }
+81 silly addNameRange versions [ 'node-mongoose-validator', [ '1.0.0', '1.1.0', '1.2.0' ] ]
+82 silly addNamed node-mongoose-validator@1.2.0
+83 verbose addNamed "1.2.0" is a plain semver version for node-mongoose-validator
+84 silly mapToRegistry name node-mongoose-validator
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry uri https://registry.npmjs.org/node-mongoose-validator
+88 verbose addRemoteTarball https://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz not in flight; adding
+89 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz',
+89 verbose addRemoteTarball   'd6bcc88b2af8293293ab6137dec4c85cddb907d6' ]
+90 info retry fetch attempt 1 at 9:04:19 PM
+91 info attempt registry request try #1 at 9:04:19 PM
+92 http fetch GET https://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz
+93 http fetch 200 https://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz
+94 silly fetchAndShaCheck shasum d6bcc88b2af8293293ab6137dec4c85cddb907d6
+95 verbose addTmpTarball /tmp/npm-3848-8e6c90bf/registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz not in flight; adding
+96 verbose addTmpTarball already have metadata; skipping unpack for node-mongoose-validator@1.2.0
+97 silly cache afterAdd node-mongoose-validator@1.2.0
+98 verbose afterAdd /Users/cperry/.npm/node-mongoose-validator/1.2.0/package/package.json not in flight; writing
+99 verbose afterAdd /Users/cperry/.npm/node-mongoose-validator/1.2.0/package/package.json written
+100 silly install resolved [ { name: 'node-mongoose-validator',
+100 silly install resolved     version: '1.2.0',
+100 silly install resolved     description: 'Easily validate mongoose paths',
+100 silly install resolved     main: 'index.js',
+100 silly install resolved     scripts: { test: 'mocha test' },
+100 silly install resolved     repository:
+100 silly install resolved      { type: 'git',
+100 silly install resolved        url: 'https://github.com/SamVerschueren/node-mongoose-validator.git' },
+100 silly install resolved     keywords: [ 'mongoose', 'validator' ],
+100 silly install resolved     author: { name: 'Sam Verschueren' },
+100 silly install resolved     contributors: [ [Object] ],
+100 silly install resolved     license: 'MIT',
+100 silly install resolved     bugs: { url: 'https://github.com/SamVerschueren/node-mongoose-validator/issues' },
+100 silly install resolved     homepage: 'https://github.com/SamVerschueren/node-mongoose-validator',
+100 silly install resolved     dependencies: { lodash: '^3.10.1', validator: '^4.0.5' },
+100 silly install resolved     devDependencies:
+100 silly install resolved      { chai: '^3.2.0',
+100 silly install resolved        mocha: '^2.2.5',
+100 silly install resolved        mongoose: '^4.1.3',
+100 silly install resolved        sinon: '^1.15.4' },
+100 silly install resolved     gitHead: 'd0eba98c2777994f675173004ecdd58ea9fd9df1',
+100 silly install resolved     _id: 'node-mongoose-validator@1.2.0',
+100 silly install resolved     _shasum: 'd6bcc88b2af8293293ab6137dec4c85cddb907d6',
+100 silly install resolved     _from: 'node-mongoose-validator@*',
+100 silly install resolved     _npmVersion: '2.7.4',
+100 silly install resolved     _nodeVersion: '0.12.2',
+100 silly install resolved     _npmUser: { name: 'samverschueren', email: 'sam.verschueren@gmail.com' },
+100 silly install resolved     dist:
+100 silly install resolved      { shasum: 'd6bcc88b2af8293293ab6137dec4c85cddb907d6',
+100 silly install resolved        tarball: 'http://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz' },
+100 silly install resolved     maintainers: [ [Object] ],
+100 silly install resolved     directories: {},
+100 silly install resolved     _resolved: 'https://registry.npmjs.org/node-mongoose-validator/-/node-mongoose-validator-1.2.0.tgz' } ]
+101 info install node-mongoose-validator@1.2.0 into /Users/cperry/Developer/GitRepos/rgi-assessment-tool
+102 info installOne node-mongoose-validator@1.2.0
+103 verbose installOne of node-mongoose-validator to /Users/cperry/Developer/GitRepos/rgi-assessment-tool not in flight; installing
+104 verbose lock using /Users/cperry/.npm/_locks/node-mongoose-validator-17a815a1e2af55f0.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+105 silly install write writing node-mongoose-validator 1.2.0 to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+106 verbose unbuild node_modules/node-mongoose-validator
+107 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator is being purged from base /Users/cperry/Developer/GitRepos/rgi-assessment-tool
+108 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+109 verbose tar unpack /Users/cperry/.npm/node-mongoose-validator/1.2.0/package.tgz
+110 verbose tar unpacking to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+111 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator is being purged
+112 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+113 silly gunzTarPerm modes [ '755', '644' ]
+114 silly gunzTarPerm extractEntry package.json
+115 silly gunzTarPerm extractEntry .npmignore
+116 silly gunzTarPerm extractEntry README.md
+117 silly gunzTarPerm extractEntry LICENSE
+118 silly gunzTarPerm extractEntry index.js
+119 silly gunzTarPerm extractEntry .jshintrc
+120 silly gunzTarPerm extractEntry .travis.yml
+121 silly gunzTarPerm extractEntry lib/node-mongoose-validator.js
+122 silly gunzTarPerm extractEntry test/test.js
+123 verbose write writing to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/package.json
+124 info preinstall node-mongoose-validator@1.2.0
+125 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/package.json
+126 silly prepareForInstallMany adding lodash@^3.10.1 from node-mongoose-validator dependencies
+127 silly prepareForInstallMany adding validator@^4.0.5 from node-mongoose-validator dependencies
+128 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/package.json
+129 silly cache add args [ 'validator@^4.0.5', null ]
+130 verbose cache add spec validator@^4.0.5
+131 silly cache add parsed spec Result {
+131 silly cache add   raw: 'validator@^4.0.5',
+131 silly cache add   scope: null,
+131 silly cache add   name: 'validator',
+131 silly cache add   rawSpec: '^4.0.5',
+131 silly cache add   spec: '>=4.0.5 <5.0.0',
+131 silly cache add   type: 'range' }
+132 silly addNamed validator@>=4.0.5 <5.0.0
+133 verbose addNamed ">=4.0.5 <5.0.0" is a valid semver range for validator
+134 silly addNameRange { name: 'validator', range: '>=4.0.5 <5.0.0', hasData: false }
+135 silly mapToRegistry name validator
+136 silly mapToRegistry using default registry
+137 silly mapToRegistry registry https://registry.npmjs.org/
+138 silly mapToRegistry uri https://registry.npmjs.org/validator
+139 verbose addNameRange registry:https://registry.npmjs.org/validator not in flight; fetching
+140 silly cache add args [ 'lodash@^3.10.1', null ]
+141 verbose cache add spec lodash@^3.10.1
+142 silly cache add parsed spec Result {
+142 silly cache add   raw: 'lodash@^3.10.1',
+142 silly cache add   scope: null,
+142 silly cache add   name: 'lodash',
+142 silly cache add   rawSpec: '^3.10.1',
+142 silly cache add   spec: '>=3.10.1 <4.0.0',
+142 silly cache add   type: 'range' }
+143 silly addNamed lodash@>=3.10.1 <4.0.0
+144 verbose addNamed ">=3.10.1 <4.0.0" is a valid semver range for lodash
+145 silly addNameRange { name: 'lodash', range: '>=3.10.1 <4.0.0', hasData: false }
+146 silly mapToRegistry name lodash
+147 silly mapToRegistry using default registry
+148 silly mapToRegistry registry https://registry.npmjs.org/
+149 silly mapToRegistry uri https://registry.npmjs.org/lodash
+150 verbose addNameRange registry:https://registry.npmjs.org/lodash not in flight; fetching
+151 verbose request uri https://registry.npmjs.org/validator
+152 verbose request no auth needed
+153 info attempt registry request try #1 at 9:04:19 PM
+154 verbose etag "AGFG4FJUWCZKYOQK59P3AC091"
+155 http request GET https://registry.npmjs.org/validator
+156 verbose request uri https://registry.npmjs.org/lodash
+157 verbose request no auth needed
+158 info attempt registry request try #1 at 9:04:19 PM
+159 verbose etag "6V3A826D01RUAALR8615SOR8U"
+160 http request GET https://registry.npmjs.org/lodash
+161 http 200 https://registry.npmjs.org/lodash
+162 silly get cb [ 200,
+162 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+162 silly get     etag: '"5SOI79XD446ROL2C8CP3P8HPR"',
+162 silly get     'content-type': 'application/json',
+162 silly get     'cache-control': 'max-age=60',
+162 silly get     'content-length': '109821',
+162 silly get     'accept-ranges': 'bytes',
+162 silly get     date: 'Sat, 24 Oct 2015 02:04:19 GMT',
+162 silly get     via: '1.1 varnish',
+162 silly get     age: '2',
+162 silly get     connection: 'keep-alive',
+162 silly get     'x-served-by': 'cache-dfw1820-DFW',
+162 silly get     'x-cache': 'HIT',
+162 silly get     'x-cache-hits': '1',
+162 silly get     'x-timer': 'S1445652259.881741,VS0,VE0',
+162 silly get     vary: 'Accept' } ]
+163 verbose get saving lodash to /Users/cperry/.npm/registry.npmjs.org/lodash/.cache.json
+164 silly addNameRange number 2 { name: 'lodash', range: '>=3.10.1 <4.0.0', hasData: true }
+165 silly addNameRange versions [ 'lodash',
+165 silly addNameRange   [ '0.1.0',
+165 silly addNameRange     '0.2.0',
+165 silly addNameRange     '0.2.1',
+165 silly addNameRange     '0.2.2',
+165 silly addNameRange     '0.3.0',
+165 silly addNameRange     '0.3.1',
+165 silly addNameRange     '0.3.2',
+165 silly addNameRange     '0.4.0',
+165 silly addNameRange     '0.4.1',
+165 silly addNameRange     '0.4.2',
+165 silly addNameRange     '0.5.0-rc.1',
+165 silly addNameRange     '0.5.0',
+165 silly addNameRange     '0.5.1',
+165 silly addNameRange     '0.5.2',
+165 silly addNameRange     '0.6.0',
+165 silly addNameRange     '0.6.1',
+165 silly addNameRange     '0.7.0',
+165 silly addNameRange     '0.8.0',
+165 silly addNameRange     '0.8.1',
+165 silly addNameRange     '0.8.2',
+165 silly addNameRange     '0.9.0',
+165 silly addNameRange     '0.9.1',
+165 silly addNameRange     '0.9.2',
+165 silly addNameRange     '0.10.0',
+165 silly addNameRange     '1.0.0-rc.1',
+165 silly addNameRange     '1.0.0-rc.2',
+165 silly addNameRange     '1.0.0-rc.3',
+165 silly addNameRange     '1.0.0',
+165 silly addNameRange     '1.0.1',
+165 silly addNameRange     '1.1.0',
+165 silly addNameRange     '1.1.1',
+165 silly addNameRange     '1.2.0',
+165 silly addNameRange     '1.2.1',
+165 silly addNameRange     '1.3.0',
+165 silly addNameRange     '1.3.1',
+165 silly addNameRange     '2.0.0',
+165 silly addNameRange     '2.1.0',
+165 silly addNameRange     '2.2.0',
+165 silly addNameRange     '2.2.1',
+165 silly addNameRange     '2.3.0',
+165 silly addNameRange     '2.4.0',
+165 silly addNameRange     '2.4.1',
+165 silly addNameRange     '3.0.0',
+165 silly addNameRange     '3.0.1',
+165 silly addNameRange     '3.1.0',
+165 silly addNameRange     '3.2.0',
+165 silly addNameRange     '3.3.0',
+165 silly addNameRange     '3.3.1',
+165 silly addNameRange     '3.4.0',
+165 silly addNameRange     '3.5.0',
+165 silly addNameRange     '3.6.0',
+165 silly addNameRange     '1.0.2',
+165 silly addNameRange     '3.7.0',
+165 silly addNameRange     '2.4.2',
+165 silly addNameRange     '3.8.0',
+165 silly addNameRange     '3.9.0',
+165 silly addNameRange     '3.9.1',
+165 silly addNameRange     '3.9.2',
+165 silly addNameRange     '3.9.3',
+165 silly addNameRange     '3.10.0',
+165 silly addNameRange     '3.10.1' ] ]
+166 silly addNamed lodash@3.10.1
+167 verbose addNamed "3.10.1" is a plain semver version for lodash
+168 silly cache afterAdd lodash@3.10.1
+169 verbose afterAdd /Users/cperry/.npm/lodash/3.10.1/package/package.json not in flight; writing
+170 verbose afterAdd /Users/cperry/.npm/lodash/3.10.1/package/package.json written
+171 http 200 https://registry.npmjs.org/validator
+172 silly get cb [ 200,
+172 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+172 silly get     etag: '"79CQHKIIFGR8NF1N2Q0BZE32"',
+172 silly get     'content-type': 'application/json',
+172 silly get     'cache-control': 'max-age=60',
+172 silly get     'content-length': '190257',
+172 silly get     'accept-ranges': 'bytes',
+172 silly get     date: 'Sat, 24 Oct 2015 02:04:19 GMT',
+172 silly get     via: '1.1 varnish',
+172 silly get     age: '0',
+172 silly get     connection: 'keep-alive',
+172 silly get     'x-served-by': 'cache-dfw1834-DFW',
+172 silly get     'x-cache': 'HIT',
+172 silly get     'x-cache-hits': '1',
+172 silly get     'x-timer': 'S1445652259.874758,VS0,VE46',
+172 silly get     vary: 'Accept' } ]
+173 verbose get saving validator to /Users/cperry/.npm/registry.npmjs.org/validator/.cache.json
+174 silly addNameRange number 2 { name: 'validator', range: '>=4.0.5 <5.0.0', hasData: true }
+175 silly addNameRange versions [ 'validator',
+175 silly addNameRange   [ '0.1.0',
+175 silly addNameRange     '0.1.1',
+175 silly addNameRange     '0.1.2',
+175 silly addNameRange     '0.1.3',
+175 silly addNameRange     '0.1.4',
+175 silly addNameRange     '0.1.5',
+175 silly addNameRange     '0.1.6',
+175 silly addNameRange     '0.1.7',
+175 silly addNameRange     '0.1.8',
+175 silly addNameRange     '0.1.9',
+175 silly addNameRange     '0.2.0',
+175 silly addNameRange     '0.2.1',
+175 silly addNameRange     '0.2.2',
+175 silly addNameRange     '0.2.3',
+175 silly addNameRange     '0.2.4',
+175 silly addNameRange     '0.2.5',
+175 silly addNameRange     '0.2.6',
+175 silly addNameRange     '0.2.7',
+175 silly addNameRange     '0.2.8',
+175 silly addNameRange     '0.2.9',
+175 silly addNameRange     '0.3.0',
+175 silly addNameRange     '0.3.1',
+175 silly addNameRange     '0.3.2',
+175 silly addNameRange     '0.3.4',
+175 silly addNameRange     '0.3.5',
+175 silly addNameRange     '0.3.6',
+175 silly addNameRange     '0.3.7',
+175 silly addNameRange     '0.3.8',
+175 silly addNameRange     '0.3.9',
+175 silly addNameRange     '0.4.0',
+175 silly addNameRange     '0.4.1',
+175 silly addNameRange     '0.4.2',
+175 silly addNameRange     '0.4.3',
+175 silly addNameRange     '0.4.4',
+175 silly addNameRange     '0.4.5',
+175 silly addNameRange     '0.4.6',
+175 silly addNameRange     '0.4.6-1',
+175 silly addNameRange     '0.4.6-2',
+175 silly addNameRange     '0.4.6-3',
+175 silly addNameRange     '0.4.7',
+175 silly addNameRange     '0.4.8',
+175 silly addNameRange     '0.4.9',
+175 silly addNameRange     '0.4.10',
+175 silly addNameRange     '0.4.11',
+175 silly addNameRange     '0.4.12',
+175 silly addNameRange     '0.4.13',
+175 silly addNameRange     '0.4.15',
+175 silly addNameRange     '0.4.16',
+175 silly addNameRange     '0.4.17',
+175 silly addNameRange     '0.4.18',
+175 silly addNameRange     '0.4.19',
+175 silly addNameRange     '0.4.20',
+175 silly addNameRange     '0.4.21',
+175 silly addNameRange     '0.4.22',
+175 silly addNameRange     '0.4.23',
+175 silly addNameRange     '0.4.24',
+175 silly addNameRange     '0.4.25',
+175 silly addNameRange     '0.4.27',
+175 silly addNameRange     '0.4.28',
+175 silly addNameRange     '0.5.0',
+175 silly addNameRange     '1.0.0',
+175 silly addNameRange     '1.1.0',
+175 silly addNameRange     '1.1.1',
+175 silly addNameRange     '1.1.2',
+175 silly addNameRange     '1.1.3',
+175 silly addNameRange     '1.2.0',
+175 silly addNameRange     '1.2.1',
+175 silly addNameRange     '1.2.2',
+175 silly addNameRange     '1.3.0',
+175 silly addNameRange     '1.4.0',
+175 silly addNameRange     '1.5.0',
+175 silly addNameRange     '1.5.1',
+175 silly addNameRange     '2.0.0',
+175 silly addNameRange     '2.1.0',
+175 silly addNameRange     '3.0.0',
+175 silly addNameRange     '3.1.0',
+175 silly addNameRange     '3.2.0',
+175 silly addNameRange     '3.2.1',
+175 silly addNameRange     '3.3.0',
+175 silly addNameRange     '3.4.0',
+175 silly addNameRange     '3.5.0',
+175 silly addNameRange     '3.5.1',
+175 silly addNameRange     '3.6.0',
+175 silly addNameRange     '3.7.0',
+175 silly addNameRange     '3.8.0',
+175 silly addNameRange     '3.9.0',
+175 silly addNameRange     '3.10.0',
+175 silly addNameRange     '3.11.0',
+175 silly addNameRange     '3.11.1',
+175 silly addNameRange     '3.11.2',
+175 silly addNameRange     '3.12.0',
+175 silly addNameRange     '3.13.0',
+175 silly addNameRange     '3.14.0',
+175 silly addNameRange     '3.14.1',
+175 silly addNameRange     '3.15.0',
+175 silly addNameRange     '3.16.0',
+175 silly addNameRange     '3.16.1',
+175 silly addNameRange     '3.17.0',
+175 silly addNameRange     '3.17.1',
+175 silly addNameRange     '3.17.2',
+175 silly addNameRange     '3.18.0',
+175 silly addNameRange     '3.18.1',
+175 silly addNameRange     '3.19.0',
+175 silly addNameRange     '3.19.1',
+175 silly addNameRange     '3.20.0',
+175 silly addNameRange     '3.21.0',
+175 silly addNameRange     '3.22.0',
+175 silly addNameRange     '3.22.1',
+175 silly addNameRange     '3.22.2',
+175 silly addNameRange     '3.23.0',
+175 silly addNameRange     '3.24.0',
+175 silly addNameRange     '3.25.0',
+175 silly addNameRange     '3.26.0',
+175 silly addNameRange     '3.27.0',
+175 silly addNameRange     '3.28.0',
+175 silly addNameRange     '3.29.0',
+175 silly addNameRange     '3.30.0',
+175 silly addNameRange     '3.32.0',
+175 silly addNameRange     '3.33.0',
+175 silly addNameRange     '3.34.0',
+175 silly addNameRange     '3.35.0',
+175 silly addNameRange     '3.36.0',
+175 silly addNameRange     '3.37.0',
+175 silly addNameRange     '3.38.0',
+175 silly addNameRange     '3.39.0',
+175 silly addNameRange     '3.40.0',
+175 silly addNameRange     '3.40.1',
+175 silly addNameRange     '3.41.0',
+175 silly addNameRange     '3.41.1',
+175 silly addNameRange     '3.41.2',
+175 silly addNameRange     '3.41.3',
+175 silly addNameRange     '3.42.0',
+175 silly addNameRange     '3.43.0',
+175 silly addNameRange     '4.0.0',
+175 silly addNameRange     '4.0.1',
+175 silly addNameRange     '4.0.2',
+175 silly addNameRange     '4.0.3',
+175 silly addNameRange     '4.0.4',
+175 silly addNameRange     '4.0.5',
+175 silly addNameRange     '4.0.6',
+175 silly addNameRange     '4.1.0',
+175 silly addNameRange     '4.2.0' ] ]
+176 silly addNamed validator@4.2.0
+177 verbose addNamed "4.2.0" is a plain semver version for validator
+178 silly mapToRegistry name validator
+179 silly mapToRegistry using default registry
+180 silly mapToRegistry registry https://registry.npmjs.org/
+181 silly mapToRegistry uri https://registry.npmjs.org/validator
+182 verbose addRemoteTarball https://registry.npmjs.org/validator/-/validator-4.2.0.tgz not in flight; adding
+183 verbose addRemoteTarball [ 'https://registry.npmjs.org/validator/-/validator-4.2.0.tgz',
+183 verbose addRemoteTarball   'f428a295e1c10b4e9da0e5925ed08f953071ce1d' ]
+184 info retry fetch attempt 1 at 9:04:20 PM
+185 info attempt registry request try #1 at 9:04:20 PM
+186 http fetch GET https://registry.npmjs.org/validator/-/validator-4.2.0.tgz
+187 http fetch 200 https://registry.npmjs.org/validator/-/validator-4.2.0.tgz
+188 silly fetchAndShaCheck shasum f428a295e1c10b4e9da0e5925ed08f953071ce1d
+189 verbose addTmpTarball /tmp/npm-3848-8e6c90bf/registry.npmjs.org/validator/-/validator-4.2.0.tgz not in flight; adding
+190 verbose addTmpTarball already have metadata; skipping unpack for validator@4.2.0
+191 silly cache afterAdd validator@4.2.0
+192 verbose afterAdd /Users/cperry/.npm/validator/4.2.0/package/package.json not in flight; writing
+193 verbose afterAdd /Users/cperry/.npm/validator/4.2.0/package/package.json written
+194 silly install resolved [ { name: 'lodash',
+194 silly install resolved     version: '3.10.1',
+194 silly install resolved     description: 'The modern build of lodash modular utilities.',
+194 silly install resolved     homepage: 'https://lodash.com/',
+194 silly install resolved     icon: 'https://lodash.com/icon.svg',
+194 silly install resolved     license: 'MIT',
+194 silly install resolved     main: 'index.js',
+194 silly install resolved     keywords: [ 'modules', 'stdlib', 'util' ],
+194 silly install resolved     author:
+194 silly install resolved      { name: 'John-David Dalton',
+194 silly install resolved        email: 'john.david.dalton@gmail.com',
+194 silly install resolved        url: 'http://allyoucanleet.com/' },
+194 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+194 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+194 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+194 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+194 silly install resolved     _id: 'lodash@3.10.1',
+194 silly install resolved     _shasum: '5bf45e8e49ba4189e17d482789dfd15bd140b7b6',
+194 silly install resolved     _from: 'lodash@>=3.10.1 <4.0.0',
+194 silly install resolved     _npmVersion: '2.13.1',
+194 silly install resolved     _nodeVersion: '0.12.5',
+194 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+194 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+194 silly install resolved     dist:
+194 silly install resolved      { shasum: '5bf45e8e49ba4189e17d482789dfd15bd140b7b6',
+194 silly install resolved        tarball: 'http://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz' },
+194 silly install resolved     directories: {},
+194 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz',
+194 silly install resolved     readme: 'ERROR: No README data found!' },
+194 silly install resolved   { name: 'validator',
+194 silly install resolved     description: 'String validation and sanitization',
+194 silly install resolved     version: '4.2.0',
+194 silly install resolved     homepage: 'http://github.com/chriso/validator.js',
+194 silly install resolved     keywords:
+194 silly install resolved      [ 'validator',
+194 silly install resolved        'validation',
+194 silly install resolved        'validate',
+194 silly install resolved        'sanitization',
+194 silly install resolved        'sanitize',
+194 silly install resolved        'sanitisation',
+194 silly install resolved        'sanitise',
+194 silly install resolved        'assert' ],
+194 silly install resolved     author: { name: 'Chris O\'Hara', email: 'cohara87@gmail.com' },
+194 silly install resolved     main: 'validator.js',
+194 silly install resolved     bugs: { url: 'http://github.com/chriso/validator.js/issues' },
+194 silly install resolved     repository:
+194 silly install resolved      { type: 'git',
+194 silly install resolved        url: 'git+ssh://git@github.com/chriso/validator.js.git' },
+194 silly install resolved     devDependencies:
+194 silly install resolved      { mocha: 'latest',
+194 silly install resolved        istanbul: 'latest',
+194 silly install resolved        jshint: 'latest',
+194 silly install resolved        'uglify-js': 'latest',
+194 silly install resolved        coveralls: 'latest' },
+194 silly install resolved     scripts:
+194 silly install resolved      { test: 'node ./node_modules/.bin/_mocha --reporter spec',
+194 silly install resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
+194 silly install resolved     engines: { node: '>= 0.10' },
+194 silly install resolved     license: 'MIT',
+194 silly install resolved     gitHead: '6bde55202330c93b58742012152157407b03abf6',
+194 silly install resolved     _id: 'validator@4.2.0',
+194 silly install resolved     _shasum: 'f428a295e1c10b4e9da0e5925ed08f953071ce1d',
+194 silly install resolved     _from: 'validator@>=4.0.5 <5.0.0',
+194 silly install resolved     _npmVersion: '2.14.7',
+194 silly install resolved     _nodeVersion: '4.2.1',
+194 silly install resolved     _npmUser: { name: 'cohara87', email: 'cohara87@gmail.com' },
+194 silly install resolved     dist:
+194 silly install resolved      { shasum: 'f428a295e1c10b4e9da0e5925ed08f953071ce1d',
+194 silly install resolved        tarball: 'http://registry.npmjs.org/validator/-/validator-4.2.0.tgz' },
+194 silly install resolved     maintainers: [ [Object] ],
+194 silly install resolved     directories: {},
+194 silly install resolved     _resolved: 'https://registry.npmjs.org/validator/-/validator-4.2.0.tgz' } ]
+195 info install lodash@3.10.1 into /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+196 info install validator@4.2.0 into /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+197 info installOne lodash@3.10.1
+198 verbose installOne of lodash to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator not in flight; installing
+199 info installOne validator@4.2.0
+200 verbose installOne of validator to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator not in flight; installing
+201 verbose lock using /Users/cperry/.npm/_locks/lodash-34da1b3969b209fa.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+202 silly install write writing lodash 3.10.1 to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+203 verbose lock using /Users/cperry/.npm/_locks/validator-b5affc9c4f761a0f.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+204 silly install write writing validator 4.2.0 to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+205 verbose unbuild node_modules/node-mongoose-validator/node_modules/lodash
+206 verbose unbuild node_modules/node-mongoose-validator/node_modules/validator
+207 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash is being purged from base /Users/cperry/Developer/GitRepos/rgi-assessment-tool
+208 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+209 verbose tar unpack /Users/cperry/.npm/lodash/3.10.1/package.tgz
+210 verbose tar unpacking to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+211 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash is being purged
+212 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+213 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator is being purged from base /Users/cperry/Developer/GitRepos/rgi-assessment-tool
+214 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+215 silly gunzTarPerm modes [ '755', '644' ]
+216 verbose tar unpack /Users/cperry/.npm/validator/4.2.0/package.tgz
+217 verbose tar unpacking to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+218 silly gentlyRm /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator is being purged
+219 verbose gentlyRm don't care about contents; nuking /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+220 silly gunzTarPerm modes [ '755', '644' ]
+221 silly gunzTarPerm extractEntry package.json
+222 silly gunzTarPerm extractEntry package.json
+223 silly gunzTarPerm extractEntry .npmignore
+224 silly gunzTarPerm extractEntry README.md
+225 silly gunzTarPerm extractEntry README.md
+226 silly gunzTarPerm extractEntry LICENSE
+227 silly gunzTarPerm extractEntry LICENSE
+228 silly gunzTarPerm extractEntry validator.js
+229 silly gunzTarPerm extractEntry validator.min.js
+230 silly gunzTarPerm extractEntry Makefile
+231 silly gunzTarPerm extractEntry CHANGELOG.md
+232 silly gunzTarPerm extractEntry bower.json
+233 silly gunzTarPerm extractEntry .travis.yml
+234 silly gunzTarPerm extractEntry test/client-side.js
+235 silly gunzTarPerm extractEntry test/exports.js
+236 silly gunzTarPerm extractEntry test/sanitizers.js
+237 silly gunzTarPerm extractEntry test/validators.js
+238 silly gunzTarPerm extractEntry .jshintrc
+239 silly gunzTarPerm extractEntry chain.js
+240 silly gunzTarPerm extractEntry string.js
+241 silly gunzTarPerm extractEntry collection.js
+242 silly gunzTarPerm extractEntry array.js
+243 silly gunzTarPerm extractEntry date.js
+244 silly gunzTarPerm extractEntry number.js
+245 silly gunzTarPerm extractEntry function.js
+246 silly gunzTarPerm extractEntry index.js
+247 silly gunzTarPerm extractEntry math.js
+248 silly gunzTarPerm extractEntry support.js
+249 silly gunzTarPerm extractEntry lang.js
+250 silly gunzTarPerm extractEntry object.js
+251 silly gunzTarPerm extractEntry utility.js
+252 silly gunzTarPerm extractEntry collection/all.js
+253 silly gunzTarPerm extractEntry collection/forEachRight.js
+254 silly gunzTarPerm extractEntry collection/groupBy.js
+255 silly gunzTarPerm extractEntry collection/include.js
+256 silly gunzTarPerm extractEntry collection/includes.js
+257 silly gunzTarPerm extractEntry collection/forEach.js
+258 silly gunzTarPerm extractEntry collection/inject.js
+259 silly gunzTarPerm extractEntry collection/invoke.js
+260 silly gunzTarPerm extractEntry collection/map.js
+261 silly gunzTarPerm extractEntry collection/max.js
+262 silly gunzTarPerm extractEntry collection/min.js
+263 silly gunzTarPerm extractEntry collection/foldr.js
+264 silly gunzTarPerm extractEntry collection/partition.js
+265 silly gunzTarPerm extractEntry collection/foldl.js
+266 silly gunzTarPerm extractEntry collection/pluck.js
+267 silly gunzTarPerm extractEntry collection/findWhere.js
+268 silly gunzTarPerm extractEntry collection/reduce.js
+269 silly gunzTarPerm extractEntry collection/findLast.js
+270 silly gunzTarPerm extractEntry collection/reduceRight.js
+271 silly gunzTarPerm extractEntry collection/find.js
+272 silly gunzTarPerm extractEntry collection/reject.js
+273 silly gunzTarPerm extractEntry collection/filter.js
+274 silly gunzTarPerm extractEntry collection/sample.js
+275 silly gunzTarPerm extractEntry collection/every.js
+276 silly gunzTarPerm extractEntry collection/select.js
+277 silly gunzTarPerm extractEntry collection/eachRight.js
+278 silly gunzTarPerm extractEntry collection/shuffle.js
+279 silly gunzTarPerm extractEntry collection/each.js
+280 silly gunzTarPerm extractEntry collection/size.js
+281 silly gunzTarPerm extractEntry collection/detect.js
+282 silly gunzTarPerm extractEntry collection/some.js
+283 silly gunzTarPerm extractEntry collection/countBy.js
+284 silly gunzTarPerm extractEntry collection/sortBy.js
+285 verbose write writing to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator/package.json
+286 info preinstall validator@4.2.0
+287 silly gunzTarPerm extractEntry collection/contains.js
+288 silly gunzTarPerm extractEntry collection/sortByAll.js
+289 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator/package.json
+290 silly gunzTarPerm extractEntry collection/collect.js
+291 silly gunzTarPerm extractEntry collection/sortByOrder.js
+292 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator/package.json
+293 silly gunzTarPerm extractEntry collection/at.js
+294 silly gunzTarPerm extractEntry collection/sum.js
+295 silly install resolved []
+296 verbose about to build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+297 info build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+298 silly gunzTarPerm extractEntry collection/any.js
+299 silly gunzTarPerm extractEntry collection/where.js
+300 info linkStuff validator@4.2.0
+301 silly linkStuff validator@4.2.0 has /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules as its parent node_modules
+302 silly gunzTarPerm extractEntry collection/indexBy.js
+303 silly gunzTarPerm extractEntry math/add.js
+304 verbose linkBins validator@4.2.0
+305 verbose linkMans validator@4.2.0
+306 verbose rebuildBundles validator@4.2.0
+307 info install validator@4.2.0
+308 info postinstall validator@4.2.0
+309 silly gunzTarPerm extractEntry math/ceil.js
+310 silly gunzTarPerm extractEntry math/floor.js
+311 verbose unlock done using /Users/cperry/.npm/_locks/validator-b5affc9c4f761a0f.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/validator
+312 silly gunzTarPerm extractEntry math/max.js
+313 silly gunzTarPerm extractEntry math/min.js
+314 silly gunzTarPerm extractEntry math/round.js
+315 silly gunzTarPerm extractEntry math/sum.js
+316 silly gunzTarPerm extractEntry number/inRange.js
+317 silly gunzTarPerm extractEntry number/random.js
+318 silly gunzTarPerm extractEntry function/after.js
+319 silly gunzTarPerm extractEntry function/curryRight.js
+320 silly gunzTarPerm extractEntry function/debounce.js
+321 silly gunzTarPerm extractEntry function/defer.js
+322 silly gunzTarPerm extractEntry function/delay.js
+323 silly gunzTarPerm extractEntry function/curry.js
+324 silly gunzTarPerm extractEntry function/flowRight.js
+325 silly gunzTarPerm extractEntry function/memoize.js
+326 silly gunzTarPerm extractEntry function/modArgs.js
+327 silly gunzTarPerm extractEntry function/negate.js
+328 silly gunzTarPerm extractEntry function/once.js
+329 silly gunzTarPerm extractEntry function/compose.js
+330 silly gunzTarPerm extractEntry function/partial.js
+331 silly gunzTarPerm extractEntry function/bindKey.js
+332 silly gunzTarPerm extractEntry function/partialRight.js
+333 silly gunzTarPerm extractEntry function/bindAll.js
+334 silly gunzTarPerm extractEntry function/rearg.js
+335 silly gunzTarPerm extractEntry function/bind.js
+336 silly gunzTarPerm extractEntry function/restParam.js
+337 silly gunzTarPerm extractEntry function/before.js
+338 silly gunzTarPerm extractEntry function/spread.js
+339 silly gunzTarPerm extractEntry function/backflow.js
+340 silly gunzTarPerm extractEntry function/throttle.js
+341 silly gunzTarPerm extractEntry function/ary.js
+342 silly gunzTarPerm extractEntry function/wrap.js
+343 silly gunzTarPerm extractEntry function/flow.js
+344 silly gunzTarPerm extractEntry object/assign.js
+345 silly gunzTarPerm extractEntry object/functions.js
+346 silly gunzTarPerm extractEntry object/get.js
+347 silly gunzTarPerm extractEntry object/has.js
+348 silly gunzTarPerm extractEntry object/forOwnRight.js
+349 silly gunzTarPerm extractEntry object/keys.js
+350 silly gunzTarPerm extractEntry object/keysIn.js
+351 silly gunzTarPerm extractEntry object/mapKeys.js
+352 silly gunzTarPerm extractEntry object/mapValues.js
+353 silly gunzTarPerm extractEntry object/merge.js
+354 silly gunzTarPerm extractEntry object/forOwn.js
+355 silly gunzTarPerm extractEntry object/methods.js
+356 silly gunzTarPerm extractEntry object/forInRight.js
+357 silly gunzTarPerm extractEntry object/omit.js
+358 silly gunzTarPerm extractEntry object/forIn.js
+359 silly gunzTarPerm extractEntry object/pairs.js
+360 silly gunzTarPerm extractEntry object/findLastKey.js
+361 silly gunzTarPerm extractEntry object/pick.js
+362 silly gunzTarPerm extractEntry object/findKey.js
+363 silly gunzTarPerm extractEntry object/result.js
+364 silly gunzTarPerm extractEntry object/extend.js
+365 silly gunzTarPerm extractEntry object/set.js
+366 silly gunzTarPerm extractEntry object/defaultsDeep.js
+367 silly gunzTarPerm extractEntry object/transform.js
+368 silly gunzTarPerm extractEntry object/defaults.js
+369 silly gunzTarPerm extractEntry object/values.js
+370 silly gunzTarPerm extractEntry object/create.js
+371 silly gunzTarPerm extractEntry object/valuesIn.js
+372 silly gunzTarPerm extractEntry object/invert.js
+373 silly gunzTarPerm extractEntry date/now.js
+374 silly gunzTarPerm extractEntry internal/LazyWrapper.js
+375 silly gunzTarPerm extractEntry internal/compareAscending.js
+376 silly gunzTarPerm extractEntry internal/compareMultiple.js
+377 silly gunzTarPerm extractEntry internal/composeArgs.js
+378 silly gunzTarPerm extractEntry internal/charsRightIndex.js
+379 silly gunzTarPerm extractEntry internal/createAggregator.js
+380 silly gunzTarPerm extractEntry internal/createAssigner.js
+381 silly gunzTarPerm extractEntry internal/createBaseEach.js
+382 silly gunzTarPerm extractEntry internal/createBaseFor.js
+383 silly gunzTarPerm extractEntry internal/createBindWrapper.js
+384 silly gunzTarPerm extractEntry internal/charsLeftIndex.js
+385 silly gunzTarPerm extractEntry internal/createCache.js
+386 silly gunzTarPerm extractEntry internal/cachePush.js
+387 silly gunzTarPerm extractEntry internal/createCompounder.js
+388 silly gunzTarPerm extractEntry internal/cacheIndexOf.js
+389 silly gunzTarPerm extractEntry internal/createCtorWrapper.js
+390 silly gunzTarPerm extractEntry internal/bufferClone.js
+391 silly gunzTarPerm extractEntry internal/createCurry.js
+392 silly gunzTarPerm extractEntry internal/bindCallback.js
+393 silly gunzTarPerm extractEntry internal/createDefaults.js
+394 silly gunzTarPerm extractEntry internal/binaryIndexBy.js
+395 silly gunzTarPerm extractEntry internal/createExtremum.js
+396 silly gunzTarPerm extractEntry internal/binaryIndex.js
+397 silly gunzTarPerm extractEntry internal/createFind.js
+398 silly gunzTarPerm extractEntry internal/baseWrapperValue.js
+399 silly gunzTarPerm extractEntry internal/createFindIndex.js
+400 silly gunzTarPerm extractEntry internal/baseWhile.js
+401 silly gunzTarPerm extractEntry internal/createFindKey.js
+402 silly gunzTarPerm extractEntry internal/baseValues.js
+403 silly gunzTarPerm extractEntry internal/createFlow.js
+404 silly gunzTarPerm extractEntry internal/baseUniq.js
+405 silly gunzTarPerm extractEntry internal/createForEach.js
+406 silly gunzTarPerm extractEntry internal/baseToString.js
+407 silly gunzTarPerm extractEntry internal/createForIn.js
+408 silly gunzTarPerm extractEntry internal/baseSum.js
+409 silly gunzTarPerm extractEntry internal/createForOwn.js
+410 silly gunzTarPerm extractEntry internal/baseSortByOrder.js
+411 silly gunzTarPerm extractEntry internal/createHybridWrapper.js
+412 silly gunzTarPerm extractEntry internal/baseSortBy.js
+413 silly gunzTarPerm extractEntry internal/createObjectMapper.js
+414 silly gunzTarPerm extractEntry internal/baseSome.js
+415 silly gunzTarPerm extractEntry internal/createPadDir.js
+416 silly gunzTarPerm extractEntry internal/baseSlice.js
+417 silly gunzTarPerm extractEntry internal/createPadding.js
+418 silly gunzTarPerm extractEntry internal/baseSetData.js
+419 silly gunzTarPerm extractEntry internal/createPartial.js
+420 silly gunzTarPerm extractEntry internal/baseReduce.js
+421 silly gunzTarPerm extractEntry internal/createPartialWrapper.js
+422 silly gunzTarPerm extractEntry internal/baseRandom.js
+423 silly gunzTarPerm extractEntry internal/createReduce.js
+424 silly gunzTarPerm extractEntry internal/basePullAt.js
+425 silly gunzTarPerm extractEntry internal/createRound.js
+426 silly gunzTarPerm extractEntry internal/basePropertyDeep.js
+427 silly gunzTarPerm extractEntry internal/createSortedIndex.js
+428 silly gunzTarPerm extractEntry internal/baseProperty.js
+429 silly gunzTarPerm extractEntry internal/createWrapper.js
+430 silly gunzTarPerm extractEntry internal/baseMergeDeep.js
+431 silly gunzTarPerm extractEntry internal/deburrLetter.js
+432 silly gunzTarPerm extractEntry internal/baseMerge.js
+433 silly gunzTarPerm extractEntry internal/equalArrays.js
+434 silly gunzTarPerm extractEntry internal/baseMatchesProperty.js
+435 silly gunzTarPerm extractEntry internal/equalByTag.js
+436 silly gunzTarPerm extractEntry internal/baseMatches.js
+437 silly gunzTarPerm extractEntry internal/equalObjects.js
+438 silly gunzTarPerm extractEntry internal/baseMap.js
+439 silly gunzTarPerm extractEntry internal/escapeHtmlChar.js
+440 silly gunzTarPerm extractEntry internal/baseLodash.js
+441 silly gunzTarPerm extractEntry internal/escapeRegExpChar.js
+442 silly gunzTarPerm extractEntry internal/baseIsMatch.js
+443 silly gunzTarPerm extractEntry internal/escapeStringChar.js
+444 silly gunzTarPerm extractEntry internal/baseIsFunction.js
+445 silly gunzTarPerm extractEntry internal/getData.js
+446 silly gunzTarPerm extractEntry internal/baseIsEqualDeep.js
+447 silly gunzTarPerm extractEntry internal/getFuncName.js
+448 silly gunzTarPerm extractEntry internal/baseIsEqual.js
+449 silly gunzTarPerm extractEntry internal/getLength.js
+450 silly gunzTarPerm extractEntry internal/baseIndexOf.js
+451 silly gunzTarPerm extractEntry internal/getMatchData.js
+452 silly gunzTarPerm extractEntry internal/baseGet.js
+453 silly gunzTarPerm extractEntry internal/getNative.js
+454 silly gunzTarPerm extractEntry internal/baseFunctions.js
+455 silly gunzTarPerm extractEntry internal/getView.js
+456 silly gunzTarPerm extractEntry internal/baseForRight.js
+457 silly gunzTarPerm extractEntry internal/indexOfNaN.js
+458 silly gunzTarPerm extractEntry internal/baseForOwnRight.js
+459 silly gunzTarPerm extractEntry internal/initCloneArray.js
+460 silly gunzTarPerm extractEntry internal/baseForOwn.js
+461 silly gunzTarPerm extractEntry internal/initCloneByTag.js
+462 silly gunzTarPerm extractEntry internal/baseForIn.js
+463 silly gunzTarPerm extractEntry internal/initCloneObject.js
+464 silly gunzTarPerm extractEntry internal/baseFor.js
+465 silly gunzTarPerm extractEntry internal/invokePath.js
+466 silly gunzTarPerm extractEntry internal/baseFlatten.js
+467 silly gunzTarPerm extractEntry internal/isArrayLike.js
+468 silly gunzTarPerm extractEntry internal/baseFindIndex.js
+469 silly gunzTarPerm extractEntry internal/isIndex.js
+470 silly gunzTarPerm extractEntry internal/baseFind.js
+471 silly gunzTarPerm extractEntry internal/isIterateeCall.js
+472 silly gunzTarPerm extractEntry internal/baseFilter.js
+473 silly gunzTarPerm extractEntry internal/isKey.js
+474 silly gunzTarPerm extractEntry internal/baseFill.js
+475 silly gunzTarPerm extractEntry internal/isLaziable.js
+476 silly gunzTarPerm extractEntry internal/baseExtremum.js
+477 silly gunzTarPerm extractEntry internal/isLength.js
+478 silly gunzTarPerm extractEntry internal/baseEvery.js
+479 silly gunzTarPerm extractEntry internal/isObjectLike.js
+480 silly gunzTarPerm extractEntry internal/baseEachRight.js
+481 silly gunzTarPerm extractEntry internal/isSpace.js
+482 silly gunzTarPerm extractEntry internal/baseEach.js
+483 silly gunzTarPerm extractEntry internal/isStrictComparable.js
+484 silly gunzTarPerm extractEntry internal/baseDifference.js
+485 silly gunzTarPerm extractEntry internal/lazyClone.js
+486 silly gunzTarPerm extractEntry internal/baseDelay.js
+487 silly gunzTarPerm extractEntry internal/lazyReverse.js
+488 silly gunzTarPerm extractEntry internal/baseCreate.js
+489 silly gunzTarPerm extractEntry internal/lazyValue.js
+490 silly gunzTarPerm extractEntry internal/baseCopy.js
+491 silly gunzTarPerm extractEntry internal/mapDelete.js
+492 silly gunzTarPerm extractEntry internal/baseCompareAscending.js
+493 silly gunzTarPerm extractEntry internal/mapGet.js
+494 silly gunzTarPerm extractEntry internal/baseClone.js
+495 silly gunzTarPerm extractEntry internal/mapHas.js
+496 silly gunzTarPerm extractEntry internal/baseCallback.js
+497 silly gunzTarPerm extractEntry internal/mapSet.js
+498 silly gunzTarPerm extractEntry internal/baseAt.js
+499 silly gunzTarPerm extractEntry internal/mergeData.js
+500 silly gunzTarPerm extractEntry internal/baseAssign.js
+501 silly gunzTarPerm extractEntry internal/mergeDefaults.js
+502 silly gunzTarPerm extractEntry internal/assignWith.js
+503 silly gunzTarPerm extractEntry internal/metaMap.js
+504 silly gunzTarPerm extractEntry internal/assignOwnDefaults.js
+505 silly gunzTarPerm extractEntry internal/pickByArray.js
+506 silly gunzTarPerm extractEntry internal/assignDefaults.js
+507 silly gunzTarPerm extractEntry internal/pickByCallback.js
+508 silly gunzTarPerm extractEntry internal/arraySum.js
+509 silly gunzTarPerm extractEntry internal/reEscape.js
+510 silly gunzTarPerm extractEntry internal/arraySome.js
+511 silly gunzTarPerm extractEntry internal/reEvaluate.js
+512 silly gunzTarPerm extractEntry internal/arrayReduceRight.js
+513 silly gunzTarPerm extractEntry internal/reInterpolate.js
+514 silly gunzTarPerm extractEntry internal/arrayReduce.js
+515 silly gunzTarPerm extractEntry internal/realNames.js
+516 silly gunzTarPerm extractEntry internal/arrayPush.js
+517 silly gunzTarPerm extractEntry internal/reorder.js
+518 silly gunzTarPerm extractEntry internal/arrayMap.js
+519 silly gunzTarPerm extractEntry internal/replaceHolders.js
+520 silly gunzTarPerm extractEntry internal/arrayFilter.js
+521 silly gunzTarPerm extractEntry internal/setData.js
+522 silly gunzTarPerm extractEntry internal/arrayExtremum.js
+523 silly gunzTarPerm extractEntry internal/shimKeys.js
+524 silly gunzTarPerm extractEntry internal/arrayEvery.js
+525 silly gunzTarPerm extractEntry internal/sortedUniq.js
+526 silly gunzTarPerm extractEntry internal/arrayEachRight.js
+527 silly gunzTarPerm extractEntry internal/toIterable.js
+528 silly gunzTarPerm extractEntry internal/arrayEach.js
+529 silly gunzTarPerm extractEntry internal/toObject.js
+530 silly gunzTarPerm extractEntry internal/arrayCopy.js
+531 silly gunzTarPerm extractEntry internal/toPath.js
+532 silly gunzTarPerm extractEntry internal/arrayConcat.js
+533 silly gunzTarPerm extractEntry internal/trimmedLeftIndex.js
+534 silly gunzTarPerm extractEntry internal/SetCache.js
+535 silly gunzTarPerm extractEntry internal/trimmedRightIndex.js
+536 silly gunzTarPerm extractEntry internal/MapCache.js
+537 silly gunzTarPerm extractEntry internal/unescapeHtmlChar.js
+538 silly gunzTarPerm extractEntry internal/LodashWrapper.js
+539 silly gunzTarPerm extractEntry internal/wrapperClone.js
+540 silly gunzTarPerm extractEntry internal/composeArgsRight.js
+541 silly gunzTarPerm extractEntry string/camelCase.js
+542 silly gunzTarPerm extractEntry string/padLeft.js
+543 silly gunzTarPerm extractEntry string/padRight.js
+544 silly gunzTarPerm extractEntry string/parseInt.js
+545 silly gunzTarPerm extractEntry string/pad.js
+546 silly gunzTarPerm extractEntry string/snakeCase.js
+547 silly gunzTarPerm extractEntry string/startCase.js
+548 silly gunzTarPerm extractEntry string/startsWith.js
+549 silly gunzTarPerm extractEntry string/template.js
+550 silly gunzTarPerm extractEntry string/templateSettings.js
+551 silly gunzTarPerm extractEntry string/kebabCase.js
+552 silly gunzTarPerm extractEntry string/trim.js
+553 silly gunzTarPerm extractEntry string/escapeRegExp.js
+554 silly gunzTarPerm extractEntry string/trimLeft.js
+555 silly gunzTarPerm extractEntry string/escape.js
+556 silly gunzTarPerm extractEntry string/trimRight.js
+557 silly gunzTarPerm extractEntry string/endsWith.js
+558 silly gunzTarPerm extractEntry string/trunc.js
+559 silly gunzTarPerm extractEntry string/deburr.js
+560 silly gunzTarPerm extractEntry string/unescape.js
+561 silly gunzTarPerm extractEntry string/capitalize.js
+562 silly gunzTarPerm extractEntry string/words.js
+563 silly gunzTarPerm extractEntry string/repeat.js
+564 silly gunzTarPerm extractEntry chain/chain.js
+565 silly gunzTarPerm extractEntry chain/run.js
+566 silly gunzTarPerm extractEntry chain/tap.js
+567 silly gunzTarPerm extractEntry chain/thru.js
+568 silly gunzTarPerm extractEntry chain/toJSON.js
+569 silly gunzTarPerm extractEntry chain/reverse.js
+570 silly gunzTarPerm extractEntry chain/value.js
+571 silly gunzTarPerm extractEntry chain/valueOf.js
+572 silly gunzTarPerm extractEntry chain/wrapperChain.js
+573 silly gunzTarPerm extractEntry chain/wrapperCommit.js
+574 silly gunzTarPerm extractEntry chain/wrapperConcat.js
+575 silly gunzTarPerm extractEntry chain/plant.js
+576 silly gunzTarPerm extractEntry chain/wrapperPlant.js
+577 silly gunzTarPerm extractEntry chain/lodash.js
+578 silly gunzTarPerm extractEntry chain/wrapperReverse.js
+579 silly gunzTarPerm extractEntry chain/concat.js
+580 silly gunzTarPerm extractEntry chain/wrapperToString.js
+581 silly gunzTarPerm extractEntry chain/commit.js
+582 silly gunzTarPerm extractEntry chain/wrapperValue.js
+583 silly gunzTarPerm extractEntry chain/toString.js
+584 silly gunzTarPerm extractEntry array/chunk.js
+585 silly gunzTarPerm extractEntry array/last.js
+586 silly gunzTarPerm extractEntry array/lastIndexOf.js
+587 silly gunzTarPerm extractEntry array/object.js
+588 silly gunzTarPerm extractEntry array/pull.js
+589 silly gunzTarPerm extractEntry array/intersection.js
+590 silly gunzTarPerm extractEntry array/remove.js
+591 silly gunzTarPerm extractEntry array/rest.js
+592 silly gunzTarPerm extractEntry array/slice.js
+593 silly gunzTarPerm extractEntry array/sortedIndex.js
+594 silly gunzTarPerm extractEntry array/sortedLastIndex.js
+595 silly gunzTarPerm extractEntry array/initial.js
+596 silly gunzTarPerm extractEntry array/tail.js
+597 silly gunzTarPerm extractEntry array/indexOf.js
+598 silly gunzTarPerm extractEntry array/take.js
+599 silly gunzTarPerm extractEntry array/head.js
+600 silly gunzTarPerm extractEntry array/takeRight.js
+601 silly gunzTarPerm extractEntry array/flattenDeep.js
+602 silly gunzTarPerm extractEntry array/takeRightWhile.js
+603 silly gunzTarPerm extractEntry array/flatten.js
+604 silly gunzTarPerm extractEntry array/takeWhile.js
+605 silly gunzTarPerm extractEntry array/first.js
+606 silly gunzTarPerm extractEntry array/union.js
+607 silly gunzTarPerm extractEntry array/findLastIndex.js
+608 silly gunzTarPerm extractEntry array/uniq.js
+609 silly gunzTarPerm extractEntry array/findIndex.js
+610 silly gunzTarPerm extractEntry array/unique.js
+611 silly gunzTarPerm extractEntry array/fill.js
+612 silly gunzTarPerm extractEntry array/unzip.js
+613 silly gunzTarPerm extractEntry array/dropWhile.js
+614 silly gunzTarPerm extractEntry array/unzipWith.js
+615 silly gunzTarPerm extractEntry array/dropRightWhile.js
+616 silly gunzTarPerm extractEntry array/without.js
+617 silly gunzTarPerm extractEntry array/dropRight.js
+618 silly gunzTarPerm extractEntry array/xor.js
+619 silly gunzTarPerm extractEntry array/drop.js
+620 silly gunzTarPerm extractEntry array/zip.js
+621 silly gunzTarPerm extractEntry array/difference.js
+622 silly gunzTarPerm extractEntry array/zipObject.js
+623 silly gunzTarPerm extractEntry array/compact.js
+624 silly gunzTarPerm extractEntry array/zipWith.js
+625 silly gunzTarPerm extractEntry array/pullAt.js
+626 silly gunzTarPerm extractEntry utility/attempt.js
+627 silly gunzTarPerm extractEntry utility/iteratee.js
+628 silly gunzTarPerm extractEntry utility/matches.js
+629 silly gunzTarPerm extractEntry utility/matchesProperty.js
+630 silly gunzTarPerm extractEntry utility/method.js
+631 silly gunzTarPerm extractEntry utility/identity.js
+632 silly gunzTarPerm extractEntry utility/mixin.js
+633 silly gunzTarPerm extractEntry utility/noop.js
+634 silly gunzTarPerm extractEntry utility/property.js
+635 silly gunzTarPerm extractEntry utility/propertyOf.js
+636 silly gunzTarPerm extractEntry utility/range.js
+637 silly gunzTarPerm extractEntry utility/constant.js
+638 silly gunzTarPerm extractEntry utility/times.js
+639 silly gunzTarPerm extractEntry utility/callback.js
+640 silly gunzTarPerm extractEntry utility/uniqueId.js
+641 silly gunzTarPerm extractEntry utility/methodOf.js
+642 silly gunzTarPerm extractEntry lang/clone.js
+643 silly gunzTarPerm extractEntry lang/isEqual.js
+644 silly gunzTarPerm extractEntry lang/isError.js
+645 silly gunzTarPerm extractEntry lang/isFinite.js
+646 silly gunzTarPerm extractEntry lang/isFunction.js
+647 silly gunzTarPerm extractEntry lang/isEmpty.js
+648 silly gunzTarPerm extractEntry lang/isNaN.js
+649 silly gunzTarPerm extractEntry lang/isNative.js
+650 silly gunzTarPerm extractEntry lang/isNull.js
+651 silly gunzTarPerm extractEntry lang/isNumber.js
+652 silly gunzTarPerm extractEntry lang/isObject.js
+653 silly gunzTarPerm extractEntry lang/isElement.js
+654 silly gunzTarPerm extractEntry lang/isPlainObject.js
+655 silly gunzTarPerm extractEntry lang/isDate.js
+656 silly gunzTarPerm extractEntry lang/isRegExp.js
+657 silly gunzTarPerm extractEntry lang/isBoolean.js
+658 silly gunzTarPerm extractEntry lang/isString.js
+659 silly gunzTarPerm extractEntry lang/isArray.js
+660 silly gunzTarPerm extractEntry lang/isTypedArray.js
+661 silly gunzTarPerm extractEntry lang/isArguments.js
+662 silly gunzTarPerm extractEntry lang/isUndefined.js
+663 silly gunzTarPerm extractEntry lang/gte.js
+664 silly gunzTarPerm extractEntry lang/lt.js
+665 silly gunzTarPerm extractEntry lang/gt.js
+666 silly gunzTarPerm extractEntry lang/lte.js
+667 silly gunzTarPerm extractEntry lang/eq.js
+668 silly gunzTarPerm extractEntry lang/toArray.js
+669 silly gunzTarPerm extractEntry lang/cloneDeep.js
+670 silly gunzTarPerm extractEntry lang/toPlainObject.js
+671 silly gunzTarPerm extractEntry lang/isMatch.js
+672 verbose write writing to /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash/package.json
+673 info preinstall lodash@3.10.1
+674 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash/package.json
+675 verbose readDependencies loading dependencies from /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash/package.json
+676 silly install resolved []
+677 verbose about to build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+678 info build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+679 info linkStuff lodash@3.10.1
+680 silly linkStuff lodash@3.10.1 has /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules as its parent node_modules
+681 verbose linkBins lodash@3.10.1
+682 verbose linkMans lodash@3.10.1
+683 verbose rebuildBundles lodash@3.10.1
+684 info install lodash@3.10.1
+685 info postinstall lodash@3.10.1
+686 verbose unlock done using /Users/cperry/.npm/_locks/lodash-34da1b3969b209fa.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator/node_modules/lodash
+687 verbose about to build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+688 info build /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+689 info linkStuff node-mongoose-validator@1.2.0
+690 silly linkStuff node-mongoose-validator@1.2.0 has /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules as its parent node_modules
+691 verbose linkBins node-mongoose-validator@1.2.0
+692 verbose linkMans node-mongoose-validator@1.2.0
+693 verbose rebuildBundles node-mongoose-validator@1.2.0
+694 verbose rebuildBundles [ 'lodash', 'validator' ]
+695 info install node-mongoose-validator@1.2.0
+696 info postinstall node-mongoose-validator@1.2.0
+697 verbose unlock done using /Users/cperry/.npm/_locks/node-mongoose-validator-17a815a1e2af55f0.lock for /Users/cperry/Developer/GitRepos/rgi-assessment-tool/node_modules/node-mongoose-validator
+698 verbose validateInstall loading /Users/cperry/Developer/GitRepos/rgi-assessment-tool/package.json for validation
+699 verbose stack Error: The package mongoose@4.1.11 does not satisfy its siblings' peerDependencies requirements!
+699 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+699 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+699 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+699 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+699 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+699 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+699 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+699 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+699 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+699 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+700 verbose cwd /Users/cperry/Developer/GitRepos/rgi-assessment-tool
+701 error Darwin 14.5.0
+702 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "node-mongoose-validator"
+703 error node v4.1.0
+704 error npm  v2.14.3
+705 error code EPEERINVALID
+706 error peerinvalid The package mongoose@4.1.11 does not satisfy its siblings' peerDependencies requirements!
+706 error peerinvalid Peer mongoose-html@0.0.1 wants mongoose@3.x
+707 verbose exit [ 1, true ]

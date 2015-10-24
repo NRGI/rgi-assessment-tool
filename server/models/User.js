@@ -2,11 +2,11 @@
 var userSchema, User,
     mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
-    options = {customCollectionName: "user_hst"},
+    options         = {customCollectionName: "user_hst"},
     Schema          = mongoose.Schema,
     validate        = require('mongoose-validate'),
     encrypt         = require('../utilities/encryption'),
-    ObjectId    = Schema.Types.ObjectId;
+    ObjectId        = Schema.Types.ObjectId;
 
 userSchema = new Schema({
     firstName: {
