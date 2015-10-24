@@ -64,6 +64,6 @@ angular
             //});
         };
         $scope.commentEdit = function (comment, index) {
-            rgiDialogFactory.assessmentMove($scope, comment, index);
+            rgiDialogFactory.commentEdit($scope, comment, index);
         };
     });
