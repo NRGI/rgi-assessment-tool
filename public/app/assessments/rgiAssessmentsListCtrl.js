@@ -30,7 +30,6 @@ angular
                 $scope.newAssessmentDialog = function () {
                     rgiDialogFactory.assessmentNew($scope);
                 };
-
                 if (!$routeParams.version) {
                     rgiAssessmentSrvc.query({}, function (assessments) {
                         // pull assessment list from collection and adds user name to match reviewer id and researcher id
@@ -79,6 +78,7 @@ angular
             case 'researcher':
                 rgiAssessmentSrvc.query({researcher_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
+                    var assessment;
                     $scope.assessments = [];
                     var assessment;
                     assessments.forEach(function (el) {
@@ -95,6 +95,7 @@ angular
             case 'reviewer':
                 rgiAssessmentSrvc.query({reviewer_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
+                    var assessment;
                     $scope.assessments = [];
                     var assessment;
                     assessments.forEach(function (el) {
