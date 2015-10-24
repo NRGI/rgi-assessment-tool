@@ -19,7 +19,7 @@ userSchema = new Schema({
         validate: [validate.alpha, 'invalid first name']},
     username: {
         type: String,
-        required:  '{PATH} is required!',
+        required:  '{PATH} is required',
         validate: [validate.alphanumeric, 'invalid {PATH} (alphanumeric only)'],
         unique: true},
     email: {
