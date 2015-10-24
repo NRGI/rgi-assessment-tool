@@ -16,6 +16,11 @@ angular
         rgiAnswerMethodSrvc,
         rgiQuestionSrvc
     ) {
+        $timeout(function() {
+            $('.ngdialog').draggable({
+                handle: '.ngdialog-content'
+            });
+        }, 500);
 
         // get all researchers
         $scope.researchers = rgiUserSrvc.query({role: 'researcher'});
