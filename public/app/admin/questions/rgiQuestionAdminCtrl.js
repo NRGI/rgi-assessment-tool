@@ -11,7 +11,7 @@ angular
         $scope.sort_options = [
             {value: "question_order", text: "Sort by Question Order"},
             {value: "component_text", text: "Sort by Component"},
-            {value: "status", text: "Sort by Status"}
+            {value: "question_text", text: "Sort by Question Text"}
         ];
         $scope.sort_order = $scope.sort_options[0].value;
 

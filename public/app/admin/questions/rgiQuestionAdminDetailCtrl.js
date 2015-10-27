@@ -48,38 +48,25 @@ angular
         //TODO fix reording questions---update happens in question controller
         $scope.questionUpdate = function () {
             var new_question_data = $scope.question;
-
-            rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
-                $location.path('/admin/question-admin');
-                rgiNotifier.notify('Question data has been updated');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
+            if (new_question_data.question_choices.length < 1) {
+                rgiNotifier.error('You must supply at least one option!');
+            } else if (!new_question_data.question_guidance_text) {
+                rgiNotifier.error('You must supply question guidance!');
+            } else if (!new_question_data.question_order) {
+                rgiNotifier.error('you must supply question order!');
+            } else if (!new_question_data.question_text) {
+                rgiNotifier.error('You must supply question text!');
+            } else {
+                rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
+                    $location.path('/admin/question-admin');
+                    rgiNotifier.notify('Question data has been updated');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+            }
         };
 
         $scope.deleteConfirmDialog = function () {
             rgiDialogFactory.questionDelete($scope);
         };
-
-        //$scope.commentSubmit = function (current_user) {
-        //    var new_comment_data, new_question_data;
-        //
-        //    new_comment_data = {
-        //        content: $scope.question.new_comment,
-        //        author_name: current_user.firstName + ' ' + current_user.lastName,
-        //        author: current_user._id,
-        //        role: current_user.role,
-        //        date: new Date().toISOString()
-        //    };
-        //    new_question_data = $scope.question;
-        //    delete new_question_data.new_comment;
-        //
-        //    new_question_data.comments.push(new_comment_data);
-        //
-        //    rgiQuestionMethodSrvc.updateQuestion(new_question_data).then(function () {
-        //        rgiNotifier.notify('Comment added');
-        //    }, function (reason) {
-        //        rgiNotifier.notify(reason);
-        //    });
-        //};
     });
