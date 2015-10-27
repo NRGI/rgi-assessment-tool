@@ -5,8 +5,9 @@ var crypto                 = require('crypto'),
     fs                     = require('fs'),
     request                = require('request'),
     s3                     = require('s3'),
-    Document               = require('mongoose').model('Documents'),
+    Doc                    = require('mongoose').model('Documents'),
     Answer                 = require('mongoose').model('Answer'),
+    upload_bucket          = process.env.DOC_BUCKET,
     client                 = s3.createClient({
                                 maxAsyncS3: 20,     // this is the default 
                                 s3RetryCount: 3,    // this is the default 
@@ -19,8 +20,7 @@ var crypto                 = require('crypto'),
                                     // any other options are passed to new AWS.S3() 
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
                                 }
-                            }),
-    upload_bucket          = process.env.DOC_BUCKET;
+                            });
 //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
 exports.fileCheck = function (req, res, next) {
@@ -38,7 +38,7 @@ exports.fileCheck = function (req, res, next) {
             // get hashed value of file as fingerprint
             var file_hash = hash.digest('hex');
             // search documents for hashed file
-            Document.findOne({file_hash: file_hash}, function (err, document) {
+            Doc.findOne({file_hash: file_hash}, function (err, document) {
                 // if file exists tag for reference
                 if (document !== null) {
                     res.send(document);
@@ -79,7 +79,7 @@ exports.fileCheck = function (req, res, next) {
                     new_document.createdBy = req.user._id;
                     new_document.creationDate = timestamp;
 
-                    Document.create(new_document, function (err, document) {
+                    Doc.create(new_document, function (err, document) {
                         if (err) {
                             res.status(400);
                             res.send({reason: err.toString()});
@@ -99,15 +99,14 @@ exports.fileCheck = function (req, res, next) {
 };
 
 exports.getDocuments = function (req, res) {
-    var query = Document.find(req.query);
+    var query = Doc.find(req.query);
     query.exec(function (err, collection) {
         res.send(collection);
     });
 };
 
 exports.getDocumentsByID = function (req, res) {
-    console.log(req.params);
-    Document.findOne({_id: req.params.id}).exec(function (err, document) {
+    Doc.findOne({_id: req.params.id}).exec(function (err, document) {
         res.send(document);
     });
 };
@@ -124,7 +123,7 @@ exports.updateDocument = function (req, res) {
     document_update = req.body;
     timestamp = new Date().toISOString();
 
-    Document.findOne({_id: document_update._id}).exec(function (err, document) {
+    Doc.findOne({_id: document_update._id}).exec(function (err, document) {
         document.title = document_update.title;
         document.authors = document_update.authors;
         document.type = document_update.type;
@@ -167,7 +166,7 @@ exports.updateDocument = function (req, res) {
 
 exports.deleteDocument = function (req, res) {
 
-    // Document.remove({_id: req.params.id}, function (err) {
+    // Doc.remove({_id: req.params.id}, function (err) {
     //     if (!err) {
     //         res.send();
     //     } else {
