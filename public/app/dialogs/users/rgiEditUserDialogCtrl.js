@@ -27,7 +27,7 @@ angular
             if (!new_user_data.email) {
                 rgiNotifier.error('You must enter an email address!');
             } else if (!new_user_data.firstName || !new_user_data.lastName) {
-                rgiNotifier.error('You must enter an full name!');
+                rgiNotifier.error('You must enter an first and last name!');
             } else if (!new_user_data.role) {
                 rgiNotifier.error('You must enter a role!');
             } else {
