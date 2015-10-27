@@ -16,7 +16,7 @@ userSchema = new Schema({
     lastName: {
         type: String,
         required: 'last name is required',
-        validate: [validate.alpha, 'invalid first name']},
+        validate: [validate.alpha, 'invalid last name']},
     username: {
         type: String,
         required:  '{PATH} is required',
@@ -33,7 +33,7 @@ userSchema = new Schema({
         type: String,
         required: 'your hash is missing'},
     role: {
-        type: String, required: '{PATH} is required!',
+        type: String, required: 'Role is required!',
         default: 'None'},
     assessments: [{
         assessment_ID:  String, // ISO3 Identifier
