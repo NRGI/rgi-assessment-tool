@@ -104,7 +104,7 @@ exports.createUser = function (req, res) {
         next();
     });
 };
-//TODO update user email
+//TODO deal with validation
 exports.updateUser = function (req, res) {
     var user_update = req.body;
 
@@ -122,7 +122,7 @@ exports.updateUser = function (req, res) {
         if (user_update.password && user_update.password.length > 0) {
             user.setPassword(user_update.password, function (err) {
                 if (err) {
-                    return res.send({ reason: err.toString() });
+                    return res.send({reason: err.toString()});
                 }
             });
         }
