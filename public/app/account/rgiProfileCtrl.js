@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiProfileCtrl', function (
@@ -7,7 +9,6 @@ angular
         rgiUserMethodSrvc,
         rgiNotifier
     ) {
-        'use strict';
         // set page resources to be those of the current identity
         $scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
         $scope.current_user = rgiIdentitySrvc.currentUser;
