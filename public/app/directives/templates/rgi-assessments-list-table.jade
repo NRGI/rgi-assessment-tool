@@ -124,12 +124,14 @@ div.top-padding-lg
                     href=""
                     ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
                     ) Waiting for submission
-                //CONTROL BUTTON 1 -ADMIN
+                //CONTROL BUTTON 1 -USER
                 td.col-sm-1(ng-if="!current_user.isSupervisor()")
                     //- researcher start button
                     button.btn.btn-col.btn-success(
-                    ng-if="assessment.status === 'assigned' && assessment.edit_control===current_user._id"
-                    ng-click="assessmentStart(assessment)") Start assessment
+                    ng-if="assessment.edit_control===current_user._id && (assessment.status === 'assigned' || assessment.status === 'assigned_reviewer' || assessment.status === 'assigned_researcher')"
+                    ng-click="assessmentStart(assessment)")
+                        text(ng-if="current_user.role==='researcher'") Start assessment
+                        text(ng-if="current_user.role==='reviewer'") Start review
 
                     //- review answers sent back button
                     a.btn.btn-col.center-block.btn-warning(
@@ -141,7 +143,7 @@ div.top-padding-lg
                     href="/assessments/{{assessment.assessment_ID}}"
                     disabled) Under Admin review
 
-                    a.btn.btn-col.center-block.btn-primary(ng-if="assessment.status === 'started' && assessment.edit_control===current_user._id"
+                    a.btn.btn-col.center-block.btn-primary(ng-if="assessment.edit_control===current_user._id && (assessment.status === 'started' || assessment.status==='review_started')"
                     href="/assessments/{{assessment.assessment_ID}}") Open assessment
 
                     //TODO add submssion fuction for this page
