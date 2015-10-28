@@ -78,15 +78,12 @@ angular
             case 'researcher':
                 rgiAssessmentSrvc.query({researcher_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
-                    var assessment;
                     $scope.assessments = [];
-                    var assessment;
-                    assessments.forEach(function (el) {
-                        assessment = el;
-                        assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
+                    assessments.forEach(function (assessment) {
+                        assessment.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
                         assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
                         if (assessment.reviewer_ID) {
-                            assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+                            assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                         }
                         $scope.assessments.push(assessment);
                     });
@@ -95,14 +92,11 @@ angular
             case 'reviewer':
                 rgiAssessmentSrvc.query({reviewer_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
-                    var assessment;
                     $scope.assessments = [];
-                    var assessment;
-                    assessments.forEach(function (el) {
-                        assessment = el;
-                        assessment.edited_by = rgiUserListSrvc.get({_id: el.last_modified.modified_by});
+                    assessments.forEach(function (assessment) {
+                        assessment.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
                         assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
-                        assessment.reviewer = rgiUserListSrvc.get({_id: assessment.review_ID});
+                        assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
                         $scope.assessments.push(assessment);
                     });
                 });
