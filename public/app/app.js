@@ -13,6 +13,10 @@ angular.module('app', [
     'ngRoute',
     'ngSanitize',
     'ui.bootstrap'
+    //'angular-sanitize',
+    //'textAngular'
+    //require('angular-sanitize'),
+    //require('textAngular')
 ]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {

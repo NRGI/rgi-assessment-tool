@@ -109,6 +109,7 @@ exports.updateAnswer = function (req, res) {
         answer.comments = answer_update.comments;
         answer.references = answer_update.references;
         answer.flags = answer_update.flags;
+        answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
         //if (answer.modified) {
         //    answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
         //} else {

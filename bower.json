@@ -22,7 +22,8 @@
     "ng-form-group": "~1.2.11",
     "ngDialog": "~0.3.7",
     "ngInfiniteScroll": "~1.2.1",
-    "toastr": "~2.1.0"
+    "toastr": "~2.1.0",
+    "textAngular": "~1.4.6"
   },
   "moduleType": [
     "node"

@@ -118,6 +118,9 @@ answerSchema = new Schema({
         assignedDate: {
             type: Date,
             default: Date.now}},
+    last_modified: {
+        modified_by: ObjectId,
+        modified_date: Date},
     researcher_score: Number,
     researcher_justification: htmlSettings,
     /////ERROR CALCULATION
