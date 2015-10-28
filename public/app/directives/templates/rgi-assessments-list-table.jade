@@ -41,7 +41,7 @@ div.top-padding-lg
                 //START DATE
                 td.col-sm-1
                     i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                    ng-if="assessment.assigstart_datenment"
+                    ng-if="assessment.start_date"
                     popover="{{assessment.start_date.started_date | date:'MM/dd/yyyy'}}"
                     popover-trigger="mouseenter")
                     em(ng-if="!assessment.start_date") N/A

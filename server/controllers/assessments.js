@@ -98,16 +98,18 @@ exports.updateAssessment = function (req, res) {
                         assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
                     }
 
-                    if (assessmentUpdates.hasOwnProperty('start_date')) {
-                        if (!(assessment.hasOwnProperty('start_date'))) {
+                    if (!(assessment.hasOwnProperty('start_date'))) {
+                        if (assessmentUpdates.hasOwnProperty('start_date')) {
                             assessment.start_date = {started_by: assessmentUpdates.start_date.started_by, started_date: timestamp};
                         }
                     }
-                    if (assessmentUpdates.hasOwnProperty('submit_date')) {
-                        if (!(assessment.hasOwnProperty('submit_date'))) {
+
+                    if (!(assessment.hasOwnProperty('submit_date'))) {
+                        if (assessmentUpdates.hasOwnProperty('submit_date')) {
                             assessment.submit_date = {submited_by: assessmentUpdates.submit_date.submited_by, submited_date: timestamp};
                         }
                     }
+
                     if (assessmentUpdates.hasOwnProperty('review_date')) {
                         if (!(assessment.hasOwnProperty('review_date'))) {
                             assessment.review_date = {reviewed_by: assessmentUpdates.review_date.reviewed_by, reviewed_date: timestamp};

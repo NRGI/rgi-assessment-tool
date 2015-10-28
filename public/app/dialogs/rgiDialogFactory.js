@@ -152,7 +152,7 @@ angular
                 ngDialog.open({
                     template: 'partials/dialogs/references/edit-document-dialog',
                     controller: 'rgiEditDocumentDialogCtrl',
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
             },
@@ -196,7 +196,7 @@ angular
                 ngDialog.open({
                     template: 'partials/dialogs/references/edit-interviewee-dialog',
                     controller: 'rgiEditIntervieweeDialogCtrl',
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
             },
