@@ -13,7 +13,7 @@
                     text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
                 div(ng-if="current_user.role==='supervisor'")
                     text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged' || answer.status==='unresolved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
 

@@ -25,7 +25,8 @@ table.table.table-hover.table-striped.table-condensed
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
+                //.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='unresolved'")  {{answer.status | ucfirst}}
                 .text(ng-if="question.status!=='submitted' && question.status!=='resubmitted' && question.status!=='saved' && question.status!=='approved' && question.status!=='flagged'")  {{question.status | ucfirst}}
             td.col-md-1.text-center {{answer.researcher_score}}
             td.col-md-1.text-center {{answer.reviewer_score}}
@@ -53,5 +54,8 @@ table.table.table-hover.table-striped.table-condensed
                 ng-if="answer.status==='approved'"
                 href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
                 a.btn.center-block.btn-default(
-                ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged'"
+                ng-if="answer.status==='unresolved'"
+                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                a.btn.center-block.btn-default(
+                ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged' && answer.status!=='unresolved'"
                 href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Go to answer page

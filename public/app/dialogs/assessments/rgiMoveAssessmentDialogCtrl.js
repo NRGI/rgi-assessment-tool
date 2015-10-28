@@ -20,7 +20,8 @@ angular
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
                     value: 'review_' + control_profile.role
                 });
-                if (control_profile.role === 'researcher' && $scope.$parent.assessment.questions_flagged === 0) {
+                //if (control_profile.role === 'researcher' && $scope.$parent.assessment_counters.flagged === 0) {
+                if (control_profile.role === 'researcher') {
                     rgiUserListSrvc.get({_id: $scope.$parent.assessment.reviewer_ID}, function (new_profile) {
                         workflow_opts.push({
                             text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',

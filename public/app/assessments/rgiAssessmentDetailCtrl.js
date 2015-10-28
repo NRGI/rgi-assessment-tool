@@ -58,6 +58,9 @@ angular
                             $scope.assessment_counters.approved +=1;
                             $scope.assessment_counters.complete +=1;
                             break;
+                        case 'unresolved':
+                            $scope.assessment_counters.unresolved +=1;
+                            $scope.assessment_counters.complete +=1;
                         case 'resubmitted':
                             $scope.assessment_counters.resubmitted +=1;
                             break;
@@ -67,8 +70,6 @@ angular
                         case 'saved':
                             $scope.assessment_counters.saved +=1;
                             break;
-                        case 'unresolved':
-                            $scope.assessment_counters.unresolved +=1;
                     }
                 });
                 $scope.answers = answers;

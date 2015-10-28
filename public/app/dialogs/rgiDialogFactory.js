@@ -35,7 +35,7 @@ angular
             },
             assessmentMove: function ($scope) {
                 var scope = $scope;
-                if (scope.assessment_counters.length !== (scope.assessment_counters.flagged + scope.assessment_counters.approved)) {
+                if (scope.assessment_counters.length !== (scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved)) {
                     rgiNotifier.error('You must approve or flag all questions!');
                 } else {
                     scope.value = true;
@@ -88,7 +88,7 @@ angular
             },
             assessmentResubmit: function ($scope) {
                 var scope = $scope;
-                if (scope.assessment_counters.flagged != 0) {
+                if (scope.assessment_counters.flagged !== 0) {
                     rgiNotifier.error('You must resubmit all flagged answers!');
                 } else {
                     scope.value = true;
