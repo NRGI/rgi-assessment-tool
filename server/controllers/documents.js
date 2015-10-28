@@ -8,6 +8,7 @@ var crypto              =   require('crypto'),
     Answer              =   require('mongoose').model('Answer'),
     Doc            =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
+    //MendeleyToken          = require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
     client              =   s3.createClient({
                                 maxAsyncS3: 20,     // this is the default
@@ -23,34 +24,6 @@ var crypto              =   require('crypto'),
                                 }
                             });
 
-//=======
-///* global require */
-//
-//var crypto                 = require('crypto'),
-//    fs                     = require('fs'),
-//    request                = require('request'),
-//    s3                     = require('s3'),
-//    Doc               = require('mongoose').model('Documents'),
-//    Answer                 = require('mongoose').model('Answer'),
-//    client                 = s3.createClient({
-//                                maxAsyncS3: 20,     // this is the default
-//                                s3RetryCount: 3,    // this is the default
-//                                s3RetryDelay: 1000, // this is the default
-//                                multipartUploadThreshold: 20971520, // this is the default (20 MB)
-//                                multipartUploadSize: 15728640, // this is the default (15 MB)
-//                                s3Options: {
-//                                    accessKeyId: process.env.DOC_AWS_ACCESS_KEY,
-//                                    secretAccessKey: process.env.DOC_AWS_SECRET_KEY
-//                                    // any other options are passed to new AWS.S3()
-//                                    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
-//                                }
-//                            }),
-//    upload_bucket       =   process.env.DOC_BUCKET;
-
-//>>>>>>> address jshint warnings in server
-
-
-    //MendeleyToken          = require('mongoose').model('MendeleyToken'),
 
 var uploadFile = function(file, req, callback) {
     var hash = crypto.createHash('sha1'),

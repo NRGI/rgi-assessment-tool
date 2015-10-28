@@ -69,7 +69,9 @@ div.left-padding-lg.right-padding-lg
                                             span.glyphicon.glyphicon-trash Remove
         //INTERVIEWS
         div(ng-if="ref_selection==='interview'")
-            div.modal-form(id="new_human_form")
+            div.modal-form(name="new_human_form")
+                .row {{selected_interviewee}}
+                .row {{new_interviewee}}
                 .form-horizontal
                     fieldset
                         .row.bottom-padding-med
@@ -88,6 +90,8 @@ div.left-padding-lg.right-padding-lg
                                 autocomplete="off")
                             div.col-md-3
                                 button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
+                                //| &nbsp;
+                                //button.btn.btn-block.btn-primary(ng-click="existingInterviewee()") Existing interviewee
 
                         // DATE ACCESSED
                         .row.bottom-padding-med
