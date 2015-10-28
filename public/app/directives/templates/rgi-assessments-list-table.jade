@@ -20,7 +20,12 @@ div.top-padding-lg
                 //ASSESSMENT
                 td.col-sm-1(ng-if="assessment.status=='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 td.col-sm-1(ng-if="assessment.status!='unassigned'")
-                    a(href="admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                    a(
+                    href="admin/assessments-admin/{{assessment.assessment_ID}}"
+                    ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                    a(
+                    href="assessments/{{assessment.assessment_ID}}"
+                    ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 //RESEARCHER
                 td.col-sm-1(ng-if="assessment.researcher!==undefined")
                     span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")

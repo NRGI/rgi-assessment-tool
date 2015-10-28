@@ -48,7 +48,7 @@
 
     button.btn.btn-danger(
     ng-click="answerUnresolved()"
-    ng-if="current_user.isSupervisor() && assessment.status==='under_review'"
+    ng-if="current_user.isSupervisor() && (assessment.status==='under_review' || assessment.status==='resubmitted')"
     ) Unresolved
     | &nbsp;
 

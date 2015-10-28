@@ -12,7 +12,6 @@ angular
         rgiIdentitySrvc,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
-        rgiAssessmentMethodSrvc,
         rgiNotifier,
         rgiDialogFactory
     ) {
@@ -31,7 +30,6 @@ angular
 
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
-                new_assessment_data = $scope.assessment,
                 flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
 
             if (new_answer_data.status!=='flagged' && flag_check) {
@@ -43,7 +41,6 @@ angular
             }
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                 .then(function () {
                     rgiNotifier.notify('Answer saved');
                 }, function (reason) {
@@ -52,8 +49,7 @@ angular
         };
 
         $scope.answerSubmit = function () {
-            var new_answer_data = $scope.answer,
-                new_assessment_data = $scope.assessment;
+            var new_answer_data = $scope.answer;
 
             if (!new_answer_data[$scope.current_user.role + '_score']) {
                 rgiNotifier.error('You must pick a score');
@@ -65,7 +61,6 @@ angular
                 }
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                    .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
 
@@ -81,8 +76,7 @@ angular
         };
 
         $scope.answerResubmit = function () {
-            var new_answer_data = $scope.answer,
-                new_assessment_data = $scope.assessment;
+            var new_answer_data = $scope.answer;
 
             if (!new_answer_data[$scope.current_user.role + '_score']) {
                 rgiNotifier.error('You must pick a score');
@@ -91,7 +85,6 @@ angular
             } else {
                 new_answer_data.status = 'resubmitted';
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                    .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
@@ -107,7 +100,6 @@ angular
 
         $scope.answerApprove = function () {
             var new_answer_data = $scope.answer,
-                new_assessment_data = $scope.assessment,
                 flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
 
             if (new_answer_data.status !== 'approved' && flag_check === true) {
@@ -115,7 +107,6 @@ angular
             } else {
                 new_answer_data.status = 'approved';
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                    .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
@@ -143,7 +134,25 @@ angular
         };
 
         $scope.answerUnresolved = function() {
-            rgiNotifier.error('create function');
+            var new_answer_data = $scope.answer,
+                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
+
+            if (flag_check !== true) {
+                rgiNotifier.error('Only mark flagged answers as unresolved!');
+            } else {
+                new_answer_data.status = 'unresolved';
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                    .then(function () {
+                        if (new_answer_data.question_order !== $scope.question_length) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        } else {
+                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                        }
+                        rgiNotifier.notify('Answer tagged as unresolved');
+                    }, function (reason) {
+                        rgiNotifier.notify(reason);
+                    });
+            }
         };
         //// make final choice
         //$scope.finalChoiceDialog = function () {
