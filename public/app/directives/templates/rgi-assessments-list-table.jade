@@ -28,12 +28,12 @@ div.top-padding-lg
                     ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 //RESEARCHER
                 td.col-sm-1(ng-if="assessment.researcher!==undefined")
-                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id")
                     a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
                 td.col-sm-1(ng-if="assessment.researcher===undefined") Not assigned
                 //REVIEWER
                 td.col-sm-1(ng-if="assessment.reviewer!==undefined")
-                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id && assessment.status!=='submitted' && assessment.status!=='unassigned'")
+                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id")
                     a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
                 td.col-sm-1(ng-if="assessment.reviewer===undefined") Not assigned
                 //ASSIGNED DATE
@@ -110,7 +110,7 @@ div.top-padding-lg
                     ) Start Review
                     a.btn.btn-col.center-block.btn-primary(
                     href="/admin/assessments-admin/{{assessment.assessment_ID}}"
-                    ng-if="assessment.status=='under_review' || assessment.status === 'resubmitted'"
+                    ng-if="['under_review', 'resubmitted'].indexOf(assessment.status) > -1"
                     ) Continue review
                     a.btn.btn-col.center-block.btn-primary(
                     href="/admin/assessment-review/{{assessment.assessment_ID}}"
@@ -118,11 +118,11 @@ div.top-padding-lg
                     ) Send to external
                     a.btn.center-block.btn-default.disabled(
                     href=""
-                    ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'"
+                    ng-if="['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
                     ) Under review
                     a.btn.center-block.btn-default.disabled(
                     href=""
-                    ng-if="assessment.status !=='unassigned' && assessment.status!=='submitted' && assessment.status !== 'resubmitted' && assessment.status!=='under_review' && assessment.status!=='review_researcher' && assessment.status!=='review_reviewer' && assessment.status!=='approved'"
+                    ng-if="['unassigned', 'submitted', 'resubmitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
                     ) Waiting for submission
                 //CONTROL BUTTON 1 -USER
                 td.col-sm-1(ng-if="!current_user.isSupervisor()")
@@ -135,15 +135,17 @@ div.top-padding-lg
 
                     //- review answers sent back button
                     a.btn.btn-col.center-block.btn-warning(
-                    ng-if="(assessment.status === 'review_researcher' || assessment.status === 'review_reviewer') && assessment.edit_control===current_user._id"
+                    ng-if="assessment.edit_control===current_user._id && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}") Review answers
 
                     //- disabled for admin review
-                    a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'submitted' || assessment.status === 'resubmitted' || assessment.status === 'under_review'"
+                    a.btn.btn-col.center-block.btn-default(
+                    ng-if="assessment.edit_control===current_user._id && ['submitted', 'resubmitted', 'under_review'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}"
                     disabled) Under Admin review
 
-                    a.btn.btn-col.center-block.btn-primary(ng-if="assessment.edit_control===current_user._id && (assessment.status === 'started' || assessment.status==='review_started')"
+                    a.btn.btn-col.center-block.btn-primary(
+                    ng-if="assessment.edit_control===current_user._id && ['started', 'review_started'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}") Open assessment
 
                     a.btn.btn-col.center-block.btn-default(
