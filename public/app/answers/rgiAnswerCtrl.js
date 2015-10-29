@@ -45,9 +45,6 @@ angular
                 var flag = el;
                 rgiUserListSrvc.get({_id: el.addressed_to}, function(user) {
                     flag.addressee = user;
-                    console.log(el);
-                    console.log(flag);
-                    console.log(user);
                 });
                 flags.push(flag);
             });
