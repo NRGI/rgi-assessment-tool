@@ -116,7 +116,7 @@ angular
                 ngDialog.open({
                     template: 'partials/dialogs/answers/final-choice-dialog',
                     controller: 'rgiFinalChoiceDialogCtrl',
-                    className: 'ngdialog-theme-plain',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: $scope
                 });
 
