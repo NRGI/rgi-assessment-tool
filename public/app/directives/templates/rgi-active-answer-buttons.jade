@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && assessment.status==='started') || (current_user.isSupervisor() && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
+    ng-if="(assessment.edit_control===current_user._id && (['started', 'review_started'].indexOf(assessment.status) > -1)) || (current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1))"
     ) Save answer
     | &nbsp;
 
@@ -14,26 +14,19 @@
 
     button.btn.btn-success(
     ng-click="answerSubmit()"
-    ng-if="assessment.edit_control===current_user._id && assessment.status==='started'"
+    ng-if="assessment.edit_control===current_user._id && (['started', 'review_started'].indexOf(assessment.status) > -1)"
     ) Submit answer
     | &nbsp;
 
     button.btn.btn-success(
     ng-click="answerApprove()"
-    ng-if="current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted')"
+    ng-if="current_user.role==='supervisor' && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
     ) Approve answer
     | &nbsp;
 
-    ////with admin button
-    //button.btn.btn-danger(
-    //ng-click="answerClear()"
-    //ng-if="(assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)) || (current_user.role==='supervisor' && (assessment.status=='under_review' || assessment.status=='resubmitted'))"
-    //) Reset answer
-    //| &nbsp;
-
     button.btn.btn-danger(
     ng-click="answerClear()"
-    ng-if="assessment.edit_control===current_user._id && (assessment.status==='started' || assessment.status==='review_' + current_user.role)"
+    ng-if="assessment.edit_control===current_user._id && (['started', 'review_started', 'review_' + current_user.role].indexOf(assessment.status) > -1)"
     ) Reset answer
     | &nbsp;
 
@@ -48,21 +41,19 @@
 
     button.btn.btn-danger(
     ng-click="answerUnresolved()"
-    ng-if="current_user.isSupervisor() && (assessment.status==='under_review' || assessment.status==='resubmitted')"
+    ng-if="current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
     ) Unresolved
     | &nbsp;
 
     button.btn.btn-primary(
     ng-click="finalChoiceDialog()"
-    ng-if="current_user.isSupervisor() && answer.reviewer_score && answer.researcher_score && answer.status==='approved'"
+    ng-if="current_user.isSupervisor() && answer.reviewer_score && answer.researcher_score"
     ) Choose final answer
     | &nbsp;
 
     button.btn.btn-default(
     ng-click="answerReturn()"
     ) Return to assessment menu
-
-.rows {{assessment_counters}}
 
 //.row
 //    div(aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" draggable="" id="flagModal" role="dialog" tabindex="-1")
