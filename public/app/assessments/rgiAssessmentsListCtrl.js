@@ -14,7 +14,6 @@ angular
         rgiIdentitySrvc,
         rgiAssessmentMethodSrvc
     ) {
-
         // filtering options
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sort_options = [
