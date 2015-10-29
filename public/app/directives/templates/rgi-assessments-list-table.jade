@@ -146,6 +146,10 @@ div.top-padding-lg
                     a.btn.btn-col.center-block.btn-primary(ng-if="assessment.edit_control===current_user._id && (assessment.status === 'started' || assessment.status==='review_started')"
                     href="/assessments/{{assessment.assessment_ID}}") Open assessment
 
+                    a.btn.btn-col.center-block.btn-default(
+                    ng-if="assessment.edit_control!==current_user._id"
+                    href="/assessments/{{assessment.assessment_ID}}") See answers
+
                     //TODO add submssion fuction for this page
                     ////- assessment submission
                     //button.btn.btn-success.pull-right(

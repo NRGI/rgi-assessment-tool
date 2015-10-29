@@ -36,9 +36,11 @@ table.table.table-hover.table-striped.table-condensed
                 a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
                 href="/assessments/answer/{{answer.answer_ID}}") Edit to answer
             td(ng-if="current_user.role!=='supervisor' && assessment.edit_control!==current_user._id")
-                a.btn.center-block.btn-default(ng-if="answer.status!=='assigned' && answer.status!=='saved'"
+                a.btn.center-block.btn-default(
+                ng-if="assessment.status!=='assigned'"
                 href="/assessments/answer/{{answer.answer_ID}}") View answer
-                a.btn.center-block.btn-success.disabled(ng-if="answer.status==='assigned' || answer.status==='saved'"
+                a.btn.center-block.btn-success(
+                ng-if="assessmentg .status==='assigned'"
                 href="/assessments/answer/{{answer.answer_ID}}") No data
             td(ng-if="current_user.role==='supervisor'")
                 a.btn.center-block.btn-primary(
