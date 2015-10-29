@@ -110,6 +110,17 @@ angular
                     //    });
                 }
             },
+            answerFinalChoice: function ($scope) {
+                var scope = $scope;
+                $scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/answers/final-choice-dialog',
+                    controller: 'rgiFinalChoiceDialogCtrl',
+                    className: 'ngdialog-theme-plain',
+                    scope: $scope
+                });
+
+            },
             commentEdit: function($scope, comment, index) {
                 var scope = $scope;
                 scope.value = true;

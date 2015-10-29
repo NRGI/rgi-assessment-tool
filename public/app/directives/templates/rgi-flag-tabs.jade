@@ -8,7 +8,7 @@ div(id="flags_div").bottom-padding-med
         ///TODO Fix repeating imvisible panels
         div.panel(
         ng-repeat="flag in flags"
-        ng-if="current_user.isSupervisor() || (flag.addressed_to===current_user._id && !flag.addressed)"
+        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to===current_user._id || answer.status==='flagged'))"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
