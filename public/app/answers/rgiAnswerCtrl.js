@@ -17,7 +17,8 @@ angular
         rgiAssessmentMethodSrvc,
         rgiAnswerMethodSrvc,
         rgiQuestionSrvc,
-        rgiIntervieweeSrvc
+        rgiIntervieweeSrvc,
+        rgiUserListSrvc
     ) {
         $scope.identity = rgiIdentitySrvc;
         $scope.page_type = 'answer';
@@ -29,31 +30,44 @@ angular
             title: 'Title'
         };
 
-        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (data) {
-            $scope.answer = data;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: data.assessment_ID});
-            $scope.question = rgiQuestionSrvc.get({_id: data.question_ID});
+        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+            $scope.answer = answer;
+            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
+            $scope.question = rgiQuestionSrvc.get({_id: answer.question_ID});
             $scope.current_user = rgiIdentitySrvc.currentUser;
-            $scope.answer_start = angular.copy($scope.answer);
+            //$scope.answer_start = angular.copy($scope.answer);
 
 
-            var citations = [];
-            var interviews = [];
+            var citations = [],
+                interviews = [],
+                flags = [];
+            answer.flags.forEach(function (el) {
+                var flag = el;
+                rgiUserListSrvc.get({_id: el.addressed_to}, function(user) {
+                    flag.addressee = user;
+                    console.log(el);
+                    console.log(flag);
+                    console.log(user);
+                });
+                flags.push(flag);
+            });
 
-            data.references.citation.forEach(function (el) {
+            answer.references.citation.forEach(function (el) {
                 rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
                     doc.comment = el;
                     citations.push(doc);
                 });
             });
 
-            data.references.human.forEach(function (el) {
+            answer.references.human.forEach(function (el) {
                 rgiIntervieweeSrvc.get({_id: el.interviewee_ID}, function (interviewee) {
                     interviewee.comment = el;
                     interviews.push(interviewee);
                 });
             });
 
+
+            $scope.flags = flags;
             $scope.citations = citations;
             $scope.interviews = interviews;
 

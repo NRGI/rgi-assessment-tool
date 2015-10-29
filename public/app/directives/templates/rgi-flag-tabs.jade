@@ -7,12 +7,11 @@ div(id="flags_div").bottom-padding-med
 
         ///TODO Fix repeating imvisible panels
         div.panel(
-        ng-repeat="flag in answer.flags"
-        ng-if="current_user.isSupervisor() || flag.addressed_to===current_user._id"
+        ng-repeat="flag in flags"
+        ng-if="current_user.isSupervisor() || (flag.addressed_to===current_user._id && !flag.addressed)"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
-            ng-if="!flag.addressed"
             id="heading{{$index}}")
                 h4.panel-title
                     div(
@@ -27,6 +26,7 @@ div(id="flags_div").bottom-padding-med
                         b {{flag.role}}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
+                        h6.pull-right Addressed to: {{flag.addressee.firstName}} {{flag.addressee.lastName}}
             div(
             id="collapse{{$index}}"
             class="panel-collapse collapse"
