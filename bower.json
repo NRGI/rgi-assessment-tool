@@ -23,7 +23,8 @@
     "ngDialog": "~0.3.7",
     "ngInfiniteScroll": "~1.2.1",
     "toastr": "~2.1.0",
-    "textAngular": "~1.4.6"
+    "textAngular": "~1.4.6",
+    "jquery-ui": "~1.11.4"
   },
   "moduleType": [
     "node"

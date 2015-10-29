@@ -78,6 +78,7 @@ angular
             case 'researcher':
                 rgiAssessmentSrvc.query({researcher_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
+                    var assessment;
                     $scope.assessments = [];
                     assessments.forEach(function (assessment) {
                         assessment.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
@@ -92,6 +93,7 @@ angular
             case 'reviewer':
                 rgiAssessmentSrvc.query({reviewer_ID: $scope.current_user._id}, function (assessments) {
                     // pull assessment list from collection and adds user name to match reviewer id and researcher id
+                    var assessment;
                     $scope.assessments = [];
                     assessments.forEach(function (assessment) {
                         assessment.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
