@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiAssessmentsListCtrl', function (
@@ -12,8 +14,6 @@ angular
         rgiIdentitySrvc,
         rgiAssessmentMethodSrvc
     ) {
-        'use strict';
-
         // filtering options
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sort_options = [
