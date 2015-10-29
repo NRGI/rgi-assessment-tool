@@ -39,7 +39,7 @@
                 .row.bottom-padding-lg
                     rgi-active-answer-buttons
 
-                .row.bottom-padding-lg(ng-if="answer.flags.length!==0")
+                .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((answer.status==='flagged' || answer.status==='unresolved') || current_user.isSupervisor())")
                     rgi-flag-tabs
 
                 // Answer form

@@ -60,7 +60,9 @@ angular
                             break;
                         case 'unresolved':
                             $scope.assessment_counters.unresolved +=1;
-                            $scope.assessment_counters.complete +=1;
+                            if ($scope.assessment.status === 'under_review') {
+                                $scope.assessment_counters.complete +=1;
+                            }
                         case 'resubmitted':
                             $scope.assessment_counters.resubmitted +=1;
                             break;

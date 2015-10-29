@@ -6,10 +6,13 @@ div(id="flags_div").bottom-padding-med
     aria-multiselectable="true")
 
         ///TODO Fix repeating imvisible panels
-        div.panel(ng-repeat="flag in answer.flags" ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
+        div.panel(
+        ng-repeat="flag in answer.flags"
+        ng-if="current_user.isSupervisor() || flag.addressed_to===current_user._id"
+        ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
-            ng-if="current_user.role==='supervisor' || (flag.addressed_to===current_user._id && !flag.addressed)"
+            ng-if="!flag.addressed"
             id="heading{{$index}}")
                 h4.panel-title
                     div(
@@ -31,7 +34,7 @@ div(id="flags_div").bottom-padding-med
             ng-if="flag.addressed"
             aria-labelledby="heading{{$index}}")
                 div.panel-body
-                    .row.left-padding-lg
+                    .row.left-padding-lg(ng-if="current_user.isSupervisor()")
                         label Addressed?
                             | &nbsp;
                             input(type="checkbox" ng-model="flag.addressed")
@@ -45,14 +48,20 @@ div(id="flags_div").bottom-padding-med
             ng-if="!flag.addressed"
             aria-labelledby="heading{{$index}}")
                 div.panel-body
-                    .row.left-padding-lg
+                    .row.left-padding-lg(ng-if="current_user.isSupervisor()")
                         label Addressed?
                             | &nbsp;
                             input(
                             type="checkbox"
-                            ng-model="flag.addressed"
-                            ng-if="current_user.role==='supervisor'")
+                            ng-model="flag.addressed")
 
                     .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
                     .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
+        div(
+        ng-repeat="flag in answer.flags"
+        ng-if="!current_user.isSupervisor() && flag.addressed_to!==current_user._id && (assessment.status==='review_started')")
+            i.glyphicon.glyphicon-warning-sign.text-warning
+                text(ng-if="current_user.role==='reviewer'")  Flag from Researcher:
+                text(ng-if="current_user.role==='researcher'")  Flag from Reviewer:
+            text(ng-bind-html="flag.content")
