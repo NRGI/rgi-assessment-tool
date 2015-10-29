@@ -16,10 +16,10 @@
                 br
                 button.btn.btn-success.pull-right(
                 ng-click="submitAssessmentDialog()"
-                ng-if="assessment.status==='started'") Submit assessment
+                ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submit assessment
                 button.btn.btn-success.pull-right(
                 ng-click="resubmitAssessmentDialog()"
-                ng-if="assessment.status==='review_researcher' || assessment.status==='review_reviewer'") Resubmit assessment
+                ng-if="assessment.status==='review_' + current_user.role") Resubmit assessment
                 button.btn.btn-success.pull-right(
                 ng-click="moveAssessmentDialog()"
                 ng-if="current_user.role==='supervisor'") Move assessment
@@ -61,12 +61,12 @@
                 .row
                     | Number of questions approved: {{assessment_counters.approved}}
                 .row
-                    | Number of questions resubmitted: {{assessment_counters.resubmitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Number of questions submitted: {{assessment_counters.submitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Number of questions resubmitted: {{assessment_counters.resubmitted}}
                 .row
                     | Number of questions unresolved: {{assessment_counters.unresolved}}
                 .row
-                    s Number of questions unfinalized: {{assessment_counters.unfinalized}}
-            .row {{assessment.counters}}
+                    s Number of questions unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
 
 
             rgi-assessment-detail-table

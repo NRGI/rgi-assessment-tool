@@ -5,7 +5,7 @@
             .row-fluid.right-padding-lg
                 rgi-answer-nav(assessment="assessment")
                 div(ng-if="current_user.role!=='supervisor'")
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted' || answer.status==='submitted'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
@@ -13,7 +13,7 @@
                     text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
                 div(ng-if="current_user.role==='supervisor'")
                     text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged' || answer.status==='unresolved'")  {{answer.status | ucfirst}}
+                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                     text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
 
@@ -39,7 +39,7 @@
                 .row.bottom-padding-lg
                     rgi-active-answer-buttons
 
-                .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((answer.status==='flagged' || answer.status==='unresolved') || current_user.isSupervisor())")
+                .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                     rgi-flag-tabs
 
                 // Answer form

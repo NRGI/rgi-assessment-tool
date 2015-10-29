@@ -42,7 +42,8 @@ angular
                     resubmitted: 0,
                     assigned: 0,
                     saved: 0,
-                    unresolved: 0
+                    unresolved: 0,
+                    finalized: 0
                 };
                 answers.forEach(function (el) {
                     switch (el.status) {
@@ -63,6 +64,10 @@ angular
                             if ($scope.assessment.status === 'under_review') {
                                 $scope.assessment_counters.complete +=1;
                             }
+                        case 'finalized':
+                            $scope.assessment_counters.saved +=1;
+                            $scope.assessment_counters.complete +=1;
+                            break;
                         case 'resubmitted':
                             $scope.assessment_counters.resubmitted +=1;
                             break;
