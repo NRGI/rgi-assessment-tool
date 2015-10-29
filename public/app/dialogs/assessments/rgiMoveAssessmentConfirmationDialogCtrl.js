@@ -34,10 +34,10 @@ angular
             new_assessment_data.status = $scope.action;
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
-
+            console.log($scope.action);
             switch ($scope.action) {
                 case 'review_researcher':
-                case 'review_researcher':
+                case 'review_reviewer':
                     new_assessment_data.questions_resubmitted = 0;
 
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
