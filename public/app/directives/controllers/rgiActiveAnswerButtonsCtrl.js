@@ -70,7 +70,7 @@ angular
                         }
                         rgiNotifier.notify('Answer submitted');
                     }, function (reason) {
-                        rgiNotifier.notify(reason);
+                        rgiNotifier.error(reason);
                     });
             }
         };
@@ -150,7 +150,7 @@ angular
                         }
                         rgiNotifier.notify('Answer tagged as unresolved');
                     }, function (reason) {
-                        rgiNotifier.notify(reason);
+                        rgiNotifier.error(reason);
                     });
             }
         };

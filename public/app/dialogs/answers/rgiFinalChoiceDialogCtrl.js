@@ -5,6 +5,7 @@ angular
     .controller('rgiFinalChoiceDialogCtrl', function (
         $scope,
         $location,
+        $routeParams,
         rgiNotifier,
         ngDialog,
         rgiUtilsSrvc,
@@ -14,61 +15,70 @@ angular
         rgiAssessmentSrvc,
         rgiAnswerMethodSrvc
     ) {
+
+        var root_url,
+            assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
+
+        if ($scope.current_user.role === 'supervisor') {
+            root_url = '/admin/assessments-admin';
+        } else {
+            root_url = '/assessments';
+        }
+
         $scope.final_choice_set = [
             {
                 text: 'Agree with researcher score',
-                value: $scope.$parent.answer.researcher_score,
+                score: $scope.$parent.answer.researcher_score,
+                justification: $scope.$parent.answer.researcher_justification,
+                value: 'researcher',
                 role: 'researcher'
             },
             {
                 text: 'Agree with reviewer score',
-                value: $scope.$parent.answer.reviewer_score,
-                role: 'researcher'
+                score: $scope.$parent.answer.reviewer_score,
+                justification: $scope.$parent.answer.reviewer_justification,
+                value: 'reviewer',
+                role: 'reviewer'
             },
             {
                 text: 'Other score',
+                score: 0,
+                justification: '',
                 value: 'other',
                 role: 'admin'
             }
         ];
         $scope.question_choices = $scope.$parent.question.question_choices;
 
-        $scope.closeDialog = function () {
-            ngDialog.close();
-        };
+        rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+            $scope.question_length = answers.length;
+        });
 
         $scope.finalChoiceSubmit = function () {
-            var new_answer_data, new_assessment_data;
-
-            new_answer_data = $scope.$parent.answer;
-            new_assessment_data = $scope.$parent.assessment;
+            var new_answer_data = $scope.$parent.answer;
 
             new_answer_data.status = 'final';
-            new_answer_data.final_score = +$scope.final_choice.value;
+            new_answer_data.final_score = +$scope.final_choice.score;
             new_answer_data.final_role = $scope.final_choice.role;
-            if ($scope.final_choice.final_justification) {
-                new_answer_data.final_justification = 'admin: ' + $scope.final_choice.final_justification;
-            } else {
-                new_answer_data.final_justification = $scope.final_choice.role + ': ' + $scope.$parent.answer[$scope.final_choice.role + '_justification'];
-            }
+            new_answer_data.final_justification = $scope.final_choice.final_justification;
 
-            new_assessment_data.questions_unfinalized -= 1;
+            console.log(new_answer_data);
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                 .then(function () {
-                    if (new_answer_data.questions_unfinalized === 0) {
-                        $location.path('/admin/assessment-review/answer-review-edit/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                    if (new_answer_data.question_order !== $scope.question_length) {
+                        $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
                     } else {
-                        $location.path('/admin/assessment-review/' + new_answer_data.assessment_ID);
+                        $location.path(root_url + '/' + new_answer_data.assessment_ID);
                     }
-                    // $location.path();
                     rgiNotifier.notify('Answer finalized');
+                    ngDialog.close();
                 }, function (reason) {
-                    rgiNotifier.notify(reason);
+                    rgiNotifier.error(reason);
                 });
 
-            ngDialog.close();
-
+            $scope.closeDialog = function () {
+                ngDialog.close();
+            };
         };
     });

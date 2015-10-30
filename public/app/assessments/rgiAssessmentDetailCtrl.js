@@ -64,8 +64,8 @@ angular
                             if ($scope.assessment.status === 'under_review') {
                                 $scope.assessment_counters.complete +=1;
                             }
-                        case 'finalized':
-                            $scope.assessment_counters.saved +=1;
+                        case 'final':
+                            $scope.assessment_counters.finalized +=1;
                             $scope.assessment_counters.complete +=1;
                             break;
                         case 'resubmitted':
