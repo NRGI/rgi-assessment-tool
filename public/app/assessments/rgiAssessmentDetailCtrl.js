@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiAssessmentDetailCtrl', function (
@@ -13,7 +15,6 @@ angular
         rgiDialogFactory,
         rgiAssessmentMethodSrvc
     ) {
-        'use strict';
         // filtering options
         $scope.sortOptions = [
             {value: "question_order", text: "Sort by Question Number"},

@@ -1,3 +1,13 @@
+div(ng-if="answer.final_score"): .well
+    h5 Final score:
+    div.left-padding-lg
+        text(ng-init="i = answer.final_score") {{answer.final_score}} - {{question.question_choices[i-1].criteria}}
+    h5 Final justification:
+    div.left-padding-lg
+        text(ng-bind-html="answer.final_justification")
+    h5 Final role:
+    div.left-padding-lg
+        | {{answer.final_role | ucfirst}}
 div(ng-if="current_user.role === 'researcher'")
     div.bottom-padding-med
         div(ng-if="!answer.researcher_score")

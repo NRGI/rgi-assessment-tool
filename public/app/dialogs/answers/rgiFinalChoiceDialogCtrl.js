@@ -55,14 +55,15 @@ angular
         });
 
         $scope.finalChoiceSubmit = function () {
-            var new_answer_data = $scope.$parent.answer;
+            var new_answer_data = $scope.$parent.answer,
+                final_choice = $scope.final_choice;
 
             new_answer_data.status = 'final';
-            new_answer_data.final_score = +$scope.final_choice.score;
-            new_answer_data.final_role = $scope.final_choice.role;
-            new_answer_data.final_justification = $scope.final_choice.final_justification;
+            new_answer_data.final_score = final_choice.score;
+            new_answer_data.final_role = final_choice.role;
+            new_answer_data.final_justification = final_choice.justification;
 
-            console.log(new_answer_data);
+            console.log(final_choice);
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(function () {
