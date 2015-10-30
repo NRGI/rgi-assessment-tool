@@ -14,22 +14,24 @@ angular
         'use strict';
         // get current control profile onto scope and use it to populate workflow_opts
         rgiUserListSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
-            var workflow_opts = [];
-            if ($scope.$parent.assessment.status !== 'approved') {
+            var workflow_opts = [],
+                assessment = $scope.$parent.assessment,
+                assessment_counters = $scope.$parent.assessment_counters;
+            if (assessment.status !== 'approved') {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
                     value: 'review_' + control_profile.role
                 });
-                if (control_profile.role === 'researcher' && $scope.$parent.assessment_counters.flagged === 0) {
+                if (control_profile.role === 'researcher' && assessment_counters.flagged === 0) {
                 //if (control_profile.role === 'researcher') {
-                    rgiUserListSrvc.get({_id: $scope.$parent.assessment.reviewer_ID}, function (new_profile) {
+                    rgiUserListSrvc.get({_id: assessment.reviewer_ID}, function (new_profile) {
                         workflow_opts.push({
                             text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
                             value: 'assigned_' + new_profile.role
                         });
                     });
-                } else if (control_profile.role === 'reviewer' && $scope.$parent.assessment.questions_flagged === 0) {
-                    rgiUserListSrvc.get({_id: $scope.$parent.assessment.researcher_ID}, function (new_profile) {
+                } else if (control_profile.role === 'reviewer' && assessment_counters.flagged === 0) {
+                    rgiUserListSrvc.get({_id: assessment.researcher_ID}, function (new_profile) {
                         workflow_opts.push({
                             text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
                             value: 'assigned_' + new_profile.role
@@ -37,7 +39,7 @@ angular
                     });
                 }
             }
-            if ($scope.$parent.assessment.questions_flagged === 0 && $scope.$parent.assessment.questions_unfinalized === 0 && $scope.$parent.assessment.status !== 'approved') {
+            if (assessment_counters.flagged===0 && assessment_counters.finalized===assessment_counters.length && assessment.status!=='approved') {
                 workflow_opts.push({
                     text: 'Approve assessment',
                     value: 'approved'
@@ -48,7 +50,8 @@ angular
             //     value: ''
             // });
 
-            if ($scope.$parent.assessment.status === 'approved' || ($scope.$parent.assessment.questions_flagged === 0 && $scope.$parent.assessment.status === 'under_review')) {
+            //if (assessment.status === 'approved' || (assessment_counters.flagged===0 && assessment.status==='under_review')) {
+            if (assessment.status === 'approved') {
                 workflow_opts.push({
                     text: 'Move to internal review',
                     value: 'internal_review'

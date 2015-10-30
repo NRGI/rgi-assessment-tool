@@ -13,6 +13,7 @@ angular
     ) {
         'use strict';
         $scope.action = $scope.$parent.action;
+        console.log($scope.action);
         switch ($scope.action) {
             case 'review_researcher':
             case 'review_reviewer':
@@ -21,6 +22,9 @@ angular
             case 'assigned_researcher':
             case 'assigned_reviewer':
                 $scope.action_text = 'reassign to ' + $scope.action.split('_')[1];
+                break;
+            case 'approved':
+                $scope.action_text = 'approve assessment';
                 break;
             case 'internal_review':
             case 'external_review':
@@ -32,13 +36,14 @@ angular
         $scope.assessmentmove = function () {
             var new_assessment_data = $scope.$parent.assessment;
             new_assessment_data.status = $scope.action;
+            new_assessment_data.first
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
-            console.log($scope.action);
+
             switch ($scope.action) {
                 case 'review_researcher':
                 case 'review_reviewer':
-                    new_assessment_data.questions_resubmitted = 0;
+                    new_assessment_data.first_pass = false;
 
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                         .then(function () {
@@ -53,7 +58,6 @@ angular
 
                 case 'assigned_researcher':
                 case 'assigned_reviewer':
-                    new_assessment_data.questions_complete = 0;
 
                     if ($scope.action === 'assigned_researcher') {
                         new_assessment_data.edit_control = new_assessment_data.researcher_ID;
@@ -62,11 +66,14 @@ angular
                     }
 
                     rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
-                        new_answer_data.forEach(function (answer) {
-                            if (answer.status !== 'unresolved') {
-                                answer.status = 'assigned';
-                            }
-                        });
+
+                        if (new_assessment_data.first_pass) {
+                            new_answer_data.forEach(function (answer) {
+                                if (answer.status !== 'unresolved') {
+                                    answer.status = 'assigned';
+                                }
+                            });
+                        }
 
                         rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                             .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
@@ -79,6 +86,19 @@ angular
                                 rgiNotifier.error(reason);
                             });
                     });
+                    break;
+
+                case 'approved':
+                    new_assessment_data.status = 'approved';
+                    new_assessment_data.edit_control = $scope.current_user._id;
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment approved!');
+                            $scope.closeThisDialog();
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
                     break;
 
                 case 'internal_review':
