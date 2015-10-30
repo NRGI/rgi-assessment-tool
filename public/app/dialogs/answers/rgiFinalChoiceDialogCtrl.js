@@ -57,27 +57,31 @@ angular
         $scope.finalChoiceSubmit = function () {
             var new_answer_data = $scope.$parent.answer,
                 final_choice = $scope.final_choice;
+            if (!final_choice) {
+                rgiNotifier.error("You must select an action!");
+            } else if (!final_choice.score) {
+                rgiNotifier.error("You must select a score!");
+            } else if (!final_choice.justification) {
+                rgiNotifier.error("You must provide a justification!");
+            } else {
+                new_answer_data.status = 'final';
+                new_answer_data.final_score = final_choice.score;
+                new_answer_data.final_role = final_choice.role;
+                new_answer_data.final_justification = final_choice.justification;
 
-            new_answer_data.status = 'final';
-            new_answer_data.final_score = final_choice.score;
-            new_answer_data.final_role = final_choice.role;
-            new_answer_data.final_justification = final_choice.justification;
-
-            console.log(final_choice);
-
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(function () {
-                    if (new_answer_data.question_order !== $scope.question_length) {
-                        $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
-                    } else {
-                        $location.path(root_url + '/' + new_answer_data.assessment_ID);
-                    }
-                    rgiNotifier.notify('Answer finalized');
-                    ngDialog.close();
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                });
-
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                    .then(function () {
+                        if (new_answer_data.question_order !== $scope.question_length) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        } else {
+                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                        }
+                        rgiNotifier.notify('Answer finalized');
+                        ngDialog.close();
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    });
+            }
             $scope.closeDialog = function () {
                 ngDialog.close();
             };
