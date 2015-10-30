@@ -7,29 +7,31 @@ table.table.table-hover.table-striped.table-condensed
             th.col-md-2.text-center Status
             th.col-md-1.text-center Researcher Score
             th.col-md-1.text-center Reviewer Score
+            th.col-md-1.text-center Final Score
             th.col-md-1.text-center
     tbody
         tr(ng-repeat="answer in answers | filter: search_text | orderBy:sortOrder")
             td.col-md-1.text-center {{answer.question_order}}
             td.col-md-1 {{answer.component_text}}
             td.col-md-5 {{answer.question_text}})
-            td.col-md-2.text-center(ng-if="current_user.role!=='supervisor'")
+            td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                 .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                 .text(ng-if="answer.status==='unresolved' || answer.status==='assigned'")
-            td.col-md-2.text-center(ng-if="current_user.role==='supervisor'")
+            td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                .text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
                 //.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='unresolved'")  {{answer.status | ucfirst}}
-                .text(ng-if="question.status!=='submitted' && question.status!=='resubmitted' && question.status!=='saved' && question.status!=='approved' && question.status!=='flagged'")  {{question.status | ucfirst}}
+                .text(ng-if="['submitted', 'resubmitted', 'saved', 'approved', 'flagged', 'final'].indexOf(answer.status) < 0")  {{question.status | ucfirst}}
             td.col-md-1.text-center {{answer.researcher_score}}
             td.col-md-1.text-center {{answer.reviewer_score}}
+            td.col-md-1.text-center.text-success {{answer.final_score}}
             td(ng-if="current_user.role!=='supervisor' && assessment.edit_control===current_user._id")
                 a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted'"
                 href="/assessments/answer/{{answer.answer_ID}}") Edit question
