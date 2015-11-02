@@ -42,10 +42,8 @@ exports.createQuestions = function (req, res, next) {
     res.send();
 };
 exports.updateQuestion = function (req, res) {
-    var question_update, timestamp;
-
-    question_update = req.body;
-    timestamp = new Date().toISOString();
+    var question_update = req.body,
+        timestamp = new Date().toISOString();
 
     if (!req.user.hasRole('supervisor')) {
         res.status(404);
@@ -87,16 +85,18 @@ exports.updateQuestion = function (req, res) {
         }
 
         question.question_text = question_update.question_text;
+        question.question_guidance_text = question_update.question_guidance_text;
+        question.question_label = question_update.question_label;
+        question.question_order = question_update.question_order;
+        question.question_use = question_update.question_use;
+        question.question_criteria = question_update.question_criteria;
+        question.question_dependancies = question_update.question_dependancies;
         question.component = question_update.component;
         question.component_text = question_update.component.replace('_', ' ').capitalize();
-        question.question_choices = question_update.question_choices;
+        question.dejure = question_update.dejure;
+        question.indicator = question_update.indicator;
         question.comments = question_update.comments;
-
-        if (question.modified) {
-            question.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
-        } else {
-            question.modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
-        }
+        question.last_modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
 
         question.save(function (err) {
             if (err) {
