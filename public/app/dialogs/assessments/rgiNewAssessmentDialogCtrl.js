@@ -110,8 +110,8 @@ angular
                         });
 
                         // send to mongo
-                        rgiAssessmentMethodSrvc.createAssessment(newAssessmentData)
-                            .then(rgiQuestionMethodSrvc.insertQuestionSet(newQuestionData))
+                        rgiAssessmentMethodSrvc.createAssessment(new_assessment_data)
+                            .then(rgiQuestionMethodSrvc.insertQuestionSet(new_question_data))
                             .then(function () {
                                 rgiNotifier.notify('Assessment deployed!');
                                 $scope.closeThisDialog();

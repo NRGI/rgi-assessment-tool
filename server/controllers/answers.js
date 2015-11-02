@@ -66,8 +66,9 @@ exports.getAnswersByID = function (req, res, next) {
 };
 
 exports.createAnswers = function (req, res, next) {
-    var new_answers, i, j;
+    var new_answers, i;
     new_answers = req.body;
+
     function createNewAnswer(new_answer) {
         Answer.create(new_answer, function (err, answer) {
             if (err) {
@@ -80,18 +81,39 @@ exports.createAnswers = function (req, res, next) {
         });
     }
 
-    Question.find({}).exec(function (err, questions) {
-        for (i = questions.length - 1; i >= 0; i -= 1) {
+    for (i = new_answers.length - 1; i >= 0; i -= 1) {
+        createNewAnswer(new_answers[i]);
+    }
 
-            for (j = new_answers.length - 1; j >= 0; j -= 1) {
+    //console.log(new_answers);
 
-                if (questions[i]._id == new_answers[j].question_ID) {
-                    new_answers[j].question_text = questions[i].question_text;
-                    createNewAnswer(new_answers[j]);
-                }
-            }
-        }
-    });
+    //new_answers.forEach(function (answer) {
+    //    Answer.create(answer, function (err, ans) {
+    //        if (err) {
+    //            if (err.toString().indexOf('E11000') > -1) {
+    //                err = new Error('Duplicate answers');
+    //            }
+    //            res.status(400);
+    //            return res.send({reason: err.toString()});
+    //        }
+    //    });
+    //});
+
+    //Question.find({}).exec(function (err, questions) {
+    //    questions.forEach(function (question) {
+    //
+    //    });
+    //    //for (i = questions.length - 1; i >= 0; i -= 1) {
+    //    //
+    //    //    for (j = new_answers.length - 1; j >= 0; j -= 1) {
+    //    //
+    //    //        if (questions[i]._id == new_answers[j].question_ID) {
+    //    //            new_answers[j].question_text = questions[i].question_text;
+    //    //            createNewAnswer(new_answers[j]);
+    //    //        }
+    //    //    }
+    //    //}
+    //});
     res.send();
 };
 
@@ -110,11 +132,6 @@ exports.updateAnswer = function (req, res) {
         answer.references = answer_update.references;
         answer.flags = answer_update.flags;
         answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
-        //if (answer.modified) {
-        //    answer.modified.push({modifiedBy: req.user._id, modifiedDate: timestamp});
-        //} else {
-        //    answer.modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
-        //}
 
         if (answer_update.hasOwnProperty('researcher_score')) {
             answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score});

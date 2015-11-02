@@ -13,7 +13,7 @@ angular
         rgiUserListSrvc,
         rgiAnswerSrvc,
         rgiDialogFactory,
-        rgiAssessmentMethodSrvc
+        rgiQuestionSrvc
     ) {
         // filtering options
         $scope.sortOptions = [
@@ -46,8 +46,11 @@ angular
                     unresolved: 0,
                     finalized: 0
                 };
-                answers.forEach(function (el) {
-                    switch (el.status) {
+
+                $scope.answers = [];
+
+                answers.forEach(function (answer) {
+                    switch (answer.status) {
                         case 'flagged':
                             $scope.assessment_counters.flagged +=1;
                             $scope.assessment_counters.complete +=1;
@@ -65,6 +68,7 @@ angular
                             if ($scope.assessment.status === 'under_review') {
                                 $scope.assessment_counters.complete +=1;
                             }
+                            break;
                         case 'final':
                             $scope.assessment_counters.finalized +=1;
                             $scope.assessment_counters.complete +=1;
@@ -79,9 +83,14 @@ angular
                             $scope.assessment_counters.saved +=1;
                             break;
                     }
+                    rgiQuestionSrvc.get({_id: answer.question_ID}, function (question) {
+                        answer.question_text = question.question_text;
+                        answer.question_order = question.question_order;
+                        answer.component_text = question.component_text;
+                        answer.component_id = question.component_id;
+                    });
+                    $scope.answers.push(answer);
                 });
-                $scope.answers = answers;
-
             });
         });
         $scope.submitAssessmentDialog = function () {
