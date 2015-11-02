@@ -102,6 +102,7 @@ angular
                                 dejure: question.dejure,
                                 question_text: question.question_text,
                                 question_criteria: question.question_criteria,
+                                question_norm: question.question_norm,
                                 question_dependancies: question.question_dependancies,
                                 question_guidance_text: question.question_guidance_text,
                                 mapping_2013: question.mapping_2013,

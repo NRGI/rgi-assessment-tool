@@ -84,36 +84,6 @@ exports.createAnswers = function (req, res, next) {
     for (i = new_answers.length - 1; i >= 0; i -= 1) {
         createNewAnswer(new_answers[i]);
     }
-
-    //console.log(new_answers);
-
-    //new_answers.forEach(function (answer) {
-    //    Answer.create(answer, function (err, ans) {
-    //        if (err) {
-    //            if (err.toString().indexOf('E11000') > -1) {
-    //                err = new Error('Duplicate answers');
-    //            }
-    //            res.status(400);
-    //            return res.send({reason: err.toString()});
-    //        }
-    //    });
-    //});
-
-    //Question.find({}).exec(function (err, questions) {
-    //    questions.forEach(function (question) {
-    //
-    //    });
-    //    //for (i = questions.length - 1; i >= 0; i -= 1) {
-    //    //
-    //    //    for (j = new_answers.length - 1; j >= 0; j -= 1) {
-    //    //
-    //    //        if (questions[i]._id == new_answers[j].question_ID) {
-    //    //            new_answers[j].question_text = questions[i].question_text;
-    //    //            createNewAnswer(new_answers[j]);
-    //    //        }
-    //    //    }
-    //    //}
-    //});
     res.send();
 };
 

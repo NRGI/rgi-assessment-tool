@@ -4,7 +4,7 @@
       div(id="answer_choice_div").bottom-padding-med
          legend Choose one of the following answers (required):
          ng-form(name="answer_choice_form")
-            .form-group.left-padding-lg(ng-repeat="choice in question.question_choices" required)
+            .form-group.left-padding-lg(ng-repeat="choice in question.question_criteria" required)
                input(
                type="radio"
                name="choice.choice_name"
@@ -12,7 +12,7 @@
                checked=""
                ng-model="answer[current_user.role + '_score']"
                ng-disabled="assessment.edit_control!==current_user._id")
-               text.left-padding-med {{choice.criteria}}
+               text.left-padding-med {{choice.letter}} - {{choice.text}}
       div(id="answer_justification_div")
          ng-form(name="answer_justification_form")
             .form-group.top-padding-med

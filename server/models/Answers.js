@@ -93,16 +93,6 @@ answerSchema = new Schema({
     question_order: {
         type: Number,
         required: '{PATH} is required'}, // generated from the order_ID of Question Model
-    //question_text: {
-    //    type: String,
-    //    required: '{PATH} is required'},
-    //component: {
-    //    type: String,
-    //    required: '{PATH} is required'}, // generated from Question Model
-    //component_text: {
-    //    type: String,
-    //    required: '{PATH} is required'}, // generated from Question Model
-    //nrc_precept: Number,
     question_ID: {
         type: ObjectId,
         required: '{PATH} is required',
@@ -113,11 +103,6 @@ answerSchema = new Schema({
         index: true}, // generated from _id value of Question Model
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
     flags: [commentSchema],
-    //assigned: {
-    //    assignedBy: ObjectId,
-    //    assignedDate: {
-    //        type: Date,
-    //        default: Date.now}},
     last_modified: {
         modified_by: ObjectId,
         modified_date: Date},

@@ -90,6 +90,7 @@ exports.updateQuestion = function (req, res) {
         question.question_order = question_update.question_order;
         question.question_use = question_update.question_use;
         question.question_criteria = question_update.question_criteria;
+        question.question_norm = question_update.question_norm;
         question.question_dependancies = question_update.question_dependancies;
         question.component = question_update.component;
         question.component_text = question_update.component.replace('_', ' ').capitalize();

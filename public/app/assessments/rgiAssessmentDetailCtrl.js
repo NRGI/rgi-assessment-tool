@@ -86,6 +86,7 @@ angular
                     rgiQuestionSrvc.get({_id: answer.question_ID}, function (question) {
                         answer.question_text = question.question_text;
                         answer.question_order = question.question_order;
+                        answer.question_label = question.question_label;
                         answer.component_text = question.component_text;
                         answer.component_id = question.component_id;
                     });
