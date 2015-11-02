@@ -4,11 +4,19 @@
       div(id="answer_choice_div").bottom-padding-med
          legend Choose one of the following answers (required):
          ng-form(name="answer_choice_form")
+            //.form-group-left-padding-lg
+            //    input(
+            //    type="radio"
+            //    checked=""
+            //    ng-model="answer[current_user.role + '_score']"
+            //    ng-disabled="assessment.edit_control!==current_user._id"
+            //    ng-options="choice as choice.letter for choice in question.question_criteria"
+            //    required)
             .form-group.left-padding-lg(ng-repeat="choice in question.question_criteria" required)
                input(
                type="radio"
                name="choice.choice_name"
-               value="{{choice.order}}"
+               ng-value="{{choice}}"
                checked=""
                ng-model="answer[current_user.role + '_score']"
                ng-disabled="assessment.edit_control!==current_user._id")

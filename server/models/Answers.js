@@ -64,7 +64,14 @@ scoreHistorySchema = new Schema({
         type: Date,
         default: Date.now},
     order: Number,
-    score: Number
+    score: {
+        name: String,
+        letter: String,
+        order: Number,
+        text: String,
+        value: Number
+    },
+    justification: String
     /////ERROR CALCULATION
 });
 
@@ -106,15 +113,33 @@ answerSchema = new Schema({
     last_modified: {
         modified_by: ObjectId,
         modified_date: Date},
-    researcher_score: Number,
+    researcher_score: {
+        name: String,
+        letter: String,
+        order: Number,
+        text: String,
+        value: Number
+    },
     researcher_justification: htmlSettings,
     /////ERROR CALCULATION
     researcher_score_history: [scoreHistorySchema],
-    reviewer_score: Number,
+    reviewer_score: {
+        name: String,
+        letter: String,
+        order: Number,
+        text: String,
+        value: Number
+    },
     reviewer_justification: htmlSettings,
     /////ERROR CALCULATION
     reviewer_score_history: [scoreHistorySchema],
-    final_score: Number,
+    final_score: {
+        name: String,
+        letter: String,
+        order: Number,
+        text: String,
+        value: Number
+    },
     final_role: String,
     final_justification: htmlSettings,
     comments: [commentSchema],

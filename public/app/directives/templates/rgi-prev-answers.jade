@@ -1,7 +1,7 @@
 div(ng-if="answer.final_score"): .well
     h5 Final score:
     div.left-padding-lg
-        text(ng-init="i = answer.final_score") {{answer.final_score}} - {{question.question_choices[i-1].criteria}}
+        | {{answer.final_score.letter | ucfirst}} - {{answer.final_score.text}}
     h5 Final justification:
     div.left-padding-lg
         text(ng-bind-html="answer.final_justification")
@@ -10,79 +10,79 @@ div(ng-if="answer.final_score"): .well
         | {{answer.final_role | ucfirst}}
 div(ng-if="current_user.role === 'researcher'")
     div.bottom-padding-med
-        div(ng-if="!answer.researcher_score")
+        div(ng-if="!answer.researcher_score.letter")
             h5 Your previous score:
             div.left-padding-lg
                 em Not submitted
-        div(ng-if="answer.researcher_score")
+        div(ng-if="answer.researcher_score.letter")
             h5 Your previous score:
             div.left-padding-lg
-                text(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+                | {{answer.researcher_score.letter| ucfirst}} - {{answer.researcher_score.text}}
             h5 Your previous justification:
             div.left-padding-lg
                 text(ng-bind-html="answer.researcher_justification")
 
     div.bottom-padding-med
-        div(ng-if="!answer.reviewer_score")
+        div(ng-if="!answer.reviewer_score.letter")
             h5 Reviewer score:
             div.left-padding-lg
                 em Not submitted
-        div(ng-if="answer.reviewer_score")
+        div(ng-if="answer.reviewer_score.letter")
             h5 Reviewer score:
             div.left-padding-lg
-                text(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+                | {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}}
             h5 Reviewer justification:
             div.left-padding-lg
                 text(ng-bind-html="answer.reviewer_justification")
 
 div(ng-if="current_user.role === 'reviewer'")
-    div.bottom-padding-lg(ng-if="!answer.reviewer_score")
+    div.bottom-padding-lg(ng-if="!answer.reviewer_score.letter")
         h5 Your previous score:
         div.left-padding-lg
             em Not submitted
-    div(ng-if="answer.reviewer_score")
+    div(ng-if="answer.reviewer_score.letter")
         h5 Your previous score:
         div.left-padding-lg
-            text(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+            | {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}}
         h5 Your previous justification:
         div.left-padding-lg
             text(ng-bind-html="answer.reviewer_justification")
 
-    div(ng-if="!answer.researcher_score")
+    div(ng-if="!answer.researcher_score.letter")
         h5 Researcher score:
         div.left-padding-lg
             em Not submitted
-    div(ng-if="answer.researcher_score")
+    div(ng-if="answer.researcher_score.letter")
         h5 Researcher score:
         div.left-padding-lg
-            text(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+            | {{answer.researcher_score.letter| ucfirst}} - {{answer.researcher_score.text}}
         h5 Researcher justification:
         div.left-padding-lg
             text(ng-bind-html="answer.researcher_justification")
 
 div(ng-if="current_user.isSupervisor()")
     div.bottom-padding-med
-        div(ng-if="!answer.researcher_score")
+        div(ng-if="!answer.researcher_score.letter")
             h5 Researcher score:
             div.left-padding-lg
                 em Not submitted
-        div(ng-if="answer.researcher_score")
+        div(ng-if="answer.researcher_score.letter")
             h5 Researcher score:
             div.left-padding-lg
-                text(ng-init="i = answer.researcher_score") {{answer.researcher_score}} - {{question.question_choices[i-1].criteria}}
+                | {{answer.researcher_score.letter| ucfirst}} - {{answer.researcher_score.text}}
             h5 Researcher justification:
             div.left-padding-lg
                 text(ng-bind-html="answer.researcher_justification")
 
     div.bottom-padding-med
-        div(ng-if="!answer.reviewer_score")
+        div(ng-if="!answer.reviewer_score.letter")
             h5 Reviewer score:
             div.left-padding-lg
                 em Not submitted
-        div(ng-if="answer.reviewer_score")
+        div(ng-if="answer.reviewer_score.letter")
             h5 Reviewer score:
             div.left-padding-lg
-                text(ng-init="i = answer.reviewer_score") {{answer.reviewer_score}} - {{question.question_choices[i-1].criteria}}
+                | {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}}
             h5 Reviewer justification:
             div.left-padding-lg
                 text(ng-bind-html="answer.reviewer_justification")
@@ -90,5 +90,5 @@ div(ng-if="current_user.isSupervisor()")
 
     div.bottom-padding-med.well
         h5 Options
-        div.left-padding-lg(ng-repeat="choice in question.question_choices")
-            | {{choice.order}} - {{choice.criteria}}
+        div.left-padding-lg(ng-repeat="choice in question.question_criteria")
+            | {{choice.letter}} - {{choice.text}}

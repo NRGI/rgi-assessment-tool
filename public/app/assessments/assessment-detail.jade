@@ -40,8 +40,9 @@
                     | Last edited by
                     a(href="mailto:{{edited_by.email}}")  {{edited_by.firstName}}  {{edited_by.lastName}}
                     |  on
-                    span(ng-repeat="mod in assessment.modified")
-                        em(ng-show="$last")  {{mod.modified_date | date}}
+                    em  {{assessment.last_modified.modified_date | date}}
+                    //span(ng-repeat="mod in assessment.modified")
+                    //    em(ng-show="$last")  {{mod.modified_date | date}}
                 //.row
                 //    | {{assessment.status | ucfirst}} on
                 //    em  {{assessment.assignment.assigned_date | date}}

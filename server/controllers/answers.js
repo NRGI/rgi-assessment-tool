@@ -104,12 +104,12 @@ exports.updateAnswer = function (req, res) {
         answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
 
         if (answer_update.hasOwnProperty('researcher_score')) {
-            answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score});
+            answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score, justification: answer.researcher_justification});
             answer.researcher_score = answer_update.researcher_score;
             answer.researcher_justification = answer_update.researcher_justification;
         }
         if (answer_update.hasOwnProperty('reviewer_score')) {
-            answer.reviewer_score_history.push({date: timestamp, order: answer.reviewer_score_history.length + 1, score: answer.reviewer_score});
+            answer.reviewer_score_history.push({date: timestamp, order: answer.reviewer_score_history.length + 1, score: answer.reviewer_score, justification: answer.reviewer_justification});
             answer.reviewer_score = answer_update.reviewer_score;
             answer.reviewer_justification = answer_update.reviewer_justification;
         }
