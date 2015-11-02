@@ -67,41 +67,45 @@ angular
             $scope.new_assessment.assessment_countries.splice(index, 1);
         };
         $scope.assessmentDeploy = function () {
-            var newAssessmentData = [],
-                newQuestionData = [];
+            var new_assessment_data = [],
+                new_question_data = [];
             rgiQuestionSrvc.query({assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase()}, function (d) {
                 if (d.length > 0) {
                     rgiNotifier.error('Assessment already deployed');
                 } else {
-                    rgiQuestionSrvc.query({assessment_ID: 'base'}, function (data) {
+                    rgiQuestionSrvc.query({assessment_ID: 'base'}, function (base_questions) {
 
-                        $scope.new_assessment.assessment_countries.forEach(function (el) {
-                            newAssessmentData.push({
-                                assessment_ID: el.country.iso2 + "-" + String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
-                                ISO3: el.country.country_ID,
+                        $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
+                            new_assessment_data.push({
+                                assessment_ID: assessment_country.country.iso2 + "-" + String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
+                                ISO3: assessment_country.country.country_ID,
                                 year: $scope.new_assessment.year,
                                 version: $scope.new_assessment.version,
-                                country: el.country.country
+                                country: assessment_country.country.country
                             });
                         });
 
-                        data.forEach(function (el) {
-                            newQuestionData.push({
-                                root_question_ID: el._id,
+                        base_questions.forEach(function (question) {
+                            new_question_data.push({
                                 year: String($scope.new_assessment.year),
                                 version: $scope.new_assessment.version,
+                                root_question_ID: question._id,
                                 assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
-                                component: el.component,
-                                component_text: el.component_text,
-                                indicator: el.indicator,
-                                sub_indicator_name: el.sub_indicator_name,
-                                precept: el.precept,
-                                // old_reference: el.old_reference,
-                                question_order: el.question_order,
-                                question_choices: el.question_choices,
-                                question_text: el.question_text,
-                                question_guidance_text: el.question_guidance_text,
-                                section_name: el.section_name
+                                question_use: question.question_use,
+                                question_order: question.question_order,
+                                question_label: question.question_label,
+                                qid: question.qid,
+                                precept: question.precept,
+                                component: question.component,
+                                component_text: question.component_text,
+                                indicator: question.indicator,
+                                dejure: question.dejure,
+                                question_text: question.question_text,
+                                question_criteria: question.question_criteria,
+                                question_dependancies: question.question_dependancies,
+                                question_guidance_text: question.question_guidance_text,
+                                mapping_2013: question.mapping_2013,
+                                mapping_external: question.mapping_external
                             });
                         });
 
