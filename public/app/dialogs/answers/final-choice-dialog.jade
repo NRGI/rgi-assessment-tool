@@ -28,18 +28,18 @@ div.left-padding-lg.right-padding-lg
                                 .row.left-padding-lg.right-padding-med
                                     legend Choose one of the following answers:
                                     ng-form(name="answer_choice_form")
-                                        .form-group(ng-repeat="choice in question_choices" required)
+                                        .form-group(ng-repeat="choice in question_criteria" required)
                                             input(
                                             type="radio"
                                             name="choice.choice_name"
-                                            value="{{choice.order}}"
+                                            ng-value="{{choice}}"
                                             checked=""
                                             ng-model="final_choice.score")
-                                            text.left-padding-med {{choice.criteria}}
+                                            text.left-padding-med {{choice.text}}
 
                     .row.left-padding-med(ng-if="['researcher', 'reviewer'].indexOf(final_choice.value) > -1")
-                        .row: em {{final_choice.role | ucfirst}}: {{final_choice.score}} -
-                            |  {{question_choices[final_choice.score-1].criteria}}
+                        .row: em {{final_choice.role | ucfirst}}: {{final_choice.score.letter | ucfirst}} -
+                            |  {{final_choice.score.text}}
                         .row: text(ng-bind-html="final_choice.justification")
 
     div.modal-footer

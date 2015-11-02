@@ -65,7 +65,7 @@ angular
                             break;
                         case 'unresolved':
                             $scope.assessment_counters.unresolved +=1;
-                            if ($scope.assessment.status === 'under_review') {
+                            if (['under_review', 'resubmitted'].indexOf($scope.assessment.status) > -1) {
                                 $scope.assessment_counters.complete +=1;
                             }
                             break;

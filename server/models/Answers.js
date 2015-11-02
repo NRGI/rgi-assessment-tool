@@ -104,6 +104,7 @@ answerSchema = new Schema({
         type: ObjectId,
         required: '{PATH} is required',
         index: true}, // generated from _id value of Question Model
+    //question_norm: Number, ///Len of options used for normalizations...ignores NAs
     root_question_ID: {
         type: ObjectId,
         required: '{PATH} is required',

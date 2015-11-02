@@ -48,7 +48,7 @@ angular
                 role: 'admin'
             }
         ];
-        $scope.question_choices = $scope.$parent.question.question_choices;
+        $scope.question_criteria = $scope.$parent.question.question_criteria;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
             $scope.question_length = answers.length;
