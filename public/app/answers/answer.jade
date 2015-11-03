@@ -22,25 +22,14 @@
             div.right-padding-lg.left-padding-lg
                 .row.bottom-padding-med
                     h3: em.bottom-padding-med.col-md-11 Question {{question.question_label}}: {{question.question_text}}
+                        text(ng-if="question.dejure")  (Dejure)
+                        text(ng-if="!question.dejure")  (Defacto)
                     i.glyphicon.glyphicon-question-sign(
                     popover-template="dynamicPopover.templateUrl"
                     popover-title="Guidance note"
                     popover-placement="bottom")
                     script(type="text/ng-template" id="myPopoverTemplate.html")
                         div(ng-bind-html="question.question_guidance_text")
-                .well
-                    .row precept: {{question.precept}}
-                    .row component: {{question.component_text}}
-                    .row indicator: {{question.indicator}}
-                    .row dejure: {{question.dejure}}
-                    .row question_dependancies: {{question.question_dependancies}}
-                    .row mapping_2013: {{question.mapping_2013}}
-                    .row mapping_external: {{question.mapping_external}}
-
-
-
-
-
                  //.row
                  //    ng-pop-up(option='ngPopupConfig')
 
