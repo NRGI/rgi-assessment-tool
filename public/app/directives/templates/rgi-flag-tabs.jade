@@ -62,6 +62,6 @@ div(id="flags_div").bottom-padding-med
         ng-repeat="flag in answer.flags"
         ng-if="!current_user.isSupervisor() && flag.addressed_to!==current_user._id && (assessment.status==='review_started')")
             i.glyphicon.glyphicon-warning-sign.text-warning
-                text(ng-if="current_user.role==='reviewer'")  Flag from Researcher:
-                text(ng-if="current_user.role==='researcher'")  Flag from Reviewer:
+                text(ng-if="current_user.role==='reviewer'")  Flag to Researcher:
+                text(ng-if="current_user.role==='researcher'")  Flag to Reviewer:
             text(ng-bind-html="flag.content")
