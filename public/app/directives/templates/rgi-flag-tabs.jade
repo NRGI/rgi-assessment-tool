@@ -8,7 +8,7 @@ div(id="flags_div").bottom-padding-med
         ///TODO Fix repeating imvisible panels
         div.panel(
         ng-repeat="flag in flags"
-        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to===current_user._id || answer.status==='flagged'))"
+        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to===current_user._id))"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
@@ -58,10 +58,11 @@ div(id="flags_div").bottom-padding-med
                     .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
                     .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
-        div(
-        ng-repeat="flag in answer.flags"
-        ng-if="!current_user.isSupervisor() && flag.addressed_to!==current_user._id && (assessment.status==='review_started')")
-            i.glyphicon.glyphicon-warning-sign.text-warning
-                text(ng-if="current_user.role==='reviewer'")  Flag to Researcher:
-                text(ng-if="current_user.role==='researcher'")  Flag to Reviewer:
-            text(ng-bind-html="flag.content")
+        div.top-padding-lg
+            div(
+            ng-repeat="flag in answer.flags"
+            ng-if="!current_user.isSupervisor() && flag.addressed_to!==current_user._id")
+                i.glyphicon.glyphicon-warning-sign.text-warning
+                    text(ng-if="current_user.role==='reviewer'")  Flag to Researcher:
+                    text(ng-if="current_user.role==='researcher'")  Flag to Reviewer:
+                text(ng-bind-html="flag.content")
