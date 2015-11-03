@@ -9,18 +9,18 @@ div(ng-if="answer.final_score"): .well
     div.left-padding-lg
         .text-success {{answer.final_role | ucfirst}}
 div(ng-if="current_user.role === 'researcher'")
-    div.bottom-padding-med
-        div(ng-if="!answer.researcher_score.letter")
-            h5 Your previous score:
-            div.left-padding-lg
-                em.text-danger Not submitted
-        div(ng-if="answer.researcher_score.letter")
-            h5 Your previous score:
-            div.left-padding-lg
-                .text-primary {{answer.researcher_score.letter| ucfirst}} - {{answer.researcher_score.text}}
-            h5 Your previous justification:
-            div.left-padding-lg
-                .text-primary(ng-bind-html="answer.researcher_justification")
+    //div.bottom-padding-med
+    //    div(ng-if="!answer.researcher_score.letter")
+    //        h5 Your previous score:
+    //        div.left-padding-lg
+    //            em.text-danger Not submitted
+    //    div(ng-if="answer.researcher_score.letter")
+    //        h5 Your previous score:
+    //        div.left-padding-lg
+    //            .text-primary {{answer.researcher_score.letter| ucfirst}} - {{answer.researcher_score.text}}
+    //        h5 Your previous justification:
+    //        div.left-padding-lg
+    //            .text-primary(ng-bind-html="answer.researcher_justification")
 
     div.bottom-padding-med
         div(ng-if="!answer.reviewer_score.letter")
@@ -36,17 +36,17 @@ div(ng-if="current_user.role === 'researcher'")
                 .text-primary(ng-bind-html="answer.reviewer_justification")
 
 div(ng-if="current_user.role === 'reviewer'")
-    div.bottom-padding-lg(ng-if="!answer.reviewer_score.letter")
-        h5 Your previous score:
-        div.left-padding-lg
-            em.text-danger Not submitted
-    div(ng-if="answer.reviewer_score.letter")
-        h5 Your previous score:
-        div.left-padding-lg
-            .text-primary {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}}
-        h5 Your previous justification:
-        div.left-padding-lg
-            .text-primary(ng-bind-html="answer.reviewer_justification")
+    //div.bottom-padding-lg(ng-if="!answer.reviewer_score.letter")
+    //    h5 Your previous score:
+    //    div.left-padding-lg
+    //        em.text-danger Not submitted
+    //div(ng-if="answer.reviewer_score.letter")
+    //    h5 Your previous score:
+    //    div.left-padding-lg
+    //        .text-primary {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}}
+    //    h5 Your previous justification:
+    //    div.left-padding-lg
+    //        .text-primary(ng-bind-html="answer.reviewer_justification")
 
     div(ng-if="!answer.researcher_score.letter")
         h5 Researcher score:
