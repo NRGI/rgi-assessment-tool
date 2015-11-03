@@ -22,7 +22,7 @@ div.left-padding-lg.right-padding-lg
                                 placeholder="File URL"
                                 ng-model="fileUrl")
                             .col-md-4
-                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl()", ng-disabled="fileUploading || (fileUrl.length == 0)")
+                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl(fileUrl)", ng-disabled="fileUploading || (fileUrl.length == 0)")
                                 //input.upload(type="file" nv-file-select uploader="uploader")
                     div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
                         table.table

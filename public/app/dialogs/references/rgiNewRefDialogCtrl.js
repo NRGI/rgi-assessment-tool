@@ -192,7 +192,7 @@ angular
         ///////////////
         //FILE UPLOAD
         ///////////////
-        $scope.fileUrl = '';
+        //$scope.fileUrl = '';
         $scope.fileUploading = false;
         $scope.answer_update = $scope.$parent.answer;
         var uploader = $scope.uploader = new FileUploader({
@@ -226,7 +226,7 @@ angular
                 }
             }
         };
-        $scope.uploadFileByUrl = function () {
+        $scope.uploadFileByUrl = function (fileUrl) {
             var handleFileUploadStatus = function (responseStatus) {
                 $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 
@@ -244,14 +244,15 @@ angular
 
             $scope.fileUploading = true;
 
-            rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent($scope.fileUrl)).then(function (response) {
+
+            rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
                 if (response.data.reason) {
                     $scope.fileUploading = false;
                     rgiNotifier.error('The file cannot be uploaded');
                 } else {
                     $scope.uploader.queue.push({
                         file: {
-                            name: $scope.fileUrl.split('/')[$scope.fileUrl.split('/').length - 1],
+                            name: fileUrl.split('/')[fileUrl.split('/').length - 1],
                             size: response.data.size
                         },
                         isUploading: true,
