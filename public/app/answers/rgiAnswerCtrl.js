@@ -33,7 +33,18 @@ angular
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
             $scope.answer = answer;
             $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
-            $scope.question = rgiQuestionSrvc.get({_id: answer.question_ID});
+            rgiQuestionSrvc.get({_id: answer.question_ID}, function(question) {
+                $scope.question = question;
+                $scope.question.question_criteria.forEach(function (opt, i) {
+                    if (i===answer[rgiIdentitySrvc.currentUser.role + '_score'].order-1) {
+                        opt.selected = true;
+                        $scope.answer.new_answer_selection = i;
+                    } else {
+                        opt.selected = false;
+                    }
+                });
+            });
+            //$scope.question = rgiQuestionSrvc.get({_id: answer.question_ID});
             $scope.current_user = rgiIdentitySrvc.currentUser;
             //$scope.answer_start = angular.copy($scope.answer);
 

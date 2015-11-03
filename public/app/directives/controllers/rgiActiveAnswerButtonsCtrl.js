@@ -31,6 +31,9 @@ angular
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
                 flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
+            if (new_answer_data.new_answer_selection) {
+                new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+            }
 
             if (new_answer_data.status!=='flagged' && flag_check) {
                 new_answer_data.status = 'flagged';
@@ -51,13 +54,16 @@ angular
         $scope.answerSubmit = function () {
             var new_answer_data = $scope.answer;
 
-            if (!new_answer_data[$scope.current_user.role + '_score']) {
+            if (!new_answer_data[$scope.current_user.role + '_score'] && !new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
             } else {
                 if (new_answer_data.status !== 'submitted') {
                     new_answer_data.status = 'submitted';
+                }
+                if (new_answer_data.new_answer_selection) {
+                    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
@@ -78,12 +84,15 @@ angular
         $scope.answerResubmit = function () {
             var new_answer_data = $scope.answer;
 
-            if (!new_answer_data[$scope.current_user.role + '_score']) {
+            if (!new_answer_data[$scope.current_user.role + '_score'] && new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
             } else {
                 new_answer_data.status = 'resubmitted';
+                if (new_answer_data.new_answer_selection) {
+                    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+                }
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(function () {
                         if (new_answer_data.question_order !== $scope.question_length) {
