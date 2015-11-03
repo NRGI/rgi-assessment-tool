@@ -70,30 +70,18 @@ div.left-padding-lg.right-padding-lg
         //INTERVIEWS
         div(ng-if="ref_selection==='interview'")
             div.modal-form(name="new_human_form")
-                .row {{selected_interviewee}}
-                .row {{new_interviewee}}
-                .form-horizontal
+                .row
+                    div.col-lg-6
+                        button.btn.btn-block.btn-primary(
+                        ng-click="intervieweeSelect('new')"
+                        ng-disabled="interviewee_selection==='new'") New interviewee
+                    div.col-lg-6
+                        button.btn.btn-block.btn-primary(
+                        ng-click="intervieweeSelect('existing')"
+                        ng-disabled="interviewee_selection==='existing'") Existing interviewee
+                .form-horizontal.top-padding-lg(ng-if="interviewee_selection")
                     fieldset
-                        .row.bottom-padding-med
-                            div.col-md-9
-                                angucomplete(
-                                id="interviewee_search"
-                                placeholder="Search existing interviewees..."
-                                selectedobject="selected_interviewee"
-                                localdata="interviewee_list"
-                                searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
-                                titlefield="firstName,lastName"
-                                descriptionfield="email"
-                                minlength="1"
-                                inputclass="form-control form-control-small"
-                                matchclass="highlight"
-                                autocomplete="off")
-                            div.col-md-3
-                                button.btn.btn-block.btn-primary(ng-click="newInterviewee()") New interviewee
-                                //| &nbsp;
-                                //button.btn.btn-block.btn-primary(ng-click="existingInterviewee()") Existing interviewee
-
-                        // DATE ACCESSED
+                        //DATE ACCESSED
                         .row.bottom-padding-med
                             div.col-md-12
                                 .pull-left.col-lg-5.input-group
@@ -120,17 +108,40 @@ div.left-padding-lg.right-padding-lg
                                 redactor
                                 autocomplete="off")
 
-                        // EXISTING INTERVIEWEE
-                        div(ng-if="selected_interviewee")
-                            h4 Existing Interviewee
-                            .row.left-padding-lg
-                                h5: b Name:
-                                | {{selected_interviewee.title}}
-                                h5: b Email:
-                                | {{selected_interviewee.originalObject.email}}
+                        //existing interviewee
+                        div(ng-if="interviewee_selection==='existing'")
+                            .row.bottom-padding-med
+                                div.col-md-9
+                                    angucomplete(
+                                    id="interviewee_search"
+                                    placeholder="Search existing interviewees..."
+                                    selectedobject="selected_interviewee"
+                                    localdata="interviewee_list"
+                                    searchfields="firstName,lastName,assessments,assessment_countries,assessment_countries"
+                                    titlefield="firstName,lastName"
+                                    descriptionfield="email"
+                                    minlength="1"
+                                    inputclass="form-control form-control-small"
+                                    matchclass="highlight"
+                                    autocomplete="off")
+                            // EXISTING INTERVIEWEE
+                            .row(ng-if="selected_interviewee")
+                                h4 Existing Interviewee
+                                .row.left-padding-lg
+                                    h5: b Name:
+                                    | {{selected_interviewee.title}}
+                                    h5: b Email:
+                                    | {{selected_interviewee.originalObject.email}}
+
+                            div.modal-footer(ng-if="interviewee_selection")
+                                div.col-lg-6
+                                    button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(selected_interviewee)") Create reference
+                                div.col-lg-6
+                                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+
 
                         // NEW INTERVIEWEE
-                        div(ng-if="new_interviewee && !selected_interviewee")
+                        div(ng-if="interviewee_selection==='new'")
                             h4 New interviewee
                             .row.form-group
                                 // FIRST NAME
@@ -195,8 +206,8 @@ div.left-padding-lg.right-padding-lg
                                     ng-model="new_interviewee.organization"
                                     autocomplete="off")
 
-    div.modal-footer(ng-if="ref_selection==='interview'")
-        div.col-lg-6
-            button.btn.btn-block.btn-success(ng-click="interviewRefSubmit()") Create reference
-        div.col-lg-6
-            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
+                            div.modal-footer(ng-if="interviewee_selection")
+                                div.col-lg-6
+                                    button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(new_interviewee)") Create reference
+                                div.col-lg-6
+                                    button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
