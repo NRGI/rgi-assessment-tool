@@ -1,6 +1,6 @@
 'use strict';
 var mongoose    = require('mongoose');
-require('mongoose-html').loadType(mongoose);
+require('mongoose-html-2').loadType(mongoose);
 
 var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
     mongooseHistory = require('mongoose-history'),
