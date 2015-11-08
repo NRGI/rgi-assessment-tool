@@ -8,7 +8,7 @@ var options = {customCollectionName: "question_hst"};
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Schemalesss = mongoose.Schema.Types.Mixed;
-require('mongoose-html').loadType(mongoose);
+require('mongoose-html-2').loadType(mongoose);
 var Html = mongoose.Types.Html;
 
 var htmlSettings = {
