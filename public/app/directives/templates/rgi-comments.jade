@@ -19,13 +19,13 @@ div(id="comments_div").bottom-padding-med
             .form-group.top-padding-med
                 .row.left-padding-lg
                     .col-md-10
-                        textarea.form-control(
-                        name="comment"
-                        type="text"
-                        ng-model="update.new_comment"
-                        placeholder="New comment..."
-                        redactor
-                        required) {{update.new_comment}}
+                        div(
+                            name="comment"
+                            ng-model="update.new_comment"
+                            ta-toolbar="[['undo', 'redo', 'clear'], ['bold', 'italics', 'underline', 'strikeThrough'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['pre', 'quote', 'insertLink']]"
+                            placeholder="New comment..."
+                            text-angular
+                        )
                     .col-md-1
                         button.btn.btn-success(
                         ng-click="commentSubmit()"

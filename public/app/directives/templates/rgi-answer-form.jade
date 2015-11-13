@@ -19,11 +19,9 @@
                     .row.left-padding-lg
                         .col-md-11
                             h4 Justification:
-                            textarea.form-control(
+                            div(
                             name="justification"
-                            type="text"
                             ng-model="answer[current_user.role + '_justification']"
+                            ta-disabled="assessment.edit_control!==current_user._id"
                             placeholder="Please provide your justification... (required)"
-                            ng-disabled="assessment.edit_control!==current_user._id"
-                            redactor
-                            required) {{answer[current_user.role + '_justification']}}
+                            text-angular)
