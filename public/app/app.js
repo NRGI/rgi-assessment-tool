@@ -2,7 +2,6 @@
 angular.module('app', [
     'angular.filter',
     'angularFileUpload',
-    'angular-redactor',
     'angucomplete',
     'infinite-scroll',
     'ng-form-group',
@@ -12,11 +11,8 @@ angular.module('app', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'textAngular',
     'ui.bootstrap'
-    //'angular-sanitize',
-    //'textAngular'
-    //require('angular-sanitize'),
-    //require('textAngular')
 ]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {

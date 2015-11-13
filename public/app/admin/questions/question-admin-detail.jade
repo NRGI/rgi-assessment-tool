@@ -75,12 +75,11 @@
                         label Guidance Text
                         //- ng-form(name="question_text_form")
                         .form-group.left-padding-lg.right-padding-lg(required)
-                            textarea.form-control(
-                            name="question_text"
-                            type="text"
-                            ng-model="question.question_guidance_text"
-                            redactor) {{question.question_guidance_text}}
-                        div(ng-bind-html="question.question_guidance_text")
+                            div(
+                                text-angular-name="question_text"
+                                ng-model="question.question_guidance_text"
+                                text-angular
+                            )
 
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
