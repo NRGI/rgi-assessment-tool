@@ -100,13 +100,13 @@ div.left-padding-lg.right-padding-lg
                         //INTERVIEWEE COMMENT
                         .row.bottom-padding-med
                             div.col-md-12
-                                textarea.form-control(
-                                name="comment"
-                                type="text"
-                                placeholder="Comments..."
-                                ng-model="answer_update.human_ref_comment"
-                                redactor
-                                autocomplete="off")
+                                div(
+                                    name="comment"
+                                    placeholder="Comments..."
+                                    ng-model="answer_update.human_ref_comment"
+                                    ta-toolbar="[['undo', 'redo', 'clear'], ['bold', 'italics', 'underline', 'strikeThrough'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['pre', 'quote', 'insertLink']]"
+                                    text-angular
+                                )
 
                         //existing interviewee
                         div(ng-if="interviewee_selection==='existing'")
