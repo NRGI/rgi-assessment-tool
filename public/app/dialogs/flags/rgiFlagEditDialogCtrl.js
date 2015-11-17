@@ -10,11 +10,12 @@ angular
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
-        //$timeout(function() {
-        //    $('.ngdialog').draggable({
-        //        handle: '.ngdialog-content'
-        //    });
-        //}, 500);
+        $timeout(function() {
+            $('.ngdialog').draggable({
+                handle: '.ngdialog-content'
+            });
+        }, 500);
+
         $scope.flag_content = $scope.$parent.flag.content;
 
         $scope.saveFlag = function () {
