@@ -44,6 +44,16 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        stylus: {
+            compile: {
+                options: {
+                    compress: false
+                },
+                files: {
+                    'public/css/site.css': 'public/css/site.styl'
+                }
+            }
+        },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -60,11 +70,17 @@ module.exports = function (grunt) {
                 options: {
                     spawn: false
                 }
+            },
+            stylus: {
+                files: ['public/css/*.styl'],
+                tasks: ['stylus:compile'],
+                options : {livereload: true}
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
