@@ -1,8 +1,6 @@
 'use strict';
 /*jshint -W079 */
 
-var _, describe, beforeEach, afterEach, it, inject, expect, module, sinon;
-
 describe('rgiUserCreateCtrl', function () {
     beforeEach(module('app'));
 
@@ -43,16 +41,12 @@ describe('rgiUserCreateCtrl', function () {
                 address: ['ADDRESS']
             };
 
-            $scope.first_name = userData.firstName;
-            $scope.last_name = userData.lastName;
-            $scope.username = userData.username;
+            $scope.new_user_data = userData;
             $scope.email = userData.email;
-            $scope.roleSelect = userData.role;
-            $scope.address = userData.address[0];
         });
 
         it('shows notification and redirects on success', function() {
-            rgiNotifierMock.expects('notify').withArgs('User account created!' + userData.email);
+            rgiNotifierMock.expects('notify').withArgs('User account created! ' + userData.email);
             $locationMock = sinon.mock($location);
             $locationMock.expects('path').withArgs('/admin/user-admin');
 
@@ -73,7 +67,7 @@ describe('rgiUserCreateCtrl', function () {
 
         it('shows an error on failure', function() {
             var reason = 'REASON';
-            rgiNotifierMock.expects('error').withArgs(reason);
+            rgiNotifierMock.expects('error').withArgs(reason+'!');
 
             userMethodCreateUserSpy = sinon.spy(function () {
                 return {
@@ -94,4 +88,5 @@ describe('rgiUserCreateCtrl', function () {
             rgiNotifierMock.restore();
         });
     });
+
 });
