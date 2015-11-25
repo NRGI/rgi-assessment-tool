@@ -180,7 +180,7 @@ angular
         //$scope.fileUrl = '';
         $scope.fileUploading = false;
         $scope.answer_update = $scope.$parent.answer;
-        var uploader = $scope.uploader = new FileUploader({
+        var uploader = $scope.uploader = rgiFileUploaderSrvc.get({
             isHTML5: true,
             withCredentials: true,
             url: 'file-upload'
@@ -193,7 +193,7 @@ angular
             }
         });
         ////TODO handle doc and txt documents
-        uploader.onCompleteItem = function (fileItem, response, status, headers) {
+        uploader.onCompleteItem = function (fileItem, response, status) {
             $scope.uploader.queue = [];
             if (status === 400) {
                 rgiNotifier.error(response.reason);
@@ -202,7 +202,6 @@ angular
                 $scope.value = true;
                 var scope = $scope.$parent;
                 scope.new_document = $scope.new_document;
-                console.log(scope);
                 //rgiDialogFactory[scope.ref_selection + 'Create']($scope);
                 if (scope.ref_selection === 'document') {
                     rgiDialogFactory.documentCreate(scope);
