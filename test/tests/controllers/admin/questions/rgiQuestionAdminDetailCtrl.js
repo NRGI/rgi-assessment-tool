@@ -1,12 +1,11 @@
 'use strict';
 /*jshint -W079 */
 
-var _, angular, describe, beforeEach, afterEach, it, inject, expect, sinon;
-
 describe('rgiQuestionAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
+    var $scope, $location, $routeParams,
+        rgiDialogFactory, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
         questionGetStub, questionGetSpy,
         $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID',
         identityCurrentUserBackUp, identityCurrentUser = 'CURRENT USER',
@@ -20,10 +19,20 @@ describe('rgiQuestionAdminDetailCtrl', function () {
         };
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _$routeParams_, _ngDialog_, _rgiIdentitySrvc_, _rgiQuestionSrvc_, _rgiQuestionMethodSrvc_, _rgiNotifier_) {
+        function (
+            $rootScope,
+            $controller,
+            _$location_,
+            _$routeParams_,
+            _rgiDialogFactory_,
+            _rgiIdentitySrvc_,
+            _rgiQuestionSrvc_,
+            _rgiQuestionMethodSrvc_,
+            _rgiNotifier_
+        ) {
             $location = _$location_;
             $routeParams = _$routeParams_;
-            ngDialog = _ngDialog_;
+            rgiDialogFactory = _rgiDialogFactory_;
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             rgiQuestionMethodSrvc = _rgiQuestionMethodSrvc_;
@@ -98,168 +107,130 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     });
 
     describe('#questionUpdate', function () {
-        var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy, notifierMock;
+        var notifierMock;
 
         beforeEach(function () {
             notifierMock = sinon.mock(rgiNotifier);
         });
 
-        describe('POSITIVE CASE', function () {
-            it('shows message and redirects', function () {
-                questionMethodDeleteQuestionSpy = sinon.spy(function () {
-                    return {
-                        then: function (callback) {
-                            callback();
-                        }
-                    };
-                });
-                questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
-
-                notifierMock.expects('notify').withArgs('Question data has been updated');
-                var $locationMock = sinon.mock($location);
-                $locationMock.expects('path').withArgs('/admin/question-admin');
-
+        describe('INCOMPLETE DATA CASES', function () {
+            it('shows an error message if there are no choices', function () {
+                $scope.question.question_choices = [];
+                notifierMock.expects('error').withArgs('You must supply at least one option!');
                 $scope.questionUpdate();
-                $locationMock.verify();
-                $locationMock.restore();
+            });
+
+            it('shows an error message if there is no guidance', function () {
+                $scope.question.question_choices = [
+                    {order: 1, criteria: 'yes'},
+                    {order: 2, criteria: 'no'}
+                ];
+                notifierMock.expects('error').withArgs('You must supply question guidance!');
+                $scope.questionUpdate();
+            });
+
+            it('shows an error message if the order is not set', function () {
+                $scope.question.question_choices = [
+                    {order: 1, criteria: 'yes'},
+                    {order: 2, criteria: 'no'}
+                ];
+                $scope.question.question_guidance_text = 'The Guidance';
+
+                notifierMock.expects('error').withArgs('you must supply question order!');
+                $scope.questionUpdate();
+            });
+
+            it('shows an error message if the question text is not set', function () {
+                $scope.question.question_choices = [
+                    {order: 1, criteria: 'yes'},
+                    {order: 2, criteria: 'no'}
+                ];
+
+                $scope.question.question_guidance_text = 'The Guidance';
+                $scope.question.question_order = 1;
+
+                notifierMock.expects('error').withArgs('You must supply question text!');
+                $scope.questionUpdate();
             });
         });
 
-        describe('NEGATIVE CASE', function () {
-            it('shows error message', function () {
-                var failureReason = 'REASON';
-                questionMethodDeleteQuestionSpy =  sinon.spy(function () {
-                    /*jshint unused: true*/
-                    /*jslint unparam: true*/
-                    return {
-                        then: function (uselessCallbackPositive, callbackNegative) {
-                            callbackNegative(failureReason);
-                        }
-                    };
-                });
-                /*jshint unused: false*/
-                /*jslint unparam: false*/
-                questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
+        describe('COMPLETE DATA CASES', function() {
+            var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy;
 
-                notifierMock.expects('error').withArgs(failureReason);
-                $scope.questionUpdate();
+            beforeEach(function () {
+                $scope.question.question_choices = [
+                    {order: 1, criteria: 'yes'},
+                    {order: 2, criteria: 'no'}
+                ];
+
+                $scope.question.question_guidance_text = 'The Guidance';
+                $scope.question.question_order = 1;
+                $scope.question.question_text = 'The Question';
+            });
+
+            describe('POSITIVE CASE', function () {
+                it('shows message and redirects', function () {
+                    questionMethodDeleteQuestionSpy = sinon.spy(function () {
+                        return {
+                            then: function (callback) {
+                                callback();
+                            }
+                        };
+                    });
+                    questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
+
+                    notifierMock.expects('notify').withArgs('Question data has been updated');
+                    var $locationMock = sinon.mock($location);
+                    $locationMock.expects('path').withArgs('/admin/question-admin');
+
+                    $scope.questionUpdate();
+                    $locationMock.verify();
+                    $locationMock.restore();
+                });
+            });
+
+            describe('NEGATIVE CASE', function () {
+                it('shows error message', function () {
+                    var failureReason = 'REASON';
+                    questionMethodDeleteQuestionSpy =  sinon.spy(function () {
+                        /*jshint unused: true*/
+                        /*jslint unparam: true*/
+                        return {
+                            then: function (uselessCallbackPositive, callbackNegative) {
+                                callbackNegative(failureReason);
+                            }
+                        };
+                    });
+                    /*jshint unused: false*/
+                    /*jslint unparam: false*/
+                    questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodDeleteQuestionSpy);
+
+                    notifierMock.expects('error').withArgs(failureReason);
+                    $scope.questionUpdate();
+                });
+            });
+
+            afterEach(function () {
+                questionMethodDeleteQuestionSpy.withArgs($scope.question).called.should.be.equal(true);
+                questionMethodDeleteQuestionStub.restore();
             });
         });
 
         afterEach(function () {
-            questionMethodDeleteQuestionSpy.withArgs($scope.question).called.should.be.equal(true);
-            questionMethodDeleteQuestionStub.restore();
             notifierMock.verify();
             notifierMock.restore();
         });
     });
 
     describe('#deleteConfirmDialog', function () {
-        it('calls dialog service with defined parameters', function () {
-            var ngDialogMock = sinon.mock(ngDialog);
-            ngDialogMock.expects('open').withArgs({
-                template: 'partials/dialogs/delete-question-confirmation-dialog',
-                controller: 'rgiDeleteQuestionDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
+        it('opens delete dialog', function () {
+            var dialogFactoryMock = sinon.mock(rgiDialogFactory);
+            dialogFactoryMock.expects('questionDelete').withArgs($scope);
 
             $scope.deleteConfirmDialog();
 
-            $scope.value.should.be.equal(true);
-            ngDialogMock.verify();
-            ngDialogMock.restore();
-        });
-    });
-
-    describe('#deleteConfirmDialog', function () {
-        it('sets the value to TRUE', function () {
-            $scope.deleteConfirmDialog();
-            $scope.value.should.be.equal(true);
-        });
-
-        it('opens a dialog', function () {
-            var ngDialogMock = sinon.mock(ngDialog);
-            ngDialogMock.expects('open').withArgs({
-                template: 'partials/dialogs/delete-question-confirmation-dialog',
-                controller: 'rgiDeleteQuestionDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
-
-            $scope.deleteConfirmDialog();
-
-            ngDialogMock.verify();
-            ngDialogMock.restore();
-        });
-
-    });
-
-    describe('#questionDelete', function () {
-        var questionMethodUpdateQuestionStub, questionMethodUpdateQuestionSpy, notifierMock,
-            currentUser;
-
-        beforeEach(function () {
-            notifierMock = sinon.mock(rgiNotifier);
-            $scope.question.new_comment = 'NEW COMMENT';
-            currentUser = {
-                _id: 'user-id',
-                firstName: 'First Name',
-                lastName: 'Last Name',
-                role: 'user'
-            };
-        });
-
-        describe('POSITIVE CASE', function () {
-            it('sends a request and displays a success message', function () {
-                questionMethodUpdateQuestionSpy = sinon.spy(function () {
-                    return {
-                        then: function (callback) {
-                            callback();
-                        }
-                    };
-                });
-
-                notifierMock.expects('notify').withArgs('Comment added');
-            });
-        });
-
-        describe('NEGATIVE CASE', function () {
-            it('shows error message', function () {
-                var failureReason = 'REASON';
-                /*jshint unused: true*/
-                /*jslint unparam: true*/
-                questionMethodUpdateQuestionSpy =  sinon.spy(function () {
-                    return {
-                        then: function (uselessCallbackPositive, callbackNegative) {
-                            callbackNegative(failureReason);
-                        }
-                    };
-                });
-                /*jshint unused: true*/
-                /*jslint unparam: true*/
-
-                notifierMock.expects('notify').withArgs(failureReason);
-            });
-        });
-
-        afterEach(function () {
-            questionMethodUpdateQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'updateQuestion', questionMethodUpdateQuestionSpy);
-            $scope.commentSubmit(currentUser);
-
-            var questionCopy = angular.copy($scope.question),
-                spyArgs = questionMethodUpdateQuestionSpy.args[0][0];
-            delete questionCopy.new_comment;
-
-            questionCopy.comments[0].date.substring(0, questionCopy.comments[0].date.length - 4);
-            spyArgs.comments[0].date.substring(0, spyArgs.comments[0].date.length - 4);
-
-            _.isEqual(spyArgs, questionCopy).should.be.equal(true);
-
-            questionMethodUpdateQuestionSpy.called.should.be.equal(true);
-            questionMethodUpdateQuestionStub.restore();
-            notifierMock.verify();
-            notifierMock.restore();
+            dialogFactoryMock.verify();
+            dialogFactoryMock.restore();
         });
     });
 
