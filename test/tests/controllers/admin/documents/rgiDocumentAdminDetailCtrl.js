@@ -6,16 +6,16 @@ var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 describe('rgiDocumentAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, ngDialog, rgiDocumentSrvc, rgiUserListSrvc,
+    var $scope, $routeParams, rgiDialogFactory, rgiDocumentSrvc, rgiUserListSrvc,
         documentGetStub, documentGetSpy,
         userListGetStub, userListGetSpy,
         document_ID = 'document id', $routeParamsDocument_ID,
         document = {users: ['user-id-1', 'user-id-2']};
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$routeParams_, _ngDialog_, _rgiDocumentSrvc_, _rgiUserListSrvc_) {
+        function ($rootScope, $controller, _$routeParams_, _rgiDialogFactory_, _rgiDocumentSrvc_, _rgiUserListSrvc_) {
             $routeParams = _$routeParams_;
-            ngDialog = _ngDialog_;
+            rgiDialogFactory = _rgiDialogFactory_;
             rgiDocumentSrvc = _rgiDocumentSrvc_;
             rgiUserListSrvc = _rgiUserListSrvc_;
 
@@ -51,23 +51,13 @@ describe('rgiDocumentAdminDetailCtrl', function () {
 
     describe('#editDocumentDialog', function () {
         it('calls dialog service with defined parameters', function () {
-            var ngDialogMock = sinon.mock(ngDialog);
-            ngDialogMock.expects('open').withArgs({
-                template: 'partials/dialogs/edit-document-dialog',
-                controller: 'rgiEditDocumentDialogCtrl',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
+            var dialogFactoryMock = sinon.mock(rgiDialogFactory);
+            dialogFactoryMock.expects('documentEdit').withArgs($scope);
 
             $scope.editDocumentDialog();
 
-            ngDialogMock.verify();
-            ngDialogMock.restore();
-        });
-
-        it('sets the value to TRUE', function () {
-            $scope.editDocumentDialog();
-            $scope.value.should.be.equal(true);
+            dialogFactoryMock.verify();
+            dialogFactoryMock.restore();
         });
     });
 
