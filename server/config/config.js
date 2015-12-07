@@ -13,7 +13,7 @@ module.exports = {
     //    rootPath: rootPath,
     //    port: process.env.PORT || 3030
     //},
-    development: {
+    staging: {
         db: '@candidate.32.mongolayer.com:10582/rgi_dev',
         rootPath: rootPath,
         port: process.env.PORT || 80
