@@ -1,12 +1,12 @@
 /*jslint node: true */
 'use strict';
 
-describe('rgiDeleteQuestionDialogCtrl', function () {
+describe('rgiNewRefDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $timeout, ngDialog, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc,
-        fileUploaderGetStub, fileUploaderGetSpy,
-        ANSWER = 'ANSWER', now;
+    var $scope, $timeout, ngDialog,
+        rgiDialogFactory, rgiIntervieweeSrvc, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc,
+        fileUploaderGetStub, fileUploaderGetSpy, now, ANSWER = 'ANSWER', intervieweeQueryStub, intervieweeQuerySpy;
 
     beforeEach(inject(
         function (
@@ -14,11 +14,16 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
             $controller,
             _$timeout_,
             _ngDialog_,
+            _rgiDialogFactory_,
+            _rgiIntervieweeSrvc_,
             _rgiNotifier_,
             _rgiFileUploaderSrvc_,
-            _rgiRequestSubmitterSrvc_) {
+            _rgiRequestSubmitterSrvc_
+        ) {
             $timeout = _$timeout_;
             ngDialog = _ngDialog_;
+            rgiDialogFactory = _rgiDialogFactory_;
+            rgiIntervieweeSrvc = _rgiIntervieweeSrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
             rgiRequestSubmitterSrvc = _rgiRequestSubmitterSrvc_;
@@ -30,6 +35,9 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 return {queue: [], filters: []};
             });
             fileUploaderGetStub = sinon.stub(rgiFileUploaderSrvc, 'get', fileUploaderGetSpy);
+
+            intervieweeQuerySpy = sinon.spy();
+            intervieweeQueryStub = sinon.stub(rgiIntervieweeSrvc, 'query', intervieweeQuerySpy);
 
             now = new Date();
             $controller('rgiNewRefDialogCtrl', {$scope: $scope});
@@ -44,12 +52,12 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         $scope.answer_update.should.be.equal(ANSWER);
     });
 
-    it('resets file URL', function () {
-        $scope.fileUrl.should.be.equal('');
+    it('sets date format', function () {
+        $scope.date_format.should.be.equal('dd-MMMM-yyyy');
     });
 
-    it('sets date format', function () {
-        $scope.date_format.should.be.equal('MMMM d, yyyy');
+    it('loads interviewees data', function () {
+        intervieweeQuerySpy.called.should.be.equal(true);
     });
 
     var compareDates = function(date1, date2) {
@@ -114,34 +122,30 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         });
 
         describe('DIALOGS ON SUCCESS', function() {
-            var dialogMock;
+            var dialogFactoryMock;
 
             beforeEach(function() {
-                dialogMock = sinon.mock(ngDialog);
-            });
-
-            it('closes the file upload dialog', function () {
-                dialogMock.expects('close').withArgs('ngdialog1');
+                dialogFactoryMock = sinon.mock(rgiDialogFactory);
             });
 
             it('opens a new document dialog', function () {
-                var dialogScope = $scope.$parent;
-                dialogScope.new_document = $scope.new_document;
+                $scope.$parent = {ref_selection: 'document'};
+                dialogFactoryMock.expects('documentCreate').withArgs($scope.$parent);
+            });
 
-                dialogMock.expects('open').withArgs({
-                    template: 'partials/dialogs/new-document-dialog',
-                    controller: 'rgiNewDocumentDialogCtrl',
-                    className: 'ngdialog-theme-default',
-                    scope: dialogScope
-                });
+            it('opens a new webpage dialog', function () {
+                $scope.$parent = {ref_selection: 'webpage'};
+                dialogFactoryMock.expects('webpageCreate').withArgs($scope.$parent);
             });
 
             afterEach(function() {
                 $scope.uploader.onCompleteItem(null, RESPONSE, 200);
-                dialogMock.verify();
-                dialogMock.restore();
+                $scope.$parent.new_document.should.be.equal($scope.new_document);
+                dialogFactoryMock.verify();
+                dialogFactoryMock.restore();
             });
         });
+
     });
 
     describe('#closeDialog', function () {
@@ -167,7 +171,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         describe('REQUEST PROCESSING', function() {
             var requestSubmitterGetStub, requestSubmitterGetSpy;
 
-            var uploadFile = function(response) {
+            var uploadFile = function(fileUrl, response) {
                 requestSubmitterGetSpy = sinon.spy(function() {
                     return {
                         then: function(callback) {
@@ -179,15 +183,12 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 });
 
                 requestSubmitterGetStub = sinon.stub(rgiRequestSubmitterSrvc, 'get', requestSubmitterGetSpy);
-                $scope.uploadFileByUrl();
+                $scope.uploadFileByUrl(fileUrl);
             };
 
             it('submits file URL to the server', function () {
                 var FILE_URL = 'http://domain.com/file.txt';
-                $scope.fileUrl = FILE_URL;
-
-                uploadFile();
-
+                uploadFile(FILE_URL);
                 requestSubmitterGetSpy.withArgs('/api/remote-file-upload?url=' + encodeURIComponent(FILE_URL))
                     .called.should.be.equal(true);
             });
@@ -198,10 +199,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 beforeEach(function() {
                     notifierErrorSpy = sinon.spy();
                     notifierErrorStub = sinon.stub(rgiNotifier, 'error', notifierErrorSpy);
-
-                    uploadFile({
-                        data: {reason: REASON}
-                    });
+                    uploadFile(undefined, {data: {reason: REASON}});
                 });
 
                 it('unsets file uploading flag', function () {
@@ -231,12 +229,8 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                         };
                     };
 
-                beforeEach(function() {
-                    $scope.fileUrl = FILE_URL;
-                });
-
                 it('adds an item to the file queue', function () {
-                    uploadFile(generateResponse(0.5));
+                    uploadFile(FILE_URL, generateResponse(0.5));
                     _.isEqual($scope.uploader.queue[$scope.uploader.queue.length - 1], {
                         file: {
                             name: 'file.txt',
@@ -249,7 +243,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
 
                 describe('INCOMPLETE CASE', function() {
                     it('polls the server for uploading progress', function() {
-                        uploadFile(generateResponse(0.5));
+                        uploadFile(FILE_URL, generateResponse(0.5));
                         $timeout.flush();
                         requestSubmitterGetSpy.withArgs('/api/remote-file/upload-progress/' + ID).called.should.be.equal(true);
                     });
@@ -261,7 +255,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                     beforeEach(function() {
                         uploaderMock = sinon.mock($scope.uploader);
                         uploaderMock.expects('onCompleteItem').withArgs({}, uploadCompletionResponse.data, uploadCompletionResponse.status);
-                        uploadFile(uploadCompletionResponse);
+                        uploadFile(FILE_URL, uploadCompletionResponse);
                     });
 
                     it('gets the document data by its upload status', function () {
@@ -286,10 +280,10 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 requestSubmitterGetStub.restore();
             });
         });
-
     });
 
     afterEach(function() {
         fileUploaderGetStub.restore();
+        intervieweeQueryStub.restore();
     });
 });

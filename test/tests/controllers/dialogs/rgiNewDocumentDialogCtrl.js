@@ -11,6 +11,13 @@ describe('rgiNewDocumentDialogCtrl', function () {
 
         $scope = $rootScope.$new();
         $scope.new_document = {status: 'created'};
+        $scope.$parent = {
+            new_document: {
+                status: 'created',
+                authors: [{first_name: 'Author First Name', last_name: 'Author Last Name'}],
+                editors: [{first_name: 'Editor First Name', last_name: 'Editor Last Name'}]
+            }
+        };
 
         $controller('rgiNewDocumentDialogCtrl', {$scope: $scope});
     }));
@@ -40,25 +47,31 @@ describe('rgiNewDocumentDialogCtrl', function () {
         ]).should.be.equal(true);
     });
 
-    it('initializes document authors', function () {
-        _.isEqual($scope.new_document.authors, [{first_name: '', last_name: ''}]).should.be.equal(true);
+    it('copies the document authors from the parent scope', function () {
+        $scope.new_document.authors.should.deep.equal([{
+            first_name: $scope.$parent.new_document.authors[0].first_name,
+            last_name: $scope.$parent.new_document.authors[0].last_name
+        }]);
     });
 
-    it('initializes document editors', function () {
-        _.isEqual($scope.new_document.editors, [{first_name: '', last_name: ''}]).should.be.equal(true);
+    it('copies the document editors from the parent scope', function () {
+        $scope.new_document.editors.should.deep.equal([{
+            first_name: $scope.$parent.new_document.editors[0].first_name,
+            last_name: $scope.$parent.new_document.editors[0].last_name
+        }]);
     });
 
     describe('#authorPush', function() {
         it('pushes an empty author record', function () {
             $scope.authorPush();
-            _.isEqual($scope.new_document.authors[$scope.new_document.authors.length - 1], {first_name: '', last_name: ''}).should.be.equal(true);
+            $scope.new_document.authors[$scope.new_document.authors.length - 1].should.deep.equal({first_name: '', last_name: ''});
         });
     });
 
     describe('#editorPush', function() {
         it('pushes an empty editor record', function () {
             $scope.editorPush();
-            _.isEqual($scope.new_document.editors[$scope.new_document.editors.length - 1], {first_name: '', last_name: ''}).should.be.equal(true);
+            $scope.new_document.editors[$scope.new_document.editors.length - 1].should.deep.equal({first_name: '', last_name: ''});
         });
     });
 
@@ -72,10 +85,10 @@ describe('rgiNewDocumentDialogCtrl', function () {
 
             $scope.authorPop(1);
 
-            _.isEqual($scope.new_document.authors, [
+            $scope.new_document.authors.should.deep.equal([
                 {first_name: 'Brian', last_name: 'Kernighan'},
                 {first_name: 'Bjarne', last_name: 'Stroustrup'}
-            ]).should.be.equal(true);
+            ]);
         });
     });
 
@@ -89,10 +102,10 @@ describe('rgiNewDocumentDialogCtrl', function () {
 
             $scope.editorPop(1);
 
-            _.isEqual($scope.new_document.editors, [
+            $scope.new_document.editors.should.deep.equal([
                 {first_name: 'Brian', last_name: 'Kernighan'},
                 {first_name: 'Bjarne', last_name: 'Stroustrup'}
-            ]).should.be.equal(true);
+            ]);
         });
     });
 

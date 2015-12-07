@@ -15,15 +15,7 @@ angular
         rgiAssessmentSrvc,
         rgiAnswerMethodSrvc
     ) {
-
-        var root_url,
-            assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
-
-        if ($scope.current_user.role === 'supervisor') {
-            root_url = '/admin/assessments-admin';
-        } else {
-            root_url = '/assessments';
-        }
+        var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
 
         $scope.final_choice_set = [
             {
@@ -71,6 +63,8 @@ angular
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(function () {
+                        var root_url = $scope.current_user.role === 'supervisor' ? '/admin/assessments-admin' : '/assessments';
+
                         if (new_answer_data.question_order !== $scope.question_length) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
                         } else {

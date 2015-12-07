@@ -1,12 +1,9 @@
 'use strict';
-/*jshint -W079 */
-
-var _, describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiQuestionAdminCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, ngDialog, rgiQuestionSrvc, questionQueryStub, questionQuerySpy,
+    var $scope, ngDialog, rgiDialogFactory, rgiQuestionSrvc, questionQueryStub, questionQuerySpy,
         questionsData = [
             {
                 question_order: 'QUESTION ORDER',
@@ -26,8 +23,9 @@ describe('rgiQuestionAdminCtrl', function () {
         ];
 
     beforeEach(inject(
-        function ($rootScope, $controller, _ngDialog_, _rgiQuestionSrvc_) {
+        function ($rootScope, $controller, _ngDialog_, _rgiDialogFactory_, _rgiQuestionSrvc_) {
             ngDialog = _ngDialog_;
+            rgiDialogFactory = _rgiDialogFactory_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             $scope = $rootScope.$new();
             /*jshint unused: true*/
@@ -44,11 +42,11 @@ describe('rgiQuestionAdminCtrl', function () {
     ));
 
     it('initializes sorting options', function () {
-        _.isEqual($scope.sort_options, [
-            {value: "question_order", text: "Sort by Question Order"},
-            {value: "component_text", text: "Sort by Component"},
-            {value: "status", text: "Sort by Status"}
-        ]).should.be.equal(true);
+        $scope.sort_options.should.deep.equal([
+            {value: 'question_order', text: 'Sort by Question Order'},
+            {value: 'component_text', text: 'Sort by Component'},
+            {value: 'question_text', text: 'Sort by Question Text'}
+        ]);
     });
 
     it('initializes sorting order', function () {
@@ -56,7 +54,7 @@ describe('rgiQuestionAdminCtrl', function () {
     });
 
     it('sets the header', function () {
-        _.isEqual([
+        $scope.header.should.deep.equal([
             'Question Order',
             'Question Text',
             'Component Text',
@@ -65,15 +63,15 @@ describe('rgiQuestionAdminCtrl', function () {
             'Ministry', 'Section',
             'Child Question',
             'NRC Precept'
-        ], $scope.header).should.be.equal(true);
+        ]);
     });
 
     it('loads the question data', function () {
-        _.isEqual($scope.questions, questionsData).should.be.equal(true);
+        $scope.questions.should.deep.equal(questionsData);
     });
 
     it('transforms the loaded question data', function () {
-        _.isEqual([
+        $scope.getArray.should.deep.equal([
             {
                 question_order: 'QUESTION ORDER',
                 question_text: 'QUESTION TEXT',
@@ -89,23 +87,13 @@ describe('rgiQuestionAdminCtrl', function () {
                 choice_1: 'No',
                 choice_1_criteria: 'no'
             }
-        ], $scope.getArray).should.be.equal(true);
+        ]);
     });
 
     describe('#newQuestionDialog', function () {
-        it('sets the value to TRUE', function () {
-            $scope.newQuestionDialog();
-            $scope.value.should.be.equal(true);
-        });
-
         it('opens a dialog', function () {
-            var ngDialogMock = sinon.mock(ngDialog);
-            ngDialogMock.expects('open').withArgs({
-                template: 'partials/dialogs/new-question-dialog',
-                controller: 'rgiNewQuestionDialogCtrl',
-                className: 'ngdialog-theme-plain dialogwidth800',
-                scope: $scope
-            });
+            var ngDialogMock = sinon.mock(rgiDialogFactory);
+            ngDialogMock.expects('questionNew').withArgs($scope);
 
             $scope.newQuestionDialog();
 
