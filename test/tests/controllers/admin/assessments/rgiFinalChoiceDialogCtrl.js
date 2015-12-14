@@ -3,7 +3,8 @@
 describe('rgiFinalChoiceDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog, rgiNotifier, rgiAnswerSrvc, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc;
+    var $scope, $location, $routeParams, ngDialog,
+        rgiNotifier, rgiAnswerSrvc, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc, rgiQuestionSetSrvc;
     var $parent, routeParamsAnswerIdBackup, answerId = 'answer2015', answerQueryStub, answerQuerySpy, ANSWERS = [1, 2];
 
     beforeEach(inject(
@@ -16,6 +17,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             _rgiNotifier_,
             _rgiAnswerSrvc_,
             _rgiAnswerMethodSrvc_,
+            _rgiQuestionSetSrvc_,
             _rgiAssessmentMethodSrvc_
         ) {
             $scope = $rootScope.$new();
@@ -41,6 +43,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             rgiNotifier = _rgiNotifier_;
             rgiAnswerSrvc = _rgiAnswerSrvc_;
             rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
+            rgiQuestionSetSrvc = _rgiQuestionSetSrvc_;
             rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
 
             routeParamsAnswerIdBackup = $routeParams.answer_ID;
@@ -89,10 +92,6 @@ describe('rgiFinalChoiceDialogCtrl', function () {
         answerQuerySpy.withArgs({assessment_ID: 'answer'}).called.should.be.equal(true);
     });
 
-    it('sets the question length', function() {
-        $scope.question_length.should.be.equal(ANSWERS.length);
-    });
-
 
     describe('#finalChoiceSubmit', function() {
         var notifierMock;
@@ -123,7 +122,8 @@ describe('rgiFinalChoiceDialogCtrl', function () {
         });
 
         describe('COMPLETE DATA CASE', function() {
-            var answerMethodUpdateAnswerStub, answerMethodUpdateAnswerSpy, checkExtra = function() {};
+            var stubsCreated, answerMethodUpdateAnswerStub, answerMethodUpdateAnswerSpy, checkExtra = function() {};
+            var areQuestionsRemainingQuestionSetStub, getNextQuestionIdQuestionSetStub;
 
             var final_choice = {
                 score: 'VALUE',
@@ -168,27 +168,33 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                     });
                 });
 
-                var setCriteria = function(role, question_length, question_order, uri) {
+                var setCriteria = function(role, areQuestionsRemaining, questionOrder, uri) {
                     $scope.current_user = {role: role};
-                    $scope.question_length = question_length;
-                    $scope.$parent.answer.question_order = question_order;
+                    stubsCreated = true;
                     $locationMock.expects('path').withArgs(uri);
+
+                    areQuestionsRemainingQuestionSetStub = sinon.stub(rgiQuestionSetSrvc, 'areQuestionsRemaining', function() {
+                        return areQuestionsRemaining;
+                    });
+                    getNextQuestionIdQuestionSetStub = sinon.stub(rgiQuestionSetSrvc, 'getNextQuestionId', function() {
+                        return '00' + questionOrder;
+                    });
                 };
 
                 it('redirects the user to the default user URL if the question order is equal to the questions number', function() {
-                    setCriteria('not supervisor', 1, 1, '/assessments/' + $parent.answer.assessment_ID);
+                    setCriteria('not supervisor', false, undefined, '/assessments/' + $parent.answer.assessment_ID);
                 });
 
                 it('redirects the user to the answer user URL if the question order is equal to the questions number', function() {
-                    setCriteria('not supervisor', 1, 0, '/assessments/answer/' + $parent.answer.assessment_ID + '-001');
+                    setCriteria('not supervisor', true, 1, '/assessments/answer/' + $parent.answer.assessment_ID + '-001');
                 });
 
                 it('redirects the supervisor to the default admin URL if the question order is equal to the questions number', function() {
-                    setCriteria('supervisor', 1, 1, '/admin/assessments-admin/' + $parent.answer.assessment_ID);
+                    setCriteria('supervisor', false, undefined, '/admin/assessments-admin/' + $parent.answer.assessment_ID);
                 });
 
                 it('redirects the user to the answer user URL if the question order is equal to the questions number', function() {
-                    setCriteria('supervisor', 1, 0, '/admin/assessments-admin/answer/' + $parent.answer.assessment_ID + '-001');
+                    setCriteria('supervisor', true, 1, '/admin/assessments-admin/answer/' + $parent.answer.assessment_ID + '-001');
                 });
             });
 
@@ -222,6 +228,11 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                 answerMethodUpdateAnswerSpy.withArgs(args).called.should.be.equal(true);
                 answerMethodUpdateAnswerStub.restore();
                 checkExtra();
+
+                if(stubsCreated) {
+                    areQuestionsRemainingQuestionSetStub.restore();
+                    getNextQuestionIdQuestionSetStub.restore();
+                }
             });
         });
 
