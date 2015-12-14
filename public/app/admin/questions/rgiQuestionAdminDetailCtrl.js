@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiQuestionAdminDetailCtrl', function (
@@ -11,7 +13,6 @@ angular
         rgiIdentitySrvc,
         rgiDialogFactory
     ) {
-        'use strict';
         rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
             $scope.question = data;
             $scope.question_start = angular.copy($scope.question);
@@ -19,6 +20,23 @@ angular
         $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'question';
+
+        $scope.questions = [];
+        rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
+            $scope.questions = questions;
+
+            $scope.questions.forEach(function(question) {
+                question.question_choices.forEach(function(option) {
+                    if($scope.question_start.linkedOption === option._id) {
+                        $scope.linkedQuestion = question;
+                    }
+                });
+            });
+        });
+
+        $scope.resetLinkedOption = function() {
+            $scope.question.linkedOption = undefined;
+        };
 
         $scope.component_options = [
             {value: 'context', text: 'Context'},

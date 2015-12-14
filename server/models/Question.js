@@ -56,6 +56,7 @@ var questionSchema = new Schema({
         required: '{PATH} is required'}, ///from Governance Component column
     indicator: String,  ///from Indicator column
     dejure: Boolean, ///from "De Jure or De Facto" true=dejure
+    linkedOption: ObjectId,
     question_text : String, ///from question column
     question_criteria: [{
         name: String,

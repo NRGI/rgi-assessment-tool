@@ -8,6 +8,7 @@ angular
         $routeParams,
         $route,
         ngDialog,
+        rgiQuestionSetSrvc,
         rgiUtilsSrvc,
         rgiIdentitySrvc,
         rgiAnswerSrvc,
@@ -25,7 +26,7 @@ angular
             root_url = '/assessments';
         }
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            $scope.question_length = answers.length;
+            rgiQuestionSetSrvc.setAnswers(answers);
         });
 
         $scope.answerSave = function () {
@@ -68,12 +69,12 @@ angular
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(function () {
-                        if (new_answer_data.question_order !== $scope.question_length) {
-
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        if (rgiQuestionSetSrvc.areQuestionsRemaining(new_answer_data)) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(new_answer_data));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
                         }
+
                         rgiNotifier.notify('Answer submitted');
                     }, function (reason) {
                         rgiNotifier.error(reason);

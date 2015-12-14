@@ -9,8 +9,8 @@ table.table.table-hover.table-striped.table-condensed
             th.col-md-1.text-center Reviewer Score
             th.col-md-1.text-center Final Score
             th.col-md-1.text-center
-    tbody
-        tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
+    tbody(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder" ng-if="isAnswerAvailable(answer)")
+        tr
             td.col-md-1.text-center {{answer.question_label}}
             td.col-md-1 {{answer.component_text}}
             td.col-md-5 {{answer.question_text}}

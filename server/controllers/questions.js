@@ -24,11 +24,11 @@ exports.getQuestionTextByID = function (req, res) {
     });
 };
 
-exports.createQuestions = function (req, res, next) {
+exports.createQuestions = function (req, res) {
     var new_questions = req.body;
 
     function createNewQuestion (new_question) {
-        Question.create(new_question, function (err, question) {
+        Question.create(new_question, function (err) {
             if (err) {
                 res.status(400);
                 return res.send({reason: err.toString()});
@@ -97,6 +97,7 @@ exports.updateQuestion = function (req, res) {
         question.dejure = question_update.dejure;
         question.indicator = question_update.indicator;
         question.comments = question_update.comments;
+        question.linkedOption = question_update.linkedOption;
         question.last_modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
 
         question.save(function (err) {

@@ -13,6 +13,7 @@ angular
         rgiAnswerSrvc,
         rgiUserListSrvc,
         rgiAssessmentSrvc,
+        rgiQuestionSetSrvc,
         rgiAnswerMethodSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
@@ -43,7 +44,7 @@ angular
         $scope.question_criteria = $scope.$parent.question.question_criteria;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            $scope.question_length = answers.length;
+            rgiQuestionSetSrvc.setAnswers(answers);
         });
 
         $scope.finalChoiceSubmit = function () {
@@ -65,8 +66,8 @@ angular
                     .then(function () {
                         var root_url = $scope.current_user.role === 'supervisor' ? '/admin/assessments-admin' : '/assessments';
 
-                        if (new_answer_data.question_order !== $scope.question_length) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        if (rgiQuestionSetSrvc.areQuestionsRemaining(new_answer_data)) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(new_answer_data));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
                         }

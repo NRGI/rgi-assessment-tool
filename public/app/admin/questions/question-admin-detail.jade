@@ -26,6 +26,22 @@
                             select.form-group.form-control(
                             ng-model="question.component"
                             ng-options="item.value as item.text for item in component_options")
+
+                    div(id="link_question").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
+                        .pull-left
+                            label.col-md-2.control-label Link to
+                            .col-md-5
+                                select.form-group.form-control(
+                                    ng-model="linkedQuestion"
+                                    ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
+                                    ng-change="resetLinkedOption()"
+                                )
+                            .col-md-5
+                                select.form-group.form-control(
+                                    ng-show="linkedQuestion.question_choices.length > 0"
+                                    ng-model="question.linkedOption"
+                                    ng-options="item._id as item.text for item in linkedQuestion.question_choices"
+                                )
                         //label.col-md-2.control-label(form="type") Data Type
                         //.col-md-2
                         //    select.form-group.form-control(
