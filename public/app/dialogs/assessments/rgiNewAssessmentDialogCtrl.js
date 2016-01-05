@@ -8,12 +8,14 @@ angular
         $location,
         rgiNotifier,
         ngDialog,
+        rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc,
+        rgiCountrySrvc,
         rgiIdentitySrvc,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
-        rgiCountrySrvc
+        rgiUtilsSrvc
     ) {
         var current_user = rgiIdentitySrvc.currentUser;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
@@ -70,18 +72,27 @@ angular
             $scope.new_assessment.assessment_countries.splice(index, 1);
         };
         $scope.assessmentDeploy = function () {
-            var new_assessment_data = [],
+            var new_assessment_ID,
+                new_assessment_set = [],
+                new_answer_set = [],
+                new_assessment_year = String($scope.new_assessment.year),
+                new_assessment_ver = $scope.new_assessment.version.slice(0, 2).toUpperCase(),
                 timestamp = new Date().toISOString();
 
-            rgiQuestionSrvc.query({assessments: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase()}, function (d) {
+            rgiQuestionSrvc.query({assessments: new_assessment_year + "-" + new_assessment_ver}, function (d) {
                 if (d.length > 0) {
                     rgiNotifier.error('Assessment already deployed');
                 } else {
                     rgiQuestionSrvc.query({}, function (questions) {
+                        questions.forEach(function (question) {
+                            question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
+                        });
 
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
-                            new_assessment_data.push({
-                                assessment_ID: assessment_country.country.iso2 + "-" + String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
+                            new_assessment_ID = assessment_country.country.iso2 + "-" + new_assessment_year + "-" + new_assessment_ver;
+
+                            new_assessment_set.push({
+                                assessment_ID: new_assessment_ID,
                                 ISO3: assessment_country.country.country_ID,
                                 year: $scope.new_assessment.year,
                                 version: $scope.new_assessment.version,
@@ -90,39 +101,22 @@ angular
                                     created_by: current_user._id,
                                     created_date: timestamp}
                             });
-                        });
-                        questions.forEach(function (question) {
-                            question.assessments.push(String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase());
-                        });
 
-                        //base_questions.forEach(function (question) {
-                        //    new_question_data.push({
-                        //        year: String($scope.new_assessment.year),
-                        //        version: $scope.new_assessment.version,
-                        //        root_question_ID: question._id,
-                        //        assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
-                        //        question_use: question.question_use,
-                        //        question_order: question.question_order,
-                        //        question_label: question.question_label,
-                        //        qid: question.qid,
-                        //        precept: question.precept,
-                        //        component: question.component,
-                        //        component_text: question.component_text,
-                        //        indicator: question.indicator,
-                        //        dejure: question.dejure,
-                        //        question_text: question.question_text,
-                        //        question_criteria: question.question_criteria,
-                        //        question_norm: question.question_norm,
-                        //        question_dependancies: question.question_dependancies,
-                        //        question_guidance_text: question.question_guidance_text,
-                        //        mapping_2013: question.mapping_2013,
-                        //        mapping_external: question.mapping_external
-                        //    });
-                        //});
-
+                            questions.forEach(function (q) {
+                                new_answer_set.push({
+                                    answer_ID: new_assessment_ID + '-' + String(rgiUtilsSrvc.zeroFill(q.question_order, 3)),
+                                    question_ID: q._id,
+                                    assessment_ID: new_assessment_ID,
+                                    year: new_assessment_year,
+                                    version: new_assessment_ver,
+                                    question_order: q.question_order,
+                                    last_modified: {modified_by: current_user._id}
+                                });
+                            });
+                        });
                         //send to mongo
-                        //rgiQuestionMethodSrvc.updateQuestionSet(questions);
-                        rgiAssessmentMethodSrvc.createAssessment(new_assessment_data)
+                        rgiAssessmentMethodSrvc.createAssessment(new_assessment_set)
+                            .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                             .then(rgiQuestionMethodSrvc.updateQuestionSet(questions))
                             .then(function () {
                                 rgiNotifier.notify('Assessment deployed!');

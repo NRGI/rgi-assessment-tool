@@ -25,15 +25,15 @@ angular
         // get assessment that needs to be updated
         $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID});
 
-        // get questions for insertion into answers collection
-        $scope.questions = rgiQuestionSrvc.query({assessments: $scope.$parent.assessment_update_ID.substr(3)});
+        //// get questions for insertion into answers collection
+        //$scope.questions = rgiQuestionSrvc.query({assessments: $scope.$parent.assessment_update_ID.substr(3)});
 
         $scope.assessmentAssign = function () {
             // update users
             var new_researcher_data = $scope.researcherSelect,
                 new_reviewer_data = $scope.reviewerSelect,
-                new_assessment_data = $scope.assessment,
-                new_answer_set = [];
+                new_assessment_data = $scope.assessment;
+                //new_answer_set = [];
                 //current_user = rgiIdentitySrvc.currentUser;
 
             //MAIL NOTIFICATION
@@ -51,27 +51,27 @@ angular
                 new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
             }
 
-            //TODO HANDLE NEW QUESTION TYPES
-            // CREATE NEW ANSWER SET
-            $scope.questions.forEach(function (question, i) {
-                new_answer_set.push({
-                    answer_ID: $scope.$parent.assessment_update_ID + '-' + String(rgiUtilsSrvc.zeroFill(question.question_order, 3)),
-                    question_ID: question._id,
-                    root_question_ID: question.root_question_ID,
-                    assessment_ID: $scope.$parent.assessment_update_ID,
-                    year: question.year,
-                    version: question.version,
-                    researcher_ID: new_researcher_data._id,
-                    edit_control: new_researcher_data._id,
-                    question_order: question.question_order,
-                    //question_text: question.question_text,
-                    //question_label: question.question_label,
-                    //component: question.component,
-                    //component_text: question.component_text
-                });
-                if (new_reviewer_data) {
-                    new_answer_set[i].reviewer_ID = new_reviewer_data._id;
-                }
+            ////TODO HANDLE NEW QUESTION TYPES
+            //// CREATE NEW ANSWER SET
+            //$scope.questions.forEach(function (question, i) {
+            //    new_answer_set.push({
+            //        answer_ID: $scope.$parent.assessment_update_ID + '-' + String(rgiUtilsSrvc.zeroFill(question.question_order, 3)),
+            //        question_ID: question._id,
+            //        root_question_ID: question.root_question_ID,
+            //        assessment_ID: $scope.$parent.assessment_update_ID,
+            //        year: question.year,
+            //        version: question.version,
+            //        researcher_ID: new_researcher_data._id,
+            //        edit_control: new_researcher_data._id,
+            //        question_order: question.question_order,
+            //        //question_text: question.question_text,
+            //        //question_label: question.question_label,
+            //        //component: question.component,
+            //        //component_text: question.component_text
+            //    });
+            //    //if (new_reviewer_data) {
+            //    //    new_answer_set[i].reviewer_ID = new_reviewer_data._id;
+            //    //}
 
 
                 //if (el.hasOwnProperty('question_order')) {
@@ -90,15 +90,15 @@ angular
                 //    new_answer_set[i].nrc_precept = el.nrc_precept;
                 //}
 
-            });
+            //});
             ////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
             if (new_reviewer_data) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
                     .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                    .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+                    //.then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                     .then(function () {
-                        rgiNotifier.notify('Assessment created and assigned!');
+                        rgiNotifier.notify('Assessment assigned!');
                         $location.path('/');
                         //$route.reload();
                         $scope.closeThisDialog();
@@ -108,15 +108,17 @@ angular
             } else if (!new_reviewer_data) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                    .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
+                    //.then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                     .then(function () {
-                        rgiNotifier.notify('Assessment created and assigned!');
+                        rgiNotifier.notify('Assessment assigned!');
                         $location.path('/');
                         //$route.reload();
                         $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
+            } else {
+                rgiNotifier.error('No researcher data!');
             }
         };
         $scope.closeDialog = function () {

@@ -44,7 +44,9 @@ assessmentSchema = new Schema({
         default: true},
     created: {
         created_by: ObjectId,
-        created_date: Date},
+        created_date: {
+            type: Date,
+            default: Date.now}},
     assignment: {
         assigned_by: ObjectId,
         assigned_date: Date},

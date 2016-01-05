@@ -68,6 +68,7 @@ scoreHistorySchema = new Schema({
         name: String,
         letter: String,
         order: Number,
+
         text: String,
         value: Number
     },
@@ -85,12 +86,6 @@ answerSchema = new Schema({
         type: String,
         required: '{PATH} is required',
         index: true}, // generated from assessment_ID value of Assessment Model (ISO3 country)
-    researcher_ID: {
-        type: ObjectId,
-        index: true}, // generated from _id value of User Model
-    reviewer_ID: {
-        type: ObjectId,
-        index: true}, // generated from _id value of User Model
     year: {
         type: String,
         required: '{PATH} is required'},
@@ -105,15 +100,17 @@ answerSchema = new Schema({
         required: '{PATH} is required',
         index: true}, // generated from _id value of Question Model
     //question_norm: Number, ///Len of options used for normalizations...ignores NAs
-    root_question_ID: {
-        type: ObjectId,
-        required: '{PATH} is required',
-        index: true}, // generated from _id value of Question Model
+    //root_question_ID: {
+    //    type: ObjectId,
+    //    required: '{PATH} is required',
+    //    index: true}, // generated from _id value of Question Model
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
     flags: [commentSchema],
     last_modified: {
         modified_by: ObjectId,
-        modified_date: Date},
+        modified_date: {
+            type: Date,
+            default: Date.now}},
     researcher_score: {
         name: String,
         letter: String,
