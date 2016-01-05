@@ -4,7 +4,7 @@ var mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema;
 
-var options = {customCollectionName: "question_hst"};
+//var options = {customCollectionName: "question_hst"};
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var Schemalesss = mongoose.Schema.Types.Mixed;
@@ -46,6 +46,9 @@ var questionSchema = new Schema({
     question_order: {
         type: Number,
         required: '{PATH} is required'},
+    question_v: {
+        type: Number,
+        default: 0},
     qid: String,  //combination of ??? (question number column)
     question_label: String,   //labeling schema for questionaire (Question Number (Continuous) column)
     precept: [Number], ///from precept column
@@ -78,7 +81,7 @@ var questionSchema = new Schema({
             default: Date.now}}
 });
 
-questionSchema.plugin(mongooseHistory, options);
+questionSchema.plugin(mongooseHistory);
 
 var Question = mongoose.model('Question', questionSchema);
 

@@ -110,6 +110,7 @@ angular
                                     year: new_assessment_year,
                                     version: new_assessment_ver,
                                     question_order: q.question_order,
+                                    question_v: q.question_v + 1,
                                     last_modified: {modified_by: current_user._id}
                                 });
                             });

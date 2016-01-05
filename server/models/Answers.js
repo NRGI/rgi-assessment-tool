@@ -5,7 +5,7 @@ require('mongoose-html-2').loadType(mongoose);
 var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
-    options         = {customCollectionName: "answer_hst"},
+    //options         = {customCollectionName: "answer_hst"},
     HTML            = mongoose.Types.Html,
     htmlSettings    = {
         type: HTML,
@@ -99,6 +99,7 @@ answerSchema = new Schema({
         type: ObjectId,
         required: '{PATH} is required',
         index: true}, // generated from _id value of Question Model
+    question_v: Number,
     //question_norm: Number, ///Len of options used for normalizations...ignores NAs
     //root_question_ID: {
     //    type: ObjectId,
@@ -148,6 +149,6 @@ answerSchema = new Schema({
     }
 });
 
-answerSchema.plugin(mongooseHistory, options);
+answerSchema.plugin(mongooseHistory);
 
 Answer = mongoose.model('Answer', answerSchema);

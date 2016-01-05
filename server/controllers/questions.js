@@ -58,6 +58,7 @@ exports.updateQuestion = function (req, res) {
                         res.status(400);
                         return res.send({ reason: err.toString() });
                     }
+                    question.question_v = question.question_v + 1;
                     question.assessments = new_question_data.assessments;
                     question.save(function (err) {
                         if (err) {
@@ -101,6 +102,7 @@ exports.updateQuestion = function (req, res) {
                     });
                     question.question_order = question_update.question_order;
                 }
+                question.question_v = question.question_v + 1;
                 question.question_text = question_update.question_text;
                 question.question_guidance_text = question_update.question_guidance_text;
                 question.question_label = question_update.question_label;

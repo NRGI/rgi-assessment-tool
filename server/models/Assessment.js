@@ -5,7 +5,7 @@ var assessmentSchema, Assessment,
     mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
-    options = {customCollectionName: "assessment_hst"},
+    //options = {customCollectionName: "assessment_hst"},
     ObjectId = mongoose.Schema.Types.ObjectId;
 
 assessmentSchema = new Schema({
@@ -67,7 +67,7 @@ assessmentSchema = new Schema({
         modified_date: Date}
 });
 
-assessmentSchema.plugin(mongooseHistory, options);
+assessmentSchema.plugin(mongooseHistory);
 
 Assessment = mongoose.model('Assessment', assessmentSchema);
 

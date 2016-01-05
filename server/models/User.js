@@ -2,7 +2,7 @@
 var userSchema, User,
     mongoose        = require('mongoose'),
     mongooseHistory = require('mongoose-history'),
-    options         = {customCollectionName: "user_hst"},
+    //options         = {customCollectionName: "user_hst"},
     Schema          = mongoose.Schema,
     validate        = require('mongoose-validate'),
     encrypt         = require('../utilities/encryption'),
@@ -63,7 +63,7 @@ userSchema.methods = {
     }
 };
 
-userSchema.plugin(mongooseHistory, options);
+userSchema.plugin(mongooseHistory);
 
 User = mongoose.model('User', userSchema);
 
