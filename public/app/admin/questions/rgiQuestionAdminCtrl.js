@@ -33,9 +33,9 @@ angular
                     child_question: el.child_question,
                     nrc_precept: el.nrc_precept
                 };
-                el.question_choices.forEach(function (el_sub, j) {
+                el.question_criteria.forEach(function (el_sub, j) {
                     question['choice_' + String(j)] = el_sub.name;
-                    question['choice_' + String(j) + '_criteria'] = el_sub.criteria;
+                    question['choice_' + String(j) + '_criteria'] = el_sub.text;
                 });
                 $scope.getArray.push(question);
             });

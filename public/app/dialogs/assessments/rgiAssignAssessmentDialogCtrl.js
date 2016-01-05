@@ -26,7 +26,7 @@ angular
         $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID});
 
         // get questions for insertion into answers collection
-        $scope.questions = rgiQuestionSrvc.query({assessment_ID: $scope.$parent.assessment_update_ID.substr(3)});
+        $scope.questions = rgiQuestionSrvc.query({assessments: $scope.$parent.assessment_update_ID.substr(3)});
 
         $scope.assessmentAssign = function () {
             // update users

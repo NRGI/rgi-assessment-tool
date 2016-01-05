@@ -4,14 +4,14 @@ var auth                    = require('./auth'),
     answers                 = require('../controllers/answers'),
     assessments             = require('../controllers/assessments'),
     authLogs                = require('../controllers/auth-logs'),
-    documents               = require('../controllers/documents'),
-    countries               = require('../controllers/countries'),
     contact                 = require('../utilities/contact'),
+    countries               = require('../controllers/countries'),
+    documents               = require('../controllers/documents'),
     interviewees            = require('../controllers/interviewees'),
     questions               = require('../controllers/questions'),
-    users                   = require('../controllers/users'),
+    multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
-    multipartMiddleware     = require('connect-multiparty')();
+    users                   = require('../controllers/users');
 
 module.exports = function (app) {
 

@@ -9,10 +9,13 @@ angular
         rgiNotifier,
         ngDialog,
         rgiAssessmentMethodSrvc,
-        rgiQuestionSrvc,
+        rgiAssessmentSrvc,
+        rgiIdentitySrvc,
         rgiQuestionMethodSrvc,
+        rgiQuestionSrvc,
         rgiCountrySrvc
     ) {
+        var current_user = rgiIdentitySrvc.currentUser;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         //TODO
         //rgiCountrySrvc.query({}, function (countries) {
@@ -68,12 +71,13 @@ angular
         };
         $scope.assessmentDeploy = function () {
             var new_assessment_data = [],
-                new_question_data = [];
-            rgiQuestionSrvc.query({assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase()}, function (d) {
+                timestamp = new Date().toISOString();
+
+            rgiQuestionSrvc.query({assessments: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase()}, function (d) {
                 if (d.length > 0) {
                     rgiNotifier.error('Assessment already deployed');
                 } else {
-                    rgiQuestionSrvc.query({assessment_ID: 'base'}, function (base_questions) {
+                    rgiQuestionSrvc.query({}, function (questions) {
 
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
                             new_assessment_data.push({
@@ -81,38 +85,45 @@ angular
                                 ISO3: assessment_country.country.country_ID,
                                 year: $scope.new_assessment.year,
                                 version: $scope.new_assessment.version,
-                                country: assessment_country.country.country
+                                country: assessment_country.country.country,
+                                created: {
+                                    created_by: current_user._id,
+                                    created_date: timestamp}
                             });
                         });
-
-                        base_questions.forEach(function (question) {
-                            new_question_data.push({
-                                year: String($scope.new_assessment.year),
-                                version: $scope.new_assessment.version,
-                                root_question_ID: question._id,
-                                assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
-                                question_use: question.question_use,
-                                question_order: question.question_order,
-                                question_label: question.question_label,
-                                qid: question.qid,
-                                precept: question.precept,
-                                component: question.component,
-                                component_text: question.component_text,
-                                indicator: question.indicator,
-                                dejure: question.dejure,
-                                question_text: question.question_text,
-                                question_criteria: question.question_criteria,
-                                question_norm: question.question_norm,
-                                question_dependancies: question.question_dependancies,
-                                question_guidance_text: question.question_guidance_text,
-                                mapping_2013: question.mapping_2013,
-                                mapping_external: question.mapping_external
-                            });
+                        questions.forEach(function (question) {
+                            question.assessments.push(String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase());
                         });
 
-                        // send to mongo
+                        //base_questions.forEach(function (question) {
+                        //    new_question_data.push({
+                        //        year: String($scope.new_assessment.year),
+                        //        version: $scope.new_assessment.version,
+                        //        root_question_ID: question._id,
+                        //        assessment_ID: String($scope.new_assessment.year) + "-" + $scope.new_assessment.version.slice(0, 2).toUpperCase(),
+                        //        question_use: question.question_use,
+                        //        question_order: question.question_order,
+                        //        question_label: question.question_label,
+                        //        qid: question.qid,
+                        //        precept: question.precept,
+                        //        component: question.component,
+                        //        component_text: question.component_text,
+                        //        indicator: question.indicator,
+                        //        dejure: question.dejure,
+                        //        question_text: question.question_text,
+                        //        question_criteria: question.question_criteria,
+                        //        question_norm: question.question_norm,
+                        //        question_dependancies: question.question_dependancies,
+                        //        question_guidance_text: question.question_guidance_text,
+                        //        mapping_2013: question.mapping_2013,
+                        //        mapping_external: question.mapping_external
+                        //    });
+                        //});
+
+                        //send to mongo
+                        //rgiQuestionMethodSrvc.updateQuestionSet(questions);
                         rgiAssessmentMethodSrvc.createAssessment(new_assessment_data)
-                            .then(rgiQuestionMethodSrvc.insertQuestionSet(new_question_data))
+                            .then(rgiQuestionMethodSrvc.updateQuestionSet(questions))
                             .then(function () {
                                 rgiNotifier.notify('Assessment deployed!');
                                 $scope.closeThisDialog();

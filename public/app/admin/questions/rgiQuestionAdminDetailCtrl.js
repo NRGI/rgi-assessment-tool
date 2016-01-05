@@ -2,6 +2,7 @@ angular
     .module('app')
     .controller('rgiQuestionAdminDetailCtrl', function (
         $scope,
+        $route,
         $routeParams,
         $location,
         ngDialog,
@@ -12,10 +13,6 @@ angular
         rgiDialogFactory
     ) {
         'use strict';
-        rgiQuestionSrvc.get({_id: $routeParams.id}, function (data) {
-            $scope.question = data;
-            $scope.question_start = angular.copy($scope.question);
-        });
         $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'question';
@@ -43,12 +40,12 @@ angular
         };
 
         $scope.questionClear = function () {
-            $scope.question = angular.copy($scope.question_start);
+            $route.reload();
         };
         //TODO fix reording questions---update happens in question controller
         $scope.questionUpdate = function () {
             var new_question_data = $scope.question;
-            if (new_question_data.question_choices.length < 1) {
+            if (new_question_data.question_criteria.length < 1) {
                 rgiNotifier.error('You must supply at least one option!');
             } else if (!new_question_data.question_guidance_text) {
                 rgiNotifier.error('You must supply question guidance!');

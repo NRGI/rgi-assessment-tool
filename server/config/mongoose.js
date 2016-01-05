@@ -7,7 +7,6 @@ var mongoose            = require('mongoose'),
     assessmentModel    = require('../models/Assessment');
 [
     'Answers',
-    'Assessment',
     'AuthLog',
     'Documents',
     'FileUploadStatus',

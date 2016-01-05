@@ -8,9 +8,22 @@ angular
         return {
             insertQuestionSet: function (new_question_set) {
                 var dfd = $q.defer(),
-                    newQuestions = new rgiQuestionSrvc(new_question_set);
-                newQuestions.length = new_question_set.length;
-                newQuestions.$save().then(function () {
+                    new_questions = new rgiQuestionSrvc(new_question_set);
+                new_questions.length = new_question_set.length;
+                new_questions.$save().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    dfd.reject(response.data.reason);
+                });
+                return dfd.promise;
+            },
+            updateQuestionSet: function (new_question_data) {
+                var dfd = $q.defer(),
+                    update_questions = new rgiQuestionSrvc(new_question_data);
+
+                update_questions.length = new_question_data.length;
+
+                update_questions.$update().then(function () {
                     dfd.resolve();
                 }, function (response) {
                     dfd.reject(response.data.reason);

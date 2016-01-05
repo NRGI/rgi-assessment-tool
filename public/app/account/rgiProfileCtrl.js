@@ -6,8 +6,8 @@ angular
         $scope,
         $route,
         rgiIdentitySrvc,
-        rgiUserMethodSrvc,
-        rgiNotifier
+        rgiNotifier,
+        rgiUserMethodSrvc
     ) {
         // set page resources to be those of the current identity
         $scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;

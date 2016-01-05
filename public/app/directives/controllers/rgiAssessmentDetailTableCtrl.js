@@ -1,4 +1,5 @@
 'use strict';
-angular.module('app').controller('rgiAssessmentDetailTableCtrl', function ($scope) {
+angular.module('app')
+	.controller('rgiAssessmentDetailTableCtrl', function ($scope) {
 
-});
+	});

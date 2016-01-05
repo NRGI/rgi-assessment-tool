@@ -42,6 +42,9 @@ assessmentSchema = new Schema({
     first_pass: {
         type: Boolean,
         default: true},
+    created: {
+        created_by: ObjectId,
+        created_date: Date},
     assignment: {
         assigned_by: ObjectId,
         assigned_date: Date},
@@ -67,70 +70,71 @@ assessmentSchema.plugin(mongooseHistory, options);
 Assessment = mongoose.model('Assessment', assessmentSchema);
 
 function createDefaultAssessments() {
-    Assessment.find({}).exec(function (err, assessments) {
-        if (assessments.length === 0) {
-            Assessment.create({
-                "assessment_ID": "AF-2015-PI",
-                "ISO3": "AFG",
-                "year": "2015",
-                "version": "pilot",
-                "country": "Afghanistan",
-                "modified": [],
-                "first_pass": true,
-                "status": "unassigned",
-                "interviewees": [],
-                "documents": []
-            });
-            Assessment.create({
-                "assessment_ID": "AL-2015-PI",
-                "ISO3": "ALB",
-                "year": "2015",
-                "version": "pilot",
-                "country": "Albania",
-                "modified": [],
-                "first_pass": true,
-                "status": "unassigned",
-                "interviewees": [],
-                "documents": []
-            });
-            Assessment.create({
-                "assessment_ID": "DZ-2015-PI",
-                "ISO3": "DZA",
-                "year": "2015",
-                "version": "pilot",
-                "country": "Algeria",
-                "modified": [],
-                "first_pass": true,
-                "status": "unassigned",
-                "interviewees": [],
-                "documents": []
-            });
-            Assessment.create({
-                "assessment_ID": "AM-2015-PI",
-                "ISO3": "ARM",
-                "year": "2015",
-                "version": "pilot",
-                "country": "Armenia",
-                "modified": [],
-                "first_pass": true,
-                "status": "unassigned",
-                "interviewees": [],
-                "documents": []
-            });
-            Assessment.create({
-                "assessment_ID": "AO-2015-PI",
-                "ISO3": "AGO",
-                "year": "2015",
-                "version": "pilot",
-                "country": "Angola",
-                "modified": [],
-                "first_pass": true,
-                "status": "unassigned",
-                "interviewees": [],
-                "documents": []
-            });
-        }
-    });
+    console.log('no assessments');
+    //Assessment.find({}).exec(function (err, assessments) {
+    //    if (assessments.length === 0) {
+    //        Assessment.create({
+    //            "assessment_ID": "AF-2016-PI",
+    //            "ISO3": "AFG",
+    //            "year": "2016",
+    //            "version": "pilot",
+    //            "country": "Afghanistan",
+    //            "modified": [],
+    //            "first_pass": true,
+    //            "status": "unassigned",
+    //            "interviewees": [],
+    //            "documents": []
+    //        });
+    //        Assessment.create({
+    //            "assessment_ID": "AL-2016-PI",
+    //            "ISO3": "ALB",
+    //            "year": "2016",
+    //            "version": "pilot",
+    //            "country": "Albania",
+    //            "modified": [],
+    //            "first_pass": true,
+    //            "status": "unassigned",
+    //            "interviewees": [],
+    //            "documents": []
+    //        });
+    //        Assessment.create({
+    //            "assessment_ID": "DZ-2016-PI",
+    //            "ISO3": "DZA",
+    //            "year": "2016",
+    //            "version": "pilot",
+    //            "country": "Algeria",
+    //            "modified": [],
+    //            "first_pass": true,
+    //            "status": "unassigned",
+    //            "interviewees": [],
+    //            "documents": []
+    //        });
+    //        Assessment.create({
+    //            "assessment_ID": "AM-2016-PI",
+    //            "ISO3": "ARM",
+    //            "year": "2016",
+    //            "version": "pilot",
+    //            "country": "Armenia",
+    //            "modified": [],
+    //            "first_pass": true,
+    //            "status": "unassigned",
+    //            "interviewees": [],
+    //            "documents": []
+    //        });
+    //        Assessment.create({
+    //            "assessment_ID": "AO-2016-PI",
+    //            "ISO3": "AGO",
+    //            "year": "2016",
+    //            "version": "pilot",
+    //            "country": "Angola",
+    //            "modified": [],
+    //            "first_pass": true,
+    //            "status": "unassigned",
+    //            "interviewees": [],
+    //            "documents": []
+    //        });
+    //    }
+    //});
 }
 
 exports.createDefaultAssessments = createDefaultAssessments;

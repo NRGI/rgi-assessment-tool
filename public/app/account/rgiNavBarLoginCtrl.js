@@ -4,10 +4,10 @@ angular
         $scope,
         $route,
         $location,
-        rgiNotifier,
-        rgiIdentitySrvc,
+        rgiAssessmentSrvc,
         rgiAuthSrvc,
-        rgiAssessmentSrvc
+        rgiIdentitySrvc,
+        rgiNotifier
     ) {
         'use strict';
         // assign the identity resource with the current identity using identity service

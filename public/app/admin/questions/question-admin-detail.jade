@@ -49,7 +49,7 @@
                             .col-md-10: b: p Option Text
                         .row.form-group(
                         name="question_options_form"
-                        ng-repeat="choice in question.question_choices")
+                        ng-repeat="choice in question.question_criteria")
                             .col-md-1
                             .col-md-1
                                 input.form-control(
@@ -61,7 +61,7 @@
                                 textarea.form-control(
                                 name="choice"
                                 type="textbox"
-                                ng-model="choice.criteria"
+                                ng-model="choice.text"
                                 required)
                             .col-md-1
                                 button.btn.btn-danger(
