@@ -12,8 +12,8 @@ angular.module('app', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ui.bootstrap'
-    //'angular-sanitize',
+    'ui.bootstrap',
+    //'angular-sanitize'
     //'textAngular'
     //require('angular-sanitize'),
     //require('textAngular')

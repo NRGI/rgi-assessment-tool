@@ -20,6 +20,7 @@ angular
         rgiIntervieweeSrvc,
         rgiUserListSrvc
     ) {
+        var current_user = rgiIdentitySrvc.currentUser;
         $scope.identity = rgiIdentitySrvc;
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
@@ -36,7 +37,7 @@ angular
             rgiQuestionSrvc.get({_id: answer.question_ID}, function(question) {
                 $scope.question = question;
                 $scope.question.question_criteria.forEach(function (opt, i) {
-                    if (i===answer[rgiIdentitySrvc.currentUser.role + '_score'].order-1) {
+                    if (i===answer[current_user.role + '_score'].order-1) {
                         opt.selected = true;
                         $scope.answer.new_answer_selection = i;
                     } else {
@@ -45,7 +46,7 @@ angular
                 });
             });
             //$scope.question = rgiQuestionSrvc.get({_id: answer.question_ID});
-            $scope.current_user = rgiIdentitySrvc.currentUser;
+            $scope.current_user = current_user;
             //$scope.answer_start = angular.copy($scope.answer);
 
 

@@ -20,7 +20,8 @@ table.table.table-hover.table-striped.table-condensed
                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                 .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                .text(ng-if="answer.status==='unresolved' || answer.status==='assigned'")
+                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
+                .text(ng-if="answer.status==='unresolved'")
             td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
@@ -29,6 +30,7 @@ table.table.table-hover.table-striped.table-condensed
                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
                 //.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='unresolved'")  {{answer.status | ucfirst}}
                 .text(ng-if="['submitted', 'resubmitted', 'saved', 'approved', 'flagged', 'final'].indexOf(answer.status) < 0")  {{question.status | ucfirst}}
+                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
             td.col-md-1.text-center {{answer.researcher_score.letter | ucfirst}}
             td.col-md-1.text-center {{answer.reviewer_score.letter | ucfirst}}
             td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}

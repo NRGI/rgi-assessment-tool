@@ -57,10 +57,6 @@ exports.getAnswersByID = function (req, res, next) {
     Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
         if (err) { return next(err); }
         if (!answer) { return next(new Error('No answer found')); }
-        if (String(req.user._id) !== String(answer.researcher_ID) && String(req.user._id) !== String(answer.reviewer_ID) && !req.user.hasRole('supervisor')) {
-            res.sendStatus(404);
-            return res.end();
-        }
         res.send(answer);
     });
 };
