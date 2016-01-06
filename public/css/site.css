@@ -132,3 +132,6 @@ input.upload {
 .ngdialog.ui-draggable {
   overflow: visible;
 }
+div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
+  margin-top: 10px;
+}
