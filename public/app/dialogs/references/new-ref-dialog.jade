@@ -3,6 +3,7 @@ div.left-padding-lg.right-padding-lg
         h3 New {{ref_selection | ucfirst}} Reference
             text(ng-if="ref_selection!=='interview'")  (PDF)
     div.modal-body
+        .row(ng-if="ref_selection=='webpage'") Please check the quality of the webpage screenshot document
         //DOCUMENTS UPLOAD
         div(ng-if="ref_selection!=='interview'")
             .form-horizontal
