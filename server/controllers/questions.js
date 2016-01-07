@@ -116,7 +116,7 @@ exports.updateQuestion = function (req, res) {
                 question.dejure = question_update.dejure;
                 question.indicator = question_update.indicator;
                 question.comments = question_update.comments;
-                question.last_modified = {modifiedBy: req.user._id, modifiedDate: timestamp};
+                question.last_modified = {modified_by: req.user._id, modified_date: timestamp};
 
                 question.save(function (err) {
                     if (err) {

@@ -2,13 +2,12 @@
 
 var authorSchema, documentSchema, Documents,
     mongoose        = require('mongoose'),
-    //mongooseHistory = require('mongoose-history'),
-    //options         = {customCollectionName: "document_hst"},
+    mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     ObjectId        = mongoose.Schema.Types.ObjectId,
     modificationSchema = new Schema({
-        modifiedBy: ObjectId,
-        modifiedDate: {type: Date, default: Date.now}
+        modified_by: ObjectId,
+        modified_date: {type: Date, default: Date.now}
     });
 
 authorSchema = new Schema({
@@ -52,7 +51,11 @@ documentSchema = new Schema({
     answers: [String],
     users: [ObjectId],
     mime_type: String,
-    modified: [modificationSchema],
+    last_modified: {
+        modified_by: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
+        modified_date: {
+            type: Date,
+            default: Date.now}},
     createdBy: ObjectId,
     creationDate: {
         type: Date,
@@ -62,6 +65,6 @@ documentSchema = new Schema({
         default: 'created'}
 });
 
-//documentSchema.plugin(mongooseHistory, options);
+documentSchema.plugin(mongooseHistory);
 
 Documents = mongoose.model('Documents', documentSchema);

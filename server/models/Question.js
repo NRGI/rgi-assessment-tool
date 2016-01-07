@@ -75,8 +75,8 @@ var questionSchema = new Schema({
     mapping_external: String, ///Mapping: External
     comments: [commentSchema],
     last_modified: {
-        modifiedBy: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
-        modifiedDate: {
+        modified_by: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
+        modified_date: {
             type: Date,
             default: Date.now}}
 });

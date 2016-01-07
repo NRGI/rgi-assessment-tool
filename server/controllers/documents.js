@@ -69,8 +69,8 @@ var uploadFile = function(file, req, callback) {
                     mime_type: file.type,
                     s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
                     modified: [{
-                        modifiedBy: req.user._id,
-                        modifiedDate: timestamp
+                        modified_by: req.user._id,
+                        modified_date: timestamp
                     }],
                     createdBy: req.user._id,
                     creationDate: timestamp
@@ -223,10 +223,9 @@ exports.updateDocument = function (req, res) {
         document.users = document_update.users;
         document.modified = document_update.modified;
         document.status = document_update.status;
-        document.modified.push({
-            modifiedBy: req.user._id,
-            modifiedDate: timestamp
-        });
+        document.last_modified = {
+            modified_by: req.user._id,
+            modified_date: timestamp};
 
         var input_array = ['source', 'year', 'date_published', 'pages', 'volume', 'issue', 'websites', 'publisher', 'city', 'edition', 'institution', 'series', 'chapter', 'editors', 'country', 'translators', 'series_editor'];
         input_array.forEach(function (el) {
