@@ -25,10 +25,10 @@
                 ng-if="current_user.role==='supervisor'") Move assessment
 
             .pull-left.left-padding-lg.bottom-padding-lg
-                .row
+                .row(ng-if="current_user.isSupervisor()")
                     | Researcher:
                     a(href="mailto:{{researcher.email}}")  {{researcher.firstName}}  {{researcher.lastName}}
-                .row
+                .row(ng-if="current_user.isSupervisor()")
                     | Reviewer:
                     a(
                     ng-if="reviewer"
@@ -49,25 +49,24 @@
 
                 .row Assessment length: {{assessment_counters.length}}
                 .row
-                    | Number of questions
-                    text(ng-if="assessment.status==='under_review'")  reviewed: {{assessment_counters.approved + assessment_counters.flagged}} (
+                    text(ng-if="assessment.status==='under_review'")  Reviewed: {{assessment_counters.approved + assessment_counters.flagged}} (
                         text(ng-if="assessment_counters.approved + assessment_counters.flagged!==0") {{(((assessment_counters.approved + assessment_counters.flagged)/assessment_counters.length)*100 | number :2)}}
                         text(ng-if="assessment_counters.approved + assessment_counters.flagged===0") 0
-                    text(ng-if="assessment.status!=='under_review'")  completed: {{assessment_counters.complete}} (
+                    text(ng-if="assessment.status!=='under_review'")  Completed: {{assessment_counters.complete}} (
                         text(ng-if="assessment_counters.complete!==0") {{((assessment_counters.complete/assessment_counters.length)*100 | number :2)}}
                         text(ng-if="assessment_counters.complete===0") 0
                     | %)
                 .row
-                    | Number of questions flagged: {{assessment_counters.flagged}}
+                    | Flagged: {{assessment_counters.flagged}}
                 .row
-                    | Number of questions approved: {{assessment_counters.approved}}
+                    | Approved: {{assessment_counters.approved}}
                 .row
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Number of questions submitted: {{assessment_counters.submitted}}
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Number of questions resubmitted: {{assessment_counters.resubmitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submitted: {{assessment_counters.submitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Resubmitted: {{assessment_counters.resubmitted}}
                 .row
-                    | Number of questions unresolved: {{assessment_counters.unresolved}}
+                    | Unresolved: {{assessment_counters.unresolved}}
                 .row
-                    s Number of questions unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
+                    | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
 
 
             rgi-assessment-detail-table

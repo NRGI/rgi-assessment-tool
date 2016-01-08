@@ -3,8 +3,8 @@ div.top-padding-lg
         thead
             tr
                 th.col-sm-1 Assessment
-                th.col-sm-1 Researcher
-                th.col-sm-1 Reviewer
+                th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
+                th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
                 th.col-sm-1 Assigned
                 th.col-sm-1 Started
                 th.col-sm-1 Submitted
@@ -18,8 +18,8 @@ div.top-padding-lg
         tbody
             tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
                 //ASSESSMENT
-                td.col-sm-1(ng-if="assessment.status=='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
-                td.col-sm-1(ng-if="assessment.status!='unassigned'")
+                td.col-sm-2(ng-if="assessment.status=='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                td.col-sm-2(ng-if="assessment.status!='unassigned'")
                     a(
                     href="admin/assessments-admin/{{assessment.assessment_ID}}"
                     ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
@@ -27,15 +27,15 @@ div.top-padding-lg
                     href="assessments/{{assessment.assessment_ID}}"
                     ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 //RESEARCHER
-                td.col-sm-1(ng-if="assessment.researcher!==undefined")
+                td.col-sm-1(ng-if="assessment.researcher!==undefined && current_user.isSupervisor()")
                     span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher._id")
                     a(href="mailto:{{assessment.researcher.email}}")  {{assessment.researcher.firstName}} {{assessment.researcher.lastName}}
-                td.col-sm-1(ng-if="assessment.researcher===undefined") Not assigned
+                td.col-sm-1(ng-if="assessment.researcher===undefined && current_user.isSupervisor()") Not assigned
                 //REVIEWER
-                td.col-sm-1(ng-if="assessment.reviewer!==undefined")
+                td.col-sm-1(ng-if="assessment.reviewer!==undefined && current_user.isSupervisor()")
                     span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer._id")
                     a(href="mailto:{{assessment.reviewer.email}}")  {{assessment.reviewer.firstName}} {{assessment.reviewer.lastName}}
-                td.col-sm-1(ng-if="assessment.reviewer===undefined") Not assigned
+                td.col-sm-1(ng-if="assessment.reviewer===undefined && current_user.isSupervisor()") Not assigned
                 //ASSIGNED DATE
                 td.col-sm-1
                     i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
