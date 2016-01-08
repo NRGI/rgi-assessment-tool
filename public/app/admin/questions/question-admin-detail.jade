@@ -2,35 +2,88 @@
     .well
         div.page-well
             legend.h3.page-header Question {{question.question_order}}. {{question.question_text}}
+                small.pull-right version {{question.question_v}}
             //legend.h3.page-header Question {{question.question_label}}. {{question.question_text}}
 
+            legend.h4 Information
+            div.right-padding-lg.left-padding-lg
+                .row(ng-if="question.assessments.length > 0")
+                    h5 Assessments
+                    text.left-padding-med(ng-repeat="assessment in question.assessments")
+                        |  {{assessment}}
+                        //TODO remove comma on last instance
+                        text ,
+                    .pull-right
+                        button.btn.btn-info(ng-click="" disabled) Previous versions
+                .row
+                    h5 Indicator
+                    text.left-padding-med {{question.indicator}}
+                .row(ng-if="question.mapping_2013_num")
+                    h5 2013 Mapping
+                    div.left-padding-med
+                        .row
+                            h6.col-md-1.control-label Number
+                            h6.col-md-1.control-label Category
+                            h6.col-md-1.control-label Comparablity
+                            h6.col-md-9.control-label Text
+                        .row
+                            small.col-md-1 {{question.mapping_2013_num}}
+                            small.col-md-1 {{question.mapping_2013_category}}
+                            small.col-md-1 {{question.mapping_2013_comp}}
+                            small.col-md-9 {{question.mapping_2013_text}}
+
+                .row(ng-if="question.mapping_external")
+                    h5 External Mapping
+                    text.left-padding-med {{question.mapping_external}}
+
+            legend.h4 Edit
             .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
                 fieldset
                     div(id="question_text_div").row-fluid.right-padding-lg.left-padding-lg
-                        label Question Text
+                        label(form="text") Question Text
                         .form-group.left-padding-lg.right-padding-lg(required)
                             textarea.form-control(
                             name="question_text"
                             type="textbox"
                             ng-model="question.question_text")
 
-                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg
+                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
                         label.col-md-2.control-label(form="order") Question Order
                         .col-md-1
                             input.form-group.form-control(
                             name="order"
                             type="number"
                             ng-model="question.question_order")
+                        label.col-md-2.control-label(form="label") Question Label
+                        .col-md-1
+                            input.form-group.form-control(
+                            name="label"
+                            ng-model="question.question_label")
+                        label.col-md-2.control-label(form="precept") NRC Precept
+                        .col-md-4
+                            select.form-group.form-control(
+                            ng-model="question.precept"
+                            ng-options="item.value as item.text for item in precept_options")
+
+                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
                         label.col-md-2.control-label(form="mode") Component
                         .col-md-5
                             select.form-group.form-control(
                             ng-model="question.component"
                             ng-options="item.value as item.text for item in component_options")
-                        //label.col-md-2.control-label(form="type") Data Type
-                        //.col-md-2
-                        //    select.form-group.form-control(
-                        //    ng-model="question.question_data_type"
-                        //    ng-options="item.value as item.text for item in typeOptions")
+                        label.col-md-2.control-label(form="type") Question Type
+                        .col-md-2
+                            select.form-group.form-control(
+                            ng-model="question.question_type"
+                            ng-options="item.value as item.text for item in type_options")
+
+                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
+                        label.col-md-1.control-label(form="use") Use in assessments
+                        .col-md-1
+                            input(type="checkbox" ng-model="question.question_use")
+                        label.col-md-1.control-label(form="dejure") Dejure?
+                        .col-md-1
+                            input(type="checkbox" ng-model="question.dejure")
                     div.row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
                         .pull-left
                             button.btn.btn-primary(
@@ -44,18 +97,31 @@
                             a.btn.btn-default(href="/admin/question-admin") Cancel
 
                     div(id="question_options_div").row-fluid.right-padding-lg.left-padding-lg
+                        .row question_norm - {{question.question_norm}}
                         .row.top-padding-lg
-                            .col-md-2: b: p.text-right Option Value
-                            .col-md-10: b: p Option Text
+                            .col-md-1: b: p.text-right Option Order
+                            .col-md-1: b: p.text-right Option Value
+                            .col-md-1: b: p.text-right Option Letter
+                            .col-md-8: b: p Option Text
                         .row.form-group(
                         name="question_options_form"
                         ng-repeat="choice in question.question_criteria")
-                            .col-md-1
                             .col-md-1
                                 input.form-control(
                                 name="choiceOrder"
                                 type="number"
                                 ng-model="choice.order"
+                                required)
+                            .col-md-1
+                                input.form-control(
+                                name="choiceValue"
+                                type="number"
+                                ng-model="choice.value"
+                                required)
+                            .col-md-1
+                                input.form-control(
+                                name="choiceLabel"
+                                ng-model="choice.letter"
                                 required)
                             .col-md-8
                                 textarea.form-control(
@@ -78,8 +144,8 @@
                             div(
                                 text-angular-name="question_text"
                                 ng-model="question.question_guidance_text"
-                                text-angular
-                            )
+                                text-angular)
 
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
+

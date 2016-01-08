@@ -52,7 +52,7 @@ documentSchema = new Schema({
     users: [ObjectId],
     mime_type: String,
     last_modified: {
-        modified_by: Schemalesss, // Pull from curretn user _id value but needs to handle legacy comments
+        modified_by: ObjectId, // Pull from curretn user _id value but needs to handle legacy comments
         modified_date: {
             type: Date,
             default: Date.now}},

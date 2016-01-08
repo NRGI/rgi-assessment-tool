@@ -17,14 +17,32 @@ angular
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'question';
 
+        $scope.precept_options = [
+            {value: 1, text: 'Precept 1: Strategy, consultation and institutions'},
+            {value: 2, text: 'Precept 2: Accountability and transparency'},
+            {value: 3, text: 'Precept 3: Exploration and license allocation'},
+            {value: 4, text: 'Precept 4: Taxation'},
+            {value: 5, text: 'Precept 5: Local effects'},
+            {value: 6, text: 'Precept 6: State-owned enterprise'},
+            {value: 7, text: 'Precept 7: Revenue distribution'},
+            {value: 8, text: 'Precept 8: Revenue volatility'},
+            {value: 9, text: 'Precept 9: Government spending'},
+            {value: 10, text: 'Precept 10: Private sector development'},
+            {value: 11, text: 'Precept 11: Roles of international companies'},
+            {value: 12, text: 'Precept 12: Roles of international actors'}
+        ];
+
+        $scope.type_options = [
+            {value: 'context', text: 'Context'},
+            {value: 'scored', text: 'Scored'},
+            {value: 'shadow', text: 'Shadow'}
+        ];
+
         $scope.component_options = [
             {value: 'context', text: 'Context'},
-            {value: 'government_effectiveness', text: 'Government Effectiveness'},
-            {value: 'legal', text: 'Institutional and Legal Setting'},
-            {value: 'reporting', text: 'Reporting Practices'},
-            {value: 'safeguard_and_quality_control', text: 'Safeguard and Quality Control'},
-            {value: 'enabling_environment', text: 'Enabling Environment'},
-            {value: 'oversight', text: 'Oversight'}
+            {value: 'legal', text: 'Legal and Regulatory Structure'},
+            {value: 'oversight', text: 'Oversight and Compliance'},
+            {value: 'reporting', text: 'Reporting and Disclosure Practices'}
         ];
 
         $scope.questionOptionAdd = function () {

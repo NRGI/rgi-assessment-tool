@@ -79,7 +79,7 @@ exports.updateQuestion = function (req, res) {
                     res.status(400);
                     return res.send({ reason: err.toString() });
                 }
-
+                //TODO deal with change in question order
                 if (question.question_order !== question_update.question_order) {
                     var new_loc = question_update.question_order,
                         old_loc = question.question_order,
@@ -103,20 +103,23 @@ exports.updateQuestion = function (req, res) {
                     question.question_order = question_update.question_order;
                 }
                 question.question_v = question.question_v + 1;
-                question.question_text = question_update.question_text;
-                question.question_guidance_text = question_update.question_guidance_text;
-                question.question_label = question_update.question_label;
-                question.question_order = question_update.question_order;
                 question.question_use = question_update.question_use;
-                question.question_criteria = question_update.question_criteria;
-                question.question_norm = question_update.question_norm;
-                question.question_dependancies = question_update.question_dependancies;
+                question.question_order = question_update.question_order;
+                question.question_type = question_update.question_type;
+                question.question_label = question_update.question_label;
+                question.precept = question_update.precept;
                 question.component = question_update.component;
                 question.component_text = question_update.component.replace('_', ' ').capitalize();
-                question.dejure = question_update.dejure;
                 question.indicator = question_update.indicator;
+                question.dejure = question_update.dejure;
+                question.question_text = question_update.question_text;
+                question.question_criteria = question_update.question_criteria;
+                //TODO deal with chang in criteria number and norm
+                //question.question_norm = question_update.question_norm;
+                question.question_dependancies = question_update.question_dependancies;
+                question.question_guidance_text = question_update.question_guidance_text;
                 question.comments = question_update.comments;
-                question.last_modified = {modified_by: req.user._id, modified_date: timestamp};
+                question.last_modified = {modified_by: req.user._id, modified_dateti: timestamp};
 
                 question.save(function (err) {
                     if (err) {

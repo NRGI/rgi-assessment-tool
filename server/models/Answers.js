@@ -7,6 +7,7 @@ var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSc
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
     HTML            = mongoose.Types.Html,
+    ObjectId        = mongoose.Schema.Types.ObjectId,
     htmlSettings    = {
         type: HTML,
         setting: {
@@ -15,8 +16,7 @@ var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSc
                 'a': ['href']
             }
         }
-    },
-    ObjectId        = mongoose.Schema.Types.ObjectId;
+    };
 
 commentSchema = new Schema({
     date: {
