@@ -72,7 +72,7 @@
 div(id="answers_div").bottom-padding-med
     legend Answers:
     div.panel(
-    ng-repeat="(key, value) in answers | orderBy: value.order"
+    ng-repeat="(key, value) in answers | orderObjectBy:value.order:order_reverse"
     ng-if="value.section_len > 0"
     ng-class="{'panel-success': (value.complete === value.section_len), 'panel-primary': !(value.complete === value.section_len)}")
         div.panel-heading.bottom-padding-med
@@ -81,7 +81,7 @@ div(id="answers_div").bottom-padding-med
                 role="button"
                 data-toggle="collapse"
                 href="#{{value.id}}")
-                    | {{value.label}} - {{value.complete}} of {{value.section_len}}
+                    | {{value.label}} - {{value.complete}} of {{value.section_len}} - {{value.order}}
         div.panel-collapse.collapse(id="{{value.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed

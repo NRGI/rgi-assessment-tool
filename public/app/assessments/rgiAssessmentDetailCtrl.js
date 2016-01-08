@@ -21,6 +21,7 @@ angular
             {value: "component_id", text: "Sort by Component"},
             {value: "status", text: "Sort by Status"}];
         $scope.sortOrder = $scope.sortOptions[0].value;
+        $scope.order_reverse = true;
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
