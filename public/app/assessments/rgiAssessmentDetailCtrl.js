@@ -190,7 +190,7 @@ angular
                         answer.component_id = question.component_id;
                         //answer.status
                         $scope.answers["precept_" + String(answer.precept)].section_len += 1;
-                        if (answer.status === 'submitted') {
+                        if (answer.status === 'submitted' || answer.status === 'resubmitted') {
                             $scope.answers["precept_" + String(answer.precept)].complete += 1;
                         }
                         $scope.answers["precept_" + String(answer.precept)].data.push(answer);
