@@ -34,7 +34,7 @@ module.exports = {
     },
     new_data: {
         baseUrl: 'http://rgi-new-data.nrgi-assessment.org',
-        db: '@candidate.32.mongolayer.com:10582/rgi_dev',
+        db: '@candidate.19.mongolayer.com:10726/rgi_dev',
         rootPath: rootPath,
         port: process.env.PORT || 80
     }

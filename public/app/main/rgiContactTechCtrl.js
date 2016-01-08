@@ -14,13 +14,13 @@ angular
             {name: 'Parts of the site are down.', value: 'down'},
             {name: 'Visual components don\'t look correct', value: 'visual'},
             {name: 'Answers don\'t seem to be saving when completed', value: 'save'},
-            //{name: '', value: ''},
-            //{name: '', value: ''},
+            {name: 'Documents cannot be saved', value: 'upload'},
+            {name: 'Cannot edit comments/justification fields', value: 'justification'},
             //{name: '', value: ''},
             {name: 'Other', value: 'other'}
         ];
         $scope.os_selection = [
-            {name: 'Anderoid', value: 'android'},
+            {name: 'Android', value: 'android'},
             {name: 'Windows Phone', value: 'windows_ph'},
             {name: 'iOS', value: 'ios'},
             {name: 'Windows 10', value:'win10'},
