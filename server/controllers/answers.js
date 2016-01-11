@@ -84,7 +84,6 @@ exports.createAnswers = function (req, res, next) {
     }
 
     for (i = new_answers.length - 1; i >= 0; i -= 1) {
-        console.log(i);
         createNewAnswer(new_answers[i]);
     }
     res.send();
