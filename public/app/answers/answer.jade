@@ -1,57 +1,62 @@
 .container-fluid.page-container
     .well
         div.page-well
-            //Navigation
-            .row-fluid.right-padding-lg
-                rgi-answer-nav(assessment="assessment")
-                div(ng-if="current_user.role!=='supervisor'")
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
-                    text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
-                div(ng-if="current_user.role==='supervisor'")
-                    text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                    text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
+            .h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+            ul.nav.nav-tabs
+                li.active: a(data-target="#question" data-toggle="tab") Question
+                li: a(data-target="#guidance" data-toggle="tab") Guidance Text
+                .row-fluid.right-padding-lg
+                    rgi-answer-nav(assessment="assessment")
+                    div(ng-if="current_user.role!=='supervisor'")
+                        text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
+                        text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
+                    div(ng-if="current_user.role==='supervisor'")
+                        text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") {{answer.status | ucfirst}}
 
-            legend.h3 {{assessment.country}} {{assessment.year}} {{assessment.version}} assessment
+            div.tab-content
 
-            div.right-padding-lg.left-padding-lg
-                .row.bottom-padding-med
-                    h3: em.bottom-padding-med.col-md-11 Question {{question.question_label}}: {{question.question_text}}
-                        text(ng-if="question.dejure")  (Dejure)
-                        text(ng-if="!question.dejure")  (Defacto)
-                    i.glyphicon.glyphicon-question-sign(
-                    popover-template="dynamicPopover.templateUrl"
-                    popover-title="Guidance note"
-                    popover-placement="bottom")
-                    script(type="text/ng-template" id="myPopoverTemplate.html")
-                        div(ng-bind-html="question.question_guidance_text")
-                 //.row
-                 //    ng-pop-up(option='ngPopupConfig')
+                div.tab-pane.active.right-padding-lg.left-padding-lg(id="question")
+                    .row.bottom-padding-med
+                        h3: em.bottom-padding-med.col-md-11 Question {{question.question_label}}: {{question.question_text}}
+                            text(ng-if="question.dejure")  (Dejure)
+                            text(ng-if="!question.dejure")  (Defacto)
+                        //i.glyphicon.glyphicon-question-sign(
+                        //popover-template="dynamicPopover.templateUrl"
+                        //popover-title="Guidance note"
+                        //popover-placement="bottom")
+                        //script(type="text/ng-template" id="myPopoverTemplate.html")
+                        //    div(ng-bind-html="question.question_guidance_text")
 
-                // Previous answers
-                .row.bottom-padding-med
-                    rgi-prev-answers(answer="answer")
+                    // Previous answers
+                    .row.bottom-padding-med
+                        rgi-prev-answers(answer="answer")
 
-                // Active buttons
-                .row.bottom-padding-lg
-                    rgi-active-answer-buttons
+                    // Active buttons
+                    .row.bottom-padding-lg
+                        rgi-active-answer-buttons
 
-                .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
-                    rgi-flag-tabs
+                    .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
+                        rgi-flag-tabs
 
-                // Answer form
-                .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
-                    rgi-answer-form
+                    // Answer form
+                    .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
+                        rgi-answer-form
 
-                // Comments
-                .row.bottom-padding-med
-                    rgi-comments(update="answer")
+                    // Comments
+                    .row.bottom-padding-med
+                        rgi-comments(update="answer")
 
-                // Biblio
-                .row.bottom-padding-lg
-                    rgi-biblio-form
+                    // Biblio
+                    .row.bottom-padding-lg
+                        rgi-biblio-form
+
+
+                div.tab-pane(id="guidance")
+                    div(ng-bind-html="question.question_guidance_text").top-padding-lg.right-padding-lg.left-padding-lg
