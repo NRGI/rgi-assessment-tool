@@ -181,21 +181,11 @@ angular
                             $scope.assessment_counters.saved +=1;
                             break;
                     }
-                    rgiQuestionSrvc.get({_id: answer.question_ID}, function (question) {
-                        answer.question_text = question.question_text;
-                        answer.question_order = question.question_order;
-                        answer.question_label = question.question_label;
-                        answer.component_text = question.component_text;
-                        answer.precept = question.precept;
-                        answer.component_id = question.component_id;
-                        //answer.status
-                        $scope.answers["precept_" + String(answer.precept)].section_len += 1;
-                        if (answer.status === 'submitted' || answer.status === 'resubmitted') {
-                            $scope.answers["precept_" + String(answer.precept)].complete += 1;
-                        }
-                        $scope.answers["precept_" + String(answer.precept)].data.push(answer);
-
-                    });
+                    $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
+                    if (answer.status === 'submitted' || answer.status === 'resubmitted') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
+                    }
+                    $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });
             });
         });

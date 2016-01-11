@@ -1,74 +1,3 @@
-//table.table.table-hover.table-striped.table-condensed
-//    thead
-//        tr
-//            th.col-md-1.text-center Question
-//            th.col-md-1 Component
-//            th.col-md-1 Precept
-//            th.col-md-5.text-center Text
-//            th.col-md-2.text-center Status
-//            th.col-md-1.text-center Researcher Score
-//            th.col-md-1.text-center Reviewer Score
-//            th.col-md-1.text-center Final Score
-//            th.col-md-1.text-center
-//    tbody
-//        tr(ng-repeat="answer in answers | filter: searchText | orderBy:sortOrder")
-//            td.col-md-1.text-center {{answer.question_label}}
-//            td.col-md-1 {{answer.component_text}}
-//            td.col-md-1 {{answer.precept}}
-//            td.col-md-5 {{answer.question_text}}
-//            td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
-//                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-//                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
-//                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-//                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
-//                .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-//                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
-//                .text(ng-if="answer.status==='unresolved'")
-//            td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
-//                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-//                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
-//                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-//                .text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
-//                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
-//                //.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='unresolved'")  {{answer.status | ucfirst}}
-//                .text(ng-if="['submitted', 'resubmitted', 'saved', 'approved', 'flagged', 'final'].indexOf(answer.status) < 0")  {{question.status | ucfirst}}
-//                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
-//            td.col-md-1.text-center {{answer.researcher_score.letter | ucfirst}}
-//            td.col-md-1.text-center {{answer.reviewer_score.letter | ucfirst}}
-//            td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}
-//            td(ng-if="current_user.role!=='supervisor' && assessment.edit_control===current_user._id")
-//                a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted'"
-//                href="/assessments/answer/{{answer.answer_ID}}") Edit question
-//                a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
-//                href="/assessments/answer/{{answer.answer_ID}}") Edit to answer
-//            td(ng-if="current_user.role!=='supervisor' && assessment.edit_control!==current_user._id")
-//                a.btn.center-block.btn-default(
-//                ng-if="assessment.status!=='assigned'"
-//                href="/assessments/answer/{{answer.answer_ID}}") View answer
-//                a.btn.center-block.btn-success(
-//                ng-if="assessmentg .status==='assigned'"
-//                href="/assessments/answer/{{answer.answer_ID}}") No data
-//            td(ng-if="current_user.role==='supervisor'")
-//                a.btn.center-block.btn-primary(
-//                ng-if="answer.status==='submitted'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
-//                a.btn.center-block.btn-warning(
-//                ng-if="answer.status==='resubmitted'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
-//                a.btn.center-block.btn-danger(
-//                ng-if="answer.status==='flagged'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
-//                a.btn.center-block.btn-default(
-//                ng-if="answer.status==='approved'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
-//                a.btn.center-block.btn-default(
-//                ng-if="answer.status==='unresolved'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
-//                a.btn.center-block.btn-default(
-//                ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged' && answer.status!=='unresolved'"
-//                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Go to answer page
-
-
 div(id="answers_div").bottom-padding-med
     legend Answers:
     div.panel(
@@ -96,9 +25,9 @@ div(id="answers_div").bottom-padding-med
                         th.col-md-1.text-center
                     tbody
                         tr(ng-repeat="answer in value.data | filter: searchText | orderBy:sortOrder")
-                            td.col-md-1.text-center {{answer.question_label}}
-                            td.col-md-1 {{answer.component_text}}
-                            td.col-md-5 {{answer.question_text}}
+                            td.col-md-1.text-center {{answer.question_ID.question_order}}
+                            td.col-md-1 {{answer.question_ID.component_text}}
+                            td.col-md-5 {{answer.question_ID.question_text}}
                             td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
@@ -150,11 +79,3 @@ div(id="answers_div").bottom-padding-med
                                 a.btn.center-block.btn-default(
                                 ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged' && answer.status!=='unresolved'"
                                 href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Go to answer page
-
-    //div.panel-group(
-    //id="answers_div"
-    //role="tablist"
-    //aria-multiselectable="true")
-    //    div.panel(
-    //    ng-repeat="answer in answers"
-    //    ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")

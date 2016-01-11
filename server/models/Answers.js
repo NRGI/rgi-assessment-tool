@@ -3,6 +3,7 @@ var mongoose    = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
 var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
+    Question        = mongoose.model('Question'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
@@ -98,7 +99,8 @@ answerSchema = new Schema({
     question_ID: {
         type: ObjectId,
         required: '{PATH} is required',
-        index: true}, // generated from _id value of Question Model
+        index: true,
+        ref: 'Question'}, // generated from _id value of Question Model
     question_v: Number,
     //question_norm: Number, ///Len of options used for normalizations...ignores NAs
     //root_question_ID: {

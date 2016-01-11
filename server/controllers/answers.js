@@ -8,11 +8,13 @@ var Answer      = require('mongoose').model('Answer'),
 exports.getAnswers = function (req, res, next) {
 
     if (req.user.hasRole('supervisor')) {
-        Answer.find(req.query, function (err, answers) {
-            if (err) { return next(err); }
-            if (!answers) { return next(new Error('No answers found')); }
-            res.send(answers);
-        });
+        Answer.find(req.query)
+            .populate('question_ID')
+            .exec(function (err, answers) {
+                if (err) { return next(err); }
+                if (!answers) { return next(new Error('No answers found')); }
+                res.send(answers);
+            });
     } else if (req.user.role === 'researcher') {
         Assessment.find({'researcher_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
             var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
@@ -21,11 +23,13 @@ exports.getAnswers = function (req, res, next) {
             if (!assessments) { return next(new Error('No assessments assigned to user')); }
 
             if (assessments_ids.indexOf(req.query.assessment_ID) > -1) {
-                Answer.find(req.query, function (err, answers) {
-                    if (err) { return next(err); }
-                    if (!answers) { return next(new Error('No answers found')); }
-                    res.send(answers);
-                });
+                Answer.find(req.query)
+                    .populate('question_ID')
+                    .exec(function (err, answers) {
+                        if (err) { return next(err); }
+                        if (!answers) { return next(new Error('No answers found')); }
+                        res.send(answers);
+                    });
             } else {
                 res.sendStatus(404);
                 return res.end();
@@ -39,11 +43,13 @@ exports.getAnswers = function (req, res, next) {
             if (!assessments) { return next(new Error('No assessments assigned to user')); }
 
             if (assessments_ids.indexOf(req.query.assessment_ID) > -1) {
-                Answer.find(req.query, function (err, answers) {
-                    if (err) { return next(err); }
-                    if (!answers) { return next(new Error('No answers found')); }
-                    res.send(answers);
-                });
+                Answer.find(req.query)
+                    .populate('question_ID')
+                    .exec(function (err, answers) {
+                        if (err) { return next(err); }
+                        if (!answers) { return next(new Error('No answers found')); }
+                        res.send(answers);
+                    });
             } else {
                 res.sendStatus(404);
                 return res.end();
@@ -78,6 +84,7 @@ exports.createAnswers = function (req, res, next) {
     }
 
     for (i = new_answers.length - 1; i >= 0; i -= 1) {
+        console.log(i);
         createNewAnswer(new_answers[i]);
     }
     res.send();
