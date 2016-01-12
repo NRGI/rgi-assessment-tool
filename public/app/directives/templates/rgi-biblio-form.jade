@@ -6,7 +6,7 @@ div.bottom-padding-med(
         .col-md-5.pull-left.top-padding-med
             select.form-group.form-control.pull-left(ng-model="ref_selection" ng-change="selectRefDialog(ref_selection)")
                 option(
-                value=""
+                value="none"
                 selected
                 disabled) Select action
                 option(
@@ -22,6 +22,8 @@ div(id="prev_bib")
                 text  {{ref.title}} (
                 a(href="{{ref.s3_url}}" target="_blank") View here
                 text )
+            .row.pull-right(ng-if="ref.comment.author===current_user._id")
+                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
             .row(ng-if="ref.type === 'web_page'")
                 b Title:
                 a(href="{{ref.source}}" target="_blank")  {{ref.title}}
@@ -39,8 +41,8 @@ div(id="prev_bib")
                 text(ng-if="!ref.year")  N/A
             .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date: 'MM/dd/yyyy'}}
             .row Accessed on {{ref.comment.date_accessed | date: 'MM/dd/yyyy'}}
-            .row.pull-right.right-padding-lg(ng-if="ref.comment.author===current_user._id")
-                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
+            //.row.pull-right.right-padding-lg.left-padding-lg.bottom-padding-med(ng-if="ref.comment.author===current_user._id")
+            //    button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
             .row
                 b Comments:
                 text(ng-if="ref.comment")  {{ref.comment.comment}}

@@ -169,8 +169,13 @@ angular
         };
 
         $scope.closeDialog = function () {
-            $scope.$parent.ref_selection = '';
+            //delete $scope.$parent.ref_selection;
+            //$scope.ref_selection = "";
+            //$scope.$parent.ref_selection = {};
             ngDialog.close();
+            //$scope.$parent.ref_selection = "none";
+            //$scope.ref_selection = "";
+            $route.reload();
         };
 
 

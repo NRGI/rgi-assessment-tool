@@ -133,14 +133,27 @@ angular
                     scope: scope
                 });
             },
+            referenceSelect: function ($scope, value){
+                var scope = $scope;
+                scope.value = true;
+                scope.ref_selection = value;
+                ngDialog.openConfirm({
+                    template: 'partials/dialogs/references/new-ref-dialog',
+                    controller: 'rgiNewRefDialogCtrl',
+                    showClose:false,
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
             documentCreate: function($scope) {
                 var scope = $scope;
                 scope.value = true;
 
                 ngDialog.close('ngdialog1');
-                ngDialog.open({
+                ngDialog.openConfirm({
                     template: 'partials/dialogs/references/new-document-dialog',
                     controller: 'rgiNewDocumentDialogCtrl',
+                    showClose:false,
                     className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
@@ -150,9 +163,10 @@ angular
                 scope.value = true;
 
                 ngDialog.close('ngdialog1');
-                ngDialog.open({
+                ngDialog.openConfirm({
                     template: 'partials/dialogs/references/new-webpage-dialog',
                     controller: 'rgiNewWebpageDialogCtrl',
+                    showClose:false,
                     className: 'ngdialog-theme-default',
                     scope: scope
                 });
@@ -186,6 +200,7 @@ angular
                     template: 'partials/dialogs/flags/flag-answer-dialog',
                     controller: 'rgiFlagAnswerDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    overlay: false,
                     scope: $scope
                 });
             },
@@ -228,17 +243,6 @@ angular
                     template: 'partials/dialogs/questions/delete-question-confirmation-dialog',
                     controller: 'rgiDeleteQuestionDialogCtrl',
                     className: 'ngdialog-theme-default',
-                    scope: scope
-                });
-            },
-            referenceSelect: function ($scope, value){
-                var scope = $scope;
-                scope.value = true;
-                scope.ref_selection = value;
-                ngDialog.open({
-                    template: 'partials/dialogs/references/new-ref-dialog',
-                    controller: 'rgiNewRefDialogCtrl',
-                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
             },
