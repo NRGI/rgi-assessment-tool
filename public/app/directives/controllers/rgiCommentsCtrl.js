@@ -18,9 +18,7 @@ angular
             var current_user = rgiIdentitySrvc.currentUser,
                 new_comment_data = {
                     content: $scope.update.new_comment,
-                    author_name: current_user.firstName + ' ' + current_user.lastName,
                     author: current_user._id,
-                    role: current_user.role,
                     date: new Date().toISOString()
                 },
                 new_update_data = $scope.update;

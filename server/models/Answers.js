@@ -4,6 +4,8 @@ require('mongoose-html-2').loadType(mongoose);
 
 var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
     Question        = mongoose.model('Question'),
+    User            = mongoose.model('User'),
+    //Doc             = mongoose.model('Documents'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
@@ -24,15 +26,21 @@ commentSchema = new Schema({
         type: Date,
         default: Date.now},
     content: htmlSettings,
-    author: ObjectId, // Pull from curretn user _id value
-    author_name: String,
-    role: String,
+    author: {
+        type: ObjectId,
+        ref: 'User'},
     addressed: Boolean,
-    addressed_to: ObjectId
+    //TODO see if we need to use populate
+    addressed_to: {
+        type: ObjectId,
+        ref: 'User'}
 });
 
 citationSchema = new Schema({
     document_ID: String,
+    //document_ID: {
+    //    type: ObjectId,
+    //    ref: 'Doc'},
     mendeley_ID: String,
     file_hash: String,
     date: {
@@ -102,11 +110,6 @@ answerSchema = new Schema({
         index: true,
         ref: 'Question'}, // generated from _id value of Question Model
     question_v: Number,
-    //question_norm: Number, ///Len of options used for normalizations...ignores NAs
-    //root_question_ID: {
-    //    type: ObjectId,
-    //    required: '{PATH} is required',
-    //    index: true}, // generated from _id value of Question Model
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
     flags: [commentSchema],
     last_modified: {

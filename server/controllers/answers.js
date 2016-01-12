@@ -9,7 +9,7 @@ exports.getAnswers = function (req, res, next) {
 
     if (req.user.hasRole('supervisor')) {
         Answer.find(req.query)
-            .populate('question_ID')
+            .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
             .exec(function (err, answers) {
                 if (err) { return next(err); }
                 if (!answers) { return next(new Error('No answers found')); }
@@ -24,7 +24,7 @@ exports.getAnswers = function (req, res, next) {
 
             if (assessments_ids.indexOf(req.query.assessment_ID) > -1) {
                 Answer.find(req.query)
-                    .populate('question_ID')
+                    .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
                     .exec(function (err, answers) {
                         if (err) { return next(err); }
                         if (!answers) { return next(new Error('No answers found')); }
@@ -44,7 +44,7 @@ exports.getAnswers = function (req, res, next) {
 
             if (assessments_ids.indexOf(req.query.assessment_ID) > -1) {
                 Answer.find(req.query)
-                    .populate('question_ID')
+                    .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
                     .exec(function (err, answers) {
                         if (err) { return next(err); }
                         if (!answers) { return next(new Error('No answers found')); }
@@ -59,12 +59,16 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersByID = function (req, res, next) {
-
-    Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
-        if (err) { return next(err); }
-        if (!answer) { return next(new Error('No answer found')); }
-        res.send(answer);
-    });
+    //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
+    Answer.findOne({answer_ID: req.params.answer_ID})
+        .populate('comments.author', 'firstName lastName role')
+        .populate('flags.author', 'firstName lastName role')
+        .populate('flags.addressed_to', 'firstName lastName role')
+        .exec(function (err, answer) {
+            if (err) { return next(err); }
+            if (!answer) { return next(new Error('No answers found')); }
+            res.send(answer);
+        });
 };
 
 exports.createAnswers = function (req, res, next) {

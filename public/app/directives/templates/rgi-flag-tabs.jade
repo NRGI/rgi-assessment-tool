@@ -8,7 +8,7 @@ div(id="flags_div").bottom-padding-med
         ///TODO Fix repeating imvisible panels
         div.panel(
         ng-repeat="flag in flags"
-        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to===current_user._id))"
+        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to._id===current_user._id))"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
@@ -22,11 +22,11 @@ div(id="flags_div").bottom-padding-med
                     href="#collapse{{$index}}"
                     aria-expanded="false"
                     aria-controls="collapse{{$index}}")
-                        b Flag {{$index+1}} - {{flag.author_name}} (
-                        b {{flag.role}}
+                        b Flag {{$index+1}} - {{flag.author.firstName}} {{flag.author.lastName}} (
+                        b {{flag.author.role}}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
-                        h6.pull-right Addressed to: {{flag.addressee.firstName}} {{flag.addressee.lastName}}
+                        h6.pull-right Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
             div(
             id="collapse{{$index}}"
             class="panel-collapse collapse"
@@ -38,8 +38,8 @@ div(id="flags_div").bottom-padding-med
                         label Addressed?
                             | &nbsp;
                             input(type="checkbox" ng-model="flag.addressed")
-                    .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
-                    .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                    .row.left-padding-lg.right-padding-lg.flag-panel-content(ng-bind-html="flag.content") {{flag.content}}
+                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
             div(
             id="collapse{{$index}}"
@@ -55,14 +55,14 @@ div(id="flags_div").bottom-padding-med
                             type="checkbox"
                             ng-model="flag.addressed")
 
-                    .row.left-padding-lg.right-padding-lg(ng-bind-html="flag.content")
-                    .row.pull-right.right-padding-lg(ng-if="flag.author === current_user._id")
+                    .row.left-padding-lg.right-padding-lg.wrap-content(ng-bind-html="flag.content")
+                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
         div.top-padding-lg
             div(
             ng-repeat="flag in answer.flags"
-            ng-if="!current_user.isSupervisor() && flag.addressed_to!==current_user._id")
+            ng-if="!current_user.isSupervisor() && flag.addressed_to._id!==current_user._id")
                 i.glyphicon.glyphicon-warning-sign.text-warning
                     text(ng-if="current_user.role==='reviewer'")  Flag to Researcher:
                     text(ng-if="current_user.role==='researcher'")  Flag to Reviewer:
-                text(ng-bind-html="flag.content")
+                text.wrap-content(ng-bind-html="flag.content")

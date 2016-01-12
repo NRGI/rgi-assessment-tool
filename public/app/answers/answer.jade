@@ -42,20 +42,20 @@
                     .row.bottom-padding-lg
                         rgi-active-answer-buttons
 
-                    .row.bottom-padding-lg(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
+                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                         rgi-flag-tabs
 
                     // Answer form
                     .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
                         rgi-answer-form
 
-                    // Comments
-                    .row.bottom-padding-med
-                        rgi-comments(update="answer")
-
                     // Biblio
                     .row.bottom-padding-lg
                         rgi-biblio-form
+
+                    // Comments
+                    .row.bottom-padding-med
+                        rgi-comments(update="answer")
 
 
                 div.tab-pane(id="guidance")
