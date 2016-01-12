@@ -23,23 +23,22 @@ angular
             {value: 'journal', text: 'Journal'},
             {value: 'book', text: 'Book'},
             {value: 'generic', text: 'Generic'},
-            {value: 'book_section', text: 'Book Section'},
-            {value: 'conference_proceedings', text: 'Conference Proceedings'},
             {value: 'working_paper', text: 'Working Paper'},
             {value: 'report', text: 'Report'},
-            {value: 'web_page', text: 'Web Page'},
-            {value: 'thesis', text: 'Thesis'},
             {value: 'magazine_article', text: 'Magazine Article'},
             {value: 'statute', text: 'Statute'},
-            {value: 'patent', text: 'Patent'},
             {value: 'newspaper_article', text: 'Newspaper Article'},
-            {value: 'computer_program', text: 'Computer Program'},
             {value: 'hearing', text: 'Hearing'},
-            {value: 'television_broadcast', text: 'Television Broadcast'},
-            {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
             {value: 'case', text: 'Case'},
-            {value: 'film', text: 'Film'},
             {value: 'bill', text: 'Bill'}
+            //{value: 'book_section', text: 'Book Section'},
+            //{value: 'web_page', text: 'Web Page'},
+            //{value: 'thesis', text: 'Thesis'},
+            //{value: 'patent', text: 'Patent'},
+            //{value: 'computer_program', text: 'Computer Program'},
+            //{value: 'television_broadcast', text: 'Television Broadcast'},
+            //{value: 'encyclopedia_article', text: 'Encyclopedia Article'},
+            //{value: 'film', text: 'Film'}
         ];
 
         //DATEPICKER OPTS
@@ -86,6 +85,14 @@ angular
                 rgiNotifier.error('You must provide a document type!');
             } else if (!$scope.ref_date_accessed) {
                 rgiNotifier.error('You must provide the date of access!');
+            } else if (!$scope.new_ref_location) {
+                rgiNotifier.error('You must provide the page location!');
+            } else if (!$scope.new_document.publisher) {
+                rgiNotifier.error('You must provide the publisher!');
+            } else if (!$scope.new_document.year) {
+                rgiNotifier.error('You must provide the year of publication!');
+            } else if (!$scope.new_document.institution) {
+                rgiNotifier.error('You must provide the publishing institution!');
             } else {
                 //if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
                 //    url = $scope.new_document.source;
