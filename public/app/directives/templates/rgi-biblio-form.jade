@@ -12,56 +12,49 @@ div.bottom-padding-med(
                 option(
                 ng-repeat="ref in ref_type"
                 value="{{ref.value}}") {{ref.text}}
+
 //- BILBLIO LIST
-div(id="prev_bib")
+div(id="prev_bib" ng-if="references.length > 0")
     .row.left-padding-lg.right-padding-lg
         h4 Citations
-        .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in citations")
-            .row(ng-if="ref.type !== 'web_page'")
+        .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references")
+            .row(ng-if="ref.document_ID.type !== 'web_page' && ref.citation_type !== 'interview'")
                 b Title:
-                text  {{ref.title}} (
-                a(href="{{ref.s3_url}}" target="_blank") View here
-                text )
-            .row.pull-right(ng-if="ref.comment.author===current_user._id")
-                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
-            .row(ng-if="ref.type === 'web_page'")
+                |  {{ref.document_ID.title}} (
+                a(href="{{ref.document_ID.s3_url}}" target="_blank") View here
+                | )
+            .row(ng-if="ref.document_ID.type === 'web_page' && ref.citation_type !== 'interview'")
                 b Title:
-                a(href="{{ref.source}}" target="_blank")  {{ref.title}}
-            .row
+                a(href="{{ref.document_ID.source}}" target="_blank")  {{ref.document_ID.title}}
+            .row(ng-if="ref.citation_type === 'interview'")
+                b Contact:
+                |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}}
+            .row(ng-if="ref.citation_type !== 'interview'")
                 b Author(s):
-                text(ng-repeat="author in ref.authors" ng-if="ref.authors.length > 0")  {{author.first_name}} {{author.last_name}}
+                text(ng-repeat="author in ref.document_ID.authors" ng-if="ref.document_ID.authors.length > 0")  {{author.first_name}} {{author.last_name}}
                     text(ng-if="!$last") ;
-                text(ng-if="ref.author.length === 0")  N/A
+                text(ng-if="ref.document_ID.author.length === 0")  N/A
             .row
                 b Type:
-                text  {{ref.type}}
+                text(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | ucfirst | addSpaces}}
+                text(ng-if="ref.citation_type === 'interview'")  {{ref.citation_type | ucfirst}}
+            .row(ng-if="ref.citation_type === 'document'")
+                b Year published:
+                text(ng-if="ref.document_ID.year")  {{ref.document_ID.year}}
+                text(ng-if="!ref.document_ID.year")  N/A
             .row
-                b Published:
-                text(ng-if="ref.year")  {{ref.year}}
-                text(ng-if="!ref.year")  N/A
-            .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date: 'MM/dd/yyyy'}}
-            .row Accessed on {{ref.comment.date_accessed | date: 'MM/dd/yyyy'}}
-            //.row.pull-right.right-padding-lg.left-padding-lg.bottom-padding-med(ng-if="ref.comment.author===current_user._id")
-            //    button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
-            .row
-                b Comments:
-                text(ng-if="ref.comment")  {{ref.comment.comment}}
-                text(ng-if="!ref.comment")  N/A
-            hr
-
-    .row.left-padding-lg.right-padding-lg
-        h4 Interviews
-        .row.left-padding-lg(ng-repeat="ref in interviews")
-            .row
-                b Contact:
-                |  {{ref.firstName}} {{ref.lastName}}
-            .row
+                b Cited by:
+                |  {{ref.author.firstName}} {{ref.author.lastName}} on {{ref.date | date: 'MM/dd/yyyy'}}
+            .row(ng-if="ref.citation_type === 'interview'")
                 b Interviewed:
-                |  {{ref.comment.contact_date | date:'MM/dd/yyyy'}}
-            .row Cited by {{ref.comment.author_name}} on {{ref.comment.date | date:'MM/dd/yyyy'}}
-            .row.pull-right.right-padding-lg(ng-if="ref.comment.author===current_user._id")
-                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
+                |  {{ref.contact_date | date:'MM/dd/yyyy'}}
+            .row(ng-if="ref.citation_type === 'document'")
+                b Accessed on:
+                |  {{ref.date_accessed | date: 'MM/dd/yyyy'}}
             .row: b Comments:
-            .row.left-padding-lg
-                text(ng-bind-html="ref.comment.comment")
-            hr
+            .row.left-padding-lg.right-padding-lg
+                text(ng-if="ref.comment" ng-bind-html="ref.comment")
+                text(ng-if="!ref.comment")  N/A
+            .row.pull-right.top-padding-med(ng-if="ref.author._id===current_user._id")
+                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
+        hr

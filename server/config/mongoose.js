@@ -5,15 +5,16 @@ var mongoose            = require('mongoose'),
     questionModel       = require('../models/Question'),
     intervieweeModel    = require('../models/Interviewees'),
     assessmentModel    = require('../models/Assessment');
+
 [
+    'Documents',
     'Answers',
     'AuthLog',
-    'Documents',
     'FileUploadStatus',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
-    require('../models/' + modelName);
-});
+        require('../models/' + modelName);
+    });
 
 module.exports = function (config, user, pass, env) {
     // connect to mongo

@@ -2,15 +2,20 @@
 var mongoose    = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
-var commentSchema, citationSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
+var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
     Question        = mongoose.model('Question'),
     User            = mongoose.model('User'),
-    //Doc             = mongoose.model('Documents'),
+    Documents             = mongoose.model('Documents'),
+    Interviewee    = mongoose.model('Interviewee'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
     HTML            = mongoose.Types.Html,
     ObjectId        = mongoose.Schema.Types.ObjectId,
+    citation_enu    = {
+        values: 'interview document'.split(' '),
+        message: 'Validator failed for `{PATH}` with value `{VALUE}`. Please select website, interview, or document.'
+    },
     htmlSettings    = {
         type: HTML,
         setting: {
@@ -36,36 +41,34 @@ commentSchema = new Schema({
         ref: 'User'}
 });
 
-citationSchema = new Schema({
-    document_ID: String,
-    //document_ID: {
-    //    type: ObjectId,
-    //    ref: 'Doc'},
+referenceSchema = new Schema({
+    citation_type: {
+        type: String,
+        enum: citation_enu},
+    document_ID: {
+        type: ObjectId,
+        ref: 'Documents'},
+    interviewee_ID: {
+        type: ObjectId,
+        ref: 'Interviewee'},
+    //Documents/websites
     mendeley_ID: String,
     file_hash: String,
-    date: {
+    date_accessed: {
         type: Date,
         default: Date.now},
-    date_accessed: Date,
-    author: ObjectId, // Pull from current user _id value
-    author_name: String,
-    role: String,
-    comment: htmlSettings,
-    location: String
-});
-
-interviewSchema = new Schema({
-    interviewee_ID: ObjectId,
+    //Interviews
     contact_date: {
         type: Date,
         default: Date.now},
     date: {
         type: Date,
         default: Date.now},
+    author: {
+        type: ObjectId,
+        ref: 'User'},
     comment: htmlSettings,
-    author: ObjectId, // Pull from curretn user _id value
-    author_name: String,
-    author_role: String
+    location: String
 });
 
 scoreHistorySchema = new Schema({
@@ -148,10 +151,7 @@ answerSchema = new Schema({
     final_justification: htmlSettings,
     comments: [commentSchema],
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
-    references: {
-        citation: [citationSchema],
-        human: [interviewSchema]
-    }
+    references: [referenceSchema]
 });
 
 answerSchema.plugin(mongooseHistory);

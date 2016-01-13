@@ -107,13 +107,12 @@ angular
                             new_answer_data = $scope.$parent.answer,
                             new_doc_data = new rgiDocumentSrvc(new_document),
                             new_ref_data = {
+                                citation_type: 'document',
                                 document_ID: new_document._id,
                                 // mendeley_ID
                                 file_hash: new_document.file_hash,
                                 date_accessed: new Date($scope.ref_date_accessed).toISOString(),
-                                author: current_user_ID,
-                                author_name: current_user_name,
-                                role: current_user_role
+                                author: current_user_ID
                             };
 
                         new_doc_data.source = url;
@@ -156,7 +155,7 @@ angular
                             new_user_data.documents = [new_document._id];
                         }
 
-                        new_answer_data.references.citation.push(new_ref_data);
+                        new_answer_data.references.push(new_ref_data);
 
                         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                             .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))

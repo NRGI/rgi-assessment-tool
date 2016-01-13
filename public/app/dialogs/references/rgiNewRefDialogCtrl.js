@@ -108,14 +108,13 @@ angular
                                 rgiIntervieweeMethodSrvc.createInterviewee(selected_interviewee)
                                     .then(function (interviewee) {
                                         new_ref_data = {
+                                            citation_type: 'interview',
                                             interviewee_ID: interviewee._id,
                                             contact_date: contact_date,
                                             comment: new_answer_data.human_ref_comment,
-                                            author: current_user._id,
-                                            author_name: current_user.firstName + ' ' + current_user.lastName,
-                                            author_role: current_user.role
+                                            author: current_user._id
                                         };
-                                        new_answer_data.references.human.push(new_ref_data);
+                                        new_answer_data.references.push(new_ref_data);
                                         rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
                                     })
                                     .then(function () {
@@ -131,14 +130,13 @@ angular
                 } else if ($scope.interviewee_selection==='existing') {
                     selected_interviewee_ID = selected_interviewee.originalObject.id;
                     new_ref_data = {
+                        citation_type: 'interview',
                         interviewee_ID: selected_interviewee_ID,
                         contact_date: contact_date,
                         comment: new_answer_data.human_ref_comment,
-                        author: current_user._id,
-                        author_name: current_user.firstName + ' ' + current_user.lastName,
-                        author_role: current_user.role
+                        author: current_user._id
                     };
-                    new_answer_data.references.human.push(new_ref_data);
+                    new_answer_data.references.push(new_ref_data);
 
                     rgiIntervieweeSrvc.get({_id: selected_interviewee_ID}, function (interviewee) {
                         ['answer', 'assessment', 'question'].forEach(function (el) {

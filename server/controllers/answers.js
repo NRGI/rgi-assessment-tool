@@ -64,6 +64,9 @@ exports.getAnswersByID = function (req, res, next) {
         .populate('comments.author', 'firstName lastName role')
         .populate('flags.author', 'firstName lastName role')
         .populate('flags.addressed_to', 'firstName lastName role')
+        .populate('references.document_ID', 'title s3_url type year source authors')
+        .populate('references.interviewee_ID', 'firstName lastName role')
+        .populate('references.author', 'firstName lastName role')
         .exec(function (err, answer) {
             if (err) { return next(err); }
             if (!answer) { return next(new Error('No answers found')); }
