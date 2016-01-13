@@ -52,7 +52,7 @@ exports.createUser = function (req, res) {
     if (user_data.email) {
         contact_packet.rec_email = user_data.email;
     }
-    if (user_data.rec_role) {
+    if (user_data.role) {
         contact_packet.rec_role = user_data.role.charAt(0).toUpperCase() + user_data.role.slice(1);
     }
     //try {
