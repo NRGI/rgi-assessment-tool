@@ -98,8 +98,7 @@ div.top-padding-lg
                     //TODO add reassign assessment dialog
                     button.btn.btn-col.center-block.btn-warning(
                     ng-click="reassignAssessmentDialog(assessment)"
-                    ng-if="assessment.status!='unassigned'"
-                    disabled) Reassign
+                    ng-if="assessment.status!='unassigned'") Reassign
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="!current_user.isSupervisor()")
                 //CONTROL BUTTON 2 - ADMIN

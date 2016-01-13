@@ -19,20 +19,6 @@ angular
                     scope: scope
                 });
             },
-            assessmentReassign: function ($scope) {
-                //var scope = $scope;
-                //if (scope.assessment_counters.length !== (scope.assessment_counters.flagged + scope.assessment_counters.approved)) {
-                //    rgiNotifier.error('You must approve or flag all questions!');
-                //} else {
-                //    scope.value = true;
-                //    ngDialog.open({
-                //        template: 'partials/dialogs/move-assessment-dialog',
-                //        controller: 'rgiMoveAssessmentDialogCtrl',
-                //        className: 'ngdialog-theme-default',
-                //        scope: scope
-                //    });
-                //}
-            },
             assessmentMove: function ($scope) {
                 var scope = $scope;
                 if (scope.assessment_counters.length!==((scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved) || scope.assessment_counters.finalized)) {
