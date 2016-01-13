@@ -6,22 +6,22 @@
                     legend.h3 New User Information
                     div.top-padding-med.right-padding-lg
                         .form-group
-                            label.col-md-2.control-label(form="new_user_data.firstName") First Name *
+                            label.col-md-2.control-label(form="firstName") First Name *
                             .col-md-10
                                 input.form-control(
-                                name="first_name"
+                                name="firstName"
                                 type="text"
                                 placeholder="First Name"
-                                ng-model="first_name"
+                                ng-model="new_user_data.firstName"
                                 autocomplete='off')
                         .form-group
-                            label.col-md-2.control-label(form="new_user_data.lastName") Last Name *
+                            label.col-md-2.control-label(form="lastName") Last Name *
                             .col-md-10
                                 input.form-control(
-                                name="last_name"
+                                name="lastName"
                                 type="text"
                                 placeholder="Last Name"
-                                ng-model="last_name"
+                                ng-model="new_user_data.lastName"
                                 required)
                         .form-group
                             label.col-md-2.control-label(form="new_user_data.username") Username *
@@ -30,7 +30,7 @@
                                 name="username"
                                 type="text"
                                 placeholder="Username"
-                                ng-model="username"
+                                ng-model="new_user_data.username"
                                 required)
                         .form-group
                             label.col-md-2.control-label(form="new_user_data.email") Email *
@@ -38,12 +38,12 @@
                                 input.form-control(name="email"
                                 type="text"
                                 placeholder="Email"
-                                ng-model="email")
+                                ng-model="new_user_data.email")
                         .form-group
                             label.col-md-2.control-label(form="new_user_data.role") Role *
                             .col-md-10
                                 select.form-control(
-                                ng-model="roleSelect"
+                                ng-model="new_user_data.role"
                                 ng-options="item.value as item.text for item in role_options"
                                 required)
                         .form-group
@@ -53,7 +53,7 @@
                                 name="address"
                                 type="text"
                                 placeholder="Address"
-                                ng-model="address")
+                                ng-model="new_user_data.address")
                         //.form-group
                         //	label.col-md-2.control-label(form="language") Preferred Language
                         //	.col-md-10

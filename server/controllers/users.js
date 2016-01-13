@@ -50,10 +50,10 @@ exports.createUser = function (req, res) {
         contact_packet.rec_username = user_data.username;
     }
     if (user_data.email) {
-        contact_packet.email = user_data.email;
+        contact_packet.rec_email = user_data.email;
     }
     if (user_data.rec_role) {
-        contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+        contact_packet.rec_role = user_data.role.charAt(0).toUpperCase() + user_data.role.slice(1);
     }
     //try {
     //    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
@@ -87,7 +87,7 @@ exports.createUser = function (req, res) {
     user_data.hashed_pwd = encrypt.hashPwd(user_data.salt, user_data.password);
     user_data.createdBy = req.user._id;
 
-    User.create(user_data, function (err, user, next) {
+    User.create(user_data, function (err, user) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
@@ -101,7 +101,7 @@ exports.createUser = function (req, res) {
         });
 
         res.send();
-        next();
+        //next();
     });
 };
 //TODO deal with validation

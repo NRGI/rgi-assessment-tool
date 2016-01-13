@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiUserCreateCtrl', function (
         $scope,
         $location,
@@ -23,8 +22,10 @@ angular
                 rgiNotifier.error('You must supply a first and last name!');
             } else if (!new_user_data.email) {
                 rgiNotifier.error('You must supply an email!');
-            } else if (!new_user_data.email) {
+            } else if (!new_user_data.username) {
                 rgiNotifier.error('You must supply an username!');
+            } else if (!new_user_data.role) {
+                rgiNotifier.error('You must select a role!');
             } else {
                 rgiUserMethodSrvc.createUser(new_user_data).then(function () {
                     rgiNotifier.notify('User account created! ' + $scope.email);
