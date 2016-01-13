@@ -58,6 +58,8 @@ angular
                 rgiNotifier.error('You must pick a score');
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
+            } else if (new_answer_data.references.length < 1) {
+                rgiNotifier.error('You must provide at least one supporting reference!');
             } else {
                 if (new_answer_data.status !== 'submitted') {
                     new_answer_data.status = 'submitted';
