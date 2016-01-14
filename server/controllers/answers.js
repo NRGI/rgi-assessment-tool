@@ -61,6 +61,7 @@ exports.getAnswers = function (req, res, next) {
 exports.getAnswersByID = function (req, res, next) {
     //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
     Answer.findOne({answer_ID: req.params.answer_ID})
+        .populate('question_ID')
         .populate('comments.author', 'firstName lastName role')
         .populate('flags.author', 'firstName lastName role')
         .populate('flags.addressed_to', 'firstName lastName role')

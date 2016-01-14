@@ -1,6 +1,24 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiFinalChoiceDialogCtrl', function ($scope) {
-        console.log($scope);
+    .controller('rgiGuidanceDialogCtrl', function (
+        $scope,
+        ngDialog,
+        rgiAnswerMethodSrvc,
+        rgiNotifier
+    ) {
+        $scope.question_guidance_text = $scope.$parent.question.question_guidance_text;
+        var new_answer_data = $scope.$parent.answer;
+        new_answer_data.guidance_dialog = false;
+        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            .then(function () {
+
+            }, function (reason) {
+                rgiNotifier.notify(reason);
+                ngDialog.close();
+            });
+
+        $scope.closeDialog = function () {
+            ngDialog.close();
+        };
     });

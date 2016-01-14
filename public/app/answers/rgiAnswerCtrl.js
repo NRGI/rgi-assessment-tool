@@ -15,11 +15,7 @@ angular
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
-        rgiAssessmentMethodSrvc,
-        rgiAnswerMethodSrvc,
-        rgiQuestionSrvc,
-        rgiIntervieweeSrvc,
-        rgiUserListSrvc
+        rgiAnswerMethodSrvc
     ) {
         var current_user = rgiIdentitySrvc.currentUser;
         $scope.identity = rgiIdentitySrvc;
@@ -38,9 +34,8 @@ angular
             $scope.flags = answer.flags;
             $scope.current_user = current_user;
             $scope.references = answer.references;
-
-            rgiQuestionSrvc.get({_id: answer.question_ID}, function(question) {
-                $scope.question = question;
+            $scope.question = answer.question_ID;
+            if (answer[current_user.role + '_score']) {
                 $scope.question.question_criteria.forEach(function (opt, i) {
                     if (i===answer[current_user.role + '_score'].order-1) {
                         opt.selected = true;
@@ -49,36 +44,12 @@ angular
                         opt.selected = false;
                     }
                 });
-            });
+            };
 
-            if (answer.guidance_model) {
-                answer.guidance_model = false;
-                rgiAnswerMethodSrvc.updateAnswer(answer)
-                    .then(function () {
-                        rgiDialogFactory.guidanceDialog(answer);
-                    }, function (reason) {
-                        rgiNotifier.notify(reason);
-                    });
+
+            //console.log(answer);
+            if (answer.guidance_dialog) {
+                rgiDialogFactory.guidanceDialog($scope);
             }
-
-            //var citations = [],
-            //    interviews = [];
-
-            //answer.references.citation.forEach(function (el) {
-            //    rgiDocumentSrvc.get({_id: el.document_ID}, function (doc) {
-            //        doc.comment = el;
-            //        citations.push(doc);
-            //    });
-            //});
-            //
-            //answer.references.human.forEach(function (el) {
-            //    rgiIntervieweeSrvc.get({_id: el.interviewee_ID}, function (interviewee) {
-            //        interviewee.comment = el;
-            //        citations.push(interviewee);
-            //    });
-            //});
-
-            //$scope.references = references;
-
         });
     });

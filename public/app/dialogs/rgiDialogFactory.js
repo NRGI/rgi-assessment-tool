@@ -19,9 +19,8 @@ angular
                     scope: scope
                 });
             },
-            guidanceDialog: function (answer) {
-                var scope = answer;
-                scope.value = true;
+            guidanceDialog: function ($scope) {
+                var scope = $scope;
                 ngDialog.open({
                     template: 'partials/dialogs/answers/guidance-dialog',
                     controller: 'rgiGuidanceDialogCtrl',
