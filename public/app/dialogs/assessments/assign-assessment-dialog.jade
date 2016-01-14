@@ -10,23 +10,23 @@ div.left-padding-lg.right-padding-lg
                 label.col-md-4  Researcher
                 .form-group.col-md-8
                     select.form-group.form-control(
-                    name="researcherSelect"
-                    ng-model="researcherSelect"
+                    name="researcher_select"
+                    ng-model="researcher_select"
                     required)
                         option(value="" selected disabled) Select researcher (required)...
                         option(ng-repeat="r in researchers" value="{{r}}") {{r.firstName}} {{r.lastName}}: number of assigned assessments - {{r.assessments.length}}
                 label.col-md-4  Reviewer
                 .form-group.col-md-8
                     select.form-group.form-control(
-                    name="reviewerSelect"
-                    ng-model="reviewerSelect"
+                    name="reviewer_select"
+                    ng-model="reviewer_select"
                     required)
                         option(value="" selected disabled) Select reviewer...
                         option(ng-repeat="r in reviewers" value="{{r}}") {{r.firstName}} {{r.lastName}}: number of assigned assessments - {{r.assessments.length}}
             div.modal-footer
                 button.btn.btn-success(
                 ng-if="assessment.status==='unassigned'"
-                ng-click="assessmentAssign(researcherSelect)"
+                ng-click="assessmentAssign(researcher_select, reviewer_select)"
                 ng-disabled="assignAssessment.$invalid") Assign users to assessment
                 //button.btn.btn-success(
                 //ng-if="assessment.status!=='unassigned'"

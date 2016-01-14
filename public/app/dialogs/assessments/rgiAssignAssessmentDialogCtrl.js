@@ -47,10 +47,9 @@ angular
             new_assessment_data.edit_control = new_researcher_data._id;
             new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
-            //IF REVIEWER SELECTED
+            ////IF REVIEWER SELECTED
             if (reviewer_select) {
                 var new_reviewer_data = new rgiUserSrvc(JSON.parse(reviewer_select));
-
                 new_assessment_data.reviewer_ID = new_reviewer_data._id;
                 new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
