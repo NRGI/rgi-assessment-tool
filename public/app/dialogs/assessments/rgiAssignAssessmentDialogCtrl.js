@@ -28,13 +28,10 @@ angular
         //// get questions for insertion into answers collection
         //$scope.questions = rgiQuestionSrvc.query({assessments: $scope.$parent.assessment_update_ID.substr(3)});
 
-        $scope.assessmentAssign = function () {
+        $scope.assessmentAssign = function (researcherSelect, reviewerSelect) {
             // update users
-            var new_researcher_data = $scope.researcherSelect,
-                new_reviewer_data = $scope.reviewerSelect,
+            var new_researcher_data = new rgiUserSrvc(JSON.parse(researcherSelect)),
                 new_assessment_data = $scope.assessment;
-                //new_answer_set = [];
-                //current_user = rgiIdentitySrvc.currentUser;
 
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
@@ -46,13 +43,11 @@ angular
             new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
             //IF REVIEWER SELECTED
-            if (new_reviewer_data) {
+            if (reviewerSelect) {
+                var new_reviewer_data = new rgiUserSrvc(JSON.parse(reviewerSelect));
+
                 new_assessment_data.reviewer_ID = new_reviewer_data._id;
                 new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
-            }
-
-            ////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
-            if (new_reviewer_data) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
                     .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
@@ -65,7 +60,7 @@ angular
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
-            } else if (!new_reviewer_data) {
+            } else if (!reviewerSelect) {
                 rgiUserMethodSrvc.updateUser(new_researcher_data)
                     .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                     //.then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
@@ -80,6 +75,13 @@ angular
             } else {
                 rgiNotifier.error('No researcher data!');
             }
+
+            ////////TODO DEAL WITH RELOADING NOT ALWAYS WORKING  - DUPLICATE ANSWER SETS
+            ////if (new_reviewer_data) {
+            //
+            ////} else if (!new_reviewer_data) {
+            //
+            //}
         };
 
         $scope.assessmentReassign = function () {

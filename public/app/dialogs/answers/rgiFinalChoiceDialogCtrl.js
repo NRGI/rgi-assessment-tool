@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiFinalChoiceDialogCtrl', function (
         $scope,
         $location,

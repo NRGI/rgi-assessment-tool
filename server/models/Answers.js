@@ -112,6 +112,9 @@ answerSchema = new Schema({
         required: '{PATH} is required',
         index: true,
         ref: 'Question'}, // generated from _id value of Question Model
+    guidance_dialog: {
+        type: Boolean,
+        default: true},
     question_v: Number,
     status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
     flags: [commentSchema],

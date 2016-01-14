@@ -19,6 +19,16 @@ angular
                     scope: scope
                 });
             },
+            guidanceDialog: function (answer) {
+                var scope = answer;
+                scope.value = true;
+                ngDialog.open({
+                    template: 'partials/dialogs/answers/guidance-dialog',
+                    controller: 'rgiGuidanceDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
             assessmentMove: function ($scope) {
                 var scope = $scope;
                 if (scope.assessment_counters.length!==((scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved) || scope.assessment_counters.finalized)) {

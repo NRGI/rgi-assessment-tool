@@ -12,6 +12,7 @@ angular
         ngDialog,
         rgiAnswerSrvc,
         rgiDocumentSrvc,
+        rgiDialogFactory,
         rgiIdentitySrvc,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
@@ -49,6 +50,16 @@ angular
                     }
                 });
             });
+
+            if (answer.guidance_model) {
+                answer.guidance_model = false;
+                rgiAnswerMethodSrvc.updateAnswer(answer)
+                    .then(function () {
+                        rgiDialogFactory.guidanceDialog(answer);
+                    }, function (reason) {
+                        rgiNotifier.notify(reason);
+                    });
+            }
 
             //var citations = [],
             //    interviews = [];
