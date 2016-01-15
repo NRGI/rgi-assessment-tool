@@ -2,7 +2,7 @@ div
     div.modal-header
         h3 New assessment deployment
     div.modal-body
-        .form-horizontal
+        .form-horizontal(ng-if="disable_button===false")
             form.form-horizontal(name="deployAssessment")
                 fieldset
                     .row
@@ -26,13 +26,19 @@ div
                         .col-md-1
                             button.btn.btn-danger(ng-click="countryDelete($index)" ng-disabled="new_assessment.assessment_countries.length==1") Delete
 
+        div.spinner(ng-if="disable_button===true")
+            div.double-bounce1
+            div.double-bounce2
+
     div.modal-footer
         button.btn.btn-success(
         ng-click="assessmentDeploy()"
-        ng-disabled="deployAssessment.$invalid") Deploy new assessment
+        ng-disabled="deployAssessment.$invalid || disable_button===true") Deploy new assessment
         | &nbsp;
         button.btn.btn-warning(
         ng-click="countryAdd(new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country)"
-        ng-disabled="!new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country") Add country
+        ng-disabled="!new_assessment.assessment_countries[new_assessment.assessment_countries.length-1].country || disable_button===true") Add country
         | &nbsp;
-        button.btn.btn-danger(ng-click="closeDialog()") Cancel
+        button.btn.btn-danger(
+        ng-click="closeDialog()"
+        ng-disabled="disable_button === true") Cancel

@@ -19,6 +19,7 @@ angular
     ) {
         var current_user = rgiIdentitySrvc.currentUser;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
+        $scope.disable_button = false;
         //TODO
         //rgiCountrySrvc.query({}, function (countries) {
         //    var country_values = {},
@@ -72,12 +73,13 @@ angular
             $scope.new_assessment.assessment_countries.splice(index, 1);
         };
         $scope.assessmentDeploy = function () {
-            var new_assessment_ID,
+            var new_assessment_ID, new_answer_set,
                 new_assessment_set = [],
-                new_answer_set = [],
                 new_assessment_year = String($scope.new_assessment.year),
                 new_assessment_ver = $scope.new_assessment.version.slice(0, 2).toUpperCase(),
                 timestamp = new Date().toISOString();
+
+            $scope.disable_button = true;
 
             rgiQuestionSrvc.query({assessments: new_assessment_year + "-" + new_assessment_ver}, function (d) {
                 if (d.length > 0) {
@@ -89,6 +91,9 @@ angular
                         });
 
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
+                            new_answer_set = [];
+                            console.log(new_answer_set);
+
                             new_assessment_ID = assessment_country.country.iso2 + "-" + new_assessment_year + "-" + new_assessment_ver;
 
                             new_assessment_set.push({
@@ -114,10 +119,14 @@ angular
                                     last_modified: {modified_by: current_user._id}
                                 });
                             });
+                            rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set)
+                                .then(function () {
+                                }, function (reason) {rgiNotifier.error(reason);}
+                            );
                         });
+
                         //send to mongo
                         rgiAssessmentMethodSrvc.createAssessment(new_assessment_set)
-                            .then(rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set))
                             .then(rgiQuestionMethodSrvc.updateQuestionSet(questions))
                             .then(function () {
                                 rgiNotifier.notify('Assessment deployed!');
