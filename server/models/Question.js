@@ -65,6 +65,7 @@ questionSchema = new Schema({
     indicator: String,  ///from Indicator column
     dejure: Boolean, ///from "De Jure or De Facto" true=dejure
     question_text : String, ///from question column
+    question_trial: Boolean,
     question_criteria: [{
         name: String,
         letter: String,
@@ -110,6 +111,7 @@ function createDefaultQuestions() {
                 "indicator" : "EITI in national legislation",
                 "dejure": true,
                 "question_text" : "Is the EITI ratified in national legislation?",
+                "question_trial": true,
                 "question_criteria": [
                     { "text": "Yes", "name": "criteria_a", "letter": "a", "order": 1, value: 1 },
                     { "text": "Partial", "name": "criteria_b", "letter": "b", "order": 2 , value: 2},
@@ -141,6 +143,7 @@ function createDefaultQuestions() {
                 "indicator" : "Contract Disclosure",
                 "dejure": false,
                 "question_text" : "Has this country adopted a rule or legisation that requires the publication of all contracts in the oil, gas, and mineral sectors?",
+                "question_trial": true,
                 "question_criteria" : [
                     { "text" : "Yes", "name" : "criteria_a", "letter": "a", "order" : 1, value: 1},
                     { "text" : "Partial", "name" : "criteria_b", "letter": "b", "order" : 2, value: 2 },
@@ -172,6 +175,7 @@ function createDefaultQuestions() {
                 "indicator" : "Contract Disclosure",
                 "dejure": true,
                 "question_text" : "Have all contracts between extraction companies and the government been disclosed?",
+                "question_trial": false,
                 "question_criteria" : [
                     { "text" : "Yes, in pdf, online.", "name" : "criteria_a", "letter": "a", "order" : 1, value: 1 },
                     { "text" : "Yes, but only physical copies", "name" : "criteria_b", "letter": "b", "order" : 2, value: 2 },
@@ -203,6 +207,7 @@ function createDefaultQuestions() {
                 "indicator" : "Freedom of Information law applied",
                 "dejure": true,
                 "question_text" : "Do citizens request and successfully receive information using the freedom of information law?",
+                "question_trial": false,
                 "question_criteria" : [
                     { "text" : "Yes", "name" : "criteria_a", "letter": "a", "order" : 1, value: 1 },
                     { "text" : "Partial", "name" : "criteria_b", "letter": "b", "order" : 2, value: 2 },
@@ -235,6 +240,7 @@ function createDefaultQuestions() {
                 "indicator" : "EITI report",
                 "dejure": true,
                 "question_text" : "Has this country published an EITI report?",
+                "question_trial": false,
                 "question_criteria" : [
                     { "letter": "a", "text" : "The country has published an EITI report, including information on national revenue classification systems and international standards, such as the IMF Government Finance Statistics Manual; a summary of national audit procedures (including an analysis of whether audit procedures meet international standards); information about the contribution of the extractive industries to the economy for the year covered (including: size of the extractive industries in absolute terms, size of the extractive industries as percentage of GDP, an estimate of informal sector activity); exports from the extractive industries in absolute terms; exports from the extractive industries as percentage of total exports.", "name" : "criteria_a", "order" : 1, value: 1 },
                     { "letter": "b", "text" : "The country has published an EITI report, but some essential information (described in full in Answer A) is missing (please explain).", "name" : "criteria_b", "order" : 2, value: 2 },
@@ -267,6 +273,7 @@ function createDefaultQuestions() {
                 "indicator" : "Quality of EITI data",
                 "dejure": true,
                 "question_text" : "If the country has published an EITI report, does it cover all topics in new standard?",
+                "question_trial": false,
                 "question_criteria" : [
                     { "letter": "a", "text" : "Covers all topics relevant within country context", "name" : "criteria_a", "order" : 1, value: 1 },
                     { "letter": "b", "text" : "Only partials resource revenue reconciliation", "name" : "criteria_c", "order" : 2, value: 2 },

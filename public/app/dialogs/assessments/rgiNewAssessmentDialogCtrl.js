@@ -111,6 +111,7 @@ angular
                                 new_answer_set.push({
                                     answer_ID: new_assessment_ID + '-' + String(rgiUtilsSrvc.zeroFill(q.question_order, 3)),
                                     question_ID: q._id,
+                                    question_trial: q.question_trial,
                                     assessment_ID: new_assessment_ID,
                                     year: new_assessment_year,
                                     version: new_assessment_ver,

@@ -5,8 +5,8 @@ require('mongoose-html-2').loadType(mongoose);
 var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
     Question        = mongoose.model('Question'),
     User            = mongoose.model('User'),
-    Documents             = mongoose.model('Documents'),
-    Interviewee    = mongoose.model('Interviewee'),
+    Documents       = mongoose.model('Documents'),
+    Interviewee     = mongoose.model('Interviewee'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
@@ -112,6 +112,7 @@ answerSchema = new Schema({
         required: '{PATH} is required',
         index: true,
         ref: 'Question'}, // generated from _id value of Question Model
+    question_trial: Boolean,
     guidance_dialog: {
         type: Boolean,
         default: true},
