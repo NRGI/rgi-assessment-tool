@@ -13,7 +13,6 @@ angular
     ) {
         'use strict';
         $scope.action = $scope.$parent.action;
-        console.log($scope.action);
         switch ($scope.action) {
             case 'review_researcher':
             case 'review_reviewer':

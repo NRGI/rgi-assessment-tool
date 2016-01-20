@@ -109,7 +109,7 @@ div.top-padding-lg
                     ) Start Review
                     a.btn.btn-col.center-block.btn-primary(
                     href="/admin/assessments-admin/{{assessment.assessment_ID}}"
-                    ng-if="['under_review', 'resubmitted'].indexOf(assessment.status) > -1"
+                    ng-if="['trial_submitted', 'under_review', 'resubmitted'].indexOf(assessment.status) > -1"
                     ) Continue review
                     a.btn.btn-col.center-block.btn-primary(
                     href="/admin/assessment-review/{{assessment.assessment_ID}}"
@@ -121,7 +121,7 @@ div.top-padding-lg
                     ) Under review
                     a.btn.center-block.btn-default.disabled(
                     href=""
-                    ng-if="['unassigned', 'submitted', 'resubmitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
+                    ng-if="['unassigned', 'submitted', 'resubmitted', 'trial_submitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
                     ) Waiting for submission
                 //CONTROL BUTTON 1 -USER
                 td.col-sm-1(ng-if="!current_user.isSupervisor()")

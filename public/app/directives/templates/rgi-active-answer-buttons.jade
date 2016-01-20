@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && (['trial_started', 'started', 'review_started'].indexOf(assessment.status) > -1)) || (current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1))"
+    ng-if="(assessment.edit_control===current_user._id && (['trial_started', 'started', 'review_started'].indexOf(assessment.status) > -1)) || (current_user.isSupervisor() && (['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1))"
     ) Save answer
     | &nbsp;
 
@@ -20,7 +20,7 @@
 
     button.btn.btn-success(
     ng-click="answerApprove()"
-    ng-if="current_user.role==='supervisor' && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
+    ng-if="current_user.role==='supervisor' && (['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
     ) Approve answer
     | &nbsp;
 

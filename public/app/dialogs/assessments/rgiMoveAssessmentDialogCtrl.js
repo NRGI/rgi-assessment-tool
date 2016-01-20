@@ -17,7 +17,7 @@ angular
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
-            if (assessment.status !== 'approved') {
+            if (assessment.status !== 'approved' && assessment.status !== 'trial_submitted') {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
                     value: 'review_' + control_profile.role
@@ -38,6 +38,12 @@ angular
                         });
                     });
                 }
+            }
+            if (assessment.status === 'trial_submitted') {
+                workflow_opts.push({
+                    text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
+                    value: 'started'
+                });
             }
             if (assessment_counters.flagged===0 && assessment_counters.finalized===assessment_counters.length && assessment.status!=='approved') {
                 workflow_opts.push({
