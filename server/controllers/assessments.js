@@ -149,6 +149,9 @@ exports.updateAssessment = function (req, res) {
                             break;
 
                         //TODO Need to handle group emails
+                        case 'trial_submitted':
+                            contact.trial_assessment_submission(contact_packet, 'researcher');
+                            break;
                         case 'submitted':
                         case 'resubmitted':
                             contact.assessment_submission(contact_packet, 'researcher');

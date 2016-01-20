@@ -143,7 +143,7 @@ div.top-padding-lg
 
                     //- disabled for admin review
                     a.btn.btn-col.center-block.btn-default(
-                    ng-if="assessment.edit_control===current_user._id && ['submitted', 'resubmitted', 'under_review'].indexOf(assessment.status) > -1"
+                    ng-if="assessment.edit_control===current_user._id && ['trial_submitted', 'submitted', 'resubmitted', 'under_review'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}"
                     disabled) Under Admin review
 

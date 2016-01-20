@@ -144,6 +144,47 @@ exports.new_assessment_assignment = function (contact_packet, type) {
 };
 
 // email when assessment is submitted or resubmitted
+exports.trial_assessment_submission = function (contact_packet) {
+    //send an email to team that assessment is ready
+    mandrill('/messages/send', {
+        message: {
+            to: [
+                {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
+                {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
+                {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
+                {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
+            ],
+            from_email: contact_packet.editor_email,
+            subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
+            html: "Hi team,<p>" +
+            contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " trial assessment for review." +
+            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
+            "Thanks!<p>" +
+            "The RGI Team.<p>"
+        }
+    }, function (err, res) {
+        if (err) { console.log( JSON.stringify(err) ); }
+        else { console.log(res); }
+    });
+    //send email to submitter that it went through
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: "rgi-admin@resourcegovernance.org",
+            subject: contact_packet.assessment_title + " recieved.",
+            html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
+            "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps." +
+            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> if you want to check the status.<p>" +
+            "Thanks!<p>" +
+            "The RGI Team.<p>"
+        }
+    }, function (err, res) {
+        if (err) { console.log( JSON.stringify(err) ); }
+        else { console.log(res); }
+    });
+};
+
+// email when assessment is submitted or resubmitted
 exports.assessment_submission = function (contact_packet) {
     //send an email to team that assessment is ready
     mandrill('/messages/send', {

@@ -67,6 +67,20 @@ angular
                     scope: scope
                 });
             },
+            assessmentTrialSubmit: function ($scope) {
+                var scope = $scope;
+                if (scope.assessment_counters.length !== scope.assessment_counters.complete) {
+                    rgiNotifier.error('You must complete all assessment trial questions');
+                } else {
+                    scope.value = true;
+                    ngDialog.open({
+                        template: 'partials/dialogs/assessments/submit-confirmation-dialog',
+                        controller: 'rgiSubmitAssessmentConfirmationDialogCtrl',
+                        className: 'ngdialog-theme-default',
+                        scope: scope
+                    });
+                }
+            },
             assessmentSubmit: function ($scope) {
                 var scope = $scope;
                 if (scope.assessment_counters.length !== scope.assessment_counters.complete) {

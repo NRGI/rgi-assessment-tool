@@ -13,7 +13,12 @@ angular
         $scope.assessmentSubmit = function () {
             var new_assessment_data = $scope.$parent.assessment;
 
-            new_assessment_data.status = 'submitted';
+            if (new_assessment_data.status==='trial_started') {
+                new_assessment_data.status = 'trial_submitted';
+            } else {
+                new_assessment_data.status = 'submitted';
+            }
+
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
 

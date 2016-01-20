@@ -15,6 +15,9 @@
                         ng-options="item.value as item.text for item in sortOptions")
                 br
                 button.btn.btn-success.pull-right(
+                ng-click="submitTrialAssessmentDialog()"
+                ng-if="assessment.status==='trial_started'") Submit trial
+                button.btn.btn-success.pull-right(
                 ng-click="submitAssessmentDialog()"
                 ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submit assessment
                 button.btn.btn-success.pull-right(

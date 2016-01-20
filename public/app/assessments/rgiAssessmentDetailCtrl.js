@@ -29,7 +29,7 @@ angular
 
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};
-            if (assessment.status === 'trial_started') {
+            if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
                 answer_query.question_trial = true;
             }
             $scope.assessment = assessment;
@@ -195,6 +195,9 @@ angular
                 });
             });
         });
+        $scope.submitTrialAssessmentDialog = function () {
+            rgiDialogFactory.assessmentTrialSubmit($scope);
+        };
         $scope.submitAssessmentDialog = function () {
             rgiDialogFactory.assessmentSubmit($scope);
         };
