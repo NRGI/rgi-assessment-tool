@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && (['started', 'review_started'].indexOf(assessment.status) > -1)) || (current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1))"
+    ng-if="(assessment.edit_control===current_user._id && (['trial_started', 'started', 'review_started'].indexOf(assessment.status) > -1)) || (current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1))"
     ) Save answer
     | &nbsp;
 
@@ -14,7 +14,7 @@
 
     button.btn.btn-success(
     ng-click="answerSubmit()"
-    ng-if="assessment.edit_control===current_user._id && (['started', 'review_started'].indexOf(assessment.status) > -1)"
+    ng-if="assessment.edit_control===current_user._id && (['trial_started', 'started', 'review_started'].indexOf(assessment.status) > -1)"
     ) Submit answer
     | &nbsp;
 
@@ -26,7 +26,7 @@
 
     button.btn.btn-danger(
     ng-click="answerClear()"
-    ng-if="assessment.edit_control===current_user._id && (['started', 'review_started', 'review_' + current_user.role].indexOf(assessment.status) > -1)"
+    ng-if="assessment.edit_control===current_user._id && (['trial_started', 'started', 'review_started', 'review_' + current_user.role].indexOf(assessment.status) > -1)"
     ) Reset answer
     | &nbsp;
 

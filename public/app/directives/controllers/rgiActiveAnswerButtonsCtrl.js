@@ -58,8 +58,8 @@ angular
                 rgiNotifier.error('You must pick a score');
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
-            } else if (new_answer_data.references.length < 1) {
-                rgiNotifier.error('You must provide at least one supporting reference!');
+            //} else if (new_answer_data.references.length < 1) {
+            //    rgiNotifier.error('You must provide at least one supporting reference!');
             } else {
                 if (new_answer_data.status !== 'submitted') {
                     new_answer_data.status = 'submitted';
@@ -70,8 +70,7 @@ angular
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(function () {
-                        if (new_answer_data.question_order !== $scope.question_length) {
-
+                        if ((new_answer_data.question_order!==$scope.question_length) && ($scope.$parent.assessment.status!=='trial_started')) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
