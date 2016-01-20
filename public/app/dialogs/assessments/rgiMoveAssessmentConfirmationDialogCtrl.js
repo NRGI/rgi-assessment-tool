@@ -60,10 +60,10 @@ angular
 
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                         .then(function () {
-                            //$scope.closeThisDialog();
-                            //$location.path('/admin/assessment-admin');
+                            $scope.closeThisDialog();
+                            $location.path('/admin/assessment-admin');
                             rgiNotifier.notify('Assessment returned!');
-                            //$route.reload();
+                            $route.reload();
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });
