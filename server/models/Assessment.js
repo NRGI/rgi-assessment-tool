@@ -38,7 +38,7 @@ assessmentSchema = new Schema({
     status: {
         type: String,
         required: '{PATH} is required',
-        default: 'unassigned'}, // unassigned, assigned, started, submitted, review, reassigned, approved
+        default: 'unassigned'}, // unassigned, assigned, trial, started, submitted, review, reassigned, approved
     first_pass: {
         type: Boolean,
         default: true},

@@ -26,11 +26,24 @@ angular
             });
         };
 
+        $scope.assessmentTrial = function (assessment) {
+            var new_assessment_data = assessment;
+            if ($scope.$parent.current_user.role==='researcher') {
+                new_assessment_data.status = 'trial_started';
+                new_assessment_data.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
+            }
+            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
+                $location.path('/assessments/' + new_assessment_data.assessment_ID);
+                rgiNotifier.notify('Assessment trial started!');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+        };
+
         $scope.assessmentStart = function (assessment) {
             var new_assessment_data = assessment;
             if ($scope.$parent.current_user.role==='researcher') {
                 new_assessment_data.status = 'started';
-                new_assessment_data.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
             } else if ($scope.$parent.current_user.role==='reviewer') {
                 new_assessment_data.status = 'review_started';
             }

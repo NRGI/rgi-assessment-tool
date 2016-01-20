@@ -25,7 +25,13 @@ angular
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
+
+
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
+            var answer_query = {assessment_ID: assessment.assessment_ID};
+            if (assessment.status === 'trial_started') {
+                answer_query.question_trial = true;
+            }
             $scope.assessment = assessment;
             $scope.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
             if (assessment.reviewer_ID) {
@@ -34,7 +40,7 @@ angular
             $scope.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
             $scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
             $scope.answers = [];
-            rgiAnswerSrvc.query({assessment_ID: assessment.assessment_ID}, function (answers) {
+            rgiAnswerSrvc.query(answer_query, function (answers) {
                 $scope.assessment_counters = {
                     length: answers.length,
                     complete: 0,

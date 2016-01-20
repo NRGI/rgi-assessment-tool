@@ -47,7 +47,7 @@ angular
 
                 new_assessment_data.mail = true;
 
-                new_assessment_data.status = 'assigned';
+                new_assessment_data.status = 'trial';
                 new_assessment_data.researcher_ID = new_researcher_data._id;
                 new_assessment_data.edit_control = new_researcher_data._id;
                 new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
