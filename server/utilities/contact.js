@@ -264,6 +264,24 @@ exports.assessment_reassignment = function (contact_packet) {
     });
 };
 
+// email when reassigning to researcher or reviewer
+exports.trial_assessment_continue = function (contact_packet) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: contact_packet.admin_email,
+            subject: "Please continue work on the " + contact_packet.assessment_title + " assessment!",
+            html: "Hello " + contact_packet.editor_firstName + ",<p>" +
+            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just approved your initial answers on the " + contact_packet.assessment_title + " assessement.<p>" +
+            "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to continue.<p>" +
+            "Thanks!<p>" +
+            "The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) { console.log( JSON.stringify(err) ); }
+        else { console.log(res); }
+    });
+};
 
 
 //// email when

@@ -1,7 +1,8 @@
 'use strict';
 /* global require */
 
-var Assessment  = require('mongoose').model('Assessment'),
+var Answer      = require('mongoose').model('Answer'),
+    Assessment  = require('mongoose').model('Assessment'),
     User        = require('mongoose').model('User'),
     contact     = require('../utilities/contact');
 
@@ -127,13 +128,32 @@ exports.updateAssessment = function (req, res) {
                     assessment.interviewees = assessmentUpdates.interviewees;
                     assessment.last_modified = {modified_by: req.user._id, modified_date: timestamp};
 
-                    assessment.save(function (err) {
-                        if (err) {
-                            return res.send({ reason: err.toString() });
-                        }
-                    });
+                    if(assessment.status!=='trial_continue') {
+                        assessment.save(function (err) {
+                            if (err) {
+                                return res.send({ reason: err.toString() });
+                            }
+                        });
+                    } else {
+                        assessment.status = 'assigned';
+                        Answer.find({assessment_ID: assessment.assessment_ID, question_trial: true}).exec(function (err, answers) {
+                            answers.forEach(function (answer) {
+                                answer.status = 'submitted';
+                                answer.save(function (err) {
+                                    if (err) {
+                                        res.send({ reason: err.toString() });
+                                    }
+                                });
+                            });
+                        });
+                        assessment.save(function (err) {
+                            if (err) {
+                                return res.send({ reason: err.toString() });
+                            }
+                        });
+                    }
+
                 });
-                //TODO refator this into ./server/utiliies/contact.js
                 //TODO deal with from email feature
                 ///////////////////////////////
                 // MAIL ROUTING
@@ -151,6 +171,9 @@ exports.updateAssessment = function (req, res) {
                         //TODO Need to handle group emails
                         case 'trial_submitted':
                             contact.trial_assessment_submission(contact_packet, 'researcher');
+                            break;
+                        case 'trial_continue':
+                            contact.trial_assessment_continue(contact_packet, 'researcher');
                             break;
                         case 'submitted':
                         case 'resubmitted':

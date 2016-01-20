@@ -42,7 +42,7 @@ angular
             if (assessment.status === 'trial_submitted') {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
-                    value: 'started'
+                    value: 'trial_continue'
                 });
             }
             if (assessment_counters.flagged===0 && assessment_counters.finalized===assessment_counters.length && assessment.status!=='approved') {
