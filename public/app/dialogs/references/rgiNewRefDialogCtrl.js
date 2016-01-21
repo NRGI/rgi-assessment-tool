@@ -5,6 +5,7 @@ angular
     .controller('rgiNewRefDialogCtrl', function (
         $q,
         $scope,
+        $rootScope,
         $route,
         $timeout,
         $http,
@@ -44,7 +45,7 @@ angular
         $scope.status = {
             opened: false
         };
-        $scope.calendarOpen = function ($event) {
+        $scope.calendarOpen = function () {
             $scope.status.opened = true;
         };
 
@@ -171,13 +172,8 @@ angular
         };
 
         $scope.closeDialog = function () {
-            //delete $scope.$parent.ref_selection;
-            //$scope.ref_selection = "";
-            //$scope.$parent.ref_selection = {};
             ngDialog.close();
-            //$scope.$parent.ref_selection = "none";
-            //$scope.ref_selection = "";
-            $route.reload();
+            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
 
 
@@ -195,7 +191,7 @@ angular
         uploader.filters.push({
             name: 'customFilter',
             //fn: function () {
-            fn: function (item /*{File|FileLikeObject}*/, options) {
+            fn: function () {
                 return this.queue.length < 1;
             }
         });

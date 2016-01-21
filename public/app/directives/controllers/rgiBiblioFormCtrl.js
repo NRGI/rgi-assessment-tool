@@ -11,7 +11,13 @@ angular
             {text: 'Add Webpage', value: 'webpage'},
             {text: 'Add Interview', value: 'interview'}
         ];
-        $scope.ref_selection = 'none';
+
+        var resetSelection = function() {
+            $scope.selected = {value: 'none'};
+        };
+
+        resetSelection();
+        $scope.$on('RESET_SELECTED_REFERENCE_ACTION', resetSelection);
 
         //TODO Generate Dialog based on change and handle upload process via dialogs
         $scope.selectRefDialog = function(value) {
