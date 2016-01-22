@@ -175,6 +175,9 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
     -webkit-transform: scale(1);
   }
 }
+.ngdialog.ui-draggable {
+  overflow: visible;
+}
 @-moz-keyframes sk-bounce {
   0%, 100% {
     transform: scale(0);
