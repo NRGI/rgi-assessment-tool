@@ -11,9 +11,7 @@ angular
         rgiAnswerMethodSrvc
     ) {
         $timeout(function() {
-            $('.ngdialog').draggable({
-                handle: '.ngdialog-content'
-            });
+            $('.ngdialog-content').draggable();
         }, 500);
 
         $scope.flag_content = $scope.$parent.flag.content;
