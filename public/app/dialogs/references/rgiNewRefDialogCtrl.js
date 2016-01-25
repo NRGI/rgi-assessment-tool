@@ -22,6 +22,11 @@ angular
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc
     ) {
+        $timeout(function() {
+            $('.ngdialog').draggable({
+                handle: '.ngdialog-content'
+            });
+        }, 500);
         /////////////
         //INTERVIEWEE
         /////////////
