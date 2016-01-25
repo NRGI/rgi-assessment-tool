@@ -5,15 +5,10 @@ angular
     .controller('rgiFlagEditDialogCtrl', function (
         $scope,
         $route,
-        $timeout,
         ngDialog,
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
-        $timeout(function() {
-            $('.ngdialog-content').draggable();
-        }, 500);
-
         $scope.flag_content = $scope.$parent.flag.content;
 
         $scope.saveFlag = function () {

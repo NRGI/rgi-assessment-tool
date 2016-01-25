@@ -6,15 +6,10 @@ angular
         $scope,
         $route,
         $location,
-        $timeout,
         ngDialog,
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
-        $timeout(function() {
-            $('.ngdialog-content').draggable();
-        }, 500);
-
         $scope.saveFlag = function () {
             var new_answer_data = $scope.$parent.answer,
                 current_user = $scope.$parent.identity.currentUser,
