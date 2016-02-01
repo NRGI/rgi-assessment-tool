@@ -5,6 +5,7 @@ angular
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
         $location,
+        $route,
         ngDialog,
         rgiUtilsSrvc,
         rgiNotifier,
@@ -14,8 +15,8 @@ angular
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
-        var originalAssessment = {};
-        var assessmentRoles = ['researcher', 'reviewer'];
+        var original_assessment = {};
+        var assessment_roles = ['researcher', 'reviewer'];
         // get all researchers
         $scope.researchers = rgiUserSrvc.query({role: 'researcher'});
         // get all reviewers
@@ -25,7 +26,7 @@ angular
         // get assessment that needs to be updated
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessment = assessment;
-            angular.extend(originalAssessment, assessment);
+            angular.extend(original_assessment, assessment);
 
             rgiUserSrvc.get({_id: assessment.researcher_ID}, function (researcher_select) {
                 $scope.researcher_select = researcher_select;
@@ -89,59 +90,78 @@ angular
         };
 
         $scope.isAnyAssessmentRoleChanged = function() {
-            var roleCahnged = false;
+            var role_changed = false;
 
-            assessmentRoles.forEach(function(role) {
-                if($scope.assessment && (originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID'])) {
-                    roleCahnged = true;
+            assessment_roles.forEach(function(role) {
+                if($scope.assessment && (original_assessment[role + '_ID'] !== $scope.assessment[role + '_ID'])) {
+                    role_changed = true;
                 }
             });
 
-            return roleCahnged;
+            return role_changed;
         };
 
         $scope.reassignAssessment = function () {
             if (!$scope.researcher_select) {
                 rgiNotifier.error('No researcher data!');
             } else {
-                var reassignData = {};
+                var reassign_data = {},
+                    new_assessment_data = $scope.assessment;
 
                 var getUser = function(users, userId) {
-                    var foundUser = {};
+                    var found_user = {};
 
                     users.forEach(function(user) {
                         if(user._id === userId) {
-                            foundUser = user;
+                            found_user = user;
                         }
                     });
 
-                    return foundUser;
+                    return found_user;
                 };
 
-                assessmentRoles.forEach(function(role) {
-                    if(originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
-                        reassignData[role] = {
-                            old: getUser($scope[role + 's'], originalAssessment[role + '_ID']),
+                assessment_roles.forEach(function(role) {
+
+                    if(original_assessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
+                        reassign_data[role] = {
+                            old: getUser($scope[role + 's'], original_assessment[role + '_ID']),
                             new: getUser($scope[role + 's'], $scope.assessment[role + '_ID'])
                         };
 
-                        reassignData[role].old.assessments.push(originalAssessment._id);
-                        rgiUserMethodSrvc.updateUser(reassignData[role].old);
-                        var assessmentIndex = reassignData[role].old.assessments.indexOf(originalAssessment._id);
-
-                        if(assessmentIndex !== -1) {
-                            reassignData[role].old.assessments.splice(assessmentIndex, 1);
+                        //remove assessment from old
+                        if (reassign_data[role].old.assessments) {
+                            reassign_data[role].old.assessments.forEach(function(assessment, i) {
+                                if (new_assessment_data.assessment_ID === assessment.assessment_ID) {
+                                    if (i > -1) {
+                                        reassign_data[role].old.assessments.splice(i, 1);
+                                    }
+                                }
+                            });
+                            rgiUserMethodSrvc.updateUser(reassign_data[role].old);
                         }
 
-                        rgiUserMethodSrvc.updateUser(reassignData[role].new);
-                        originalAssessment[role + '_ID'] = $scope.assessment[role + '_ID'];
+                        //add assessment to new
+                        reassign_data[role].new.assessments.push({assessment_ID: new_assessment_data.assessment_ID, country_name: new_assessment_data.country});
+                        rgiUserMethodSrvc.updateUser(reassign_data[role].new);
+
+                        //change role id
+                        if (reassign_data[role].new._id) {
+                            new_assessment_data[role + '_ID'] = reassign_data[role].new._id;
+                        }
+
+                        //change control if applicable
+                        if (new_assessment_data.edit_control === reassign_data[role].old._id) {
+                            new_assessment_data.edit_control = reassign_data[role].new._id;
+                        }
                     }
                 });
+                console.log(new_assessment_data);
 
-                rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
+                rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                     .then(function () {
                         rgiNotifier.notify('Assessment reassigned!');
                         $scope.closeDialog();
+                        $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });

@@ -92,7 +92,6 @@ angular
 
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
                             new_answer_set = [];
-                            console.log(new_answer_set);
 
                             new_assessment_ID = assessment_country.country.iso2 + "-" + new_assessment_year + "-" + new_assessment_ver;
 
