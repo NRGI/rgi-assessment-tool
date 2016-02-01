@@ -26,9 +26,12 @@ div(id="prev_bib" ng-if="references.length > 0")
             .row(ng-if="ref.document_ID.type === 'web_page' && ref.citation_type !== 'interview'")
                 b Title:
                 a(href="{{ref.document_ID.source}}" target="_blank")  {{ref.document_ID.title}}
-            .row(ng-if="ref.citation_type === 'interview'")
+            .row(ng-if="ref.citation_type === 'interview' && current_user.isSupervisor()")
                 b Contact:
-                |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}}
+                |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}} ({{ref.interviewee_ID.role}})
+            .row(ng-if="ref.citation_type === 'interview' && !current_user.isSupervisor()")
+                b Contact:
+                em  {{ref.interviewee_ID.role}}
             .row(ng-if="ref.citation_type !== 'interview'")
                 b Author(s):
                 text(ng-repeat="author in ref.document_ID.authors" ng-if="ref.document_ID.authors.length > 0")  {{author.first_name}} {{author.last_name}}
