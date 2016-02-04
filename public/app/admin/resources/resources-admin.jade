@@ -1,0 +1,17 @@
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header {{title}}
+                hr
+            div.left-padding-med.right-padding-med
+                div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
+                    div.panel-heading.bottom-padding-med
+                        .panel-title
+                            div(
+                            role="button"
+                            data-toggle="collapse"
+                            href="#{{resource._id}}")
+                                | {{resource.head}} - {{resource.order}}
+                    div.panel-collapse.collapse(id="{{resource._id}}")
+                        div.panel-body
+                            | {{resource.body}}
