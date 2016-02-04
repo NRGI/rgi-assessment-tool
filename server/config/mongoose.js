@@ -4,7 +4,8 @@ var mongoose            = require('mongoose'),
     countryModel        = require('../models/Countries'),
     questionModel       = require('../models/Question'),
     intervieweeModel    = require('../models/Interviewees'),
-    assessmentModel    = require('../models/Assessment');
+    assessmentModel     = require('../models/Assessment'),
+    resourceModel       = require('../models/Resources');
 
 [
     'Documents',
@@ -37,4 +38,5 @@ module.exports = function (config, user, pass, env) {
     questionModel.createDefaultQuestions();
     intervieweeModel.createDefaultInterviewees();
     assessmentModel.createDefaultAssessments();
+    resourceModel.createDefaultResources();
 };

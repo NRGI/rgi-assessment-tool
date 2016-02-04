@@ -9,6 +9,7 @@ var auth                    = require('./auth'),
     documents               = require('../controllers/documents'),
     interviewees            = require('../controllers/interviewees'),
     questions               = require('../controllers/questions'),
+    resources               = require('../controllers/resources'),
     multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
     users                   = require('../controllers/users');
@@ -96,6 +97,19 @@ module.exports = function (app) {
     // PUT
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
 
+    //////////////////////////
+    //// CONTENT RESOURCES ///
+    //////////////////////////
+    // GET
+    app.get('/api/resources', auth.requiresApiLogin, resources.getResources);
+    app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourcesByID);
+
+    //// // POST
+    //// app.post('/api/documents', auth.requiresApiLogin, documents.createDocuments);
+    //
+    //// PUT
+    //app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
+
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
@@ -105,9 +119,9 @@ module.exports = function (app) {
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
     app.get('/api/remote-file/document/:statusId', auth.requiresApiLogin,  documents.getUploadStatusDocument);
 
-    /////////////////////////
-    ///// INTERVIEWEE CRUD ////////
-    /////////////////////////
+    //////////////////////////
+    ///// INTERVIEWEE CRUD ///
+    //////////////////////////
     // GET
     app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
     app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
