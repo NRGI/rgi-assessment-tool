@@ -22,8 +22,14 @@
         //- REGULAR USER
         ul.nav.navbar-nav(ng-hide="identity.currentUser.isSupervisor()")
             li
+                a(href="/faqs"
+                title="FAQs") FAQs
+            li
+                a(href="/resources"
+                    title="Other resources") Resources
+            li
                 a(href="/assessments"
-                    title="Assessment dashboard") Assessments
+                title="Assessment dashboard") Assessments
         //- ADMIN USER
         ul.nav.navbar-nav.dropdown
             li.dropdown(ng-show="identity.currentUser.isSupervisor()")

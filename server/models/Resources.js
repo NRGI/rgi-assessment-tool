@@ -7,7 +7,7 @@ var resourceSchema, Resource,
     //ObjectId        = mongoose.Schema.Types.ObjectId,
     Html            = mongoose.Types.Html,
     type_enu = {
-        values: 'faq resources'.split(' '),
+        values: 'faq resource'.split(' '),
         message: 'Validator failed for `{PATH}` with value `{VALUE}`. Please select scored, context, or shadow.'
     },
     htmlSettings    = {
@@ -30,6 +30,9 @@ resourceSchema = new Schema({
         required: '{PATH} is required'},
     body: {
         type: String,
+        required: '{PATH} is required'},
+    order: {
+        type: Number,
         required: '{PATH} is required'}
 });
 
@@ -41,31 +44,37 @@ function createDefaultResources() {
             Resource.create({
                 type: 'faq',
                 head: 'FAQ CONTENT 1',
+                order: 1,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
             Resource.create({
                 type: 'faq',
                 head: 'FAQ CONTENT 2',
+                order: 2,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
             Resource.create({
                 type: 'faq',
                 head: 'FAQ CONTENT 3',
+                order: 3,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
             Resource.create({
                 type: 'resource',
                 head: 'RESOURCE CONTENT 1',
+                order: 1,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
             Resource.create({
                 type: 'resource',
                 head: 'RESOURCE CONTENT 2',
+                order: 2,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
             Resource.create({
                 type: 'resource',
                 head: 'RESOURCE CONTENT 3',
+                order: 3,
                 body: 'CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT CONENT '
             });
         }

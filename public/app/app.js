@@ -57,6 +57,17 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             templateUrl: '/partials/account/reset-password',
             controller:  'rgiResetPasswordCtrl'
         })
+        // FAQ/RESOURCES
+        .when('/faqs', {
+            templateUrl: '/partials/main/faqs',
+            controller: 'rgiFaqsCtrl',
+            resolve: routeRoleChecks.user
+        })
+        .when('/resources', {
+            templateUrl: '/partials/main/resources',
+            controller: 'rgiResourcesCtrl',
+            resolve: routeRoleChecks.user
+        })
 
         ///// Admin Routes
         // USERS
