@@ -2,6 +2,7 @@
     .well
         div.page-well
             legend.h3.page-header {{title}}
+            div.bottom-padding-med: button.btn.btn-success(ng-click="newResourceDialog()") Create new block
             div.left-padding-med.right-padding-med
                 div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
                     div.panel-heading.bottom-padding-med
@@ -24,9 +25,9 @@
                                         type="number"
                                         ng-model="resource.order")
 
-                                    label.col-md-1.control-label(form="order")
-                                        text(ng-if="title==='Other Resources'") Resource order
-                                        text(ng-if="title==='Frequently Asked Questions'") FAQ order
+                                    label.col-md-1.control-label(form="title")
+                                        text(ng-if="title==='Other Resources'") Resource title
+                                        text(ng-if="title==='Frequently Asked Questions'") FAQ title
                                     .col-md-8
                                         input.form-group.form-control(
                                         name="label"

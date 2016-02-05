@@ -104,8 +104,8 @@ module.exports = function (app) {
     app.get('/api/resources', auth.requiresApiLogin, resources.getResources);
     app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourcesByID);
 
-    //// // POST
-    //// app.post('/api/documents', auth.requiresApiLogin, documents.createDocuments);
+    // POST
+    app.post('/api/resources', auth.requiresRole('supervisor'), resources.createResource);
 
     // PUT
     app.put('/api/resources', auth.requiresRole('supervisor'), resources.updateResource);

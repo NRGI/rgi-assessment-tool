@@ -1,0 +1,32 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 New FAQ/Resource block
+    div.modal-body
+        .form-horizontal
+            .row-fluid
+                label.col-sm-3.control-label(form="order")
+                    text(ng-if="title==='Other Resources'") Resource order
+                    text(ng-if="title==='Frequently Asked Questions'") FAQ order
+                .col-sm-2
+                    input.form-group.form-control(
+                    name="order"
+                    type="number"
+                    ng-model="new_resource.order")
+                label.col-md-3.control-label(form="title")
+                    text(ng-if="title==='Other Resources'") Resource title
+                    text(ng-if="title==='Frequently Asked Questions'") FAQ title
+                .col-md-4
+                    input.form-group.form-control(
+                    name="label"
+                    ng-model="new_resource.head")
+            .row-fluid
+                .row.form-group.left-padding-lg.right-padding-lg(required)
+                    div(
+                    text-angular-name="content_text"
+                    ng-model="new_resource.body"
+                    text-angular)
+
+    div.modal-footer
+        button.btn.btn-success(ng-click="resourceCreate()") Create new block
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel

@@ -190,6 +190,16 @@ angular
                     scope: scope
                 });
             },
+            resourcenNew: function($scope) {
+                var scope = $scope;
+
+                ngDialog.open({
+                    template: 'partials/dialogs/resources/new-resource-dialog',
+                    controller: 'rgiNewResourceDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
             resourceDelete: function($scope, resource) {
                 var scope = $scope;
                 scope.resource = resource;

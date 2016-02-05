@@ -16,6 +16,23 @@ exports.getResourcesByID = function (req, res) {
     });
 };
 
+exports.createResource = function (req, res, next) {
+    var resource_data = req.body;
+
+    //noinspection JSUnusedLocalSymbols
+    Resource.create(resource_data, function (err, resource) {
+        if (err) {
+            if (err.toString().indexOf('E11000') > -1) {
+                err = new Error('Duplicate email');
+            }
+            res.status(400);
+            return res.send({reason: err.toString()});
+        } else {
+            res.send();
+        }
+    });
+};
+
 //exports.createQuestions = function (req, res, next) {
 //    var new_questions = req.body;
 //

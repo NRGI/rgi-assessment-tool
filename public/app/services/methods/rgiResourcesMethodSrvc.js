@@ -9,29 +9,17 @@ angular
         //
     ) {
         return {
-            //createInterviewee: function (new_interviewee_data) {
-            //    var new_interviewee = new rgiIntervieweeSrvc(new_interviewee_data),
-            //        dfd = $q.defer();
-            //    new_interviewee.$save().then(function (interviewee) {
-            //        dfd.resolve(interviewee);
-            //    }, function (response) {
-            //        dfd.reject(response.data.reason);
-            //    });
-            //    return dfd.promise;
-            //},
-            //deleteInterviewee: function (user_deletion) {
-            //    var dfd = $q.defer(),
-            //        delete_ID = new rgiIntervieweeSrvc();
-            //
-            //    delete_ID.id = user_deletion;
-            //    //noinspection CommaExpressionJS
-            //    delete_ID.$delete().then(function (response) {
-            //        dfd.resolve(response);
-            //    }, function (response) {
-            //        dfd.reject(response.data.reason);
-            //    });
-            //    return dfd.promise;
-            //},
+            createResource: function (new_resource_data) {
+                var new_resource = new rgiResourcesSrvc(new_resource_data),
+                    dfd = $q.defer();
+                console.log(new_resource);
+                new_resource.$save().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    dfd.reject(response.data.reason);
+                });
+                return dfd.promise;
+            },
             updateResource: function (new_resource_data) {
                 var dfd = $q.defer();
 
@@ -56,19 +44,5 @@ angular
                 });
                 return dfd.promise;
             }
-            //deleteQuestion: function (questionDeletion) {
-            //    var dfd, deleteID;
-            //
-            //    dfd = $q.defer();
-            //    deleteID = new rgiQuestionSrvc();
-            //    deleteID.id = questionDeletion;
-            //
-            //    deleteID.$delete().then(function () {
-            //        dfd.resolve();
-            //    }, function (response) {
-            //        dfd.reject(response.data.reason);
-            //    });
-            //    return dfd.promise;
-            //}
         };
     });

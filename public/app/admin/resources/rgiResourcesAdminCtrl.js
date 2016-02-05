@@ -16,6 +16,7 @@ angular
         } else if (resource_type === 'faq') {
             $scope.title = 'Frequently Asked Questions'
         }
+        $scope.resource_type = resource_type;
         $scope.resources = rgiResourcesSrvc.query({type: resource_type});
 
         $scope.resourceUpdate = function (resource) {
@@ -35,6 +36,11 @@ angular
                 });
             }
         };
+
+        $scope.newResourceDialog = function () {
+            rgiDialogFactory.resourcenNew($scope);
+        };
+
         $scope.deleteConfirmDialog = function (resource) {
             rgiDialogFactory.resourceDelete($scope, resource);
         };
