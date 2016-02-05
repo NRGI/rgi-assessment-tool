@@ -61,15 +61,18 @@ exports.updateResource = function (req, res) {
     });
     res.send();
 };
-//
-//exports.deleteQuestion = function (req, res) {
-//
-//    Question.remove({_id: req.params.id}, function (err) {
-//        if (!err) {
-//            res.send();
-//        } else {
-//            return res.send({ reason: err.toString() });
-//        }
-//    });
-//    res.send();
-//};
+
+exports.deleteResource = function (req, res) {
+    if (!req.user.hasRole('supervisor')) {
+        res.status(404);
+        return res.end();
+    }
+    Resource.remove({_id: req.params.id}, function (err) {
+        if (!err) {
+            res.send();
+        } else {
+            return res.send({ reason: err.toString() });
+        }
+    });
+    res.send();
+};

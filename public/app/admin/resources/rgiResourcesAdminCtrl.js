@@ -5,6 +5,7 @@ angular
         $scope,
         $route,
         $location,
+        rgiDialogFactory,
         rgiNotifier,
         rgiResourcesSrvc,
         rgiResourcesMethodSrvc
@@ -33,5 +34,8 @@ angular
                     rgiNotifier.error(reason);
                 });
             }
+        };
+        $scope.deleteConfirmDialog = function (resource) {
+            rgiDialogFactory.resourceDelete($scope, resource);
         };
     });

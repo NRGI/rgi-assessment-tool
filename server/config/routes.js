@@ -110,6 +110,9 @@ module.exports = function (app) {
     // PUT
     app.put('/api/resources', auth.requiresRole('supervisor'), resources.updateResource);
 
+    // DELETE
+    app.delete('/api/resources/:id', auth.requiresRole('supervisor'), resources.deleteResource);
+
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////

@@ -3,9 +3,10 @@
 angular
     .module('app')
     .factory('rgiResourcesMethodSrvc', function (
-        $q
+        $q,
+        rgiResourcesSrvc
         //$http,
-        //rgiResourcesSrvc
+        //
     ) {
         return {
             //createInterviewee: function (new_interviewee_data) {
@@ -41,6 +42,33 @@ angular
                     dfd.reject(response.data.reason);
                 });
                 return dfd.promise;
+            },
+            deleteResource: function (resource_deletion) {
+                var dfd = $q.defer(),
+                    delete_ID = new rgiResourcesSrvc();
+
+                delete_ID.id = resource_deletion;
+
+                delete_ID.$delete().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    dfd.reject(response.data.reason);
+                });
+                return dfd.promise;
             }
+            //deleteQuestion: function (questionDeletion) {
+            //    var dfd, deleteID;
+            //
+            //    dfd = $q.defer();
+            //    deleteID = new rgiQuestionSrvc();
+            //    deleteID.id = questionDeletion;
+            //
+            //    deleteID.$delete().then(function () {
+            //        dfd.resolve();
+            //    }, function (response) {
+            //        dfd.reject(response.data.reason);
+            //    });
+            //    return dfd.promise;
+            //}
         };
     });

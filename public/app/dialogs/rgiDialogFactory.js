@@ -190,6 +190,16 @@ angular
                     scope: scope
                 });
             },
+            resourceDelete: function($scope, resource) {
+                var scope = $scope;
+                scope.resource = resource;
+                ngDialog.open({
+                    template: 'partials/dialogs/resources/delete-resource-confirmation-dialog',
+                    controller: 'rgiDeleteResourceDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
 
         //        if (scope.ref_selection === 'document') {
 
