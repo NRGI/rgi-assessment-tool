@@ -3,8 +3,8 @@
 angular
     .module('app')
     .factory('rgiResourcesMethodSrvc', function (
+        $q
         //$http,
-        //$q,
         //rgiResourcesSrvc
     ) {
         return {
@@ -31,16 +31,16 @@ angular
             //    });
             //    return dfd.promise;
             //},
-            //updateInterviewee: function (new_interviewee_data) {
-            //    var dfd = $q.defer();
-            //
-            //    //noinspection CommaExpressionJS
-            //    new_interviewee_data.$update().then(function () {
-            //        dfd.resolve();
-            //    }, function (response) {
-            //        dfd.reject(response.data.reason);
-            //    });
-            //    return dfd.promise;
-            //}
+            updateResource: function (new_resource_data) {
+                var dfd = $q.defer();
+
+                //noinspection CommaExpressionJS
+                new_resource_data.$update().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    dfd.reject(response.data.reason);
+                });
+                return dfd.promise;
+            }
         };
     });

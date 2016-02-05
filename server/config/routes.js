@@ -106,9 +106,9 @@ module.exports = function (app) {
 
     //// // POST
     //// app.post('/api/documents', auth.requiresApiLogin, documents.createDocuments);
-    //
-    //// PUT
-    //app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
+
+    // PUT
+    app.put('/api/resources', auth.requiresRole('supervisor'), resources.updateResource);
 
     /////////////////////////
     //// UPLOAD DOCUMENTS ///

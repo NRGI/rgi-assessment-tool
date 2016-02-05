@@ -2,7 +2,6 @@
     .well
         div.page-well
             legend.h3.page-header {{title}}
-                hr
             div.left-padding-med.right-padding-med
                 div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
                     div.panel-heading.bottom-padding-med
@@ -14,4 +13,31 @@
                                 | {{resource.head}} - {{resource.order}}
                     div.panel-collapse.collapse(id="{{resource._id}}")
                         div.panel-body
-                            | {{resource.body}}
+                            div.right-padding-med.left-padding-med.bottom-padding-lg
+                                .row-fluid
+                                    label.col-md-1.control-label(form="order")
+                                        text(ng-if="title==='Other Resources'") Resource order
+                                        text(ng-if="title==='Frequently Asked Questions'") FAQ order
+                                    .col-md-1
+                                        input.form-group.form-control(
+                                        name="order"
+                                        type="number"
+                                        ng-model="resource.order")
+
+                                    label.col-md-1.control-label(form="order")
+                                        text(ng-if="title==='Other Resources'") Resource order
+                                        text(ng-if="title==='Frequently Asked Questions'") FAQ order
+                                    .col-md-8
+                                        input.form-group.form-control(
+                                        name="label"
+                                        ng-model="resource.head")
+                                .row-fluid
+                                    label Content
+                                    .form-group.left-padding-lg.right-padding-lg(required)
+                                        div(
+                                        text-angular-name="content_text"
+                                        ng-model="resource.body"
+                                        text-angular)
+
+                                .row-fluid.top-padding-med.right-padding-lg
+                                    button.btn.btn-success.pull-right(ng-click='resourceUpdate(resource)') Save
