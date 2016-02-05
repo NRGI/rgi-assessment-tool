@@ -15,4 +15,4 @@
                                 | {{resource.head}} - {{resource.order}}
                     div.panel-collapse.collapse(id="{{resource._id}}")
                         div.panel-body
-                            | {{resource.body}}
+                            div(ng-bind-html="resource.body")
