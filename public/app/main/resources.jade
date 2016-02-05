@@ -1,8 +1,9 @@
 .container-fluid.page-container
     .well
         div.page-well
-            .h3 Other Resources
+            .h3 {{title}}
                 hr
+            | {{resource_type}}
             div.left-padding-med.right-padding-med
                 div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
                     div.panel-heading.bottom-padding-med

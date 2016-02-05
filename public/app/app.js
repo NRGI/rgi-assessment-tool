@@ -58,12 +58,12 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiResetPasswordCtrl'
         })
         // FAQ/RESOURCES
-        .when('/faqs', {
-            templateUrl: '/partials/main/faqs',
-            controller: 'rgiFaqsCtrl',
+        .when('/faq', {
+            templateUrl: '/partials/main/resources',
+            controller: 'rgiResourcesCtrl',
             resolve: routeRoleChecks.user
         })
-        .when('/resources', {
+        .when('/resource', {
             templateUrl: '/partials/main/resources',
             controller: 'rgiResourcesCtrl',
             resolve: routeRoleChecks.user
