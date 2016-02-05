@@ -18,7 +18,6 @@ angular
         $scope.resources = rgiResourcesSrvc.query({type: resource_type});
 
         $scope.resourceUpdate = function (resource) {
-            console.log(resource);
             var new_resource_data = resource;
             if (!new_resource_data.head) {
                 rgiNotifier.error('You must supply a title');

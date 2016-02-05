@@ -15,4 +15,5 @@
                                 | {{resource.head}} - {{resource.order}}
                     div.panel-collapse.collapse(id="{{resource._id}}")
                         div.panel-body
-                            div(ng-bind-html="resource.body")
+                            div(ta-bind="text" ng-model="resource.body" ta-readonly="disabled")
+                            //ta-bind(ta-bind="resource.body")
