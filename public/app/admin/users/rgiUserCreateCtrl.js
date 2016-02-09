@@ -11,7 +11,8 @@ angular.module('app')
             //{value: 'admin', text: 'Administrator'},
             {value: 'supervisor', text: 'Supervisor'},
             {value: 'researcher', text: 'Researcher'},
-            {value: 'reviewer', text: 'Reviewer'}
+            {value: 'reviewer', text: 'Reviewer'},
+            {value: 'ext_reviewer', text: 'External Reviewer'}
         ];
         $scope.new_user_data = {};
 

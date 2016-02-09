@@ -84,6 +84,7 @@
                                 ng-model="new_user_data.role"
                                 ng-options="item.value as item.text for item in role_options"
                                 required)
+                                    option(value="" selected disabled) Select role...
                         .form-group
                             label.col-md-2.control-label(form="createUserForm" for="createUserForm.email") Email *
                             .col-md-10
