@@ -1,56 +1,113 @@
 .container-fluid.page-container
     .well
         div.page-well
-            form.form-horizontal(name='createUserForm')
+            form.form-horizontal(name="createUserForm" id="createUserForm")
                 fieldset.left-padding-lg.right-padding-lg
                     legend.h3 New User Information
                     div.top-padding-med.right-padding-lg
                         .form-group
-                            label.col-md-2.control-label(form="firstName") First Name *
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.salutation") Salutation
+                            .col-md-10
+                                select.form-control(
+                                name="salutation"
+                                id="createUserForm.salutation"
+                                ng-model="new_user_data.salutation"
+                                ng-options="title for title in ['Mr.', 'Mrs.', 'Miss', 'Ms.', 'Dr.', 'Prof.']")
+                                    option(value="" selected disabled) Select salutation...
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.firstName") First Name *
                             .col-md-10
                                 input.form-control(
                                 name="firstName"
+                                id="createUserForm.firstName"
                                 type="text"
                                 placeholder="First Name"
                                 ng-model="new_user_data.firstName"
                                 autocomplete='off')
                         .form-group
-                            label.col-md-2.control-label(form="lastName") Last Name *
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.lastName") Last Name *
                             .col-md-10
                                 input.form-control(
                                 name="lastName"
+                                id="createUserForm.lastName"
                                 type="text"
                                 placeholder="Last Name"
                                 ng-model="new_user_data.lastName"
                                 required)
                         .form-group
-                            label.col-md-2.control-label(form="new_user_data.username") Username *
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.title") Title
+                            .col-md-10
+                                input.form-control(
+                                name="title"
+                                id="createUserForm.title"
+                                type="text"
+                                placeholder="Title"
+                                ng-model="new_user_data.title"
+                                required)
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.position") Position
+                            .col-md-10
+                                input.form-control(
+                                name="position"
+                                id="createUserForm.position"
+                                type="text"
+                                placeholder="Position"
+                                ng-model="new_user_data.position"
+                                required)
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.organization") Organization
+                            .col-md-10
+                                input.form-control(
+                                name="organization"
+                                id="createUserForm.organization"
+                                type="text"
+                                placeholder="Organization"
+                                ng-model="new_user_data.organization"
+                                required)
+
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.username") Username *
                             .col-md-10
                                 input.form-control(
                                 name="username"
+                                id="createUserForm.username"
                                 type="text"
                                 placeholder="Username"
                                 ng-model="new_user_data.username"
                                 required)
                         .form-group
-                            label.col-md-2.control-label(form="new_user_data.email") Email *
-                            .col-md-10
-                                input.form-control(name="email"
-                                type="text"
-                                placeholder="Email"
-                                ng-model="new_user_data.email")
-                        .form-group
-                            label.col-md-2.control-label(form="new_user_data.role") Role *
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.role") Role *
                             .col-md-10
                                 select.form-control(
+                                name="role"
+                                id="createUserForm.role"
                                 ng-model="new_user_data.role"
                                 ng-options="item.value as item.text for item in role_options"
                                 required)
                         .form-group
-                            label.col-md-2.control-label(form="new_user_data.address") Address
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.email") Email *
+                            .col-md-10
+                                input.form-control(
+                                name="email"
+                                id="createUserForm.email"
+                                type="text"
+                                placeholder="Email"
+                                ng-model="new_user_data.email")
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.phoneNumber") Phone Number
+                            .col-md-10
+                                input.form-control(
+                                name="phoneNumber"
+                                id="createUserForm.phoneNumber"
+                                type="text"
+                                placeholder="Phone Number"
+                                ng-model="new_user_data.phoneNumber")
+                        .form-group
+                            label.col-md-2.control-label(form="createUserForm" for="createUserForm.address") Address
                             .col-md-10
                                 input.form-control(
                                 name="address"
+                                id="createUserForm.address"
                                 type="text"
                                 placeholder="Address"
                                 ng-model="new_user_data.address")
