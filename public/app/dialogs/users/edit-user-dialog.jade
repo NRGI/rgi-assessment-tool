@@ -67,7 +67,7 @@ div.left-padding-lg.right-padding-lg
                             .pull-left.col-lg-6
                                 label
                                     small Role:
-                                select.form-group.form-control(ng-model="new_user_data.role" ng-options="role as (role | ucfirst) for role in roles")
+                                select.form-group.form-control(ng-model="new_user_data.role" ng-options="role as (role|role|ucfirst) for role in roles")
                 div
                     .row
                         .form-group

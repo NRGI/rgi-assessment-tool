@@ -27,7 +27,7 @@
                                 td
                                     .row(ng-repeat="user in user_list").left-padding-lg
                                         a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                                        |  - {{user.role}}
+                                        |  - {{ user.role|role }}
 
                 div.left-padding-lg.right-padding-lg.top-padding-med
                 h3 Information

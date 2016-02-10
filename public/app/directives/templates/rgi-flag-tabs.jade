@@ -23,7 +23,7 @@ div(id="flags_div").bottom-padding-med
                     aria-expanded="false"
                     aria-controls="collapse{{$index}}")
                         b Flag {{$index+1}} - {{flag.author.firstName}} {{flag.author.lastName}} (
-                        b {{flag.author.role}}
+                        b {{ flag.author.role|role }}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
                         h6.pull-right Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}

@@ -30,7 +30,7 @@ div.table-responsive
                 td.col-sm-1
                     a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
                 td.col-sm-1 {{user.username}}
-                td.col-sm-1 {{user.role | ucfirst}}
+                td.col-sm-1 {{user.role|role|ucfirst}}
                 td.col-sm-1 {{user.last_sign_in["date-time"] | date:'MM/dd/yyyy'}}
                 td.col-sm-7
                     table.table(

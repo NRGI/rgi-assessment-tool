@@ -27,7 +27,7 @@
                                 td(ng-if="user_list.length > 0")
                                     .row(ng-repeat="user in user_list").left-padding-lg
                                         a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                                        text  - {{user.role}}
+                                        text  - {{ user.role|role }}
                                 td(ng-if="interviewee.assessments.length < 1") None
                                 td(ng-if="interviewee.answers.length < 1") None
                                 td(ng-if="user_list.length < 1") None
@@ -64,7 +64,7 @@
                                     .row
                                         label Role:
                                     .row
-                                        text {{interviewee.role | ucfirst}}
+                                        text {{interviewee.role|role|ucfirst}}
                                 td.col-med-3
                                     .row
                                         label Title:

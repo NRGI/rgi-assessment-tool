@@ -38,7 +38,7 @@ div.left-padding-lg.right-padding-lg
                                             text.left-padding-med {{choice.text}}
 
                     .row.left-padding-med(ng-if="['researcher', 'reviewer'].indexOf(final_choice.value) > -1")
-                        .row: em {{final_choice.role | ucfirst}}: {{final_choice.score.letter | ucfirst}} -
+                        .row: em {{final_choice.role|role|ucfirst}}: {{final_choice.score.letter | ucfirst}} -
                             |  {{final_choice.score.text}}
                         .row: text(ng-bind-html="final_choice.justification")
 

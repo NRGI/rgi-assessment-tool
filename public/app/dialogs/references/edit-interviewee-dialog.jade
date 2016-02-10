@@ -75,7 +75,7 @@ div.left-padding-lg.right-padding-lg
                     div.row.left-padding-med.right-padding-med
                         label
                             small Role:
-                        select.form-group.form-control(ng-model="new_interviewee_data.role" ng-options="role as (role | ucfirst) for role in roles")
+                        select.form-group.form-control(ng-model="new_interviewee_data.role" ng-options="role as (role|role|ucfirst) for role in roles")
 
     div.modal-footer
         .col-lg-6
