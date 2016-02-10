@@ -10,6 +10,7 @@ angular
         $timeout,
         $http,
         ngDialog,
+        rgiAllowedFileExtensionGuideSrvc,
         rgiDialogFactory,
         rgiNotifier,
         FileUploader,
@@ -176,11 +177,9 @@ angular
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
 
-
         ///////////////
         //FILE UPLOAD
         ///////////////
-        //$scope.fileUrl = '';
         $scope.fileUploading = false;
         $scope.answer_update = $scope.$parent.answer;
         var uploader = $scope.uploader = rgiFileUploaderSrvc.get({
@@ -188,14 +187,36 @@ angular
             withCredentials: true,
             url: 'file-upload'
         });
+
         uploader.filters.push({
-            name: 'customFilter',
-            //fn: function () {
+            name: 'singleFile',
             fn: function () {
                 return this.queue.length < 1;
             }
         });
-        ////TODO handle doc and txt documents
+
+        $scope.isAllowedFileExtension = function(fileName) {
+            var allowedExtensionFound = false;
+
+            rgiAllowedFileExtensionGuideSrvc.getList().forEach(function(extension) {
+                var dottedExtension = '.' + extension;
+                var extensionPosition = fileName.indexOf(dottedExtension);
+
+                if((extensionPosition !== -1) && ((fileName.length - dottedExtension.length) === extensionPosition)) {
+                    allowedExtensionFound = true;
+                }
+            });
+
+            return allowedExtensionFound;
+        };
+
+        uploader.filters.push({
+            name: 'allowedExtension',
+            fn: function (fileItem) {
+                return $scope.isAllowedFileExtension(fileItem.name);
+            }
+        });
+
         uploader.onCompleteItem = function (fileItem, response, status) {
             $scope.uploader.queue = [];
             if (status === 400) {
@@ -213,6 +234,7 @@ angular
                 }
             }
         };
+
         $scope.uploadFileByUrl = function (fileUrl) {
             var handleFileUploadStatus = function (responseStatus) {
                 $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
@@ -251,8 +273,6 @@ angular
                             }
                     });
             }
-
-
 
         };
     });

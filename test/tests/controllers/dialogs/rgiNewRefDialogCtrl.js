@@ -85,7 +85,7 @@ describe('rgiNewRefDialogCtrl', function () {
         var nonEmptyQueue = {queue: [1], fn: filter.fn};
         nonEmptyQueue.fn().should.be.equal(false);
 
-        filter.name.should.be.equal('customFilter');
+        filter.name.should.be.equal('singleFile');
     });
 
     describe('#uploader.onCompleteItem', function () {
