@@ -46,6 +46,11 @@ userSchema = new Schema({
         type:  Date,
         default: Date.now},
     address: String,
+    salutation: String,
+    title: String,
+    position: String,
+    organization: String,
+    phone: String,
     language: String
 });
 
