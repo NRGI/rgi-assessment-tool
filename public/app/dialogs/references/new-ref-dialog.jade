@@ -13,7 +13,7 @@ div.left-padding-lg.right-padding-lg
                     div.bottom-padding-med
                         div.fileUpload.btn.btn-default
                             span Select File
-                            input.upload(type="file" nv-file-select uploader="uploader")
+                            input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
                     div(ng-if="ref_selection==='document'")
                         h5 OR
                         .form-group
