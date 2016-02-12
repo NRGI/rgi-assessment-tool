@@ -72,9 +72,12 @@ div.top-padding-lg
                     popover-trigger="mouseenter")
                     em.text-center(ng-if="!assessment.approved_date") N/A
                 //LAST EDIT
-                td.col-sm-1(ng-if="assessment.edited_by")
+                td.col-sm-1(ng-if="assessment.edited_by && current_user.isSupervisor()")
                     a(href="mailto:{{assessment.edited_by.email}}") {{assessment.edited_by.lastName}}
                     text  -
+                    em  {{assessment.last_modified.modified_date | date}}
+                td.col-sm-1(ng-if="assessment.edited_by && !current_user.isSupervisor()")
+                    | {{assessment.edited_by.role | ucfirst}} -
                     em  {{assessment.last_modified.modified_date | date}}
                 td.col-sm-1(ng-if="!assessment.edited_by")
                 //STATUS
