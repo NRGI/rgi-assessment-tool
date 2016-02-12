@@ -133,7 +133,7 @@ exports.new_assessment_assignment = function (contact_packet, type) {
             subject: contact_packet.assessment_title + ' assessment assigned!',
             html: "Hello " + contact_packet[type + '_firstName'] + ",<p>" +
             "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just assigned the " + contact_packet.assessment_title + " assessement to you.<p>" +
-            "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to start the assessment.<p>" +
+            "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to start the assessment.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
         }
@@ -158,7 +158,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
             contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " trial assessment for review." +
-            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
+            "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
@@ -174,7 +174,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps." +
-            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> if you want to check the status.<p>" +
+            "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> if you want to check the status.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
@@ -199,7 +199,7 @@ exports.assessment_submission = function (contact_packet) {
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
             contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " assessment for review." +
-            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
+            "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
@@ -215,7 +215,7 @@ exports.assessment_submission = function (contact_packet) {
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " assessment was sent to the admin team. We will be in contact shortly with next steps." +
-            "Please visit your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> if you want to check the status.<p>" +
+            "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> if you want to check the status.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
@@ -235,7 +235,7 @@ exports.flag_review = function (contact_packet) {
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. " +
             "There are a few errors we'd like you to address before moving the assessment on.<p>" +
-            "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
+            "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
         }
@@ -254,7 +254,7 @@ exports.assessment_reassignment = function (contact_packet) {
             subject: "Please begin work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>" +
-            "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a>.<p>" +
+            "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a>.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
         }
@@ -273,7 +273,7 @@ exports.trial_assessment_continue = function (contact_packet) {
             subject: "Please continue work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just approved your initial answers on the " + contact_packet.assessment_title + " assessement.<p>" +
-            "Please go to your <a href='http://rgiassessmenttool.elasticbeanstalk.com/assessments'>assessment dashboard</a> to continue.<p>" +
+            "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to continue.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
         }
