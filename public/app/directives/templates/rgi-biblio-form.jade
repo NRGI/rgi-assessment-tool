@@ -47,7 +47,8 @@ div(id="prev_bib" ng-if="references.length > 0")
                 text(ng-if="!ref.document_ID.year")  N/A
             .row
                 b Cited by:
-                |  {{ref.author.firstName}} {{ref.author.lastName}} on {{ref.date | date: 'MM/dd/yyyy'}}
+                text(ng-if="current_user.isSupervisor()")  {{ref.author.firstName}} {{ref.author.lastName}} on {{ref.date | date: 'MM/dd/yyyy'}}
+                text(ng-if="!current_user.isSupervisor()")  {{ref.author.role}} on {{ref.date | date: 'MM/dd/yyyy'}}
             .row(ng-if="ref.citation_type === 'interview'")
                 b Interviewed:
                 |  {{ref.contact_date | date:'MM/dd/yyyy'}}
