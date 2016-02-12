@@ -14,10 +14,10 @@ angular
         rgiUserMethodSrvc
     ) {
         var originalAssessment = {};
-        var assessmentRoles = ['researcher', 'reviewer'];
+        $scope.assessmentRoles = ['researcher', 'reviewer'];
         $scope.availableUsers = {};
 
-        assessmentRoles.forEach(function(role) {
+        $scope.assessmentRoles.forEach(function(role) {
             $scope.availableUsers[role] = rgiUserSrvc.query({role: role});
         });
 
@@ -89,7 +89,7 @@ angular
         $scope.isAnyAssessmentRoleChanged = function() {
             var roleChanged = false;
 
-            assessmentRoles.forEach(function(role) {
+            $scope.assessmentRoles.forEach(function(role) {
                 if($scope.assessment && (originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID'])) {
                     roleChanged = true;
                 }
@@ -105,7 +105,7 @@ angular
                 var reassign_data = {},
                     new_assessment_data = $scope.assessment;
 
-                assessmentRoles.forEach(function(role) {
+                $scope.assessmentRoles.forEach(function(role) {
 
                     if(originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
                         reassign_data[role] = {

@@ -7,24 +7,18 @@
                 strong Instructions:
                 em  You must assign the assessment to a researcher. You can assign to a reviewer at a later data if need be.
             .row.top-padding-med
-                label.col-md-4  Researcher
-                .form-group.col-md-8
-                    select.form-group.form-control(
-                    ng-model="assessment.researcher_ID"
-                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers.researcher"
-                    required)
-                        option(value="" selected disabled) Select researcher (required)...
-                label.col-md-4  Reviewer
-                .form-group.col-md-8
-                    select.form-group.form-control(
-                    ng-model="assessment.reviewer_ID"
-                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers.reviewer"
-                    required)
-                        option(value="" selected disabled) Select reviewer...
+                div(ng-repeat="role in assessmentRoles")
+                    label.col-md-4  {{role|role|ucfirst}}
+                    .form-group.col-md-8
+                        select.form-group.form-control(
+                        ng-model="assessment[role + '_ID']"
+                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers[role]"
+                        required)
+                            option(value="" selected disabled) Select {{role|role}}...
             .modal-footer
                 button.btn.btn-success(
                 ng-click="assessment.status === 'unassigned' ? assessmentAssign() : reassignAssessment()"
-                ng-disabled="assignAssessment.$invalid || ((assessment.status !== 'unassigned') && !isAnyAssessmentRoleChanged())")
+                ng-disabled="!assessment.researcher_ID || ((assessment.status !== 'unassigned') && !isAnyAssessmentRoleChanged())")
                     span(ng-if="assessment.status === 'unassigned'") Assign users to assessment
                     span(ng-if="assessment.status !== 'unassigned'") Reassign users to assessment
                 | &nbsp;
