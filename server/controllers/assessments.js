@@ -20,12 +20,12 @@ exports.getAssessmentsByID = function (req, res) {
     });
 };
 
-exports.createAssessments = function (req, res, next) {
+exports.createAssessments = function (req, res) {
     var new_assessments = req.body;
     //console.log(new_assessments);
 
     function createNewAssessment (new_assessment) {
-        Assessment.create(new_assessment, function (err, assessment) {
+        Assessment.create(new_assessment, function (err) {
             if (err) {
                 if (err.toString().indexOf('E11000') > -1) {
                     err = new Error('Duplicate Assessment');
@@ -95,6 +95,9 @@ exports.updateAssessment = function (req, res) {
                     }
                     if (!(assessment.hasOwnProperty('reviewer_ID'))) {
                         assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
+                    }
+                    if (!(assessment.hasOwnProperty('ext_reviewer_ID'))) {
+                        assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
                     }
                     if (!(assessment.hasOwnProperty('assignment'))) {
                         assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};

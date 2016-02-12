@@ -32,6 +32,9 @@ assessmentSchema = new Schema({
     reviewer_ID: {
         type: ObjectId,
         index: true}, // pulled from user_id
+    ext_reviewer_ID: {
+        type: ObjectId,
+        index: true}, // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
     documents: [ObjectId],
     interviewees: [ObjectId],
