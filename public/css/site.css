@@ -113,6 +113,12 @@ input.upload {
 .ngdialog.dialogwidth800 .ngdialog-content {
   width: 800px !important;
 }
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  color: #555;
+  background-color: #ffd066;
+}
 .popover {
   max-width: 30% !important;
 }

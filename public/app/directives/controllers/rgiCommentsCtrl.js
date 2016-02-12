@@ -15,6 +15,7 @@ angular
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.commentSubmit = function () {
+
             var current_user = rgiIdentitySrvc.currentUser,
                 new_comment_data = {
                     content: $scope.update.new_comment,
@@ -23,43 +24,47 @@ angular
                 },
                 new_update_data = $scope.update;
 
-            new_update_data.comments.push(new_comment_data);
+            if(!new_comment_data.content) {
+                rgiNotifier.error('You must include a comment before submitting!');
+            } else {
+                new_update_data.comments.push(new_comment_data);
 
-            if (new_update_data.status === 'assigned' && !current_user.isSupervisor()) {
-                new_update_data.status = 'saved';
+                if (new_update_data.status === 'assigned' && !current_user.isSupervisor()) {
+                    new_update_data.status = 'saved';
+                }
+
+                switch($scope.$parent.page_type) {
+                    case 'answer':
+                        rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
+                            rgiNotifier.notify('Comment added');
+                            $scope.update.new_comment = undefined;
+                            $route.reload();
+                        }, function (reason) {
+                            rgiNotifier.notify(reason);
+                        });
+                        break;
+                    case 'question':
+                        rgiQuestionMethodSrvc.updateQuestion(new_update_data).then(function () {
+                            rgiNotifier.notify('Comment added');
+                            $scope.update.new_comment = undefined;
+                            $route.reload();
+                        }, function (reason) {
+                            rgiNotifier.notify(reason);
+                        });
+                        break;
+                    default:
+                        rgiNotifier.error('Unrecognized page format!');
+
+                }
+
+                rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
+                    rgiNotifier.notify('Comment added');
+                    $scope.update.new_comment = undefined;
+                    $route.reload();
+                }, function (reason) {
+                    rgiNotifier.notify(reason);
+                });
             }
-
-            switch($scope.$parent.page_type) {
-                case 'answer':
-                    rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
-                        rgiNotifier.notify('Comment added');
-                        $scope.update.new_comment = undefined;
-                        $route.reload();
-                    }, function (reason) {
-                        rgiNotifier.notify(reason);
-                    });
-                    break;
-                case 'question':
-                    rgiQuestionMethodSrvc.updateQuestion(new_update_data).then(function () {
-                        rgiNotifier.notify('Comment added');
-                        $scope.update.new_comment = undefined;
-                        $route.reload();
-                    }, function (reason) {
-                        rgiNotifier.notify(reason);
-                    });
-                    break;
-                default:
-                    rgiNotifier.error('Unrecognized page format!');
-
-            }
-
-            //rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
-            //    rgiNotifier.notify('Comment added');
-            //    $scope.update.new_comment = undefined;
-            //    $route.reload();
-            //}, function (reason) {
-            //    rgiNotifier.notify(reason);
-            //});
         };
         $scope.commentEdit = function (comment, index) {
             rgiDialogFactory.commentEdit($scope, comment, index);
