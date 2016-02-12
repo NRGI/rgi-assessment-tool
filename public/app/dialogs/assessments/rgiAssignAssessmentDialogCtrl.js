@@ -18,7 +18,15 @@ angular
         $scope.availableUsers = {};
 
         $scope.assessmentRoles.forEach(function(role) {
-            $scope.availableUsers[role] = rgiUserSrvc.query({role: role});
+            $scope.availableUsers[role] = [];
+        });
+
+        rgiUserSrvc.query(function(users) {
+            users.forEach(function(user) {
+                if($scope.assessmentRoles.indexOf(user.role) !== -1) {
+                    $scope.availableUsers[user.role].push(user);
+                }
+            });
         });
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
