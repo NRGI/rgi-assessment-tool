@@ -1,6 +1,6 @@
 legend References (required):
 div.bottom-padding-med(
-    ng-if="current_user._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(answer.status) > -1)"
+    ng-if="current_user._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(assessment.status) > -1)"
     id="biblio_div")
     .row
         .col-md-5.pull-left.top-padding-med

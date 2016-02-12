@@ -47,28 +47,6 @@ div.left-padding-lg.right-padding-lg
                             glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
 
 
-                    // EDITORS
-                    .row.form-group(ng-repeat="editor in new_document.editors")
-                        .pull-left.col-lg-5
-                            input.form-control(
-                            name="editor_first"
-                            type="text"
-                            placeholder="Editor first name..."
-                            ng-model="editor.first_name"
-                            autocomplete="off")
-                        .pull-left.col-lg-5
-                            input.form-control(
-                            name="editor_last"
-                            type="text"
-                            placeholder="Editor last name..."
-                            ng-model="editor.last_name"
-                            autocomplete="off")
-                        .pull-left.col-lg-1.right-padding-med(ng-if="$last")
-                            glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="editorPush()")
-                        .pull-left.col-lg-1(ng-if="!$last")
-                            glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="editorPop($index)")
-
-
                     // SOURCE
                     .row.form-group
                         .col-lg-12
@@ -98,29 +76,29 @@ div.left-padding-lg.right-padding-lg
                             ng-model="new_document.year"
                             autocomplete="off")
 
-                    .row.form-group
-                        // INSTITUTION
-                        .pull-left.col-lg-6
-                            input.form-control(
-                            name="institution"
-                            type="text"
-                            placeholder="Institution..."
-                            ng-model="new_document.institution"
-                            autocomplete="off")
-
-                        // CITY
-                        .pull-left.col-lg-6
-                            input.form-control(
-                            name="city"
-                            type="text"
-                            placeholder="City..."
-                            ng-model="new_document.city"
-                            autocomplete="off")
-
-
+                    //.row.form-group
+                    //    // INSTITUTION
+                    //    .pull-left.col-lg-6
+                    //        input.form-control(
+                    //        name="institution"
+                    //        type="text"
+                    //        placeholder="Institution..."
+                    //        ng-model="new_document.institution"
+                    //        autocomplete="off")
+                    //
+                    //    // CITY
+                    //    .pull-left.col-lg-6
+                    //        input.form-control(
+                    //        name="city"
+                    //        type="text"
+                    //        placeholder="City..."
+                    //        ng-model="new_document.city"
+                    //        autocomplete="off")
 
 
-                       // CITY
+
+
+
                 // EXISTING DOC
                 div(ng-if="new_document.status==='submitted'")
                     .row
@@ -146,15 +124,6 @@ div.left-padding-lg.right-padding-lg
                                     b Author(s):
                                 h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
                                 h5(ng-if="!new_document.authors")  N/A
-                        //- EDITORS
-                        div.col-md-6
-                            .form-group.pull-left
-                                h5
-                                    b Editor(s):
-                                h5(ng-repeat="editor in new_document.editors" ng-if="new_document.editors[0].first_name !== ''")  {{editor.first_name | ucfirst}} {{editor.last_name| ucfirst}},
-                                h5(ng-if="new_document.editors[0].first_name === ''")  N/A
-
-                    .row
                         // SOURCE
                         div.col-md-6
                             .form-group.pull-left
@@ -163,6 +132,7 @@ div.left-padding-lg.right-padding-lg
                                 h5(ng-if="new_document.source")  {{new_document.source}}
                                 h5(ng-if="!new_document.source")  N/A
 
+                    .row
                         // PUBLISHER
                         div.col-md-6
                             .form-group.pull-left
@@ -170,8 +140,6 @@ div.left-padding-lg.right-padding-lg
                                     b Publisher:
                                 h5(ng-if="new_document.publisher")  {{new_document.publisher}}
                                 h5(ng-if="!new_document.publisher")  N/A
-
-                    .row
                         // YEAR
                         div.col-md-6
                             .form-group.pull-left
@@ -180,23 +148,23 @@ div.left-padding-lg.right-padding-lg
                                 h5(ng-if="new_document.year")  {{new_document.year}}
                                 h5(ng-if="!new_document.year")  N/A
 
-                        // INSTITUTION
-                        div.col-md-6
-                            .form-group.pull-left
-                                h5
-                                    b Institution:
-                                h5(ng-if="new_document.institution")  {{new_document.institution}}
-                                h5(ng-if="!new_document.institution")  N/A
+                        //// INSTITUTION
+                        //div.col-md-6
+                        //    .form-group.pull-left
+                        //        h5
+                        //            b Institution:
+                        //        h5(ng-if="new_document.institution")  {{new_document.institution}}
+                        //        h5(ng-if="!new_document.institution")  N/A
 
-
-                    .row
-                        // CITY
-                        div.col-md-6
-                            .form-group.pull-left
-                                h5
-                                    b City:
-                                h5(ng-if="new_document.city")  {{new_document.city}}
-                                h5(ng-if="!new_document.city")  N/A
+                    //
+                    //.row
+                    //    // CITY
+                    //    div.col-md-6
+                    //        .form-group.pull-left
+                    //            h5
+                    //                b City:
+                    //            h5(ng-if="new_document.city")  {{new_document.city}}
+                    //            h5(ng-if="!new_document.city")  N/A
 
                 .row.form-group
                     // LOCATION IN DOC
@@ -234,5 +202,7 @@ div.left-padding-lg.right-padding-lg
                         autocomplete="off")
 
     div.modal-footer
-        .col-lg-11
+        .col-lg-6
             button.btn.btn-block.btn-success(ng-click="documentRefSubmit(new_document)") Create reference
+        .col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

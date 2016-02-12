@@ -5,6 +5,7 @@ angular
     .controller('rgiNewDocumentDialogCtrl', function (
         $scope,
         $route,
+        $rootScope,
         ngDialog,
         rgiUtilsSrvc,
         rgiNotifier,
@@ -62,17 +63,17 @@ angular
             $scope.new_document.authors.push({first_name: "", last_name: ""});
         };
 
-        $scope.editorPush = function () {
-            $scope.new_document.editors.push({first_name: "", last_name: ""});
-        };
+        //$scope.editorPush = function () {
+        //    $scope.new_document.editors.push({first_name: "", last_name: ""});
+        //};
 
         $scope.authorPop = function (index) {
             $scope.new_document.authors.splice(index, 1);
         };
 
-        $scope.editorPop = function (index) {
-            $scope.new_document.editors.splice(index, 1);
-        };
+        //$scope.editorPop = function (index) {
+        //    $scope.new_document.editors.splice(index, 1);
+        //};
 
         $scope.documentRefSubmit = function (new_document) {
             var url, new_user_data = $scope.$parent.current_user;
@@ -91,8 +92,8 @@ angular
                 rgiNotifier.error('You must provide the publisher!');
             } else if (!$scope.new_document.year) {
                 rgiNotifier.error('You must provide the year of publication!');
-            } else if (!$scope.new_document.institution) {
-                rgiNotifier.error('You must provide the publishing institution!');
+            //} else if (!$scope.new_document.institution) {
+            //    rgiNotifier.error('You must provide the publishing institution!');
             } else {
                 //if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
                 //    url = $scope.new_document.source;
@@ -192,5 +193,6 @@ angular
 
         $scope.closeDialog = function () {
             ngDialog.close();
+            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
     });
