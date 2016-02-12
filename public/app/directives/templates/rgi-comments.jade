@@ -3,9 +3,9 @@ div(id="comments_div").bottom-padding-med
     div(id="prev_comments_div" ng-if="update.comments.length!==0")
         .row.left-padding-lg.bottom-padding-med(ng-repeat="comment in update.comments")
             .row
-                b {{comment.author.firstName}} {{comment.author.lastName}} (
+                b(ng-if='current_user.isSupervisor()') {{comment.author.firstName}} {{comment.author.lastName}} (
                 b {{comment.author.role}}
-                b ):
+                b(ng-if='current_user.isSupervisor()') ):
             .row
                 date
                     small

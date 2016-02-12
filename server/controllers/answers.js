@@ -132,6 +132,7 @@ exports.updateAnswer = function (req, res) {
 
         answer.save(function (err) {
             if (err) {
+                console.log(err);
                 res.send({ reason: err.toString() });
             }
         });

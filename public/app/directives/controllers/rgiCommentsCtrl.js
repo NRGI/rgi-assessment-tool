@@ -56,14 +56,6 @@ angular
                         rgiNotifier.error('Unrecognized page format!');
 
                 }
-
-                rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
-                    rgiNotifier.notify('Comment added');
-                    $scope.update.new_comment = undefined;
-                    $route.reload();
-                }, function (reason) {
-                    rgiNotifier.notify(reason);
-                });
             }
         };
         $scope.commentEdit = function (comment, index) {
