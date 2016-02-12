@@ -46,51 +46,47 @@ angular
             return foundUser;
         };
 
-        $scope.assessmentAssign = function () {
+        $scope.assignAssessment = function () {
             if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('You must select a researcher!');
             } else {
-                var new_researcher_data = new rgiUserSrvc(JSON.parse(getUser('researcher', $scope.assessment.researcher_ID))),
-                    new_assessment_data = $scope.assessment;
+                var researcher = new rgiUserSrvc(getUser('researcher', $scope.assessment.researcher_ID));
 
-                new_assessment_data.mail = true;
+                $scope.assessment.mail = true;
+                $scope.assessment.status = 'trial';
+                $scope.assessment.researcher_ID = researcher._id;
+                $scope.assessment.edit_control = researcher._id;
 
-                new_assessment_data.status = 'trial';
-                new_assessment_data.researcher_ID = new_researcher_data._id;
-                new_assessment_data.edit_control = new_researcher_data._id;
-                new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
+                var linkedAssessmentData = {
+                    assessment_ID: $scope.$parent.assessment_update_ID,
+                    country_name: $scope.assessment.country,
+                    year: $scope.assessment.year,
+                    version: $scope.assessment.version
+                };
+
+                researcher.assessments.push(linkedAssessmentData);
+
+                var saveAssessment = function() {
+                    rgiUserMethodSrvc.updateUser(researcher)
+                        .then(rgiAssessmentMethodSrvc.updateAssessment($scope.assessment))
+                        .then(function () {
+                            rgiNotifier.notify('Assessment assigned!');
+                            $location.path('/');
+                            $scope.closeThisDialog();
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                };
 
                 if ($scope.assessment.reviewer_ID) {
-                    var new_reviewer_data = new rgiUserSrvc(JSON.parse(getUser('reviewer', $scope.assessment.reviewer_ID)));
+                    var reviewer = new rgiUserSrvc(getUser('reviewer', $scope.assessment.reviewer_ID));
+                    $scope.assessment.reviewer_ID = reviewer._id;
+                    reviewer.assessments.push(linkedAssessmentData);
 
-                    new_assessment_data.reviewer_ID = new_reviewer_data._id;
-                    new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
-
-                    rgiUserMethodSrvc.updateUser(new_researcher_data)
-                        .then(rgiUserMethodSrvc.updateUser(new_reviewer_data))
-                        .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                        .then(function () {
-                            rgiNotifier.notify('Assessment assigned!');
-                            $location.path('/');
-                            //$route.reload();
-                            $scope.closeThisDialog();
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
-                        });
-
+                    rgiUserMethodSrvc.updateUser(reviewer).then(saveAssessment());
                 } else {
-                    rgiUserMethodSrvc.updateUser(new_researcher_data)
-                        .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
-                        .then(function () {
-                            rgiNotifier.notify('Assessment assigned!');
-                            $location.path('/');
-                            //$route.reload();
-                            $scope.closeThisDialog();
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
-                        });
+                    saveAssessment();
                 }
-
             }
         };
 

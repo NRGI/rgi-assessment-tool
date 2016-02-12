@@ -17,7 +17,7 @@
                             option(value="" selected disabled) Select {{role|role}}...
             .modal-footer
                 button.btn.btn-success(
-                ng-click="assessment.status === 'unassigned' ? assessmentAssign() : reassignAssessment()"
+                ng-click="assessment.status === 'unassigned' ? assignAssessment() : reassignAssessment()"
                 ng-disabled="!assessment.researcher_ID || ((assessment.status !== 'unassigned') && !isAnyAssessmentRoleChanged())")
                     span(ng-if="assessment.status === 'unassigned'") Assign users to assessment
                     span(ng-if="assessment.status !== 'unassigned'") Reassign users to assessment
