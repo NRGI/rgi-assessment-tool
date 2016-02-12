@@ -7,51 +7,42 @@ angular
         $location,
         $route,
         ngDialog,
-        rgiUtilsSrvc,
         rgiNotifier,
-        rgiIdentitySrvc,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
-        var original_assessment = {};
+        var originalAssessment = {};
         var assessmentRoles = ['researcher', 'reviewer'];
-        // get all researchers
-        $scope.researchers = rgiUserSrvc.query({role: 'researcher'});
-        // get all reviewers
-        $scope.reviewers = rgiUserSrvc.query({role: 'reviewer'});
+        $scope.availableUsers = {};
+
+        assessmentRoles.forEach(function(role) {
+            $scope.availableUsers[role] = rgiUserSrvc.query({role: role});
+        });
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessment = assessment;
-            angular.extend(original_assessment, assessment);
-
-            assessmentRoles.forEach(function(role) {
-                if(assessment[role + '_ID']) {
-                    rgiUserSrvc.get({_id: assessment[role + '_ID']}, function (user) {
-                        $scope[role + '_select'] = user;
-                    });
-                }
-            });
+            angular.extend(originalAssessment, assessment);
         });
 
-        var getUser = function(users, userId) {
-            var found_user = {};
+        var getUser = function(role, userId) {
+            var foundUser = {};
 
-            users.forEach(function(user) {
+            $scope.availableUsers[role].forEach(function(user) {
                 if(user._id === userId) {
-                    found_user = user;
+                    foundUser = user;
                 }
             });
 
-            return found_user;
+            return foundUser;
         };
 
         $scope.assessmentAssign = function () {
             if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('You must select a researcher!');
             } else {
-                var new_researcher_data = new rgiUserSrvc(JSON.parse(getUser($scope.researchers, $scope.assessment.researcher_ID))),
+                var new_researcher_data = new rgiUserSrvc(JSON.parse(getUser('researcher', $scope.assessment.researcher_ID))),
                     new_assessment_data = $scope.assessment;
 
                 new_assessment_data.mail = true;
@@ -62,7 +53,7 @@ angular
                 new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
                 if ($scope.assessment.reviewer_ID) {
-                    var new_reviewer_data = new rgiUserSrvc(JSON.parse(getUser($scope.reviewers, $scope.assessment.reviewer_ID)));
+                    var new_reviewer_data = new rgiUserSrvc(JSON.parse(getUser('reviewer', $scope.assessment.reviewer_ID)));
 
                     new_assessment_data.reviewer_ID = new_reviewer_data._id;
                     new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
@@ -96,15 +87,15 @@ angular
         };
 
         $scope.isAnyAssessmentRoleChanged = function() {
-            var role_changed = false;
+            var roleChanged = false;
 
             assessmentRoles.forEach(function(role) {
-                if($scope.assessment && (original_assessment[role + '_ID'] !== $scope.assessment[role + '_ID'])) {
-                    role_changed = true;
+                if($scope.assessment && (originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID'])) {
+                    roleChanged = true;
                 }
             });
 
-            return role_changed;
+            return roleChanged;
         };
 
         $scope.reassignAssessment = function () {
@@ -116,10 +107,10 @@ angular
 
                 assessmentRoles.forEach(function(role) {
 
-                    if(original_assessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
+                    if(originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
                         reassign_data[role] = {
-                            old: getUser($scope[role + 's'], original_assessment[role + '_ID']),
-                            new: getUser($scope[role + 's'], $scope.assessment[role + '_ID'])
+                            old: getUser(role, originalAssessment[role + '_ID']),
+                            new: getUser(role, $scope.assessment[role + '_ID'])
                         };
 
                         //remove assessment from old
