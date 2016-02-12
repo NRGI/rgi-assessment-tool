@@ -22,8 +22,6 @@ angular
         // get all reviewers
         $scope.reviewers = rgiUserSrvc.query({role: 'reviewer'});
 
-
-        // get assessment that needs to be updated
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessment = assessment;
             angular.extend(original_assessment, assessment);
@@ -37,15 +35,23 @@ angular
             });
         });
 
+        var getUser = function(users, userId) {
+            var found_user = {};
 
-        //// get questions for insertion into answers collection
-        //$scope.questions = rgiQuestionSrvc.query({assessments: $scope.$parent.assessment_update_ID.substr(3)});
+            users.forEach(function(user) {
+                if(user._id === userId) {
+                    found_user = user;
+                }
+            });
 
-        $scope.assessmentAssign = function (researcher_select, reviewer_select) {
-            if (!researcher_select) {
+            return found_user;
+        };
+
+        $scope.assessmentAssign = function () {
+            if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('You must select a researcher!');
             } else {
-                var new_researcher_data = new rgiUserSrvc(JSON.parse(researcher_select)),
+                var new_researcher_data = new rgiUserSrvc(JSON.parse(getUser($scope.researchers, $scope.assessment.researcher_ID))),
                     new_assessment_data = $scope.assessment;
 
                 new_assessment_data.mail = true;
@@ -55,8 +61,8 @@ angular
                 new_assessment_data.edit_control = new_researcher_data._id;
                 new_researcher_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
 
-                if (reviewer_select) {
-                    var new_reviewer_data = new rgiUserSrvc(JSON.parse(reviewer_select));
+                if ($scope.assessment.reviewer_ID) {
+                    var new_reviewer_data = new rgiUserSrvc(JSON.parse(getUser($scope.reviewers, $scope.assessment.reviewer_ID)));
 
                     new_assessment_data.reviewer_ID = new_reviewer_data._id;
                     new_reviewer_data.assessments.push({assessment_ID: $scope.$parent.assessment_update_ID, country_name: $scope.assessment.country, year: $scope.assessment.year, version: $scope.assessment.version});
@@ -73,7 +79,7 @@ angular
                             rgiNotifier.error(reason);
                         });
 
-                } else if (!reviewer_select) {
+                } else {
                     rgiUserMethodSrvc.updateUser(new_researcher_data)
                         .then(rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data))
                         .then(function () {
@@ -102,23 +108,11 @@ angular
         };
 
         $scope.reassignAssessment = function () {
-            if (!$scope.researcher_select) {
+            if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('No researcher data!');
             } else {
                 var reassign_data = {},
                     new_assessment_data = $scope.assessment;
-
-                var getUser = function(users, userId) {
-                    var found_user = {};
-
-                    users.forEach(function(user) {
-                        if(user._id === userId) {
-                            found_user = user;
-                        }
-                    });
-
-                    return found_user;
-                };
 
                 assessmentRoles.forEach(function(role) {
 
@@ -155,7 +149,6 @@ angular
                         }
                     }
                 });
-                console.log(new_assessment_data);
 
                 rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                     .then(function () {

@@ -1,37 +1,11 @@
-div.left-padding-lg.right-padding-lg
-    div.modal-header
+.left-padding-lg.right-padding-lg
+    .modal-header
         h3 Assign Assessment
-    div.modal-body
-        fieldset(ng-if="assessment.status==='unassigned'")
-            .row
+    .modal-body
+        fieldset
+            .row(ng-if="assessment.status === 'unassigned'")
                 strong Instructions:
                 em  You must assign the assessment to a researcher. You can assign to a reviewer at a later data if need be.
-            .row.top-padding-med
-                label.col-md-4  Researcher
-                .form-group.col-md-8
-                    select.form-group.form-control(
-                    name="researcher_select"
-                    ng-model="researcher_select"
-                    required)
-                        option(value="" selected disabled) Select researcher (required)...
-                        option(ng-repeat="r in researchers" value="{{r}}") {{r.firstName}} {{r.lastName}}: number of assigned assessments - {{r.assessments.length}}
-                label.col-md-4  Reviewer
-                .form-group.col-md-8
-                    select.form-group.form-control(
-                    name="reviewer_select"
-                    ng-model="reviewer_select"
-                    required)
-                        option(value="" selected disabled) Select reviewer...
-                        option(ng-repeat="r in reviewers" value="{{r}}") {{r.firstName}} {{r.lastName}}: number of assigned assessments - {{r.assessments.length}}
-            div.modal-footer
-                button.btn.btn-success(
-                ng-if="assessment.status==='unassigned'"
-                ng-click="assessmentAssign(researcher_select, reviewer_select)"
-                ng-disabled="assignAssessment.$invalid") Assign users to assessment
-                | &nbsp;
-                button.btn.btn-danger(ng-click="closeDialog()") Cancel
-
-        fieldset(ng-if="assessment.status!=='unassigned'")
             .row.top-padding-med
                 label.col-md-4  Researcher
                 .form-group.col-md-8
@@ -39,7 +13,7 @@ div.left-padding-lg.right-padding-lg
                     ng-model="assessment.researcher_ID"
                     ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in researchers"
                     required)
-
+                        option(value="" selected disabled) Select researcher (required)...
                 label.col-md-4  Reviewer
                 .form-group.col-md-8
                     select.form-group.form-control(
@@ -47,12 +21,11 @@ div.left-padding-lg.right-padding-lg
                     ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in reviewers"
                     required)
                         option(value="" selected disabled) Select reviewer...
-
-
-            div.modal-footer
+            .modal-footer(ng-if="assessment.status==='unassigned'")
                 button.btn.btn-success(
-                ng-if="assessment.status!=='unassigned'"
-                ng-click="reassignAssessment()"
-                ng-disabled="assignAssessment.$invalid || !isAnyAssessmentRoleChanged()") Reassign users to assessment
+                ng-click="assessment.status === 'unassigned' ? assessmentAssign() : reassignAssessment()"
+                ng-disabled="assignAssessment.$invalid || ((assessment.status !== 'unassigned') && !isAnyAssessmentRoleChanged())")
+                    span(ng-if="assessment.status === 'unassigned'") Assign users to assessment
+                    span(ng-if="assessment.status !== 'unassigned'") Reassign users to assessment
                 | &nbsp;
                 button.btn.btn-danger(ng-click="closeDialog()") Cancel
