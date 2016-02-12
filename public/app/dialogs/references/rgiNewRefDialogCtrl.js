@@ -213,7 +213,13 @@ angular
         uploader.filters.push({
             name: 'allowedExtension',
             fn: function (fileItem) {
-                return $scope.isAllowedFileExtension(fileItem.name);
+                var fileExtensionAllowed = $scope.isAllowedFileExtension(fileItem.name);
+
+                if(!fileExtensionAllowed) {
+                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
+                }
+
+                return fileExtensionAllowed;
             }
         });
 
