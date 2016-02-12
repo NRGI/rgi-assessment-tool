@@ -6,6 +6,7 @@ angular
         $scope,
         $location,
         $route,
+        $q,
         ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
@@ -46,47 +47,50 @@ angular
             return foundUser;
         };
 
+        var updateAssessment = function(notificationMessage) {
+            rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
+                .then(function () {
+                    rgiNotifier.notify(notificationMessage);
+                    $location.path('/');
+                    $scope.closeThisDialog();
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+        };
+
         $scope.assignAssessment = function () {
             if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('You must select a researcher!');
             } else {
-                var researcher = new rgiUserSrvc(getUser('researcher', $scope.assessment.researcher_ID));
-
                 $scope.assessment.mail = true;
                 $scope.assessment.status = 'trial';
-                $scope.assessment.researcher_ID = researcher._id;
-                $scope.assessment.edit_control = researcher._id;
+                $scope.assessment.edit_control = $scope.assessment.researcher_ID;
 
-                var linkedAssessmentData = {
-                    assessment_ID: $scope.$parent.assessment_update_ID,
-                    country_name: $scope.assessment.country,
-                    year: $scope.assessment.year,
-                    version: $scope.assessment.version
+                var assignUser = function(role, linkedAssessmentData) {
+                    var field = role + '_ID';
+                    var user = new rgiUserSrvc(getUser(role, $scope.assessment[field]));
+
+                    user.assessments.push(linkedAssessmentData);
+                    $scope.assessment[field] = user._id;
+
+                    return rgiUserMethodSrvc.updateUser(user).$promise;
                 };
 
-                researcher.assessments.push(linkedAssessmentData);
+                var promises = [];
+                $scope.assessmentRoles.forEach(function(role) {
+                    if ($scope.assessment[role + '_ID']) {
+                        promises.push(assignUser(role, {
+                            assessment_ID: $scope.$parent.assessment_update_ID,
+                            country_name: $scope.assessment.country,
+                            year: $scope.assessment.year,
+                            version: $scope.assessment.version
+                        }));
+                    }
+                });
 
-                var saveAssessment = function() {
-                    rgiUserMethodSrvc.updateUser(researcher)
-                        .then(rgiAssessmentMethodSrvc.updateAssessment($scope.assessment))
-                        .then(function () {
-                            rgiNotifier.notify('Assessment assigned!');
-                            $location.path('/');
-                            $scope.closeThisDialog();
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
-                        });
-                };
-
-                if ($scope.assessment.reviewer_ID) {
-                    var reviewer = new rgiUserSrvc(getUser('reviewer', $scope.assessment.reviewer_ID));
-                    $scope.assessment.reviewer_ID = reviewer._id;
-                    reviewer.assessments.push(linkedAssessmentData);
-
-                    rgiUserMethodSrvc.updateUser(reviewer).then(saveAssessment());
-                } else {
-                    saveAssessment();
-                }
+                $q.all(promises).then(function() {
+                    updateAssessment('Assessment assigned!');
+                });
             }
         };
 
