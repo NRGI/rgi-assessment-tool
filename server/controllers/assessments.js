@@ -22,6 +22,7 @@ exports.getAssessmentsByID = function (req, res) {
 
 exports.createAssessments = function (req, res, next) {
     var new_assessments = req.body;
+    //console.log(new_assessments);
 
     function createNewAssessment (new_assessment) {
         Assessment.create(new_assessment, function (err, assessment) {

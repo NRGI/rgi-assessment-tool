@@ -79,11 +79,11 @@ exports.createAnswers = function (req, res, next) {
     var new_answers, i;
     new_answers = req.body;
 
-    function createNewAnswer(new_answer) {
+    function createNewAnswer (new_answer) {
         Answer.create(new_answer, function (err, answer) {
             if (err) {
                 if (err.toString().indexOf('E11000') > -1) {
-                    err = new Error('Duplicate answers');
+                    err = new Error('Duplicate Assessment');
                 }
                 res.status(400);
                 return res.send({reason: err.toString()});
