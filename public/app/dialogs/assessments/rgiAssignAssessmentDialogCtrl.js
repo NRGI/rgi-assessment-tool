@@ -110,6 +110,8 @@ angular
             if (!$scope.assessment.researcher_ID) {
                 rgiNotifier.error('No researcher data!');
             } else {
+                var promises = [];
+
                 $scope.assessmentRoles.forEach(function(role) {
                     if(originalAssessment[role + '_ID'] !== $scope.assessment[role + '_ID']) {
                         var oldAssignee = getUser(role, originalAssessment[role + '_ID']);
@@ -136,7 +138,7 @@ angular
                             assessment_ID: $scope.assessment.assessment_ID,
                             country_name: $scope.assessment.country
                         });
-                        rgiUserMethodSrvc.updateUser(newAssignee);
+                        promises.push(rgiUserMethodSrvc.updateUser(newAssignee).$promise);
 
                         //change assignee in the assessment
                         if (newAssignee._id) {
@@ -150,16 +152,10 @@ angular
                     }
                 });
 
-                rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
-                    .then(function () {
-                        rgiNotifier.notify('Assessment reassigned!');
-                        $scope.closeDialog();
-                        $route.reload();
-                    }, function (reason) {
-                        rgiNotifier.error(reason);
-                    });
+                $q.all(promises).then(function() {
+                    updateAssessment('Assessment reassigned!');
+                });
             }
-
         };
 
         $scope.closeDialog = function () {
