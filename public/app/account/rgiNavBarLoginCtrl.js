@@ -1,3 +1,5 @@
+'use strict';
+
 angular
     .module('app')
     .controller('rgiNavBarLoginCtrl', function (
@@ -9,27 +11,30 @@ angular
         rgiIdentitySrvc,
         rgiNotifier
     ) {
-        'use strict';
-        // assign the identity resource with the current identity using identity service
-        var url_array = [];
-        $scope.identity = rgiIdentitySrvc;
-        $scope.versions = [];
+        var loadAssessments = function() {
+            var urls = [];
 
-        if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
-
-            rgiAssessmentSrvc.query({}, function (data) {
-                data.forEach(function (el) {
-                    if (url_array.indexOf(el.year + '_' + el.version) < 0) {
-                        url_array.push(el.year + '_' + el.version);
+            rgiAssessmentSrvc.query({}, function (assessments) {
+                assessments.forEach(function (assessment) {
+                    if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
+                        urls.push(assessment.year + '_' + assessment.version);
                         $scope.versions.push({
-                            year: el.year,
-                            version: el.version,
-                            name: el.year + ' ' + el.version.charAt(0).toUpperCase() + el.version.slice(1),
-                            url: el.year + '_' + el.version
+                            year: assessment.year,
+                            version: assessment.version,
+                            name: assessment.year + ' ' + assessment.version.charAt(0).toUpperCase() + assessment.version.slice(1),
+                            url: assessment.year + '_' + assessment.version
                         });
                     }
                 });
             });
+        };
+
+        // assign the identity resource with the current identity using identity service
+        $scope.identity = rgiIdentitySrvc;
+        $scope.versions = [];
+
+        if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
+            loadAssessments();
         }
 
         $scope.recoverPassword = function() {
@@ -40,23 +45,12 @@ angular
         $scope.signin = function (username, password) {
             rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
                 $scope.versions = [];
+
                 if (success) {
                     if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
-                        var url_array = [];
-                        rgiAssessmentSrvc.query({}, function (data) {
-                            data.forEach(function (el) {
-                                if (url_array.indexOf(el.year + '_' + el.version) < 0) {
-                                    url_array.push(el.year + '_' + el.version);
-                                    $scope.versions.push({
-                                        year: el.year,
-                                        version: el.version,
-                                        name: el.year + ' ' + el.version.charAt(0).toUpperCase() + el.version.slice(1),
-                                        url: el.year + '_' + el.version
-                                    });
-                                }
-                            });
-                        });
+                        loadAssessments();
                     }
+
                     rgiNotifier.notify('You have successfully signed in!');
                     $location.path('/');
                 } else {
