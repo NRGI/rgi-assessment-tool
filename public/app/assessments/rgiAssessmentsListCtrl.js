@@ -20,7 +20,7 @@ angular
         $scope.sort_order = $scope.sort_options[0].value;
 
         var getUser = function(userId) {
-            return rgiUserListSrvc.get({_id: userId});
+            return rgiUserListSrvc.getCached({_id: userId});
         };
 
         var getAssessments = function(criteria) {

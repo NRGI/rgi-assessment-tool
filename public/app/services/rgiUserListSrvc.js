@@ -1,6 +1,10 @@
-angular.module('app').factory('rgiUserListSrvc', function ($resource) {
-    'use strict';
-    var UserResource = $resource('/api/user-list/:_id', {_id: "@id"}, {});
+'use strict';
 
-    return UserResource;
+angular.module('app').factory('rgiUserListSrvc', function ($resource) {
+    return $resource('/api/user-list/:_id', {_id: "@id"}, {
+        getCached: {
+            method : 'GET',
+            cache : true
+        }
+    });
 });
