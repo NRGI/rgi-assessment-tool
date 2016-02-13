@@ -7,6 +7,7 @@ angular
         $routeParams,
         rgiDialogFactory,
         rgiAssessmentSrvc,
+        rgiAssessmentRolesGuideSrvc,
         rgiUserListSrvc,
         rgiIdentitySrvc
     ) {
@@ -18,22 +19,24 @@ angular
             {value: 'status', text: 'Sort by Status'}];
         $scope.sort_order = $scope.sort_options[0].value;
 
+        var getUser = function(userId) {
+            return rgiUserListSrvc.get({_id: userId});
+        };
+
         var getAssessments = function(criteria) {
             rgiAssessmentSrvc.query(criteria, function (assessments) {
                 $scope.assessments = [];
 
                 assessments.forEach(function (assessment) {
                     if (assessment.last_modified) {
-                        assessment.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
+                        assessment.edited_by = getUser(assessment.last_modified.modified_by);
                     }
 
-                    if(assessment.researcher_ID) {
-                        assessment.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
-                    }
-
-                    if(assessment.reviewer_ID) {
-                        assessment.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
-                    }
+                    rgiAssessmentRolesGuideSrvc.list().forEach(function(role) {
+                        if(assessment[role + '_ID']) {
+                            assessment[role] = getUser(assessment[role + '_ID']);
+                        }
+                    });
 
                     $scope.assessments.push(assessment);
                 });
