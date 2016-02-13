@@ -11,11 +11,12 @@ angular
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
+        rgiAssessmentRolesGuideSrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
         var originalAssessment = {};
-        $scope.assessmentRoles = ['researcher', 'reviewer', 'ext_reviewer'];
+        $scope.assessmentRoles = rgiAssessmentRolesGuideSrvc.list();
         $scope.availableUsers = {};
 
         $scope.assessmentRoles.forEach(function(role) {
