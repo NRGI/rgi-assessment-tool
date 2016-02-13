@@ -21,15 +21,12 @@
 
         //- REGULAR USER
         ul.nav.navbar-nav(ng-hide="identity.currentUser.isSupervisor()")
+            li(ng-show="!identity.currentUser.isExternalReviewer()")
+                a(href="/faq" title="FAQs") FAQs
+            li(ng-show="!identity.currentUser.isExternalReviewer()")
+                a(href="/resource" title="Other resources") Resources
             li
-                a(href="/faq"
-                title="FAQs") FAQs
-            li
-                a(href="/resource"
-                    title="Other resources") Resources
-            li
-                a(href="/assessments"
-                title="Assessment dashboard") Assessments
+                a(href="/assessments" title="Assessment dashboard") Assessments
         //- ADMIN USER
         ul.nav.navbar-nav.dropdown
             li.dropdown(ng-show="identity.currentUser.isSupervisor()")
