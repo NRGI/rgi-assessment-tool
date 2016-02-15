@@ -134,14 +134,14 @@ div.top-padding-lg
                     ng-click="assessmentTrial(assessment)") Start trial
                     //- researcher start button
                     button.btn.btn-col.btn-success(
-                    ng-if="assessment.edit_control===current_user._id && ['assigned', 'assigned_reviewer', 'assigned_researcher'].indexOf(assessment.status) > -1"
+                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['assigned', 'assigned_reviewer', 'assigned_researcher'].indexOf(assessment.status) > -1"
                     ng-click="assessmentStart(assessment)")
                         text(ng-if="current_user.role==='researcher'") Start assessment
-                        text(ng-if="current_user.role==='reviewer'") Start review
+                        text(ng-if="['reviewer', 'ext_reviewer'].indexOf(current_user.role) !== -1") Start review
 
                     //- review answers sent back button
                     a.btn.btn-col.center-block.btn-warning(
-                    ng-if="assessment.edit_control===current_user._id && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
+                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}") Review answers
 
                     //- disabled for admin review

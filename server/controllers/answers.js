@@ -15,28 +15,11 @@ exports.getAnswers = function (req, res, next) {
                 if (!answers) { return next(new Error('No answers found')); }
                 res.send(answers);
             });
-    } else if (req.user.role === 'researcher') {
-        Assessment.find({'researcher_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
-            var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
+    } else {
+        var criteria = {};
+        criteria[req.user.role + '_ID'] = req.user._id;
 
-            if (err) { return next(err); }
-            if (!assessments) { return next(new Error('No assessments assigned to user')); }
-
-            if (assessments_ids.indexOf(req.query.assessment_ID) > -1) {
-                Answer.find(req.query)
-                    .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
-                    .exec(function (err, answers) {
-                        if (err) { return next(err); }
-                        if (!answers) { return next(new Error('No answers found')); }
-                        res.send(answers);
-                    });
-            } else {
-                res.sendStatus(404);
-                return res.end();
-            }
-        });
-    } else if (req.user.role === 'reviewer') {
-        Assessment.find({'reviewer_ID': req.user._id}, {assessment_ID: 1}, function (err, assessments) {
+        Assessment.find(criteria, {assessment_ID: 1}, function (err, assessments) {
             var assessments_ids = assessments.map(function (doc) { return doc.assessment_ID; });
 
             if (err) { return next(err); }
@@ -75,12 +58,12 @@ exports.getAnswersByID = function (req, res, next) {
         });
 };
 
-exports.createAnswers = function (req, res, next) {
+exports.createAnswers = function (req, res) {
     var new_answers, i;
     new_answers = req.body;
 
-    function createNewAnswer (new_answer) {
-        Answer.create(new_answer, function (err, answer) {
+    function createNewAnswer(new_answer) {
+        Answer.create(new_answer, function (err) {
             if (err) {
                 if (err.toString().indexOf('E11000') > -1) {
                     err = new Error('Duplicate Assessment');
@@ -132,7 +115,6 @@ exports.updateAnswer = function (req, res) {
 
         answer.save(function (err) {
             if (err) {
-                console.log(err);
                 res.send({ reason: err.toString() });
             }
         });
