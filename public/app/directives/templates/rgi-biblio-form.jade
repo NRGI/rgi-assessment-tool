@@ -59,6 +59,9 @@ div(id="prev_bib" ng-if="references.length > 0")
             .row.left-padding-lg.right-padding-lg
                 text(ng-if="ref.comment" ng-bind-html="ref.comment")
                 text(ng-if="!ref.comment")  N/A
-            .row.pull-right.top-padding-med(ng-if="ref.author._id===current_user._id")
-                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
+            .row.top-padding-med(ng-if="ref.author._id===current_user._id")
+                .col-lg-8
+                    button.btn.btn-danger.pull-right(ng-click="deleteReference(ref._id)") Delete Reference
+                .col-lg-4
+                    button.btn.btn-primary.pull-right(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
         hr
