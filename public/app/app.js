@@ -12,6 +12,7 @@ angular.module('app', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'ta-maxlength',
     'textAngular',
     'ui.bootstrap'
 ]);
