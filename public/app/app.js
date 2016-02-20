@@ -236,4 +236,6 @@ angular.module('app').run(function ($rootScope, $location) {
             $location.path('/');
         }
     });
+
+    $rootScope.editorContentMaxLength = 4000;
 });

@@ -22,9 +22,11 @@ div.left-padding-lg.right-padding-lg
             .row-fluid
                 .row.form-group.left-padding-lg.right-padding-lg(required)
                     div(
+                    name="content_text"
                     text-angular-name="content_text"
                     ng-model="new_resource.body"
-                    text-angular)
+                    text-angular
+                    ta-maxlength="{{editorContentMaxLength}}")
 
     div.modal-footer
         button.btn.btn-success(ng-click="resourceCreate()") Create new block

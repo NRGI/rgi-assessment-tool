@@ -36,9 +36,11 @@
                                     label Content
                                     .form-group.left-padding-lg.right-padding-lg(required)
                                         div(
+                                        name="content_text"
                                         text-angular-name="content_text"
                                         ng-model="resource.body"
-                                        text-angular)
+                                        text-angular
+                                        ta-maxlength="{{editorContentMaxLength}}")
 
                                 .row-fluid.top-padding-med.right-padding-lg
                                     div.pull-right
