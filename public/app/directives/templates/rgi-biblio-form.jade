@@ -45,6 +45,9 @@ div(id="prev_bib" ng-if="references.length > 0")
                 b Year published:
                 text(ng-if="ref.document_ID.year")  {{ref.document_ID.year}}
                 text(ng-if="!ref.document_ID.year")  N/A
+            .row(ng-if="ref.citation_type !== 'interview'")
+                b Location in document:
+                |  {{ref.location}}
             .row
                 b Cited by:
                 text(ng-if="current_user.isSupervisor()")  {{ref.author.firstName}} {{ref.author.lastName}} on {{ref.date | date: 'MM/dd/yyyy'}}
