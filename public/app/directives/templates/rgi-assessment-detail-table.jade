@@ -10,7 +10,7 @@ div(id="answers_div").bottom-padding-med
                 role="button"
                 data-toggle="collapse"
                 href="#{{value.id}}")
-                    | {{value.label}} - {{value.complete}} of {{value.section_len}}
+                    |  {{value.label}} ({{value.complete}} of {{value.section_len}} completed)
         div.panel-collapse.collapse(id="{{value.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed
@@ -29,16 +29,16 @@ div(id="answers_div").bottom-padding-med
                             td.col-md-1 {{answer.question_ID.component_text}}
                             td.col-md-5 {{answer.question_ID.question_text}}
                             td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
-                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
+                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  Complete
+                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  Complete
                                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                                 .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                                 .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
                                 .text(ng-if="answer.status==='unresolved'")
                             td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
-                                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  {{answer.status | ucfirst}}
-                                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  {{answer.status | ucfirst}}
+                                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  Needs review
+                                .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  Needs review
                                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                                 .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
