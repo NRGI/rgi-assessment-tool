@@ -1,6 +1,6 @@
 'use strict';
-angular
-    .module('app')
+
+angular.module('app')
     .controller('rgiNewResourceDialogCtrl', function (
         $scope,
         $route,
@@ -8,6 +8,7 @@ angular
         rgiNotifier,
         rgiResourcesMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.new_resource = {
             order: $scope.$parent.resources.length + 1,
             type: $scope.$parent.resource_type

@@ -230,10 +230,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
 });
 
-angular.module('app').run(function ($rootScope, $location) {
+angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         if (rejection === 'not authorized') {
             $location.path('/');
         }
     });
+
+    $rootScope.editorContentMaxLength = 4000;
+    $rootScope.identity = rgiIdentitySrvc;
+    $rootScope.current_user = rgiIdentitySrvc.currentUser;
+
 });

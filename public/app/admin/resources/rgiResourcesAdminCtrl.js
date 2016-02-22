@@ -1,6 +1,6 @@
 'use strict'
-angular
-    .module('app')
+
+angular.module('app')
     .controller('rgiResourcesAdminCtrl', function (
         $scope,
         $route,

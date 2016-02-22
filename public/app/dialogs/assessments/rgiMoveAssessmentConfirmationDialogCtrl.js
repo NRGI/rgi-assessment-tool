@@ -1,5 +1,6 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiMoveAssessmentConfirmationDialogCtrl', function (
         $scope,
         $location,
@@ -11,8 +12,9 @@ angular
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc
     ) {
-        'use strict';
+
         $scope.action = $scope.$parent.action;
+        $scope.current_user = $scope.$root.current_user;
         switch ($scope.action) {
             case 'started':
                 $scope.action_text = 'send back to researcher to continue assessment';
@@ -33,7 +35,6 @@ angular
             case 'final_approval':
                 $scope.action_text = $scope.action.replace('_', ' ');
         }
-        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.assessmentmove = function () {
             var new_assessment_data = $scope.$parent.assessment;

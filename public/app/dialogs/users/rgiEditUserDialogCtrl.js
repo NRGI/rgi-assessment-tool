@@ -1,5 +1,5 @@
-angular
-    .module('app')
+'use strict';
+angular.module('app')
     .controller('rgiEditUserDialogCtrl', function (
         $scope,
         $route,
@@ -7,7 +7,7 @@ angular
         rgiNotifier,
         rgiUserMethodSrvc
     ) {
-        'use strict';
+        $scope.current_user = $scope.$root.current_user;
         $scope.new_user_data = $scope.$parent.user;
         $scope.roles = ['supervisor', 'researcher', 'reviewer'];
 

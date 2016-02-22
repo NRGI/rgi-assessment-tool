@@ -1,5 +1,6 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiDocumentAdminDetailCtrl', function (
         $scope,
         $routeParams,
@@ -8,7 +9,6 @@ angular
         rgiUserListSrvc,
         rgiDialogFactory
     ) {
-        'use strict';
         rgiDocumentSrvc.get({_id: $routeParams.document_ID}, function (document) {
 
             $scope.user_list = [];

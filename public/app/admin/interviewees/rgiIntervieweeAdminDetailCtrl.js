@@ -1,7 +1,6 @@
 'use strict';
 /*jslint nomen: true unparam: true regexp: true*/
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiIntervieweeAdminDetailCtrl', function (
         $scope,
         $route,

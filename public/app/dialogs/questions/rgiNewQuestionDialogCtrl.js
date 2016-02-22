@@ -1,11 +1,12 @@
 'use strict';
-angular
-    .module('app')
+
+angular.module('app')
     .controller('rgiNewQuestionDialogCtrl', function (
         $scope,
         ngDialog,
         rgiNotifier
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.new_question = {
             question_order: $scope.questions.length + 1,
             question_text: "Enter text",

@@ -12,7 +12,8 @@ angular
         rgiDialogFactory,
         rgiAssessmentMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+
+        $scope.current_user = $scope.$root.current_user;
 
         $scope.assessmentStartReview = function (assessment_ID) {
             rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
@@ -28,7 +29,7 @@ angular
 
         $scope.assessmentTrial = function (assessment) {
             var new_assessment_data = assessment;
-            if ($scope.$parent.current_user.role==='researcher') {
+            if ($scope.current_user.role==='researcher') {
                 new_assessment_data.status = 'trial_started';
                 new_assessment_data.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
             }
@@ -42,9 +43,9 @@ angular
 
         $scope.assessmentStart = function (assessment) {
             var new_assessment_data = assessment;
-            if ($scope.$parent.current_user.role==='researcher') {
+            if ($scope.current_user.role==='researcher') {
                 new_assessment_data.status = 'started';
-            } else if ($scope.$parent.current_user.role==='reviewer') {
+            } else if ($scope.current_user.role==='reviewer') {
                 new_assessment_data.status = 'review_started';
             }
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {

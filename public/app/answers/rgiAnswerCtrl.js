@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiAnswerCtrl', function (
         $scope,
         $routeParams,
@@ -14,10 +13,8 @@ angular
         rgiDocumentSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
-        rgiAssessmentSrvc,
-        rgiAnswerMethodSrvc
+        rgiAssessmentSrvc
     ) {
-        var current_user = rgiIdentitySrvc.currentUser;
         $scope.identity = rgiIdentitySrvc;
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
@@ -32,12 +29,11 @@ angular
             $scope.answer = answer;
             $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
             $scope.flags = answer.flags;
-            $scope.current_user = current_user;
             $scope.references = answer.references;
             $scope.question = answer.question_ID;
-            if (answer[current_user.role + '_score']) {
+            if (answer[$scope.current_user.role + '_score']) {
                 $scope.question.question_criteria.forEach(function (opt, i) {
-                    if (i===answer[current_user.role + '_score'].order-1) {
+                    if (i===answer[$scope.current_user.role + '_score'].order-1) {
                         opt.selected = true;
                         $scope.answer.new_answer_selection = i;
                     } else {

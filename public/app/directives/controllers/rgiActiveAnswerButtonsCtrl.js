@@ -15,9 +15,10 @@ angular
         rgiNotifier,
         rgiDialogFactory
     ) {
+        $scope.current_user = $scope.$root.current_user;
+
         var root_url,
             assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
-        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         if ($scope.current_user.role === 'supervisor') {
             root_url = '/admin/assessments-admin';

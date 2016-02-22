@@ -24,6 +24,7 @@ div(id="comments_div").bottom-padding-med
                         ta-toolbar="[['undo', 'redo', 'clear'], ['bold', 'italics', 'underline', 'strikeThrough'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['pre', 'quote', 'insertLink']]"
                         placeholder="New comment..."
                         text-angular
+                        ta-maxlength="{{editorContentMaxLength}}"
                     )
                 .col-md-1
                     button.btn.btn-success(

@@ -1,12 +1,12 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiUserMethodSrvc', function (
         $http,
         $q,
         rgiIdentitySrvc,
         rgiUserSrvc
     ) {
-        'use strict';
         return {
             createUser: function (new_user_data) {
                 var new_user = new rgiUserSrvc(new_user_data),

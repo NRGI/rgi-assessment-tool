@@ -1,9 +1,7 @@
 'use strict';
 
-angular
-    .module('app')
-    .factory('rgiUtilsSrvc', function (
-    ) {
+angular.module('app')
+    .factory('rgiUtilsSrvc', function () {
         return {
             flagCheck: function (flags) {
                 var disabled = false;

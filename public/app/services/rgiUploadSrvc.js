@@ -1,6 +1,7 @@
-angular.module('app').factory('rgiUploadSrvc', function ($resource) {
-    'use strict';
-    var UploadResource = $resource('/file-upload', {}, {});
+'use strict';
+angular.module('app')
+    .factory('rgiUploadSrvc', function ($resource) {
+        var UploadResource = $resource('/file-upload', {}, {});
 
-    return UploadResource;
-});
+        return UploadResource;
+    });

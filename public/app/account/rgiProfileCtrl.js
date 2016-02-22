@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiProfileCtrl', function (
         $scope,
         $route,
@@ -10,8 +9,7 @@ angular
         rgiUserMethodSrvc
     ) {
         // set page resources to be those of the current identity
-        $scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.fullName = $scope.current_user.firstName + " " + $scope.current_user.lastName;
 
         // update functinonality for update button
         $scope.update = function () {

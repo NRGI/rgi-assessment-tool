@@ -1,10 +1,10 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiUploadMethodSrvc', function (
         $q,
         rgiUploadSrvc
     ) {
-        'use strict';
         return {
             upload: function (fileItem) {
                 console.log('.url');

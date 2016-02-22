@@ -1,5 +1,6 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiMoveAssessmentDialogCtrl', function (
         $scope,
         $location,
@@ -11,8 +12,8 @@ angular
         rgiUserListSrvc,
         rgiDialogFactory
     ) {
-        'use strict';
         // get current control profile onto scope and use it to populate workflow_opts
+        $scope.current_user = $scope.$root.current_user;
         rgiUserListSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,

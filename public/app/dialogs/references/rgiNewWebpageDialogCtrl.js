@@ -1,25 +1,6 @@
-//function isURLReal(fullyQualifiedURL) {
-//    'use strict';
-//    var URL = encodeURIComponent(fullyQualifiedURL),
-//        dfd = $.Deferred(),
-//        checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
-//
-//    checkURLPromise
-//        .done(function(res) {
-//            // results should be null if the page 404s or the domain doesn't work
-//            if (res.query.results) {
-//                dfd.resolve(true);
-//            } else {
-//                dfd.reject(false);
-//            }
-//        })
-//        .fail(function () {
-//            dfd.reject('failed');
-//        });
-//    return dfd.promise();
-//}
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiNewWebpageDialogCtrl', function (
         $scope,
         $route,
@@ -31,7 +12,8 @@ angular
         rgiAnswerMethodSrvc,
         rgiUserMethodSrvc
     ) {
-        'use strict';
+        $scope.current_user = $scope.$root.current_user;
+
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
         }
@@ -78,7 +60,8 @@ angular
         };
 
         $scope.documentRefSubmit = function (new_document) {
-            var url, new_user_data = $scope.$parent.current_user;
+            var url, new_user_data = $scope.current_user;
+
             //check for minimum data
             if (!$scope.new_document.source) {
                 rgiNotifier.error('You must provide a source URL!');
@@ -101,9 +84,7 @@ angular
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,
                             question_ID = $scope.$parent.question._id,
                             answer_ID = $scope.$parent.answer.answer_ID,
-                            current_user_ID = $scope.$parent.current_user._id,
-                            current_user_name = $scope.$parent.current_user.firstName + ' ' + $scope.current_user.lastName,
-                            current_user_role = $scope.$parent.current_user.role,
+                            current_user_ID = $scope.current_user._id,
                             new_answer_data = $scope.$parent.answer,
                             new_doc_data = new rgiDocumentSrvc(new_document),
                             new_ref_data = {

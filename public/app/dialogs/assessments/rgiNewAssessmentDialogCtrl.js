@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiNewAssessmentDialogCtrl', function (
         $scope,
         $route,
@@ -17,7 +16,7 @@ angular
         rgiQuestionSrvc,
         rgiUtilsSrvc
     ) {
-        var current_user = rgiIdentitySrvc.currentUser;
+        $scope.current_user = $scope.$root.current_user;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         $scope.disable_button = false;
         //TODO
@@ -102,7 +101,7 @@ angular
                                 version: $scope.new_assessment.version,
                                 country: assessment_country.country.country,
                                 created: {
-                                    created_by: current_user._id,
+                                    created_by: $scope.current_user._id,
                                     created_date: timestamp}
                             });
 
@@ -116,7 +115,7 @@ angular
                                     version: new_assessment_ver,
                                     question_order: q.question_order,
                                     question_v: q.question_v + 1,
-                                    last_modified: {modified_by: current_user._id}
+                                    last_modified: {modified_by: $scope.current_user._id}
                                 });
                             });
                             rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set)

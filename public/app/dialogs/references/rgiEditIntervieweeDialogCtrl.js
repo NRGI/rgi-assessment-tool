@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiEditIntervieweeDialogCtrl', function (
         $scope,
         $route,
@@ -9,7 +8,7 @@ angular
         rgiNotifier,
         rgiIntervieweeMethodSrvc
     ) {
-        'use strict';
+        $scope.current_user = $scope.$root.current_user;
         $scope.new_interviewee_data = $scope.$parent.interviewee;
         $scope.roles = ['government', 'cso', 'industry', 'expert', 'other'];
 

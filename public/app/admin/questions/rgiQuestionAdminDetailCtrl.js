@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiQuestionAdminDetailCtrl', function (
         $scope,
         $route,
@@ -16,7 +15,6 @@ angular
         rgiQuestionSrvc
     ) {
         $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'question';
 
         $scope.precept_options = rgiPreceptGuideSrvc.getPrecepts();

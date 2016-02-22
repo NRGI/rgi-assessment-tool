@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiAssessmentsListCtrl', function (
         $scope,
         $routeParams,
@@ -12,7 +11,6 @@ angular
         rgiIdentitySrvc
     ) {
         // filtering options
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sort_options = [
             {value: 'country', text: 'Sort by Country'},
             {value: 'start_date', text: 'Sort by Date started'},

@@ -1,13 +1,13 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiBiblioFormCtrl', function (
         $scope,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
         rgiNotifier
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.ref_type = [
             {text: 'Add Document', value: 'document'},
             {text: 'Add Webpage', value: 'webpage'},

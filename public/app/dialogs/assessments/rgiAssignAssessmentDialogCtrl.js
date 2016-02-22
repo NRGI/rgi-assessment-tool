@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
         $location,
@@ -15,6 +14,7 @@ angular
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         var originalAssessment = {};
         $scope.assessmentRoles = rgiAssessmentRolesGuideSrvc.list();
         $scope.availableUsers = {};

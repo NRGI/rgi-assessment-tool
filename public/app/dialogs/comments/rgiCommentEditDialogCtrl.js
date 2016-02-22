@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiCommentEditDialogCtrl', function (
         $scope,
         $route,
@@ -9,6 +8,7 @@ angular
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.comment_content = $scope.$parent.comment.content;
 
         $scope.saveComment = function () {

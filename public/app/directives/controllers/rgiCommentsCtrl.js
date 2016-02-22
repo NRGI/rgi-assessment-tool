@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiCommentsCtrl', function (
         $scope,
         $route,
@@ -12,11 +11,10 @@ angular
         rgiQuestionMethodSrvc,
         rgiNotifier
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.current_user = $scope.$root.current_user;
 
         $scope.commentSubmit = function () {
-
-            var current_user = rgiIdentitySrvc.currentUser,
+            var current_user = $scope.$root.current_user,
                 new_comment_data = {
                     content: $scope.update.new_comment,
                     author: current_user._id,
@@ -29,7 +27,7 @@ angular
             } else {
                 new_update_data.comments.push(new_comment_data);
 
-                if (new_update_data.status === 'assigned' && !current_user.isSupervisor()) {
+                if (new_update_data.status === 'assigned' && !$scope.$root.current_user.isSupervisor()) {
                     new_update_data.status = 'saved';
                 }
 

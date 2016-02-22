@@ -1,12 +1,12 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiAssessmentMethodSrvc', function (
         $http,
         $q,
         rgiIdentitySrvc,
         rgiAssessmentSrvc
     ) {
-        'use strict';
         return {
             createAssessment: function (new_assessment_data) {
 

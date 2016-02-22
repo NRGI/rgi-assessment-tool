@@ -1,10 +1,10 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiQuestionMethodSrvc', function (
         $q,
         rgiQuestionSrvc
     ) {
-        'use strict';
         return {
             insertQuestionSet: function (new_question_set) {
                 var dfd = $q.defer(),

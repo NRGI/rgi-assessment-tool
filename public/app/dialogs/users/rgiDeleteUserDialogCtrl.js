@@ -1,5 +1,6 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiDeleteUserDialogCtrl', function (
         $scope,
         $location,
@@ -7,7 +8,7 @@ angular
         rgiUserMethodSrvc,
         rgiNotifier
     ) {
-        'use strict';
+        $scope.current_user = $scope.$root.current_user;
         $scope.userDelete = function () {
             var user_deletion = $scope.$parent.user;
 

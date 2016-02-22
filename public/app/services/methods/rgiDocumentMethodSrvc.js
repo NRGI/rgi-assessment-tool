@@ -1,7 +1,7 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiDocumentMethodSrvc', function ($q) {
-        'use strict';
         return {
             updateDocument: function (new_doc_data) {
                 var dfd = $q.defer();

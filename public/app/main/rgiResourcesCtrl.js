@@ -1,5 +1,6 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiResourcesCtrl', function (
         $scope,
         $location,
@@ -11,7 +12,7 @@ angular
         if (resource_type === 'resource') {
             $scope.title = 'Other Resources';
         } else if (resource_type === 'faq') {
-            $scope.title = 'Frequently Asked Questions'
+            $scope.title = 'Frequently Asked Questions';
         }
 
         $scope.identity = rgiIdentitySrvc;

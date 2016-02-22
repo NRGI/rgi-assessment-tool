@@ -1,12 +1,9 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .factory('rgiResourcesMethodSrvc', function (
         $q,
         rgiResourcesSrvc
-        //$http,
-        //
     ) {
         return {
             createResource: function (new_resource_data) {

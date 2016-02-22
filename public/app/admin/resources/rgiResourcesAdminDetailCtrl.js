@@ -1,7 +1,6 @@
-angular
-    .module('app')
-    .controller('rgiResourcesAdminDetailCtrl', function (
-        $scope
-    ) {
+'use strict';
+
+angular.module('app')
+    .controller('rgiResourcesAdminDetailCtrl', function ($scope) {
 
     });

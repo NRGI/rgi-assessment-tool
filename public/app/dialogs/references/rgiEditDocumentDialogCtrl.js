@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiEditDocumentDialogCtrl', function (
         $scope,
         $route,
@@ -10,6 +9,7 @@ angular
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [

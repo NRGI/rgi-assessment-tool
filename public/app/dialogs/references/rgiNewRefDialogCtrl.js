@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiNewRefDialogCtrl', function (
         $q,
         $scope,
@@ -26,6 +25,7 @@ angular
         /////////////
         //INTERVIEWEE
         /////////////
+        $scope.current_user = $scope.$root.current_user;
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
             {text: 'CSO', value: 'cso'},
@@ -49,6 +49,7 @@ angular
         $scope.calendarOpen = function () {
             $scope.status.opened = true;
         };
+        $scope.maxDate = today;
 
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
@@ -77,9 +78,10 @@ angular
         };
 
         $scope.interviewRefSubmit = function (selected_interviewee) {
-            var new_answer_data, contact_date, email_domain, new_ref_data, current_user, selected_interviewee_ID;
-            new_answer_data = $scope.answer_update;
-            current_user = $scope.current_user;
+            var contact_date, email_domain, new_ref_data, selected_interviewee_ID,
+                new_answer_data = $scope.answer_update,
+                current_user = $scope.current_user;
+
             //error handling
             if (!new_answer_data.human_ref_comment) {
                 rgiNotifier.error('You must enter interview content!');

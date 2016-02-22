@@ -1,12 +1,12 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiRecoverPasswordCtrl', function (
         $scope,
         $location,
         rgiNotifier,
         rgiResetPasswordSrvc
     ) {
-        'use strict';
         var getErrorMessage = function(errorCode) {
             return errorCode === 'USER_NOT_FOUND' ? 'The user is not found' : 'An unknown error occurred';
         };

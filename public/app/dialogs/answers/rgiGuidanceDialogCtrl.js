@@ -8,6 +8,8 @@ angular.module('app')
         rgiNotifier
     ) {
         $scope.question_guidance_text = $scope.$parent.question.question_guidance_text;
+        $scope.current_user = $scope.$root.current_user;
+
         var new_answer_data = $scope.$parent.answer;
         new_answer_data.guidance_dialog = false;
         rgiAnswerMethodSrvc.updateAnswer(new_answer_data)

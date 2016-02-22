@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiNavBarLoginCtrl', function (
         $scope,
         $route,
@@ -30,7 +29,6 @@ angular
         };
 
         // assign the identity resource with the current identity using identity service
-        $scope.identity = rgiIdentitySrvc;
         $scope.versions = [];
 
         if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {

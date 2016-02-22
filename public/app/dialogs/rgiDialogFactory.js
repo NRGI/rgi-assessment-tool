@@ -1,11 +1,9 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .factory('rgiDialogFactory', function (
         ngDialog,
-        rgiNotifier,
-        rgiUtilsSrvc
+        rgiNotifier
     ) {
         return {
             assessmentAssign: function ($scope, assessment) {

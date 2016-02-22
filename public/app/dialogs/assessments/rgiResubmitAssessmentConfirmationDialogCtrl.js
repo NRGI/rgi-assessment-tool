@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiResubmitAssessmentConfirmationDialogCtrl', function (
         $scope,
         $location,
@@ -10,6 +9,7 @@ angular
         rgiNotifier,
         rgiAssessmentMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.assessmentResubmit = function () {
             var new_assessment_data = $scope.$parent.assessment;
 

@@ -1,12 +1,12 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .controller('rgiContactTechCtrl', function (
         $scope,
         $location,
         rgiNotifier,
         rgiContactMethodSrvc
     ) {
-        'use strict';
         $scope.request = {tool: 'rgi'};
 
         $scope.issue_selection = [

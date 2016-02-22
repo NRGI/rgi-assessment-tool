@@ -14,8 +14,8 @@ angular
             answer_split = $routeParams.answer_ID.split('-'),
             assessment_ID = answer_split.slice(0, answer_split.length - 1).join('-');
 
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.answer_number = Number(answer_split[3]);
+        $scope.current_user = $scope.$root.current_user;
 
         if ($scope.current_user === 'supervisor') {
             root_url = '/admin/assessments-admin/answer/';

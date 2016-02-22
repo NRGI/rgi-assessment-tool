@@ -1,23 +1,23 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiFlagAnswerDialogCtrl', function (
         $scope,
         $route,
         $location,
         ngDialog,
         rgiNotifier,
+        rgiIdentitySrvc,
         rgiAnswerMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.saveFlag = function () {
             var new_answer_data = $scope.$parent.answer,
-                current_user = $scope.$parent.identity.currentUser,
                 new_flag_data = {
                     content: $scope.flag_content,
-                    author_name: current_user.firstName + ' ' + current_user.lastName,
-                    author: current_user._id,
-                    role: current_user.role,
+                    author_name: $scope.current_user.firstName + ' ' + $scope.current_user.lastName,
+                    author: $scope.current_user._id,
+                    role: $scope.current_user.role,
                     date: new Date().toISOString(),
                     addressed: false,
                     addressed_to: $scope.$parent.assessment.edit_control

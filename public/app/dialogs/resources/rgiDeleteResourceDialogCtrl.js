@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiDeleteResourceDialogCtrl', function (
         $scope,
         $route,
@@ -9,6 +8,7 @@ angular
         rgiNotifier,
         rgiResourcesMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.resourceDelete = function () {
             var resource_deletion = $scope.$parent.resource._id;
 

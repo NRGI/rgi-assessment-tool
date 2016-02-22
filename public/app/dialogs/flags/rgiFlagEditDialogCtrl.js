@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiFlagEditDialogCtrl', function (
         $scope,
         $route,
@@ -9,6 +8,7 @@ angular
         rgiNotifier,
         rgiAnswerMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.flag_content = $scope.$parent.flag.content;
 
         $scope.saveFlag = function () {

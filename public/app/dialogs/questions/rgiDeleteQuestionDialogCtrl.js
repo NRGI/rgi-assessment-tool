@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiDeleteQuestionDialogCtrl', function (
         $scope,
         $location,
@@ -9,6 +8,7 @@ angular
         rgiQuestionMethodSrvc,
         rgiNotifier
     ) {
+        $scope.current_user = $scope.$root.current_user;
         $scope.questionDelete = function () {
             var question_deletion = $scope.$parent.question._id;
 

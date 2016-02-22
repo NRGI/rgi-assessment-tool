@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiAssessmentDetailCtrl', function (
         $scope,
         $routeParams,
@@ -22,10 +21,6 @@ angular
             {value: "status", text: "Sort by Status"}];
         $scope.sortOrder = $scope.sortOptions[0].value;
         $scope.order_reverse = true;
-
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
-
 
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};

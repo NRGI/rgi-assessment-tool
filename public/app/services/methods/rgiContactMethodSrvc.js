@@ -1,10 +1,10 @@
-angular
-    .module('app')
+'use strict';
+
+angular.module('app')
     .factory('rgiContactMethodSrvc', function (
         $q,
         rgiContactTechSrvc
     ) {
-        'use strict';
         return {
             contact: function (contactInfo) {
                 var newContact = new rgiContactTechSrvc(contactInfo),

@@ -15,6 +15,7 @@ angular.module('app')
         rgiAnswerMethodSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
+        $scope.current_user = $scope.$root.current_user;
 
         $scope.final_choice_set = [
             {

@@ -1,7 +1,6 @@
 'use strict';
 
-angular
-    .module('app')
+angular.module('app')
     .controller('rgiNewDocumentDialogCtrl', function (
         $scope,
         $route,
@@ -14,6 +13,7 @@ angular
         rgiAnswerMethodSrvc,
         rgiUserMethodSrvc
     ) {
+        $scope.current_user = $scope.$root.current_user;
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
             $scope.new_document.editors = [{first_name: "", last_name: ""}];
@@ -76,7 +76,7 @@ angular
         //};
 
         $scope.documentRefSubmit = function (new_document) {
-            var url, new_user_data = $scope.$parent.current_user;
+            var url, new_user_data = $scope.$root.current_user;
             //check for minimum data
             if (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name) {
                 rgiNotifier.error('You must provide at least one author!');
@@ -123,9 +123,7 @@ angular
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
                     answer_ID = $scope.$parent.answer.answer_ID,
-                    current_user_ID = $scope.$parent.current_user._id,
-                    current_user_name = $scope.$parent.current_user.firstName + ' ' + $scope.current_user.lastName,
-                    current_user_role = $scope.$parent.current_user.role,
+                    current_user_ID = $scope.current_user._id,
                     new_answer_data = $scope.$parent.answer,
                     new_doc_data = new rgiDocumentSrvc(new_document),
                     new_ref_data = {

@@ -10,6 +10,7 @@ div.left-padding-lg.right-padding-lg
                             name="comment_text"
                             ng-model="comment_content"
                             text-angular
+                            ta-maxlength="{{editorContentMaxLength}}"
                         )
     div.modal-footer
         button.btn.btn-success(ng-click="saveComment()" ng-disabled="!comment_content") Save
