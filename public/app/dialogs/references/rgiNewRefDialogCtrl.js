@@ -165,7 +165,7 @@ angular.module('app')
                             rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
                             $scope.closeThisDialog();
                             rgiNotifier.notify('Reference added!');
-                            $route.reload();
+                            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });
