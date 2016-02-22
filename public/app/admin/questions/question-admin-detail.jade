@@ -140,14 +140,14 @@
 
                     div(id="guidance_text_div").row-fluid.right-padding-lg.left-padding-lg
                         label Guidance Text
-                        //- ng-form(name="question_text_form")
                         .form-group.left-padding-lg.right-padding-lg(required)
                             div(
                                 name="question_text"
                                 text-angular-name="question_text"
                                 ng-model="question.question_guidance_text"
+                                ta-toolbar="{{taToolbarOptions}}"
                                 text-angular
-                                ta-maxlength="{{editorContentMaxLength}}")
+                                ta-max-text="{{editorContentMaxLength}}")
 
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")

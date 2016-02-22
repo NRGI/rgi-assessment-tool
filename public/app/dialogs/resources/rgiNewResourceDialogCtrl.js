@@ -9,6 +9,9 @@ angular.module('app')
         rgiResourcesMethodSrvc
     ) {
         $scope.current_user = $scope.$root.current_user;
+        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
+        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
+
         $scope.new_resource = {
             order: $scope.$parent.resources.length + 1,
             type: $scope.$parent.resource_type

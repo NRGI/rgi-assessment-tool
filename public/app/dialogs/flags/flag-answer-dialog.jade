@@ -9,9 +9,9 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                         div(
                             name="answer_text"
                             ng-model="flag_content"
+                            ta-toolbar="{{taToolbarOptions}}"
                             text-angular
-                            ta-maxlength="{{editorContentMaxLength}}"
-                        )
+                            ta-max-text="{{editorContentMaxLength}}")
 
     div.modal-footer
         button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save

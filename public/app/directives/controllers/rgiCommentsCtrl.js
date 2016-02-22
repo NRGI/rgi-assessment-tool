@@ -12,6 +12,8 @@ angular.module('app')
         rgiNotifier
     ) {
         $scope.current_user = $scope.$root.current_user;
+        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
+        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.commentSubmit = function () {
             var current_user = $scope.$root.current_user,

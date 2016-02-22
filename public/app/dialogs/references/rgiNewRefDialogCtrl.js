@@ -16,7 +16,6 @@ angular.module('app')
         rgiUtilsSrvc,
         rgiFileUploaderSrvc,
         rgiRequestSubmitterSrvc,
-        //rgiUrlCheckSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
         rgiIntervieweeSrvc,
@@ -26,6 +25,9 @@ angular.module('app')
         //INTERVIEWEE
         /////////////
         $scope.current_user = $scope.$root.current_user;
+        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
+        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
+
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
             {text: 'CSO', value: 'cso'},

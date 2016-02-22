@@ -9,6 +9,9 @@ angular.module('app')
         rgiAnswerMethodSrvc
     ) {
         $scope.current_user = $scope.$root.current_user;
+        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
+        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
+
         $scope.comment_content = $scope.$parent.comment.content;
 
         $scope.saveComment = function () {

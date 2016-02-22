@@ -113,12 +113,11 @@ div.left-padding-lg.right-padding-lg
                             div.col-md-12
                                 div(
                                     name="reference-comment"
-                                    placeholder="Enter relevant interview statements for this question..."
+                                    placeholder="Enter relevant interview statements for this question (4,000 character limit)..."
                                     ng-model="answer_update.human_ref_comment"
-                                    ta-toolbar="[['undo', 'redo', 'clear'], ['bold', 'italics', 'underline', 'strikeThrough'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['pre', 'quote', 'insertLink']]"
+                                    ta-toolbar="{{taToolbarOptions}}"
                                     text-angular
-                                    ta-maxlength="{{editorContentMaxLength}}"
-                                )
+                                    ta-max-text="{{editorContentMaxLength}}")
 
                         //existing interviewee
                         div(ng-if="interviewee_selection==='existing'")

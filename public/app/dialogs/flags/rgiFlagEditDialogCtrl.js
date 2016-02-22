@@ -9,6 +9,9 @@ angular.module('app')
         rgiAnswerMethodSrvc
     ) {
         $scope.current_user = $scope.$root.current_user;
+        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
+        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
+
         $scope.flag_content = $scope.$parent.flag.content;
 
         $scope.saveFlag = function () {
