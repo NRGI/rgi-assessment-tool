@@ -52,8 +52,9 @@
                         rgi-answer-form
 
                     // Biblio
-                    .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id")
+                    .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor()")
                         rgi-biblio-form
+
 
                     // Comments
                     .row.bottom-padding-med

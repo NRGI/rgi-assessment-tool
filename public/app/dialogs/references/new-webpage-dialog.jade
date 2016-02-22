@@ -1,171 +1,180 @@
 div.left-padding-lg.right-padding-lg
-   div.modal-header
-      h3 New Webpage Reference
-   div.modal-body
-      .row.left-padding-lg(id="new_document_form")
-         .form-horizontal
-            // NEW DOC
-            fieldset
-               div(ng-if="new_document.status!=='submitted'")
-                  // TITLE
-                  .row.form-group.right-padding-lg.top-padding-med
-                     input.form-control(
-                     name="title"
-                     type="text"
-                     placeholder="Title (required)..."
-                     ng-model="new_document.title"
-                     autocomplete="off"
-                     required)
+    div.modal-header
+        h3 New Webpage Reference
+    div.modal-body
+        .row.left-padding-lg(id="new_document_form")
+            .form-horizontal
+                // NEW DOC
+                fieldset
+                    div(ng-if="new_document.status!=='submitted'")
+                        // TITLE
+                        .row.form-group.right-padding-lg.top-padding-med
+                            input.form-control(
+                            name="title"
+                            type="text"
+                            placeholder="Title (required)..."
+                            ng-model="new_document.title"
+                            autocomplete="off"
+                            required)
 
-                  // DOC TYPE
-                  .row.form-group.right-padding-lg
-                     select.form-control(
-                     ng-model="new_document.type"
-                     required
-                     disabled)
-                        option(value="web_page" selected) Web page
-                  // AUTHOR
-                  div(ng-repeat="author in new_document.authors")
-                     .row
-                        .form-group
-                           .pull-left.col-lg-5
-                              input.form-control(
-                              name="author_first"
-                              type="text"
-                              placeholder="Author first name (required)..."
-                              ng-model="author.first_name"
-                              autocomplete="off")
-                           .pull-left.col-lg-5
-                              input.form-control(
-                              name="author_last"
-                              type="text"
-                              placeholder="Author last name (required)..."
-                              ng-model="author.last_name"
-                              autocomplete="off")
-                           .pull-left.col-lg-1.right-padding-med(ng-if="$last")
-                              glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
-                           .pull-left.col-lg-1(ng-if="!$last")
-                              glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
-                  //div
-                  //    .row
-                  //        .form-group
-                  //            // YEAR
-                  //            .pull-left.col-lg-5
-                  //                input.form-control(
-                  //                name="year"
-                  //                type="text"
-                  //                placeholder="Year published..."
-                  //                ng-model="new_document.year"
-                  //                autocomplete="off")
+                        // DOC TYPE
+                        .row.form-group.right-padding-lg
+                            select.form-control(
+                            ng-model="new_document.type"
+                            required
+                            disabled)
+                                option(value="web_page" selected) Web page
+                        // AUTHOR
+                        div(ng-repeat="author in new_document.authors")
+                            .row
+                                .form-group
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="author_first"
+                                        type="text"
+                                        placeholder="Author first name (required)..."
+                                        ng-model="author.first_name"
+                                        autocomplete="off")
+                                    .pull-left.col-lg-5
+                                        input.form-control(
+                                        name="author_last"
+                                        type="text"
+                                        placeholder="Author last name (required)..."
+                                        ng-model="author.last_name"
+                                        autocomplete="off")
+                                    .pull-left.col-lg-1.right-padding-med(ng-if="$last")
+                                        glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
+                                    .pull-left.col-lg-1(ng-if="!$last")
+                                        glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
+                        //div
+                        //    .row
+                        //        .form-group
+                        //            // YEAR
+                        //            .pull-left.col-lg-5
+                        //                input.form-control(
+                        //                name="year"
+                        //                type="text"
+                        //                placeholder="Year published..."
+                        //                ng-model="new_document.year"
+                        //                autocomplete="off")
 
-                  // SOURCE
-                  div
-                     .row
-                        .form-group
-                           .col-lg-11
-                              input.form-control.right-padding-med(
-                              name="source"
-                              type="text"
-                              placeholder="Source URL..."
-                              ng-model="new_document.source"
-                              autocomplete="off")
+                        // SOURCE
+                        div
+                            .row
+                                .form-group
+                                    .col-lg-11
+                                        input.form-control.right-padding-med(
+                                        name="source"
+                                        type="text"
+                                        placeholder="Source URL..."
+                                        ng-model="new_document.source"
+                                        autocomplete="off")
 
-                  // DATE PUBLISHED
-                  div.left-padding-med
-                     .row
-                        .form-group
-                           .col-lg-10.input-group
-                              input.form-control(
-                              type="text"
-                              datepicker-popup="{{date_format}}"
-                              ng-model="new_document.date_published"
-                              placeholder="Date published..."
-                              is-open="pub_status.opened"
-                              max-date="maxDate"
-                              datepicker-options="date_options"
-                              close-text="Close")
-                              span.input-group-btn
-                                 button.btn.btn-default(ng-click="pubCalOpen($event)")
-                                    i.glyphicon.glyphicon-calendar
-
-
-
-               // EXISTING DOC
-               div(ng-if="new_document.status==='submitted'")
-                  .row
-                     // TITILE
-                     div.col-md-6
-                        .form-group.pull-left
-                           h5
-                              b Title:
-                           h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
-                           h5(ng-if="!new_document.title")   N/A
-                     // DOC TYPE
-                     div.col-md-6
-                        .form-group.pull-left
-                           h5
-                              b Type:
-                           h5(ng-if="new_document.type")  {{new_document.type| ucfirst}}
-                           h5(ng-if="!new_document.type")  N/A
-                  //- AUTHOR
-                  .row
-                     div.col-md-6
-                        .form-group.pull-left
-                           h5
-                              b Author(s):
-                           h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
-                           h5(ng-if="!new_document.authors")  N/A
-
-                  .row
-                     // SOURCE
-                     div.col-md-6
-                        .form-group.pull-left
-                           h5
-                              b Source:
-                           h5(ng-if="new_document.source")  {{new_document.source}}
-                           h5(ng-if="!new_document.source")  N/A
-
-                     // YEAR
-                     div.col-md-6
-                        .form-group.pull-left
-                           h5
-                              b Date published:
-                           h5(ng-if="new_document.date_published")  {{new_document.date_published | date: 'MM/dd/yyyy'}}
-                           h5(ng-if="!new_document.date_published")  N/A
-
-               // DATE ACCESSED
-               div.left-padding-med
-                  .row
-                     .form-group
-                        .col-lg-10.input-group
-                           input.form-control(
-                           type="text"
-                           datepicker-popup="{{date_format}}"
-                           ng-model="ref_date_accessed"
-                           placeholder="Date accessed..."
-                           is-open="acc_status.opened"
-                           max-date="maxDate"
-                           datepicker-options="date_options"
-                           close-text="Close")
-                           span.input-group-btn
-                              button.btn.btn-default(ng-click="accCalOpen($event)")
-                                 i.glyphicon.glyphicon-calendar
+                        // DATE PUBLISHED
+                        div.left-padding-med
+                            .row
+                                .form-group
+                                    .col-lg-10.input-group
+                                        input.form-control(
+                                        type="text"
+                                        datepicker-popup="{{date_format}}"
+                                        ng-model="new_document.date_published"
+                                        placeholder="Date published..."
+                                        is-open="pub_status.opened"
+                                        max-date="maxDate"
+                                        datepicker-options="date_options"
+                                        close-text="Close")
+                                        span.input-group-btn
+                                            button.btn.btn-default(ng-click="pubCalOpen($event)")
+                                                i.glyphicon.glyphicon-calendar
 
 
 
-               //- COMMENT
-               div(id="comment")
-                  .row
-                     .form-group
-                        .col-lg-11
-                           textarea.form-control(
-                           name="comment"
-                           type="text"
-                           placeholder="Comments..."
-                           ng-model="answer.new_ref_comment"
-                           autocomplete="off")
-   div.modal-footer
-      button.btn.btn-block.btn-success(
-      ng-click="documentRefSubmit(new_document)"
-      ng-disabled="$scope.submit_disabled"
-      ) Create reference
+                    // EXISTING DOC
+                    div(ng-if="new_document.status==='submitted'")
+                        .row
+                            // TITILE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    h5
+                                        b Title:
+                                    h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
+                                    h5(ng-if="!new_document.title")   N/A
+                            // DOC TYPE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    h5
+                                        b Type:
+                                    h5(ng-if="new_document.type")  {{new_document.type| ucfirst}}
+                                    h5(ng-if="!new_document.type")  N/A
+                        //- AUTHOR
+                        .row
+                            div.col-md-6
+                                .form-group.pull-left
+                                    h5
+                                        b Author(s):
+                                    h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                    h5(ng-if="!new_document.authors")  N/A
+
+                        .row
+                            // SOURCE
+                            div.col-md-6
+                                .form-group.pull-left
+                                    h5
+                                        b Source:
+                                    h5(ng-if="new_document.source")  {{new_document.source}}
+                                    h5(ng-if="!new_document.source")  N/A
+
+                            // YEAR
+                            div.col-md-6
+                                .form-group.pull-left
+                                    h5
+                                        b Date published:
+                                    h5(ng-if="new_document.date_published")  {{new_document.date_published | date: 'MM/dd/yyyy'}}
+                                    h5(ng-if="!new_document.date_published")  N/A
+
+                    // DATE ACCESSED
+                    div.left-padding-med
+                        .row
+                            .form-group
+                                .col-lg-10.input-group
+                                    input.form-control(
+                                    type="text"
+                                    datepicker-popup="{{date_format}}"
+                                    ng-model="ref_date_accessed"
+                                    placeholder="Date accessed..."
+                                    is-open="acc_status.opened"
+                                    max-date="maxDate"
+                                    datepicker-options="date_options"
+                                    close-text="Close")
+                                    span.input-group-btn
+                                        button.btn.btn-default(ng-click="accCalOpen($event)")
+                                            i.glyphicon.glyphicon-calendar
+
+
+
+                    //- COMMENT
+                    div(id="comment")
+                        .row
+                            .form-group
+                                .col-lg-11
+                                    textarea.form-control(
+                                    name="comment"
+                                    type="text"
+                                    placeholder="Comments..."
+                                    ng-model="answer.new_ref_comment"
+                                    autocomplete="off")
+    div.modal-footer
+        button.btn.btn-block.btn-success(
+        ng-click="documentRefSubmit(new_document)"
+        ng-disabled="$scope.submit_disabled"
+        ) Create reference
+
+    div.modal-footer
+        .col-lg-6
+            button.btn.btn-block.btn-success(
+            ng-click="documentRefSubmit(new_document)"
+            ng-disabled="$scope.submit_disabled"
+            ) Create reference
+        .col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
