@@ -25,7 +25,7 @@ div(id="answers_div").bottom-padding-med
                         th.col-md-1.text-center
                     tbody
                         tr(ng-repeat="answer in value.data | filter: searchText | orderBy:sortOrder")
-                            td.col-md-1.text-center {{answer.question_ID.question_order}}
+                            td.col-md-1.text-center {{answer.question_ID.question_label}}
                             td.col-md-1 {{answer.question_ID.component_text}}
                             td.col-md-5 {{answer.question_ID.question_text}}
                             td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
