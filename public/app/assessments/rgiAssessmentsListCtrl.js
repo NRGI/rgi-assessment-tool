@@ -7,8 +7,7 @@ angular.module('app')
         rgiDialogFactory,
         rgiAssessmentSrvc,
         rgiAssessmentRolesGuideSrvc,
-        rgiUserListSrvc,
-        rgiIdentitySrvc
+        rgiUserListSrvc
     ) {
         // filtering options
         $scope.sort_options = [

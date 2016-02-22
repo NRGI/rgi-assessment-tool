@@ -14,18 +14,19 @@
                         ng-model="sortOrder"
                         ng-options="item.value as item.text for item in sortOptions")
                 br
-                button.btn.btn-success.pull-right(
-                ng-click="submitTrialAssessmentDialog()"
-                ng-if="assessment.status==='trial_started'") Submit trial
-                button.btn.btn-success.pull-right(
-                ng-click="submitAssessmentDialog()"
-                ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submit assessment
-                button.btn.btn-success.pull-right(
-                ng-click="resubmitAssessmentDialog()"
-                ng-if="assessment.status==='review_' + current_user.role") Resubmit assessment
-                button.btn.btn-success.pull-right(
-                ng-click="moveAssessmentDialog()"
-                ng-if="current_user.role==='supervisor'") Move assessment
+                div(ng-if="!current_user.isSupervisor()")
+                    button.btn.btn-success.pull-right(
+                    ng-click="submitTrialAssessmentDialog()"
+                    ng-if="assessment.status==='trial_started'") Submit trial
+                    button.btn.btn-success.pull-right(
+                    ng-click="submitAssessmentDialog()"
+                    ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submit assessment
+                    button.btn.btn-success.pull-right(
+                    ng-click="resubmitAssessmentDialog()"
+                    ng-if="assessment.status==='review_' + current_user.role") Resubmit assessment
+                div(ng-if="current_user.isSupervisor()")
+                    button.btn.btn-success.pull-right(
+                    ng-click="moveAssessmentDialog()") Move assessment
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row(ng-if="current_user.isSupervisor()")
@@ -64,8 +65,8 @@
                 .row
                     | Approved: {{assessment_counters.approved}}
                 .row
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submitted: {{assessment_counters.submitted}}
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Resubmitted: {{assessment_counters.resubmitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Completed: {{assessment_counters.submitted}}
+                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Completed: {{assessment_counters.resubmitted}}
                 .row
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
