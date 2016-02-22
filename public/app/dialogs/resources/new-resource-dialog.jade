@@ -25,7 +25,8 @@ div.left-padding-lg.right-padding-lg
                     name="resource-content_text"
                     text-angular-name="content_text"
                     ng-model="new_resource.body"
-                    text-angular)
+                    text-angular
+                    ta-maxlength="{{editorContentMaxLength}}")
 
     div.modal-footer
         button.btn.btn-success(ng-click="resourceCreate()") Create new block

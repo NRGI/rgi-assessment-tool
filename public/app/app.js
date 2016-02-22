@@ -240,5 +240,4 @@ angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
     $rootScope.editorContentMaxLength = 4000;
     $rootScope.identity = rgiIdentitySrvc;
     $rootScope.current_user = rgiIdentitySrvc.currentUser;
-
 });

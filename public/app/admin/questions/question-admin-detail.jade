@@ -146,7 +146,8 @@
                                 name="question_text"
                                 text-angular-name="question_text"
                                 ng-model="question.question_guidance_text"
-                                text-angular)
+                                text-angular
+                                ta-maxlength="{{editorContentMaxLength}}")
 
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
