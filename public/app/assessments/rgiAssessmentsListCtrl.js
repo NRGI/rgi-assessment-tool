@@ -5,7 +5,9 @@ angular.module('app')
         $scope,
         $routeParams,
         rgiDialogFactory,
+        rgiAnswerSrvc,
         rgiAssessmentSrvc,
+        rgiAssessmentStatisticsGuideSrvc,
         rgiAssessmentRolesGuideSrvc,
         rgiIdentitySrvc,
         rgiUserListSrvc
@@ -38,11 +40,29 @@ angular.module('app')
                     });
 
                     $scope.assessments.push(assessment);
+
+                    if($scope.current_user.role === 'ext_reviewer') {
+                        var assessmentId = assessment.assessment_ID;
+                        $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate({length: 0});
+                        var answerCriteria = {assessment_ID: assessmentId};
+
+                        if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
+                            answerCriteria.question_trial = true;
+                        }
+
+                        rgiAnswerSrvc.query(answerCriteria, function (answers) {
+                            $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
+                            answers.forEach(function (answer) {
+                                rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
+                            });
+                        });
+                    }
                 });
             });
         };
 
         var criteria = {};
+        $scope.assessmentsStatistics = {};
 
         if ($scope.current_user.role === 'supervisor') {
             $scope.sort_options.push({value: 'year', text: 'Sort by Year of assessment'});
