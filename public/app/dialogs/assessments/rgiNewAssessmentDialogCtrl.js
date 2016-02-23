@@ -16,7 +16,7 @@ angular.module('app')
         rgiQuestionSrvc,
         rgiUtilsSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         $scope.disable_button = false;
         //TODO

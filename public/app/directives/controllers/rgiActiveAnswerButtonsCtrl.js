@@ -15,7 +15,7 @@ angular
         rgiNotifier,
         rgiDialogFactory
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         var root_url,
             assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);

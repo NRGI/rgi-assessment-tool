@@ -7,15 +7,16 @@ angular.module('app')
         $routeParams,
         rgiNotifier,
         ngDialog,
-        rgiUtilsSrvc,
-        rgiAssessmentMethodSrvc,
         rgiAnswerSrvc,
-        rgiUserListSrvc,
+        rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
-        rgiAnswerMethodSrvc
+        rgiAssessmentMethodSrvc,
+        rgiIdentitySrvc,
+        rgiUserListSrvc,
+        rgiUtilsSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.final_choice_set = [
             {

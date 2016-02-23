@@ -10,7 +10,7 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiAnswerMethodSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
         $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 

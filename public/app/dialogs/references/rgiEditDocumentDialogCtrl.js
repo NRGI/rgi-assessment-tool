@@ -7,9 +7,10 @@ angular.module('app')
         ngDialog,
         rgiNotifier,
         rgiDocumentSrvc,
-        rgiDocumentMethodSrvc
+        rgiDocumentMethodSrvc,
+        rgiIdentitySrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [

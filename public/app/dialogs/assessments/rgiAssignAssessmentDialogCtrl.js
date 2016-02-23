@@ -11,10 +11,11 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         rgiAssessmentRolesGuideSrvc,
+        rgiIdentitySrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         var originalAssessment = {};
         $scope.assessmentRoles = rgiAssessmentRolesGuideSrvc.list();
         $scope.availableUsers = {};

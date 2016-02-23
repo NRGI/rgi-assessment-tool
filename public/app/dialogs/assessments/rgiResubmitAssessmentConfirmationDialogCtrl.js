@@ -9,7 +9,7 @@ angular.module('app')
         rgiNotifier,
         rgiAssessmentMethodSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.assessmentResubmit = function () {
             var new_assessment_data = $scope.$parent.assessment;
 

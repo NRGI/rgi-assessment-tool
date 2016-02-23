@@ -16,6 +16,7 @@ angular.module('app')
         rgiAssessmentSrvc
     ) {
         $scope.identity = rgiIdentitySrvc;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
 

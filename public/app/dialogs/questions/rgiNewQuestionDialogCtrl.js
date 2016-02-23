@@ -4,9 +4,10 @@ angular.module('app')
     .controller('rgiNewQuestionDialogCtrl', function (
         $scope,
         ngDialog,
-        rgiNotifier
+        rgiNotifier,
+        rgiIdentitySrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_question = {
             question_order: $scope.questions.length + 1,
             question_text: "Enter text",

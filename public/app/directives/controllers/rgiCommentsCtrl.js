@@ -11,12 +11,12 @@ angular.module('app')
         rgiQuestionMethodSrvc,
         rgiNotifier
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
         $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.commentSubmit = function () {
-            var current_user = $scope.$root.current_user,
+            var current_user = rgiIdentitySrvc.currentUser,
                 new_comment_data = {
                     content: $scope.update.new_comment,
                     author: current_user._id,

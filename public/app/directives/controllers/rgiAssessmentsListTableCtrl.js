@@ -13,7 +13,7 @@ angular
         rgiAssessmentMethodSrvc
     ) {
 
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.assessmentStartReview = function (assessment_ID) {
             rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {

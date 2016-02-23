@@ -5,9 +5,10 @@ angular.module('app')
         $scope,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
+        rgiIdentitySrvc,
         rgiNotifier
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.ref_type = [
             {text: 'Add Document', value: 'document'},
             {text: 'Add Webpage', value: 'webpage'},

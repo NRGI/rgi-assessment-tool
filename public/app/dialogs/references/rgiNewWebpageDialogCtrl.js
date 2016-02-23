@@ -10,10 +10,11 @@ angular.module('app')
         rgiNotifier,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
+        rgiIdentitySrvc,
         rgiAnswerMethodSrvc,
         rgiUserMethodSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];

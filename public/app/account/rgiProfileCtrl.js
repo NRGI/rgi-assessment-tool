@@ -8,7 +8,7 @@ angular.module('app')
         rgiNotifier,
         rgiUserMethodSrvc
     ) {
-        // set page resources to be those of the current identity
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.fullName = $scope.current_user.firstName + " " + $scope.current_user.lastName;
 
         // update functinonality for update button

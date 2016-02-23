@@ -6,9 +6,10 @@ angular.module('app')
         $route,
         ngDialog,
         rgiNotifier,
+        rgiIdentitySrvc,
         rgiIntervieweeMethodSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_interviewee_data = $scope.$parent.interviewee;
         $scope.roles = ['government', 'cso', 'industry', 'expert', 'other'];
 

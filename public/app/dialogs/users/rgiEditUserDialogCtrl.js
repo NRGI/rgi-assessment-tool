@@ -5,9 +5,10 @@ angular.module('app')
         $route,
         ngDialog,
         rgiNotifier,
-        rgiUserMethodSrvc
+        rgiUserMethodSrvc,
+        rgiIdentitySrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_user_data = $scope.$parent.user;
         $scope.roles = ['supervisor', 'researcher', 'reviewer'];
 

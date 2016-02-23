@@ -7,8 +7,10 @@ angular.module('app')
         rgiDialogFactory,
         rgiAssessmentSrvc,
         rgiAssessmentRolesGuideSrvc,
+        rgiIdentitySrvc,
         rgiUserListSrvc
     ) {
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         // filtering options
         $scope.sort_options = [
             {value: 'country', text: 'Sort by Country'},

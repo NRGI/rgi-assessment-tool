@@ -5,10 +5,11 @@ angular.module('app')
         $scope,
         ngDialog,
         rgiAnswerMethodSrvc,
+        rgiIdentitySrvc,
         rgiNotifier
     ) {
         $scope.question_guidance_text = $scope.$parent.question.question_guidance_text;
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         var new_answer_data = $scope.$parent.answer;
         new_answer_data.guidance_dialog = false;

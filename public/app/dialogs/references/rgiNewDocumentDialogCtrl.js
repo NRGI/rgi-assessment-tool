@@ -6,14 +6,15 @@ angular.module('app')
         $route,
         $rootScope,
         ngDialog,
-        rgiUtilsSrvc,
         rgiNotifier,
+        rgiAnswerMethodSrvc,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
-        rgiAnswerMethodSrvc,
-        rgiUserMethodSrvc
+        rgiIdentitySrvc,
+        rgiUserMethodSrvc,
+        rgiUtilsSrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
             $scope.new_document.editors = [{first_name: "", last_name: ""}];
@@ -76,7 +77,8 @@ angular.module('app')
         //};
 
         $scope.documentRefSubmit = function (new_document) {
-            var url, new_user_data = $scope.$root.current_user;
+            var url, new_user_data = rgiIdentitySrvc.currentUser;
+
             //check for minimum data
             if (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name) {
                 rgiNotifier.error('You must provide at least one author!');

@@ -6,9 +6,10 @@ angular.module('app')
         $location,
         ngDialog,
         rgiUserMethodSrvc,
-        rgiNotifier
+        rgiNotifier,
+        rgiIdentitySrvc
     ) {
-        $scope.current_user = $scope.$root.current_user;
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.userDelete = function () {
             var user_deletion = $scope.$parent.user;
 
