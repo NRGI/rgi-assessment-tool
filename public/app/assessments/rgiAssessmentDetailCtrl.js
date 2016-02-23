@@ -8,6 +8,7 @@ angular.module('app')
         ngDialog,
         rgiAnswerSrvc,
         rgiAssessmentSrvc,
+        rgiAssessmentStatisticsGuideSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiNotifier,
@@ -36,59 +37,18 @@ angular.module('app')
             $scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
             $scope.answers = [];
             rgiAnswerSrvc.query(answer_query, function (answers) {
-                $scope.assessment_counters = {
-                    length: answers.length,
-                    complete: 0,
-                    flagged: 0,
-                    submitted: 0,
-                    approved: 0,
-                    resubmitted: 0,
-                    assigned: 0,
-                    saved: 0,
-                    unresolved: 0,
-                    finalized: 0
-                };
+                $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
 
                 $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
                 answers.forEach(function (answer) {
-                    switch (answer.status) {
-                        case 'flagged':
-                            $scope.assessment_counters.flagged +=1;
-                            $scope.assessment_counters.complete +=1;
-                            break;
-                        case 'submitted':
-                            $scope.assessment_counters.submitted +=1;
-                            $scope.assessment_counters.complete +=1;
-                            break;
-                        case 'approved':
-                            $scope.assessment_counters.approved +=1;
-                            $scope.assessment_counters.complete +=1;
-                            break;
-                        case 'unresolved':
-                            $scope.assessment_counters.unresolved +=1;
-                            if (['under_review', 'resubmitted'].indexOf($scope.assessment.status) > -1) {
-                                $scope.assessment_counters.complete +=1;
-                            }
-                            break;
-                        case 'final':
-                            $scope.assessment_counters.finalized +=1;
-                            $scope.assessment_counters.complete +=1;
-                            break;
-                        case 'resubmitted':
-                            $scope.assessment_counters.resubmitted +=1;
-                            break;
-                        case 'assigned':
-                            $scope.assessment_counters.assigned +=1;
-                            break;
-                        case 'saved':
-                            $scope.assessment_counters.saved +=1;
-                            break;
-                    }
+                    rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
                     $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
+
                     if (answer.status === 'submitted' || answer.status === 'resubmitted') {
                         $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
                     }
+
                     $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });
             });
