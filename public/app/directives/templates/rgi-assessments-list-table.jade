@@ -16,7 +16,7 @@ div.top-padding-lg
                 th.col-md-1
                 th.col-md-1
         tbody
-            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order" ng-if="(current_user.role !== 'ext_reviewer') || (assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length > 0.8)")
                 //ASSESSMENT
                 td.col-sm-2(ng-if="assessment.status=='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 td.col-sm-2(ng-if="assessment.status!='unassigned'")
