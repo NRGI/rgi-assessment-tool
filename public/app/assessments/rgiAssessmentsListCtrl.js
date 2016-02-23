@@ -39,20 +39,22 @@ angular.module('app')
 
                     $scope.assessments.push(assessment);
 
-                    var assessmentId = assessment.assessment_ID;
-                    var answerCriteria = {assessment_ID: assessmentId};
+                    if($scope.current_user.role === 'ext_reviewer') {
+                        var assessmentId = assessment.assessment_ID;
+                        $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate({length: 0});
+                        var answerCriteria = {assessment_ID: assessmentId};
 
-                    if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
-                        answerCriteria.question_trial = true;
-                    }
+                        if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
+                            answerCriteria.question_trial = true;
+                        }
 
-                    $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate({length: 0});
-                    rgiAnswerSrvc.query(answerCriteria, function (answers) {
-                        $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
-                        answers.forEach(function (answer) {
-                            rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
+                        rgiAnswerSrvc.query(answerCriteria, function (answers) {
+                            $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
+                            answers.forEach(function (answer) {
+                                rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
+                            });
                         });
-                    });
+                    }
                 });
             });
         };
