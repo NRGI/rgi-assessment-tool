@@ -144,6 +144,34 @@ function createDefaultUsers() {
                 assessments: [],
                 language:  'English'
             });
+
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'external');
+            User.create({
+                firstName: 'external',
+                lastName: 'reviewer',
+                username: 'external',
+                email: 'ext_reviewer@resourcegovernance.org',
+                salt: salt,
+                hashed_pwd:  hash,
+                role: 'ext_reviewer',
+                assessments: [],
+                language:  'English'
+            });
+
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'external');
+            User.create({
+                firstName: 'externaltwo',
+                lastName: 'reviewer',
+                username: 'externaltwo',
+                email: 'ext_reviewer2@resourcegovernance.org',
+                salt: salt,
+                hashed_pwd:  hash,
+                role: 'ext_reviewer',
+                assessments: [],
+                language:  'English'
+            });
         }
     });
 }
