@@ -9,14 +9,14 @@
                     rgi-answer-nav(
                     assessment="assessment"
                     ng-if="assessment.status!=='trial_started'")
-                    div(ng-if="current_user.role!=='supervisor'")
+                    div(ng-if="!current_user.isSupervisor()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  Complete
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
                         text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
-                    div(ng-if="current_user.role==='supervisor'")
+                    div(ng-if="current_user.isSupervisor()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}

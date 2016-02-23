@@ -15,7 +15,7 @@ angular.module('app')
 
             if (user_deletion.assessments.length > 0) {
                 rgiNotifier.error('You cannot delete a user with an assigned assessment!');
-            } else if (user_deletion.role === 'supervisor') {
+            } else if (user_deletion.isSupervisor()) {
                 rgiNotifier.error('You cannot delete a supervisor!');
             } else {
                 rgiUserMethodSrvc.deleteUser(user_deletion._id).then(function () {

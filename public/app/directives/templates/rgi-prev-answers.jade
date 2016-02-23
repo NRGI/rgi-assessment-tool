@@ -8,7 +8,7 @@ div(ng-if="answer.final_score"): .well
     h5 Final role:
     div.left-padding-lg
         .text-success {{answer.final_role|role|ucfirst}}
-div(ng-if="current_user.role === 'researcher'")
+div(ng-if="current_user.isResearcher()")
     //div.bottom-padding-med
     //    div(ng-if="!answer.researcher_score.letter")
     //        h5 Your previous score:
@@ -35,7 +35,7 @@ div(ng-if="current_user.role === 'researcher'")
             div.left-padding-lg
                 .text-primary(ng-bind-html="answer.reviewer_justification")
 
-div(ng-if="current_user.role === 'reviewer'")
+div(ng-if="current_user.isReviewer()")
     //div.bottom-padding-lg(ng-if="!answer.reviewer_score.letter")
     //    h5 Your previous score:
     //    div.left-padding-lg

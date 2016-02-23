@@ -10,7 +10,7 @@ angular.module('app')
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_user_data = $scope.$parent.user;
-        $scope.roles = ['supervisor', 'researcher', 'reviewer'];
+        $scope.roles = ['supervisor', 'researcher', 'reviewer', 'ext_reviewer'];
 
         //$scope.intervieweeSave = function (new_interviewee_data) {
         //    // TODO fix save notification

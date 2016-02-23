@@ -64,7 +64,7 @@ angular.module('app')
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(function () {
-                        var root_url = $scope.current_user.role === 'supervisor' ? '/admin/assessments-admin' : '/assessments';
+                        var root_url = $scope.current_user.isSupervisor() ? '/admin/assessments-admin' : '/assessments';
 
                         if (new_answer_data.question_order !== $scope.question_length) {
                             $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));

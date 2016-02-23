@@ -31,7 +31,9 @@ angular.module('app')
         // assign the identity resource with the current identity using identity service
         $scope.versions = [];
 
-        if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
+        $scope.current_user = rgiIdentitySrvc.currentUser;
+
+        if ($scope.current_user && $scope.current_user.isSupervisor()) {
             loadAssessments();
         }
 
@@ -45,7 +47,7 @@ angular.module('app')
                 $scope.versions = [];
 
                 if (success) {
-                    if ($scope.identity.currentUser !== undefined && $scope.identity.currentUser.role === 'supervisor') {
+                    if ($scope.current_user && $scope.current_user.isSupervisor()) {
                         loadAssessments();
                     }
 

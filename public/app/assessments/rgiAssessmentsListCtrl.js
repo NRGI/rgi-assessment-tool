@@ -41,7 +41,7 @@ angular.module('app')
 
                     $scope.assessments.push(assessment);
 
-                    if($scope.current_user.role === 'ext_reviewer') {
+                    if($scope.current_user.isExternalReviewer()) {
                         var assessmentId = assessment.assessment_ID;
                         $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate({length: 0});
                         var answerCriteria = {assessment_ID: assessmentId};
@@ -64,7 +64,7 @@ angular.module('app')
         var criteria = {};
         $scope.assessmentsStatistics = {};
 
-        if ($scope.current_user.role === 'supervisor') {
+        if ($scope.current_user.isSupervisor()) {
             $scope.sort_options.push({value: 'year', text: 'Sort by Year of assessment'});
             $scope.sort_options.push({value: 'version', text: 'Sort by Version'});
 
