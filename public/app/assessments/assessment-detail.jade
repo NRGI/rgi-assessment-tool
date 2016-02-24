@@ -3,8 +3,9 @@
         div.page-well
             img.mapsicon.left-padding-lg(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
             legend.h3.page-header {{assessment.country}} {{assessment.year}} {{assessment.version | ucfirst}} Assessment
+                .pull-right.text-danger(ng-if="assessment_counters.complete / assessment_counters.length < 0.8") Assessment not complete
             .pull-right
-                form.form-inline
+                form.form-inline(ng-if="assessment_counters.complete / assessment_counters.length >= 0.8")
                     .form-group
                         input.form-control(
                         ng-model="searchText"
@@ -73,4 +74,7 @@
                     | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
 
 
-            rgi-assessment-detail-table
+            //rgi-assessment-detail-table(ng-if="assessment_counters.complete / assessment_counters.length >= 0.8")
+            rgi-assessment-detail-table(ng-if="assessment_counters.complete / assessment_counters.length < 0.8")
+        //div(ng-if="assessment_counters.complete / assessment_counters.length < 0.8")
+        //    .row

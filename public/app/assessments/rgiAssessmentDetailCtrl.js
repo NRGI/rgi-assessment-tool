@@ -37,6 +37,7 @@ angular.module('app')
             $scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
             $scope.answers = [];
             rgiAnswerSrvc.query(answer_query, function (answers) {
+                console.log(answers);
                 $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
 
                 $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
