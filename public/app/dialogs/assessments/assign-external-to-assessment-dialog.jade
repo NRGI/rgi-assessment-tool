@@ -1,0 +1,17 @@
+.left-padding-lg.right-padding-lg
+    .modal-header
+        h3 Assign Assessment to External Reviewer
+    .modal-body
+        fieldset: div: .row
+            h4.col-md-4  Assessment:
+            .form-group.col-md-6(class="nullable")
+                select.form-group.form-control.right-padding-med(
+                name="assessment_selector"
+                ng-model="new_assessment_assignment"
+                ng-options="a as (a.country + ' ' + a.version + ' ' + a.year) for a in assessments"
+                required)
+                    option(value="" selected disabled) Select assessment...
+    .modal-footer.top-padding-lg
+        button.btn.btn-success(ng-click="assignAssessmentExternal(new_assessment_assignment)") Assign assessment
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeDialog()") Cancel

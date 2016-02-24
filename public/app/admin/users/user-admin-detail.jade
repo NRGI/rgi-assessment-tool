@@ -20,14 +20,17 @@
                             tr
                                 td
                                     .row(ng-repeat="assessment in user.assessments").left-padding-lg
-                                        a(href="/admin/assessment-admin/{{assessment.assessment_ID}}") {{assessment.assessment_ID}}
+                                        a(href="/admin/assessments-admin/{{assessment.assessment_ID}}") {{assessment.assessment_ID}}
                                 td
                                     .row(ng-repeat="interviewee in user.interviewees").left-padding-lg {{interviewee}}
                                         //a(href="/admin/assessments-admin/interviewee/{{interviewee}}") {{interviewee}}
                                 td
                                     .row(ng-repeat="document in user.document_details").left-padding-lg
                                         a(href="/admin/documents-admin/{{document._id}}") {{document.title}}
+                .row-fluid.col-md-3(ng-if="user.isExternalReviewer()")
+                    button.btn.btn-block.btn-primary(ng-click="addToAssessment()") Add to assessment
             div.left-padding-lg.right-padding-lg
+                .top-padding-lg(ng-if="user.isExternalReviewer()")
                 h3 Information
                 .row-fluid.right-padding-med.left-padding-med
                     table.table.table-condensed

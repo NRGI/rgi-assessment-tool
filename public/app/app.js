@@ -3,6 +3,7 @@ angular.module('app', [
     'angular.filter',
     'angularFileUpload',
     'angular-redactor',
+    'angular-underscore',
     'angucomplete',
     'infinite-scroll',
     'ng-form-group',
@@ -240,4 +241,5 @@ angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
     $rootScope.editorContentMaxLength = 4000;
     $rootScope.taToolbarOptions = [['undo', 'redo', 'clear'], ['bold', 'italics', 'underline'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['quote', 'insertLink'], ['charcount']];
     $rootScope.identity = rgiIdentitySrvc;
+    $rootScope._ = _;
 });

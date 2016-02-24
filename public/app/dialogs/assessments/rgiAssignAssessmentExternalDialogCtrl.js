@@ -49,10 +49,7 @@ angular.module('app')
             if ($scope.assessment.ext_reviewer_ID.length < 1) {
                 rgiNotifier.error('You must select an external reviewer!');
             } else {
-                var new_assessment = $scope.assessment
-                //$scope.assessment.mail = true;
-                //$scope.assessment.status = 'trial';
-                //$scope.assessment.edit_control = $scope.assessment.researcher_ID;
+                var new_assessment = $scope.assessment;
 
                 rgiAssessmentMethodSrvc.updateAssessment(new_assessment)
                     .then(function () {
@@ -62,32 +59,6 @@ angular.module('app')
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
-
-                //var assignUser = function(role, linkedAssessmentData) {
-                //    var field = role + '_ID';
-                //    var user = new rgiUserSrvc(getUser(role, $scope.assessment[field]));
-                //
-                //    user.assessments.push(linkedAssessmentData);
-                //    $scope.assessment[field] = user._id;
-                //
-                //    return rgiUserMethodSrvc.updateUser(user).$promise;
-                //};
-                //
-                //var promises = [];
-                //$scope.assessmentRoles.forEach(function(role) {
-                //    if ($scope.assessment[role + '_ID']) {
-                //        promises.push(assignUser(role, {
-                //            assessment_ID: $scope.$parent.assessment_update_ID,
-                //            country_name: $scope.assessment.country,
-                //            year: $scope.assessment.year,
-                //            version: $scope.assessment.version
-                //        }));
-                //    }
-                //});
-                //
-                //$q.all(promises).then(function() {
-                //    updateAssessment('Assessment assigned!');
-                //});
             }
         };
 

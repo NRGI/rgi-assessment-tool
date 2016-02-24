@@ -8,9 +8,13 @@ var Answer      = require('mongoose').model('Answer'),
     contact     = require('../utilities/contact');
 
 exports.getAssessments = function (req, res) {
+    console.log(req.query);
+    //if (typeof req.query.ext_reviewer_ID==='string') {
+    //    req.query.ext_reviewer_ID = JSON.parse(req.query.ext_reviewer_ID);
+    //}
     var query = Assessment.find(req.query);
-    query.exec(function (err, collection) {
-        res.send(collection);
+    query.exec(function (err, assessments) {
+        res.send(assessments);
     });
 };
 
@@ -104,7 +108,7 @@ exports.updateAssessment = function (req, res) {
                     //if (!(assessment.hasOwnProperty('ext_reviewer_ID'))) {
                     //    assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
                     //}
-                    if (!(assessment.hasOwnProperty('assignment'))) {
+                    if (!(assessment.hasOwnProperty('assignment')) && assessment.hasOwnProperty('researcher_ID')) {
                         assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
                     }
 

@@ -3,7 +3,8 @@
         div.page-well
             legend.h3.page-header
                 text(ng-if="current_user.isSupervisor()") Assessment Status Dashboard
-                text(ng-if="!current_user.isSupervisor()") Open Assessments
+                text(ng-if="current_user.isResearcher() || current_user.isReviewer()") Open Assessments
+                text(ng-if="current_user.isExternalReviewer()") Completed Assessments
             div.left-padding-lg.right-padding-lg.top-padding-med
                 .row.pull-left.left-padding-lg.right-padding-lg(ng-if="current_user.isSupervisor()")
                     .btn.btn-success(ng-click="newAssessmentDialog()") Deploy Assessment

@@ -37,4 +37,8 @@ angular.module('app')
         $scope.deleteConfirmDialog = function () {
             rgiDialogFactory.userDelete($scope);
         };
+
+        $scope.addToAssessment = function () {
+            rgiDialogFactory.assessmentAddReviewer($scope);
+        };
     });
