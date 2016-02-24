@@ -18,6 +18,7 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
         var originalAssessment = {};
         $scope.assessmentRoles = _.without(rgiAssessmentRolesGuideSrvc.list(),'ext_reviewer');
+        //$scope.assessmentRoles = rgiAssessmentRolesGuideSrvc.list();
         $scope.availableUsers = {};
 
         $scope.assessmentRoles.forEach(function(role) {

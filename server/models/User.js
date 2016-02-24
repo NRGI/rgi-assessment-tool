@@ -39,9 +39,15 @@ userSchema = new Schema({
         assessment_ID:  String, // ISO3 Identifier
         country_name:  String // Text name of country
     }],
-    documents: [ObjectId],
-    interviewees: [ObjectId],
-    createdBy: ObjectId,
+    documents: [{
+        type: ObjectId,
+        ref: 'Documents'}],
+    interviewees: [{
+        type: ObjectId,
+        ref: 'Interviewees'}],
+    createdBy: {
+        type: ObjectId,
+        ref: 'User'},
     creationDate: {
         type:  Date,
         default: Date.now},

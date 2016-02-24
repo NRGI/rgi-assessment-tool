@@ -4,6 +4,7 @@
 var Answer      = require('mongoose').model('Answer'),
     Assessment  = require('mongoose').model('Assessment'),
     User        = require('mongoose').model('User'),
+    _           = require('underscore'),
     contact     = require('../utilities/contact');
 
 exports.getAssessments = function (req, res) {
@@ -65,10 +66,12 @@ exports.updateAssessment = function (req, res) {
     }
 
     User.findOne({_id: researcher_id}).exec(function (err, user_researcher) {
-        contact_packet.researcher_firstName = user_researcher.firstName;
-        contact_packet.researcher_lastName = user_researcher.lastName;
-        contact_packet.researcher_fullName = user_researcher.firstName + " " + user_researcher.lastName;
-        contact_packet.researcher_email = user_researcher.email;
+        if (user_researcher) {
+            contact_packet.researcher_firstName = user_researcher.firstName;
+            contact_packet.researcher_lastName = user_researcher.lastName;
+            contact_packet.researcher_fullName = user_researcher.firstName + " " + user_researcher.lastName;
+            contact_packet.researcher_email = user_researcher.email;
+        }
 
         User.findOne({_id: reviewer_id}).exec(function (err, user_reviewer) {
             if (user_reviewer) {
@@ -79,11 +82,13 @@ exports.updateAssessment = function (req, res) {
                 contact_packet.reviewer_role = user_reviewer.role;
             }
             User.findOne({_id: edit_control_id}).exec(function (err, user_editor) {
-                contact_packet.editor_firstName = user_editor.firstName;
-                contact_packet.editor_lastName = user_editor.lastName;
-                contact_packet.editor_fullName = user_editor.firstName + " " + user_editor.lastName;
-                contact_packet.editor_role = user_editor.role;
-                contact_packet.editor_email = user_editor.email;
+                if (user_editor) {
+                    contact_packet.editor_firstName = user_editor.firstName;
+                    contact_packet.editor_lastName = user_editor.lastName;
+                    contact_packet.editor_fullName = user_editor.firstName + " " + user_editor.lastName;
+                    contact_packet.editor_role = user_editor.role;
+                    contact_packet.editor_email = user_editor.email;
+                }
 
                 Assessment.findOne({_id: assessmentUpdates._id}).exec(function (err, assessment) {
                     if (err) {
@@ -96,35 +101,74 @@ exports.updateAssessment = function (req, res) {
                     if (!(assessment.hasOwnProperty('reviewer_ID'))) {
                         assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
                     }
-                    if (!(assessment.hasOwnProperty('ext_reviewer_ID'))) {
-                        assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
-                    }
+                    //if (!(assessment.hasOwnProperty('ext_reviewer_ID'))) {
+                    //    assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
+                    //}
                     if (!(assessment.hasOwnProperty('assignment'))) {
                         assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
                     }
 
-                    if (!(assessment.hasOwnProperty('start_date'))) {
-                        if (assessmentUpdates.hasOwnProperty('start_date')) {
-                            assessment.start_date = {started_by: assessmentUpdates.start_date.started_by, started_date: timestamp};
-                        }
+                    //if (!(assessment.hasOwnProperty('start_date'))) {
+                    //    if (assessmentUpdates.hasOwnProperty('start_date')) {
+                    //        assessment.start_date = {started_by: assessmentUpdates.start_date.started_by, started_date: timestamp};
+                    //    }
+                    //}
+                    if (!(assessment.hasOwnProperty('start_date')) && assessmentUpdates.hasOwnProperty('start_date')) {
+                        assessment.start_date = {started_by: assessmentUpdates.start_date.started_by, started_date: timestamp};
                     }
 
-                    if (!(assessment.hasOwnProperty('submit_date'))) {
-                        if (assessmentUpdates.hasOwnProperty('submit_date')) {
-                            assessment.submit_date = {submited_by: assessmentUpdates.submit_date.submited_by, submited_date: timestamp};
-                        }
+                    //if (!(assessment.hasOwnProperty('submit_date'))) {
+                    //    if (assessmentUpdates.hasOwnProperty('submit_date')) {
+                    //        assessment.submit_date = {submited_by: assessmentUpdates.submit_date.submited_by, submited_date: timestamp};
+                    //    }
+                    //}
+                    if (!(assessment.hasOwnProperty('submit_date')) && assessmentUpdates.hasOwnProperty('submit_date')) {
+                        assessment.submit_date = {submited_by: assessmentUpdates.submit_date.submited_by, submited_date: timestamp};
                     }
 
-                    if (assessmentUpdates.hasOwnProperty('review_date')) {
-                        if (!(assessment.hasOwnProperty('review_date'))) {
-                            assessment.review_date = {reviewed_by: assessmentUpdates.review_date.reviewed_by, reviewed_date: timestamp};
-                        }
+                    //if (assessmentUpdates.hasOwnProperty('review_date')) {
+                    //    if (!(assessment.hasOwnProperty('review_date'))) {
+                    //        assessment.review_date = {reviewed_by: assessmentUpdates.review_date.reviewed_by, reviewed_date: timestamp};
+                    //    }
+                    //}
+                    if (!(assessment.hasOwnProperty('review_date')) && assessmentUpdates.hasOwnProperty('review_date')) {
+                        assessment.review_date = {reviewed_by: assessmentUpdates.review_date.reviewed_by, reviewed_date: timestamp};
                     }
-                    if (assessmentUpdates.hasOwnProperty('approval')) {
-                        if (!(assessment.hasOwnProperty('approval'))) {
-                            assessment.approval = {approved_by: assessmentUpdates.approval.approved_by, approved_date: timestamp};
-                        }
+
+                    //if (assessmentUpdates.hasOwnProperty('approval')) {
+                    //    if (!(assessment.hasOwnProperty('approval'))) {
+                    //        assessment.approval = {approved_by: assessmentUpdates.approval.approved_by, approved_date: timestamp};
+                    //    }
+                    //}
+                    if (!(assessment.hasOwnProperty('approval')) && assessmentUpdates.hasOwnProperty('approval')) {
+                        assessment.approval = {approved_by: assessmentUpdates.approval.approved_by, approved_date: timestamp};
                     }
+
+                    _.each(assessmentUpdates.ext_reviewer_ID, function(new_reviewer) {
+                        var new_assignment = true;
+                        _.each(assessment.ext_reviewer_ID, function(old_reviewer) {
+                            if (new_reviewer==old_reviewer) {
+                                new_assignment = false;
+                            }
+                        });
+                        if (new_assignment===true) {
+                            User.findOne({_id: new_reviewer}).exec(function (err, new_ext_reviewer) {
+
+                                new_ext_reviewer.assessments.push({
+                                    assessment_ID: assessment.assessment_ID,
+                                    country_name: assessment.country
+                                });
+                                new_ext_reviewer.save(function (err) {
+                                    if (err) {
+                                        return res.send({ reason: err.toString() });
+                                    }
+                                });
+
+                            });
+                        }
+                    });
+
+                    assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
 
                     assessment.edit_control = assessmentUpdates.edit_control;
                     assessment.status = assessmentUpdates.status;

@@ -17,6 +17,17 @@ angular.module('app')
                     scope: scope
                 });
             },
+            assessmentExternalAssign: function ($scope, assessment) {
+                var scope = $scope;
+                scope.value = true;
+                scope.assessment_update_ID = assessment.assessment_ID;
+                ngDialog.open({
+                    template: 'partials/dialogs/assessments/assign-assessment-external-dialog',
+                    controller: 'rgiAssignAssessmentExternalDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: scope
+                });
+            },
             guidanceDialog: function ($scope) {
                 var scope = $scope;
                 ngDialog.open({

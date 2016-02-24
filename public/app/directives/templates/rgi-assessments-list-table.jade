@@ -103,7 +103,10 @@ div.top-padding-lg
                     ng-click="reassignAssessmentDialog(assessment)"
                     ng-if="assessment.status!='unassigned'") Reassign
                 //CONTROL BUTTON 1 -ADMIN
-                td.col-sm-1(ng-if="!current_user.isSupervisor()")
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    button.btn.btn-col.center-block.btn-primary(
+                    ng-disabled="assessment.status==='unassigned'"
+                    ng-click="assignAssessmentExternalDialog(assessment)") Assign external
                 //CONTROL BUTTON 2 - ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.btn-primary(
@@ -125,7 +128,7 @@ div.top-padding-lg
                     a.btn.center-block.btn-default.disabled(
                     href=""
                     ng-if="['unassigned', 'submitted', 'resubmitted', 'trial_submitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
-                    ) Waiting for submission
+                    ) Waiting
                 //CONTROL BUTTON 1 -USER
                 td.col-sm-1(ng-if="!current_user.isSupervisor()")
                     //start trial button

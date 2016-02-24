@@ -60,6 +60,10 @@ angular
             rgiDialogFactory.assessmentAssign($scope, assessment);
         };
 
+        $scope.assignAssessmentExternalDialog = function (assessment) {
+            rgiDialogFactory.assessmentExternalAssign($scope, assessment);
+        };
+
         $scope.reassignAssessmentDialog = function (assessment) {
             rgiDialogFactory.assessmentAssign($scope, assessment);
         };
