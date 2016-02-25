@@ -49,7 +49,8 @@
 
                     ////.row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                     //.row(ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
-                    //    rgi-external-answer-tabs
+                    .row
+                        rgi-external-answer-tabs(answer="answer")
 
                     // Answer form
                     .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")

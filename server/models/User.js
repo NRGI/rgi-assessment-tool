@@ -52,6 +52,7 @@ userSchema = new Schema({
         type:  Date,
         default: Date.now},
     address: String,
+    external_type: String, //government, country_team,
     salutation: String,
     title: String,
     position: String,

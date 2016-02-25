@@ -14,6 +14,7 @@ angular
     ) {
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.externalThreshold = $scope.$parent.$parent.externalThreshold;
 
         $scope.assessmentStartReview = function (assessment_ID) {
             rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {

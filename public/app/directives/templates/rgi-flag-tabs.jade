@@ -5,7 +5,6 @@ div(id="flags_div").bottom-padding-med
     role="tablist"
     aria-multiselectable="true")
 
-        ///TODO Fix repeating imvisible panels
         div.panel(
         ng-repeat="flag in flags"
         ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to._id===current_user._id))"

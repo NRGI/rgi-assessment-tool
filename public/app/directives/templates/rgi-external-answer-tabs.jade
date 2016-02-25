@@ -1,0 +1,38 @@
+div(id="external_answer_div").bottom-padding-med
+    legend External answers
+    div.panel-group(
+    id="prev_external_answer_div"
+    role="tablist"
+    aria-multiselectable="true")
+        div.panel.panel-primary(
+        ng-repeat="answer in answer.external_answer"
+        ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
+            div.panel-heading(
+            role="tab"
+            id="heading{{$index}}")
+                h4.panel-title
+                    div(
+                    style="text-align: left;"
+                    role="button"
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse{{$index}}"
+                    aria-expanded="false"
+                    aria-controls="collapse{{$index}}")
+                        b(ng-if="current_user.isSupervisor() || current_user._id===answer.author._id") {{answer.author.firstName | ucfirst}} {{answer.author.lastName | ucfirst}} -
+                        b: em  {{answer.author.external_type}} reviewer
+                        em.pull-right  {{answer.date | date:'MM/dd/yyyy'}}
+
+            div(
+            id="collapse{{$index}}"
+            class="panel-collapse collapse"
+            role="tabpanel"
+            aria-labelledby="heading{{$index}}")
+                div.panel-body
+                    h5 Answer:
+                    .row.left-padding-lg
+                        .text-primary {{answer.score.letter | ucfirst}} - {{answer.score.text}}
+
+                    h5 Justification:
+                    .row.left-padding-lg
+                        .text-primary(ng-bind-html="answer.comment")

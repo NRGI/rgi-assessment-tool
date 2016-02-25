@@ -163,14 +163,11 @@ div.top-padding-lg
 
                 td.col-sm-1(ng-if="current_user.isExternalReviewer()")
                     a.btn.btn-col.center-block.btn-primary(
-                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
+                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
                     href="/assessments/{{assessment.assessment_ID}}") Comment on assessment
-                    //a.btn.btn-col.center-block.btn-primary(
-                    //ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
-                    //href="/assessments/{{assessment.assessment_ID}}") Comment on assessment
-                    //button.btn.btn-col.btn-default(
-                    //ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
-                    //disabled) Waiting for completion
+                    button.btn.btn-col.btn-default(
+                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
+                    disabled) Waiting for completion
 
 
                     //TODO add submssion fuction for this page

@@ -242,4 +242,5 @@ angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
     $rootScope.taToolbarOptions = [['undo', 'redo', 'clear'], ['bold', 'italics', 'underline'], ['h1', 'h2', 'h3'], ['ul', 'ol'], ['quote', 'insertLink'], ['charcount']];
     $rootScope.identity = rgiIdentitySrvc;
     $rootScope._ = _;
+    $rootScope.externalThreshold = .8;
 });
