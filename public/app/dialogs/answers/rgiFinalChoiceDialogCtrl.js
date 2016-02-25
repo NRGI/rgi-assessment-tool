@@ -5,6 +5,7 @@ angular.module('app')
         $scope,
         $location,
         $routeParams,
+        $route,
         rgiNotifier,
         ngDialog,
         rgiAnswerSrvc,
@@ -36,14 +37,6 @@ angular.module('app')
                 role: 'researcher'
             },
             {
-                text: 'Agree with reviewer score',
-                score: $scope.answer.reviewer_score,
-                justification: $scope.answer.reviewer_justification,
-                comment: '',
-                value: 'reviewer',
-                role: 'reviewer'
-            },
-            {
                 text: 'Other score',
                 score: 0,
                 justification: '',
@@ -53,13 +46,20 @@ angular.module('app')
             }
         ];
 
+        if ($scope.answer.reviewer_score) {
+            $scope.final_choice_set.push({
+                text: 'Agree with reviewer score',
+                score: $scope.answer.reviewer_score,
+                justification: $scope.answer.reviewer_justification,
+                comment: '',
+                value: 'reviewer',
+                role: 'reviewer'
+            });
+        }
 
         $scope.externalChoiceSubmit = function () {
             var new_answer_data = $scope.answer,
                 final_choice = $scope.final_choice;
-
-            console.log(new_answer_data);
-            console.log(final_choice);
 
             new_answer_data.external_answer.push({
                 comment: final_choice.comment,
@@ -75,6 +75,7 @@ angular.module('app')
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(function () {
                     rgiNotifier.notify('Input added');
+                    $route.reload();
                     ngDialog.close();
                 }, function (reason) {
                     rgiNotifier.error(reason);
