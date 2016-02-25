@@ -63,7 +63,10 @@ referenceSchema = new Schema({
         default: Date.now},
     author: user_ref,
     comment: htmlSettings,
-    location: String
+    location: String,
+    hidden: {
+        type: Boolean,
+        default: false}
 });
 
 scoreHistorySchema = new Schema({

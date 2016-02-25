@@ -185,6 +185,16 @@ angular.module('app')
                     scope: scope
                 });
             },
+            referenceDeleteConfirmation: function ($scope, ref_index){
+                var scope = $scope;
+                scope.ref_index = ref_index;
+                ngDialog.openConfirm({
+                    template: 'partials/dialogs/references/delete-ref-dialog',
+                    controller: 'rgiDeleteRefDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: scope
+                });
+            },
             documentCreate: function($scope) {
                 var scope = $scope;
                 scope.value = true;

@@ -22,26 +22,8 @@ angular.module('app')
         resetSelection();
         $scope.$on('RESET_SELECTED_REFERENCE_ACTION', resetSelection);
 
-        $scope.deleteReference = function(referenceId) {
-            var removeReferenceIndex = -1;
-
-            for(var i in $scope.answer.references) {
-                if($scope.answer.references.hasOwnProperty(i) && $scope.answer.references[i]._id === referenceId) {
-                    removeReferenceIndex = i;
-                }
-            }
-
-            if(removeReferenceIndex > -1) {
-                var referencesBackup = $scope.answer.references.slice(0);
-                $scope.answer.references.splice(removeReferenceIndex, 1);
-
-                rgiAnswerMethodSrvc.updateAnswer($scope.answer).then(function () {
-                    rgiNotifier.notify('The reference has been deleted');
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                    $scope.answer.references = referencesBackup;
-                });
-            }
+        $scope.deleteReferenceConfirmation = function(ref_index) {
+            rgiDialogFactory.referenceDeleteConfirmation($scope, ref_index);
         };
 
         //TODO Generate Dialog based on change and handle upload process via dialogs
