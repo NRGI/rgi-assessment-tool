@@ -166,7 +166,7 @@ angular.module('app')
                             rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
                             $scope.closeThisDialog();
                             rgiNotifier.notify('Reference added!');
-                            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
+                            $route.reload();
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });
@@ -279,27 +279,6 @@ angular.module('app')
                     handleFileUploadStatus(response);
                 }
             });
-
-            //if (fileUrl.split('.')[fileUrl.split('.').length - 1].toLowerCase() !== 'pdf') {
-            //    rgiNotifier.error('The URL does not point to a document!');
-            //} else {
-            //    rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
-            //        if (response.data.reason) {
-            //            $scope.fileUploading = false;
-            //            rgiNotifier.error('The file cannot be uploaded');
-            //                } else {
-            //                    $scope.uploader.queue.push({
-            //                        file: {
-            //                            name: fileUrl.split('/')[fileUrl.split('/').length - 1],
-            //                            size: response.data.size
-            //                        },
-            //                        isUploading: true,
-            //                        progress: response.data.completion * 100
-            //                    });
-            //                    handleFileUploadStatus(response);
-            //                }
-            //        });
-            //}
 
         };
     });

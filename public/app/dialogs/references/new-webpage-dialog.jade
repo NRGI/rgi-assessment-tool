@@ -164,17 +164,17 @@ div.left-padding-lg.right-padding-lg
                                     placeholder="Comments..."
                                     ng-model="answer.new_ref_comment"
                                     autocomplete="off")
-    div.modal-footer
-        button.btn.btn-block.btn-success(
-        ng-click="documentRefSubmit(new_document)"
-        ng-disabled="$scope.submit_disabled"
-        ) Create reference
+    //div.modal-footer
+    //    button.btn.btn-block.btn-success(
+    //    ng-click="documentRefSubmit(new_document)"
+    //    ng-disabled="$scope.submit_disabled"
+    //    ) Create reference
 
     div.modal-footer
-        .col-lg-6
+        .col-lg-7
             button.btn.btn-block.btn-success(
             ng-click="documentRefSubmit(new_document)"
             ng-disabled="$scope.submit_disabled"
             ) Create reference
-        .col-lg-6
+        .col-lg-5
             button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

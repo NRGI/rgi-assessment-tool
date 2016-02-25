@@ -184,7 +184,7 @@ angular.module('app')
                     .then(function () {
                         $scope.closeThisDialog();
                         rgiNotifier.notify('Reference added!');
-                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
+                        $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });

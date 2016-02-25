@@ -146,29 +146,17 @@ angular.module('app')
                             .then(function () {
                                 $scope.closeThisDialog();
                                 rgiNotifier.notify('Reference added!');
-                                $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
+                                $route.reload();
                             }, function (reason) {
                                 rgiNotifier.error(reason);
                             });
 
                     });
-
-
-
-                //    url = $scope.answer.web_ref_url;
-                //} else {
-                //    url = 'http://' + $scope.answer.web_ref_url;
-                //}
-                //var url = ;
-                //
-                ////TODO check for proper url
-                //} else if ($scope.new_document.source !== undefined) {
-
-
             }
         };
 
         $scope.closeDialog = function () {
             ngDialog.close();
+            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
     });
