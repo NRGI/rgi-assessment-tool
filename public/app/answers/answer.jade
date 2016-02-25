@@ -48,8 +48,7 @@
                         rgi-flag-tabs
 
                     ////.row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
-                    //.row(ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
-                    .row
+                    .row(ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
                         rgi-external-answer-tabs(answer="answer")
 
                     // Answer form
