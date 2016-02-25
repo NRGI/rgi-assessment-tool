@@ -80,37 +80,6 @@ angular.module('app')
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
-
-            //if (!final_choice) {
-            //    //rgiNotifier.error("You must select an action!");
-            //} else if (!final_choice.score) {
-            //    //rgiNotifier.error("You must select a score!");
-            //} else if (!final_choice.comment) {
-            //    //rgiNotifier.error("You must provide a justification!");
-            //} else {
-            //    console.log(new_answer_data);
-            //    console.log(final_choice);
-            //
-            //    //{
-            //    //    score: {
-            //            name: String,
-            //                letter: String,
-            //                order: Number,
-            //                text: String,
-            //                value: Number
-            //    //    },
-            //    //    justification: htmlSettings,
-            //    //        comment: htmlSettings,
-            //    //    author: ObjectId,
-            //    //    date: {
-            //    //    type: Date,
-            //    //default: Date.now
-            //    //}
-            //    //
-            //    //}
-            //
-            //}
-            //console.log($scope);
         };
 
         $scope.finalChoiceSubmit = function () {

@@ -43,8 +43,6 @@ angular.module('app')
                 });
             };
 
-
-            //console.log(answer);
             if (answer.guidance_dialog) {
                 rgiDialogFactory.guidanceDialog($scope);
             }

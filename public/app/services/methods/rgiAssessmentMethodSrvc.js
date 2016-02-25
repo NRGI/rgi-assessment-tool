@@ -24,7 +24,6 @@ angular.module('app')
             },
             //deleteAssessment: function (userDeletion) {
             //    var dfd = $q.defer();
-            //    console.log(userDeletion);
             //
             ////     userDeletion.$remove().then(function() {
             ////         dfd.resolve();

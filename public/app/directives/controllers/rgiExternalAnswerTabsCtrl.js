@@ -7,8 +7,4 @@ angular.module('app')
         rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        console.log($scope);
-        //$scope.flagEdit = function (flag, index) {
-        //    rgiDialogFactory.flagEdit($scope, flag, index);
-        //};
     });

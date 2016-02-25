@@ -9,7 +9,6 @@ angular.module('app')
             createResource: function (new_resource_data) {
                 var new_resource = new rgiResourcesSrvc(new_resource_data),
                     dfd = $q.defer();
-                console.log(new_resource);
                 new_resource.$save().then(function () {
                     dfd.resolve();
                 }, function (response) {
