@@ -55,16 +55,16 @@ div.left-padding-lg.right-padding-lg
                                     td.text-center
                                         span(ng-show="item.isSuccess")
                                             i.glyphicon.glyphicon-ok
-                                        span(ng-show="item.isCancel")
-                                            i.glyphicon.glyphicon-ban-circle
+                                        //span(ng-show="item.isCancel")
+                                        //    i.glyphicon.glyphicon-ban-circle
                                         span(ng-show="item.isError")
                                             i.glyphicon.glyphicon-remove
                                     td(nowrap)
                                         button.btn.btn-success.btn-xs(type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess")
                                             span.glyphicon.glyphicon-upload Upload
-                                        | &nbsp;
-                                        button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
-                                            span.glyphicon.glyphicon-ban-circle Cancel
+                                        //| &nbsp;
+                                        //button.btn.btn-warning.btn-xs(ng-click="item.cancel()" ng-disabled="!item.isUploading")
+                                        //    span.glyphicon.glyphicon-ban-circle Cancel
                                         | &nbsp;
                                         button.btn.btn-danger.btn-xs(ng-click="item.remove()")
                                             span.glyphicon.glyphicon-trash Remove
