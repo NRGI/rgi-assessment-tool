@@ -6,6 +6,7 @@ angular.module('app')
         $route,
         ngDialog,
         rgiNotifier,
+        rgiIdentitySrvc,
         rgiAnswerMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
