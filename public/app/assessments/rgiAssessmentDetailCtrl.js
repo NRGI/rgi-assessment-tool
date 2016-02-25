@@ -20,6 +20,7 @@ angular.module('app')
             {value: "question_order", text: "Sort by Question Number"},
             {value: "component_id", text: "Sort by Component"},
             {value: "status", text: "Sort by Status"}];
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sortOrder = $scope.sortOptions[0].value;
         $scope.order_reverse = true;
 
