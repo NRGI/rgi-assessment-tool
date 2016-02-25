@@ -13,8 +13,7 @@ div.left-padding-lg.right-padding-lg
                         type="text"
                         placeholder="Title (required)..."
                         ng-model="new_document.title"
-                        autocomplete="off"
-                        required)
+                        autocomplete="off")
 
                     // DOC TYPE
                     .row.form-group
@@ -31,16 +30,14 @@ div.left-padding-lg.right-padding-lg
                             type="text"
                             placeholder="Author first name (required)..."
                             ng-model="author.first_name"
-                            autocomplete="off"
-                            required)
+                            autocomplete="off")
                         .pull-left.col-lg-5
                             input.form-control(
                             name="author_last"
                             type="text"
                             placeholder="Author last name (required)..."
                             ng-model="author.last_name"
-                            autocomplete="off"
-                            required)
+                            autocomplete="off")
                         .pull-left.col-lg-1.right-padding-med(ng-if="$last")
                             glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
                         .pull-left.col-lg-1(ng-if="!$last")

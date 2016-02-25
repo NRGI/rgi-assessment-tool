@@ -49,16 +49,8 @@ angular.module('app')
             $scope.new_document.authors.push({first_name: "", last_name: ""});
         };
 
-        $scope.editorPush = function () {
-            $scope.new_document.editors.push({first_name: "", last_name: ""});
-        };
-
         $scope.authorPop = function (index) {
             $scope.new_document.authors.splice(index, 1);
-        };
-
-        $scope.editorPop = function (index) {
-            $scope.new_document.editors.splice(index, 1);
         };
 
         $scope.documentRefSubmit = function (new_document) {

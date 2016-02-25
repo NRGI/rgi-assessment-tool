@@ -21,26 +21,22 @@ angular.module('app')
         }
         $scope.new_document = $scope.$parent.new_document;
 
-        $scope.new_doc_type = [
-            {value: 'journal', text: 'Journal'},
+        $scope.doc_type = [
             {value: 'book', text: 'Book'},
+            {value: 'book_section', text: 'Book Chapter'},
+            {value: 'bill', text: 'Bill'},
+            {value: 'data_file', text: 'Data File'},
             {value: 'generic', text: 'Generic'},
-            {value: 'working_paper', text: 'Working Paper'},
-            {value: 'report', text: 'Report'},
+            {value: 'journal', text: 'Journal'},
+            {value: 'case', text: 'Judicial Decision'},
             {value: 'magazine_article', text: 'Magazine Article'},
-            {value: 'statute', text: 'Statute'},
             {value: 'newspaper_article', text: 'Newspaper Article'},
-            {value: 'hearing', text: 'Hearing'},
-            {value: 'case', text: 'Case'},
-            {value: 'bill', text: 'Bill'}
-            //{value: 'book_section', text: 'Book Section'},
-            //{value: 'web_page', text: 'Web Page'},
-            //{value: 'thesis', text: 'Thesis'},
-            //{value: 'patent', text: 'Patent'},
-            //{value: 'computer_program', text: 'Computer Program'},
-            //{value: 'television_broadcast', text: 'Television Broadcast'},
-            //{value: 'encyclopedia_article', text: 'Encyclopedia Article'},
-            //{value: 'film', text: 'Film'}
+            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
+            {value: 'policy_document', text: 'Policy document'},
+            {value: 'report', text: 'Report'},
+            {value: 'statute', text: 'Statute'},
+            {value: 'web_page', text: 'Web Page'},
+            {value: 'working_paper', text: 'Working Paper'}
         ];
 
         //DATEPICKER OPTS
@@ -80,48 +76,17 @@ angular.module('app')
             var url, new_user_data = rgiIdentitySrvc.currentUser;
 
             //check for minimum data
-            if (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name) {
-                rgiNotifier.error('You must provide at least one author!');
-            } else if (!$scope.new_document.title) {
+            if (!$scope.new_document.title) {
                 rgiNotifier.error('You must provide a title!');
             } else if (!$scope.new_document.type) {
                 rgiNotifier.error('You must provide a document type!');
-            } else if (!$scope.ref_date_accessed) {
-                rgiNotifier.error('You must provide the date of access!');
             } else if (!$scope.new_ref_location) {
                 rgiNotifier.error('You must provide the page location!');
-            } else if (!$scope.new_document.publisher) {
-                rgiNotifier.error('You must provide the publisher!');
+            } else if (!$scope.new_document.publisher && (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name)) {
+                rgiNotifier.error('You must provide either a publisher or an author!');
             } else if (!$scope.new_document.year) {
                 rgiNotifier.error('You must provide the year of publication!');
-            //} else if (!$scope.new_document.institution) {
-            //    rgiNotifier.error('You must provide the publishing institution!');
             } else {
-                //if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
-                //    url = $scope.new_document.source;
-                //} else {
-                //    url = 'http://' + $scope.new_document.source;
-                //}
-            ////TODO check for proper url
-            //} else if ($scope.new_document.source !== undefined) {
-            //    if ($scope.new_document.source.split('://')[0] === 'http' || $scope.answer.web_ref_url.split('://')[0] === 'https') {
-            //        url = $scope.new_document.source;
-            //    } else {
-            //        url = 'http://' + $scope.new_document.source;
-            //    }
-            //    //    url = $scope.answer.web_ref_url;
-            //    //} else {
-            //    //    url = 'http://' + $scope.answer.web_ref_url;
-            //    //}
-            //    //var url = ;
-            //    //rgiUtilsSrvc.isURLReal(url)
-            //    //    .fail(function (res) {
-            //    //        rgiNotifier.error('Website does not exists');
-            //    //    })
-            //    //    .done(function (res) {
-            //    //
-            //    //    });
-
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
                     answer_ID = $scope.$parent.answer.answer_ID,

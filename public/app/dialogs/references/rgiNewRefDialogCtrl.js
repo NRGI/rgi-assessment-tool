@@ -100,13 +100,11 @@ angular.module('app')
                         rgiNotifier.error('You must enter a first and last name for new interviewees!');
                     } else if (!selected_interviewee.role) {
                         rgiNotifier.error('You must select a role for new interviewees!');
-                    } else if (!selected_interviewee.title) {
-                        rgiNotifier.error('You must enter a position for new interviewees!');
                     } else if (!selected_interviewee.organization) {
                         rgiNotifier.error('You must enter an organization for new interviewees!');
                     } else {
-                        if (!selected_interviewee.email) {
-                            rgiNotifier.error('You must enter a valid email address!');
+                        if (!selected_interviewee.email && selected_interviewee.phone) {
+                            rgiNotifier.error('You must enter a valid email address or phone number!');
                         } else {
                             email_domain = 'http://' + selected_interviewee.email.split('@')[1];
                             if (email_domain === 'http://undefined') {
