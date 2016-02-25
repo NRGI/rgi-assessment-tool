@@ -144,6 +144,10 @@ angular
             rgiDialogFactory.flagCreate($scope);
         };
 
+        $scope.externalAnswer = function () {
+            rgiDialogFactory.answerExternalChoice($scope);
+        };
+
         $scope.answerUnresolved = function() {
             var new_answer_data = $scope.answer,
                 flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);

@@ -12,6 +12,7 @@ var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerS
     //options         = {customCollectionName: "answer_hst"},
     HTML            = mongoose.Types.Html,
     ObjectId        = mongoose.Schema.Types.ObjectId,
+    user_ref        = {type: ObjectId, ref: 'User'},
     citation_enu    = {
         values: 'interview document'.split(' '),
         message: 'Validator failed for `{PATH}` with value `{VALUE}`. Please select website, interview, or document.'
@@ -31,14 +32,10 @@ commentSchema = new Schema({
         type: Date,
         default: Date.now},
     content: htmlSettings,
-    author: {
-        type: ObjectId,
-        ref: 'User'},
+    author: user_ref,
     addressed: Boolean,
     //TODO see if we need to use populate
-    addressed_to: {
-        type: ObjectId,
-        ref: 'User'}
+    addressed_to: user_ref
 });
 
 referenceSchema = new Schema({
@@ -64,9 +61,7 @@ referenceSchema = new Schema({
     date: {
         type: Date,
         default: Date.now},
-    author: {
-        type: ObjectId,
-        ref: 'User'},
+    author: user_ref,
     comment: htmlSettings,
     location: String
 });
@@ -117,7 +112,9 @@ answerSchema = new Schema({
         type: Boolean,
         default: true},
     question_v: Number,
-    status: {type: String, default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
+    status: {
+        type: String,
+        default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
     flags: [commentSchema],
     last_modified: {
         modified_by: ObjectId,
@@ -153,6 +150,21 @@ answerSchema = new Schema({
     },
     final_role: String,
     final_justification: htmlSettings,
+    external_answer: [{
+        score: {
+            name: String,
+            letter: String,
+            order: Number,
+            text: String,
+            value: Number
+        },
+        justification: htmlSettings,
+        comment: htmlSettings,
+        author: user_ref,
+        date: {
+            type: Date,
+            default: Date.now}
+    }],
     comments: [commentSchema],
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: [referenceSchema]

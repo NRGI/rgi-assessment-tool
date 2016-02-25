@@ -9,7 +9,7 @@
                     rgi-answer-nav(
                     assessment="assessment"
                     ng-if="assessment.status!=='trial_started'")
-                    div(ng-if="!current_user.isSupervisor()")
+                    div(ng-if="current_user.isResearcher() || current_user.isReviewer()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  Complete
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
@@ -47,12 +47,16 @@
                     .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                         rgi-flag-tabs
 
+                    ////.row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
+                    //.row(ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
+                    //    rgi-external-answer-tabs
+
                     // Answer form
                     .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
                         rgi-answer-form
 
                     // Biblio
-                    .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor()")
+                    .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor() || current_user.isExternalReviewer()")
                         rgi-biblio-form
 
 

@@ -51,6 +51,12 @@
     ) Choose final answer
     | &nbsp;
 
+    button.btn.btn-primary(
+    ng-click="externalAnswer()"
+    ng-if="current_user.isExternalReviewer()"
+    ) Choose alternate answer
+    | &nbsp;
+
     button.btn.btn-default(
     ng-click="answerReturn()"
     ) Return to assessment menu

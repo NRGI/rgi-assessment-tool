@@ -1,12 +1,14 @@
 div.left-padding-lg.right-padding-lg
     div.modal-header
-        h3 Final choice for question
+        h3(ng-if="current_user.isSupervisor()") Final choice for question
+        h3(ng-if="current_user.isExternalReviewer()") External input for question
     div.modal-body
         .row
             form.form-horizontal
                 fieldset
                     .row
-                        label.col-md-4 Final Choice
+                        label.col-md-4(ng-if="current_user.isSupervisor()") Final Choice
+                        label.col-md-4(ng-if="current_user.isExternalReviewer()") External Choice
                         .form-group.col-md-8
                             select.form-group.form-control.right-padding-med(name="final_choice"
                             ng-model="final_choice"
@@ -14,18 +16,15 @@ div.left-padding-lg.right-padding-lg
                             required)
                                 option(value="" selected disabled) Select final answer
 
-                    .row.left-padding-med(ng-if="['other', 'admin'].indexOf(final_choice.value) > -1")
-                        ng-form(name="new_comment_form")
+                    //.row.left-padding-med(ng-if="['other', 'admin'].indexOf(final_choice.value) > -1")
+                    .row.left-padding-med(ng-if="final_choice.value")
+                        ng-form
                             .form-group
-                                .row.bottom-padding-med
-                                    .col-md-12
-                                        textarea.form-control(
-                                        name="comment"
-                                        type="text"
-                                        ng-model="final_choice.justification"
-                                        placeholder="Justification..."
-                                        required)
-                                .row.left-padding-lg.right-padding-med
+                                .row.left-padding-med(ng-if="['researcher', 'reviewer'].indexOf(final_choice.value) > -1")
+                                    .row: em {{final_choice.role|role|ucfirst}}: {{final_choice.score.letter | ucfirst}} -
+                                        |  {{final_choice.score.text}}
+                                    .row: text(ng-bind-html="final_choice.justification")
+                                .row.left-padding-lg.right-padding-med(ng-if="final_choice.role===current_user.role")
                                     legend Choose one of the following answers:
                                     ng-form(name="answer_choice_form")
                                         .form-group(ng-repeat="choice in question_criteria" required)
@@ -36,13 +35,33 @@ div.left-padding-lg.right-padding-lg
                                             checked=""
                                             ng-model="final_choice.score")
                                             text.left-padding-med {{choice.text}}
-
-                    .row.left-padding-med(ng-if="['researcher', 'reviewer'].indexOf(final_choice.value) > -1")
-                        .row: em {{final_choice.role|role|ucfirst}}: {{final_choice.score.letter | ucfirst}} -
-                            |  {{final_choice.score.text}}
-                        .row: text(ng-bind-html="final_choice.justification")
+                                .row.bottom-padding-med.top-padding-lg
+                                    .col-md-12
+                                        div(
+                                        ng-if="current_user.isSupervisor()"
+                                        name="final_choice_justification"
+                                        ng-model="final_choice.justification"
+                                        ta-toolbar="{{taToolbarOptions}}"
+                                        placeholder="Justification (4,000 character limit)..."
+                                        text-angular
+                                        ta-max-text="{{editorContentMaxLength}}")
+                                        div(
+                                        ng-if="current_user.isExternalReviewer()"
+                                        name="final_choice_comment"
+                                        ng-model="final_choice.comment"
+                                        ta-toolbar="{{taToolbarOptions}}"
+                                        placeholder="Justification (4,000 character limit)..."
+                                        text-angular
+                                        ta-max-text="{{editorContentMaxLength}}")
 
     div.modal-footer
-        button.btn.btn-success(ng-click="finalChoiceSubmit()" ng-disabled="finalChoice.$invalid || answer_choice_form.$invalid") Finalize choice
+        button.btn.btn-success(
+        ng-if="current_user.isSupervisor()"
+        ng-disabled="!final_choice.value || !final_choice.justification"
+        ng-click="finalChoiceSubmit()") Finalize choice
+        button.btn.btn-success(
+        ng-if="current_user.isExternalReviewer()"
+        ng-disabled="!final_choice.value || !final_choice.comment"
+        ng-click="externalChoiceSubmit()") External choice
         | &nbsp;
         button.btn.btn-danger(ng-click="closeDialog()") Cancel

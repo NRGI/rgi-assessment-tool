@@ -95,6 +95,7 @@ exports.updateAnswer = function (req, res) {
         answer.guidance_dialog = answer_update.guidance_dialog;
         answer.references = answer_update.references;
         answer.flags = answer_update.flags;
+        answer.external_answer = answer_update.external_answer;
         answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
 
         if (answer_update.hasOwnProperty('researcher_score')) {
