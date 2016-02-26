@@ -32,14 +32,14 @@ div.left-padding-lg.right-padding-lg
                                         input.form-control(
                                         name="author_first"
                                         type="text"
-                                        placeholder="Author first name (required)..."
+                                        placeholder="Author first name..."
                                         ng-model="author.first_name"
                                         autocomplete="off")
                                     .pull-left.col-lg-5
                                         input.form-control(
                                         name="author_last"
                                         type="text"
-                                        placeholder="Author last name (required)..."
+                                        placeholder="Author last name..."
                                         ng-model="author.last_name"
                                         autocomplete="off")
                                     .pull-left.col-lg-1.right-padding-med(ng-if="$last")
@@ -66,7 +66,7 @@ div.left-padding-lg.right-padding-lg
                                         input.form-control.right-padding-med(
                                         name="source"
                                         type="text"
-                                        placeholder="Source URL..."
+                                        placeholder="Source URL (required)..."
                                         ng-model="new_document.source"
                                         autocomplete="off")
 
@@ -142,7 +142,7 @@ div.left-padding-lg.right-padding-lg
                                     type="text"
                                     datepicker-popup="{{date_format}}"
                                     ng-model="ref_date_accessed"
-                                    placeholder="Date accessed..."
+                                    placeholder="Date accessed (required)..."
                                     is-open="acc_status.opened"
                                     max-date="maxDate"
                                     datepicker-options="date_options"
