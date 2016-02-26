@@ -99,7 +99,7 @@ div.left-padding-lg.right-padding-lg
                                     input.form-control(
                                     type="text"
                                     datepicker-popup="{{date_format}}"
-                                    placeholder="Date interviewed..."
+                                    placeholder="Date interviewed (required)..."
                                     ng-model="answer_update.human_ref_contact_date"
                                     is-open="status.opened"
                                     max-date="maxDate"
@@ -113,7 +113,7 @@ div.left-padding-lg.right-padding-lg
                             div.col-md-12
                                 div(
                                     name="reference-comment"
-                                    placeholder="Enter relevant interview statements for this question (4,000 character limit)..."
+                                    placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
                                     ng-model="answer_update.human_ref_comment"
                                     ta-toolbar="{{taToolbarOptions}}"
                                     text-angular
@@ -160,7 +160,7 @@ div.left-padding-lg.right-padding-lg
                                     input.form-control(
                                     name="firstName"
                                     type="text"
-                                    placeholder="First name..."
+                                    placeholder="First name (required)..."
                                     ng-model="new_interviewee.firstName"
                                     autocomplete="off")
                                 // LAST NAME
@@ -168,7 +168,7 @@ div.left-padding-lg.right-padding-lg
                                     input.form-control(
                                     name="lastName"
                                     type="text"
-                                    placeholder="Last name..."
+                                    placeholder="Last name (required)..."
                                     ng-model="new_interviewee.lastName"
                                     autocomplete="off")
                             .row.form-group.right-padding-med
@@ -187,7 +187,7 @@ div.left-padding-lg.right-padding-lg
                                     input.form-control(
                                     name="email"
                                     type="text"
-                                    placeholder="Interviewee email..."
+                                    placeholder="Interviewee email (required)..."
                                     ng-model="new_interviewee.email"
                                     autocomplete="off")
                                 // PHONE
@@ -213,7 +213,7 @@ div.left-padding-lg.right-padding-lg
                                     input.form-control(
                                     name="organization"
                                     type="text"
-                                    placeholder="Organization name..."
+                                    placeholder="Organization name (required)..."
                                     ng-model="new_interviewee.organization"
                                     autocomplete="off")
 

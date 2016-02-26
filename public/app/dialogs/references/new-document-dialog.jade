@@ -28,14 +28,14 @@ div.left-padding-lg.right-padding-lg
                             input.form-control(
                             name="author_first"
                             type="text"
-                            placeholder="Author first name (required)..."
+                            placeholder="Author first name..."
                             ng-model="author.first_name"
                             autocomplete="off")
                         .pull-left.col-lg-5
                             input.form-control(
                             name="author_last"
                             type="text"
-                            placeholder="Author last name (required)..."
+                            placeholder="Author last name..."
                             ng-model="author.last_name"
                             autocomplete="off")
                         .pull-left.col-lg-1.right-padding-med(ng-if="$last")
@@ -69,7 +69,7 @@ div.left-padding-lg.right-padding-lg
                             input.form-control(
                             name="year"
                             type="text"
-                            placeholder="Year published..."
+                            placeholder="Year published (required)..."
                             ng-model="new_document.year"
                             autocomplete="off")
 
@@ -169,7 +169,7 @@ div.left-padding-lg.right-padding-lg
                         input.form-control(
                         name="location"
                         type="text"
-                        placeholder="Page number(s)..."
+                        placeholder="Page number(s) (required)..."
                         ng-model="new_ref_location"
                         autocomplete="off")
 
