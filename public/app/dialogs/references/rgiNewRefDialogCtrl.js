@@ -22,6 +22,8 @@ angular.module('app')
         rgiIntervieweeMethodSrvc,
         rgiIdentitySrvc
     ) {
+        //console.log($scope.$parent.$parent.$parent.$parent.answer);
+        console.log($rootScope);
         /////////////
         //INTERVIEWEE
         /////////////
@@ -128,8 +130,8 @@ angular.module('app')
                                     })
                                     .then(function () {
                                         $scope.closeThisDialog();
+                                        $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                                         rgiNotifier.notify('Reference added');
-                                        $route.reload();
                                     }, function (reason) {
                                         rgiNotifier.notify(reason);
                                     });
@@ -163,8 +165,9 @@ angular.module('app')
                         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
                             rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
                             $scope.closeThisDialog();
+                            $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                             rgiNotifier.notify('Reference added!');
-                            $route.reload();
+
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         });

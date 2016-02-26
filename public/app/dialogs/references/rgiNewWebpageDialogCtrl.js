@@ -20,7 +20,7 @@ angular.module('app')
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
         }
         $scope.new_document.type = 'web_page';
-        $scope.submit_disabled = false;
+        $scope.disable_button = false;
 
         //DATEPICKER OPTS
         var today = new Date();
@@ -55,14 +55,18 @@ angular.module('app')
 
         $scope.documentRefSubmit = function (new_document) {
             var url, new_user_data = $scope.current_user;
+            $scope.disable_button=true;
 
             //check for minimum data
             if (!$scope.new_document.source) {
                 rgiNotifier.error('You must provide a source URL!');
+                $scope.disable_button=false;
             } else if (!$scope.new_document.title) {
                 rgiNotifier.error('You must provide a title!');
+                $scope.disable_button=false;
             } else if (!$scope.ref_date_accessed) {
                 rgiNotifier.error('You must provide the date of access!');
+                $scope.disable_button=false;
             } else {
                 if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
                     url = $scope.new_document.source;
@@ -72,9 +76,9 @@ angular.module('app')
                 rgiUtilsSrvc.isURLReal(url)
                     .fail(function (res) {
                         rgiNotifier.error('Website does not exists');
+                        $scope.disable_button=false;
                     })
                     .done(function (res) {
-                        $scope.submit_disabled=true;
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,
                             question_ID = $scope.$parent.question._id,
                             answer_ID = $scope.$parent.answer.answer_ID,
@@ -137,10 +141,12 @@ angular.module('app')
                             .then(rgiUserMethodSrvc.updateUser(new_user_data))
                             .then(function () {
                                 $scope.closeThisDialog();
+                                $scope.disable_button = false;
+                                $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                                 rgiNotifier.notify('Reference added!');
-                                $route.reload();
                             }, function (reason) {
                                 rgiNotifier.error(reason);
+                                $scope.disable_button = false;
                             });
 
                     });
