@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id || current_user.isSupervisor()) && ['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1"
+    ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor()"
     ) Save answer
     | &nbsp;
 
@@ -30,9 +30,6 @@
     ) Reset answer
     | &nbsp;
 
-    //a.btn.btn-warning(
-    //data-toggle="modal"
-    //href="#flagModal") Flag answer
     button.btn.btn-warning(
     ng-click="answerFlag()"
     ng-if="current_user.isSupervisor()"
@@ -60,26 +57,3 @@
     button.btn.btn-default(
     ng-click="answerReturn()"
     ) Return to assessment menu
-
-//.row
-//    div(aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" draggable="" id="flagModal" role="dialog" tabindex="-1")
-//        div.modal-dialog
-//            div.left-padding-lg.right-padding-lg
-//            div.modal-content
-//                div.modal-header
-//                    button.close(aria-hidden="true" data-dismiss="modal" type="button") x
-//                    h3 Please add text describing flag.
-//                div.modal-body
-//                    .form-horizontal.left-padding-lg
-//                        fieldset
-//                            .row
-//                                .form-group(required).col-md-12
-//                                    textarea.form-control(
-//                                    name="question_text"
-//                                    type="textbox"
-//                                    ng-model="flag_content"
-//                                    redactor) {{flag_content}}
-//                div.modal-footer
-//                    button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
-//                    | &nbsp;
-//                    button.btn.btn-default(data-dismiss="modal" type="button") Cancel

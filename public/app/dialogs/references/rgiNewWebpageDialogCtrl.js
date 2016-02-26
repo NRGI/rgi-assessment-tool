@@ -75,8 +75,9 @@ angular.module('app')
                 }
                 rgiUtilsSrvc.isURLReal(url)
                     .fail(function (res) {
-                        rgiNotifier.error('Website does not exists');
                         $scope.disable_button=false;
+                        rgiNotifier.error('Website does not exists');
+                        $scope.closeThisDialog();
                     })
                     .done(function (res) {
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,

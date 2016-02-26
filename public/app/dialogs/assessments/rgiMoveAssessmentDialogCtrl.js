@@ -9,30 +9,31 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiAssessmentMethodSrvc,
         rgiAnswerSrvc,
-        rgiUserListSrvc,
+        rgiUserSrvc,
         rgiDialogFactory
     ) {
-        // get current control profile onto scope and use it to populate workflow_opts
+        // get current control profile onto scope and use it to populate workflow_opts\
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        rgiUserListSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
+        rgiUserSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
+
             if (assessment.status !== 'approved' && assessment.status !== 'trial_submitted') {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
                     value: 'review_' + control_profile.role
                 });
-                if (control_profile.role === 'researcher' && assessment_counters.flagged === 0) {
+                if (control_profile.role === 'researcher' && assessment_counters.flagged === 0 && assessment.reviewer_ID) {
                 //if (control_profile.role === 'researcher') {
-                    rgiUserListSrvc.get({_id: assessment.reviewer_ID}, function (new_profile) {
+                    rgiUserSrvc.get({_id: assessment.reviewer_ID}, function (new_profile) {
                         workflow_opts.push({
                             text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
                             value: 'assigned_' + new_profile.role
                         });
                     });
                 } else if (control_profile.role === 'reviewer' && assessment_counters.flagged === 0) {
-                    rgiUserListSrvc.get({_id: assessment.researcher_ID}, function (new_profile) {
+                    rgiUserSrvc.get({_id: assessment.researcher_ID}, function (new_profile) {
                         workflow_opts.push({
                             text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
                             value: 'assigned_' + new_profile.role
