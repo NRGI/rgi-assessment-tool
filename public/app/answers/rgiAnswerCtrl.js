@@ -20,12 +20,6 @@ angular.module('app')
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
 
-        $scope.dynamicPopover = {
-            content: 'Hello, World!',
-            templateUrl: 'myPopoverTemplate.html',
-            title: 'Title'
-        };
-
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
             $scope.answer = answer;
             $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
@@ -47,4 +41,14 @@ angular.module('app')
                 rgiDialogFactory.guidanceDialog($scope);
             }
         });
+
+        var resetReference = function() {
+            rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+                $scope.references = answer.references;
+            });
+        };
+
+        resetReference();
+        $scope.$on('RESET_REFERENCE_ACTION', resetReference);
+
     });

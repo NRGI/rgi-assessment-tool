@@ -15,6 +15,7 @@ angular.module('app')
         rgiUtilsSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.disable_button = false;
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
             $scope.new_document.editors = [{first_name: "", last_name: ""}];
@@ -74,18 +75,24 @@ angular.module('app')
 
         $scope.documentRefSubmit = function (new_document) {
             var url, new_user_data = rgiIdentitySrvc.currentUser;
+            $scope.disable_button = true;
 
             //check for minimum data
             if (!$scope.new_document.title) {
                 rgiNotifier.error('You must provide a title!');
+                $scope.disable_button = false;
             } else if (!$scope.new_document.type) {
                 rgiNotifier.error('You must provide a document type!');
+                $scope.disable_button = false;
             } else if (!$scope.new_ref_location) {
                 rgiNotifier.error('You must provide the page location!');
+                $scope.disable_button = false;
             } else if (!$scope.new_document.publisher && (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name)) {
                 rgiNotifier.error('You must provide either a publisher or an author!');
+                $scope.disable_button = false;
             } else if (!$scope.new_document.year) {
                 rgiNotifier.error('You must provide the year of publication!');
+                $scope.disable_button = false;
             } else {
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
@@ -148,10 +155,12 @@ angular.module('app')
                     .then(rgiUserMethodSrvc.updateUser(new_user_data))
                     .then(function () {
                         $scope.closeThisDialog();
+                        $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                         rgiNotifier.notify('Reference added!');
                         $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
+                        $scope.disable_button = false;
                     });
             }
         };

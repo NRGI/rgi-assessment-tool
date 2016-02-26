@@ -3,6 +3,7 @@
 angular.module('app')
     .controller('rgiDeleteRefDialogCtrl', function (
         $scope,
+        $rootScope,
         ngDialog,
         rgiAnswerMethodSrvc,
         rgiNotifier
@@ -15,12 +16,14 @@ angular.module('app')
             new_answer_data.references[ref_index].hidden = true;
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
                 $scope.closeDialog();
+                $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                 rgiNotifier.notify('The reference has been deleted');
             }, function (reason) {
                 rgiNotifier.error(reason);
             });
         };
         $scope.closeDialog = function () {
+            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
             ngDialog.close();
         };
     });
