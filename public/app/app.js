@@ -132,16 +132,16 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiResourcesAdminCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        .when('/admin/faq-admin/:_id', {
-            templateUrl: '/partials/admin/resources/resources-admin-detail',
-            controller: 'rgiResourcesAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
-        .when('/admin/resource-admin/:_id', {
-            templateUrl: '/partials/admin/resources/resources-admin-detail',
-            controller: 'rgiResourcesAdminDetailCtrl',
-            resolve: routeRoleChecks.supervisor
-        })
+        //.when('/admin/faq-admin/:_id', {
+        //    templateUrl: '/partials/admin/resources/resources-admin-detail',
+        //    controller: 'rgiResourcesAdminDetailCtrl',
+        //    resolve: routeRoleChecks.supervisor
+        //})
+        //.when('/admin/resource-admin/:_id', {
+        //    templateUrl: '/partials/admin/resources/resources-admin-detail',
+        //    controller: 'rgiResourcesAdminDetailCtrl',
+        //    resolve: routeRoleChecks.supervisor
+        //})
 
         ///// GENERAL ROUTES
         /// Assessments

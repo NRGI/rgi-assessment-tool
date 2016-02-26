@@ -21,7 +21,7 @@ angular.module('app')
         }
         $scope.new_document = $scope.$parent.new_document;
 
-        $scope.doc_type = [
+        $scope.new_doc_type = [
             {value: 'book', text: 'Book'},
             {value: 'book_section', text: 'Book Chapter'},
             {value: 'bill', text: 'Bill'},

@@ -18,8 +18,8 @@ div.top-padding-lg
         tbody
             tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
                 //ASSESSMENT
-                td.col-sm-2(ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
-                td.col-sm-2(ng-if="current_user.isSupervisor()")
+                td.col-sm-2(ng-if="!current_user.isSupervisor()|| assessment.status==='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                td.col-sm-2(ng-if="current_user.isSupervisor() && assessment.status!=='unassigned'")
                     a(
                     href="admin/assessments-admin/{{assessment.assessment_ID}}"
                     ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}

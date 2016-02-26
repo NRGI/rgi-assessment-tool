@@ -3,10 +3,6 @@ var mongoose    = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
 var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
-    Question        = mongoose.model('Question'),
-    User            = mongoose.model('User'),
-    Documents       = mongoose.model('Documents'),
-    Interviewee     = mongoose.model('Interviewee'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
@@ -118,7 +114,6 @@ answerSchema = new Schema({
     status: {
         type: String,
         default: 'assigned'}, // saved, submitted, flagged, reviewed, approved
-    flags: [commentSchema],
     last_modified: {
         modified_by: ObjectId,
         modified_date: {
@@ -132,7 +127,6 @@ answerSchema = new Schema({
         value: Number
     },
     researcher_justification: htmlSettings,
-    /////ERROR CALCULATION
     researcher_score_history: [scoreHistorySchema],
     reviewer_score: {
         name: String,
@@ -142,7 +136,6 @@ answerSchema = new Schema({
         value: Number
     },
     reviewer_justification: htmlSettings,
-    /////ERROR CALCULATION
     reviewer_score_history: [scoreHistorySchema],
     final_score: {
         name: String,
@@ -168,6 +161,10 @@ answerSchema = new Schema({
             type: Date,
             default: Date.now}
     }],
+    flags: [commentSchema],
+    dependancy_hidden: {
+        type: Boolean,
+        default: false},
     comments: [commentSchema],
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: [referenceSchema]

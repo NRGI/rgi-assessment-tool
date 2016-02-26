@@ -74,10 +74,12 @@ questionSchema = new Schema({
         value: Number
     }],  ///from Criterion columns and used to be called question_choices
     question_norm: Number, ///Len of options used for normalizations...ignores NAs
-    question_dependancies: [ObjectId], //from question dependancies column points to question label
-    question_dependancies_trigger: String,
-    question_dependancies_trigger_payload: String,
-    question_guidance_text: String, //from Guidance Notes column
+    question_dependancies: {
+        dependancies: [ObjectId], //from question dependancies column points to question label
+        trigger: String, //option that hides and scores
+        target_score: String
+    },
+    question_guidance_text: htmlSettings, //from Guidance Notes column
     mapping_2013_num: String, ///from Mapping: RGI 2013 column
     mapping_2013_text: String,
     mapping_2013_category: String,
