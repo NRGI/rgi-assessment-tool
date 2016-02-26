@@ -99,7 +99,7 @@ angular.module('app')
                     if (!selected_interviewee.firstName || !selected_interviewee.lastName) {
                         rgiNotifier.error('You must enter a first and last name for new interviewees!');
                     } else if (!selected_interviewee.role) {
-                        rgiNotifier.error('You must select a role for new interviewees!');
+                        rgiNotifier.error('You must select a type of organization for new interviewees!');
                     } else if (!selected_interviewee.organization) {
                         rgiNotifier.error('You must enter an organization for new interviewees!');
                     } else {
