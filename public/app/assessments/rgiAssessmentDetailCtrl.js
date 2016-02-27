@@ -49,6 +49,9 @@ angular.module('app')
                     if (answer.status === 'submitted' || answer.status === 'resubmitted') {
                         $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
                     }
+                    if (answer.status === 'approved') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
+                    }
 
                     $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });
