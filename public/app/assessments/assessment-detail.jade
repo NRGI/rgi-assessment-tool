@@ -43,7 +43,10 @@
                     | Status: {{assessment.status | addSpaces | ucfirst}}
                 .row
                     | Last edited by
-                    a(href="mailto:{{edited_by.email}}")  {{edited_by.firstName}}  {{edited_by.lastName}}
+                    a(
+                    href="mailto:{{edited_by.email}}"
+                    ng-if="current_user.isSupervisor()")  {{edited_by.firstName}}  {{edited_by.lastName}}
+                    text(ng-if="!current_user.isSupervisor()")  {{edited_by.role}}
                     |  on
                     em  {{assessment.last_modified.modified_date | date}}
                     //span(ng-repeat="mod in assessment.modified")
