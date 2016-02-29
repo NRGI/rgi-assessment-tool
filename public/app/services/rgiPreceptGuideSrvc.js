@@ -18,6 +18,7 @@ angular.module('app')
                 if(addCompleteField) {
                     templateData.complete = 0;
                     templateData.approved = 0;
+                    templateData.flagged = 0;
                 }
 
                 templates[preceptId] = templateData;
