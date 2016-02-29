@@ -19,6 +19,7 @@ angular.module('app')
                     templateData.complete = 0;
                     templateData.approved = 0;
                     templateData.flagged = 0;
+                    templateData.unresolved = 0;
                 }
 
                 templates[preceptId] = templateData;
