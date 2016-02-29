@@ -22,8 +22,6 @@ angular.module('app')
         rgiIntervieweeMethodSrvc,
         rgiIdentitySrvc
     ) {
-        //console.log($scope.$parent.$parent.$parent.$parent.answer);
-        console.log($rootScope);
         /////////////
         //INTERVIEWEE
         /////////////
