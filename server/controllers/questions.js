@@ -24,11 +24,11 @@ exports.getQuestionTextByID = function (req, res) {
     });
 };
 
-exports.createQuestions = function (req, res, next) {
+exports.createQuestions = function (req, res) {
     var new_questions = req.body;
 
     function createNewQuestion (new_question) {
-        Question.create(new_question, function (err, question) {
+        Question.create(new_question, function (err) {
             if (err) {
                 res.status(400);
                 return res.send({reason: err.toString()});
@@ -50,22 +50,27 @@ exports.updateQuestion = function (req, res) {
         return res.end();
     }
     if (question_update.length) {
-        for(i=0; i < question_update.length; i++) {
-            new_question_data = question_update[String(i)];
-            Question.findOne({_id: new_question_data._id})
-                .exec(function (err, question) {
+        var getCallback = function(assessments) {
+            return function (err, question) {
+                if (err) {
+                    res.status(400);
+                    return res.send({ reason: err.toString() });
+                }
+
+                question.question_v = question.question_v + 1;
+                question.assessments = assessments;
+
+                question.save(function (err) {
                     if (err) {
-                        res.status(400);
-                        return res.send({ reason: err.toString() });
+                        return res.end();
                     }
-                    question.question_v = question.question_v + 1;
-                    question.assessments = new_question_data.assessments;
-                    question.save(function (err) {
-                        if (err) {
-                            return res.end();
-                        }
-                    });
                 });
+            };
+        };
+
+        for(i = 0; i < question_update.length; i++) {
+            new_question_data = question_update[String(i)];
+            Question.findOne({_id: new_question_data._id}).exec(getCallback(new_question_data.assessments));
         }
     } else {
         Question.findOne({_id: question_update._id})
@@ -119,6 +124,7 @@ exports.updateQuestion = function (req, res) {
                 question.question_dependancies = question_update.question_dependancies;
                 question.question_guidance_text = question_update.question_guidance_text;
                 question.comments = question_update.comments;
+                question.linkedOption = question_update.linkedOption;
                 question.last_modified = {modified_by: req.user._id, modified_dateti: timestamp};
 
                 question.save(function (err) {
