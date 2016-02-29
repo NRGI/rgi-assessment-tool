@@ -3,7 +3,7 @@ div(id="answers_div").bottom-padding-med
     div.panel(
     ng-repeat="(key, value) in answers | orderObjectBy:value.order:order_reverse"
     ng-if="value.section_len > 0"
-    ng-class="{'panel-success': ((value.complete===value.section_len && !current_user.isSupervisor()) || (value.approved===value.section_len && current_user.isSupervisor())) && value.flagged===0 && (current_user.isSupervisor() && value.unresolved===0), 'panel-primary': ((!(value.complete === value.section_len) && !current_user.isSupervisor()) || (!(value.approved === value.section_len) && current_user.isSupervisor())) && value.flagged===0 && (current_user.isSupervisor() && value.unresolved===0), 'panel-danger': value.flagged !== 0 || (current_user.isSupervisor() && value.unresolved !== 0)}")
+    ng-class="{'panel-success': ((!current_user.isSupervisor() && ((value.complete+value.approved+value.unresolved)===value.section_len)) || (!current_user.isSupervisor() && value.approved===value.section_len)),'panel-primary': ((!current_user.isSupervisor() && !((value.complete+value.approved+value.unresolved)===value.section_len)) || (!current_user.isSupervisor() && !value.approved===value.section_len)),'panel-danger': value.flagged !== 0 || (current_user.isSupervisor() && value.unresolved !== 0)}")
         div.panel-heading.bottom-padding-med
             .panel-title
                 div(
@@ -11,7 +11,7 @@ div(id="answers_div").bottom-padding-med
                 data-toggle="collapse"
                 href="#{{value.id}}")
                     |  {{value.label}}
-                    text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()")  ({{value.complete}} of {{value.section_len}} completed)
+                    text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()")  ({{value.complete + value.approved}} of {{value.section_len}} completed)
                     text(ng-if="current_user.isSupervisor()")  ({{value.approved}} of {{value.section_len}} approved)
                     text(ng-if="value.flagged!==0")  ({{value.flagged}} flagged)
                     text(ng-if="value.unresolved!==0 && current_user.isSupervisor()")  ({{value.unresolved}} unresolved)
