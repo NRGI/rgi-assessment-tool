@@ -15,10 +15,11 @@ angular
         rgiNotifier,
         rgiDialogFactory
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
         var root_url,
-            assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
+            assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
+            _ = $scope.$parent.$parent._;
+
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         if ($scope.current_user.role === 'supervisor') {
             root_url = '/admin/assessments-admin';
@@ -53,7 +54,10 @@ angular
         };
 
         $scope.answerSubmit = function () {
-            var new_answer_data = $scope.answer;
+            var new_answer_data = $scope.answer,
+                auth_match = _.some($scope.references, function (ref) {
+                    return (ref.author._id === $scope.current_user._id && !ref.hidden);
+                });
 
             if (!new_answer_data[$scope.current_user.role + '_score'] && !new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
@@ -62,34 +66,29 @@ angular
             } else if (new_answer_data.references.length < 1) {
                 rgiNotifier.error('You must provide at least one supporting reference!');
             //} else {
-            } else if ($scope.current_user.role==='reviewer' && (new_answer_data['researcher_score'].value!==$scope.question.question_criteria[new_answer_data.new_answer_selection].value)) {
+            } else if ($scope.current_user.role==='reviewer' && (new_answer_data['researcher_score'].value!==$scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match) {
+                rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
+            } else {
+                new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
 
-                console.log($scope);
-                //return _.some(array, function (item) {
-                //    return (item.name === "xxx");
-                //});
-                //console.log($scope.question.question_criteria[new_answer_data.new_answer_selection].value);
+                if (new_answer_data.status !== 'submitted') {
+                    new_answer_data.status = 'submitted';
+                }
+                if (new_answer_data.new_answer_selection) {
+                    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+                }
 
-                //new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
-
-                //if (new_answer_data.status !== 'submitted') {
-                //    new_answer_data.status = 'submitted';
-                //}
-                //if (new_answer_data.new_answer_selection) {
-                //    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
-                //}
-                //
-                //rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                //    .then(function () {
-                //        if ((new_answer_data.question_order!==$scope.question_length) && ($scope.$parent.assessment.status!=='trial_started')) {
-                //            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
-                //        } else {
-                //            $location.path(root_url + '/' + new_answer_data.assessment_ID);
-                //        }
-                //        rgiNotifier.notify('Answer submitted');
-                //    }, function (reason) {
-                //        rgiNotifier.error(reason);
-                //    });
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                    .then(function () {
+                        if ((new_answer_data.question_order!==$scope.question_length) && ($scope.$parent.assessment.status!=='trial_started')) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        } else {
+                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                        }
+                        rgiNotifier.notify('Answer submitted');
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    });
             }
         };
 
