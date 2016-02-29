@@ -18,8 +18,17 @@ angular.module('app')
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
+            if (assessment.status === 'trial_submitted') {
+                workflow_opts.push({
+                    text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+                    value: control_profile.role + '_trial'
+                });
+                workflow_opts.push({
+                    text: 'Allow ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ' to continue assessment.',
+                    value: 'assigned_' + control_profile.role
+                });
 
-            if (assessment.status !== 'approved' && assessment.status !== 'trial_submitted') {
+            } else {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
                     value: 'review_' + control_profile.role
@@ -41,12 +50,12 @@ angular.module('app')
                     });
                 }
             }
-            if (assessment.status === 'trial_submitted') {
-                workflow_opts.push({
-                    text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
-                    value: 'trial_continue'
-                });
-            }
+            //if (assessment.status === 'trial_submitted') {
+            //    workflow_opts.push({
+            //        text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
+            //        value: 'trial_continue'
+            //    });
+            //}
             if (assessment_counters.flagged===0 && assessment_counters.finalized===assessment_counters.length && assessment.status!=='approved') {
                 workflow_opts.push({
                     text: 'Approve assessment',

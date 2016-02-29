@@ -218,15 +218,19 @@ exports.updateAssessment = function (req, res) {
                             break;
 
                         //TODO Need to handle group emails
+                        case 'researcher_trial':
+                        case 'researcher_trial':
+                            contact.trial_assessment_return(contact_packet);
+                            break;
                         case 'trial_submitted':
-                            contact.trial_assessment_submission(contact_packet, 'researcher');
+                            contact.trial_assessment_submission(contact_packet);
                             break;
                         case 'trial_continue':
-                            contact.trial_assessment_continue(contact_packet, 'researcher');
+                            contact.trial_assessment_continue(contact_packet);
                             break;
                         case 'submitted':
                         case 'resubmitted':
-                            contact.assessment_submission(contact_packet, 'researcher');
+                            contact.assessment_submission(contact_packet);
                             break;
 
                         case 'review_researcher':
@@ -237,10 +241,6 @@ exports.updateAssessment = function (req, res) {
                         case 'assigned_researcher':
                         case 'assigned_reviewer':
                             contact.assessment_reassignment(contact_packet);
-                            break;
-
-                        case 'internal_review':
-                            console.log('send over to internal review email');
                             break;
 
                         case 'external_review':

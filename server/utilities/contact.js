@@ -225,6 +225,26 @@ exports.assessment_submission = function (contact_packet) {
     });
 };
 
+// email when trial answers need to be reviewed by researcher or reviewer
+exports.trial_assessment_return = function (contact_packet) {
+    mandrill('/messages/send', {
+        message: {
+            to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
+            from_email: contact_packet.admin_email,
+            subject: contact_packet.assessment_title + ' assessment returned for review!',
+            html: "Hello " + contact_packet.editor_firstName + ",<p>" +
+            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " trial assessement to you. " +
+            "There are a few errors we'd like you to address before moving the assessment on.<p>" +
+            "Please go to your <a href='" + config.baseUrl + "/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
+            "Thanks!<p>" +
+            "The RGI Team."
+        }
+    }, function (err, res) {
+        if (err) { console.log( JSON.stringify(err) ); }
+        else { console.log(res); }
+    });
+};
+
 // email when flags need to be reviewed by researcher or reviewer
 exports.flag_review = function (contact_packet) {
     mandrill('/messages/send', {
@@ -235,7 +255,7 @@ exports.flag_review = function (contact_packet) {
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. " +
             "There are a few errors we'd like you to address before moving the assessment on.<p>" +
-            "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
+            "Please go to your <a href='" + config.baseUrl + "/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
         }
