@@ -55,6 +55,9 @@ angular.module('app')
                     if (answer.status === 'flagged') {
                         $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
                     }
+                    if (answer.status === 'unresolved') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
+                    }
 
                     $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });
