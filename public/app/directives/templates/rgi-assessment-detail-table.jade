@@ -26,7 +26,7 @@ div(id="answers_div").bottom-padding-med
                     tbody
                         tr(
                         ng-repeat="answer in value.data | filter: searchText | orderBy:sortOrder"
-                        ng-if="!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1")
+                        ng-if="(!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1) && isAnswerAvailable(answer)")
                             td.col-md-1.text-center {{answer.question_ID.question_label}}
                             td.col-md-1 {{answer.question_ID.component_text}}
                             td.col-md-5 {{answer.question_ID.question_text}}
