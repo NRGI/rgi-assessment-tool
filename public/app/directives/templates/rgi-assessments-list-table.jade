@@ -133,7 +133,7 @@ div.top-padding-lg
                 td.col-sm-1(ng-if="current_user.isResearcher() || current_user.isReviewer()")
                     //start trial button
                     button.btn.btn-col.btn-success(
-                    ng-if="assessment.edit_control===current_user._id && assessment.status === 'trial'"
+                    ng-if="assessment.edit_control===current_user._id && ['trial', 'researcher_trial', 'reviewer_trial'].indexOf(assessment.status) > -1"
                     ng-click="assessmentTrial(assessment)") Start trial
                     //- researcher start button
                     button.btn.btn-col.btn-success(
