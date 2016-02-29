@@ -66,7 +66,7 @@ angular.module('app')
                 rgiNotifier.error('You must select a researcher!');
             } else {
                 $scope.assessment.mail = true;
-                $scope.assessment.status = 'trial';
+                $scope.assessment.status = 'researcher_trial';
                 $scope.assessment.edit_control = $scope.assessment.researcher_ID;
 
                 var assignUser = function(role, linkedAssessmentData) {

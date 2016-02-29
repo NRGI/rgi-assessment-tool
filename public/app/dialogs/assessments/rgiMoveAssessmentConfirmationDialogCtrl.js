@@ -39,11 +39,22 @@ angular.module('app')
         $scope.assessmentmove = function () {
             var new_assessment_data = $scope.$parent.assessment;
             new_assessment_data.status = $scope.action;
-            //new_assessment_data.first
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
 
             switch ($scope.action) {
+                case 'researcher_trial':
+                case 'reviewer_trial':
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $scope.closeThisDialog();
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment returned for review!');
+                            $route.reload();
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
+                    break;
                 case 'trial_continue':
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                         .then(function () {
