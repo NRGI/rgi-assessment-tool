@@ -6,7 +6,7 @@ angular.module('app')
         rgiQuestionSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var questions = [];
+        var questions;
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
             questions = questionList;
