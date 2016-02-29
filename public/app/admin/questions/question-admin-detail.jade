@@ -59,9 +59,9 @@
                                 )
                             .col-md-5
                                 select.form-group.form-control(
-                                ng-show="linkedQuestion.question_criteria.length > 0"
+                                ng-if="linkedQuestion.question_criteria.length > 0"
                                 ng-model="question.linkedOption"
-                                ng-options="item._id as item.text for item in linkedQuestion.question_criteria"
+                                ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria"
                                 )
 
                     div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
