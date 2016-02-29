@@ -94,7 +94,7 @@ angular.module('app')
 
                     rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
 
-                        if (new_assessment_data.first_pass) {
+                        if (new_assessment_data.first_pass && $scope.action === 'assigned_reviewer') {
                             new_answer_data.forEach(function (answer) {
                                 if (answer.status !== 'unresolved') {
                                     answer.status = 'assigned';
