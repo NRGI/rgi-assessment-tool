@@ -52,6 +52,9 @@ angular.module('app')
                     if (answer.status === 'approved') {
                         $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
                     }
+                    if (answer.status === 'flagged') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
+                    }
 
                     $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });

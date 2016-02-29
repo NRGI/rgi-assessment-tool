@@ -3,7 +3,7 @@ div(id="answers_div").bottom-padding-med
     div.panel(
     ng-repeat="(key, value) in answers | orderObjectBy:value.order:order_reverse"
     ng-if="value.section_len > 0"
-    ng-class="{'panel-success': ((value.complete===value.section_len && !current_user.isSupervisor()) || (value.approved===value.section_len && current_user.isSupervisor())), 'panel-primary': (!(value.complete === value.section_len) && !current_user.isSupervisor()) || (!(value.approved === value.section_len) && current_user.isSupervisor())}")
+    ng-class="{'panel-success': ((value.complete===value.section_len && !current_user.isSupervisor()) || (value.approved===value.section_len && current_user.isSupervisor())) && value.flagged === 0, 'panel-primary': ((!(value.complete === value.section_len) && !current_user.isSupervisor()) || (!(value.approved === value.section_len) && current_user.isSupervisor())) && value.flagged === 0, 'panel-danger': value.flagged !== 0}")
         div.panel-heading.bottom-padding-med
             .panel-title
                 div(
@@ -13,6 +13,7 @@ div(id="answers_div").bottom-padding-med
                     |  {{value.label}}
                     text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()")  ({{value.complete}} of {{value.section_len}} completed)
                     text(ng-if="current_user.isSupervisor()")  ({{value.approved}} of {{value.section_len}} approved)
+                    text(ng-if="value.flagged!==0")  ({{value.flagged}} flagged)
         div.panel-collapse.collapse(id="{{value.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed
