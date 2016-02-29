@@ -170,7 +170,7 @@ exports.updateAssessment = function (req, res) {
                     });
 
                     assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
-
+                    assessment.first_pass = assessmentUpdates.first_pass;
                     assessment.edit_control = assessmentUpdates.edit_control;
                     assessment.status = assessmentUpdates.status;
                     assessment.documents = assessmentUpdates.documents;
