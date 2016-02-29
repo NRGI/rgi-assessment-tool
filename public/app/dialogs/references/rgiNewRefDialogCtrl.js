@@ -108,34 +108,57 @@ angular.module('app')
                         if (!selected_interviewee.email && selected_interviewee.phone) {
                             rgiNotifier.error('You must enter a valid email address or phone number!');
                         } else {
-                            email_domain = 'http://' + selected_interviewee.email.split('@')[1];
-                            if (email_domain === 'http://undefined') {
-                                rgiNotifier.error('You must enter a valid email address!');
-                            } else {
-                                selected_interviewee.answers = [new_answer_data.answer_ID];
-                                selected_interviewee.assessments = [new_answer_data.assessment_ID];
-                                selected_interviewee.questions = [new_answer_data.question_ID];
-                                selected_interviewee.users = [current_user._id];
-                                rgiIntervieweeMethodSrvc.createInterviewee(selected_interviewee)
-                                    .then(function (interviewee) {
-                                        new_ref_data = {
-                                            citation_type: 'interview',
-                                            interviewee_ID: interviewee._id,
-                                            contact_date: contact_date,
-                                            comment: new_answer_data.human_ref_comment,
-                                            author: current_user._id
-                                        };
-                                        new_answer_data.references.push(new_ref_data);
-                                        rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
-                                    })
-                                    .then(function () {
-                                        $scope.closeThisDialog();
-                                        $rootScope.$broadcast('RESET_REFERENCE_ACTION');
-                                        rgiNotifier.notify('Reference added');
-                                    }, function (reason) {
-                                        rgiNotifier.notify(reason);
-                                    });
-                            }
+                            selected_interviewee.answers = [new_answer_data.answer_ID];
+                            selected_interviewee.assessments = [new_answer_data.assessment_ID];
+                            selected_interviewee.questions = [new_answer_data.question_ID];
+                            selected_interviewee.users = [current_user._id];
+                            rgiIntervieweeMethodSrvc.createInterviewee(selected_interviewee)
+                                .then(function (interviewee) {
+                                    new_ref_data = {
+                                        citation_type: 'interview',
+                                        interviewee_ID: interviewee._id,
+                                        contact_date: contact_date,
+                                        comment: new_answer_data.human_ref_comment,
+                                        author: current_user._id
+                                    };
+                                    new_answer_data.references.push(new_ref_data);
+                                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
+                                })
+                                .then(function () {
+                                    $scope.closeThisDialog();
+                                    $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                                    rgiNotifier.notify('Reference added');
+                                }, function (reason) {
+                                    rgiNotifier.notify(reason);
+                                });
+                            //email_domain = 'http://' + selected_interviewee.email.split('@')[1];
+                            //if (email_domain === 'http://undefined') {
+                            //    rgiNotifier.error('You must enter a valid email address!');
+                            //} else {
+                            //    selected_interviewee.answers = [new_answer_data.answer_ID];
+                            //    selected_interviewee.assessments = [new_answer_data.assessment_ID];
+                            //    selected_interviewee.questions = [new_answer_data.question_ID];
+                            //    selected_interviewee.users = [current_user._id];
+                            //    rgiIntervieweeMethodSrvc.createInterviewee(selected_interviewee)
+                            //        .then(function (interviewee) {
+                            //            new_ref_data = {
+                            //                citation_type: 'interview',
+                            //                interviewee_ID: interviewee._id,
+                            //                contact_date: contact_date,
+                            //                comment: new_answer_data.human_ref_comment,
+                            //                author: current_user._id
+                            //            };
+                            //            new_answer_data.references.push(new_ref_data);
+                            //            rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
+                            //        })
+                            //        .then(function () {
+                            //            $scope.closeThisDialog();
+                            //            $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                            //            rgiNotifier.notify('Reference added');
+                            //        }, function (reason) {
+                            //            rgiNotifier.notify(reason);
+                            //        });
+                            //}
                         }
                     }
                 } else if ($scope.interviewee_selection==='existing') {
