@@ -25,7 +25,7 @@ angular.module('app')
         $scope.new_doc_type = [
             {value: 'book', text: 'Book'},
             {value: 'book_section', text: 'Book Chapter'},
-            {value: 'bill', text: 'Bill'},
+            {value: 'bill', text: 'Legislation'},
             {value: 'data_file', text: 'Data File'},
             {value: 'generic', text: 'Generic'},
             {value: 'journal', text: 'Journal'},
