@@ -57,7 +57,9 @@ angular.module('app')
                     break;
                 case 'review_researcher':
                 case 'review_reviewer':
-                    new_assessment_data.first_pass = false;
+                    if ($scope.action === 'review_reviewer') {
+                        new_assessment_data.first_pass = false;
+                    }
 
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                         .then(function () {
