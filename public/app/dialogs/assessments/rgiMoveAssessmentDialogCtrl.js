@@ -38,7 +38,7 @@ angular.module('app')
                     value: 'review_' + control_profile.role
                 });
                 if (control_profile.role === 'researcher' && assessment_counters.flagged === 0 && assessment.reviewer_ID) {
-                    if (assessment.first_pass) {
+                    if (!assessment.first_pass) {
                         workflow_opts.push({
                             text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
                             value: assessment.reviewer_ID.role + '_trial'
