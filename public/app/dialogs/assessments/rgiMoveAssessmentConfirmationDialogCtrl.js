@@ -16,7 +16,7 @@ angular.module('app')
         $scope.action = $scope.$parent.action;
         $scope.current_user = rgiIdentitySrvc.currentUser;
         switch ($scope.action) {
-            case 'started':
+            case 'researcher_started':
                 $scope.action_text = 'send back to researcher to continue assessment';
                 break;
             case 'review_researcher':

@@ -32,7 +32,6 @@ angular
             var new_assessment_data = assessment;
             if ($scope.current_user.isResearcher()) {
                 new_assessment_data.status = 'trial_started';
-                new_assessment_data.start_date = {started_by: rgiIdentitySrvc.currentUser._id};
             }
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
                 $location.path('/assessments/' + new_assessment_data.assessment_ID);
@@ -45,9 +44,9 @@ angular
         $scope.assessmentStart = function (assessment) {
             var new_assessment_data = assessment;
             if ($scope.current_user.isResearcher()) {
-                new_assessment_data.status = 'started';
+                new_assessment_data.status = 'researcher_started';
             } else if ($scope.current_user.isReviewer()) {
-                new_assessment_data.status = 'review_started';
+                new_assessment_data.status = 'reviewer_started';
             }
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
                 $location.path('/assessments/answer/' + new_assessment_data.assessment_ID + '-001');

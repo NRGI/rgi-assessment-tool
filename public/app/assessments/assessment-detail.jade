@@ -21,7 +21,7 @@
                     ng-if="assessment.status==='trial_started'") Submit trial
                     button.btn.btn-success.pull-right(
                     ng-click="submitAssessmentDialog()"
-                    ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Submit assessment
+                    ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Submit assessment
                     button.btn.btn-success.pull-right(
                     ng-click="resubmitAssessmentDialog()"
                     ng-if="assessment.status==='review_' + current_user.role") Resubmit assessment
@@ -69,8 +69,8 @@
                 .row
                     | Approved: {{assessment_counters.approved}}
                 .row
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) > -1") Completed: {{assessment_counters.submitted}}
-                    text(ng-if="['started', 'review_started'].indexOf(assessment.status) < 0") Completed: {{assessment_counters.resubmitted}}
+                    text(ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Completed: {{assessment_counters.submitted}}
+                    text(ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) < 0") Completed: {{assessment_counters.resubmitted}}
                 .row
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
