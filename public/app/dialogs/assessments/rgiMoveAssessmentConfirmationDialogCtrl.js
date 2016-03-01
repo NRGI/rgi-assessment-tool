@@ -42,6 +42,7 @@ angular.module('app')
             new_assessment_data.status = $scope.action;
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
+            console.log($scope.action);
 
             switch ($scope.action) {
                 case 'researcher_trial':
@@ -56,8 +57,8 @@ angular.module('app')
                                         answer.status = 'assigned';
                                     }
                                 });
+                                new_assessment_data.first_pass = false;
                             }
-
                             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                                 .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
                                 .then(function () {
@@ -95,9 +96,6 @@ angular.module('app')
                     break;
                 case 'review_researcher':
                 case 'review_reviewer':
-                    if ($scope.action === 'review_reviewer') {
-                        new_assessment_data.first_pass = false;
-                    }
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                         .then(function () {
                             $scope.closeThisDialog();
