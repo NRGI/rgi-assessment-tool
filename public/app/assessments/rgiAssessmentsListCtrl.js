@@ -9,8 +9,8 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
         rgiAssessmentRolesGuideSrvc,
-        rgiIdentitySrvc,
-        rgiUserListSrvc
+        rgiIdentitySrvc
+        //rgiUserListSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         // filtering options
@@ -20,24 +20,24 @@ angular.module('app')
             {value: 'status', text: 'Sort by Status'}];
         $scope.sort_order = $scope.sort_options[0].value;
 
-        var getUser = function(userId) {
-            return rgiUserListSrvc.getCached({_id: userId});
-        };
+        //var getUser = function(userId) {
+        //    return rgiUserListSrvc.getCached({_id: userId});
+        //};
 
         var getAssessments = function(criteria) {
             rgiAssessmentSrvc.query(criteria, function (assessments) {
                 $scope.assessments = [];
 
                 assessments.forEach(function (assessment) {
-                    if (assessment.last_modified) {
-                        assessment.edited_by = getUser(assessment.last_modified.modified_by);
-                    }
+                    //if (assessment.last_modified) {
+                    //    assessment.edited_by = getUser(assessment.last_modified.modified_by);
+                    //}
 
-                    rgiAssessmentRolesGuideSrvc.list().forEach(function(role) {
-                        if(assessment[role + '_ID']) {
-                            assessment[role] = getUser(assessment[role + '_ID']);
-                        }
-                    });
+                    //rgiAssessmentRolesGuideSrvc.list().forEach(function(role) {
+                    //    if(assessment[role + '_ID']) {
+                    //        assessment[role] = getUser(assessment[role + '_ID']);
+                    //    }
+                    //});
 
                     $scope.assessments.push(assessment);
 

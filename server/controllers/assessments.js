@@ -27,22 +27,27 @@ exports.getAssessments = function (req, res) {
         .populate('last_review_date.user', 'firstName lastName role email')
         .populate('approval_date.user', 'firstName lastName role email')
         .populate('last_modified.user', 'firstName lastName role email')
+        .populate('researcher_ID', 'firstName lastName role email')
+        .populate('reviewer_ID', 'firstName lastName role email')
         .exec(function (err, assessments) {
             if (err) { return next(err); }
             if (!assessments) { return next(new Error('No assessments found')); }
             res.send(assessments);
         });
-    //var query = Assessment.find(req.query);
-    //query.exec(function (err, assessments) {
-    //    res.send(assessments);
-    //});
 };
 
 
 exports.getAssessmentsByID = function (req, res) {
-    Assessment.findOne({assessment_ID: req.params.assessment_ID}).exec(function (err, assessment) {
-        res.send(assessment);
-    });
+    Assessment.findOne({assessment_ID: req.params.assessment_ID})
+        .populate('researcher_ID', 'firstName lastName role email')
+        .populate('reviewer_ID', 'firstName lastName role email')
+        .exec(function (err, assessment) {
+            if (err) { return next(err); }
+            res.send(assessment);
+        });
+
+
+
 };
 
 exports.createAssessments = function (req, res) {
@@ -82,7 +87,7 @@ exports.updateAssessment = function (req, res) {
         contact_packet.admin_email = req.user.email;
     }
     //TODO make sure i can res.send without breaking functino
-    if (String(req.user._id) !== String(assessmentUpdates.researcher_ID) && String(req.user._id) !== String(assessmentUpdates.reviewer_ID) && !req.user.hasRole('supervisor')) {
+    if (String(req.user._id) !== String(assessmentUpdates.researcher_ID._id) && String(req.user._id) !== String(assessmentUpdates.reviewer_ID._id) && !req.user.hasRole('supervisor')) {
         //var err = new Error('You are not an admin and do not have edit control!');
         res.sendStatus(404);
         return res.end();
@@ -131,12 +136,6 @@ exports.updateAssessment = function (req, res) {
                             assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
                         }
                     }
-                    //if (!(assessment.hasOwnProperty('assignment')) && assessment.hasOwnProperty('researcher_ID')) {
-                    //    assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
-                    //}
-                    //{ user: user_ref, date: Date},
-                    //approval,
-                    //last_modified
                     switch (assessmentUpdates.status) {
                         case 'researcher_trial':
                             if (!assessment.hasOwnProperty('assignment_date')) {
