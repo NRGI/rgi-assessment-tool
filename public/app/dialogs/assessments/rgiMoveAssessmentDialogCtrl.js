@@ -34,19 +34,21 @@ angular.module('app')
                     value: 'review_' + control_profile.role
                 });
                 if (control_profile.role === 'researcher' && assessment_counters.flagged === 0 && assessment.reviewer_ID) {
-                //if (control_profile.role === 'researcher') {
-                    rgiUserSrvc.get({_id: assessment.reviewer_ID}, function (new_profile) {
+                    if (assessment.first_pass) {
                         workflow_opts.push({
-                            text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
-                            value: 'assigned_' + new_profile.role
+                            text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
+                            value: assessment.reviewer_ID.role + '_trial'
                         });
-                    });
+                    } else {
+                        workflow_opts.push({
+                            text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
+                            value: 'assigned_' + assessment.reviewer_ID.role
+                        });
+                    }
                 } else if (control_profile.role === 'reviewer' && assessment_counters.flagged === 0) {
-                    rgiUserSrvc.get({_id: assessment.researcher_ID}, function (new_profile) {
-                        workflow_opts.push({
-                            text: 'Move to ' + new_profile.firstName + " " + new_profile.lastName + ' (' + new_profile.role + ').',
-                            value: 'assigned_' + new_profile.role
-                        });
+                    workflow_opts.push({
+                        text: 'Move to ' + assessment.researcher_ID.firstName + " " + assessment.researcher_ID.lastName + ' (' + assessment.researcher_ID.role + ').',
+                        value: 'assigned_' + assessment.researcher_ID.role
                     });
                 }
             }

@@ -32,13 +32,13 @@
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row(ng-if="current_user.isSupervisor()")
                     | Researcher:
-                    a(href="mailto:{{researcher.email}}")  {{researcher.firstName}}  {{researcher.lastName}}
+                    a(href="mailto:{{assessment.researcher_ID.email}}")  {{assessment.researcher_ID.firstName}}  {{assessment.researcher_ID.lastName}}
                 .row(ng-if="current_user.isSupervisor()")
                     | Reviewer:
                     a(
-                    ng-if="reviewer"
-                    href="mailto:{{reviewer.email}}")  {{reviewer.firstName}}  {{reviewer.lastName}}
-                    em(ng-if="!reviewer")  N/A
+                    ng-if="assessment.reviewer_ID"
+                    href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}}  {{assessment.reviewer_ID.lastName}}
+                    em(ng-if="!assessment.reviewer_ID")  N/A
                 .row
                     | Status: {{assessment.status | addSpaces | ucfirst}}
                 .row
