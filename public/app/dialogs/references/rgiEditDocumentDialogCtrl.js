@@ -14,21 +14,30 @@ angular.module('app')
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [
-            {value: 'book', text: 'Book'},
-            {value: 'book_section', text: 'Book Chapter'},
-            {value: 'bill', text: 'Bill'},
-            {value: 'data_file', text: 'Data File'},
-            {value: 'generic', text: 'Generic'},
             {value: 'journal', text: 'Journal'},
-            {value: 'case', text: 'Judicial Decision'},
-            {value: 'magazine_article', text: 'Magazine Article'},
-            {value: 'newspaper_article', text: 'Newspaper Article'},
-            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
-            {value: 'policy_document', text: 'Policy document'},
+            {value: 'data_file', text: 'Data File'},
+            {value: 'book', text: 'Book'},
+            {value: 'generic', text: 'Generic'},
+            {value: 'book_section', text: 'Book Section'},
+            {value: 'conference_proceedings', text: 'Conference Proceedings'},
+            {value: 'working_paper', text: 'Working Paper'},
             {value: 'report', text: 'Report'},
-            {value: 'statute', text: 'Statute'},
             {value: 'web_page', text: 'Web Page'},
-            {value: 'working_paper', text: 'Working Paper'}
+            {value: 'thesis', text: 'Thesis'},
+            {value: 'magazine_article', text: 'Magazine Article'},
+            {value: 'statute', text: 'Statute'},
+            {value: 'patent', text: 'Patent'},
+            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
+            {value: 'newspaper_article', text: 'Newspaper Article'},
+            {value: 'policy_document', text: 'Policy document'},
+            {value: 'computer_program', text: 'Computer Program'},
+            {value: 'hearing', text: 'Hearing'},
+            {value: 'television_broadcast', text: 'Television Broadcast'},
+            {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
+            {value: 'case', text: 'Case'},
+            {value: 'film', text: 'Film'},
+            {value: 'statute', text: 'Statute'},
+            {value: 'bill', text: 'Bill'}
         ];
         $scope.authorPush = function () {
             $scope.new_doc_data.authors.push({first_name: "", last_name: ""});

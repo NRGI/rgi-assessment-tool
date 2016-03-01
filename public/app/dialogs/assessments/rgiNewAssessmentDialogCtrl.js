@@ -81,6 +81,8 @@ angular.module('app')
             $scope.disable_button = true;
 
             rgiQuestionSrvc.query({assessments: new_assessment_year + "-" + new_assessment_ver}, function (d) {
+                var country_deployed = false;
+                forEachKey()
                 if (d.length > 0) {
                     rgiNotifier.error('Assessment already deployed');
                 } else {

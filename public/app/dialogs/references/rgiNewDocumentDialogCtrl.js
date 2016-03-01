@@ -25,20 +25,18 @@ angular.module('app')
         $scope.new_doc_type = [
             {value: 'book', text: 'Book'},
             {value: 'book_section', text: 'Book Chapter'},
-            {value: 'bill', text: 'Legislation'},
             {value: 'data_file', text: 'Data File'},
-            {value: 'generic', text: 'Generic'},
             {value: 'journal', text: 'Journal'},
             {value: 'case', text: 'Judicial Decision'},
-            {value: 'magazine_article', text: 'Magazine Article'},
-            {value: 'newspaper_article', text: 'Newspaper Article'},
+            {value: 'newspaper_article', text: 'Press Article'},
             {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
             {value: 'policy_document', text: 'Policy document'},
             {value: 'report', text: 'Report'},
-            {value: 'statute', text: 'Statute'},
+            {value: 'statute', text: 'Legislation'},
             {value: 'web_page', text: 'Web Page'},
             {value: 'working_paper', text: 'Working Paper'}
         ];
+
 
         //DATEPICKER OPTS
         var today = new Date();
