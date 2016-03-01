@@ -44,6 +44,7 @@ angular.module('app')
             $scope.answers = [];
 
             rgiAnswerSrvc.query(answer_query, function (answers) {
+                rgiQuestionSetSrvc.setAnswers(answers);
                 $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
                 $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 

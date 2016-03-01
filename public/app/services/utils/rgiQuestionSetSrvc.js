@@ -8,7 +8,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
     });
 
     var getNextQuestion = function(answer) {
-        var linkedQuestion = getLinkedQuestion(getQuestionOption(answer));
+        var linkedQuestion = getLinkedQuestion(getQuestionSelectedOption(answer));
         return linkedQuestion === undefined ? getRootQuestions(false)[0] : linkedQuestion;
     };
 
@@ -24,13 +24,17 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         return foundQuestion;
     };
 
-    var getQuestionOption = function(answer) {
+    var getSelectedOption = function(answer) {
+        return answer.researcher_score;
+    };
+
+    var getQuestionSelectedOption = function(answer) {
         var foundOption;
 
         questions.forEach(function(question) {
-            if(isQuestionAssociated(answer, question)) {
+            if(isAssociatedQuestion(answer, question)) {
                 question.question_criteria.forEach(function(option) {
-                    if(answer.researcher_score.text === option.text) {
+                    if(getSelectedOption(answer).text === option.text) {
                         foundOption = option;
                     }
                 });
@@ -52,7 +56,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         return rootQuestions;
     };
 
-    var isQuestionAssociated = function(answer, question) {
+    var isAssociatedQuestion = function(answer, question) {
         return answer.question_ID._id === question._id;
     };
 
@@ -60,7 +64,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         var associatedQuestion;
 
         questions.forEach(function(question) {
-            if(isQuestionAssociated(answer, question)) {
+            if(isAssociatedQuestion(answer, question)) {
                 associatedQuestion = question;
             }
         });
@@ -72,12 +76,39 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         var answered = false;
 
         answers.forEach(function(answer) {
-            if(isQuestionAssociated(answer, question) && answer.researcher_score) {
+            if(isAssociatedQuestion(answer, question) && getSelectedOption(answer)) {
                 answered = true;
             }
         });
 
         return answered;
+    };
+
+    var getAvailableLinkedQuestions = function() {
+        var availableLinkedQuestions = [];
+
+        answers.forEach(function(answer) {
+            if(getSelectedOption(answer)) {
+                var linkedQuestion = getLinkedQuestion(getQuestionSelectedOption(answer));
+                if(linkedQuestion) {
+                    availableLinkedQuestions.push(linkedQuestion);
+                }
+            }
+        });
+
+        return availableLinkedQuestions;
+    };
+
+    var isQuestionFound = function(associatedQuestion, questions) {
+        var questionFound = false;
+
+        questions.forEach(function(question) {
+            if(question._id === associatedQuestion._id) {
+                questionFound = true;
+            }
+        });
+
+        return questionFound;
     };
 
     return {
@@ -88,17 +119,8 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
             return getNextQuestion(answer) !== undefined;
         },
         isAvailable: function(answer) {
-            var rootQuestions = getRootQuestions(true),
-                associatedQuestion = getAssociatedQuestion(answer),
-                isRootQuestion = false;
-
-            rootQuestions.forEach(function(question) {
-                if(question._id === associatedQuestion._id) {
-                    isRootQuestion = true;
-                }
-            });
-
-            return isRootQuestion;
+            var question = getAssociatedQuestion(answer);
+            return isQuestionFound(question, getRootQuestions(true)) || isQuestionFound(question, getAvailableLinkedQuestions());
         },
         setAnswers: function(answersData) {
             answers = answersData;
