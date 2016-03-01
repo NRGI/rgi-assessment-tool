@@ -1,10 +1,22 @@
 'use strict';
 
-angular.module('app').factory('rgiAssessmentStatisticsGuideSrvc', function () {
+angular.module('app').factory('rgiAssessmentStatisticsGuideSrvc', function (rgiQuestionSetSrvc) {
+    var getCurrentQuestionSetLength = function(answers) {
+        var questionsNumber = 0;
+
+        answers.forEach(function(answer) {
+            if(rgiQuestionSetSrvc.isAvailable(answer)) {
+                questionsNumber++;
+            }
+        });
+
+        return questionsNumber;
+    };
+
     return {
         getCounterSetTemplate: function(answers) {
             return {
-                length: answers.length,
+                length: getCurrentQuestionSetLength(answers),
                 complete: 0,
                 flagged: 0,
                 submitted: 0,
