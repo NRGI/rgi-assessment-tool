@@ -14,6 +14,7 @@ angular.module('app')
         rgiUserMethodSrvc,
         rgiUtilsSrvc
     ) {
+        $scope.answer.new_ref_comment = '';
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.disable_button = false;
         if ($scope.new_document.status === 'created') {
@@ -157,6 +158,7 @@ angular.module('app')
                     .then(function () {
                         $scope.closeThisDialog();
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                         rgiNotifier.notify('Reference added!');
                     }, function (reason) {
                         rgiNotifier.error(reason);
