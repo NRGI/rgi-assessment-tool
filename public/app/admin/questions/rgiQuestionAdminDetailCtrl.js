@@ -32,6 +32,23 @@ angular.module('app')
             {value: 'reporting', text: 'Reporting and Disclosure Practices'}
         ];
 
+        $scope.questions = [];
+        rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
+            $scope.questions = questions;
+
+            $scope.questions.forEach(function(question) {
+                question.question_criteria.forEach(function(option) {
+                    if($scope.question.linkedOption === option._id) {
+                        $scope.linkedQuestion = question;
+                    }
+                });
+            });
+        });
+
+        $scope.resetLinkedOption = function() {
+            $scope.question.linkedOption = undefined;
+        };
+
         $scope.questionOptionAdd = function () {
             $scope.question.question_choices.push({order: $scope.question.question_choices.length + 1, criteria: "Enter text"});
         };
