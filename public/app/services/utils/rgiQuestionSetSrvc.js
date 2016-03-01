@@ -9,7 +9,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
 
     var getNextQuestion = function(answer) {
         var linkedQuestion = getLinkedQuestion(getQuestionOption(answer));
-        return linkedQuestion === undefined ? getRootQuestions()[0] : linkedQuestion;
+        return linkedQuestion === undefined ? getRootQuestions(false)[0] : linkedQuestion;
     };
 
     var getLinkedQuestion = function(option) {
@@ -40,11 +40,11 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         return foundOption;
     };
 
-    var getRootQuestions = function() {
+    var getRootQuestions = function(showAnsweredQuestions) {
         var rootQuestions = [];
 
         questions.forEach(function(question) {
-            if((question.linkedOption === undefined) && !isQuestionAnswered(question)) {
+            if((question.linkedOption === undefined) && (!isQuestionAnswered(question) || showAnsweredQuestions)) {
                 rootQuestions.push(question);
             }
         });
@@ -54,6 +54,18 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
 
     var isQuestionAssociated = function(answer, question) {
         return answer.question_ID._id === question._id;
+    };
+
+    var getAssociatedQuestion = function(answer) {
+        var associatedQuestion;
+
+        questions.forEach(function(question) {
+            if(isQuestionAssociated(answer, question)) {
+                associatedQuestion = question;
+            }
+        });
+
+        return associatedQuestion;
     };
 
     var isQuestionAnswered = function(question) {
@@ -74,6 +86,19 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         },
         isAnyQuestionRemaining: function(answer) {
             return getNextQuestion(answer) !== undefined;
+        },
+        isAvailable: function(answer) {
+            var rootQuestions = getRootQuestions(true),
+                associatedQuestion = getAssociatedQuestion(answer),
+                isRootQuestion = false;
+
+            rootQuestions.forEach(function(question) {
+                if(question._id === associatedQuestion._id) {
+                    isRootQuestion = true;
+                }
+            });
+
+            return isRootQuestion;
         },
         setAnswers: function(answersData) {
             answers = answersData;
