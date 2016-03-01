@@ -49,7 +49,7 @@ assessmentSchema = new Schema({
         created_date: {
             type: Date,
             default: Date.now}},
-    assignment: {
+    assignment_date: {
         user: user_ref,
         date: Date},
     researcher_start_date: {
@@ -67,7 +67,7 @@ assessmentSchema = new Schema({
     last_review_date: {
         user: user_ref,
         date: Date},
-    approval: {
+    approval_date: {
         user: user_ref,
         date: Date},
     last_modified: {

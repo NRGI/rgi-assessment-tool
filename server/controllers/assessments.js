@@ -18,10 +18,24 @@ exports.getAssessments = function (req, res) {
             }
         }
     }
-    var query = Assessment.find(req.query);
-    query.exec(function (err, assessments) {
-        res.send(assessments);
-    });
+    Assessment.find(req.query)
+        .populate('assignment_date.user', 'firstName lastName role email')
+        .populate('researcher_start_date.user', 'firstName lastName role email')
+        .populate('reviewer_start_date.user', 'firstName lastName role email')
+        .populate('researcher_submit_date.user', 'firstName lastName role email')
+        .populate('reviewer_submit_date.user', 'firstName lastName role email')
+        .populate('last_review_date.user', 'firstName lastName role email')
+        .populate('approval_date.user', 'firstName lastName role email')
+        .populate('last_modified.user', 'firstName lastName role email')
+        .exec(function (err, assessments) {
+            if (err) { return next(err); }
+            if (!assessments) { return next(new Error('No assessments found')); }
+            res.send(assessments);
+        });
+    //var query = Assessment.find(req.query);
+    //query.exec(function (err, assessments) {
+    //    res.send(assessments);
+    //});
 };
 
 
@@ -125,8 +139,8 @@ exports.updateAssessment = function (req, res) {
                     //last_modified
                     switch (assessmentUpdates.status) {
                         case 'researcher_trial':
-                            if (!assessment.hasOwnProperty('assignment')) {
-                                assessment.assignment = {user: req.user._id, date: timestamp};
+                            if (!assessment.hasOwnProperty('assignment_date')) {
+                                assessment.assignment_date = {user: req.user._id, date: timestamp};
                             }
                             break;
                         case 'trial_started':
@@ -150,8 +164,8 @@ exports.updateAssessment = function (req, res) {
                             assessment.last_review_date = {user: req.user._id, date: timestamp};
                             break;
                         case 'approved':
-                            if (!assessment.hasOwnProperty('approval')) {
-                                assessment.approval = {user: req.user._id, date: timestamp};
+                            if (!assessment.hasOwnProperty('approval_date')) {
+                                assessment.approval_date = {user: req.user._id, date: timestamp};
                             }
                             break;
                     }
