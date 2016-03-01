@@ -121,9 +121,6 @@ exports.updateAssessment = function (req, res) {
                     //    assessment.assignment = {assigned_by: req.user._id, assigned_date: timestamp};
                     //}
                     //{ user: user_ref, date: Date},
-                    //researcher_submit_date,
-                    //reviewer_submit_date,
-                    //last_review_date,
                     //approval,
                     //last_modified
                     switch (assessmentUpdates.status) {
@@ -140,50 +137,24 @@ exports.updateAssessment = function (req, res) {
                                 assessment.reviewer_start_date = {user: req.user._id, date: timestamp};
                             }
                             break;
-                        case 'started':
-                            if (!assessment.hasOwnProperty('researcher_submit_date') && assessment.status==='researcher_trial') {
-                                assessment.researcher_start_date = {user: req.user._id, date: timestamp};
+                        case 'submitted':
+                            if (assessment.status==='researcher_started') {
+                                assessment.researcher_submit_date = {user: req.user._id, date: timestamp};
                             }
-                            if (!assessment.hasOwnProperty('reviewer_submit_date') && assessment.status==='reviewer_trial') {
-                                assessment.reviewer_start_date = {user: req.user._id, date: timestamp};
+                            if (assessment.status==='reviewer_started') {
+                                assessment.reviewer_submit_date = {user: req.user._id, date: timestamp};
                             }
-
                             break;
-                        case '':
-
+                        case 'review_researcher':
+                        case 'review_reviewer':
+                            assessment.last_review_date = {user: req.user._id, date: timestamp};
                             break;
-                        case '':
-
-                            break;
-                        case '':
-
+                        case 'approved':
+                            if (!assessment.hasOwnProperty('approval')) {
+                                assessment.approval = {user: req.user._id, date: timestamp};
+                            }
                             break;
                     }
-
-
-                    //if (!(assessment.hasOwnProperty('start_date'))) {
-                    //    if (assessmentUpdates.hasOwnProperty('start_date')) {
-                    //        assessment.start_date = {started_by: assessmentUpdates.start_date.started_by, started_date: timestamp};
-                    //    }
-                    //}
-                    //
-                    //if (!(assessment.hasOwnProperty('submit_date'))) {
-                    //    if (assessmentUpdates.hasOwnProperty('submit_date')) {
-                    //        assessment.submit_date = {submited_by: assessmentUpdates.submit_date.submited_by, submited_date: timestamp};
-                    //    }
-                    //}
-                    //
-                    //if (assessmentUpdates.hasOwnProperty('review_date')) {
-                    //    if (!(assessment.hasOwnProperty('review_date'))) {
-                    //        assessment.review_date = {reviewed_by: assessmentUpdates.review_date.reviewed_by, reviewed_date: timestamp};
-                    //    }
-                    //}
-                    //
-                    //if (assessmentUpdates.hasOwnProperty('approval')) {
-                    //    if (!(assessment.hasOwnProperty('approval'))) {
-                    //        assessment.approval = {approved_by: assessmentUpdates.approval.approved_by, approved_date: timestamp};
-                    //    }
-                    //}
 
                     _.each(assessmentUpdates.ext_reviewer_ID, function(new_reviewer) {
                         var new_assignment = true;
