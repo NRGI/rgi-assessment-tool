@@ -41,6 +41,7 @@ exports.getAssessmentsByID = function (req, res) {
     Assessment.findOne({assessment_ID: req.params.assessment_ID})
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
+        .populate('last_modified.user', 'firstName lastName role email')
         .exec(function (err, assessment) {
             if (err) { return next(err); }
             res.send(assessment);

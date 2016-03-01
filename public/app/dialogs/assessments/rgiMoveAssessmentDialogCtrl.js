@@ -18,16 +18,20 @@ angular.module('app')
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
-            if (assessment.status === 'trial_submitted') {
-                workflow_opts.push({
-                    text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
-                    value: control_profile.role + '_trial'
-                });
-                workflow_opts.push({
-                    text: 'Allow ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ' to continue assessment.',
-                    value: 'assigned_' + control_profile.role
-                });
+            console.log($scope.$parent.assessment_counters);
 
+            if (assessment.status === 'trial_submitted') {
+                if ($scope.$parent.assessment_counters.flagged!==0) {
+                    workflow_opts.push({
+                        text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+                        value: control_profile.role + '_trial'
+                    });
+                } else if ($scope.$parent.assessment_counters.approved===$scope.$parent.assessment_counters.length) {
+                    workflow_opts.push({
+                        text: 'Allow ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
+                        value: 'assigned_' + control_profile.role
+                    });
+                }
             } else {
                 workflow_opts.push({
                     text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',

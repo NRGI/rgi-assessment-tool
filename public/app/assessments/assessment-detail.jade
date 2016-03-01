@@ -18,13 +18,13 @@
                 div(ng-if="!current_user.isSupervisor()")
                     button.btn.btn-success.pull-right(
                     ng-click="submitTrialAssessmentDialog()"
-                    ng-if="assessment.status==='trial_started'") Submit trial
+                    ng-if="current_user._id === assessment.edit_control && assessment.status==='trial_started'") Submit trial
                     button.btn.btn-success.pull-right(
                     ng-click="submitAssessmentDialog()"
-                    ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Submit assessment
+                    ng-if="current_user._id === assessment.edit_control && ['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Submit assessment
                     button.btn.btn-success.pull-right(
                     ng-click="resubmitAssessmentDialog()"
-                    ng-if="assessment.status==='review_' + current_user.role") Resubmit assessment
+                    ng-if="current_user._id === assessment.edit_control && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1") Resubmit assessment
                 div(ng-if="current_user.isSupervisor()")
                     button.btn.btn-success.pull-right(
                     ng-click="moveAssessmentDialog()") Move assessment
@@ -44,11 +44,11 @@
                 .row
                     | Last edited by
                     a(
-                    href="mailto:{{edited_by.email}}"
-                    ng-if="current_user.isSupervisor()")  {{edited_by.firstName}}  {{edited_by.lastName}}
-                    text(ng-if="!current_user.isSupervisor()")  {{edited_by.role}}
+                    href="mailto:{{assessment.last_modified.user.email}}"
+                    ng-if="current_user.isSupervisor()")  {{assessment.last_modified.user.firstName}}  {{assessment.last_modified.user.lastName}}
+                    text(ng-if="!current_user.isSupervisor()")  {{assessment.last_modified.user.role}}
                     |  on
-                    em  {{assessment.last_modified.modified_date | date}}
+                    em  {{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
                     //span(ng-repeat="mod in assessment.modified")
                     //    em(ng-show="$last")  {{mod.modified_date | date}}
                 //.row
@@ -70,7 +70,7 @@
                     | Approved: {{assessment_counters.approved}}
                 .row
                     text(ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Completed: {{assessment_counters.submitted}}
-                    text(ng-if="['researcher_started', 'reviewer_started'].indexOf(assessment.status) < 0") Completed: {{assessment_counters.resubmitted}}
+                    text(ng-if="['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1") Completed: {{assessment_counters.resubmitted}}
                 .row
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
