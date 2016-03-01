@@ -8,6 +8,7 @@ angular.module('app')
         ngDialog,
         rgiUtilsSrvc,
         rgiNotifier,
+        rgiAllowedFileExtensionGuideSrvc,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
         rgiIdentitySrvc,
@@ -15,6 +16,7 @@ angular.module('app')
         rgiUserMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
+        var _ = $rootScope._
 
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
@@ -54,19 +56,30 @@ angular.module('app')
         };
 
         $scope.documentRefSubmit = function (new_document) {
-            var url, new_user_data = $scope.current_user;
+            var url, file_extension,
+                allowed_extensions = rgiAllowedFileExtensionGuideSrvc.getList(),
+                new_user_data = $scope.current_user;
             $scope.disable_button=true;
+
+            if ($scope.new_document.source) {
+                file_extension = _.last($scope.new_document.source.split('.'));
+            }
 
             //check for minimum data
             if (!$scope.new_document.source) {
                 rgiNotifier.error('You must provide a source URL!');
+                $scope.disable_button = false;
+            } else if (allowed_extensions.indexOf(file_extension) > -1) {
+                rgiNotifier.error('This is a remote file. Please upload as a document!');
+                $scope.closeThisDialog();
+                $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                 $scope.disable_button=false;
             } else if (!$scope.new_document.title) {
                 rgiNotifier.error('You must provide a title!');
                 $scope.disable_button=false;
             } else if (!$scope.ref_date_accessed) {
                 rgiNotifier.error('You must provide the date of access!');
-                $scope.disable_button=false;
+                $scope.disable_button = false;
             } else {
                 if ($scope.new_document.source.split('://')[0] === 'http' || $scope.new_document.source.split('://')[0] === 'https') {
                     url = $scope.new_document.source;
@@ -78,6 +91,7 @@ angular.module('app')
                         $scope.disable_button=false;
                         rgiNotifier.error('Website does not exists');
                         $scope.closeThisDialog();
+                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                     })
                     .done(function (res) {
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,
