@@ -99,7 +99,6 @@ angular.module('app')
                         new_assessment_data.first_pass = false;
                     }
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-                        .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
                         .then(function () {
                             $scope.closeThisDialog();
                             $location.path('/admin/assessment-admin');

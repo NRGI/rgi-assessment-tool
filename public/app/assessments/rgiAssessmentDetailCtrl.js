@@ -23,6 +23,7 @@ angular.module('app')
         $scope.sortOrder = $scope.sortOptions[0].value;
         $scope.order_reverse = true;
 
+
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};
             if (['researcher_trial', 'reviewer_trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
@@ -56,14 +57,29 @@ angular.module('app')
                 });
             });
         });
+
         $scope.submitTrialAssessmentDialog = function () {
-            rgiDialogFactory.assessmentTrialSubmit($scope);
+            if ($scope.assessment_counters.flagged!==0) {
+                rgiNotifier.error('You must address all flags!');
+            } else if ($scope.assessment_counters.approved + $scope.assessment_counters.submitted !== $scope.assessment_counters.length) {
+                rgiNotifier.error('Some answers have not been marked complete or approved!');
+            } else {
+                rgiDialogFactory.assessmentTrialSubmit($scope);
+            }
         };
         $scope.submitAssessmentDialog = function () {
-            rgiDialogFactory.assessmentSubmit($scope);
+            if ($scope.assessment_counters.approved + $scope.assessment_counters.submitted !== $scope.assessment_counters.length) {
+                rgiNotifier.error('Some answers have not been marked complete or approved!');
+            } else {
+                rgiDialogFactory.assessmentSubmit($scope);
+            }
         };
         $scope.resubmitAssessmentDialog = function () {
-            rgiDialogFactory.assessmentResubmit($scope);
+            if ($scope.assessment_counters.approved + $scope.assessment_counters.resubmitted !== $scope.assessment_counters.length) {
+                rgiNotifier.error('Some answers have not been marked complete or approved!');
+            } else {
+                rgiDialogFactory.assessmentResubmit($scope);
+            }
         };
         $scope.moveAssessmentDialog = function () {
             rgiDialogFactory.assessmentMove($scope);
