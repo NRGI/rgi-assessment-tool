@@ -30,12 +30,11 @@ angular
             answerData.status = status;
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData) && additionalCondition) {
-                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(answerData));
+                    if ((answerData.question_order !== $scope.question_length) && additionalCondition) {
+                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((answerData.question_order + 1), 3)));
                     } else {
                         $location.path(rootUrl + '/' + answerData.assessment_ID);
                     }
-
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
