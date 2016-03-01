@@ -25,7 +25,7 @@ angular.module('app')
 
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};
-            if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
+            if (['researcher_trial', 'reviewer_trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
                 answer_query.question_trial = true;
             }
             $scope.assessment = assessment;

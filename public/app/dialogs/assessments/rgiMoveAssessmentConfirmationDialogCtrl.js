@@ -46,15 +46,41 @@ angular.module('app')
             switch ($scope.action) {
                 case 'researcher_trial':
                 case 'reviewer_trial':
-                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-                        .then(function () {
-                            $scope.closeThisDialog();
-                            $location.path('/admin/assessment-admin');
-                            rgiNotifier.notify('Assessment returned for review!');
-                            $route.reload();
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
+                    if ($scope.action === 'reviewer_trial') {
+                        new_assessment_data.edit_control = new_assessment_data.reviewer_ID;
+                        rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
+
+                            if (new_assessment_data.first_pass) {
+                                new_answer_data.forEach(function (answer) {
+                                    if (answer.status !== 'unresolved') {
+                                        answer.status = 'assigned';
+                                    }
+                                });
+                            }
+
+                            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                                .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
+                                .then(function () {
+                                    $scope.closeThisDialog();
+                                    $location.path('/admin/assessment-admin');
+                                    rgiNotifier.notify('Assessment moved forward!');
+                                    $route.reload();
+                                }, function (reason) {
+                                    rgiNotifier.error(reason);
+                                });
                         });
+                    } else {
+                        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                            .then(function () {
+                                $scope.closeThisDialog();
+                                $location.path('/admin/assessment-admin');
+                                rgiNotifier.notify('Assessment returned for review!');
+                                $route.reload();
+                            }, function (reason) {
+                                rgiNotifier.error(reason);
+                            });
+                    }
+
                     break;
                 case 'trial_continue':
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
@@ -72,12 +98,12 @@ angular.module('app')
                     if ($scope.action === 'review_reviewer') {
                         new_assessment_data.first_pass = false;
                     }
-
                     rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
                         .then(function () {
                             $scope.closeThisDialog();
                             $location.path('/admin/assessment-admin');
-                            rgiNotifier.notify('Assessment returned!');
+                            rgiNotifier.notify('Assessment moved forward!');
                             $route.reload();
                         }, function (reason) {
                             rgiNotifier.error(reason);
@@ -93,27 +119,15 @@ angular.module('app')
                         new_assessment_data.edit_control = new_assessment_data.reviewer_ID;
                     }
 
-                    rgiAnswerSrvc.query({assessment_ID: $scope.$parent.assessment.assessment_ID}, function (new_answer_data) {
-
-                        if (new_assessment_data.first_pass && $scope.action === 'assigned_reviewer') {
-                            new_answer_data.forEach(function (answer) {
-                                if (answer.status !== 'unresolved') {
-                                    answer.status = 'assigned';
-                                }
-                            });
-                        }
-
-                        rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
-                            .then(rgiAnswerMethodSrvc.updateAnswerSet(new_answer_data))
-                            .then(function () {
-                                $scope.closeThisDialog();
-                                $location.path('/admin/assessment-admin');
-                                rgiNotifier.notify('Assessment moved forward!');
-                                $route.reload();
-                            }, function (reason) {
-                                rgiNotifier.error(reason);
-                            });
-                    });
+                    rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+                        .then(function () {
+                            $scope.closeThisDialog();
+                            $location.path('/admin/assessment-admin');
+                            rgiNotifier.notify('Assessment moved forward!');
+                            $route.reload();
+                        }, function (reason) {
+                            rgiNotifier.error(reason);
+                        });
                     break;
 
                 case 'approved':
