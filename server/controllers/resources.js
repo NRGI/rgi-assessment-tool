@@ -4,10 +4,11 @@
 var Resource = require('mongoose').model('Resource');
 
 exports.getResources = function (req, res) {
-    var query = Resource.find(req.query);
-    query.exec(function (err, resources) {
-        res.send(resources);
-    });
+    Resource.find(req.query)
+        .sort('order')
+        .exec(function (err, resources) {
+            res.send(resources);
+        });
 };
 
 exports.getResourcesByID = function (req, res) {

@@ -7,15 +7,15 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiResourcesSrvc
     ) {
-        var resource_type = $location.$$path.replace('/', '');
+        $scope.resource_type = $location.$$path.replace('/', '');
 
-        if (resource_type === 'resource') {
+        if ($scope.resource_type === 'resource') {
             $scope.title = 'Other Resources';
-        } else if (resource_type === 'faq') {
+        } else if ($scope.resource_type === 'faq') {
             $scope.title = 'Frequently Asked Questions';
         }
 
         $scope.identity = rgiIdentitySrvc;
-        $scope.resources = rgiResourcesSrvc.query({type: resource_type});
+        $scope.resources = rgiResourcesSrvc.query({type: $scope.resource_type});
 
     });
