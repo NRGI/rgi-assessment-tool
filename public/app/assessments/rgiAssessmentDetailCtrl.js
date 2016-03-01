@@ -12,8 +12,7 @@ angular.module('app')
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiNotifier,
-        rgiPreceptGuideSrvc,
-        rgiUserListSrvc
+        rgiPreceptGuideSrvc
     ) {
         // filtering options
         $scope.sortOptions = [
@@ -30,12 +29,12 @@ angular.module('app')
                 answer_query.question_trial = true;
             }
             $scope.assessment = assessment;
-            $scope.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
-            if (assessment.reviewer_ID) {
-                $scope.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
-            }
-            $scope.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
-            $scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
+            //$scope.researcher = rgiUserListSrvc.get({_id: assessment.researcher_ID});
+            //if (assessment.reviewer_ID) {
+            //    $scope.reviewer = rgiUserListSrvc.get({_id: assessment.reviewer_ID});
+            //}
+            //$scope.assigned_by = rgiUserListSrvc.get({_id: assessment.assignment.assigned_by});
+            //$scope.edited_by = rgiUserListSrvc.get({_id: assessment.last_modified.modified_by});
             $scope.answers = [];
             rgiAnswerSrvc.query(answer_query, function (answers) {
                 $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);

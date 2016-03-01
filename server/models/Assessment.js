@@ -6,7 +6,8 @@ var assessmentSchema, Assessment,
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options = {customCollectionName: "assessment_hst"},
-    ObjectId = mongoose.Schema.Types.ObjectId;
+    ObjectId        = mongoose.Schema.Types.ObjectId,
+    user_ref        = {type: ObjectId, ref: 'User'};
 
 assessmentSchema = new Schema({
     assessment_ID: {
@@ -26,15 +27,9 @@ assessmentSchema = new Schema({
     version: {
         type: String,
         required: '{PATH} is required'},  // pilot or full
-    researcher_ID: {
-        type: ObjectId,
-        ref: 'User'}, // pulled from user_id
-    reviewer_ID: {
-        type: ObjectId,
-        ref: 'User'}, // pulled from user_id
-    ext_reviewer_ID: [{
-        type: ObjectId,
-        ref: 'User'}], // pulled from user_id
+    researcher_ID: user_ref, // pulled from user_id
+    reviewer_ID: user_ref, // pulled from user_id
+    ext_reviewer_ID: [user_ref], // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
     documents: [{
         type: ObjectId,
@@ -50,42 +45,34 @@ assessmentSchema = new Schema({
         type: Boolean,
         default: true},
     created: {
-        created_by: {
-            type: ObjectId,
-            ref: 'User'},
+        created_by: user_ref,
         created_date: {
             type: Date,
             default: Date.now}},
     assignment: {
-        assigned_by: {
-            type: ObjectId,
-            ref: 'User'},
-        assigned_date: Date},
-    start_date: {
-        started_by: {
-            type: ObjectId,
-            ref: 'User'},
-        started_date: Date},
-    submit_date: {
-        submitted_by: {
-            type: ObjectId,
-            ref: 'User'},
-        submitted_date: Date},
-    review_date: {
-        reviewed_by: {
-            type: ObjectId,
-            ref: 'User'},
-        reviewed_date: Date},
+        user: user_ref,
+        date: Date},
+    researcher_start_date: {
+        user: user_ref,
+        date: Date},
+    reviewer_start_date: {
+        user: user_ref,
+        date: Date},
+    researcher_submit_date: {
+        user: user_ref,
+        date: Date},
+    reviewer_submit_date: {
+        user: user_ref,
+        date: Date},
+    last_review_date: {
+        user: user_ref,
+        date: Date},
     approval: {
-        approved_by: {
-            type: ObjectId,
-            ref: 'User'},
-        approved_date: Date},
+        user: user_ref,
+        date: Date},
     last_modified: {
-        modified_by: {
-            type: ObjectId,
-            ref: 'User'},
-        modified_date: Date}
+        user: user_ref,
+        date: Date}
 });
 
 assessmentSchema.plugin(mongooseHistory);

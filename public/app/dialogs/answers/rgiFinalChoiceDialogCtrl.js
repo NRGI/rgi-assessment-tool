@@ -13,7 +13,6 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         rgiIdentitySrvc,
-        rgiUserListSrvc,
         rgiUtilsSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),

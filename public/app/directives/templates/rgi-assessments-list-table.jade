@@ -154,7 +154,7 @@ div.top-padding-lg
                     disabled) Under Admin review
 
                     a.btn.btn-col.center-block.btn-primary(
-                    ng-if="assessment.edit_control===current_user._id && ['trial_started', 'started', 'review_started'].indexOf(assessment.status) > -1"
+                    ng-if="assessment.edit_control===current_user._id && ['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}") Open assessment
 
                     a.btn.btn-col.center-block.btn-default(
