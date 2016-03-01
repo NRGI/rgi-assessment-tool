@@ -223,6 +223,7 @@ angular.module('app')
 
         $scope.isAllowedFileExtension = function(fileName) {
             var allowedExtensionFound = false;
+            fileName = fileName.toLowerCase();
 
             rgiAllowedFileExtensionGuideSrvc.getList().forEach(function(extension) {
                 var dottedExtension = '.' + extension;
