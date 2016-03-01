@@ -56,7 +56,6 @@ angular.module('app')
 
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
-        //rgiIntervieweeSrvc.get({assessment_ID: 'DZ-2015-PI'}, function (interviewees) {
         rgiIntervieweeSrvc.query({}, function (interviewees) {
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {
