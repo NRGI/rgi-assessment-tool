@@ -103,7 +103,7 @@ angular.module('app')
                     } else if (!selected_interviewee.organization) {
                         rgiNotifier.error('You must enter an organization for new interviewees!');
                     } else {
-                        if (!selected_interviewee.email && selected_interviewee.phone) {
+                        if (!selected_interviewee.email && !selected_interviewee.phone) {
                             rgiNotifier.error('You must enter a valid email address or phone number!');
                         } else {
                             selected_interviewee.answers = [new_answer_data.answer_ID];
