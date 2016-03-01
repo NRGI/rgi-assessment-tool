@@ -3,16 +3,17 @@
         div.page-well
             .h3 {{title}}
                 hr
-            | {{resource_type}}
+            div.bottom-padding-lg(ng-if="resource_type==='resource'")
+                | The following materials provide general and technical information about some of the key topics covered by the RGI questionnaire.
             div.left-padding-med.right-padding-med
-                div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
+                div.panel.panel-primary(ng-repeat="resource in resources | orderBy:order")
                     div.panel-heading.bottom-padding-med
                         .panel-title
                             div(
                             role="button"
                             data-toggle="collapse"
                             href="#{{resource._id}}")
-                                | {{resource.head}} - {{resource.order}}
+                                | {{resource.head}}
                     div.panel-collapse.collapse(id="{{resource._id}}")
                         div.panel-body
                             div(ta-bind="text" ng-model="resource.body" ta-readonly="disabled")

@@ -192,25 +192,25 @@ function createDefaultResources() {
             Resource.create({
                 type: 'faq',
                 head: 'What do I do if I cannot reach my assigned NRGI staff membercountry coordinator?',
-                order: 1,
+                order: 6,
                 body: 'If your country coordinator is away for a long period of time, before leaving they will assign you a different coordinator to guide you through the process whilst they are away. Always pay very close attention to all emails from NRGI, as missing this information may mean the difference between receiving a prompt response to your query, or a delayed response.'
             });
             Resource.create({
                 type: 'faq',
                 head: 'Can I modify my answer once I have submitted it?',
-                order: 6,
+                order: 7,
                 body: 'Once you have submitted your assessment, you cannot return to your answers to edit them. When working on an answer, clicking on <b>Save Answer</b> will save your progress but the question will not be marked as complete and you can return to your work at a later date. By selecting **Mark complete**, your question will be marked as complete on the assessment homepage, but you can still return to your answer if you have not submitted your full assessment. If you are unsure whether your answer is complete, click on <b>Save answer</b> rather than <b>Mark complete</b>.'
             });
             Resource.create({
                 type: 'faq',
                 head: 'When can I use an interview as a source of evidence?',
-                order: 7,
+                order: 8,
                 body: 'Interviews should only be used to inquire about where publicly available information can be found. Where an interviewee provides a consultant with information on where information can be acquired, the consultant should reference the original source of information as the primary source of evidence, with the interview justification as a secondary source of evidence.'
             });
             Resource.create({
                 type: 'faq',
                 head: 'How do I upload an interview as evidence?',
-                order: 8,
+                order: 9,
                 body: 'Interviews can be recorded as a type of reference in the assessment tool. When entering a new interview as a reference, the tool will ask you for basic contact details for your interviewee, which you are required to include but that will not be made public (i.e. all interviewees will remain anonymous). If you fail to include these details, or include incorrect contact details, for example to preserve an interviewee’s identity, your interview will not be included as a reference and you will be required to answer the question again.'
             });
         }
