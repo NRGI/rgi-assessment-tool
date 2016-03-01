@@ -105,10 +105,13 @@ angular.module('app')
                         document_ID: new_document._id,
                         // mendeley_ID
                         file_hash: new_document.file_hash,
-                        date_accessed: new Date($scope.ref_date_accessed).toISOString(),
                         author: current_user_ID,
                         location: $scope.new_ref_location
                     };
+
+                if ($scope.ref_date_accessed) {
+                    new_ref_data.date_accessed = new Date($scope.ref_date_accessed).toISOString();
+                }
 
                 if (new_doc_data.status === 'created') {
                     new_doc_data.status = 'submitted';
