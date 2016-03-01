@@ -25,6 +25,7 @@ angular.module('app')
                 break;
             case 'assigned_researcher':
             case 'assigned_reviewer':
+            case 'reviewer_trial':
                 $scope.action_text = 'reassign to ' + $scope.action.split('_')[1];
                 break;
             case 'approved':
