@@ -30,9 +30,7 @@ angular
 
         $scope.assessmentTrial = function (assessment) {
             var new_assessment_data = assessment;
-            if ($scope.current_user.isResearcher()) {
-                new_assessment_data.status = 'trial_started';
-            }
+            new_assessment_data.status = 'trial_started';
             rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data).then(function () {
                 $location.path('/assessments/' + new_assessment_data.assessment_ID);
                 rgiNotifier.notify('Assessment trial started!');
