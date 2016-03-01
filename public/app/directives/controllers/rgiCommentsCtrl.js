@@ -4,6 +4,7 @@ angular.module('app')
     .controller('rgiCommentsCtrl', function (
         $scope,
         $route,
+        $rootScope,
         ngDialog,
         rgiDialogFactory,
         rgiIdentitySrvc,
@@ -38,7 +39,6 @@ angular.module('app')
                         rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
                             rgiNotifier.notify('Comment added');
                             $scope.update.new_comment = undefined;
-                            $route.reload();
                         }, function (reason) {
                             rgiNotifier.notify(reason);
                         });
@@ -47,7 +47,6 @@ angular.module('app')
                         rgiQuestionMethodSrvc.updateQuestion(new_update_data).then(function () {
                             rgiNotifier.notify('Comment added');
                             $scope.update.new_comment = undefined;
-                            $route.reload();
                         }, function (reason) {
                             rgiNotifier.notify(reason);
                         });
