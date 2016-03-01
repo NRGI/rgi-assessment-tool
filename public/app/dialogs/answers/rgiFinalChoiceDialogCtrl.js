@@ -13,6 +13,7 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         rgiIdentitySrvc,
+        rgiQuestionSetSrvc,
         rgiUtilsSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
@@ -23,7 +24,7 @@ angular.module('app')
         $scope.answer = $scope.$parent.$parent.answer;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            $scope.question_length = answers.length;
+            rgiQuestionSetSrvc.setAnswers(answers);
         });
 
         $scope.final_choice_set = [
@@ -100,8 +101,8 @@ angular.module('app')
                     .then(function () {
                         var root_url = $scope.current_user.isSupervisor() ? '/admin/assessments-admin' : '/assessments';
 
-                        if (new_answer_data.question_order !== $scope.question_length) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((new_answer_data.question_order + 1), 3)));
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(new_answer_data)) {
+                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(new_answer_data));
                         } else {
                             $location.path(root_url + '/' + new_answer_data.assessment_ID);
                         }
@@ -111,6 +112,7 @@ angular.module('app')
                         rgiNotifier.error(reason);
                     });
             }
+
             $scope.closeDialog = function () {
                 ngDialog.close();
             };

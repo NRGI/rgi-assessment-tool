@@ -13,6 +13,7 @@ angular
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiNotifier,
+        rgiQuestionSetSrvc,
         rgiUtilsSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
@@ -22,18 +23,19 @@ angular
             _ = $scope.$parent.$parent._;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            $scope.question_length = answers.length;
+            rgiQuestionSetSrvc.setAnswers(answers);
         });
 
         var updateAnswer = function(answerData, status, notificationMessage, additionalCondition) {
             answerData.status = status;
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    if ((answerData.question_order !== $scope.question_length) && additionalCondition) {
-                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill((answerData.question_order + 1), 3)));
+                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData) && additionalCondition) {
+                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(answerData));
                     } else {
                         $location.path(rootUrl + '/' + answerData.assessment_ID);
                     }
+
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
