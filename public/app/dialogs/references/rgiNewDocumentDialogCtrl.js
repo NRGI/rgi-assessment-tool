@@ -160,7 +160,6 @@ angular.module('app')
                         $scope.closeThisDialog();
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                         rgiNotifier.notify('Reference added!');
-                        $route.reload();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                         $scope.disable_button = false;

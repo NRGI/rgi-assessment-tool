@@ -47,8 +47,15 @@ angular.module('app')
                 $scope.references = answer.references;
             });
         };
+        var resetAnswer = function() {
+            rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+                $scope.answer = answer;
+                $scope.flags = answer.flags;
+            });
+        };
 
         resetReference();
         $scope.$on('RESET_REFERENCE_ACTION', resetReference);
+        $scope.$on('RESET_ANSWER_ACTION', resetAnswer);
 
     });

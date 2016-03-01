@@ -29,7 +29,6 @@ angular.module('app')
                     .then(function () {
                         rgiNotifier.notify('Comment edited');
                         $scope.closeThisDialog();
-                        $route.reload();
                     }, function (reason) {
                         rgiNotifier.notify(reason);
                     });
