@@ -29,6 +29,7 @@ assessmentSchema = new Schema({
         required: '{PATH} is required'},  // pilot or full
     researcher_ID: user_ref, // pulled from user_id
     reviewer_ID: user_ref, // pulled from user_id
+    supervisor_ID: [user_ref], // pulled from user_id
     ext_reviewer_ID: [user_ref], // pulled from user_id
     edit_control: ObjectId, // user_ID of editing rights
     documents: [{
