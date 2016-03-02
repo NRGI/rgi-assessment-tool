@@ -16,7 +16,7 @@ angular.module('app')
         rgiUserMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var _ = $rootScope._
+        var _ = $rootScope._;
 
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
@@ -40,10 +40,10 @@ angular.module('app')
         $scope.pub_status = {
             opened: false
         };
-        $scope.accCalOpen = function($event) {
+        $scope.accCalOpen = function() {
             $scope.acc_status.opened = true;
         };
-        $scope.pubCalOpen = function($event) {
+        $scope.pubCalOpen = function() {
             $scope.pub_status.opened = true;
         };
 
@@ -87,13 +87,7 @@ angular.module('app')
                     url = 'http://' + $scope.new_document.source;
                 }
                 rgiUtilsSrvc.isURLReal(url)
-                    .fail(function (res) {
-                        $scope.disable_button=false;
-                        rgiNotifier.error('Website does not exists');
-                        $scope.closeThisDialog();
-                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
-                    })
-                    .done(function (res) {
+                    .then(function () {
                         var assessment_ID = $scope.$parent.assessment.assessment_ID,
                             question_ID = $scope.$parent.question._id,
                             answer_ID = $scope.$parent.answer.answer_ID,
@@ -165,6 +159,11 @@ angular.module('app')
                                 $scope.disable_button = false;
                             });
 
+                    }, function () {
+                        $scope.disable_button = false;
+                        rgiNotifier.error('Website does not exists');
+                        $scope.closeThisDialog();
+                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                     });
             }
         };
