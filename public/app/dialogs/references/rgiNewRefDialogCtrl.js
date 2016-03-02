@@ -2,12 +2,9 @@
 
 angular.module('app')
     .controller('rgiNewRefDialogCtrl', function (
-        $q,
         $scope,
         $rootScope,
-        $route,
         $timeout,
-        $http,
         ngDialog,
         rgiAllowedFileExtensionGuideSrvc,
         rgiDialogFactory,
@@ -80,7 +77,7 @@ angular.module('app')
         };
 
         $scope.interviewRefSubmit = function (selected_interviewee) {
-            var contact_date, email_domain, new_ref_data, selected_interviewee_ID,
+            var contact_date, new_ref_data, selected_interviewee_ID,
                 new_answer_data = $scope.answer_update,
                 current_user = $scope.current_user;
 
@@ -302,5 +299,27 @@ angular.module('app')
                 }
             });
 
+        };
+
+        $scope.uploadSnapshot = function(url) {
+            $scope.fileUploading = true;
+
+            rgiUtilsSrvc.isURLReal(url)
+                .then(function () {
+                    rgiRequestSubmitterSrvc.get('/api/snapshot-upload?url=' + encodeURIComponent(url)).then(function (response) {
+                        if(response.data.error) {
+                            rgiNotifier.error(response.data.error);
+                        } else {
+                            uploader.onCompleteItem({}, response.data.result, response.data.result.status);
+                        }
+                    }, function(err) {
+                        rgiNotifier.error(err);
+                    }).finally(function() {
+                        $scope.fileUploading = false;
+                    });
+                }, function () {
+                    $scope.fileUploading = false;
+                    rgiNotifier.error('The URL is unavailable');
+                });
         };
     });
