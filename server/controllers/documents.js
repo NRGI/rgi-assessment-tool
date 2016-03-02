@@ -6,9 +6,10 @@ var crypto              =   require('crypto'),
     request             =   require('request'),
     s3                  =   require('s3'),
     Answer              =   require('mongoose').model('Answer'),
-    Doc            =   require('mongoose').model('Documents'),
+    Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
-    //MendeleyToken          = require('mongoose').model('MendeleyToken'),
+    screenshot          =   require('url-to-screenshot'),
+    //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
     client              =   s3.createClient({
                                 maxAsyncS3: 20,     // this is the default
@@ -91,6 +92,27 @@ var getFileName = function(timestamp, user, extension) {
 exports.getRemoteFileUploadStatus = function (req, res) {
     FileUploadStatus.findOne({_id: req.params.statusId}, function(err, uploadStatus) {
         res.send(uploadStatus);
+    });
+};
+
+exports.uploadUrlSnapshot = function(req, res) {
+    screenshot(req.query.url).width(800).height(600).clip().capture(function(errorCapture, img) {
+        if (errorCapture) {
+            res.send({error: errorCapture});
+        } else {
+            var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
+            fs.writeFileSync(filePath, img);
+
+            uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (errorUpload, doc) {
+                fs.unlink(filePath);
+
+                if(errorUpload) {
+                    res.send({error: errorUpload});
+                } else {
+                    res.send({result: doc});
+                }
+            });
+        }
     });
 };
 
