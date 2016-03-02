@@ -124,34 +124,6 @@ angular.module('app')
                                 }, function (reason) {
                                     rgiNotifier.notify(reason);
                                 });
-                            //email_domain = 'http://' + selected_interviewee.email.split('@')[1];
-                            //if (email_domain === 'http://undefined') {
-                            //    rgiNotifier.error('You must enter a valid email address!');
-                            //} else {
-                            //    selected_interviewee.answers = [new_answer_data.answer_ID];
-                            //    selected_interviewee.assessments = [new_answer_data.assessment_ID];
-                            //    selected_interviewee.questions = [new_answer_data.question_ID];
-                            //    selected_interviewee.users = [current_user._id];
-                            //    rgiIntervieweeMethodSrvc.createInterviewee(selected_interviewee)
-                            //        .then(function (interviewee) {
-                            //            new_ref_data = {
-                            //                citation_type: 'interview',
-                            //                interviewee_ID: interviewee._id,
-                            //                contact_date: contact_date,
-                            //                comment: new_answer_data.human_ref_comment,
-                            //                author: current_user._id
-                            //            };
-                            //            new_answer_data.references.push(new_ref_data);
-                            //            rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
-                            //        })
-                            //        .then(function () {
-                            //            $scope.closeThisDialog();
-                            //            $rootScope.$broadcast('RESET_REFERENCE_ACTION');
-                            //            rgiNotifier.notify('Reference added');
-                            //        }, function (reason) {
-                            //            rgiNotifier.notify(reason);
-                            //        });
-                            //}
                         }
                     }
                 } else if ($scope.interviewee_selection==='existing') {
@@ -265,46 +237,53 @@ angular.module('app')
         };
 
         $scope.uploadFileByUrl = function (fileUrl) {
-            if (fileUrl.split('://')[0] !== 'http' && fileUrl.split('://')[0] !== 'https') {
-                fileUrl = 'http://' + fileUrl;
-            }
-            console.log(fileUrl);
-            var handleFileUploadStatus = function (responseStatus) {
-                $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
+            if (!$scope.isAllowedFileExtension(fileUrl)) {
+                rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
+            } else {
+                if (fileUrl.split('://')[0] !== 'http' && fileUrl.split('://')[0] !== 'https') {
+                    fileUrl = 'http://' + fileUrl;
+                }
+                console.log($scope.isAllowedFileExtension(fileUrl));
+                var handleFileUploadStatus = function (responseStatus) {
+                    $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 
-                if (responseStatus.data.completion < 1) {
-                    $timeout(function () {
-                        rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + responseStatus.data._id).then(handleFileUploadStatus);
-                    }, 1000);
-                } else {
-                    rgiRequestSubmitterSrvc.get('/api/remote-file/document/' + responseStatus.data._id).then(function (responseDocument) {
+                    if (responseStatus.data.completion < 1) {
+                        $timeout(function () {
+                            rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + responseStatus.data._id).then(handleFileUploadStatus);
+                        }, 1000);
+                    } else {
+                        rgiRequestSubmitterSrvc.get('/api/remote-file/document/' + responseStatus.data._id).then(function (responseDocument) {
+                            $scope.fileUploading = false;
+                            uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
+                        });
+                    }
+                };
+
+                rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
+                    if (response.data.reason) {
                         $scope.fileUploading = false;
-                        uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
-                    });
-                }
-            };
-
-            rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
-                if (response.data.reason) {
-                    $scope.fileUploading = false;
-                    rgiNotifier.error('The file cannot be uploaded');
-                } else {
-                    $scope.uploader.queue.push({
-                        file: {
-                            name: fileUrl.split('/')[fileUrl.split('/').length - 1],
-                            size: response.data.size
-                        },
-                        isUploading: true,
-                        progress: response.data.completion * 100
-                    });
-                    handleFileUploadStatus(response);
-                }
-            });
+                        rgiNotifier.error('The file cannot be uploaded');
+                    } else {
+                        $scope.uploader.queue.push({
+                            file: {
+                                name: fileUrl.split('/')[fileUrl.split('/').length - 1],
+                                size: response.data.size
+                            },
+                            isUploading: true,
+                            progress: response.data.completion * 100
+                        });
+                        handleFileUploadStatus(response);
+                    }
+                });
+            }
 
         };
 
         $scope.uploadSnapshot = function(url) {
             $scope.fileUploading = true;
+            if (url.split('://')[0] !== 'http' && url.split('://')[0] !== 'https') {
+                url = 'http://' + url;
+            }
 
             rgiUtilsSrvc.isURLReal(url)
                 .then(function () {

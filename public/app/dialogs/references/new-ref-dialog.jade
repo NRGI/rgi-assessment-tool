@@ -7,30 +7,52 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
             form(name="snapshotForm").form-horizontal
                 fieldset
                     .form-group
-                        .col-md-8
-                            input.form-control(type="url", placeholder="URL", ng-disabled="fileUploading", ng-model="snapshotUrl")
-                        .col-md-2
-                            button.btn.btn-success(ng-click="uploadSnapshot(snapshotUrl)", ng-disabled="snapshotForm.$invalid || snapshotForm.$pristine || fileUploading") Upload
-                        .col-md-2
-                            button.btn.btn-danger.pull-right(ng-click="closeDialog()") Cancel
+                        .row.bottom-padding-med
+                            input.form-control(
+                            placeholder="URL..."
+                            ng-disabled="fileUploading"
+                            ng-model="snapshotUrl")
+                        .row
+                            div.spinner(ng-if="fileUploading")
+                                div.double-bounce1
+                                div.double-bounce2
+                            button.btn.btn-success(
+                            ng-click="uploadSnapshot(snapshotUrl)"
+                            ng-disabled="!snapshotUrl"
+                            ng-if="!fileUploading") Upload
+                            | &nbsp;
+                            button.btn.btn-danger(
+                            ng-click="closeDialog()"
+                            ng-if="!fileUploading") Cancel
+
         div(ng-if="ref_selection === 'document'")
             .form-horizontal
                 fieldset
-                    h4 New document
-                    .bottom-padding-med
-                        div.fileUpload.btn.btn-default
-                            span Select File
-                            input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
-                    div
-                        h5 OR
-                        form(name="remoteFileForm").form-group
+                    .form-group
+                        .row: h4 New document
+                        .row.bottom-padding-med
+                            div.fileUpload.btn.btn-default
+                                span Select File
+                                input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
+                        .row: h5 OR
+                        .row: form(name="remoteFileForm").form-group
                             .col-md-8
                                 input.form-control(
                                 placeholder="File URL..."
-                                ng-model="fileUrl")
+                                ng-model="fileUrl"
+                                ng-disabled="fileUploading")
                             .col-md-4
-                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl(fileUrl)", ng-disabled="fileUploading || remoteFileForm.$invalid || remoteFileForm.$pristine || !isAllowedFileExtension(fileUrl)")
+                                input.btn.btn-success(
+                                type="button"
+                                value="Upload"
+                                ng-click="uploadFileByUrl(fileUrl)"
+                                ng-if="!fileUploading"
+                                ng-disabled="!fileUrl")
                                 //input.upload(type="file" nv-file-select uploader="uploader")
+                        .row
+                            div.spinner(ng-if="fileUploading")
+                                div.double-bounce1
+                                div.double-bounce2
                     .row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
                         table.table
                             thead
