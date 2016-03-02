@@ -26,8 +26,7 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                         form(name="remoteFileForm").form-group
                             .col-md-8
                                 input.form-control(
-                                type="url"
-                                placeholder="File URL"
+                                placeholder="File URL..."
                                 ng-model="fileUrl")
                             .col-md-4
                                 input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl(fileUrl)", ng-disabled="fileUploading || remoteFileForm.$invalid || remoteFileForm.$pristine || !isAllowedFileExtension(fileUrl)")
