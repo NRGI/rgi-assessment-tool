@@ -4,7 +4,7 @@ div(id="questions_div").bottom-padding-med
             button.btn.btn-success.popover-dialog(popover="Feature coming" popover-trigger="mouseenter" ng-click="") New Question
             //button.btn.btn-success(ng-click="newQuestionDialog()" disabled) New Question
             | &nbsp;
-            button.btn.btn-default(ng-csv="getArray" filename="question_set.csv") Export as CSV
+            button.btn.btn-default(ng-csv="getExportedQuestions()" filename="question_set.csv") Export as CSV
             form.form-inline.pull-right
                 .form-group
                     input.form-control(
