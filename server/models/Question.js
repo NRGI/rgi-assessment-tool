@@ -15,7 +15,7 @@ var commentSchema, questionSchema, Question,
     htmlSettings    = {
         type: Html,
         setting: {
-            allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
+            allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del', 'br'],
             allowedAttributes: {
                 'a': ['href']
             }
