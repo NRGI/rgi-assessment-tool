@@ -59,6 +59,10 @@ angular.module('app')
             var url, file_extension,
                 allowed_extensions = rgiAllowedFileExtensionGuideSrvc.getList(),
                 new_user_data = $scope.current_user;
+
+            //if (fileUrl.split('://')[0] !== 'http' || fileUrl.split('://')[0] !== 'https') {
+            //    fileUrl = 'http://' + fileUrl;
+            //}
             $scope.disable_button=true;
 
             if ($scope.new_document.source) {
