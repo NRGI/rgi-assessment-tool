@@ -18,11 +18,7 @@ intervieweeSchema = new Schema({
     lastName: {
         type: String,
         required: '{PATH} is required!'},
-    email: {
-        type: String,
-        required: '{PATH} is required!',
-        unique: true
-    },
+    email: String,
     phone: String,
     role: {
         type: String,
