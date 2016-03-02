@@ -4,7 +4,7 @@ FROM	centos:centos6
 RUN		rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 
 # Install Node.js, npm, git and bower
-RUN		yum install -y git npm wget tar.x86_64 bzip2 fontconfig freetype libfreetype.so.6 libfontconfig.so.1 libstdc++.so.6
+RUN		yum install -y git npm wget tar.x86_64 bzip2 fontconfig freetype libfreetype.so.6 libfontconfig.so.1 libstdc++.so.6 urw-fonts
 RUN		npm install -g bower
 
 #Install Phantom JS
