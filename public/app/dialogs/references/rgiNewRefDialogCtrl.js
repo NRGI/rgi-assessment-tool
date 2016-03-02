@@ -265,7 +265,7 @@ angular.module('app')
         };
 
         $scope.uploadFileByUrl = function (fileUrl) {
-            if (fileUrl.split('://')[0] !== 'http' || fileUrl.split('://')[0] !== 'https') {
+            if (fileUrl.split('://')[0] !== 'http' && fileUrl.split('://')[0] !== 'https') {
                 fileUrl = 'http://' + fileUrl;
             }
             console.log(fileUrl);
@@ -284,7 +284,6 @@ angular.module('app')
                 }
             };
 
-            $scope.fileUploading = true;
             rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
                 if (response.data.reason) {
                     $scope.fileUploading = false;
