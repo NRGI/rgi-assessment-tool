@@ -118,6 +118,7 @@ module.exports = function (app) {
     /////////////////////////
 
     app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
+    app.get('/api/snapshot-upload', auth.requiresApiLogin,  documents.uploadUrlSnapshot);
     app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
     app.get('/api/remote-file/document/:statusId', auth.requiresApiLogin,  documents.getUploadStatusDocument);

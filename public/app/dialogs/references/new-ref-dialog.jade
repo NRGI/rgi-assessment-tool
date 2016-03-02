@@ -1,31 +1,38 @@
 div.left-padding-lg.right-padding-lg(draggable-dialog)
     div.modal-header
         h3 New {{ref_selection | ucfirst}} Reference
-            text(ng-if="ref_selection!=='interview'")  (PDF)
-    div.modal-body
-        .row(ng-if="ref_selection=='webpage'") Please check the quality of the webpage screenshot document
-        //DOCUMENTS UPLOAD
-        div(ng-if="ref_selection!=='interview'")
+            text(ng-if="ref_selection === 'document'") (PDF)
+    .modal-body
+        div(ng-if="ref_selection=='webpage'")
+            form(name="snapshotForm").form-horizontal
+                fieldset
+                    .form-group
+                        .col-md-8
+                            input.form-control(type="url", placeholder="URL", ng-disabled="fileUploading", ng-model="snapshotUrl")
+                        .col-md-2
+                            button.btn.btn-success(ng-click="uploadSnapshot(snapshotUrl)", ng-disabled="snapshotForm.$invalid || snapshotForm.$pristine || fileUploading") Upload
+                        .col-md-2
+                            button.btn.btn-danger.pull-right(ng-click="closeDialog()") Cancel
+        div(ng-if="ref_selection === 'document'")
             .form-horizontal
                 fieldset
-                    h4(ng-if="ref_selection==='website'") New PDF capture of website
-                    h4(ng-if="ref_selection==='document'") New document
-                    div.bottom-padding-med
+                    h4 New document
+                    .bottom-padding-med
                         div.fileUpload.btn.btn-default
                             span Select File
                             input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
-                    div(ng-if="ref_selection==='document'")
+                    div
                         h5 OR
-                        .form-group
+                        form(name="remoteFileForm").form-group
                             .col-md-8
                                 input.form-control(
-                                type="text"
+                                type="url"
                                 placeholder="File URL"
                                 ng-model="fileUrl")
                             .col-md-4
-                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl(fileUrl)", ng-disabled="fileUploading || !fileUrl || !isAllowedFileExtension(fileUrl)")
+                                input.btn.btn-default(type="button", value="Upload", ng-click="uploadFileByUrl(fileUrl)", ng-disabled="fileUploading || remoteFileForm.$invalid || remoteFileForm.$pristine || !isAllowedFileExtension(fileUrl)")
                                 //input.upload(type="file" nv-file-select uploader="uploader")
-                    div.row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
+                    .row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
                         table.table
                             thead
                                 tr
@@ -73,17 +80,17 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
 
         //INTERVIEWS
         div(ng-if="ref_selection==='interview'")
-            div.modal-form(name="new_human_form")
+            .modal-form(name="new_human_form")
                 .row
-                    div.col-lg-4
+                    .col-lg-4
                         button.btn.btn-block.btn-primary(
                         ng-click="intervieweeSelect('new')"
                         ng-disabled="interviewee_selection==='new'") New interviewee
-                    div.col-lg-4
+                    .col-lg-4
                         button.btn.btn-block.btn-primary(
                         ng-click="intervieweeSelect('existing')"
                         ng-disabled="interviewee_selection==='existing'") Existing interviewee
-                    div.col-lg-4
+                    .col-lg-4
                         button.btn.btn-block.btn-danger(
                         ng-click="closeDialog()"
                         ng-if="!interviewee_selection") Close dialog
@@ -94,7 +101,7 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                     fieldset
                         //DATE ACCESSED
                         .row.bottom-padding-med
-                            div.col-md-12
+                            .col-md-12
                                 .pull-left.col-lg-5.input-group
                                     input.form-control(
                                     type="text"
@@ -110,7 +117,7 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                                             i.glyphicon.glyphicon-calendar
                         //INTERVIEWEE COMMENT
                         .row.bottom-padding-med
-                            div.col-md-12
+                            .col-md-12
                                 div(
                                     name="reference-comment"
                                     placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
@@ -122,7 +129,7 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                         //existing interviewee
                         div(ng-if="interviewee_selection==='existing'")
                             .row.bottom-padding-med
-                                div.col-md-9
+                                .col-md-9
                                     angucomplete(
                                     id="interviewee_search"
                                     placeholder="Type name to search for existing interviewees..."
@@ -144,10 +151,10 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                                     h5: b Email:
                                     | {{selected_interviewee.originalObject.email}}
 
-                            div.modal-footer(ng-if="interviewee_selection")
-                                div.col-lg-6
+                            .modal-footer(ng-if="interviewee_selection")
+                                .col-lg-6
                                     button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(selected_interviewee)") Create reference
-                                div.col-lg-6
+                                .col-lg-6
                                     button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
 
 
@@ -217,8 +224,8 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                                     ng-model="new_interviewee.organization"
                                     autocomplete="off")
 
-                            div.modal-footer(ng-if="interviewee_selection")
-                                div.col-lg-6
+                            .modal-footer(ng-if="interviewee_selection")
+                                .col-lg-6
                                     button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(new_interviewee)") Create reference
-                                div.col-lg-6
+                                .col-lg-6
                                     button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
