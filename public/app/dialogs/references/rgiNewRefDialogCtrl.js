@@ -314,6 +314,7 @@ angular.module('app')
                         if(response.data.error) {
                             rgiNotifier.error(response.data.error);
                         } else {
+                            response.data.result.source = url;
                             uploader.onCompleteItem({}, response.data.result, response.data.result.status);
                         }
                     }, function(err) {
