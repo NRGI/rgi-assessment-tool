@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiUtilsSrvc', function () {
+    .factory('rgiUtilsSrvc', function ($http, $q) {
         return {
             flagCheck: function (flags) {
                 var disabled = false;
@@ -21,24 +21,21 @@ angular.module('app')
                 }
                 return number + ""; // always return a string
             },
-            isURLReal: function (fullyQualifiedURL) {
-                var URL = encodeURIComponent(fullyQualifiedURL),
-                    dfd = $.Deferred(),
-                    checkURLPromise = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + URL + '%22&format=json');
+            isURLReal: function (url) {
+                var deferred = $q.defer();
 
-                checkURLPromise
-                    .done(function(res) {
-                        // results should be null if the page 404s or the domain doesn't work
-                        if (res.query.results) {
-                            dfd.resolve(true);
+                $http.get('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + encodeURIComponent(url) + '%22&format=json')
+                    .then(function(response) {
+                        if (response.data.query.results) {
+                            deferred.resolve(true);
                         } else {
-                            dfd.reject(false);
+                            deferred.reject(false);
                         }
-                    })
-                    .fail(function () {
-                        dfd.reject('failed');
+                    }, function () {
+                        deferred.reject(undefined);
                     });
-                return dfd.promise();
+
+                return deferred.promise;
             }
         };
     });
