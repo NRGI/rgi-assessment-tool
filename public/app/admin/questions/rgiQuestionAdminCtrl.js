@@ -17,12 +17,21 @@ angular.module('app')
         $scope.order_reverse = true;
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
-            var q;
             $scope.questions = rgiPreceptGuideSrvc.getQuestionTemplates();
-            $scope.getArray = [];
 
             questions.forEach(function (question) {
-                q = {
+                $scope.questions["precept_" + String(question.precept)].section_len += 1;
+                $scope.questions["precept_" + String(question.precept)].data.push(question);
+            });
+
+            $scope.header = ['Question Order', 'Question Label',  'NRC Precept', 'Question Type', 'Question Text', 'Component Text', 'Indicator Name', 'Dejure'];
+        });
+
+        $scope.getExportedQuestions = function() {
+            var exportedQuestions = [];
+
+            var getExportedQuestion = function(question) {
+                var exportedData = {
                     question_order: question.question_order,
                     question_label: question.question_label,
                     precept: question.precept,
@@ -32,19 +41,28 @@ angular.module('app')
                     indicator_name: question.indicator_name,
                     dejure: question.dejure
                 };
-                question.question_criteria.forEach(function (crit, j) {
-                    q['choice_' + String(j)] = crit.name;
-                    q['choice_' + String(j) + '_criteria'] = crit.text;
+
+                question.question_criteria.forEach(function (criterion, index) {
+                    exportedData['choice_' + String(index)] = criterion.name;
+                    exportedData['choice_' + String(index) + '_criteria'] = criterion.text;
                 });
-                $scope.getArray.push(q);
-                $scope.questions["precept_" + String(question.precept)].section_len += 1;
-                $scope.questions["precept_" + String(question.precept)].data.push(question);
-            });
 
-            $scope.header = ['Question Order', 'Question Label',  'NRC Prece[t', 'Question Type', 'Question Text', 'Component Text', 'Indicator Name', 'Dejure?'];
-        });
+                return exportedData;
+            };
 
-        // $scope.questions = rgiQuestionSrvc.query();
+            var addExportedQuestion = function(question) {
+                exportedQuestions.push(getExportedQuestion(question));
+            };
+
+            for(var precept in $scope.questions) {
+                if($scope.questions.hasOwnProperty(precept)) {
+                    $scope.questions[precept].data.forEach(addExportedQuestion);
+                }
+            }
+
+            return exportedQuestions;
+        };
+
         $scope.newQuestionDialog = function () {
             rgiDialogFactory.questionNew($scope);
         };
