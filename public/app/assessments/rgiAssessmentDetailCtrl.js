@@ -59,7 +59,6 @@ angular.module('app')
                         if (answer.status === 'final') {
                             $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
                         }
-
                         $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                     }
                 });

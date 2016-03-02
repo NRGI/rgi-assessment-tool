@@ -146,7 +146,6 @@ angular.module('app')
                     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
                     .then(rgiUserMethodSrvc.updateUser(new_user_data))
                     .then(function () {
-//<<<<<<< d8c4adb7df3016be41eae3f3d8581aa573892274
 //                        var assessment_ID = $scope.$parent.assessment.assessment_ID,
 //                            question_ID = $scope.$parent.question._id,
 //                            answer_ID = $scope.$parent.answer.answer_ID,
@@ -221,8 +220,6 @@ angular.module('app')
 //                    }, function () {
 //                        $scope.disable_button = false;
 //                        rgiNotifier.error('Website does not exists');
-//=======
-//>>>>>>> get URL snapshot
                         $scope.closeThisDialog();
                         $scope.disable_button = false;
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
