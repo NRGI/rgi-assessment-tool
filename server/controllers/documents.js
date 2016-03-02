@@ -96,7 +96,7 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 };
 
 exports.uploadUrlSnapshot = function(req, res) {
-    screenshot(req.query.url).clip().capture(function(errorCapture, img) {
+    screenshot(req.query.url).width(800).capture(function(errorCapture, img) {
         if (errorCapture) {
             res.send({error: errorCapture});
         } else {
