@@ -20,6 +20,7 @@ angular.module('app')
                     templateData.approved = 0;
                     templateData.flagged = 0;
                     templateData.unresolved = 0;
+                    templateData.finalized = 0;
                 }
 
                 templates[preceptId] = templateData;

@@ -18,7 +18,7 @@ angular.module('app')
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
-            console.log($scope.$parent.assessment_counters);
+            console.log(assessment.first_pass);
 
             if (assessment.status === 'trial_submitted') {
                 if ($scope.$parent.assessment_counters.flagged!==0) {
@@ -38,7 +38,7 @@ angular.module('app')
                     value: 'review_' + control_profile.role
                 });
                 if (control_profile.role === 'researcher' && assessment_counters.flagged === 0 && assessment.reviewer_ID) {
-                    if (!assessment.first_pass) {
+                    if (assessment.first_pass) {
                         workflow_opts.push({
                             text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
                             value: assessment.reviewer_ID.role + '_trial'

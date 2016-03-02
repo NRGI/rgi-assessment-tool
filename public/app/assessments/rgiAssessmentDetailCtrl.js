@@ -52,6 +52,9 @@ angular.module('app')
                     if (answer.status === 'unresolved') {
                         $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
                     }
+                    if (answer.status === 'final') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
+                    }
 
                     $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
                 });
