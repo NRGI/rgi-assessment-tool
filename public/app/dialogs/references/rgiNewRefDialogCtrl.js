@@ -49,7 +49,6 @@ angular.module('app')
         $scope.calendarOpen = function () {
             $scope.status.opened = true;
         };
-        $scope.maxDate = today;
 
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];

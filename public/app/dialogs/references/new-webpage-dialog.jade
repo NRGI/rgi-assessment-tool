@@ -82,7 +82,7 @@ div.left-padding-lg.right-padding-lg
                                         ng-model="new_document.date_published"
                                         placeholder="Date published..."
                                         is-open="pub_status.opened"
-                                        max-date="maxDate"
+                                        max-date="date_max_limit"
                                         datepicker-options="date_options"
                                         close-text="Close")
                                         span.input-group-btn
@@ -145,7 +145,7 @@ div.left-padding-lg.right-padding-lg
                                     ng-model="ref_date_accessed"
                                     placeholder="Date accessed (required)..."
                                     is-open="acc_status.opened"
-                                    max-date="maxDate"
+                                    max-date="date_max_limit"
                                     datepicker-options="date_options"
                                     close-text="Close")
                                     span.input-group-btn
