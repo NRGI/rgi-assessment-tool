@@ -59,6 +59,10 @@ angular.module('app')
             var url, file_extension,
                 allowed_extensions = rgiAllowedFileExtensionGuideSrvc.getList(),
                 new_user_data = $scope.current_user;
+
+            //if (fileUrl.split('://')[0] !== 'http' || fileUrl.split('://')[0] !== 'https') {
+            //    fileUrl = 'http://' + fileUrl;
+            //}
             $scope.disable_button=true;
 
             if ($scope.new_document.source) {
@@ -142,7 +146,6 @@ angular.module('app')
                     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
                     .then(rgiUserMethodSrvc.updateUser(new_user_data))
                     .then(function () {
-//<<<<<<< a009c2f375e5e50d96b85f5445b2aa6a35a32087
 //                        var assessment_ID = $scope.$parent.assessment.assessment_ID,
 //                            question_ID = $scope.$parent.question._id,
 //                            answer_ID = $scope.$parent.answer.answer_ID,
@@ -217,8 +220,6 @@ angular.module('app')
 //                    }, function () {
 //                        $scope.disable_button = false;
 //                        rgiNotifier.error('Website does not exists');
-//=======
-//>>>>>>> get URL snapshot
                         $scope.closeThisDialog();
                         $scope.disable_button = false;
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
@@ -226,86 +227,6 @@ angular.module('app')
                     }, function (reason) {
                         rgiNotifier.error(reason);
                         $scope.disable_button = false;
-//=======
-//                rgiUtilsSrvc.isURLReal(url)
-//                    .then(function () {
-//                        var assessment_ID = $scope.$parent.assessment.assessment_ID,
-//                            question_ID = $scope.$parent.question._id,
-//                            answer_ID = $scope.$parent.answer.answer_ID,
-//                            current_user_ID = $scope.current_user._id,
-//                            new_answer_data = $scope.$parent.answer,
-//                            new_doc_data = new rgiDocumentSrvc(new_document),
-//                            new_ref_data = {
-//                                citation_type: 'document',
-//                                document_ID: new_document._id,
-//                                // mendeley_ID
-//                                file_hash: new_document.file_hash,
-//                                date_accessed: new Date($scope.ref_date_accessed).toISOString(),
-//                                author: current_user_ID
-//                            };
-//
-//                        new_doc_data.source = url;
-//
-//                        if (new_doc_data.status === 'created') {
-//                            new_doc_data.status = 'submitted';
-//                        }
-//
-//                        if (new_doc_data.assessments !== undefined && new_doc_data.assessments.indexOf(assessment_ID) < 0) {
-//                            new_doc_data.assessments.push(assessment_ID);
-//                        } else if (new_doc_data.assessments === undefined) {
-//                            new_doc_data.assessments = [assessment_ID];
-//                        }
-//
-//                        if (new_doc_data.questions !== undefined && new_doc_data.questions.indexOf(question_ID) < 0) {
-//                            new_doc_data.questions.push(question_ID);
-//                        } else if (new_doc_data.questions === undefined) {
-//                            new_doc_data.questions = [question_ID];
-//                        }
-//
-//                        if (new_doc_data.answers !== undefined && new_doc_data.answers.indexOf(answer_ID) < 0) {
-//                            new_doc_data.answers.push(answer_ID);
-//                        } else if (new_doc_data.answers === undefined) {
-//                            new_doc_data.answers = [answer_ID];
-//                        }
-//
-//                        if (new_doc_data.users !== undefined && new_doc_data.users.indexOf(current_user_ID) < 0) {
-//                            new_doc_data.users.push(current_user_ID);
-//                        } else if (new_doc_data.users === undefined) {
-//                            new_doc_data.users = [current_user_ID];
-//                        }
-//
-//                        if ($scope.answer.new_ref_comment !== undefined) {
-//                            new_ref_data.comment = $scope.answer.new_ref_comment;
-//                        }
-//
-//                        if (new_user_data.documents !== undefined && new_user_data.documents.indexOf(new_document._id) < 0) {
-//                            new_user_data.documents.push(new_document._id);
-//                        } else if (new_user_data.documents === undefined) {
-//                            new_user_data.documents = [new_document._id];
-//                        }
-//
-//                        new_answer_data.references.push(new_ref_data);
-//
-//                        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-//                            .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
-//                            .then(rgiUserMethodSrvc.updateUser(new_user_data))
-//                            .then(function () {
-//                                $scope.closeThisDialog();
-//                                $scope.disable_button = false;
-//                                $rootScope.$broadcast('RESET_REFERENCE_ACTION');
-//                                $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
-//                                rgiNotifier.notify('Reference added!');
-//                            }, function (reason) {
-//                                rgiNotifier.error(reason);
-//                                $scope.disable_button = false;
-//                            });
-//
-//                    }, function () {
-//                        $scope.disable_button = false;
-//                        rgiNotifier.error('Website does not exists');
-//                        $scope.closeThisDialog();
-//                        $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
-//>>>>>>> make `$scope` available in the URL check callback
                     });
             }
         };
