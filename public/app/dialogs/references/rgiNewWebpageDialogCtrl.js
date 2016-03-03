@@ -55,22 +55,20 @@ angular.module('app')
             $scope.new_document.authors.splice(index, 1);
         };
 
-        $scope.documentRefSubmit = function (new_document) {
-            var url, file_extension,
+        $scope.documentRefSubmit = function () {
+            var file_extension,
+                new_document = $scope.$parent.$parent.new_document,
                 allowed_extensions = rgiAllowedFileExtensionGuideSrvc.getList(),
                 new_user_data = $scope.current_user;
 
-            //if (fileUrl.split('://')[0] !== 'http' || fileUrl.split('://')[0] !== 'https') {
-            //    fileUrl = 'http://' + fileUrl;
-            //}
             $scope.disable_button=true;
 
-            if ($scope.new_document.source) {
-                file_extension = _.last($scope.new_document.source.split('.'));
+            if (new_document.source) {
+                file_extension = _.last(new_document.source.split('.'));
             }
 
             //check for minimum data
-            if (!$scope.new_document.source) {
+            if (!new_document.source) {
                 rgiNotifier.error('You must provide a source URL!');
                 $scope.disable_button = false;
             } else if (allowed_extensions.indexOf(file_extension) > -1) {
@@ -78,7 +76,7 @@ angular.module('app')
                 $scope.closeThisDialog();
                 $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                 $scope.disable_button=false;
-            } else if (!$scope.new_document.title) {
+            } else if (!new_document.title) {
                 rgiNotifier.error('You must provide a title!');
                 $scope.disable_button=false;
             } else if (!$scope.ref_date_accessed) {
@@ -100,7 +98,7 @@ angular.module('app')
                         author: current_user_ID
                     };
 
-                new_doc_data.source = url;
+                //new_doc_data.source = url;
 
                 if (new_doc_data.status === 'created') {
                     new_doc_data.status = 'submitted';
