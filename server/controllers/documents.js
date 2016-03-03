@@ -9,6 +9,7 @@ var crypto              =   require('crypto'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
     screenshot          =   require('url-to-screenshot'),
+    Jimp                =   require("jimp"),
     //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
     client              =   s3.createClient({
@@ -96,20 +97,44 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 };
 
 exports.uploadUrlSnapshot = function(req, res) {
-    screenshot(req.query.url).width(800).capture(function(errorCapture, img) {
+    screenshot(req.query.url).width(1600).height(12000).capture(function(errorCapture, img) {
         if (errorCapture) {
             res.send({error: errorCapture});
         } else {
             var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
-            fs.writeFileSync(filePath, img);
-
-            uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (errorUpload, doc) {
-                fs.unlink(filePath);
-
-                if(errorUpload) {
-                    res.send({error: errorUpload});
+            fs.writeFile(filePath, img, 'binary', function(writeOriginalImageError) {
+                if(writeOriginalImageError) {
+                    res.send({error: writeOriginalImageError});
                 } else {
-                    res.send({result: doc});
+                    Jimp.read(filePath, function (readError, originalImage) {
+                        if(readError) {
+                            res.send({error: readError});
+                        } else {
+                            originalImage.flip(false, true).autocrop(function(cropError, croppedImage) {
+                                if(cropError) {
+                                    res.send({error: cropError});
+                                } else {
+                                    croppedImage.flip(false, true).write(filePath, function(writeCroppedImageError) {
+                                        if(writeCroppedImageError) {
+                                            res.send({error: writeCroppedImageError});
+                                        } else {
+                                            uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
+                                                function (errorUpload, doc) {
+                                                    fs.unlink(filePath);
+
+                                                    if(errorUpload) {
+                                                        res.send({error: errorUpload});
+                                                    } else {
+                                                        res.send({result: doc});
+                                                    }
+                                                }
+                                            );
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }
