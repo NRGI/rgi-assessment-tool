@@ -32,7 +32,7 @@ exports.createInterviewee = function (req, res, next) {
     Interviewee.create(interviewee_data, function (err, interviewee) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
-                err = new Error('Duplicate email');
+                err = new Error('Duplicate email and phone number combination');
             }
             res.status(400);
             return res.send({reason: err.toString()});

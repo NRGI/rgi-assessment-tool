@@ -122,7 +122,7 @@ angular.module('app')
                                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                                     rgiNotifier.notify('Reference added');
                                 }, function (reason) {
-                                    rgiNotifier.notify(reason);
+                                    rgiNotifier.error(reason);
                                 });
                         }
                     }

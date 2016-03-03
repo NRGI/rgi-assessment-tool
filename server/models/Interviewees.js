@@ -39,6 +39,7 @@ intervieweeSchema = new Schema({
 });
 
 //intervieweeSchema.plugin(mongooseHistory, options);
+intervieweeSchema.index({ email: 1, phone: 1 }, { unique: true });
 
 Interviewee = mongoose.model('Interviewee', intervieweeSchema);
 
