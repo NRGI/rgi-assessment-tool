@@ -11,7 +11,7 @@
                     value="{{$index}}"
                     ng-checked="choice.selected"
                     ng-model="answer.new_answer_selection"
-                    ng-disabled="assessment.edit_control!==current_user._id")
+                    ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
                     text.left-padding-med {{choice.letter}} - {{choice.text}}
         div(id="answer_justification_div")
             ng-form(name="answer_justification_form")
@@ -22,7 +22,7 @@
                             div(
                             name="justification"
                             ng-model="answer[current_user.role + '_justification']"
-                            ta-disabled="assessment.edit_control!==current_user._id"
+                            ta-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'"
                             ta-toolbar="{{taToolbarOptions}}"
                             placeholder="Please provide your justification (4,000 character limit)..."
                             text-angular

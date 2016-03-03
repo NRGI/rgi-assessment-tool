@@ -5,7 +5,10 @@ div.bottom-padding-med(
     id="biblio_div")
     .row
         .col-md-5.pull-left.top-padding-med
-            select.form-group.form-control.pull-left(ng-model="selected.value" ng-change="selectRefDialog(selected.value)")
+            select.form-group.form-control.pull-left(
+            ng-model="selected.value"
+            ng-change="selectRefDialog(selected.value)"
+            ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
                 option(
                 value="none"
                 selected
@@ -69,8 +72,14 @@ div(id="prev_bib" ng-if="references.length > 0")
                 text(ng-if="!ref.comment")  N/A
 
             .row.top-padding-med(ng-if="ref.author._id===current_user._id")
-                button.btn.btn-danger(ng-click="deleteReferenceConfirmation($index)") Delete Reference
+                button.btn.btn-danger(
+                ng-click="deleteReferenceConfirmation($index)"
+                ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Delete Reference
                 | &nbsp;
-                button.btn.btn-primary(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Edit reference
+                button.btn.btn-primary(
+                popover="Feature coming"
+                popover-trigger="mouseenter"
+                ng-click=""
+                ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
 
             hr
