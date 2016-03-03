@@ -83,6 +83,7 @@ exports.updateAssessment = function (req, res) {
         reviewer_id = assessmentUpdates.reviewer_ID,
         contact_packet = {};
 
+
     contact_packet.assessment_title = assessmentUpdates.country + " " + assessmentUpdates.year + " " + assessmentUpdates.version;
 
     if (req.user.role === 'supervisor') {
@@ -90,13 +91,12 @@ exports.updateAssessment = function (req, res) {
         contact_packet.admin_email = req.user.email;
     }
     //TODO make sure i can res.send without breaking functino
-    if (String(req.user._id) !== String(assessmentUpdates.researcher_ID._id) && String(req.user._id) !== String(assessmentUpdates.reviewer_ID._id) && !req.user.hasRole('supervisor')) {
+    if (String(req.user._id) !== String(edit_control_id) && !req.user.hasRole('supervisor')) {
         //var err = new Error('You are not an admin and do not have edit control!');
         res.sendStatus(404);
         return res.end();
         //return res.send({reason: err.toString()});
     }
-
     User.findOne({_id: researcher_id}).exec(function (err, user_researcher) {
         if (user_researcher) {
             contact_packet.researcher_firstName = user_researcher.firstName;
