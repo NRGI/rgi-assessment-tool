@@ -82,10 +82,10 @@ exports.new_user_confirmation = function (contact_packet, token) {
             from_email: contact_packet.send_email,
             subject: contact_packet.rec_role + ' account created!',
             html: 'Hello ' + contact_packet.rec_name + ',<p>' +
-            'an RGI ' + contact_packet.rec_role + 'account was just set up for you by <a href="' +
+            'an RGI ' + contact_packet.rec_role + ' account was just set up for you by <a href="' +
             contact_packet.send_email + '">' + contact_packet.send_name + '</a>.<p>' +
-            'The user name is <b>' + contact_packet.rec_username + '</b>.' +
-            'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">set password</a> before login.<p>' +
+            'The user name is <b>' + contact_packet.rec_username + '</b>. ' +
+            'Please, <a href="' + config.baseUrl + '/reset-password/' + token + '">set up your password</a> before logging in.<p>' +
             'Thanks!<p>' +
             'The RGI Team.'
         }
@@ -157,7 +157,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             from_email: contact_packet.editor_email,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
-            contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " trial assessment for review." +
+            contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " trial assessment for review. " +
             "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
@@ -173,7 +173,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             from_email: "rgi-admin@resourcegovernance.org",
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
-            "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps." +
+            "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps. " +
             "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> if you want to check the status.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
