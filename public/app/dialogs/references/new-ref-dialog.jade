@@ -24,6 +24,8 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                             button.btn.btn-danger(
                             ng-click="closeDialog()"
                             ng-if="!fileUploading") Cancel
+                        .row(ng-if="fileUploading")
+                            button.btn.btn-danger(ng-click="closeDialog()") Cancel
 
         div(ng-if="ref_selection === 'document'")
             .form-horizontal
