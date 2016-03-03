@@ -148,7 +148,6 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-all;
-  word-break: break-word;
 }
 .spinner {
   width: 40px;
@@ -170,8 +169,8 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
   animation: sk-bounce 2s infinite ease-in-out;
 }
 .double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
 }
 @-webkit-keyframes sk-bounce {
   0%, 100% {
@@ -180,6 +179,10 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control {
   50% {
     -webkit-transform: scale(1);
   }
+}
+table[ts-wrapper="ts-wrapper"] .tablesort-asc,
+table[ts-wrapper="ts-wrapper"] .tablesort-desc {
+  background-color: #ddd;
 }
 @-moz-keyframes sk-bounce {
   0%, 100% {

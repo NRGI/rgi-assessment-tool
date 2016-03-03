@@ -14,6 +14,7 @@ angular.module('app', [
     'ngRoute',
     'ngSanitize',
     'ta-maxlength',
+    'tableSort',
     'textAngular',
     'ui.bootstrap'
 ]);

@@ -10,10 +10,6 @@ div(id="questions_div").bottom-padding-med
                     input.form-control(
                     ng-model="search_text"
                     placeholder="Filter")
-                .form-group.margin-left-med
-                    select.form-control(
-                    ng-model="sort_order"
-                    ng-options="item.value as item.text for item in sort_options")
     div.panel.panel-primary(
     ng-repeat="(key, value) in questions | orderObjectBy:value.order:order_reverse"
     ng-if="value.section_len > 0")
@@ -27,21 +23,21 @@ div(id="questions_div").bottom-padding-med
 
         div.panel-collapse.collapse(id="{{value.id}}")
             div.panel-body
-                table.table.table-hover.table-striped.table-condensed.table-responsive
+                table(ts-wrapper).table.table-hover.table-striped.table-condensed.table-responsive
                     thead: tr
-                        th.col-md-1 Number
-                        th.col-md-1 Label
-                        th.col-md-1 Version
-                        th.col-md-6 Question Text
-                        th.col-md-1 Component
-                        th.col-md-1 Type
+                        th(ts-criteria="question_order" ts-default).col-md-1 Number
+                        th(ts-criteria="question_label").col-md-1 Label
+                        th(ts-criteria="question_v").col-md-1 Version
+                        th(ts-criteria="question_text").col-md-5 Question Text
+                        th(ts-criteria="component_text").col-md-2 Component
+                        th(ts-criteria="question_type").col-md-1 Type
                         th.col-md-1
-                    tbody: tr(ng-repeat="question in value.data | filter:search_text | orderBy:sort_order")
+                    tbody: tr(ng-repeat="question in value.data | filter:search_text" ts-repeat)
                         td.col-md-1 {{question.question_order}}
                         td.col-md-1 {{question.question_label}}
                         td.col-md-1 {{question.question_v}}
-                        td.col-md-6 {{question.question_text}}
-                        td.col-md-1 {{question.component_text}}
+                        td.col-md-5 {{question.question_text}}
+                        td.col-md-2 {{question.component_text}}
                         td.col-md-1 {{question.question_type}}
                         td.col-md-1
                             a.btn.center-block.btn-warning(href="/admin/question-admin/{{question._id}}") Edit

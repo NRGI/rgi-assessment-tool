@@ -7,13 +7,6 @@ angular.module('app')
         rgiPreceptGuideSrvc,
         rgiQuestionSrvc
     ) {
-        // filtering options
-        $scope.sort_options = [
-            {value: "question_order", text: "Sort by Question Order"},
-            {value: "component_text", text: "Sort by Component"},
-            {value: "question_text", text: "Sort by Question Text"}
-        ];
-        $scope.sort_order = $scope.sort_options[0].value;
         $scope.order_reverse = true;
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
