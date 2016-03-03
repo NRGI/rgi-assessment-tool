@@ -217,7 +217,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/new-webpage-dialog',
                     controller: 'rgiNewWebpageDialogCtrl',
                     showClose:false,
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
             },

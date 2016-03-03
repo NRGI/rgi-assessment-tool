@@ -108,16 +108,14 @@ div.left-padding-lg.right-padding-lg
                                         b Type:
                                     h5(ng-if="new_document.type")  {{new_document.type| ucfirst}}
                                     h5(ng-if="!new_document.type")  N/A
-                        //- AUTHOR
                         .row
+                            // AUTHOR
                             div.col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Author(s):
                                     h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
                                     h5(ng-if="!new_document.authors")  N/A
-
-                        .row
                             // SOURCE
                             div.col-md-6
                                 .form-group.pull-left
@@ -126,6 +124,8 @@ div.left-padding-lg.right-padding-lg
                                     h5(ng-if="new_document.source")  {{new_document.source}}
                                     h5(ng-if="!new_document.source")  N/A
 
+                        .row
+
                             // YEAR
                             div.col-md-6
                                 .form-group.pull-left
@@ -133,6 +133,8 @@ div.left-padding-lg.right-padding-lg
                                         b Date published:
                                     h5(ng-if="new_document.date_published")  {{new_document.date_published | date: 'MM/dd/yyyy'}}
                                     h5(ng-if="!new_document.date_published")  N/A
+
+
 
                     // DATE ACCESSED
                     div.left-padding-med
