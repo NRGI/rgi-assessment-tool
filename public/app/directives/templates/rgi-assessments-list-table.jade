@@ -171,7 +171,7 @@ div.top-padding-lg
 
                     //- review answers sent back button
                     a.btn.btn-col.center-block.btn-warning(
-                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
+                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) > -1"
                     href="/assessments/{{assessment.assessment_ID}}") Review answers
 
                     //- disabled for admin review
@@ -190,7 +190,7 @@ div.top-padding-lg
 
                 td.col-sm-1(ng-if="current_user.isExternalReviewer()")
                     a.btn.btn-col.center-block.btn-primary(
-                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
+                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete+assessmentsStatistics[assessment.assessment_ID].approved/ assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
                     href="/assessments/{{assessment.assessment_ID}}") Comment on assessment
                     button.btn.btn-col.btn-default(
                     ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"

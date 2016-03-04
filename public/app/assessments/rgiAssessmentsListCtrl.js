@@ -29,21 +29,11 @@ angular.module('app')
                 $scope.assessments = [];
 
                 assessments.forEach(function (assessment) {
-                    //if (assessment.last_modified) {
-                    //    assessment.edited_by = getUser(assessment.last_modified.modified_by);
-                    //}
-
-                    //rgiAssessmentRolesGuideSrvc.list().forEach(function(role) {
-                    //    if(assessment[role + '_ID']) {
-                    //        assessment[role] = getUser(assessment[role + '_ID']);
-                    //    }
-                    //});
 
                     $scope.assessments.push(assessment);
 
                     if($scope.current_user.isExternalReviewer()) {
                         var assessmentId = assessment.assessment_ID;
-                        $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate({length: 0});
                         var answerCriteria = {assessment_ID: assessmentId};
 
                         if (['trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {

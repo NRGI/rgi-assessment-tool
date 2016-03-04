@@ -8,7 +8,7 @@ div.bottom-padding-med(
             select.form-group.form-control.pull-left(
             ng-model="selected.value"
             ng-change="selectRefDialog(selected.value)"
-            ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
+            ng-disabled="(assessment.edit_control!==current_user._id && !current_user.isExternalReviewer()) || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
                 option(
                 value="none"
                 selected

@@ -5,6 +5,7 @@ angular
     .controller('rgiAssessmentsListTableCtrl', function (
         $scope,
         $location,
+        $rootScope,
         ngDialog,
         rgiNotifier,
         rgiIdentitySrvc,
@@ -14,7 +15,8 @@ angular
     ) {
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.externalThreshold = $scope.$parent.$parent.externalThreshold;
+        $scope.externalThreshold = $rootScope.externalThreshold;
+        $scope.assessmentsStatistics = $scope.$parent.assessmentsStatistics;
 
         $scope.assessmentStartReview = function (assessment_ID) {
             rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (new_assessment_data) {
