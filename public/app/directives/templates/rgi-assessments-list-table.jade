@@ -144,10 +144,14 @@ div.top-padding-lg
                     href="/admin/assessments-admin/{{assessment.assessment_ID}}"
                     ng-if="['trial_submitted', 'under_review', 'resubmitted'].indexOf(assessment.status) > -1"
                     ) Continue review
-                    a.btn.btn-col.center-block.btn-primary(
-                    href="/admin/assessment-review/{{assessment.assessment_ID}}"
+                    //a.btn.btn-col.center-block.btn-primary(
+                    //href="/admin/assessment-review/{{assessment.assessment_ID}}"
+                    //ng-if="assessment.status=='approved'"
+                    //) Send to external
+                    button.btn.btn-col.center-block.btn-primary(
                     ng-if="assessment.status=='approved'"
-                    ) Send to external
+                    disabled
+                    ) Start external review
                     a.btn.center-block.btn-default.disabled(
                     href=""
                     ng-if="['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
