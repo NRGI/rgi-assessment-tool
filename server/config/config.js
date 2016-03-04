@@ -20,6 +20,12 @@ module.exports = {
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
+    staging_2: {
+        baseUrl: 'http://rgi-staging_2.nrgi-assessment.org',
+        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev_2?replicaSet=set-54c2868c4ae1de388800b2a3',
+        rootPath: rootPath,
+        port: process.env.PORT || 80
+    },
     question_staging: {
         baseUrl: 'http://rgi-question-staging.nrgi-assessment.org',
         db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_question_staging?replicaSet=set-54c2868c4ae1de388800b2a3',
