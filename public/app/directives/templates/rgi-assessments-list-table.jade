@@ -96,8 +96,11 @@ div.top-padding-lg
                         popover-trigger="mouseenter")
                         em(ng-if="!assessment.approval_date") N/A
                 //LAST EDIT
-                td.col-sm-1(ng-if="assessment.last_modified && current_user.isSupervisor()")
-                    a(href="mailto:{{assessment.last_modified.user.email}}") {{assessment.last_modified.user.lastName}}
+                td.col-sm-1(ng-if="assessment.last_modified")
+                    a(
+                    href="mailto:{{assessment.last_modified.user.email}}"
+                    ng-if="current_user.isSupervisor()") {{assessment.last_modified.user.lastName}}
+                    text(ng-if="!current_user.isSupervisor()") {{assessment.last_modified.user.role | ucfirst}}
                     | &nbsp;-&nbsp;
                     i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
                     ng-if="assessment.last_modified"

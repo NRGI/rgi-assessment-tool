@@ -61,7 +61,7 @@ div(id="answers_div").bottom-padding-med
                                 a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
                                 href="/assessments/answer/{{answer.answer_ID}}") Edit answer
                                 a.btn.center-block.btn-default(
-                                ng-if="assessment.status!=='submitted' || assessment.status!=='trial_submitted'"
+                                ng-if="assessment.status==='submitted' || assessment.status==='trial_submitted'"
                                 href="/assessments/answer/{{answer.answer_ID}}") View answer
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control!==current_user._id")
                                 a.btn.center-block.btn-default(
