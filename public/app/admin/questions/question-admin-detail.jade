@@ -19,23 +19,23 @@
                 .row
                     h5 Indicator
                     text.left-padding-med {{question.indicator}}
-                .row(ng-if="question.mapping_2013_num")
-                    h5 2013 Mapping
-                    div.left-padding-med
-                        .row
-                            h6.col-md-1.control-label Number
-                            h6.col-md-1.control-label Category
-                            h6.col-md-1.control-label Comparablity
-                            h6.col-md-9.control-label Text
-                        .row
-                            small.col-md-1 {{question.mapping_2013_num}}
-                            small.col-md-1 {{question.mapping_2013_category}}
-                            small.col-md-1 {{question.mapping_2013_comp}}
-                            small.col-md-9 {{question.mapping_2013_text}}
-
-                .row(ng-if="question.mapping_external")
-                    h5 External Mapping
-                    text.left-padding-med {{question.mapping_external}}
+            //    .row(ng-if="question.mapping_2013_num")
+            //        h5 2013 Mapping
+            //        div.left-padding-med
+            //            .row
+            //                h6.col-md-1.control-label Number
+            //                h6.col-md-1.control-label Category
+            //                h6.col-md-1.control-label Comparablity
+            //                h6.col-md-9.control-label Text
+            //            .row
+            //                small.col-md-1 {{question.mapping_2013_num}}
+            //                small.col-md-1 {{question.mapping_2013_category}}
+            //                small.col-md-1 {{question.mapping_2013_comp}}
+            //                small.col-md-9 {{question.mapping_2013_text}}
+            //
+            //    .row(ng-if="question.mapping_external")
+            //        h5 External Mapping
+            //        text.left-padding-med {{question.mapping_external}}
 
             legend.h4 Edit
             .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg

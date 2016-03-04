@@ -101,7 +101,10 @@ angular.module('app')
                 } else {
                     rgiQuestionSrvc.query({}, function (questions) {
                         questions.forEach(function (question) {
-                            question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
+                            console.log(_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver));
+                            if (_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver) < 0) {
+                                question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
+                            }
                         });
 
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
