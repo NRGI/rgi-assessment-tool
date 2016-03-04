@@ -1,7 +1,6 @@
 div.left-padding-lg.right-padding-lg(draggable-dialog)
     div.modal-header
         h3 New {{ref_selection | ucfirst}} Reference
-            text(ng-if="ref_selection === 'document'") (PDF)
     .modal-body
         div(ng-if="ref_selection=='webpage'")
             form(name="snapshotForm").form-horizontal
