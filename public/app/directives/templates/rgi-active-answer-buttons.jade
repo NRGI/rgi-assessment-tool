@@ -2,7 +2,7 @@
 .col-md-pull-2
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor()"
+    ng-if="(assessment.edit_control===current_user._id && assessment.status!=='submitted' && assessment.status!=='trial_submitted') || current_user.isSupervisor()"
     ) Save answer
     | &nbsp;
 
