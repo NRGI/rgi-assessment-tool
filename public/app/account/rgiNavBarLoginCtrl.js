@@ -10,47 +10,39 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiNotifier
     ) {
-        var loadAssessments = function() {
-            var urls = [];
+        var setUserData = function() {
+            $scope.versions = [];
+            $scope.current_user = rgiIdentitySrvc.currentUser;
 
-            rgiAssessmentSrvc.query({}, function (assessments) {
-                assessments.forEach(function (assessment) {
-                    if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
-                        urls.push(assessment.year + '_' + assessment.version);
-                        $scope.versions.push({
-                            year: assessment.year,
-                            version: assessment.version,
-                            name: assessment.year + ' ' + assessment.version.charAt(0).toUpperCase() + assessment.version.slice(1),
-                            url: assessment.year + '_' + assessment.version
-                        });
-                    }
+            if ($scope.current_user && $scope.current_user.isSupervisor()) {
+                var urls = [];
+
+                rgiAssessmentSrvc.query({}, function (assessments) {
+                    assessments.forEach(function (assessment) {
+                        if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
+                            urls.push(assessment.year + '_' + assessment.version);
+                            $scope.versions.push({
+                                year: assessment.year,
+                                version: assessment.version,
+                                name: assessment.year + ' ' + assessment.version.charAt(0).toUpperCase() + assessment.version.slice(1),
+                                url: assessment.year + '_' + assessment.version
+                            });
+                        }
+                    });
                 });
-            });
+            }
         };
 
-        // assign the identity resource with the current identity using identity service
-        $scope.versions = [];
-
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
-        if ($scope.current_user && $scope.current_user.isSupervisor()) {
-            loadAssessments();
-        }
+        setUserData();
 
         $scope.recoverPassword = function() {
             $location.path('/recover-password');
         };
 
-        // signin function for signin button
         $scope.signin = function (username, password) {
             rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
-                $scope.versions = [];
-
                 if (success) {
-                    if ($scope.current_user && $scope.current_user.isSupervisor()) {
-                        loadAssessments();
-                    }
-
+                    setUserData();
                     rgiNotifier.notify('You have successfully signed in!');
                     $location.path('/');
                 } else {
@@ -58,7 +50,7 @@ angular.module('app')
                 }
             });
         };
-        // signout function for signout button
+
         $scope.signout = function () {
             rgiAuthSrvc.logoutUser().then(function () {
                 $scope.username = "";
