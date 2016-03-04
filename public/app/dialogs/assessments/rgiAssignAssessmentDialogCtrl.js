@@ -18,7 +18,6 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
         var originalAssessment = {};
         $scope.assessmentRoles = _.without(rgiAssessmentRolesGuideSrvc.list(),'ext_reviewer');
-        //$scope.assessmentRoles = rgiAssessmentRolesGuideSrvc.list();
         $scope.availableUsers = {};
 
         $scope.assessmentRoles.forEach(function(role) {
@@ -34,6 +33,11 @@ angular.module('app')
         });
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
+            $scope.assessmentRoles.forEach(function(role) {
+                var field = role + '_ID';
+                assessment[field] = assessment[field] && assessment[field]._id ? assessment[field]._id : assessment[field];
+            });
+
             $scope.assessment = assessment;
             angular.extend(originalAssessment, assessment);
         });
