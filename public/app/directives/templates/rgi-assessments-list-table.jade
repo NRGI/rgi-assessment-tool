@@ -96,9 +96,6 @@ div.top-padding-lg
                         popover-trigger="mouseenter")
                         em(ng-if="!assessment.approval_date") N/A
                 //LAST EDIT
-                td.col-sm-1
-                    div.text-center(ng-if="assessment.edited_by && current_user.isSupervisor()")
-                    text
                 td.col-sm-1(ng-if="assessment.last_modified && current_user.isSupervisor()")
                     a(href="mailto:{{assessment.last_modified.user.email}}") {{assessment.last_modified.user.lastName}}
                     | &nbsp;-&nbsp;
@@ -108,7 +105,7 @@ div.top-padding-lg
                     popover-trigger="mouseenter")
                 td.col-sm-1(ng-if="!assessment.last_modified")
                 //STATUS
-                td.col-sm-1 {{assessment.status | ucfirst}}
+                td.col-sm-1 {{assessment.status | addSpaces | ucfirst}}
                 ////QUESTIONS COMPLETE
                 //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
                 //td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
@@ -195,20 +192,3 @@ div.top-padding-lg
                     button.btn.btn-col.btn-default(
                     ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
                     disabled) Waiting for completion
-
-
-                    //TODO add submssion fuction for this page
-                    ////- assessment submission
-                    //button.btn.btn-success.pull-right(
-                    //ng-if="assessment.edit_control===identity.currentUser._id && assessment.questions_complete === assessment.question_length"
-                    //ng-click="assessmentSubmit()") Submit assessment
-
-                    ////- disabled for researcher control
-                    //a.btn.btn-col.center-block.btn-default(ng-if="(assessment.status === 'assigned_researcher' || assessment.status === 'assigned' || assessment.status === 'started') && current_user.role === 'reviewer'"
-                    //href="/assessments-review/{{assessment.assessment_ID}}"
-                    //disabled) Under researcher control
-                    //
-                    ////- disabled for reviewer control
-                    //a.btn.btn-col.center-block.btn-default(ng-if="assessment.status === 'assigned_reviewer' && current_user.isResearcher()"
-                    //href="/assessments-review/{{assessment.assessment_ID}}"
-                    //disabled) Under reviewer control
