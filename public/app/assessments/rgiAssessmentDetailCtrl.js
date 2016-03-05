@@ -22,7 +22,7 @@ angular.module('app')
             {value: "status", text: "Sort by Status"}];
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sortOrder = $scope.sortOptions[0].value;
-        $scope.order_reverse = true;
+        $scope.order_reverse = $scope.current_user.isSupervisor();
 
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};
