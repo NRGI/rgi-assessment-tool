@@ -6,7 +6,7 @@
             div.bottom-padding-lg(ng-if="resource_type==='resource'")
                 | The following materials provide general and technical information about some of the key topics covered by the RGI questionnaire.
             div.left-padding-med.right-padding-med
-                div.panel.panel-primary(ng-repeat="resource in resources | orderBy:order")
+                div.panel.panel-primary(ng-repeat="resource in resources | orderBy:'head'")
                     div.panel-heading.bottom-padding-med
                         .panel-title
                             div(
