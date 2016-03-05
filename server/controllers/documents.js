@@ -144,15 +144,17 @@ exports.uploadUrlSnapshot = function(req, res) {
 exports.uploadRemoteFile = function (req, res) {
     FileUploadStatus.create({}, function(err, fileUploadStatus) {
         var timeoutId,
+            timeoutPeriod = 15000,
             remoteFileRequest = request({
                 method: 'GET',
+                timeout: timeoutPeriod,
                 uri: req.query.url
             }, function () {})
                 .on('response', function(response) {
                     clearTimeout(timeoutId);
 
                     if (response.statusCode === 200) {
-                        var fileTotalSize = parseInt(response.headers['content-length'], 10);
+                        var fileTotalSize = response.headers['content-length'] ? parseInt(response.headers['content-length'], 10) : -1;
                         var receivedDataSized = 0;
                         var filePath = '/tmp/' +
                             getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
@@ -163,10 +165,11 @@ exports.uploadRemoteFile = function (req, res) {
                         response
                             .on('data', function(data) {
                                 receivedDataSized += data.length;
-                                fileUploadStatus.setCompletion(receivedDataSized / fileTotalSize);
+                                fileUploadStatus.setCompletion(fileTotalSize > 0 ? receivedDataSized / fileTotalSize : 0);
                             })
                             .on('end', function() {
                                 file.close(function() {
+                                    fileUploadStatus.setCompletion(1);
                                     uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (err, doc) {
                                         if (!err) {
                                             fileUploadStatus.setDocument(doc);
@@ -200,7 +203,7 @@ exports.uploadRemoteFile = function (req, res) {
             timeoutId = setTimeout(function() {
                 remoteFileRequest.abort();
                 res.send({reason: 'File request timeout'});
-            }, 2000);
+            }, timeoutPeriod);
     });
 };
 
