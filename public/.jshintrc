@@ -5,10 +5,8 @@
   "newcap": false,
   "globals": {
     "$": true,
-    "angular": true
-  },
-  "predef": [
-    "angular",
-    "$"
-  ]
+    "_": true,
+    "angular": true,
+    "document": true
+  }
 }

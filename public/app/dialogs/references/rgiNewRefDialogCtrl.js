@@ -190,14 +190,15 @@ angular.module('app')
         });
 
         $scope.isAllowedFileExtension = function(fileName) {
-            var allowedExtensionFound = false;
+            var allowedExtensionFound = false, link = document.createElement('a');
             fileName = fileName.toLowerCase();
+            link.href = fileName;
 
             rgiAllowedFileExtensionGuideSrvc.getList().forEach(function(extension) {
                 var dottedExtension = '.' + extension;
-                var extensionPosition = fileName.indexOf(dottedExtension);
+                var extensionPosition = link.pathname.indexOf(dottedExtension);
 
-                if((extensionPosition !== -1) && ((fileName.length - dottedExtension.length) === extensionPosition)) {
+                if((extensionPosition !== -1) && ((link.pathname.length - dottedExtension.length) === extensionPosition)) {
                     allowedExtensionFound = true;
                 }
             });
