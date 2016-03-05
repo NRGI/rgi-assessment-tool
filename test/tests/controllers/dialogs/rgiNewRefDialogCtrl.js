@@ -207,7 +207,7 @@ describe('rgiNewRefDialogCtrl', function () {
                 });
 
                 it('shows an error message', function () {
-                    notifierErrorSpy.withArgs('The file cannot be uploaded').called.should.be.equal(true);
+                    notifierErrorSpy.withArgs(REASON).called.should.be.equal(true);
                 });
 
                 afterEach(function() {

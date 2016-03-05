@@ -263,7 +263,7 @@ angular.module('app')
                 rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl)).then(function (response) {
                     if (response.data.reason) {
                         $scope.fileUploading = false;
-                        rgiNotifier.error('The file cannot be uploaded');
+                        rgiNotifier.error(response.data.reason);
                     } else {
                         $scope.uploader.queue.push({
                             file: {
