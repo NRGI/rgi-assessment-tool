@@ -94,14 +94,12 @@ angular.module('app')
                         }
                     });
                 });
-                console.log(country_deployed);
                 if (country_deployed.value) {
                     rgiNotifier.error(country_deployed.country + ' assessment already deployed');
                     $scope.disable_button = false;
                 } else {
                     rgiQuestionSrvc.query({}, function (questions) {
                         questions.forEach(function (question) {
-                            console.log(_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver));
                             if (_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver) < 0) {
                                 question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
                             }
@@ -122,6 +120,7 @@ angular.module('app')
                                     created_by: $scope.current_user._id,
                                     created_date: timestamp}
                             });
+
 
                             questions.forEach(function (q) {
                                 new_answer_set.push({

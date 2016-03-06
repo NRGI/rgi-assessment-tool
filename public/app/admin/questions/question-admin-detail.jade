@@ -12,7 +12,7 @@
                     text.left-padding-med(ng-repeat="assessment in question.assessments")
                         |  {{assessment}}
                         //TODO remove comma on last instance
-                        text ,
+                        text(ng-if="!$last") ,
                     .pull-right
                         //TODO create question version dialog
                         button.btn.btn-info(ng-click="" disabled) Previous versions
@@ -48,21 +48,21 @@
                             type="textbox"
                             ng-model="question.question_text")
 
-                    div(id="link_question").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
-                        .pull-left
-                            label.col-md-2.control-label Link to
-                            .col-md-5
-                                select.form-group.form-control(
-                                ng-model="linkedQuestion"
-                                ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
-                                ng-change="resetLinkedOption()"
-                                )
-                            .col-md-5
-                                select.form-group.form-control(
-                                ng-if="linkedQuestion.question_criteria.length > 0"
-                                ng-model="question.linkedOption"
-                                ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria"
-                                )
+                    //div(id="link_question").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
+                    //    .pull-left
+                    //        label.col-md-2.control-label Link to
+                    //        .col-md-5
+                    //            select.form-group.form-control(
+                    //            ng-model="linkedQuestion"
+                    //            ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
+                    //            ng-change="resetLinkedOption()"
+                    //            )
+                    //        .col-md-5
+                    //            select.form-group.form-control(
+                    //            ng-if="linkedQuestion.question_criteria.length > 0"
+                    //            ng-model="question.linkedOption"
+                    //            ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria"
+                    //            )
 
                     div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
                         label.col-md-2.control-label(form="order") Question Order
@@ -83,8 +83,11 @@
                             ng-options="item.value as item.text for item in precept_options")
 
                     div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
+                        label.col-md-1.control-label(form="dejure") Dejure?
+                        .col-md-1
+                            input(type="checkbox" ng-model="question.dejure")
                         label.col-md-2.control-label(form="mode") Component
-                        .col-md-5
+                        .col-md-4
                             select.form-group.form-control(
                             ng-model="question.component"
                             ng-options="item.value as item.text for item in component_options")
@@ -94,13 +97,11 @@
                             ng-model="question.question_type"
                             ng-options="item.value as item.text for item in type_options")
 
-                    div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
-                        label.col-md-1.control-label(form="use") Use in assessments
-                        .col-md-1
-                            input(type="checkbox" ng-model="question.question_use")
-                        label.col-md-1.control-label(form="dejure") Dejure?
-                        .col-md-1
-                            input(type="checkbox" ng-model="question.dejure")
+                    //div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
+                        //label.col-md-1.control-label(form="use") Use in assessments
+                        //.col-md-1
+                        //    input(type="checkbox" ng-model="question.question_use")
+
                     div.row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
                         .pull-left
                             button.btn.btn-primary(
@@ -164,7 +165,6 @@
                                 ta-toolbar="{{taToolbarOptions}}"
                                 text-angular
                                 ta-max-text="{{editorContentMaxLength}}")
-
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
 
