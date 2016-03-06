@@ -144,7 +144,7 @@ exports.uploadUrlSnapshot = function(req, res) {
 exports.uploadRemoteFile = function (req, res) {
     FileUploadStatus.create({}, function(err, fileUploadStatus) {
         var timeoutId,
-            timeoutPeriod = 15000,
+            timeoutPeriod = 20000,
             remoteFileRequest = request({
                 method: 'GET',
                 timeout: timeoutPeriod,
