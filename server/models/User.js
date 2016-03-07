@@ -82,7 +82,7 @@ User = mongoose.model('User', userSchema);
 function createDefaultUsers() {
     User.find({}).exec(function (err, collection) {
         var salt, hash;
-        if (collection.length === 0 && process.env.NODE_ENV !== 'production') {
+        if (collection.length === 0 && process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'question_staging') {
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'jcust');
             User.create({
@@ -179,7 +179,7 @@ function createDefaultUsers() {
                 assessments: [],
                 language:  'English'
             });
-        } else if (collection.length === 0 && process.env.NODE_ENV === 'production') {
+        } else if (collection.length === 0 && (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'question_staging')) {
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'jcust');
             User.create({

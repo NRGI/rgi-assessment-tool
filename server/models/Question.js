@@ -103,7 +103,7 @@ Question = mongoose.model('Question', questionSchema);
 
 function createDefaultQuestions() {
     Question.find({}).exec(function (err, questions) {
-        if (questions.length === 0 && process.env.NODE_ENV !== 'production') {
+        if (questions.length === 0 && process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'question_staging') {
             var timestamp = new Date().toISOString();
             Question.create({
                 "_id": "561fe604f004cd4715705420",
