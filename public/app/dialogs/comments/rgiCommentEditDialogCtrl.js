@@ -30,7 +30,7 @@ angular.module('app')
                         rgiNotifier.notify('Comment edited');
                         $scope.closeThisDialog();
                     }, function (reason) {
-                        rgiNotifier.notify(reason);
+                        rgiNotifier.error(reason);
                     });
             }
         };

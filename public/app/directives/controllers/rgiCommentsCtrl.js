@@ -30,7 +30,7 @@ angular.module('app')
             } else {
                 new_update_data.comments.push(new_comment_data);
 
-                if (new_update_data.status === 'assigned' && !$scope.$root.current_user.isSupervisor()) {
+                if (new_update_data.status === 'assigned' && !$scope.current_user.isSupervisor()) {
                     new_update_data.status = 'saved';
                 }
 
@@ -40,7 +40,7 @@ angular.module('app')
                             rgiNotifier.notify('Comment added');
                             $scope.update.new_comment = undefined;
                         }, function (reason) {
-                            rgiNotifier.notify(reason);
+                            rgiNotifier.error(reason);
                         });
                         break;
                     case 'question':
@@ -48,7 +48,7 @@ angular.module('app')
                             rgiNotifier.notify('Comment added');
                             $scope.update.new_comment = undefined;
                         }, function (reason) {
-                            rgiNotifier.notify(reason);
+                            rgiNotifier.error(reason);
                         });
                         break;
                     default:
