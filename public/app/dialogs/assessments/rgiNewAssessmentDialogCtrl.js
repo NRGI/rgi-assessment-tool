@@ -98,7 +98,7 @@ angular.module('app')
                     rgiNotifier.error(country_deployed.country + ' assessment already deployed');
                     $scope.disable_button = false;
                 } else {
-                    rgiQuestionSrvc.query({}, function (questions) {
+                    rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
                         questions.forEach(function (question) {
                             if (_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver) < 0) {
                                 question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
