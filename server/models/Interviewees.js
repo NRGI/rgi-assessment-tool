@@ -45,7 +45,7 @@ Interviewee = mongoose.model('Interviewee', intervieweeSchema);
 
 function createDefaultInterviewees() {
     Interviewee.find({}).exec(function (err, collection) {
-        if (collection.length === 0) {
+        if (collection.length === 0 && process.env.NODE_ENV !== 'production') {
             Interviewee.create({
                 firstName: "Steve",
                 lastName: "Jobs",
