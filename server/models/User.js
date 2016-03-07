@@ -81,8 +81,8 @@ User = mongoose.model('User', userSchema);
 
 function createDefaultUsers() {
     User.find({}).exec(function (err, collection) {
-        if (collection.length === 0) {
-            var salt, hash;
+        var salt, hash;
+        if (collection.length === 0 && process.env.NODE_ENV !== 'production') {
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'jcust');
             User.create({
@@ -177,6 +177,103 @@ function createDefaultUsers() {
                 hashed_pwd:  hash,
                 role: 'ext_reviewer',
                 assessments: [],
+                language:  'English'
+            });
+        } else if (collection.length === 0 && process.env.NODE_ENV === 'production') {
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'jcust');
+            User.create({
+                firstName: 'Jim',
+                lastName: 'Cust',
+                username: 'jcust',
+                email: 'jcust@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'cperry');
+            User.create({
+                firstName: 'Chris',
+                lastName: 'Perry',
+                username: 'cperry',
+                email: 'cperry@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'jmcmann');
+            User.create({
+                firstName: 'Jason',
+                lastName: 'McMann',
+                username: 'jmcmann',
+                email: 'jmcmann@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'ahasermann');
+            User.create({
+                firstName: 'Anna',
+                lastName: 'Hasermann',
+                username: 'ahasermann',
+                email: 'ahasermann@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'dhartmann');
+            User.create({
+                firstName: 'Diana',
+                lastName: 'Hartmann',
+                username: 'dhartmann',
+                email: 'dhartmann@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'gjacovella');
+            User.create({
+                firstName: 'Giulia',
+                lastName: 'Jacovella',
+                username: 'gjacovella',
+                email: 'gjacovella@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'hpatel');
+            User.create({
+                firstName: 'Humaira',
+                lastName: 'Patel',
+                username: 'hpatel',
+                email: 'hpatel@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
+                language:  'English'
+            });
+            salt = encrypt.createSalt();
+            hash = encrypt.hashPwd(salt, 'iedwards');
+            User.create({
+                firstName: 'Isabelle',
+                lastName: 'Edwards',
+                username: 'iedwards',
+                email: 'iedwards@resourcegovernance.org',
+                salt:  salt,
+                hashed_pwd:  hash,
+                role: 'supervisor',
                 language:  'English'
             });
         }
