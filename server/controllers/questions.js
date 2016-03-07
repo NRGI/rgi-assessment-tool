@@ -12,7 +12,7 @@ exports.getQuestions = function (req, res) {
 
 exports.getQuestionsByID = function (req, res) {
     Question.findOne({_id: req.params.id})
-        .populate('question_dependancies.dependancies', 'question_label question_text')
+        //.populate('question_dependancies.dependancies', 'question_label question_text')
         .exec(function (err, question) {
             res.send(question);
         });

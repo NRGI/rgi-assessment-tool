@@ -83,6 +83,7 @@ questionSchema = new Schema({
     //    trigger: String, //option that hides and scores
     //    target_score: String}],
     question_guidance_text: htmlSettings, //from Guidance Notes column
+    question_dependancies: htmlSettings, //from Dependancies column
     mapping_2013_num: String, ///from Mapping: RGI 2013 column
     mapping_2013_text: String,
     mapping_2013_category: String,
