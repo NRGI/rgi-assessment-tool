@@ -119,7 +119,9 @@ angular.module('app')
                                 })
                                 .then(function () {
                                     $scope.closeThisDialog();
+                                    $scope.answer_update.human_ref_comment = "";
                                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                                    $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                                     rgiNotifier.notify('Reference added');
                                 }, function (reason) {
                                     rgiNotifier.error(reason);
@@ -153,7 +155,9 @@ angular.module('app')
                         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
                             rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
                             $scope.closeThisDialog();
+                            $scope.answer_update.human_ref_comment = "";
                             $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                             rgiNotifier.notify('Reference added!');
 
                         }, function (reason) {
