@@ -1,105 +1,105 @@
 .container(ng-controller="rgiNavBarLoginCtrl")
-	.jumbotron
-		h1 NRGI Resource Governance Index Assessment Tool
-		p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the RGI Assessment Tool Portal.
-		p(ng-show="!identity.isAuthenticated()") Please log in. 
+    .jumbotron
+        h1 NRGI Resource Governance Index Assessment Tool
+        p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the RGI Assessment Tool Portal.
+        p(ng-show="!identity.isAuthenticated()") Please log in.
 
-	div(ng-show="identity.isAuthenticated()").right-padding-lg.left-padding-lg
-		h4 Welcome to the Resource Governance Index (RGI) Assessment Tool.
-		p As a consultant on the RGI project, you will use this tool to answer your assigned questionnaire.
-			| Please refer to the
-			em: a(href="")  Tool Guide for Researchers and Peer Reviewers
-			|  to learn how to use this platform.
-		p The RGI 2016 questionnaire is comprised of 168 questions. These are grouped into seven precepts covering the following issue areas:
-		ul
-			li
-				b Precept 2
-				| :
-				em  Accountability and transparency (natural resource wealth, contracts, EITI)
-			li
-				b Precept 3
-				| :
-				em  Exploration and license allocation (licensing policies and procedures)
-			li
-				b Precept 4
-				| :
-				em  Taxation (fiscal terms, company payments)
-			li
-				b Precept 5
-				| :
-				em  Local effects (environmental and social impacts, community involvement)
-			li
-				b Precept 6
-				| :
-				em  Nationally-owned resource companies
-			li
-				b Precept 7
-				| :
-				em  Revenue distribution (general issues, subnational transfers)
-			li
-				b Precept 8
-				| :
-				em  Revenue volatility (natural resource funds)
-		p Consultants are encouraged to read carefully read the
-			em Guide for Researchers and Peer Reviewers Consultants
-			|  and consider should keep in mind the following points while completing the questionnaire:
-		ol
-			li
-				b Sector of Focus
-				| : Answer the questionnaire with reference to the sector specified in your TOR (i.e. oil/gas or minerals).
-			li
-				b Mineral of Focus
-				| : If the sector specified in your TOR is minerals, answer
-				em  de facto
-				|  questions on data disclosure with respect to the specific mineral indicated by your RGI country coordinator.
-			li
-				b Publicly Available Information
-				| : Answer the questionnaire on the basis of publicly available information, defined as information that is:
-				ul
-					li Published by the institution or agency responsible for producing it within a given timeframe; and
-					li Available at no cost to any person who wants the document, including in cases where a direct request
-						|  must be made to the relevant institution or agency.
-			li
-				b Interviews
-				| : Interview do not constitute publicly available information, and should only be used in cases where the
-				|  information necessary to answer a question is not available via other channels (as described more fully in the
-				em  Guide for Researchers and Peer Reviewers
-				| ).
-			li
-				b Time Period Under Study
-				| : For de facto questions, answer the questionnaire with reference to events taking place from January 2015 onwards
-				|  or during the most recently concluded fiscal year (as specified for each question).
-				ul
-					li If no events took place during the time period specified in the question, answer the question based on the
-						|  most recent event taking place (i.e. the most recent event taking place prior to January 2015, or
-						|  during the previous full fiscal year).
-			li
-				b What Constitutes a “Complete” Response
-				| : For a response to be considered “complete”, consultants must provide the following information when responding to each question:
-				ul
-					li An answer selection.
-					li A text justification explaining the answer selection.
-					li Full reference information for all sources that informed the answer selection.
-					li PDF copies of all sources that informed the answer selection.
-			li
-				b “Proving the Negative”
-				| : Answering certain RGI questions requires consultants researchers to demonstrate the absence of a key component of the legal
-				|  framework for resource governance (for
-				em  de jure
-				|  questions), or the absence of an event taking place (for
-				em  de facto
-				|  questions).  To prove the negative in the case of
-				em  de jure
-				|  questions, consultants should provide at least two sources indicating (either directly or indirectly) that the relevant component
-				|  of the legal framework for resource governance is not in place.
-			li
-				b Question-Level Guidance
-				| : Guidelines for answering each question can be found in the RGI Tool under the
-				em  “Question Guidance”
-				|  tab that displays alongside of each question.
-			li
-				b RGI Tool
-				| : The RGI Tool has been tested to be fully compatible with Google Chrome and Apple Safari.  Consultants are therefore encouraged
-				|  to use these browsers when responding to the RGI questionnaire via the RGI Tool (available at
-				a(href="http://rgi.nrgi-assessment.org/")  http://rgi.nrgi-assessment.org/
-				| ).
+    div(ng-show="identity.isAuthenticated()").right-padding-lg.left-padding-lg
+        h4 Welcome to the Resource Governance Index (RGI) Assessment Tool.
+        p As a consultant on the RGI project, you will use this tool to answer your assigned questionnaire.
+            | Please refer to the
+            em: a(href="")  Tool Guide for Researchers and Peer Reviewers
+            |  to learn how to use this platform.
+        p The RGI 2016 questionnaire is comprised of 168 questions. These are grouped into seven precepts covering the following issue areas:
+        ul
+            li
+                b Precept 2
+                | :
+                em  Accountability and transparency (natural resource wealth, contracts, EITI)
+            li
+                b Precept 3
+                | :
+                em  Exploration and license allocation (licensing policies and procedures)
+            li
+                b Precept 4
+                | :
+                em  Taxation (fiscal terms, company payments)
+            li
+                b Precept 5
+                | :
+                em  Local effects (environmental and social impacts, community involvement)
+            li
+                b Precept 6
+                | :
+                em  Nationally-owned resource companies
+            li
+                b Precept 7
+                | :
+                em  Revenue distribution (general issues, subnational transfers)
+            li
+                b Precept 8
+                | :
+                em  Revenue volatility (natural resource funds)
+        p Consultants are encouraged to read carefully read the
+            em Guide for Researchers and Peer Reviewers Consultants
+            |  and consider should keep in mind the following points while completing the questionnaire:
+        ol
+            li
+                b Sector of Focus
+                | : Answer the questionnaire with reference to the sector specified in your TOR (i.e. oil/gas or minerals).
+            li
+                b Mineral of Focus
+                | : If the sector specified in your TOR is minerals, answer
+                em  de facto
+                |  questions on data disclosure with respect to the specific mineral indicated by your RGI country coordinator.
+            li
+                b Publicly Available Information
+                | : Answer the questionnaire on the basis of publicly available information, defined as information that is:
+                ul
+                    li Published by the institution or agency responsible for producing it within a given timeframe; and
+                    li Available at no cost to any person who wants the document, including in cases where a direct request
+                        |  must be made to the relevant institution or agency.
+            li
+                b Interviews
+                | : Interview do not constitute publicly available information, and should only be used in cases where the
+                |  information necessary to answer a question is not available via other channels (as described more fully in the
+                em  Guide for Researchers and Peer Reviewers
+                | ).
+            li
+                b Time Period Under Study
+                | : For de facto questions, answer the questionnaire with reference to events taking place from January 2015 onwards
+                |  or during the most recently concluded fiscal year (as specified for each question).
+                ul
+                    li If no events took place during the time period specified in the question, answer the question based on the
+                        |  most recent event taking place (i.e. the most recent event taking place prior to January 2015, or
+                        |  during the previous full fiscal year).
+            li
+                b What Constitutes a “Complete” Response
+                | : For a response to be considered “complete”, consultants must provide the following information when responding to each question:
+                ul
+                    li An answer selection.
+                    li A text justification explaining the answer selection.
+                    li Full reference information for all sources that informed the answer selection.
+                    li PDF copies of all sources that informed the answer selection.
+            li
+                b “Proving the Negative”
+                | : Answering certain RGI questions requires consultants researchers to demonstrate the absence of a key component of the legal
+                |  framework for resource governance (for
+                em  de jure
+                |  questions), or the absence of an event taking place (for
+                em  de facto
+                |  questions).  To prove the negative in the case of
+                em  de jure
+                |  questions, consultants should provide at least two sources indicating (either directly or indirectly) that the relevant component
+                |  of the legal framework for resource governance is not in place.
+            li
+                b Question-Level Guidance
+                | : Guidelines for answering each question can be found in the RGI Tool under the
+                em  “Question Guidance”
+                |  tab that displays alongside of each question.
+            li
+                b RGI Tool
+                | : The RGI Tool has been tested to be fully compatible with Google Chrome and Apple Safari.  Consultants are therefore encouraged
+                |  to use these browsers when responding to the RGI questionnaire via the RGI Tool (available at
+                a(href="http://rgi.nrgi-assessment.org/")  http://rgi.nrgi-assessment.org/
+                | ).
