@@ -218,7 +218,7 @@ angular.module('app')
                 var fileExtensionAllowed = $scope.isAllowedFileExtension(fileItem.name);
 
                 if(!fileExtensionAllowed) {
-                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
+                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded. If this is in error, please try uploading file from desktop.');
                 }
 
                 return fileExtensionAllowed;
