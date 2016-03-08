@@ -1,10 +1,12 @@
 'use strict';
 /* global require */
 
-var Answer      = require('mongoose').model('Answer'),
+var error       = [],
+    Answer      = require('mongoose').model('Answer'),
     Assessment  = require('mongoose').model('Assessment'),
     User        = require('mongoose').model('User'),
     _           = require('underscore'),
+    async       = require('async'),
     contact     = require('../utilities/contact');
 
 exports.getAssessments = function (req, res) {
@@ -75,14 +77,13 @@ exports.createAssessments = function (req, res) {
     res.send();
 };
 
-exports.updateAssessment = function (req, res) {
+exports.updateAssessment = function (req, res, next) {
     var assessmentUpdates = req.body,
         timestamp = new Date().toISOString(),
         edit_control_id = assessmentUpdates.edit_control,
         researcher_id = assessmentUpdates.researcher_ID,
         reviewer_id = assessmentUpdates.reviewer_ID,
         contact_packet = {};
-
 
     contact_packet.assessment_title = assessmentUpdates.country + " " + assessmentUpdates.year + " " + assessmentUpdates.version;
 
@@ -95,8 +96,12 @@ exports.updateAssessment = function (req, res) {
         //var err = new Error('You are not an admin and do not have edit control!');
         res.sendStatus(404);
         return res.end();
-        //return res.send({reason: err.toString()});
     }
+    if (req.user.role === 'supervisor') {
+        contact_packet.admin_name = req.user.firstName + " " + req.user.lastName;
+        contact_packet.admin_email = req.user.email;
+    }
+
     User.findOne({_id: researcher_id}).exec(function (err, user_researcher) {
         if (user_researcher) {
             contact_packet.researcher_firstName = user_researcher.firstName;
@@ -173,13 +178,13 @@ exports.updateAssessment = function (req, res) {
                     }
 
                     _.each(assessmentUpdates.ext_reviewer_ID, function(new_reviewer) {
-                        var new_assignment = true;
+                        var new_ext_assignment = true;
                         _.each(assessment.ext_reviewer_ID, function(old_reviewer) {
                             if (new_reviewer==old_reviewer) {
-                                new_assignment = false;
+                                new_ext_assignment = false;
                             }
                         });
-                        if (new_assignment===true) {
+                        if (new_ext_assignment===true) {
                             User.findOne({_id: new_reviewer}).exec(function (err, new_ext_reviewer) {
 
                                 new_ext_reviewer.assessments.push({
@@ -188,7 +193,33 @@ exports.updateAssessment = function (req, res) {
                                 });
                                 new_ext_reviewer.save(function (err) {
                                     if (err) {
-                                        return res.send({ reason: err.toString() });
+                                        res.sendStatus(500);
+                                        return next(err);
+                                    }
+                                });
+
+                            });
+                        }
+                    });
+                    _.each(assessmentUpdates.supervisor_ID, function(new_supervisor) {
+                        var new_supervisor_assignment = true;
+                        _.each(assessment.supervisor_ID, function(old_supervisor) {
+                            console.log(new_supervisor, ' : ', old_supervisor)
+                            if (new_supervisor==old_supervisor || new_supervisor._id==old_supervisor) {
+                                new_supervisor_assignment = false;
+                            }
+                        });
+                        if (new_supervisor_assignment===true) {
+                            User.findOne({_id: new_supervisor}).exec(function (err, new_supervisor_assignment) {
+
+                                new_supervisor_assignment.assessments.push({
+                                    assessment_ID: assessment.assessment_ID,
+                                    country_name: assessment.country
+                                });
+                                new_supervisor_assignment.save(function (err) {
+                                    if (err) {
+                                        res.sendStatus(500);
+                                        return next(err);
                                     }
                                 });
 
@@ -208,7 +239,63 @@ exports.updateAssessment = function (req, res) {
                     if(assessment.status!=='trial_continue') {
                         assessment.save(function (err) {
                             if (err) {
-                                return res.send({ reason: err.toString() });
+                                res.sendStatus(500);
+                                return next(err.message);
+                            } else {
+                                //TODO deal with from email feature
+                                ///////////////////////////////
+                                // MAIL ROUTING
+                                ///////////////////////////////
+                                if (assessmentUpdates.mail === true) {
+                                    switch (assessmentUpdates.status) {
+
+                                        case 'assigned':
+                                            contact.new_assessment_assignment(contact_packet, 'researcher');
+                                            if (contact_packet.reviewer_role !== 'supervisor') {
+                                                contact.new_assessment_assignment(contact_packet, 'reviewer');
+                                            }
+                                            break;
+
+                                        //TODO Need to handle group emails
+                                        case 'researcher_trial':
+                                        case 'researcher_trial':
+                                            contact.trial_assessment_return(contact_packet);
+                                            break;
+                                        case 'trial_submitted':
+                                            contact.trial_assessment_submission(contact_packet);
+                                            break;
+                                        case 'trial_continue':
+                                            contact.trial_assessment_continue(contact_packet);
+                                            break;
+                                        case 'submitted':
+                                        case 'resubmitted':
+                                            contact.assessment_submission(contact_packet);
+                                            break;
+
+                                        case 'review_researcher':
+                                        case 'review_reviewer':
+                                            contact.flag_review(contact_packet);
+                                            break;
+
+                                        case 'assigned_researcher':
+                                        case 'assigned_reviewer':
+                                            contact.assessment_reassignment(contact_packet);
+                                            break;
+
+                                        case 'external_review':
+                                            console.log('send over to external review email');
+                                            break;
+
+                                        case 'final_approval':
+                                            console.log('final approval email');
+                                            break;
+
+                                        default:
+                                            console.log('no email action');
+                                            break;
+                                    }
+                                }
+                                res.send();
                             }
                         });
                     } else {
@@ -218,75 +305,77 @@ exports.updateAssessment = function (req, res) {
                                 answer.status = 'submitted';
                                 answer.save(function (err) {
                                     if (err) {
-                                        res.send({ reason: err.toString() });
+                                        res.sendStatus(500);
+                                        return next(err);
                                     }
                                 });
                             });
                         });
                         assessment.save(function (err) {
                             if (err) {
-                                return res.send({ reason: err.toString() });
+                                res.sendStatus(500);
+                                return next(err);
+                            } else {
+                                //TODO deal with from email feature
+                                ///////////////////////////////
+                                // MAIL ROUTING
+                                ///////////////////////////////
+                                if (assessmentUpdates.mail === true) {
+                                    switch (assessmentUpdates.status) {
+
+                                        case 'assigned':
+                                            contact.new_assessment_assignment(contact_packet, 'researcher');
+                                            if (contact_packet.reviewer_role !== 'supervisor') {
+                                                contact.new_assessment_assignment(contact_packet, 'reviewer');
+                                            }
+                                            break;
+
+                                        //TODO Need to handle group emails
+                                        case 'researcher_trial':
+                                        case 'researcher_trial':
+                                            contact.trial_assessment_return(contact_packet);
+                                            break;
+                                        case 'trial_submitted':
+                                            contact.trial_assessment_submission(contact_packet);
+                                            break;
+                                        case 'trial_continue':
+                                            contact.trial_assessment_continue(contact_packet);
+                                            break;
+                                        case 'submitted':
+                                        case 'resubmitted':
+                                            contact.assessment_submission(contact_packet);
+                                            break;
+
+                                        case 'review_researcher':
+                                        case 'review_reviewer':
+                                            contact.flag_review(contact_packet);
+                                            break;
+
+                                        case 'assigned_researcher':
+                                        case 'assigned_reviewer':
+                                            contact.assessment_reassignment(contact_packet);
+                                            break;
+
+                                        case 'external_review':
+                                            console.log('send over to external review email');
+                                            break;
+
+                                        case 'final_approval':
+                                            console.log('final approval email');
+                                            break;
+
+                                        default:
+                                            console.log('no email action');
+                                            break;
+                                    }
+                                }
+                                res.send();
                             }
                         });
                     }
 
                 });
-                //TODO deal with from email feature
-                ///////////////////////////////
-                // MAIL ROUTING
-                ///////////////////////////////
-                if (assessmentUpdates.mail === true) {
-                    switch (assessmentUpdates.status) {
-
-                        case 'assigned':
-                            contact.new_assessment_assignment(contact_packet, 'researcher');
-                            if (contact_packet.reviewer_role !== 'supervisor') {
-                                contact.new_assessment_assignment(contact_packet, 'reviewer');
-                            }
-                            break;
-
-                        //TODO Need to handle group emails
-                        case 'researcher_trial':
-                        case 'researcher_trial':
-                            contact.trial_assessment_return(contact_packet);
-                            break;
-                        case 'trial_submitted':
-                            contact.trial_assessment_submission(contact_packet);
-                            break;
-                        case 'trial_continue':
-                            contact.trial_assessment_continue(contact_packet);
-                            break;
-                        case 'submitted':
-                        case 'resubmitted':
-                            contact.assessment_submission(contact_packet);
-                            break;
-
-                        case 'review_researcher':
-                        case 'review_reviewer':
-                            contact.flag_review(contact_packet);
-                            break;
-
-                        case 'assigned_researcher':
-                        case 'assigned_reviewer':
-                            contact.assessment_reassignment(contact_packet);
-                            break;
-
-                        case 'external_review':
-                            console.log('send over to external review email');
-                            break;
-
-                        case 'final_approval':
-                            console.log('final approval email');
-                            break;
-
-                        default:
-                            console.log('no email action');
-                            break;
-                    }
-                }
             });
         });
     });
-
-    res.send();
 };

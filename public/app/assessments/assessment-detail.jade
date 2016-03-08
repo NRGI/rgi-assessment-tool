@@ -75,6 +75,7 @@
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
                     | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
+                .row {{assessment.supervisor_ID}}
 
 
             rgi-assessment-detail-table(ng-if="!current_user.isExternalReviewer() || assessment_counters.complete / assessment_counters.length >= externalThreshold")

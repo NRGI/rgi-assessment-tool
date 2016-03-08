@@ -63,6 +63,9 @@ angular
         $scope.assignAssessmentExternalDialog = function (assessment) {
             rgiDialogFactory.assessmentExternalAssign($scope, assessment);
         };
+        $scope.assignAssessmentSupervisorDialog = function (assessment) {
+            rgiDialogFactory.assessmentSupervisorAssign($scope, assessment);
+        };
 
         $scope.reassignAssessmentDialog = function (assessment) {
             rgiDialogFactory.assessmentAssign($scope, assessment);

@@ -27,8 +27,8 @@ angular
                     });
 
                 //get assessment info
-                user.assessments.forEach(function(el, i) {
-                    user.assessments[i].details = rgiAssessmentSrvc.get({assessment_ID: el.assessment_ID});
+                user.assessments.forEach(function(assessment) {
+                    assessment.details = rgiAssessmentSrvc.get({assessment_ID: assessment.assessment_ID});
                 });
                 $scope.users.push(user);
             });

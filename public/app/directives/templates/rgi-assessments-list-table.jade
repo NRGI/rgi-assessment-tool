@@ -15,6 +15,8 @@ div.top-padding-lg
                 //th.col-md-1.text-center Questions Complete/Flagged
                 th.col-md-1
                 th.col-md-1
+                th.col-md-1
+
         tbody
             tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
                 //ASSESSMENT
@@ -133,7 +135,16 @@ div.top-padding-lg
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.center-block.btn-primary(
                     ng-disabled="assessment.status==='unassigned'"
-                    ng-click="assignAssessmentExternalDialog(assessment)") Assign external
+                    ng-click="assignAssessmentExternalDialog(assessment)")
+                        | Assign
+                        br
+                        | external
+                //CONTROL BUTTON 1 -ADMIN
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    button.btn.btn-col.center-block.btn-primary(ng-click="assignAssessmentSupervisorDialog(assessment)")
+                        | Assign
+                        br
+                        | supervisor
                 //CONTROL BUTTON 2 - ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.btn-primary(

@@ -33,9 +33,7 @@ div.table-responsive
                 td.col-sm-1 {{user.role|role|ucfirst}}
                 td.col-sm-1 {{user.last_sign_in["date-time"] | date:'MM/dd/yyyy'}}
                 td.col-sm-7
-                    table.table(
-                    ng-if="user.role!=='supervisor'"
-                    style="margin-top: -6px; margin-bottom: -9px")
+                    table.table(style="margin-top: -6px; margin-bottom: -9px")
                         tr(ng-repeat="assessment in user.assessments")
                             td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
                             td.col-sm-1
