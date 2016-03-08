@@ -75,7 +75,11 @@
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
                     | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
-                .row {{assessment.supervisor_ID}}
+                .row(ng-if="current_user.isSupervisor()")
+                    | Supervisors:
+                    text(ng-repeat="sup in assessment.supervisor_ID")
+                        |  {{sup.firstName}} {{sup.lastName}}
+                        span(ng-if="!$last") ,
 
 
             rgi-assessment-detail-table(ng-if="!current_user.isExternalReviewer() || assessment_counters.complete / assessment_counters.length >= externalThreshold")
