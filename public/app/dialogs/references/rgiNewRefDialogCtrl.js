@@ -120,8 +120,10 @@ angular.module('app')
                                 .then(function () {
                                     $scope.closeThisDialog();
                                     $scope.answer_update.human_ref_comment = "";
-                                    $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                                     $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
+                                    $timeout(function() {
+                                        $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                                    }, 1000);
                                     rgiNotifier.notify('Reference added');
                                 }, function (reason) {
                                     rgiNotifier.error(reason);
