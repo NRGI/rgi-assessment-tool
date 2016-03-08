@@ -125,6 +125,7 @@ div.top-padding-lg
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.center-block.btn-primary(
                     ng-click="assignAssessmentDialog(assessment)"
+                    ng-disabled="assessment.supervisor_ID.length < 1"
                     ng-if="assessment.status=='unassigned'"
                     ) Assign
                     //TODO add reassign assessment dialog
@@ -134,7 +135,7 @@ div.top-padding-lg
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.center-block.btn-primary(
-                    ng-disabled="assessment.status==='unassigned'"
+                    ng-disabled="assessment.status==='unassigned' || assessment.supervisor_ID.length < 1"
                     ng-click="assignAssessmentExternalDialog(assessment)")
                         | Assign
                         br
