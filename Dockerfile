@@ -25,5 +25,5 @@ RUN		cd /src && bower install --allow-root
 
 EXPOSE  80
 
-CMD     ["node", "/src/server.js"]
-#CMD     ["/src/node_modules/forever/bin/forever", "start", "-c", "node --harmony", "/src/server.js"]
+#CMD     ["node", "/src/server.js"]
+CMD     ["/src/node_modules/forever/bin/forever", "start", "-c", "node --harmony", "/src/server.js"]
