@@ -28,14 +28,22 @@ angular
 
         var updateAnswer = function(answerData, status, notificationMessage, additionalCondition) {
             answerData.status = status;
+            var next_answer,
+                answer_order = $scope.$parent.answer.question_order,
+                assessment_ID = $scope.$parent.assessment.assessment_ID,
+                assessment_status = $scope.$parent.assessment.status;
+
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData) && additionalCondition) {
-                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(answerData));
-                    } else {
-                        $location.path(rootUrl + '/' + answerData.assessment_ID);
-                    }
-
+                    rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+                        if (answer_order !== answers.length && assessment_status !== 'trial_started' && assessment_status !== 'trial_submitted'){
+                            next_answer = String(rgiUtilsSrvc.zeroFill((answer_order+1), 3));
+                            console.log(next_answer);
+                            $location.path(rootUrl + '/answer/' + assessment_ID + "-" + next_answer);
+                        } else {
+                            $location.path(rootUrl + '/' + assessment_ID);
+                        }
+                    });
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
