@@ -1,37 +1,105 @@
 .container(ng-controller="rgiNavBarLoginCtrl")
 	.jumbotron
 		h1 NRGI Resource Governance Index Assessment Tool
-		p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the assessment to RGI Assessment Tool Portal.
+		p(ng-show="identity.isAuthenticated()") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}, welcome to the RGI Assessment Tool Portal.
 		p(ng-show="!identity.isAuthenticated()") Please log in. 
 
 	div(ng-show="identity.isAuthenticated()").right-padding-lg.left-padding-lg
-		h4 Welcome to the RGI Assessment tool.
-		p The questionnaire consists of 135 questions.
-		p You can navigate through the questionnaire by sorting it according to question order or status (i.e. whether you have completed a question or not).
-		p For each question, researchers should choose among multiple answer choices. If you select “Partial” as answer criteria, please provide an explanation.
-		p Researchers should select the answer choice that seems most applicable and then provide a citation:
-		p
-			ol(type="1")
-				li A URL (for example: https://mem.go.tz/wpcontent/uploads/2014/02/0013_11032013_Mining_Act_2010.pdf) reference or citation to an official document that supports or provides foundation for the researcher’s answer choice, 
-				li A reference or citation to an interview with a government official, civil society activist and local industry expert including their phone and email contact details, 
-				li A comment providing evidence for the answer chosen, or
-				li A reference to relevant newspaper articles, academic papers, books or reports by international institutions.
-		p Researchers will also be expected to supply electronic (PDF) versions and/or websites of publicly available key documents used in answering the questionnaire. The information management tool allows researchers to upload these documents or provide relevant web links. These include, but are not limited to:
-		p
-			ul
-				li Legislation
-				li Government reports
-				li Contracts
-				li Environmental and social impact reports
-				li Petroleum, Gas and Mining Statistical Reports or Databases
-				li Annual and In-Year Reports
-				li EITI Reports
-				li Auditor’s Reports
-				li Other documents such as interview notes or transcripts of responses.
-		p Researchers should also provide any additional information which may be relevant in the “Comment” section. Each question includes a “not applicable/other” option. This option should only be used in cases where the question does not apply at all to the country in question. For instance, “not applicable/other” would apply to questions about Special Resource Funds or State-Owned Companies in a country that has neither. In all cases where the researcher selects the “not applicable/other” answer choice, s/he should provide an explanation of why this option was chosen in the “Comment” section, including cases where researchers are unable to find the information or are not qualified to answer the question.
-		p Researchers should privilege documents that are publicly available in completing the questionnaire. If one or more of the key documents has been attained through special means (that would not be available to the general public) this should be noted in the space for sources and comments.
-		p Once you have completed a question, you need to press submit. You can also save a partial answer to a question and return later to complete it. 
-		p You can only submit the entire questionnaire as completed once you have submitted answers to all questions. 
-		p Please note that in the word document of the questionnaire, you will find a column entitled Guidance Notes that will provide information to help you with answering the questions. 
-
-
+		h4 Welcome to the Resource Governance Index (RGI) Assessment Tool.
+		p As a consultant on the RGI project, you will use this tool to answer your assigned questionnaire.
+			| Please refer to the
+			em: a(href="")  Tool Guide for Researchers and Peer Reviewers
+			|  to learn how to use this platform.
+		p The RGI 2016 questionnaire is comprised of 168 questions. These are grouped into seven precepts covering the following issue areas:
+		ul
+			li
+				b Precept 2
+				| :
+				em  Accountability and transparency (natural resource wealth, contracts, EITI)
+			li
+				b Precept 3
+				| :
+				em  Exploration and license allocation (licensing policies and procedures)
+			li
+				b Precept 4
+				| :
+				em  Taxation (fiscal terms, company payments)
+			li
+				b Precept 5
+				| :
+				em  Local effects (environmental and social impacts, community involvement)
+			li
+				b Precept 6
+				| :
+				em  Nationally-owned resource companies
+			li
+				b Precept 7
+				| :
+				em  Revenue distribution (general issues, subnational transfers)
+			li
+				b Precept 8
+				| :
+				em  Revenue volatility (natural resource funds)
+		p Consultants are encouraged to read carefully read the
+			em Guide for Researchers and Peer Reviewers Consultants
+			|  and consider should keep in mind the following points while completing the questionnaire:
+		ol
+			li
+				b Sector of Focus
+				| : Answer the questionnaire with reference to the sector specified in your TOR (i.e. oil/gas or minerals).
+			li
+				b Mineral of Focus
+				| : If the sector specified in your TOR is minerals, answer
+				em  de facto
+				|  questions on data disclosure with respect to the specific mineral indicated by your RGI country coordinator.
+			li
+				b Publicly Available Information
+				| : Answer the questionnaire on the basis of publicly available information, defined as information that is:
+				ul
+					li Published by the institution or agency responsible for producing it within a given timeframe; and
+					li Available at no cost to any person who wants the document, including in cases where a direct request
+						|  must be made to the relevant institution or agency.
+			li
+				b Interviews
+				| : Interview do not constitute publicly available information, and should only be used in cases where the
+				|  information necessary to answer a question is not available via other channels (as described more fully in the
+				em  Guide for Researchers and Peer Reviewers
+				| ).
+			li
+				b Time Period Under Study
+				| : For de facto questions, answer the questionnaire with reference to events taking place from January 2015 onwards
+				|  or during the most recently concluded fiscal year (as specified for each question).
+				ul
+					li If no events took place during the time period specified in the question, answer the question based on the
+						|  most recent event taking place (i.e. the most recent event taking place prior to January 2015, or
+						|  during the previous full fiscal year).
+			li
+				b What Constitutes a “Complete” Response
+				| : For a response to be considered “complete”, consultants must provide the following information when responding to each question:
+				ul
+					li An answer selection.
+					li A text justification explaining the answer selection.
+					li Full reference information for all sources that informed the answer selection.
+					li PDF copies of all sources that informed the answer selection.
+			li
+				b “Proving the Negative”
+				| : Answering certain RGI questions requires consultants researchers to demonstrate the absence of a key component of the legal
+				|  framework for resource governance (for
+				em  de jure
+				|  questions), or the absence of an event taking place (for
+				em  de facto
+				|  questions).  To prove the negative in the case of
+				em  de jure
+				|  questions, consultants should provide at least two sources indicating (either directly or indirectly) that the relevant component
+				|  of the legal framework for resource governance is not in place.
+			li
+				b Question-Level Guidance
+				| : Guidelines for answering each question can be found in the RGI Tool under the
+				em  “Question Guidance”
+				|  tab that displays alongside of each question.
+			li
+				b RGI Tool
+				| : The RGI Tool has been tested to be fully compatible with Google Chrome and Apple Safari.  Consultants are therefore encouraged
+				|  to use these browsers when responding to the RGI questionnaire via the RGI Tool (available at
+				a(href="http://rgi.nrgi-assessment.org/")  http://rgi.nrgi-assessment.org/
+				| ).
