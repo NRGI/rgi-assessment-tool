@@ -91,15 +91,16 @@ exports.updateAssessment = function (req, res, next) {
         contact_packet.admin_name = req.user.firstName + " " + req.user.lastName;
         contact_packet.admin_email = req.user.email;
     }
-    //TODO make sure i can res.send without breaking functino
-    if (String(req.user._id) !== String(edit_control_id) && !req.user.hasRole('supervisor')) {
-        //var err = new Error('You are not an admin and do not have edit control!');
-        res.sendStatus(404);
-        return res.end();
-    }
-    if (req.user.role === 'supervisor') {
-        contact_packet.admin_name = req.user.firstName + " " + req.user.lastName;
-        contact_packet.admin_email = req.user.email;
+    //TODO make sure i can res.send without breaking function
+    contact_packet.admin = [];
+
+    if (assessmentUpdates.supervisor_ID) {
+        assessmentUpdates.supervisor_ID.forEach(function (sup) {
+            contact_packet.admin.push({
+                name: sup.firstName + ' ' + sup.lastName,
+                email: sup.email,
+            });
+        });
     }
 
     User.findOne({_id: researcher_id}).exec(function (err, user_researcher) {

@@ -38,7 +38,7 @@ exports.techSend = function (req, res) {
     //send an e-mail to technical support
     mandrill('/messages/send', {
         message: {
-            to: [{email: 'tech-support@resourcegovernance.org', name: 'Assessment tool tech support'}],
+            to: [{email: siteEmail, name: 'Assessment tool tech support'}],
             from_email: message_content.email,
             subject: issue_tool + ' Issue: ' + message_content.issue.value,
             html: "Hi,<p>" +
@@ -129,10 +129,10 @@ exports.new_assessment_assignment = function (contact_packet, type) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet[type + '_email'], name: contact_packet[type + '_fullName']}],
-            from_email: 'rgi-admin@resourcegovernance.org',
+            from_email: contact_packet.admin[0],
             subject: contact_packet.assessment_title + ' assessment assigned!',
             html: "Hello " + contact_packet[type + '_firstName'] + ",<p>" +
-            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just assigned the " + contact_packet.assessment_title + " assessement to you.<p>" +
+            "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just assigned the " + contact_packet.assessment_title + " assessement to you.<p>" +
             "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to start the assessment.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
@@ -148,12 +148,7 @@ exports.trial_assessment_submission = function (contact_packet) {
     //send an email to team that assessment is ready
     mandrill('/messages/send', {
         message: {
-            to: [
-                {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
-                {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
-                {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
-                {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
-            ],
+            to: contact_packet.admin,
             from_email: contact_packet.editor_email,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
@@ -170,7 +165,7 @@ exports.trial_assessment_submission = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: "rgi-admin@resourcegovernance.org",
+            from_email: contact_packet.admin[0],
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps. " +
@@ -189,12 +184,7 @@ exports.assessment_submission = function (contact_packet) {
     //send an email to team that assessment is ready
     mandrill('/messages/send', {
         message: {
-            to: [
-                {email: 'RGI-admin@resourcegovernance.org', name: 'RGI Team'},
-                {email: 'ahasemann@resourcegovernance.org', name: 'Anna Hasemann'},
-                {email: 'cperry@resourcegovernance.org', name: 'Chris Perry'},
-                {email: 'jcust@resourcegovernance.org', name: 'Jim Cust'}
-            ],
+            to: contact_packet.admin,
             from_email: contact_packet.editor_email,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
@@ -211,7 +201,7 @@ exports.assessment_submission = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: "rgi-admin@resourcegovernance.org",
+            from_email: contact_packet.admin[0],
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " assessment was sent to the admin team. We will be in contact shortly with next steps." +
@@ -230,10 +220,10 @@ exports.trial_assessment_return = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin_email,
+            from_email: contact_packet.admin,
             subject: contact_packet.assessment_title + ' assessment returned for review!',
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
-            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " trial assessement to you. " +
+            "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " trial assessement to you. " +
             "There are a few errors we'd like you to address before moving the assessment on.<p>" +
             "Please go to your <a href='" + config.baseUrl + "/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
             "Thanks!<p>" +
@@ -250,10 +240,10 @@ exports.flag_review = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin_email,
+            from_email: contact_packet.admin,
             subject: contact_packet.assessment_title + ' assessment returned for review!',
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
-            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. " +
+            "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. " +
             "There are a few errors we'd like you to address before moving the assessment on.<p>" +
             "Please go to your <a href='" + config.baseUrl + "/assessments'>assessment dashboard</a> to take a look at flagged answers in the assessment.<p>" +
             "Thanks!<p>" +
@@ -270,10 +260,10 @@ exports.assessment_reassignment = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin_email,
+            from_email: contact_packet.admin,
             subject: "Please begin work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
-            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>" +
+            "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>" +
             "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a>.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
@@ -289,10 +279,10 @@ exports.trial_assessment_continue = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin_email,
+            from_email: contact_packet.admin,
             subject: "Please continue work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
-            "<a href='" + contact_packet.admin_email + "'>" + contact_packet.admin_name + "</a> just approved your initial answers on the " + contact_packet.assessment_title + " assessement.<p>" +
+            "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just approved your initial answers on the " + contact_packet.assessment_title + " assessement.<p>" +
             "Please go to your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to continue.<p>" +
             "Thanks!<p>" +
             "The RGI Team."
