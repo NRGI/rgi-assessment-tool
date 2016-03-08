@@ -27,5 +27,3 @@ EXPOSE  80
 
 CMD     ["/src/node_modules/forever/bin/forever","/src/server.js"]
 #CMD     ["node", "/src/server.js"]
-#CMD     ["/src/node_modules/forever/bin/forever","start","-c","/src/server.js"]
-#CMD     ["/src/node_modules/forever/bin/forever", "start", "-c", "node --harmony", "/src/server.js"]
