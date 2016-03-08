@@ -205,7 +205,6 @@ exports.updateAssessment = function (req, res, next) {
                     _.each(assessmentUpdates.supervisor_ID, function(new_supervisor) {
                         var new_supervisor_assignment = true;
                         _.each(assessment.supervisor_ID, function(old_supervisor) {
-                            console.log(new_supervisor, ' : ', old_supervisor)
                             if (new_supervisor==old_supervisor || new_supervisor._id==old_supervisor) {
                                 new_supervisor_assignment = false;
                             }

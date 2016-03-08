@@ -126,10 +126,11 @@ exports.delete_user_confirmation = function (contact_packet) {
 
 // email when assessment is assigned
 exports.new_assessment_assignment = function (contact_packet, type) {
+    console.log(contact_packet);
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet[type + '_email'], name: contact_packet[type + '_fullName']}],
-            from_email: contact_packet.admin[0],
+            from_email: contact_packet.admin[0].email,
             subject: contact_packet.assessment_title + ' assessment assigned!',
             html: "Hello " + contact_packet[type + '_firstName'] + ",<p>" +
             "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just assigned the " + contact_packet.assessment_title + " assessement to you.<p>" +
@@ -165,7 +166,7 @@ exports.trial_assessment_submission = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin[0],
+            from_email: contact_packet.admin[0].email,
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " trial assessment was sent to the admin team. We will be in contact shortly with next steps. " +
@@ -201,7 +202,7 @@ exports.assessment_submission = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin[0],
+            from_email: contact_packet.admin[0].email,
             subject: contact_packet.assessment_title + " recieved.",
             html: "Hi "+ contact_packet.editor_fullName + ",<p>" +
             "Your submission of the " + contact_packet.assessment_title + " assessment was sent to the admin team. We will be in contact shortly with next steps." +
@@ -220,7 +221,7 @@ exports.trial_assessment_return = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin,
+            from_email: contact_packet.admin[0].email,
             subject: contact_packet.assessment_title + ' assessment returned for review!',
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " trial assessement to you. " +
@@ -240,7 +241,7 @@ exports.flag_review = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin,
+            from_email: contact_packet.admin[0].email,
             subject: contact_packet.assessment_title + ' assessment returned for review!',
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " assessement to you. " +
@@ -260,7 +261,7 @@ exports.assessment_reassignment = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin,
+            from_email: contact_packet.admin[0].email,
             subject: "Please begin work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just returned the " + contact_packet.assessment_title + " assessement to your control.<p>" +
@@ -279,7 +280,7 @@ exports.trial_assessment_continue = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.editor_email, name: contact_packet.editor_fullName}],
-            from_email: contact_packet.admin,
+            from_email: contact_packet.admin[0].email,
             subject: "Please continue work on the " + contact_packet.assessment_title + " assessment!",
             html: "Hello " + contact_packet.editor_firstName + ",<p>" +
             "<a href='" + contact_packet.admin[0].email + "'>" + contact_packet.admin[0].name + "</a> just approved your initial answers on the " + contact_packet.assessment_title + " assessement.<p>" +
