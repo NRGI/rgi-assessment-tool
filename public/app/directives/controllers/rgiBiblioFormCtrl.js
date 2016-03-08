@@ -11,7 +11,7 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.ref_type = [
             {text: 'Add Document', value: 'document'},
-            {text: 'Add Webpage', value: 'webpage'},
+            //{text: 'Add Webpage', value: 'webpage'},
             {text: 'Add Interview', value: 'interview'}
         ];
 
