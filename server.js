@@ -1,6 +1,6 @@
 'use strict';
 
-//require('newrelic');
+require('newrelic');
 
 var express         = require('express');
 
