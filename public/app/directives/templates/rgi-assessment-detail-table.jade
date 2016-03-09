@@ -57,7 +57,9 @@ div(id="answers_div").bottom-padding-med
                             td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control===current_user._id")
                                 a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted' && assessment.status!=='trial_submitted'"
-                                href="/assessments/answer/{{answer.answer_ID}}") Edit answer
+                                href="/assessments/answer/{{answer.answer_ID}}")
+                                    text(ng-if="answer.status==='assigned'") Start answer
+                                    text(ng-if="answer.status!=='assigned'") Edit answer
                                 a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
                                 href="/assessments/answer/{{answer.answer_ID}}") Edit answer
                                 a.btn.center-block.btn-default(
