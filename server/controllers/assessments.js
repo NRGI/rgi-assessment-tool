@@ -78,7 +78,8 @@ exports.createAssessments = function (req, res) {
 };
 
 exports.updateAssessment = function (req, res, next) {
-    var assessmentUpdates = req.body,
+    var assessment_init = false,
+        assessmentUpdates = req.body,
         timestamp = new Date().toISOString(),
         edit_control_id = assessmentUpdates.edit_control,
         researcher_id = assessmentUpdates.researcher_ID,
@@ -129,6 +130,9 @@ exports.updateAssessment = function (req, res, next) {
                 }
 
                 Assessment.findOne({_id: assessmentUpdates._id}).exec(function (err, assessment) {
+                    if (assessment.status === 'unassigned') {
+                        assessment_init = true;
+                    }
                     if (err) {
                         res.sendStatus(400);
                         return res.send({ reason: err.toString() });
@@ -259,7 +263,14 @@ exports.updateAssessment = function (req, res, next) {
                                         //TODO Need to handle group emails
                                         case 'researcher_trial':
                                         case 'researcher_trial':
-                                            contact.trial_assessment_return(contact_packet);
+                                            if (assessment_init) {
+                                                contact.new_assessment_assignment(contact_packet, 'researcher');
+                                                if (contact_packet.reviewer_role !== 'supervisor') {
+                                                    contact.new_assessment_assignment(contact_packet, 'reviewer');
+                                                }
+                                            } else {
+                                                contact.trial_assessment_return(contact_packet);
+                                            }
                                             break;
                                         case 'trial_submitted':
                                             contact.trial_assessment_submission(contact_packet);
