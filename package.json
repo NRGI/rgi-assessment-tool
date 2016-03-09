@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/NRGI/rgi-assessment-tool",
   "dependencies": {
+    "async": "^1.5.2",
     "aws-sdk": "^2.1.24",
     "body-parser": "^1.9.2",
     "bootstrap": "^3.3.1",
