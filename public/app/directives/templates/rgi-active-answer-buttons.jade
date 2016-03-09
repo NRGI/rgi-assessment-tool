@@ -1,11 +1,5 @@
 //- Active buttons
 .col-md-pull-2
-    button.btn.btn-primary(
-    ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && assessment.status!=='submitted' && assessment.status!=='trial_submitted') || current_user.isSupervisor()"
-    ) Save answer
-    | &nbsp;
-
     button.btn.btn-success(
     ng-click="answerResubmit()"
     ng-if="assessment.edit_control===current_user._id && assessment.status==='review_' + current_user.role"
@@ -16,6 +10,12 @@
     ng-click="answerSubmit()"
     ng-if="assessment.edit_control===current_user._id && (['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1)"
     ) Mark complete
+    | &nbsp;
+
+    button.btn.btn-primary(
+    ng-click="answerSave()"
+    ng-if="(assessment.edit_control===current_user._id && assessment.status!=='submitted' && assessment.status!=='trial_submitted') || current_user.isSupervisor()"
+    ) Save answer
     | &nbsp;
 
     button.btn.btn-success(
