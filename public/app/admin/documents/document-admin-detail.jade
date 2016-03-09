@@ -64,7 +64,7 @@
                                     .row
                                         label Source:
                                     .row(ng-if="document.source")
-                                        a(href="document.source") {{document.source}}
+                                        a(href="{{document.source}}") {{document.source}}
                                     .row(ng-if="!document.source")
                                         text N/A
                                 td.col-med-3
