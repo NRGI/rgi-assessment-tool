@@ -29,12 +29,6 @@
                         h3: em.bottom-padding-med.col-md-11 Question {{question.question_label}}: {{question.question_text}}
                             text(ng-if="question.dejure")  (Dejure)
                             text(ng-if="!question.dejure")  (Defacto)
-                        //i.glyphicon.glyphicon-question-sign(
-                        //popover-template="dynamicPopover.templateUrl"
-                        //popover-title="Guidance note"
-                        //popover-placement="bottom")
-                        //script(type="text/ng-template" id="myPopoverTemplate.html")
-                        //    div(ng-bind-html="question.question_guidance_text")
 
                     // Previous answers
                     .row.bottom-padding-med
@@ -47,8 +41,7 @@
                     .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                         rgi-flag-tabs
 
-                    ////.row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
-                    .row(ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
+                    .row(ng-if="answer.external_answer.length!==0")
                         rgi-external-answer-tabs(answer="answer")
 
                     // Answer form
