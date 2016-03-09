@@ -8,8 +8,7 @@ var crypto              =   require('crypto'),
     Answer              =   require('mongoose').model('Answer'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
-    screenshot          =   require('url-to-screenshot'),
-    Jimp                =   require("jimp"),
+    phantom             =   require('phantom'),
     //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
     client              =   s3.createClient({
@@ -97,47 +96,58 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 };
 
 exports.uploadUrlSnapshot = function(req, res) {
-    screenshot(req.query.url).height(12000).capture(function(errorCapture, img) {
-        if (errorCapture) {
-            res.send({error: errorCapture});
-        } else {
-            var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
-            fs.writeFile(filePath, img, 'binary', function(writeOriginalImageError) {
-                if(writeOriginalImageError) {
-                    res.send({error: writeOriginalImageError});
-                } else {
-                    Jimp.read(filePath, function (readError, originalImage) {
-                        if(readError) {
-                            res.send({error: readError});
-                        } else {
-                            originalImage.flip(false, true).autocrop(function(cropError, croppedImage) {
-                                if(cropError) {
-                                    res.send({error: cropError});
-                                } else {
-                                    croppedImage.flip(false, true).write(filePath, function(writeCroppedImageError) {
-                                        if(writeCroppedImageError) {
-                                            res.send({error: writeCroppedImageError});
-                                        } else {
-                                            uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
-                                                function (errorUpload, doc) {
-                                                    fs.unlink(filePath);
+    var width = 1024, height = 768;
 
-                                                    if(errorUpload) {
-                                                        res.send({error: errorUpload});
-                                                    } else {
-                                                        res.send({result: doc});
-                                                    }
-                                                }
-                                            );
+    phantom.create().then(function(ph) {
+        ph.createPage().then(function(page) {
+            page.property('viewportSize', {width: width, height: height}).then(function() {
+                page.open(req.query.url).then(function() {
+                    page.evaluate(function() {
+                        return document.body.offsetHeight;
+                    }).then(function(actualHeight) {
+                        if(actualHeight > 3000) {
+                            res.send({error: 'TOO_LARGE_SIZE'});
+                        } else {
+                            page.property('viewportSize', {width: width, height: actualHeight}).then(function() {
+                                page.open(req.query.url).then(function() {
+                                    var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
+                                    page.render(filePath);
+
+                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
+                                        function (errorUpload, doc) {
+                                            fs.unlink(filePath);
+
+                                            if(errorUpload) {
+                                                res.send({error: 'S3_TRANSFER_FAILURE'});
+                                            } else {
+                                                res.send({result: doc});
+                                            }
                                         }
-                                    });
-                                }
+                                    );
+
+                                    page.close();
+                                    ph.exit();
+                                }).catch(function() {
+                                    res.send({error: 'PAGE_CONNECT_FAILURE'});
+                                });
+                            }).catch(function() {
+                                res.send({error: 'VIEWPORT_RESIZE_FAILURE'});
                             });
                         }
+                    }).catch(function() {
+                        res.send({error: 'PAGE_DEFINE_HEIGHT_FAILURE'});
                     });
-                }
+                }).catch(function() {
+                    res.send({error: 'PAGE_CONNECT_FAILURE'});
+                });
+            }).catch(function() {
+                res.send({error: 'VIEWPORT_RESIZE_FAILURE'});
             });
-        }
+        }).catch(function() {
+            res.send({error: 'PAGE_OPEN_FAILURE'});
+        });
+    }).catch(function() {
+        res.send({error: 'PHANTOM_INITIALIZATION_FAILURE'});
     });
 };
 
