@@ -5,13 +5,13 @@ div.top-padding-lg
                 th.col-sm-1 Assessment
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
+                th.col-sm-1 Status
                 th.text-center.col-sm-1 Assigned
                 th.text-center.col-sm-1 Started
                 th.text-center.col-sm-1 Submitted
                 th.text-center.col-sm-1 Reviewed
                 th.text-center.col-sm-1 Approve
                 th.text-center.col-sm-1 Last Edit
-                th.col-sm-1 Status
                 //th.col-md-1.text-center Questions Complete/Flagged
                 th.col-md-1
                 th.col-md-1
@@ -38,6 +38,18 @@ div.top-padding-lg
                     span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer_ID._id")
                     a(href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}} {{assessment.reviewer_ID.lastName}}
                 td.col-sm-1(ng-if="!assessment.reviewer_ID && current_user.isSupervisor()") Not assigned
+                //STATUS
+                td.col-sm-1 {{assessment.status | addSpaces | ucfirst}}
+                ////QUESTIONS COMPLETE
+                //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
+                //td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
+                //QUESTIONS FLAGGED
+                //td.text-center.col-md-1
+                //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_complete}}
+                //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
+                //td.text-center.col-md-1
+                //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
+                //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
                 //ASSIGNED DATE
                 td.col-sm-1
                     div.text-center
@@ -109,18 +121,6 @@ div.top-padding-lg
                     popover="{{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                     popover-trigger="mouseenter")
                 td.col-sm-1(ng-if="!assessment.last_modified")
-                //STATUS
-                td.col-sm-1 {{assessment.status | addSpaces | ucfirst}}
-                ////QUESTIONS COMPLETE
-                //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
-                //td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
-                //QUESTIONS FLAGGED
-                //td.text-center.col-md-1
-                //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_complete}}
-                //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
-                //td.text-center.col-md-1
-                //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
-                //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     button.btn.btn-col.center-block.btn-primary(
