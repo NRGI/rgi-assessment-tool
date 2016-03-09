@@ -106,6 +106,31 @@ function createDefaultInterviewees() {
                 users: [],
                 creationDate: Date.now()
             });
+            Interviewee.create({
+                firstName: "Anonymous",
+                lastName: "Interviewee",
+                email: "",
+                phone: "",
+                role: "anon", // gov, industry, CSO, expert or other
+                assessments: ["AF-2015-PI"],
+                questions: [],
+                answers: [],
+                users: [],
+                creationDate: Date.now()
+            });
+        } else if (collection.length === 0 && process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'question_staging') {
+            Interviewee.create({
+                firstName: "Anonymous",
+                lastName: "Interviewee",
+                email: "",
+                phone: "",
+                role: "anon", // gov, industry, CSO, expert or other
+                assessments: ["AF-2015-PI"],
+                questions: [],
+                answers: [],
+                users: [],
+                creationDate: Date.now()
+            });
         }
     });
 }
