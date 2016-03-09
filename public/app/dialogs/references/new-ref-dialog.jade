@@ -30,12 +30,13 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
             .form-horizontal
                 fieldset
                     .form-group
-                        .row: h4 New document
+                        .row: h4 Please select a document from your computer:
                         .row.bottom-padding-med
                             div.fileUpload.btn.btn-default
                                 span Select File
                                 input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
-                        .row: h5 OR
+                        .row: h4: b OR
+                        .row: h4 Please supply a remote file url:
                         .row: form(name="remoteFileForm").form-group
                             .col-md-8
                                 input.form-control(
