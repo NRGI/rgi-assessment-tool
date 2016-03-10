@@ -4,7 +4,7 @@
             legend.h3.page-header {{title}}
             div.bottom-padding-med: button.btn.btn-success(ng-click="newResourceDialog()") Create new block
             div.left-padding-med.right-padding-med
-                div.panel.panel-primary(ng-repeat="resource in resources | orderObjectBy:resource.order")
+                div.panel.panel-primary(ng-repeat="resource in resources")
                     div.panel-heading.bottom-padding-med
                         .panel-title
                             div(
