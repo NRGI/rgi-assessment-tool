@@ -29,7 +29,7 @@ angular.module('app')
                 rgiNotifier.error('You must select a role!');
             } else {
                 rgiUserMethodSrvc.createUser(new_user_data).then(function () {
-                    rgiNotifier.notify('User account created! ' + $scope.email);
+                    rgiNotifier.notify('User account created! ' + new_user_data.email);
                     $location.path('/admin/user-admin');
                 }, function (reason) {
                     var err_str = reason.replace('Path ','');
