@@ -190,7 +190,7 @@ table[ts-wrapper="ts-wrapper"] .tablesort-desc {
 .assessment-assign-block {
   margin-bottom: 2px;
 }
-.assessment-list .btn {
+.assessment-list-supervisor .btn {
   white-space: normal;
 }
 @-moz-keyframes sk-bounce {

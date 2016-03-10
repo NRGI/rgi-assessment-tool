@@ -1,8 +1,8 @@
-div.top-padding-lg
-    table.table.table-hover.assessment-list
+.top-padding-lg(ng-class="{'assessment-list-supervisor': current_user.isSupervisor()}")
+    table.table.table-hover
         thead
             tr
-                th.col-sm-1 Assessment
+                th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Assessment
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
                 th.col-sm-1.text-center Assigned
@@ -10,8 +10,8 @@ div.top-padding-lg
                 th.col-sm-1.text-center Submitted
                 th.col-sm-1.text-center Reviewed
                 th.col-sm-1.text-center Approve
-                th.col-sm-1.text-center Last Edit
-                th.col-sm-1 Status
+                th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Last Edit
+                th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Status
                 //th.col-md-1.text-center Questions Complete/Flagged
                 th.col-sm-1.assessment-actions(ng-if="current_user.isSupervisor()")
                 th.col-sm-1
@@ -19,7 +19,7 @@ div.top-padding-lg
         tbody
             tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
                 //ASSESSMENT
-                td.col-sm-1
+                td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}")
                     div(ng-if="!current_user.isSupervisor() || assessment.status === 'unassigned'")
                         text {{assessment.year}} {{assessment.country}} {{assessment.version}}
                     div(ng-if="current_user.isSupervisor() && assessment.status !== 'unassigned'")
@@ -99,7 +99,7 @@ div.top-padding-lg
                         popover-trigger="mouseenter")
                         em(ng-if="!assessment.approval_date") N/A
                 //LAST EDIT
-                td.col-sm-1
+                td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}")
                     div(ng-if="assessment.last_modified")
                         a(
                         href="mailto:{{assessment.last_modified.user.email}}"
@@ -110,7 +110,7 @@ div.top-padding-lg
                         ng-if="assessment.last_modified"
                         popover="{{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                         popover-trigger="mouseenter")
-                td.col-sm-1 {{assessment.status | addSpaces | ucfirst}}
+                td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") {{assessment.status | addSpaces | ucfirst}}
                 ////QUESTIONS COMPLETE
                 //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
                 //td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
