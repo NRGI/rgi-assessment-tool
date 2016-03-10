@@ -11,7 +11,7 @@ div(id="questions_div").bottom-padding-med
                     ng-model="search_text"
                     placeholder="Filter")
     div.panel.panel-primary(
-    ng-repeat="(key, value) in questions | orderObjectBy:value.order:order_reverse"
+    ng-repeat="(key, value) in questions"
     ng-if="value.section_len > 0")
         div.panel-heading.bottom-padding-med
             .panel-title
