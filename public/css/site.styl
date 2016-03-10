@@ -184,10 +184,36 @@ table[ts-wrapper="ts-wrapper"] .tablesort-asc, table[ts-wrapper="ts-wrapper"] .t
   background-color: #ddd
 
 .assessment-actions
-  min-width: 110px
+  min-width 110px
 
-.assessment-assign-block
-  margin-bottom: 2px
+.assessment-list-supervisor
+  .table
+    thead
+      tr
+        td
+          padding 6px
+        th
+          padding 6px
+    tbody
+      tr
+        td
+          padding 6px
+        th
+          padding 6px
 
-.assessment-list-supervisor .btn
-  white-space: normal
+  .dropdown
+    .btn
+      .caret
+        margin-left 3px
+
+  .dropdown-menu
+    left auto
+    right 18px
+    li
+      a
+        cursor pointer
+      a.inactive-link
+        cursor not-allowed
+        color #ddd
+      a.inactive-link:hover
+        background-color transparent

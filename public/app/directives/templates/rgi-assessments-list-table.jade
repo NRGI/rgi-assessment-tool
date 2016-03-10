@@ -123,27 +123,25 @@
                 //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
-                    div.assessment-assign-block(ng-if="assessment.status === 'unassigned'")
-                        button.btn.btn-col.center-block.btn-primary(
-                            ng-click="assignAssessmentDialog(assessment)",
-                            ng-disabled="assessment.supervisor_ID.length < 1"
-                        ) Assign
+                    .dropdown
+                        button(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")#assessment-assign.btn.btn-default.dropdown-toggle
+                            text Assign
+                            span.caret
+                        ul(aria-labelledby="assessment-assign").dropdown-menu
+                            li(ng-if="assessment.status === 'unassigned' && (assessment.supervisor_ID.length > 0)")
+                                a(ng-if="assessment.supervisor_ID.length > 0" ng-click="assignAssessmentDialog(assessment)")
+                                    text Researcher and/or Reviewer
+                                a(ng-if="assessment.supervisor_ID.length <= 0").inactive-link
+                                    text Researcher and/or Reviewer
+                            li(ng-if="assessment.status !== 'unassigned'")
+                                a(ng-click="reassignAssessmentDialog(assessment)") Reassign Researcher and/or Reviewer
+                            li(ng-if="(assessment.status !== 'unassigned') && (assessment.supervisor_ID.length > 0)")
+                                a(ng-click="assignAssessmentExternalDialog(assessment)") External Reviewer
+                            li(ng-if="(assessment.status === 'unassigned') || (assessment.supervisor_ID.length <= 0)")
+                                a.inactive-link External Reviewer
+                            li
+                                a(ng-click="assignAssessmentSupervisorDialog(assessment)") Supervisor
 
-                    div.assessment-assign-block(ng-if="assessment.status !== 'unassigned'")
-                        button.btn.btn-col.center-block.btn-warning(ng-click="reassignAssessmentDialog(assessment)") Reassign
-
-                    div.assessment-assign-block
-                        button.btn.btn-col.center-block.btn-primary(
-                        ng-disabled="assessment.status==='unassigned' || assessment.supervisor_ID.length < 1"
-                        ng-click="assignAssessmentExternalDialog(assessment)")
-                            | Assign
-                            br
-                            | external
-                    div.assessment-assign-block
-                        button.btn.btn-col.center-block.btn-primary(ng-click="assignAssessmentSupervisorDialog(assessment)")
-                            | Assign
-                            br
-                            | supervisor
                 //CONTROL BUTTON 2 - ADMIN
                 td.col-sm-1
                     div(ng-if="current_user.isSupervisor()")
