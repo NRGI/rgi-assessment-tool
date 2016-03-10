@@ -1,43 +1,44 @@
 div.top-padding-lg
-    table.table.table-hover
+    table.table.table-hover.assessment-list
         thead
             tr
                 th.col-sm-1 Assessment
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
-                th.text-center.col-sm-1 Assigned
-                th.text-center.col-sm-1 Started
-                th.text-center.col-sm-1 Submitted
-                th.text-center.col-sm-1 Reviewed
-                th.text-center.col-sm-1 Approve
-                th.text-center.col-sm-1 Last Edit
+                th.col-sm-1.text-center Assigned
+                th.col-sm-1.text-center Started
+                th.col-sm-1.text-center Submitted
+                th.col-sm-1.text-center Reviewed
+                th.col-sm-1.text-center Approve
+                th.col-sm-1.text-center Last Edit
                 th.col-sm-1 Status
                 //th.col-md-1.text-center Questions Complete/Flagged
-                th.col-md-1
-                th.col-md-1
-                th.col-md-1
+                th.col-sm-1.assessment-actions(ng-if="current_user.isSupervisor()")
+                th.col-sm-1
 
         tbody
             tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
                 //ASSESSMENT
-                td.col-sm-2(ng-if="!current_user.isSupervisor()|| assessment.status==='unassigned'") {{assessment.year}} {{assessment.country}} {{assessment.version}}
-                td.col-sm-2(ng-if="current_user.isSupervisor() && assessment.status!=='unassigned'")
-                    a(
-                    href="admin/assessments-admin/{{assessment.assessment_ID}}"
-                    ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
-                    a(
-                    href="assessments/{{assessment.assessment_ID}}"
-                    ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                td.col-sm-1
+                    div(ng-if="!current_user.isSupervisor() || assessment.status === 'unassigned'")
+                        text {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                    div(ng-if="current_user.isSupervisor() && assessment.status !== 'unassigned'")
+                        a(href="admin/assessments-admin/{{assessment.assessment_ID}}"
+                        ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                        a(href="assessments/{{assessment.assessment_ID}}"
+                        ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
                 //RESEARCHER
-                td.col-sm-1(ng-if="assessment.researcher_ID && current_user.isSupervisor()")
-                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher_ID._id")
-                    a(href="mailto:{{assessment.researcher_ID.email}}")  {{assessment.researcher_ID.firstName}} {{assessment.researcher_ID.lastName}}
-                td.col-sm-1(ng-if="!assessment.researcher_ID && current_user.isSupervisor()") Not assigned
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    div(ng-if="assessment.researcher_ID && current_user.isSupervisor()")
+                        span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.researcher_ID._id")
+                        a(href="mailto:{{assessment.researcher_ID.email}}")  {{assessment.researcher_ID.firstName}} {{assessment.researcher_ID.lastName}}
+                    div(ng-if="!assessment.researcher_ID && current_user.isSupervisor()") Not assigned
                 //REVIEWER
-                td.col-sm-1(ng-if="assessment.reviewer_ID && current_user.isSupervisor()")
-                    span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer_ID._id")
-                    a(href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}} {{assessment.reviewer_ID.lastName}}
-                td.col-sm-1(ng-if="!assessment.reviewer_ID && current_user.isSupervisor()") Not assigned
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    div(ng-if="assessment.reviewer_ID && current_user.isSupervisor()")
+                        span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer_ID._id")
+                        a(href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}} {{assessment.reviewer_ID.lastName}}
+                    div(ng-if="!assessment.reviewer_ID && current_user.isSupervisor()") Not assigned
                 //ASSIGNED DATE
                 td.col-sm-1
                     div.text-center
@@ -98,18 +99,17 @@ div.top-padding-lg
                         popover-trigger="mouseenter")
                         em(ng-if="!assessment.approval_date") N/A
                 //LAST EDIT
-                td.col-sm-1(ng-if="assessment.last_modified")
-                    a(
-                    href="mailto:{{assessment.last_modified.user.email}}"
-                    ng-if="current_user.isSupervisor()") {{assessment.last_modified.user.lastName}}
-                    text(ng-if="!current_user.isSupervisor()") {{assessment.last_modified.user.role | ucfirst}}
-                    | &nbsp;-&nbsp;
-                    i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                    ng-if="assessment.last_modified"
-                    popover="{{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                    popover-trigger="mouseenter")
-                td.col-sm-1(ng-if="!assessment.last_modified")
-                //STATUS
+                td.col-sm-1
+                    div(ng-if="assessment.last_modified")
+                        a(
+                        href="mailto:{{assessment.last_modified.user.email}}"
+                        ng-if="current_user.isSupervisor()") {{assessment.last_modified.user.lastName}}
+                        text(ng-if="!current_user.isSupervisor()") {{assessment.last_modified.user.role | ucfirst}}
+                        | &nbsp;-&nbsp;
+                        i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                        ng-if="assessment.last_modified"
+                        popover="{{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
+                        popover-trigger="mouseenter")
                 td.col-sm-1 {{assessment.status | addSpaces | ucfirst}}
                 ////QUESTIONS COMPLETE
                 //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
@@ -123,93 +123,92 @@ div.top-padding-lg
                 //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
-                    button.btn.btn-col.center-block.btn-primary(
-                    ng-click="assignAssessmentDialog(assessment)"
-                    ng-disabled="assessment.supervisor_ID.length < 1"
-                    ng-if="assessment.status=='unassigned'"
-                    ) Assign
-                    //TODO add reassign assessment dialog
-                    button.btn.btn-col.center-block.btn-warning(
-                    ng-click="reassignAssessmentDialog(assessment)"
-                    ng-if="assessment.status!='unassigned'") Reassign
-                //CONTROL BUTTON 1 -ADMIN
-                td.col-sm-1(ng-if="current_user.isSupervisor()")
-                    button.btn.btn-col.center-block.btn-primary(
-                    ng-disabled="assessment.status==='unassigned' || assessment.supervisor_ID.length < 1"
-                    ng-click="assignAssessmentExternalDialog(assessment)")
-                        | Assign
-                        br
-                        | external
-                //CONTROL BUTTON 1 -ADMIN
-                td.col-sm-1(ng-if="current_user.isSupervisor()")
-                    button.btn.btn-col.center-block.btn-primary(ng-click="assignAssessmentSupervisorDialog(assessment)")
-                        | Assign
-                        br
-                        | supervisor
+                    div.assessment-assign-block(ng-if="assessment.status === 'unassigned'")
+                        button.btn.btn-col.center-block.btn-primary(
+                            ng-click="assignAssessmentDialog(assessment)",
+                            ng-disabled="assessment.supervisor_ID.length < 1"
+                        ) Assign
+
+                    div.assessment-assign-block(ng-if="assessment.status !== 'unassigned'")
+                        button.btn.btn-col.center-block.btn-warning(ng-click="reassignAssessmentDialog(assessment)") Reassign
+
+                    div.assessment-assign-block
+                        button.btn.btn-col.center-block.btn-primary(
+                        ng-disabled="assessment.status==='unassigned' || assessment.supervisor_ID.length < 1"
+                        ng-click="assignAssessmentExternalDialog(assessment)")
+                            | Assign
+                            br
+                            | external
+                    div.assessment-assign-block
+                        button.btn.btn-col.center-block.btn-primary(ng-click="assignAssessmentSupervisorDialog(assessment)")
+                            | Assign
+                            br
+                            | supervisor
                 //CONTROL BUTTON 2 - ADMIN
-                td.col-sm-1(ng-if="current_user.isSupervisor()")
-                    button.btn.btn-col.btn-primary(
-                    ng-click="assessmentStartReview(assessment.assessment_ID)"
-                    ng-if="assessment.status === 'submitted'"
-                    ) Start Review
-                    a.btn.btn-col.center-block.btn-primary(
-                    href="/admin/assessments-admin/{{assessment.assessment_ID}}"
-                    ng-if="['trial_submitted', 'under_review', 'resubmitted'].indexOf(assessment.status) > -1"
-                    )
-                        text(ng-if="assessment.status !== 'trial_submitted'") Continue Review
-                        text(ng-if="assessment.status === 'trial_submitted'") Start Review
-                    //a.btn.btn-col.center-block.btn-primary(
-                    //href="/admin/assessment-review/{{assessment.assessment_ID}}"
-                    //ng-if="assessment.status=='approved'"
-                    //) Send to external
-                    button.btn.btn-col.center-block.btn-primary(
-                    ng-if="assessment.status=='approved'"
-                    disabled
-                    ) Start external review
-                    a.btn.center-block.btn-default.disabled(
-                    href=""
-                    ng-if="['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
-                    ) Under review
-                    a.btn.center-block.btn-default.disabled(
-                    href=""
-                    ng-if="['unassigned', 'submitted', 'resubmitted', 'trial_submitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
-                    ) Waiting
-                //CONTROL BUTTON 1 -USER
-                td.col-sm-1(ng-if="current_user.isResearcher() || current_user.isReviewer()")
-                    //start trial button
-                    button.btn.btn-col.btn-success(
-                    ng-if="assessment.edit_control===current_user._id && ['trial', 'researcher_trial', 'reviewer_trial'].indexOf(assessment.status) > -1"
-                    ng-click="assessmentTrial(assessment)") Start trial
-                    //- researcher start button
-                    button.btn.btn-col.btn-success(
-                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['assigned', 'assigned_reviewer', 'assigned_researcher'].indexOf(assessment.status) > -1"
-                    ng-click="assessmentStart(assessment)")
-                        text(ng-if="current_user.isResearcher()") Start assessment
-                        text(ng-if="['reviewer', 'ext_reviewer'].indexOf(current_user.role) !== -1") Start review
+                td.col-sm-1
+                    div(ng-if="current_user.isSupervisor()")
+                        button.btn.btn-col.btn-primary(
+                        ng-click="assessmentStartReview(assessment.assessment_ID)"
+                        ng-if="assessment.status === 'submitted'"
+                        ) Start Review
+                        a.btn.btn-col.center-block.btn-primary(
+                        href="/admin/assessments-admin/{{assessment.assessment_ID}}"
+                        ng-if="['trial_submitted', 'under_review', 'resubmitted'].indexOf(assessment.status) > -1"
+                        )
+                            text(ng-if="assessment.status !== 'trial_submitted'") Continue Review
+                            text(ng-if="assessment.status === 'trial_submitted'") Start Review
+                        //a.btn.btn-col.center-block.btn-primary(
+                        //href="/admin/assessment-review/{{assessment.assessment_ID}}"
+                        //ng-if="assessment.status=='approved'"
+                        //) Send to external
+                        button.btn.btn-col.center-block.btn-primary(
+                        ng-if="assessment.status=='approved'"
+                        disabled
+                        ) Start external review
+                        a.btn.center-block.btn-default.disabled(
+                        href=""
+                        ng-if="['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1"
+                        ) Under review
+                        a.btn.center-block.btn-default.disabled(
+                        href=""
+                        ng-if="['unassigned', 'submitted', 'resubmitted', 'trial_submitted', 'under_review', 'review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) < 0"
+                        ) Waiting
+                    //CONTROL BUTTON 1 -USER
+                    div(ng-if="current_user.isResearcher() || current_user.isReviewer()")
+                        //start trial button
+                        button.btn.btn-col.btn-success(
+                        ng-if="assessment.edit_control===current_user._id && ['trial', 'researcher_trial', 'reviewer_trial'].indexOf(assessment.status) > -1"
+                        ng-click="assessmentTrial(assessment)") Start trial
+                        //- researcher start button
+                        button.btn.btn-col.btn-success(
+                        ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['assigned', 'assigned_reviewer', 'assigned_researcher'].indexOf(assessment.status) > -1"
+                        ng-click="assessmentStart(assessment)")
+                            text(ng-if="current_user.isResearcher()") Start assessment
+                            text(ng-if="['reviewer', 'ext_reviewer'].indexOf(current_user.role) !== -1") Start review
 
-                    //- review answers sent back button
-                    a.btn.btn-col.center-block.btn-warning(
-                    ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) > -1"
-                    href="/assessments/{{assessment.assessment_ID}}") Review answers
+                        //- review answers sent back button
+                        a.btn.btn-col.center-block.btn-warning(
+                        ng-if="((assessment.edit_control === current_user._id) || current_user.isExternalReviewer()) && ['review_researcher', 'review_reviewer', 'approved'].indexOf(assessment.status) > -1"
+                        href="/assessments/{{assessment.assessment_ID}}") Review answers
 
-                    //- disabled for admin review
-                    a.btn.btn-col.center-block.btn-default(
-                    ng-if="assessment.edit_control===current_user._id && ['trial_submitted', 'submitted', 'resubmitted', 'under_review'].indexOf(assessment.status) > -1"
-                    href="/assessments/{{assessment.assessment_ID}}"
-                    disabled) Under Admin review
+                        //- disabled for admin review
+                        a.btn.btn-col.center-block.btn-default(
+                        ng-if="assessment.edit_control===current_user._id && ['trial_submitted', 'submitted', 'resubmitted', 'under_review'].indexOf(assessment.status) > -1"
+                        href="/assessments/{{assessment.assessment_ID}}"
+                        disabled) Under Admin review
 
-                    a.btn.btn-col.center-block.btn-primary(
-                    ng-if="assessment.edit_control===current_user._id && ['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1"
-                    href="/assessments/{{assessment.assessment_ID}}") Open assessment
+                        a.btn.btn-col.center-block.btn-primary(
+                        ng-if="assessment.edit_control===current_user._id && ['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1"
+                        href="/assessments/{{assessment.assessment_ID}}") Open assessment
 
-                    a.btn.btn-col.center-block.btn-default(
-                    ng-if="assessment.edit_control!==current_user._id"
-                    href="/assessments/{{assessment.assessment_ID}}") See answers
+                        a.btn.btn-col.center-block.btn-default(
+                        ng-if="assessment.edit_control!==current_user._id"
+                        href="/assessments/{{assessment.assessment_ID}}") See answers
 
-                td.col-sm-1(ng-if="current_user.isExternalReviewer()")
-                    a.btn.btn-col.center-block.btn-primary(
-                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete+assessmentsStatistics[assessment.assessment_ID].approved/ assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
-                    href="/assessments/{{assessment.assessment_ID}}") Comment on assessment
-                    button.btn.btn-col.btn-default(
-                    ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
-                    disabled) Waiting for completion
+                    div(ng-if="current_user.isExternalReviewer()")
+                        a.btn.btn-col.center-block.btn-primary(
+                        ng-if="(assessmentsStatistics[assessment.assessment_ID].complete+assessmentsStatistics[assessment.assessment_ID].approved/ assessmentsStatistics[assessment.assessment_ID].length >= 0.8)"
+                        href="/assessments/{{assessment.assessment_ID}}") Comment on assessment
+                        button.btn.btn-col.btn-default(
+                        ng-if="(assessmentsStatistics[assessment.assessment_ID].complete / assessmentsStatistics[assessment.assessment_ID].length < 0.8)"
+                        disabled) Waiting for completion

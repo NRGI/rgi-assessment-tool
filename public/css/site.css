@@ -184,6 +184,15 @@ table[ts-wrapper="ts-wrapper"] .tablesort-asc,
 table[ts-wrapper="ts-wrapper"] .tablesort-desc {
   background-color: #ddd;
 }
+.assessment-actions {
+  min-width: 110px;
+}
+.assessment-assign-block {
+  margin-bottom: 2px;
+}
+.assessment-list .btn {
+  white-space: normal;
+}
 @-moz-keyframes sk-bounce {
   0%, 100% {
     transform: scale(0);
