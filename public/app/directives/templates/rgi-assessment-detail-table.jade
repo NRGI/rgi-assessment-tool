@@ -1,7 +1,7 @@
 div(id="answers_div").bottom-padding-med
     legend Answers:
     div.panel(
-    ng-repeat="(key, value) in answers | orderObjectBy:value.order:order_reverse"
+    ng-repeat="(key, value) in answers"
     ng-if="value.section_len > 0"
     ng-class="{'panel-success': ((!current_user.isSupervisor() && ((value.complete+value.approved)===value.section_len)) || (current_user.isSupervisor() && value.approved+value.finalized===value.section_len)),'panel-primary': ((!current_user.isSupervisor() && !((value.complete+value.approved)===value.section_len)) || (current_user.isSupervisor() && value.approved+value.finalized!==value.section_len)),'panel-danger': value.flagged !== 0 || (current_user.isSupervisor() && value.unresolved !== 0)}")
         div.panel-heading.bottom-padding-med
