@@ -137,11 +137,11 @@
                             li(ng-if="assessment.status !== 'unassigned'")
                                 a(ng-click="reassignAssessmentDialog(assessment)") Reassign Researcher and/or Reviewer
                             li(ng-if="(assessment.status !== 'unassigned') && (assessment.supervisor_ID.length > 0)")
-                                a(ng-click="assignAssessmentExternalDialog(assessment)") External Reviewer
+                                a(ng-click="assignAssessmentExternalDialog(assessment)") External Reviewer(s)
                             li(ng-if="(assessment.status === 'unassigned') || (assessment.supervisor_ID.length <= 0)")
-                                a.inactive-link External Reviewer
+                                a.inactive-link External Reviewer(s)
                             li
-                                a(ng-click="assignAssessmentSupervisorDialog(assessment)") Supervisor
+                                a(ng-click="assignAssessmentSupervisorDialog(assessment)") Supervisor(s)
 
                 //CONTROL BUTTON 2 - ADMIN
                 td.col-sm-1
