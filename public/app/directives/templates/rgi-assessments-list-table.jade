@@ -155,7 +155,9 @@ div.top-padding-lg
                     a.btn.btn-col.center-block.btn-primary(
                     href="/admin/assessments-admin/{{assessment.assessment_ID}}"
                     ng-if="['trial_submitted', 'under_review', 'resubmitted'].indexOf(assessment.status) > -1"
-                    ) Continue review
+                    )
+                        text(ng-if="assessment.status !== 'trial_submitted'") Continue Review
+                        text(ng-if="assessment.status === 'trial_submitted'") Start Review
                     //a.btn.btn-col.center-block.btn-primary(
                     //href="/admin/assessment-review/{{assessment.assessment_ID}}"
                     //ng-if="assessment.status=='approved'"
