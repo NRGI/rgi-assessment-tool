@@ -51,6 +51,7 @@
                 //td.text-center.col-md-1
                 //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
                 //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
+
                 //ASSIGNED DATE
                 td.col-sm-1
                     div.text-center
@@ -122,6 +123,7 @@
                         ng-if="assessment.last_modified"
                         popover="{{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                         popover-trigger="mouseenter")
+
                 //CONTROL BUTTON 1 -ADMIN
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     .dropdown
