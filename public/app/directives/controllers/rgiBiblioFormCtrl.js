@@ -30,4 +30,7 @@ angular.module('app')
         $scope.selectRefDialog = function(value) {
             rgiDialogFactory.referenceSelect($scope, value);
         };
+        $scope.editReferenceDialog = function(ref_index) {
+            rgiDialogFactory.referenceEdit($scope, ref_index);
+        };
     });
