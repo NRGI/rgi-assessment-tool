@@ -5,6 +5,7 @@
                 th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Assessment
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
                 th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
+                th.col-sm-1(ng-if="current_user.isSupervisor()") External Reviewer(s)
                 th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Status
                 th.text-center.col-sm-1 Assigned
                 th.text-center.col-sm-1 Started
@@ -39,6 +40,13 @@
                         span.glyphicon.glyphicon-pencil(ng-if="assessment.edit_control===assessment.reviewer_ID._id")
                         a(href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}} {{assessment.reviewer_ID.lastName}}
                     div(ng-if="!assessment.reviewer_ID && current_user.isSupervisor()") Not assigned
+                //EXTERNAL REVIEWER
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    div(ng-if="assessment.ext_reviewer_ID.length > 0")
+                        text(ng-repeat="reviewer in assessment.ext_reviewer_ID")
+                            a(href="mailto:{{reviewer.email}}") {{reviewer.firstName}} {{reviewer.lastName}}
+                            text(ng-if="!$last") ,&nbsp;
+                    div(ng-if="assessment.ext_reviewer_ID.length < 1")
                 //STATUS
                 td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") {{assessment.status | addSpaces | ucfirst}}
                 ////QUESTIONS COMPLETE
