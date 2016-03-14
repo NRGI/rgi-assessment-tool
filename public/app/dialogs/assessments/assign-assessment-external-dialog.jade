@@ -15,7 +15,6 @@
                 .col-md-1
                     button.btn.btn-danger(ng-click="removeAssignee($index)" ng-disabled="assessment.ext_reviewer_ID.length==1") Delete
     .modal-footer
-
         button.btn.btn-success(ng-click="saveAssigneeList()" ng-disabled="isAssigneeListEmpty() || !isAssigneeListModified()") Assign external reviewer(s)
         | &nbsp;
         button.btn.btn-warning(
