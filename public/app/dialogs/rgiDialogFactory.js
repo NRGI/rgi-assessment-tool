@@ -32,9 +32,10 @@ angular.module('app')
                 var scope = $scope;
                 scope.value = true;
                 scope.assessment_update_ID = assessment.assessment_ID;
+                scope.userType = 'supervisor';
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assign-assessment-supervisor-dialog',
-                    controller: 'rgiAssignAssessmentSupervisorDialogCtrl',
+                    controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
@@ -51,12 +52,11 @@ angular.module('app')
                 });
             },
             guidanceDialog: function ($scope) {
-                var scope = $scope;
                 ngDialog.open({
                     template: 'partials/dialogs/answers/guidance-dialog',
                     controller: 'rgiGuidanceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
-                    scope: scope
+                    scope: $scope
                 });
             },
             assessmentMove: function ($scope) {
@@ -151,7 +151,6 @@ angular.module('app')
                 }
             },
             answerFinalChoice: function ($scope) {
-                var scope = $scope;
                 $scope.value = true;
                 ngDialog.open({
                     template: 'partials/dialogs/answers/final-choice-dialog',
@@ -162,7 +161,6 @@ angular.module('app')
 
             },
             answerExternalChoice: function ($scope) {
-                var scope = $scope;
                 $scope.value = true;
                 ngDialog.open({
                     template: 'partials/dialogs/answers/final-choice-dialog',
@@ -243,13 +241,11 @@ angular.module('app')
                 });
             },
             resourcenNew: function($scope) {
-                var scope = $scope;
-
                 ngDialog.open({
                     template: 'partials/dialogs/resources/new-resource-dialog',
                     controller: 'rgiNewResourceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
-                    scope: scope
+                    scope: $scope
                 });
             },
             resourceDelete: function($scope, resource) {
@@ -275,8 +271,7 @@ angular.module('app')
         //    });
         //}
             flagCreate: function($scope) {
-                var scope = $scope;
-                scope.value = true;
+                $scope.value = true;
                 ngDialog.open({
                     template: 'partials/dialogs/flags/flag-answer-dialog',
                     controller: 'rgiFlagAnswerDialogCtrl',
