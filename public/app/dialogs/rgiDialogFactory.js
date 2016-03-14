@@ -21,9 +21,11 @@ angular.module('app')
                 var scope = $scope;
                 scope.value = true;
                 scope.assessment_update_ID = assessment.assessment_ID;
+                scope.userType = 'ext_reviewer';
+
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assign-assessment-external-dialog',
-                    controller: 'rgiAssignAssessmentExternalDialogCtrl',
+                    controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
                     scope: scope
                 });
@@ -33,6 +35,7 @@ angular.module('app')
                 scope.value = true;
                 scope.assessment_update_ID = assessment.assessment_ID;
                 scope.userType = 'supervisor';
+
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assign-assessment-supervisor-dialog',
                     controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
