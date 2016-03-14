@@ -24,7 +24,7 @@ angular.module('app')
             }
 
             if($scope.assessment.supervisor_ID.length === 0) {
-                $scope.assessment.supervisor_ID.push({});
+                $scope.addAssignee();
             }
 
             rgiUserSrvc.query({role: 'supervisor'}, function(users) {
@@ -33,15 +33,29 @@ angular.module('app')
         });
 
         $scope.addAssignee = function () {
-            $scope.assessment.supervisor_ID.push({});
+            $scope.assessment.supervisor_ID.push(undefined);
         };
 
         $scope.removeAssignee = function (index) {
             $scope.assessment.supervisor_ID.splice(index, 1);
         };
 
-        $scope.assignAssessmentSupervisor = function () {
-            if ($scope.assessment.supervisor_ID.length < 1) {
+        $scope.isAssigneeListEmpty = function() {
+            var assigneeNumber = 0;
+
+            if($scope.assessment) {
+                $scope.assessment.supervisor_ID.forEach(function(assignee) {
+                    if(assignee) {
+                        assigneeNumber++;
+                    }
+                });
+            }
+
+            return assigneeNumber < 1;
+        };
+
+        $scope.saveAssigneeList = function () {
+            if ($scope.isAssigneeListEmpty()) {
                 rgiNotifier.error('You must select a supervisor!');
             } else {
                 rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
