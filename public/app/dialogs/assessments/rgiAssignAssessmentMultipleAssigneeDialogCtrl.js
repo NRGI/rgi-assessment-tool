@@ -3,7 +3,6 @@
 angular.module('app')
     .controller('rgiAssignAssessmentMultipleAssigneeDialogCtrl', function (
         $scope,
-        $location,
         $route,
         ngDialog,
         rgiNotifier,
@@ -19,7 +18,7 @@ angular.module('app')
             $scope.assessment = assessment;
 
             for(var assigneeId in $scope.assessment[assigneeField]) {
-                if($scope.assessment[assigneeField].hasOwnProperty(assigneeId)) {
+                if($scope.assessment[assigneeField].hasOwnProperty(assigneeId) && $scope.assessment[assigneeField][assigneeId]._id) {
                     $scope.assessment[assigneeField][assigneeId] = $scope.assessment[assigneeField][assigneeId]._id;
                 }
             }
