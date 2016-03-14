@@ -107,7 +107,6 @@ angular.module('app')
                 });
             });
 
-
             $q.all(promises)
                 .then(function () {
                     rgiNotifier.notify('Assessment assigned!');

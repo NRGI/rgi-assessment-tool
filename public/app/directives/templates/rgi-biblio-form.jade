@@ -24,6 +24,7 @@ div(id="prev_bib" ng-if="references.length > 0")
         .row.left-padding-lg.bottom-padding-med(
         ng-repeat="ref in references"
         ng-if="!ref.hidden")
+            .row {{ref}}
             .row
                 b Type:
                 u: em(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | addSpaces | ucfirst}}
