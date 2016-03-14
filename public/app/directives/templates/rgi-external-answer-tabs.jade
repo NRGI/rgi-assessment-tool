@@ -9,26 +9,26 @@ div(id="external_answer_div").bottom-padding-med
         ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
             div.panel-heading(
             role="tab"
-            id="heading{{$index}}")
+            id="heading{{answer._id}}")
                 h4.panel-title
                     div(
                     style="text-align: left;"
                     role="button"
                     data-toggle="collapse"
                     data-parent="#accordion"
-                    href="#collapse{{$index}}"
+                    href="#collapse{{answer._id}}"
                     aria-expanded="false"
-                    aria-controls="collapse{{$index}}")
+                    aria-controls="collapse{{answer._id}}")
                         b(ng-if="current_user.isSupervisor() || current_user._id===answer.author._id") {{answer.author.firstName | ucfirst}} {{answer.author.lastName | ucfirst}} -
                         b: em  {{answer.author.external_type}} reviewer
                         em.pull-right  {{answer.date | date:'MM/dd/yyyy'}}
 
-            div(
-            id="collapse{{$index}}"
+            div.left-padding-lg(
+            id="collapse{{answer._id}}"
             class="panel-collapse collapse"
             role="tabpanel"
-            aria-labelledby="heading{{$index}}")
-                div.panel-body
+            aria-labelledby="heading{{answer._id}}")
+                div.panel-body.left-padding-lg.right-padding-lg
                     h5 Answer:
                     .row.left-padding-lg
                         .text-primary {{answer.score.letter | ucfirst}} - {{answer.score.text}}
