@@ -74,6 +74,11 @@ angular.module('app')
             return getNonEmptyAssigneeList().length < 1;
         };
 
+        $scope.isAssigneeListModified = function() {
+            return getArrayDifference(originalAssigneeList, getNonEmptyAssigneeList()).length +
+                getArrayDifference(getNonEmptyAssigneeList(), originalAssigneeList).length > 0;
+        };
+
         $scope.saveAssigneeList = function () {
             var promises = [];
             promises.push(rgiAssessmentMethodSrvc.updateAssessment($scope.assessment));
