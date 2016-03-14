@@ -40,28 +40,48 @@ angular.module('app')
                 $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
                 answers.forEach(function (answer) {
-                    if(rgiQuestionSetSrvc.isAvailable(answer)) {
-                        rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
-                        $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
+                    rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
+                    $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
 
-                        if (answer.status === 'submitted' || answer.status === 'resubmitted') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
-                        }
-                        if (answer.status === 'approved') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
-                        }
-                        if (answer.status === 'flagged') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
-                        }
-                        if (answer.status === 'unresolved') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
-                        }
-                        if (answer.status === 'final') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
-                        }
-
-                        $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
+                    if (answer.status === 'submitted' || answer.status === 'resubmitted') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
                     }
+                    if (answer.status === 'approved') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
+                    }
+                    if (answer.status === 'flagged') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
+                    }
+                    if (answer.status === 'unresolved') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
+                    }
+                    if (answer.status === 'final') {
+                        $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
+                    }
+
+                    $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
+                    //if(rgiQuestionSetSrvc.isAvailable(answer)) {
+                    //    rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
+                    //    $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
+                    //
+                    //    if (answer.status === 'submitted' || answer.status === 'resubmitted') {
+                    //        $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
+                    //    }
+                    //    if (answer.status === 'approved') {
+                    //        $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
+                    //    }
+                    //    if (answer.status === 'flagged') {
+                    //        $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
+                    //    }
+                    //    if (answer.status === 'unresolved') {
+                    //        $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
+                    //    }
+                    //    if (answer.status === 'final') {
+                    //        $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
+                    //    }
+                    //
+                    //    $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
+                    //}
                 });
             });
         });

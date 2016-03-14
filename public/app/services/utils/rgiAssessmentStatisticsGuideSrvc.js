@@ -2,23 +2,24 @@
 
 angular.module('app')
     .factory('rgiAssessmentStatisticsGuideSrvc', function (rgiQuestionSetSrvc) {
-        var getCurrentQuestionSetLength = function(answers) {
-            var questionsNumber = 0;
-
-            answers.forEach(function(answer) {
-                questionsNumber++;
-                //if(rgiQuestionSetSrvc.isAvailable(answer)) {
-                //    questionsNumber++;
-                //}
-            });
-
-            return questionsNumber;
-        };
+        //var getCurrentQuestionSetLength = function(answers) {
+        //    var questionsNumber = 0;
+        //
+        //    answers.forEach(function(answer) {
+        //        questionsNumber++;
+        //        //if(rgiQuestionSetSrvc.isAvailable(answer)) {
+        //        //    questionsNumber++;
+        //        //}
+        //    });
+        //
+        //    return questionsNumber;
+        //};
 
         return {
             getCounterSetTemplate: function(answers) {
                 return {
-                    length: getCurrentQuestionSetLength(answers),
+                    //length: getCurrentQuestionSetLength(answers),
+                    length: answers.length,
                     complete: 0,
                     flagged: 0,
                     submitted: 0,
