@@ -24,6 +24,7 @@ div(id="prev_bib" ng-if="references.length > 0")
         .row.left-padding-lg.bottom-padding-med(
         ng-repeat="ref in references"
         ng-if="!ref.hidden")
+            .row {{ref}}
             .row
                 b Type:
                 u: em(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | addSpaces | ucfirst}}
@@ -77,8 +78,13 @@ div(id="prev_bib" ng-if="references.length > 0")
                 ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Delete Reference
                 | &nbsp;
                 button.btn.btn-primary(
+                ng-click="editReferenceDialog($index)"
+                ng-if="ref.citation_type!=='interview'"
+                ng-disabled="(assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
+                button.btn.btn-primary(
                 popover="Feature coming"
                 popover-trigger="mouseenter"
+                ng-if="ref.citation_type==='interview'"
                 ng-click=""
                 ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
 
