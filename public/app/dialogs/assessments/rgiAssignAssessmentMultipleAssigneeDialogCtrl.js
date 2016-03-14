@@ -14,8 +14,7 @@ angular.module('app')
         rgiUserSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var
-            availableUsers = [],
+        var availableUsers = [],
             assigneeField = $scope.userType + '_ID',
             originalAssigneeList = [],
             getArrayDifference = function(original, modified) {
@@ -107,6 +106,7 @@ angular.module('app')
                     }
                 });
             });
+
 
             $q.all(promises)
                 .then(function () {
