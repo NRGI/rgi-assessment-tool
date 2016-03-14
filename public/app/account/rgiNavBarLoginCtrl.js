@@ -40,15 +40,19 @@ angular.module('app')
         };
 
         $scope.signin = function (username, password) {
-            rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
-                if (success) {
-                    setUserData();
-                    rgiNotifier.notify('You have successfully signed in!');
-                    $location.path('/');
-                } else {
-                    rgiNotifier.error('Username/Password combination incorrect');
-                }
-            });
+            if (!username || !password) {
+                rgiNotifier.error('You must supply a Username and Password!');
+            } else {
+                rgiAuthSrvc.authenticateUser(username, password).then(function (success) {
+                    if (success) {
+                        setUserData();
+                        rgiNotifier.notify('You have successfully signed in!');
+                        $location.path('/');
+                    } else {
+                        rgiNotifier.error('Username/Password combination incorrect!');
+                    }
+                });
+            }
         };
 
         $scope.signout = function () {
