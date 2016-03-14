@@ -5,59 +5,46 @@ angular.module('app')
         $scope,
         $location,
         $route,
-        $q,
         ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
-        rgiAssessmentRolesGuideSrvc,
         rgiIdentitySrvc,
-        rgiUserSrvc,
-        rgiUserMethodSrvc
+        rgiUserSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessment = assessment;
 
+            for(var supervisorIndex in $scope.assessment.supervisor_ID) {
+                if($scope.assessment.supervisor_ID.hasOwnProperty(supervisorIndex)) {
+                    $scope.assessment.supervisor_ID[supervisorIndex] = $scope.assessment.supervisor_ID[supervisorIndex]._id;
+                }
+            }
+
+            if($scope.assessment.supervisor_ID.length === 0) {
+                $scope.assessment.supervisor_ID.push({});
+            }
+
             rgiUserSrvc.query({role: 'supervisor'}, function(users) {
                 $scope.availableUsers = users;
             });
         });
 
-        $scope.reviewerAdd = function () {
-            $scope.assessment.supervisor_ID.push("");
+        $scope.addAssignee = function () {
+            $scope.assessment.supervisor_ID.push({});
         };
 
-        $scope.reviewerDelete = function (index) {
+        $scope.removeAssignee = function (index) {
             $scope.assessment.supervisor_ID.splice(index, 1);
-        };
-
-
-        var updateAssessment = function(notificationMessage) {
-            rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
-                .then(function () {
-                    rgiNotifier.notify(notificationMessage);
-                    $location.path('/');
-                    $route.reload();
-                }, function (reason) {
-                    if (reason) {
-                        rgiNotifier.error(reason);
-                    } else {
-                        rgiNotifier.error('Validation error');
-                        $scope.closeThisDialog();
-                        $route.reload();
-                    }
-                });
         };
 
         $scope.assignAssessmentSupervisor = function () {
             if ($scope.assessment.supervisor_ID.length < 1) {
-                rgiNotifier.error('You must select an supervisor!');
+                rgiNotifier.error('You must select a supervisor!');
             } else {
-                var new_assessment = $scope.assessment;
-
-                rgiAssessmentMethodSrvc.updateAssessment(new_assessment)
+                rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
                     .then(function () {
                         rgiNotifier.notify('Assessment assigned!');
                         $scope.closeThisDialog();
@@ -73,7 +60,6 @@ angular.module('app')
                     });
             }
         };
-
 
         $scope.closeDialog = function () {
             ngDialog.close();
