@@ -35,7 +35,6 @@ angular.module('app')
                 scope.value = true;
                 scope.assessment_update_ID = assessment.assessment_ID;
                 scope.userType = 'supervisor';
-
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assign-assessment-supervisor-dialog',
                     controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
