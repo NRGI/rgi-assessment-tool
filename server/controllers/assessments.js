@@ -31,7 +31,8 @@ exports.getAssessments = function (req, res) {
         .populate('last_modified.user', 'firstName lastName role email')
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
-        .populate('supervisor_ID', 'firstName lastName role email')
+        .populate('reviewer_ID', 'firstName lastName role email')
+        .populate('ext_reviewer_ID', 'firstName lastName role email')
         .exec(function (err, assessments) {
             if (err) { return next(err); }
             if (!assessments) { return next(new Error('No assessments found')); }
