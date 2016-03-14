@@ -4,15 +4,43 @@ angular.module('app')
     .controller('rgiAssignAssessmentMultipleAssigneeDialogCtrl', function (
         $scope,
         $route,
+        $q,
         ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         rgiIdentitySrvc,
+        rgiUserAssessmentsSrvc,
         rgiUserSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var assigneeField = $scope.userType + '_ID';
+        var
+            assigneeField = $scope.userType + '_ID',
+            originalAssigneeList = [],
+            getArrayDifference = function(original, modified) {
+                var difference = [];
+
+                original.forEach(function(item) {
+                    if(modified.indexOf(item) === -1) {
+                        difference.push(item);
+                    }
+                });
+
+                return difference;
+            },
+            getNonEmptyAssigneeList = function() {
+                var assigneeList = [];
+
+                if($scope.assessment) {
+                    $scope.assessment[assigneeField].forEach(function(assignee) {
+                        if(assignee) {
+                            assigneeList.push(assignee);
+                        }
+                    });
+                }
+
+                return assigneeList;
+            };
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessment = assessment;
@@ -22,6 +50,8 @@ angular.module('app')
                     $scope.assessment[assigneeField][assigneeId] = $scope.assessment[assigneeField][assigneeId]._id;
                 }
             }
+
+            originalAssigneeList = $scope.assessment[assigneeField].slice();
 
             if($scope.assessment[assigneeField].length === 0) {
                 $scope.addAssignee();
@@ -41,21 +71,22 @@ angular.module('app')
         };
 
         $scope.isAssigneeListEmpty = function() {
-            var assigneeNumber = 0;
-
-            if($scope.assessment) {
-                $scope.assessment[assigneeField].forEach(function(assignee) {
-                    if(assignee) {
-                        assigneeNumber++;
-                    }
-                });
-            }
-
-            return assigneeNumber < 1;
+            return getNonEmptyAssigneeList().length < 1;
         };
 
         $scope.saveAssigneeList = function () {
-            rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
+            var promises = [];
+            promises.push(rgiAssessmentMethodSrvc.updateAssessment($scope.assessment));
+
+            getArrayDifference(originalAssigneeList, getNonEmptyAssigneeList()).forEach(function(removedAssigneeId) {
+                $scope.availableUsers.forEach(function(user) {
+                    if((user._id === removedAssigneeId) && user.assessments) {
+                        promises.push(rgiUserAssessmentsSrvc.remove(user, $scope.assessment));
+                    }
+                });
+            });
+
+            $q.all(promises)
                 .then(function () {
                     rgiNotifier.notify('Assessment assigned!');
                     $scope.closeThisDialog();
