@@ -9,7 +9,7 @@
                     select.form-group.form-control.right-padding-med(
                     name="reviewer_selector"
                     ng-model="assessment.ext_reviewer_ID[$index]"
-                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
+                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in getFilteredAvailableUsers(assessment.ext_reviewer_ID[$index])"
                     required)
                         option(value="" selected disabled) Select external reviewer...
                 .col-md-1
@@ -19,7 +19,7 @@
         | &nbsp;
         button.btn.btn-warning(
         ng-click="addAssignee()"
-        ng-disabled="assessment.ext_reviewer_ID.length < 1 || !assessment.ext_reviewer_ID[assessment.ext_reviewer_ID.length-1] || disable_button===true") Add external reviewer
+        ng-disabled="assessment.ext_reviewer_ID.length < 1 || !assessment.ext_reviewer_ID[assessment.ext_reviewer_ID.length-1] || !isNewAssigneeAvailable() || disable_button===true") Add external reviewer
         //"assessment.ext_reviewer_ID[assessment.assessment_countries.length-1].country || disable_button===true") Add external reviewer
         | &nbsp;
         button.btn.btn-danger(ng-click="closeDialog()") Cancel
