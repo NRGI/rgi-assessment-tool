@@ -40,6 +40,11 @@
                     ng-if="assessment.reviewer_ID"
                     href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}}  {{assessment.reviewer_ID.lastName}}
                     em(ng-if="!assessment.reviewer_ID")  N/A
+                .row(ng-if="current_user.isSupervisor() && assessment.ext_reviewer_ID.length > 0")
+                    | External Reviewer(s):&nbsp;
+                    text(ng-repeat="reviewer in assessment.ext_reviewer_ID")
+                        a(href="mailto:{{reviewer.email}}") {{reviewer.firstName}} {{reviewer.lastName}}
+                        text(ng-if="!$last") ,&nbsp;
                 .row
                     | Status: {{assessment.status | addSpaces | ucfirst}}
                 .row
