@@ -24,6 +24,14 @@ exports.logout = function (req, res) {
     AuthLog.log(req.user._id, 'sign-out');
     req.logout();
     res.end();
+    //console.log(req.user);
+    //if (req.user===undefined) {
+    //    res.send({error: 'Unknown error logging out!'});
+    //} else {
+    //    AuthLog.log(req.user._id, 'sign-out');
+    //    req.logout();
+    //    res.end();
+    //}
 };
 
 exports.passUser = function (req, res) {
