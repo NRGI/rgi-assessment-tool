@@ -38,33 +38,33 @@ div.table-responsive
                             td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
                             td.col-sm-1
                                 i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                                ng-if="assessment.details.assignment"
-                                popover="{{assessment.details.assignment.assigned_date | date:'MM/dd/yyyy'}}"
+                                ng-if="assessment.details.assignment_date"
+                                popover="{{assessment.details.assignment_date.date | date:'MM/dd/yyyy'}}"
                                 popover-trigger="mouseenter")
-                                em(ng-if="!assessment.details.assignment") N/A
+                                em(ng-if="!assessment.details.assignment_date") N/A
                             td.col-sm-1
-                                i.glyphicon.glyphicon-calendar.popover-dialog(
-                                ng-if="assessment.details.assignment.start_date"
-                                popover="{{assessment.details.assignment.start_date | date:'MM/dd/yyyy'}}"
+                                i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details[user.role+'_start_date'].date"
+                                popover="{{assessment.details[user.role+'_start_date'].date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                                 popover-trigger="mouseenter")
-                                em.text-center(ng-if="!assessment.details.assignment.start_date") N/A
+                                em(ng-if="!assessment.details[user.role+'_start_date'].date") N/A
                             td.col-sm-1
-                                i.glyphicon.glyphicon-calendar.popover-dialog(
-                                ng-if="assessment.details.assignment.submit_date"
-                                popover="{{assessment.details.assignment.submit_date | date:'MM/dd/yyyy'}}"
+                                i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details[user.role+'_submit_date'].date"
+                                popover="{{assessment.details[user.role+'_submit_date'].date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                                 popover-trigger="mouseenter")
-                                em.text-center(ng-if="!assessment.details.assignment.submit_date") N/A
+                                em(ng-if="!assessment.details[user.role+'_submit_date'].date") N/A
                             td.col-sm-1
-                                i.glyphicon.glyphicon-calendar.popover-dialog(
-                                ng-if="assessment.details.assignment.review_date"
-                                popover="{{assessment.details.assignment.review_date | date:'MM/dd/yyyy'}}"
+                                i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.last_review_date"
+                                popover="{{assessment.details.last_review_date.date | date:'MM/dd/yyyy'}}"
                                 popover-trigger="mouseenter")
-                                em.text-center(ng-if="!assessment.details.assignment.review_date") N/A
+                                em(ng-if="!assessment.details.last_review_date") N/A
                             td.col-sm-1
-                                i.glyphicon.glyphicon-calendar.popover-dialog(
-                                ng-if="assessment.details.assignment.approved_date"
-                                popover="{{assessment.details.assignment.approved_date | date:'MM/dd/yyyy'}}"
+                                i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                                ng-if="assessment.details.approval_date"
+                                popover="{{assessment.details.approval_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
                                 popover-trigger="mouseenter")
-                                em.text-center(ng-if="!assessment.details.assignment.approved_date") N/A
+                                em(ng-if="!assessment.details.approval_date") N/A
                 td.col-sm-1
                     a.btn.center-block.btn-primary(href="/admin/user-admin/{{user._id}}") View
