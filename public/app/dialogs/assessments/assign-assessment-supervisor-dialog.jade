@@ -15,7 +15,7 @@
                 .col-md-1
                     button.btn.btn-danger(ng-click="removeAssignee($index)" ng-disabled="assessment.supervisor_ID.length==1") Delete
     .modal-footer
-        button.btn.btn-success(ng-click="saveAssigneeList()" ng-disabled="isAssigneeListEmpty()") Assign supervisor(s)
+        button.btn.btn-success(ng-click="saveAssigneeList()" ng-disabled="isAssigneeListEmpty() || !isAssigneeListModified()") Assign supervisor(s)
         | &nbsp;
         button.btn.btn-warning(
         ng-click="addAssignee()"
