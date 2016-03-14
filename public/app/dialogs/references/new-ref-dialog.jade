@@ -73,10 +73,10 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                                 tr(ng-repeat="item in uploader.queue")
                                     td
                                         h6(ng-if="!new_document")
-                                            strong {{ item.file.name }}
+                                            strong.wrap-content {{ item.file.name}}
                                         h6
                                             strong
-                                                a(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name }}
+                                                a.wrap-content(ng-if="new_document" href="{{new_document.s3_url}}" target="_blank") {{ item.file.name}}
                                     td(ng-show="uploader.isHTML5" nowrap)
                                         h6 {{ item.file.size/1024/1024|number:2 }} MB
                                     td(ng-show="uploader.isHTML5")
