@@ -46,6 +46,7 @@ exports.getAssessmentsByID = function (req, res) {
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
         .populate('supervisor_ID', 'firstName lastName role email')
+        .populate('ext_reviewer_ID', 'firstName lastName role email')
         .populate('last_modified.user', 'firstName lastName role email')
         .exec(function (err, assessment) {
             if (err) { return next(err); }
