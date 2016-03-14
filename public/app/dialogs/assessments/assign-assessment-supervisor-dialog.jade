@@ -1,38 +1,24 @@
 .left-padding-lg.right-padding-lg
     .modal-header
-        h3 Assign Assessment to External Reviewer
+        h3 Assign Assessment to Supervisor(s)
     .modal-body
         fieldset
-            div(ng-if="assessment.supervisor_ID.length < 1")
-                .row
-                    h4.col-md-4  Supervisor 1
-                    .form-group.col-md-6(class="nullable")
-                        select.form-group.form-control.right-padding-med(
-                        name="supervisor_selector"
-                        ng-model="assessment.supervisor_ID[assessment.supervisor_ID.length]"
-                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
-                        required)
-                            option(value="" selected disabled) Select supervisor...
-                    .col-md-1
-                        button.btn.btn-danger(ng-click="reviewerDelete($index)" ng-disabled="assessment.supervisor_ID.length==1") Delete
-
-            div(ng-if="assessment.supervisor_ID.length > 0")
-                .row(ng-repeat="reviewer in assessment.supervisor_ID")
-                    h4.col-md-4  Supervisor {{$index+1}}
-                    .form-group.col-md-5(class="nullable")
-                        select.form-group.form-control.right-padding-med(
-                        name="supervisor_selector"
-                        ng-model="assessment.supervisor_ID[$index]"
-                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
-                        required)
-                            option(value="" selected disabled) Select supervisor...
-                    .col-md-1
-                        button.btn.btn-danger(ng-click="reviewerDelete($index)" ng-disabled="assessment.supervisor_ID.length==1") Delete
+            .row(ng-repeat="reviewer in assessment.supervisor_ID")
+                h4.col-md-4  Supervisor {{$index+1}}
+                .form-group.col-md-5.nullable
+                    select.form-group.form-control.right-padding-med(
+                    name="supervisor_selector"
+                    ng-model="assessment.supervisor_ID[$index]"
+                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
+                    required)
+                        option(value="" selected disabled) Select supervisor...
+                .col-md-1
+                    button.btn.btn-danger(ng-click="removeAssignee($index)" ng-disabled="assessment.supervisor_ID.length==1") Delete
     .modal-footer
         button.btn.btn-success(ng-click="assignAssessmentSupervisor()") Assign supervisor(s)
         | &nbsp;
         button.btn.btn-warning(
-        ng-click="reviewerAdd()"
+        ng-click="addAssignee()"
         ng-disabled="assessment.supervisor_ID.length < 1 || !assessment.supervisor_ID[assessment.supervisor_ID.length-1] || disable_button===true") Add supervisor
         //"assessment.ext_reviewer_ID[assessment.assessment_countries.length-1].country || disable_button===true") Add external reviewer
         | &nbsp;
