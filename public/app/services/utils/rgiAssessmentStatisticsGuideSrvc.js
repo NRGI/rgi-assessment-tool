@@ -6,9 +6,10 @@ angular.module('app')
             var questionsNumber = 0;
 
             answers.forEach(function(answer) {
-                if(rgiQuestionSetSrvc.isAvailable(answer)) {
-                    questionsNumber++;
-                }
+                questionsNumber++;
+                //if(rgiQuestionSetSrvc.isAvailable(answer)) {
+                //    questionsNumber++;
+                //}
             });
 
             return questionsNumber;
