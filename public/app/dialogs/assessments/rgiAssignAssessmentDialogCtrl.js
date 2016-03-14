@@ -12,6 +12,7 @@ angular.module('app')
         rgiAssessmentMethodSrvc,
         rgiAssessmentRolesGuideSrvc,
         rgiIdentitySrvc,
+        rgiUserAssessmentsSrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
@@ -126,26 +127,11 @@ angular.module('app')
 
                         //remove assessment from the old assignee
                         if (oldAssignee && oldAssignee.assessments) {
-                            var assessmentIndex = -1;
-
-                            oldAssignee.assessments.forEach(function(assessment, i) {
-                                if ($scope.assessment.assessment_ID === assessment.assessment_ID) {
-                                    if (i > -1) {
-                                        assessmentIndex = i;
-                                    }
-                                }
-                            });
-
-                            oldAssignee.assessments.splice(assessmentIndex, 1);
-                            rgiUserMethodSrvc.updateUser(oldAssignee);
+                            promises.push(rgiUserAssessmentsSrvc.remove(oldAssignee, $scope.assessment));
                         }
 
                         //add assessment to the new assignee
-                        newAssignee.assessments.push({
-                            assessment_ID: $scope.assessment.assessment_ID,
-                            country_name: $scope.assessment.country
-                        });
-                        promises.push(rgiUserMethodSrvc.updateUser(newAssignee).$promise);
+                        promises.push(rgiUserAssessmentsSrvc.add(newAssignee, $scope.assessment));
 
                         //change assignee in the assessment
                         if (newAssignee._id) {
