@@ -11,27 +11,27 @@ div(id="flags_div").bottom-padding-med
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             div.panel-heading(
             role="tab"
-            id="heading{{$index}}")
+            id="heading{{flag._id}}")
                 h4.panel-title
                     div(
                     style="text-align: left;"
                     role="button"
                     data-toggle="collapse"
                     data-parent="#accordion"
-                    href="#collapse{{$index}}"
+                    href="#collapse{{flag._id}}"
                     aria-expanded="false"
-                    aria-controls="collapse{{$index}}")
+                    aria-controls="collapse{{flag._id}}")
                         b Flag {{$index+1}} - {{flag.author.firstName}} {{flag.author.lastName}} (
                         b {{ flag.author.role|role }}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
                         h6.pull-right Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
             div(
-            id="collapse{{$index}}"
+            id="collapse{{flag._id}}"
             class="panel-collapse collapse"
             role="tabpanel"
             ng-if="flag.addressed"
-            aria-labelledby="heading{{$index}}")
+            aria-labelledby="heading{{flag._id}}")
                 div.panel-body
                     .row.left-padding-lg(ng-if="current_user.isSupervisor()")
                         label Addressed?
@@ -41,11 +41,11 @@ div(id="flags_div").bottom-padding-med
                     .row.pull-right.right-padding-lg(ng-if="flag.author._id === current_user._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
             div(
-            id="collapse{{$index}}"
+            id="collapse{{flag._id}}"
             class="panel-collapse collapse in"
             role="tabpanel"
             ng-if="!flag.addressed"
-            aria-labelledby="heading{{$index}}")
+            aria-labelledby="heading{{flag._id}}")
                 div.panel-body
                     .row.left-padding-lg(ng-if="current_user.isSupervisor()")
                         label Addressed?
