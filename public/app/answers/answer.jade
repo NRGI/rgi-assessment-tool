@@ -60,8 +60,8 @@
 
                 div.tab-pane(id="guidance")
                     label: h3 Guidance:
-                    div(ng-bind-html="question.question_guidance_text").top-padding-lg.right-padding-lg.left-padding-lg
+                    div(ng-bind-html="question.question_guidance_text").right-padding-lg.left-padding-lg
                     label(ng-if="question.question_dependancies"): h3 Dependencies:
                     div(
                     ng-bind-html="question.question_dependancies"
-                    ng-if="question.question_dependancies").top-padding-lg.right-padding-lg.left-padding-lg
+                    ng-if="question.question_dependancies").right-padding-lg.left-padding-lg
