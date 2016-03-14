@@ -3,36 +3,22 @@
         h3 Assign Assessment to External Reviewer
     .modal-body
         fieldset
-            div(ng-if="assessment.ext_reviewer_ID.length < 1")
-                .row
-                    h4.col-md-4  External reviewer 1
-                    .form-group.col-md-6(class="nullable")
-                        select.form-group.form-control.right-padding-med(
-                        name="reviewer_selector"
-                        ng-model="assessment.ext_reviewer_ID[assessment.ext_reviewer_ID.length]"
-                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
-                        required)
-                            option(value="" selected disabled) Select external reviewer...
-                    .col-md-1
-                        button.btn.btn-danger(ng-click="reviewerDelete($index)" ng-disabled="assessment.ext_reviewer_ID.length==1") Delete
-
-            div(ng-if="assessment.ext_reviewer_ID.length > 0")
-                .row(ng-repeat="reviewer in assessment.ext_reviewer_ID")
-                    h4.col-md-4  External reviewer {{$index+1}}
-                    .form-group.col-md-5(class="nullable")
-                        select.form-group.form-control.right-padding-med(
-                        name="reviewer_selector"
-                        ng-model="assessment.ext_reviewer_ID[$index]"
-                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
-                        required)
-                            option(value="" selected disabled) Select external reviewer...
-                    .col-md-1
-                        button.btn.btn-danger(ng-click="reviewerDelete($index)" ng-disabled="assessment.ext_reviewer_ID.length==1") Delete
+            .row(ng-repeat="reviewer in assessment.ext_reviewer_ID")
+                h4.col-md-4  External reviewer {{$index+1}}
+                .form-group.col-md-5.nullable
+                    select.form-group.form-control.right-padding-med(
+                    name="reviewer_selector"
+                    ng-model="assessment.ext_reviewer_ID[$index]"
+                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers"
+                    required)
+                        option(value="" selected disabled) Select external reviewer...
+                .col-md-1
+                    button.btn.btn-danger(ng-click="removeAssignee($index)" ng-disabled="assessment.ext_reviewer_ID.length==1") Delete
     .modal-footer
-        button.btn.btn-success(ng-click="assignAssessmentExternal()") Assign external reviewer(s)
+        button.btn.btn-success(ng-click="saveAssigneeList()" ng-disabled="isAssigneeListEmpty()") Assign external reviewer(s)
         | &nbsp;
         button.btn.btn-warning(
-        ng-click="reviewerAdd()"
+        ng-click="addAssignee()"
         ng-disabled="assessment.ext_reviewer_ID.length < 1 || !assessment.ext_reviewer_ID[assessment.ext_reviewer_ID.length-1] || disable_button===true") Add external reviewer
         //"assessment.ext_reviewer_ID[assessment.assessment_countries.length-1].country || disable_button===true") Add external reviewer
         | &nbsp;
