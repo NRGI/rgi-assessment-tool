@@ -44,7 +44,6 @@ angular.module('app')
 
         var resetReference = function() {
             rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
-                console.log(answer);
                 $scope.references = answer.references;
             });
         };
