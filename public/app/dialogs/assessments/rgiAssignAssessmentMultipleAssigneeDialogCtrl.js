@@ -15,6 +15,7 @@ angular.module('app')
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         var
+            availableUsers = [],
             assigneeField = $scope.userType + '_ID',
             originalAssigneeList = [],
             getArrayDifference = function(original, modified) {
@@ -58,7 +59,7 @@ angular.module('app')
             }
 
             rgiUserSrvc.query({role: $scope.userType}, function(users) {
-                $scope.availableUsers = users;
+                availableUsers = users;
             });
         });
 
@@ -68,6 +69,22 @@ angular.module('app')
 
         $scope.removeAssignee = function (index) {
             $scope.assessment[assigneeField].splice(index, 1);
+        };
+
+        $scope.getFilteredAvailableUsers = function(modelValue) {
+            var users = [];
+
+            availableUsers.forEach(function(user) {
+                if(($scope.assessment[assigneeField].indexOf(user._id) === -1) || (user._id === modelValue)) {
+                    users.push(user);
+                }
+            });
+
+            return users;
+        };
+
+        $scope.isNewAssigneeAvailable = function() {
+            return $scope.assessment && ($scope.assessment[assigneeField].length < availableUsers.length);
         };
 
         $scope.isAssigneeListEmpty = function() {
