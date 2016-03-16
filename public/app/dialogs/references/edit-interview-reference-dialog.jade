@@ -1,7 +1,7 @@
-div.left-padding-lg.right-padding-lg
-    div.modal-header
+.left-padding-lg.right-padding-lg
+    .modal-header
         h3 Edit Interview Reference
-    div.modal-body
+    .modal-body
         .form-horizontal.top-padding-lg
 
             fieldset
@@ -30,12 +30,17 @@ div.left-padding-lg.right-padding-lg
                         ta-toolbar="{{taToolbarOptions}}"
                         text-angular
                         ta-max-text="{{editorContentMaxLength}}")
+        .row
+            h4 Interviewee
+            .row.left-padding-lg
+                h5: b Name:
+                | {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}}
 
-        div.spinner(ng-if="disable_button")
-            div.double-bounce1
-            div.double-bounce2
+        .spinner(ng-if="disable_button")
+            .double-bounce1
+            .double-bounce2
 
-    div.modal-footer
+    .modal-footer
         .col-lg-6
             button.btn.btn-block.btn-success(
             ng-click="editReference(new_document)"
