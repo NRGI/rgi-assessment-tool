@@ -33,4 +33,8 @@ angular.module('app')
         $scope.showEditDocumentReferenceDialog = function(referenceIndex) {
             rgiDialogFactory.editDocumentReference($scope, referenceIndex);
         };
+
+        $scope.showEditInterviewReferenceDialog = function(referenceIndex) {
+            rgiDialogFactory.editInterviewReference($scope, referenceIndex);
+        };
     });

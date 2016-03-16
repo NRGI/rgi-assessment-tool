@@ -81,10 +81,8 @@ div(id="prev_bib" ng-if="references.length > 0")
                 ng-if="ref.citation_type!=='interview'"
                 ng-disabled="(assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
                 button.btn.btn-primary(
-                popover="Feature coming"
-                popover-trigger="mouseenter"
                 ng-if="ref.citation_type==='interview'"
-                ng-click=""
+                ng-click="showEditInterviewReferenceDialog($index)"
                 ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
 
             hr

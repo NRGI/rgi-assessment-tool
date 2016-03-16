@@ -202,7 +202,17 @@ angular.module('app')
 
                 ngDialog.openConfirm({
                     template: 'partials/dialogs/references/edit-document-reference-dialog',
-                    controller: 'rgiEditDocumentReferenceDialogCtrl',
+                    controller: 'rgiEditReferenceDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    scope: $scope
+                });
+            },
+            editInterviewReference: function ($scope, referenceIndex) {
+                $scope.ref_index = referenceIndex;
+
+                ngDialog.openConfirm({
+                    template: 'partials/dialogs/references/edit-interview-reference-dialog',
+                    controller: 'rgiEditReferenceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
                     scope: $scope
                 });

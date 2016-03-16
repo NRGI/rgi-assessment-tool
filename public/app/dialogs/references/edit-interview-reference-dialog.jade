@@ -1,0 +1,44 @@
+div.left-padding-lg.right-padding-lg
+    div.modal-header
+        h3 Edit Interview Reference
+    div.modal-body
+        .form-horizontal.top-padding-lg
+
+            fieldset
+                .row.bottom-padding-med
+                    .col-md-12
+                        .pull-left.col-lg-5.input-group
+                            input.form-control(
+                            type="text"
+                            datepicker-popup="{{date_format}}"
+                            placeholder="Date interviewed (required)..."
+                            ng-model="ref.contact_date"
+                            is-open="status.opened"
+                            max-date="date_max_limit"
+                            datepicker-options="date_options"
+                            close-text="Close")
+                            span.input-group-btn
+                                button.btn.btn-default(ng-click="openCalendar($event)")
+                                    i.glyphicon.glyphicon-calendar
+
+                .row.bottom-padding-med
+                    .col-md-12
+                        div(
+                        name="reference-comment"
+                        placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
+                        ng-model="ref.comment"
+                        ta-toolbar="{{taToolbarOptions}}"
+                        text-angular
+                        ta-max-text="{{editorContentMaxLength}}")
+
+        div.spinner(ng-if="disable_button")
+            div.double-bounce1
+            div.double-bounce2
+
+    div.modal-footer
+        .col-lg-6
+            button.btn.btn-block.btn-success(
+            ng-click="editReference(new_document)"
+            ng-disabled="disable_button") Edit reference
+        .col-lg-6
+            button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
