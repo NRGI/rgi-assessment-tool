@@ -5,8 +5,7 @@ angular.module('app')
         $scope,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
-        rgiIdentitySrvc,
-        rgiNotifier
+        rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.ref_type = [
@@ -22,15 +21,16 @@ angular.module('app')
         resetSelection();
         $scope.$on('RESET_SELECTED_REFERENCE_ACTION', resetSelection);
 
-        $scope.deleteReferenceConfirmation = function(ref_index) {
-            rgiDialogFactory.referenceDeleteConfirmation($scope, ref_index);
+        $scope.deleteReferenceConfirmation = function(referenceIndex) {
+            rgiDialogFactory.referenceDeleteConfirmation($scope, referenceIndex);
         };
 
         //TODO Generate Dialog based on change and handle upload process via dialogs
         $scope.selectRefDialog = function(value) {
             rgiDialogFactory.referenceSelect($scope, value);
         };
-        $scope.editReferenceDialog = function(ref_index) {
-            rgiDialogFactory.referenceEdit($scope, ref_index);
+
+        $scope.showEditDocumentReferenceDialog = function(referenceIndex) {
+            rgiDialogFactory.editDocumentReference($scope, referenceIndex);
         };
     });

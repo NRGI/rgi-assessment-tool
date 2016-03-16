@@ -197,14 +197,14 @@ angular.module('app')
                     scope: scope
                 });
             },
-            referenceEdit: function ($scope, ref_index){
-                var scope = $scope;
-                scope.ref_index = ref_index;
+            editDocumentReference: function ($scope, referenceIndex) {
+                $scope.ref_index = referenceIndex;
+
                 ngDialog.openConfirm({
-                    template: 'partials/dialogs/references/edit-ref-dialog',
-                    controller: 'rgiEditRefDialogCtrl',
+                    template: 'partials/dialogs/references/edit-document-reference-dialog',
+                    controller: 'rgiEditDocumentReferenceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
-                    scope: scope
+                    scope: $scope
                 });
             },
             referenceDeleteConfirmation: function ($scope, ref_index){

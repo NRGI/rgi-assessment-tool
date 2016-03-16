@@ -77,7 +77,7 @@ div(id="prev_bib" ng-if="references.length > 0")
                 ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Delete Reference
                 | &nbsp;
                 button.btn.btn-primary(
-                ng-click="editReferenceDialog($index)"
+                ng-click="showEditDocumentReferenceDialog($index)"
                 ng-if="ref.citation_type!=='interview'"
                 ng-disabled="(assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
                 button.btn.btn-primary(
