@@ -10,6 +10,7 @@ var auth                    = require('./auth'),
     interviewees            = require('../controllers/interviewees'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
+    response                = require('../controllers/general-response'),
     multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
     users                   = require('../controllers/users');
@@ -69,7 +70,7 @@ module.exports = function (app) {
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
 
     // PUT
-    app.put('/api/answers/:answer_ID', auth.requiresApiLogin, answers.updateAnswer);
+    app.put('/api/answers/:answer_ID', auth.requiresApiLogin, answers.updateAnswer, assessments.updateModificationDate, response.submit);
 
     ///////////////////////////////////////
     ///// ASSESSMENT OVERVIEW CRUD/////////

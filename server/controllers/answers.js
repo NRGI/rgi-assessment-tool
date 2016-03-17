@@ -81,47 +81,57 @@ exports.createAnswers = function (req, res) {
     res.send();
 };
 
-exports.updateAnswer = function (req, res) {
-    var answer_update = req.body,
+exports.updateAnswer = function (req, res, next) {
+    var updateData = req.body,
         timestamp = new Date().toISOString();
 
     if (!req.user._id) {
-        res.sendStatus(404);
-        return res.end();
-    }
+        req.status = 404;
+        next();
+    } else {
+        Answer.findOne({answer_ID: updateData.answer_ID}, function (err, answer) {
+            var setFields = function(src, dst, fields) {
+                fields.forEach(function(field) {
+                    src[field] = dst[field];
+                });
+            };
 
-    Answer.findOne({answer_ID: answer_update.answer_ID}, function (err, answer) {
-        answer.status = answer_update.status;
-        answer.comments = answer_update.comments;
-        answer.guidance_dialog = answer_update.guidance_dialog;
-        answer.references = answer_update.references;
-        answer.flags = answer_update.flags;
-        answer.external_answer = answer_update.external_answer;
-        answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
+            setFields(answer, updateData, ['status', 'comments', 'guidance_dialog', 'references', 'flags', 'external_answer']);
+            answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
+            var scoreModified = false;
 
-        if (answer_update.hasOwnProperty('researcher_score')) {
-            answer.researcher_score_history.push({date: timestamp, order: answer.researcher_score_history.length + 1, score: answer.researcher_score, justification: answer.researcher_justification});
-            answer.researcher_score = answer_update.researcher_score;
-            answer.researcher_justification = answer_update.researcher_justification;
-        }
-        if (answer_update.hasOwnProperty('reviewer_score')) {
-            answer.reviewer_score_history.push({date: timestamp, order: answer.reviewer_score_history.length + 1, score: answer.reviewer_score, justification: answer.reviewer_justification});
-            answer.reviewer_score = answer_update.reviewer_score;
-            answer.reviewer_justification = answer_update.reviewer_justification;
-        }
-        if (answer_update.hasOwnProperty('final_score')) {
-            answer.final_score = answer_update.final_score;
-            answer.final_role = answer_update.final_role;
-            answer.final_justification = answer_update.final_justification;
-        }
+            ['researcher', 'reviewer'].forEach(function(userType) {
+                if (updateData.hasOwnProperty(userType + '_score')) {
+                    scoreModified = true;
+                    setFields(answer, updateData, [userType + '_score', userType + '_justification']);
 
-        answer.save(function (err) {
-            if (err) {
-                res.send({ reason: err.toString() });
-                return res.end();
-            } else {
-                res.send();
+                    answer[userType + '_score_history'].push({
+                        date: timestamp,
+                        order: answer[userType + '_score_history'].length + 1,
+                        score: answer[userType + '_score'],
+                        justification: answer[userType + '_justification']
+                    });
+                }
+            });
+
+            if (updateData.hasOwnProperty('final_score')) {
+                scoreModified = true;
+                setFields(answer, updateData, ['final_score', 'final_justification']);
+                answer.final_role = updateData.final_role;
             }
+
+            if(scoreModified) {
+                req.last_modified = {user: req.user._id, date: timestamp};
+                req.assessment_ID = answer.assessment_ID;
+            }
+
+            answer.save(function (err) {
+                if (err !== null) {
+                    req.error = err;
+                }
+
+                next();
+            });
         });
-    });
+    }
 };

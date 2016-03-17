@@ -6,6 +6,7 @@ angular.module('app')
         $rootScope,
         ngDialog,
         rgiAnswerMethodSrvc,
+        rgiIntervieweeSrvc,
         rgiNotifier
     ) {
         var
@@ -13,6 +14,11 @@ angular.module('app')
             ref_index = $scope.$parent.$parent.ref_index;
 
         $scope.ref = new_answer_data.references[ref_index];
+
+        if($scope.ref.citation_type === 'interview') {
+            var intervieweeId = $scope.ref.interviewee_ID._id ? $scope.ref.interviewee_ID._id : $scope.ref.interviewee_ID;
+            $scope.interviewee = rgiIntervieweeSrvc.get({_id: intervieweeId});
+        }
 
         var today = new Date();
         $scope.date_default = today;
