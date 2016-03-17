@@ -98,10 +98,13 @@ exports.updateAnswer = function (req, res, next) {
 
             setFields(answer, updateData, ['status', 'comments', 'guidance_dialog', 'references', 'flags', 'external_answer']);
             answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
+            var scoreModified = false;
 
             ['researcher', 'reviewer'].forEach(function(userType) {
                 if (updateData.hasOwnProperty(userType + '_score')) {
+                    scoreModified = true;
                     setFields(answer, updateData, [userType + '_score', userType + '_justification']);
+
                     answer[userType + '_score_history'].push({
                         date: timestamp,
                         order: answer[userType + '_score_history'].length + 1,
@@ -112,12 +115,18 @@ exports.updateAnswer = function (req, res, next) {
             });
 
             if (updateData.hasOwnProperty('final_score')) {
+                scoreModified = true;
                 setFields(answer, updateData, ['final_score', 'final_justification']);
                 answer.final_role = updateData.final_role;
             }
 
+            if(scoreModified) {
+                req.last_modified = {user: req.user._id, date: timestamp};
+                req.assessment_ID = answer.assessment_ID;
+            }
+
             answer.save(function (err) {
-                if (err) {
+                if (err !== null) {
                     req.error = err;
                 }
 

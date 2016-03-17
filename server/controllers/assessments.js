@@ -9,15 +9,12 @@ var error       = [],
     async       = require('async'),
     contact     = require('../utilities/contact');
 
-exports.getAssessments = function (req, res) {
+exports.getAssessments = function (req, res, next) {
 
     if (req.query.ext_reviewer_ID) {
         try {
             req.query.ext_reviewer_ID = JSON.parse(req.query.ext_reviewer_ID);
         } catch (e) {
-            if (e instanceof SyntaxError) {
-                req.query.ext_reviewer_ID = req.query.ext_reviewer_ID;
-            }
         }
     }
     Assessment.find(req.query)
@@ -41,7 +38,7 @@ exports.getAssessments = function (req, res) {
 };
 
 
-exports.getAssessmentsByID = function (req, res) {
+exports.getAssessmentsByID = function (req, res, next) {
     Assessment.findOne({assessment_ID: req.params.assessment_ID})
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
@@ -101,7 +98,7 @@ exports.updateAssessment = function (req, res, next) {
         assessmentUpdates.supervisor_ID.forEach(function (sup) {
             contact_packet.admin.push({
                 name: sup.firstName + ' ' + sup.lastName,
-                email: sup.email,
+                email: sup.email
             });
         });
     }
@@ -264,7 +261,6 @@ exports.updateAssessment = function (req, res, next) {
 
                                         //TODO Need to handle group emails
                                         case 'researcher_trial':
-                                        case 'researcher_trial':
                                             if (assessment_init) {
                                                 contact.new_assessment_assignment(contact_packet, 'researcher');
                                                 if (contact_packet.reviewer_role !== 'supervisor') {
@@ -345,7 +341,6 @@ exports.updateAssessment = function (req, res, next) {
 
                                         //TODO Need to handle group emails
                                         case 'researcher_trial':
-                                        case 'researcher_trial':
                                             contact.trial_assessment_return(contact_packet);
                                             break;
                                         case 'trial_submitted':
@@ -391,4 +386,32 @@ exports.updateAssessment = function (req, res, next) {
             });
         });
     });
+};
+
+exports.updateModificationDate = function(req, res, next) {
+    if(!req.hasOwnProperty('assessment_ID') || !req.hasOwnProperty('last_modified')) {
+        next();
+    } else {
+        Assessment.findOne({assessment_ID: req.assessment_ID}).exec(function (getAssessmentError, assessment) {
+            if(getAssessmentError !== null) {
+                req.error = getAssessmentError;
+                next();
+            } else {
+                if(assessment === null) {
+                    req.status(404);
+                    next();
+                } else {
+                    assessment.last_modified = req.last_modified;
+
+                    assessment.save(function (updateAssessmentError) {
+                        if(updateAssessmentError !== null) {
+                            req.error = updateAssessmentError;
+                        }
+
+                        next();
+                    });
+                }
+            }
+        });
+    }
 };

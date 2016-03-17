@@ -70,7 +70,7 @@ module.exports = function (app) {
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
 
     // PUT
-    app.put('/api/answers/:answer_ID', auth.requiresApiLogin, answers.updateAnswer, response.submit);
+    app.put('/api/answers/:answer_ID', auth.requiresApiLogin, answers.updateAnswer, assessments.updateModificationDate, response.submit);
 
     ///////////////////////////////////////
     ///// ASSESSMENT OVERVIEW CRUD/////////
