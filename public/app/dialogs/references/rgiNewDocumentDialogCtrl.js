@@ -107,6 +107,11 @@ angular.module('app')
                         author: current_user_ID,
                         location: $scope.new_ref_location
                     };
+                if (new_doc_data.source) {
+                    if (new_doc_data.source.split('://') !== 'http' && new_doc_data.source.split('://') !== 'https') {
+                        new_doc_data.source = 'http://' + new_doc_data.source;
+                    }
+                }
 
                 if ($scope.ref_date_accessed) {
                     new_ref_data.date_accessed = new Date($scope.ref_date_accessed).toISOString();
