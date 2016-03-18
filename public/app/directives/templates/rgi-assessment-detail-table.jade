@@ -22,10 +22,11 @@ div(id="answers_div").bottom-padding-med
                     thead: tr
                         th.col-md-1.text-center Question
                         th.col-md-1 Component
-                        th.col-md-5.text-center Text
+                        th.col-md-3.text-center Text
                         th.col-md-2.text-center Status
                         th.col-md-1.text-center Researcher Score
                         th.col-md-1.text-center Reviewer Score
+                        th.col-md-1.text-center External Reviewer(s) Score
                         th.col-md-1.text-center Final Score
                         th.col-md-1.text-center
                     tbody
@@ -34,7 +35,7 @@ div(id="answers_div").bottom-padding-med
                         ng-if="(!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1) && isAnswerAvailable(answer)")
                             td.col-md-1.text-center {{answer.question_ID.question_label}}
                             td.col-md-1 {{answer.question_ID.component_text}}
-                            td.col-md-5 {{answer.question_ID.question_text}}
+                            td.col-md-3 {{answer.question_ID.question_text}}
                             td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  Complete
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  Complete
@@ -54,6 +55,8 @@ div(id="answers_div").bottom-padding-med
                                 .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
                             td.col-md-1.text-center {{answer.researcher_score.letter | ucfirst}}
                             td.col-md-1.text-center {{answer.reviewer_score.letter | ucfirst}}
+                            td.col-md-1
+                                div(ng-repeat="externalReviewerAnswer in answer.external_answer") {{getUser(externalReviewerAnswer.author).firstName}} {{getUser(externalReviewerAnswer.author).lastName}} - {{externalReviewerAnswer.score.letter | ucfirst}}
                             td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control===current_user._id")
                                 a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted' && assessment.status!=='trial_submitted'"
