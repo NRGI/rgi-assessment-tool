@@ -2,16 +2,12 @@
     table.table.table-hover
         thead
             tr
-                th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Assessment
-                th.col-sm-1(ng-if="current_user.isSupervisor()") Researcher
-                th.col-sm-1(ng-if="current_user.isSupervisor()") Reviewer
-                th.col-sm-1(ng-if="current_user.isSupervisor()") External Reviewer(s)
+                th(ng-class="{'col-sm-2': current_user.isSupervisor(), 'col-sm-6': !current_user.isSupervisor()}") Assessment
+                th.col-sm-2(ng-if="current_user.isSupervisor()") Researcher
+                th.col-sm-2(ng-if="current_user.isSupervisor()") Reviewer
+                th.col-sm-2(ng-if="current_user.isSupervisor()") External Reviewer(s)
                 th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Status
-                th.text-center.col-sm-1 Assigned
-                th.text-center.col-sm-1 Started
-                th.text-center.col-sm-1 Submitted
-                th.text-center.col-sm-1 Reviewed
-                th.text-center.col-sm-1 Approve
+                th.text-center.col-sm-1 Milestones
                 th(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") Last Edit
                 //th.col-md-1.text-center Questions Complete/Flagged
                 th.col-sm-1.assessment-actions(ng-if="current_user.isSupervisor()")
@@ -59,66 +55,12 @@
                 //td.text-center.col-md-1
                 //    text(ng-if="assessment.status!=='assigned' && assessment.status!=='submitted'") {{assessment.questions_flagged}}
                 //    text(ng-if="assessment.status==='assigned' || assessment.status==='submitted'")
-
-                //ASSIGNED DATE
-                td.col-sm-1
-                    div.text-center
-                        i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                        ng-if="assessment.assignment_date"
-                        popover="{{assessment.assignment_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                        popover-trigger="mouseenter")
-                        em(ng-if="!assessment.assignment_date") N/A
-                // START DATE
-                td.col-sm-1
-                    div.text-center
-                        // RESEARCHER START DATE
-                        div(ng-if-"current_user.isResearcher() || current_user.isSupervisor()")
-                            i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                            ng-if="assessment.researcher_start_date && (current_user.isResearcher() || current_user.isSupervisor())"
-                            popover="Researcher: {{assessment.researcher_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                            popover-trigger="mouseenter")
-                            em(ng-if="!assessment.researcher_start_date") N/A
-                        // REVIEWER START DATE
-                        div(ng-if="current_user.isReviewer() || current_user.isSupervisor()")
-                            i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                            ng-if="assessment.reviewer_start_date && (current_user.isReviewer() || current_user.isSupervisor())"
-                            popover="Reviewer: {{assessment.reviewer_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                            popover-trigger="mouseenter")
-                            em(ng-if="!assessment.reviewer_start_date") N/A
-
-                //SUBMITTED DATE
-                td.col-sm-1
-                    div.text-center
-                        // RESEARCHER SUBMITTED DATE
-                        div(ng-if-"current_user.isResearcher() || current_user.isSupervisor()")
-                            i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                            ng-if="assessment.researcher_submit_date && (current_user.isResearcher() || current_user.isSupervisor())"
-                            popover="Researcher: {{assessment.researcher_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                            popover-trigger="mouseenter")
-                            em(ng-if="!assessment.researcher_submit_date") N/A
-                        // REVIEWER SUBMITTED DATE
-                        div(ng-if="current_user.isReviewer() || current_user.isSupervisor()")
-                            i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                            ng-if="assessment.reviewer_submit_date && (current_user.isReviewer() || current_user.isSupervisor())"
-                            popover="Reviewer: {{assessment.reviewer_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                            popover-trigger="mouseenter")
-                            em(ng-if="!assessment.reviewer_submit_date") N/A
-                //REVIEWED DATE
-                td.col-sm-1
-                    div.text-center
-                        i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                        ng-if="assessment.last_review_date"
-                        popover="{{assessment.last_review_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                        popover-trigger="mouseenter")
-                        em(ng-if="!assessment.last_review_date") N/A
-                //APPROVED DATE
-                td.col-sm-1
-                    div.text-center
-                        i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
-                        ng-if="assessment.approval_date"
-                        popover="{{assessment.approval_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}"
-                        popover-trigger="mouseenter")
-                        em(ng-if="!assessment.approval_date") N/A
+                td.col-sm-1.text-center
+                    i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
+                    ng-if="isAnyMilestoneStarted(assessment)"
+                    uib-popover-template="'partials/assessments/milestones'"
+                    popover-trigger="mouseenter")
+                    em(ng-if="!isAnyMilestoneStarted(assessment)") N/A
                 //LAST EDIT
                 td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}")
                     div(ng-if="assessment.last_modified")
@@ -144,6 +86,8 @@
                                     text Researcher and/or Reviewer
                                 a(ng-if="assessment.supervisor_ID.length <= 0").inactive-link
                                     text Researcher and/or Reviewer
+                            li(ng-if="(assessment.status === 'unassigned') && (assessment.supervisor_ID.length <= 0)")
+                                a.inactive-link Researcher and/or Reviewer
                             li(ng-if="assessment.status !== 'unassigned'")
                                 a(ng-click="reassignAssessmentDialog(assessment)") Researcher and/or Reviewer
                             li(ng-if="(assessment.status !== 'unassigned') && (assessment.supervisor_ID.length > 0)")

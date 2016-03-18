@@ -216,6 +216,10 @@ table[ts-wrapper="ts-wrapper"] .tablesort-desc {
 .assessment-list-supervisor .dropdown-menu li a.inactive-link:hover {
   background-color: transparent;
 }
+.assessment-milestone-name {
+  font-weight: 700;
+  padding-right: 1em;
+}
 @-moz-keyframes sk-bounce {
   0%, 100% {
     transform: scale(0);
