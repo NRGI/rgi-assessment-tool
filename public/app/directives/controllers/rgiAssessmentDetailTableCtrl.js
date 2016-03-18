@@ -3,10 +3,13 @@ angular.module('app')
     .controller('rgiAssessmentDetailTableCtrl', function (
         $scope,
         rgiIdentitySrvc,
-        rgiQuestionSrvc
+        rgiQuestionSrvc,
+        rgiUserListSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var questions = [];
+        var
+            questions = [],
+            users = {};
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
             questions = questionList;
@@ -54,6 +57,13 @@ angular.module('app')
             });
 
             return options;
+        };
+
+        $scope.getUser = function(userId) {
+            if(!users.hasOwnProperty(userId)) {
+                users[userId] = rgiUserListSrvc.getCached({_id: userId});
+            }
+            return users[userId];
         };
 
         $scope.isAnswerAvailable = function(answer) {
