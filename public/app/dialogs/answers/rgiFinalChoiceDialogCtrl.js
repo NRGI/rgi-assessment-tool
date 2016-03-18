@@ -10,11 +10,8 @@ angular.module('app')
         ngDialog,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
-        rgiAssessmentSrvc,
-        rgiAssessmentMethodSrvc,
         rgiIdentitySrvc,
-        rgiQuestionSetSrvc,
-        rgiUtilsSrvc
+        rgiQuestionSetSrvc
     ) {
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
             _ = $scope.$parent.$parent.$parent._;
@@ -22,6 +19,7 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.question_criteria = $scope.$parent.question.question_criteria;
         $scope.answer = $scope.$parent.$parent.answer;
+        $scope.requestProcessing = false;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
             rgiQuestionSetSrvc.setAnswers(answers);
@@ -58,16 +56,20 @@ angular.module('app')
         }
 
         $scope.externalChoiceSubmit = function () {
-            var new_answer_data = $scope.answer,
+            $scope.requestProcessing = true;
+            var
+                new_answer_data = $scope.answer,
                 final_choice = $scope.final_choice;
 
             new_answer_data.external_answer.push({
                 comment: final_choice.comment,
                 author: $scope.current_user._id
             });
+
             if (final_choice.justification) {
                 _.last(new_answer_data.external_answer).justification = final_choice.justification;
             }
+
             if (final_choice.score) {
                 _.last(new_answer_data.external_answer).score = final_choice.score;
             }
@@ -79,6 +81,8 @@ angular.module('app')
                     ngDialog.close();
                 }, function (reason) {
                     rgiNotifier.error(reason);
+                }).finally(function() {
+                    $scope.requestProcessing = false;
                 });
         };
 
