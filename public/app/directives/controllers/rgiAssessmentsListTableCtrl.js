@@ -63,8 +63,31 @@ angular
         $scope.assignAssessmentExternalDialog = function (assessment) {
             rgiDialogFactory.assessmentExternalAssign($scope, assessment);
         };
+
         $scope.assignAssessmentSupervisorDialog = function (assessment) {
             rgiDialogFactory.assessmentSupervisorAssign($scope, assessment);
+        };
+
+        $scope.isAnyMilestoneStarted = function(assessment) {
+            var
+                milestoneFieldSet = false,
+                milestoneDateFields = ['assignment_date', 'last_review_date', 'approval_date'];
+
+            if($scope.current_user.isResearcher() || $scope.current_user.isSupervisor()) {
+                milestoneDateFields = milestoneDateFields.concat(['researcher_start_date', 'researcher_submit_date']);
+            }
+
+            if($scope.current_user.isReviewer() || $scope.current_user.isSupervisor()) {
+                milestoneDateFields = milestoneDateFields.concat(['reviewer_start_date', 'reviewer_submit_date']);
+            }
+
+            milestoneDateFields.forEach(function(milestoneField) {
+                if(assessment[milestoneField]) {
+                    milestoneFieldSet = true;
+                }
+            });
+
+            return milestoneFieldSet;
         };
 
         $scope.reassignAssessmentDialog = function (assessment) {
