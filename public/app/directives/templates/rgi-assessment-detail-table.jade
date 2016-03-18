@@ -26,7 +26,7 @@ div(id="answers_div").bottom-padding-med
                         th.col-md-2.text-center Status
                         th.col-md-1.text-center Researcher Score
                         th.col-md-1.text-center Reviewer Score
-                        th.col-md-1.text-center External Reviewer(s) Score
+                        th.col-md-1.text-center(ng-if="current_user.isSupervisor()") External Reviewer(s) Score
                         th.col-md-1.text-center Final Score
                         th.col-md-1.text-center
                     tbody
@@ -55,7 +55,7 @@ div(id="answers_div").bottom-padding-med
                                 .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
                             td.col-md-1.text-center {{answer.researcher_score.letter | ucfirst}}
                             td.col-md-1.text-center {{answer.reviewer_score.letter | ucfirst}}
-                            td.col-md-1
+                            td.col-md-1(ng-if="current_user.isSupervisor()")
                                 div(ng-repeat="externalReviewerAnswer in answer.external_answer") {{getUser(externalReviewerAnswer.author).firstName}} {{getUser(externalReviewerAnswer.author).lastName}} - {{externalReviewerAnswer.score.letter | ucfirst}}
                             td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control===current_user._id")
