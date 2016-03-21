@@ -1,0 +1,15 @@
+.pull-left.col-lg-5.input-group
+    input.form-control(
+        type="text"
+        datepicker-popup="{{date_format}}"
+        readonly="readonly"
+        placeholder="{{placeholder}}"
+        ng-model="ngModel"
+        is-open="status.opened"
+        max-date="date_max_limit"
+        datepicker-options="date_options"
+        close-text="Close"
+    )
+    span.input-group-btn
+        button.btn.btn-default(ng-click="openCalendar($event)")
+            i.glyphicon.glyphicon-calendar
