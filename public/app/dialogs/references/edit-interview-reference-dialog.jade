@@ -7,19 +7,7 @@
             fieldset
                 .row.bottom-padding-med
                     .col-md-12
-                        .pull-left.col-lg-5.input-group
-                            input.form-control(
-                            type="text"
-                            datepicker-popup="{{date_format}}"
-                            placeholder="Date interviewed (required)..."
-                            ng-model="ref.contact_date"
-                            is-open="status.opened"
-                            max-date="date_max_limit"
-                            datepicker-options="date_options"
-                            close-text="Close")
-                            span.input-group-btn
-                                button.btn.btn-default(ng-click="openCalendar($event)")
-                                    i.glyphicon.glyphicon-calendar
+                        rgi-calendar(ng-model="ref.contact_date", placeholder="Date accessed...")
 
                 .row.bottom-padding-med
                     .col-md-12
