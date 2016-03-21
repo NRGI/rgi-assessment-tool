@@ -14,6 +14,7 @@ angular.module('app')
             ref_index = $scope.$parent.$parent.ref_index;
 
         $scope.ref = new_answer_data.references[ref_index];
+        var dateField = $scope.ref.citation_type === 'interview' ? 'contact_date' : 'date_accessed';
 
         if($scope.ref.citation_type === 'interview') {
             var intervieweeId = $scope.ref.interviewee_ID._id ? $scope.ref.interviewee_ID._id : $scope.ref.interviewee_ID;
@@ -21,14 +22,18 @@ angular.module('app')
         }
 
         $scope.editReference = function(referenceIndex) {
-            new_answer_data.references[referenceIndex] = $scope.ref;
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                $scope.closeDialog();
-                $rootScope.$broadcast('RESET_REFERENCE_ACTION');
-                rgiNotifier.notify('The reference has been edited');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
+            if($scope.ref[dateField]) {
+                new_answer_data.references[referenceIndex] = $scope.ref;
+                rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+                    $scope.closeDialog();
+                    $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                    rgiNotifier.notify('The reference has been edited');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+            } else {
+                rgiNotifier.error('You must select the date');
+            }
         };
 
         $scope.closeDialog = function () {
