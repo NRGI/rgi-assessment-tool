@@ -71,6 +71,8 @@ angular.module('app')
         getAssessments(criteria);
 
         $scope.newAssessmentDialog = function () {
+            $scope.year = criteria.year;
+            $scope.version = criteria.version;
             rgiDialogFactory.assessmentNew($scope);
         };
     });

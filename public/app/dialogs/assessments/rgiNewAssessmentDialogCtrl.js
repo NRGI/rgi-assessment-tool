@@ -37,26 +37,23 @@ angular.module('app')
         //});
 
         $scope.new_assessment = {
-            year: "",
-            version: "",
+            year: $scope.year ? parseInt($scope.year) : '',
+            version: $scope.version || '',
             assessment_countries: [{}]
         };
 
-        var cur_year = new Date().getFullYear(),
-            years = [],
-            i;
+        var currentYear = new Date().getFullYear();
+        $scope.years = [];
 
-        for (i = 0; i < 6; i += 1) {
-            years.push(cur_year + i);
+        for (var yearIncrement = 0; yearIncrement < 6; yearIncrement++) {
+            $scope.years.push(currentYear + yearIncrement);
         }
-
-        $scope.years = years;
 
         $scope.closeDialog = function () {
             ngDialog.close();
         };
         // TODO remove country from countries scope when added to new assessments
-        $scope.countryAdd = function (country_pop) {
+        $scope.countryAdd = function () {
             $scope.new_assessment.assessment_countries.push({country: ""});
             //var country_id = $scope.new_assessment.assessment_countries[$scope.new_assessment.assessment_countries.length - 2].country.iso2,
             //    country_array = $scope.countries;
