@@ -72,24 +72,10 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                                         autocomplete="off")
 
                         // DATE PUBLISHED
-                        div.left-padding-med
+                        .left-padding-med
                             .row
                                 .form-group
-                                    .col-lg-10.input-group
-                                        input.form-control(
-                                        type="text"
-                                        datepicker-popup="{{date_format}}"
-                                        ng-model="new_document.date_published"
-                                        placeholder="Date published..."
-                                        is-open="pub_status.opened"
-                                        max-date="date_max_limit"
-                                        datepicker-options="date_options"
-                                        close-text="Close")
-                                        span.input-group-btn
-                                            button.btn.btn-default(ng-click="pubCalOpen($event)")
-                                                i.glyphicon.glyphicon-calendar
-
-
+                                    rgi-calendar(ng-model="new_document.date_published", placeholder="Date published...")
 
                     // EXISTING DOC
                     div(ng-if="new_document.status==='submitted'")
@@ -140,21 +126,7 @@ div.left-padding-lg.right-padding-lg(draggable-dialog)
                     div.left-padding-med
                         .row
                             .form-group
-                                .col-lg-10.input-group
-                                    input.form-control(
-                                    type="text"
-                                    datepicker-popup="{{date_format}}"
-                                    ng-model="ref_date_accessed"
-                                    placeholder="Date accessed (required)..."
-                                    is-open="acc_status.opened"
-                                    max-date="date_max_limit"
-                                    datepicker-options="date_options"
-                                    close-text="Close")
-                                    span.input-group-btn
-                                        button.btn.btn-default(ng-click="accCalOpen($event)")
-                                            i.glyphicon.glyphicon-calendar
-
-
+                                rgi-calendar(ng-model="ref_date_accessed", placeholder="Date accessed (required)...")
 
                     //- COMMENT
                     div(id="comment")
