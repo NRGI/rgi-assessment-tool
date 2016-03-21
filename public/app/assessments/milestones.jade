@@ -1,25 +1,32 @@
 div(ng-if="assessment.assignment_date")
-    span.assessment-milestone-name Assigned
-    span.assessment-milestone-date {{assessment.assignment_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left.assessment-milestone-name Assigned
+    .pull-right.assessment-milestone-date {{assessment.assignment_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.researcher_start_date && (current_user.isResearcher() || current_user.isSupervisor())")
-    span(ng-if="current_user.isSupervisor()").assessment-milestone-name Started by Researcher
-    span(ng-if="current_user.isResearcher()").assessment-milestone-name Started
-    span.assessment-milestone-date {{assessment.researcher_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left(ng-if="current_user.isSupervisor()").assessment-milestone-name Started by Researcher
+    .pull-left(ng-if="current_user.isResearcher()").assessment-milestone-name Started
+    .pull-right.assessment-milestone-date {{assessment.researcher_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.researcher_submit_date && (current_user.isResearcher() || current_user.isSupervisor())")
-    span(ng-if="current_user.isSupervisor()").assessment-milestone-name Submitted by Researcher
-    span(ng-if="current_user.isResearcher()").assessment-milestone-name Submitted
-    span.assessment-milestone-date {{assessment.researcher_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left(ng-if="current_user.isSupervisor()").assessment-milestone-name Submitted by Researcher
+    .pull-left(ng-if="current_user.isResearcher()").assessment-milestone-name Submitted
+    .pull-right.assessment-milestone-date {{assessment.researcher_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.reviewer_start_date && (current_user.isReviewer() || current_user.isSupervisor())")
-    span(ng-if="current_user.isSupervisor()").assessment-milestone-name Started by Reviewer
-    span(ng-if="current_user.isReviewer()").assessment-milestone-name Started
-    span.assessment-milestone-date {{assessment.reviewer_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left(ng-if="current_user.isSupervisor()").assessment-milestone-name Started by Reviewer
+    .pull-left(ng-if="current_user.isReviewer()").assessment-milestone-name Started
+    .pull-right.assessment-milestone-date {{assessment.reviewer_start_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.reviewer_submit_date && (current_user.isReviewer() || current_user.isSupervisor())")
-    span(ng-if="current_user.isSupervisor()").assessment-milestone-name Submitted by Reviewer
-    span(ng-if="current_user.isReviewer()").assessment-milestone-name Submitted
-    span.assessment-milestone-date {{assessment.reviewer_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left(ng-if="current_user.isSupervisor()").assessment-milestone-name Submitted by Reviewer
+    .pull-left(ng-if="current_user.isReviewer()").assessment-milestone-name Submitted
+    .pull-right.assessment-milestone-date {{assessment.reviewer_submit_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.last_review_date")
-    span.assessment-milestone-name Reviewed
-    span.assessment-milestone-date {{assessment.last_review_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left.assessment-milestone-name Reviewed
+    .pull-right.assessment-milestone-date {{assessment.last_review_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
 div(ng-if="assessment.approval_date")
-    span.assessment-milestone-name Approved
-    span.assessment-milestone-date {{assessment.approval_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .pull-left.assessment-milestone-name Approved
+    .pull-right.assessment-milestone-date {{assessment.approval_date.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+    .clearfix
