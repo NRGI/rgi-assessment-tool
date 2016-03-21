@@ -3,7 +3,6 @@
 angular.module('app')
     .controller('rgiNewDocumentDialogCtrl', function (
         $scope,
-        $route,
         $rootScope,
         ngDialog,
         rgiNotifier,
@@ -11,8 +10,7 @@ angular.module('app')
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
         rgiIdentitySrvc,
-        rgiUserMethodSrvc,
-        rgiUtilsSrvc
+        rgiUserMethodSrvc
     ) {
         $scope.answer.new_ref_comment = '';
         $scope.current_user = rgiIdentitySrvc.currentUser;
@@ -38,24 +36,6 @@ angular.module('app')
             {value: 'working_paper', text: 'Working Paper'}
         ];
 
-
-        //DATEPICKER OPTS
-        var today = new Date();
-        $scope.date_default = today;
-        $scope.date_max_limit = today;
-        $scope.date_options = {
-            formatYear: 'yy',
-            startingDay: 1
-        };
-        $scope.date_formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        $scope.date_format = $scope.date_formats[0];
-        $scope.status = {
-            opened: false
-        };
-        $scope.calendarOpen = function($event) {
-            $scope.status.opened = true;
-        };
-
         $scope.authorPush = function () {
             $scope.new_document.authors.push({first_name: "", last_name: ""});
         };
@@ -73,7 +53,7 @@ angular.module('app')
         //};
 
         $scope.documentRefSubmit = function (new_document) {
-            var url, new_user_data = rgiIdentitySrvc.currentUser;
+            var new_user_data = rgiIdentitySrvc.currentUser;
             $scope.disable_button = true;
 
             //check for minimum data
