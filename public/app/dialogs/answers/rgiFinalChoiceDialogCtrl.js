@@ -26,16 +26,31 @@ angular.module('app')
             rgiQuestionSetSrvc.setAnswers(answers);
         });
 
-        var getFinalScoreOption = function(text, score, justification, value, role) {
-            return {
-                text: text,
-                score: score,
-                justification: justification,
-                comment: '',
-                value: value,
-                role: role
+        var
+            getReferenceAuthorId = function(reference) {
+                return reference.author._id ? reference.author._id : reference.author;
+            },
+            isAnyReferenceUploaded = function() {
+                var referenceFound = false;
+
+                $scope.answer.references.forEach(function(reference) {
+                    if(getReferenceAuthorId(reference) === $scope.current_user._id) {
+                        referenceFound = true;
+                    }
+                });
+
+                return referenceFound;
+            },
+            getFinalScoreOption = function(text, score, justification, value, role) {
+                return {
+                    text: text,
+                    score: score,
+                    justification: justification,
+                    comment: '',
+                    value: value,
+                    role: role
+                };
             };
-        };
 
         $scope.answerOptions = [getFinalScoreOption('Agree with researcher score', $scope.answer.researcher_score,
             $scope.answer.researcher_justification, 'researcher', 'researcher')];
@@ -47,35 +62,43 @@ angular.module('app')
 
         $scope.answerOptions.push(getFinalScoreOption('Other score', 0, '', 'other', $scope.current_user.role));
 
+        $scope.isOwnAnswerSelected = function() {
+            return ($scope.final_choice !== undefined) && ($scope.final_choice.value === 'other');
+        };
+
         $scope.submitExternalChoice = function () {
-            $scope.requestProcessing = true;
-            var
-                answerData = $scope.answer,
-                finalChoice = $scope.final_choice;
+            if(isAnyReferenceUploaded() || !$scope.isOwnAnswerSelected()) {
+                $scope.requestProcessing = true;
+                var
+                    answerData = $scope.answer,
+                    finalChoice = $scope.final_choice;
 
-            answerData.external_answer.push({
-                comment: finalChoice.comment,
-                author: $scope.current_user._id
-            });
-
-            if (finalChoice.justification) {
-                _.last(answerData.external_answer).justification = finalChoice.justification;
-            }
-
-            if (finalChoice.score) {
-                _.last(answerData.external_answer).score = finalChoice.score;
-            }
-
-            rgiAnswerMethodSrvc.updateAnswer(answerData)
-                .then(function () {
-                    rgiNotifier.notify('Input added');
-                    $route.reload();
-                    ngDialog.close();
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                }).finally(function() {
-                    $scope.requestProcessing = false;
+                answerData.external_answer.push({
+                    comment: finalChoice.comment,
+                    author: $scope.current_user._id
                 });
+
+                if (finalChoice.justification) {
+                    _.last(answerData.external_answer).justification = finalChoice.justification;
+                }
+
+                if (finalChoice.score) {
+                    _.last(answerData.external_answer).score = finalChoice.score;
+                }
+
+                rgiAnswerMethodSrvc.updateAnswer(answerData)
+                    .then(function () {
+                        rgiNotifier.notify('Input added');
+                        $route.reload();
+                        ngDialog.close();
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    }).finally(function() {
+                        $scope.requestProcessing = false;
+                    });
+            } else {
+                rgiNotifier.error('You must add at least one reference for justification');
+            }
         };
 
         $scope.submitFinalChoice = function () {

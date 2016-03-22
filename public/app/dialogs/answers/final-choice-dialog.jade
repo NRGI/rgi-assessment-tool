@@ -40,19 +40,21 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                             text.left-padding-med {{choice.text}}
                                 .row.bottom-padding-med.top-padding-lg
                                     .col-md-12
+                                        div(ng-if="current_user.isExternalReviewer() && isOwnAnswerSelected()")
+                                            rgi-references
                                         div(
-                                            ng-if="current_user.isSupervisor()"
-                                            name="final_choice_justification"
-                                            ng-model="final_choice.justification"
+                                            ng-if="current_user.isExternalReviewer()"
+                                            name="final_choice_comment"
+                                            ng-model="final_choice.comment"
                                             ta-toolbar="{{taToolbarOptions}}"
                                             placeholder="Justification (4,000 character limit)..."
                                             text-angular
                                             ta-max-text="{{editorContentMaxLength}}"
                                         )
                                         div(
-                                            ng-if="current_user.isExternalReviewer()"
-                                            name="final_choice_comment"
-                                            ng-model="final_choice.comment"
+                                            ng-if="current_user.isSupervisor()"
+                                            name="final_choice_justification"
+                                            ng-model="final_choice.justification"
                                             ta-toolbar="{{taToolbarOptions}}"
                                             placeholder="Justification (4,000 character limit)..."
                                             text-angular
@@ -67,7 +69,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
         ) Finalize choice
         button.btn.btn-success(
             ng-if="current_user.isExternalReviewer()"
-            ng-disabled="!final_choice.value || !final_choice.comment || requestProcessing"
+            ng-disabled="!final_choice.value || (isOwnAnswerSelected() && !final_choice.score) || (!isOwnAnswerSelected() && !final_choice.comment) || requestProcessing"
             ng-click="submitExternalChoice()"
         ) External choice
         | &nbsp;
