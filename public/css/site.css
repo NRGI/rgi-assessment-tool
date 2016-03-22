@@ -220,6 +220,9 @@ table[ts-wrapper="ts-wrapper"] .tablesort-desc {
   font-weight: 700;
   padding-right: 1em;
 }
+.popover {
+  max-width: 400px !important;
+}
 @-moz-keyframes sk-bounce {
   0%, 100% {
     transform: scale(0);
