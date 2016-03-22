@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiBiblioFormCtrl', function (
+    .controller('rgiReferencesCtrl', function (
         $scope,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
