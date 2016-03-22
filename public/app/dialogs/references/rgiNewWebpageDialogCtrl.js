@@ -5,7 +5,6 @@ angular.module('app')
         $scope,
         $route,
         $rootScope,
-        ngDialog,
         rgiUtilsSrvc,
         rgiNotifier,
         rgiAllowedFileExtensionGuideSrvc,
@@ -134,7 +133,7 @@ angular.module('app')
         };
 
         $scope.closeDialog = function () {
-            ngDialog.close();
+            $scope.closeThisDialog();
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
     });

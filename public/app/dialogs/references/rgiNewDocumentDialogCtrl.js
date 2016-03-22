@@ -4,7 +4,6 @@ angular.module('app')
     .controller('rgiNewDocumentDialogCtrl', function (
         $scope,
         $rootScope,
-        ngDialog,
         rgiNotifier,
         rgiAnswerMethodSrvc,
         rgiDocumentSrvc,
@@ -153,7 +152,7 @@ angular.module('app')
         };
 
         $scope.closeDialog = function () {
-            ngDialog.close();
+            $scope.closeThisDialog();
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
     });

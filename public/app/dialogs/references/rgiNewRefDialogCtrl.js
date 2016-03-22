@@ -5,7 +5,6 @@ angular.module('app')
         $scope,
         $rootScope,
         $timeout,
-        ngDialog,
         rgiAllowedFileExtensionGuideSrvc,
         rgiDialogFactory,
         rgiNotifier,
@@ -157,7 +156,7 @@ angular.module('app')
         };
 
         $scope.closeDialog = function () {
-            ngDialog.close();
+            $scope.closeThisDialog();
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
 
