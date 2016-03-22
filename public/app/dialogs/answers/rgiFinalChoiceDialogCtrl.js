@@ -25,35 +25,26 @@ angular.module('app')
             rgiQuestionSetSrvc.setAnswers(answers);
         });
 
-        $scope.final_choice_set = [
-            {
-                text: 'Agree with researcher score',
-                score: $scope.answer.researcher_score,
-                justification: $scope.answer.researcher_justification,
+        var getFinalScoreOption = function(text, score, justification, value, role) {
+            return {
+                text: text,
+                score: score,
+                justification: justification,
                 comment: '',
-                value: 'researcher',
-                role: 'researcher'
-            },
-            {
-                text: 'Other score',
-                score: 0,
-                justification: '',
-                comment: '',
-                value: 'other',
-                role: $scope.current_user.role
-            }
-        ];
+                value: value,
+                role: role
+            };
+        };
+
+        $scope.final_choice_set = [getFinalScoreOption('Agree with researcher score', $scope.answer.researcher_score,
+            $scope.answer.researcher_justification, 'researcher', 'researcher')];
 
         if ($scope.answer.reviewer_score) {
-            $scope.final_choice_set.push({
-                text: 'Agree with reviewer score',
-                score: $scope.answer.reviewer_score,
-                justification: $scope.answer.reviewer_justification,
-                comment: '',
-                value: 'reviewer',
-                role: 'reviewer'
-            });
+            $scope.final_choice_set.push(getFinalScoreOption('Agree with reviewer score', $scope.answer.reviewer_score,
+                $scope.answer.reviewer_justification, 'reviewer', 'reviewer'));
         }
+
+        $scope.final_choice_set.push(getFinalScoreOption('Other score', 0, '', 'other', $scope.current_user.role));
 
         $scope.externalChoiceSubmit = function () {
             $scope.requestProcessing = true;
