@@ -111,9 +111,5 @@ angular.module('app')
                         rgiNotifier.error(reason);
                     });
             }
-
-            $scope.closeDialog = function () {
-                ngDialog.close();
-            };
         };
     });
