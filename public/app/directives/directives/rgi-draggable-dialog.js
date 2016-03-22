@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .directive('draggableDialog', function () {
+    .directive('rgiDraggableDialog', function () {
         return function (scope, element) {
             $(element).closest('.ngdialog-content').draggable();
         };
