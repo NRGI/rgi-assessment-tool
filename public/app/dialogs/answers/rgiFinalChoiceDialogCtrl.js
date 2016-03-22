@@ -13,7 +13,8 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiQuestionSetSrvc
     ) {
-        var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
+        var
+            assessmentId = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
             _ = $scope.$parent.$parent.$parent._;
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
@@ -21,7 +22,7 @@ angular.module('app')
         $scope.answer = $scope.$parent.$parent.answer;
         $scope.requestProcessing = false;
 
-        rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+        rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
             rgiQuestionSetSrvc.setAnswers(answers);
         });
 
@@ -36,36 +37,36 @@ angular.module('app')
             };
         };
 
-        $scope.final_choice_set = [getFinalScoreOption('Agree with researcher score', $scope.answer.researcher_score,
+        $scope.answerOptions = [getFinalScoreOption('Agree with researcher score', $scope.answer.researcher_score,
             $scope.answer.researcher_justification, 'researcher', 'researcher')];
 
         if ($scope.answer.reviewer_score) {
-            $scope.final_choice_set.push(getFinalScoreOption('Agree with reviewer score', $scope.answer.reviewer_score,
+            $scope.answerOptions.push(getFinalScoreOption('Agree with reviewer score', $scope.answer.reviewer_score,
                 $scope.answer.reviewer_justification, 'reviewer', 'reviewer'));
         }
 
-        $scope.final_choice_set.push(getFinalScoreOption('Other score', 0, '', 'other', $scope.current_user.role));
+        $scope.answerOptions.push(getFinalScoreOption('Other score', 0, '', 'other', $scope.current_user.role));
 
-        $scope.externalChoiceSubmit = function () {
+        $scope.submitExternalChoice = function () {
             $scope.requestProcessing = true;
             var
-                new_answer_data = $scope.answer,
-                final_choice = $scope.final_choice;
+                answerData = $scope.answer,
+                finalChoice = $scope.final_choice;
 
-            new_answer_data.external_answer.push({
-                comment: final_choice.comment,
+            answerData.external_answer.push({
+                comment: finalChoice.comment,
                 author: $scope.current_user._id
             });
 
-            if (final_choice.justification) {
-                _.last(new_answer_data.external_answer).justification = final_choice.justification;
+            if (finalChoice.justification) {
+                _.last(answerData.external_answer).justification = finalChoice.justification;
             }
 
-            if (final_choice.score) {
-                _.last(new_answer_data.external_answer).score = final_choice.score;
+            if (finalChoice.score) {
+                _.last(answerData.external_answer).score = finalChoice.score;
             }
 
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
                     rgiNotifier.notify('Input added');
                     $route.reload();
@@ -77,30 +78,33 @@ angular.module('app')
                 });
         };
 
-        $scope.finalChoiceSubmit = function () {
-            var new_answer_data = $scope.$parent.answer,
-                final_choice = $scope.final_choice;
-            if (!final_choice) {
+        $scope.submitFinalChoice = function () {
+            var
+                answerData = $scope.$parent.answer,
+                finalChoice = $scope.final_choice;
+
+            if (!finalChoice) {
                 rgiNotifier.error("You must select an action!");
-            } else if (!final_choice.score) {
+            } else if (!finalChoice.score) {
                 rgiNotifier.error("You must select a score!");
-            } else if (!final_choice.justification) {
+            } else if (!finalChoice.justification) {
                 rgiNotifier.error("You must provide a justification!");
             } else {
-                new_answer_data.status = 'final';
-                new_answer_data.final_score = final_choice.score;
-                new_answer_data.final_role = final_choice.role;
-                new_answer_data.final_justification = final_choice.justification;
+                answerData.status = 'final';
+                ['score', 'role', 'justification'].forEach(function(field) {
+                    answerData['final_' + field] = finalChoice[field];
+                });
 
-                rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+                rgiAnswerMethodSrvc.updateAnswer(answerData)
                     .then(function () {
-                        var root_url = $scope.current_user.isSupervisor() ? '/admin/assessments-admin' : '/assessments';
+                        var rootUrl = $scope.current_user.isSupervisor() ? '/admin/assessments-admin' : '/assessments';
 
-                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(new_answer_data)) {
-                            $location.path(root_url + '/answer/' + new_answer_data.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(new_answer_data));
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData)) {
+                            $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(answerData));
                         } else {
-                            $location.path(root_url + '/' + new_answer_data.assessment_ID);
+                            $location.path(rootUrl + '/' + answerData.assessment_ID);
                         }
+
                         rgiNotifier.notify('Answer finalized');
                         ngDialog.close();
                     }, function (reason) {
