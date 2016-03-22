@@ -1,38 +1,35 @@
 div(id="external_answer_div").bottom-padding-med
     legend External answers
-    div.panel-group(
-    id="prev_external_answer_div"
-    role="tablist"
-    aria-multiselectable="true")
-        div.panel.panel-primary(
-        ng-repeat="answer in answer.external_answer"
-        ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()")
-            div.panel-heading(
-            role="tab"
-            id="heading{{answer._id}}")
+    .panel-group#prev_external_answer_div(role="tablist" aria-multiselectable="true")
+        .panel.panel-primary(
+            ng-repeat="answer in answer.external_answer"
+            ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()"
+        )
+            .panel-heading(role="tab" id="heading{{answer._id}}")
                 h4.panel-title
                     div(
-                    style="text-align: left;"
-                    role="button"
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href="#collapse{{answer._id}}"
-                    aria-expanded="false"
-                    aria-controls="collapse{{answer._id}}")
+                        style="text-align: left;"
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#accordion"
+                        href="#collapse{{answer._id}}"
+                        aria-expanded="false"
+                        aria-controls="collapse{{answer._id}}"
+                    )
                         b(ng-if="current_user.isSupervisor() || current_user._id===answer.author._id") {{answer.author.firstName | ucfirst}} {{answer.author.lastName | ucfirst}} -
                         b: em  {{answer.author.external_type}} reviewer
                         em.pull-right  {{answer.date | date:'MM/dd/yyyy'}}
 
-            div.left-padding-lg(
-            id="collapse{{answer._id}}"
-            class="panel-collapse collapse"
-            role="tabpanel"
-            aria-labelledby="heading{{answer._id}}")
-                div.panel-body.left-padding-lg.right-padding-lg
+            .left-padding-lg.panel-collapse.collapse(
+                id="collapse{{answer._id}}"
+                role="tabpanel"
+                aria-labelledby="heading{{answer._id}}"
+            )
+                .panel-body.left-padding-lg.right-padding-lg
                     h5 Answer:
                     .row.left-padding-lg
                         .text-primary {{answer.score.letter | ucfirst}} - {{answer.score.text}}
 
-                    h5 Justification:
-                    .row.left-padding-lg
+                    h5(ng-if="!isAlternativeScore(answer.score)") Justification:
+                    .row.left-padding-lg(ng-if="!isAlternativeScore(answer.score)")
                         .text-primary(ng-bind-html="answer.comment")
