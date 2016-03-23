@@ -27,7 +27,8 @@ div.table-responsive
                 td.col-md-1 {{i.firstName}}
                 td.col-md-1 {{i.lastName}}
                 td.col-md-1
-                    a(href="mailto:i.lastName" ng-disabled="i.email===undefined").btn.btn-default Email
+                    a(ng-if="i.email !== undefined" href="mailto:{{i.email}}").btn.btn-default Email
+                    a(ng-if="i.email === undefined" disabled).btn.btn-default Email
                 td.col-md-1 {{ i.role|role }}
                 td.col-md-1 {{i.title}}
                 td.col-md-1 {{i.organization}}
