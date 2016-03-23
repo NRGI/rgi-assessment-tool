@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteRefDialogCtrl', function (
+    .controller('rgiDeleteReferenceDialogCtrl', function (
         $scope,
         $rootScope,
         ngDialog,
@@ -22,6 +22,7 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
+
         $scope.closeDialog = function () {
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
             ngDialog.close();

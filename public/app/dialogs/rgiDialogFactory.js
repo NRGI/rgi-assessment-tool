@@ -221,8 +221,8 @@ angular.module('app')
                 var scope = $scope;
                 scope.ref_index = ref_index;
                 ngDialog.openConfirm({
-                    template: 'partials/dialogs/references/delete-ref-dialog',
-                    controller: 'rgiDeleteRefDialogCtrl',
+                    template: 'partials/dialogs/references/delete-reference-dialog',
+                    controller: 'rgiDeleteReferenceDialogCtrl',
                     className: 'ngdialog-theme-default',
                     scope: scope
                 });
