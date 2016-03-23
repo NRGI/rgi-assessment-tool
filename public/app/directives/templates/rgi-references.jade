@@ -1,6 +1,6 @@
 legend References
     text(ng-if="!current_user.isExternalReviewer() && !current_user.isSupervisor()")  (required):
-div.bottom-padding-med(
+.bottom-padding-med(
     ng-if="(current_user._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(assessment.status) > -1)) || current_user.isExternalReviewer()"
     id="biblio_div")
     .row
@@ -18,7 +18,7 @@ div.bottom-padding-med(
                 value="{{ref.value}}") {{ref.text}}
 
 //- BILBLIO LIST
-div(id="prev_bib" ng-if="references.length > 0")
+div(id="prev_bib" ng-if="!isReferenceListEmpty()")
     .row.left-padding-lg.right-padding-lg
         h4 Citations
         .row.left-padding-lg.bottom-padding-med(
