@@ -13,12 +13,12 @@ angular.module('app')
         var
             answer = $scope.$parent.$parent.answer,
             currentReference = answer.references[$scope.$parent.$parent.ref_index],
-            isAnotherReferenceFound = function(userField) {
+            isAnotherReferenceFound = function(field) {
                 var anotherReferenceFound = false;
 
                 answer.references.forEach(function(reference) {
-                    if((getUserId(reference, userField) === getUserId(currentReference, userField)) && !reference.hidden &&
-                        (reference.citation_type === currentReference.citation_type) && (reference._id !== currentReference._id)) {
+                    if((reference.citation_type === currentReference.citation_type) && (reference._id !== currentReference._id) &&
+                        (getReferencedObjectId(reference, field) === getReferencedObjectId(currentReference, field)) && !reference.hidden) {
                         anotherReferenceFound = true;
                     }
                 });
@@ -36,41 +36,45 @@ angular.module('app')
 
                 return belongingAnswerFound;
             },
-            getUserId = function(reference, userField) {
-                return reference[userField]._id ? reference[userField]._id : reference[userField];
+            getReferencedObjectId = function(reference, field) {
+                var referencedObjectData = reference[field];
+                return referencedObjectData._id ? referencedObjectData._id : referencedObjectData;
             },
-            removeIntervieweeAnswer = function(interviewee) {
-                var answerIndex = interviewee.answers.indexOf(answer.answer_ID);
+            removeReferencedObjectAnswer = function(referencedObject) {
+                var answerIndex = referencedObject.answers.indexOf(answer.answer_ID);
 
                 if(answerIndex > -1) {
-                    interviewee.answers.splice(answerIndex, 1);
+                    referencedObject.answers.splice(answerIndex, 1);
                 }
             },
-            cleanUpIntervieweeAssessments = function(interviewee) {
+            cleanUpReferencedObjectAssessments = function(referencedObject) {
                 var assessmentIdCollection = [];
 
-                interviewee.assessments.forEach(function(assessmentId) {
-                    if(!isAssessmentReferenceFound(assessmentId, interviewee.answers)) {
+                referencedObject.assessments.forEach(function(assessmentId) {
+                    if(!isAssessmentReferenceFound(assessmentId, referencedObject.answers)) {
                         assessmentIdCollection.push(assessmentId);
                     }
                 });
 
                 assessmentIdCollection.forEach(function(assessmentId) {
-                    interviewee.assessments.splice(interviewee.assessments.indexOf(assessmentId), 1);
+                    referencedObject.assessments.splice(referencedObject.assessments.indexOf(assessmentId), 1);
                 });
+            },
+            cleanUpReferencedObject = function(field, storage, saveObject, promiseList) {
+                if(!isAnotherReferenceFound(field)) {
+                    storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
+                        removeReferencedObjectAnswer(referencedObject);
+                        cleanUpReferencedObjectAssessments(referencedObject);
+                        promiseList.push(saveObject(referencedObject).$promise);
+                    });
+                }
             };
 
         $scope.deleteReference = function() {
             var promises = [];
 
             if(currentReference.citation_type === 'interview') {
-                if(!isAnotherReferenceFound('interviewee_ID')) {
-                    rgiIntervieweeSrvc.get({_id: getUserId(currentReference, 'interviewee_ID')}, function (interviewee) {
-                        removeIntervieweeAnswer(interviewee);
-                        cleanUpIntervieweeAssessments(interviewee);
-                        promises.push(rgiIntervieweeMethodSrvc.updateInterviewee(interviewee).$promise);
-                    });
-                }
+                cleanUpReferencedObject('interviewee_ID', rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc.updateInterviewee, promises);
             }
 
             currentReference.hidden = true;
