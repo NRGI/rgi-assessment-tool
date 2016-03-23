@@ -6,6 +6,8 @@ angular.module('app')
         $rootScope,
         $q,
         rgiAnswerMethodSrvc,
+        rgiDocumentSrvc,
+        rgiDocumentMethodSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier
@@ -75,6 +77,8 @@ angular.module('app')
 
             if(currentReference.citation_type === 'interview') {
                 cleanUpReferencedObject('interviewee_ID', rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc.updateInterviewee, promises);
+            } else if(currentReference.citation_type === 'document') {
+                cleanUpReferencedObject('document_ID', rgiDocumentSrvc, rgiDocumentMethodSrvc.updateDocument, promises);
             }
 
             currentReference.hidden = true;
