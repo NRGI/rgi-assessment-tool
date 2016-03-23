@@ -4,7 +4,6 @@ angular.module('app')
     .controller('rgiDeleteReferenceDialogCtrl', function (
         $scope,
         $rootScope,
-        ngDialog,
         rgiAnswerMethodSrvc,
         rgiNotifier
     ) {
@@ -12,19 +11,14 @@ angular.module('app')
 
         $scope.refDelete = function(ref_index) {
             var new_answer_data = $scope.$parent.$parent.answer;
-
             new_answer_data.references[ref_index].hidden = true;
+
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                $scope.closeDialog();
+                $scope.closeThisDialog();
                 $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                 rgiNotifier.notify('The reference has been deleted');
             }, function (reason) {
                 rgiNotifier.error(reason);
             });
-        };
-
-        $scope.closeDialog = function () {
-            $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
-            ngDialog.close();
         };
     });
