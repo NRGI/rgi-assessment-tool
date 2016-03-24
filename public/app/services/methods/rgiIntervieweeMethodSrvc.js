@@ -2,44 +2,18 @@
 
 angular.module('app')
     .factory('rgiIntervieweeMethodSrvc', function (
-        $http,
-        $q,
-        rgiIntervieweeSrvc
+        rgiIntervieweeSrvc,
+        rgiResourceProcessorSrvc
     ) {
         return {
-            createInterviewee: function (new_interviewee_data) {
-                var new_interviewee = new rgiIntervieweeSrvc(new_interviewee_data),
-                    dfd = $q.defer();
-                new_interviewee.$save().then(function (interviewee) {
-                    dfd.resolve(interviewee);
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            createInterviewee: function (newIntervieweeData) {
+                return rgiResourceProcessorSrvc.process(new rgiIntervieweeSrvc(newIntervieweeData), '$save');
             },
-            deleteInterviewee: function (user_deletion) {
-                var dfd = $q.defer(),
-                    delete_ID = new rgiIntervieweeSrvc();
-
-                delete_ID.id = user_deletion;
-                //noinspection CommaExpressionJS
-                delete_ID.$delete().then(function (response) {
-                    dfd.resolve(response);
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            deleteInterviewee: function (intervieweeId) {
+                return rgiResourceProcessorSrvc.delete(rgiIntervieweeSrvc, intervieweeId);
             },
-            updateInterviewee: function (new_interviewee_data) {
-                var dfd = $q.defer();
-
-                //noinspection CommaExpressionJS
-                new_interviewee_data.$update().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            updateInterviewee: function (interviewee) {
+                return rgiResourceProcessorSrvc.process(interviewee, '$update');
             }
         };
     });
