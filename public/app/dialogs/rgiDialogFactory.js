@@ -185,6 +185,15 @@ angular.module('app')
                     scope: scope
                 });
             },
+            deleteInterviewee: function($scope, interviewee) {
+                $scope.interviewee = interviewee;
+                ngDialog.open({
+                    template: 'partials/dialogs/interviewees/delete-interviewee-dialog',
+                    controller: 'rgiDeleteIntervieweeDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
             referenceSelect: function ($scope, value){
                 var scope = $scope;
                 scope.value = true;
