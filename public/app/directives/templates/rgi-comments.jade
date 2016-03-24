@@ -12,7 +12,7 @@ div(id="comments_div").bottom-padding-med
                         em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
             .row.col-md-11(ng-bind-html="comment.content")
             .row.pull-right.right-padding-lg(ng-if="comment.author._id === current_user._id")
-                button.btn.btn-primary(ng-click="commentEdit(comment, $index)") Edit comment
+                button.btn.btn-primary(ng-click="editComment(comment, $index)") Edit comment
 
     #new_comment_div.bottom-padding-med.top-padding-med
         ng-form(name="new_comment_form")
@@ -27,6 +27,6 @@ div(id="comments_div").bottom-padding-med
                         ta-max-text="{{editorContentMaxLength}}")
                 .col-md-1
                     button.btn.btn-success(
-                    ng-click="commentSubmit()"
+                    ng-click="submitComment()"
                     ng-disabled="new_comment_form.$invalid"
                     ) Submit comment
