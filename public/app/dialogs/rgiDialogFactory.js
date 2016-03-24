@@ -185,6 +185,15 @@ angular.module('app')
                     scope: scope
                 });
             },
+            deleteDocument: function($scope, doc) {
+                $scope.document = doc;
+                ngDialog.open({
+                    template: 'partials/dialogs/documents/delete-document-dialog',
+                    controller: 'rgiDeleteDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
             deleteInterviewee: function($scope, interviewee) {
                 $scope.interviewee = interviewee;
                 ngDialog.open({

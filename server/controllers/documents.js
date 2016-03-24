@@ -305,13 +305,7 @@ exports.updateDocument = function (req, res) {
 };
 
 exports.deleteDocument = function (req, res) {
-
-    // Doc.remove({_id: req.params.id}, function (err) {
-    //     if (!err) {
-    //         res.send();
-    //     } else {
-    //         return res.send({ reason: err.toString() });
-    //     }
-    // });
-    // res.send();
+    Doc.remove({_id: req.params.id}, function (err) {
+        res.send(err ? {reason: err.toString()} : {});
+    });
 };
