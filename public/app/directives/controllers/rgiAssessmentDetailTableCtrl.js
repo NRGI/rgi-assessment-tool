@@ -61,7 +61,7 @@ angular.module('app')
 
         $scope.getUser = function(userId) {
             if(!users.hasOwnProperty(userId)) {
-                users[userId] = rgiUserListSrvc.getCached({_id: userId});
+                users[userId] = rgiUserListSrvc.get({_id: userId});
             }
             return users[userId];
         };
