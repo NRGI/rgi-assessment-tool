@@ -21,9 +21,13 @@ angular.module('app')
                 doc.id = documentId;
 
                 doc.$delete().then(function (response) {
-                    dfd.resolve(response);
-                }, function (response) {
-                    dfd.reject(response.data.reason);
+                    if(response.reason) {
+                        dfd.reject(response.reason);
+                    } else {
+                        dfd.resolve(response);
+                    }
+                }, function () {
+                    dfd.reject('Request Failed');
                 });
 
                 return dfd.promise;
