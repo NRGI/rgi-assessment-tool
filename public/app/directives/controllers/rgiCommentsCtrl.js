@@ -58,4 +58,8 @@ angular.module('app')
         $scope.editComment = function (comment, index) {
             rgiDialogFactory.commentEdit($scope, comment, index);
         };
+
+        $scope.deleteComment = function(comment) {
+            rgiDialogFactory.deleteComment($scope, comment);
+        };
     });
