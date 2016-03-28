@@ -4,13 +4,7 @@ angular.module('app')
     .controller('rgiAnswerCtrl', function (
         $scope,
         $routeParams,
-        $q,
-        $timeout,
-        $route,
-        rgiNotifier,
-        ngDialog,
         rgiAnswerSrvc,
-        rgiDocumentSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiAssessmentSrvc
@@ -35,7 +29,7 @@ angular.module('app')
                         opt.selected = false;
                     }
                 });
-            };
+            }
 
             if (answer.guidance_dialog) {
                 rgiDialogFactory.guidanceDialog($scope);
@@ -47,6 +41,7 @@ angular.module('app')
                 $scope.references = answer.references;
             });
         };
+
         var resetAnswer = function() {
             rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
                 $scope.answer = answer;

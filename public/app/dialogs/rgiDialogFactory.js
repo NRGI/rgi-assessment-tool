@@ -185,6 +185,33 @@ angular.module('app')
                     scope: scope
                 });
             },
+            deleteComment: function($scope, comment) {
+                $scope.comment = comment;
+                ngDialog.open({
+                    template: 'partials/dialogs/comments/delete-comment-dialog',
+                    controller: 'rgiDeleteCommentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
+            deleteDocument: function($scope, doc) {
+                $scope.document = doc;
+                ngDialog.open({
+                    template: 'partials/dialogs/documents/delete-document-dialog',
+                    controller: 'rgiDeleteDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
+            deleteInterviewee: function($scope, interviewee) {
+                $scope.interviewee = interviewee;
+                ngDialog.open({
+                    template: 'partials/dialogs/interviewees/delete-interviewee-dialog',
+                    controller: 'rgiDeleteIntervieweeDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
             referenceSelect: function ($scope, value){
                 var scope = $scope;
                 scope.value = true;
@@ -221,8 +248,8 @@ angular.module('app')
                 var scope = $scope;
                 scope.ref_index = ref_index;
                 ngDialog.openConfirm({
-                    template: 'partials/dialogs/references/delete-ref-dialog',
-                    controller: 'rgiDeleteRefDialogCtrl',
+                    template: 'partials/dialogs/references/delete-reference-dialog',
+                    controller: 'rgiDeleteReferenceDialogCtrl',
                     className: 'ngdialog-theme-default',
                     scope: scope
                 });

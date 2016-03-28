@@ -3,9 +3,6 @@
 angular.module('app')
     .controller('rgiCommentsCtrl', function (
         $scope,
-        $route,
-        $rootScope,
-        ngDialog,
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiAnswerMethodSrvc,
@@ -16,7 +13,7 @@ angular.module('app')
         $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
         $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
-        $scope.commentSubmit = function () {
+        $scope.submitComment = function () {
             var current_user = rgiIdentitySrvc.currentUser,
                 new_comment_data = {
                     content: $scope.update.new_comment,
@@ -57,7 +54,12 @@ angular.module('app')
                 }
             }
         };
-        $scope.commentEdit = function (comment, index) {
+
+        $scope.editComment = function (comment, index) {
             rgiDialogFactory.commentEdit($scope, comment, index);
+        };
+
+        $scope.deleteComment = function(comment) {
+            rgiDialogFactory.deleteComment($scope, comment);
         };
     });

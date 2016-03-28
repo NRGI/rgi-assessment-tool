@@ -1,8 +1,8 @@
+'use strict';
+
 angular.module('app').factory('rgiDocumentSrvc', function ($resource) {
-    'use strict';
-    var DocumentResource = $resource('/api/documents/:_id', {_id: '@id'}, {
+    return $resource('/api/documents/:_id', {_id: '@id'}, {
+        get: {method: 'GET', cache: true},
         update: {method: 'PUT', isArray: false}
     });
-
-    return DocumentResource;
 });

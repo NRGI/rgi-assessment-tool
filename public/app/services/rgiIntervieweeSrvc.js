@@ -2,9 +2,8 @@
 /*jslint nomen: true */
 angular.module('app')
     .factory('rgiIntervieweeSrvc', function ($resource) {
-        var IntervieweeResource = $resource('/api/interviewees/:_id', {_id: '@id'}, {
+        return $resource('/api/interviewees/:_id', {_id: '@id'}, {
+            get: {method: 'GET', cache: true},
             update: {method: 'PUT', isArray: false}
         });
-
-        return IntervieweeResource;
     });

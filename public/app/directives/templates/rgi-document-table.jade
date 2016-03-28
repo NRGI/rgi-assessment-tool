@@ -14,27 +14,30 @@ div.table-responsive
     table.table.table-hover.table-striped.table-condensed.left-padding-lg.right-padding-lg(ng-if="documents.length > 0")
         thead
             tr
-                th Title
-                th Authors
-                th Type
-                th Cited by
-                th Assessments
-                th
-                th
+                th.col-md-2 Title
+                th.col-md-2 Authors
+                th.col-md-1 Type
+                th.col-md-2 Cited by
+                th.col-md-1 Assessments
+                th(colspan="3").col-md-4.text-center Actions
         tbody
             tr(ng-repeat="doc in documents | filter:search_text | orderBy:sort_order")
-                td {{doc.title}}
-                td
-                    .row(ng-repeat="author in doc.authors") {{author.first_name}} {{author.last_name}}
-                td {{doc.type}}
-                td
-                    .row(ng-repeat="user in doc.user_list")
+                td.col-md-2 {{doc.title}}
+                td.col-md-2
+                    div(ng-repeat="author in doc.authors") {{author.first_name}} {{author.last_name}}
+                td.col-md-1 {{doc.type}}
+                td.col-md-2
+                    div(ng-repeat="user in doc.user_list")
                         a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
-                td
-                    a(href="/admin/assessments-admin/{{assessment}}" ng-repeat="assessment in doc.assessments") {{assessment}}
-                td
+                td.col-md-1
+                    div(ng-repeat="assessment in doc.assessments")
+                        a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
+                td.col-md-1
                     a(href="/admin/documents-admin/{{doc._id}}").btn-block.btn.btn-warning Metadata
-                td
+                td.col-md-2
                     a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-default Link to document
+                td.col-md-1
+                    a(ng-if="doc.answers.length <= 0", ng-click="deleteDocument(doc)").btn.btn-danger Delete
+                    a(ng-if="doc.answers.length > 0", disabled).btn.btn-danger Delete
 
     h1.text-danger(ng-if="documents.length < 1") No documents uploaded

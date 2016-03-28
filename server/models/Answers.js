@@ -2,7 +2,7 @@
 var mongoose    = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
-var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerSchema, Answer,
+var commentSchema, referenceSchema, scoreHistorySchema, answerSchema, Answer,
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     //options         = {customCollectionName: "answer_hst"},
@@ -26,10 +26,12 @@ var commentSchema, referenceSchema, interviewSchema, scoreHistorySchema, answerS
 commentSchema = new Schema({
     date: {
         type: Date,
-        default: Date.now},
+        default: Date.now
+    },
     content: htmlSettings,
     author: user_ref,
     addressed: Boolean,
+    hidden: Boolean,
     //TODO see if we need to use populate
     addressed_to: user_ref
 });

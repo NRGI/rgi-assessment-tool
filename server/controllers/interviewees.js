@@ -74,13 +74,7 @@ exports.updateInterviewee = function (req, res) {
 };
 
 exports.deleteInterviewee = function (req, res) {
-
-    // Interviewee.remove({_id: req.params.id}, function (err) {
-    //     if (!err) {
-    //         res.send();
-    //     } else {
-    //         return res.send({ reason: err.toString() });
-    //     }
-    // });
-    // res.send();
+    Interviewee.remove({_id: req.params.id}, function (err) {
+        res.send(err ? {reason: err.toString()} : {});
+    });
 };
