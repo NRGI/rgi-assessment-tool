@@ -67,7 +67,7 @@
                         a(
                         href="mailto:{{assessment.last_modified.user.email}}"
                         ng-if="current_user.isSupervisor()") {{assessment.last_modified.user.lastName}}
-                        text(ng-if="!current_user.isSupervisor()") {{assessment.last_modified.user.role | ucfirst}}
+                        text(ng-if="!current_user.isSupervisor()") {{assessment.last_modified.user.role|role|ucfirst}}
                         | &nbsp;-&nbsp;
                         i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
                         ng-if="assessment.last_modified"
