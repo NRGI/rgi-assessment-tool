@@ -13,6 +13,11 @@ angular.module('app')
             return role === undefined ? undefined : role.replace('ext_', 'external ');
         };
     })
+    .filter('readableId', function () {
+        return function (role) {
+            return role === undefined ? undefined : role.split('_').join(' ');
+        };
+    })
     .filter('zpad', function () {
         return function (n, len) {
             var num = parseInt(n, 10);
