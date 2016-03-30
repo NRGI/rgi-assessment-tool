@@ -96,7 +96,16 @@ exports.updateAnswer = function (req, res, next) {
                 });
             };
 
-            setFields(answer, updateData, ['status', 'comments', 'guidance_dialog', 'references', 'flags', 'external_answer']);
+            setFields(answer, updateData, [
+                'status',
+                'comments',
+                'guidance_dialog',
+                'references',
+                'flags',
+                'external_answer',
+                'researcher_resolve_flag_required'
+            ]);
+
             answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
             var scoreModified = false;
 

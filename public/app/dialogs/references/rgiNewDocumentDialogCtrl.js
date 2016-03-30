@@ -135,6 +135,7 @@ angular.module('app')
                 }
 
                 new_answer_data.references.push(new_ref_data);
+                new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
 
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))

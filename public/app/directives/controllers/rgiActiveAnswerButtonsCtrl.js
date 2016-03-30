@@ -26,7 +26,7 @@ angular
             rgiQuestionSetSrvc.setAnswers(answers);
         });
 
-        var updateAnswer = function(answerData, status, notificationMessage, additionalCondition) {
+        var updateAnswer = function(answerData, status, notificationMessage) {
             answerData.status = status;
             var next_answer,
                 answer_order = $scope.$parent.answer.question_order,
@@ -53,6 +53,7 @@ angular
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
                 flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
+
             if (new_answer_data.new_answer_selection) {
                 new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
             }
@@ -64,6 +65,8 @@ angular
             } else if (new_answer_data.status==='assigned') {
                 new_answer_data.status = 'saved';
             }
+
+            new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(function () {
@@ -97,6 +100,7 @@ angular
 
         $scope.answerResubmit = function () {
             var new_answer_data = $scope.answer;
+            new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
 
             if (!new_answer_data[$scope.current_user.role + '_score'] && new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');

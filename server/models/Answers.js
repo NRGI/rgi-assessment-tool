@@ -109,6 +109,7 @@ answerSchema = new Schema({
         index: true,
         ref: 'Question'}, // generated from _id value of Question Model
     question_trial: Boolean,
+    researcher_resolve_flag_required: Boolean,
     guidance_dialog: {
         type: Boolean,
         default: true},

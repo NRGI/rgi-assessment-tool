@@ -28,6 +28,7 @@ angular.module('app')
 
             new_answer_data.flags.push(new_flag_data);
             new_answer_data.status = 'flagged';
+            new_answer_data.researcher_resolve_flag_required = true;
 
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(function () {

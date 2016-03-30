@@ -3,6 +3,7 @@
     button.btn.btn-success(
     ng-click="answerResubmit()"
     ng-if="assessment.edit_control===current_user._id && assessment.status==='review_' + current_user.role"
+    ng-disabled="isResolveFlagRequired() && !isChoiceChanged() && !isJustificationChanged()"
     ) Mark complete
     | &nbsp;
 
@@ -15,6 +16,7 @@
     button.btn.btn-primary(
     ng-click="answerSave()"
     ng-if="(assessment.edit_control===current_user._id && assessment.status!=='submitted' && assessment.status!=='trial_submitted') || current_user.isSupervisor()"
+    ng-disabled="!isChoiceChanged() && !isJustificationChanged()"
     ) Save answer
     | &nbsp;
 
