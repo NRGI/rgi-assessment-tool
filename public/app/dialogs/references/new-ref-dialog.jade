@@ -130,12 +130,12 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         .row.bottom-padding-med
                             .col-md-12
                                 div(
-                                    name="reference-comment"
-                                    placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
-                                    ng-model="answer_update.human_ref_comment"
-                                    ta-toolbar="{{taToolbarOptions}}"
-                                    text-angular
-                                    ta-max-text="{{editorContentMaxLength}}")
+                                name="reference-comment"
+                                placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
+                                ng-model="answer_update.human_ref_comment"
+                                ta-toolbar="{{taToolbarOptions}}"
+                                text-angular
+                                ta-max-text="{{editorContentMaxLength}}")
 
                         //existing interviewee
                         div(ng-if="interviewee_selection==='existing'")
