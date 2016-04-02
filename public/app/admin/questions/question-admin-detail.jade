@@ -158,23 +158,11 @@
                     div(id="guidance_text_div").row-fluid.right-padding-lg.left-padding-lg
                         label Guidance Text
                         .form-group.left-padding-lg.right-padding-lg(required)
-                            div(
-                                name="guidance_text"
-                                text-angular-name="guidance_text"
-                                ng-model="question.question_guidance_text"
-                                ta-toolbar="{{taToolbarOptions}}"
-                                text-angular
-                                ta-max-text="{{editorContentMaxLength}}")
+                            rgi-wysiwyg(name="guidance_text", ng-model="question.question_guidance_text")
                     div(id="dependancy_div").row-fluid.right-padding-lg.left-padding-lg
                         label Dependencies
                         .form-group.left-padding-lg.right-padding-lg
-                            div(
-                            name="dependancy_text"
-                            text-angular-name="dependancy_text"
-                            ng-model="question.question_dependancies"
-                            ta-toolbar="{{taToolbarOptions}}"
-                            text-angular
-                            ta-max-text="{{editorContentMaxLength}}")
+                            rgi-wysiwyg(name="dependancy_text", ng-model="question.question_dependancies")
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
 
