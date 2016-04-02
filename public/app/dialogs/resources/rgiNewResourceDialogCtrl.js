@@ -10,8 +10,6 @@ angular.module('app')
         rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.new_resource = {
             order: $scope.$parent.resources.length + 1,
@@ -19,7 +17,6 @@ angular.module('app')
         };
 
         $scope.resourceCreate = function () {
-
             if (!$scope.new_resource.order) {
                 rgiNotifier.error('You must supply the order you want the block to appear!');
             } else if (!$scope.new_resource.head) {

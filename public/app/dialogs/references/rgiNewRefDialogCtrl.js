@@ -22,8 +22,9 @@ angular.module('app')
         //INTERVIEWEE
         /////////////
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
+        $scope.salutation_opts = ['mr.', 'mrs.', 'ms.'];
+        $scope.answer_update = $scope.$parent.answer;
+        $scope.interviewee_list = [];
 
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
@@ -31,10 +32,7 @@ angular.module('app')
             {text: 'Industry', value: 'industry'},
             {text: 'Expert', value: 'expert'},
             {text: 'Other', value: 'other'}];
-        $scope.salutation_opts = ['mr.', 'mrs.', 'ms.'];
 
-        $scope.answer_update = $scope.$parent.answer;
-        $scope.interviewee_list = [];
         rgiIntervieweeSrvc.query({}, function (interviewees) {
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {

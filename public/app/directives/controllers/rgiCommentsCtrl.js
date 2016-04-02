@@ -10,8 +10,6 @@ angular.module('app')
         rgiNotifier
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.submitComment = function () {
             var current_user = rgiIdentitySrvc.currentUser,

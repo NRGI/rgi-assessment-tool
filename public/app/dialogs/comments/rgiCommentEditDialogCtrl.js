@@ -10,16 +10,12 @@ angular.module('app')
         rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
-
         $scope.comment_content = $scope.$parent.comment.content;
 
         $scope.saveComment = function () {
             var new_answer_data = $scope.$parent.update,
                 new_comment_data = $scope.$parent.comment,
-                index = $scope.$parent.index,
-                answer_ID = $scope.$parent.update.answer_ID;
+                index = $scope.$parent.index;
             if (new_comment_data.content === $scope.comment_content) {
                 rgiNotifier.error('Do you have edits to submit?');
             } else {
