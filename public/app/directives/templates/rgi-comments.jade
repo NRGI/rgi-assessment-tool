@@ -20,13 +20,11 @@ div(id="comments_div").bottom-padding-med
         ng-form(name="new_comment_form")
             .row.left-padding-lg
                 .col-md-10
-                    div(
+                    rgi-wysiwyg(
                         name="comment"
                         ng-model="update.new_comment"
-                        ta-toolbar="{{taToolbarOptions}}"
                         placeholder="New comment (4,000 character limit)..."
-                        text-angular
-                        ta-max-text="{{editorContentMaxLength}}")
+                    )
                 .col-md-1
                     button.btn.btn-success(
                     ng-click="submitComment()"

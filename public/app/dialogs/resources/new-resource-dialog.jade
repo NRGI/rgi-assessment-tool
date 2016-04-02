@@ -21,14 +21,11 @@ div.left-padding-lg.right-padding-lg
                     ng-model="new_resource.head")
             .row-fluid
                 .row.form-group.left-padding-lg.right-padding-lg(required)
-                    div(
-                    name="resource-content_text"
-                    text-angular-name="content_text"
-                    ng-model="new_resource.body"
-                    ta-toolbar="{{taToolbarOptions}}"
-                    placeholder="Please provide resource content (4,000 character limit)..."
-                    text-angular
-                    ta-max-text="{{editorContentMaxLength}}")
+                    rgi-wysiwyg(
+                        name="resource-content_text"
+                        placeholder="Please provide resource content (4,000 character limit)..."
+                        ng-model="new_resource.body"
+                    )
 
     div.modal-footer
         button.btn.btn-success(ng-click="resourceCreate()") Create new block

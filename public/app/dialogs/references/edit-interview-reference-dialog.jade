@@ -11,13 +11,11 @@
 
                 .row.bottom-padding-med
                     .col-md-12
-                        div(
-                        name="reference-comment"
-                        placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
-                        ng-model="ref.comment"
-                        ta-toolbar="{{taToolbarOptions}}"
-                        text-angular
-                        ta-max-text="{{editorContentMaxLength}}")
+                        rgi-wysiwyg(
+                            name="reference-comment"
+                            placeholder="Enter relevant interview statements for this question (4,000 character limit) (required)..."
+                            ng-model="ref.comment"
+                        )
         .row
             h4 Interviewee
             .row.left-padding-lg

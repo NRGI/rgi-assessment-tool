@@ -6,12 +6,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
             fieldset
                 .row
                     .form-group(required).col-md-12
-                        div(
-                            name="answer_text"
-                            ng-model="flag_content"
-                            ta-toolbar="{{taToolbarOptions}}"
-                            text-angular
-                            ta-max-text="{{editorContentMaxLength}}")
+                        rgi-wysiwyg(name="answer_text", ng-model="flag_content")
 
     div.modal-footer
         button.btn.btn-success(ng-click="saveFlag()" ng-disabled="!flag_content") Save
