@@ -11,8 +11,6 @@ angular.module('app')
         rgiAnswerMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.saveFlag = function () {
             var new_answer_data = $scope.$parent.answer,

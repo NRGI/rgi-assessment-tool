@@ -6,12 +6,7 @@ div.left-padding-lg.right-padding-lg
             fieldset
                 .row
                     .form-group(required).col-md-12
-                        div(
-                            name="comment_text"
-                            ng-model="comment_content"
-                            ta-toolbar="{{taToolbarOptions}}"
-                            text-angular
-                            ta-max-text="{{editorContentMaxLength}}")
+                        rgi-wysiwyg(name="comment_text", ng-model="comment_content")
     div.modal-footer
         button.btn.btn-success(ng-click="saveComment()" ng-disabled="!comment_content") Save
         | &nbsp;

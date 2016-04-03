@@ -11,7 +11,7 @@ div(id="comments_div").bottom-padding-med
                     small
                         em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
             .row.col-md-11(ng-bind-html="comment.content")
-            .row.pull-right.right-padding-lg(ng-if="comment.author._id === current_user._id")
+            .row.pull-right.right-padding-lg(ng-if="isAuthor(comment)")
                 button.btn.btn-primary(ng-click="editComment(comment, $index)") Edit comment
                 | &nbsp
                 button.btn.btn-danger(ng-click="deleteComment(comment)") Delete comment
@@ -20,13 +20,11 @@ div(id="comments_div").bottom-padding-med
         ng-form(name="new_comment_form")
             .row.left-padding-lg
                 .col-md-10
-                    div(
+                    rgi-wysiwyg(
                         name="comment"
                         ng-model="update.new_comment"
-                        ta-toolbar="{{taToolbarOptions}}"
                         placeholder="New comment (4,000 character limit)..."
-                        text-angular
-                        ta-max-text="{{editorContentMaxLength}}")
+                    )
                 .col-md-1
                     button.btn.btn-success(
                     ng-click="submitComment()"

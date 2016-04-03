@@ -42,23 +42,17 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     .col-md-12
                                         div(ng-if="current_user.isExternalReviewer() && isOwnAnswerSelected()")
                                             rgi-references
-                                        div(
+                                        rgi-wysiwyg(
                                             ng-if="current_user.isExternalReviewer()"
                                             name="final_choice_comment"
                                             ng-model="final_choice.comment"
-                                            ta-toolbar="{{taToolbarOptions}}"
                                             placeholder="Justification (4,000 character limit)..."
-                                            text-angular
-                                            ta-max-text="{{editorContentMaxLength}}"
                                         )
-                                        div(
+                                        rgi-wysiwyg(
                                             ng-if="current_user.isSupervisor()"
                                             name="final_choice_justification"
                                             ng-model="final_choice.justification"
-                                            ta-toolbar="{{taToolbarOptions}}"
                                             placeholder="Justification (4,000 character limit)..."
-                                            text-angular
-                                            ta-max-text="{{editorContentMaxLength}}"
                                         )
 
     .modal-footer

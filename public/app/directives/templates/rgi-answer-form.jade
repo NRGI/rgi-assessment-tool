@@ -19,11 +19,9 @@
                     .row.left-padding-lg
                         .col-md-11
                             h4 Justification (required):
-                            div(
-                            name="justification"
-                            ng-model="answer[current_user.role + '_justification']"
-                            ta-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'"
-                            ta-toolbar="{{taToolbarOptions}}"
-                            placeholder="Please provide your justification (4,000 character limit)..."
-                            text-angular
-                            ta-max-text="{{editorContentMaxLength}}")
+                            rgi-wysiwyg(
+                                name="justification"
+                                ng-model="answer[current_user.role + '_justification']"
+                                placeholder="Please provide your justification (4,000 character limit)..."
+                                disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'"
+                            )

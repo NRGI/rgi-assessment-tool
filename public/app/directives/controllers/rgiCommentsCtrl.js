@@ -10,8 +10,6 @@ angular.module('app')
         rgiNotifier
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.editorContentMaxLength = $scope.$root.editorContentMaxLength;
-        $scope.taToolbarOptions = $scope.$root.taToolbarOptions;
 
         $scope.submitComment = function () {
             var current_user = rgiIdentitySrvc.currentUser,
@@ -31,28 +29,30 @@ angular.module('app')
                     new_update_data.status = 'saved';
                 }
 
-                switch($scope.$parent.page_type) {
-                    case 'answer':
-                        rgiAnswerMethodSrvc.updateAnswer(new_update_data).then(function () {
-                            rgiNotifier.notify('Comment added');
-                            $scope.update.new_comment = undefined;
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
-                        });
-                        break;
-                    case 'question':
-                        rgiQuestionMethodSrvc.updateQuestion(new_update_data).then(function () {
-                            rgiNotifier.notify('Comment added');
-                            $scope.update.new_comment = undefined;
-                        }, function (reason) {
-                            rgiNotifier.error(reason);
-                        });
-                        break;
-                    default:
-                        rgiNotifier.error('Unrecognized page format!');
+                var saveComment;
 
+                if($scope.$parent.page_type === 'answer') {
+                    saveComment = rgiAnswerMethodSrvc.updateAnswer;
+                } else if($scope.$parent.page_type === 'question') {
+                    saveComment = rgiQuestionMethodSrvc.updateQuestion;
+                }
+
+                if(saveComment === undefined) {
+                    rgiNotifier.error('Unrecognized page format!');
+                } else {
+                    saveComment(new_update_data).then(function () {
+                        rgiNotifier.notify('Comment added');
+                        $scope.update.new_comment = undefined;
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                    });
                 }
             }
+        };
+
+        $scope.isAuthor = function(comment) {
+            var currentUserId = $scope.current_user._id;
+            return comment.author._id ? (comment.author._id === currentUserId) : (comment.author === currentUserId);
         };
 
         $scope.editComment = function (comment, index) {
