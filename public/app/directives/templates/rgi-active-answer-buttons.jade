@@ -10,7 +10,6 @@
     button.btn.btn-success(
     ng-click="answerSubmit()"
     ng-if="assessment.edit_control===current_user._id && (['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1)"
-    ng-disabled="!isChoiceChanged() && !isJustificationChanged()"
     ) Mark complete
     | &nbsp;
 
