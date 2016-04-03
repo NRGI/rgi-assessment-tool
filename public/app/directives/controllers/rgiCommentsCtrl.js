@@ -56,7 +56,7 @@ angular.module('app')
         };
 
         $scope.editComment = function (comment, index) {
-            rgiDialogFactory.commentEdit($scope, comment, index);
+            rgiDialogFactory.commentEdit($scope.update, comment, index);
         };
 
         $scope.deleteComment = function(comment) {
