@@ -87,7 +87,7 @@ angular.module('app')
                         location: $scope.new_ref_location
                     };
                 if (new_doc_data.source) {
-                    if (new_doc_data.source.split('://') !== 'http' && new_doc_data.source.split('://') !== 'https') {
+                    if (new_doc_data.source.split('://')[0] !== 'http' && new_doc_data.source.split('://')[0] !== 'https') {
                         new_doc_data.source = 'http://' + new_doc_data.source;
                     }
                 }

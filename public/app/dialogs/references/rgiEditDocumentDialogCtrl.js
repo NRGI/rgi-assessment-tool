@@ -66,6 +66,11 @@ angular.module('app')
             } else if (!$scope.new_doc_data.year) {
                 rgiNotifier.error('You must provide the year of publication!');
             } else {
+                if (new_doc_data.source) {
+                    if (new_doc_data.source.split('://')[0] !== 'http' && new_doc_data.source.split('://')[0] !== 'https') {
+                        new_doc_data.source = 'http://' + new_doc_data.source;
+                    }
+                }
                 rgiDocumentMethodSrvc.updateDocument(new_doc_data).then(function () {
                     // TODO fix save notification
                     rgiNotifier.notify('Document has been updated');
