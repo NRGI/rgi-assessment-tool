@@ -2,7 +2,6 @@
 angular.module('app', [
     'angular.filter',
     'angularFileUpload',
-    'angular-redactor',
     'angular-underscore',
     'angucomplete',
     'infinite-scroll',
