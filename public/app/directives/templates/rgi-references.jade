@@ -26,8 +26,19 @@ div(id="prev_bib" ng-if="!isReferenceListEmpty()")
         ng-if="!ref.hidden")
             .row
                 b Type:
-                u: em(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | addSpaces | ucfirst}}
                 u: em(ng-if="ref.citation_type === 'interview'")  {{ref.citation_type | ucfirst}}
+                span(ng-if="current_user.isSupervisor()")
+                    u: em(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | addSpaces | ucfirst}}
+                span(ng-if="!current_user.isSupervisor()")
+                    u: em(ng-if="ref.citation_type === 'document'")
+                        span(ng-if="['book', 'data_file', 'journal', 'parliamentary_meeting_note', 'policy_document', 'web_page', 'generic'].indexOf(ref.document_ID.type) > -1")  {{ref.document_ID.type | addSpaces | ucfirst}}
+                        span(ng-if="['book_section', 'encyclopedia_article'].indexOf(ref.document_ID.type) > -1")  Book Chapter
+                        span(ng-if="['report', 'conference_proceedings'].indexOf(ref.document_ID.type) > -1")  Report
+                        span(ng-if="['working_paper', 'thesis'].indexOf(ref.document_ID.type) > -1")  Working Paper
+                        span(ng-if="['newspaper_article', 'magazine_article', 'television_broadcast', 'film'].indexOf(ref.document_ID.type) > -1")  Press Article
+                        span(ng-if="['case', 'hearing'].indexOf(ref.document_ID.type) > -1")  Judicial Decision
+                        span(ng-if="['statute', 'bill'].indexOf(ref.document_ID.type) > -1")  Legislation
+                        span(ng-if="ref.document_ID.type===''")  Legislation
             .row(ng-if="ref.citation_type !== 'interview'")
                 b Title:
                 |  {{ref.document_ID.title}} (
