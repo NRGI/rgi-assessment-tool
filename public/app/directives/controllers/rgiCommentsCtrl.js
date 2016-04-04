@@ -55,8 +55,8 @@ angular.module('app')
             return comment.author._id ? (comment.author._id === currentUserId) : (comment.author === currentUserId);
         };
 
-        $scope.editComment = function (comment, index) {
-            rgiDialogFactory.commentEdit($scope, comment, index);
+        $scope.editComment = function (comment) {
+            rgiDialogFactory.commentEdit($scope.update, comment);
         };
 
         $scope.deleteComment = function(comment) {

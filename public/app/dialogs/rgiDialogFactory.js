@@ -173,16 +173,15 @@ angular.module('app')
                 });
 
             },
-            commentEdit: function($scope, comment, index) {
-                var scope = $scope;
-                scope.value = true;
-                scope.index = index;
-                scope.comment = comment;
+            commentEdit: function(answer, comment) {
                 ngDialog.open({
                     template: 'partials/dialogs/comments/comment-edit-dialog',
                     controller: 'rgiCommentEditDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
-                    scope: scope
+                    data: {
+                        answer: answer,
+                        comment: comment
+                    }
                 });
             },
             deleteComment: function($scope, comment) {
