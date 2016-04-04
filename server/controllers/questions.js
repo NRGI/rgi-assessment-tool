@@ -12,7 +12,6 @@ exports.getQuestions = function (req, res) {
 
 exports.getQuestionsByID = function (req, res) {
     Question.findOne({_id: req.params.id})
-        //.populate('question_dependancies.dependancies', 'question_label question_text')
         .exec(function (err, question) {
             res.send(question);
         });
@@ -123,7 +122,6 @@ exports.updateQuestion = function (req, res) {
                 question.question_criteria = question_update.question_criteria;
                 //TODO deal with chang in criteria number and norm
                 //question.question_norm = question_update.question_norm;
-                question.question_dependancies = question_update.question_dependancies;
                 question.question_guidance_text = question_update.question_guidance_text;
                 question.comments = question_update.comments;
                 question.linkedOption = question_update.linkedOption;

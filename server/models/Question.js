@@ -76,14 +76,7 @@ questionSchema = new Schema({
         value: Number
     }],  ///from Criterion columns and used to be called question_choices
     question_norm: Number, ///Len of options used for normalizations...ignores NAs
-    //question_dependancies: [{
-    //    dependancies: [{
-    //        type: ObjectId,
-    //        ref: 'Question'}], //from question dependancies column points to question label
-    //    trigger: String, //option that hides and scores
-    //    target_score: String}],
     question_guidance_text: htmlSettings, //from Guidance Notes column
-    question_dependancies: htmlSettings, //from Dependancies column
     mapping_2013_num: String, ///from Mapping: RGI 2013 column
     mapping_2013_text: String,
     mapping_2013_category: String,
@@ -253,10 +246,6 @@ function createDefaultQuestions() {
                     { "letter": "e", "text" : "Not applicable/Other. (Explain in 'comments' box.)", "name" : "criteria_e", "order" : 5, value: -999 }
                 ],
                 "question_norm": 4,
-                //"question_dependancies": [{
-                //    dependancies: ["561fe604f004cd471570543a"], //from question dependancies column points to question label
-                //    trigger: 'criteria_e', //option order that hides and scores
-                //    target_score: "criteria_e"}],
                 "question_guidance_text": "<p>'Machine-readable' data <br> refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "mapping_2013_num": 1,
                 "mapping_2013_text": "Changed: Disaggregated response categories, in previous version, aggregated here. RGI2013.20: Does the Ministry of XX publish periodical information on some or all of the information on revenue generation presented in the table below (in reports or statistical databases)?",
