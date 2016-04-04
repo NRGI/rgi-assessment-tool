@@ -12,7 +12,7 @@ div(id="comments_div").bottom-padding-med
                         em  {{comment.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
             .row.col-md-11(ng-bind-html="comment.content")
             .row.pull-right.right-padding-lg(ng-if="isAuthor(comment)")
-                button.btn.btn-primary(ng-click="editComment(comment, $index)") Edit comment
+                button.btn.btn-primary(ng-click="editComment(comment)") Edit comment
                 | &nbsp
                 button.btn.btn-danger(ng-click="deleteComment(comment)") Delete comment
 

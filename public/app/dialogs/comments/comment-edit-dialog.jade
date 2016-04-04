@@ -6,8 +6,8 @@ div.left-padding-lg.right-padding-lg
             fieldset
                 .row
                     .form-group(required).col-md-12
-                        rgi-wysiwyg(name="comment_text", ng-model="comment_content")
+                        rgi-wysiwyg(name="comment_text", ng-model="commentContent")
     div.modal-footer
-        button.btn.btn-success(ng-click="saveComment()" ng-disabled="!comment_content") Save
+        button.btn.btn-success(ng-click="saveComment()" ng-disabled="!isCommentModificationValid()") Save
         | &nbsp;
         button.btn.btn-default(ng-click="closeThisDialog()") Cancel

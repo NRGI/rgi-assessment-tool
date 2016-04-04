@@ -173,15 +173,14 @@ angular.module('app')
                 });
 
             },
-            commentEdit: function(answer, comment, index) {
+            commentEdit: function(answer, comment) {
                 ngDialog.open({
                     template: 'partials/dialogs/comments/comment-edit-dialog',
                     controller: 'rgiCommentEditDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
                     data: {
                         answer: answer,
-                        comment: comment,
-                        index: index
+                        comment: comment
                     }
                 });
             },

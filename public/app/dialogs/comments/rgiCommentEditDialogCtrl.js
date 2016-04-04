@@ -8,21 +8,21 @@ angular.module('app')
         rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.comment_content = $scope.ngDialogData.comment.content;
+        $scope.commentContent = $scope.ngDialogData.comment.content;
+
+        $scope.isCommentModificationValid = function() {
+            return ($scope.commentContent.length > 0) && ($scope.commentContent !== $scope.ngDialogData.comment.content);
+        };
 
         $scope.saveComment = function () {
-            if ($scope.ngDialogData.comment.content === $scope.comment_content) {
-                rgiNotifier.error('Do you have edits to submit?');
-            } else {
-                $scope.ngDialogData.answer.comments[$scope.ngDialogData.index].content = $scope.comment_content;
+            $scope.ngDialogData.comment.content = $scope.commentContent;
 
-                rgiAnswerMethodSrvc.updateAnswer($scope.ngDialogData.answer)
-                    .then(function () {
-                        rgiNotifier.notify('Comment edited');
-                        $scope.closeThisDialog();
-                    }, function (reason) {
-                        rgiNotifier.error(reason);
-                    });
-            }
+            rgiAnswerMethodSrvc.updateAnswer($scope.ngDialogData.answer)
+                .then(function () {
+                    rgiNotifier.notify('Comment edited');
+                    $scope.closeThisDialog();
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
         };
     });
