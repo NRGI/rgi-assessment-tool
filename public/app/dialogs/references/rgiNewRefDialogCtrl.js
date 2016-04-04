@@ -13,6 +13,7 @@ angular.module('app')
         rgiFileUploaderSrvc,
         rgiRequestSubmitterSrvc,
         rgiAnswerMethodSrvc,
+        rgiDocumentSrvc,
         rgiAssessmentSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
@@ -25,6 +26,7 @@ angular.module('app')
         $scope.salutation_opts = ['mr.', 'mrs.', 'ms.'];
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
+        $scope.document_list = [];
 
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
@@ -50,6 +52,9 @@ angular.module('app')
                 });
                 $scope.interviewee_list.push(interviewee_add);
             });
+        });
+        rgiDocumentSrvc.query({}, function (documents) {
+
         });
 
         $scope.intervieweeSelect = function (selection) {
