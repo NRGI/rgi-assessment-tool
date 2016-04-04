@@ -5,9 +5,13 @@ angular.module('app')
         $scope,
         $location,
         rgiNotifier,
-        rgiContactMethodSrvc
+        rgiContactMethodSrvc,
+        rgiIdentitySrvc,
+        rgiAssessmentSrvc
     ) {
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.request = {tool: 'rgi'};
+        var criteria = {};
 
         $scope.issue_selection = [
             {name: 'Trouble logging in.', value: 'login'},
@@ -47,15 +51,40 @@ angular.module('app')
             {name: 'Other', value: 'other'}
         ];
 
+        if($scope.current_user) {
+            $scope.request.first_name = $scope.current_user.firstName;
+            $scope.request.last_name = $scope.current_user.lastName;
+            $scope.request.email = $scope.current_user.email;
+            var getAssessments = function(criteria) {
+                rgiAssessmentSrvc.query(criteria, function (assessments) {
+                    if (assessments.length > 1) {
+                        $scope.assessments = assessments;
+                    } else if (assessments.length > 0) {
+                        $scope.request.assessment = assessments[0];
+                    }
+
+                });
+            };
+            criteria[$scope.current_user.role + '_ID'] = $scope.current_user._id;
+            getAssessments(criteria);
+        }
+
         $scope.sendRequest = function() {
             var contactInfo = $scope.request;
-
-            rgiContactMethodSrvc.contact(contactInfo).then(function () {
-                rgiNotifier.notify('Request sent.');
-                $location.path('/');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
+            if (!contactInfo.first_name || !contactInfo.first_name) {
+                rgiNotifier.error('You must supply a name!');
+            } else if (!contactInfo.email) {
+                rgiNotifier.error('You must supply an email!');
+            } else if (!contactInfo.issue) {
+                rgiNotifier.error('You must select an issue!');
+            } else {
+                rgiContactMethodSrvc.contact(contactInfo).then(function () {
+                    rgiNotifier.notify('Request sent.');
+                    $location.path('/');
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                });
+            }
         };
 
         $scope.clearRequest = function () {

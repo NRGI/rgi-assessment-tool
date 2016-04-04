@@ -29,6 +29,7 @@ exports.getAssessments = function (req, res, next) {
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
+        .populate('supervisor_ID', 'firstName lastName role email')
         .populate('ext_reviewer_ID', 'firstName lastName role email')
         .exec(function (err, assessments) {
             if (err) { return next(err); }

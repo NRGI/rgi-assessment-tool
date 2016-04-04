@@ -9,9 +9,14 @@ exports.techSend = function (req, res) {
     var issue_os, issue_browser, issue_browser_ver,
         message_content = req.body,
         issue_tool = message_content.tool.toUpperCase(),
-        issue_full_name = message_content.first_name + " " + message_content.last_name;
-        //issue_first_name = message_content.first_name,
-        //issue_last_name = message_content.last_name,
+        issue_full_name = message_content.first_name + " " + message_content.last_name,
+        supervisor_email = [{email: siteEmail, name: 'Assessment tool tech support'}];
+
+    if (message_content.assessment) {
+        message_content.assessment.supervisor_ID.forEach(function (supervisor) {
+            supervisor_email.push({email: supervisor.email, name: supervisor.firstName + ' ' + supervisor.lastName});
+        });
+    }
     if (message_content.os) {
         issue_os = message_content.os;
     } else {
@@ -38,7 +43,7 @@ exports.techSend = function (req, res) {
     //send an e-mail to technical support
     mandrill('/messages/send', {
         message: {
-            to: [{email: siteEmail, name: 'Assessment tool tech support'}],
+            to: supervisor_email,
             from_email: message_content.email,
             subject: issue_tool + ' Issue: ' + message_content.issue.value,
             html: "Hi,<p>" +
