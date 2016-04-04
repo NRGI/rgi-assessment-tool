@@ -1,32 +1,32 @@
-//CONTROLS FOR ASSESSMENT NAVIGATION
-glyphicon.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-ng-if="answers_length!==answer_number"
-ng-click="fastForward()")
+.assessment-navigation
+    glyphicon.text-info.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
+    ng-if="answers_length!==answer_number"
+    ng-click="fastForward()")
 
-glyphicon.text-muted.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
-ng-if="answers_length===answer_number"
-disabled)
+    glyphicon.text-muted.glyphicon.glyphicon-fast-forward.pull-right.left-padding-med(
+    ng-if="answers_length===answer_number"
+    disabled)
 
-glyphicon.text-info.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-ng-if="answers_length!==answer_number"
-ng-click="moveForward()")
+    glyphicon.text-info.glyphicon.glyphicon-forward.pull-right.left-padding-med(
+    ng-if="answers_length!==answer_number"
+    ng-click="moveForward()")
 
-glyphicon.text-muted.glyphicon.glyphicon-forward.pull-right.left-padding-med(
-ng-if="answers_length===answer_number"
-disabled)
+    glyphicon.text-muted.glyphicon.glyphicon-forward.pull-right.left-padding-med(
+    ng-if="answers_length===answer_number"
+    disabled)
 
-glyphicon.text-info.glyphicon.glyphicon-backward.pull-right.right-padding-med(
-ng-if="answer_number!==1"
-ng-click="moveBackward()")
+    glyphicon.text-info.glyphicon.glyphicon-backward.pull-right.right-padding-med(
+    ng-if="answer_number!==1"
+    ng-click="moveBackward()")
 
-glyphicon.text-muted.glyphicon.glyphicon-backward.pull-right.right-padding-med(
-ng-if="answer_number===1"
-disabled)
+    glyphicon.text-muted.glyphicon.glyphicon-backward.pull-right.right-padding-med(
+    ng-if="answer_number===1"
+    disabled)
 
-glyphicon.text-info.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-ng-if="answer_number!==1"
-ng-click="fastBackward()")
+    glyphicon.text-info.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
+    ng-if="answer_number!==1"
+    ng-click="fastBackward()")
 
-glyphicon.text-muted.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
-ng-if="answer_number===1"
-disabled)
+    glyphicon.text-muted.glyphicon.glyphicon-fast-backward.pull-right.right-padding-med(
+    ng-if="answer_number===1"
+    disabled)
