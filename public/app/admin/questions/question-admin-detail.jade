@@ -11,7 +11,6 @@
                     h5 Assessments
                     text.left-padding-med(ng-repeat="assessment in question.assessments")
                         |  {{assessment}}
-                        //TODO remove comma on last instance
                         text(ng-if="!$last") ,
                     .pull-right
                         //TODO create question version dialog
@@ -48,21 +47,21 @@
                             type="textbox"
                             ng-model="question.question_text")
 
-                    //div(id="link_question").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
-                    //    .pull-left
-                    //        label.col-md-2.control-label Link to
-                    //        .col-md-5
-                    //            select.form-group.form-control(
-                    //            ng-model="linkedQuestion"
-                    //            ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
-                    //            ng-change="resetLinkedOption()"
-                    //            )
-                    //        .col-md-5
-                    //            select.form-group.form-control(
-                    //            ng-if="linkedQuestion.question_criteria.length > 0"
-                    //            ng-model="question.linkedOption"
-                    //            ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria"
-                    //            )
+                    div(id="link_question").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
+                        .pull-left
+                            label.col-md-2.control-label Link to
+                            .col-md-5
+                                select.form-group.form-control(
+                                ng-model="linkedQuestion"
+                                ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
+                                ng-change="resetLinkedOption()"
+                                )
+                            .col-md-5
+                                select.form-group.form-control(
+                                ng-if="linkedQuestion.question_criteria.length > 0"
+                                ng-model="question.linkedOption"
+                                ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria"
+                                )
 
                     div(id="question_details_div").row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg
                         label.col-md-2.control-label(form="order") Question Order
