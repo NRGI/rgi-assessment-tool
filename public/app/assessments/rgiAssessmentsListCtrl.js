@@ -41,7 +41,7 @@ angular.module('app')
                         }
 
                         rgiAnswerSrvc.query(answerCriteria, function (answers) {
-                            $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(answers);
+                            $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
                             answers.forEach(function (answer) {
                                 rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
                             });

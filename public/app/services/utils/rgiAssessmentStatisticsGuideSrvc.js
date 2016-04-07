@@ -1,25 +1,11 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAssessmentStatisticsGuideSrvc', function (rgiQuestionSetSrvc) {
-        //var getCurrentQuestionSetLength = function(answers) {
-        //    var questionsNumber = 0;
-        //
-        //    answers.forEach(function(answer) {
-        //        questionsNumber++;
-        //        //if(rgiQuestionSetSrvc.isAvailable(answer)) {
-        //        //    questionsNumber++;
-        //        //}
-        //    });
-        //
-        //    return questionsNumber;
-        //};
-
+    .factory('rgiAssessmentStatisticsGuideSrvc', function (rgiIdentitySrvc, rgiQuestionSetSrvc) {
         return {
-            getCounterSetTemplate: function(answers) {
+            getCounterSetTemplate: function() {
                 return {
-                    //length: getCurrentQuestionSetLength(answers),
-                    length: answers.length,
+                    length: rgiQuestionSetSrvc.getAvailableQuestions(rgiIdentitySrvc.currentUser.role, true).length,
                     complete: 0,
                     flagged: 0,
                     submitted: 0,
