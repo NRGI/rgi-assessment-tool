@@ -26,24 +26,22 @@ angular
             rgiQuestionSetSrvc.setAnswers(answers);
         });
 
+        var isTrialAssessment = function() {
+            return ['trial_started', 'trial_submitted'].indexOf($scope.$parent.assessment.status) !== -1;
+        };
+
         var updateAnswer = function(answerData, status, notificationMessage) {
             answerData.status = status;
-            var next_answer,
-                answer_order = $scope.$parent.answer.question_order,
-                assessment_ID = $scope.$parent.assessment.assessment_ID,
-                assessment_status = $scope.$parent.assessment.status;
 
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-                        if (answer_order !== answers.length && assessment_status !== 'trial_started' && assessment_status !== 'trial_submitted'){
-                            next_answer = String(rgiUtilsSrvc.zeroFill((answer_order+1), 3));
-                            console.log(next_answer);
-                            $location.path(rootUrl + '/answer/' + assessment_ID + "-" + next_answer);
-                        } else {
-                            $location.path(rootUrl + '/' + assessment_ID);
-                        }
-                    });
+                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role) && !isTrialAssessment()) {
+                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" +
+                        rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, answerData));
+                    } else {
+                        $location.path(rootUrl + '/' + answerData.assessment_ID);
+                    }
+
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
@@ -94,7 +92,7 @@ angular
                 if (new_answer_data.new_answer_selection) {
                     new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
-                updateAnswer(new_answer_data, 'submitted', 'Answer submitted', $scope.$parent.assessment.status !== 'trial_started');
+                updateAnswer(new_answer_data, 'submitted', 'Answer submitted');
             }
         };
 
@@ -110,7 +108,7 @@ angular
                 if (new_answer_data.new_answer_selection) {
                     new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
-                updateAnswer(new_answer_data, 'resubmitted', 'Answer resubmitted', true);
+                updateAnswer(new_answer_data, 'resubmitted', 'Answer resubmitted');
             }
         };
 
@@ -147,7 +145,7 @@ angular
             if (rgiUtilsSrvc.flagCheck(new_answer_data.flags) !== true) {
                 rgiNotifier.error('Only mark flagged answers as unresolved!');
             } else {
-                updateAnswer(new_answer_data, 'unresolved', 'Answer tagged as unresolved', true);
+                updateAnswer(new_answer_data, 'unresolved', 'Answer tagged as unresolved');
             }
         };
         // make final choice
