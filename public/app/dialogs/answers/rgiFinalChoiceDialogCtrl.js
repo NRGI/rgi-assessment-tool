@@ -11,7 +11,8 @@ angular.module('app')
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
         rgiIdentitySrvc,
-        rgiQuestionSetSrvc
+        rgiQuestionSetSrvc,
+        rgiUrlGuideSrvc
     ) {
         var
             assessmentId = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
@@ -120,12 +121,11 @@ angular.module('app')
 
                 rgiAnswerMethodSrvc.updateAnswer(answerData)
                     .then(function () {
-                        var rootUrl = $scope.current_user.isSupervisor() ? '/admin/assessments-admin' : '/assessments';
-
                         if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData)) {
-                            $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" + rgiQuestionSetSrvc.getNextQuestionId(answerData));
+                            $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
+                                rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
                         } else {
-                            $location.path(rootUrl + '/' + answerData.assessment_ID);
+                            $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
                         }
 
                         rgiNotifier.notify('Answer finalized');

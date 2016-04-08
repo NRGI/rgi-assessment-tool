@@ -14,12 +14,12 @@ angular
         rgiIdentitySrvc,
         rgiNotifier,
         rgiQuestionSetSrvc,
+        rgiUrlGuideSrvc,
         rgiUtilsSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
-            rootUrl = $scope.current_user.role === 'supervisor' ? '/admin/assessments-admin' : '/assessments',
             _ = $scope.$parent.$parent._;
 
         rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
@@ -36,10 +36,10 @@ angular
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
                     if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role) && !isTrialAssessment()) {
-                        $location.path(rootUrl + '/answer/' + answerData.assessment_ID + "-" +
-                        rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, answerData));
+                        $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
+                            rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
                     } else {
-                        $location.path(rootUrl + '/' + answerData.assessment_ID);
+                        $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
                     }
 
                     rgiNotifier.notify(notificationMessage);
@@ -128,7 +128,7 @@ angular
         };
 
         $scope.answerReturn = function () {
-            $location.path(rootUrl + '/' + $scope.answer.assessment_ID);
+            $location.path(rgiUrlGuideSrvc.getAssessmentUrl($scope.answer.assessment_ID));
         };
 
         $scope.answerFlag = function () {
