@@ -6,20 +6,15 @@ angular
         $scope,
         $location,
         $routeParams,
-        rgiUtilsSrvc,
-        rgiIdentitySrvc,
-        rgiAnswerSrvc
+        rgiAnswerSrvc,
+        rgiUrlGuideSrvc
     ) {
         var answersNumber,
             answerAttributes = $routeParams.answer_ID.split('-'),
             assessmentId = answerAttributes.slice(0, answerAttributes.length - 1).join('-'),
             currentAnswerOrder = Number(answerAttributes[3]),
-            getRootUrl = function(role) {
-                return role === 'supervisor' ? '/admin/assessments-admin/answer/' : '/assessments/answer/';
-            },
-            getUrl = function(answerOrder) {
-                return getRootUrl(rgiIdentitySrvc.currentUser.role) + assessmentId + "-" +
-                    String(rgiUtilsSrvc.zeroFill(answerOrder, 3));
+            redirectToAnswerPage = function(answerOrder) {
+                $location.path(rgiUrlGuideSrvc.getAnswerUrl(assessmentId, answerOrder));
             };
 
         rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
@@ -35,18 +30,18 @@ angular
         };
 
         $scope.moveBackward = function () {
-            $location.path(getUrl(currentAnswerOrder - 1));
+            redirectToAnswerPage(currentAnswerOrder - 1);
         };
 
         $scope.moveForward = function () {
-            $location.path(getUrl(currentAnswerOrder + 1));
+            redirectToAnswerPage(currentAnswerOrder + 1);
         };
 
         $scope.moveFirst = function () {
-            $location.path(getUrl(1));
+            redirectToAnswerPage(1);
         };
 
         $scope.moveLast = function () {
-            $location.path(getUrl(answersNumber));
+            redirectToAnswerPage(answersNumber);
         };
     });

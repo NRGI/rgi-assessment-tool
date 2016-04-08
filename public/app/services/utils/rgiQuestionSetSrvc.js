@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, rgiUtilsSrvc) {
+angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
     var answers = [], questions;
 
     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
@@ -20,7 +20,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         return rootQuestions;
     };
 
-    var getLinkedQuestions = function(role, showAnsweredQuestions, currentAnswer) {
+    var getLinkedQuestions = function(role, showAnsweredQuestions) {
         var availableLinkedQuestions = [];
 
         answers.forEach(function(answer) {
@@ -31,11 +31,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
 
                 if(question !== null) {
                     if(!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions) {
-                        if((currentAnswer !== undefined) && (currentAnswer._id === answer.id)) {
-                            availableLinkedQuestions = [question].concat(availableLinkedQuestions);
-                        } else {
-                            availableLinkedQuestions.push(question);
-                        }
+                        availableLinkedQuestions.push(question);
                     }
                 }
             }
@@ -108,14 +104,29 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc, r
         return associatedQuestion;
     };
 
+    var getRelativeQuestion = function(offset, role, showAnsweredQuestions, answer) {
+        var answerIndex = -1,
+            questions = questionSet.getAvailableQuestions(role, showAnsweredQuestions);
+
+        for(var index in questions) {
+            if(questions.hasOwnProperty(index) && (questions[index].question_order === answer.question_order)) {
+                answerIndex = index;
+            }
+        }
+
+        return questions[answerIndex + offset];
+    };
+
     var questionSet = {
-        getAvailableQuestions: function(role, showAnsweredQuestions, answer) {
-            return getLinkedQuestions(role, showAnsweredQuestions, answer)
-                .concat(getRootQuestions(role, showAnsweredQuestions));
+        getAvailableQuestions: function(role, showAnsweredQuestions) {
+            return getRootQuestions(role, showAnsweredQuestions)
+                .concat(getLinkedQuestions(role, showAnsweredQuestions));
         },
-        getNextQuestionId: function(role, answer) {
-            var availableQuestions = questionSet.getAvailableQuestions(role, false, answer);
-            return String(rgiUtilsSrvc.zeroFill((availableQuestions[0].question_order), 3));
+        getNextQuestionId: function(role, showAnsweredQuestions, answer) {
+            return getRelativeQuestion(1, role, showAnsweredQuestions, answer).question_order;
+        },
+        getPrevQuestionId: function(role, showAnsweredQuestions, answer) {
+            return getRelativeQuestion(-1, role, showAnsweredQuestions, answer).question_order;
         },
         isAnyQuestionRemaining: function(role) {
             return questionSet.getAvailableQuestions(role, false).length > 0;
