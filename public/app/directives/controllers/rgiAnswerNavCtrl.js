@@ -10,33 +10,43 @@ angular
         rgiIdentitySrvc,
         rgiAnswerSrvc
     ) {
-        var root_url, answer_length,
-            answer_split = $routeParams.answer_ID.split('-'),
-            assessment_ID = answer_split.slice(0, answer_split.length - 1).join('-');
+        var answersNumber,
+            answerAttributes = $routeParams.answer_ID.split('-'),
+            assessmentId = answerAttributes.slice(0, answerAttributes.length - 1).join('-'),
+            currentAnswerOrder = Number(answerAttributes[3]),
+            getRootUrl = function(role) {
+                return role === 'supervisor' ? '/admin/assessments-admin/answer/' : '/assessments/answer/';
+            },
+            getUrl = function(answerOrder) {
+                return getRootUrl(rgiIdentitySrvc.currentUser.role) + assessmentId + "-" +
+                    String(rgiUtilsSrvc.zeroFill(answerOrder, 3));
+            };
 
-        $scope.answer_number = Number(answer_split[3]);
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
-        if ($scope.current_user === 'supervisor') {
-            root_url = '/admin/assessments-admin/answer/';
-        } else {
-            root_url = '/assessments/answer/';
-        }
-        rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            $scope.answers_length = answers.length;
+        rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
+            answersNumber = answers.length;
         });
 
-        $scope.moveForward = function () {
-            $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answer_number + 1, 3)));
-        };
-        $scope.fastForward = function () {
-            $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answers_length, 3)));
-        };
-        $scope.moveBackward = function () {
-            $location.path(root_url + assessment_ID + "-" + String(rgiUtilsSrvc.zeroFill($scope.answer_number - 1, 3)));
-        };
-        $scope.fastBackward = function () {
-            $location.path(root_url + assessment_ID + "-001");
+        $scope.isFirstAnswer = function() {
+            return currentAnswerOrder === 1;
         };
 
+        $scope.isLastAnswer = function() {
+            return currentAnswerOrder === answersNumber;
+        };
+
+        $scope.moveBackward = function () {
+            $location.path(getUrl(currentAnswerOrder - 1));
+        };
+
+        $scope.moveForward = function () {
+            $location.path(getUrl(currentAnswerOrder + 1));
+        };
+
+        $scope.moveFirst = function () {
+            $location.path(getUrl(1));
+        };
+
+        $scope.moveLast = function () {
+            $location.path(getUrl(answersNumber));
+        };
     });
