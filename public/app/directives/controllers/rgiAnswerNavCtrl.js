@@ -6,42 +6,54 @@ angular
         $scope,
         $location,
         $routeParams,
-        rgiAnswerSrvc,
+        rgiIdentitySrvc,
+        rgiQuestionSetSrvc,
         rgiUrlGuideSrvc
     ) {
-        var answersNumber,
-            answerAttributes = $routeParams.answer_ID.split('-'),
+        var answerAttributes = $routeParams.answer_ID.split('-'),
             assessmentId = answerAttributes.slice(0, answerAttributes.length - 1).join('-'),
             currentAnswerOrder = Number(answerAttributes[3]),
+            role = rgiIdentitySrvc.currentUser.role,
+            getQuestionOrders = function() {
+                var orders = [];
+
+                rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function(question) {
+                    orders.push(question.question_order);
+                });
+
+                orders.sort();
+                return orders;
+            },
             redirectToAnswerPage = function(answerOrder) {
                 $location.path(rgiUrlGuideSrvc.getAnswerUrl(assessmentId, answerOrder));
             };
 
-        rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
-            answersNumber = answers.length;
-        });
-
         $scope.isFirstAnswer = function() {
-            return currentAnswerOrder === 1;
+            return (getQuestionOrders().length > 0) && (currentAnswerOrder === getQuestionOrders()[0]);
         };
 
         $scope.isLastAnswer = function() {
-            return currentAnswerOrder === answersNumber;
+            return (getQuestionOrders().length > 0) &&
+                (currentAnswerOrder === getQuestionOrders()[getQuestionOrders().length - 1]);
         };
 
         $scope.moveBackward = function () {
-            redirectToAnswerPage(currentAnswerOrder - 1);
+            redirectToAnswerPage(rgiQuestionSetSrvc.getPrevQuestionId(role, true, {question_order: currentAnswerOrder}));
         };
 
         $scope.moveForward = function () {
-            redirectToAnswerPage(currentAnswerOrder + 1);
+            redirectToAnswerPage(rgiQuestionSetSrvc.getNextQuestionId(role, true, {question_order: currentAnswerOrder}));
         };
 
         $scope.moveFirst = function () {
-            redirectToAnswerPage(1);
+            if(getQuestionOrders().length > 0) {
+                redirectToAnswerPage(getQuestionOrders()[0]);
+            }
         };
 
         $scope.moveLast = function () {
-            redirectToAnswerPage(answersNumber);
+            if(getQuestionOrders().length > 0) {
+                redirectToAnswerPage(getQuestionOrders()[getQuestionOrders().length - 1]);
+            }
         };
     });

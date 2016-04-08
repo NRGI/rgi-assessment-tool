@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
-    var answers = [], questions;
+    var answers = [], questions = [];
 
     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
         questions = questionList;
@@ -11,7 +11,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         var rootQuestions = [];
 
         questions.forEach(function(question) {
-            if((question.linkedOption === undefined) &&
+            if((question.linkedOption === undefined) && (getAssociatedAnswer(question) !== null) &&
                 (!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions)) {
                 rootQuestions.push(question);
             }
@@ -24,14 +24,16 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         var availableLinkedQuestions = [];
 
         answers.forEach(function(answer) {
-            var choice = getAnswerChoice('researcher', answer);
+            if(answer !== null) {
+                var choice = getAnswerChoice('researcher', answer);
 
-            if(choice) {
-                var question = getLinkedQuestion(getQuestionSelectedOption(getAssociatedQuestion(answer), choice));
+                if(choice) {
+                    var question = getLinkedQuestion(getQuestionSelectedOption(getAssociatedQuestion(answer), choice));
 
-                if(question !== null) {
-                    if(!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions) {
-                        availableLinkedQuestions.push(question);
+                    if(question !== null) {
+                        if(!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions) {
+                            availableLinkedQuestions.push(question);
+                        }
                     }
                 }
             }
@@ -105,16 +107,13 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
     };
 
     var getRelativeQuestion = function(offset, role, showAnsweredQuestions, answer) {
-        var answerIndex = -1,
-            questions = questionSet.getAvailableQuestions(role, showAnsweredQuestions);
+        var questions = questionSet.getAvailableQuestions(role, showAnsweredQuestions);
 
-        for(var index in questions) {
-            if(questions.hasOwnProperty(index) && (questions[index].question_order === answer.question_order)) {
-                answerIndex = index;
+        for(var questionIndex = 0; questionIndex < questions.length; questionIndex++) {
+            if(questions[questionIndex].question_order === (answer.question_order + offset)) {
+                return questions[questionIndex];
             }
         }
-
-        return questions[answerIndex + offset];
     };
 
     var questionSet = {
