@@ -57,12 +57,16 @@ angular.module('app')
 
         $scope.isChoiceChanged = function() {
             return ($scope.answer !== undefined) && ($scope.answer.new_answer_selection !== undefined) &&
-                (originallySubmitted.score.letter !== $scope.answer.question_ID.question_criteria[$scope.answer.new_answer_selection].letter);
+                ( ((originallySubmitted.score === undefined) &&
+                ($scope.answer.question_ID.question_criteria[$scope.answer.new_answer_selection] !== undefined)) ||
+                (originallySubmitted.score.letter !==
+                $scope.answer.question_ID.question_criteria[$scope.answer.new_answer_selection].letter) );
         };
 
         $scope.isJustificationChanged = function() {
             var justification = $scope.answer ? $scope.answer[$scope.current_user.role + '_justification'] : undefined;
-            return (justification !== undefined) && (justification !== originallySubmitted.justification);
+            return (justification !== undefined) && ((justification !== originallySubmitted.justification) ||
+                (undefined !== originallySubmitted.justification));
         };
 
         $scope.isResolveFlagRequired = function() {
