@@ -66,7 +66,7 @@ angular.module('app')
         $scope.isJustificationChanged = function() {
             var justification = $scope.answer ? $scope.answer[$scope.current_user.role + '_justification'] : undefined;
             return (justification !== undefined) && ((justification !== originallySubmitted.justification) ||
-                (undefined !== originallySubmitted.justification));
+                (undefined === originallySubmitted.justification));
         };
 
         $scope.isResolveFlagRequired = function() {
