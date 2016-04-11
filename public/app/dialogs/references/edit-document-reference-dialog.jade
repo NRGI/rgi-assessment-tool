@@ -25,7 +25,9 @@ div.left-padding-lg.right-padding-lg
                         .form-group.pull-left
                             h5
                                 b Author(s):
-                            h5(ng-repeat="author in ref.document_ID.authors" ng-if="ref.document_ID.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                            h5(ng-repeat="author in ref.document_ID.authors" ng-if="ref.document_ID.authors")
+                                text(ng-if="!$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                text(ng-if="$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}}
                             h5(ng-if="!ref.document_ID.authors")  N/A
                     // SOURCE
                     div.col-md-6

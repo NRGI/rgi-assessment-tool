@@ -119,7 +119,9 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                             .form-group.pull-left
                                 h5
                                     b Author(s):
-                                h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")  {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                h5(ng-repeat="author in new_document.authors" ng-if="new_document.authors")
+                                    text(ng-if="!$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}},
+                                    text(ng-if="$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}}
                                 h5(ng-if="!new_document.authors")  N/A
                         // SOURCE
                         div.col-md-6
