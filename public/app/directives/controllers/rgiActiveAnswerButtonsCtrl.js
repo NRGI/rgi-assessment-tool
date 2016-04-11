@@ -35,7 +35,7 @@ angular
 
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role) && !isTrialAssessment()) {
+                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData) && !isTrialAssessment()) {
                         $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
                             rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
                     } else {

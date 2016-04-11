@@ -121,7 +121,7 @@ angular.module('app')
 
                 rgiAnswerMethodSrvc.updateAnswer(answerData)
                     .then(function () {
-                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(answerData)) {
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData)) {
                             $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
                                 rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
                         } else {
