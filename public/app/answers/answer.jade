@@ -13,7 +13,7 @@
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  Complete
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                        text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
+                        text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag.hint(ng-if="answer.status==='flagged'", popover="For resubmission you should first change the choice or upload a new reference", popover-trigger="mouseenter")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
                         text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
                     div(ng-if="current_user.isSupervisor()")
