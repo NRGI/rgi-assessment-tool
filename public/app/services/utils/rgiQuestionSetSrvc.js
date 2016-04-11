@@ -127,8 +127,8 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         getPrevQuestionId: function(role, showAnsweredQuestions, answer) {
             return getRelativeQuestion(-1, role, showAnsweredQuestions, answer).question_order;
         },
-        isAnyQuestionRemaining: function(role) {
-            return questionSet.getAvailableQuestions(role, false).length > 0;
+        isAnyQuestionRemaining: function(role, showAnsweredQuestions, answer) {
+            return getRelativeQuestion(1, role, showAnsweredQuestions, answer) !== undefined;
         },
         isAvailable: function(role, answer) {
             var
