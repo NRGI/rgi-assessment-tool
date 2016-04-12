@@ -46,4 +46,8 @@ angular.module('app')
         $scope.showEditInterviewReferenceDialog = function(referenceIndex) {
             rgiDialogFactory.editInterviewReference($scope, referenceIndex);
         };
+
+        $scope.showRestoreReferenceDialog = function(referenceIndex) {
+            rgiDialogFactory.restoreReference($scope, referenceIndex);
+        };
     });

@@ -58,7 +58,7 @@
 
 .row.top-padding-med.button-set(ng-if="ref.author._id===current_user._id")
     button.btn.btn-primary(
-    ng-click="showRestoreReferenceConfirmationDialog($index)"
+    ng-click="showRestoreReferenceDialog($index)"
     ng-if="ref.hidden"
     ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Restore Reference
     button.btn.btn-danger(
