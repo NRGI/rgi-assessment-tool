@@ -30,6 +30,10 @@ angular.module('app')
             return rgiReferenceListSrvc.isEmpty($scope.references);
         };
 
+        $scope.getOwnReferencesNumber = function() {
+            return rgiReferenceListSrvc.getLength($scope.references, $scope.current_user);
+        };
+
         //TODO Generate Dialog based on change and handle upload process via dialogs
         $scope.selectRefDialog = function(value) {
             rgiDialogFactory.referenceSelect($scope, value);
