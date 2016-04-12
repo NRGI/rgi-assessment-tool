@@ -23,6 +23,16 @@ div
                             )
                                 option(value="" selected disabled) Select version
 
+                    .row(ng-if="new_assessment.version == 'mining'")
+                        h4.col-md-4 Mineral
+                        .form-group.col-md-5
+                            select.form-group.form-control.right-padding-med(
+                                ng-model="new_assessment.mineral", name="mineral",
+                                ng-required="new_assessment.version == 'mining'",
+                                ng-options="mineral as mineral for mineral in getAvailableMinerals()"
+                            )
+                                option(value="" selected disabled) Select mineral
+
                     .row(ng-repeat="country in new_assessment.assessment_countries")
                         h4.col-md-4  Country {{$index+1}}
                         .form-group.col-md-5.nullable

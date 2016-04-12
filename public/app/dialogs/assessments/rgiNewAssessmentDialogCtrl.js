@@ -13,6 +13,7 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiCountrySrvc,
         rgiIdentitySrvc,
+        rgiMineralGuideSrvc,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
         rgiUtilsSrvc
@@ -67,6 +68,10 @@ angular.module('app')
             //}
         };
 
+        $scope.getAvailableMinerals = function() {
+            return rgiMineralGuideSrvc.list();
+        };
+
         $scope.countryDelete = function (index) {
             $scope.new_assessment.assessment_countries.splice(index, 1);
         };
@@ -112,6 +117,7 @@ angular.module('app')
                                 ISO3: assessment_country.country.country_ID,
                                 year: $scope.new_assessment.year,
                                 version: $scope.new_assessment.version,
+                                mineral: $scope.new_assessment.mineral,
                                 country: assessment_country.country.country,
                                 created: {
                                     created_by: $scope.current_user._id,

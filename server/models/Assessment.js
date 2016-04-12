@@ -27,6 +27,7 @@ assessmentSchema = new Schema({
     version: {
         type: String,
         required: '{PATH} is required'},  // pilot or full
+    mineral: {type: String},
     researcher_ID: user_ref, // pulled from user_id
     reviewer_ID: user_ref, // pulled from user_id
     supervisor_ID: [user_ref], // pulled from user_id
