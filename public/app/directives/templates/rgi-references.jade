@@ -21,9 +21,7 @@ legend References
 div(id="prev_bib" ng-if="!isReferenceListEmpty()")
     .row.left-padding-lg.right-padding-lg
         h4 Citations
-        .row.left-padding-lg.bottom-padding-med(
-        ng-repeat="ref in references"
-        ng-if="!ref.hidden")
+        .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references", ng-if="!ref.hidden")
             .row
                 b Type:
                 u: em(ng-if="ref.citation_type === 'interview'")  {{ref.citation_type | ucfirst}}
@@ -85,7 +83,7 @@ div(id="prev_bib" ng-if="!isReferenceListEmpty()")
             .row.top-padding-med(ng-if="ref.author._id===current_user._id")
                 button.btn.btn-danger(
                 ng-click="deleteReferenceConfirmation($index)"
-                ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Delete Reference
+                ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted' || (getOwnReferencesNumber() <= 1)") Delete Reference
                 | &nbsp;
                 button.btn.btn-primary(
                 ng-click="showEditDocumentReferenceDialog($index)"
