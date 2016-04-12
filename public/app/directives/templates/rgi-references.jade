@@ -23,3 +23,5 @@ div(id="prev_bib" ng-if="!isReferenceListEmpty()")
         h4 Citations
         .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references", ng-if="!ref.hidden")
             div(ng-include="'/partials/directives/templates/partials/reference'")
+        .row.left-padding-lg.bottom-padding-med.deleted(ng-repeat="ref in references", ng-if="ref.hidden")
+            div(ng-include="'/partials/directives/templates/partials/reference'")
