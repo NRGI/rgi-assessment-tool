@@ -7,6 +7,7 @@ angular.module('app')
         $route,
         $routeParams,
         ngDialog,
+        rgiIdentitySrvc,
         rgiNotifier,
         rgiUserListSrvc,
         rgiIntervieweeSrvc,
@@ -15,6 +16,7 @@ angular.module('app')
         rgiDialogFactory
     ) {
         $scope.references = [];
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         rgiAssessmentSrvc.query({}, function (assessments) {
             rgiIntervieweeSrvc.get({_id: $routeParams.interviewee_ID}, function (interviewee) {
@@ -26,6 +28,7 @@ angular.module('app')
                     response.data.forEach(function(answer) {
                         answer.references.forEach(function(ref) {
                             if((ref.citation_type === 'interview') && (ref.interviewee_ID === interviewee._id)) {
+                                ref.interviewee_ID = interviewee;
                                 $scope.references.push(ref);
                             }
                         });
