@@ -18,12 +18,12 @@
                 //ASSESSMENT
                 td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}")
                     div(ng-if="!current_user.isSupervisor() || assessment.status === 'unassigned'")
-                        text {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                        text {{assessment.year}} {{assessment.country}} {{assessment.mineral || ''}} {{assessment.version}}
                     div(ng-if="current_user.isSupervisor() && assessment.status !== 'unassigned'")
                         a(href="admin/assessments-admin/{{assessment.assessment_ID}}"
-                        ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                        ng-if="current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.mineral || ''}} {{assessment.version}}
                         a(href="assessments/{{assessment.assessment_ID}}"
-                        ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.version}}
+                        ng-if="!current_user.isSupervisor()") {{assessment.year}} {{assessment.country}} {{assessment.mineral || ''}} {{assessment.version}}
                 //RESEARCHER
                 td.col-sm-1(ng-if="current_user.isSupervisor()")
                     div(ng-if="assessment.researcher_ID && current_user.isSupervisor()")

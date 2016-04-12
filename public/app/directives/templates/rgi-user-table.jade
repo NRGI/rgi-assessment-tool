@@ -35,7 +35,7 @@ div.table-responsive
                 td.col-sm-7
                     table.table(style="margin-top: -6px; margin-bottom: -9px")
                         tr(ng-repeat="assessment in user.assessments")
-                            td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.details.version}}
+                            td.col-sm-2 {{assessment.country_name}} {{assessment.details.year}} {{assessment.mineral || ''}} {{assessment.details.version}}
                             td.col-sm-1
                                 i.text-success.glyphicon.glyphicon-calendar.popover-dialog(
                                 ng-if="assessment.details.assignment_date"
