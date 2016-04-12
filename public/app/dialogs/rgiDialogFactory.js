@@ -253,6 +253,15 @@ angular.module('app')
                     scope: scope
                 });
             },
+            restoreReference: function ($scope, referenceIndex) {
+                $scope.ref_index = referenceIndex;
+                ngDialog.openConfirm({
+                    template: 'partials/dialogs/references/restore-reference-dialog',
+                    controller: 'rgiDeleteReferenceDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
             documentCreate: function($scope) {
                 var scope = $scope;
                 scope.value = true;

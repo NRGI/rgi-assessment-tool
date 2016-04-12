@@ -49,6 +49,11 @@ angular.module('app')
                     referencedObject.answers.splice(answerIndex, 1);
                 }
             },
+            supplementReferencedObjectAnswers = function(referencedObject) {
+                if(referencedObject.answers.indexOf(answer.answer_ID) === -1) {
+                    referencedObject.answers.push(answer.answer_ID);
+                }
+            },
             cleanUpReferencedObjectAssessments = function(referencedObject) {
                 var assessmentIdCollection = [];
 
@@ -62,6 +67,11 @@ angular.module('app')
                     referencedObject.assessments.splice(referencedObject.assessments.indexOf(assessmentId), 1);
                 });
             },
+            supplementReferencedObjectAssessments = function(referencedObject) {
+                if(referencedObject.assessments.indexOf(answer.assessment_ID) === -1) {
+                    referencedObject.assessments.push(answer.assessment_ID);
+                }
+            },
             cleanUpReferencedObject = function(field, storage, saveObject, promiseList) {
                 if(!isAnotherReferenceFound(field)) {
                     storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
@@ -70,26 +80,42 @@ angular.module('app')
                         promiseList.push(saveObject(referencedObject).$promise);
                     });
                 }
+            },
+            supplementReferencedObject = function(field, storage, saveObject, promiseList) {
+                if(!isAnotherReferenceFound(field)) {
+                    storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
+                        supplementReferencedObjectAnswers(referencedObject);
+                        supplementReferencedObjectAssessments(referencedObject);
+                        promiseList.push(saveObject(referencedObject).$promise);
+                    });
+                }
+            },
+            modifyHiddenFlag = function(modifyReferenceObject, hiddenStatus, notificationMessage) {
+                var promises = [];
+
+                if(currentReference.citation_type === 'interview') {
+                    modifyReferenceObject('interviewee_ID', rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc.updateInterviewee, promises);
+                } else if(currentReference.citation_type === 'document') {
+                    modifyReferenceObject('document_ID', rgiDocumentSrvc, rgiDocumentMethodSrvc.updateDocument, promises);
+                }
+
+                currentReference.hidden = hiddenStatus;
+                promises.push(rgiAnswerMethodSrvc.updateAnswer(answer).$promise);
+
+                $q.all(promises).then(function() {
+                    $scope.closeThisDialog();
+                    $rootScope.$broadcast('RESET_REFERENCE_ACTION');
+                    rgiNotifier.notify(notificationMessage);
+                }, function (reason) {
+                    rgiNotifier.error(reason);
+                }).finally($scope.closeThisDialog);
             };
 
         $scope.deleteReference = function() {
-            var promises = [];
+            modifyHiddenFlag(cleanUpReferencedObject, true, 'The reference has been deleted');
+        };
 
-            if(currentReference.citation_type === 'interview') {
-                cleanUpReferencedObject('interviewee_ID', rgiIntervieweeSrvc, rgiIntervieweeMethodSrvc.updateInterviewee, promises);
-            } else if(currentReference.citation_type === 'document') {
-                cleanUpReferencedObject('document_ID', rgiDocumentSrvc, rgiDocumentMethodSrvc.updateDocument, promises);
-            }
-
-            currentReference.hidden = true;
-            promises.push(rgiAnswerMethodSrvc.updateAnswer(answer).$promise);
-
-            $q.all(promises).then(function() {
-                $scope.closeThisDialog();
-                $rootScope.$broadcast('RESET_REFERENCE_ACTION');
-                rgiNotifier.notify('The reference has been deleted');
-            }, function (reason) {
-                rgiNotifier.error(reason);
-            });
+        $scope.restoreReference = function() {
+            modifyHiddenFlag(supplementReferencedObject, false, 'The reference has been restored');
         };
     });
