@@ -3,7 +3,6 @@
 angular.module('app')
     .controller('rgiIntervieweeAdminDetailCtrl', function (
         $scope,
-        $http,
         $route,
         $routeParams,
         ngDialog,
@@ -11,6 +10,7 @@ angular.module('app')
         rgiNotifier,
         rgiUserListSrvc,
         rgiIntervieweeSrvc,
+        rgiIntervieweeAnswerSrvc,
         rgiIntervieweeMethodSrvc,
         rgiAssessmentSrvc,
         rgiDialogFactory
@@ -24,8 +24,8 @@ angular.module('app')
                 $scope.user_list = [];
                 $scope.assessments = [];
 
-                $http.get('/api/interviewee-answers/' + $scope.interviewee.answers).then(function(response) {
-                    response.data.forEach(function(answer) {
+                rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
+                    answers.forEach(function(answer) {
                         answer.references.forEach(function(ref) {
                             if((ref.citation_type === 'interview') && (ref.interviewee_ID === interviewee._id)) {
                                 ref.interviewee_ID = interviewee;
