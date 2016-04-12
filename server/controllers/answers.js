@@ -10,6 +10,7 @@ exports.getAnswers = function (req, res, next) {
     if (req.user.hasRole('supervisor')) {
         Answer.find(req.query)
             .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
+            .populate('references.author', 'firstName lastName role')
             .exec(function (err, answers) {
                 if (err) { return next(err); }
                 if (!answers) { return next(new Error('No answers found')); }

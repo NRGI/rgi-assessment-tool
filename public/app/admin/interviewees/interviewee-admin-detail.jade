@@ -1,8 +1,8 @@
 .container-fluid.page-container
     .well
-        div.page-well
+        .page-well
             legend.h3.page-header {{interviewee.firstName | ucfirst}} {{interviewee.lastName | ucfirst}}
-            div.left-padding-lg.right-padding-lg
+            .left-padding-lg.right-padding-lg
                 .row-fluid
                     button.btn.btn-warning(ng-click="editIntervieweeDialog()") Edit metadata
                     | &nbsp;
@@ -42,8 +42,12 @@
                             option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
                     button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
 
+            .left-padding-lg.right-padding-lg.top-padding-med(ng-if="references.length > 0")
+                h3 Citations
+                .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references", ng-if="!ref.hidden")
+                    div(ng-include="'/partials/directives/templates/partials/reference'")
 
-            div.left-padding-lg.right-padding-lg.top-padding-med
+            .left-padding-lg.right-padding-lg.top-padding-med
                 h3 Information
                 .row-fluid.right-padding-med.left-padding-med
                     table.table.table-condensed
