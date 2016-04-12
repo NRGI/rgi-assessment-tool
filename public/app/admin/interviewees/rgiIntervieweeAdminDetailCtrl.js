@@ -3,6 +3,7 @@
 angular.module('app')
     .controller('rgiIntervieweeAdminDetailCtrl', function (
         $scope,
+        $http,
         $route,
         $routeParams,
         ngDialog,
@@ -13,11 +14,24 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiDialogFactory
     ) {
+        $scope.references = [];
+
         rgiAssessmentSrvc.query({}, function (assessments) {
             rgiIntervieweeSrvc.get({_id: $routeParams.interviewee_ID}, function (interviewee) {
                 $scope.interviewee = interviewee;
                 $scope.user_list = [];
                 $scope.assessments = [];
+
+                $http.get('/api/interviewee-answers/' + $scope.interviewee.answers).then(function(response) {
+                    response.data.forEach(function(answer) {
+                        answer.references.forEach(function(ref) {
+                            if((ref.citation_type === 'interview') && (ref.interviewee_ID === interviewee._id)) {
+                                $scope.references.push(ref);
+                            }
+                        });
+                    });
+                });
+
                 assessments.forEach(function (el) {
                     if (interviewee.assessments.indexOf(el.assessment_ID) < 0) {
                         $scope.assessments.push({
@@ -26,6 +40,7 @@ angular.module('app')
                         });
                     }
                 });
+
                 interviewee.users.forEach(function (el) {
                     rgiUserListSrvc.get({_id: el}, function (user) {
                         $scope.user_list.push(user);

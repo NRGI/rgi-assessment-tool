@@ -78,3 +78,8 @@ exports.deleteInterviewee = function (req, res) {
         res.send(err ? {reason: err.toString()} : {});
     });
 };
+
+exports.parseCriterion = function(req, res, next) {
+    req.query.answer_ID = {$in: req.params.answers.split(',')};
+    next();
+};

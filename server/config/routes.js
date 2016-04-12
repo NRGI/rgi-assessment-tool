@@ -92,6 +92,7 @@ module.exports = function (app) {
     //////////////////////////
     app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
     app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
+    app.get('/api/interviewee-answers/:answers', auth.requiresApiLogin, interviewees.parseCriterion, answers.getAnswers);
     app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
     app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
     app.delete('/api/interviewees/:id', auth.requiresRole('supervisor'), interviewees.deleteInterviewee);
