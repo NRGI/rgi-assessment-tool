@@ -7,13 +7,13 @@ angular
         $location,
         $routeParams,
         $route,
-        ngDialog,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiNotifier,
         rgiQuestionSetSrvc,
+        rgiReferenceListSrvc,
         rgiUrlGuideSrvc,
         rgiUtilsSrvc
     ) {
@@ -84,7 +84,7 @@ angular
                 rgiNotifier.error('You must pick a score');
             } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
                 rgiNotifier.error('You must provide a justification');
-            } else if (new_answer_data.references.length < 1) {
+            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references)) {
                 rgiNotifier.error('You must provide at least one supporting reference!');
             } else if ($scope.current_user.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match) {
                 rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
