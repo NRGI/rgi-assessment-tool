@@ -5,7 +5,8 @@ angular.module('app')
         $scope,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
-        rgiIdentitySrvc
+        rgiIdentitySrvc,
+        rgiReferenceListSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.ref_type = [
@@ -26,17 +27,7 @@ angular.module('app')
         };
 
         $scope.isReferenceListEmpty = function() {
-            var listEmpty = true;
-
-            if($scope.references !== undefined) {
-                $scope.references.forEach(function(reference) {
-                    if(!reference.hidden) {
-                        listEmpty = false;
-                    }
-                });
-            }
-
-            return listEmpty;
+            return rgiReferenceListSrvc.isEmpty($scope.references);
         };
 
         //TODO Generate Dialog based on change and handle upload process via dialogs
