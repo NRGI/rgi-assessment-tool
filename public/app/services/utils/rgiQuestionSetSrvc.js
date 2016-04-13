@@ -4,6 +4,7 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
     var answers = [], questions = [];
 
     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
+        questionList.sort(function(question1, question2){return question1.question_order - question2.question_order;});
         questions = questionList;
     });
 
@@ -118,8 +119,8 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         var questions = questionSet.getAvailableQuestions(role, showAnsweredQuestions);
 
         for(var questionIndex = 0; questionIndex < questions.length; questionIndex++) {
-            if(questions[questionIndex].question_order === (answer.question_order + offset)) {
-                return questions[questionIndex];
+            if(questions[questionIndex].question_order === answer.question_order) {
+                return questions[questionIndex + offset];
             }
         }
     };
