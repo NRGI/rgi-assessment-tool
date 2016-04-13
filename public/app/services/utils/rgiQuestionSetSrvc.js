@@ -7,12 +7,12 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         questions = questionList;
     });
 
-    var getRootQuestions = function(role, showAnsweredQuestions) {
+    var getRootQuestions = function(roles, showAnsweredQuestions) {
         var rootQuestions = [];
 
         questions.forEach(function(question) {
             if((question.linkedOption === undefined) && (getAssociatedAnswer(question) !== null) &&
-                (!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions)) {
+                ((getAnswerChoices(roles, getAssociatedAnswer(question)).length === 0) || showAnsweredQuestions)) {
                 rootQuestions.push(question);
             }
         });
@@ -20,22 +20,20 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         return rootQuestions;
     };
 
-    var getLinkedQuestions = function(role, showAnsweredQuestions) {
+    var getLinkedQuestions = function(roles, showAnsweredQuestions) {
         var availableLinkedQuestions = [];
 
         answers.forEach(function(answer) {
             if(answer !== null) {
-                var choice = getAnswerChoice('researcher', answer);
-
-                if(choice) {
+                getAnswerChoices(roles, answer).forEach(function(choice) {
                     var question = getLinkedQuestion(getQuestionSelectedOption(getAssociatedQuestion(answer), choice));
 
                     if(question !== null) {
-                        if(!getAnswerChoice(role, getAssociatedAnswer(question)) || showAnsweredQuestions) {
+                        if((getAnswerChoices(roles, getAssociatedAnswer(question)).length === 0) || showAnsweredQuestions) {
                             availableLinkedQuestions.push(question);
                         }
                     }
-                }
+                });
             }
         });
 
@@ -56,8 +54,18 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         return foundQuestion;
     };
 
-    var getAnswerChoice = function(role, answer) {
-        return answer[getChoiceField(role)];
+    var getAnswerChoices = function(roles, answer) {
+        var choices = [];
+
+        roles.forEach(function(role) {
+            var choice = answer[getChoiceField(role)];
+
+            if(choice !== undefined) {
+                choices.push(choice);
+            }
+        });
+
+        return choices;
     };
 
     var getChoiceField = function(role) {
@@ -116,10 +124,24 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
         }
     };
 
+    var getRoles = function(role) {
+        var roles = ['researcher'];
+
+        if(['researcher', 'ext_reviewer'].indexOf(role) === -1) {
+            roles.push('reviewer');
+        }
+
+        if(roles.indexOf(role) === -1) {
+            roles.push(role);
+        }
+
+        return roles;
+    };
+
     var questionSet = {
         getAvailableQuestions: function(role, showAnsweredQuestions) {
-            return getRootQuestions(role, showAnsweredQuestions)
-                .concat(getLinkedQuestions(role, showAnsweredQuestions));
+            return getRootQuestions(getRoles(role), showAnsweredQuestions)
+                .concat(getLinkedQuestions(getRoles(role), showAnsweredQuestions));
         },
         getNextQuestionId: function(role, showAnsweredQuestions, answer) {
             return getRelativeQuestion(1, role, showAnsweredQuestions, answer).question_order;
