@@ -5,9 +5,11 @@ angular
     .controller('rgiActiveAnswerButtonsCtrl', function (
         $scope,
         $location,
+        $rootScope,
         $routeParams,
         $route,
         rgiAnswerSrvc,
+        rgiAnswerFilterSrvc,
         rgiAnswerMethodSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
@@ -22,8 +24,14 @@ angular
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
             _ = $scope.$parent.$parent._;
 
-        rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-            rgiQuestionSetSrvc.setAnswers(answers);
+        $rootScope.$watch(function() {
+            return $scope.$parent.assessment;
+        }, function(assessment) {
+            if(assessment !== undefined) {
+                rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+                    rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
+                });
+            }
         });
 
         var isTrialAssessment = function() {

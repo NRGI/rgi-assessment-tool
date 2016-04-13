@@ -7,6 +7,7 @@ angular.module('app')
         $location,
         ngDialog,
         rgiAnswerSrvc,
+        rgiAnswerFilterSrvc,
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
         rgiDialogFactory,
@@ -35,7 +36,7 @@ angular.module('app')
             $scope.answers = [];
 
             rgiAnswerSrvc.query(answer_query, function (answers) {
-                rgiQuestionSetSrvc.setAnswers(answers);
+                rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
                 $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
                 $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
