@@ -37,8 +37,7 @@
                     // Active buttons
                     .row.bottom-padding-lg
                         rgi-active-answer-buttons
-
-                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitte'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
+                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitted'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
                         rgi-flag-tabs
 
                     .row(ng-if="answer.external_answer.length!==0")
