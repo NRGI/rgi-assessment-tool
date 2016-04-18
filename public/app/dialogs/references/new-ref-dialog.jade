@@ -36,6 +36,26 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                 span Select File
                                 input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
                         .row: h4: b OR
+                        .row: h4 Please select a previously cited document:
+                        .row.bottom-padding-med
+                            .col-md-8
+                                select.form-group.form-control(
+                                ng-model="selected_doc"
+                                ng-disabled="document_list.length<1")
+                                    option(
+                                    value="none"
+                                    selected
+                                    disabled) Select document
+                                    option(
+                                    ng-repeat="doc in document_list"
+                                    value="{{doc._id}}") {{doc.title}}
+                            .col-md-4
+                                input.btn.btn-success(
+                                type="button"
+                                value="Select"
+                                ng-click="selectPrevDoc(selected_doc)"
+                                ng-disabled="document_list.length<1 || selected_doc=='none'")
+                        .row: h4: b OR
                         .row: h4 Please supply a remote file url:
                         .row: form(name="remoteFileForm").form-group
                             .col-md-8

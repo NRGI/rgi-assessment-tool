@@ -28,6 +28,7 @@ angular.module('app')
         $scope.interviewee_list = [];
         $scope.document_list = [];
         $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.selected_doc = 'none';
 
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
@@ -55,8 +56,13 @@ angular.module('app')
             });
         });
 
-        rgiDocumentSrvc.query({}, function (documents) {
-
+        rgiDocumentSrvc.query({users: $scope.current_user._id}, function (documents) {
+            documents.forEach(function(doc) {
+                $scope.document_list.push({
+                    _id: doc._id,
+                    title: doc.title
+                });
+            });
         });
 
         $scope.intervieweeSelect = function (selection) {
@@ -313,5 +319,19 @@ angular.module('app')
                     $scope.fileUploading = false;
                     rgiNotifier.error('The URL is unavailable');
                 });
+        };
+        $scope.selectPrevDoc = function(selected_doc) {
+            rgiDocumentSrvc.get({_id: selected_doc}, function (document){
+                $scope.new_document = document;
+                $scope.value = true;
+                var scope = $scope.$parent;
+                //rgiDialogFactory[scope.ref_selection + 'Create']($scope);
+                scope.new_document = $scope.new_document;
+                if (scope.ref_selection === 'document') {
+                    rgiDialogFactory.documentCreate(scope);
+                } else if (scope.ref_selection === 'webpage') {
+                    rgiDialogFactory.webpageCreate(scope);
+                }
+            });
         };
     });
