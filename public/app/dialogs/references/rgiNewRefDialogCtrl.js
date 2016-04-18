@@ -27,6 +27,7 @@ angular.module('app')
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
         $scope.document_list = [];
+        $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
@@ -34,9 +35,8 @@ angular.module('app')
             {text: 'Industry', value: 'industry'},
             {text: 'Expert', value: 'expert'},
             {text: 'Other', value: 'other'}];
-        // console.log($scope.$parent.$parent.$parent.$parent.assessment.assessment_ID);
 
-        rgiIntervieweeSrvc.query({assessments: $scope.$parent.$parent.$parent.$parent.assessment.assessment_ID}, function (interviewees) {
+        rgiIntervieweeSrvc.query({users: $scope.current_user._id}, function (interviewees) {
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {
                     firstName: interviewee.firstName,

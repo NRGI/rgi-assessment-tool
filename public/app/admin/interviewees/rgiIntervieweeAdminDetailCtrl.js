@@ -8,6 +8,7 @@ angular.module('app')
         ngDialog,
         rgiIdentitySrvc,
         rgiNotifier,
+        rgiUserSrvc,
         rgiUserListSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeAnswerSrvc,
@@ -22,7 +23,20 @@ angular.module('app')
             rgiIntervieweeSrvc.get({_id: $routeParams.interviewee_ID}, function (interviewee) {
                 $scope.interviewee = interviewee;
                 $scope.user_list = [];
+                $scope.users = [];
                 $scope.assessments = [];
+                rgiUserSrvc.query({}, function(users) {
+                    users.forEach(function(user) {
+                        if (interviewee.users.indexOf(user._id) < 0) {
+                            $scope.users.push({
+                                _id: user._id,
+                                firstName: user.firstName,
+                                lastName: user.lastName,
+                                role: user.role
+                            });
+                        }
+                    });
+                });
 
                 rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
                     answers.forEach(function(answer) {
@@ -56,13 +70,29 @@ angular.module('app')
             rgiDialogFactory.intervieweeEdit($scope);
         };
 
-        $scope.addAssessment = function () {
-            if ($scope.add_assessment === undefined) {
-                rgiNotifier.error('You must select an assessment from the dropdown!');
+        // $scope.addAssessment = function () {
+        //     if ($scope.add_assessment === undefined) {
+        //         rgiNotifier.error('You must select an assessment from the dropdown!');
+        //     } else {
+        //         var new_interviewee_data = $scope.interviewee;
+        //         if (new_interviewee_data.assessments.indexOf($scope.add_assessment) < 0) {
+        //             new_interviewee_data.assessments.push($scope.add_assessment);
+        //             rgiIntervieweeMethodSrvc.updateInterviewee(new_interviewee_data).then(function () {
+        //                 rgiNotifier.notify('Interviewee updated');
+        //                 $route.reload();
+        //             }, function (reason) {
+        //                 rgiNotifier.notify(reason);
+        //             });
+        //         }
+        //     }
+        // };
+        $scope.addUser = function () {
+            if ($scope.add_user === undefined) {
+                rgiNotifier.error('You must select an user from the dropdown!');
             } else {
                 var new_interviewee_data = $scope.interviewee;
-                if (new_interviewee_data.assessments.indexOf($scope.add_assessment) < 0) {
-                    new_interviewee_data.assessments.push($scope.add_assessment);
+                if (new_interviewee_data.users.indexOf($scope.add_user) < 0) {
+                    new_interviewee_data.users.push($scope.add_user);
                     rgiIntervieweeMethodSrvc.updateInterviewee(new_interviewee_data).then(function () {
                         rgiNotifier.notify('Interviewee updated');
                         $route.reload();

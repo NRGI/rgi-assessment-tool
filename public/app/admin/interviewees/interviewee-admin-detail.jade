@@ -32,15 +32,24 @@
                                 td(ng-if="interviewee.answers.length < 1") None
                                 td(ng-if="user_list.length < 1") None
 
+                //.row-fluid.left-padding-lg.right-padding-lg.top-padding-med
+                //    em.pull-left.col-md-2 Add to assessment
+                //    .form-group(name="add_assessment_form").col-md-4
+                //        select.form-control(
+                //        ng-model="add_assessment"
+                //        required)
+                //            option(value="" selected disabled) Select assessment
+                //            option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
+                //    button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
                 .row-fluid.left-padding-lg.right-padding-lg.top-padding-med
-                    em.pull-left Add to assessment
-                    .form-group(name="add_assessment_form").col-md-4
+                    em.pull-left.col-md-2 Add to user
+                    .form-group(name="add_user_form").col-md-4
                         select.form-control(
-                        ng-model="add_assessment"
+                        ng-model="add_user"
                         required)
-                            option(value="" selected disabled) Select assessment
-                            option(ng-repeat="assessment in assessments" value="{{assessment.assessment_ID}}") {{assessment.text}}
-                    button.btn.btn-primary(ng-click="addAssessment()" ng-disabed="!add_assessment") Add
+                            option(value="" selected disabled) Select user
+                            option(ng-repeat="user in users" value="{{user._id}}") {{user.firstName}} {{user.lastName}} - {{user.role}}
+                    button.btn.btn-primary(ng-click="addUser()" ng-disabed="!add_user") Add
 
             .left-padding-lg.right-padding-lg.top-padding-med(ng-if="references.length > 0")
                 h3 Citations
