@@ -80,7 +80,7 @@ questionSchema = new Schema({
     }],  ///from Criterion columns and used to be called question_choices
     question_norm: Number, ///Len of options used for normalizations...ignores NAs
     question_guidance_text: htmlSettings, //from Guidance Notes column
-    question_dependancies: htmlSettings, //from Dependancies column
+    question_dependancies: htmlSettings,
     mapping_2013_num: String, ///from Mapping: RGI 2013 column
     mapping_2013_text: String,
     mapping_2013_category: String,
