@@ -66,6 +66,9 @@ questionSchema = new Schema({
     indicator: String,  ///from Indicator column
     dejure: Boolean, ///from "De Jure or De Facto" true=dejure
     linkedOption: ObjectId,
+    dependant: {
+        type: Boolean,
+        default: false},
     question_text : String, ///from question column
     question_trial: Boolean,
     question_criteria: [{
@@ -77,6 +80,7 @@ questionSchema = new Schema({
     }],  ///from Criterion columns and used to be called question_choices
     question_norm: Number, ///Len of options used for normalizations...ignores NAs
     question_guidance_text: htmlSettings, //from Guidance Notes column
+    question_dependancies: htmlSettings, //from Dependancies column
     mapping_2013_num: String, ///from Mapping: RGI 2013 column
     mapping_2013_text: String,
     mapping_2013_category: String,
@@ -107,8 +111,8 @@ function createDefaultQuestions() {
                 "question_type": "context",
                 "question_label": "1.a",
                 "precept": 2,
-                "component" : "context",
-                "component_text" : "Context",
+                "component" : "legal",
+                "component_text" : "Legal and Regulatory Structure",
                 "indicator" : "EITI in national legislation",
                 "dejure": true,
                 "question_text" : "Is the EITI ratified in national legislation?",
@@ -121,6 +125,7 @@ function createDefaultQuestions() {
                 ],
                 "question_norm": 3,
                 "question_guidance_text": "<p><h5>Relevance:</h5><p>This <br> question is important to assess the national tax authority is audited by an independent auditor. Where an independent audit on the tax authority does not occur, this may indicate a presence of corruption, simply from the lack of an independent check on the government tax authority.  <p><h5>Where to look:</h5><p>Where an independent audit office audits the tax authority, evidence can usually be found on either the independent auditor’s website, as evidence of their work, or on the national tax authority’s website, as evidence of their compliance with the requirement to be audited by an independent body.  <p><h5>How to answer:</h5><p>If no evidence of an independent audit being conducted on the national tax authority can be found, researchers should select Criterion E.",
+                "question_dependancies": "<p>'Machine-readable' data <br> refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "mapping_2013_num": 1,
                 "mapping_2013_text": "Changed: Disaggregated response categories, in previous version, aggregated here. RGI2013.20: Does the Ministry of XX publish periodical information on some or all of the information on revenue generation presented in the table below (in reports or statistical databases)?",
                 "mapping_2013_category": "Context",
@@ -278,6 +283,7 @@ function createDefaultQuestions() {
                 ],
                 "question_norm": 3,
                 "question_guidance_text": "<p>'Machine-readable' data <br> refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
+                "question_dependancies": "<p>'Machine-readable' data <br> refers to data that can be 'read automatically by a web broswer or computer system' (excerpted from the White House Office of Management and Budget Circular No. A-11, 2015, Section 200-17).  <p>Machine-readable data can take a variety of formats.  For the purposes of RGI, the most 'readable' data describes that which is available via a public API (i.e. an 'application programming interface'), whereby users can query a database directly to return raw data.  <p>To be treated as 'public' for the purposes of the RGI, an API must be accompanied by a landing page and user documentation.  Aside from an API, other machine-readable data formats include non-proprietary formats (i.e. .csv, .tsv, and .JSON) and propriatery formats (e.g. Microsoft Access and Excel files).  For the purposes of the RGI, the latter are viewed as less 'readable' than the former in that they cannot always be read directly by programming languages or open source software.  For the purposes of the RGI, data contained in PDF and Microsoft Word files is viewed as less 'readable' in that data is mingled with text and formatting and cannot be easily extracted without transcription or data entry.",
                 "mapping_2013_num": 1,
                 "mapping_2013_text": "Changed: Disaggregated response categories, in previous version, aggregated here. RGI2013.20: Does the Ministry of XX publish periodical information on some or all of the information on revenue generation presented in the table below (in reports or statistical databases)?",
                 "mapping_2013_category": "Context",

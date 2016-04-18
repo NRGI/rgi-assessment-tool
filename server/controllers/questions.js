@@ -119,10 +119,12 @@ exports.updateQuestion = function (req, res) {
                 question.indicator = question_update.indicator;
                 question.dejure = question_update.dejure;
                 question.question_text = question_update.question_text;
+                question.dependant = question_update.dependant;
                 question.question_criteria = question_update.question_criteria;
                 //TODO deal with chang in criteria number and norm
                 //question.question_norm = question_update.question_norm;
                 question.question_guidance_text = question_update.question_guidance_text;
+                question.question_dependancies = question_update.question_dependancies;
                 question.comments = question_update.comments;
                 question.linkedOption = question_update.linkedOption;
                 question.last_modified = {modified_by: req.user._id, modified_dateti: timestamp};

@@ -26,7 +26,6 @@ angular.module('app')
         ];
 
         $scope.component_options = [
-            {value: 'context', text: 'Context'},
             {value: 'legal', text: 'Legal and Regulatory Structure'},
             {value: 'oversight', text: 'Oversight and Compliance'},
             {value: 'reporting', text: 'Reporting and Disclosure Practices'}
