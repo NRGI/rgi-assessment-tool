@@ -3,7 +3,7 @@
         div.page-well
             legend.h3.page-header Question {{question.question_order}}. {{question.question_text}}
                 small.pull-right version {{question.question_v}}
-            div.left-padding-med.right-padding-med.bottom-padding-lg
+            .row.bottom-padding-lg: div
                 div.col-md-6
                     h4 Information:
                     div.right-padding-lg.left-padding-lg
@@ -30,8 +30,9 @@
                         | &nbsp;
                         a.btn.btn-default(href="/admin/question-admin") Cancel
 
-            div.left-padding-med.right-padding-med
-                legend.h4 Edit:
+            hr
+            .row.left-padding-med.right-padding-med.bottom-padding-lg: div
+                h4 Edit:
                 .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
                     fieldset
                         .row: div(id="question_details_div").row-fluid.top-padding-med
@@ -91,7 +92,6 @@
                                     ng-if="linkedQuestion.question_criteria.length > 0"
                                     ng-model="question.linkedOption"
                                     ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria")
-
                         .row: div(id="question_options_div").row-fluid.top-padding-med
                             .row.top-padding-lg
                                 .col-md-1: b: p.text-right Option Order
@@ -141,6 +141,6 @@
                             label Dependencies
                             .form-group.left-padding-lg.right-padding-lg
                                 rgi-wysiwyg(name="dependancy_text", ng-model="question.question_dependancies")
-            //
-            //        .row: div(id="comments").row-fluid.right-padding-lg.left-padding-lg
-            //            rgi-comments(update="question")
+
+            .row.left-padding-med.right-padding-med.bottom-padding-lg: div
+                rgi-comments(update="question")

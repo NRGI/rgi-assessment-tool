@@ -83,6 +83,7 @@ angular
         };
 
         $scope.answerSubmit = function () {
+            // answer.question_ID.dependant
             var new_answer_data = $scope.answer,
                 auth_match = _.some($scope.references, function (ref) {
                     return (ref.author._id === $scope.current_user._id && !ref.hidden);
@@ -90,11 +91,11 @@ angular
 
             if (!new_answer_data[$scope.current_user.role + '_score'] && !new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
+            } else if (!new_answer_data[$scope.current_user.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide a justification');
-            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, $scope.current_user)) {
+            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, $scope.current_user) && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide at least one supporting reference!');
-            } else if ($scope.current_user.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match) {
+            } else if ($scope.current_user.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
             } else {
                 if (new_answer_data.new_answer_selection) {
@@ -110,7 +111,7 @@ angular
 
             if (!new_answer_data[$scope.current_user.role + '_score'] && new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[$scope.current_user.role + '_justification']) {
+            } else if (!new_answer_data[$scope.current_user.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide a justification');
             } else {
                 if (new_answer_data.new_answer_selection) {

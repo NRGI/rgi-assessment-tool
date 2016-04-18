@@ -1,7 +1,7 @@
 .container-fluid.page-container
     .well
         div.page-well
-            .h3 {{assessment.country}} {{assessment.year}} {{assessment.mineral || ''}} {{assessment.version}} assessment
+            .h3 {{assessment.country}} {{assessment.year}} {{assessment.mineral | addSpaces}} {{assessment.version}} assessment
             ul.nav.nav-tabs
                 li.active: a(data-target="#question" data-toggle="tab") Question
                 li: a(data-target="#guidance" data-toggle="tab") Question Guidance
