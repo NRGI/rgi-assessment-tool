@@ -117,9 +117,23 @@ exports.uploadUrlSnapshot = function(req, res) {
                     clearTimeout(timeout);
 
                     page.evaluate(function () {
+                        if([undefined, null].indexOf(document) !== -1) {
+                            return undefined;
+                        }
+
+                        if([undefined, null].indexOf(document.body) !== -1) {
+                            return undefined;
+                        }
+
+                        if([undefined, null].indexOf(document.body.offsetHeight) !== -1) {
+                            return undefined;
+                        }
+
                         return document.body.offsetHeight;
                     }).then(function (actualHeight) {
-                        if (actualHeight > 3000) {
+                        if(actualHeight === undefined) {
+                            terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
+                        } else if (actualHeight > 3000) {
                             terminateWithError('TOO_LARGE_SIZE', ph);
                         } else {
                             page.property('viewportSize', {width: width, height: actualHeight}).then(function () {
