@@ -96,7 +96,15 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 };
 
 exports.uploadUrlSnapshot = function(req, res) {
-    var width = 1024, height = 768;
+    var width = 1024, height = 768,
+        terminateWithError = function(errorCode, ph) {
+            res.send({error: errorCode});
+            console.log(errorCode);
+
+            if(ph) {
+                ph.exit();
+            }
+        };
 
     phantom.create().then(function(ph) {
         ph.createPage().then(function(page) {
@@ -106,7 +114,7 @@ exports.uploadUrlSnapshot = function(req, res) {
                         return document.body.offsetHeight;
                     }).then(function(actualHeight) {
                         if(actualHeight > 3000) {
-                            res.send({error: 'TOO_LARGE_SIZE'});
+                            terminateWithError('TOO_LARGE_SIZE', ph);
                         } else {
                             page.property('viewportSize', {width: width, height: actualHeight}).then(function() {
                                 page.open(req.query.url).then(function() {
@@ -118,7 +126,7 @@ exports.uploadUrlSnapshot = function(req, res) {
                                             fs.unlink(filePath);
 
                                             if(errorUpload) {
-                                                res.send({error: 'S3_TRANSFER_FAILURE'});
+                                                terminateWithError('S3_TRANSFER_FAILURE', ph);
                                             } else {
                                                 res.send({result: doc});
                                             }
@@ -128,26 +136,26 @@ exports.uploadUrlSnapshot = function(req, res) {
                                     page.close();
                                     ph.exit();
                                 }).catch(function() {
-                                    res.send({error: 'PAGE_CONNECT_FAILURE'});
+                                    terminateWithError('PAGE_CONNECT_FAILURE', ph);
                                 });
                             }).catch(function() {
-                                res.send({error: 'VIEWPORT_RESIZE_FAILURE'});
+                                terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
                             });
                         }
                     }).catch(function() {
-                        res.send({error: 'PAGE_DEFINE_HEIGHT_FAILURE'});
+                        terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
                     });
                 }).catch(function() {
-                    res.send({error: 'PAGE_CONNECT_FAILURE'});
+                    terminateWithError('PAGE_CONNECT_FAILURE', ph);
                 });
             }).catch(function() {
-                res.send({error: 'VIEWPORT_RESIZE_FAILURE'});
+                terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
             });
         }).catch(function() {
-            res.send({error: 'PAGE_OPEN_FAILURE'});
+            terminateWithError('PAGE_OPEN_FAILURE', ph);
         });
     }).catch(function() {
-        res.send({error: 'PHANTOM_INITIALIZATION_FAILURE'});
+        terminateWithError('PHANTOM_INITIALIZATION_FAILURE');
     });
 };
 
