@@ -5,6 +5,7 @@
             ul.nav.nav-tabs
                 li.active: a(data-target="#question" data-toggle="tab") Question
                 li: a(data-target="#guidance" data-toggle="tab") Question Guidance
+                li(ng-if="current_user.isSupervisor()"): a(data-target="#previous" data-toggle="tab") Answer History
                 .row-fluid.right-padding-lg
                     rgi-answer-nav(
                     assessment="assessment"
@@ -59,3 +60,34 @@
                 div.tab-pane(id="guidance")
                     label: h3 Guidance:
                     div(ng-bind-html="question.question_guidance_text").right-padding-lg.left-padding-lg
+                div.tab-pane(id="previous" ng-if="current_user.isSupervisor()")
+                    label: h3 Answer History:
+                    .row
+                        .col-md-6
+                            h4 Researcher scores:
+                                em(ng-if="answer.researcher_score_history.length<1")  N/A
+                            table(ng-if="answer.researcher_score_history.length>0").table.table-hover
+                                thead
+                                    tr
+                                        th.col-md-3 Score
+                                        th.col-md-7 Justification
+                                        th.col-md-2 Date
+                                tbody
+                                    tr(ng-repeat="score in answer.researcher_score_history")
+                                        td {{score.score.letter | ucfirst}} - {{score.score.text}}
+                                        td: div(ng-bind-html="score.justification")
+                                        td {{score.date | date}}
+                        .col-md-6
+                            h4 Reviewer scores:
+                                em(ng-if="answer.reviewer_score_history.length<1")  N/A
+                            table(ng-if="answer.reviewer_score_history.length>0").table.table-hover
+                                thead
+                                    tr
+                                        th.col-md-3 Score
+                                        th.col-md-7 Justification
+                                        th.col-md-2 Date
+                                tbody
+                                    tr(ng-repeat="score in answer.reviewer_score_history")
+                                        td {{score.score.letter | ucfirst}} - {{score.score.text}}
+                                        td: div(ng-bind-html="score.justification")
+                                        td {{score.date | date}}
