@@ -53,7 +53,6 @@ angular.module('app')
                 });
                 $scope.interviewee_list.push(interviewee_add);
             });
-            console.log($scope.interviewee_list);
         });
 
         rgiDocumentSrvc.query({}, function (documents) {
@@ -116,7 +115,7 @@ angular.module('app')
                                     }, 1000);
                                     rgiNotifier.notify('Reference added');
                                 }, function (reason) {
-                                    rgiNotifier.error(reason);
+                                    rgiNotifier.error('The interviewee is cited by a different user. Please contact your supervisor with the interviewee details!');
                                 });
                         }
                     }

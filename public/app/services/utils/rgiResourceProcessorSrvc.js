@@ -13,6 +13,7 @@ angular.module('app').factory('rgiResourceProcessorSrvc', function ($q) {
         },
         getErrorHandler: function(dfd) {
             return function () {
+                console.log(dfd);
                 dfd.reject('Request Failed');
             };
         },

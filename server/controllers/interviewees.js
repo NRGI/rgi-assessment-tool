@@ -30,6 +30,7 @@ exports.createInterviewee = function (req, res, next) {
 
     //noinspection JSUnusedLocalSymbols
     Interviewee.create(interviewee_data, function (err, interviewee) {
+        // console.log(err);
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate email and phone number combination');
