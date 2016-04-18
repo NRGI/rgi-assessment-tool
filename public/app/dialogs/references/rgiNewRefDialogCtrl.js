@@ -281,13 +281,14 @@ angular.module('app')
 
             var getErrorMessage = function(errorCode) {
                 switch(errorCode) {
-                    case 'TOO_LARGE_SIZE': return 'A snapshot of the web page cannot be generated because of the page dimensions';
-                    case 'S3_TRANSFER_FAILURE': return 'A snapshot of the web page cannot be saved to the file storage';
                     case 'PAGE_CONNECT_FAILURE': return 'The snapshot generator cannot connect to the URL';
-                    case 'VIEWPORT_RESIZE_FAILURE': return 'A snapshot of the web page with required dimensions cannot be generated';
                     case 'PAGE_DEFINE_HEIGHT_FAILURE': return 'A snapshot of the web page cannot be generated because the page dimensions are undefined';
+                    case 'PAGE_LOADING_TIMEOUT_EXPIRED': return 'Page loading timeout expired';
                     case 'PAGE_OPEN_FAILURE': return 'The snapshot generator failed to open the web page';
                     case 'PHANTOM_INITIALIZATION_FAILURE': return 'The snapshot generator initialization failed';
+                    case 'S3_TRANSFER_FAILURE': return 'A snapshot of the web page cannot be saved to the file storage';
+                    case 'TOO_LARGE_SIZE': return 'A snapshot of the web page cannot be generated because of the page dimensions';
+                    case 'VIEWPORT_RESIZE_FAILURE': return 'A snapshot of the web page with required dimensions cannot be generated';
                 }
                 return 'A snapshot of the web page cannot be generated because of unknown error';
             };
