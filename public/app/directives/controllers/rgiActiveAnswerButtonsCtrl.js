@@ -81,7 +81,6 @@ angular
                     rgiNotifier.notify(reason);
                 });
         };
-
         $scope.answerSubmit = function () {
             // answer.question_ID.dependant
             var new_answer_data = $scope.answer,
