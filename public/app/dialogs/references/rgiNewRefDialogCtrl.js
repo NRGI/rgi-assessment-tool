@@ -34,8 +34,9 @@ angular.module('app')
             {text: 'Industry', value: 'industry'},
             {text: 'Expert', value: 'expert'},
             {text: 'Other', value: 'other'}];
+        // console.log($scope.$parent.$parent.$parent.$parent.assessment.assessment_ID);
 
-        rgiIntervieweeSrvc.query({}, function (interviewees) {
+        rgiIntervieweeSrvc.query({assessments: $scope.$parent.$parent.$parent.$parent.assessment.assessment_ID}, function (interviewees) {
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {
                     firstName: interviewee.firstName,
@@ -52,7 +53,9 @@ angular.module('app')
                 });
                 $scope.interviewee_list.push(interviewee_add);
             });
+            console.log($scope.interviewee_list);
         });
+
         rgiDocumentSrvc.query({}, function (documents) {
 
         });
