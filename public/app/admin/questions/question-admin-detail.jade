@@ -107,8 +107,8 @@
                             ng-click="questionUpdate()"
                             ng-disabled="profileForm.$invalid") Save question
                             | &nbsp;
-                            button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete question
-                            | &nbsp;
+                            //button.btn.btn-danger(ng-click="deleteConfirmDialog()" disabled) Delete question
+                            //| &nbsp;
                             button.btn.btn-warning(ng-click="questionClear()") Reset question
                             | &nbsp;
                             a.btn.btn-default(href="/admin/question-admin") Cancel
@@ -158,6 +158,12 @@
                         label Guidance Text
                         .form-group.left-padding-lg.right-padding-lg(required)
                             rgi-wysiwyg(name="guidance_text", ng-model="question.question_guidance_text")
+
+                    div(id="dependancy_div").row-fluid.right-padding-lg.left-padding-lg
+                        label Dependencies
+                        .form-group.left-padding-lg.right-padding-lg
+                            rgi-wysiwyg(name="dependancy_text", ng-model="question.question_dependancies")
+
                     div(id="comments").row-fluid.right-padding-lg.left-padding-lg
                         rgi-comments(update="question")
 
