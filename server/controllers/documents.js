@@ -108,63 +108,61 @@ exports.uploadUrlSnapshot = function(req, res) {
 
     phantom.create().then(function(ph) {
         ph.createPage().then(function(page) {
-            page.property('onResourceTimeout', function() {
-                terminateWithError('PAGE_LOADING_TIMEOUT_EXPIRED', ph);
-            });
+            page.property('viewportSize', {width: width, height: height}).then(function () {
+                var timeout = setTimeout(function() {
+                    terminateWithError('PAGE_LOADING_TIMEOUT_EXPIRED', ph);
+                }, 30000);
 
-            page.setting('resourceTimeout', 15000).then(function() {
-                page.property('viewportSize', {width: width, height: height}).then(function () {
-                    page.open(req.query.url).then(function () {
-                        page.evaluate(function () {
-                            return document.body.offsetHeight;
-                        }).then(function (actualHeight) {
-                            if (actualHeight > 3000) {
-                                terminateWithError('TOO_LARGE_SIZE', ph);
-                            } else {
-                                page.property('viewportSize', {width: width, height: actualHeight}).then(function () {
-                                    page.open(req.query.url).then(function () {
-                                        var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
-                                        page.render(filePath);
+                page.open(req.query.url).then(function () {
+                    clearTimeout(timeout);
 
-                                        var interval = setInterval(function() {
-                                            fs.exists(filePath, function(renderingCompleted) {
-                                                if (renderingCompleted) {
-                                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
-                                                        function (errorUpload, doc) {
-                                                            fs.unlink(filePath);
+                    page.evaluate(function () {
+                        return document.body.offsetHeight;
+                    }).then(function (actualHeight) {
+                        if (actualHeight > 3000) {
+                            terminateWithError('TOO_LARGE_SIZE', ph);
+                        } else {
+                            page.property('viewportSize', {width: width, height: actualHeight}).then(function () {
+                                page.open(req.query.url).then(function () {
+                                    var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
+                                    page.render(filePath);
 
-                                                            if (errorUpload) {
-                                                                terminateWithError('S3_TRANSFER_FAILURE', ph);
-                                                            } else {
-                                                                res.send({result: doc});
-                                                            }
+                                    var interval = setInterval(function() {
+                                        fs.exists(filePath, function(renderingCompleted) {
+                                            if (renderingCompleted) {
+                                                uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
+                                                    function (errorUpload, doc) {
+                                                        fs.unlink(filePath);
+
+                                                        if (errorUpload) {
+                                                            terminateWithError('S3_TRANSFER_FAILURE', ph);
+                                                        } else {
+                                                            res.send({result: doc});
                                                         }
-                                                    );
+                                                    }
+                                                );
 
-                                                    page.close();
-                                                    ph.exit();
-                                                    clearInterval(interval);
-                                                }
-                                            });
-                                        }, 250);
-                                    }).catch(function () {
-                                        terminateWithError('PAGE_CONNECT_FAILURE', ph);
-                                    });
+                                                page.close();
+                                                ph.exit();
+                                                clearInterval(interval);
+                                            }
+                                        });
+                                    }, 250);
                                 }).catch(function () {
-                                    terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
+                                    terminateWithError('PAGE_CONNECT_FAILURE', ph);
                                 });
-                            }
-                        }).catch(function () {
-                            terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
-                        });
+                            }).catch(function () {
+                                terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
+                            });
+                        }
                     }).catch(function () {
-                        terminateWithError('PAGE_CONNECT_FAILURE', ph);
+                        terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
                     });
                 }).catch(function () {
-                    terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
+                    terminateWithError('PAGE_CONNECT_FAILURE', ph);
                 });
             }).catch(function () {
-                terminateWithError('SET_TIMEOUT_FAILURE', ph);
+                terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
             });
         }).catch(function() {
             terminateWithError('PAGE_OPEN_FAILURE', ph);
