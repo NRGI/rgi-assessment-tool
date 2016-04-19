@@ -120,7 +120,7 @@ angular.module('app')
                                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                                     }, 1000);
                                     rgiNotifier.notify('Reference added');
-                                }, function (reason) {
+                                }, function () {
                                     rgiNotifier.error('The interviewee is cited by a different user. Please contact your supervisor with the interviewee details!');
                                 });
                         }
@@ -294,6 +294,7 @@ angular.module('app')
                     case 'PAGE_LOADING_TIMEOUT_EXPIRED': return 'Page loading timeout expired';
                     case 'PAGE_OPEN_FAILURE': return 'The snapshot generator failed to open the web page';
                     case 'PHANTOM_INITIALIZATION_FAILURE': return 'The snapshot generator initialization failed';
+                    case 'SET_TIMEOUT_FAILURE': return 'The snapshot generator initialization failed';
                     case 'S3_TRANSFER_FAILURE': return 'A snapshot of the web page cannot be saved to the file storage';
                     case 'TOO_LARGE_SIZE': return 'A snapshot of the web page cannot be generated because of the page dimensions';
                     case 'VIEWPORT_RESIZE_FAILURE': return 'A snapshot of the web page with required dimensions cannot be generated';
