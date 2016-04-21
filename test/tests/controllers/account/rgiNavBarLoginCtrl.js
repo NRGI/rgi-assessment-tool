@@ -86,6 +86,13 @@ describe('rgiNavBarLoginCtrl', function () {
             });
         });
 
+        describe('Empty credentials', function () {
+            it('shows a notification message', function () {
+                $scope.signin('', '');
+                rgiNotifierErrorSpy.withArgs('You must supply a Username and Password!').called.should.be.equal(true);
+            });
+        });
+
         describe('Authentication failure', function () {
             beforeEach(function () {
                 $scope.signin('NON-EXISTING-USER', 'INCORRECT-PASSWORD');
