@@ -1,7 +1,4 @@
 'use strict';
-/*jshint -W079 */
-
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiNavBarLoginCtrl', function () {
     beforeEach(module('app'));
@@ -67,8 +64,10 @@ describe('rgiNavBarLoginCtrl', function () {
 
         afterEach(function () {
             for (var mockIndex in mocks) {
-                mocks[mockIndex].verify();
-                mocks[mockIndex].restore();
+                if(mocks.hasOwnProperty(mockIndex)) {
+                    mocks[mockIndex].verify();
+                    mocks[mockIndex].restore();
+                }
             }
         });
     });
@@ -93,7 +92,7 @@ describe('rgiNavBarLoginCtrl', function () {
             });
 
             it('shows a notification message', function () {
-                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect').called.should.be.equal(true);
+                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect!').called.should.be.equal(true);
             });
 
             it('clears the version list', function () {
