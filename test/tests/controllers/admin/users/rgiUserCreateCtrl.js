@@ -18,11 +18,12 @@ describe('rgiUserCreateCtrl', function () {
     ));
 
     it('initializes role options', function () {
-        _.isEqual($scope.role_options, [
+        $scope.role_options.should.deep.equal([
             {value: 'supervisor', text: 'Supervisor'},
             {value: 'researcher', text: 'Researcher'},
-            {value: 'reviewer', text: 'Reviewer'}
-        ]).should.be.equal(true);
+            {value: 'reviewer', text: 'Reviewer'},
+            {value: 'ext_reviewer', text: 'External Reviewer'}
+        ]);
     });
 
     describe('#userCreate', function () {
@@ -88,5 +89,4 @@ describe('rgiUserCreateCtrl', function () {
             rgiNotifierMock.restore();
         });
     });
-
 });
