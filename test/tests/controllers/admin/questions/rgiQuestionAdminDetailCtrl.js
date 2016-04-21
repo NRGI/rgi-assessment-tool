@@ -5,8 +5,9 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
     var $scope, $location, $route, $routeParams,
-        rgiDialogFactory, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
+        rgiDialogFactory, rgiPreceptGuideSrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
         questionGetStub, questionGetSpy,
+        getPreceptsStub, getPreceptsSpy, PRECEPTS = 'PRECEPTS',
         $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID',
         questionData = {
             _id: 'QUESTION-ID',
@@ -25,6 +26,7 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             _$route_,
             _$routeParams_,
             _rgiDialogFactory_,
+            _rgiPreceptGuideSrvc_,
             _rgiQuestionSrvc_,
             _rgiQuestionMethodSrvc_,
             _rgiNotifier_
@@ -33,6 +35,7 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             $route = _$route_;
             $routeParams = _$routeParams_;
             rgiDialogFactory = _rgiDialogFactory_;
+            rgiPreceptGuideSrvc = _rgiPreceptGuideSrvc_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             rgiQuestionMethodSrvc = _rgiQuestionMethodSrvc_;
             rgiNotifier = _rgiNotifier_;
@@ -48,6 +51,11 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             /*jslint unparam: false*/
             questionGetStub = sinon.stub(rgiQuestionSrvc, 'get', questionGetSpy);
 
+            getPreceptsSpy = sinon.spy(function () {
+                return PRECEPTS;
+            });
+            getPreceptsStub = sinon.stub(rgiPreceptGuideSrvc, 'getPrecepts', getPreceptsSpy);
+
             $scope = $rootScope.$new();
             $controller('rgiQuestionAdminDetailCtrl', {$scope: $scope});
         }
@@ -56,6 +64,23 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     it('loads initial question data by question id got as the route parameter', function () {
         questionGetSpy.withArgs({_id: $routeParamsId}).called.should.be.equal(true);
         $scope.question.should.deep.equal(questionData);
+    });
+
+    it('sets the precept options', function () {
+        getPreceptsSpy.called.should.be.equal(true);
+        $scope.precept_options.should.be.equal(PRECEPTS);
+    });
+
+    it('sets the page type', function () {
+        $scope.page_type.should.be.equal('question');
+    });
+
+    it('sets type options', function () {
+        $scope.type_options.should.deep.equal([
+            {value: 'context', text: 'Context'},
+            {value: 'scored', text: 'Scored'},
+            {value: 'shadow', text: 'Shadow'}
+        ]);
     });
 
     it('initializes components data', function () {
@@ -229,5 +254,6 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     afterEach(function () {
         $routeParams.id = $routeParamsIdBackUp;
         questionGetStub.restore();
+        getPreceptsStub.restore();
     });
 });
