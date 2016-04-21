@@ -4,15 +4,14 @@
 describe('rgiQuestionAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams,
-        rgiDialogFactory, rgiIdentitySrvc, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
+    var $scope, $location, $route, $routeParams,
+        rgiDialogFactory, rgiQuestionSrvc, rgiQuestionMethodSrvc, rgiNotifier,
         questionGetStub, questionGetSpy,
         $routeParamsIdBackUp, $routeParamsId = 'QUESTION-ID',
-        identityCurrentUserBackUp, identityCurrentUser = 'CURRENT USER',
         questionData = {
             _id: 'QUESTION-ID',
             comments: [],
-            question_choices: [
+            question_criteria: [
                 {order: 1, criteria: 'yes'},
                 {order: 2, criteria: 'no'}
             ]
@@ -23,23 +22,20 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             $rootScope,
             $controller,
             _$location_,
+            _$route_,
             _$routeParams_,
             _rgiDialogFactory_,
-            _rgiIdentitySrvc_,
             _rgiQuestionSrvc_,
             _rgiQuestionMethodSrvc_,
             _rgiNotifier_
         ) {
             $location = _$location_;
+            $route = _$route_;
             $routeParams = _$routeParams_;
             rgiDialogFactory = _rgiDialogFactory_;
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             rgiQuestionMethodSrvc = _rgiQuestionMethodSrvc_;
             rgiNotifier = _rgiNotifier_;
-
-            identityCurrentUserBackUp = rgiIdentitySrvc.currentUser;
-            rgiIdentitySrvc.currentUser = identityCurrentUser;
 
             $routeParamsIdBackUp = $routeParams.id;
             $routeParams.id = $routeParamsId;
@@ -59,50 +55,46 @@ describe('rgiQuestionAdminDetailCtrl', function () {
 
     it('loads initial question data by question id got as the route parameter', function () {
         questionGetSpy.withArgs({_id: $routeParamsId}).called.should.be.equal(true);
-        _.isEqual($scope.question, questionData).should.be.equal(true);
-        _.isEqual($scope.question_start, questionData).should.be.equal(true);
-    });
-
-    it('loads current user data', function () {
-        _.isEqual($scope.current_user, identityCurrentUser).should.be.equal(true);
+        $scope.question.should.deep.equal(questionData);
     });
 
     it('initializes components data', function () {
-        _.isEqual($scope.component_options, [
-            {value: 'context', text: 'Context'},
-            {value: 'government_effectiveness', text: 'Government Effectiveness'},
-            {value: 'legal', text: 'Institutional and Legal Setting'},
-            {value: 'reporting', text: 'Reporting Practices'},
-            {value: 'safeguard_and_quality_control', text: 'Safeguard and Quality Control'},
-            {value: 'enabling_environment', text: 'Enabling Environment'},
-            {value: 'oversight', text: 'Oversight'}
-        ]).should.be.equal(true);
+        $scope.component_options.should.deep.equal([
+            {value: 'legal', text: 'Legal and Regulatory Structure'},
+            {value: 'oversight', text: 'Oversight and Compliance'},
+            {value: 'reporting', text: 'Reporting and Disclosure Practices'}
+        ]);
     });
 
     describe('#questionOptionAdd', function () {
         it('adds a placeholder to add a new option', function () {
-            var questionChoice, originalItemsNumber = $scope.question.question_choices.length;
+            var questionChoice, originalItemsNumber = $scope.question.question_criteria.length;
             $scope.questionOptionAdd();
 
-            questionChoice = $scope.question.question_choices[$scope.question.question_choices.length - 1];
+            questionChoice = $scope.question.question_criteria[$scope.question.question_criteria.length - 1];
             questionChoice.order.should.be.equal(originalItemsNumber + 1);
-            questionChoice.criteria.should.be.equal('Enter text');
+            questionChoice.value.should.be.equal(originalItemsNumber + 1);
+            questionChoice.text.should.be.equal('');
         });
     });
 
     describe('#questionOptionDelete', function () {
         it('removes choice data', function () {
-            var choiceIndex = 0, choiceData = angular.copy($scope.question.question_choices[choiceIndex]);
+            var choiceIndex = 0, choiceData = angular.copy($scope.question.question_criteria[choiceIndex]);
             $scope.questionOptionDelete();
-            _.isEqual($scope.question.question_choices[choiceIndex], choiceData).should.be.equal(false);
+            $scope.question.question_criteria[choiceIndex].should.not.deep.equal(choiceData);
         });
     });
 
     describe('#questionClear', function () {
-        it('re-initializes the question data', function () {
-            $scope.question.question_choices[0].criteria = 'Yes, of course';
+        it('reloads the page', function () {
+            var $routeMock = sinon.mock($route);
+            $routeMock.expects('reload');
+
             $scope.questionClear();
-            _.isEqual($scope.question, $scope.question_start).should.be.equal(true);
+
+            $routeMock.verify();
+            $routeMock.restore();
         });
     });
 
@@ -115,13 +107,13 @@ describe('rgiQuestionAdminDetailCtrl', function () {
 
         describe('INCOMPLETE DATA CASES', function () {
             it('shows an error message if there are no choices', function () {
-                $scope.question.question_choices = [];
+                $scope.question.question_criteria = [];
                 notifierMock.expects('error').withArgs('You must supply at least one option!');
                 $scope.questionUpdate();
             });
 
             it('shows an error message if there is no guidance', function () {
-                $scope.question.question_choices = [
+                $scope.question.question_criteria = [
                     {order: 1, criteria: 'yes'},
                     {order: 2, criteria: 'no'}
                 ];
@@ -130,7 +122,7 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             });
 
             it('shows an error message if the order is not set', function () {
-                $scope.question.question_choices = [
+                $scope.question.question_criteria = [
                     {order: 1, criteria: 'yes'},
                     {order: 2, criteria: 'no'}
                 ];
@@ -141,7 +133,7 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             });
 
             it('shows an error message if the question text is not set', function () {
-                $scope.question.question_choices = [
+                $scope.question.question_criteria = [
                     {order: 1, criteria: 'yes'},
                     {order: 2, criteria: 'no'}
                 ];
@@ -158,7 +150,7 @@ describe('rgiQuestionAdminDetailCtrl', function () {
             var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy;
 
             beforeEach(function () {
-                $scope.question.question_choices = [
+                $scope.question.question_criteria = [
                     {order: 1, criteria: 'yes'},
                     {order: 2, criteria: 'no'}
                 ];
@@ -236,7 +228,6 @@ describe('rgiQuestionAdminDetailCtrl', function () {
 
     afterEach(function () {
         $routeParams.id = $routeParamsIdBackUp;
-        rgiIdentitySrvc.currentUser = identityCurrentUserBackUp;
         questionGetStub.restore();
     });
 });
