@@ -16,6 +16,7 @@ angular.module('app', [
     'tableSort',
     'textAngular',
     'ui.bootstrap',
+    // 'smalleditor'
     'ngWYSIWYG'
 ]);
 

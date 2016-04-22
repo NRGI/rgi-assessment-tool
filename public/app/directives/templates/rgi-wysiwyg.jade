@@ -8,15 +8,7 @@
 //    ta-maxlength="{{editorContentMaxLength}}"
 //    ta-max-text="{{editorContentMaxLength}}"
 //    ta-disabled="disabled")
-
-//wysiwyg(
-//name="{{name}}"
-//textarea-id="{{name}}"
-//textarea-class="form-control"
-//textarea-name="{{name}}"
-//placeholder="{{placeholder}}"
-//ng-model="ngModel"
-//textarea-menu="{{taToolbarOptions}}"
-//enable-bootstrap-title="true"
-//)
-wysiwyg-edit(content="ngModel")
+wysiwyg-edit(
+content="ngModel"
+config="editorConfig")
+//div(smalleditor)
