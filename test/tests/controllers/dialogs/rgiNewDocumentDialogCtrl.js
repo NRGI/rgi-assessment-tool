@@ -4,13 +4,17 @@
 describe('rgiNewDocumentDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, ngDialog;
+    var $scope, $rootScope, ngDialog;
 
-    beforeEach(inject(function ($rootScope, $controller, _ngDialog_) {
+    beforeEach(inject(function ($controller, _$rootScope_, _ngDialog_) {
         ngDialog = _ngDialog_;
-
+        $rootScope = _$rootScope_;
         $scope = $rootScope.$new();
+
         $scope.new_document = {status: 'created'};
+        $scope.answer = {};
+        $scope.closeThisDialog = sinon.spy();
+
         $scope.$parent = {
             new_document: {
                 status: 'created',
@@ -23,28 +27,20 @@ describe('rgiNewDocumentDialogCtrl', function () {
     }));
 
     it('defines available document types', function () {
-        _.isEqual($scope.new_doc_type, [
-            {value: 'journal', text: 'Journal'},
+        $scope.new_doc_type.should.deep.equal([
             {value: 'book', text: 'Book'},
-            {value: 'generic', text: 'Generic'},
-            {value: 'book_section', text: 'Book Section'},
-            {value: 'conference_proceedings', text: 'Conference Proceedings'},
-            {value: 'working_paper', text: 'Working Paper'},
+            {value: 'book_section', text: 'Book Chapter'},
+            {value: 'data_file', text: 'Data File'},
+            {value: 'journal', text: 'Journal'},
+            {value: 'case', text: 'Judicial Decision'},
+            {value: 'newspaper_article', text: 'Press Article'},
+            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
+            {value: 'policy_document', text: 'Policy document'},
             {value: 'report', text: 'Report'},
+            {value: 'statute', text: 'Legislation'},
             {value: 'web_page', text: 'Web Page'},
-            {value: 'thesis', text: 'Thesis'},
-            {value: 'magazine_article', text: 'Magazine Article'},
-            {value: 'statute', text: 'Statute'},
-            {value: 'patent', text: 'Patent'},
-            {value: 'newspaper_article', text: 'Newspaper Article'},
-            {value: 'computer_program', text: 'Computer Program'},
-            {value: 'hearing', text: 'Hearing'},
-            {value: 'television_broadcast', text: 'Television Broadcast'},
-            {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
-            {value: 'case', text: 'Case'},
-            {value: 'film', text: 'Film'},
-            {value: 'bill', text: 'Bill'}
-        ]).should.be.equal(true);
+            {value: 'working_paper', text: 'Working Paper'}
+        ]);
     });
 
     it('copies the document authors from the parent scope', function () {
@@ -68,13 +64,6 @@ describe('rgiNewDocumentDialogCtrl', function () {
         });
     });
 
-    describe('#editorPush', function() {
-        it('pushes an empty editor record', function () {
-            $scope.editorPush();
-            $scope.new_document.editors[$scope.new_document.editors.length - 1].should.deep.equal({first_name: '', last_name: ''});
-        });
-    });
-
     describe('#authorPop', function() {
         it('pops author record from a given index', function () {
             $scope.new_document.authors = [
@@ -92,32 +81,16 @@ describe('rgiNewDocumentDialogCtrl', function () {
         });
     });
 
-    describe('#editorPop', function() {
-        it('pops author record from a given index', function () {
-            $scope.new_document.editors = [
-                {first_name: 'Brian', last_name: 'Kernighan'},
-                {first_name: 'Dennis', last_name: 'Ritchie'},
-                {first_name: 'Bjarne', last_name: 'Stroustrup'}
-            ];
-
-            $scope.editorPop(1);
-
-            $scope.new_document.editors.should.deep.equal([
-                {first_name: 'Brian', last_name: 'Kernighan'},
-                {first_name: 'Bjarne', last_name: 'Stroustrup'}
-            ]);
-        });
-    });
-
     describe('#closeDialog', function() {
         it('closes the dialog', function () {
-            var dialogMock = sinon.mock(ngDialog);
-            dialogMock.expects('close');
+            var $rootScopeMock = sinon.mock($rootScope);
+            $rootScopeMock.expects('$broadcast').withArgs('RESET_SELECTED_REFERENCE_ACTION');
 
             $scope.closeDialog();
 
-            dialogMock.verify();
-            dialogMock.restore();
+            $scope.closeThisDialog.called.should.be.equal(true);
+            $rootScopeMock.verify();
+            $rootScopeMock.restore();
         });
     });
 });

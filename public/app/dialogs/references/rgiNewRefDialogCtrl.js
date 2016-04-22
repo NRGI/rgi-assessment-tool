@@ -242,10 +242,12 @@ angular.module('app')
             if (!$scope.isAllowedFileExtension(fileUrl)) {
                 rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
             } else {
+                $scope.fileUploading = true;
+
                 if (fileUrl.split('://')[0] !== 'http' && fileUrl.split('://')[0] !== 'https') {
                     fileUrl = 'http://' + fileUrl;
                 }
-                console.log($scope.isAllowedFileExtension(fileUrl));
+
                 var handleFileUploadStatus = function (responseStatus) {
                     $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 

@@ -3,29 +3,30 @@
 describe('rgiQuestionAdminCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, ngDialog, rgiDialogFactory, rgiQuestionSrvc, questionQueryStub, questionQuerySpy,
+    var $scope, ngDialog, rgiDialogFactory, rgiQuestionSrvc, rgiPreceptGuideSrvc,
+        questionQueryStub, questionQuerySpy, getPreceptsStub, getPreceptsSpy,
         questionsData = [
             {
+                question_label: 'QUESTION LABEL',
                 question_order: 'QUESTION ORDER',
                 question_text: 'QUESTION TEXT',
+                question_type: 'QUESTION TYPE',
                 component_text: 'COMPONENT TEXT',
                 indicator_name: 'INDICATOR NAME',
-                sub_indicator_name: 'SUBINDICATOR NAME',
-                minstry_if_applicable: 'MINISTRY IF APPLICABLE',
-                section_name: 'SECTION NAME',
-                child_question: 'CHILD QUESTION',
-                nrc_precept: 'NRC PRECEPT',
-                question_choices: [
-                    {name: 'Yes', criteria: 'yes'},
-                    {name: 'No', criteria: 'no'}
+                dejure: 'DEJURE',
+                precept: 1,
+                question_criteria: [
+                    {name: 'yes', text: 'Yes'},
+                    {name: 'no', text: 'No'}
                 ]
             }
         ];
 
     beforeEach(inject(
-        function ($rootScope, $controller, _ngDialog_, _rgiDialogFactory_, _rgiQuestionSrvc_) {
+        function ($rootScope, $controller, _ngDialog_, _rgiDialogFactory_, _rgiPreceptGuideSrvc_, _rgiQuestionSrvc_) {
             ngDialog = _ngDialog_;
             rgiDialogFactory = _rgiDialogFactory_;
+            rgiPreceptGuideSrvc = _rgiPreceptGuideSrvc_;
             rgiQuestionSrvc = _rgiQuestionSrvc_;
             $scope = $rootScope.$new();
             /*jshint unused: true*/
@@ -37,73 +38,72 @@ describe('rgiQuestionAdminCtrl', function () {
             /*jslint unparam: false*/
             questionQueryStub = sinon.stub(rgiQuestionSrvc, 'query', questionQuerySpy);
 
+            getPreceptsSpy = sinon.spy(function () {
+                return {precept_1: {section_len: 0, data: []}};
+            });
+            getPreceptsStub = sinon.stub(rgiPreceptGuideSrvc, 'getQuestionTemplates', getPreceptsSpy);
+
             $controller('rgiQuestionAdminCtrl', {$scope: $scope});
         }
     ));
 
-    it('initializes sorting options', function () {
-        $scope.sort_options.should.deep.equal([
-            {value: 'question_order', text: 'Sort by Question Order'},
-            {value: 'component_text', text: 'Sort by Component'},
-            {value: 'question_text', text: 'Sort by Question Text'}
-        ]);
-    });
-
     it('initializes sorting order', function () {
-        $scope.sort_order.should.be.equal('question_order');
+        $scope.order_reverse.should.be.equal(true);
     });
 
     it('sets the header', function () {
         $scope.header.should.deep.equal([
             'Question Order',
+            'Question Label',
+            'NRC Precept',
+            'Question Type',
             'Question Text',
             'Component Text',
             'Indicator Name',
-            'Subindicator Name',
-            'Ministry', 'Section',
-            'Child Question',
-            'NRC Precept'
+            'Dejure'
         ]);
     });
 
     it('loads the question data', function () {
-        $scope.questions.should.deep.equal(questionsData);
+        $scope.questions.should.deep.equal({precept_1: {section_len: 1, data: [questionsData[0]]}});
     });
 
-    it('transforms the loaded question data', function () {
-        $scope.getArray.should.deep.equal([
-            {
-                question_order: 'QUESTION ORDER',
-                question_text: 'QUESTION TEXT',
-                component_text: 'COMPONENT TEXT',
-                indicator_name: 'INDICATOR NAME',
-                sub_indicator_name: 'SUBINDICATOR NAME',
-                minstry_if_applicable: 'MINISTRY IF APPLICABLE',
-                section_name: 'SECTION NAME',
-                child_question: 'CHILD QUESTION',
-                nrc_precept: 'NRC PRECEPT',
-                choice_0: 'Yes',
-                choice_0_criteria: 'yes',
-                choice_1: 'No',
-                choice_1_criteria: 'no'
-            }
-        ]);
+    describe('#getExportedQuestions', function () {
+        it('returns transformed question data', function () {
+            $scope.getExportedQuestions().should.deep.equal([
+                {
+                    question_order: questionsData[0].question_order,
+                    question_label: questionsData[0].question_label,
+                    precept: questionsData[0].precept,
+                    dejure: questionsData[0].dejure,
+                    question_type: questionsData[0].question_type,
+                    question_text: questionsData[0].question_text,
+                    component_text: questionsData[0].component_text,
+                    indicator_name: questionsData[0].indicator_name,
+                    choice_0: questionsData[0].question_criteria[0].name,
+                    choice_0_criteria: questionsData[0].question_criteria[0].text,
+                    choice_1: questionsData[0].question_criteria[1].name,
+                    choice_1_criteria: questionsData[0].question_criteria[1].text
+                }
+            ]);
+        });
     });
 
     describe('#newQuestionDialog', function () {
         it('opens a dialog', function () {
-            var ngDialogMock = sinon.mock(rgiDialogFactory);
-            ngDialogMock.expects('questionNew').withArgs($scope);
+            var dialogFactoryMock = sinon.mock(rgiDialogFactory);
+            dialogFactoryMock.expects('questionNew').withArgs($scope);
 
             $scope.newQuestionDialog();
 
-            ngDialogMock.verify();
-            ngDialogMock.restore();
+            dialogFactoryMock.verify();
+            dialogFactoryMock.restore();
         });
 
     });
 
     afterEach(function () {
         questionQueryStub.restore();
+        getPreceptsStub.restore();
     });
 });

@@ -6,9 +6,7 @@ angular.module('app')
         $route,
         $routeParams,
         $location,
-        ngDialog,
         rgiDialogFactory,
-        rgiIdentitySrvc,
         rgiNotifier,
         rgiPreceptGuideSrvc,
         rgiQuestionMethodSrvc,
@@ -49,13 +47,19 @@ angular.module('app')
         };
 
         $scope.questionOptionAdd = function () {
-            $scope.question.question_choices.push({order: $scope.question.question_choices.length + 1, criteria: "Enter text"});
+            var order = $scope.question.question_criteria.length + 1;
+
+            $scope.question.question_criteria.push({
+                order: order,
+                value: order,
+                text: ''
+            });
         };
 
         $scope.questionOptionDelete = function (index) {
-            $scope.question.question_choices.splice(index, 1);
+            $scope.question.question_criteria.splice(index, 1);
 
-            $scope.question.question_choices.forEach(function (el, i) {
+            $scope.question.question_criteria.forEach(function (el, i) {
                 el.order = i + 1;
             });
         };

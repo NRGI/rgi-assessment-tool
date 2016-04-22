@@ -1,7 +1,4 @@
 'use strict';
-/*jshint -W079 */
-
-var describe, beforeEach, afterEach, it, inject, expect, sinon;
 
 describe('rgiNavBarLoginCtrl', function () {
     beforeEach(module('app'));
@@ -67,8 +64,10 @@ describe('rgiNavBarLoginCtrl', function () {
 
         afterEach(function () {
             for (var mockIndex in mocks) {
-                mocks[mockIndex].verify();
-                mocks[mockIndex].restore();
+                if(mocks.hasOwnProperty(mockIndex)) {
+                    mocks[mockIndex].verify();
+                    mocks[mockIndex].restore();
+                }
             }
         });
     });
@@ -87,13 +86,20 @@ describe('rgiNavBarLoginCtrl', function () {
             });
         });
 
+        describe('Empty credentials', function () {
+            it('shows a notification message', function () {
+                $scope.signin('', '');
+                rgiNotifierErrorSpy.withArgs('You must supply a Username and Password!').called.should.be.equal(true);
+            });
+        });
+
         describe('Authentication failure', function () {
             beforeEach(function () {
                 $scope.signin('NON-EXISTING-USER', 'INCORRECT-PASSWORD');
             });
 
             it('shows a notification message', function () {
-                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect').called.should.be.equal(true);
+                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect!').called.should.be.equal(true);
             });
 
             it('clears the version list', function () {

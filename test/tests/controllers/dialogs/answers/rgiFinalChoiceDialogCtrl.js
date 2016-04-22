@@ -3,8 +3,10 @@
 describe('rgiFinalChoiceDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog, rgiNotifier, rgiAnswerSrvc, rgiAnswerMethodSrvc, rgiAssessmentMethodSrvc;
-    var $parent, routeParamsAnswerIdBackup, answerId = 'answer2015', answerQueryStub, answerQuerySpy, ANSWERS = [1, 2];
+    var $scope, $location, $routeParams, ngDialog,
+        rgiNotifier, rgiAnswerSrvc, rgiAnswerMethodSrvc, rgiIdentitySrvc, rgiQuestionSetSrvc, rgiUrlGuideSrvc,
+        $parent, currenUserBackup, currentUer = {role: 'user-role', _id: 'user-id'},
+        routeParamsAnswerIdBackup, answerId = 'answer2015', answerQueryStub, answerQuerySpy, ANSWERS = [1, 2];
 
     beforeEach(inject(
         function (
@@ -13,35 +15,39 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             _$routeParams_,
             _$location_,
             _ngDialog_,
+            _rgiIdentitySrvc_,
             _rgiNotifier_,
             _rgiAnswerSrvc_,
             _rgiAnswerMethodSrvc_,
-            _rgiAssessmentMethodSrvc_
+            _rgiQuestionSetSrvc_,
+            _rgiUrlGuideSrvc_
         ) {
             $scope = $rootScope.$new();
             $parent = {
-                answer: {
-                    assessment_ID: 'assessment-id',
-                    final_score: 3,
-                    question_order: 1,
-                    researcher_score: 'Researcher Score',
-                    researcher_justification: 'Researcher Justification',
-                    reviewer_score: 'Reviewer Score',
-                    reviewer_justification: 'Reviewer Justification',
-                    ROLE_justification: 'Role Justification',
-                    'new role_justification': 'New Role Justification'
-                },
-                question: {question_criteria: 'Question Criteria'}
+                question: {question_criteria: 'Question Criteria'},
+                $parent: {
+                    $parent: {'_': _},
+                    answer: {
+                        references: [],
+                        assessment_ID: 'assessment-id',
+                        researcher_score: 'Researcher Score',
+                        researcher_justification: 'Researcher Justification',
+                        reviewer_score: 'Reviewer Score',
+                        reviewer_justification: 'Reviewer Justification'
+                    }
+                }
             };
             $scope.$parent = $parent;
 
             $location = _$location_;
             $routeParams = _$routeParams_;
             ngDialog = _ngDialog_;
+            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiAnswerSrvc = _rgiAnswerSrvc_;
             rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
-            rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
+            rgiQuestionSetSrvc = _rgiQuestionSetSrvc_;
+            rgiUrlGuideSrvc = _rgiUrlGuideSrvc_;
 
             routeParamsAnswerIdBackup = $routeParams.answer_ID;
             $routeParams.answer_ID = answerId;
@@ -51,23 +57,28 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             });
             answerQueryStub = sinon.stub(rgiAnswerSrvc, 'query', answerQuerySpy);
 
+            currenUserBackup = _.cloneDeep(rgiIdentitySrvc.currentUser);
+            rgiIdentitySrvc.currentUser = currentUer;
+
             $controller('rgiFinalChoiceDialogCtrl', {$scope: $scope});
         }
     ));
 
     it('initializes the choice set', function() {
-        $scope.final_choice_set.should.deep.equal([
+        $scope.answerOptions.should.deep.equal([
             {
                 text: 'Agree with researcher score',
-                score: $parent.answer.researcher_score,
-                justification: $parent.answer.researcher_justification,
+                score: $parent.$parent.answer.researcher_score,
+                justification: $parent.$parent.answer.researcher_justification,
+                comment: '',
                 value: 'researcher',
                 role: 'researcher'
             },
             {
                 text: 'Agree with reviewer score',
-                score: $parent.answer.reviewer_score,
-                justification: $parent.answer.reviewer_justification,
+                score: $parent.$parent.answer.reviewer_score,
+                justification: $parent.$parent.answer.reviewer_justification,
+                comment: '',
                 value: 'reviewer',
                 role: 'reviewer'
             },
@@ -75,8 +86,9 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                 text: 'Other score',
                 score: 0,
                 justification: '',
+                comment: '',
                 value: 'other',
-                role: 'admin'
+                role: currentUer.role
             }
         ]);
     });
@@ -89,12 +101,12 @@ describe('rgiFinalChoiceDialogCtrl', function () {
         answerQuerySpy.withArgs({assessment_ID: 'answer'}).called.should.be.equal(true);
     });
 
-    it('sets the question length', function() {
-        $scope.question_length.should.be.equal(ANSWERS.length);
+    it('sets the request processing flag', function() {
+        $scope.requestProcessing.should.be.equal(false);
     });
 
 
-    describe('#finalChoiceSubmit', function() {
+    describe('#submitFinalChoice', function() {
         var notifierMock;
 
         beforeEach(function() {
@@ -118,7 +130,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             });
 
             afterEach(function() {
-                $scope.finalChoiceSubmit();
+                $scope.submitFinalChoice();
             });
         });
 
@@ -143,10 +155,13 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             });
 
             describe('SUCCESS CASE', function() {
-                var $locationMock, dialogMock;
+                var $locationMock, dialogMock, urlGuideMock, stubs = {};
 
                 beforeEach(function() {
                     $locationMock = sinon.mock($location);
+                    $locationMock.expects('path');
+
+                    urlGuideMock = sinon.mock(rgiUrlGuideSrvc);
                     notifierMock.expects('notify').withArgs('Answer finalized');
 
                     dialogMock = sinon.mock(ngDialog);
@@ -157,6 +172,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                         $locationMock.restore();
                         dialogMock.verify();
                         dialogMock.restore();
+                        console.log('restore mocks');
                     };
 
                     answerMethodUpdateAnswerSpy = sinon.spy(function() {
@@ -168,27 +184,44 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                     });
                 });
 
-                var setCriteria = function(role, question_length, question_order, uri) {
-                    $scope.current_user = {role: role};
-                    $scope.question_length = question_length;
-                    $scope.$parent.answer.question_order = question_order;
-                    $locationMock.expects('path').withArgs(uri);
+                var setCriteria = function(nextQuestionId) {
+                    stubs.isAnyQuestionRemaining = sinon.stub(rgiQuestionSetSrvc, 'isAnyQuestionRemaining', function() {
+                        return nextQuestionId !== undefined;
+                    });
+
+                    if(nextQuestionId !== undefined) {
+                        stubs.getNextQuestionId = sinon.stub(rgiQuestionSetSrvc, 'getNextQuestionId', function() {
+                            return nextQuestionId;
+                        });
+
+                        urlGuideMock.expects('getAnswerUrl');
+                    } else {
+                        urlGuideMock.expects('getAssessmentUrl');
+                    }
                 };
 
-                it('redirects the user to the default user URL if the question order is equal to the questions number', function() {
-                    setCriteria('not supervisor', 1, 1, '/assessments/' + $parent.answer.assessment_ID);
+                it('redirects to the assessment URL if there are no more questions', function() {
+                    setCriteria();
                 });
 
-                it('redirects the user to the answer user URL if the question order is equal to the questions number', function() {
-                    setCriteria('not supervisor', 1, 0, '/assessments/answer/' + $parent.answer.assessment_ID + '-001');
+                it('redirects to the next question URL if there are questions available', function() {
+                    setCriteria('next-question');
                 });
 
-                it('redirects the supervisor to the default admin URL if the question order is equal to the questions number', function() {
-                    setCriteria('supervisor', 1, 1, '/admin/assessments-admin/' + $parent.answer.assessment_ID);
-                });
+                afterEach(function() {
+                    var originalCheckExtra = checkExtra;
 
-                it('redirects the user to the answer user URL if the question order is equal to the questions number', function() {
-                    setCriteria('supervisor', 1, 0, '/admin/assessments-admin/answer/' + $parent.answer.assessment_ID + '-001');
+                    checkExtra = function() {
+                        originalCheckExtra();
+                        urlGuideMock.verify();
+                        urlGuideMock.restore();
+
+                        for(var stubIndex in stubs) {
+                            if(stubs.hasOwnProperty(stubIndex)) {
+                                stubs[stubIndex].restore();
+                            }
+                        }
+                    };
                 });
             });
 
@@ -210,9 +243,9 @@ describe('rgiFinalChoiceDialogCtrl', function () {
 
             afterEach(function() {
                 answerMethodUpdateAnswerStub = sinon.stub(rgiAnswerMethodSrvc, 'updateAnswer', answerMethodUpdateAnswerSpy);
-                $scope.finalChoiceSubmit();
+                $scope.submitFinalChoice();
 
-                var args = angular.copy($parent.answer, {
+                var args = angular.copy($parent.$parent.answer, {
                     status: 'final',
                     final_score: final_choice.score,
                     final_role: final_choice.role,
@@ -234,5 +267,6 @@ describe('rgiFinalChoiceDialogCtrl', function () {
     afterEach(function() {
         $routeParams.answer_ID = routeParamsAnswerIdBackup;
         answerQueryStub.restore();
+        rgiIdentitySrvc.currentUser = currenUserBackup;
     });
 });
