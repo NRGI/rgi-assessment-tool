@@ -60,7 +60,6 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
 
         roles.forEach(function(role) {
             var choice = answer[getChoiceField(role)];
-
             if(choice !== undefined) {
                 choices.push(choice);
             }
