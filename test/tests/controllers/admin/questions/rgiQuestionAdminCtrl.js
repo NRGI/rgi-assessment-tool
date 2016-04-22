@@ -13,10 +13,11 @@ describe('rgiQuestionAdminCtrl', function () {
                 question_type: 'QUESTION TYPE',
                 component_text: 'COMPONENT TEXT',
                 indicator_name: 'INDICATOR NAME',
+                dejure: 'DEJURE',
                 precept: 1,
                 question_criteria: [
-                    {name: 'Yes', text: 'yes'},
-                    {name: 'No', text: 'no'}
+                    {name: 'yes', text: 'Yes'},
+                    {name: 'no', text: 'No'}
                 ]
             }
         ];
@@ -69,21 +70,22 @@ describe('rgiQuestionAdminCtrl', function () {
 
     describe('#getExportedQuestions', function () {
         it('returns transformed question data', function () {
-            JSON.stringify($scope.getExportedQuestions()).should.be.equal(JSON.stringify([
+            $scope.getExportedQuestions().should.deep.equal([
                 {
-                    question_order: 'QUESTION ORDER',
-                    question_label: 'QUESTION LABEL',
-                    precept: 1,
-                    question_type: 'QUESTION TYPE',
-                    question_text: 'QUESTION TEXT',
-                    component_text: 'COMPONENT TEXT',
-                    indicator_name: 'INDICATOR NAME',
-                    choice_0: 'Yes',
-                    choice_0_criteria: 'yes',
-                    choice_1: 'No',
-                    choice_1_criteria: 'no'
+                    question_order: questionsData[0].question_order,
+                    question_label: questionsData[0].question_label,
+                    precept: questionsData[0].precept,
+                    dejure: questionsData[0].dejure,
+                    question_type: questionsData[0].question_type,
+                    question_text: questionsData[0].question_text,
+                    component_text: questionsData[0].component_text,
+                    indicator_name: questionsData[0].indicator_name,
+                    choice_0: questionsData[0].question_criteria[0].name,
+                    choice_0_criteria: questionsData[0].question_criteria[0].text,
+                    choice_1: questionsData[0].question_criteria[1].name,
+                    choice_1_criteria: questionsData[0].question_criteria[1].text
                 }
-            ]));
+            ]);
         });
     });
 
