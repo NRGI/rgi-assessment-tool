@@ -6,8 +6,8 @@ angular.module('app')
         $location,
         $routeParams,
         $route,
-        rgiNotifier,
         ngDialog,
+        rgiNotifier,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
         rgiIdentitySrvc,
@@ -104,7 +104,7 @@ angular.module('app')
 
         $scope.submitFinalChoice = function () {
             var
-                answerData = $scope.$parent.answer,
+                answerData = $scope.answer,
                 finalChoice = $scope.final_choice;
 
             if (!finalChoice) {
