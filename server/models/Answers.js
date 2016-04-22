@@ -16,9 +16,10 @@ var commentSchema, referenceSchema, scoreHistorySchema, answerSchema, Answer,
     htmlSettings    = {
         type: HTML,
         setting: {
-            allowedTags: ['p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
+            allowedTags: ['div', 'span', 'p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'del'],
             allowedAttributes: {
-                'a': ['href']
+                'a': ['href'],
+                'span': ['style']
             }
         }
     };
