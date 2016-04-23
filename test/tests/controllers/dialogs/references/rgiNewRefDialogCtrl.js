@@ -84,6 +84,23 @@ describe('rgiNewRefDialogCtrl', function () {
         spies.fileUploaderGet.withArgs({isHTML5: true, withCredentials: true, url: 'file-upload'}).called.should.be.equal(true);
     });
 
+    it('sets selected document', function() {
+        $scope.selected_doc.should.be.equal('none');
+    });
+
+    it('initializes the role options', function() {
+        $scope.role_opts.should.deep.equal([
+            {text: 'Government', value: 'government'},
+            {text: 'CSO', value: 'cso'},
+            {text: 'Industry', value: 'industry'},
+            {text: 'Expert', value: 'expert'},
+            {text: 'Other', value: 'other'}]);
+    });
+
+    it('initializes the salutation options', function() {
+        $scope.salutation_opts.should.deep.equal(['mr.', 'mrs.', 'ms.']);
+    });
+
     it('adds `single file` uploader filter', function() {
         var filter = $scope.uploader.filters[$scope.uploader.filters.length - 2];
 
@@ -154,6 +171,14 @@ describe('rgiNewRefDialogCtrl', function () {
             });
         });
 
+    });
+
+    describe('#selectIntervieweeType', function () {
+        it('sets the interviewee type', function () {
+            var INTERVIEWEE_TYPE = 'INTERVIEWEE TYPE';
+            $scope.selectIntervieweeType(INTERVIEWEE_TYPE);
+            $scope.intervieweeType.should.be.equal(INTERVIEWEE_TYPE);
+        });
     });
 
     describe('#closeDialog', function () {
