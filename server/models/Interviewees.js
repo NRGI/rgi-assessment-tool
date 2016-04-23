@@ -132,6 +132,7 @@ function createDefaultInterviewees() {
                 creationDate: Date.now()
             });
         }
+        console.log('Interviewees created...');
     });
 }
 

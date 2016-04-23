@@ -265,6 +265,7 @@ function createDefaultCountries() {
             Country.create({'country': 'Yemen', 'country_ID': 'YEM', 'iso2': 'YE'});
             Country.create({'country': 'Zambia', 'country_ID': 'ZMB', 'iso2': 'ZM'});
             Country.create({'country': 'Zimbabwe', 'country_ID': 'ZWE', 'iso2': 'ZW'});
+            console.log('Countries created...');
         }
     });
 }

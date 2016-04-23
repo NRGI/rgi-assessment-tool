@@ -292,6 +292,7 @@ function createDefaultQuestions() {
                 "comments": [],
                 last_modified: {"modified_by": "initiated", "modified_date": timestamp}
             });
+            console.log('Questions created...');
         }
     });
 }

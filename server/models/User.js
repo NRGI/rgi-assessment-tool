@@ -277,6 +277,7 @@ function createDefaultUsers() {
                 language:  'English'
             });
         }
+        console.log('Users created...');
     });
 }
 
