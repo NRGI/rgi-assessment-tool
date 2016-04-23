@@ -64,8 +64,8 @@ angular.module('app')
             });
         });
 
-        $scope.intervieweeSelect = function (selection) {
-            $scope.interviewee_selection = selection;
+        $scope.selectIntervieweeType = function (intervieweeType) {
+            $scope.intervieweeType = intervieweeType;
         };
 
         $scope.interviewRefSubmit = function (selected_interviewee) {
@@ -83,7 +83,7 @@ angular.module('app')
             } else {
                 contact_date = new Date(new_answer_data.human_ref_contact_date).toISOString();
 
-                if ($scope.interviewee_selection==='new') {
+                if ($scope.intervieweeType === 'new') {
                     if (!selected_interviewee.firstName || !selected_interviewee.lastName) {
                         rgiNotifier.error('You must enter a first and last name for new interviewees!');
                     } else if (!selected_interviewee.role) {
@@ -124,7 +124,7 @@ angular.module('app')
                                 });
                         }
                     }
-                } else if ($scope.interviewee_selection==='existing') {
+                } else if ($scope.intervieweeType === 'existing') {
                     selected_interviewee_ID = selected_interviewee.originalObject.id;
                     new_ref_data = {
                         citation_type: 'interview',

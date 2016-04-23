@@ -127,20 +127,20 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                 .row
                     .col-lg-4
                         button.btn.btn-block.btn-primary(
-                        ng-click="intervieweeSelect('new')"
-                        ng-disabled="interviewee_selection==='new'") New interviewee
+                        ng-click="selectIntervieweeType('new')"
+                        ng-disabled="intervieweeType === 'new'") New interviewee
                     .col-lg-4
                         button.btn.btn-block.btn-primary(
-                        ng-click="intervieweeSelect('existing')"
-                        ng-disabled="interviewee_selection==='existing'") Existing interviewee
+                        ng-click="selectIntervieweeType('existing')"
+                        ng-disabled="intervieweeType === 'existing'") Existing interviewee
                     .col-lg-4
                         button.btn.btn-block.btn-danger(
                         ng-click="closeDialog()"
-                        ng-if="!interviewee_selection") Close dialog
+                        ng-if="!intervieweeType") Close dialog
 
                         //button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
                         //button.btn.btn-danger.pull-right(ng-click="closeDialog()") Close dialog
-                .form-horizontal.top-padding-lg(ng-if="interviewee_selection")
+                .form-horizontal.top-padding-lg(ng-if="intervieweeType")
                     fieldset
                         //DATE ACCESSED
                         .row.bottom-padding-med
@@ -156,7 +156,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                 )
 
                         //existing interviewee
-                        div(ng-if="interviewee_selection==='existing'")
+                        div(ng-if="intervieweeType === 'existing'")
                             .row.bottom-padding-med
                                 .col-md-9
                                     angucomplete(
@@ -180,7 +180,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     h5: b Email:
                                     | {{selected_interviewee.originalObject.email}}
 
-                            .modal-footer(ng-if="interviewee_selection")
+                            .modal-footer(ng-if="intervieweeType")
                                 .col-lg-6
                                     button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(selected_interviewee)") Create reference
                                 .col-lg-6
@@ -188,7 +188,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
 
 
                         // NEW INTERVIEWEE
-                        div(ng-if="interviewee_selection==='new'")
+                        div(ng-if="intervieweeType === 'new'")
                             h4 New interviewee
                             .row.form-group
                                 // FIRST NAME
@@ -253,7 +253,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     ng-model="new_interviewee.organization"
                                     autocomplete="off")
 
-                            .modal-footer(ng-if="interviewee_selection")
+                            .modal-footer(ng-if="intervieweeType")
                                 .col-lg-6
                                     button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(new_interviewee)") Create reference
                                 .col-lg-6
