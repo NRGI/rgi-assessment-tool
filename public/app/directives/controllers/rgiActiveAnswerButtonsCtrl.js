@@ -43,13 +43,14 @@ angular
 
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
-                    if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData) && !isTrialAssessment()) {
-                        $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
-                            rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
-                    } else {
-                        $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
+                    if (status!=='saved'){
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData) && !isTrialAssessment()) {
+                            $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
+                                rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
+                        } else {
+                            $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
+                        }
                     }
-
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
@@ -73,13 +74,14 @@ angular
             }
 
             new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
+            updateAnswer(new_answer_data, 'saved', 'Answer saved');
 
-            rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-                .then(function () {
-                    rgiNotifier.notify('Answer saved');
-                }, function (reason) {
-                    rgiNotifier.notify(reason);
-                });
+            // rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
+            //     .then(function () {
+            //         rgiNotifier.notify('Answer saved');
+            //     }, function (reason) {
+            //         rgiNotifier.notify(reason);
+            //     });
         };
         $scope.answerSubmit = function () {
             // answer.question_ID.dependant
