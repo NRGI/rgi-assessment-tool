@@ -50,7 +50,7 @@ exports.updateQuestion = function (req, res) {
         res.status(404);
         return res.end();
     }
-    if (question_update.length) {
+    if (question_update['0']) {
         var getCallback = function(assessments) {
             return function (err, question) {
                 if (err) {
