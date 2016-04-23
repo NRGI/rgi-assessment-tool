@@ -23,6 +23,7 @@ module.exports = function (config) {
             'public/vendor/angular-resource/angular-resource.js',
             'public/vendor/angular-route/angular-route.js',
             'public/vendor/angular-mocks/angular-mocks.js',
+            'public/vendor/jquery/dist/jquery.js',
             'public/vendor/lodash/lodash.js',
             'public/vendor/toastr/toastr.js',
             'test/test-app.js',

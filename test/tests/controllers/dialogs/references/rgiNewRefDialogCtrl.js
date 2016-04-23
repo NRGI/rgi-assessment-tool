@@ -4,45 +4,69 @@
 describe('rgiNewRefDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $timeout, ngDialog,
-        rgiDialogFactory, rgiIntervieweeSrvc, rgiNotifier, rgiFileUploaderSrvc, rgiRequestSubmitterSrvc,
-        fileUploaderGetStub, fileUploaderGetSpy, now, ANSWER = 'ANSWER', intervieweeQueryStub, intervieweeQuerySpy;
+    var $scope, $rootScope, $timeout, rgiAllowedFileExtensionGuideSrvc, ngDialog, rgiDialogFactory, rgiDocumentSrvc,
+        rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier, rgiRequestSubmitterSrvc,
+        stubs = {}, spies = {}, ANSWER = 'ANSWER', FILE_URL = 'http://domain.com/file.png',
+        currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'};
 
     beforeEach(inject(
         function (
-            $rootScope,
             $controller,
+            _$rootScope_,
             _$timeout_,
             _ngDialog_,
+            _rgiAllowedFileExtensionGuideSrvc_,
             _rgiDialogFactory_,
+            _rgiDocumentSrvc_,
+            _rgiFileUploaderSrvc_,
+            _rgiIdentitySrvc_,
             _rgiIntervieweeSrvc_,
             _rgiNotifier_,
-            _rgiFileUploaderSrvc_,
             _rgiRequestSubmitterSrvc_
         ) {
+            $rootScope = _$rootScope_;
             $timeout = _$timeout_;
             ngDialog = _ngDialog_;
+            rgiAllowedFileExtensionGuideSrvc = _rgiAllowedFileExtensionGuideSrvc_;
             rgiDialogFactory = _rgiDialogFactory_;
+            rgiDocumentSrvc = _rgiDocumentSrvc_;
+            rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
+            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiIntervieweeSrvc = _rgiIntervieweeSrvc_;
             rgiNotifier = _rgiNotifier_;
-            rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
             rgiRequestSubmitterSrvc = _rgiRequestSubmitterSrvc_;
 
             $scope = $rootScope.$new();
             $scope.$parent.answer = ANSWER;
 
-            fileUploaderGetSpy = sinon.spy(function() {
+            stubs.AllowedFileExtensionGuideGetList = sinon.stub(rgiAllowedFileExtensionGuideSrvc, 'getList', function() {
+                return ['png'];
+            });
+
+            spies.documentSrvcQuery = sinon.spy(function(criteria, callback) {
+                callback([]);
+            });
+            stubs.documentSrvcQuery = sinon.stub(rgiDocumentSrvc, 'query', spies.documentSrvcQuery);
+
+            spies.fileUploaderGet = sinon.spy(function() {
                 return {queue: [], filters: []};
             });
-            fileUploaderGetStub = sinon.stub(rgiFileUploaderSrvc, 'get', fileUploaderGetSpy);
+            stubs.fileUploaderGet = sinon.stub(rgiFileUploaderSrvc, 'get', spies.fileUploaderGet);
 
-            intervieweeQuerySpy = sinon.spy();
-            intervieweeQueryStub = sinon.stub(rgiIntervieweeSrvc, 'query', intervieweeQuerySpy);
+            spies.intervieweeQuery = sinon.spy();
+            stubs.intervieweeQuery = sinon.stub(rgiIntervieweeSrvc, 'query', spies.intervieweeQuery);
 
-            now = new Date();
+            currentUserBackup = _.cloneDeep(rgiIdentitySrvc.currentUser);
+            rgiIdentitySrvc.currentUser = currentUser;
+
+            $scope.closeThisDialog = sinon.spy();
             $controller('rgiNewRefDialogCtrl', {$scope: $scope});
         }
     ));
+
+    it('loads user documents', function () {
+        spies.documentSrvcQuery.withArgs({users: currentUser._id}).called.should.be.equal(true);
+    });
 
     it('resets file upload status', function () {
         $scope.fileUploading.should.be.equal(false);
@@ -52,32 +76,16 @@ describe('rgiNewRefDialogCtrl', function () {
         $scope.answer_update.should.be.equal(ANSWER);
     });
 
-    it('sets date format', function () {
-        $scope.date_format.should.be.equal('dd-MMMM-yyyy');
-    });
-
     it('loads interviewees data', function () {
-        intervieweeQuerySpy.called.should.be.equal(true);
-    });
-
-    var compareDates = function(date1, date2) {
-        return Math.abs(date1.getTime() - date2.getTime()) < 300;
-    };
-
-    it('sets default date', function () {
-        compareDates($scope.date_default, now).should.be.equal(true);
-    });
-
-    it('sets date limit', function () {
-        compareDates($scope.date_max_limit, now).should.be.equal(true);
+        spies.intervieweeQuery.called.should.be.equal(true);
     });
 
     it('initializes file uploader', function() {
-        fileUploaderGetSpy.withArgs({isHTML5: true, withCredentials: true, url: 'file-upload'}).called.should.be.equal(true);
+        spies.fileUploaderGet.withArgs({isHTML5: true, withCredentials: true, url: 'file-upload'}).called.should.be.equal(true);
     });
 
-    it('adds uploader filter', function() {
-        var filter = $scope.uploader.filters[$scope.uploader.filters.length - 1];
+    it('adds `single file` uploader filter', function() {
+        var filter = $scope.uploader.filters[$scope.uploader.filters.length - 2];
 
         var emptyQueue = {queue: [], fn: filter.fn};
         emptyQueue.fn().should.be.equal(true);
@@ -150,21 +158,25 @@ describe('rgiNewRefDialogCtrl', function () {
 
     describe('#closeDialog', function () {
         it('closes the dialog', function () {
-            var ngDialogMock = sinon.mock(rgiNotifier);
             $scope.closeDialog();
-            ngDialogMock.verify();
-            ngDialogMock.restore();
+            $scope.closeThisDialog.called.should.be.equal(true);
         });
 
-        it('clears reference selection', function () {
+        it('sends a broadcast message', function () {
+            var $rootScopeMock = sinon.mock($rootScope);
+            $rootScopeMock.expects('$broadcast').withArgs('RESET_SELECTED_REFERENCE_ACTION');
+
             $scope.closeDialog();
-            $scope.$parent.ref_selection.should.be.equal('');
+
+            $rootScopeMock.verify();
+            $rootScopeMock.restore();
         });
     });
 
     describe('#uploadFileByUrl', function () {
+
         it('sets file uploading flag while the file is uploading', function () {
-            $scope.uploadFileByUrl();
+            $scope.uploadFileByUrl(FILE_URL);
             $scope.fileUploading.should.be.equal(true);
         });
 
@@ -187,7 +199,6 @@ describe('rgiNewRefDialogCtrl', function () {
             };
 
             it('submits file URL to the server', function () {
-                var FILE_URL = 'http://domain.com/file.txt';
                 uploadFile(FILE_URL);
                 requestSubmitterGetSpy.withArgs('/api/remote-file-upload?url=' + encodeURIComponent(FILE_URL))
                     .called.should.be.equal(true);
@@ -199,7 +210,7 @@ describe('rgiNewRefDialogCtrl', function () {
                 beforeEach(function() {
                     notifierErrorSpy = sinon.spy();
                     notifierErrorStub = sinon.stub(rgiNotifier, 'error', notifierErrorSpy);
-                    uploadFile(undefined, {data: {reason: REASON}});
+                    uploadFile(FILE_URL, {data: {reason: REASON}});
                 });
 
                 it('unsets file uploading flag', function () {
@@ -216,7 +227,6 @@ describe('rgiNewRefDialogCtrl', function () {
             });
 
             describe('SUCCESS CASE', function() {
-                var FILE_URL = 'http://domain.com/file.txt';
                 var SIZE = 1024, ID = 'ID',
                     generateResponse = function(completion) {
                         return {
@@ -233,7 +243,7 @@ describe('rgiNewRefDialogCtrl', function () {
                     uploadFile(FILE_URL, generateResponse(0.5));
                     _.isEqual($scope.uploader.queue[$scope.uploader.queue.length - 1], {
                         file: {
-                            name: 'file.txt',
+                            name: 'file.png',
                             size: SIZE
                         },
                         isUploading: true,
@@ -283,7 +293,10 @@ describe('rgiNewRefDialogCtrl', function () {
     });
 
     afterEach(function() {
-        fileUploaderGetStub.restore();
-        intervieweeQueryStub.restore();
+        Object.keys(stubs).forEach(function(stubIndex) {
+            stubs[stubIndex].restore();
+        });
+
+        rgiIdentitySrvc.currentUser = currentUserBackup;
     });
 });

@@ -172,7 +172,6 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                         $locationMock.restore();
                         dialogMock.verify();
                         dialogMock.restore();
-                        console.log('restore mocks');
                     };
 
                     answerMethodUpdateAnswerSpy = sinon.spy(function() {

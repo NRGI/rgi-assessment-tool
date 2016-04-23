@@ -27,7 +27,6 @@ angular.module('app')
         $scope.answer_update = $scope.$parent.answer;
         $scope.interviewee_list = [];
         $scope.document_list = [];
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.selected_doc = 'none';
 
         $scope.role_opts = [
