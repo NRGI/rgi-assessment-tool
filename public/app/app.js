@@ -15,9 +15,9 @@ angular.module('app', [
     'ta-maxlength',
     'tableSort',
     'textAngular',
-    'ui.bootstrap'
+    'ui.bootstrap',
     // 'smalleditor'
-    // 'ngWYSIWYG'
+    'ngWYSIWYG'
 ]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
