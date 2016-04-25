@@ -8,11 +8,12 @@
                     input(
                     type="radio"
                     name="choice.choice_name"
+                    id="{{choice.name}}"
                     value="{{$index}}"
                     ng-checked="choice.selected"
                     ng-model="answer.new_answer_selection"
                     ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
-                    text.left-padding-med {{choice.letter}} - {{choice.text}}
+                    label(for="{{choice.name}}").thin-label.left-padding-med {{choice.letter}} - {{choice.text}}
         div(id="answer_justification_div")
             ng-form(name="answer_justification_form")
                 .form-group.top-padding-med
