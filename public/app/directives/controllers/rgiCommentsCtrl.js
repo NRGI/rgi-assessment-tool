@@ -12,10 +12,9 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
         $scope.submitComment = function () {
-            var current_user = rgiIdentitySrvc.currentUser,
-                new_comment_data = {
+            var new_comment_data = {
                     content: $scope.update.new_comment,
-                    author: current_user._id,
+                    author: $scope.current_user._id,
                     date: new Date().toISOString()
                 },
                 new_update_data = $scope.update;
@@ -43,6 +42,7 @@ angular.module('app')
                     saveComment(new_update_data).then(function () {
                         rgiNotifier.notify('Comment added');
                         $scope.update.new_comment = undefined;
+                        new_update_data.comments[new_update_data.comments.length - 1].author = $scope.current_user;
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });
