@@ -29,8 +29,7 @@
     "ta-maxlength": "*",
     "textAngular": "~1.4.6",
     "toastr": "~2.1.0",
-    "underscore": "~1.8.3",
-    "ngWYSIWYG": "^0.6.2"
+    "underscore": "~1.8.3"
   },
   "moduleType": [
     "node"
