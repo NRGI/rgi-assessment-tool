@@ -44,10 +44,10 @@ exports.techSend = function (req, res) {
     mandrill('/messages/send', {
         message: {
             to: supervisor_email,
-            from_email: message_content.email,
+            from_email: siteEmail,
             subject: issue_tool + ' Issue: ' + message_content.issue.value,
             html: "Hi,<p>" +
-            issue_full_name + " is having an issue with the " + issue_tool + " tool. Please find more info below.<p>" +
+            "<a href='mailto:"+ message_content.email + "'>" + issue_full_name + "</a> is having an issue with the " + issue_tool + " tool. Please find more info below.<p>" +
             "<ul><li><b>Issue</b>: " + message_content.issue.name + "</li><<li><b>Issue description</b>: " + message_content.issue_description + "</li>" +
             "<li><b>OS</b>: " + issue_os + "</li><li><b>Browser</b>: " + issue_browser + "</li><li><b>Browser version</b>: " + issue_browser_ver + "</li></ul>"
         }
@@ -60,7 +60,7 @@ exports.techSend = function (req, res) {
     mandrill('/messages/send', {
         message: {
             to: [{email: message_content.email, name: issue_full_name}],
-            from_email: 'tech-support@resourcegovernance.org',
+            from_email: siteEmail,
             subject: 'Confirmation of ' + message_content.issue.value + ' support ticket',
             html: "Hi " + issue_full_name + "\,<p>" +
             "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience\, we will contact you shortly. " +
@@ -149,16 +149,16 @@ exports.new_assessment_assignment = function (contact_packet, type) {
     });
 };
 
-// email when assessment is submitted or resubmitted
+// email when trial assessment is submitted or resubmitted
 exports.trial_assessment_submission = function (contact_packet) {
     //send an email to team that assessment is ready
     mandrill('/messages/send', {
         message: {
             to: contact_packet.admin,
-            from_email: contact_packet.editor_email,
+            from_email: siteEmail,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
-            contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " trial assessment for review. " +
+            "<a href='" + contact_packet.editor_email + "'>" + contact_packet.editor_fullName + "</a> just submitted the " + contact_packet.assessment_title + " trial assessment for review. " +
             "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
@@ -191,10 +191,10 @@ exports.assessment_submission = function (contact_packet) {
     mandrill('/messages/send', {
         message: {
             to: contact_packet.admin,
-            from_email: contact_packet.editor_email,
+            from_email: siteEmail,
             subject: contact_packet.assessment_title + ' submitted by ' + contact_packet.editor_role + " " + contact_packet.editor_fullName,
             html: "Hi team,<p>" +
-            contact_packet.editor_fullName + " just submitted the " + contact_packet.assessment_title + " assessment for review." +
+            "<a href='" + contact_packet.editor_email + "'>" + contact_packet.editor_fullName + "</a> just submitted the " + contact_packet.assessment_title + " assessment for review." +
             "Please visit your <a href='" + config.baseUrl + "/admin/assessment-admin'>assessment dashboard</a> to review.<p>" +
             "Thanks!<p>" +
             "The RGI Team.<p>"
