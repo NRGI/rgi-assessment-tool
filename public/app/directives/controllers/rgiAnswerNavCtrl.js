@@ -14,27 +14,23 @@ angular
             assessmentId = answerAttributes.slice(0, answerAttributes.length - 1).join('-'),
             currentAnswerOrder = Number(answerAttributes[3]),
             role = rgiIdentitySrvc.currentUser.role,
-            getQuestionOrders = function() {
-                var orders = [];
-
-                rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function(question) {
-                    orders.push(question.question_order);
-                });
-
-                orders.sort();
-                return orders;
-            },
             redirectToAnswerPage = function(answerOrder) {
                 $location.path(rgiUrlGuideSrvc.getAnswerUrl(assessmentId, answerOrder));
-            };
+            },
+            questionOrders = [];
+
+        rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function(question) {
+            questionOrders.push(question.question_order);
+        });
+
+        questionOrders.sort();
 
         $scope.isFirstAnswer = function() {
-            return (getQuestionOrders().length > 0) && (currentAnswerOrder === getQuestionOrders()[0]);
+            return (questionOrders.length > 0) && (currentAnswerOrder === questionOrders[0]);
         };
 
         $scope.isLastAnswer = function() {
-            return (getQuestionOrders().length > 0) &&
-                (currentAnswerOrder === getQuestionOrders()[getQuestionOrders().length - 1]);
+            return (questionOrders.length > 0) && (currentAnswerOrder === questionOrders[questionOrders.length - 1]);
         };
 
         $scope.moveBackward = function () {
@@ -46,14 +42,14 @@ angular
         };
 
         $scope.moveFirst = function () {
-            if(getQuestionOrders().length > 0) {
-                redirectToAnswerPage(getQuestionOrders()[0]);
+            if(questionOrders.length > 0) {
+                redirectToAnswerPage(questionOrders[0]);
             }
         };
 
         $scope.moveLast = function () {
-            if(getQuestionOrders().length > 0) {
-                redirectToAnswerPage(getQuestionOrders()[getQuestionOrders().length - 1]);
+            if(questionOrders.length > 0) {
+                redirectToAnswerPage(questionOrders[questionOrders.length - 1]);
             }
         };
     });
