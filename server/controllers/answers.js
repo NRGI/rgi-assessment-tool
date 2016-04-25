@@ -113,7 +113,7 @@ exports.updateAnswer = function (req, res, next) {
             ['researcher', 'reviewer'].forEach(function(userType) {
                 if (updateData.hasOwnProperty(userType + '_score')) {
                     scoreModified = true;
-                    setFields(answer, updateData, [userType + '_score', userType + '_justification']);
+                    setFields(answer, updateData, [userType + '_score']);
 
                     answer[userType + '_score_history'].push({
                         date: timestamp,
@@ -122,6 +122,8 @@ exports.updateAnswer = function (req, res, next) {
                         justification: answer[userType + '_justification']
                     });
                 }
+
+                setFields(answer, updateData, [userType + '_justification']);
             });
 
             if (updateData.hasOwnProperty('final_score')) {
