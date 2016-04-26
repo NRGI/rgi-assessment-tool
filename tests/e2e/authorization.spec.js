@@ -3,7 +3,7 @@
 
   describe('Home Page', function() {
     beforeEach(function() {
-      browser.driver.get('http://localhost:3030/');
+      browser.driver.get(browser.baseUrl + '/');
 
       element(by.model('username')).sendKeys('cperry');
       element(by.model('password')).sendKeys('cperry');
