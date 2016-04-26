@@ -2,14 +2,9 @@
     //- LOGIN NAVBAR
     form.navbar-form.right-padding-lg(ng-if="!identity.isAuthenticated()")
         .form-group
-            input.form-control(
-                placeholder="Username"
-                ng-model="username")
+            input.form-control(placeholder="Username", ng-model="username")
         .form-group
-            input.form-control(
-                type="password"
-                placeholder="Password"
-                ng-model="password")
+            input.form-control(type="password", placeholder="Password", ng-model="password")
         button.btn.btn-primary(ng-click="signin(username, password)")
             span.glyphicon.glyphicon-log-in(title="Login")  Login
         //- TODO add forgot password functionality
@@ -41,9 +36,7 @@
         //- ADMIN DROPDOWN
         ul.nav.navbar-nav.dropdown
             li.dropdown(ng-if="identity.currentUser.isSupervisor()")
-                a.dropdown-toggle(
-                    href=""
-                    data-toggle="dropdown") Admin
+                a.dropdown-toggle(href="", data-toggle="dropdown") Admin
                     b.caret
                 ul.dropdown-menu
                     li
@@ -69,7 +62,4 @@
 
         //- LOGOUT
         ul.nav.navbar-nav
-            li: a.glyphicon.glyphicon-log-out(
-            href=""
-            ng-click="signout()"
-            title="Logout")
+            li: a.glyphicon.glyphicon-log-out(href="", ng-click="signout()", title="Logout")
