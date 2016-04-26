@@ -10,7 +10,7 @@
   "private": true,
   "dependencies": {
     "angucomplete": "*",
-    "angular": "~1.3.2",
+    "angular": "1.3.2",
     "angular-bootstrap": "~0.14.3",
     "angular-file-upload": "~1.1.5",
     "angular-filter": "~0.5.4",
