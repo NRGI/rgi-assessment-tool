@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                     'server.js',
                     'public/app/**/*.js',
                     'server/**/*.js',
-                    'test/**/*.js'
+                    'tests/**/*.js'
                 ]
             }
         },

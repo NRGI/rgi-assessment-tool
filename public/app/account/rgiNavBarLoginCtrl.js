@@ -3,7 +3,6 @@
 angular.module('app')
     .controller('rgiNavBarLoginCtrl', function (
         $scope,
-        $route,
         $location,
         rgiAssessmentSrvc,
         rgiAuthSrvc,
@@ -12,16 +11,15 @@ angular.module('app')
     ) {
         var setUserData = function() {
             $scope.versions = [];
-            $scope.current_user = rgiIdentitySrvc.currentUser;
 
-            if ($scope.current_user && $scope.current_user.isSupervisor()) {
-                var urls = [];
+            if (rgiIdentitySrvc.currentUser && rgiIdentitySrvc.currentUser.isSupervisor()) {
+                var urls = [], versions = [];
 
                 rgiAssessmentSrvc.query({}, function (assessments) {
                     assessments.forEach(function (assessment) {
                         if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
                             urls.push(assessment.year + '_' + assessment.version);
-                            $scope.versions.push({
+                            versions.push({
                                 year: assessment.year,
                                 version: assessment.version,
                                 name: assessment.year + ' ' + assessment.version.charAt(0).toUpperCase() + assessment.version.slice(1),
@@ -29,6 +27,12 @@ angular.module('app')
                             });
                         }
                     });
+
+                    versions.sort(function(versionA, versionB) {
+                        return versionA.url > versionB.url;
+                    });
+
+                    $scope.versions = versions;
                 });
             }
         };

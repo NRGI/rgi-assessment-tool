@@ -1,13 +1,13 @@
 RGI Assessment Tool
 ===================
-#####Summary
+##Summary
 ***
 This tool is a custom webapp build on Node.js, Express and Angular. It is connected on the back-end to to a MongoDB instance.
 
 The tool allows researchers to complete RGI assessments, reviewers to review assessments and administrators to validate and authorize assessments.
 
 
-#####Installation
+##Installation
 ***
 ***Method 1:*** Open terminal and run the following commands:
 
@@ -22,7 +22,28 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 
 		docker run -d=true -p 49160:3030 -e "USER_ID=<db user name>" -e "USER_KEY=<db pass>" byndcivilization/rgi-assessment-tool
 
-#####TODO
+##Tests
+
+###Unit Tests
+####Run
+```
+$ karma start
+```
+
+###E2E Tests
+####Install
+```
+$ npm install -g protractor
+$ webdriver-manager update
+```
+
+####Run
+```
+$ webdriver-manager start
+$ protractor protractor.conf.js
+```
+
+##TODO
 ***
 -	country of residence no address
 -	validation is for admin - make its own page

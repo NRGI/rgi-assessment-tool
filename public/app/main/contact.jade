@@ -1,7 +1,7 @@
 .container.top-padding-med
     .well.left-padding-lg
         //div {{assessments}}
-        div.left-padding-lg.right-padding-lg.top-padding-med
+        .left-padding-lg.right-padding-lg.top-padding-med
             form.form-horizontal(name='request_form')
                 fieldset
                     //- general contact form
@@ -44,32 +44,33 @@
                                     select.form-group.form-control.right-padding-med(
                                     name="assessments_selector"
                                     ng-model="request.assessment"
-                                    ng-options="a.country for a in assessments")
+                                    ng-options="assessment.country as (assessment.country + ' ' + assessment.year + ' ' + (assessment.mineral|addSpaces) + ' ' + assessment.version) for assessment in assessments")
 
-                    div(id="issue_selection_div").bottom-padding-med.left-padding-lg.right-padding-lg
+                    #issue_selection_div.bottom-padding-med.left-padding-lg.right-padding-lg
                         legend What type of issue are you having (required)?
                         ng-form(name="issue_form")
-                            .form-group.left-padding-lg(ng-repeat="issue in issue_selection" required)
+                            .form-group.left-padding-lg(ng-repeat="issue in issue_selection track by issue.value" required)
                                 input(
                                 type="radio"
                                 name="issue.name"
-                                ng-value="{{issue}}"
+                                ng-value="issue"
                                 checked=""
+                                id="{{::issue.value}}"
                                 ng-model="request.issue")
-                                text.left-padding-med {{issue.name}}
+                                label.thin-label.left-padding-med(for="{{::issue.value}}") {{::issue.name}}
                             .form-group.left-padding-lg.right-padding-lg
                                 textarea.form-control(
                                 type="text"
                                 ng-model="request.issue_description"
                                 placeholder="Please provide a brief description of the issue (required)."
                                 required)
-                    div(id="system_selection_div").bottom-padding-med.left-padding-lg.right-padding-lg
+                    #system_selection_div.bottom-padding-med.left-padding-lg.right-padding-lg
                         legend Tell us about your system to better help you?
                         .col-md-5.pull-left.top-padding-med
                             label Operating system
                             select.form-group.form-control.pull-left(ng-model="request.os")
                                 option(value="" selected disabled)
-                                option(ng-repeat="os in os_selection" value="{{os.value}}") {{os.name}}
+                                option(ng-repeat="os in os_selection track by os.value" value="{{::os.value}}") {{::os.name}}
                             input.form-group.form-control(
                             name="os_text"
                             type="text"
@@ -81,7 +82,7 @@
                             label Browser
                             select.form-group.form-control.pull-left(ng-model="request.browser")
                                 option(value="" selected disabled)
-                                option(ng-repeat="browser in browser_selection" value="{{browser.value}}") {{browser.name}}
+                                option(ng-repeat="browser in browser_selection track by browser.value" value="{{::browser.value}}") {{::browser.name}}
                             input.form-group.form-control(
                             name="browser_text"
                             type="text"
@@ -93,7 +94,7 @@
                             label Version
                             input.form-group.form-control(type="number" ng-model="request.browser_ver")
 
-                div.left-padding-lg.bottom-padding-lg.top-padding-lg(id="control_buttions")
+                #control_buttions.left-padding-lg.bottom-padding-lg.top-padding-lg
                     .col-md-4.pull-right
                         button.btn.btn-primary(
                         ng-click="sendRequest()"

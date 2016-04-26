@@ -9,7 +9,6 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiAssessmentSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.request = {tool: 'rgi'};
         var criteria = {};
 
@@ -51,13 +50,29 @@ angular.module('app')
             {name: 'Other', value: 'other'}
         ];
 
-        if($scope.current_user) {
-            $scope.request.first_name = $scope.current_user.firstName;
-            $scope.request.last_name = $scope.current_user.lastName;
-            $scope.request.email = $scope.current_user.email;
+        if(rgiIdentitySrvc.currentUser) {
+            $scope.request.first_name = rgiIdentitySrvc.currentUser.firstName;
+            $scope.request.last_name = rgiIdentitySrvc.currentUser.lastName;
+            $scope.request.email = rgiIdentitySrvc.currentUser.email;
             var getAssessments = function(criteria) {
                 rgiAssessmentSrvc.query(criteria, function (assessments) {
                     if (assessments.length > 1) {
+                        assessments.sort(function(assessmentA, assessmentB) {
+                            if(assessmentA.country !== assessmentB.country) {
+                                return assessmentA.country > assessmentB.country;
+                            }
+
+                            if(assessmentA.year !== assessmentB.year) {
+                                return assessmentA.year > assessmentB.year;
+                            }
+
+                            if(assessmentA.version !== assessmentB.version) {
+                                return assessmentA.version > assessmentB.version;
+                            }
+
+                            return assessmentA.mineral > assessmentB.mineral;
+                        });
+
                         $scope.assessments = assessments;
                     } else if (assessments.length > 0) {
                         $scope.request.assessment = assessments[0];
@@ -65,7 +80,7 @@ angular.module('app')
 
                 });
             };
-            criteria[$scope.current_user.role + '_ID'] = $scope.current_user._id;
+            criteria[rgiIdentitySrvc.currentUser.role + '_ID'] = rgiIdentitySrvc.currentUser._id;
             getAssessments(criteria);
         }
 
