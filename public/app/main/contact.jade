@@ -55,8 +55,9 @@
                                 name="issue.name"
                                 ng-value="issue"
                                 checked=""
+                                id="{{::issue.value}}"
                                 ng-model="request.issue")
-                                text.left-padding-med {{::issue.name}}
+                                label.thin-label.left-padding-med(for="{{::issue.value}}") {{::issue.name}}
                             .form-group.left-padding-lg.right-padding-lg
                                 textarea.form-control(
                                 type="text"
