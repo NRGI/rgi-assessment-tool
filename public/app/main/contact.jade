@@ -44,7 +44,7 @@
                                     select.form-group.form-control.right-padding-med(
                                     name="assessments_selector"
                                     ng-model="request.assessment"
-                                    ng-options="a.country for a in assessments")
+                                    ng-options="assessment.country as (assessment.country + ' ' + assessment.year + ' ' + (assessment.mineral|addSpaces) + ' ' + assessment.version) for assessment in assessments")
 
                     #issue_selection_div.bottom-padding-med.left-padding-lg.right-padding-lg
                         legend What type of issue are you having (required)?
