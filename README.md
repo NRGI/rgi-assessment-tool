@@ -27,7 +27,20 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 ###Unit Tests
 ####Run
 ```
-karma start
+$ karma start
+```
+
+###E2E Tests
+####Install
+```
+$ npm install -g protractor
+$ webdriver-manager update
+```
+
+####Run
+```
+$ webdriver-manager start
+$ protractor protractor.conf.js
 ```
 
 ##TODO
