@@ -57,6 +57,22 @@ angular.module('app')
             var getAssessments = function(criteria) {
                 rgiAssessmentSrvc.query(criteria, function (assessments) {
                     if (assessments.length > 1) {
+                        assessments.sort(function(assessmentA, assessmentB) {
+                            if(assessmentA.country !== assessmentB.country) {
+                                return assessmentA.country > assessmentB.country;
+                            }
+
+                            if(assessmentA.year !== assessmentB.year) {
+                                return assessmentA.year > assessmentB.year;
+                            }
+
+                            if(assessmentA.version !== assessmentB.version) {
+                                return assessmentA.version > assessmentB.version;
+                            }
+
+                            return assessmentA.mineral > assessmentB.mineral;
+                        });
+
                         $scope.assessments = assessments;
                     } else if (assessments.length > 0) {
                         $scope.request.assessment = assessments[0];
