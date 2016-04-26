@@ -1,6 +1,6 @@
 .navbar-right(ng-controller="rgiNavBarLoginCtrl")
     //- LOGIN NAVBAR
-    form.navbar-form.right-padding-lg(ng-hide="identity.isAuthenticated()")
+    form.navbar-form.right-padding-lg(ng-if="!identity.isAuthenticated()")
         .form-group
             input.form-control(
                 placeholder="Username"
@@ -17,30 +17,30 @@
 
 
     //- AUTHENTICATED NAVBAR
-    ul.nav.navbar-nav.navbar-right.right-padding-lg(ng-show="identity.isAuthenticated()")
+    ul.nav.navbar-nav.navbar-right.right-padding-lg(ng-if="identity.isAuthenticated()")
 
         //- REGULAR USER
-        ul.nav.navbar-nav(ng-hide="identity.currentUser.isSupervisor()")
-            li(ng-show="!identity.currentUser.isExternalReviewer()")
+        ul.nav.navbar-nav(ng-if="!identity.currentUser.isSupervisor()")
+            li(ng-if="!identity.currentUser.isExternalReviewer()")
                 a(href="/faq" title="FAQs") FAQs
-            li(ng-show="!identity.currentUser.isExternalReviewer()")
+            li(ng-if="!identity.currentUser.isExternalReviewer()")
                 a(href="/resource" title="Other resources") Resources
             li
                 a(href="/assessments" title="Assessment dashboard") Assessments
         //- ADMIN USER
         ul.nav.navbar-nav.dropdown
-            li.dropdown(ng-show="identity.currentUser.isSupervisor()")
+            li.dropdown(ng-if="identity.currentUser.isSupervisor()")
                 a.dropdown-toggle(data-toggle="dropdown") Assessment Admin
                     b.caret
                 ul.dropdown-menu
                     li
                         a(href="/admin/assessment-admin") All assessments
-                    li(ng-repeat="version in versions")
-                        a(href="/admin/assessment-admin/subs/{{version.url}}") {{version.name}}
+                    li(ng-repeat="version in versions track by version.url")
+                        a(href="/admin/assessment-admin/subs/{{::version.url}}") {{::version.name}}
 
         //- ADMIN DROPDOWN
         ul.nav.navbar-nav.dropdown
-            li.dropdown(ng-show="identity.currentUser.isSupervisor()")
+            li.dropdown(ng-if="identity.currentUser.isSupervisor()")
                 a.dropdown-toggle(
                     href=""
                     data-toggle="dropdown") Admin
@@ -65,7 +65,7 @@
         ul.nav.navbar-nav
             li
                 a(href="/profile"
-                    title="Profile") {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+                    title="Profile") {{::identity.currentUser.firstName}} {{::identity.currentUser.lastName}}
 
         //- LOGOUT
         ul.nav.navbar-nav

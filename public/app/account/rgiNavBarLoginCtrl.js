@@ -3,7 +3,6 @@
 angular.module('app')
     .controller('rgiNavBarLoginCtrl', function (
         $scope,
-        $route,
         $location,
         rgiAssessmentSrvc,
         rgiAuthSrvc,
@@ -12,9 +11,8 @@ angular.module('app')
     ) {
         var setUserData = function() {
             $scope.versions = [];
-            $scope.current_user = rgiIdentitySrvc.currentUser;
 
-            if ($scope.current_user && $scope.current_user.isSupervisor()) {
+            if (rgiIdentitySrvc.currentUser && rgiIdentitySrvc.currentUser.isSupervisor()) {
                 var urls = [];
 
                 rgiAssessmentSrvc.query({}, function (assessments) {
