@@ -13,13 +13,13 @@ angular.module('app')
             $scope.versions = [];
 
             if (rgiIdentitySrvc.currentUser && rgiIdentitySrvc.currentUser.isSupervisor()) {
-                var urls = [];
+                var urls = [], versions = [];
 
                 rgiAssessmentSrvc.query({}, function (assessments) {
                     assessments.forEach(function (assessment) {
                         if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
                             urls.push(assessment.year + '_' + assessment.version);
-                            $scope.versions.push({
+                            versions.push({
                                 year: assessment.year,
                                 version: assessment.version,
                                 name: assessment.year + ' ' + assessment.version.charAt(0).toUpperCase() + assessment.version.slice(1),
@@ -27,6 +27,12 @@ angular.module('app')
                             });
                         }
                     });
+
+                    versions.sort(function(versionA, versionB) {
+                        return versionA.url > versionB.url;
+                    });
+
+                    $scope.versions = versions;
                 });
             }
         };
