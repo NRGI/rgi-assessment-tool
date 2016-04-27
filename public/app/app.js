@@ -15,7 +15,8 @@ angular.module('app', [
     'ta-maxlength',
     'tableSort',
     'textAngular',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui.bootstrap.showErrors'
 ]);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
