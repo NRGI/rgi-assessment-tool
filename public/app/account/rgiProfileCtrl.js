@@ -14,7 +14,6 @@ angular.module('app')
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.humanNamePattern = HUMAN_NAME_PATTERN;
         $scope.passwordPattern = PASSWORD_PATTERN;
-
         var timeoutId;
 
         $scope.checkPassword = function() {
