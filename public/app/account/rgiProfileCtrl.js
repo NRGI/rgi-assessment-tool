@@ -9,9 +9,7 @@ angular.module('app')
         rgiUserMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.fullName = $scope.current_user.firstName + " " + $scope.current_user.lastName;
 
-        // update functinonality for update button
         $scope.update = function () {
             var new_user_data = $scope.current_user;
             if (!new_user_data.firstName || !new_user_data.lastName) {
