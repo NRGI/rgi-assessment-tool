@@ -1,3 +1,13 @@
+$extra-light-gray = #d7e0e2
+$light-gray = #ddd
+$gray = #ccc
+$dark-gray = #555555
+
+$dark = #333
+$extra-dark = #000
+
+$yellow = #ffd066
+
 body
   padding-top 61px
 
@@ -6,13 +16,13 @@ body
   margin-top -15px
   margin-bottom -20px
   h6
-    color #ccc
+    color $gray
 
 footer
   padding-left 15px
   padding-right 15px
   p
-    border-top 1px solid #d7e0e2
+    border-top 1px solid $extra-light-gray
 
 .mapsicon
   height 100px
@@ -110,8 +120,8 @@ input.upload
 .nav-tabs > li > a,
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus
-  color #555555
-  background-color #ffd066
+  color $dark-gray
+  background-color $yellow
 
 .popover
   max-width 30% !important
@@ -130,7 +140,7 @@ input.upload
 
 .ui-draggable-handle
   border-style solid
-  border-color #000
+  border-color $extra-dark
   border-width thin
 
 
@@ -154,7 +164,7 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control
   width 100%
   height 100%
   border-radius 50%
-  background-color #333
+  background-color $dark
   opacity 0.6
   position absolute
   top 0
@@ -181,7 +191,7 @@ div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control
     -webkit-transform scale(1.0)
 
 table[ts-wrapper="ts-wrapper"] .tablesort-asc, table[ts-wrapper="ts-wrapper"] .tablesort-desc
-  background-color: #ddd
+  background-color: $light-gray
 
 .assessment-actions
   min-width 110px
@@ -214,7 +224,7 @@ table[ts-wrapper="ts-wrapper"] .tablesort-asc, table[ts-wrapper="ts-wrapper"] .t
         cursor pointer
       a.inactive-link
         cursor not-allowed
-        color #ddd
+        color $light-gray
       a.inactive-link:hover
         background-color transparent
 
