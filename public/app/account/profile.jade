@@ -6,40 +6,44 @@
                     legend.h3.page-header {{fullName}}'s {{role|role|ucfirst}} Profile
                     .row.right-padding-lg.top-padding-med
                         .form-group
-                            label.col-md-2.control-label(form="first_name") First Name
-                            .col-md-4
-                                input.form-control(
-                                name="first_name"
-                                type="text"
-                                placeholder="First Name"
-                                ng-model="current_user.firstName"
-                                required)
-                            label.col-md-2.control-label(form="last_name") Last Name
-                            .col-md-4
-                                input.form-control(
-                                name="last_name"
-                                type="text"
-                                placeholder="Last Name"
-                                ng-model="current_user.lastName"
-                                required)
+                            span(show-errors="{skipFormGroupCheck: true}")
+                                label.col-md-2.control-label(form="first_name") First Name
+                                .col-md-4
+                                    input.form-control(
+                                    name="first_name"
+                                    type="text"
+                                    placeholder="First Name"
+                                    ng-model="current_user.firstName"
+                                    required)
+                            span(show-errors="{skipFormGroupCheck: true}")
+                                label.col-md-2.control-label(form="last_name") Last Name
+                                .col-md-4
+                                    input.form-control(
+                                    name="last_name"
+                                    type="text"
+                                    placeholder="Last Name"
+                                    ng-model="current_user.lastName"
+                                    required)
                     .row.right-padding-lg
                         .form-group
-                            label.col-md-2.control-label(form="username") Username
-                            .col-md-4
-                                input.form-control(
-                                name="username"
-                                type="text"
-                                placeholder="Username"
-                                ng-model="current_user.username"
-                                readonly)
-                            label.col-md-2.control-label(form="email") Email
-                            .col-md-4
-                                input.form-control(
-                                name="email"
-                                type="email"
-                                placeholder="Email"
-                                ng-model="current_user.email"
-                                required)
+                            span
+                                label.col-md-2.control-label(form="username") Username
+                                .col-md-4
+                                    input.form-control(
+                                    name="username"
+                                    type="text"
+                                    placeholder="Username"
+                                    ng-model="current_user.username"
+                                    readonly)
+                            span(show-errors="{skipFormGroupCheck: true}")
+                                label.col-md-2.control-label(form="email") Email
+                                .col-md-4
+                                    input.form-control(
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email"
+                                    ng-model="current_user.email"
+                                    required)
                     .row.right-padding-lg
                         .form-group
                             label.col-md-2.control-label(form="password") Password
@@ -70,6 +74,6 @@
                             .pull-right
                                 button.btn.btn-primary(
                                 ng-click="update()"
-                                ng-disabled="signupFormm.$invalid || (password && !password_rep) || (password !== password_rep)") Submit
+                                ng-disabled="profileForm.$invalid || (password !== password_rep)") Submit
                                 | &nbsp;
                                 a.btn.btn-default(href="/") Cancel
