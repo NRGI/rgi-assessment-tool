@@ -35,7 +35,6 @@ angular.module('app')
                 $scope.profileForm.password_rep.$setValidity('matched', $scope.password === $scope.password_rep);
             }
         };
-
         $scope.update = function () {
             var new_user_data = $scope.current_user;
             if (!new_user_data.firstName || !new_user_data.lastName) {

@@ -33,7 +33,7 @@
                                     name="username"
                                     type="text"
                                     placeholder="Username"
-                                    ng-model="current_user.username"
+                                    value="{{::current_user.username}}"
                                     readonly)
                             span(show-errors="{skipFormGroupCheck: true}")
                                 label.col-md-2.control-label(form="email") Email
