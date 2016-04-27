@@ -27,8 +27,7 @@ describe('rgiProfileCtrl', function () {
         }
     ));
 
-    it('initialize the fields by values got from identity service', function () {
-        $scope.fullName.should.be.equal(dummyCurrentUser.firstName + ' ' + dummyCurrentUser.lastName);
+    it('sets the current user data', function () {
         $scope.current_user.should.deep.equal(dummyCurrentUser);
     });
 
