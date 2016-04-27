@@ -3,7 +3,7 @@
         div.page-well
             form.form-horizontal(name='profileForm')
                 fieldset.left-padding-lg.right-padding-lg
-                    legend.h3.page-header {{::current_user.firstName}} {{::current_user.lastName}}'s {{role|role|ucfirst}} Profile
+                    legend.h3.page-header {{::current_user.firstName}} {{::current_user.lastName}}'s {{::current_user.role|role|ucfirst}} Profile
                     .row.right-padding-lg.top-padding-med
                         .form-group
                             span(show-errors="{skipFormGroupCheck: true}")
