@@ -1,3 +1,4 @@
+//color variables
 $extra-light-gray = #d7e0e2
 $light-gray = #ddd
 $gray = #ccc
@@ -8,13 +9,20 @@ $extra-dark = #000
 
 $yellow = #ffd066
 
+//margin & padding variables
+$margin-regular = 10px
+
+$padding-small = 6px
+$padding-regular = 20px
+$padding-large = 50px
+
 body
   padding-top 61px
 
 .navbar-header a.navbar-brand
   padding-top 30px
   margin-top -15px
-  margin-bottom -20px
+  margin-bottom -1 * $padding-regular
   h6
     color $gray
 
@@ -29,49 +37,49 @@ footer
 
 .navbar-form
   .form-group
-    margin-left 10px
+    margin-left $margin-regular
   button
-    margin-left 10px
+    margin-left $margin-regular
 
 .page-container
-  padding-top 20px
+  padding-top $padding-regular
   min-width 500px
 
 .page-well
-  margin-top 10px
-  margin-bottom 10px
-  margin-left 50px
+  margin-top $margin-regular
+  margin-bottom $margin-regular
+  margin-left $padding-large
   margin-right 70px
 
 .filter-form
-  padding-top 20px
-  padding-bottom 20px
+  padding-top $padding-regular
+  padding-bottom $padding-regular
 
 .table-responsive
   overflow-x auto
 
 .left-padding-lg
-  padding-left 50px
+  padding-left $padding-large
 .top-padding-lg
-  padding-top 50px
+  padding-top $padding-large
 .right-padding-lg
-  padding-right 50px
+  padding-right $padding-large
 .bottom-padding-lg
-  padding-bottom 50px
+  padding-bottom $padding-large
 
 .left-padding-med
-  padding-left 20px
+  padding-left $padding-regular
 .top-padding-med
-  padding-top 20px
+  padding-top $padding-regular
 .right-padding-med
-  padding-right 20px
+  padding-right $padding-regular
 .bottom-padding-med
-  padding-bottom 20px
+  padding-bottom $padding-regular
 
 .margin-left-med
-  margin-left 10px
+  margin-left $margin-regular
 .margin-bottom-med
-  margin-bottom 10px
+  margin-bottom $margin-regular
 
 #toast-container
   top 70px
@@ -99,7 +107,7 @@ footer
 .fileUpload
   position relative
   overflow hidden
-  margin 10px
+  margin $margin-regular
 
 input.upload
   position absolute
@@ -145,7 +153,7 @@ input.upload
 
 
 div.ta-scroll-window.ng-scope.ta-text.ta-editor.form-control
-  margin-top 10px
+  margin-top $margin-regular
 
 .wrap-content
   overflow-wrap break-word
@@ -201,15 +209,15 @@ table[ts-wrapper="ts-wrapper"] .tablesort-asc, table[ts-wrapper="ts-wrapper"] .t
     thead
       tr
         td
-          padding 6px
+          padding $padding-small
         th
-          padding 6px
+          padding $padding-small
     tbody
       tr
         td
-          padding 6px
+          padding $padding-small
         th
-          padding 6px
+          padding $padding-small
 
   .dropdown
     .btn
