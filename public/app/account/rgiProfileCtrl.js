@@ -6,9 +6,11 @@ angular.module('app')
         $route,
         rgiIdentitySrvc,
         rgiNotifier,
-        rgiUserMethodSrvc
+        rgiUserMethodSrvc,
+        HUMAN_NAME_PATTERN
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 
         $scope.update = function () {
             var new_user_data = $scope.current_user;

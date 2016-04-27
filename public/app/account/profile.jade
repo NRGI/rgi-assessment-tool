@@ -14,6 +14,7 @@
                                         name="first_name"
                                         type="text"
                                         placeholder="First Name"
+                                        ng-pattern="humanNamePattern"
                                         ng-model="current_user.firstName"
                                         required)
                             .col-md-6
@@ -24,6 +25,7 @@
                                         name="last_name"
                                         type="text"
                                         placeholder="Last Name"
+                                        ng-pattern="humanNamePattern"
                                         ng-model="current_user.lastName"
                                         required)
                     .row.right-padding-lg
