@@ -1,0 +1,46 @@
+@import "../variables"
+
+.assessment-actions
+  min-width 110px
+
+.assessment-list-supervisor
+  .table
+    thead
+      tr
+        td
+          padding $padding-small
+        th
+          padding $padding-small
+    tbody
+      tr
+        td
+          padding $padding-small
+        th
+          padding $padding-small
+
+  .dropdown
+    .btn
+      .caret
+        margin-left 3px
+
+  .dropdown-menu
+    left auto
+    right 18px
+    li
+      a
+        cursor pointer
+      a.inactive-link
+        cursor not-allowed
+        color $light-gray
+      a.inactive-link:hover
+        background-color transparent
+
+.assessment-milestone-name
+  font-weight 700
+  padding-right 1em
+
+.assessment-navigation
+  .glyphicon.text-info
+    cursor pointer
+  .glyphicon.text-muted
+    cursor default
