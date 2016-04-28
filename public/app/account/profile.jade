@@ -61,6 +61,8 @@
                                         type="password"
                                         ng-pattern="passwordPattern"
                                         ng-change="checkPasswordsMatch(false)"
+                                        ng-keyup="checkPassword()"
+                                        ng-paste="checkPassword()"
                                         ng-model="password")
                             .col-md-6
                                 .form-group
