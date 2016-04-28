@@ -4,8 +4,6 @@ angular.module('app')
     .controller('rgiAssessmentDetailCtrl', function (
         $scope,
         $routeParams,
-        $location,
-        ngDialog,
         rgiAnswerSrvc,
         rgiAnswerFilterSrvc,
         rgiAssessmentSrvc,

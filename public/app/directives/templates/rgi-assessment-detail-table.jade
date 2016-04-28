@@ -6,16 +6,13 @@ div(id="answers_div").bottom-padding-med
     ng-class="{'panel-success': ((!current_user.isSupervisor() && ((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized===precept.data.length)),'panel-primary': ((!current_user.isSupervisor() && !((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized!==precept.data.length)),'panel-danger': precept.flagged !== 0 || (current_user.isSupervisor() && precept.unresolved !== 0)}")
         div.panel-heading.bottom-padding-med
             .panel-title
-                div(
-                role="button"
-                data-toggle="collapse"
-                href="#{{precept.id}}") {{precept.label}}
-                    text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()") ({{precept.complete + precept.approved}} of {{precept.data.length}} completed)
-                    text(ng-if="current_user.isSupervisor()") ({{precept.approved+precept.finalized}} of {{precept.data.length}} approved)
-                    text(ng-if="precept.flagged!==0") ({{precept.flagged}} flagged)
-                    text(ng-if="precept.unresolved!==0 && current_user.isSupervisor()") ({{precept.unresolved}} unresolved)
-                    text(ng-if="current_user.isSupervisor() && precept.finalized!==0") ({{precept.finalized}} final answers)
-        div.panel-collapse.collapse(id="{{precept.id}}")
+                div(role="button", data-toggle="collapse", href="#{{::precept.id}}") {{::precept.label}}
+                    text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()") ({{::precept.complete + precept.approved}} of {{::precept.data.length}} completed)
+                    text(ng-if="current_user.isSupervisor()") ({{::precept.approved+precept.finalized}} of {{::precept.data.length}} approved)
+                    text(ng-if="precept.flagged!==0") ({{::precept.flagged}} flagged)
+                    text(ng-if="precept.unresolved!==0 && current_user.isSupervisor()") ({{::precept.unresolved}} unresolved)
+                    text(ng-if="current_user.isSupervisor() && precept.finalized!==0") ({{::precept.finalized}} final answers)
+        div.panel-collapse.collapse(id="{{::precept.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed
                     thead: tr
@@ -30,66 +27,66 @@ div(id="answers_div").bottom-padding-med
                         th.col-md-1.text-center
                     tbody
                         tr(
-                        ng-repeat="answer in precept.data | filter: searchText | orderBy:sortOrder"
+                        ng-repeat="answer in precept.data|filter: searchText|orderBy:sortOrder track by answer.answer_ID"
                         ng-if="(!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1) && isAnswerAvailable(answer)")
-                            td.col-md-1.text-center {{answer.question_ID.question_label}}
-                            td.col-md-1 {{answer.question_ID.component_text}}
-                            td.col-md-3 {{answer.question_ID.question_text}}
+                            td.col-md-1.text-center {{::answer.question_ID.question_label}}
+                            td.col-md-1 {{::answer.question_ID.component_text}}
+                            td.col-md-3 {{::answer.question_ID.question_text}}
                             td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  Complete
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  Complete
-                                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{answer.status | ucfirst}}
-                                .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
-                                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
+                                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{::answer.status | ucfirst}}
+                                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'")  {{::answer.status | ucfirst}}
+                                .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{::answer.status | ucfirst}}
+                                .text(ng-if="answer.status==='assigned'")  {{::answer.status | ucfirst}}
                                 .text(ng-if="answer.status==='unresolved'")
                             td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
                                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  Needs review
                                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  Needs review
-                                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
-                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
-                                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{answer.status | ucfirst}}
+                                .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{::answer.status | ucfirst}}
+                                .text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{::answer.status | ucfirst}}
+                                .text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='flagged'|| answer.status==='unresolved'")  {{::answer.status | ucfirst}}
                                 //.text-danger.glyphicon.glyphicon-flag(ng-if="answer.status==='unresolved'")  {{answer.status | ucfirst}}
-                                .text(ng-if="['submitted', 'resubmitted', 'saved', 'approved', 'flagged', 'final'].indexOf(answer.status) < 0")  {{question.status | ucfirst}}
-                                .text(ng-if="answer.status==='assigned'")  {{answer.status | ucfirst}}
-                            td.col-md-1.text-center {{answer.researcher_score.letter | ucfirst}}
-                            td.col-md-1.text-center {{answer.reviewer_score.letter | ucfirst}}
+                                .text(ng-if="['submitted', 'resubmitted', 'saved', 'approved', 'flagged', 'final'].indexOf(answer.status) < 0")  {{::question.status | ucfirst}}
+                                .text(ng-if="answer.status==='assigned'")  {{::answer.status | ucfirst}}
+                            td.col-md-1.text-center {{::answer.researcher_score.letter | ucfirst}}
+                            td.col-md-1.text-center {{::answer.reviewer_score.letter | ucfirst}}
                             td.col-md-1(ng-if="current_user.isSupervisor()")
-                                div(ng-repeat="externalReviewerAnswer in answer.external_answer") {{getUser(externalReviewerAnswer.author).firstName}} {{getUser(externalReviewerAnswer.author).lastName}} - {{externalReviewerAnswer.score.letter | ucfirst}}
-                            td.col-md-1.text-center.text-success {{answer.final_score.letter | ucfirst}}
+                                div(ng-repeat="externalReviewerAnswer in answer.external_answer track by externalReviewerAnswer._id") {{::getUser(externalReviewerAnswer.author).firstName}} {{::getUser(externalReviewerAnswer.author).lastName}} - {{::externalReviewerAnswer.score.letter | ucfirst}}
+                            td.col-md-1.text-center.text-success {{::answer.final_score.letter | ucfirst}}
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control===current_user._id")
                                 a.btn.center-block.btn-primary(ng-if="answer.status!=='flagged' && assessment.status!=='submitted' && assessment.status!=='trial_submitted'"
-                                href="/assessments/answer/{{answer.answer_ID}}")
+                                href="/assessments/answer/{{::answer.answer_ID}}")
                                     text(ng-if="answer.status==='assigned'") Start answer
                                     text(ng-if="answer.status!=='assigned'") Edit answer
                                 a.btn.center-block.btn-danger(ng-if="answer.status==='flagged'"
-                                href="/assessments/answer/{{answer.answer_ID}}") Edit answer
+                                href="/assessments/answer/{{::answer.answer_ID}}") Edit answer
                                 a.btn.center-block.btn-default(
                                 ng-if="assessment.status==='submitted' || assessment.status==='trial_submitted'"
-                                href="/assessments/answer/{{answer.answer_ID}}") View answer
+                                href="/assessments/answer/{{::answer.answer_ID}}") View answer
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control!==current_user._id")
                                 a.btn.center-block.btn-default(
                                 ng-if="assessment.status!=='assigned'"
-                                href="/assessments/answer/{{answer.answer_ID}}") View answer
+                                href="/assessments/answer/{{::answer.answer_ID}}") View answer
                                 a.btn.center-block.btn-success(
                                 ng-if="assessmentg .status==='assigned'"
-                                href="/assessments/answer/{{answer.answer_ID}}") No data
+                                href="/assessments/answer/{{::answer.answer_ID}}") No data
                             td(ng-if="current_user.isSupervisor()")
                                 a.btn.center-block.btn-primary(
                                 ng-if="answer.status==='submitted'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Review
                                 a.btn.center-block.btn-warning(
                                 ng-if="answer.status==='resubmitted'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Review
                                 a.btn.center-block.btn-danger(
                                 ng-if="answer.status==='flagged'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Review
                                 a.btn.center-block.btn-default(
                                 ng-if="answer.status==='approved'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Review
                                 a.btn.center-block.btn-default(
                                 ng-if="answer.status==='unresolved'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Review
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Review
                                 a.btn.center-block.btn-default(
                                 ng-if="answer.status!=='under_review' && answer.status!=='resubmitted' && answer.status!=='submitted' && answer.status!=='approved' && answer.status!=='flagged' && answer.status!=='unresolved'"
-                                href="/admin/assessments-admin/answer/{{answer.answer_ID}}") Go to answer page
+                                href="/admin/assessments-admin/answer/{{::answer.answer_ID}}") Go to answer page
