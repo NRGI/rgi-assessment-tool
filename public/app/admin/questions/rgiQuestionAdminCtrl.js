@@ -8,16 +8,23 @@ angular.module('app')
         rgiQuestionSrvc
     ) {
         $scope.order_reverse = true;
+        $scope.questions = rgiPreceptGuideSrvc.getQuestionTemplates();
+
+        $scope.header = [
+            'Question Order',
+            'Question Label',
+            'NRC Precept',
+            'Question Type',
+            'Question Text',
+            'Component Text',
+            'Indicator Name',
+            'Dejure'
+        ];
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
-            $scope.questions = rgiPreceptGuideSrvc.getQuestionTemplates();
-
             questions.forEach(function (question) {
-                $scope.questions[question.precept - 1].section_len += 1;
                 $scope.questions[question.precept - 1].data.push(question);
             });
-
-            $scope.header = ['Question Order', 'Question Label',  'NRC Precept', 'Question Type', 'Question Text', 'Component Text', 'Indicator Name', 'Dejure'];
         });
 
         $scope.getExportedQuestions = function() {

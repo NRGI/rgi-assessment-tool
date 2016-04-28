@@ -10,18 +10,13 @@ div(id="questions_div").bottom-padding-med
                     input.form-control(
                     ng-model="search_text"
                     placeholder="Filter")
-    div.panel.panel-primary(
-    ng-repeat="(key, value) in questions"
-    ng-if="value.section_len > 0")
+    div.panel.panel-primary(ng-repeat="precept in questions track by precept.id", ng-if="precept.data.length > 0")
         div.panel-heading.bottom-padding-med
             .panel-title
-                div(
-                role="button"
-                data-toggle="collapse"
-                href="#{{value.id}}")
-                    | {{value.label}} -  {{value.section_len}} questions
+                div(role="button", data-toggle="collapse", href="#{{precept.id}}")
+                    | {{precept.label}} - {{precept.data.length}} questions
 
-        div.panel-collapse.collapse(id="{{value.id}}")
+        div.panel-collapse.collapse(id="{{precept.id}}")
             div.panel-body
                 table(ts-wrapper).table.table-hover.table-striped.table-condensed.table-responsive
                     thead: tr
@@ -32,7 +27,7 @@ div(id="questions_div").bottom-padding-med
                         th(ts-criteria="component_text").col-md-2 Component
                         th(ts-criteria="question_type").col-md-1 Type
                         th.col-md-1
-                    tbody: tr(ng-repeat="question in value.data | filter:search_text" ts-repeat)
+                    tbody: tr(ng-repeat="question in precept.data|filter:search_text" ts-repeat)
                         td.col-md-1 {{question.question_order}}
                         td.col-md-1 {{question.question_label}}
                         td.col-md-1 {{question.question_v}}
