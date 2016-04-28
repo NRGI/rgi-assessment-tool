@@ -7,16 +7,14 @@ div(id="questions_div").bottom-padding-med
             button.btn.btn-default(ng-csv="getExportedQuestions()" filename="question_set.csv") Export as CSV
             form.form-inline.pull-right
                 .form-group
-                    input.form-control(
-                    ng-model="search_text"
-                    placeholder="Filter")
+                    input.form-control(ng-model="search_text", placeholder="Filter")
     div.panel.panel-primary(ng-repeat="precept in questions track by precept.id", ng-if="precept.data.length > 0")
         div.panel-heading.bottom-padding-med
             .panel-title
-                div(role="button", data-toggle="collapse", href="#{{precept.id}}")
-                    | {{precept.label}} - {{precept.data.length}} questions
+                div(role="button", data-toggle="collapse", href="#{{::precept.id}}")
+                    | {{::precept.label}} - {{::precept.data.length}} questions
 
-        div.panel-collapse.collapse(id="{{precept.id}}")
+        div.panel-collapse.collapse(id="{{::precept.id}}")
             div.panel-body
                 table(ts-wrapper).table.table-hover.table-striped.table-condensed.table-responsive
                     thead: tr
@@ -27,12 +25,12 @@ div(id="questions_div").bottom-padding-med
                         th(ts-criteria="component_text").col-md-2 Component
                         th(ts-criteria="question_type").col-md-1 Type
                         th.col-md-1
-                    tbody: tr(ng-repeat="question in precept.data|filter:search_text" ts-repeat)
-                        td.col-md-1 {{question.question_order}}
-                        td.col-md-1 {{question.question_label}}
-                        td.col-md-1 {{question.question_v}}
-                        td.col-md-5 {{question.question_text}}
-                        td.col-md-2 {{question.component_text}}
-                        td.col-md-1 {{question.question_type}}
+                    tbody: tr(ng-repeat="question in precept.data|filter:search_text track by question.question_order" ts-repeat)
+                        td.col-md-1 {{::question.question_order}}
+                        td.col-md-1 {{::question.question_label}}
+                        td.col-md-1 {{::question.question_v}}
+                        td.col-md-5 {{::question.question_text}}
+                        td.col-md-2 {{::question.component_text}}
+                        td.col-md-1 {{::question.question_type}}
                         td.col-md-1
-                            a.btn.center-block.btn-warning(href="/admin/question-admin/{{question._id}}") Edit
+                            a.btn.center-block.btn-warning(href="/admin/question-admin/{{::question._id}}") Edit
