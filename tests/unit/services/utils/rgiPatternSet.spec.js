@@ -24,7 +24,6 @@ describe('rgiPatternSet', function () {
         testPattern('accepts alphabetical name', 'Anna', true);
         testPattern('accepts a dashed name', 'Anna-Maria', true);
         testPattern('accepts a double name', 'Anna Maria', true);
-
         testPattern('declines a number', 7, false);
         testPattern('declines a name with a number', 'Oliver Stone 3', false);
         testPattern('declines a name with special characters', '@lex', false);
