@@ -41,7 +41,7 @@ angular.module('app')
                 answers.forEach(function (answer) {
                     if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
                         rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
-                        $scope.answers[answer.question_ID.precept - 1].data.push(answer);
+                        $scope.answers[answer.question_ID.precept - 1].section_len += 1;
 
                         var counters = {
                             complete: ['submitted', 'resubmitted'],
@@ -56,6 +56,8 @@ angular.module('app')
                                 $scope.answers[answer.question_ID.precept - 1][counter]++;
                             }
                         }
+
+                        $scope.answers[answer.question_ID.precept - 1].data.push(answer);
                     }
                 });
             });
