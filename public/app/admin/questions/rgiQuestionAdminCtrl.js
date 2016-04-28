@@ -13,8 +13,8 @@ angular.module('app')
             $scope.questions = rgiPreceptGuideSrvc.getQuestionTemplates();
 
             questions.forEach(function (question) {
-                $scope.questions["precept_" + String(question.precept)].section_len += 1;
-                $scope.questions["precept_" + String(question.precept)].data.push(question);
+                $scope.questions[question.precept - 1].section_len += 1;
+                $scope.questions[question.precept - 1].data.push(question);
             });
 
             $scope.header = ['Question Order', 'Question Label',  'NRC Precept', 'Question Type', 'Question Text', 'Component Text', 'Indicator Name', 'Dejure'];

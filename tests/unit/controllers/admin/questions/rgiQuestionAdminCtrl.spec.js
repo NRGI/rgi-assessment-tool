@@ -39,7 +39,7 @@ describe('rgiQuestionAdminCtrl', function () {
             questionQueryStub = sinon.stub(rgiQuestionSrvc, 'query', questionQuerySpy);
 
             getPreceptsSpy = sinon.spy(function () {
-                return {precept_1: {section_len: 0, data: []}};
+                return [{section_len: 0, data: []}];
             });
             getPreceptsStub = sinon.stub(rgiPreceptGuideSrvc, 'getQuestionTemplates', getPreceptsSpy);
 
@@ -65,7 +65,7 @@ describe('rgiQuestionAdminCtrl', function () {
     });
 
     it('loads the question data', function () {
-        $scope.questions.should.deep.equal({precept_1: {section_len: 1, data: [questionsData[0]]}});
+        $scope.questions.should.deep.equal([{section_len: 1, data: [questionsData[0]]}]);
     });
 
     describe('#getExportedQuestions', function () {

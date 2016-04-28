@@ -3,13 +3,12 @@
 angular.module('app')
     .factory('rgiPreceptGuideSrvc', function () {
         var getTemplates = function(addCompleteField) {
-            var templates = {};
+            var templates = [];
 
             preceptGuide.getPrecepts().forEach(function(precept) {
-                var preceptId = 'precept_' + precept.value;
                 var templateData = {
                     label: precept.text,
-                    id: preceptId,
+                    id: 'precept_' + precept.value,
                     order: precept.value,
                     section_len: 0,
                     data: []
@@ -23,7 +22,7 @@ angular.module('app')
                     templateData.finalized = 0;
                 }
 
-                templates[preceptId] = templateData;
+                templates.push(templateData);
             });
 
             return templates;
