@@ -51,19 +51,6 @@ describe('rgiQuestionAdminCtrl', function () {
         $scope.order_reverse.should.be.equal(true);
     });
 
-    it('sets the header', function () {
-        $scope.header.should.deep.equal([
-            'Question Order',
-            'Question Label',
-            'NRC Precept',
-            'Question Type',
-            'Question Text',
-            'Component Text',
-            'Indicator Name',
-            'Dejure'
-        ]);
-    });
-
     it('loads the question data', function () {
         $scope.questions.should.deep.equal([{data: [questionsData[0]]}]);
     });
