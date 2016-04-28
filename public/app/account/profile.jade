@@ -51,27 +51,35 @@
                                         ng-model="current_user.email"
                                         required)
                     .row.right-padding-lg
-                        .form-group
-                            label.col-md-2.control-label(form="password") Password
-                            .col-md-4
-                                input.form-control(
-                                name="password"
-                                type="password"
-                                ng-model="password")
-                            label.col-md-2.control-label(form="address") Address
-                            .col-md-4
-                                input.form-control(
-                                name="address"
-                                type="address"
-                                placeholder="Address"
-                                ng-model="current_user.address")
+                        .row
+                            .col-md-6
+                                .form-group
+                                    label.col-md-4.control-label(form="password") Password
+                                    .col-md-8
+                                        input.form-control(
+                                        name="password"
+                                        type="password"
+                                        ng-pattern="passwordPattern"
+                                        ng-change="checkPasswordsMatch(false)"
+                                        ng-model="password")
+                            .col-md-6
+                                .form-group
+                                    label.col-md-4.control-label(form="address") Address
+                                    .col-md-8
+                                        input.form-control(
+                                        name="address"
+                                        type="address"
+                                        placeholder="Address"
+                                        ng-model="current_user.address")
                     .row.right-padding-lg
                         .form-group
                             label.col-md-2.control-label(form="password") Repeat Password
                             .col-md-4
                                 input.form-control(
-                                name="password"
+                                name="password_rep"
                                 type="password"
+                                ng-change="checkPasswordsMatch(true)"
+                                ng-disabled="profileForm.password.$invalid || (password === undefined) || (password.length === 0)"
                                 ng-model="password_rep")
 
 
