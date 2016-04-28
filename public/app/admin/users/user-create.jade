@@ -108,9 +108,10 @@
                                 input.form-control(
                                 name="phoneNumber"
                                 id="createUserForm.phoneNumber"
-                                type="text"
-                                placeholder="Phone Number"
+                                type="tel"
+                                placeholder=""
                                 ng-model="new_user_data.phoneNumber"
+                                ui-mask="(999) 999-9?9?9?9?9"
                                 autocomplete="off")
                         .form-group
                             label.col-md-2.control-label(form="createUserForm" for="createUserForm.address") Address
