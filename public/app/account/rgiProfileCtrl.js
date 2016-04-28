@@ -7,10 +7,18 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiNotifier,
         rgiUserMethodSrvc,
-        HUMAN_NAME_PATTERN
+        HUMAN_NAME_PATTERN,
+        PASSWORD_PATTERN
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.humanNamePattern = HUMAN_NAME_PATTERN;
+        $scope.passwordPattern = PASSWORD_PATTERN;
+
+        $scope.checkPasswordsMatch = function(skipTouchedCheck) {
+            if(skipTouchedCheck || $scope.profileForm.password_rep.$touched) {
+                $scope.profileForm.password_rep.$setValidity('matched', $scope.password === $scope.password_rep);
+            }
+        };
 
         $scope.update = function () {
             var new_user_data = $scope.current_user;
