@@ -29,4 +29,18 @@ describe('rgiPatternSet', function () {
         testPattern('declines a name with a number', 'Oliver Stone 3', false);
         testPattern('declines a name with special characters', '@lex', false);
     });
+
+    describe('PASSWORD_PATTERN', function() {
+        beforeEach(function() {
+            currentPattern = PASSWORD_PATTERN;
+        });
+
+        testPattern('accepts a 8-character password with an upper-case letter, an lower-case letter, a digit and a special character', 'P@ssw0rd', true);
+        testPattern('declines a password with length less than 6 characters', 'A$df1', false);
+        testPattern('declines a password with length more than 8 characters', 'P@ssw0rd1', false);
+        testPattern('declines a password without a special character', 'Passw0rd', false);
+        testPattern('declines a password without a digit', 'P@ssword', false);
+        testPattern('declines a password without an upper-case character', 'p@ssw0rd', false);
+        testPattern('declines a password without a lower-case character', 'P@SSW0RD', false);
+    });
 });
