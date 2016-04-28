@@ -1,10 +1,10 @@
 .container-fluid.page-container
     .well
-        div.page-well
+        .page-well
             form.form-horizontal(name="createUserForm" id="createUserForm")
                 fieldset.left-padding-lg.right-padding-lg
                     legend.h3 New User Information
-                    div.top-padding-med.right-padding-lg
+                    .top-padding-med.right-padding-lg
                         .form-group
                             label.col-md-2.control-label(form="createUserForm" for="createUserForm.salutation") Salutation
                             .col-md-10
@@ -128,6 +128,6 @@
                         .form-group
                             .col-md-10.col-md-offset-2
                                 .pull-right
-                                    button.btn.btn-primary(ng-click="userCreate()") Submit
+                                    button.btn.btn-primary(ng-click="userCreate()", ng-disabled="createUserForm.$invalid") Submit
                                     | &nbsp;
                                     a.btn.btn-default(href="/") Cancel
