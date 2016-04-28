@@ -29,6 +29,21 @@ angular.module('app')
             }
         };
 
+        var timeoutId;
+
+        $scope.checkPassword = function() {
+            if(timeoutId !== undefined) {
+                $timeout.cancel(timeoutId);
+            }
+
+            if($scope.profileForm.password.$invalid) {
+                timeoutId = $timeout(function() {
+                    rgiNotifier.error('The password should consist of 6-8 characters including at least one digit, ' +
+                    'at least one lower-case letter, at least one upper-case letter and at least one special character');
+                }, 1000);
+            }
+        };
+
         $scope.checkPasswordsMatch = function(skipTouchedCheck) {
             if($scope.profileForm.password.$valid && (skipTouchedCheck || $scope.profileForm.password_rep.$touched)) {
                 $scope.profileForm.password_rep.$setValidity('matched', $scope.password === $scope.password_rep);
