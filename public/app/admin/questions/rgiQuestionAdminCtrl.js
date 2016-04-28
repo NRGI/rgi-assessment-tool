@@ -10,17 +10,6 @@ angular.module('app')
         $scope.order_reverse = true;
         $scope.questions = rgiPreceptGuideSrvc.getQuestionTemplates();
 
-        $scope.header = [
-            'Question Order',
-            'Question Label',
-            'NRC Precept',
-            'Question Type',
-            'Question Text',
-            'Component Text',
-            'Indicator Name',
-            'Dejure'
-        ];
-
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
             questions.forEach(function (question) {
                 $scope.questions[question.precept - 1].data.push(question);
