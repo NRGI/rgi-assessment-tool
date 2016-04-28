@@ -5,7 +5,8 @@ angular.module('app')
         $scope,
         $location,
         rgiNotifier,
-        rgiUserMethodSrvc
+        rgiUserMethodSrvc,
+        HUMAN_NAME_PATTERN
     ) {
         $scope.role_options = [
             //{value: 'admin', text: 'Administrator'},
@@ -14,7 +15,9 @@ angular.module('app')
             {value: 'reviewer', text: 'Reviewer'},
             {value: 'ext_reviewer', text: 'External Reviewer'}
         ];
+
         $scope.new_user_data = {};
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 
       // fix submit button functionality
         $scope.userCreate = function () {

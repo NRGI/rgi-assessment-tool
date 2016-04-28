@@ -22,6 +22,7 @@
                                 id="createUserForm.firstName"
                                 type="text"
                                 placeholder="First Name"
+                                ng-pattern="humanNamePattern"
                                 ng-model="new_user_data.firstName"
                                 autocomplete='off')
                         .form-group
@@ -32,6 +33,7 @@
                                 id="createUserForm.lastName"
                                 type="text"
                                 placeholder="Last Name"
+                                ng-pattern="humanNamePattern"
                                 ng-model="new_user_data.lastName"
                                 autocomplete="off"
                                 required)
