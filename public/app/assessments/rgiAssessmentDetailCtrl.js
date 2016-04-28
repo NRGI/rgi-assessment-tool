@@ -43,25 +43,23 @@ angular.module('app')
                 answers.forEach(function (answer) {
                     if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
                         rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
-                        $scope.answers["precept_" + String(answer.question_ID.precept)].section_len += 1;
+                        $scope.answers[answer.question_ID.precept - 1].section_len += 1;
 
-                        if (answer.status === 'submitted' || answer.status === 'resubmitted') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].complete += 1;
-                        }
-                        if (answer.status === 'approved') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].approved += 1;
-                        }
-                        if (answer.status === 'flagged') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].flagged += 1;
-                        }
-                        if (answer.status === 'unresolved') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].unresolved += 1;
-                        }
-                        if (answer.status === 'final') {
-                            $scope.answers["precept_" + String(answer.question_ID.precept)].finalized += 1;
+                        var counters = {
+                            complete: ['submitted', 'resubmitted'],
+                            approved: ['approved'],
+                            flagged: ['flagged'],
+                            unresolved: ['unresolved'],
+                            finalized: ['final']
+                        };
+
+                        for(var counter in counters) {
+                            if(counters.hasOwnProperty(counter) && (counters[counter].indexOf(answer.status) !== -1)) {
+                                $scope.answers[answer.question_ID.precept - 1][counter]++;
+                            }
                         }
 
-                        $scope.answers["precept_" + String(answer.question_ID.precept)].data.push(answer);
+                        $scope.answers[answer.question_ID.precept - 1].data.push(answer);
                     }
                 });
             });
