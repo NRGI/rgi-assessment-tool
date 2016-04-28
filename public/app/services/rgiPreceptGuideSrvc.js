@@ -10,7 +10,6 @@ angular.module('app')
                     label: precept.text,
                     id: 'precept_' + precept.value,
                     order: precept.value,
-                    section_len: 0,
                     data: []
                 };
 

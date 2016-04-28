@@ -12,7 +12,6 @@ angular.module('app')
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
             questions.forEach(function (question) {
-                $scope.questions[question.precept - 1].section_len += 1;
                 $scope.questions[question.precept - 1].data.push(question);
             });
         });
