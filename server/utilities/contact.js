@@ -84,7 +84,7 @@ exports.new_user_confirmation = function (contact_packet, token) {
     mandrill('/messages/send', {
         message: {
             to: [{email: contact_packet.rec_email, name: contact_packet.rec_name}],
-            from_email: contact_packet.send_email,
+            from_email: siteEmail,
             subject: contact_packet.rec_role + ' account created!',
             html: 'Hello ' + contact_packet.rec_name + ',<p>' +
             'an RGI ' + contact_packet.rec_role + ' account was just set up for you by <a href="' +
