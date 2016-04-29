@@ -100,7 +100,7 @@ angular.module('app')
             promises.push(rgiAssessmentMethodSrvc.updateAssessment($scope.assessment));
 
             getArrayDifference(originalAssigneeList, getNonEmptyAssigneeList()).forEach(function(removedAssigneeId) {
-                $scope.availableUsers.forEach(function(user) {
+                availableUsers.forEach(function(user) {
                     if((user._id === removedAssigneeId) && user.assessments) {
                         promises.push(rgiUserAssessmentsSrvc.remove(user, $scope.assessment));
                     }
