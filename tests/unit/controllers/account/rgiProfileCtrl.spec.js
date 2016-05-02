@@ -182,6 +182,47 @@ describe('rgiProfileCtrl', function () {
         });
     });
 
+    describe('#checkPasswordsMatch', function() {
+        var setValiditySpy, setData = function(passwordValid, repeatPasswordTouched, password, repeatPassword) {
+            setValiditySpy = sinon.spy();
+
+            $scope.profileForm = {
+                password: {$valid: passwordValid},
+                password_rep: {
+                    $touched: repeatPasswordTouched,
+                    $setValidity: setValiditySpy
+                }
+            };
+
+            $scope.password = password;
+            $scope.password_rep = repeatPassword;
+        };
+
+        it('does nothing if the password is invalid', function() {
+            setData(false);
+            $scope.checkPasswordsMatch(true);
+            setValiditySpy.called.should.be.equal(false);
+        });
+
+        it('does nothing if the repeat password field is invalid and the check is not called by force', function() {
+            setData(true, false);
+            $scope.checkPasswordsMatch(false);
+            setValiditySpy.called.should.be.equal(false);
+        });
+
+        it('sets validity if the repeat password field is invalid but the check is called by force', function() {
+            setData(true, false, 'password', 'password');
+            $scope.checkPasswordsMatch(true);
+            setValiditySpy.withArgs('matched', true).called.should.be.equal(true);
+        });
+
+        it('sets validity to `FALSE` if the passwords do not match', function() {
+            setData(true, true, 'password', 'another password');
+            $scope.checkPasswordsMatch(false);
+            setValiditySpy.withArgs('matched', false).called.should.be.equal(true);
+        });
+    });
+
     afterEach(function () {
         rgiIdentitySrvc.currentUser = currentUserBackUp;
     });
