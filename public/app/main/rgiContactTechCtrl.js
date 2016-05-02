@@ -7,11 +7,10 @@ angular.module('app')
         rgiNotifier,
         rgiContactMethodSrvc,
         rgiIdentitySrvc,
-        rgiAssessmentSrvc
+        rgiAssessmentSrvc,
+        HUMAN_NAME_PATTERN,
+        VERSION_PATTERN
     ) {
-        $scope.request = {tool: 'rgi'};
-        var criteria = {};
-
         $scope.issue_selection = [
             {name: 'Trouble logging in.', value: 'login'},
             {name: 'Parts of the site are down.', value: 'down'},
@@ -19,9 +18,19 @@ angular.module('app')
             {name: 'Answers don\'t seem to be saving when completed', value: 'save'},
             {name: 'Documents cannot be saved', value: 'upload'},
             {name: 'Cannot edit comments/justification fields', value: 'justification'},
-            //{name: '', value: ''},
             {name: 'Other', value: 'other'}
         ];
+
+        $scope.clearRequest = function () {
+            $scope.request = {tool: 'rgi', issue: $scope.issue_selection[$scope.issue_selection.length - 1]};
+        };
+
+        $scope.clearRequest();
+        var criteria = {};
+
+        $scope.versionPattern = VERSION_PATTERN;
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
+
         $scope.os_selection = [
             {name: 'Android', value: 'android'},
             {name: 'Windows Phone', value: 'windows_ph'},
@@ -100,9 +109,5 @@ angular.module('app')
                     rgiNotifier.error(reason);
                 });
             }
-        };
-
-        $scope.clearRequest = function () {
-            $scope.request = {tool: 'rgi'};
         };
     });

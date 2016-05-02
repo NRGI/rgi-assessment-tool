@@ -11,37 +11,44 @@
                     //    =' '
                     //    a(href='mailto:tech-support@resourcegovernance.org?Subject=RGI Tool Issue') tech-support@resourcegovernance.org
                     .row.right-padding-lg.top-padding-med
-                        .form-group
-                            label.col-md-2.control-label(form="first_name") First Name
-                            .col-md-4
-                                input.form-control(
-                                name="first_name"
-                                type="text"
-                                placeholder="First Name"
-                                ng-model="request.first_name"
-                                required)
-                            label.col-md-2.control-label(form="last_name") Last Name
-                            .col-md-4
-                                input.form-control(
-                                name="last_name"
-                                type="text"
-                                placeholder="Last Name"
-                                ng-model="request.last_name"
-                                required)
+                        .col-md-6
+                            .form-group
+                                label.col-md-4.control-label(form="first_name") First Name
+                                .col-md-8
+                                    input.form-control(
+                                    name="first_name"
+                                    type="text"
+                                    placeholder="First Name"
+                                    ng-model="request.first_name"
+                                    ng-pattern="humanNamePattern"
+                                    required)
+                        .col-md-6
+                            .form-group
+                                label.col-md-4.control-label(form="last_name") Last Name
+                                .col-md-8
+                                    input.form-control(
+                                    name="last_name"
+                                    type="text"
+                                    placeholder="Last Name"
+                                    ng-model="request.last_name"
+                                    ng-pattern="humanNamePattern"
+                                    required)
                     .row.right-padding-lg
-                        .form-group
-                            label.col-md-2.control-label(form="email") Email
-                            .col-md-4
-                                input.form-control(
-                                name="email"
-                                type="email"
-                                placeholder="Email"
-                                ng-model="request.email"
-                                required)
-                            div(ng-if="assessments")
-                                label.col-md-2.control-label(form="assessment") Assessment
-                                .col-md-4
-                                    select.form-group.form-control.right-padding-med(
+                        .col-md-6
+                            .form-group
+                                label.col-md-4.control-label(form="email") Email
+                                .col-md-8
+                                    input.form-control(
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email"
+                                    ng-model="request.email"
+                                    required)
+                        .col-md-6(ng-if="assessments")
+                            .form-group
+                                label.col-md-4.control-label(form="assessment") Assessment
+                                .col-md-8
+                                    select.form-control(
                                     name="assessments_selector"
                                     ng-model="request.assessment"
                                     ng-options="assessment.country as (assessment.country + ' ' + assessment.year + ' ' + (assessment.mineral|addSpaces) + ' ' + assessment.version) for assessment in assessments")
@@ -56,7 +63,8 @@
                                 ng-value="issue"
                                 checked=""
                                 id="{{::issue.value}}"
-                                ng-model="request.issue")
+                                ng-model="request.issue"
+                                required)
                                 label.thin-label.left-padding-med(for="{{::issue.value}}") {{::issue.name}}
                             .form-group.left-padding-lg.right-padding-lg
                                 textarea.form-control(
@@ -67,32 +75,36 @@
                     #system_selection_div.bottom-padding-med.left-padding-lg.right-padding-lg
                         legend Tell us about your system to better help you?
                         .col-md-5.pull-left.top-padding-med
-                            label Operating system
-                            select.form-group.form-control.pull-left(ng-model="request.os")
-                                option(value="" selected disabled)
-                                option(ng-repeat="os in os_selection track by os.value" value="{{::os.value}}") {{::os.name}}
-                            input.form-group.form-control(
-                            name="os_text"
-                            type="text"
-                            ng-model="request.os_text"
-                            placeholder="OS name..."
-                            required
-                            ng-if="request.os=='other'")
+                            .form-group.right-padding-med
+                                label.control-label Operating system
+                                select.form-control.pull-left(ng-model="request.os")
+                                    option(value="" selected disabled)
+                                    option(ng-repeat="os in os_selection track by os.value" value="{{::os.value}}") {{::os.name}}
+                                input.form-control(
+                                name="os_text"
+                                type="text"
+                                ng-model="request.os_text"
+                                placeholder="OS name..."
+                                required
+                                ng-if="request.os=='other'")
                         .col-md-5.pull-left.top-padding-med
-                            label Browser
-                            select.form-group.form-control.pull-left(ng-model="request.browser")
-                                option(value="" selected disabled)
-                                option(ng-repeat="browser in browser_selection track by browser.value" value="{{::browser.value}}") {{::browser.name}}
-                            input.form-group.form-control(
-                            name="browser_text"
-                            type="text"
-                            ng-model="request.browser_text"
-                            placeholder="Browser name..."
-                            required
-                            ng-if="request.browser=='other'")
+                            .form-group.right-padding-med
+                                label.control-label Browser
+                                select.form-control.pull-left(ng-model="request.browser")
+                                    option(value="" selected disabled)
+                                    option(ng-repeat="browser in browser_selection track by browser.value" value="{{::browser.value}}") {{::browser.name}}
+                                input.form-control(
+                                name="browser_text"
+                                type="text"
+                                ng-model="request.browser_text"
+                                placeholder="Browser name..."
+                                required
+                                ng-if="request.browser=='other'")
                         .col-md-2.pull-left.top-padding-med
-                            label Version
-                            input.form-group.form-control(type="number" ng-model="request.browser_ver")
+                            .form-group
+                                label.control-label Version
+                                input.form-control(type="text", ng-model="request.browser_ver", ng-pattern="versionPattern")
+                        .clear-fix
 
                 #control_buttions.left-padding-lg.bottom-padding-lg.top-padding-lg
                     .col-md-4.pull-right
@@ -106,3 +118,4 @@
                         ) Clear form
                         | &nbsp;
                         a.btn.btn-default(href="/") Cancel
+                    .clear-fix
