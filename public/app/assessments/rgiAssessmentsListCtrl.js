@@ -17,20 +17,42 @@ angular.module('app')
         $scope.sort_options = [
             {value: 'country', text: 'Sort by Country'},
             {value: 'start_date', text: 'Sort by Date started'},
-            {value: 'status', text: 'Sort by Status'}];
+            {value: 'status', text: 'Sort by Status'}
+        ];
         $scope.sort_order = $scope.sort_options[0].value;
 
-        //var getUser = function(userId) {
-        //    return rgiUserListSrvc.getCached({_id: userId});
-        //};
+        $scope.statuses = {};
+        $scope.availableStatuses = [
+            'unassigned',
+            'assigned',
+            'assigned_researcher',
+            'assigned_reviewer',
+            'trial',
+            'trial_started',
+            'researcher_trial',
+            'reviewer_trial',
+            'trial_continue',
+            'trial_submitted',
+            'researcher_started',
+            'reviewer_started',
+            'submitted',
+            'resubmitted',
+            'under_review',
+            //'started',
+            //'review',
+            //'reassigned',
+            'approved'
+        ];
+        $scope.availableStatuses.sort();
 
         var getAssessments = function(criteria) {
             rgiAssessmentSrvc.query(criteria, function (assessments) {
                 $scope.assessments = [];
+                $scope.statuses = {};
 
                 assessments.forEach(function (assessment) {
-
                     $scope.assessments.push(assessment);
+                    $scope.statuses[assessment._id] = assessment.status;
 
                     if($scope.current_user.isExternalReviewer()) {
                         var assessmentId = assessment.assessment_ID;
@@ -74,5 +96,9 @@ angular.module('app')
             $scope.year = criteria.year;
             $scope.version = criteria.version;
             rgiDialogFactory.assessmentNew($scope);
+        };
+
+        $scope.setAssessmentStatus = function(assessmentId, status) {
+            rgiDialogFactory.setAssessmentStatus($scope, assessmentId, status);
         };
     });
