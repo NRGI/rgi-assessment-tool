@@ -61,10 +61,6 @@ public/vendor
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-#CI stuff
-#.shippable.yml
-#.travis.yml
-
 config.config
 
 #New relic
