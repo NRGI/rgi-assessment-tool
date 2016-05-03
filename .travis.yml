@@ -3,8 +3,8 @@ node_js:
   - '0.10'
 
 before_script:
-  - npm install
-  - bower install --allow-root
+  - npm install --dev
+  - bower install
   - npm install phantomjs -g
 
 script:
