@@ -59,7 +59,7 @@ build/Release
 
 #CI stuff
 shippable.yml
-travis.yml
+#travis.yml
 
 config.config
 
