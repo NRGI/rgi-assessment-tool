@@ -61,22 +61,23 @@ angular
 
         $scope.answerSave = function () {
             var new_answer_data = $scope.answer,
-                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags);
+                flag_check = rgiUtilsSrvc.flagCheck(new_answer_data.flags),
+                status = new_answer_data.status;
 
             if (new_answer_data.new_answer_selection) {
                 new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
             }
 
-            if (new_answer_data.status!=='flagged' && flag_check) {
-                new_answer_data.status = 'flagged';
-            } else if (new_answer_data.status==='flagged' && !flag_check) {
-                new_answer_data.status = 'saved';
-            } else if (new_answer_data.status==='assigned') {
-                new_answer_data.status = 'saved';
+            if (status!=='flagged' && flag_check) {
+                status = 'flagged';
+            } else if (status==='flagged' && !flag_check) {
+                status = 'saved';
+            } else if (status==='assigned') {
+                status = 'saved';
             }
 
             new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
-            updateAnswer(new_answer_data, 'saved', 'Answer saved');
+            updateAnswer(new_answer_data, status, 'Answer saved');
 
             // rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
             //     .then(function () {
