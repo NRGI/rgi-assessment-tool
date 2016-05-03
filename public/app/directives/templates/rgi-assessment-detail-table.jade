@@ -69,7 +69,7 @@ div(id="answers_div").bottom-padding-med
                                 ng-if="assessment.status!=='assigned'"
                                 href="/assessments/answer/{{::answer.answer_ID}}") View answer
                                 a.btn.center-block.btn-success(
-                                ng-if="assessmentg .status==='assigned'"
+                                ng-if="assessment.status==='assigned'"
                                 href="/assessments/answer/{{::answer.answer_ID}}") No data
                             td(ng-if="current_user.isSupervisor()")
                                 a.btn.center-block.btn-primary(
