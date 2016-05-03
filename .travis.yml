@@ -8,8 +8,8 @@ services:
 before_script:
   - npm install --dev
   - npm install -g bower
+  - npm install -g phantomjs
   - bower install
-  - npm install phantomjs -g
 
 
 script:
