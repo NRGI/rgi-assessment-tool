@@ -380,6 +380,17 @@ angular.module('app')
                     scope: scope
                 });
             },
+            setAssessmentStatus: function($scope, assessmentId, status) {
+                $scope.assessmentId = assessmentId;
+                $scope.newStatus = status;
+
+                ngDialog.open({
+                    template: 'partials/dialogs/assessments/assessment-status-dialog',
+                    controller: 'rgiAssessmentStatusDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope
+                });
+            },
             userEdit: function($scope) {
                 var scope = $scope;
                 scope.value = true;
