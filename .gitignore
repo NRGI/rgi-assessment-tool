@@ -74,4 +74,4 @@ newrelic_agent.log
 .elasticbeanstalk/*.global.yml
 
 npm-debug.log
-#/shippable/
+/shippable/
