@@ -9,6 +9,8 @@ before_script:
   - npm install --dev
   - npm install -g bower
   - bower install --allow-root
+  - npm install -g karma-phantomjs-launcher
+  - export PHANTOMJS_BIN=/usr/local/lib/node_modules/karma-phantomjs-launcher/node_modules/phantomjs/lib/phantom/bin/phantomjs
 #  - sudo npm install phantomjs-prebuilt -g
 
 script:
