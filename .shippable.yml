@@ -9,7 +9,7 @@ before_script:
   - npm install --dev
   - npm install -g bower
   - bower install --allow-root
-  - sudo npm install phantomjs-prebuilt -g
+#  - sudo npm install phantomjs-prebuilt -g
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
