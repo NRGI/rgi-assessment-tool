@@ -1,21 +1,30 @@
 language: node_js
+
+build_image: NRGI/rgi-assessment-tool:staging
+
 node_js:
   - '0.10'
 
-services:
-  - docker
+#services:
+#  - docker
 
-before_script:
+#env:
+#  - XUNIT_FILE=shippable/testresults/result.xml
+
+install:
   - npm install --dev
   - npm install -g bower
   - bower install
   - npm install phantomjs -g
 
-script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
+before_script:
+  - mkdir -p shippable/testresults
 
-on_success:
-    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+script:
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+
+#on_success:
+#    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
 
 
 
