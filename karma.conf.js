@@ -37,18 +37,21 @@ module.exports = function (config) {
             'public/app/app.js'
         ],
 
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['progress', 'junit', 'coverage'],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-
+            'public/app/**/*.js': ['coverage']
         },
 
-
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'junit'],
+        coverageReporter: {
+            type : 'html',
+            dir : 'shippable/codecoverage'
+        },
 
         // the default configuration
         junitReporter: {
