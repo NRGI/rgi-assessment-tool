@@ -11,13 +11,11 @@ node_js:
 #env:
 #  - XUNIT_FILE=shippable/testresults/result.xml
 
-install:
+before_script:
   - npm install --dev
   - npm install -g bower
   - bower install
   - npm install phantomjs -g
-
-before_script:
   - mkdir -p shippable/testresults
 
 script:
