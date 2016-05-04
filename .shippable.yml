@@ -8,9 +8,6 @@ node_js:
 #services:
 #  - docker
 
-#env:
-#  - XUNIT_FILE=shippable/testresults/result.xml
-
 before_script:
   - npm install --dev
   - npm install -g bower
@@ -20,6 +17,9 @@ before_script:
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+
+after_success:
+  - echo 'success'
 
 #on_success:
 #    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
