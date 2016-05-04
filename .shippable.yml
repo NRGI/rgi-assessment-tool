@@ -14,6 +14,9 @@ before_script:
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
 
+on_success:
+    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+
 
 
 #language: node_js
