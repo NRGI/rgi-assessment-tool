@@ -5,8 +5,8 @@ language: node_js
 node_js:
   - '0.10'
 
-services:
-  - docker
+#services:
+#  - docker
 
 before_script:
   - npm install --dev
@@ -14,13 +14,14 @@ before_script:
   - bower install
   - npm install phantomjs -g
   - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
-after_success:
-  docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+#after_success:
+#  docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
 
 #on_success:
 #    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
