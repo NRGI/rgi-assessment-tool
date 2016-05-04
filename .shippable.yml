@@ -19,7 +19,7 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
 
 after_success:
-  - docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+  docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
 
 #on_success:
 #    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
