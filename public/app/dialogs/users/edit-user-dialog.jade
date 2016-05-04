@@ -15,6 +15,8 @@
                             type="text"
                             placeholder="First name..."
                             ng-model="new_user_data.firstName"
+                            ng-pattern="humanNamePattern"
+                            required
                             autocomplete="off")
                     .col-lg-2
                     .col-lg-5
@@ -26,6 +28,8 @@
                             type="text"
                             placeholder="Last name..."
                             ng-model="new_user_data.lastName"
+                            ng-pattern="humanNamePattern"
+                            required
                             autocomplete="off")
                 .row
                     .col-lg-5
@@ -35,7 +39,7 @@
                             input.form-control(
                             name="username"
                             type="text"
-                            ng-model="new_user_data.username"
+                            value="{{::new_user_data.username}}"
                             disabled)
                     .col-lg-2
                     .col-lg-5
@@ -44,9 +48,10 @@
                                 small Email:
                             input.form-control(
                             name="email"
-                            type="text"
+                            type="email"
                             placeholder="Email..."
                             ng-model="new_user_data.email"
+                            required
                             autocomplete="off")
                 .row
                     .col-lg-5
@@ -72,8 +77,12 @@
                                 small Password:
                             input.form-control(
                             name="password"
-                            type="text"
+                            type="password"
                             placeholder="New password..."
+                            ng-pattern="passwordPattern"
+                            ng-change="checkPasswordsMatch(false)"
+                            ng-keyup="checkPassword()"
+                            ng-paste="checkPassword()"
                             ng-model="password"
                             autocomplete="off")
                     .col-lg-2
@@ -82,13 +91,15 @@
                             label.control-label
                                 small Repeat Password:
                             input.form-control(
-                            name="password"
-                            type="text"
+                            name="password_rep"
+                            type="password"
+                            ng-change="checkPasswordsMatch(true)"
+                            ng-disabled="profileForm.password.$invalid || (password === undefined) || (password.length === 0)"
                             placeholder="Repeat password..."
                             ng-model="password_rep"
                             autocomplete="off")
     .modal-footer
         .col-lg-6
-            button.btn.btn-block.btn-success(ng-click="updateUser()") Save
+            button.btn.btn-block.btn-success(ng-click="update()", ng-disabled="profileForm.$invalid") Save
         .col-lg-6
             button.btn.btn-block.btn-danger(ng-click="closeThisDialog()") Cancel
