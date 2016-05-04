@@ -58,7 +58,7 @@ public/vendor
 build/Release
 
 #CI stuff
-shippable.yml
+#.shippable.yml
 #.travis.yml
 
 config.config
