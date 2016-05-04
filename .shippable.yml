@@ -1,6 +1,6 @@
 language: node_js
 
-build_image: NRGI/rgi-assessment-tool:staging
+#build_image: NRGI/rgi-assessment-tool:staging
 
 node_js:
   - '0.10'
