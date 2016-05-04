@@ -1,106 +1,37 @@
 language: node_js
 
-#build_image: NRGI/rgi-assessment-tool:staging
+#build_image: nrgi/rgi-assessment-tool:staging
 
 node_js:
   - '0.10'
 
-#services:
-#  - docker
+build:
+  pre_ci:
+    - docker build -t nrgi/rgi-assessment-tool:staging .
+  pre_ci_boot:
+    image_name: nrgi/rgi-assessment-tool
+    image_tag: staging
+    pull: false
 
-before_script:
-  - npm install --dev
-  - npm install -g bower
-  - bower install
-  - npm install phantomjs -g
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
-
-#build:
-#    on_success:
-#        docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
-##        docker push manishas/prodImage:$BRANCH.$BUILD_NUMBER
-
-#after_success:
-#  docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
-
-#on_success:
-#    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+  ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - npm install --dev
+    - npm install phantomjs -g
+    - npm install -g bower
+    - bower install
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
 
-
-#language: node_js
-#node_js:
-#  - '0.10'
-#
-#services:
-#  - docker
-#
 #before_script:
 #  - npm install --dev
-#  - npm install -g phantomjs-prebuilt
 #  - npm install -g bower
-#  - bower install --allow-root
-##  - npm install -g karma-phantomjs-launcher
-##  - export PHANTOMJS_BIN=/usr/local/lib/node_modules/karma-phantomjs-launcher/node_modules/phantomjs/lib/phantom/bin/phantomjs
-##  - sudo npm install phantomjs-prebuilt -g
-#
-##script:
-##  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
+#  - bower install
+#  - npm install phantomjs -g
+#  - mkdir -p shippable/testresults
+#  - mkdir -p shippable/codecoverage
+
 #script:
-#  - npm test
-#build:
-#  on_success:
-#    - docker build -t NRGI/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
-
-#build:
-#  pre_ci:
-#    - npm install --dev
-#    - npm install -g bower
-#    - bower install
-#    - npm install phantomjs -g
-#  ci:
-#    - mkdir -p shippable/testresults
-#    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
-
-
-#language: node_js
-#node_js:
-#- '0.10'
-#
-## include
-#branches:
-#  only:
-#    - master
-#
-#before_install:
-#  - sudo pip install awsebcli
-#
-#env:
-#  global:
-#    - AWSAccessKeyId=AKIAIDN5JLKAF6E3B4RQ
-#    - secure: FYcgiDGNOwX5VxJmvJyL2WG3UX1nFUOiRY6KO71ZyUd95RKGQnHNXOVErnR7DOzz5Z4lXhHf3vuHB773Lk8+MFqcfP8eOk817UrbT+2Kqt2P6PddeIxyaXWnakWG3B3PLi0wqeXA9njK9TMiJCJLh9g9EivMl3DyWylv0Mbqp8duixe67GyL1LAnY3yHOqY10nFNVH3X3sASwp2QhSaBiX8iwLhDGtGceHyNUBot+oKyhD3m4C7gVA88LydCjmteUaoQhE7Xjbi1FMli+CjUu0ARzOoJy7nh86PdtRxMjixhOzy3ygBLVUEUn7utjlRqFIpChzggOanOVqZz1IYE1g==
-#    - USER_DEV_ID=cperry
-#    - secure: JkpVsgu4gufliMVKVgTylqglBrepZcPoM+IxJMjlO8qBRPTtHicAtMyDclamc1DfCsm3OuzXWwnOdH9D4/qxm4qjYTHl0DiCNsQlFpkw2D/e628+bOx4aLK23Ge5ZHpyurwQntChDSZGttWyBfKKQ9BLWgZ6jOfcsungCIaH0xIFK0FnDDoOvdlhqET+etvxSjcc7arkI0JwjO/dDo51vhfpxkqjxaAvcmRucovj8QDwRtdSjMh62NYM9JuoeW8jN/5+z7xkiVqHSxpNVpHpgVxVuq1qyjhRDgAYup4cNH4zNDWqG/R7CKAnQfGN4eXI7rDnVaqM9aXQHZdtSIwOaA==
-#
-#before_script:
-#  - mkdir -p ~/.aws
-#  - echo '[profile eb-cli]' > ~/.aws/config
-#  - echo $AWSAccessKeyId
-#  - echo $AWSSecretKeys
-#  - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
-#  - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
-#  - npm install phantomjs --save
-#
-#script:
-#  - npm test
-#
-#after_success:
-#  - eb init && eb deploy rgi-assessment-tool-pr
-#  - eb setenv USER_DEV_ID=$USER_DEV_ID USER_DEV_KEY=$USER_DEV_KEY
-#
-#commit_container: byndcivilization/rgi-assessment-tool
+#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
