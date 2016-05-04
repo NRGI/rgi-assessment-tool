@@ -20,10 +20,10 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
-build:
-    on_success:
-        docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
-#        docker push manishas/prodImage:$BRANCH.$BUILD_NUMBER
+#build:
+#    on_success:
+#        docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
+##        docker push manishas/prodImage:$BRANCH.$BUILD_NUMBER
 
 #after_success:
 #  docker build -t nrgi/rgi-assessment-tool:$BRANCH.$BUILD_NUMBER
