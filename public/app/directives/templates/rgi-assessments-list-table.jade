@@ -44,7 +44,13 @@
                             text(ng-if="!$last") ,&nbsp;
                     div(ng-if="assessment.ext_reviewer_ID.length < 1")
                 //STATUS
-                td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}") {{assessment.status | addSpaces | ucfirst}}
+                td.col-sm-2(ng-if="!current_user.isSupervisor()") {{assessment.status | addSpaces | ucfirst}}
+                td.col-sm-1(ng-if="current_user.isSupervisor()")
+                    span(uib-dropdown)
+                        a(id="{{assessment.assessment_ID}}-dropdown", uib-dropdown-toggle) {{statuses[assessment._id]|addSpaces|ucfirst}}
+                        ul.uib-dropdown-menu(aria-labelledby="{{assessment.assessment_ID}}-dropdown")
+                            li(ng-repeat="status in availableStatuses")
+                                a(ng-click="setAssessmentStatus(assessment._id, status)") {{status|addSpaces|ucfirst}}
                 ////QUESTIONS COMPLETE
                 //td.col-md-1(ng-if="assessment.questions_complete !== assessment.question_length || assessment.status === 'submitted' || assessment.questions_flagged !== 0") {{assessment.status | ucfirst}}
                 //td.col-md-1(ng-if="assessment.status !== 'submitted' && assessment.questions_complete === assessment.question_length && assessment.questions_flagged === 0") Ready to submit
