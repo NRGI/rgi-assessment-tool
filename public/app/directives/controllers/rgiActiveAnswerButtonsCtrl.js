@@ -68,7 +68,7 @@ angular
                 new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
             }
 
-            if (status!=='flagged' && flag_check) {
+            if (status!=='flagged' && flag_check && $scope.current_user.isSupervisor()) {
                 status = 'flagged';
             } else if (status==='flagged' && !flag_check) {
                 status = 'saved';
