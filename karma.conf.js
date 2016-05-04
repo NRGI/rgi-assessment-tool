@@ -50,7 +50,7 @@ module.exports = function (config) {
 
         coverageReporter: {
             type : 'html',
-            dir : 'shippable/codecoverage'
+            dir : './shippable/codecoverage'
         },
 
         // the default configuration
