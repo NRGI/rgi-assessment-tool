@@ -7,7 +7,6 @@ angular.module('app')
         $rootScope,
         $location,
         rgiNotifier,
-        ngDialog,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc,
@@ -19,7 +18,6 @@ angular.module('app')
         rgiUtilsSrvc
     ) {
         var _ = $rootScope._;
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         $scope.disable_button = false;
         //TODO
@@ -49,33 +47,40 @@ angular.module('app')
         for (var yearIncrement = 0; yearIncrement < 6; yearIncrement++) {
             $scope.years.push(currentYear + yearIncrement);
         }
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
-        };
         // TODO remove country from countries scope when added to new assessments
-        $scope.countryAdd = function () {
-            $scope.new_assessment.assessment_countries.push({country: ""});
-            //var country_id = $scope.new_assessment.assessment_countries[$scope.new_assessment.assessment_countries.length - 2].country.iso2,
-            //    country_array = $scope.countries;
-            //
-            //for (var i = 0; i < country_array.length; i++) {
-            //    console.log(country_array[i].iso2);
-            ////    //if(country_array[i].iso2 == country_id) {
-            ////    //    country_array.splice(i, 1);
-            ////    //    break;
-            ////    //}
-            //}
+        $scope.addCountry = function () {
+            $scope.new_assessment.assessment_countries.push({country: ''});
         };
 
         $scope.getAvailableMinerals = function() {
             return rgiMineralGuideSrvc.list();
         };
 
-        $scope.countryDelete = function (index) {
+        $scope.deleteCountry = function (index) {
             $scope.new_assessment.assessment_countries.splice(index, 1);
         };
-        $scope.assessmentDeploy = function () {
+
+        $scope.deployAssessment = function () {
+            if($scope.new_assessment.year === undefined) {
+                return rgiNotifier.error('Please, select the assessment year');
+            } else if($scope.new_assessment.version === undefined) {
+                return rgiNotifier.error('Please, select the assessment version');
+            } else if(($scope.new_assessment.version === 'mining') && ($scope.new_assessment.mineral === undefined)) {
+                return rgiNotifier.error('Please, select the assessment mineral');
+            }
+
+            var countrySelected = true;
+
+            $scope.new_assessment.assessment_countries.forEach(function(countryData) {
+                if(!countryData.country) {
+                    countrySelected = false;
+                }
+            });
+
+            if(!countrySelected) {
+                return rgiNotifier.error('Please, select the assessment country');
+            }
+
             var new_assessment_ID, new_answer_set,
                 new_assessment_set = [],
                 new_assessment_year = String($scope.new_assessment.year),
@@ -120,7 +125,7 @@ angular.module('app')
                                 mineral: $scope.new_assessment.mineral,
                                 country: assessment_country.country.country,
                                 created: {
-                                    created_by: $scope.current_user._id,
+                                    created_by: rgiIdentitySrvc.currentUser._id,
                                     created_date: timestamp}
                             });
 
@@ -135,7 +140,7 @@ angular.module('app')
                                     version: new_assessment_ver,
                                     question_order: q.question_order,
                                     question_v: q.question_v + 1,
-                                    last_modified: {modified_by: $scope.current_user._id}
+                                    last_modified: {modified_by: rgiIdentitySrvc.currentUser._id}
                                 });
                             });
                             rgiAnswerMethodSrvc.insertAnswerSet(new_answer_set)
