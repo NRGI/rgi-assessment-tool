@@ -1,96 +1,93 @@
-div.left-padding-lg.right-padding-lg
-    div.modal-header
+.left-padding-lg.right-padding-lg
+    .modal-header
         h3 Edit User
-    div.modal-body
-        .form-horizontal
+    .modal-body
+        form.form-horizontal(name='profileForm')
             //USER EDIT
             fieldset
-                div
-                    .row
+                .row
+                    .col-lg-5
                         .form-group
-                            // FIRST NAME
-                            .pull-left.col-lg-6
-                                label
-                                    small First name:
-                                input.form-control(
-                                name="first_name"
-                                type="text"
-                                placeholder="First name..."
-                                ng-model="new_user_data.firstName"
-                                autocomplete="off")
-                            // LAST NAME
-                            .pull-left.col-lg-6
-                                label
-                                    small Last name:
-                                input.form-control(
-                                name="last_name"
-                                type="text"
-                                placeholder="Last name..."
-                                ng-model="new_user_data.lastName"
-                                autocomplete="off")
-                div
-                    .row
+                            label.control-label
+                                small First name:
+                            input.form-control(
+                            name="first_name"
+                            type="text"
+                            placeholder="First name..."
+                            ng-model="new_user_data.firstName"
+                            autocomplete="off")
+                    .col-lg-2
+                    .col-lg-5
                         .form-group
-                            // USERNAME
-                            .pull-left.col-lg-6
-                                label
-                                    small Username:
-                                input.form-control(
-                                name="username"
-                                type="text"
-                                ng-model="new_user_data.username"
-                                disabled)
-                            // EMAIL
-                            .pull-left.col-lg-6
-                                label
-                                    small Email:
-                                input.form-control(
-                                name="email"
-                                type="text"
-                                placeholder="Email..."
-                                ng-model="new_user_data.email"
-                                autocomplete="off")
-                div
-                    .row
+                            label.control-label
+                                small Last name:
+                            input.form-control(
+                            name="last_name"
+                            type="text"
+                            placeholder="Last name..."
+                            ng-model="new_user_data.lastName"
+                            autocomplete="off")
+                .row
+                    .col-lg-5
                         .form-group
-                            // ADDRESS
-                            .pull-left.col-lg-6
-                                label
-                                    small Address:
-                                input.form-control(
-                                name="address"
-                                type="text"
-                                placeholder="Address..."
-                                ng-model="new_user_data.address"
-                                autocomplete="off")
-                            // ORG
-                            .pull-left.col-lg-6
-                                label
-                                    small Role:
-                                select.form-group.form-control(ng-model="new_user_data.role" ng-options="role as (role|role|ucfirst) for role in roles")
-                div
-                    .row
+                            label.control-label
+                                small Username:
+                            input.form-control(
+                            name="username"
+                            type="text"
+                            ng-model="new_user_data.username"
+                            disabled)
+                    .col-lg-2
+                    .col-lg-5
                         .form-group
-                            // PASSWORD
-                            .pull-left.col-lg-6
-                                label
-                                    small Password:
-                                input.form-control(
-                                name="password"
-                                type="text"
-                                placeholder="New password..."
-                                ng-model="password"
-                                autocomplete="off")
-                            .pull-left.col-lg-6
-                                label
-                                    small
-                                input.form-control(
-                                name="password"
-                                type="text"
-                                placeholder="Repeat password..."
-                                ng-model="password_rep"
-                                autocomplete="off")
-    div.modal-footer
+                            label.control-label
+                                small Email:
+                            input.form-control(
+                            name="email"
+                            type="text"
+                            placeholder="Email..."
+                            ng-model="new_user_data.email"
+                            autocomplete="off")
+                .row
+                    .col-lg-5
+                        .form-group
+                            label.control-label
+                                small Address:
+                            input.form-control(
+                            name="address"
+                            type="text"
+                            placeholder="Address..."
+                            ng-model="new_user_data.address"
+                            autocomplete="off")
+                    .col-lg-2
+                    .col-lg-5
+                        .form-group
+                            label.control-label
+                                small Role:
+                            select.form-control(ng-model="new_user_data.role" ng-options="role as (role|role|ucfirst) for role in roles")
+                .row
+                    .col-lg-5
+                        .form-group
+                            label.control-label
+                                small Password:
+                            input.form-control(
+                            name="password"
+                            type="text"
+                            placeholder="New password..."
+                            ng-model="password"
+                            autocomplete="off")
+                    .col-lg-2
+                    .col-lg-5
+                        .form-group
+                            label.control-label
+                                small Repeat Password:
+                            input.form-control(
+                            name="password"
+                            type="text"
+                            placeholder="Repeat password..."
+                            ng-model="password_rep"
+                            autocomplete="off")
+    .modal-footer
         .col-lg-6
             button.btn.btn-block.btn-success(ng-click="userUpdate()") Save
         .col-lg-6
