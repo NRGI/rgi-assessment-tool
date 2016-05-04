@@ -3,6 +3,7 @@
 angular.module('app')
     .controller('rgiAssessmentsListCtrl', function (
         $scope,
+        $rootScope,
         $routeParams,
         rgiDialogFactory,
         rgiAnswerSrvc,
@@ -91,6 +92,9 @@ angular.module('app')
         }
 
         getAssessments(criteria);
+        $rootScope.$on('REFRESH_ASSESSMENT_LIST', function() {
+            getAssessments(criteria);
+        });
 
         $scope.newAssessmentDialog = function () {
             $scope.year = criteria.year;

@@ -3,7 +3,7 @@
 angular.module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
-        $location,
+        $rootScope,
         $route,
         $q,
         ngDialog,
@@ -58,9 +58,9 @@ angular.module('app')
         var updateAssessment = function(notificationMessage) {
             rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
                 .then(function () {
-                    rgiNotifier.notify(notificationMessage);
-                    $location.path('/');
+                    $rootScope.$broadcast('REFRESH_ASSESSMENT_LIST');
                     $scope.closeThisDialog();
+                    rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
