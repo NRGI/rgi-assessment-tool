@@ -49,7 +49,8 @@ module.exports = function (config) {
         },
 
         coverageReporter: {
-            type : 'html',
+            type : 'cobertura',
+            // type : 'html',
             dir : './shippable/codecoverage'
         },
 
