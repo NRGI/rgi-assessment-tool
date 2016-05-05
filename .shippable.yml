@@ -47,4 +47,4 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
 after_success:
-  - echo 'success'
+  - docker ps
