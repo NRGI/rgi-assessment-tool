@@ -52,5 +52,9 @@ script:
 
 after_success:
   - sudo docker build -t nrgi/rgi-assessment-tool:staging .
+  - sudo docker push nrgi/rgi-assessment-tool:staging
 
-commit_container: nrgi/rgi-assessment-tool
+integrations:
+    hub:
+      - integrationName: nrgiDockerHub
+        type: docker
