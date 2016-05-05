@@ -14,7 +14,7 @@ build:
     - mkdir -p shippable/codecoverage
     - sudo npm install -g phantomjs
     - sudo npm install -g bower
-    - sudo npm install --dev
+#    - sudo npm install --dev
     - bower install
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
