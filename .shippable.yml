@@ -8,15 +8,12 @@ node_js:
 build:
   pre_ci:
     - docker build -t nrgi/rgi-assessment-tool:staging .
-#  pre_ci_boot:
-#    image_name: nrgi/rgi-assessment-tool
-#    image_tag: staging
-#    pull: foreveralse
 
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - npm install --dev
+#    - npm install --dev
+    - npm install
     - npm install phantomjs -g
     - npm install -g bower
     - bower install
