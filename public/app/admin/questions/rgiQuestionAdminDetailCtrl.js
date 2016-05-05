@@ -10,7 +10,8 @@ angular.module('app')
         rgiNotifier,
         rgiPreceptGuideSrvc,
         rgiQuestionMethodSrvc,
-        rgiQuestionSrvc
+        rgiQuestionSrvc,
+        rgiSortableGuideSrvc
     ) {
         $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
         $scope.page_type = 'question';
@@ -91,4 +92,10 @@ angular.module('app')
         $scope.deleteConfirmDialog = function () {
             rgiDialogFactory.questionDelete($scope);
         };
+
+        $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(function() {
+            $scope.question.question_criteria.forEach(function(criterion, index) {
+                criterion.order = index + 1;
+            });
+        });
     });
