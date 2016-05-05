@@ -11,7 +11,6 @@ before_script:
   - npm install -g phantomjs
   - bower install
 
-build:
-  ci:
-    - mkdir -p shippable/testresults
-    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters html
+
+script:
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
