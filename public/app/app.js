@@ -4,6 +4,7 @@ angular.module('app', [
     'angularFileUpload',
     'angular-underscore',
     'angucomplete',
+    'as.sortable',
     'infinite-scroll',
     'ng-form-group',
     'ngCsv',
