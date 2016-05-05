@@ -39,12 +39,13 @@ node_js:
 
 
 before_script:
+  - sudo docker build -t nrgi/rgi-assessment-tool:staging .
   - npm install --dev
   - npm install -g bower phantomjs
   - bower install
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
-  - docker build -t nrgi/rgi-assessment-tool:staging .
+
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
