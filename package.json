@@ -47,6 +47,27 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "chai": "^1.9.1"
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-chai-plugins": "^0.7.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-htmlfile-reporter": "^0.2.2",
+    "karma-junit-reporter": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^1.0.0",
+    "load-grunt-tasks": "^3.5.0",
+    "mocha": "^2.4.5",
+    "protractor": "^3.3.0"
   }
 }
