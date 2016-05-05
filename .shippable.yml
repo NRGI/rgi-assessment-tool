@@ -3,39 +3,10 @@ language: node_js
 node_js:
   - 0.10
 
-#branches:
-#  only:
-#    - staging
-#    - master
-
-#build:
-#  pre_ci:
-#    - sudo npm install --dev
-##    - docker build -t nrgi/rgi-assessment-tool:staging .
-#
-#
-#  ci:
-#    - mkdir -p shippable/testresults
-#    - mkdir -p shippable/codecoverage
-#    - sudo npm install -g phantomjs
-#    - sudo npm install -g bower
-##    - sudo npm install --dev
-#    - bower install --allow-root
-#    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-#    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
-
-#  post_ci:
-#          #Commit the container only if you want all the artifacts from the CI step
-#          - docker commit $SHIPPABLE_CONTAINER_NAME manishas/sample-node:tag
-#          - docker push manishas/sample-node:tag
-#
-#integrations:
-#  hub:
-#    - integrationName: your_integration_name
-#      type: docker
-#      branches:
-#        only:
-#          - master
+branches:
+  only:
+    - staging
+    - master
 
 
 before_script:
