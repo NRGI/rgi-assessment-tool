@@ -39,7 +39,6 @@ node_js:
 
 
 before_script:
-  - sudo docker build -t nrgi/rgi-assessment-tool:staging .
   - npm install --dev
   - npm install -g bower phantomjs
   - bower install
@@ -51,6 +50,7 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
-commit_container: nrgi/rgi-assessment-tool
-#after_success:
-#  - docker ps
+after_success:
+  - sudo docker build -t nrgi/rgi-assessment-tool:staging .
+
+#commit_container: nrgi/rgi-assessment-tool
