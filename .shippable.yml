@@ -12,12 +12,25 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - sudo npm install phantomjs -g
+    - sudo npm install -g phantomjs
     - sudo npm install -g bower
     - sudo npm install --dev
     - bower install
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+
+#  post_ci:
+#          #Commit the container only if you want all the artifacts from the CI step
+#          - docker commit $SHIPPABLE_CONTAINER_NAME manishas/sample-node:tag
+#          - docker push manishas/sample-node:tag
+#
+#integrations:
+#  hub:
+#    - integrationName: your_integration_name
+#      type: docker
+#      branches:
+#        only:
+#          - master
 
 
 #before_script:
