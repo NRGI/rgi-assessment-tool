@@ -12,7 +12,7 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - npm install phantomjs -g
+    - sudo npm install phantomjs -g
     - npm install -g bower
     - npm install --dev
     - bower install
