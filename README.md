@@ -1,6 +1,8 @@
 RGI Assessment Tool
 ===================
 [![Run Status](https://api.shippable.com/projects/55159b755ab6cc1352ad63c5/badge?branch=master)](https://app.shippable.com/projects/55159b755ab6cc1352ad63c5)
+
+[![Coverage Badge](https://api.shippable.com/projects/55159b755ab6cc1352ad63c5/coverageBadge?branch=master)](https://app.shippable.com/projects/55159b755ab6cc1352ad63c5)
 ##Summary
 ***
 This tool is a custom webapp build on Node.js, Express and Angular. It is connected on the back-end to to a MongoDB instance.
