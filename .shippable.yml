@@ -4,10 +4,9 @@ node_js:
   - 0.10
 
 branches:
-  only:
-    - staging
-    - master
-
+  only:
+    - staging
+    - master
 
 before_script:
   - npm install --dev
