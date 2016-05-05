@@ -1,6 +1,8 @@
 language: node_js
 
 #build_image: nrgi/rgi-assessment-tool:staging
+services:
+  - docker
 
 node_js:
   - '0.10'
