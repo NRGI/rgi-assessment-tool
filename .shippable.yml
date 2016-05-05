@@ -53,4 +53,4 @@ script:
 after_success:
   - sudo docker build -t nrgi/rgi-assessment-tool:staging .
 
-#commit_container: nrgi/rgi-assessment-tool
+commit_container: nrgi/rgi-assessment-tool
