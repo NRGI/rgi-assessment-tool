@@ -12,10 +12,9 @@ build:
   ci:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-#    - npm install --dev
-    - npm install
     - npm install phantomjs -g
     - npm install -g bower
+    - npm install --dev
     - bower install
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
     - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
