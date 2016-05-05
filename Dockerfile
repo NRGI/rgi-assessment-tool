@@ -16,7 +16,7 @@ RUN		yum install -y git \
                        libstdc++.so.6 \
                        urw-fonts
 
-RUN		npm install -g bower
+RUN		npm install -g bower forever
 
 #Install Phantom JS
 RUN     wget http://phantomjs.googlecode.com/files/phantomjs-1.8.1-linux-x86_64.tar.bz2 -O /usr/local/share/phantomjs-1.8.1-linux-x86_64.tar.bz2 && ls /usr/local/share
