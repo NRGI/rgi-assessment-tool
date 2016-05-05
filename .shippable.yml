@@ -3,10 +3,10 @@ language: node_js
 node_js:
   - 0.10
 
-branches:
-  only:
-    - staging
-    - master
+#branches:
+#  only:
+#    - staging
+#    - master
 
 #build:
 #  pre_ci:
