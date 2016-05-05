@@ -92,43 +92,35 @@
                                     ng-if="linkedQuestion.question_criteria.length > 0"
                                     ng-model="question.linkedOption"
                                     ng-options="item._id as item.text|limitTo:80 for item in linkedQuestion.question_criteria")
-                        .row: div(id="question_options_div").row-fluid.top-padding-med
+                        .row(data-as-sortable="sortableOptions", data-ng-model="question.question_criteria"): div(id="question_options_div").row-fluid.top-padding-med
                             .row.top-padding-lg
-                                .col-md-1: b: p.text-right Option Order
                                 .col-md-1: b: p.text-right Option Value
                                 .col-md-1: b: p.text-right Option Letter
-                                .col-md-8: b: p Option Text
-                            .row.form-group(
-                            name="question_options_form"
-                            ng-repeat="choice in question.question_criteria")
-                                .col-md-1
-                                    input.form-control(
-                                    name="choiceOrder"
-                                    type="number"
-                                    ng-model="choice.order"
-                                    required)
-                                .col-md-1
-                                    input.form-control(
-                                    name="choiceValue"
-                                    type="number"
-                                    ng-model="choice.value"
-                                    required)
-                                .col-md-1
-                                    input.form-control(
-                                    name="choiceLabel"
-                                    ng-model="choice.letter"
-                                    required)
-                                .col-md-8
-                                    textarea.form-control(
-                                    name="choice"
-                                    type="textbox"
-                                    placeholder="Enter text"
-                                    ng-model="choice.text"
-                                    required)
-                                .col-md-1
-                                    button.btn.btn-danger(
-                                    ng-click="questionOptionDelete($index)"
-                                    ng-disabled="question.question_choices.length==1") Delete
+                                .col-md-9: b: p Option Text
+                            .row.form-group.sortable-item(name="question_options_form", ng-repeat="choice in question.question_criteria", data-as-sortable-item)
+                                div(data-as-sortable-item-handle)
+                                    .col-md-1
+                                        input.form-control(
+                                        name="choiceValue"
+                                        type="number"
+                                        ng-model="choice.value"
+                                        required)
+                                    .col-md-1
+                                        input.form-control(
+                                        name="choiceLabel"
+                                        ng-model="choice.letter"
+                                        required)
+                                    .col-md-9
+                                        textarea.form-control(
+                                        name="choice"
+                                        type="textbox"
+                                        placeholder="Enter text"
+                                        ng-model="choice.text"
+                                        required)
+                                    .col-md-1
+                                        button.btn.btn-danger(
+                                        ng-click="questionOptionDelete($index)"
+                                        ng-disabled="question.question_choices.length==1") Delete
                         .row: div.row-fluid.right-padding-lg.left-padding-lg.bottom-padding-lg.top-padding-med
                             .pull-right
                                 button.btn.btn-success(ng-click="questionOptionAdd()") Add Option
