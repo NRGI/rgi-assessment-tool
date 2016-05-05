@@ -1,11 +1,12 @@
 language: node_js
 
-#build_image: nrgi/rgi-assessment-tool:staging
-services:
-  - docker
-
 node_js:
-  - '0.10'
+  - 0.10
+
+branches:
+  only:
+    - staging
+    - master
 
 #build:
 #  pre_ci:
@@ -48,5 +49,6 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
-after_success:
-  - docker ps
+commit_container: nrgi/rgi-assessment-tool
+#after_success:
+#  - docker ps
