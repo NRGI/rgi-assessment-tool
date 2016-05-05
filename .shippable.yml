@@ -8,6 +8,7 @@ node_js:
 build:
   pre_ci:
     - docker build -t nrgi/rgi-assessment-tool:staging .
+    - sudo npm install --dev
 
   ci:
     - mkdir -p shippable/testresults
