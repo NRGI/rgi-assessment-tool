@@ -5,21 +5,21 @@ language: node_js
 node_js:
   - '0.10'
 
-build:
-  pre_ci:
-    - sudo npm install --dev
-#    - docker build -t nrgi/rgi-assessment-tool:staging .
-
-
-  ci:
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-    - sudo npm install -g phantomjs
-    - sudo npm install -g bower
+#build:
+#  pre_ci:
 #    - sudo npm install --dev
-    - bower install --allow-root
-    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+##    - docker build -t nrgi/rgi-assessment-tool:staging .
+#
+#
+#  ci:
+#    - mkdir -p shippable/testresults
+#    - mkdir -p shippable/codecoverage
+#    - sudo npm install -g phantomjs
+#    - sudo npm install -g bower
+##    - sudo npm install --dev
+#    - bower install --allow-root
+#    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+#    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
 #  post_ci:
 #          #Commit the container only if you want all the artifacts from the CI step
@@ -35,14 +35,14 @@ build:
 #          - master
 
 
-#before_script:
-#  - npm install --dev
-#  - npm install -g bower
-#  - bower install
-#  - npm install phantomjs -g
-#  - mkdir -p shippable/testresults
-#  - mkdir -p shippable/codecoverage
+before_script:
+  - npm install --dev
+  - npm install -g bower
+  - bower install
+  - npm install phantomjs -g
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
 
-#script:
-#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+script:
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
