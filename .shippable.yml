@@ -37,12 +37,14 @@ node_js:
 
 before_script:
   - npm install --dev
-  - npm install -g bower
+  - npm install -g bower phantomjs
   - bower install
-  - npm install phantomjs -g
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+
+after_success:
+  - echo 'success'
