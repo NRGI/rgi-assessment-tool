@@ -76,7 +76,6 @@ describe('rgiProfileCtrl', function () {
 
                 beforeEach(function () {
                     $routeMock = sinon.mock($route);
-                    $routeMock.expects('reload');
 
                     userMethodUpdateCurrentUserSpy = sinon.spy(function() {
                         return {
@@ -86,10 +85,12 @@ describe('rgiProfileCtrl', function () {
                         };
                     });
                     userMethodUpdateCurrentUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateCurrentUserSpy);
-                    notifierMock.expects('notify').withArgs('Your user account has been updated');
                 });
 
                 it('submits user data without password if the password is not set', function() {
+                    $routeMock.expects('reload');
+                    notifierMock.expects('notify').withArgs('Your user account has been updated');
+
                     $scope.password = '';
                     $scope.update();
                     userMethodUpdateCurrentUserSpy.withArgs({
@@ -104,14 +105,13 @@ describe('rgiProfileCtrl', function () {
                     $scope.password_rep = ' ANOTHER PASSWORD';
                     notifierMock.expects('error').withArgs('Passwords must match!');
                     $scope.update();
-                    userMethodUpdateCurrentUserSpy.withArgs({
-                        firstName: $scope.current_user.firstName,
-                        lastName: $scope.current_user.lastName,
-                        email: $scope.current_user.email
-                    }).called.should.be.equal(true);
+                    userMethodUpdateCurrentUserSpy.called.should.be.equal(false);
                 });
 
                 it('submits user data (including password) if the passwords match', function() {
+                    $routeMock.expects('reload');
+                    notifierMock.expects('notify').withArgs('Your user account has been updated');
+
                     $scope.password = 'PASSWORD';
                     $scope.password_rep = 'PASSWORD';
                     $scope.update();
