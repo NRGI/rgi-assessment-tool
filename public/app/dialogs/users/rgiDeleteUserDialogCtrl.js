@@ -4,28 +4,21 @@ angular.module('app')
     .controller('rgiDeleteUserDialogCtrl', function (
         $scope,
         $location,
-        ngDialog,
         rgiUserMethodSrvc,
-        rgiNotifier,
-        rgiIdentitySrvc
+        rgiNotifier
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.userDelete = function () {
-            var user_deletion = $scope.$parent.user;
+        $scope.deleteUser = function () {
+            var user = $scope.$parent.user;
 
-            if (user_deletion.assessments.length > 0) {
+            if (user.assessments.length > 0) {
                 rgiNotifier.error('You cannot delete a user with an assigned assessment!');
             } else {
-                rgiUserMethodSrvc.deleteUser(user_deletion._id).then(function () {
-                    $scope.closeDialog();
+                rgiUserMethodSrvc.deleteUser(user._id).then(function () {
                     $location.path('/admin/user-admin');
                     rgiNotifier.notify('User account has been deleted');
                 }, function (reason) {
                     rgiNotifier.error(reason);
-                });
+                }).finally($scope.closeThisDialog);
             }
-        };
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
