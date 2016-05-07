@@ -1,8 +1,8 @@
 .container-fluid.page-container
     .well
-        div.page-well
+        .page-well(ng-if="user._id !== undefined")
             legend.h3.page-header {{user.firstName}} {{user.lastName}}'s Profile
-            div.left-padding-lg.right-padding-lg
+            .left-padding-lg.right-padding-lg
                 .row-fluid
                     button.btn.btn-warning(ng-click="editUserDialog()") Edit user
                     | &nbsp;
@@ -29,7 +29,7 @@
                                         a(href="/admin/documents-admin/{{document._id}}") {{document.title}}
                 .row-fluid.col-md-3(ng-if="user.isExternalReviewer()")
                     button.btn.btn-block.btn-primary(ng-click="addToAssessment()") Add to assessment
-            div.left-padding-lg.right-padding-lg
+            .left-padding-lg.right-padding-lg
                 .top-padding-lg(ng-if="user.isExternalReviewer()")
                 h3 Information
                 .row-fluid.right-padding-med.left-padding-med
@@ -71,6 +71,6 @@
                                         text {{user.address}}
                                     .row(ng-if="!user.address")
                                         text N/A
-            div.left-padding-lg.right-padding-lg
+            .left-padding-lg.right-padding-lg
                 h3 Login info
                 rgi-auth-logs(user="user")
