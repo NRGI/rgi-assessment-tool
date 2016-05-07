@@ -10,11 +10,13 @@ var User                = require('mongoose').model('User'),
 
 exports.getUsers = function (req, res) {
     var query;
+
     if (req.user.hasRole('supervisor')) {
         query = User.find(req.query);
     } else {
         query = User.find(req.query).select({ "firstName": 1, "lastName": 1});
     }
+
     query.exec(function (err, collection) {
         res.send(collection);
     });
@@ -104,58 +106,53 @@ exports.createUser = function (req, res) {
         //next();
     });
 };
-//TODO deal with validation
+
 exports.updateUser = function (req, res) {
     var user_update = req.body;
 
     if (req.user._id != user_update._id && !req.user.hasRole('supervisor')) {
-        res.status(404);
+        res.status(403);
         return res.end();
     }
-
 
     User.findOne({_id: req.body._id}).exec(function (err, user) {
         if (err) {
             res.status(400);
-            return res.send({ reason: err.toString() });
-        }
-        if (user_update.password && user_update.password.length > 0) {
-            user.setPassword(user_update.password, function (err) {
+            res.send({ reason: err.toString() });
+        } else if(user === null) {
+            res.status(404);
+            res.send({reason: 'User not found'});
+        } else {
+            if (user_update.password && user_update.password.length > 0) {
+                user.setPassword(user_update.password, function (err) {
+                    if (err) {
+                        res.send({reason: err.toString()});
+                    }
+                });
+            }
+
+            user.firstName = user_update.firstName;
+            user.lastName = user_update.lastName;
+            user.email = user_update.email;
+            user.address = user_update.address;
+            user.language = user_update.language;
+            user.assessments = user_update.assessments;
+            user.documents = user_update.documents;
+            user.interviewees = user_update.interviewees;
+
+            user.save(function (err) {
                 if (err) {
-                    return res.send({reason: err.toString()});
+                    res.send({ reason: err.toString() });
                 }
             });
         }
-        user.firstName = user_update.firstName;
-        user.lastName = user_update.lastName;
-        user.email = user_update.email;
-        user.address = user_update.address;
-        user.language = user_update.language;
-        user.assessments = user_update.assessments;
-        user.documents = user_update.documents;
-        user.interviewees = user_update.interviewees;
-
-        user.save(function (err) {
-            if (err) {
-                return res.send({ reason: err.toString() });
-            }
-        });
     });
-    res.send();
 };
 
 //TODO send deleted user information to 'purgatory for a period in case admin needs to undo
 //TODO remove associated data
 exports.deleteUser = function (req, res) {
-    var user_delete = req.body,
-        contact_packet = {};
-
     User.remove({_id: req.params.id}, function (err) {
-        if (!err) {
-            res.send();
-        } else {
-            return res.send({ reason: err.toString() });
-        }
+        res.send(err ? {reason: err.toString()} : undefined);
     });
-    res.send();
 };
