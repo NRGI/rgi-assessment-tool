@@ -25,12 +25,13 @@ angular.module('app')
             }
         };
 
-        $scope.$watch('user', function(user) {
+        var stopWatch = $scope.$watchCollection('user', function(user) {
             if((user === undefined) || (user._id === undefined)) {
                 return;
             }
 
             userId = user._id;
+            stopWatch();
 
             rgiAuthLogsSrvc.getTotalNumber(userId).then(function (logsNumberResponse) {
                 if(logsNumberResponse.data.error) {
@@ -42,5 +43,5 @@ angular.module('app')
             }, function() {
                 rgiNotifier.error('Auth logs loading failure');
             });
-        }, true);
+        });
     });
