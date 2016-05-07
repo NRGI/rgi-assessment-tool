@@ -39,11 +39,10 @@ angular.module('app')
         var updateUser = function(userData) {
             rgiUserMethodSrvc.updateUser(userData).then(function () {
                 rgiNotifier.notify('User account has been updated');
-                $scope.closeThisDialog();
                 $route.reload();
             }, function (reason) {
                 rgiNotifier.error(reason);
-            });
+            }).finally($scope.closeThisDialog);
         };
 
         $scope.update = function () {
