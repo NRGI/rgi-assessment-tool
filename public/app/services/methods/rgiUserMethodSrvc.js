@@ -3,6 +3,7 @@
 angular.module('app')
     .factory('rgiUserMethodSrvc', function (
         $q,
+        rgiHttpResponseProcessorSrvc,
         rgiUserSrvc
     ) {
         var
@@ -13,11 +14,16 @@ angular.module('app')
             manipulateUser = function(user, action, formatErrorMessage) {
                 var dfd = $q.defer();
 
-                user[action]().then(function () {
-                    dfd.resolve();
+                user[action]().then(function (response) {
+                    if(response.data.reason) {
+                        var errorMessage = response.data.reason;
+                        dfd.reject(formatErrorMessage ? getFormattedErrorMessage(errorMessage) : errorMessage);
+                    } else {
+                        dfd.resolve();
+                    }
                 }, function (response) {
-                    var errorMessage = response.data.reason;
-                    dfd.reject(formatErrorMessage ? getFormattedErrorMessage(errorMessage) : errorMessage);
+                    dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response));
+                    rgiHttpResponseProcessorSrvc.handle(response);
                 });
 
                 return dfd.promise;
