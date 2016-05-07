@@ -6,16 +6,10 @@ angular.module('app')
         $location,
         rgiNotifier,
         rgiUserMethodSrvc,
+        AVAILABLE_ROLES_SET,
         HUMAN_NAME_PATTERN
     ) {
-        $scope.role_options = [
-            //{value: 'admin', text: 'Administrator'},
-            {value: 'supervisor', text: 'Supervisor'},
-            {value: 'researcher', text: 'Researcher'},
-            {value: 'reviewer', text: 'Reviewer'},
-            {value: 'ext_reviewer', text: 'External Reviewer'}
-        ];
-
+        $scope.roles = AVAILABLE_ROLES_SET;
         $scope.new_user_data = {};
         $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 

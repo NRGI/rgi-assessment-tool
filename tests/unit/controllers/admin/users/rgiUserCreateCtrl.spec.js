@@ -18,12 +18,7 @@ describe('rgiUserCreateCtrl', function () {
     ));
 
     it('initializes role options', function () {
-        $scope.role_options.should.deep.equal([
-            {value: 'supervisor', text: 'Supervisor'},
-            {value: 'researcher', text: 'Researcher'},
-            {value: 'reviewer', text: 'Reviewer'},
-            {value: 'ext_reviewer', text: 'External Reviewer'}
-        ]);
+        $scope.roles.should.deep.equal(['supervisor', 'researcher', 'reviewer', 'ext_reviewer']);
     });
 
     describe('#userCreate', function () {

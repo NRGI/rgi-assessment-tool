@@ -6,11 +6,12 @@ angular.module('app')
         $timeout,
         rgiNotifier,
         rgiUserMethodSrvc,
+        AVAILABLE_ROLES_SET,
         HUMAN_NAME_PATTERN,
         PASSWORD_PATTERN
     ) {
         $scope.new_user_data = $scope.$parent.user;
-        $scope.roles = ['supervisor', 'researcher', 'reviewer', 'ext_reviewer'];
+        $scope.roles = AVAILABLE_ROLES_SET;
 
         $scope.humanNamePattern = HUMAN_NAME_PATTERN;
         $scope.passwordPattern = PASSWORD_PATTERN;

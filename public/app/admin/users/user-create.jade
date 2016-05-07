@@ -90,7 +90,7 @@
                                 name="role"
                                 id="createUserForm.role"
                                 ng-model="new_user_data.role"
-                                ng-options="item.value as item.text for item in role_options"
+                                ng-options="role as (role|role|ucfirst) for role in roles"
                                 required)
                                     option(value="" selected disabled) Select role...
                         .form-group
