@@ -10,7 +10,13 @@ angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
                 case 403:
                     return 'Please, re-login';
                 default:
-                    return 'Unknown error occurred';
+                    if(response.data.reason !== undefined) {
+                        return response.data.reason;
+                    } else if(response.data.length > 0) {
+                        return response.data;
+                    } else {
+                        return 'Unknown error occurred';
+                    }
             }
         },
         handle: function(response) {

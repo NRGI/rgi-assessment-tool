@@ -1,6 +1,6 @@
 'use strict';
 
-describe('rgiPatternSet', function () {
+describe('rgiHttpResponseProcessorSrvc', function () {
     var rgiHttpResponseProcessorSrvc,
         $location, rgiIdentitySrvc;
 
@@ -17,9 +17,23 @@ describe('rgiPatternSet', function () {
             rgiHttpResponseProcessorSrvc.getMessage({status: 403}).should.be.equal('Please, re-login');
         });
 
-        it('returns the default message for unknown status', function() {
-            rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status'})
-                .should.be.equal('Unknown error occurred');
+        describe('UNKNOWN STATUS', function() {
+            it('returns the provided reason', function() {
+                var reason = 'REASON';
+                rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: {reason: reason}})
+                    .should.be.equal(reason);
+            });
+
+            it('returns the provided data if no reason is provided', function() {
+                var reason = 'REASON';
+                rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: reason})
+                    .should.be.equal(reason);
+            });
+
+            it('returns the default message if no error message provided', function() {
+                rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: ''})
+                    .should.be.equal('Unknown error occurred');
+            });
         });
     });
 
