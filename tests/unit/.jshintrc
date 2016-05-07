@@ -12,6 +12,7 @@
     "expect": false,
     "inject": false,
     "it": false,
+    "should": false,
     "sinon": false
   }
 }
