@@ -24,14 +24,6 @@ describe('rgiUserAdminDetailCtrl', function () {
         }
     ));
 
-    it('initializes role options', function () {
-        _.isEqual($scope.role_options, [
-            {value: 'supervisor', text: 'Supervisor'},
-            {value: 'researcher', text: 'Researcher'},
-            {value: 'reviewer', text: 'Reviewer'}
-        ]).should.be.equal(true);
-    });
-
     it('requires user data', function () {
         userGetSpy.withArgs({_id: userId}).called.should.be.equal(true);
     });
