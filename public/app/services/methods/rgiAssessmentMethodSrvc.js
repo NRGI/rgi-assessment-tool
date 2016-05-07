@@ -2,9 +2,7 @@
 
 angular.module('app')
     .factory('rgiAssessmentMethodSrvc', function (
-        $http,
         $q,
-        rgiIdentitySrvc,
         rgiAssessmentSrvc
     ) {
         return {
@@ -19,8 +17,8 @@ angular.module('app')
                 }, function (response) {
                     dfd.reject(response.data.reason);
                 });
-                return dfd.promise;
 
+                return dfd.promise;
             },
             //deleteAssessment: function (userDeletion) {
             //    var dfd = $q.defer();
