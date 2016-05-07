@@ -2,49 +2,38 @@
 
 angular.module('app')
     .factory('rgiUserMethodSrvc', function (
-        $http,
         $q,
-        rgiIdentitySrvc,
         rgiUserSrvc
     ) {
+        var
+            getFormattedErrorMessage = function(errorMessage) {
+                errorMessage = errorMessage.replace('ValidationError: ', '');
+                return errorMessage.charAt(0).toUpperCase() + errorMessage.slice(1);
+            },
+            manipulateUser = function(user, action, formatErrorMessage) {
+                var dfd = $q.defer();
+
+                user[action]().then(function () {
+                    dfd.resolve();
+                }, function (response) {
+                    var errorMessage = response.data.reason;
+                    dfd.reject(formatErrorMessage ? getFormattedErrorMessage(errorMessage) : errorMessage);
+                });
+
+                return dfd.promise;
+            };
+
         return {
-            createUser: function (new_user_data) {
-                var new_user = new rgiUserSrvc(new_user_data),
-                    dfd = $q.defer(),
-                    error_message;
-
-                new_user.$save().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    error_message = response.data.reason.replace('ValidationError: ', '');
-                    dfd.reject(error_message.charAt(0).toUpperCase() + error_message.slice(1));
-                });
-                return dfd.promise;
+            createUser: function (user) {
+                return manipulateUser(new rgiUserSrvc(user), '$save', true);
             },
-            deleteUser: function (userDeletion) {
-                var dfd = $q.defer(),
-                    deleteID = new rgiUserSrvc();
-
-                deleteID.id = userDeletion;
-
-                deleteID.$delete().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            deleteUser: function (userId) {
+                var user = new rgiUserSrvc();
+                user.id = userId;
+                return manipulateUser(user, '$delete', false);
             },
-            updateUser: function (new_user_data) {
-                var dfd = $q.defer(),
-                error_message;
-
-                new_user_data.$update().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    error_message = response.data.reason.replace('ValidationError: ', '');
-                    dfd.reject(error_message.charAt(0).toUpperCase() + error_message.slice(1));
-                });
-                return dfd.promise;
+            updateUser: function (user) {
+                return manipulateUser(user, '$update', true);
             }
         };
     });
