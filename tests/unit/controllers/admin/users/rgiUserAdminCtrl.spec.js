@@ -36,7 +36,7 @@ describe('rgiUserAdminCtrl', function () {
                     };
 
                     return detailsMap[assessment.assessment_ID];
-                }, assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'get', assessmentGetSpy);
+                }, assessmentGetStub = sinon.stub(rgiAssessmentSrvc, 'getCached', assessmentGetSpy);
             /*jshint unused: false*/
             /*jslint unparam: false*/
 

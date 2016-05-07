@@ -1,8 +1,8 @@
+'use strict';
+
 angular.module('app').factory('rgiAssessmentSrvc', function ($resource) {
-    'use strict';
-    var AssessmentResource = $resource('/api/assessments/:assessment_ID', {assessment_ID: '@assessment_ID'}, {
+    return $resource('/api/assessments/:assessment_ID', {assessment_ID: '@assessment_ID'}, {
+        getCached: {method: 'GET', isArray: false, cache: true},
         update: {method: 'PUT', isArray: false}
     });
-
-    return AssessmentResource;
 });
