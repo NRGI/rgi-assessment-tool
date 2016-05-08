@@ -9,9 +9,7 @@ angular.module('app')
         rgiAnswerSrvc,
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
-        rgiAssessmentRolesGuideSrvc,
         rgiIdentitySrvc
-        //rgiUserListSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         // filtering options

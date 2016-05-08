@@ -4,13 +4,12 @@ angular.module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
         $scope,
         $rootScope,
-        $route,
         $q,
         ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
-        rgiAssessmentRolesGuideSrvc,
+        ASSESSMENT_ROLES_SET,
         rgiIdentitySrvc,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc,
@@ -18,7 +17,7 @@ angular.module('app')
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         var originalAssessment = {};
-        $scope.assessmentRoles = _.without(rgiAssessmentRolesGuideSrvc.list(),'ext_reviewer');
+        $scope.assessmentRoles = _.without(ASSESSMENT_ROLES_SET,'ext_reviewer');
         $scope.availableUsers = {};
 
         $scope.assessmentRoles.forEach(function(role) {
