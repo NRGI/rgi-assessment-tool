@@ -106,9 +106,7 @@ describe('rgiUserMethodSrvc', function () {
 
             it('rejects the deferred if an error is got', function () {
                 expectedPromise = 'NEGATIVE';
-                var REJECTED_RESPONSE = {
-                    data: {reason: 'REJECT'}
-                };
+                var REJECTED_RESPONSE = {reason: 'REJECT'};
 
                 rgiUserSrvcStub = sinon.stub(rgiUserSrvc.prototype, '$save', function() {
                     return {
@@ -127,7 +125,7 @@ describe('rgiUserMethodSrvc', function () {
                 });
 
                 rgiUserMethodSrvc.createUser([expectedPromise]).should.be.equal(expectedPromise);
-                $qDeferSpy.should.have.been.calledWith(REJECTED_RESPONSE.data.reason);
+                $qDeferSpy.should.have.been.calledWith(REJECTED_RESPONSE.reason);
             });
         });
 
@@ -169,9 +167,7 @@ describe('rgiUserMethodSrvc', function () {
 
             it('resolves the deferred in positive case', function () {
                 expectedPromise = 'NEGATIVE';
-                var REJECTED_RESPONSE = {
-                    data: {reason: 'REJECT_INSERTION'}
-                };
+                var REJECTED_RESPONSE = {reason: 'REJECT_INSERTION'};
 
                 rgiUserSrvcStub = sinon.stub(rgiUserSrvc.prototype, '$delete', function() {
                     return {
@@ -190,7 +186,7 @@ describe('rgiUserMethodSrvc', function () {
                 });
 
                 rgiUserMethodSrvc.deleteUser([expectedPromise]).should.be.equal(expectedPromise);
-                $qDeferSpy.should.have.been.calledWith(REJECTED_RESPONSE.data.reason);
+                $qDeferSpy.should.have.been.calledWith(REJECTED_RESPONSE.reason);
             });
         });
 
@@ -247,7 +243,7 @@ describe('rgiUserMethodSrvc', function () {
                     $update: function () {
                         return {
                             then: function (callback) {
-                                callback({data: {reason: REASON}});
+                                callback({reason: REASON});
                             }
                         };
                     }

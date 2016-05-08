@@ -123,7 +123,7 @@ exports.updateUser = function (req, res) {
                 });
 
             user.save(function (saveError) {
-                res.send(saveError ? {reason: saveError.toString()} : undefined);
+                res.send(saveError ? {reason: saveError.toString()} : user);
             });
         };
 

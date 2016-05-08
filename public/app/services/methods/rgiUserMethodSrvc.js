@@ -14,9 +14,9 @@ angular.module('app')
             manipulateUser = function(user, action, formatErrorMessage) {
                 var dfd = $q.defer();
 
-                user[action]().then(function (response) {
-                    if(response.data.reason) {
-                        var errorMessage = response.data.reason;
+                user[action]().then(function (data) {
+                    if(data.reason) {
+                        var errorMessage = data.reason;
                         dfd.reject(formatErrorMessage ? getFormattedErrorMessage(errorMessage) : errorMessage);
                     } else {
                         dfd.resolve();
