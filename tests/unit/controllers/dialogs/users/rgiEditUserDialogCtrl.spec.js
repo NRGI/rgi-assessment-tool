@@ -51,28 +51,28 @@ describe('rgiEditUserDialogCtrl', function () {
 
         describe('INCOMPLETE DATA CASE', function() {
             it('shows an error message if the email is not set', function() {
-                $scope.user.email = '';
+                $scope.new_user_data.email = '';
                 notifierMock.expects('error').withArgs('You must enter an email address!');
             });
 
             it('shows an error message if the first name is not set', function() {
-                $scope.user.email = 'name@mail.com';
-                $scope.user.firstName = '';
+                $scope.new_user_data.email = 'name@mail.com';
+                $scope.new_user_data.firstName = '';
                 notifierMock.expects('error').withArgs('You must enter an first and last name!');
             });
 
             it('shows an error message if the last name is not set', function() {
-                $scope.user.email = 'name@mail.com';
-                $scope.user.firstName = 'FIRST NAME';
-                $scope.user.lastName = '';
+                $scope.new_user_data.email = 'name@mail.com';
+                $scope.new_user_data.firstName = 'FIRST NAME';
+                $scope.new_user_data.lastName = '';
                 notifierMock.expects('error').withArgs('You must enter an first and last name!');
             });
 
             it('shows an error message if the last name is not set', function() {
-                $scope.user.email = 'name@mail.com';
-                $scope.user.firstName = 'FIRST NAME';
-                $scope.user.lastName = 'LAST NAME';
-                $scope.user.role = undefined;
+                $scope.new_user_data.email = 'name@mail.com';
+                $scope.new_user_data.firstName = 'FIRST NAME';
+                $scope.new_user_data.lastName = 'LAST NAME';
+                $scope.new_user_data.role = undefined;
                 notifierMock.expects('error').withArgs('You must enter a role!');
             });
 
@@ -85,10 +85,10 @@ describe('rgiEditUserDialogCtrl', function () {
             var userMethodUpdateCurrentUserStub, userMethodUpdateCurrentUserSpy, finallySpy, expectedUpdateData,
                 getExpectedSubmittedData = function(includePassword) {
                     var submittedData = {
-                        firstName: $scope.user.firstName,
-                        lastName: $scope.user.lastName,
-                        email: $scope.user.email,
-                        role: $scope.user.role
+                        firstName: $scope.new_user_data.firstName,
+                        lastName: $scope.new_user_data.lastName,
+                        email: $scope.new_user_data.email,
+                        role: $scope.new_user_data.role
                     };
 
                     if(includePassword) {
@@ -102,10 +102,10 @@ describe('rgiEditUserDialogCtrl', function () {
                 };
 
             beforeEach(function () {
-                $scope.user.firstName = 'FIRST NAME';
-                $scope.user.lastName = 'LAST NAME';
-                $scope.user.email = 'EMAIL';
-                $scope.user.role = 'ROLE';
+                $scope.new_user_data.firstName = 'FIRST NAME';
+                $scope.new_user_data.lastName = 'LAST NAME';
+                $scope.new_user_data.email = 'EMAIL';
+                $scope.new_user_data.role = 'ROLE';
 
                 finallySpy = sinon.spy();
                 $scope.closeThisDialog = 'closeThisDialog';
@@ -174,7 +174,7 @@ describe('rgiEditUserDialogCtrl', function () {
                     });
                     userMethodUpdateCurrentUserStub = sinon.stub(rgiUserMethodSrvc, 'updateUser', userMethodUpdateCurrentUserSpy);
                     notifierMock.expects('error').withArgs(FAILURE_REASON);
-                    delete $scope.user.password;
+                    delete $scope.new_user_data.password;
                 });
 
                 it('submits updated user data', function() {

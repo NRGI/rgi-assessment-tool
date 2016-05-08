@@ -47,7 +47,7 @@ angular.module('app')
         };
 
         $scope.update = function () {
-            var new_user_data = $scope.user;
+            var new_user_data = $scope.new_user_data;
             if (!new_user_data.email) {
                 rgiNotifier.error('You must enter an email address!');
             } else if (!new_user_data.firstName || !new_user_data.lastName) {
