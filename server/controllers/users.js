@@ -115,36 +115,36 @@ exports.updateUser = function (req, res) {
         return res.end();
     }
 
-    User.findOne({_id: req.body._id}).exec(function (err, user) {
-        if (err) {
+    User.findOne({_id: req.body._id}).exec(function (findUserError, user) {
+        var updateUser = function() {
+            ['firstName', 'lastName', 'email', 'address', 'language', 'assessments', 'documents', 'interviewees']
+                .forEach(function(field) {
+                    user[field] = user_update[field];
+                });
+
+            user.save(function (saveError) {
+                res.send(saveError ? {reason: saveError.toString()} : undefined);
+            });
+        };
+
+        if (findUserError) {
             res.status(400);
-            res.send({ reason: err.toString() });
+            res.send({ reason: findUserError.toString() });
         } else if(user === null) {
             res.status(404);
             res.send({reason: 'User not found'});
         } else {
             if (user_update.password && user_update.password.length > 0) {
-                user.setPassword(user_update.password, function (err) {
-                    if (err) {
-                        res.send({reason: err.toString()});
+                user.setPassword(user_update.password, function (setPasswordError) {
+                    if (setPasswordError) {
+                        res.send({reason: setPasswordError.toString()});
+                    } else {
+                        updateUser();
                     }
                 });
+            } else {
+                updateUser();
             }
-
-            user.firstName = user_update.firstName;
-            user.lastName = user_update.lastName;
-            user.email = user_update.email;
-            user.address = user_update.address;
-            user.language = user_update.language;
-            user.assessments = user_update.assessments;
-            user.documents = user_update.documents;
-            user.interviewees = user_update.interviewees;
-
-            user.save(function (err) {
-                if (err) {
-                    res.send({ reason: err.toString() });
-                }
-            });
         }
     });
 };
