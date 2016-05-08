@@ -3,7 +3,7 @@
 describe('rgiProfileCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $route, rgiIdentitySrvc, rgiUserMethodSrvc, rgiNotifier;
+    var $scope, $route, $timeout, rgiIdentitySrvc, rgiUserMethodSrvc, rgiNotifier;
     var currentUserBackUp;
 
     var dummyCurrentUser = {
@@ -13,16 +13,17 @@ describe('rgiProfileCtrl', function () {
     };
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$route_, _rgiIdentitySrvc_, _rgiUserMethodSrvc_, _rgiNotifier_) {
+        function ($rootScope, $controller, _$route_, _$timeout_, _rgiIdentitySrvc_, _rgiUserMethodSrvc_, _rgiNotifier_) {
             $scope = $rootScope.$new();
             $route = _$route_;
+            $timeout = _$timeout_;
+
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiUserMethodSrvc = _rgiUserMethodSrvc_;
             rgiNotifier = _rgiNotifier_;
 
             currentUserBackUp = rgiIdentitySrvc.currentUser;
             rgiIdentitySrvc.currentUser = dummyCurrentUser;
-
             $controller('rgiProfileCtrl', {$scope: $scope});
         }
     ));
@@ -177,6 +178,52 @@ describe('rgiProfileCtrl', function () {
         });
 
         afterEach(function () {
+            notifierMock.verify();
+            notifierMock.restore();
+        });
+    });
+
+    describe('#checkPassword', function() {
+        var notifierMock,
+            setPasswordInvalidity = function(invalidity) {
+                $scope.profileForm = {password: {$invalid: invalidity}};
+            };
+
+        beforeEach(function() {
+            notifierMock = sinon.mock(rgiNotifier);
+        });
+
+        it('does nothing until timeout period is elapsed', function() {
+            setPasswordInvalidity(true);
+            $scope.checkPassword();
+            notifierMock.expects('error').never();
+        });
+
+        it('shows an error message once the timeout period is elapsed and if the password is invalid', function() {
+            setPasswordInvalidity(true);
+            $scope.checkPassword();
+            notifierMock.expects('error').withArgs('The password should consist of 6-8 characters including at least ' +
+            'one digit, at least one lower-case letter, at least one upper-case letter and at least one special character');
+            $timeout.flush();
+        });
+
+        it('does nothing if the password is invalid', function() {
+            setPasswordInvalidity(false);
+            $scope.checkPassword();
+            notifierMock.expects('error').never();
+            $timeout.verifyNoPendingTasks();
+        });
+
+        it('does nothing if the password become valid until the timeout period is elapsed', function() {
+            setPasswordInvalidity(true);
+            $scope.checkPassword();
+            setPasswordInvalidity(false);
+            $scope.checkPassword();
+            notifierMock.expects('error').never();
+            $timeout.verifyNoPendingTasks();
+        });
+
+        afterEach(function() {
             notifierMock.verify();
             notifierMock.restore();
         });
