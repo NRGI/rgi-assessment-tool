@@ -64,7 +64,23 @@ describe('rgiProfileCtrl', function () {
         });
 
         describe('COMPLETE DATA CASE', function() {
-            var userMethodUpdateCurrentUserStub, userMethodUpdateCurrentUserSpy;
+            var userMethodUpdateCurrentUserStub, userMethodUpdateCurrentUserSpy, expectedUpdateData,
+                getExpectedSubmittedData = function(includePassword) {
+                    var submittedData = {
+                        firstName: $scope.current_user.firstName,
+                        lastName: $scope.current_user.lastName,
+                        email: $scope.current_user.email
+                    };
+
+                    if(includePassword) {
+                        submittedData.password = $scope.password;
+                    }
+
+                    return submittedData;
+                },
+                setValidationCriteria = function(updateData) {
+                    expectedUpdateData = updateData;
+                };
 
             beforeEach(function () {
                 $scope.current_user.firstName = 'UPDATED FIRST NAME';
@@ -89,43 +105,32 @@ describe('rgiProfileCtrl', function () {
                 });
 
                 it('submits user data without password if the password is not set', function() {
-                    $routeMock.expects('reload');
                     notifierMock.expects('notify').withArgs('Your user account has been updated');
-
                     $scope.password = '';
-                    $scope.update();
-                    userMethodUpdateCurrentUserSpy.withArgs({
-                        firstName: $scope.current_user.firstName,
-                        lastName: $scope.current_user.lastName,
-                        email: $scope.current_user.email
-                    }).called.should.be.equal(true);
+                    setValidationCriteria(getExpectedSubmittedData(false));
                 });
 
                 it('submits user data without password & shows an error message if the passwords do not match', function() {
+                    notifierMock.expects('error').withArgs('Passwords must match!');
                     $scope.password = 'PASSWORD';
                     $scope.password_rep = ' ANOTHER PASSWORD';
-                    notifierMock.expects('error').withArgs('Passwords must match!');
-                    $scope.update();
-                    userMethodUpdateCurrentUserSpy.called.should.be.equal(false);
+                    setValidationCriteria(false);
                 });
 
                 it('submits user data (including password) if the passwords match', function() {
-                    $routeMock.expects('reload');
                     notifierMock.expects('notify').withArgs('Your user account has been updated');
-
                     $scope.password = 'PASSWORD';
                     $scope.password_rep = 'PASSWORD';
-                    $scope.update();
-
-                    userMethodUpdateCurrentUserSpy.withArgs({
-                        firstName: $scope.current_user.firstName,
-                        lastName: $scope.current_user.lastName,
-                        email: $scope.current_user.email,
-                        password: $scope.password
-                    }).called.should.be.equal(true);
+                    setValidationCriteria(getExpectedSubmittedData(true));
                 });
 
                 afterEach(function () {
+                    if(expectedUpdateData !== false) {
+                        $routeMock.expects('reload');
+                    }
+
+                    $scope.update();
+
                     $routeMock.verify();
                     $routeMock.restore();
                 });
@@ -149,30 +154,27 @@ describe('rgiProfileCtrl', function () {
 
                 it('submits updated user data', function() {
                     $scope.password = '';
-                    $scope.update();
-
-                    userMethodUpdateCurrentUserSpy.withArgs({
-                        firstName: $scope.current_user.firstName,
-                        lastName: $scope.current_user.lastName,
-                        email: $scope.current_user.email
-                    }).called.should.be.equal(true);
+                    setValidationCriteria(getExpectedSubmittedData(false));
                 });
 
                 it('submits user data (including password, if it is not empty) if the passwords match', function() {
                     $scope.password = 'PASSWORD';
                     $scope.password_rep = 'PASSWORD';
-                    $scope.update();
+                    setValidationCriteria(getExpectedSubmittedData(true));
+                });
 
-                    userMethodUpdateCurrentUserSpy.withArgs({
-                        firstName: $scope.current_user.firstName,
-                        lastName: $scope.current_user.lastName,
-                        email: $scope.current_user.email,
-                        password: 'PASSWORD'
-                    }).called.should.be.equal(true);
+                afterEach(function () {
+                    $scope.update();
                 });
             });
 
             afterEach(function () {
+                if(expectedUpdateData === false) {
+                    userMethodUpdateCurrentUserSpy.called.should.be.equal(false);
+                } else {
+                    userMethodUpdateCurrentUserSpy.withArgs(expectedUpdateData).called.should.be.equal(true);
+                }
+
                 userMethodUpdateCurrentUserStub.restore();
             });
         });
