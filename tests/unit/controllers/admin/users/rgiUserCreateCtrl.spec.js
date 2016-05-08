@@ -4,21 +4,22 @@
 describe('rgiUserCreateCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, rgiNotifier, rgiUserMethodSrvc;
+    var $scope, $location, rgiNotifier, rgiUserMethodSrvc, AVAILABLE_ROLES_SET;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiUserMethodSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiUserMethodSrvc_, _AVAILABLE_ROLES_SET_) {
             $location = _$location_;
             rgiNotifier = _rgiNotifier_;
             rgiUserMethodSrvc = _rgiUserMethodSrvc_;
+            AVAILABLE_ROLES_SET = _AVAILABLE_ROLES_SET_;
 
             $scope = $rootScope.$new();
             $controller('rgiUserCreateCtrl', {$scope: $scope});
         }
     ));
 
-    it('initializes role options', function () {
-        $scope.roles.should.deep.equal(['supervisor', 'researcher', 'reviewer', 'ext_reviewer']);
+    it('gets role list', function () {
+        $scope.roles.should.deep.equal(AVAILABLE_ROLES_SET);
     });
 
     describe('#userCreate', function () {
