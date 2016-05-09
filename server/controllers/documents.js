@@ -307,29 +307,46 @@ exports.getUploadStatusDocument = function (req, res) {
 // };
 
 exports.updateDocument = function (req, res) {
-    var document_update, timestamp;
-
-    document_update = req.body;
-    timestamp = new Date().toISOString();
+    var document_update = req.body;
 
     Doc.findOne({_id: document_update._id}).exec(function (err, document) {
-        document.title = document_update.title;
-        document.authors = document_update.authors;
-        document.type = document_update.type;
-        document.assessments = document_update.assessments;
-        document.questions = document_update.questions;
-        document.answers = document_update.answers;
-        document.users = document_update.users;
-        document.modified = document_update.modified;
-        document.status = document_update.status;
         document.last_modified = {
             modified_by: req.user._id,
-            modified_date: timestamp};
+            modified_date: new Date().toISOString()
+        };
 
-        var input_array = ['source', 'year', 'date_published', 'pages', 'volume', 'issue', 'websites', 'publisher', 'city', 'edition', 'institution', 'series', 'chapter', 'editors', 'country', 'translators', 'series_editor'];
-        input_array.forEach(function (el) {
-            if (el in document_update) {
-                document[el] = document_update[el];
+        var processedFields = [
+            'answers',
+            'assessments',
+            'authors',
+            'chapter',
+            'city',
+            'country',
+            'date_published',
+            'edition',
+            'editors',
+            'institution',
+            'issue',
+            'modified',
+            'pages',
+            'publisher',
+            'questions',
+            'series',
+            'series_editor',
+            'source',
+            'status',
+            'title',
+            'translators',
+            'type',
+            'volume',
+            'users',
+            'websites',
+            'year'
+        ];
+
+        processedFields.forEach(function (field) {
+            if (field in document_update) {
+                document[field] = document_update[field];
             }
         });
 
@@ -337,10 +354,11 @@ exports.updateDocument = function (req, res) {
             if (err) {
                 res.status(400);
                 res.send({reason: err.toString()});
+            } else {
+                res.send(document);
             }
         });
     });
-    // res.send();
 };
 
 exports.deleteDocument = function (req, res) {
