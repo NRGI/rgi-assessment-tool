@@ -3,12 +3,13 @@
 describe('rgiAuthLogsCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, rgiAuthLogsSrvc, rgiNotifier, userId = 'USER-ID';
+    var $scope, rgiAuthLogsSrvc, rgiHttpResponseProcessorSrvc, rgiNotifier, userId = 'USER-ID';
 
     beforeEach(inject(
-        function ($rootScope, $controller, _rgiAuthLogsSrvc_, _rgiNotifier_) {
+        function ($rootScope, $controller, _rgiAuthLogsSrvc_, _rgiHttpResponseProcessorSrvc_, _rgiNotifier_) {
             $scope = $rootScope.$new();
             rgiAuthLogsSrvc = _rgiAuthLogsSrvc_;
+            rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
             rgiNotifier = _rgiNotifier_;
             $controller('rgiAuthLogsCtrl', {$scope: $scope});
         }
@@ -29,13 +30,30 @@ describe('rgiAuthLogsCtrl', function () {
         });
 
         describe('CURRENT USER DETECTED', function() {
-            var authLogsSpy, authLogsStub, response, extraMock;
+            var authLogsSpy, authLogsStub, response, extraMock, cleanUp;
 
             beforeEach(function() {
                 $scope.user = {_id: userId};
             });
 
             describe('NEGATIVE CASE', function() {
+                var httpResponseProcessorStubs = {}, httpResponseProcessorHandleSpy;
+
+                beforeEach(function() {
+                    httpResponseProcessorHandleSpy = sinon.spy();
+                    httpResponseProcessorStubs.handle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle', httpResponseProcessorHandleSpy);
+
+                    httpResponseProcessorStubs.getMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage', function(response, message) {
+                        return message;
+                    });
+
+                    cleanUp = function() {
+                        httpResponseProcessorStubs.getMessage.restore();
+                        httpResponseProcessorStubs.handle.restore();
+                        httpResponseProcessorHandleSpy.withArgs(response).called.should.be.equal(true);
+                    };
+                });
+
                 it('shows an error message, if it fails to get the logs number', function () {
                     extraMock = sinon.mock(rgiNotifier);
                     extraMock.expects('error').withArgs('Auth logs loading failure');
@@ -53,6 +71,10 @@ describe('rgiAuthLogsCtrl', function () {
             });
 
             describe('POSITIVE CASE', function() {
+                beforeEach(function() {
+                    cleanUp = function() {};
+                });
+
                 it('load logs, if it gets the logs number successfully', function () {
                     response = {data: {}};
                     extraMock = sinon.mock($scope);
@@ -83,6 +105,7 @@ describe('rgiAuthLogsCtrl', function () {
             afterEach(function () {
                 authLogsStub = sinon.stub(rgiAuthLogsSrvc, 'getTotalNumber', authLogsSpy);
                 $scope.$apply();
+                cleanUp();
 
                 extraMock.verify();
                 extraMock.restore();
@@ -93,7 +116,7 @@ describe('rgiAuthLogsCtrl', function () {
     });
 
     describe('#loadLogs', function() {
-        var authLogsListSpy, check, logsNumberResponse, logsListResponse, notifierMock;
+        var authLogsListSpy, check, logsNumberResponse, logsListResponse, notifierMock, errorResponse = 'ERROR';
 
         beforeEach(function() {
             $scope.user = {_id: userId};
@@ -143,13 +166,25 @@ describe('rgiAuthLogsCtrl', function () {
         });
 
         describe('ERROR CASE', function() {
-            it('shows an error message, if the request is failed', function() {
-                logsNumberResponse = {data: {error: null, number: 21}};
+            var httpResponseProcessorStubs = {}, httpResponseProcessorHandleSpy;
 
+            it('shows an error message, if the request is failed', function() {
+                httpResponseProcessorHandleSpy = sinon.spy();
+                httpResponseProcessorStubs.handle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle', httpResponseProcessorHandleSpy);
+
+                httpResponseProcessorStubs.getMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage', function(response, message) {
+                    return message;
+                });
+
+                logsNumberResponse = {data: {error: null, number: 21}};
                 notifierMock = sinon.mock(rgiNotifier);
                 notifierMock.expects('error').withArgs('Auth logs loading failure');
 
                 check = function() {
+                    httpResponseProcessorStubs.getMessage.restore();
+                    httpResponseProcessorStubs.handle.restore();
+                    httpResponseProcessorHandleSpy.withArgs(errorResponse).called.should.be.equal(true);
+
                     notifierMock.verify();
                     notifierMock.restore();
                 };
@@ -159,7 +194,7 @@ describe('rgiAuthLogsCtrl', function () {
                 authLogsListSpy = sinon.spy(function() {
                     return {
                         then: function(successCallback, errorCallback) {
-                            errorCallback();
+                            errorCallback(errorResponse);
                         }
                     };
                 });
