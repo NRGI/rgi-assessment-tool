@@ -4,9 +4,11 @@ angular
     .module('app')
     .controller('rgiUserAdminCtrl', function (
         $scope,
-        rgiUserSrvc,
         rgiAssessmentSrvc,
-        rgiAuthLogsSrvc
+        rgiAuthLogsSrvc,
+        rgiHttpResponseProcessorSrvc,
+        rgiNotifier,
+        rgiUserSrvc
     ) {
         $scope.sort_options = [
             {value: "firstName", text: "Sort by First Name"},
@@ -25,6 +27,9 @@ angular
                 rgiAuthLogsSrvc.getMostRecent(user._id, 'sign-in')
                     .then(function (log) {
                         user.last_sign_in = log.data.logs[0];
+                    }, function(response) {
+                        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
+                        rgiHttpResponseProcessorSrvc.handle(response);
                     });
 
                 user.assessments.forEach(function(assessment) {
