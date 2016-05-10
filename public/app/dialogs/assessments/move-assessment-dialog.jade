@@ -1,8 +1,8 @@
-div.left-padding-lg.right-padding-lg
-    div.modal-header
+.left-padding-lg.right-padding-lg
+    .modal-header
         h3 Assessment Administration
-    div.modal-body
-        .form-horizontal
+    .modal-body
+        form(name="reassignAssessment").form-horizontal
             fieldset
                 .row
                     h5.col-md-4  Action
@@ -10,9 +10,8 @@ div.left-padding-lg.right-padding-lg
                         select.form-group.form-control(name="action" ng-model="action" required)
                             option(value="" selected disabled) Select action
                             option(ng-repeat="opt in workflow_opts" value="{{opt.value}}" ng-if="opt.value!==''") {{opt.text}}
-                            //- option(ng-repeat="opt in workflowOpts" value="{{opt.value}}" ng-if="opt.value===''" disabled text-decoration="line-through") {{opt.text}} (needs finalization)
 
-    div.modal-footer
-        button.btn.btn-success(ng-click="assessmentMove()" ng-disabled="reassignAssessment.$invalid") Confirm action
+    .modal-footer
+        button.btn.btn-success(ng-click="moveAssessment()", ng-disabled="reassignAssessment.$invalid") Confirm action
         | &nbsp;
-        button.btn.btn-danger(ng-click="closeDialog()") Cancel
+        button.btn.btn-danger(ng-click="closeThisDialog()") Cancel

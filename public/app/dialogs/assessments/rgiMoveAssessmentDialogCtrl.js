@@ -3,22 +3,13 @@
 angular.module('app')
     .controller('rgiMoveAssessmentDialogCtrl', function (
         $scope,
-        $location,
-        rgiNotifier,
-        ngDialog,
-        rgiIdentitySrvc,
-        rgiAssessmentMethodSrvc,
-        rgiAnswerSrvc,
         rgiUserSrvc,
         rgiDialogFactory
     ) {
-        // get current control profile onto scope and use it to populate workflow_opts\
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         rgiUserSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
             var workflow_opts = [],
                 assessment = $scope.$parent.assessment,
                 assessment_counters = $scope.$parent.assessment_counters;
-            console.log(assessment.first_pass);
 
             if (assessment.status === 'trial_submitted') {
                 if ($scope.$parent.assessment_counters.flagged!==0) {
@@ -107,11 +98,7 @@ angular.module('app')
             $scope.workflow_opts = workflow_opts;
         });
 
-        $scope.closeDialog = function () {
-            ngDialog.close();
-        };
-
-        $scope.assessmentMove = function () {
+        $scope.moveAssessment = function () {
             rgiDialogFactory.assessmentMoveConfirm($scope);
          };
     });
