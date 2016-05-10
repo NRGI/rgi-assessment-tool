@@ -18,6 +18,12 @@ describe('rgiHttpResponseProcessorSrvc', function () {
         });
 
         describe('UNKNOWN STATUS', function() {
+            it('returns the submitted message', function() {
+                var message = 'MESSAGE';
+                rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: {reason: 'REASON'}}, message)
+                    .should.be.equal(message);
+            });
+
             it('returns the provided reason', function() {
                 var reason = 'REASON';
                 rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: {reason: reason}})

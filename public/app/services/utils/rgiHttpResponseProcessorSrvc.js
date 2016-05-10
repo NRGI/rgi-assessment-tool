@@ -5,12 +5,14 @@ angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
     rgiIdentitySrvc
 ) {
     return {
-        getMessage: function(response) {
+        getMessage: function(response, defaultMessage) {
             switch (response.status) {
                 case 403:
                     return 'Please, re-login';
                 default:
-                    if(response.data.reason !== undefined) {
+                    if(defaultMessage !== undefined) {
+                        return defaultMessage;
+                    } else if(response.data.reason !== undefined) {
                         return response.data.reason;
                     } else if(response.data.length > 0) {
                         return response.data;
