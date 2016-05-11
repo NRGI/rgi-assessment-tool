@@ -6,11 +6,11 @@ angular.module('app')
         $location,
         $routeParams,
         $route,
-        ngDialog,
-        rgiNotifier,
         rgiAnswerSrvc,
         rgiAnswerMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
+        rgiNotifier,
         rgiQuestionSetSrvc,
         rgiUrlGuideSrvc
     ) {
@@ -25,6 +25,9 @@ angular.module('app')
 
         rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
             rgiQuestionSetSrvc.setAnswers(answers);
+        }, function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
         });
 
         var
@@ -91,7 +94,7 @@ angular.module('app')
                     .then(function () {
                         rgiNotifier.notify('Input added');
                         $route.reload();
-                        ngDialog.close();
+                        $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     }).finally(function() {
@@ -129,7 +132,7 @@ angular.module('app')
                         }
 
                         rgiNotifier.notify('Answer finalized');
-                        ngDialog.close();
+                        $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     });

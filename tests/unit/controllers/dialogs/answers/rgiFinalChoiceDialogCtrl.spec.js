@@ -3,7 +3,7 @@
 describe('rgiFinalChoiceDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, $routeParams, ngDialog,
+    var $scope, $location, $routeParams,
         rgiNotifier, rgiAnswerSrvc, rgiAnswerMethodSrvc, rgiIdentitySrvc, rgiQuestionSetSrvc, rgiUrlGuideSrvc,
         $parent, currenUserBackup, currentUer = {role: 'user-role', _id: 'user-id'},
         routeParamsAnswerIdBackup, answerId = 'answer2015', answerQueryStub, answerQuerySpy, ANSWERS = [1, 2];
@@ -14,7 +14,6 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             $rootScope,
             _$routeParams_,
             _$location_,
-            _ngDialog_,
             _rgiIdentitySrvc_,
             _rgiNotifier_,
             _rgiAnswerSrvc_,
@@ -41,7 +40,6 @@ describe('rgiFinalChoiceDialogCtrl', function () {
 
             $location = _$location_;
             $routeParams = _$routeParams_;
-            ngDialog = _ngDialog_;
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiAnswerSrvc = _rgiAnswerSrvc_;
@@ -59,6 +57,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
 
             currenUserBackup = _.cloneDeep(rgiIdentitySrvc.currentUser);
             rgiIdentitySrvc.currentUser = currentUer;
+            $scope.closeThisDialog = sinon.spy();
 
             $controller('rgiFinalChoiceDialogCtrl', {$scope: $scope});
         }
@@ -155,7 +154,7 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             });
 
             describe('SUCCESS CASE', function() {
-                var $locationMock, dialogMock, urlGuideMock, stubs = {};
+                var $locationMock, urlGuideMock, stubs = {};
 
                 beforeEach(function() {
                     $locationMock = sinon.mock($location);
@@ -164,14 +163,10 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                     urlGuideMock = sinon.mock(rgiUrlGuideSrvc);
                     notifierMock.expects('notify').withArgs('Answer finalized');
 
-                    dialogMock = sinon.mock(ngDialog);
-                    dialogMock.expects('close');
-
                     checkExtra = function() {
                         $locationMock.verify();
                         $locationMock.restore();
-                        dialogMock.verify();
-                        dialogMock.restore();
+                        $scope.closeThisDialog.called.should.be.equal(true);
                     };
 
                     answerMethodUpdateAnswerSpy = sinon.spy(function() {
@@ -225,6 +220,10 @@ describe('rgiFinalChoiceDialogCtrl', function () {
             });
 
             describe('FAILURE CASE', function() {
+                beforeEach(function() {
+                    checkExtra = function() {};
+                });
+
                 it('shows failure reason', function() {
                     var REASON = 'REASON';
 

@@ -5,16 +5,21 @@ angular.module('app')
         $scope,
         $routeParams,
         rgiAnswerSrvc,
+        rgiAssessmentSrvc,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
-        rgiAssessmentSrvc
+        rgiNotifier
     ) {
         $scope.identity = rgiIdentitySrvc;
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
 
-        var originallySubmitted = {};
+        var originallySubmitted = {}, processFailureResponse = function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
+        };
 
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
             $scope.answer = answer;
@@ -40,20 +45,20 @@ angular.module('app')
             if (answer.guidance_dialog) {
                 rgiDialogFactory.guidanceDialog($scope);
             }
-        });
+        }, processFailureResponse);
 
         var resetReference = function() {
             rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
                 console.log('refresh reference list');
                 $scope.references = answer.references;
-            });
+            }, processFailureResponse);
         };
 
         var resetAnswer = function() {
             rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
                 $scope.answer = answer;
                 $scope.flags = answer.flags;
-            });
+            }, processFailureResponse);
         };
 
         $scope.isChoiceChanged = function() {

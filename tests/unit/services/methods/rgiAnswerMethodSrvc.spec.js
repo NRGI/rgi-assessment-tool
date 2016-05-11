@@ -4,17 +4,63 @@ describe('rgiAnswerMethodSrvc', function () {
     beforeEach(module('app'));
 
     var rgiAnswerMethodSrvc;
-    var $q, rgiAnswerSrvc;
+    var $q, rgiAnswerSrvc, rgiHttpResponseProcessorSrvc;
+    var $qDeferStub, $qDeferSpy, expectedPromise;
 
-    beforeEach(inject(function (_rgiAnswerMethodSrvc_, _$q_, _rgiAnswerSrvc_) {
+    beforeEach(inject(function (_rgiAnswerMethodSrvc_, _$q_, _rgiAnswerSrvc_, _rgiHttpResponseProcessorSrvc_) {
         $q = _$q_;
         rgiAnswerSrvc = _rgiAnswerSrvc_;
         rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
+        rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
     }));
 
-    describe('#updateAnswer', function () {
-        var $qDeferStub, $qDeferSpy, expectedPromise;
+    var checkFailureCase = function(performMainAction, dummyResponses) {
+        describe('REJECT', function() {
+            var actualPromise, httpResponseHandleSpy, stubs = {};
 
+            beforeEach(function() {
+                expectedPromise = 'NEGATIVE';
+
+                $qDeferSpy = sinon.spy();
+                $qDeferStub = sinon.stub($q, 'defer', function() {
+                    return {
+                        reject: $qDeferSpy,
+                        promise: expectedPromise
+                    };
+                });
+
+                httpResponseHandleSpy = sinon.spy();
+                stubs.handle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle', httpResponseHandleSpy);
+                stubs.getMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage', function(response, message) {
+                    return message;
+                });
+
+                actualPromise = performMainAction(expectedPromise);
+            });
+
+            it('submits the failure response for further processing', function () {
+                dummyResponses.forEach(function(dummyResponse) {
+                    httpResponseHandleSpy.withArgs(dummyResponse).called.should.be.equal(true);
+                });
+            });
+
+            it('returns a promise', function () {
+                actualPromise.should.be.equal(expectedPromise);
+            });
+
+            it('rejects the deferred in negative case', function () {
+                $qDeferSpy.should.have.been.calledWith('Save answer failure');
+            });
+
+            afterEach(function() {
+                Object.keys(stubs).forEach(function(stubName) {
+                    stubs[stubName].restore();
+                });
+            });
+        });
+    };
+
+    describe('#updateAnswer', function () {
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
 
@@ -39,41 +85,22 @@ describe('rgiAnswerMethodSrvc', function () {
             $qDeferSpy.called.should.be.equal(true);
         });
 
-        it('rejects the deferred in negative case', function () {
-            expectedPromise = 'NEGATIVE';
-            var REASON = 'REASON';
+        var dummyResponse = 'RESPONSE';
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
-                return {
-                    reject: $qDeferSpy,
-                    promise: expectedPromise
-                };
-            });
-
-            rgiAnswerMethodSrvc.updateAnswer({
+        checkFailureCase(function() {
+            return rgiAnswerMethodSrvc.updateAnswer({
                 $update: function() {
                     return {
                         then: function(uselessCallbackPositive, callbackNegative) {
-                            callbackNegative({
-                                data: {reason: REASON}
-                            });
+                            callbackNegative(dummyResponse);
                         }
                     };
                 }
-            }).should.be.equal(expectedPromise);
-
-            $qDeferSpy.should.have.been.calledWith(REASON);
-        });
-
-        afterEach(function () {
-            $qDeferStub.restore();
-        });
+            });
+        }, [dummyResponse]);
     });
 
     describe('#updateAnswerSet', function () {
-        var $qDeferStub, $qDeferSpy, expectedPromise;
-
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
 
@@ -109,27 +136,15 @@ describe('rgiAnswerMethodSrvc', function () {
             sinon.assert.calledTwice($qDeferSpy);
         });
 
-        it('rejects the deferred in negative case', function () {
-            expectedPromise = 'NEGATIVE';
-            var REASON1 = 'REASON1';
-            var REASON2 = 'REASON2';
+        var dummyResponse1 = 'RESPONSE1', dummyResponse2 = 'RESPONSE2';
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
-                return {
-                    reject: $qDeferSpy,
-                    promise: expectedPromise
-                };
-            });
-
-            rgiAnswerMethodSrvc.updateAnswerSet([
+        checkFailureCase(function() {
+            return rgiAnswerMethodSrvc.updateAnswerSet([
                 {
                     $update: function() {
                         return {
                             then: function(uselessCallbackPositive, callbackNegative) {
-                                callbackNegative({
-                                    data: {reason: REASON1}
-                                });
+                                callbackNegative(dummyResponse1);
                             }
                         };
                     }
@@ -138,26 +153,17 @@ describe('rgiAnswerMethodSrvc', function () {
                     $update: function() {
                         return {
                             then: function(uselessCallbackPositive, callbackNegative) {
-                                callbackNegative({
-                                    data: {reason: REASON2}
-                                });
+                                callbackNegative(dummyResponse2);
                             }
                         };
                     }
                 }
-            ]).should.be.equal(expectedPromise);
-
-            $qDeferSpy.should.have.been.calledWith(REASON1);
-            $qDeferSpy.should.have.been.calledWith(REASON2);
-        });
-
-        afterEach(function () {
-            $qDeferStub.restore();
-        });
+            ]);
+        }, [dummyResponse1, dummyResponse2]);
     });
 
     describe('#insertAnswerSet', function () {
-        var $qDeferStub, rgiAnswerSrvcStub, $qDeferSpy, expectedPromise;
+        var rgiAnswerSrvcStub;
 
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
@@ -182,36 +188,30 @@ describe('rgiAnswerMethodSrvc', function () {
             $qDeferSpy.called.should.be.equal(true);
         });
 
-        it('resolves the deferred in positive case', function () {
-            expectedPromise = 'NEGATIVE';
-            var REJECT_INSERTION_RESPONSE = {
-                data: {reason: 'REJECT_INSERTION'}
-            };
+        describe('reject insert', function() {
+            var REJECT_INSERTION_RESPONSE = 'REJECT_INSERTION';
 
-            rgiAnswerSrvcStub = sinon.stub(rgiAnswerSrvc.prototype, '$save', function() {
-                return {
-                    then: function(callbackPositive, callbackNegative) {
-                        callbackNegative(REJECT_INSERTION_RESPONSE);
-                    }
-                };
+            beforeEach(function() {
+                rgiAnswerSrvcStub = sinon.stub(rgiAnswerSrvc.prototype, '$save', function() {
+                    return {
+                        then: function(callbackPositive, callbackNegative) {
+                            callbackNegative(REJECT_INSERTION_RESPONSE);
+                        }
+                    };
+                });
             });
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
-                return {
-                    reject: $qDeferSpy,
-                    promise: expectedPromise
-                };
-            });
-
-            rgiAnswerMethodSrvc.insertAnswerSet([expectedPromise]).should.be.equal(expectedPromise);
-            $qDeferSpy.should.have.been.calledWith(REJECT_INSERTION_RESPONSE.data.reason);
+            checkFailureCase(function(expectedPromise) {
+                return rgiAnswerMethodSrvc.insertAnswerSet([expectedPromise]);
+            }, [REJECT_INSERTION_RESPONSE]);
         });
 
         afterEach(function () {
-            $qDeferStub.restore();
             rgiAnswerSrvcStub.restore();
         });
     });
 
+    afterEach(function () {
+        $qDeferStub.restore();
+    });
 });
