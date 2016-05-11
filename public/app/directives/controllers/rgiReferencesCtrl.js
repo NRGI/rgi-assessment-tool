@@ -3,12 +3,10 @@
 angular.module('app')
     .controller('rgiReferencesCtrl', function (
         $scope,
-        rgiAnswerMethodSrvc,
         rgiDialogFactory,
         rgiIdentitySrvc,
         rgiReferenceListSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.ref_type = [
             {text: 'Add Document', value: 'document'},
             //{text: 'Add Webpage', value: 'webpage'},
@@ -31,7 +29,7 @@ angular.module('app')
         };
 
         $scope.getOwnReferencesNumber = function() {
-            return rgiReferenceListSrvc.getLength($scope.references, $scope.current_user);
+            return rgiReferenceListSrvc.getLength($scope.references, rgiIdentitySrvc.currentUser);
         };
 
         //TODO Generate Dialog based on change and handle upload process via dialogs

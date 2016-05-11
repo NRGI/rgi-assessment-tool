@@ -1,14 +1,14 @@
 legend References
-    text(ng-if="!current_user.isExternalReviewer() && !current_user.isSupervisor()")  (required):
+    text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor()")  (required):
 .bottom-padding-med(
-    ng-if="(current_user._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(assessment.status) > -1)) || current_user.isExternalReviewer()"
+    ng-if="(identity.currentUser._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(assessment.status) > -1)) || identity.currentUser.isExternalReviewer()"
     id="biblio_div")
     .row
         .col-md-5.pull-left.top-padding-med
             select.form-group.form-control.pull-left(
             ng-model="selected.value"
             ng-change="selectRefDialog(selected.value)"
-            ng-disabled="(assessment.edit_control!==current_user._id && !current_user.isExternalReviewer()) || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
+            ng-disabled="(assessment.edit_control!==identity.currentUser._id && !identity.currentUser.isExternalReviewer()) || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
                 option(
                 value="none"
                 selected
