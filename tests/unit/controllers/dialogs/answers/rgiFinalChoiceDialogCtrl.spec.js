@@ -146,7 +146,10 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                 answerMethodUpdateAnswerSpy = sinon.spy(function() {
                     return {
                         then: function(callback) {
-                            return callback;
+                            callback();
+                            return {finally: function(finallyCallback) {
+                                finallyCallback();
+                            }};
                         }
                     };
                 });
@@ -173,6 +176,9 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                         return {
                             then: function(callback) {
                                 callback();
+                                return {finally: function(finallyCallback) {
+                                    finallyCallback();
+                                }};
                             }
                         };
                     });
@@ -221,7 +227,9 @@ describe('rgiFinalChoiceDialogCtrl', function () {
 
             describe('FAILURE CASE', function() {
                 beforeEach(function() {
-                    checkExtra = function() {};
+                    checkExtra = function() {
+                        $scope.closeThisDialog.called.should.be.equal(true);
+                    };
                 });
 
                 it('shows failure reason', function() {
@@ -231,6 +239,9 @@ describe('rgiFinalChoiceDialogCtrl', function () {
                         return {
                             then: function(uselessPositiveCallback, negativeCallback) {
                                 negativeCallback(REASON);
+                                return {finally: function(finallyCallback) {
+                                    finallyCallback();
+                                }};
                             }
                         };
                     });

@@ -10,11 +10,10 @@ angular.module('app')
             $scope.comment.hidden = true;
 
             rgiAnswerMethodSrvc.updateAnswer($scope.$parent.update).then(function() {
-                $scope.closeThisDialog();
                 rgiNotifier.notify('The comment has been deleted');
             }, function(reason) {
                 $scope.comment.hidden = false;
                 rgiNotifier.error(reason);
-            });
+            }).finally($scope.closeThisDialog);
         };
     });

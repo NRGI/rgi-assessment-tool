@@ -4,7 +4,6 @@ angular.module('app')
     .controller('rgiEditReferenceDialogCtrl', function (
         $scope,
         $rootScope,
-        ngDialog,
         rgiAnswerMethodSrvc,
         rgiIntervieweeSrvc,
         rgiNotifier
@@ -25,18 +24,13 @@ angular.module('app')
             if($scope.ref[dateField]) {
                 new_answer_data.references[referenceIndex] = $scope.ref;
                 rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
-                    $scope.closeDialog();
                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                     rgiNotifier.notify('The reference has been edited');
                 }, function (reason) {
                     rgiNotifier.error(reason);
-                });
+                }).finally($scope.closeThisDialog);
             } else {
                 rgiNotifier.error('You must select the date');
             }
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });

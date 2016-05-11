@@ -109,7 +109,9 @@ angular.module('app')
                                     };
                                     new_answer_data.references.push(new_ref_data);
                                     new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
-                                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data);
+                                    rgiAnswerMethodSrvc.updateAnswer(new_answer_data).catch(function(reason) {
+                                        rgiNotifier.error(reason);
+                                    }).finally($scope.closeThisDialog);
                                 })
                                 .then(function () {
                                     $scope.closeThisDialog();
@@ -151,14 +153,13 @@ angular.module('app')
                         }
                         rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
                             rgiIntervieweeMethodSrvc.updateInterviewee(interviewee);
-                            $scope.closeThisDialog();
                             $scope.answer_update.human_ref_comment = "";
                             $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                             rgiNotifier.notify('Reference added!');
                         }, function (reason) {
                             rgiNotifier.error(reason);
-                        });
+                        }).finally($scope.closeThisDialog);
                     });
                 } else {
                     rgiNotifier.error('Something happened assigning interviewees!');

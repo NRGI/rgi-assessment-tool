@@ -141,14 +141,13 @@ angular.module('app')
                     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
                     .then(rgiUserMethodSrvc.updateUser(new_user_data))
                     .then(function () {
-                        $scope.closeThisDialog();
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                         $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                         rgiNotifier.notify('Reference added!');
                     }, function (reason) {
                         rgiNotifier.error(reason);
                         $scope.disable_button = false;
-                    });
+                    }).finally($scope.closeThisDialog);
             }
         };
 

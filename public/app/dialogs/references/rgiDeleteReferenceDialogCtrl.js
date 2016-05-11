@@ -103,7 +103,6 @@ angular.module('app')
                 promises.push(rgiAnswerMethodSrvc.updateAnswer(answer).$promise);
 
                 $q.all(promises).then(function() {
-                    $scope.closeThisDialog();
                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {

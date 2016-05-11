@@ -94,10 +94,10 @@ angular.module('app')
                     .then(function () {
                         rgiNotifier.notify('Input added');
                         $route.reload();
-                        $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
                     }).finally(function() {
+                        $scope.closeThisDialog();
                         $scope.requestProcessing = false;
                     });
             } else {
@@ -132,10 +132,9 @@ angular.module('app')
                         }
 
                         rgiNotifier.notify('Answer finalized');
-                        $scope.closeThisDialog();
                     }, function (reason) {
                         rgiNotifier.error(reason);
-                    });
+                    }).finally($scope.closeThisDialog);
             }
         };
     });

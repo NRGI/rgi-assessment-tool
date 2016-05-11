@@ -31,11 +31,10 @@ angular.module('app')
             rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
                 .then(function () {
                     rgiNotifier.notify('Answer flagged');
-                    $scope.closeThisDialog();
                     $route.reload();
                 }, function (reason) {
                     rgiNotifier.notify(reason);
-                });
+                }).finally($scope.closeThisDialog);
         };
 
         $scope.closeDialog = function () {
