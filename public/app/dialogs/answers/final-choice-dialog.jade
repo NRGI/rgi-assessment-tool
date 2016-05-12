@@ -1,14 +1,14 @@
-div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
-    div.modal-header
-        h3(ng-if="current_user.isSupervisor()") Final choice for question
-        h3(ng-if="current_user.isExternalReviewer()") External input for question
-    div.modal-body
+.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
+    .modal-header
+        h3(ng-if="identity.currentUser.isSupervisor()") Final choice for question
+        h3(ng-if="identity.currentUser.isExternalReviewer()") External input for question
+    .modal-body
         .row
             form.form-horizontal
                 fieldset
                     .row
-                        label.col-md-4(ng-if="current_user.isSupervisor()") Final Choice
-                        label.col-md-4(ng-if="current_user.isExternalReviewer()") External Choice
+                        label.col-md-4(ng-if="identity.currentUser.isSupervisor()") Final Choice
+                        label.col-md-4(ng-if="identity.currentUser.isExternalReviewer()") External Choice
                         .form-group.col-md-8
                             select.form-group.form-control.right-padding-med(
                                 name="final_choice"
@@ -23,34 +23,35 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         ng-form
                             .form-group
                                 .row.left-padding-med(ng-if="['researcher', 'reviewer'].indexOf(final_choice.value) > -1")
-                                    .row: em {{final_choice.role|role|ucfirst}}: {{final_choice.score.letter | ucfirst}} -
-                                        |  {{final_choice.score.text}}
+                                    .row: em {{::final_choice.role|role|ucfirst}}: {{::final_choice.score.letter | ucfirst}} -
+                                        |  {{::final_choice.score.text}}
                                     .row: text(ng-bind-html="final_choice.justification")
-                                .row.left-padding-lg.right-padding-med(ng-if="final_choice.role===current_user.role")
+                                .row.left-padding-lg.right-padding-med(ng-if="final_choice.role===identity.currentUser.role")
                                     legend Choose one of the following answers:
                                     ng-form(name="answer_choice_form")
-                                        .form-group(ng-repeat="choice in question_criteria" required)
+                                        .form-group(ng-repeat="choice in question_criteria track by choice.order")
                                             input(
+                                                required
                                                 type="radio"
                                                 name="choice.choice_name"
-                                                ng-value="{{choice}}"
-                                                id="{{choice.name}}"
+                                                ng-value="choice"
+                                                id="{{::choice.name}}"
                                                 checked=""
                                                 ng-model="final_choice.score"
                                             )
-                                            label(for="{{choice.name}}").left-padding-med.thin-label {{choice.text}}
+                                            label(for="{{::choice.name}}").left-padding-med.thin-label {{::choice.text}}
                                 .row.bottom-padding-med.top-padding-lg
                                     .col-md-12
-                                        div(ng-if="current_user.isExternalReviewer() && isOwnAnswerSelected()")
+                                        div(ng-if="identity.currentUser.isExternalReviewer() && isOwnAnswerSelected()")
                                             rgi-references
                                         rgi-wysiwyg(
-                                            ng-if="current_user.isExternalReviewer()"
+                                            ng-if="identity.currentUser.isExternalReviewer()"
                                             name="final_choice_comment"
                                             ng-model="final_choice.comment"
                                             placeholder="Justification (4,000 character limit)..."
                                         )
                                         rgi-wysiwyg(
-                                            ng-if="current_user.isSupervisor()"
+                                            ng-if="identity.currentUser.isSupervisor()"
                                             name="final_choice_justification"
                                             ng-model="final_choice.justification"
                                             placeholder="Justification (4,000 character limit)..."
@@ -58,12 +59,12 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
 
     .modal-footer
         button.btn.btn-success(
-            ng-if="current_user.isSupervisor()"
+            ng-if="identity.currentUser.isSupervisor()"
             ng-disabled="!final_choice.value || !final_choice.justification"
             ng-click="submitFinalChoice()"
         ) Finalize choice
         button.btn.btn-success(
-            ng-if="current_user.isExternalReviewer()"
+            ng-if="identity.currentUser.isExternalReviewer()"
             ng-disabled="!final_choice.value || (isOwnAnswerSelected() && !final_choice.score) || (!isOwnAnswerSelected() && !final_choice.comment) || requestProcessing"
             ng-click="submitExternalChoice()"
         ) External choice

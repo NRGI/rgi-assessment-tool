@@ -18,7 +18,6 @@ angular.module('app')
             assessmentId = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
             _ = $scope.$parent.$parent.$parent._;
 
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.question_criteria = $scope.$parent.question.question_criteria;
         $scope.answer = $scope.$parent.$parent.answer;
         $scope.requestProcessing = false;
@@ -38,7 +37,7 @@ angular.module('app')
                 var referenceFound = false;
 
                 $scope.answer.references.forEach(function(reference) {
-                    if(getReferenceAuthorId(reference) === $scope.current_user._id) {
+                    if(getReferenceAuthorId(reference) === rgiIdentitySrvc.currentUser._id) {
                         referenceFound = true;
                     }
                 });
@@ -64,7 +63,7 @@ angular.module('app')
                 $scope.answer.reviewer_justification, 'reviewer', 'reviewer'));
         }
 
-        $scope.answerOptions.push(getFinalScoreOption('Other score', 0, '', 'other', $scope.current_user.role));
+        $scope.answerOptions.push(getFinalScoreOption('Other score', 0, '', 'other', rgiIdentitySrvc.currentUser.role));
 
         $scope.isOwnAnswerSelected = function() {
             return ($scope.final_choice !== undefined) && ($scope.final_choice.value === 'other');
@@ -79,7 +78,7 @@ angular.module('app')
 
                 answerData.external_answer.push({
                     comment: finalChoice.comment,
-                    author: $scope.current_user._id
+                    author: rgiIdentitySrvc.currentUser._id
                 });
 
                 if (finalChoice.justification) {
@@ -124,9 +123,9 @@ angular.module('app')
 
                 rgiAnswerMethodSrvc.updateAnswer(answerData)
                     .then(function () {
-                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData)) {
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(rgiIdentitySrvc.currentUser.role, true, answerData)) {
                             $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
-                                rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
+                                rgiQuestionSetSrvc.getNextQuestionId(rgiIdentitySrvc.currentUser.role, true, answerData)) );
                         } else {
                             $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
                         }
