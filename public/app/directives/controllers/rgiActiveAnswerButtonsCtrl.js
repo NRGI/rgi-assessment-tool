@@ -3,6 +3,7 @@
 angular
     .module('app')
     .controller('rgiActiveAnswerButtonsCtrl', function (
+        _,
         $scope,
         $location,
         $rootScope,
@@ -20,8 +21,7 @@ angular
         rgiUrlGuideSrvc,
         rgiUtilsSrvc
     ) {
-        var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
-            _ = $scope.$parent.$parent._;
+        var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
 
         var deactivateAssessmentWatcher = $rootScope.$watch(function() {
             return $scope.$parent.assessment;

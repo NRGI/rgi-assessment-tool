@@ -2,6 +2,7 @@
 
 angular.module('app')
     .controller('rgiFinalChoiceDialogCtrl', function (
+        _,
         $scope,
         $location,
         $routeParams,
@@ -14,9 +15,7 @@ angular.module('app')
         rgiQuestionSetSrvc,
         rgiUrlGuideSrvc
     ) {
-        var
-            assessmentId = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
-            _ = $scope.$parent.$parent.$parent._;
+        var assessmentId = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4);
 
         $scope.question_criteria = $scope.$parent.question.question_criteria;
         $scope.answer = $scope.$parent.$parent.answer;

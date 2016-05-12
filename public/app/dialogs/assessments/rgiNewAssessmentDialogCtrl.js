@@ -17,7 +17,6 @@ angular.module('app')
         rgiQuestionSrvc,
         rgiUtilsSrvc
     ) {
-        var _ = $rootScope._;
         $scope.countries = rgiCountrySrvc.query({country_use: true});
         $scope.disable_button = false;
         //TODO
@@ -107,7 +106,7 @@ angular.module('app')
                 } else {
                     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
                         questions.forEach(function (question) {
-                            if (_.indexOf(question.assessments, new_assessment_year + "-" + new_assessment_ver) < 0) {
+                            if (question.assessments.indexOf(new_assessment_year + "-" + new_assessment_ver) < 0) {
                                 question.assessments.push(new_assessment_year + "-" + new_assessment_ver);
                             }
                         });

@@ -2,6 +2,7 @@
 
 angular.module('app')
     .controller('rgiNewWebpageDialogCtrl', function (
+        _,
         $scope,
         $route,
         $rootScope,
@@ -15,7 +16,6 @@ angular.module('app')
         rgiUserMethodSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
-        var _ = $rootScope._;
 
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];

@@ -2,6 +2,7 @@
 
 angular.module('app')
     .controller('rgiAssignAssessmentDialogCtrl', function (
+        _,
         $scope,
         $rootScope,
         $q,
