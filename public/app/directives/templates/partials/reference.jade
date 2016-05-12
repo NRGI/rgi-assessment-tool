@@ -1,9 +1,9 @@
 .row
     b Type:
     u: em(ng-if="ref.citation_type === 'interview'")  {{ref.citation_type | ucfirst}}
-    span(ng-if="current_user.isSupervisor()")
+    span(ng-if="identity.currentUser.isSupervisor()")
         u: em(ng-if="ref.citation_type === 'document'")  {{ref.document_ID.type | addSpaces | ucfirst}}
-    span(ng-if="!current_user.isSupervisor()")
+    span(ng-if="!identity.currentUser.isSupervisor()")
         u: em(ng-if="ref.citation_type === 'document'")
             span(ng-if="['book', 'data_file', 'journal', 'parliamentary_meeting_note', 'policy_document', 'web_page', 'generic'].indexOf(ref.document_ID.type) > -1")  {{ref.document_ID.type | addSpaces | ucfirst}}
             span(ng-if="['book_section', 'encyclopedia_article'].indexOf(ref.document_ID.type) > -1")  Book Chapter
@@ -21,10 +21,10 @@
 .row(ng-if="ref.document_ID.type === 'web_page' && ref.citation_type !== 'interview'")
     b Source:
     a(href="{{ref.document_ID.source}}" target="_blank")  {{ref.document_ID.source}}
-.row(ng-if="ref.citation_type === 'interview' && (current_user.isSupervisor() || ref.author._id===current_user._id)")
+.row(ng-if="ref.citation_type === 'interview' && (identity.currentUser.isSupervisor() || ref.author._id===identity.currentUser._id)")
     b Contact:
     |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}} ({{ref.interviewee_ID.role}})
-.row(ng-if="ref.citation_type === 'interview' && (!current_user.isSupervisor() && ref.author._id!==current_user._id)")
+.row(ng-if="ref.citation_type === 'interview' && (!identity.currentUser.isSupervisor() && ref.author._id!==identity.currentUser._id)")
     b Contact:
     em  {{ref.interviewee_ID.role | ucfirst}}
 .row(ng-if="ref.citation_type !== 'interview'")
@@ -41,9 +41,9 @@
     |  {{ref.location}}
 .row
     b Cited by:
-    text(ng-if="current_user.isSupervisor()")  {{ref.author.firstName}} {{ref.author.lastName}}
-    text(ng-if="!current_user.isSupervisor() && ref.author._id!==current_user._id")  {{ref.author.role}}
-    text(ng-if="!current_user.isSupervisor() && ref.author._id===current_user._id")  you
+    text(ng-if="identity.currentUser.isSupervisor()")  {{ref.author.firstName}} {{ref.author.lastName}}
+    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id!==identity.currentUser._id")  {{ref.author.role}}
+    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id===identity.currentUser._id")  you
     |  on {{ref.date | date: 'MM/dd/yyyy'}}
 .row(ng-if="ref.citation_type === 'interview'")
     b Interviewed:
@@ -56,23 +56,23 @@
     text(ng-if="ref.comment" ng-bind-html="ref.comment")
     text(ng-if="!ref.comment")  N/A
 
-.row.top-padding-med.button-set(ng-if="ref.author._id===current_user._id")
+.row.top-padding-med.button-set(ng-if="ref.author._id===identity.currentUser._id")
     button.btn.btn-primary(
     ng-click="showRestoreReferenceDialog($index)"
     ng-if="ref.hidden"
-    ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Restore Reference
+    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Restore Reference
     button.btn.btn-danger(
     ng-click="deleteReferenceConfirmation($index)"
     ng-if="!ref.hidden"
-    ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted' || (getOwnReferencesNumber() <= 1)") Delete Reference
+    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted' || (getOwnReferencesNumber() <= 1)") Delete Reference
     | &nbsp;
     button.btn.btn-primary(
     ng-click="showEditDocumentReferenceDialog($index)"
     ng-if="(ref.citation_type!=='interview') && !ref.hidden"
-    ng-disabled="(assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
+    ng-disabled="(assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
     button.btn.btn-primary(
     ng-if="(ref.citation_type==='interview') && !ref.hidden"
     ng-click="showEditInterviewReferenceDialog($index)"
-    ng-disabled="assessment.edit_control!==current_user._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
+    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
 
 hr
