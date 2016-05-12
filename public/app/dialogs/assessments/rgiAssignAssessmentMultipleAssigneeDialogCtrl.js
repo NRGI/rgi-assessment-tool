@@ -5,15 +5,12 @@ angular.module('app')
         $scope,
         $route,
         $q,
-        ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
-        rgiIdentitySrvc,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         var availableUsers = [],
             assigneeField = $scope.userType + '_ID',
             originalAssigneeList = [],
@@ -121,9 +118,5 @@ angular.module('app')
                         $route.reload();
                     }
                 });
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
