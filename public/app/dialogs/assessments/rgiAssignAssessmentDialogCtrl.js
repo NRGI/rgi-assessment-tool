@@ -6,17 +6,14 @@ angular.module('app')
         $scope,
         $rootScope,
         $q,
-        ngDialog,
         rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         ASSESSMENT_ROLES_SET,
-        rgiIdentitySrvc,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         var originalAssessment = {};
         $scope.assessmentRoles = _.without(ASSESSMENT_ROLES_SET,'ext_reviewer');
         $scope.availableUsers = {};
@@ -59,11 +56,10 @@ angular.module('app')
             rgiAssessmentMethodSrvc.updateAssessment($scope.assessment)
                 .then(function () {
                     $rootScope.$broadcast('REFRESH_ASSESSMENT_LIST');
-                    $scope.closeThisDialog();
                     rgiNotifier.notify(notificationMessage);
                 }, function (reason) {
                     rgiNotifier.error(reason);
-                });
+                }).finally($scope.closeThisDialog);
         };
 
         $scope.assignAssessment = function () {
@@ -149,9 +145,5 @@ angular.module('app')
                     updateAssessment('Assessment reassigned!');
                 });
             }
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
