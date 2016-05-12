@@ -1,27 +1,26 @@
 legend References
-    text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor()")  (required):
+    text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor()") (required):
 .bottom-padding-med(
-    ng-if="(identity.currentUser._id===assessment.edit_control && !(['resubmitted', 'submitted'].indexOf(assessment.status) > -1)) || identity.currentUser.isExternalReviewer()"
+    ng-if="((identity.currentUser._id === assessment.edit_control) && (['resubmitted', 'submitted'].indexOf(assessment.status) === -1)) || identity.currentUser.isExternalReviewer()"
     id="biblio_div")
     .row
         .col-md-5.pull-left.top-padding-med
             select.form-group.form-control.pull-left(
             ng-model="selected.value"
             ng-change="selectRefDialog(selected.value)"
-            ng-disabled="(assessment.edit_control!==identity.currentUser._id && !identity.currentUser.isExternalReviewer()) || assessment.status === 'submitted' || assessment.status === 'trial_submitted'")
+            ng-disabled="((assessment.edit_control !== identity.currentUser._id) && !identity.currentUser.isExternalReviewer()) || (['submitted', 'trial_submitted'].indexOf(assessment.status) > -1)")
                 option(
                 value="none"
                 selected
                 disabled) Select action
                 option(
-                ng-repeat="ref in ref_type"
-                value="{{ref.value}}") {{ref.text}}
+                ng-repeat="ref in ref_type track by ref.value"
+                value="{{::ref.value}}") {{::ref.text}}
 
-//- BILBLIO LIST
 div(id="prev_bib" ng-if="!isReferenceListEmpty()")
     .row.left-padding-lg.right-padding-lg
         h4 Citations
         .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references", ng-if="!ref.hidden")
             div(ng-include="'/partials/directives/templates/partials/reference'")
-        .row.left-padding-lg.bottom-padding-med.deleted(ng-repeat="ref in references", ng-if="ref.hidden")
+        .row.left-padding-lg.bottom-padding-med.deleted(ng-repeat="ref in references", ng-if="ref.hidden && (ref.author._id === identity.currentUser._id)")
             div(ng-include="'/partials/directives/templates/partials/reference'")
