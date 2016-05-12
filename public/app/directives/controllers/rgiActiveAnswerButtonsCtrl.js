@@ -20,8 +20,6 @@ angular
         rgiUrlGuideSrvc,
         rgiUtilsSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
         var assessment_ID = $routeParams.answer_ID.substring(0, $routeParams.answer_ID.length - 4),
             _ = $scope.$parent.$parent._;
 
@@ -50,9 +48,9 @@ angular
             rgiAnswerMethodSrvc.updateAnswer(answerData)
                 .then(function () {
                     if (status!=='saved'){
-                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining($scope.current_user.role, true, answerData) && !isTrialAssessment()) {
+                        if (rgiQuestionSetSrvc.isAnyQuestionRemaining(rgiIdentitySrvc.currentUser.role, true, answerData) && !isTrialAssessment()) {
                             $location.path( rgiUrlGuideSrvc.getAnswerUrl(answerData.assessment_ID,
-                                rgiQuestionSetSrvc.getNextQuestionId($scope.current_user.role, true, answerData)) );
+                                rgiQuestionSetSrvc.getNextQuestionId(rgiIdentitySrvc.currentUser.role, true, answerData)) );
                         } else {
                             $location.path(rgiUrlGuideSrvc.getAssessmentUrl(answerData.assessment_ID));
                         }
@@ -69,10 +67,10 @@ angular
                 status = new_answer_data.status;
 
             if (new_answer_data.new_answer_selection) {
-                new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+                new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
             }
 
-            if (status!=='flagged' && flag_check && $scope.current_user.isSupervisor()) {
+            if (status!=='flagged' && flag_check && rgiIdentitySrvc.currentUser.isSupervisor()) {
                 status = 'flagged';
             } else if (status==='flagged' && !flag_check) {
                 status = 'saved';
@@ -80,34 +78,27 @@ angular
                 status = 'saved';
             }
 
-            new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
+            new_answer_data[rgiIdentitySrvc.currentUser.role + '_resolve_flag_required'] = false;
             updateAnswer(new_answer_data, status, 'Answer saved');
-
-            // rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-            //     .then(function () {
-            //         rgiNotifier.notify('Answer saved');
-            //     }, function (reason) {
-            //         rgiNotifier.notify(reason);
-            //     });
         };
+        
         $scope.answerSubmit = function () {
-            // answer.question_ID.dependant
             var new_answer_data = $scope.answer,
                 auth_match = _.some($scope.references, function (ref) {
-                    return (ref.author._id === $scope.current_user._id && !ref.hidden);
+                    return (ref.author._id === rgiIdentitySrvc.currentUser._id && !ref.hidden);
                 });
 
-            if (!new_answer_data[$scope.current_user.role + '_score'] && !new_answer_data.new_answer_selection) {
+            if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] && !new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[$scope.current_user.role + '_justification'] && !new_answer_data.question_ID.dependant) {
+            } else if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide a justification');
-            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, $scope.current_user) && !new_answer_data.question_ID.dependant) {
+            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide at least one supporting reference!');
-            } else if ($scope.current_user.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match && !new_answer_data.question_ID.dependant) {
+            } else if (rgiIdentitySrvc.currentUser.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
             } else {
                 if (new_answer_data.new_answer_selection) {
-                    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+                    new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
                 updateAnswer(new_answer_data, 'submitted', 'Answer submitted');
             }
@@ -115,15 +106,15 @@ angular
 
         $scope.answerResubmit = function () {
             var new_answer_data = $scope.answer;
-            new_answer_data[$scope.current_user.role + '_resolve_flag_required'] = false;
+            new_answer_data[rgiIdentitySrvc.currentUser.role + '_resolve_flag_required'] = false;
 
-            if (!new_answer_data[$scope.current_user.role + '_score'] && new_answer_data.new_answer_selection) {
+            if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] && new_answer_data.new_answer_selection) {
                 rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[$scope.current_user.role + '_justification'] && !new_answer_data.question_ID.dependant) {
+            } else if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                 rgiNotifier.error('You must provide a justification');
             } else {
                 if (new_answer_data.new_answer_selection) {
-                    new_answer_data[$scope.current_user.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
+                    new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
                 updateAnswer(new_answer_data, 'resubmitted', 'Answer resubmitted');
             }
@@ -165,7 +156,7 @@ angular
                 updateAnswer(new_answer_data, 'unresolved', 'Answer tagged as unresolved');
             }
         };
-        // make final choice
+        
         $scope.finalChoiceDialog = function () {
             rgiDialogFactory.answerFinalChoice($scope);
         };

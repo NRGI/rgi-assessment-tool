@@ -1,58 +1,57 @@
-//- Active buttons
 .col-md-pull-2
     button.btn.btn-success(
     ng-click="answerResubmit()"
-    ng-if="assessment.edit_control===current_user._id && assessment.status==='review_' + current_user.role"
+    ng-if="(assessment.edit_control === identity.currentUser._id) && (assessment.status === 'review_' + identity.currentUser.role)"
     ng-disabled="isResolveFlagRequired() && !isChoiceChanged() && !isJustificationChanged()"
     ) Mark complete
     | &nbsp;
 
     button.btn.btn-success(
     ng-click="answerSubmit()"
-    ng-if="assessment.edit_control===current_user._id && (['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1)"
+    ng-if="(assessment.edit_control === identity.currentUser._id) && (['trial_started', 'researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1)"
     ng-disabled="isResolveFlagRequired() && !isChoiceChanged() && !isJustificationChanged()"
     ) Mark complete
     | &nbsp;
 
     button.btn.btn-primary(
     ng-click="answerSave()"
-    ng-if="(assessment.edit_control===current_user._id && assessment.status!=='submitted' && assessment.status!=='trial_submitted') || current_user.isSupervisor()"
+    ng-if="((assessment.edit_control === identity.currentUser._id) && (['trial_submitted','submitted'].indexOf(assessment.status) === -1)) || identity.currentUser.isSupervisor()"
     ) Save answer
     | &nbsp;
 
     button.btn.btn-success(
     ng-click="answerApprove()"
-    ng-if="current_user.role==='supervisor' && (['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
+    ng-if="identity.currentUser.isSupervisor() && (['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
     ) Approve answer
     | &nbsp;
 
     button.btn.btn-danger(
     ng-click="answerClear()"
-    ng-if="assessment.edit_control===current_user._id && (['trial_started', 'researcher_started', 'reviewer_started', 'review_' + current_user.role].indexOf(assessment.status) > -1) && (['assigned', 'saved' + current_user.role].indexOf(answer.status) > -1)"
+    ng-if="(assessment.edit_control === identity.currentUser._id) && (['trial_started', 'researcher_started', 'reviewer_started', 'review_' + identity.currentUser.role].indexOf(assessment.status) > -1) && (['assigned', 'saved' + identity.currentUser.role].indexOf(answer.status) > -1)"
     ) Reset answer
     | &nbsp;
 
     button.btn.btn-warning(
     ng-click="answerFlag()"
-    ng-if="current_user.isSupervisor()"
+    ng-if="identity.currentUser.isSupervisor()"
     ) Flag answer
     | &nbsp;
 
     button.btn.btn-danger(
     ng-click="answerUnresolved()"
-    ng-if="current_user.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
+    ng-if="identity.currentUser.isSupervisor() && (['under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
     ) Mark unresolved
     | &nbsp;
 
     button.btn.btn-primary(
     ng-click="finalChoiceDialog()"
-    ng-if="current_user.isSupervisor() && answer.reviewer_score && answer.researcher_score"
+    ng-if="identity.currentUser.isSupervisor() && answer.reviewer_score && answer.researcher_score"
     ) Choose final answer
     | &nbsp;
 
     button.btn.btn-primary(
     ng-click="externalAnswer()"
-    ng-if="current_user.isExternalReviewer()"
+    ng-if="identity.currentUser.isExternalReviewer()"
     ) Choose alternate answer
     | &nbsp;
 
