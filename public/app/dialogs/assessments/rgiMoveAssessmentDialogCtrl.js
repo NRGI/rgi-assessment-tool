@@ -6,99 +6,79 @@ angular.module('app')
         rgiUserSrvc,
         rgiDialogFactory
     ) {
+        var getUserInfo = function(user) {
+            return user.firstName + " " + user.lastName + ' (' + user.role + ')';
+        };
+
         rgiUserSrvc.get({_id: $scope.$parent.assessment.edit_control}, function (control_profile) {
-            var workflow_opts = [],
+            var workflowOptions = [],
                 assessment = $scope.$parent.assessment,
-                assessment_counters = $scope.$parent.assessment_counters;
+                stats = $scope.$parent.assessment_counters;
 
             if (assessment.status === 'trial_submitted') {
-                if ($scope.$parent.assessment_counters.flagged!==0) {
-                    workflow_opts.push({
-                        text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+                if (stats.flagged !== 0) {
+                    workflowOptions.push({
+                        text: 'Send back to ' + getUserInfo(control_profile) + ' for review.',
                         value: control_profile.role + '_trial'
                     });
-                } else if ($scope.$parent.assessment_counters.approved===$scope.$parent.assessment_counters.length) {
-                    workflow_opts.push({
-                        text: 'Allow ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
+                } else if (stats.approved === stats.length) {
+                    workflowOptions.push({
+                        text: 'Allow ' + getUserInfo(control_profile) + ' to continue assessment.',
                         value: 'assigned_' + control_profile.role
                     });
                 }
             } else {
-                workflow_opts.push({
-                    text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') for review.',
+                workflowOptions.push({
+                    text: 'Send back to ' + getUserInfo(control_profile) + ' for review.',
                     value: 'review_' + control_profile.role
                 });
-                if (control_profile.role === 'researcher' && assessment_counters.flagged === 0 && assessment.reviewer_ID) {
+
+                if ((control_profile.role === 'researcher') && (stats.flagged === 0) && assessment.reviewer_ID) {
                     if (assessment.first_pass) {
-                        workflow_opts.push({
-                            text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
+                        workflowOptions.push({
+                            text: 'Move to ' + getUserInfo(assessment.reviewer_ID) + '.',
                             value: assessment.reviewer_ID.role + '_trial'
                         });
                     } else {
-                        workflow_opts.push({
-                            text: 'Move to ' + assessment.reviewer_ID.firstName + " " + assessment.reviewer_ID.lastName + ' (' + assessment.reviewer_ID.role + ').',
+                        workflowOptions.push({
+                            text: 'Move to ' + getUserInfo(assessment.reviewer_ID) + '.',
                             value: 'assigned_' + assessment.reviewer_ID.role
                         });
                     }
-                } else if (control_profile.role === 'reviewer' && assessment_counters.flagged === 0) {
-                    workflow_opts.push({
-                        text: 'Move to ' + assessment.researcher_ID.firstName + " " + assessment.researcher_ID.lastName + ' (' + assessment.researcher_ID.role + ').',
+                } else if ((control_profile.role === 'reviewer') && (stats.flagged === 0)) {
+                    workflowOptions.push({
+                        text: 'Move to ' + getUserInfo(assessment.researcher_ID) + '.',
                         value: 'assigned_' + assessment.researcher_ID.role
                     });
                 }
             }
-            //if (assessment.status === 'trial_submitted') {
-            //    workflow_opts.push({
-            //        text: 'Send back to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ') to continue assessment.',
-            //        value: 'trial_continue'
-            //    });
-            //}
-            if (assessment_counters.flagged===0 && assessment_counters.finalized===assessment_counters.length && assessment.status!=='approved') {
-                workflow_opts.push({
+
+            if ((stats.flagged === 0) && (stats.finalized === stats.length) && (assessment.status !== 'approved')) {
+                workflowOptions.push({
                     text: 'Approve assessment',
                     value: 'approved'
                 });
             }
-            // workflow_opts.push({
-            //     text: 'Move to ' + control_profile.firstName + " " + control_profile.lastName + ' (' + control_profile.role + ').',
-            //     value: ''
-            // });
 
-            //if (assessment.status === 'approved' || (assessment_counters.flagged===0 && assessment.status==='under_review')) {
             if (assessment.status === 'approved') {
-                workflow_opts.push({
+                workflowOptions.push({
                     text: 'Move to internal review',
                     value: 'internal_review'
                 });
-                workflow_opts.push({
+                workflowOptions.push({
                     text: 'Move to external review',
                     value: 'external_review'
                 });
-                workflow_opts.push({
+                workflowOptions.push({
                     text: 'Final approval',
                     value: 'final_approval'
                 });
             }
-            // } else {
-            //     workflow_opts.push({
-            //         text: 'Move to internal review',
-            //         value: ''
-            //     });
-            //     workflow_opts.push({
 
-            //         text: 'Move to external review',
-
-            //         value: ''
-            //     });
-            //     workflow_opts.push({
-            //         text: 'Final approval',
-            //         value: ''
-            //     });
-            // }
-            $scope.workflow_opts = workflow_opts;
+            $scope.workflow_opts = workflowOptions;
         });
 
         $scope.moveAssessment = function () {
             rgiDialogFactory.assessmentMoveConfirm($scope);
-         };
+        };
     });
