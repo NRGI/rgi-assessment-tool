@@ -15,8 +15,6 @@ angular.module('app')
         rgiAnswerMethodSrvc,
         rgiUserMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
         }
@@ -35,7 +33,7 @@ angular.module('app')
             var file_extension,
                 new_document = $scope.$parent.$parent.new_document,
                 allowed_extensions = rgiAllowedFileExtensionGuideSrvc.getList(),
-                new_user_data = $scope.current_user;
+                new_user_data = rgiIdentitySrvc.currentUser;
 
             $scope.disable_button=true;
 
@@ -62,7 +60,7 @@ angular.module('app')
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
                     answer_ID = $scope.$parent.answer.answer_ID,
-                    current_user_ID = $scope.current_user._id,
+                    current_user_ID = rgiIdentitySrvc.currentUser._id,
                     new_answer_data = $scope.$parent.answer,
                     new_doc_data = new rgiDocumentSrvc(new_document),
                     new_ref_data = {
@@ -120,14 +118,14 @@ angular.module('app')
                     .then(rgiDocumentMethodSrvc.updateDocument(new_doc_data))
                     .then(rgiUserMethodSrvc.updateUser(new_user_data))
                     .then(function () {
-                        $scope.closeThisDialog();
-                        $scope.disable_button = false;
                         $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                         $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
                         rgiNotifier.notify('Reference added!');
                     }, function (reason) {
                         rgiNotifier.error(reason);
+                    }).finally(function() {
                         $scope.disable_button = false;
+                        $scope.closeThisDialog();
                     });
             }
         };

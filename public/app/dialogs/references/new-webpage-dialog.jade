@@ -1,7 +1,7 @@
-div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
-    div.modal-header
+.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
+    .modal-header
         h3 New Webpage Reference
-    div.modal-body
+    .modal-body
         .row.left-padding-lg(id="new_document_form")
             .form-horizontal
                 // NEW DOC
@@ -78,17 +78,17 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     rgi-calendar(ng-model="new_document.date_published", placeholder="Date published...")
 
                     // EXISTING DOC
-                    div(ng-if="new_document.status==='submitted'")
+                    div(ng-if="new_document.status === 'submitted'")
                         .row
                             // TITILE
-                            div.col-md-6
+                            .col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Title:
                                     h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
                                     h5(ng-if="!new_document.title")   N/A
                             // DOC TYPE
-                            div.col-md-6
+                            .col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Type:
@@ -96,7 +96,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     h5(ng-if="!new_document.type")  N/A
                         .row
                             // AUTHOR
-                            div.col-md-6
+                            .col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Author(s):
@@ -105,7 +105,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                         text(ng-if="$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}}
                                     h5(ng-if="!new_document.authors")  N/A
                             // SOURCE
-                            div.col-md-6
+                            .col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Source:
@@ -113,25 +113,22 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     h5(ng-if="!new_document.source")  N/A
 
                         .row
-
                             // YEAR
-                            div.col-md-6
+                            .col-md-6
                                 .form-group.pull-left
                                     h5
                                         b Date published:
                                     h5(ng-if="new_document.date_published")  {{new_document.date_published | date: 'MM/dd/yyyy'}}
                                     h5(ng-if="!new_document.date_published")  N/A
 
-
-
                     // DATE ACCESSED
-                    div.left-padding-med
+                    .left-padding-med
                         .row
                             .form-group
                                 rgi-calendar(ng-model="ref_date_accessed", placeholder="Date accessed (required)...")
 
                     //- COMMENT
-                    div(id="comment")
+                    #comment
                         .row
                             .form-group
                                 .col-lg-11
@@ -142,15 +139,12 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     ng-model="answer.new_ref_comment"
                                     autocomplete="off")
 
-        div.spinner(ng-if="disable_button")
-            div.double-bounce1
-            div.double-bounce2
+        .spinner(ng-if="disable_button")
+            .double-bounce1
+            .double-bounce2
 
-    div.modal-footer(ng-if="!disable_button")
+    .modal-footer(ng-if="!disable_button")
         .col-lg-7
-            button.btn.btn-block.btn-success(
-            ng-click="documentRefSubmit()"
-            ng-disabled="disable_button"
-            ) Create reference
+            button.btn.btn-block.btn-success(ng-click="documentRefSubmit()", ng-disabled="disable_button") Create reference
         .col-lg-5
             button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel
