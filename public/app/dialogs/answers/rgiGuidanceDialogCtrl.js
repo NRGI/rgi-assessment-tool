@@ -3,25 +3,16 @@
 angular.module('app')
     .controller('rgiGuidanceDialogCtrl', function (
         $scope,
-        ngDialog,
         rgiAnswerMethodSrvc,
-        rgiIdentitySrvc,
         rgiNotifier
     ) {
         $scope.question_guidance_text = $scope.$parent.question.question_guidance_text;
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+        var answer = $scope.$parent.answer;
+        answer.guidance_dialog = false;
 
-        var new_answer_data = $scope.$parent.answer;
-        new_answer_data.guidance_dialog = false;
-        rgiAnswerMethodSrvc.updateAnswer(new_answer_data)
-            .then(function () {
-
-            }, function (reason) {
+        rgiAnswerMethodSrvc.updateAnswer(answer)
+            .catch(function (reason) {
                 rgiNotifier.notify(reason);
-                ngDialog.close();
+                $scope.closeThisDialog();
             });
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
-        };
     });
