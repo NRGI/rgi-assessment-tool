@@ -11,8 +11,6 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiNotifier
     ) {
-        $scope.identity = rgiIdentitySrvc;
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
 
@@ -28,12 +26,12 @@ angular.module('app')
             $scope.references = answer.references;
             $scope.question = answer.question_ID;
 
-            originallySubmitted.score = answer[$scope.current_user.role + '_score'];
-            originallySubmitted.justification = answer[$scope.current_user.role + '_justification'];
+            originallySubmitted.score = answer[rgiIdentitySrvc.currentUser.role + '_score'];
+            originallySubmitted.justification = answer[rgiIdentitySrvc.currentUser.role + '_justification'];
 
-            if (answer[$scope.current_user.role + '_score']) {
+            if (answer[rgiIdentitySrvc.currentUser.role + '_score']) {
                 $scope.question.question_criteria.forEach(function (opt, i) {
-                    if (i === answer[$scope.current_user.role + '_score'].order - 1) {
+                    if (i === answer[rgiIdentitySrvc.currentUser.role + '_score'].order - 1) {
                         opt.selected = true;
                         $scope.answer.new_answer_selection = i;
                     } else {
@@ -70,13 +68,13 @@ angular.module('app')
         };
 
         $scope.isJustificationChanged = function() {
-            var justification = $scope.answer ? $scope.answer[$scope.current_user.role + '_justification'] : undefined;
+            var justification = $scope.answer ? $scope.answer[rgiIdentitySrvc.currentUser.role + '_justification'] : undefined;
             return (justification !== undefined) && ((justification !== originallySubmitted.justification) ||
                 (undefined === originallySubmitted.justification));
         };
 
         $scope.isResolveFlagRequired = function() {
-            return $scope.answer && $scope.answer[$scope.current_user.role + '_resolve_flag_required'];
+            return $scope.answer && $scope.answer[rgiIdentitySrvc.currentUser.role + '_resolve_flag_required'];
         };
 
         resetReference();

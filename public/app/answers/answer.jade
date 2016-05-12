@@ -1,96 +1,91 @@
 .container-fluid.page-container
     .well
-        div.page-well
-            .h3 {{assessment.country}} {{assessment.year}} {{assessment.mineral | addSpaces}} {{assessment.version}} assessment
+        .page-well
+            .h3 {{::assessment.country}} {{::assessment.year}} {{::assessment.mineral|addSpaces}} {{::assessment.version}} assessment
             ul.nav.nav-tabs
                 li.active: a(data-target="#question" data-toggle="tab") Question
                 li: a(data-target="#guidance" data-toggle="tab") Question Guidance
-                li(ng-if="current_user.isSupervisor()"): a(data-target="#previous" data-toggle="tab") Answer History
+                li(ng-if="identity.currentUser.isSupervisor()"): a(data-target="#previous" data-toggle="tab") Answer History
                 .row-fluid.right-padding-lg
                     rgi-answer-nav(
                     assessment="assessment"
                     ng-if="assessment.status!=='trial_started'")
-                    div(ng-if="current_user.isResearcher() || current_user.isReviewer()")
+                    div(ng-if="identity.currentUser.isResearcher() || identity.currentUser.isReviewer()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['resubmitted', 'submitted'].indexOf(answer.status) > -1")  Complete
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-check(ng-if="answer.status==='approved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag.hint(ng-if="answer.status==='flagged'", popover="For resubmission you should first change the choice or upload a new reference", popover-trigger="mouseenter")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
                         text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
-                    div(ng-if="current_user.isSupervisor()")
+                    div(ng-if="identity.currentUser.isSupervisor()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-warning(ng-if="answer.status==='submitted'") Needs review
 
-            div.tab-content
+            .tab-content
 
-                div.tab-pane.active.right-padding-lg.left-padding-lg(id="question")
+                #question.tab-pane.active.right-padding-lg.left-padding-lg
                     .row.bottom-padding-med
-                        h3: em.bottom-padding-med.col-md-11 Question {{question.question_label}}: {{question.question_text}}
+                        h3: em.bottom-padding-med.col-md-11 Question {{::question.question_label}}: {{::question.question_text}}
                             text(ng-if="question.dejure")  (Dejure)
                             text(ng-if="!question.dejure")  (Defacto)
 
-                    // Previous answers
                     .row.bottom-padding-med
                         rgi-prev-answers(answer="answer")
 
-                    // Active buttons
                     .row.bottom-padding-lg
                         rgi-active-answer-buttons
-                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitted'].indexOf(answer.status) > -1) || current_user.isSupervisor())")
+                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitted'].indexOf(answer.status) > -1) || identity.currentUser.isSupervisor())")
                         rgi-flag-tabs
 
                     .row(ng-if="answer.external_answer.length!==0")
                         rgi-external-answer-tabs(answer="answer")
 
-                    // Answer form
-                    .row.bottom-padding-med(ng-if="assessment.edit_control===current_user._id")
+                    .row.bottom-padding-med(ng-if="assessment.edit_control === identity.currentUser._id")
                         rgi-answer-form
 
-                    // Biblio
-                    .row.bottom-padding-lg(ng-if="assessment.edit_control===current_user._id || current_user.isSupervisor() || current_user.isExternalReviewer()")
+                    .row.bottom-padding-lg(ng-if="(assessment.edit_control === identity.currentUser._id) || identity.currentUser.isSupervisor() || identity.currentUser.isExternalReviewer()")
                         rgi-references
 
-                    // Comments
                     .row.bottom-padding-med
                         rgi-comments(update="answer")
 
 
-                div.tab-pane(id="guidance")
+                #guidance.tab-pane
                     label: h3 Guidance:
-                    div(ng-bind-html="question.question_guidance_text").right-padding-lg.left-padding-lg
-                    div(ng-if="question.question_dependancies").right-padding-lg.left-padding-lg
+                    .right-padding-lg.left-padding-lg(ng-bind-html="question.question_guidance_text")
+                    .right-padding-lg.left-padding-lg(ng-if="question.question_dependancies")
                         label: h5: em Dependencies:
                         div(ng-bind-html="question.question_dependancies")
-                div.tab-pane(id="previous" ng-if="current_user.isSupervisor()")
+                #previous.tab-pane(ng-if="identity.currentUser.isSupervisor()")
                     label: h3 Answer History:
                     .row
                         .col-md-6
                             h4 Researcher scores:
                                 em(ng-if="answer.researcher_score_history.length<1")  N/A
-                            table(ng-if="answer.researcher_score_history.length>0").table.table-hover
+                            table.table.table-hover(ng-if="answer.researcher_score_history.length > 0")
                                 thead
                                     tr
                                         th.col-md-3 Score
                                         th.col-md-7 Justification
                                         th.col-md-2 Date
                                 tbody
-                                    tr(ng-repeat="score in answer.researcher_score_history")
-                                        td {{score.score.letter | ucfirst}} - {{score.score.text}}
+                                    tr(ng-repeat="score in answer.researcher_score_history track by score.order")
+                                        td {{::score.score.letter|ucfirst}} - {{::score.score.text}}
                                         td: div(ng-bind-html="score.justification")
-                                        td {{score.date | date}}
+                                        td {{::score.date|date}}
                         .col-md-6
                             h4 Reviewer scores:
-                                em(ng-if="answer.reviewer_score_history.length<1")  N/A
-                            table(ng-if="answer.reviewer_score_history.length>0").table.table-hover
+                                em(ng-if="answer.reviewer_score_history.length < 1")  N/A
+                            table.table.table-hover(ng-if="answer.reviewer_score_history.length > 0")
                                 thead
                                     tr
                                         th.col-md-3 Score
                                         th.col-md-7 Justification
                                         th.col-md-2 Date
                                 tbody
-                                    tr(ng-repeat="score in answer.reviewer_score_history")
-                                        td {{score.score.letter | ucfirst}} - {{score.score.text}}
+                                    tr(ng-repeat="score in answer.reviewer_score_history track by score.order")
+                                        td {{::score.score.letter|ucfirst}} - {{::score.score.text}}
                                         td: div(ng-bind-html="score.justification")
-                                        td {{score.date | date}}
+                                        td {{::score.date|date}}
