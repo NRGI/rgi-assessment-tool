@@ -4,7 +4,7 @@
     .modal-body
         fieldset: div: .row
             h4.col-md-4  Assessment:
-            .form-group.col-md-6(class="nullable")
+            .form-group.col-md-6.nullable
                 select.form-group.form-control.right-padding-med(
                 name="assessment_selector"
                 ng-model="new_assessment_assignment"
@@ -14,4 +14,4 @@
     .modal-footer.top-padding-lg
         button.btn.btn-success(ng-click="assignAssessmentExternal(new_assessment_assignment)") Assign assessment
         | &nbsp;
-        button.btn.btn-danger(ng-click="closeDialog()") Cancel
+        button.btn.btn-danger(ng-click="closeThisDialog()") Cancel

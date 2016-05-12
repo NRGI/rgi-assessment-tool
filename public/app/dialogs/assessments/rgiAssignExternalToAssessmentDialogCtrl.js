@@ -4,7 +4,6 @@ angular.module('app')
     .controller('rgiAssignExternalToAssessmentDialogCtrl', function (
         $scope,
         $route,
-        ngDialog,
         rgiNotifier,
         rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc
@@ -28,9 +27,5 @@ angular.module('app')
                         rgiNotifier.error(reason);
                     }).finally($scope.closeThisDialog);
             }
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
