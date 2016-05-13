@@ -111,7 +111,9 @@ describe('rgiUtilsSrvc', function () {
         });
 
         afterEach(function() {
-
+            spies.$httpGet.withArgs(
+                'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' +
+                encodeURIComponent(URL) + '%22&format=json').called.should.be.equal(true);
             stubs.$httpGet.restore();
             stubs.$qDefer.restore();
         });
