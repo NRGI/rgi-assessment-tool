@@ -1,8 +1,9 @@
 'use strict';
 
 describe('rgiAuthSrvc', function () {
-    var rgiAuthSrvc;
-    var $q, $http, rgiIdentitySrvc, rgiUserSrvc;
+    var rgiAuthSrvc,
+        $q, $http, rgiIdentitySrvc, rgiUserSrvc,
+        spies = {}, stubs = {};
 
     beforeEach(module('app'));
 
@@ -77,103 +78,87 @@ describe('rgiAuthSrvc', function () {
         });
     });
 
-    describe('#authenticateUser', function() {
-        var $deferredResolveSpy, promise, $qDeferSpy, $qDeferStub, $httpPostSpy, $httpPostStub;
-        var username = 'username', password = 'password';
+    var set$httpPostStub = function(callback) {
+        spies.$httpPost = sinon.spy(function() {
+            return {then: callback};
+        });
+
+        stubs.$httpPost = sinon.stub($http, 'post', spies.$httpPost);
+    };
+
+    describe('LOGIN / LOGOUT', function() {
+        var promise, promiseGot;
 
         beforeEach(function () {
-            $deferredResolveSpy = sinon.spy();
+            spies.$deferredResolve = sinon.spy();
             promise = 'promise';
 
-            $qDeferSpy = sinon.spy(function() {
+            spies.$qDefer = sinon.spy(function() {
                 return {
-                    resolve: $deferredResolveSpy,
+                    resolve: spies.$deferredResolve,
                     promise: promise
                 };
             });
-            $qDeferStub = sinon.stub($q, 'defer', $qDeferSpy);
+            stubs.$qDefer = sinon.stub($q, 'defer', spies.$qDefer);
         });
 
-        it('sets the user data to Identity service on successful authorization', function() {
-            var firstName = 'Alex';
+        describe('#authenticateUser', function() {
+            var username = 'username', password = 'password';
 
-            $httpPostSpy = sinon.spy(function() {
-                return {
-                    then: function(callback) {
-                        callback({
-                            data: {
-                                success: true,
-                                user: {
-                                    firstName: firstName
-                                }
+            it('sets the user data to Identity service on successful authorization', function() {
+                var firstName = 'Alex';
+                set$httpPostStub(function(callback) {
+                    callback({
+                        data: {
+                            success: true,
+                            user: {
+                                firstName: firstName
                             }
-                        });
-                    }
-                };
+                        }
+                    });
+                });
+
+                promiseGot = rgiAuthSrvc.authenticateUser(username, password);
+                rgiIdentitySrvc.currentUser.firstName.should.be.equal(firstName);
+                spies.$deferredResolve.withArgs(true).called.should.be.equal(true);
             });
-            $httpPostStub = sinon.stub($http, 'post', $httpPostSpy);
 
-            rgiAuthSrvc.authenticateUser(username, password).should.be.equal(promise);
+            it('does nothing on failed authorization', function() {
+                set$httpPostStub(function(callback) {
+                    callback({
+                        data: {
+                            success: false
+                        }
+                    });
+                });
 
-            rgiIdentitySrvc.currentUser.firstName.should.be.equal(firstName);
-            $deferredResolveSpy.withArgs(true).called.should.be.equal(true);
+                promiseGot = rgiAuthSrvc.authenticateUser(username, password);
+                spies.$deferredResolve.withArgs(true).called.should.be.equal(false);
+            });
+
+            afterEach(function () {
+                spies.$httpPost.withArgs('/login', {username: username, password: password}).called.should.be.equal(true);
+            });
         });
 
-        it('does nothing on failed authorization', function() {
-            $httpPostSpy = sinon.spy(function() {
-                return {
-                    then: function(callback) {
-                        callback({
-                            data: {
-                                success: false
-                            }
-                        });
-                    }
-                };
-            });
-            $httpPostStub = sinon.stub($http, 'post', $httpPostSpy);
+        describe('#logoutUser', function() {
+            it('sends logout request to the back end', function() {
+                set$httpPostStub(function(callback) {
+                    callback();
+                });
 
-            rgiAuthSrvc.authenticateUser(username, password).should.be.equal(promise);
-            $deferredResolveSpy.withArgs(true).called.should.be.equal(false);
+                promiseGot = rgiAuthSrvc.logoutUser();
+                should.equal(rgiIdentitySrvc.currentUser, undefined);
+
+                spies.$httpPost.withArgs('/logout', {logout: true}).called.should.be.equal(true);
+                spies.$deferredResolve.called.should.be.equal(true);
+            });
         });
 
         afterEach(function () {
-            $httpPostSpy.withArgs('/login', {username: username, password: password}).called.should.be.equal(true);
-            $qDeferStub.restore();
-            $httpPostStub.restore();
-        });
-    });
-
-    describe('#logoutUser', function() {
-        it('sends logout request to the back end', function() {
-            var $deferredResolveSpy = sinon.spy();
-            var promise = 'promise';
-
-            var $qDeferSpy = sinon.spy(function() {
-                return {
-                    resolve: $deferredResolveSpy,
-                    promise: promise
-                };
-            });
-            var $qDeferStub = sinon.stub($q, 'defer', $qDeferSpy);
-
-            var $httpPostSpy = sinon.spy(function() {
-                return {
-                    then: function(callback) {
-                        callback();
-                    }
-                };
-            });
-            var $httpPostStub = sinon.stub($http, 'post', $httpPostSpy);
-
-            rgiAuthSrvc.logoutUser().should.be.equal(promise);
-            should.equal(rgiIdentitySrvc.currentUser, undefined);
-
-            $httpPostSpy.withArgs('/logout', {logout: true}).called.should.be.equal(true);
-            $deferredResolveSpy.called.should.be.equal(true);
-
-            $qDeferStub.restore();
-            $httpPostStub.restore();
+            promiseGot.should.be.equal(promise);
+            stubs.$qDefer.restore();
+            stubs.$httpPost.restore();
         });
     });
 });
