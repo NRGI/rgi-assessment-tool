@@ -1,6 +1,18 @@
 'use strict';
 
-angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrvc, rgiUserSrvc) {
+angular.module('app').factory('rgiAuthSrvc', function (
+    $http,
+    $q,
+    rgiHttpResponseProcessorSrvc,
+    rgiIdentitySrvc,
+    rgiNotifier,
+    rgiUserSrvc
+) {
+    var processHttpFailure = function(response) {
+        rgiHttpResponseProcessorSrvc.handle(response);
+        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
+    };
+
     return {
         authenticateUser: function (username, password) {
             var dfd = $q.defer();
@@ -14,7 +26,7 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
                 } else {
                     dfd.resolve(false);
                 }
-            });
+            }, processHttpFailure);
 
             return dfd.promise;
         },
@@ -24,7 +36,7 @@ angular.module('app').factory('rgiAuthSrvc', function ($http, $q, rgiIdentitySrv
             $http.post('/logout', {logout: true}).then(function () {
                 rgiIdentitySrvc.currentUser = undefined;
                 dfd.resolve();
-            });
+            }, processHttpFailure);
 
             return dfd.promise;
         },

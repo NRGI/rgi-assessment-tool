@@ -2,16 +2,27 @@
 
 describe('rgiAuthSrvc', function () {
     var rgiAuthSrvc,
-        $q, $http, rgiIdentitySrvc, rgiUserSrvc,
+        $q, $http, rgiHttpResponseProcessorSrvc, rgiIdentitySrvc, rgiNotifier, rgiUserSrvc,
         spies = {}, stubs = {};
 
     beforeEach(module('app'));
 
-    beforeEach(inject(function(_rgiAuthSrvc_, _$q_, _$http_, _rgiIdentitySrvc_, _rgiUserSrvc_) {
+    beforeEach(inject(function(
+        _rgiAuthSrvc_,
+        _$q_,
+        _$http_,
+        _rgiHttpResponseProcessorSrvc_,
+        _rgiIdentitySrvc_,
+        _rgiNotifier_,
+        _rgiUserSrvc_
+    ) {
         $http = _$http_;
         $q = _$q_;
+        rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
         rgiIdentitySrvc = _rgiIdentitySrvc_;
+        rgiNotifier = _rgiNotifier_;
         rgiUserSrvc = _rgiUserSrvc_;
+
         rgiAuthSrvc = _rgiAuthSrvc_;
     }));
 
@@ -155,10 +166,51 @@ describe('rgiAuthSrvc', function () {
             });
         });
 
+        describe('HTTP failure', function() {
+            var RESPONSE = 'RESPONSE', ERROR_MESSAGE = 'ERROR MESSAGE', notifierMock;
+
+            beforeEach(function() {
+                notifierMock = sinon.mock(rgiNotifier);
+                notifierMock.expects('error').withArgs(ERROR_MESSAGE);
+
+                spies.httpResponseProcessorHandle = sinon.spy();
+                spies.httpResponseProcessorGetMessage = sinon.spy(function() {
+                    return ERROR_MESSAGE;
+                });
+
+                stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
+                    spies.httpResponseProcessorHandle);
+                stubs.httpResponseProcessorGetMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage',
+                    spies.httpResponseProcessorGetMessage);
+
+                set$httpPostStub(function(uselessCallbackSuccess, callbackFailure) {
+                    callbackFailure(RESPONSE);
+                });
+            });
+
+            it('processed in #authenticateUser', function() {
+                promiseGot = rgiAuthSrvc.authenticateUser();
+            });
+
+            it('processed in #logoutUser', function() {
+                promiseGot = rgiAuthSrvc.logoutUser();
+            });
+
+            afterEach(function() {
+                spies.httpResponseProcessorHandle.withArgs(RESPONSE).called.should.be.equal(true);
+                spies.httpResponseProcessorGetMessage.withArgs(RESPONSE).called.should.be.equal(true);
+
+                notifierMock.restore();
+                notifierMock.verify();
+            });
+        });
+
         afterEach(function () {
             promiseGot.should.be.equal(promise);
-            stubs.$qDefer.restore();
-            stubs.$httpPost.restore();
+
+            Object.keys(stubs).forEach(function(stubName) {
+                stubs[stubName].restore();
+            });
         });
     });
 });
