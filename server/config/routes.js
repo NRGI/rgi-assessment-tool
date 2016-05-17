@@ -64,7 +64,7 @@ module.exports = function (app) {
     /////////////////////////
     //// DOCUMENTS  /////////
     /////////////////////////
-    app.get('/api/documents', auth.requiresApiLogin, documents.getDocuments);
+    app.get('/api/documents/:limit/:skip', auth.requiresApiLogin, documents.getDocuments);
     app.get('/api/documents/:id', auth.requiresApiLogin, documents.getDocumentsByID);
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
     app.delete('/api/documents/:id', auth.requiresRole('supervisor'), documents.deleteDocument);

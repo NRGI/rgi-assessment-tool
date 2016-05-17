@@ -49,7 +49,9 @@ documentSchema = new Schema({
     assessments: [String],
     questions: [ObjectId],
     answers: [String],
-    users: [ObjectId],
+    users: [{
+        type: ObjectId,
+        ref: 'User'}],
     mime_type: String,
     last_modified: {
         modified_by: ObjectId, // Pull from curretn user _id value but needs to handle legacy comments

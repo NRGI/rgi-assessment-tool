@@ -12,18 +12,28 @@ angular.module('app')
             {value: 'type', text: 'Sort by document type'},
             {value: 'assessments', text: 'Sort by attached assessments'}
         ];
-        $scope.sort_order = $scope.sort_options[0].value;
 
-        $scope.documents = [];
-        rgiDocumentSrvc.query({}, function (documents) {
-            documents.forEach(function (el) {
-                el.user_list = [];
-                el.users.forEach(function (element) {
-                    rgiUserListSrvc.get({_id: element}, function (user) {
-                        el.user_list.push(user);
-                    });
-                });
-                $scope.documents.push(el);
-            });
+        $scope.sort_order = $scope.sort_options[0].value;
+        
+        var limit = 50,
+            currentPage = 0,
+            totalPages = 0;
+
+        rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
+            $scope.count = response.count;
+            $scope.documents = response.data;
+            totalPages = response.count / limit;
+            currentPage = currentPage + 1;
         });
+        $scope.loadMoreDocs = function() {
+            if(currentPage < totalPages) {
+                rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
+
+                    response.data.forEach(function (doc) {
+                        $scope.documents.push(doc);
+                    });
+                    currentPage = currentPage + 1;
+                });
+            }
+        };
     });

@@ -5,6 +5,7 @@ var crypto              =   require('crypto'),
     mime                =   require('mime'),
     request             =   require('request'),
     s3                  =   require('s3'),
+    async               =   require('async'),
     Answer              =   require('mongoose').model('Answer'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
@@ -267,11 +268,59 @@ exports.fileCheck = function (req, res) {
     });
 };
 
-exports.getDocuments = function (req, res) {
-    var query = Doc.find(req.query);
-    query.exec(function (err, collection) {
-        res.send(collection);
+// exports.getDocuments = function (req, res) {
+//     var limit = Number(req.params.limit),
+//         skip = Number(req.params.skip),
+//         query = Doc.find(req.query);
+//     console.log(skip);
+//     console.log(limit);
+//     console.log(query);
+//
+//     query.exec(function (err, collection) {
+//         res.send(collection);
+//     });
+// };
+
+exports.getDocuments = function(req, res) {
+    var limit = Number(req.params.limit),
+        skip = Number(req.params.skip),
+        query = Doc.find(req.query);
+
+    async.waterfall([
+        documentCount,
+        getDocumentSet
+    ], function (err, result) {
+        if (err) {
+            res.send(err);
+        } else{
+            res.send(result);
+        }
     });
+
+    function documentCount(callback) {
+        Doc.find({}).count().exec(function(err, doc_count) {
+            if(doc_count) {
+                callback(null, doc_count);
+            } else {
+                callback(err);
+            }
+        });
+    }
+    function getDocumentSet(doc_count, callback) {
+        query.sort({
+                title: 'asc'
+            })
+            .skip(skip)
+            .limit(limit)
+            // .lean()
+            .exec(function(err, documents) {
+                if(documents) {
+                    callback(null, {data: documents, count: doc_count});
+                } else {
+                    callback(err);
+                }
+            });
+    }
 };
 
 exports.getDocumentsByID = function (req, res) {
