@@ -55,8 +55,10 @@ angular.module('app')
             });
         });
 
-        rgiDocumentSrvc.query({users: $scope.current_user._id}, function (documents) {
-            documents.forEach(function(doc) {
+        var limit = 500,
+            skip = 0;
+        rgiDocumentSrvc.query({skip: skip, limit: limit, users: $scope.current_user._id}, function (response) {
+            response.data.forEach(function(doc) {
                 $scope.document_list.push({
                     _id: doc._id,
                     title: doc.title
