@@ -27,8 +27,8 @@ div.table-responsive
                     div(ng-repeat="author in doc.authors") {{author.first_name}} {{author.last_name}}
                 td.col-md-1 {{doc.type}}
                 td.col-md-2
-                    div(ng-repeat="user in doc.user_list")
-                        a(href="mailto:{{user.email}}") {{user.firstName}} {{user.lastName}}
+                    div(ng-repeat="user in doc.users")
+                        | {{user.firstName}} {{user.lastName}}
                 td.col-md-1
                     div(ng-repeat="assessment in doc.assessments")
                         a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
@@ -41,3 +41,5 @@ div.table-responsive
                     a(ng-if="doc.answers.length > 0", disabled).btn.btn-danger Delete
 
     h1.text-danger(ng-if="documents.length < 1") No documents uploaded
+
+div(ng-if='documents.length>49' infinite-scroll='loadMoreDocs()' infinite-scroll-distance='0')

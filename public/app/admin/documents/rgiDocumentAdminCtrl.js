@@ -14,26 +14,4 @@ angular.module('app')
         ];
 
         $scope.sort_order = $scope.sort_options[0].value;
-        
-        var limit = 50,
-            currentPage = 0,
-            totalPages = 0;
-
-        rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
-            $scope.count = response.count;
-            $scope.documents = response.data;
-            totalPages = response.count / limit;
-            currentPage = currentPage + 1;
-        });
-        $scope.loadMoreDocs = function() {
-            if(currentPage < totalPages) {
-                rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
-
-                    response.data.forEach(function (doc) {
-                        $scope.documents.push(doc);
-                    });
-                    currentPage = currentPage + 1;
-                });
-            }
-        };
     });

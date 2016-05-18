@@ -240,6 +240,7 @@ angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
         }
     });
 
+    $rootScope._ = _;
     $rootScope.identity = rgiIdentitySrvc;
     $rootScope.externalThreshold = 0.8;
 });

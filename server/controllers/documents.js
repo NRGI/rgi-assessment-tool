@@ -284,7 +284,9 @@ exports.fileCheck = function (req, res) {
 exports.getDocuments = function(req, res) {
     var limit = Number(req.params.limit),
         skip = Number(req.params.skip),
-        query = Doc.find(req.query);
+        query = req.query;
+
+    query.title = {$exists: true};
 
     async.waterfall([
         documentCount,
@@ -298,7 +300,7 @@ exports.getDocuments = function(req, res) {
     });
 
     function documentCount(callback) {
-        Doc.find({}).count().exec(function(err, doc_count) {
+        Doc.find(query).count().exec(function(err, doc_count) {
             if(doc_count) {
                 callback(null, doc_count);
             } else {
@@ -307,11 +309,13 @@ exports.getDocuments = function(req, res) {
         });
     }
     function getDocumentSet(doc_count, callback) {
-        query.sort({
+        Doc.find(query)
+            .sort({
                 title: 'asc'
             })
-            .skip(skip)
+            .skip(skip*limit)
             .limit(limit)
+            .populate('users', 'firstName lastName')
             // .lean()
             .exec(function(err, documents) {
                 if(documents) {
