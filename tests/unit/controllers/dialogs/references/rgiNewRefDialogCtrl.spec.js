@@ -206,15 +206,19 @@ describe('rgiNewRefDialogCtrl', function () {
         });
 
         describe('REQUEST PROCESSING', function() {
-            var requestSubmitterGetStub, requestSubmitterGetSpy;
+            var requestSubmitterGetStub, requestSubmitterGetSpy, requestSubmitterGetFailureSpy;
 
             var uploadFile = function(fileUrl, response) {
+                requestSubmitterGetFailureSpy = sinon.spy();
+
                 requestSubmitterGetSpy = sinon.spy(function() {
                     return {
                         then: function(callback) {
                             if(response !== undefined) {
                                 callback(response);
                             }
+
+                            return {catch: requestSubmitterGetFailureSpy};
                         }
                     };
                 });
