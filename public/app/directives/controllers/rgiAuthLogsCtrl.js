@@ -10,6 +10,11 @@ angular.module('app')
         var userId, totalPages, ITEMS_PER_PAGE = 20, currentPage = 0;
         $scope.logs = [];
 
+        var processHttpFailure = function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
+        };
+
         $scope.loadLogs = function() {
             if(currentPage < totalPages) {
                 rgiAuthLogsSrvc.list(userId, ITEMS_PER_PAGE, currentPage++).then(function (logsResponse) {
@@ -20,10 +25,7 @@ angular.module('app')
                             $scope.logs.push(log);
                         });
                     }
-                }, function(response) {
-                    rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
-                    rgiHttpResponseProcessorSrvc.handle(response);
-                });
+                }, processHttpFailure);
             }
         };
 
@@ -42,9 +44,6 @@ angular.module('app')
                     totalPages = Math.ceil(logsNumberResponse.data.number / ITEMS_PER_PAGE);
                     $scope.loadLogs();
                 }
-            }, function(response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            }, processHttpFailure);
         });
     });
