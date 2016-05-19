@@ -3,14 +3,23 @@
 describe('rgiRecoverPasswordCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, rgiNotifier, rgiResetPasswordSrvc;
+    var $scope, $location, rgiHttpResponseProcessorSrvc, rgiNotifier, rgiResetPasswordSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiResetPasswordSrvc_) {
-            $scope = $rootScope.$new();
+        function (
+            $rootScope,
+            $controller,
+            _$location_,
+            _rgiHttpResponseProcessorSrvc_,
+            _rgiNotifier_,
+            _rgiResetPasswordSrvc_
+        ) {
             $location = _$location_;
+            rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiResetPasswordSrvc = _rgiResetPasswordSrvc_;
+
+            $scope = $rootScope.$new();
             $controller('rgiRecoverPasswordCtrl', {$scope: $scope});
         }
     ));
@@ -42,13 +51,13 @@ describe('rgiRecoverPasswordCtrl', function () {
         });
 
         describe('VALID CASE', function() {
-            var resetPasswordStub, resetPasswordSpy,
-                $locationMock, response, email = 'EMAIL',
-                emailBackup, recoverPasswordFormBackup;
+            var spies = {}, stubs = {}, $locationMock, extraCheck, response,
+                email = 'EMAIL', emailBackup, recoverPasswordFormBackup;
 
             beforeEach(function () {
                 emailBackup = $scope.email;
                 recoverPasswordFormBackup = $scope.recoverPasswordForm;
+                extraCheck = function() {};
 
                 $scope.recoverPasswordForm = {email: {
                     $invalid: false,
@@ -61,12 +70,26 @@ describe('rgiRecoverPasswordCtrl', function () {
             });
 
             describe('NEGATIVE CASE', function() {
+                beforeEach(function() {
+                    spies.httpResponseProcessorHandle = sinon.spy();
+                    stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
+                        spies.httpResponseProcessorHandle);
+
+                    stubs.httpResponseProcessorGetMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage', function() {
+                        return 'An unknown error occurred';
+                    });
+
+                    extraCheck = function() {
+                        spies.httpResponseProcessorHandle.withArgs(response).called.should.be.equal(true);
+                    };
+                });
+
                 it('shows an unknown error message', function () {
                     rgiNotifierMock.expects('error').withArgs('An unknown error occurred');
                 });
 
                 afterEach(function () {
-                    resetPasswordSpy = sinon.spy(function() {
+                    spies.resetPassword = sinon.spy(function() {
                         return {
                             then: function(callbackPositive, callbackNegative) {
                                 callbackNegative();
@@ -103,7 +126,7 @@ describe('rgiRecoverPasswordCtrl', function () {
                 });
 
                 afterEach(function () {
-                    resetPasswordSpy = sinon.spy(function() {
+                    spies.resetPassword = sinon.spy(function() {
                         return {
                             then: function(callback) {
                                 callback(response);
@@ -114,12 +137,17 @@ describe('rgiRecoverPasswordCtrl', function () {
             });
 
             afterEach(function () {
-                resetPasswordStub = sinon.stub(rgiResetPasswordSrvc, 'recover', resetPasswordSpy);
+                stubs.resetPasswordRecover = sinon.stub(rgiResetPasswordSrvc, 'recover', spies.resetPassword);
                 executeAndValidateAndRestoreMock();
                 $locationMock.verify();
                 $locationMock.restore();
-                resetPasswordSpy.withArgs(email).called.should.be.equal(true);
-                resetPasswordStub.restore();
+                spies.resetPassword.withArgs(email).called.should.be.equal(true);
+
+                Object.keys(stubs).forEach(function(stubName) {
+                    stubs[stubName].restore();
+                });
+
+                extraCheck();
                 $scope.recoverPasswordForm = recoverPasswordFormBackup;
                 $scope.email = emailBackup;
             });
