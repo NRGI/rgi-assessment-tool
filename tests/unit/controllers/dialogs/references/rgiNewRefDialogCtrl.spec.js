@@ -44,7 +44,7 @@ describe('rgiNewRefDialogCtrl', function () {
             });
 
             spies.documentSrvcQuery = sinon.spy(function(criteria, callback) {
-                callback([]);
+                callback({data: []});
             });
             stubs.documentSrvcQuery = sinon.stub(rgiDocumentSrvc, 'query', spies.documentSrvcQuery);
 
@@ -65,7 +65,7 @@ describe('rgiNewRefDialogCtrl', function () {
     ));
 
     it('loads user documents', function () {
-        spies.documentSrvcQuery.withArgs({users: currentUser._id}).called.should.be.equal(true);
+        spies.documentSrvcQuery.withArgs({skip: 0, limit: 500, users: currentUser._id}).called.should.be.equal(true);
     });
 
     it('resets file upload status', function () {
