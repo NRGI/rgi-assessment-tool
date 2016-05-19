@@ -3,14 +3,23 @@
 describe('rgiResetPasswordCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, rgiNotifier, rgiResetPasswordSrvc;
+    var $scope, $routeParams, rgiHttpResponseProcessorSrvc, rgiNotifier, rgiResetPasswordSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$routeParams_, _rgiNotifier_, _rgiResetPasswordSrvc_) {
-            $scope = $rootScope.$new();
+        function (
+            $rootScope,
+            $controller,
+            _$routeParams_,
+            _rgiHttpResponseProcessorSrvc_,
+            _rgiNotifier_,
+            _rgiResetPasswordSrvc_
+        ) {
             $routeParams = _$routeParams_;
+            rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiResetPasswordSrvc = _rgiResetPasswordSrvc_;
+
+            $scope = $rootScope.$new();
             $controller('rgiResetPasswordCtrl', {$scope: $scope});
         }
     ));
@@ -43,9 +52,7 @@ describe('rgiResetPasswordCtrl', function () {
         });
 
         describe('VALID CASE', function() {
-            var resetPasswordStub, resetPasswordSpy,
-                response,
-                passwordBackup, passwordRepeatBackup, tokenBackup,
+            var spies = {}, stubs = {}, response, passwordBackup, passwordRepeatBackup, tokenBackup, extraCheck,
                 password = 'PASSWORD', token = 'TOKEN';
 
             beforeEach(function () {
@@ -58,15 +65,30 @@ describe('rgiResetPasswordCtrl', function () {
                 $scope.passwordRepeat = password;
 
                 rgiNotifierMock = sinon.mock(rgiNotifier);
+                extraCheck = function() {};
             });
 
             describe('NEGATIVE CASE', function() {
+                beforeEach(function() {
+                    spies.httpResponseProcessorHandle = sinon.spy();
+                    stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
+                        spies.httpResponseProcessorHandle);
+
+                    extraCheck = function() {
+                        spies.httpResponseProcessorHandle.withArgs(response).called.should.be.equal(true);
+                    };
+
+                    stubs.httpResponseProcessorGetMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage', function() {
+                        return 'An unknown error occurred';
+                    });
+                });
+
                 it('shows an unknown error message', function () {
                     rgiNotifierMock.expects('error').withArgs('An unknown error occurred');
                 });
 
                 afterEach(function () {
-                    resetPasswordSpy = sinon.spy(function() {
+                    spies.resetPassword = sinon.spy(function() {
                         return {
                             then: function(callbackPositive, callbackNegative) {
                                 callbackNegative();
@@ -112,7 +134,7 @@ describe('rgiResetPasswordCtrl', function () {
                 });
 
                 afterEach(function () {
-                    resetPasswordSpy = sinon.spy(function() {
+                    spies.resetPassword = sinon.spy(function() {
                         return {
                             then: function(callback) {
                                 callback(response);
@@ -123,12 +145,15 @@ describe('rgiResetPasswordCtrl', function () {
             });
 
             afterEach(function () {
-                resetPasswordStub = sinon.stub(rgiResetPasswordSrvc, 'reset', resetPasswordSpy);
+                stubs.resetPassword = sinon.stub(rgiResetPasswordSrvc, 'reset', spies.resetPassword);
                 executeAndValidateAndRestoreMock();
-                resetPasswordSpy.withArgs(token, password).called.should.be.equal(true);
+                spies.resetPassword.withArgs(token, password).called.should.be.equal(true);
 
-                resetPasswordStub.restore();
+                Object.keys(stubs).forEach(function(stubName) {
+                    stubs[stubName].restore();
+                });
 
+                extraCheck();
                 $routeParams.token = tokenBackup;
                 $scope.password = passwordBackup;
                 $scope.passwordRepeat = passwordRepeatBackup;

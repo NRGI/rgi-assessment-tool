@@ -5,6 +5,7 @@ angular.module('app')
         $scope,
         $routeParams,
         $location,
+        rgiHttpResponseProcessorSrvc,
         rgiNotifier,
         rgiResetPasswordSrvc
     ) {
@@ -31,8 +32,9 @@ angular.module('app')
                     rgiNotifier.notify('The password has been successfully reset. You can log in using your new password.');
                     $location.path('/');
                 }
-            }, function () {
-                rgiNotifier.error(getErrorMessage('UNKNOWN_ERROR'));
+            }, function (response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
+                rgiHttpResponseProcessorSrvc.handle(response);
             });
         };
     });
