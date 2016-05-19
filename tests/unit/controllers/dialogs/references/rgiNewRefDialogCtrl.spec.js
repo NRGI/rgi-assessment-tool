@@ -7,7 +7,7 @@ describe('rgiNewRefDialogCtrl', function () {
     var $scope, $rootScope, $timeout, rgiAllowedFileExtensionGuideSrvc, ngDialog, rgiDialogFactory, rgiDocumentSrvc,
         rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier, rgiRequestSubmitterSrvc,
         stubs = {}, spies = {}, ANSWER = 'ANSWER', FILE_URL = 'http://domain.com/file.png',
-        currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'}, limit = 500, skip = 0;
+        currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'};
 
     beforeEach(inject(
         function (
@@ -44,7 +44,7 @@ describe('rgiNewRefDialogCtrl', function () {
             });
 
             spies.documentSrvcQuery = sinon.spy(function(criteria, callback) {
-                callback({data:[]});
+                callback({data: []});
             });
             stubs.documentSrvcQuery = sinon.stub(rgiDocumentSrvc, 'query', spies.documentSrvcQuery);
 
@@ -65,7 +65,7 @@ describe('rgiNewRefDialogCtrl', function () {
     ));
 
     it('loads user documents', function () {
-        spies.documentSrvcQuery.withArgs({skip: skip, limit: limit, users: currentUser._id}).called.should.be.equal(true);
+        spies.documentSrvcQuery.withArgs({skip: 0, limit: 500, users: currentUser._id}).called.should.be.equal(true);
     });
 
     it('resets file upload status', function () {
