@@ -3,6 +3,7 @@
 angular.module('app')
     .controller('rgiNewRefDialogCtrl', function (
         $scope,
+        $http,
         $rootScope,
         $timeout,
         FileUploader,
@@ -17,7 +18,6 @@ angular.module('app')
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier,
-        rgiRequestSubmitterSrvc,
         rgiUtilsSrvc
     ) {
         /////////////
@@ -261,12 +261,12 @@ angular.module('app')
 
                     if (responseStatus.data.completion < 1) {
                         $timeout(function () {
-                            rgiRequestSubmitterSrvc.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
+                            $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
                                 .then(handleFileUploadStatus)
                                 .catch(processHttpFailure);
                         }, 1000);
                     } else {
-                        rgiRequestSubmitterSrvc.get('/api/remote-file/document/' + responseStatus.data._id)
+                        $http.get('/api/remote-file/document/' + responseStatus.data._id)
                             .then(function (responseDocument) {
                                 $scope.fileUploading = false;
                                 uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
@@ -275,7 +275,7 @@ angular.module('app')
                     }
                 };
 
-                rgiRequestSubmitterSrvc.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl))
+                $http.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl))
                     .then(function (response) {
                         if (response.data.reason) {
                             $scope.fileUploading = false;
@@ -320,7 +320,7 @@ angular.module('app')
 
             rgiUtilsSrvc.isURLReal(url)
                 .then(function () {
-                    rgiRequestSubmitterSrvc.get('/api/snapshot-upload?url=' + encodeURIComponent(url)).then(function (response) {
+                    $http.get('/api/snapshot-upload?url=' + encodeURIComponent(url)).then(function (response) {
                         if(response.data.error) {
                             rgiNotifier.error(getErrorMessage(response.data.error));
                         } else {
@@ -329,13 +329,13 @@ angular.module('app')
                         }
                     }).catch(function() {
                         rgiNotifier.error('The snapshot cannot be generated');
+                        processHttpFailure();
                     }).finally(function() {
                         $scope.fileUploading = false;
                     });
                 }, function () {
                     $scope.fileUploading = false;
                     rgiNotifier.error('The URL is unavailable');
-                    processHttpFailure();
                 });
         };
         $scope.selectPrevDoc = function(selected_doc) {

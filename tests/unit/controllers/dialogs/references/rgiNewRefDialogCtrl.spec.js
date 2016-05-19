@@ -4,14 +4,15 @@
 describe('rgiNewRefDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $rootScope, $timeout, rgiAllowedFileExtensionGuideSrvc, ngDialog, rgiDialogFactory, rgiDocumentSrvc,
-        rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier, rgiRequestSubmitterSrvc,
+    var $scope, $http, $rootScope, $timeout, ngDialog, rgiAllowedFileExtensionGuideSrvc,
+        rgiDialogFactory, rgiDocumentSrvc, rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier,
         stubs = {}, spies = {}, ANSWER = 'ANSWER', FILE_URL = 'http://domain.com/file.png',
         currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'};
 
     beforeEach(inject(
         function (
             $controller,
+            _$http_,
             _$rootScope_,
             _$timeout_,
             _ngDialog_,
@@ -21,8 +22,7 @@ describe('rgiNewRefDialogCtrl', function () {
             _rgiFileUploaderSrvc_,
             _rgiIdentitySrvc_,
             _rgiIntervieweeSrvc_,
-            _rgiNotifier_,
-            _rgiRequestSubmitterSrvc_
+            _rgiNotifier_
         ) {
             $rootScope = _$rootScope_;
             $timeout = _$timeout_;
@@ -34,7 +34,7 @@ describe('rgiNewRefDialogCtrl', function () {
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiIntervieweeSrvc = _rgiIntervieweeSrvc_;
             rgiNotifier = _rgiNotifier_;
-            rgiRequestSubmitterSrvc = _rgiRequestSubmitterSrvc_;
+            $http = _$http_;
 
             $scope = $rootScope.$new();
             $scope.$parent.answer = ANSWER;
@@ -206,30 +206,30 @@ describe('rgiNewRefDialogCtrl', function () {
         });
 
         describe('REQUEST PROCESSING', function() {
-            var requestSubmitterGetStub, requestSubmitterGetSpy, requestSubmitterGetFailureSpy;
+            var $httpGetStub, $httpGetSpy, $httpGetFailureSpy;
 
             var uploadFile = function(fileUrl, response) {
-                requestSubmitterGetFailureSpy = sinon.spy();
+                $httpGetFailureSpy = sinon.spy();
 
-                requestSubmitterGetSpy = sinon.spy(function() {
+                $httpGetSpy = sinon.spy(function() {
                     return {
                         then: function(callback) {
                             if(response !== undefined) {
                                 callback(response);
                             }
 
-                            return {catch: requestSubmitterGetFailureSpy};
+                            return {catch: $httpGetFailureSpy};
                         }
                     };
                 });
 
-                requestSubmitterGetStub = sinon.stub(rgiRequestSubmitterSrvc, 'get', requestSubmitterGetSpy);
+                $httpGetStub = sinon.stub($http, 'get', $httpGetSpy);
                 $scope.uploadFileByUrl(fileUrl);
             };
 
             it('submits file URL to the server', function () {
                 uploadFile(FILE_URL);
-                requestSubmitterGetSpy.withArgs('/api/remote-file-upload?url=' + encodeURIComponent(FILE_URL))
+                $httpGetSpy.withArgs('/api/remote-file-upload?url=' + encodeURIComponent(FILE_URL))
                     .called.should.be.equal(true);
             });
 
@@ -284,7 +284,7 @@ describe('rgiNewRefDialogCtrl', function () {
                     it('polls the server for uploading progress', function() {
                         uploadFile(FILE_URL, generateResponse(0.5));
                         $timeout.flush();
-                        requestSubmitterGetSpy.withArgs('/api/remote-file/upload-progress/' + ID).called.should.be.equal(true);
+                        $httpGetSpy.withArgs('/api/remote-file/upload-progress/' + ID).called.should.be.equal(true);
                     });
                 });
 
@@ -298,7 +298,7 @@ describe('rgiNewRefDialogCtrl', function () {
                     });
 
                     it('gets the document data by its upload status', function () {
-                        requestSubmitterGetSpy.withArgs('/api/remote-file/document/' + ID).called.should.be.equal(true);
+                        $httpGetSpy.withArgs('/api/remote-file/document/' + ID).called.should.be.equal(true);
                     });
 
                     it('unsets file uploading flag', function () {
@@ -316,7 +316,7 @@ describe('rgiNewRefDialogCtrl', function () {
             });
 
             afterEach(function() {
-                requestSubmitterGetStub.restore();
+                $httpGetStub.restore();
             });
         });
     });
