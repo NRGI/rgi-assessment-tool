@@ -2,15 +2,64 @@
 
 describe('rgiHttpResponseProcessorSrvc', function () {
     var rgiHttpResponseProcessorSrvc,
-        $location, rgiIdentitySrvc;
+        $location, rgiIdentitySrvc, rgiNotifier;
 
     beforeEach(module('app'));
 
-    beforeEach(inject(function(_rgiHttpResponseProcessorSrvc_, _$location_, _rgiIdentitySrvc_) {
+    beforeEach(inject(function(
+        _rgiHttpResponseProcessorSrvc_,
+        _$location_,
+        _rgiIdentitySrvc_,
+        _rgiNotifier_
+    ) {
         rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
         $location = _$location_;
         rgiIdentitySrvc = _rgiIdentitySrvc_;
+        rgiNotifier = _rgiNotifier_;
     }));
+
+    describe('#getDefaultHandler', function() {
+        var defaultHandler, alternativeMessage = 'ALTERNATIVE MESSAGE', dummyResponse = {status: 'DUMMY'},
+            mocks = {}, spies = {}, stubs = {};
+
+        beforeEach(function() {
+            rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
+            defaultHandler = rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
+            mocks.notifier = sinon.mock(rgiNotifier);
+
+            spies.httpResponseProcessorHandle = sinon.spy(rgiHttpResponseProcessorSrvc.handle);
+            stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
+                spies.httpResponseProcessorHandle);
+
+            stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage',
+                function(response, alternativeMessage) {
+                    return alternativeMessage;
+                });
+        });
+
+        it('handles the response only once', function() {
+            defaultHandler(dummyResponse);
+            defaultHandler(dummyResponse);
+            spies.httpResponseProcessorHandle.withArgs(dummyResponse).calledOnce.should.be.equal(true);
+        });
+
+        it('shows the error message only once', function() {
+            mocks.notifier.expects('error').withArgs(alternativeMessage).once(true);
+            defaultHandler(dummyResponse);
+            defaultHandler(dummyResponse);
+        });
+
+        afterEach(function() {
+            Object.keys(mocks).forEach(function(mockName) {
+                mocks[mockName].verify();
+                mocks[mockName].restore();
+            });
+
+            Object.keys(stubs).forEach(function(stubName) {
+                stubs[stubName].restore();
+            });
+        });
+    });
 
     describe('#getMessage', function() {
         it('returns an message for forbidden status', function() {
@@ -67,6 +116,11 @@ describe('rgiHttpResponseProcessorSrvc', function () {
                 rgiIdentitySrvc.currentUser = currentUserBackup;
             });
 
+            it('increases the number of handled HTTP failures', function() {
+                var handledFailuresNumber = rgiHttpResponseProcessorSrvc.getHandledFailuresNumber();
+                rgiHttpResponseProcessorSrvc.handle({status: 200});
+                rgiHttpResponseProcessorSrvc.getHandledFailuresNumber().should.be.equal(handledFailuresNumber + 1);
+            });
         });
 
         describe('NAVIGATION', function() {
@@ -90,6 +144,15 @@ describe('rgiHttpResponseProcessorSrvc', function () {
                 $locationMock.verify();
                 $locationMock.restore();
             });
+        });
+    });
+
+    describe('#resetHandledFailuresNumber', function() {
+        it('sets to 0 the number of handled HTTP failures', function() {
+            rgiHttpResponseProcessorSrvc.handle({status: 200});
+            rgiHttpResponseProcessorSrvc.getHandledFailuresNumber().should.be.gt(0);
+            rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
+            rgiHttpResponseProcessorSrvc.getHandledFailuresNumber().should.be.equal(0);
         });
     });
 });
