@@ -289,42 +289,28 @@ exports.getDocuments = function(req, res) {
     query.title = {$exists: true};
 
     async.waterfall([
-        documentCount,
-        getDocumentSet
+        function (callback) {
+            Doc.find(query).count().exec(callback);
+        },
+        function (documentsNumber, callback) {
+            Doc.find(query)
+                .sort({
+                    title: 'asc'
+                })
+                .skip(skip * limit)
+                .limit(limit)
+                .populate('users', 'firstName lastName')
+                .exec(function(err, documents) {
+                    callback(err, {data: documents, count: documentsNumber});
+                });
+        }
     ], function (err, result) {
         if (err) {
-            res.send(err);
+            res.send({reason: err.toString()});
         } else{
             res.send(result);
         }
     });
-
-    function documentCount(callback) {
-        Doc.find(query).count().exec(function(err, doc_count) {
-            if(doc_count) {
-                callback(null, doc_count);
-            } else {
-                callback(err);
-            }
-        });
-    }
-    function getDocumentSet(doc_count, callback) {
-        Doc.find(query)
-            .sort({
-                title: 'asc'
-            })
-            .skip(skip*limit)
-            .limit(limit)
-            .populate('users', 'firstName lastName')
-            // .lean()
-            .exec(function(err, documents) {
-                if(documents) {
-                    callback(null, {data: documents, count: doc_count});
-                } else {
-                    callback(err);
-                }
-            });
-    }
 };
 
 exports.getDocumentsByID = function (req, res) {
