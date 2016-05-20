@@ -95,12 +95,25 @@ answerSchema = new Schema({
         type: String,
         required: '{PATH} is required',
         index: true}, // generated from assessment_ID value of Assessment Model (ISO3 country)
+<<<<<<< HEAD
     year: {
         type: String,
         required: '{PATH} is required'},
     version: {
         type: String,
         required: '{PATH} is required'},  // pilot or main
+=======
+    researcher_ID: {
+        type: ObjectId,
+        required: '{PATH} is required',
+        index: true}, // generated from _id value of User Model
+    reviewer_ID: {
+        type: ObjectId,
+        index: true}, // generated from _id value of User Model
+    year: String,
+    version: String,  // pilot or main
+    //edit_control: ObjectId, // user_ID of editing rights
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
     question_order: {
         type: Number,
         required: '{PATH} is required'}, // generated from the order_ID of Question Model

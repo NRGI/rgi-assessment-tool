@@ -1,4 +1,5 @@
 'use strict';
+<<<<<<< HEAD
 /* global require */
 var crypto              =   require('crypto'),
     fs                  =   require('fs'),
@@ -18,6 +19,23 @@ var crypto              =   require('crypto'),
                                 s3RetryDelay: 1000, // this is the default
                                 multipartUploadThreshold: 20971520, // this is the default (20 MB)
                                 multipartUploadSize: 15728640, // this is the default (15 MB)
+=======
+/*jslint nomen: true unparam: true*/
+
+var crypto                 = require('crypto'),
+    fs                     = require('fs'),
+    request                = require('request'),
+    s3                     = require('s3'),
+    Doc                    = require('mongoose').model('Documents'),
+    Answer                 = require('mongoose').model('Answer'),
+    upload_bucket          = process.env.DOC_BUCKET,
+    client                 = s3.createClient({
+                                maxAsyncS3: 20,     // this is the default 
+                                s3RetryCount: 3,    // this is the default 
+                                s3RetryDelay: 1000, // this is the default 
+                                multipartUploadThreshold: 20971520, // this is the default (20 MB) 
+                                multipartUploadSize: 15728640, // this is the default (15 MB) 
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
                                 s3Options: {
                                     accessKeyId: process.env.DOC_AWS_ACCESS_KEY,
                                     secretAccessKey: process.env.DOC_AWS_SECRET_KEY
@@ -25,12 +43,36 @@ var crypto              =   require('crypto'),
                                     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
                                 }
                             });
+<<<<<<< HEAD
 
 
 var uploadFile = function(file, req, callback) {
     var hash = crypto.createHash('sha1'),
         timestamp = new Date().toISOString(),
         file_extension = getFileExtension(file.path);
+=======
+//MendeleyToken          = require('mongoose').model('MendeleyToken'),
+
+exports.fileCheck = function (req, res, next) {
+    // get temp path of file upload
+    var file_path = req.files.file.path,
+        // read_stream = fs.createReadStream(file_path),
+        hash = crypto.createHash('sha1'),
+        timestamp = new Date().toISOString(),
+        file_extension = file_path.split('.')[file_path.split('.').length - 1];
+
+    if (file_extension === 'pdf') {
+        fs.readFile(file_path, {encoding: 'utf8'}, function (err, data) {
+            // Use the 'data' string here.
+            hash.update(data);
+            // get hashed value of file as fingerprint
+            var file_hash = hash.digest('hex');
+            // search documents for hashed file
+            Doc.findOne({file_hash: file_hash}, function (err, document) {
+                // if file exists tag for reference
+                if (document !== null) {
+                    res.send(document);
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 
     fs.readFile(file.path, {encoding: 'utf8'}, function (err, data) {
         hash.update(data);
@@ -115,6 +157,7 @@ exports.uploadUrlSnapshot = function(req, res) {
                         terminateWithError('PAGE_LOADING_TIMEOUT_EXPIRED', ph);
                     }, timeoutPeriod);
 
+<<<<<<< HEAD
                     page.open(req.query.url).then(function () {
                         clearTimeout(timeout);
 
@@ -176,6 +219,24 @@ exports.uploadUrlSnapshot = function(req, res) {
                         });
                     }).catch(function () {
                         terminateWithError('PAGE_CONNECT_FAILURE', ph);
+=======
+                    new_document.file_hash = file_hash;
+                    new_document.s3_url = 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.pdf';
+                    new_document.modified = [{
+                        modifiedBy: req.user._id,
+                        modifiedDate: timestamp
+                    }];
+                    new_document.createdBy = req.user._id;
+                    new_document.creationDate = timestamp;
+
+                    Doc.create(new_document, function (err, document) {
+                        if (err) {
+                            res.status(400);
+                            res.send({reason: err.toString()});
+                        } else {
+                            res.send(document);
+                        }
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
                     });
                 }).catch(function () {
                     terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
@@ -268,6 +329,7 @@ exports.fileCheck = function (req, res) {
     });
 };
 
+<<<<<<< HEAD
 // exports.getDocuments = function (req, res) {
 //     var limit = Number(req.params.limit),
 //         skip = Number(req.params.skip),
@@ -310,6 +372,12 @@ exports.getDocuments = function(req, res) {
         } else{
             res.send(result);
         }
+=======
+exports.getDocuments = function (req, res) {
+    var query = Doc.find(req.query);
+    query.exec(function (err, collection) {
+        res.send(collection);
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
     });
 };
 
@@ -346,6 +414,7 @@ exports.getUploadStatusDocument = function (req, res) {
 // };
 
 exports.updateDocument = function (req, res) {
+<<<<<<< HEAD
     var document_update = req.body;
 
     Doc.findOne({_id: document_update._id}).exec(function (err, document) {
@@ -353,6 +422,27 @@ exports.updateDocument = function (req, res) {
             modified_by: req.user._id,
             modified_date: new Date().toISOString()
         };
+=======
+    var document_update, timestamp;
+
+    document_update = req.body;
+    timestamp = new Date().toISOString();
+
+    Doc.findOne({_id: document_update._id}).exec(function (err, document) {
+        document.title = document_update.title;
+        document.authors = document_update.authors;
+        document.type = document_update.type;
+        document.assessments = document_update.assessments;
+        document.questions = document_update.questions;
+        document.answers = document_update.answers;
+        document.users = document_update.users;
+        document.modified = document_update.modified;
+        document.status = document_update.status;
+        document.modified.push({
+            modifiedBy: req.user._id,
+            modifiedDate: timestamp
+        });
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 
         var processedFields = [
             'answers',
@@ -401,7 +491,19 @@ exports.updateDocument = function (req, res) {
 };
 
 exports.deleteDocument = function (req, res) {
+<<<<<<< HEAD
     Doc.remove({_id: req.params.id}, function (err) {
         res.send(err ? {reason: err.toString()} : {});
     });
+=======
+
+    // Doc.remove({_id: req.params.id}, function (err) {
+    //     if (!err) {
+    //         res.send();
+    //     } else {
+    //         return res.send({ reason: err.toString() });
+    //     }
+    // });
+    // res.send();
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 };

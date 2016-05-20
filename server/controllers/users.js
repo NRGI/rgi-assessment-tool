@@ -44,6 +44,7 @@ exports.createUser = function (req, res) {
         send_email: req.user.email
     };
 
+<<<<<<< HEAD
     if (user_data.firstName && user_data.lastName) {
         contact_packet.rec_name = user_data.firstName.charAt(0).toUpperCase() + user_data.firstName.slice(1) + " " + user_data.lastName.charAt(0).toUpperCase() + user_data.lastName.slice(1);
     }
@@ -61,6 +62,16 @@ exports.createUser = function (req, res) {
     //    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
     //}
     //catch(err) {
+=======
+
+    contact_packet.rec_email = userData.email;
+    contact_packet.rec_name = userData.firstName.charAt(0).toUpperCase() + userData.firstName.slice(1) + " " + userData.lastName.charAt(0).toUpperCase() + userData.lastName.slice(1);
+    contact_packet.rec_role = userData.role.charAt(0).toUpperCase() + userData.role.slice(1);
+    contact_packet.rec_username = userData.username;
+    contact_packet.rec_password = userData.password;
+    contact_packet.send_name = req.user.firstName + " " + req.user.lastName;
+    contact_packet.send_email = req.user.email;
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 
     //    res.status(400);
     //    return res.send({reason: 'first and last name is required'});

@@ -13,6 +13,7 @@ angular.module('app')
         $scope.new_user_data = {};
         $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 
+<<<<<<< HEAD
       // fix submit button functionality
         $scope.userCreate = function () {
             var new_user_data = $scope.new_user_data;
@@ -35,3 +36,30 @@ angular.module('app')
             }
         };
     });
+=======
+  // fix submit button functionality
+    $scope.userCreate = function () {
+        if ($scope.password !== $scope.password_repeat) {
+            rgiNotifier.error('Passwords must match!')
+        } else {
+            var new_user_data = {
+                firstName: $scope.first_name,
+                lastName: $scope.last_name,
+                username: $scope.username,
+                email: $scope.email,
+                password: $scope.password,
+                // ADD ROLE IN CREATION EVENT
+                role: $scope.roleSelect,
+                address: [$scope.address]
+            };
+
+            rgiUserMethodSrvc.createUser(new_user_data).then(function () {
+                rgiNotifier.notify('User account created!' + $scope.email);
+                $location.path('/admin/user-admin');
+            }, function (reason) {
+                rgiNotifier.error(reason);
+            });
+        }
+    };
+});
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b

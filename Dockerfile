@@ -4,6 +4,7 @@ MAINTAINER Chris Perry, cperry@resourcegovernance.org
 # Enable EPEL for Node.js
 RUN     rpm -Uvh https://rpm.nodesource.com/pub_4.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
+<<<<<<< HEAD
 # Upgrade system
 RUN     yum -y clean all
 RUN     yum -y distro-sync
@@ -23,6 +24,11 @@ RUN     tar jxvf /usr/local/share/phantomjs-1.8.1-linux-x86_64.tar.bz2 -C /usr/l
 RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
 RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+=======
+# Install Node.js, npm, git and bower
+RUN		yum install -y git npm
+RUN		npm install -g bower
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 
 # Build src
 ADD     package.json /tmp/package.json

@@ -43,6 +43,7 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersByID = function (req, res, next) {
+<<<<<<< HEAD
     //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
     Answer.findOne({answer_ID: req.params.answer_ID})
         .populate('question_ID')
@@ -58,17 +59,50 @@ exports.getAnswersByID = function (req, res, next) {
             if (!answer) { return next(new Error('No answers found')); }
             res.send(answer);
         });
+=======
+
+    Answer.findOne({answer_ID: req.params.answer_ID}, function (err, answer) {
+        if (err) { return next(err); }
+        if (!answer) { return next(new Error('No answer found')); }
+        //if (String(req.user._id) !== String(answer.researcher_ID) && String(req.user._id) !== String(answer.reviewer_ID) && !req.user.hasRole('supervisor')) {
+        //    res.sendStatus(404);
+        //    return res.end();
+        //}
+        res.send(answer);
+    });
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 };
 
 exports.createAnswers = function (req, res) {
     var new_answers, i;
     new_answers = req.body;
 
+<<<<<<< HEAD
     function createNewAnswer(new_answer) {
         Answer.create(new_answer, function (err) {
             if (err) {
                 if (err.toString().indexOf('E11000') > -1) {
                     err = new Error('Duplicate Assessment');
+=======
+
+    Question.find({}).exec(function (err, questions) {
+        for (i = questions.length - 1; i >= 0; i -= 1) {
+
+            for (j = new_answers.length - 1; j >= 0; j -= 1) {
+
+                if (questions[i]._id == new_answers[j].question_ID) {
+                    new_answers[j].question_text = questions[i].question_text;
+                    console.log(new_answers[j]);
+                    Answer.create(new_answers[j], function (err, answer) {
+                        if (err) {
+                            if (err.toString().indexOf('E11000') > -1) {
+                                err = new Error('Duplicate answers');
+                            }
+                            res.status(400);
+                            return res.send({reason: err.toString()});
+                        }
+                    });
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
                 }
                 res.status(400);
                 return res.send({reason: err.toString()});
@@ -86,6 +120,7 @@ exports.updateAnswer = function (req, res, next) {
     var updateData = req.body,
         timestamp = new Date().toISOString();
 
+<<<<<<< HEAD
     if (!req.user._id) {
         req.status = 404;
         next();
@@ -122,6 +157,12 @@ exports.updateAnswer = function (req, res, next) {
                         justification: answer[userType + '_justification']
                     });
                 }
+=======
+    //if (String(req.user._id) !== String(answer_update.researcher_ID) && !req.user.hasRole('supervisor')) {
+    //    res.sendStatus(404);
+    //    return res.end();
+    //}
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
 
                 setFields(answer, updateData, [userType + '_justification']);
             });

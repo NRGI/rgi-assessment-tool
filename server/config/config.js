@@ -15,6 +15,7 @@ module.exports = {
     //    port: process.env.PORT || 3030
     //},
     staging: {
+<<<<<<< HEAD
         baseUrl: 'http://rgi-staging.nrgi-assessment.org',
         db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev?replicaSet=set-54c2868c4ae1de388800b2a3',
         rootPath: rootPath,
@@ -29,6 +30,9 @@ module.exports = {
     question_staging: {
         baseUrl: 'http://rgi-question-staging.nrgi-assessment.org',
         db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_question_staging?replicaSet=set-54c2868c4ae1de388800b2a3',
+=======
+        db: '@candidate.32.mongolayer.com:10582/rgi_dev',
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
@@ -39,6 +43,7 @@ module.exports = {
         port: process.env.PORT || 80
     },
     pilot: {
+<<<<<<< HEAD
         baseUrl: 'http://rgi-pilot.nrgi-assessment.org',
         db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_pilot?replicaSet=set-54c2868c4ae1de388800b2a3',
         rootPath: rootPath,
@@ -47,6 +52,9 @@ module.exports = {
     new_data: {
         baseUrl: 'http://rgi-new-data.nrgi-assessment.org',
         db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev?replicaSet=set-54c2868c4ae1de388800b2a3',
+=======
+        db: '@candidate.32.mongolayer.com:10582/rgi_pilot',
+>>>>>>> a36829db08c82844e4c05cf309557594404f579b
         rootPath: rootPath,
         port: process.env.PORT || 80
     }

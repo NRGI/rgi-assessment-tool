@@ -140,7 +140,7 @@ exports.updateAssessment = function (req, res, next) {
                     if (!(assessment.hasOwnProperty('researcher_ID'))) {
                         assessment.researcher_ID = assessmentUpdates.researcher_ID;
                     }
-                    if (!(assessment.hasOwnProperty('reviewer_ID'))) {
+                    if (!(assessment.hasOwnProperty('reviewer_ID')) && assessmentUpdates.reviewer_ID) {
                         assessment.reviewer_ID = assessmentUpdates.reviewer_ID;
                     }
 
