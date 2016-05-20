@@ -23,10 +23,10 @@
     a(href="{{ref.document_ID.source}}" target="_blank")  {{ref.document_ID.source}}
 .row(ng-if="ref.citation_type === 'interview' && (identity.currentUser.isSupervisor() || ref.author._id===identity.currentUser._id)")
     b Contact:
-    |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}} ({{ref.interviewee_ID.role}})
+    |  {{ref.interviewee_ID.firstName}} {{ref.interviewee_ID.lastName}} ({{ref.interviewee_ID.role|role|ucfirst}})
 .row(ng-if="ref.citation_type === 'interview' && (!identity.currentUser.isSupervisor() && ref.author._id!==identity.currentUser._id)")
     b Contact:
-    em  {{ref.interviewee_ID.role | ucfirst}}
+    em  {{ref.interviewee_ID.role|role|ucfirst}}
 .row(ng-if="ref.citation_type !== 'interview'")
     b Author(s):
     text(ng-repeat="author in ref.document_ID.authors" ng-if="ref.document_ID.authors.length > 0")  {{author.first_name}} {{author.last_name}}
@@ -41,9 +41,9 @@
     |  {{ref.location}}
 .row
     b Cited by:
-    text(ng-if="identity.currentUser.isSupervisor()")  {{ref.author.firstName}} {{ref.author.lastName}}
-    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id!==identity.currentUser._id")  {{ref.author.role}}
-    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id===identity.currentUser._id")  you
+    text(ng-if="identity.currentUser.isSupervisor()") {{ref.author.firstName}} {{ref.author.lastName}}
+    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id!==identity.currentUser._id") {{ref.author.role|role|ucfirst}}
+    text(ng-if="!identity.currentUser.isSupervisor() && ref.author._id===identity.currentUser._id") you
     |  on {{ref.date | date: 'MM/dd/yyyy'}}
 .row(ng-if="ref.citation_type === 'interview'")
     b Interviewed:
