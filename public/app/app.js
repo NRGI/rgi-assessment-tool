@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('app', [
     'angular.filter',
     'angularFileUpload',
@@ -9,7 +10,6 @@ angular.module('app', [
     'ng-form-group',
     'ngCsv',
     'ngDialog',
-    //'ngPopup',
     'ngResource',
     'ngRoute',
     'ngSanitize',
@@ -134,16 +134,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiResourcesAdminCtrl',
             resolve: routeRoleChecks.supervisor
         })
-        //.when('/admin/faq-admin/:_id', {
-        //    templateUrl: '/partials/admin/resources/resources-admin-detail',
-        //    controller: 'rgiResourcesAdminDetailCtrl',
-        //    resolve: routeRoleChecks.supervisor
-        //})
-        //.when('/admin/resource-admin/:_id', {
-        //    templateUrl: '/partials/admin/resources/resources-admin-detail',
-        //    controller: 'rgiResourcesAdminDetailCtrl',
-        //    resolve: routeRoleChecks.supervisor
-        //})
 
         ///// GENERAL ROUTES
         /// Assessments
@@ -175,12 +165,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             resolve: routeRoleChecks.supervisor
         })
 
-        //.when('/assessments-review/:assessment_ID', {
-        //    templateUrl: '/partials/researchers/assessments/assessment-review',
-        //    controller:  'rgiAssessmentDetailCtrl',
-        //    resolve: routeRoleChecks.user
-        //})
-
         // Answers
         .when('/admin/assessments-admin/answer/:answer_ID', {
             templateUrl: '/partials/answers/answer',
@@ -192,45 +176,6 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiAnswerCtrl',
             resolve: routeRoleChecks.user
         });
-
-
-
-        // Answers
-        //.when('/admin/assessment-review/:assessment_ID', {
-        //    templateUrl: '/partials/admin/assessments/review/assessment-review',
-        //    controller: 'rgiAssessmentAdminDetailCtrl',
-        //    resolve: routeRoleChecks.supervisor
-        //})
-        //.when('/admin/assessment-review/answer-review-edit/:answer_ID', {
-        //    templateUrl: '/partials/admin/assessments/review/answer-page-review',
-        //    controller: 'rgiAnswerCtrl'
-        //})
-        //.when('/assessments', {
-        //    templateUrl: '/partials/researchers/assessments/assessments-list',
-        //    controller:  'rgiAssessmentsListCtrl',
-        //    resolve: routeRoleChecks.user
-        //})
-        //.when('/assessments/:assessment_ID', {
-        //    templateUrl: '/partials/researchers/assessments/assessment-detail',
-        //    controller:  'rgiAssessmentDetailCtrl',
-        //    resolve: routeRoleChecks.user
-        //})
-        //////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////
-        // Answers
-        //.when('/assessments/assessment-view/:answer_ID', {
-        //    templateUrl: '/partials/researchers/answers/answer-page-view',
-        //    controller:  'rgiAnswerCtrl'
-        //})
-        //.when('/assessments/assessment-edit/:answer_ID', {
-        //    templateUrl: '/partials/researchers/answers/answer-page-edit',
-        //    controller:  'rgiAnswerCtrl'
-        //})
-        //.when('/assessment-review/answer-review/:answer_ID', {
-        //    templateUrl: '/partials/researchers/answers/answer-page-review',
-        //    controller:  'rgiAnswerCtrl'
-        //});
-
 });
 
 angular.module('app').run(function ($location, $rootScope, $route, $window, rgiIdentitySrvc) {
@@ -245,7 +190,6 @@ angular.module('app').run(function ($location, $rootScope, $route, $window, rgiI
         $route.reload();
     };
 
-    $rootScope._ = _;
     $rootScope.identity = rgiIdentitySrvc;
     $rootScope.externalThreshold = 0.8;
 });

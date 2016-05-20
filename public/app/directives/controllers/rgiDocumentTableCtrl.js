@@ -2,6 +2,7 @@
 
 angular.module('app')
     .controller('rgiDocumentTableCtrl', function (
+        _,
         $scope,
         $rootScope,
         rgiDialogFactory,
@@ -11,8 +12,7 @@ angular.module('app')
     ) {
         var limit = 50,
             currentPage = 0,
-            totalPages = 0,
-            _ = $rootScope._;
+            totalPages = 0;
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.busy = false;
