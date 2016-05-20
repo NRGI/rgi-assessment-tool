@@ -233,12 +233,16 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
 });
 
-angular.module('app').run(function ($rootScope, $location, rgiIdentitySrvc) {
+angular.module('app').run(function ($location, $rootScope, $window, rgiIdentitySrvc) {
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         if (rejection === 'not authorized') {
             $location.path('/');
         }
     });
+
+    $window.onpopstate = function () {
+        $window.history.forward(1);
+    };
 
     $rootScope._ = _;
     $rootScope.identity = rgiIdentitySrvc;
