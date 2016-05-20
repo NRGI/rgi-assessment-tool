@@ -52,7 +52,7 @@
                     a(
                     href="mailto:{{assessment.last_modified.user.email}}"
                     ng-if="current_user.isSupervisor()")  {{assessment.last_modified.user.firstName}}  {{assessment.last_modified.user.lastName}}
-                    text(ng-if="!current_user.isSupervisor()")  {{assessment.last_modified.user.role}}
+                    text(ng-if="!current_user.isSupervisor()")  {{assessment.last_modified.user.role|role|ucfirst}}
                     |  on
                     em  {{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
                     //span(ng-repeat="mod in assessment.modified")

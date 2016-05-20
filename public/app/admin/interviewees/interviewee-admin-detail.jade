@@ -48,7 +48,7 @@
                         ng-model="add_user"
                         required)
                             option(value="" selected disabled) Select user
-                            option(ng-repeat="user in users" value="{{user._id}}") {{user.firstName}} {{user.lastName}} - {{user.role}}
+                            option(ng-repeat="user in users" value="{{user._id}}") {{user.firstName}} {{user.lastName}} - {{user.role|role|ucfirst}}
                     button.btn.btn-primary(ng-click="addUser()" ng-disabed="!add_user") Add
 
             .left-padding-lg.right-padding-lg.top-padding-med(ng-if="references.length > 0")
