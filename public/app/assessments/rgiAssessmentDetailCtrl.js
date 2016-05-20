@@ -9,6 +9,7 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiNotifier,
         rgiPreceptGuideSrvc,
@@ -58,6 +59,9 @@ angular.module('app')
                         }
                     }
                 });
+            }, function(response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
             });
         });
 

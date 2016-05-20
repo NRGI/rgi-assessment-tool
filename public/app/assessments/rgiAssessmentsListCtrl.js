@@ -5,11 +5,13 @@ angular.module('app')
         $scope,
         $rootScope,
         $routeParams,
-        rgiDialogFactory,
         rgiAnswerSrvc,
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
-        rgiIdentitySrvc
+        rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
+        rgiIdentitySrvc,
+        rgiNotifier
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         // filtering options
@@ -48,6 +50,7 @@ angular.module('app')
             rgiAssessmentSrvc.query(criteria, function (assessments) {
                 $scope.assessments = [];
                 $scope.statuses = {};
+                var answerListLoadingFailure = false;
 
                 assessments.forEach(function (assessment) {
                     $scope.assessments.push(assessment);
@@ -66,6 +69,12 @@ angular.module('app')
                             answers.forEach(function (answer) {
                                 rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
                             });
+                        }, function(response) {
+                            if(!answerListLoadingFailure) {
+                                answerListLoadingFailure = true;
+                                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
+                                rgiHttpResponseProcessorSrvc.handle(response);
+                            }
                         });
                     }
                 });

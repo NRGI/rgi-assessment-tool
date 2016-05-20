@@ -5,12 +5,12 @@ angular.module('app')
         $scope,
         $location,
         $route,
-        ngDialog,
-        rgiNotifier,
-        rgiIdentitySrvc,
         rgiAssessmentMethodSrvc,
         rgiAnswerSrvc,
-        rgiAnswerMethodSrvc
+        rgiAnswerMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
+        rgiIdentitySrvc,
+        rgiNotifier
     ) {
 
         $scope.action = $scope.$parent.action;
@@ -37,12 +37,11 @@ angular.module('app')
                 $scope.action_text = $scope.action.replace('_', ' ');
         }
 
-        $scope.assessmentmove = function () {
+        $scope.moveAssessment = function () {
             var new_assessment_data = $scope.$parent.assessment;
             new_assessment_data.status = $scope.action;
             //MAIL NOTIFICATION
             new_assessment_data.mail = true;
-            console.log($scope.action);
 
             switch ($scope.action) {
                 case 'researcher_trial':
@@ -69,6 +68,10 @@ angular.module('app')
                                 }, function (reason) {
                                     rgiNotifier.error(reason);
                                 });
+                        }, function(response) {
+                            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
+                            rgiHttpResponseProcessorSrvc.handle(response);
+                            $scope.closeThisDialog();
                         });
                     } else {
                         rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
@@ -158,8 +161,5 @@ angular.module('app')
 
 
             }
-        };
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
