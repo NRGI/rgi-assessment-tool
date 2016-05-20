@@ -233,7 +233,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
 });
 
-angular.module('app').run(function ($location, $rootScope, $window, rgiIdentitySrvc) {
+angular.module('app').run(function ($location, $rootScope, $route, $window, rgiIdentitySrvc) {
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         if (rejection === 'not authorized') {
             $location.path('/');
@@ -242,6 +242,7 @@ angular.module('app').run(function ($location, $rootScope, $window, rgiIdentityS
 
     $window.onpopstate = function () {
         $window.history.forward(1);
+        $route.reload();
     };
 
     $rootScope._ = _;
