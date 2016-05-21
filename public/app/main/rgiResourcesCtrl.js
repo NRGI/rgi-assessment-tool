@@ -4,7 +4,7 @@ angular.module('app')
     .controller('rgiResourcesCtrl', function (
         $scope,
         $location,
-        rgiIdentitySrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiResourcesSrvc
     ) {
         $scope.resource_type = $location.$$path.replace('/', '');
@@ -15,7 +15,8 @@ angular.module('app')
             $scope.title = 'Frequently Asked Questions';
         }
 
-        $scope.identity = rgiIdentitySrvc;
-        $scope.resources = rgiResourcesSrvc.query({type: $scope.resource_type});
-
+        rgiResourcesSrvc.query({type: $scope.resource_type}, function(resources) {
+            $scope.resources = resources;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load ' +
+            ($scope.resource_type === 'faq' ? 'FAQ' : $scope.resource_type) + ' data failure'));
     });
