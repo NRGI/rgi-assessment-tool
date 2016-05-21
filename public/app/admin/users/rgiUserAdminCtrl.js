@@ -29,12 +29,12 @@ angular
                 rgiAuthLogsSrvc.getMostRecent(user._id, 'sign-in')
                     .then(function (log) {
                         user.last_sign_in = log.data.logs[0];
-                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Auth logs loading failure'));
+                    }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Auth logs loading failure'));
 
                 user.assessments.forEach(function(assessment) {
                     rgiAssessmentSrvc.getCached({assessment_ID: assessment.assessment_ID}, function(details) {
                         assessment.details = details;
-                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
+                    }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load assessment data failure'));
                 });
 
                 $scope.users.push(user);

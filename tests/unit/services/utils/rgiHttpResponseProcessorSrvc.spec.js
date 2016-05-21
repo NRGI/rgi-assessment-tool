@@ -18,13 +18,12 @@ describe('rgiHttpResponseProcessorSrvc', function () {
         rgiNotifier = _rgiNotifier_;
     }));
 
-    describe('#getDefaultHandler', function() {
-        var defaultHandler, alternativeMessage = 'ALTERNATIVE MESSAGE', dummyResponse = {status: 'DUMMY'},
+    describe('HANDLERS', function() {
+        var handler, alternativeMessage = 'ALTERNATIVE MESSAGE', dummyResponse = {status: 'DUMMY'},
             mocks = {}, spies = {}, stubs = {};
 
         beforeEach(function() {
             rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
-            defaultHandler = rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
             mocks.notifier = sinon.mock(rgiNotifier);
 
             spies.httpResponseProcessorHandle = sinon.spy(rgiHttpResponseProcessorSrvc.handle);
@@ -37,16 +36,40 @@ describe('rgiHttpResponseProcessorSrvc', function () {
                 });
         });
 
-        it('handles the response only once', function() {
-            defaultHandler(dummyResponse);
-            defaultHandler(dummyResponse);
-            spies.httpResponseProcessorHandle.withArgs(dummyResponse).calledOnce.should.be.equal(true);
+        describe('#getDefaultRepeatedHandler', function() {
+            beforeEach(function() {
+                handler = rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
+            });
+
+            it('handles the response as many times as it is called', function() {
+                handler(dummyResponse);
+                handler(dummyResponse);
+                spies.httpResponseProcessorHandle.withArgs(dummyResponse).calledTwice.should.be.equal(true);
+            });
+
+            it('shows the error message as many times as it is called', function() {
+                mocks.notifier.expects('error').withArgs(alternativeMessage).twice(true);
+                handler(dummyResponse);
+                handler(dummyResponse);
+            });
         });
 
-        it('shows the error message only once', function() {
-            mocks.notifier.expects('error').withArgs(alternativeMessage).once(true);
-            defaultHandler(dummyResponse);
-            defaultHandler(dummyResponse);
+        describe('#getNotRepeatedHandler', function() {
+            beforeEach(function() {
+                handler = rgiHttpResponseProcessorSrvc.getNotRepeatedHandler(alternativeMessage);
+            });
+
+            it('handles the response only once', function() {
+                handler(dummyResponse);
+                handler(dummyResponse);
+                spies.httpResponseProcessorHandle.withArgs(dummyResponse).calledOnce.should.be.equal(true);
+            });
+
+            it('shows the error message only once', function() {
+                mocks.notifier.expects('error').withArgs(alternativeMessage).once(true);
+                handler(dummyResponse);
+                handler(dummyResponse);
+            });
         });
 
         afterEach(function() {

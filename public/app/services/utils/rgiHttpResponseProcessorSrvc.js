@@ -9,9 +9,14 @@ angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
         httpResponseProcessor = {
             getDefaultHandler: function(alternativeMessage) {
                 return function(response) {
+                    rgiNotifier.error(httpResponseProcessor.getMessage(response, alternativeMessage));
+                    httpResponseProcessor.handle(response);
+                };
+            },
+            getNotRepeatedHandler: function(alternativeMessage) {
+                return function(response) {
                     if(httpResponseProcessor.getHandledFailuresNumber() === 0) {
-                        rgiNotifier.error(httpResponseProcessor.getMessage(response, alternativeMessage));
-                        httpResponseProcessor.handle(response);
+                        httpResponseProcessor.getDefaultHandler(alternativeMessage)(response);
                     }
                 };
             },
