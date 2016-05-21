@@ -2,6 +2,7 @@
 angular.module('app')
     .controller('rgiAssessmentDetailTableCtrl', function (
         $scope,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiQuestionSrvc,
         rgiUserListSrvc
@@ -13,7 +14,7 @@ angular.module('app')
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
             questions = questionList;
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
         var getQuestion = function(answer) {
             var foundQuestion = false;
