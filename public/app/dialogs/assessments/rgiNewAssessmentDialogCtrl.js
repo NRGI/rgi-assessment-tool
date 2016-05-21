@@ -160,8 +160,8 @@ angular.module('app')
                             }, function (reason) {
                                 rgiNotifier.error(reason);
                             });
-                    }, function(question) {
-                        rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure');
+                    }, function(response) {
+                        rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure')(response);
                         $scope.closeThisDialog();
                     });
                 }

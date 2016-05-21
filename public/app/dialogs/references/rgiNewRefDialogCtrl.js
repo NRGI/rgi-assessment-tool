@@ -61,7 +61,10 @@ angular.module('app')
 
                 $scope.interviewee_list.push(interviewee_add);
             });
-        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
+        }, function(response) {
+            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure')(response);
+            $scope.closeThisDialog();
+        });
 
         var limit = 500,
             skip = 0;
@@ -76,7 +79,10 @@ angular.module('app')
                     });
                 });
             }
-        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
+        }, function(response) {
+            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure')(response);
+            $scope.closeThisDialog();
+        });
 
         $scope.selectIntervieweeType = function (intervieweeType) {
             $scope.intervieweeType = intervieweeType;
@@ -174,7 +180,10 @@ angular.module('app')
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         }).finally($scope.closeThisDialog);
-                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
+                    }, function(response) {
+                        rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure')(response);
+                        $scope.closeThisDialog();
+                    });
                 } else {
                     rgiNotifier.error('Something happened assigning interviewees!');
                 }
@@ -383,6 +392,9 @@ angular.module('app')
                 } else if (scope.ref_selection === 'webpage') {
                     rgiDialogFactory.webpageCreate(scope);
                 }
-            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
+            }, function(response) {
+                rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure')(response);
+                $scope.closeThisDialog();
+            });
         };
     });
