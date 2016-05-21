@@ -126,6 +126,58 @@ describe('rgiNewRefDialogCtrl', function () {
             });
         });
 
+        describe('`allowed extension`', function() {
+            beforeEach(function() {
+                filter = $scope.uploader.filters[$scope.uploader.filters.length - 2];
+            });
+
+            it('sets the filter name to `allowedExtension`', function() {
+                filter.name.should.be.equal('allowedExtension');
+            });
+
+            describe('check results', function() {
+                var $scopeIsAllowedFileExtensionSpy, stubs = {}, FILE_NAME = 'file.txt',
+                    setScopeIsAllowedFileExtensionStub = function(result) {
+                        $scopeIsAllowedFileExtensionSpy = sinon.spy(function() {return result;});
+                        stubs.$scopeIsAllowedFileExtension = sinon.stub($scope, 'isAllowedFileExtension',
+                            $scopeIsAllowedFileExtensionSpy);
+                    };
+
+                it('returns `true` if the file extension is allowed', function() {
+                    setScopeIsAllowedFileExtensionStub(true);
+                    filter.fn({name: FILE_NAME}).should.be.equal(true);
+                });
+
+                it('returns `false` if the file extension is not allowed', function() {
+                    setScopeIsAllowedFileExtensionStub(false);
+                    filter.fn({name: FILE_NAME}).should.be.equal(false);
+                });
+
+                it('shows an error message if the file extension is not allowed', function() {
+                    stubs.allowedFileExtensionGuideGetSerializedList = sinon.stub(rgiAllowedFileExtensionGuideSrvc,
+                        'getSerializedList', function() {return 'allowed';});
+                    setScopeIsAllowedFileExtensionStub(false);
+
+                    var notifierMock = sinon.mock(rgiNotifier);
+                    notifierMock.expects('error').withArgs('Only allowed files can be uploaded. If this is in error, ' +
+                        'please try uploading file from desktop.');
+
+                    filter.fn({name: FILE_NAME});
+
+                    notifierMock.verify();
+                    notifierMock.restore();
+                });
+
+                afterEach(function() {
+                    $scopeIsAllowedFileExtensionSpy.withArgs(FILE_NAME).called.should.be.equal(true);
+
+                    Object.keys(stubs).forEach(function(stubNanme) {
+                        stubs[stubNanme].restore();
+                    });
+                });
+            });
+        });
+
         describe('`file size limit`', function() {
             beforeEach(function() {
                 filter = $scope.uploader.filters[$scope.uploader.filters.length - 1];
