@@ -63,6 +63,9 @@ angular.module('app')
                 rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
                 rgiHttpResponseProcessorSrvc.handle(response);
             });
+        }, function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
         });
 
         $scope.submitTrialAssessmentDialog = function () {

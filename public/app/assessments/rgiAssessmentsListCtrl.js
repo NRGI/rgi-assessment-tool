@@ -78,6 +78,9 @@ angular.module('app')
                         });
                     }
                 });
+            }, function(response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
             });
         };
 

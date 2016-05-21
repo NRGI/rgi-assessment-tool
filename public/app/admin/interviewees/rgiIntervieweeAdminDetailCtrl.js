@@ -10,6 +10,7 @@ angular.module('app')
         rgiNotifier,
         rgiUserSrvc,
         rgiUserListSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeAnswerSrvc,
         rgiIntervieweeMethodSrvc,
@@ -64,6 +65,9 @@ angular.module('app')
                     });
                 });
             });
+        }, function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
         });
 
         $scope.editIntervieweeDialog = function () {

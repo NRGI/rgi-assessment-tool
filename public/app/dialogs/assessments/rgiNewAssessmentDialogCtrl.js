@@ -6,13 +6,14 @@ angular.module('app')
         $route,
         $rootScope,
         $location,
-        rgiNotifier,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc,
         rgiCountrySrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiMineralGuideSrvc,
+        rgiNotifier,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
         rgiUtilsSrvc
@@ -90,8 +91,7 @@ angular.module('app')
 
             rgiAssessmentSrvc.query({year: new_assessment_year, version: $scope.new_assessment.version}, function (assessments) {
                 var country_deployed = {value: false};
-                //console.log(assessments);
-                //console.log($scope.new_assessment.assessment_countries[0].country.country);
+
                 assessments.forEach(function (assessment) {
                     $scope.new_assessment.assessment_countries.forEach(function(country) {
                         if (country.country.country===assessment.country) {
@@ -100,6 +100,7 @@ angular.module('app')
                         }
                     });
                 });
+
                 if (country_deployed.value) {
                     rgiNotifier.error(country_deployed.country + ' assessment already deployed');
                     $scope.disable_button = false;
@@ -161,6 +162,9 @@ angular.module('app')
                             });
                     });
                 }
+            }, function(response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
             });
         };
     });

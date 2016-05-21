@@ -18,7 +18,9 @@ angular
             {value: "approved", text: "Sort by Approved"},
             {value: "submitted", text: "Sort by Submitted"}
         ];
+
         $scope.sort_order = $scope.sort_options[1].value;
+        rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
 
         rgiUserSrvc.query({}, function (users) {
             $scope.users = [];
@@ -27,13 +29,12 @@ angular
                 rgiAuthLogsSrvc.getMostRecent(user._id, 'sign-in')
                     .then(function (log) {
                         user.last_sign_in = log.data.logs[0];
-                    }, function(response) {
-                        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
-                        rgiHttpResponseProcessorSrvc.handle(response);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Auth logs loading failure'));
 
                 user.assessments.forEach(function(assessment) {
-                    assessment.details = rgiAssessmentSrvc.getCached({assessment_ID: assessment.assessment_ID});
+                    rgiAssessmentSrvc.getCached({assessment_ID: assessment.assessment_ID}, function(details) {
+                        assessment.details = details;
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
                 });
 
                 $scope.users.push(user);

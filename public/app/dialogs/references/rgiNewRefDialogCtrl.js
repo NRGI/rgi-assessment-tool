@@ -47,11 +47,16 @@ angular.module('app')
                     email: interviewee.email,
                     assessment_countries: []
                 };
+
                 interviewee.assessments.forEach(function (assessment_ID) {
                     rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
                         interviewee_add.assessment_countries.push(assessment.country);
+                    }, function(response) {
+                        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                        rgiHttpResponseProcessorSrvc.handle(response);
                     });
                 });
+
                 $scope.interviewee_list.push(interviewee_add);
             });
         });

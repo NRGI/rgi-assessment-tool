@@ -6,10 +6,11 @@ angular.module('app')
         $scope,
         $rootScope,
         $q,
-        rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
         ASSESSMENT_ROLES_SET,
+        rgiHttpResponseProcessorSrvc,
+        rgiNotifier,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc,
         rgiUserMethodSrvc
@@ -38,6 +39,9 @@ angular.module('app')
 
             $scope.assessment = assessment;
             angular.extend(originalAssessment, assessment);
+        }, function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
         });
 
         var getUser = function(role, userId) {

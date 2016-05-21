@@ -4,10 +4,11 @@ angular.module('app')
     .controller('rgiContactTechCtrl', function (
         $scope,
         $location,
-        rgiNotifier,
-        rgiContactMethodSrvc,
-        rgiIdentitySrvc,
         rgiAssessmentSrvc,
+        rgiContactMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
+        rgiIdentitySrvc,
+        rgiNotifier,
         HUMAN_NAME_PATTERN,
         VERSION_PATTERN
     ) {
@@ -87,8 +88,12 @@ angular.module('app')
                         $scope.request.assessment = assessments[0];
                     }
 
+                }, function(response) {
+                    rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                    rgiHttpResponseProcessorSrvc.handle(response);
                 });
             };
+
             criteria[rgiIdentitySrvc.currentUser.role + '_ID'] = rgiIdentitySrvc.currentUser._id;
             getAssessments(criteria);
         }

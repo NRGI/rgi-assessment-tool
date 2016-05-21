@@ -41,7 +41,7 @@ describe('rgiUserAdminCtrl', function () {
             });
             /*jshint unused: false*/
             /*jslint unparam: false*/
-            stubs.assessmentgetCached = sinon.stub(rgiAssessmentSrvc, 'getCached', function (assessment) {
+            stubs.assessmentgetCached = sinon.stub(rgiAssessmentSrvc, 'getCached', function (assessment, callback) {
                 var detailsMap = {
                     'assessment-0-0': 'details-0-0',
                     'assessment-0-1': 'details-0-1',
@@ -49,7 +49,7 @@ describe('rgiUserAdminCtrl', function () {
                     'assessment-1-1': 'details-1-1'
                 };
 
-                return detailsMap[assessment.assessment_ID];
+                callback(detailsMap[assessment.assessment_ID]);
             });
 
             stubs.authLogsGetMostRecent = sinon.stub(rgiAuthLogsSrvc, 'getMostRecent', function (userId, action) {

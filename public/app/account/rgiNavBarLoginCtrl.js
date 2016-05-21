@@ -6,6 +6,7 @@ angular.module('app')
         $location,
         rgiAssessmentSrvc,
         rgiAuthSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiNotifier
     ) {
@@ -33,6 +34,9 @@ angular.module('app')
                     });
 
                     $scope.versions = versions;
+                }, function(response) {
+                    rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                    rgiHttpResponseProcessorSrvc.handle(response);
                 });
             }
         };

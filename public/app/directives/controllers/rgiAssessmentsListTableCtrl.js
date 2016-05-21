@@ -7,11 +7,12 @@ angular
         $location,
         $rootScope,
         ngDialog,
-        rgiNotifier,
-        rgiIdentitySrvc,
+        rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc,
         rgiDialogFactory,
-        rgiAssessmentMethodSrvc
+        rgiHttpResponseProcessorSrvc,
+        rgiIdentitySrvc,
+        rgiNotifier
     ) {
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
@@ -27,6 +28,9 @@ angular
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
+            }, function(response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
             });
         };
 

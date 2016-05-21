@@ -3,43 +3,30 @@
 angular.module('app')
     .factory('rgiAssessmentMethodSrvc', function (
         $q,
-        rgiAssessmentSrvc
+        rgiAssessmentSrvc,
+        rgiHttpResponseProcessorSrvc
     ) {
+        var saveAssessment = function(assessment, action) {
+            var dfd = $q.defer();
+
+            assessment[action]().then(function () {
+                dfd.resolve();
+            }, function (response) {
+                dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response, 'Save assessment failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
+            });
+
+            return dfd.promise;
+        };
+
         return {
-            createAssessment: function (new_assessment_data) {
-
-                var dfd = $q.defer(),
-                    new_assessments = new rgiAssessmentSrvc(new_assessment_data);
-
-                new_assessments.length = new_assessment_data.length;
-                new_assessments.$save().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-
-                return dfd.promise;
+            createAssessment: function (assessmentsData) {
+                var assessments = new rgiAssessmentSrvc(assessmentsData);
+                assessments.length = assessmentsData.length;
+                return saveAssessment(assessments, '$save');
             },
-            //deleteAssessment: function (userDeletion) {
-            //    var dfd = $q.defer();
-            //
-            ////     userDeletion.$remove().then(function() {
-            ////         dfd.resolve();
-            ////     }), function(response) {
-            ////         dfd.reject(response.data.reason);
-            ////     };
-            //    return dfd.promise;
-            //},
-            updateAssessment: function (new_assessment_data) {
-                var dfd = $q.defer();
-
-                new_assessment_data.$update().then(function () {
-                    dfd.resolve();
-                }, function(response) {
-                    dfd.reject(response.data.reason);
-                });
-
-                return dfd.promise;
+            updateAssessment: function (assessment) {
+                return saveAssessment(assessment, '$update');
             }
         };
     });

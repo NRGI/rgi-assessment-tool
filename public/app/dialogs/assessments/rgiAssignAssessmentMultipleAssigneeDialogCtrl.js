@@ -5,9 +5,10 @@ angular.module('app')
         $scope,
         $route,
         $q,
-        rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
+        rgiNotifier,
+        rgiHttpResponseProcessorSrvc,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc
     ) {
@@ -57,6 +58,9 @@ angular.module('app')
             rgiUserSrvc.query({role: $scope.userType}, function(users) {
                 availableUsers = users;
             });
+        }, function(response) {
+            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+            rgiHttpResponseProcessorSrvc.handle(response);
         });
 
         $scope.addAssignee = function () {

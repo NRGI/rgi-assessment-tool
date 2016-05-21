@@ -21,10 +21,16 @@ angular.module('app')
 
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
             $scope.answer = answer;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
             $scope.flags = answer.flags;
             $scope.references = answer.references;
             $scope.question = answer.question_ID;
+
+            rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID}, function(assessment) {
+                $scope.assessment = assessment;
+            }, function(response) {
+                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
+                rgiHttpResponseProcessorSrvc.handle(response);
+            });
 
             originallySubmitted.score = answer[rgiIdentitySrvc.currentUser.role + '_score'];
             originallySubmitted.justification = answer[rgiIdentitySrvc.currentUser.role + '_justification'];
