@@ -6,7 +6,6 @@ angular.module('app')
         $http,
         $rootScope,
         $timeout,
-        FileUploader,
         rgiAllowedFileExtensionGuideSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
@@ -18,7 +17,8 @@ angular.module('app')
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier,
-        rgiUtilsSrvc
+        rgiUtilsSrvc,
+        FILE_SIZE_LIMIT
     ) {
         /////////////
         //INTERVIEWEE
@@ -217,13 +217,25 @@ angular.module('app')
         uploader.filters.push({
             name: 'allowedExtension',
             fn: function (fileItem) {
-                var fileExtensionAllowed = $scope.isAllowedFileExtension(fileItem.name);
-
-                if(!fileExtensionAllowed) {
-                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded. If this is in error, please try uploading file from desktop.');
+                if(!$scope.isAllowedFileExtension(fileItem.name)) {
+                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() +
+                    ' files can be uploaded. If this is in error, please try uploading file from desktop.');
+                    return false;
                 }
 
-                return fileExtensionAllowed;
+                return true;
+            }
+        });
+
+        uploader.filters.push({
+            name: 'fileSizeLimit',
+            fn: function (fileItem) {
+                if(fileItem.size > FILE_SIZE_LIMIT) {
+                    rgiNotifier.error('The file size is too large to be uploaded');
+                    return false;
+                }
+
+                return true;
             }
         });
 

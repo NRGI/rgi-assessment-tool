@@ -4,7 +4,7 @@
 describe('rgiNewRefDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $http, $rootScope, $timeout, ngDialog, rgiAllowedFileExtensionGuideSrvc,
+    var $scope, $http, $rootScope, $timeout, ngDialog, rgiAllowedFileExtensionGuideSrvc, FILE_SIZE_LIMIT,
         rgiDialogFactory, rgiDocumentSrvc, rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier,
         stubs = {}, spies = {}, ANSWER = 'ANSWER', FILE_URL = 'http://domain.com/file.png',
         currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'};
@@ -22,9 +22,11 @@ describe('rgiNewRefDialogCtrl', function () {
             _rgiFileUploaderSrvc_,
             _rgiIdentitySrvc_,
             _rgiIntervieweeSrvc_,
-            _rgiNotifier_
+            _rgiNotifier_,
+            _FILE_SIZE_LIMIT_
         ) {
             $rootScope = _$rootScope_;
+            $http = _$http_;
             $timeout = _$timeout_;
             ngDialog = _ngDialog_;
             rgiAllowedFileExtensionGuideSrvc = _rgiAllowedFileExtensionGuideSrvc_;
@@ -34,7 +36,7 @@ describe('rgiNewRefDialogCtrl', function () {
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiIntervieweeSrvc = _rgiIntervieweeSrvc_;
             rgiNotifier = _rgiNotifier_;
-            $http = _$http_;
+            FILE_SIZE_LIMIT = _FILE_SIZE_LIMIT_;
 
             $scope = $rootScope.$new();
             $scope.$parent.answer = ANSWER;
@@ -101,16 +103,60 @@ describe('rgiNewRefDialogCtrl', function () {
         $scope.salutation_opts.should.deep.equal(['mr.', 'mrs.', 'ms.']);
     });
 
-    it('adds `single file` uploader filter', function() {
-        var filter = $scope.uploader.filters[$scope.uploader.filters.length - 2];
+    describe('filters to validate an uploaded file', function() {
+        var filter;
 
-        var emptyQueue = {queue: [], fn: filter.fn};
-        emptyQueue.fn().should.be.equal(true);
+        describe('`single file`', function() {
+            beforeEach(function() {
+                filter = $scope.uploader.filters[$scope.uploader.filters.length - 3];
+            });
 
-        var nonEmptyQueue = {queue: [1], fn: filter.fn};
-        nonEmptyQueue.fn().should.be.equal(false);
+            it('sets the filter name to `singleFile`', function() {
+                filter.name.should.be.equal('singleFile');
+            });
 
-        filter.name.should.be.equal('singleFile');
+            it('returns `true` if the queue is empty', function() {
+                var emptyQueue = {queue: [], fn: filter.fn};
+                emptyQueue.fn().should.be.equal(true);
+            });
+
+            it('returns `false` if the queue is not empty', function() {
+                var nonEmptyQueue = {queue: [1], fn: filter.fn};
+                nonEmptyQueue.fn().should.be.equal(false);
+            });
+        });
+
+        describe('`file size limit`', function() {
+            beforeEach(function() {
+                filter = $scope.uploader.filters[$scope.uploader.filters.length - 1];
+            });
+
+            it('sets the filter name to `singleFile`', function() {
+                filter.name.should.be.equal('fileSizeLimit');
+            });
+
+            it('returns `true` if the file size is less than the limit', function() {
+                filter.fn({size: FILE_SIZE_LIMIT - 1}).should.be.equal(true);
+            });
+
+            it('returns `true` if the file size is equal to the limit', function() {
+                filter.fn({size: FILE_SIZE_LIMIT}).should.be.equal(true);
+            });
+
+            it('returns `false` if the file size is more than the limit', function() {
+                filter.fn({size: FILE_SIZE_LIMIT + 1}).should.be.equal(false);
+            });
+
+            it('shows an error message if the file size is more than the limit', function() {
+                var notifierMock = sinon.mock(rgiNotifier);
+                notifierMock.expects('error').withArgs('The file size is too large to be uploaded');
+
+                filter.fn({size: FILE_SIZE_LIMIT + 1});
+
+                notifierMock.verify();
+                notifierMock.restore();
+            });
+        });
     });
 
     describe('#uploader.onCompleteItem', function () {
