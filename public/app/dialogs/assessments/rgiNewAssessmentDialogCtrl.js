@@ -18,7 +18,13 @@ angular.module('app')
         rgiQuestionSrvc,
         rgiUtilsSrvc
     ) {
-        $scope.countries = rgiCountrySrvc.query({country_use: true});
+        rgiCountrySrvc.query({country_use: true}, function(countries) {
+            $scope.countries = countries;
+        }, function(response) {
+            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure')(response);
+            $scope.closeThisDialog();
+        });
+
         $scope.disable_button = false;
         //TODO
         //rgiCountrySrvc.query({}, function (countries) {
