@@ -61,7 +61,7 @@ angular.module('app')
 
                 $scope.interviewee_list.push(interviewee_add);
             });
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
 
         var limit = 500,
             skip = 0;
@@ -174,7 +174,7 @@ angular.module('app')
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         }).finally($scope.closeThisDialog);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
                 } else {
                     rgiNotifier.error('Something happened assigning interviewees!');
                 }

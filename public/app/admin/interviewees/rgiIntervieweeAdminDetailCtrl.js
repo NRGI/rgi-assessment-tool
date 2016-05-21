@@ -64,7 +64,7 @@ angular.module('app')
                         $scope.user_list.push(user);
                     });
                 });
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.editIntervieweeDialog = function () {

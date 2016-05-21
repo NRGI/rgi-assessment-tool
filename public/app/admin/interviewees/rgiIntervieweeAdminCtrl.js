@@ -3,9 +3,9 @@
 angular.module('app')
     .controller('rgiIntervieweeAdminCtrl', function (
         $scope,
-        rgiIntervieweeSrvc
+        rgiIntervieweeSrvc,
+        rgiHttpResponseProcessorSrvc
     ) {
-        // filtering options
         $scope.sort_options = [
             {value: 'lastName', text: 'Sort by last name'},
             {value: 'firstName', text: 'Sort by first name'},
@@ -14,7 +14,10 @@ angular.module('app')
             {value: 'organization', text: 'Sort by interviewee organization'},
             {value: 'assessments', text: 'Sort by attached assessments'}
         ];
+
         $scope.sort_order = $scope.sort_options[0].value;
 
-        $scope.interviewees = rgiIntervieweeSrvc.query({});
+        rgiIntervieweeSrvc.query({}, function(interviewees) {
+            $scope.interviewees = interviewees;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
     });
