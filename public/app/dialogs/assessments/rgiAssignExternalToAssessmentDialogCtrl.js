@@ -13,8 +13,8 @@ angular.module('app')
         rgiAssessmentSrvc.query({ext_reviewer_ID: {$ne: $scope.user._id}}, function(assessments) {
             $scope.assessments = assessments;
         }, function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
+            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
+            $scope.closeThisDialog();
         });
 
         $scope.assignAssessmentExternal = function (new_assessment_assignment) {

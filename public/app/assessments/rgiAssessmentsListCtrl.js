@@ -10,8 +10,7 @@ angular.module('app')
         rgiAssessmentStatisticsGuideSrvc,
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
-        rgiIdentitySrvc,
-        rgiNotifier
+        rgiIdentitySrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         // filtering options
@@ -50,7 +49,7 @@ angular.module('app')
             rgiAssessmentSrvc.query(criteria, function (assessments) {
                 $scope.assessments = [];
                 $scope.statuses = {};
-                var answerListLoadingFailure = false;
+                rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
 
                 assessments.forEach(function (assessment) {
                     $scope.assessments.push(assessment);
@@ -69,19 +68,10 @@ angular.module('app')
                             answers.forEach(function (answer) {
                                 rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
                             });
-                        }, function(response) {
-                            if(!answerListLoadingFailure) {
-                                answerListLoadingFailure = true;
-                                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-                                rgiHttpResponseProcessorSrvc.handle(response);
-                            }
-                        });
+                        }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load answer data failure'));
                     }
                 });
-            }, function(response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         };
 
         var criteria = {};

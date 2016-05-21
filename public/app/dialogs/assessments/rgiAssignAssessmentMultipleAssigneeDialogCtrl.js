@@ -59,8 +59,8 @@ angular.module('app')
                 availableUsers = users;
             });
         }, function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
+            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
+            $scope.closeThisDialog();
         });
 
         $scope.addAssignee = function () {

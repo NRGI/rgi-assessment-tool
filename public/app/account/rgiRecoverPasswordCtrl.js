@@ -24,9 +24,6 @@ angular.module('app')
                     rgiNotifier.notify('An email with instructions to recover your password has been sent to your email address.');
                     $location.path('/');
                 }
-            }, function (response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler());
         };
     });

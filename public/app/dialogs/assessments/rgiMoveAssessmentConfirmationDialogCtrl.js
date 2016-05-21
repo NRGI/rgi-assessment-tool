@@ -69,8 +69,7 @@ angular.module('app')
                                     rgiNotifier.error(reason);
                                 });
                         }, function(response) {
-                            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-                            rgiHttpResponseProcessorSrvc.handle(response);
+                            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure')(response);
                             $scope.closeThisDialog();
                         });
                     } else {

@@ -38,6 +38,8 @@ angular.module('app')
             {text: 'Other', value: 'other'}];
 
         rgiIntervieweeSrvc.query({users: $scope.current_user._id}, function (interviewees) {
+            rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
+
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {
                     firstName: interviewee.firstName,
@@ -52,8 +54,8 @@ angular.module('app')
                     rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
                         interviewee_add.assessment_countries.push(assessment.country);
                     }, function(response) {
-                        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-                        rgiHttpResponseProcessorSrvc.handle(response);
+                        rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load assessment data failure')(response);
+                        $scope.closeThisDialog();
                     });
                 });
 
@@ -265,8 +267,8 @@ angular.module('app')
         };
 
         var processHttpFailure = function(response) {
-            rgiHttpResponseProcessorSrvc.handle(response);
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
+            rgiHttpResponseProcessorSrvc.getDefaultHandler()(response);
+            $scope.closeThisDialog();
         };
 
         var handleFileUploadFailure = function(errorMessage) {

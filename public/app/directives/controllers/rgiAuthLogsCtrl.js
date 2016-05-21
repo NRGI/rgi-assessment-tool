@@ -10,10 +10,7 @@ angular.module('app')
         var userId, totalPages, ITEMS_PER_PAGE = 20, currentPage = 0;
         $scope.logs = [];
 
-        var processHttpFailure = function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Auth logs loading failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
-        };
+        var processHttpFailure = rgiHttpResponseProcessorSrvc.getDefaultHandler('Auth logs loading failure');
 
         $scope.loadLogs = function() {
             if(currentPage < totalPages) {

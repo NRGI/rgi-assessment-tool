@@ -59,14 +59,8 @@ angular.module('app')
                         }
                     }
                 });
-            }, function(response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
-        }, function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
-        });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.submitTrialAssessmentDialog = function () {
             if ($scope.assessment_counters.flagged!==0) {

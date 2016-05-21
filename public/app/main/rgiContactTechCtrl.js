@@ -88,10 +88,7 @@ angular.module('app')
                         $scope.request.assessment = assessments[0];
                     }
 
-                }, function(response) {
-                    rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-                    rgiHttpResponseProcessorSrvc.handle(response);
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
             };
 
             criteria[rgiIdentitySrvc.currentUser.role + '_ID'] = rgiIdentitySrvc.currentUser._id;

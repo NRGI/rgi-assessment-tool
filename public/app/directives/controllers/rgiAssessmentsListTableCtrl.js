@@ -28,10 +28,7 @@ angular
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
-            }, function(response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         };
 
         $scope.assessmentTrial = function (assessment) {

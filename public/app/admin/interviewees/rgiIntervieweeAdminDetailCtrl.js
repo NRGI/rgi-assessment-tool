@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true regexp: true*/
+
 angular.module('app')
     .controller('rgiIntervieweeAdminDetailCtrl', function (
         $scope,
@@ -65,10 +65,7 @@ angular.module('app')
                     });
                 });
             });
-        }, function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load assessment data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.editIntervieweeDialog = function () {
             rgiDialogFactory.intervieweeEdit($scope);
