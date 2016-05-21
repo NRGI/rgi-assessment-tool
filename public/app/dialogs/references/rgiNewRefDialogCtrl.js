@@ -227,11 +227,13 @@ angular.module('app')
             }
         });
 
+        var fileExceedingLimitErrorMessage = 'The file size is too large to be uploaded';
+
         uploader.filters.push({
             name: 'fileSizeLimit',
             fn: function (fileItem) {
                 if(fileItem.size > FILE_SIZE_LIMIT) {
-                    rgiNotifier.error('The file size is too large to be uploaded');
+                    rgiNotifier.error(fileExceedingLimitErrorMessage);
                     return false;
                 }
 
@@ -262,6 +264,11 @@ angular.module('app')
             rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
         };
 
+        var handleFileUploadFailure = function(errorMessage) {
+            $scope.fileUploading = false;
+            rgiNotifier.error(errorMessage);
+        };
+
         $scope.uploadFileByUrl = function (fileUrl) {
             if (!$scope.isAllowedFileExtension(fileUrl)) {
                 rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
@@ -276,11 +283,15 @@ angular.module('app')
                     $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 
                     if (responseStatus.data.completion < 1) {
-                        $timeout(function () {
-                            $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
-                                .then(handleFileUploadStatus)
-                                .catch(processHttpFailure);
-                        }, 1000);
+                        if(responseStatus.data.completion < 0) {
+                            handleFileUploadFailure(fileExceedingLimitErrorMessage);
+                        } else {
+                            $timeout(function () {
+                                $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
+                                    .then(handleFileUploadStatus)
+                                    .catch(processHttpFailure);
+                            }, 1000);
+                        }
                     } else {
                         $http.get('/api/remote-file/document/' + responseStatus.data._id)
                             .then(function (responseDocument) {
@@ -294,8 +305,7 @@ angular.module('app')
                 $http.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl))
                     .then(function (response) {
                         if (response.data.reason) {
-                            $scope.fileUploading = false;
-                            rgiNotifier.error(response.data.reason);
+                            handleFileUploadFailure(response.data.reason);
                         } else {
                             $scope.uploader.queue.push({
                                 file: {
