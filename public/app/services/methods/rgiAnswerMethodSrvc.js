@@ -7,10 +7,7 @@ angular.module('app')
         rgiHttpResponseProcessorSrvc
     ) {
         var getHandleFailureResponse = function(dfd) {
-            return function (response) {
-                dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response, 'Save answer failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            };
+            return rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd, 'Save answer failure');
         };
 
         return {

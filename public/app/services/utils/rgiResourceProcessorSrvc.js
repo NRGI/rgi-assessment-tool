@@ -11,15 +11,12 @@ angular.module('app').factory('rgiResourceProcessorSrvc', function ($q, rgiHttpR
                 }
             };
         },
-        getErrorHandler: function(dfd) {
-            return function (response) {
-                dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            };
-        },
         process: function(object, method) {
             var dfd = $q.defer();
-            object[method]().then(resourceProcessor.getResponseHandler(dfd), resourceProcessor.getErrorHandler(dfd));
+
+            object[method]().then(resourceProcessor.getResponseHandler(dfd),
+                rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd));
+
             return dfd.promise;
         },
         delete: function(className, objectId) {

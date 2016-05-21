@@ -9,12 +9,8 @@ angular.module('app')
         var saveAssessment = function(assessment, action) {
             var dfd = $q.defer();
 
-            assessment[action]().then(function () {
-                dfd.resolve();
-            }, function (response) {
-                dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response, 'Save assessment failure'));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            assessment[action]().then(dfd.resolve,
+                rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd, 'Save assessment failure'));
 
             return dfd.promise;
         };

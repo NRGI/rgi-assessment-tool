@@ -21,10 +21,7 @@ angular.module('app')
                     } else {
                         dfd.resolve();
                     }
-                }, function (response) {
-                    dfd.reject(rgiHttpResponseProcessorSrvc.getMessage(response));
-                    rgiHttpResponseProcessorSrvc.handle(response);
-                });
+                }, rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd));
 
                 return dfd.promise;
             };
