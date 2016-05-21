@@ -271,6 +271,20 @@ describe('rgiNewRefDialogCtrl', function () {
 
     });
 
+    describe('#isAllowedFileExtension', function() {
+        it('returns `true` if the file extension is allowed', function() {
+            $scope.isAllowedFileExtension('image.png').should.be.equal(true);
+        });
+
+        it('returns `false` if the file extension is not allowed', function() {
+            $scope.isAllowedFileExtension('image.gif').should.be.equal(false);
+        });
+
+        it('returns `false` if there is no file extension', function() {
+            $scope.isAllowedFileExtension('http://google.com/search-results').should.be.equal(false);
+        });
+    });
+
     describe('#selectIntervieweeType', function () {
         it('sets the interviewee type', function () {
             var INTERVIEWEE_TYPE = 'INTERVIEWEE TYPE';
