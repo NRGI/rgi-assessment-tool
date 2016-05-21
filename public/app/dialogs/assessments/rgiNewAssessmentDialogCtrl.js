@@ -12,7 +12,7 @@ angular.module('app')
         rgiCountrySrvc,
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
-        rgiMineralGuideSrvc,
+        MINERAL_TAGS_SET,
         rgiNotifier,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
@@ -53,7 +53,7 @@ angular.module('app')
         };
 
         $scope.getAvailableMinerals = function() {
-            return rgiMineralGuideSrvc.list();
+            return MINERAL_TAGS_SET;
         };
 
         $scope.deleteCountry = function (index) {
