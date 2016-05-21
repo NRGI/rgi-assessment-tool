@@ -48,7 +48,7 @@ angular.module('app')
                             }
                         });
                     });
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee answers failure'));
 
                 assessments.forEach(function (el) {
                     if (interviewee.assessments.indexOf(el.assessment_ID) < 0) {
