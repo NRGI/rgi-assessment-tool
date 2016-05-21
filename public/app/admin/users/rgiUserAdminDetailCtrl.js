@@ -4,20 +4,23 @@ angular.module('app')
     .controller('rgiUserAdminDetailCtrl', function (
         $scope,
         $routeParams,
-        rgiNotifier,
-        rgiUserSrvc,
+        rgiDialogFactory,
         rgiDocumentSrvc,
-        rgiDialogFactory
+        rgiHttpResponseProcessorSrvc,
+        rgiNotifier,
+        rgiUserSrvc
     ) {
         rgiUserSrvc.get({_id: $routeParams.id}, function (user) {
             $scope.user = user;
             $scope.user.document_details = [];
 
             if(user.documents) {
+                rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
+
                 user.documents.forEach(function (doc_id) {
                     rgiDocumentSrvc.get({_id: doc_id}, function (doc) {
                         $scope.user.document_details.push(doc);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load document data failure'));
                 });
             }
         });

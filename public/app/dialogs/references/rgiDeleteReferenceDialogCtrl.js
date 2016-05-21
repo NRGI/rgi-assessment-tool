@@ -8,6 +8,7 @@ angular.module('app')
         rgiAnswerMethodSrvc,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier
@@ -78,7 +79,7 @@ angular.module('app')
                         removeReferencedObjectAnswer(referencedObject);
                         cleanUpReferencedObjectAssessments(referencedObject);
                         promiseList.push(saveObject(referencedObject).$promise);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load reference data failure'));
                 }
             },
             supplementReferencedObject = function(field, storage, saveObject, promiseList) {
@@ -87,7 +88,7 @@ angular.module('app')
                         supplementReferencedObjectAnswers(referencedObject);
                         supplementReferencedObjectAssessments(referencedObject);
                         promiseList.push(saveObject(referencedObject).$promise);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load reference data failure'));
                 }
             },
             modifyHiddenFlag = function(modifyReferenceObject, hiddenStatus, notificationMessage) {
@@ -105,9 +106,7 @@ angular.module('app')
                 $q.all(promises).then(function() {
                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                     rgiNotifier.notify(notificationMessage);
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                }).finally($scope.closeThisDialog);
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Save reference failure')).finally($scope.closeThisDialog);
             };
 
         $scope.deleteReference = function() {

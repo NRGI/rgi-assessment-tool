@@ -7,6 +7,7 @@ angular.module('app')
         $rootScope,
         rgiDialogFactory,
         rgiDocumentSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiNotifier
     ) {
@@ -19,14 +20,14 @@ angular.module('app')
 
         rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
             if(response.reason) {
-                rgiNotifier.error('Documents loading failure');
+                rgiNotifier.error('Load document data failure');
             } else {
                 $scope.count = response.count;
                 $scope.documents = response.data;
                 totalPages = Math.ceil(response.count / limit);
                 currentPage = currentPage + 1;
             }
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
 
         $scope.loadMoreDocs = function() {
             if ($scope.busy) {
@@ -44,7 +45,7 @@ angular.module('app')
                         currentPage = currentPage + 1;
                         $scope.busy = false;
                     }
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
             }
         };
 

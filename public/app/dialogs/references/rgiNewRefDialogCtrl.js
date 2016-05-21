@@ -67,7 +67,7 @@ angular.module('app')
             skip = 0;
         rgiDocumentSrvc.query({skip: skip, limit: limit, users: $scope.current_user._id}, function (response) {
             if(response.reason) {
-                rgiNotifier.error('Documents loading failure');
+                rgiNotifier.error('Load document data failure');
             } else {
                 response.data.forEach(function(doc) {
                     $scope.document_list.push({
@@ -76,7 +76,7 @@ angular.module('app')
                     });
                 });
             }
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
 
         $scope.selectIntervieweeType = function (intervieweeType) {
             $scope.intervieweeType = intervieweeType;
@@ -383,6 +383,6 @@ angular.module('app')
                 } else if (scope.ref_selection === 'webpage') {
                     rgiDialogFactory.webpageCreate(scope);
                 }
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
         };
     });

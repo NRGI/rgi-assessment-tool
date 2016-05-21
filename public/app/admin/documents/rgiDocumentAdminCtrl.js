@@ -2,9 +2,7 @@
 
 angular.module('app')
     .controller('rgiDocumentAdminCtrl', function (
-        $scope,
-        rgiDocumentSrvc,
-        rgiUserListSrvc
+        $scope
     ) {
         // filtering options
         $scope.sort_options = [
