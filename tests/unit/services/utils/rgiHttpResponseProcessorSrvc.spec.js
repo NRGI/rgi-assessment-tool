@@ -54,6 +54,25 @@ describe('rgiHttpResponseProcessorSrvc', function () {
             });
         });
 
+        describe('#getDeferredHandler', function() {
+            beforeEach(function() {
+                spies.dfdReject = sinon.spy();
+                handler = rgiHttpResponseProcessorSrvc.getDeferredHandler({reject: spies.dfdReject}, alternativeMessage);
+            });
+
+            it('handles the response as many times as it is called', function() {
+                handler(dummyResponse);
+                handler(dummyResponse);
+                spies.httpResponseProcessorHandle.withArgs(dummyResponse).calledTwice.should.be.equal(true);
+            });
+
+            it('shows the error message as many times as it is called', function() {
+                handler(dummyResponse);
+                handler(dummyResponse);
+                spies.dfdReject.withArgs(alternativeMessage).calledTwice.should.be.equal(true);
+            });
+        });
+
         describe('#getNotRepeatedHandler', function() {
             beforeEach(function() {
                 handler = rgiHttpResponseProcessorSrvc.getNotRepeatedHandler(alternativeMessage);
