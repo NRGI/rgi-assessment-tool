@@ -23,7 +23,7 @@ angular.module('app')
                     }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load document data failure'));
                 });
             }
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
         $scope.editUserDialog = function () {
             rgiDialogFactory.userEdit($scope);

@@ -29,7 +29,7 @@ angular.module('app')
                     $scope.availableUsers[user.role].push(user);
                 }
             });
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
         rgiAssessmentSrvc.get({assessment_ID: $scope.$parent.assessment_update_ID}, function(assessment) {
             $scope.assessmentRoles.forEach(function(role) {
@@ -95,7 +95,7 @@ angular.module('app')
 
                 $q.all(promises).then(function() {
                     updateAssessment('Assessment assigned!');
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Save user data failure'));
             }
         };
 

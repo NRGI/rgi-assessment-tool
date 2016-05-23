@@ -39,5 +39,5 @@ angular
 
                 $scope.users.push(user);
             });
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
     });

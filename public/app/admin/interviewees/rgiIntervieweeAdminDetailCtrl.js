@@ -37,7 +37,7 @@ angular.module('app')
                             });
                         }
                     });
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
                 rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
                     answers.forEach(function(answer) {
