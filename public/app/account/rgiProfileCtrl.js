@@ -24,7 +24,7 @@ angular.module('app')
 
             if($scope.profileForm.password.$invalid) {
                 timeoutId = $timeout(function() {
-                    rgiNotifier.error('The password should consist of 6-8 characters including at least one digit, ' +
+                    rgiNotifier.error('The password should consist of 8-16 characters including at least one digit, ' +
                     'at least one lower-case letter, at least one upper-case letter and at least one special character');
                 }, 1000);
             }

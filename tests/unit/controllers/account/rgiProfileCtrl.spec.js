@@ -7,7 +7,6 @@ describe('rgiProfileCtrl', function () {
     var currentUserBackUp;
 
     var dummyCurrentUser = {
-        firstName: 'FIRST NAME',
         lastName: 'LAST NAME',
         email: 'EMAIL'
     };
@@ -204,7 +203,7 @@ describe('rgiProfileCtrl', function () {
         it('shows an error message once the timeout period is elapsed and if the password is invalid', function() {
             setPasswordInvalidity(true);
             $scope.checkPassword();
-            notifierMock.expects('error').withArgs('The password should consist of 6-8 characters including at least ' +
+            notifierMock.expects('error').withArgs('The password should consist of 8-16 characters including at least ' +
             'one digit, at least one lower-case letter, at least one upper-case letter and at least one special character');
             $timeout.flush();
         });
