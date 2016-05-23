@@ -4,6 +4,7 @@ var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE
     siteEmail = 'tech-support@resourcegovernance.org';
 
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
+console.log(process.env.MANDRILL_APIKEY);
 // send email to tech support
 exports.techSend = function (req, res) {
     var issue_os, issue_browser, issue_browser_ver,
