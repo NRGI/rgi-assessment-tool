@@ -7,15 +7,18 @@ angular.module('app')
         $routeParams,
         $location,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiNotifier,
         rgiPreceptGuideSrvc,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
         rgiSortableGuideSrvc
     ) {
-        $scope.question = rgiQuestionSrvc.get({_id: $routeParams.id});
-        $scope.page_type = 'question';
+        rgiQuestionSrvc.get({_id: $routeParams.id}, function(question) {
+            $scope.question = question;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
+        $scope.page_type = 'question';
         $scope.precept_options = rgiPreceptGuideSrvc.getPrecepts();
 
         $scope.type_options = [

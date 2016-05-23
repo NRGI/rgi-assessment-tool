@@ -6,18 +6,22 @@ angular.module('app')
         $route,
         $rootScope,
         $location,
-        rgiNotifier,
         rgiAnswerMethodSrvc,
         rgiAssessmentMethodSrvc,
         rgiAssessmentSrvc,
         rgiCountrySrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
-        rgiMineralGuideSrvc,
+        MINERAL_TAGS_SET,
+        rgiNotifier,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
         rgiUtilsSrvc
     ) {
-        $scope.countries = rgiCountrySrvc.query({country_use: true});
+        rgiCountrySrvc.query({country_use: true}, function(countries) {
+            $scope.countries = countries;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
+
         $scope.disable_button = false;
         //TODO
         //rgiCountrySrvc.query({}, function (countries) {
@@ -52,7 +56,7 @@ angular.module('app')
         };
 
         $scope.getAvailableMinerals = function() {
-            return rgiMineralGuideSrvc.list();
+            return MINERAL_TAGS_SET;
         };
 
         $scope.deleteCountry = function (index) {
@@ -90,8 +94,7 @@ angular.module('app')
 
             rgiAssessmentSrvc.query({year: new_assessment_year, version: $scope.new_assessment.version}, function (assessments) {
                 var country_deployed = {value: false};
-                //console.log(assessments);
-                //console.log($scope.new_assessment.assessment_countries[0].country.country);
+
                 assessments.forEach(function (assessment) {
                     $scope.new_assessment.assessment_countries.forEach(function(country) {
                         if (country.country.country===assessment.country) {
@@ -100,6 +103,7 @@ angular.module('app')
                         }
                     });
                 });
+
                 if (country_deployed.value) {
                     rgiNotifier.error(country_deployed.country + ' assessment already deployed');
                     $scope.disable_button = false;
@@ -159,8 +163,8 @@ angular.module('app')
                             }, function (reason) {
                                 rgiNotifier.error(reason);
                             });
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
                 }
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         };
     });

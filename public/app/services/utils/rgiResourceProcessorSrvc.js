@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiResourceProcessorSrvc', function ($q) {
+angular.module('app').factory('rgiResourceProcessorSrvc', function ($q, rgiHttpResponseProcessorSrvc) {
     var resourceProcessor = {
         getResponseHandler: function(dfd) {
             return function (response) {
@@ -11,15 +11,12 @@ angular.module('app').factory('rgiResourceProcessorSrvc', function ($q) {
                 }
             };
         },
-        getErrorHandler: function(dfd) {
-            return function () {
-                console.log(dfd);
-                dfd.reject('Request Failed');
-            };
-        },
         process: function(object, method) {
             var dfd = $q.defer();
-            object[method]().then(resourceProcessor.getResponseHandler(dfd), resourceProcessor.getErrorHandler(dfd));
+
+            object[method]().then(resourceProcessor.getResponseHandler(dfd),
+                rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd));
+
             return dfd.promise;
         },
         delete: function(className, objectId) {

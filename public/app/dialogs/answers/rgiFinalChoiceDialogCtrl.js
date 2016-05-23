@@ -23,10 +23,7 @@ angular.module('app')
 
         rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
             rgiQuestionSetSrvc.setAnswers(answers);
-        }, function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
 
         var
             getReferenceAuthorId = function(reference) {

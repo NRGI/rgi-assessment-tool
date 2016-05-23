@@ -9,6 +9,7 @@ var crypto              =   require('crypto'),
     Answer              =   require('mongoose').model('Answer'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
+    FILE_SIZE_LIMIT     =   400 * 1024 * 1024,//400MB
     phantom             =   require('phantom'),
     //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
@@ -204,8 +205,17 @@ exports.uploadRemoteFile = function (req, res) {
                     clearTimeout(timeoutId);
 
                     if (response.statusCode === 200) {
-                        var fileTotalSize = response.headers['content-length'] ? parseInt(response.headers['content-length'], 10) : -1;
-                        var receivedDataSized = 0;
+                        var fileTotalSize = 0;
+
+                        if(response.headers['content-length']) {
+                            fileTotalSize = parseInt(response.headers['content-length'], 10);
+                        }
+
+                        if(fileTotalSize > FILE_SIZE_LIMIT) {
+                            return res.send({reason: 'The file size is too large to be uploaded'});
+                        }
+
+                        var receivedDataSize = 0;
                         var filePath = '/tmp/' +
                             getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
 
@@ -214,12 +224,18 @@ exports.uploadRemoteFile = function (req, res) {
 
                         response
                             .on('data', function(data) {
-                                receivedDataSized += data.length;
-                                fileUploadStatus.setCompletion(fileTotalSize > 0 ? receivedDataSized / fileTotalSize : 0);
+                                receivedDataSize += data.length;
+
+                                if(receivedDataSize > FILE_SIZE_LIMIT) {
+                                    fileUploadStatus.setCompletion(-1);
+                                } else {
+                                    fileUploadStatus.setCompletion(fileTotalSize > 0 ? receivedDataSize / fileTotalSize : 0);
+                                }
                             })
                             .on('end', function() {
+                                fileUploadStatus.setCompletion(1);
+
                                 file.close(function() {
-                                    fileUploadStatus.setCompletion(1);
                                     uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (err, doc) {
                                         if (!err) {
                                             fileUploadStatus.setDocument(doc);
@@ -227,10 +243,10 @@ exports.uploadRemoteFile = function (req, res) {
                                     });
                                 });
                             })
-                            .on('error', function(err) {
+                            .on('error', function() {
                                 file.close(function() {
                                     fs.unlink(filePath);
-                                    res.send({reason: err.toString()});
+                                    fileUploadStatus.setCompletion(-1);
                                 });
                             });
 

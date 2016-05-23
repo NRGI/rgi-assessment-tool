@@ -1,5 +1,5 @@
 'use strict';
-/*jslint nomen: true unparam: true regexp: true*/
+
 angular.module('app')
     .controller('rgiIntervieweeAdminDetailCtrl', function (
         $scope,
@@ -10,6 +10,7 @@ angular.module('app')
         rgiNotifier,
         rgiUserSrvc,
         rgiUserListSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeAnswerSrvc,
         rgiIntervieweeMethodSrvc,
@@ -36,7 +37,7 @@ angular.module('app')
                             });
                         }
                     });
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
                 rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
                     answers.forEach(function(answer) {
@@ -47,7 +48,7 @@ angular.module('app')
                             }
                         });
                     });
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee answers failure'));
 
                 assessments.forEach(function (el) {
                     if (interviewee.assessments.indexOf(el.assessment_ID) < 0) {
@@ -57,14 +58,14 @@ angular.module('app')
                         });
                     }
                 });
+                rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
 
                 interviewee.users.forEach(function (el) {
-                    rgiUserListSrvc.get({_id: el}, function (user) {
-                        $scope.user_list.push(user);
-                    });
+                    rgiUserListSrvc.get({_id: el}, $scope.user_list.push,
+                        rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load user list failure'));
                 });
-            });
-        });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.editIntervieweeDialog = function () {
             rgiDialogFactory.intervieweeEdit($scope);

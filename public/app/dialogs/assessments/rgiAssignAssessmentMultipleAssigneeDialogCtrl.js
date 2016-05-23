@@ -5,9 +5,10 @@ angular.module('app')
         $scope,
         $route,
         $q,
-        rgiNotifier,
         rgiAssessmentSrvc,
         rgiAssessmentMethodSrvc,
+        rgiNotifier,
+        rgiHttpResponseProcessorSrvc,
         rgiUserAssessmentsSrvc,
         rgiUserSrvc
     ) {
@@ -56,8 +57,8 @@ angular.module('app')
 
             rgiUserSrvc.query({role: $scope.userType}, function(users) {
                 availableUsers = users;
-            });
-        });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.addAssignee = function () {
             $scope.assessment[assigneeField].push(undefined);

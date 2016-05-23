@@ -32,9 +32,6 @@ angular.module('app')
                     rgiNotifier.notify('The password has been successfully reset. You can log in using your new password.');
                     $location.path('/');
                 }
-            }, function (response) {
-                rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
-                rgiHttpResponseProcessorSrvc.handle(response);
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler());
         };
     });

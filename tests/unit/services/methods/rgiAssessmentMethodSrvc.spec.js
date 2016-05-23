@@ -5,21 +5,28 @@ describe('rgiAssessmentMethodSrvc', function () {
 
     var rgiAssessmentMethodSrvc;
     var $q, rgiAssessmentSrvc;
-    var $qDeferStub, $qDeferSpy, expectedPromise;
+    var stubs = {}, spies = {}, expectedPromise, REJECT_RESPONSE = 'REJECTED RESPONSE';
 
-    beforeEach(inject(function (_rgiAssessmentMethodSrvc_, _$q_, _rgiAssessmentSrvc_) {
+    beforeEach(inject(function (_rgiAssessmentMethodSrvc_, _$q_, _rgiAssessmentSrvc_, rgiHttpResponseProcessorSrvc) {
         $q = _$q_;
         rgiAssessmentSrvc = _rgiAssessmentSrvc_;
         rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
+
+        spies.httpResponseProcessorHandle = sinon.spy();
+        stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
+            spies.httpResponseProcessorHandle);
+
+        stubs.httpResponseProcessorGetMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage',
+            function(response, alternativeMessage) {
+                return alternativeMessage;
+            });
     }));
 
     describe('#createAssessment', function () {
-        var rgiAssessmentSrvcStub;
-
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
 
-            rgiAssessmentSrvcStub = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
+            stubs.assessmentSave = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
                 return {
                     then: function(callback) {
                         callback();
@@ -27,25 +34,22 @@ describe('rgiAssessmentMethodSrvc', function () {
                 };
             });
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
+            spies.$qDefer = sinon.spy();
+            stubs.$qDefer = sinon.stub($q, 'defer', function() {
                 return {
-                    resolve: $qDeferSpy,
+                    resolve: spies.$qDefer,
                     promise: expectedPromise
                 };
             });
 
             rgiAssessmentMethodSrvc.createAssessment([expectedPromise]).should.be.equal(expectedPromise);
-            $qDeferSpy.called.should.be.equal(true);
+            spies.$qDefer.called.should.be.equal(true);
         });
 
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'NEGATIVE';
-            var REJECT_RESPONSE = {
-                data: {reason: 'REJECT_INSERTION'}
-            };
 
-            rgiAssessmentSrvcStub = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
+            stubs.assessmentSave = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
                 return {
                     then: function(callbackPositive, callbackNegative) {
                         callbackNegative(REJECT_RESPONSE);
@@ -53,20 +57,16 @@ describe('rgiAssessmentMethodSrvc', function () {
                 };
             });
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
+            spies.$qDefer = sinon.spy();
+            stubs.$qDefer = sinon.stub($q, 'defer', function() {
                 return {
-                    reject: $qDeferSpy,
+                    reject: spies.$qDefer,
                     promise: expectedPromise
                 };
             });
 
             rgiAssessmentMethodSrvc.createAssessment([expectedPromise]).should.be.equal(expectedPromise);
-            $qDeferSpy.should.have.been.calledWith(REJECT_RESPONSE.data.reason);
-        });
-
-        afterEach(function () {
-            rgiAssessmentSrvcStub.restore();
+            spies.$qDefer.should.have.been.calledWith('Save assessment failure');
         });
     });
 
@@ -74,10 +74,10 @@ describe('rgiAssessmentMethodSrvc', function () {
         it('resolves the deferred in positive case', function () {
             expectedPromise = 'POSITIVE';
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
+            spies.$qDefer = sinon.spy();
+            stubs.$qDefer = sinon.stub($q, 'defer', function() {
                 return {
-                    resolve: $qDeferSpy,
+                    resolve: spies.$qDefer,
                     promise: expectedPromise
                 };
             });
@@ -92,17 +92,16 @@ describe('rgiAssessmentMethodSrvc', function () {
                 }
             }).should.be.equal(expectedPromise);
 
-            $qDeferSpy.called.should.be.equal(true);
+            spies.$qDefer.called.should.be.equal(true);
         });
 
         it('rejects the deferred in negative case', function () {
             expectedPromise = 'NEGATIVE';
-            var REASON = 'REASON';
 
-            $qDeferSpy = sinon.spy();
-            $qDeferStub = sinon.stub($q, 'defer', function() {
+            spies.$qDefer = sinon.spy();
+            stubs.$qDefer = sinon.stub($q, 'defer', function() {
                 return {
-                    reject: $qDeferSpy,
+                    reject: spies.$qDefer,
                     promise: expectedPromise
                 };
             });
@@ -111,20 +110,19 @@ describe('rgiAssessmentMethodSrvc', function () {
                 $update: function() {
                     return {
                         then: function(uselessCallbackPositive, callbackNegative) {
-                            callbackNegative({
-                                data: {reason: REASON}
-                            });
+                            callbackNegative({});
                         }
                     };
                 }
             }).should.be.equal(expectedPromise);
 
-            $qDeferSpy.should.have.been.calledWith(REASON);
+            spies.$qDefer.should.have.been.calledWith('Save assessment failure');
         });
-
     });
 
     afterEach(function () {
-        $qDeferStub.restore();
+        Object.keys(stubs).forEach(function(stubName) {
+            stubs[stubName].restore();
+        });
     });
 });

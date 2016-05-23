@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('app').factory('rgiQuestionSetSrvc', function (rgiQuestionSrvc) {
+angular.module('app').factory('rgiQuestionSetSrvc', function (rgiHttpResponseProcessorSrvc, rgiQuestionSrvc) {
     var answers = [], questions = [];
 
     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questionList) {
         questionList.sort(function(question1, question2){return question1.question_order - question2.question_order;});
         questions = questionList;
-    });
+    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
     var getRootQuestions = function(roles, showAnsweredQuestions) {
         var rootQuestions = [];

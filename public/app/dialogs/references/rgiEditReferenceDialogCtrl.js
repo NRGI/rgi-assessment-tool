@@ -5,6 +5,7 @@ angular.module('app')
         $scope,
         $rootScope,
         rgiAnswerMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiNotifier
     ) {
@@ -17,7 +18,10 @@ angular.module('app')
 
         if($scope.ref.citation_type === 'interview') {
             var intervieweeId = $scope.ref.interviewee_ID._id ? $scope.ref.interviewee_ID._id : $scope.ref.interviewee_ID;
-            $scope.interviewee = rgiIntervieweeSrvc.get({_id: intervieweeId});
+
+            rgiIntervieweeSrvc.get({_id: intervieweeId}, function(interviewee) {
+                $scope.interviewee = interviewee;
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
         }
 
         $scope.editReference = function(referenceIndex) {

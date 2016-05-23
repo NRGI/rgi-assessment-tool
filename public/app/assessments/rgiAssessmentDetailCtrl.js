@@ -9,6 +9,7 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiAssessmentStatisticsGuideSrvc,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiNotifier,
         rgiPreceptGuideSrvc,
@@ -58,8 +59,8 @@ angular.module('app')
                         }
                     }
                 });
-            });
-        });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.submitTrialAssessmentDialog = function () {
             if ($scope.assessment_counters.flagged!==0) {

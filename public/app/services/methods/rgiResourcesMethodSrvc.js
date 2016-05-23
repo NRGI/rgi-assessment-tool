@@ -2,43 +2,18 @@
 
 angular.module('app')
     .factory('rgiResourcesMethodSrvc', function (
-        $q,
+        rgiResourceProcessorSrvc,
         rgiResourcesSrvc
     ) {
         return {
-            createResource: function (new_resource_data) {
-                var new_resource = new rgiResourcesSrvc(new_resource_data),
-                    dfd = $q.defer();
-                new_resource.$save().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            createResource: function (newResourceData) {
+                return rgiResourceProcessorSrvc.process(new rgiResourcesSrvc(newResourceData), '$save');
             },
-            updateResource: function (new_resource_data) {
-                var dfd = $q.defer();
-
-                //noinspection CommaExpressionJS
-                new_resource_data.$update().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            updateResource: function (resource) {
+                return rgiResourceProcessorSrvc.process(resource, '$update');
             },
-            deleteResource: function (resource_deletion) {
-                var dfd = $q.defer(),
-                    delete_ID = new rgiResourcesSrvc();
-
-                delete_ID.id = resource_deletion;
-
-                delete_ID.$delete().then(function () {
-                    dfd.resolve();
-                }, function (response) {
-                    dfd.reject(response.data.reason);
-                });
-                return dfd.promise;
+            deleteResource: function (resourceId) {
+                return rgiResourceProcessorSrvc.delete(rgiResourcesSrvc, resourceId);
             }
         };
     });

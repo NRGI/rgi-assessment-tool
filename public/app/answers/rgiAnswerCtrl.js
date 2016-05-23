@@ -8,23 +8,23 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
-        rgiIdentitySrvc,
-        rgiNotifier
+        rgiIdentitySrvc
     ) {
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
 
-        var originallySubmitted = {}, processFailureResponse = function(response) {
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-            rgiHttpResponseProcessorSrvc.handle(response);
-        };
+        var originallySubmitted = {},
+            processFailureResponse = rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure');
 
         rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
             $scope.answer = answer;
-            $scope.assessment = rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID});
             $scope.flags = answer.flags;
             $scope.references = answer.references;
             $scope.question = answer.question_ID;
+
+            rgiAssessmentSrvc.get({assessment_ID: answer.assessment_ID}, function(assessment) {
+                $scope.assessment = assessment;
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
             originallySubmitted.score = answer[rgiIdentitySrvc.currentUser.role + '_score'];
             originallySubmitted.justification = answer[rgiIdentitySrvc.currentUser.role + '_justification'];

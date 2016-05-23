@@ -4,12 +4,15 @@ angular.module('app')
     .controller('rgiAssignExternalToAssessmentDialogCtrl', function (
         $scope,
         $route,
-        rgiNotifier,
         rgiAssessmentMethodSrvc,
-        rgiAssessmentSrvc
+        rgiAssessmentSrvc,
+        rgiHttpResponseProcessorSrvc,
+        rgiNotifier
     ) {
         $scope.user = $scope.$parent.user;
-        $scope.assessments = rgiAssessmentSrvc.query({ext_reviewer_ID: {$ne: $scope.user._id}});
+        rgiAssessmentSrvc.query({ext_reviewer_ID: {$ne: $scope.user._id}}, function(assessments) {
+            $scope.assessments = assessments;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.assignAssessmentExternal = function (new_assessment_assignment) {
             if(!new_assessment_assignment) {

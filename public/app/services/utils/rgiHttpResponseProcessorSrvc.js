@@ -6,12 +6,25 @@ angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
     rgiNotifier
 ) {
     var handledFailuresNumber = 0,
+        handleByDefault = function(response, alternativeMessage, showMessage) {
+            showMessage(httpResponseProcessor.getMessage(response, alternativeMessage));
+            httpResponseProcessor.handle(response);
+        },
         httpResponseProcessor = {
             getDefaultHandler: function(alternativeMessage) {
                 return function(response) {
+                    handleByDefault(response, alternativeMessage, rgiNotifier.error);
+                };
+            },
+            getDeferredHandler: function(dfd, alternativeMessage) {
+                return function(response) {
+                    handleByDefault(response, alternativeMessage, dfd.reject);
+                };
+            },
+            getNotRepeatedHandler: function(alternativeMessage) {
+                return function(response) {
                     if(httpResponseProcessor.getHandledFailuresNumber() === 0) {
-                        rgiNotifier.error(httpResponseProcessor.getMessage(response, alternativeMessage));
-                        httpResponseProcessor.handle(response);
+                        httpResponseProcessor.getDefaultHandler(alternativeMessage)(response);
                     }
                 };
             },

@@ -5,13 +5,9 @@ angular.module('app').factory('rgiAuthSrvc', function (
     $q,
     rgiHttpResponseProcessorSrvc,
     rgiIdentitySrvc,
-    rgiNotifier,
     rgiUserSrvc
 ) {
-    var processHttpFailure = function(response) {
-        rgiHttpResponseProcessorSrvc.handle(response);
-        rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
-    };
+    var processHttpFailure = rgiHttpResponseProcessorSrvc.getDefaultHandler();
 
     return {
         authenticateUser: function (username, password) {

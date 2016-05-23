@@ -1,8 +1,7 @@
 div
    div.modal-header
       h4 Are you sure you want to {{action_text}}?
-   //div.modal-body
    div.modal-footer
-      button.btn.btn-danger(ng-click="assessmentmove()") Confirm
+      button.btn.btn-danger(ng-click="moveAssessment()") Confirm
       | &nbsp;
-      button.btn.btn-default(ng-click="closeDialog()") Cancel
+      button.btn.btn-default(ng-click="closeThisDialog()") Cancel

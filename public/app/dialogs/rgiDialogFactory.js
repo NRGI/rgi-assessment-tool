@@ -14,6 +14,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/assign-assessment-dialog',
                     controller: 'rgiAssignAssessmentDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -27,6 +28,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/assign-assessment-external-dialog',
                     controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -40,6 +42,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/assign-assessment-supervisor-dialog',
                     controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -51,6 +54,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/assign-external-to-assessment-dialog',
                     controller: 'rgiAssignExternalToAssessmentDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -59,6 +63,7 @@ angular.module('app')
                     template: 'partials/dialogs/answers/guidance-dialog',
                     controller: 'rgiGuidanceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -72,6 +77,7 @@ angular.module('app')
                         template: 'partials/dialogs/assessments/move-assessment-dialog',
                         controller: 'rgiMoveAssessmentDialogCtrl',
                         className: 'ngdialog-theme-default',
+                        closeByNavigation: true,
                         scope: scope
                     });
                 }
@@ -87,6 +93,7 @@ angular.module('app')
                         template: 'partials/dialogs/assessments/move-assessment-confirmation-dialog',
                         controller: 'rgiMoveAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
+                        closeByNavigation: true,
                         scope: scope
                     });
                 }
@@ -98,6 +105,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/new-assessment-dialog',
                     controller: 'rgiNewAssessmentDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -111,6 +119,7 @@ angular.module('app')
                         template: 'partials/dialogs/assessments/submit-confirmation-dialog',
                         controller: 'rgiSubmitAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
+                        closeByNavigation: true,
                         scope: scope
                     });
                 }
@@ -125,6 +134,7 @@ angular.module('app')
                         template: 'partials/dialogs/assessments/submit-confirmation-dialog',
                         controller: 'rgiSubmitAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
+                        closeByNavigation: true,
                         scope: scope
                     });
                 }
@@ -139,6 +149,7 @@ angular.module('app')
                         template: 'partials/dialogs/assessments/resubmit-confirmation-dialog',
                         controller: 'rgiResubmitAssessmentConfirmationDialogCtrl',
                         className: 'ngdialog-theme-default',
+                        closeByNavigation: true,
                         scope: scope
                     });
                     //var new_assessment_data = scope.assessment;
@@ -159,6 +170,7 @@ angular.module('app')
                     template: 'partials/dialogs/answers/final-choice-dialog',
                     controller: 'rgiFinalChoiceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
 
@@ -169,6 +181,7 @@ angular.module('app')
                     template: 'partials/dialogs/answers/final-choice-dialog',
                     controller: 'rgiFinalChoiceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
 
@@ -178,6 +191,7 @@ angular.module('app')
                     template: 'partials/dialogs/comments/comment-edit-dialog',
                     controller: 'rgiCommentEditDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     data: {
                         answer: answer,
                         comment: comment
@@ -190,6 +204,7 @@ angular.module('app')
                     template: 'partials/dialogs/comments/delete-comment-dialog',
                     controller: 'rgiDeleteCommentDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -199,6 +214,7 @@ angular.module('app')
                     template: 'partials/dialogs/documents/delete-document-dialog',
                     controller: 'rgiDeleteDocumentDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -208,6 +224,7 @@ angular.module('app')
                     template: 'partials/dialogs/interviewees/delete-interviewee-dialog',
                     controller: 'rgiDeleteIntervieweeDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -220,6 +237,7 @@ angular.module('app')
                     controller: 'rgiNewRefDialogCtrl',
                     showClose:false,
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -230,6 +248,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/edit-document-reference-dialog',
                     controller: 'rgiEditReferenceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -240,6 +259,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/edit-interview-reference-dialog',
                     controller: 'rgiEditReferenceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -250,6 +270,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/delete-reference-dialog',
                     controller: 'rgiDeleteReferenceDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -259,6 +280,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/restore-reference-dialog',
                     controller: 'rgiDeleteReferenceDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -272,6 +294,7 @@ angular.module('app')
                     controller: 'rgiNewDocumentDialogCtrl',
                     showClose:false,
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -285,6 +308,7 @@ angular.module('app')
                     controller: 'rgiNewWebpageDialogCtrl',
                     showClose:false,
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -295,6 +319,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/edit-document-dialog',
                     controller: 'rgiEditDocumentDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -303,6 +328,7 @@ angular.module('app')
                     template: 'partials/dialogs/resources/new-resource-dialog',
                     controller: 'rgiNewResourceDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -313,6 +339,7 @@ angular.module('app')
                     template: 'partials/dialogs/resources/delete-resource-confirmation-dialog',
                     controller: 'rgiDeleteResourceDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -334,6 +361,7 @@ angular.module('app')
                     template: 'partials/dialogs/flags/flag-answer-dialog',
                     controller: 'rgiFlagAnswerDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     overlay: false,
                     scope: $scope
                 });
@@ -347,6 +375,7 @@ angular.module('app')
                     template: 'partials/dialogs/flags/flag-answer-dialog',
                     controller: 'rgiFlagEditDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -357,6 +386,7 @@ angular.module('app')
                     template: 'partials/dialogs/references/edit-interviewee-dialog',
                     controller: 'rgiEditIntervieweeDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -367,6 +397,7 @@ angular.module('app')
                     template: 'partials/dialogs/questions/new-question-dialog',
                     controller: 'rgiNewQuestionDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -377,6 +408,7 @@ angular.module('app')
                     template: 'partials/dialogs/questions/delete-question-confirmation-dialog',
                     controller: 'rgiDeleteQuestionDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -388,6 +420,7 @@ angular.module('app')
                     template: 'partials/dialogs/assessments/assessment-status-dialog',
                     controller: 'rgiAssessmentStatusDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: $scope
                 });
             },
@@ -398,6 +431,7 @@ angular.module('app')
                     template: 'partials/dialogs/users/edit-user-dialog',
                     controller: 'rgiEditUserDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             },
@@ -408,6 +442,7 @@ angular.module('app')
                     template: 'partials/dialogs/users/delete-user-confirmation-dialog',
                     controller: 'rgiDeleteUserDialogCtrl',
                     className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
                     scope: scope
                 });
             }

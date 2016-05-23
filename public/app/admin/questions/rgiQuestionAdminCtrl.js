@@ -4,6 +4,7 @@ angular.module('app')
     .controller('rgiQuestionAdminCtrl', function (
         $scope,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiPreceptGuideSrvc,
         rgiQuestionSrvc
     ) {
@@ -14,7 +15,7 @@ angular.module('app')
             questions.forEach(function (question) {
                 $scope.questions[question.precept - 1].data.push(question);
             });
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
         $scope.getExportedQuestions = function() {
             var exportedQuestions = [];

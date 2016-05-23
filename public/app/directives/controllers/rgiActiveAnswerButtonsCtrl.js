@@ -29,10 +29,7 @@ angular
             if(assessment !== undefined) {
                 rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
                     rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
-                }, function(response) {
-                    rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response, 'Load answer data failure'));
-                    rgiHttpResponseProcessorSrvc.handle(response);
-                });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
 
                 deactivateAssessmentWatcher();
             }

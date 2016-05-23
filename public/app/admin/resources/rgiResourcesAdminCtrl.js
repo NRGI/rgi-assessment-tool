@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 angular.module('app')
     .controller('rgiResourcesAdminCtrl', function (
@@ -6,18 +6,23 @@ angular.module('app')
         $route,
         $location,
         rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
         rgiNotifier,
         rgiResourcesSrvc,
         rgiResourcesMethodSrvc
     ) {
-        var resource_type = $location.$$path.replace('/admin/', '').replace('-admin', '');
-        if (resource_type === 'resource') {
+        $scope.resource_type = $location.$$path.replace('/admin/', '').replace('-admin', '');
+
+        if ($scope.resource_type === 'resource') {
             $scope.title = 'Other Resources';
-        } else if (resource_type === 'faq') {
-            $scope.title = 'Frequently Asked Questions'
+        } else if ($scope.resource_type === 'faq') {
+            $scope.title = 'Frequently Asked Questions';
         }
-        $scope.resource_type = resource_type;
-        $scope.resources = rgiResourcesSrvc.query({type: resource_type});
+
+        rgiResourcesSrvc.query({type: $scope.resource_type}, function(resources) {
+            $scope.resources = resources;
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load ' +
+            ($scope.resource_type === 'faq' ? 'FAQ' : $scope.resource_type) + ' data failure'));
 
         $scope.resourceUpdate = function (resource) {
             var new_resource_data = resource;

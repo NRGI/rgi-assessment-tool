@@ -8,6 +8,7 @@ angular.module('app')
         rgiAnswerMethodSrvc,
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
+        rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier
@@ -15,6 +16,9 @@ angular.module('app')
         var
             answer = $scope.$parent.$parent.answer,
             currentReference = answer.references[$scope.$parent.$parent.ref_index],
+            getHttpFailureHandler = function(alternativeMessage) {
+                return rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
+            },
             isAnotherReferenceFound = function(field) {
                 var anotherReferenceFound = false;
 
@@ -78,7 +82,7 @@ angular.module('app')
                         removeReferencedObjectAnswer(referencedObject);
                         cleanUpReferencedObjectAssessments(referencedObject);
                         promiseList.push(saveObject(referencedObject).$promise);
-                    });
+                    }, getHttpFailureHandler('Load reference data failure'));
                 }
             },
             supplementReferencedObject = function(field, storage, saveObject, promiseList) {
@@ -87,7 +91,7 @@ angular.module('app')
                         supplementReferencedObjectAnswers(referencedObject);
                         supplementReferencedObjectAssessments(referencedObject);
                         promiseList.push(saveObject(referencedObject).$promise);
-                    });
+                    }, getHttpFailureHandler('Load reference data failure'));
                 }
             },
             modifyHiddenFlag = function(modifyReferenceObject, hiddenStatus, notificationMessage) {
@@ -105,9 +109,7 @@ angular.module('app')
                 $q.all(promises).then(function() {
                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                     rgiNotifier.notify(notificationMessage);
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                }).finally($scope.closeThisDialog);
+                }, getHttpFailureHandler('Save reference failure')).finally($scope.closeThisDialog);
             };
 
         $scope.deleteReference = function() {

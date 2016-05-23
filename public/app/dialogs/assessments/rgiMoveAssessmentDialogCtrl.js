@@ -3,8 +3,9 @@
 angular.module('app')
     .controller('rgiMoveAssessmentDialogCtrl', function (
         $scope,
-        rgiUserSrvc,
-        rgiDialogFactory
+        rgiDialogFactory,
+        rgiHttpResponseProcessorSrvc,
+        rgiUserSrvc
     ) {
         var getUserInfo = function(user) {
             return user.firstName + " " + user.lastName + ' (' + user.role + ')';
@@ -48,7 +49,7 @@ angular.module('app')
             }
 
             $scope.workflow_opts = workflowOptions;
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
         $scope.moveAssessment = function () {
             rgiDialogFactory.assessmentMoveConfirm($scope);

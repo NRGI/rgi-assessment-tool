@@ -6,7 +6,6 @@ angular.module('app')
         $http,
         $rootScope,
         $timeout,
-        FileUploader,
         rgiAllowedFileExtensionGuideSrvc,
         rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
@@ -18,8 +17,12 @@ angular.module('app')
         rgiIntervieweeSrvc,
         rgiIntervieweeMethodSrvc,
         rgiNotifier,
-        rgiUtilsSrvc
+        rgiUtilsSrvc,
+        FILE_SIZE_LIMIT
     ) {
+        var getHttpFailureHandler = function(alternativeMessage) {
+            return rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
+        };
         /////////////
         //INTERVIEWEE
         /////////////
@@ -38,6 +41,8 @@ angular.module('app')
             {text: 'Other', value: 'other'}];
 
         rgiIntervieweeSrvc.query({users: $scope.current_user._id}, function (interviewees) {
+            rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
+
             interviewees.forEach(function (interviewee) {
                 var interviewee_add = {
                     firstName: interviewee.firstName,
@@ -47,20 +52,22 @@ angular.module('app')
                     email: interviewee.email,
                     assessment_countries: []
                 };
+
                 interviewee.assessments.forEach(function (assessment_ID) {
                     rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
                         interviewee_add.assessment_countries.push(assessment.country);
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load assessment data failure'));
                 });
+
                 $scope.interviewee_list.push(interviewee_add);
             });
-        });
+        }, getHttpFailureHandler('Load interviewee data failure'));
 
         var limit = 500,
             skip = 0;
         rgiDocumentSrvc.query({skip: skip, limit: limit, users: $scope.current_user._id}, function (response) {
             if(response.reason) {
-                rgiNotifier.error('Documents loading failure');
+                rgiNotifier.error('Load document data failure');
             } else {
                 response.data.forEach(function(doc) {
                     $scope.document_list.push({
@@ -69,7 +76,7 @@ angular.module('app')
                     });
                 });
             }
-        });
+        }, getHttpFailureHandler('Load document data failure'));
 
         $scope.selectIntervieweeType = function (intervieweeType) {
             $scope.intervieweeType = intervieweeType;
@@ -167,7 +174,7 @@ angular.module('app')
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         }).finally($scope.closeThisDialog);
-                    });
+                    }, getHttpFailureHandler('Load interviewee data failure'));
                 } else {
                     rgiNotifier.error('Something happened assigning interviewees!');
                 }
@@ -217,13 +224,27 @@ angular.module('app')
         uploader.filters.push({
             name: 'allowedExtension',
             fn: function (fileItem) {
-                var fileExtensionAllowed = $scope.isAllowedFileExtension(fileItem.name);
-
-                if(!fileExtensionAllowed) {
-                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded. If this is in error, please try uploading file from desktop.');
+                if(!$scope.isAllowedFileExtension(fileItem.name)) {
+                    rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() +
+                    ' files can be uploaded. If this is in error, please try uploading file from desktop.');
+                    return false;
                 }
 
-                return fileExtensionAllowed;
+                return true;
+            }
+        });
+
+        var fileExceedingLimitErrorMessage = 'The file size is too large to be uploaded';
+
+        uploader.filters.push({
+            name: 'fileSizeLimit',
+            fn: function (fileItem) {
+                if(fileItem.size > FILE_SIZE_LIMIT) {
+                    rgiNotifier.error(fileExceedingLimitErrorMessage);
+                    return false;
+                }
+
+                return true;
             }
         });
 
@@ -245,9 +266,9 @@ angular.module('app')
             }
         };
 
-        var processHttpFailure = function(response) {
-            rgiHttpResponseProcessorSrvc.handle(response);
-            rgiNotifier.error(rgiHttpResponseProcessorSrvc.getMessage(response));
+        var handleFileUploadFailure = function(errorMessage) {
+            $scope.fileUploading = false;
+            rgiNotifier.error(errorMessage);
         };
 
         $scope.uploadFileByUrl = function (fileUrl) {
@@ -264,26 +285,29 @@ angular.module('app')
                     $scope.uploader.queue[$scope.uploader.queue.length - 1].progress = responseStatus.data.completion * 100;
 
                     if (responseStatus.data.completion < 1) {
-                        $timeout(function () {
-                            $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
-                                .then(handleFileUploadStatus)
-                                .catch(processHttpFailure);
-                        }, 1000);
+                        if(responseStatus.data.completion < 0) {
+                            handleFileUploadFailure(fileExceedingLimitErrorMessage);
+                        } else {
+                            $timeout(function () {
+                                $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
+                                    .then(handleFileUploadStatus)
+                                    .catch(getHttpFailureHandler());
+                            }, 1000);
+                        }
                     } else {
                         $http.get('/api/remote-file/document/' + responseStatus.data._id)
                             .then(function (responseDocument) {
                                 $scope.fileUploading = false;
                                 uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
                             })
-                            .catch(processHttpFailure);
+                            .catch(getHttpFailureHandler());
                     }
                 };
 
                 $http.get('/api/remote-file-upload?url=' + encodeURIComponent(fileUrl))
                     .then(function (response) {
                         if (response.data.reason) {
-                            $scope.fileUploading = false;
-                            rgiNotifier.error(response.data.reason);
+                            handleFileUploadFailure(response.data.reason);
                         } else {
                             $scope.uploader.queue.push({
                                 file: {
@@ -296,7 +320,7 @@ angular.module('app')
                             handleFileUploadStatus(response);
                         }
                     })
-                    .catch(processHttpFailure);
+                    .catch(getHttpFailureHandler());
             }
 
         };
@@ -324,19 +348,19 @@ angular.module('app')
 
             rgiUtilsSrvc.isURLReal(url)
                 .then(function () {
-                    $http.get('/api/snapshot-upload?url=' + encodeURIComponent(url)).then(function (response) {
-                        if(response.data.error) {
-                            rgiNotifier.error(getErrorMessage(response.data.error));
-                        } else {
-                            response.data.result.source = url;
-                            uploader.onCompleteItem({}, response.data.result, response.data.result.status);
-                        }
-                    }).catch(function() {
-                        rgiNotifier.error('The snapshot cannot be generated');
-                        processHttpFailure();
-                    }).finally(function() {
-                        $scope.fileUploading = false;
-                    });
+                    $http.get('/api/snapshot-upload?url=' + encodeURIComponent(url))
+                        .then(function (response) {
+                            if(response.data.error) {
+                                rgiNotifier.error(getErrorMessage(response.data.error));
+                            } else {
+                                response.data.result.source = url;
+                                uploader.onCompleteItem({}, response.data.result, response.data.result.status);
+                            }
+                        })
+                        .catch(getHttpFailureHandler('The snapshot cannot be generated'))
+                        .finally(function() {
+                            $scope.fileUploading = false;
+                        });
                 }, function () {
                     $scope.fileUploading = false;
                     rgiNotifier.error('The URL is unavailable');
@@ -354,6 +378,6 @@ angular.module('app')
                 } else if (scope.ref_selection === 'webpage') {
                     rgiDialogFactory.webpageCreate(scope);
                 }
-            });
+            }, getHttpFailureHandler('Load document data failure'));
         };
     });
