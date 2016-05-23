@@ -58,11 +58,11 @@ angular.module('app')
                         });
                     }
                 });
+                rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
 
                 interviewee.users.forEach(function (el) {
-                    rgiUserListSrvc.get({_id: el}, function (user) {
-                        $scope.user_list.push(user);
-                    });
+                    rgiUserListSrvc.get({_id: el}, $scope.user_list.push,
+                        rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load user list failure'));
                 });
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
