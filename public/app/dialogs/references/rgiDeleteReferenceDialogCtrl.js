@@ -17,10 +17,7 @@ angular.module('app')
             answer = $scope.$parent.$parent.answer,
             currentReference = answer.references[$scope.$parent.$parent.ref_index],
             getHttpFailureHandler = function(alternativeMessage) {
-                return function(response) {
-                    rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage)(response);
-                    $scope.closeThisDialog();
-                };
+                return rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
             },
             isAnotherReferenceFound = function(field) {
                 var anotherReferenceFound = false;

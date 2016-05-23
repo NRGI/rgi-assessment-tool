@@ -58,10 +58,7 @@ angular.module('app')
             rgiUserSrvc.query({role: $scope.userType}, function(users) {
                 availableUsers = users;
             });
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.addAssignee = function () {
             $scope.assessment[assigneeField].push(undefined);

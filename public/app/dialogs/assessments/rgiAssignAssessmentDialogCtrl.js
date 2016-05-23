@@ -39,10 +39,7 @@ angular.module('app')
 
             $scope.assessment = assessment;
             angular.extend(originalAssessment, assessment);
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         var getUser = function(role, userId) {
             var foundUser = {};

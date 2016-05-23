@@ -21,10 +21,7 @@ angular.module('app')
 
             rgiIntervieweeSrvc.get({_id: intervieweeId}, function(interviewee) {
                 $scope.interviewee = interviewee;
-            }, function(response) {
-                rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure')(response);
-                $scope.closeThisDialog();
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
         }
 
         $scope.editReference = function(referenceIndex) {

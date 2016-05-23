@@ -20,6 +20,9 @@ angular.module('app')
         rgiUtilsSrvc,
         FILE_SIZE_LIMIT
     ) {
+        var getHttpFailureHandler = function(alternativeMessage) {
+            return rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
+        };
         /////////////
         //INTERVIEWEE
         /////////////
@@ -53,18 +56,12 @@ angular.module('app')
                 interviewee.assessments.forEach(function (assessment_ID) {
                     rgiAssessmentSrvc.get({assessment_ID: assessment_ID}, function (assessment) {
                         interviewee_add.assessment_countries.push(assessment.country);
-                    }, function(response) {
-                        rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load assessment data failure')(response);
-                        $scope.closeThisDialog();
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load assessment data failure'));
                 });
 
                 $scope.interviewee_list.push(interviewee_add);
             });
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, getHttpFailureHandler('Load interviewee data failure'));
 
         var limit = 500,
             skip = 0;
@@ -79,10 +76,7 @@ angular.module('app')
                     });
                 });
             }
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, getHttpFailureHandler('Load document data failure'));
 
         $scope.selectIntervieweeType = function (intervieweeType) {
             $scope.intervieweeType = intervieweeType;
@@ -180,10 +174,7 @@ angular.module('app')
                         }, function (reason) {
                             rgiNotifier.error(reason);
                         }).finally($scope.closeThisDialog);
-                    }, function(response) {
-                        rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure')(response);
-                        $scope.closeThisDialog();
-                    });
+                    }, getHttpFailureHandler('Load interviewee data failure'));
                 } else {
                     rgiNotifier.error('Something happened assigning interviewees!');
                 }
@@ -275,11 +266,6 @@ angular.module('app')
             }
         };
 
-        var processHttpFailure = function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler()(response);
-            $scope.closeThisDialog();
-        };
-
         var handleFileUploadFailure = function(errorMessage) {
             $scope.fileUploading = false;
             rgiNotifier.error(errorMessage);
@@ -305,7 +291,7 @@ angular.module('app')
                             $timeout(function () {
                                 $http.get('/api/remote-file/upload-progress/' + responseStatus.data._id)
                                     .then(handleFileUploadStatus)
-                                    .catch(processHttpFailure);
+                                    .catch(getHttpFailureHandler());
                             }, 1000);
                         }
                     } else {
@@ -314,7 +300,7 @@ angular.module('app')
                                 $scope.fileUploading = false;
                                 uploader.onCompleteItem({}, responseDocument.data, responseDocument.status);
                             })
-                            .catch(processHttpFailure);
+                            .catch(getHttpFailureHandler());
                     }
                 };
 
@@ -334,7 +320,7 @@ angular.module('app')
                             handleFileUploadStatus(response);
                         }
                     })
-                    .catch(processHttpFailure);
+                    .catch(getHttpFailureHandler());
             }
 
         };
@@ -362,19 +348,19 @@ angular.module('app')
 
             rgiUtilsSrvc.isURLReal(url)
                 .then(function () {
-                    $http.get('/api/snapshot-upload?url=' + encodeURIComponent(url)).then(function (response) {
-                        if(response.data.error) {
-                            rgiNotifier.error(getErrorMessage(response.data.error));
-                        } else {
-                            response.data.result.source = url;
-                            uploader.onCompleteItem({}, response.data.result, response.data.result.status);
-                        }
-                    }).catch(function() {
-                        rgiNotifier.error('The snapshot cannot be generated');
-                        processHttpFailure();
-                    }).finally(function() {
-                        $scope.fileUploading = false;
-                    });
+                    $http.get('/api/snapshot-upload?url=' + encodeURIComponent(url))
+                        .then(function (response) {
+                            if(response.data.error) {
+                                rgiNotifier.error(getErrorMessage(response.data.error));
+                            } else {
+                                response.data.result.source = url;
+                                uploader.onCompleteItem({}, response.data.result, response.data.result.status);
+                            }
+                        })
+                        .catch(getHttpFailureHandler('The snapshot cannot be generated'))
+                        .finally(function() {
+                            $scope.fileUploading = false;
+                        });
                 }, function () {
                     $scope.fileUploading = false;
                     rgiNotifier.error('The URL is unavailable');
@@ -392,9 +378,6 @@ angular.module('app')
                 } else if (scope.ref_selection === 'webpage') {
                     rgiDialogFactory.webpageCreate(scope);
                 }
-            }, function(response) {
-                rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure')(response);
-                $scope.closeThisDialog();
-            });
+            }, getHttpFailureHandler('Load document data failure'));
         };
     });

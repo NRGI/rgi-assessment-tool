@@ -12,10 +12,7 @@ angular.module('app')
         $scope.user = $scope.$parent.user;
         rgiAssessmentSrvc.query({ext_reviewer_ID: {$ne: $scope.user._id}}, function(assessments) {
             $scope.assessments = assessments;
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
         $scope.assignAssessmentExternal = function (new_assessment_assignment) {
             if(!new_assessment_assignment) {

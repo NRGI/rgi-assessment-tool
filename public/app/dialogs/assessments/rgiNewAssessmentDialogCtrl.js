@@ -20,10 +20,7 @@ angular.module('app')
     ) {
         rgiCountrySrvc.query({country_use: true}, function(countries) {
             $scope.countries = countries;
-        }, function(response) {
-            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure')(response);
-            $scope.closeThisDialog();
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
 
         $scope.disable_button = false;
         //TODO
@@ -166,14 +163,8 @@ angular.module('app')
                             }, function (reason) {
                                 rgiNotifier.error(reason);
                             });
-                    }, function(response) {
-                        rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure')(response);
-                        $scope.closeThisDialog();
-                    });
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
                 }
-            }, function(response) {
-                rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure')(response);
-                $scope.closeThisDialog();
-            });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         };
     });

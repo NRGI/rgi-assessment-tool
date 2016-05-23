@@ -68,10 +68,7 @@ angular.module('app')
                                 }, function (reason) {
                                     rgiNotifier.error(reason);
                                 });
-                        }, function(response) {
-                            rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure')(response);
-                            $scope.closeThisDialog();
-                        });
+                        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
                     } else {
                         rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
                             .then(function () {
