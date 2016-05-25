@@ -21,7 +21,7 @@
 
     button.btn.btn-success(
     ng-click="answerApprove()"
-    ng-if="identity.currentUser.isSupervisor() && (['trial_submitted','under_review', 'resubmitted'].indexOf(assessment.status) > -1)"
+    ng-if="identity.currentUser.isSupervisor() && (['resubmitted', 'trial_submitted','under_review'].indexOf(assessment.status) > -1) && (['approved', 'final'].indexOf(answer.status) === -1)"
     ) Approve answer
     | &nbsp;
 
