@@ -16,8 +16,6 @@ var pass = process.env.DB_KEY;
 
 require('./server/config/express')(app, config, user, pass, env);
 
-// require('./server/config/mongoose')(app, config, user, pass, env);
-
 require('./server/config/passport')();
 
 require('./server/config/routes')(app);
