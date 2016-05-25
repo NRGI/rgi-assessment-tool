@@ -68,7 +68,11 @@ module.exports = function (app, config, user, pass, env) {
     //Connection session
     app.use(session({
         secret: 'All your base are belong to us',
-        store: new MongoStore({ mongooseConnection: db }),
+        store: new MongoStore({
+            mongooseConnection: db,
+            autoRemove: 'native',
+            touchAfter: 120}),
+        touchAfter: 120,
         resave: true,
         saveUninitialized: true
     }));
