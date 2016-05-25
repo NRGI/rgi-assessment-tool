@@ -1,5 +1,7 @@
 'use strict';
 var mongoose            = require('mongoose'),
+    session             = require('express-session'),
+    MongoStore          = require('connect-mongo')(session),
     userModel           = require('../models/User'),
     countryModel        = require('../models/Countries'),
     questionModel       = require('../models/Question'),
@@ -17,7 +19,7 @@ var mongoose            = require('mongoose'),
         require('../models/' + modelName);
     });
 
-module.exports = function (config, user, pass, env) {
+module.exports = function (app, config, user, pass, env) {
     // connect to mongo
 
     if (env === 'local') {
@@ -31,6 +33,13 @@ module.exports = function (config, user, pass, env) {
     db.once('open', function callback() {
         console.log('rgi db opened');
     });
+
+    // app.use(session({
+    //     secret: 'All your base are belong to us',
+    //     store: new MongoStore({ mongooseConnection: db }),
+    //     resave: true,
+    //     saveUninitialized: true
+    // }));
 
     // import default data
     userModel.createDefaultUsers();

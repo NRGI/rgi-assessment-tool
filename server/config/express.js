@@ -1,13 +1,31 @@
 'use strict';
-var express      = require('express'),
-    stylus       = require('stylus'),
-    logger       = require('morgan'),
-    bodyParser   = require('body-parser'),
-    cookieParser = require('cookie-parser'),
-    session      = require('express-session'),
-    passport     = require('passport');
+var express             = require('express'),
+    mongoose            = require('mongoose'),
+    stylus              = require('stylus'),
+    logger              = require('morgan'),
+    bodyParser          = require('body-parser'),
+    cookieParser        = require('cookie-parser'),
+    session             = require('express-session'),
+    MongoStore          = require('connect-mongo')(session),
+    passport            = require('passport'),
+    userModel           = require('../models/User'),
+    countryModel        = require('../models/Countries'),
+    questionModel       = require('../models/Question'),
+    intervieweeModel    = require('../models/Interviewees'),
+    resourceModel       = require('../models/Resources');
 
-module.exports = function (app, config) {
+[
+    'Documents',
+    'Answers',
+    'Assessment',
+    'AuthLog',
+    'FileUploadStatus',
+    'ResetPasswordToken'
+].forEach(function(modelName) {
+    require('../models/' + modelName);
+});
+
+module.exports = function (app, config, user, pass, env) {
     // function for use by stylus middleware
     function compile(str, path) {
         return stylus(str).set('filename', path);
@@ -17,6 +35,7 @@ module.exports = function (app, config) {
     app.set('view engine', 'jade');
     // set up logger
     app.use(logger('dev'));
+    
     // authentication cofigs
     app.use(cookieParser());
 
@@ -27,8 +46,29 @@ module.exports = function (app, config) {
 
     app.use(bodyParser.json({limit: '50mb'}));
 
+    //Mongoose connection
+    if (env === 'local') {
+        mongoose.connect(config.db);
+    } else {
+        mongoose.connect('mongodb://' + user + ':' + pass + config.db);
+    }
+
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error...'));
+    db.once('open', function callback() {
+        console.log('rgi db opened');
+    });
+    // import default data
+    userModel.createDefaultUsers();
+    countryModel.createDefaultCountries();
+    questionModel.createDefaultQuestions();
+    intervieweeModel.createDefaultInterviewees();
+    resourceModel.createDefaultResources();
+
+    //Connection session
     app.use(session({
         secret: 'All your base are belong to us',
+        store: new MongoStore({ mongooseConnection: db }),
         resave: true,
         saveUninitialized: true
     }));
