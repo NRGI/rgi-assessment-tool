@@ -4,8 +4,9 @@
 describe('rgiNewRefDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $http, $rootScope, $timeout, ngDialog, rgiAllowedFileExtensionGuideSrvc, FILE_SIZE_LIMIT,
-        rgiDialogFactory, rgiDocumentSrvc, rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier,
+    var $scope, $http, $rootScope, $timeout, ngDialog,
+        rgiAllowedFileExtensionGuideSrvc, rgiHttpResponseProcessorSrvc, rgiDialogFactory, rgiDocumentSrvc,
+        rgiFileUploaderSrvc, rgiIdentitySrvc, rgiIntervieweeSrvc, rgiNotifier, FILE_SIZE_LIMIT,
         stubs = {}, spies = {}, ANSWER = 'ANSWER', FILE_URL = 'http://domain.com/file.png',
         currentUserBackup, currentUser = {role: 'user-role', _id: 'user-id'};
 
@@ -20,6 +21,7 @@ describe('rgiNewRefDialogCtrl', function () {
             _rgiDialogFactory_,
             _rgiDocumentSrvc_,
             _rgiFileUploaderSrvc_,
+            _rgiHttpResponseProcessorSrvc_,
             _rgiIdentitySrvc_,
             _rgiIntervieweeSrvc_,
             _rgiNotifier_,
@@ -33,6 +35,7 @@ describe('rgiNewRefDialogCtrl', function () {
             rgiDialogFactory = _rgiDialogFactory_;
             rgiDocumentSrvc = _rgiDocumentSrvc_;
             rgiFileUploaderSrvc = _rgiFileUploaderSrvc_;
+            rgiHttpResponseProcessorSrvc = _rgiHttpResponseProcessorSrvc_;
             rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiIntervieweeSrvc = _rgiIntervieweeSrvc_;
             rgiNotifier = _rgiNotifier_;
@@ -429,6 +432,70 @@ describe('rgiNewRefDialogCtrl', function () {
 
             afterEach(function() {
                 $httpGetStub.restore();
+            });
+        });
+    });
+
+    describe('#selectPrevDoc', function() {
+        var actualErrorMessage, DOC = 'ERROR MESSAGE';
+
+        beforeEach(function() {
+            stubs.httpResponseProcessorGetDefaultHandler = sinon.stub(rgiHttpResponseProcessorSrvc, 'getDefaultHandler',
+                function(errorMessage) {
+                    return errorMessage;
+                });
+
+            stubs.documentGet = sinon.stub(rgiDocumentSrvc, 'get', function(document, callback, errorMessage) {
+                callback(document._id);
+                actualErrorMessage = errorMessage;
+            });
+
+            $scope.$parent = {};
+        });
+
+        describe('GENERAL CHECK', function() {
+            beforeEach(function() {
+                $scope.selectPrevDoc(DOC);
+            });
+
+            it('sets the value', function() {
+                $scope.value.should.be.equal(true);
+            });
+
+            it('sets the document data', function() {
+                $scope.new_document.should.be.equal(DOC);
+            });
+
+            it('sets the document data in the parent scope', function() {
+                $scope.$parent.new_document.should.be.equal(DOC);
+            });
+
+            it('gets the error processing handler', function() {
+                actualErrorMessage.should.be.equal('Load document data failure');
+            });
+        });
+
+        describe('DIALOG FACTORY CHECK', function() {
+            var dialogFactoryMock;
+
+            beforeEach(function() {
+                dialogFactoryMock = sinon.mock(rgiDialogFactory);
+            });
+
+            it('shows the dialog \'Create Document\'', function() {
+                $scope.$parent.ref_selection = 'document';
+                dialogFactoryMock.expects('documentCreate');
+            });
+
+            it('shows the dialog \'Create Webpage\'', function() {
+                $scope.$parent.ref_selection = 'webpage';
+                dialogFactoryMock.expects('webpageCreate');
+            });
+
+            afterEach(function() {
+                $scope.selectPrevDoc(DOC);
+                dialogFactoryMock.verify();
+                dialogFactoryMock.restore();
             });
         });
     });
