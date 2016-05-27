@@ -366,13 +366,15 @@ angular.module('app')
                     rgiNotifier.error('The URL is unavailable');
                 });
         };
+
         $scope.selectPrevDoc = function(selected_doc) {
             rgiDocumentSrvc.get({_id: selected_doc}, function (document){
                 $scope.new_document = document;
                 $scope.value = true;
                 var scope = $scope.$parent;
-                //rgiDialogFactory[scope.ref_selection + 'Create']($scope);
+
                 scope.new_document = $scope.new_document;
+
                 if (scope.ref_selection === 'document') {
                     rgiDialogFactory.documentCreate(scope);
                 } else if (scope.ref_selection === 'webpage') {
