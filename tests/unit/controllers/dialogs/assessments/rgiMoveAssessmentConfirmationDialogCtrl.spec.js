@@ -92,7 +92,7 @@ describe('rgiMoveAssessmentConfirmationDialogCtrl', function () {
             };
 
             checkNotProcessedAction('shows an error message if a not supported action is applied',
-                '$scope.action case does not have a route!', 'NOT SUPPORTED');
+                '`NOT SUPPORTED` case does not have a route!', 'NOT SUPPORTED');
 
             checkNotProcessedAction('shows an error message if `' + 'internal_review' + '` action is applied',
                 'Function "' + 'internal_review' + '" does not exist yet!', 'internal_review');

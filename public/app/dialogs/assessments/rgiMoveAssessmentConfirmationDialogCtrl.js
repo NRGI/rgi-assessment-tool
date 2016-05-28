@@ -108,7 +108,7 @@ angular.module('app')
                 case 'final_approval':
                     return rgiNotifier.error('Function "internal_review" does not exist yet!');
                 default:
-                    return rgiNotifier.error('$scope.action case does not have a route!');
+                    return rgiNotifier.error('`' + $scope.action + '` case does not have a route!');
             }
         };
     });
