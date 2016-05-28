@@ -9,6 +9,12 @@ module.exports = {
         rootPath: rootPath,
         port: process.env.PORT || 3030
     },
+    test: {
+        baseUrl: 'http://localhost:3131',
+        db: 'mongodb://localhost/rgi_local',
+        rootPath: rootPath,
+        port: process.env.PORT || 3131
+    },
     //local: {
     //    db: '@candidate.32.mongolayer.com:10582/mga_production',
     //    rootPath: rootPath,

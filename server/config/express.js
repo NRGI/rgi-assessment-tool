@@ -47,10 +47,10 @@ module.exports = function (app, config, user, pass, env) {
     app.use(bodyParser.json({limit: '50mb'}));
 
     //Mongoose connection
-    if (env === 'local') {
-        mongoose.connect(config.db);
-    } else {
+    if (['local', 'test'].indexOf(env) === -1) {
         mongoose.connect('mongodb://' + user + ':' + pass + config.db);
+    } else {
+        mongoose.connect(config.db);
     }
 
     var db = mongoose.connection;
