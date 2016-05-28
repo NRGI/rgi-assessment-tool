@@ -175,9 +175,12 @@ describe('rgiMoveAssessmentConfirmationDialogCtrl', function () {
                         mocks.$location = sinon.mock($location);
                         mocks.$location.expects('path').withArgs(uri);
 
+                        mocks.$route = sinon.mock($route);
+
                         if(routeChanged) {
-                            mocks.$route = sinon.mock($route);
                             mocks.$route.expects('reload');
+                        } else {
+                            mocks.$route.expects('reload').never();
                         }
                     },
                     checkPositive = function(status, message, routeChanged, extraFields) {
