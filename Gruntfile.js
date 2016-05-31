@@ -1,9 +1,23 @@
 /*jslint node: true */
 'use strict';
+
+var testEnvironment = 'test';
+var config = require('./server/config/config')[testEnvironment];
+
 module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        express: {
+            options: {},
+            test: {
+                options: {
+                    script: './server.js',
+                    node_env: testEnvironment,
+                    port: config.port
+                }
+            }
+        },
         jade: {
             compile: {
                 options: {
@@ -105,10 +119,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    grunt.loadNpmTasks('grunt-express-server');
+
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('server', ['express', 'watch']);
     grunt.registerTask('test', [
         'protractor_webdriver',
         'protractor'
