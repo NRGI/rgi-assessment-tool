@@ -11,7 +11,7 @@ module.exports = {
     },
     test: {
         baseUrl: 'http://localhost:3131',
-        db: 'mongodb://localhost/rgi_local',
+        db: 'mongodb://localhost/rgi_test',
         rootPath: rootPath,
         port: process.env.PORT || 3131
     },

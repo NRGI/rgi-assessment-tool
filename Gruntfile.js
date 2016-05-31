@@ -77,6 +77,11 @@ module.exports = function (grunt) {
             },
             all: {}
         },
+        shell: {
+            clearDb: {
+                command: 'node ./tests/clear-db.js'
+            }
+        },
         stylus: {
             compile: {
                 options: {
@@ -123,6 +128,8 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
+
+    grunt.loadNpmTasks('grunt-shell');
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
     grunt.registerTask('server', ['express', 'watch']);
