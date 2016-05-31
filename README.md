@@ -37,14 +37,12 @@ $ karma start
 ###E2E Tests
 ####Install
 ```
-$ npm install -g protractor
-$ webdriver-manager update
+$ npm run-script webdriver-manager-update
 ```
 
 ####Run
 ```
-$ webdriver-manager start
-$ protractor protractor.conf.js
+$ grunt test
 ```
 
 ##TODO

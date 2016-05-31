@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "webdriver-manager-update": "./node_modules/protractor/bin/webdriver-manager update"
   },
   "repository": {
     "type": "git",
@@ -55,6 +56,8 @@
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-protractor-runner": "^3.2.0",
+    "grunt-protractor-webdriver": "^0.2.5",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "karma": "^0.13.22",
