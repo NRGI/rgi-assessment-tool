@@ -1,11 +1,4 @@
 {
-  "strict": true,
-  "globals": {
-    "describe": false,
-    "browser": false,
-    "element": false,
-    "it": false,
-    "by": false,
-    "expect": false
-  }
+  "node": true,
+  "strict": true
 }
