@@ -4,21 +4,8 @@ var mongoose = require('mongoose'),
     async = require('async');
 
 var testEnvironment = 'test',
-    config = require('../server/config/config')[testEnvironment];
-
-var models = {
-    Answer: 'Answers',
-    Assessment: 'Assessment',
-    AuthLog: 'AuthLog',
-    Country: 'Countries',
-    Documents: 'Documents',
-    FileUploadStatus: 'FileUploadStatus',
-    Interviewee: 'Interviewees',
-    Question: 'Question',
-    ResetPasswordToken: 'ResetPasswordToken',
-    Resource: 'Resources',
-    User: 'User'
-};
+    config = require('../server/config/config')[testEnvironment],
+    models = require('./models');
 
 Object.keys(models).forEach(function(modelName) {
     require('../server/models/' + models[modelName]);
