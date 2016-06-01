@@ -15,14 +15,16 @@ angular.module('app')
         rgiPreceptGuideSrvc,
         rgiQuestionSetSrvc
     ) {
-        // filtering options
         $scope.sortOptions = [
             {value: "question_order", text: "Sort by Question Number"},
             {value: "component_id", text: "Sort by Component"},
-            {value: "status", text: "Sort by Status"}];
+            {value: "status", text: "Sort by Status"}
+        ];
+
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sortOrder = $scope.sortOptions[0].value;
         $scope.order_reverse = $scope.current_user.isSupervisor();
+        $scope.assessment_counters = {length: 0};
 
         rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
             var answer_query = {assessment_ID: assessment.assessment_ID};
@@ -62,30 +64,28 @@ angular.module('app')
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
 
-        $scope.submitTrialAssessmentDialog = function () {
-            if ($scope.assessment_counters.flagged!==0) {
-                rgiNotifier.error('You must address all flags!');
-            } else if ($scope.assessment_counters.approved + $scope.assessment_counters.submitted !== $scope.assessment_counters.length) {
+        var submitAssessment = function(counterName, dialogMethod) {
+            if ($scope.assessment_counters.approved + $scope.assessment_counters[counterName] < $scope.assessment_counters.length) {
                 rgiNotifier.error('Some answers have not been marked complete or approved!');
             } else {
-                rgiDialogFactory.assessmentTrialSubmit($scope);
+                rgiDialogFactory[dialogMethod]($scope);
+            }
+        };
+
+        $scope.submitTrialAssessmentDialog = function () {
+            if ($scope.assessment_counters.flagged > 0) {
+                rgiNotifier.error('You must address all flags!');
+            } else {
+                submitAssessment('submitted', 'assessmentTrialSubmit');
             }
         };
 
         $scope.submitAssessmentDialog = function () {
-            if ($scope.assessment_counters.approved + $scope.assessment_counters.submitted !== $scope.assessment_counters.length) {
-                rgiNotifier.error('Some answers have not been marked complete or approved!');
-            } else {
-                rgiDialogFactory.assessmentSubmit($scope);
-            }
+            submitAssessment('submitted', 'assessmentSubmit');
         };
 
         $scope.resubmitAssessmentDialog = function () {
-            if ($scope.assessment_counters.approved + $scope.assessment_counters.resubmitted !== $scope.assessment_counters.length) {
-                rgiNotifier.error('Some answers have not been marked complete or approved!');
-            } else {
-                rgiDialogFactory.assessmentResubmit($scope);
-            }
+            submitAssessment('resubmitted', 'assessmentResubmit');
         };
 
         $scope.moveAssessmentDialog = function () {

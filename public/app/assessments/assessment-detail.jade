@@ -19,12 +19,15 @@
                 div(ng-if="!current_user.isSupervisor()")
                     button.btn.btn-success.pull-right(
                     ng-click="submitTrialAssessmentDialog()"
+                    ng-disabled="assessment_counters.length <= 0"
                     ng-if="current_user._id === assessment.edit_control && assessment.status==='trial_started'") Submit trial
                     button.btn.btn-success.pull-right(
                     ng-click="submitAssessmentDialog()"
+                    ng-disabled="assessment_counters.length <= 0"
                     ng-if="current_user._id === assessment.edit_control && ['researcher_started', 'reviewer_started'].indexOf(assessment.status) > -1") Submit assessment
                     button.btn.btn-success.pull-right(
                     ng-click="resubmitAssessmentDialog()"
+                    ng-disabled="assessment_counters.length <= 0"
                     ng-if="current_user._id === assessment.edit_control && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1") Resubmit assessment
                 div(ng-if="current_user.isSupervisor()")
                     button.btn.btn-success.pull-right(
