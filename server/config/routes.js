@@ -16,6 +16,23 @@ var auth                    = require('./auth'),
     users                   = require('../controllers/users');
 
 module.exports = function (app) {
+    /////////////////////////
+    ///// RAW DATA API //////
+    /////////////////////////
+    // app.get('/api/raw-data/answers', auth.requiresApiLogin, answers.getAnswers);
+    // app.get('/api/raw-data/answers/:answer_ID', auth.requiresApiLogin, answers.getAnswersByID);
+    // app.get('/api/questions', auth.requiresApiLogin, questions.getQuestions);
+    // app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionsByID);
+    // app.get('/api/answers', auth.requiresApiLogin, answers.getAnswers);
+    // app.get('/api/answers/:answer_ID', auth.requiresApiLogin, answers.getAnswersByID);
+    // app.get('/api/documents/:id', auth.requiresApiLogin, documents.getDocumentsByID);
+
+
+    ///////////////////////////
+    ///// FINAL DATA API //////
+    ///////////////////////////
+    
+    
 
     /////////////////////////
     ///// USERS CRUD ////////
