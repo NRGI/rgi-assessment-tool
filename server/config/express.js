@@ -12,7 +12,8 @@ var express             = require('express'),
     countryModel        = require('../models/Countries'),
     questionModel       = require('../models/Question'),
     intervieweeModel    = require('../models/Interviewees'),
-    resourceModel       = require('../models/Resources');
+    resourceModel       = require('../models/Resources'),
+    SESSION_SECRET	    = "All your base are belong to us";
 
 [
     'Documents',
@@ -67,7 +68,7 @@ module.exports = function (app, config, user, pass, env) {
 
     //Connection session
     app.use(session({
-        secret: 'All your base are belong to us',
+        secret: SESSION_SECRET,
         store: new MongoStore({
             mongooseConnection: db,
             autoRemove: 'native',
