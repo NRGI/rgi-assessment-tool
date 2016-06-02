@@ -26,43 +26,45 @@ angular.module('app')
         $scope.order_reverse = $scope.current_user.isSupervisor();
         $scope.assessment_counters = {length: 0};
 
-        rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
-            var answer_query = {assessment_ID: assessment.assessment_ID};
+        rgiQuestionSetSrvc.loadQuestions(function() {
+            rgiAssessmentSrvc.get({assessment_ID: $routeParams.assessment_ID}, function (assessment) {
+                var answer_query = {assessment_ID: assessment.assessment_ID};
 
-            if (['researcher_trial', 'reviewer_trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
-                answer_query.question_trial = true;
-            }
+                if (['researcher_trial', 'reviewer_trial', 'trial_started', 'trial_submitted'].indexOf(assessment.status) > -1) {
+                    answer_query.question_trial = true;
+                }
 
-            $scope.assessment = assessment;
-            $scope.answers = [];
+                $scope.assessment = assessment;
+                $scope.answers = [];
 
-            rgiAnswerSrvc.query(answer_query, function (answers) {
-                rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
-                $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
-                $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
+                rgiAnswerSrvc.query(answer_query, function (answers) {
+                    rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
+                    $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
+                    $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
-                answers.forEach(function (answer) {
-                    if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
-                        rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
-                        $scope.answers[answer.question_ID.precept - 1].data.push(answer);
+                    answers.forEach(function (answer) {
+                        if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
+                            rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
+                            $scope.answers[answer.question_ID.precept - 1].data.push(answer);
 
-                        var counters = {
-                            complete: ['submitted', 'resubmitted'],
-                            approved: ['approved'],
-                            flagged: ['flagged'],
-                            unresolved: ['unresolved'],
-                            finalized: ['final']
-                        };
+                            var counters = {
+                                complete: ['submitted', 'resubmitted'],
+                                approved: ['approved'],
+                                flagged: ['flagged'],
+                                unresolved: ['unresolved'],
+                                finalized: ['final']
+                            };
 
-                        for(var counter in counters) {
-                            if(counters.hasOwnProperty(counter) && (counters[counter].indexOf(answer.status) !== -1)) {
-                                $scope.answers[answer.question_ID.precept - 1][counter]++;
+                            for(var counter in counters) {
+                                if(counters.hasOwnProperty(counter) && (counters[counter].indexOf(answer.status) !== -1)) {
+                                    $scope.answers[answer.question_ID.precept - 1][counter]++;
+                                }
                             }
                         }
-                    }
-                });
-            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
-        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
+                    });
+                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
+        });
 
         var submitAssessment = function(counterName, dialogMethod) {
             if ($scope.assessment_counters.approved + $scope.assessment_counters[counterName] < $scope.assessment_counters.length) {

@@ -2,9 +2,8 @@
 
 angular.module('app')
     .factory('rgiQuestionSrvc', function ($resource) {
-        var QuestionResource = $resource('/api/questions/:_id', {_id: '@id'}, {
+        return $resource('/api/questions/:_id', {_id: '@id'}, {
+            queryCached: {method: 'GET', isArray: true, cache: true},
             update: {method: 'PUT', isArray: false}
         });
-
-        return QuestionResource;
     });
