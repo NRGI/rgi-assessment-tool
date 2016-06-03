@@ -19,8 +19,10 @@ angular
             },
             questionOrders = [];
 
-        rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function(question) {
-            questionOrders.push(question.question_order);
+        rgiQuestionSetSrvc.loadQuestions(function() {
+            rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function (question) {
+                questionOrders.push(question.question_order);
+            });
         });
 
         questionOrders.sort();
