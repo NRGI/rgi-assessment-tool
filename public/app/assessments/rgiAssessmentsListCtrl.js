@@ -64,9 +64,11 @@ angular.module('app')
                         }
 
                         rgiAnswerSrvc.query(answerCriteria, function (answers) {
-                            $scope.assessmentsStatistics[assessmentId] = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
-                            answers.forEach(function (answer) {
-                                rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
+                            rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(function(counters) {
+                                $scope.assessmentsStatistics[assessmentId] = counters;
+                                answers.forEach(function (answer) {
+                                    rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessmentsStatistics[assessmentId], assessment);
+                                });
                             });
                         }, rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load answer data failure'));
                     }
