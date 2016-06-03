@@ -27,9 +27,11 @@ angular
             return $scope.$parent.assessment;
         }, function(assessment) {
             if(assessment !== undefined) {
-                rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
-                    rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
-                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+                rgiQuestionSetSrvc.loadQuestions(function() {
+                    rgiAnswerSrvc.query({assessment_ID: assessment_ID}, function (answers) {
+                        rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+                });
 
                 deactivateAssessmentWatcher();
             }

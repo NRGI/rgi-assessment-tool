@@ -21,9 +21,11 @@ angular.module('app')
         $scope.answer = $scope.$parent.$parent.answer;
         $scope.requestProcessing = false;
 
-        rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
-            rgiQuestionSetSrvc.setAnswers(answers);
-        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+        rgiQuestionSetSrvc.loadQuestions(function() {
+            rgiAnswerSrvc.query({assessment_ID: assessmentId}, function (answers) {
+                rgiQuestionSetSrvc.setAnswers(answers);
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
+        });
 
         var
             getReferenceAuthorId = function(reference) {

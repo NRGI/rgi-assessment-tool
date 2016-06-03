@@ -39,28 +39,31 @@ angular.module('app')
 
                 rgiAnswerSrvc.query(answer_query, function (answers) {
                     rgiQuestionSetSrvc.setAnswers(rgiAnswerFilterSrvc.getAnswers(answers, assessment));
-                    $scope.assessment_counters = rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate();
-                    $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
-                    answers.forEach(function (answer) {
-                        if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
-                            rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
-                            $scope.answers[answer.question_ID.precept - 1].data.push(answer);
+                    rgiAssessmentStatisticsGuideSrvc.getCounterSetTemplate(function(counters) {
+                        $scope.assessment_counters = counters;
+                        $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
-                            var counters = {
-                                complete: ['submitted', 'resubmitted'],
-                                approved: ['approved'],
-                                flagged: ['flagged'],
-                                unresolved: ['unresolved'],
-                                finalized: ['final']
-                            };
+                        answers.forEach(function (answer) {
+                            if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
+                                rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
+                                $scope.answers[answer.question_ID.precept - 1].data.push(answer);
 
-                            for(var counter in counters) {
-                                if(counters.hasOwnProperty(counter) && (counters[counter].indexOf(answer.status) !== -1)) {
-                                    $scope.answers[answer.question_ID.precept - 1][counter]++;
+                                var counters = {
+                                    complete: ['submitted', 'resubmitted'],
+                                    approved: ['approved'],
+                                    flagged: ['flagged'],
+                                    unresolved: ['unresolved'],
+                                    finalized: ['final']
+                                };
+
+                                for(var counter in counters) {
+                                    if(counters.hasOwnProperty(counter) && (counters[counter].indexOf(answer.status) !== -1)) {
+                                        $scope.answers[answer.question_ID.precept - 1][counter]++;
+                                    }
                                 }
                             }
-                        }
+                        });
                     });
                 }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure'));
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
