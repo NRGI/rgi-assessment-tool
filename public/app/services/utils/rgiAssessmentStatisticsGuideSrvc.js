@@ -3,19 +3,21 @@
 angular.module('app')
     .factory('rgiAssessmentStatisticsGuideSrvc', function (rgiIdentitySrvc, rgiQuestionSetSrvc) {
         return {
-            getCounterSetTemplate: function() {
-                return {
-                    length: rgiQuestionSetSrvc.getAvailableQuestions(rgiIdentitySrvc.currentUser.role, true).length,
-                    complete: 0,
-                    flagged: 0,
-                    submitted: 0,
-                    approved: 0,
-                    resubmitted: 0,
-                    assigned: 0,
-                    saved: 0,
-                    unresolved: 0,
-                    finalized: 0
-                };
+            getCounterSetTemplate: function(callback) {
+                rgiQuestionSetSrvc.loadQuestions(function() {
+                    callback({
+                        length: rgiQuestionSetSrvc.getAvailableQuestions(rgiIdentitySrvc.currentUser.role, true).length,
+                        complete: 0,
+                        flagged: 0,
+                        submitted: 0,
+                        approved: 0,
+                        resubmitted: 0,
+                        assigned: 0,
+                        saved: 0,
+                        unresolved: 0,
+                        finalized: 0
+                    });
+                });
             },
             updateCounters: function(answer, counterSet, assessment) {
                 switch (answer.status) {
