@@ -1,20 +1,20 @@
 .container-fluid.page-container
     .well
-        div.page-well
+        .page-well
             legend.h3.page-header {{title}}
-            div.bottom-padding-med: button.btn.btn-success(ng-click="newResourceDialog()") Create new block
-            div.left-padding-med.right-padding-med
-                div.panel.panel-primary(ng-repeat="resource in resources")
-                    div.panel-heading.bottom-padding-med
+            .bottom-padding-med: button.btn.btn-success(ng-click="showCreateResourceDialog()") Create new block
+            .left-padding-med.right-padding-med
+                .panel.panel-primary(ng-repeat="resource in resources")
+                    .panel-heading.bottom-padding-med
                         .panel-title
                             div(
                             role="button"
                             data-toggle="collapse"
                             href="#{{resource._id}}")
                                 | {{resource.head}} - {{resource.order}}
-                    div.panel-collapse.collapse(id="{{resource._id}}")
-                        div.panel-body
-                            div.right-padding-med.left-padding-med.bottom-padding-lg
+                    .panel-collapse.collapse(id="{{resource._id}}")
+                        .panel-body
+                            .right-padding-med.left-padding-med.bottom-padding-lg
                                 .row-fluid
                                     label.col-md-1.control-label(form="order")
                                         text(ng-if="title==='Other Resources'") Resource order
@@ -38,7 +38,7 @@
                                         rgi-wysiwyg(name="resource-{{$index}}-body", ng-model="resource.body")
 
                                 .row-fluid.top-padding-med.right-padding-lg
-                                    div.pull-right
-                                        button.btn.btn-success(ng-click='resourceUpdate(resource)') Save
+                                    .pull-right
+                                        button.btn.btn-success(ng-click='updateResource(resource)') Save
                                         | &nbsp;
-                                        button.btn.btn-danger(ng-click='deleteConfirmDialog(resource)') Delete
+                                        button.btn.btn-danger(ng-click='showConfirmResourceDeletionDialog(resource)') Delete
