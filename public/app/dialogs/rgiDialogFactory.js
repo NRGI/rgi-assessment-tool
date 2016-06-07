@@ -323,7 +323,7 @@ angular.module('app')
                     scope: scope
                 });
             },
-            resourcenNew: function($scope) {
+            createResource: function($scope) {
                 ngDialog.open({
                     template: 'partials/dialogs/resources/new-resource-dialog',
                     controller: 'rgiNewResourceDialogCtrl',
@@ -332,7 +332,7 @@ angular.module('app')
                     scope: $scope
                 });
             },
-            resourceDelete: function($scope, resource) {
+            deleteResource: function($scope, resource) {
                 var scope = $scope;
                 scope.resource = resource;
                 ngDialog.open({
