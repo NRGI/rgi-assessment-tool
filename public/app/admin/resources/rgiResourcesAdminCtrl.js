@@ -24,16 +24,15 @@ angular.module('app')
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load ' +
             ($scope.resource_type === 'faq' ? 'FAQ' : $scope.resource_type) + ' data failure'));
 
-        $scope.resourceUpdate = function (resource) {
-            var new_resource_data = resource;
-            if (!new_resource_data.head) {
+        $scope.updateResource = function (resource) {
+            if (!resource.head) {
                 rgiNotifier.error('You must supply a title');
-            } else if (!new_resource_data.body) {
+            } else if (!resource.body) {
                 rgiNotifier.error('You must supply content');
-            } else if (!new_resource_data.order) {
+            } else if (!resource.order) {
                 rgiNotifier.error('You must supply the order you want this to appear');
             } else {
-                rgiResourcesMethodSrvc.updateResource(new_resource_data).then(function () {
+                rgiResourcesMethodSrvc.updateResource(resource).then(function () {
                     $route.reload();
                     rgiNotifier.notify('Resource has been updated');
                 }, function (reason) {
@@ -42,11 +41,11 @@ angular.module('app')
             }
         };
 
-        $scope.newResourceDialog = function () {
-            rgiDialogFactory.resourcenNew($scope);
+        $scope.showCreateResourceDialog = function () {
+            rgiDialogFactory.createResource($scope);
         };
 
-        $scope.deleteConfirmDialog = function (resource) {
-            rgiDialogFactory.resourceDelete($scope, resource);
+        $scope.showConfirmResourceDeletionDialog = function (resource) {
+            rgiDialogFactory.deleteResource($scope, resource);
         };
     });

@@ -87,7 +87,7 @@ describe('rgiResourcesAdminCtrl', function () {
         describe('ACTIONS', function() {
             var mocks = {};
 
-            describe('#resourceUpdate', function() {
+            describe('#updateResource', function() {
                 var FAILURE_REASON = 'FAILURE REASON', setUpdateResourceStub = function(callback) {
                     spies.resourcesMethodUpdateResource = sinon.spy(function() {
                         return {then: callback};
@@ -102,17 +102,17 @@ describe('rgiResourcesAdminCtrl', function () {
 
                 it('shows an error message if the resource head is not set', function() {
                     mocks.notifier.expects('error').withArgs('You must supply a title');
-                    $scope.resourceUpdate({});
+                    $scope.updateResource({});
                 });
 
                 it('shows an error message if the resource body is not set', function() {
                     mocks.notifier.expects('error').withArgs('You must supply content');
-                    $scope.resourceUpdate({head: 'head'});
+                    $scope.updateResource({head: 'head'});
                 });
 
                 it('shows an error message if the resource order is not set', function() {
                     mocks.notifier.expects('error').withArgs('You must supply the order you want this to appear');
-                    $scope.resourceUpdate({head: 'head', body: 'body'});
+                    $scope.updateResource({head: 'head', body: 'body'});
                 });
 
                 describe('request submission', function() {
@@ -143,26 +143,26 @@ describe('rgiResourcesAdminCtrl', function () {
 
                     afterEach(function() {
                         var resource = {head: 'head', body: 'body', order: 'order'};
-                        $scope.resourceUpdate(resource);
+                        $scope.updateResource(resource);
                         spies.resourcesMethodUpdateResource.withArgs(resource).called.should.be.equal(true);
                     });
                 });
             });
 
-            describe('#newResourceDialog', function() {
+            describe('#showCreateResourceDialog', function() {
                 it('opens a dialog', function() {
                     mocks.dialogFactory = sinon.mock(rgiDialogFactory);
-                    mocks.dialogFactory.expects('resourcenNew').withArgs($scope);
-                    $scope.newResourceDialog();
+                    mocks.dialogFactory.expects('createResource').withArgs($scope);
+                    $scope.showCreateResourceDialog();
                 });
             });
 
-            describe('#deleteConfirmDialog', function() {
+            describe('#showConfirmResourceDeletionDialog', function() {
                 it('opens a dialog', function() {
                     mocks.dialogFactory = sinon.mock(rgiDialogFactory);
                     var resource = 'RESOURCE';
-                    mocks.dialogFactory.expects('resourceDelete').withArgs($scope, resource);
-                    $scope.deleteConfirmDialog(resource);
+                    mocks.dialogFactory.expects('deleteResource').withArgs($scope, resource);
+                    $scope.showConfirmResourceDeletionDialog(resource);
                 });
             });
 
