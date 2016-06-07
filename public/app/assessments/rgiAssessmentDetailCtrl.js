@@ -21,9 +21,8 @@ angular.module('app')
             {value: "status", text: "Sort by Status"}
         ];
 
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.sortOrder = $scope.sortOptions[0].value;
-        $scope.order_reverse = $scope.current_user.isSupervisor();
+        $scope.order_reverse = rgiIdentitySrvc.currentUser.isSupervisor();
         $scope.assessment_counters = {length: 0};
 
         rgiQuestionSetSrvc.loadQuestions(function() {
@@ -45,7 +44,7 @@ angular.module('app')
                         $scope.answers = rgiPreceptGuideSrvc.getAnswerTemplates();
 
                         answers.forEach(function (answer) {
-                            if(rgiQuestionSetSrvc.isAvailable($scope.current_user.role, answer)) {
+                            if(rgiQuestionSetSrvc.isAvailable(rgiIdentitySrvc.currentUser.role, answer)) {
                                 rgiAssessmentStatisticsGuideSrvc.updateCounters(answer, $scope.assessment_counters, $scope.assessment);
                                 $scope.answers[answer.question_ID.precept - 1].data.push(answer);
 
