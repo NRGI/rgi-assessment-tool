@@ -14,10 +14,24 @@ angular.module('app')
         rgiQuestionSrvc,
         rgiSortableGuideSrvc
     ) {
-        rgiQuestionSrvc.get({_id: $routeParams.id}, function(question) {
-            $scope.question = question;
+        rgiQuestionSrvc.get({_id: $routeParams.id}, function(mainQuestion) {
+            $scope.question = mainQuestion;
+
+            rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
+                $scope.questions = questions;
+
+                $scope.questions.forEach(function(question) {
+                    question.question_criteria.forEach(function(option) {
+                        if($scope.question.linkedOption === option._id) {
+                            $scope.linkedQuestion = question;
+                        }
+                    });
+                });
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
+
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
+        $scope.questions = [];
         $scope.page_type = 'question';
         $scope.precept_options = rgiPreceptGuideSrvc.getPrecepts();
 
@@ -32,19 +46,6 @@ angular.module('app')
             {value: 'oversight', text: 'Oversight and Compliance'},
             {value: 'reporting', text: 'Reporting and Disclosure Practices'}
         ];
-
-        $scope.questions = [];
-        rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
-            $scope.questions = questions;
-
-            $scope.questions.forEach(function(question) {
-                question.question_criteria.forEach(function(option) {
-                    if($scope.question.linkedOption === option._id) {
-                        $scope.linkedQuestion = question;
-                    }
-                });
-            });
-        });
 
         $scope.resetLinkedOption = function() {
             $scope.question.linkedOption = undefined;
