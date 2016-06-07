@@ -1,8 +1,8 @@
 .container-fluid.page-container
     .well
         div.page-well
-            img.mapsicon.left-padding-lg(src="assets/mapsicon/all/{{assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
-            legend.h3.page-header {{assessment.country}} {{assessment.year}} {{assessment.mineral || ''}} {{assessment.version | ucfirst}} Assessment
+            img.mapsicon.left-padding-lg(src="assets/mapsicon/all/{{::assessment.assessment_ID | lowercase | limitTo: 2}}/vector.svg")
+            legend.h3.page-header {{::assessment.country}} {{::assessment.year}} {{::assessment.mineral || ''}} {{::assessment.version | ucfirst}} Assessment
                 .pull-right.text-danger(ng-if="identity.currentUser.isExternalReviewer() && assessment_counters.complete / assessment_counters.length < externalThreshold") Assessment not complete
 
             .pull-right
@@ -36,28 +36,28 @@
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row(ng-if="identity.currentUser.isSupervisor()")
                     | Researcher:
-                    a(href="mailto:{{assessment.researcher_ID.email}}")  {{assessment.researcher_ID.firstName}}  {{assessment.researcher_ID.lastName}}
+                    a(href="mailto:{{::assessment.researcher_ID.email}}")  {{::assessment.researcher_ID.firstName}}  {{::assessment.researcher_ID.lastName}}
                 .row(ng-if="identity.currentUser.isSupervisor()")
                     | Reviewer:
                     a(
                     ng-if="assessment.reviewer_ID"
-                    href="mailto:{{assessment.reviewer_ID.email}}")  {{assessment.reviewer_ID.firstName}}  {{assessment.reviewer_ID.lastName}}
+                    href="mailto:{{::assessment.reviewer_ID.email}}")  {{::assessment.reviewer_ID.firstName}}  {{::assessment.reviewer_ID.lastName}}
                     em(ng-if="!assessment.reviewer_ID")  N/A
                 .row(ng-if="identity.currentUser.isSupervisor() && assessment.ext_reviewer_ID.length > 0")
                     | External Reviewer(s):&nbsp;
-                    text(ng-repeat="reviewer in assessment.ext_reviewer_ID")
-                        a(href="mailto:{{reviewer.email}}") {{reviewer.firstName}} {{reviewer.lastName}}
+                    text(ng-repeat="reviewer in assessment.ext_reviewer_ID track by reviewer._id")
+                        a(href="mailto:{{::reviewer.email}}") {{::reviewer.firstName}} {{::reviewer.lastName}}
                         text(ng-if="!$last") ,&nbsp;
                 .row
-                    | Status: {{assessment.status | addSpaces | ucfirst}}
+                    | Status: {{::assessment.status | addSpaces | ucfirst}}
                 .row
                     | Last edited by
                     a(
-                    href="mailto:{{assessment.last_modified.user.email}}"
-                    ng-if="identity.currentUser.isSupervisor()")  {{assessment.last_modified.user.firstName}}  {{assessment.last_modified.user.lastName}}
-                    text(ng-if="!identity.currentUser.isSupervisor()")  {{assessment.last_modified.user.role|role|ucfirst}}
+                    href="mailto:{{::assessment.last_modified.user.email}}"
+                    ng-if="identity.currentUser.isSupervisor()")  {{::assessment.last_modified.user.firstName}}  {{::assessment.last_modified.user.lastName}}
+                    text(ng-if="!identity.currentUser.isSupervisor()")  {{::assessment.last_modified.user.role|role|ucfirst}}
                     |  on
-                    em  {{assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
+                    em  {{::assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
                     //span(ng-repeat="mod in assessment.modified")
                     //    em(ng-show="$last")  {{mod.modified_date | date}}
                 //.row
@@ -86,8 +86,8 @@
                     | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
                 .row(ng-if="identity.currentUser.isSupervisor()")
                     | Supervisors:
-                    text(ng-repeat="sup in assessment.supervisor_ID")
-                        |  {{sup.firstName}} {{sup.lastName}}
+                    text(ng-repeat="sup in assessment.supervisor_ID track by sup._id")
+                        |  {{::sup.firstName}} {{::sup.lastName}}
                         span(ng-if="!$last") ,
 
             .clearfix
