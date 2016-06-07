@@ -137,10 +137,6 @@ describe('rgiAssessmentDetailCtrl', function () {
             $scope.sortOrder.should.be.equal('question_order');
         });
 
-        it('gets the current user', function() {
-            $scope.current_user.should.deep.equal(dummyData.user);
-        });
-
         it('initialize the sorting options', function() {
             $scope.sortOptions.should.deep.equal([
                 {value: 'question_order', text: 'Sort by Question Number'},
