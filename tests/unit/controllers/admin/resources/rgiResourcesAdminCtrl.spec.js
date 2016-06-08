@@ -179,11 +179,6 @@ describe('rgiResourcesAdminCtrl', function () {
                     $scope.updateResource({head: 'head'});
                 });
 
-                it('shows an error message if the resource order is not set', function() {
-                    mocks.notifier.expects('error').withArgs('You must supply the order you want this to appear');
-                    $scope.updateResource({head: 'head', body: 'body'});
-                });
-
                 describe('request submission', function() {
                     describe('SUCCESS', function() {
                         beforeEach(function() {
