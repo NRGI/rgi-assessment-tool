@@ -82,8 +82,6 @@ angular.module('app')
                 rgiNotifier.error('You must supply a title');
             } else if (!resource.body) {
                 rgiNotifier.error('You must supply content');
-            } else if (!resource.order) {
-                rgiNotifier.error('You must supply the order you want this to appear');
             } else {
                 rgiResourcesMethodSrvc.updateResource(resource).then(function () {
                     $route.reload();
