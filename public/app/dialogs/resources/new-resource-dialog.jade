@@ -3,7 +3,7 @@
         h3(ng-if="resource_type === 'resource'") New Resource block
         h3(ng-if="resource_type === 'faq'") New FAQ block
     .modal-body
-        .form-horizontal
+        form(name="newResourceForm").form-horizontal
             .row-fluid
                 .row.form-group.left-padding-lg.right-padding-lg
                     .resource-title-block
@@ -23,6 +23,6 @@
                     )
 
     .modal-footer
-        button.btn.btn-success(ng-click="resourceCreate()") Create new block
+        button.btn.btn-success(ng-click="createResource()", ng-disabled="newResourceForm.$invalid") Create new block
         | &nbsp;
         button.btn.btn-danger(ng-click="closeThisDialog()") Cancel
