@@ -13,26 +13,28 @@
                         .panel.panel-primary
                             .panel-heading.bottom-padding-med
                                 .panel-title
-                                    div(
-                                    role="button"
-                                    data-toggle="collapse"
-                                    href="#{{resource._id}}")
-                                        | {{resource.head}}
+                                    div(role="button" data-toggle="collapse" href="#{{resource._id}}") {{resource.head}} &nbsp
                             .panel-collapse.collapse(id="{{resource._id}}")
                                 .panel-body
                                     .right-padding-med.left-padding-med.bottom-padding-lg
                                         .row-fluid
                                             .form-group.left-padding-lg.right-padding-lg
                                                 input.form-group.form-control(
-                                                name="label"
-                                                placeholder="title"
-                                                ng-model="resource.head")
+                                                    name="label"
+                                                    placeholder="title"
+                                                    ng-model="resource.head"
+                                                    required
+                                                )
                                         .row-fluid
-                                            .form-group.left-padding-lg.right-padding-lg(required)
-                                                rgi-wysiwyg(name="resource-{{$index}}-body", ng-model="resource.body")
+                                            .form-group.left-padding-lg.right-padding-lg
+                                                rgi-wysiwyg(
+                                                    name="resource-{{$index}}-body"
+                                                    ng-model="resource.body"
+                                                    required
+                                                )
 
                                         .row-fluid.top-padding-med.right-padding-lg
                                             .pull-right
-                                                button.btn.btn-success(ng-click='updateResource(resource)') Save
+                                                button.btn.btn-success(ng-click='updateResource(resource)', ng-disabled="(resource.head === undefined) || (resource.body.length === 0)") Save
                                                 | &nbsp;
                                                 button.btn.btn-danger(ng-click='showConfirmResourceDeletionDialog(resource)') Delete
