@@ -12,7 +12,7 @@ angular.module('app')
             type: $scope.$parent.resource_type
         };
 
-        $scope.resourceCreate = function () {
+        $scope.createResource = function () {
             if (!$scope.new_resource.head) {
                 rgiNotifier.error('You must supply a title!');
             } else if (!$scope.new_resource.body) {
