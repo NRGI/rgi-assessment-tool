@@ -5,20 +5,15 @@ angular.module('app')
         $scope,
         $route,
         rgiNotifier,
-        rgiResourcesMethodSrvc,
-        rgiIdentitySrvc
+        rgiResourcesMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-
         $scope.new_resource = {
             order: $scope.$parent.resources.length + 1,
             type: $scope.$parent.resource_type
         };
 
         $scope.resourceCreate = function () {
-            if (!$scope.new_resource.order) {
-                rgiNotifier.error('You must supply the order you want the block to appear!');
-            } else if (!$scope.new_resource.head) {
+            if (!$scope.new_resource.head) {
                 rgiNotifier.error('You must supply a title!');
             } else if (!$scope.new_resource.body) {
                 rgiNotifier.error('You must supply content!');
