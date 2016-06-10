@@ -125,6 +125,22 @@ describe('rgiFinalChoiceDialogCtrl', function () {
         $scope.requestProcessing.should.be.equal(false);
     });
 
+    describe('#isOwnAnswerSelected', function() {
+        it('returns `false` if the final choice is undefined', function() {
+            $scope.final_choice = false;
+            $scope.isOwnAnswerSelected().should.be.equal(false);
+        });
+
+        it('returns `true` if the final choice value is equal to \'other\'', function() {
+            $scope.final_choice = {value: 'other'};
+            $scope.isOwnAnswerSelected().should.be.equal(true);
+        });
+
+        it('returns `true` if the final choice value is not equal to \'other\'', function() {
+            $scope.final_choice = {value: 'not other'};
+            $scope.isOwnAnswerSelected().should.be.equal(false);
+        });
+    });
 
     describe('#submitFinalChoice', function() {
         var mocks = {};
