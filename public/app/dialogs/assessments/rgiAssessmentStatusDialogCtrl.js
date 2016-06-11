@@ -10,6 +10,10 @@ angular.module('app')
             setStatus = function(assessment, status) {
                 assessment.status = status;
                 $scope.statuses[$scope.assessmentId] = status;
+
+                if((status.indexOf('reviewer') === 0) && (assessment.reviewer_ID !== undefined)) {
+                    assessment.edit_control = assessment.reviewer_ID;
+                }
             },
             getAssessment = function() {
                 var foundAssessment = {};
