@@ -15,7 +15,7 @@ angular.module('app')
             rgiResourcesMethodSrvc.deleteResource(resource_deletion).then(function () {
                 $scope.closeThisDialog();
                 $route.reload();
-                rgiNotifier.notify('Question has been deleted');
+                rgiNotifier.notify('Resource has been deleted');
             }, function (reason) {
                 rgiNotifier.error(reason);
             });

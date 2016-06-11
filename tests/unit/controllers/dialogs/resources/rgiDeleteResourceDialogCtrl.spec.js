@@ -40,7 +40,7 @@ describe('rgiDeleteResourceDialogCtrl', function () {
 
                 mocks.$route = sinon.mock($route);
                 mocks.$route.expects('reload');
-                mocks.notifier.expects('notify').withArgs('Question has been deleted');
+                mocks.notifier.expects('notify').withArgs('Resource has been deleted');
 
                 $scope.closeThisDialog = sinon.spy();
                 $scope.resourceDelete();
