@@ -3,12 +3,11 @@
 describe('rgiDeleteQuestionDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, ngDialog, rgiNotifier, rgiQuestionMethodSrvc;
+    var $scope, $location, rgiNotifier, rgiQuestionMethodSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _ngDialog_, _rgiNotifier_, _rgiQuestionMethodSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiQuestionMethodSrvc_) {
             $location = _$location_;
-            ngDialog = _ngDialog_;
             rgiNotifier = _rgiNotifier_;
             rgiQuestionMethodSrvc = _rgiQuestionMethodSrvc_;
 
@@ -18,7 +17,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
         }
     ));
 
-    describe('#questionDelete', function () {
+    describe('#deleteQuestion', function () {
         var questionMethodDeleteQuestionStub, questionMethodDeleteQuestionSpy, notifierMock,
             QUESTION_ID = 'QUESTION_ID';
 
@@ -44,7 +43,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 $locationMock.expects('path').withArgs('/admin/question-admin');
                 notifierMock.expects('notify').withArgs('Question has been deleted');
 
-                $scope.questionDelete();
+                $scope.deleteQuestion();
 
                 $locationMock.verify();
                 $locationMock.restore();
@@ -69,7 +68,7 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
                 questionMethodDeleteQuestionStub = sinon.stub(rgiQuestionMethodSrvc, 'deleteQuestion', questionMethodDeleteQuestionSpy);
 
                 notifierMock.expects('error').withArgs(failureReason);
-                $scope.questionDelete();
+                $scope.deleteQuestion();
             });
         });
 
@@ -78,15 +77,6 @@ describe('rgiDeleteQuestionDialogCtrl', function () {
             questionMethodDeleteQuestionStub.restore();
             notifierMock.verify();
             notifierMock.restore();
-        });
-    });
-
-    describe('#closeDialog', function () {
-        it('closes the dialog', function () {
-            var ngDialogMock = sinon.mock(ngDialog);
-            $scope.closeDialog();
-            ngDialogMock.verify();
-            ngDialogMock.restore();
         });
     });
 });
