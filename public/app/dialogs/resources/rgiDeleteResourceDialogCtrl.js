@@ -6,10 +6,8 @@ angular.module('app')
         $route,
         ngDialog,
         rgiNotifier,
-        rgiResourcesMethodSrvc,
-        rgiIdentitySrvc
+        rgiResourcesMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.resourceDelete = function () {
             var resource_deletion = $scope.$parent.resource._id;
 

@@ -3,28 +3,19 @@
 describe('rgiDeleteResourceDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $route, ngDialog, rgiNotifier, rgiResourcesMethodSrvc, rgiIdentitySrvc,
-        mocks = {}, identityCurrentUserBackUp, CURRENT_USER = 'CURRENT USER';
+    var $scope, $route, ngDialog, rgiNotifier, rgiResourcesMethodSrvc, mocks = {};
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$route_, _ngDialog_, _rgiNotifier_, _rgiResourcesMethodSrvc_, _rgiIdentitySrvc_) {
+        function ($rootScope, $controller, _$route_, _ngDialog_, _rgiNotifier_, _rgiResourcesMethodSrvc_) {
             $route = _$route_;
             ngDialog = _ngDialog_;
             rgiNotifier = _rgiNotifier_;
             rgiResourcesMethodSrvc = _rgiResourcesMethodSrvc_;
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
-
-            identityCurrentUserBackUp = _.clone(rgiIdentitySrvc.currentUser);
-            rgiIdentitySrvc.currentUser = CURRENT_USER;
 
             $scope = $rootScope.$new();
             $controller('rgiDeleteResourceDialogCtrl', {$scope: $scope});
         }
     ));
-
-    it('sets the current user data', function () {
-        $scope.current_user.should.be.equal(CURRENT_USER);
-    });
 
     describe('#resourceDelete', function() {
         var resourcesMethodDeleteResourceStub, spies = {}, RESOURCE_ID = 'RESOURCE ID',
@@ -96,8 +87,6 @@ describe('rgiDeleteResourceDialogCtrl', function () {
     });
 
     afterEach(function() {
-        rgiIdentitySrvc.currentUser = identityCurrentUserBackUp;
-
         Object.keys(mocks).forEach(function(mockName) {
             mocks[mockName].restore();
         });
