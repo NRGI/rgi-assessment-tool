@@ -3,12 +3,11 @@
 describe('rgiDeleteResourceDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $route, ngDialog, rgiNotifier, rgiResourcesMethodSrvc, mocks = {};
+    var $scope, $route, rgiNotifier, rgiResourcesMethodSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$route_, _ngDialog_, _rgiNotifier_, _rgiResourcesMethodSrvc_) {
+        function ($rootScope, $controller, _$route_, _rgiNotifier_, _rgiResourcesMethodSrvc_) {
             $route = _$route_;
-            ngDialog = _ngDialog_;
             rgiNotifier = _rgiNotifier_;
             rgiResourcesMethodSrvc = _rgiResourcesMethodSrvc_;
 
@@ -17,8 +16,8 @@ describe('rgiDeleteResourceDialogCtrl', function () {
         }
     ));
 
-    describe('#resourceDelete', function() {
-        var resourcesMethodDeleteResourceStub, spies = {}, RESOURCE_ID = 'RESOURCE ID',
+    describe('#deleteResource', function() {
+        var resourcesMethodDeleteResourceStub, mocks = {}, spies = {}, RESOURCE_ID = 'RESOURCE ID',
             setResourcesMethodDeleteResourceStub = function(callback) {
                 spies.resourcesMethodDeleteResource = sinon.spy(function() {
                     return {then: callback};
@@ -43,7 +42,7 @@ describe('rgiDeleteResourceDialogCtrl', function () {
                 mocks.notifier.expects('notify').withArgs('Resource has been deleted');
 
                 $scope.closeThisDialog = sinon.spy();
-                $scope.resourceDelete();
+                $scope.deleteResource();
             });
 
             it('closes the dialog', function() {
@@ -67,28 +66,17 @@ describe('rgiDeleteResourceDialogCtrl', function () {
                 callbackFailure(FAILURE_REASON);
             });
 
-            $scope.resourceDelete();
+            $scope.deleteResource();
             mocks.notifier.verify();
         });
 
         afterEach(function() {
             spies.resourcesMethodDeleteResource.withArgs(RESOURCE_ID).called.should.be.equal(true);
             resourcesMethodDeleteResourceStub.restore();
-        });
-    });
 
-    describe('#resourceDelete', function() {
-        it('closes the current dialog', function() {
-            mocks.ngDialog = sinon.mock(ngDialog);
-            mocks.ngDialog.expects('close');
-            $scope.closeDialog();
-            mocks.ngDialog.verify();
-        });
-    });
-
-    afterEach(function() {
-        Object.keys(mocks).forEach(function(mockName) {
-            mocks[mockName].restore();
+            Object.keys(mocks).forEach(function(mockName) {
+                mocks[mockName].restore();
+            });
         });
     });
 });
