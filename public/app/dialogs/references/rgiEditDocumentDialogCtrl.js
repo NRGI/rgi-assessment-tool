@@ -10,30 +10,29 @@ angular.module('app')
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [
-            {value: 'journal', text: 'Journal'},
-            {value: 'data_file', text: 'Data File'},
+            {value: 'bill', text: 'Bill'},
             {value: 'book', text: 'Book'},
-            {value: 'generic', text: 'Generic'},
             {value: 'book_section', text: 'Book Section'},
-            {value: 'conference_proceedings', text: 'Conference Proceedings'},
-            {value: 'working_paper', text: 'Working Paper'},
-            {value: 'report', text: 'Report'},
-            {value: 'web_page', text: 'Web Page'},
-            {value: 'thesis', text: 'Thesis'},
-            {value: 'magazine_article', text: 'Magazine Article'},
-            {value: 'statute', text: 'Statute'},
-            {value: 'patent', text: 'Patent'},
-            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
-            {value: 'newspaper_article', text: 'Newspaper Article'},
-            {value: 'policy_document', text: 'Policy document'},
-            {value: 'computer_program', text: 'Computer Program'},
-            {value: 'hearing', text: 'Hearing'},
-            {value: 'television_broadcast', text: 'Television Broadcast'},
-            {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
             {value: 'case', text: 'Case'},
+            {value: 'computer_program', text: 'Computer Program'},
+            {value: 'conference_proceedings', text: 'Conference Proceedings'},
+            {value: 'data_file', text: 'Data File'},
+            {value: 'encyclopedia_article', text: 'Encyclopedia Article'},
             {value: 'film', text: 'Film'},
+            {value: 'generic', text: 'Generic'},
+            {value: 'hearing', text: 'Hearing'},
+            {value: 'journal', text: 'Journal'},
+            {value: 'magazine_article', text: 'Magazine Article'},
+            {value: 'newspaper_article', text: 'Newspaper Article'},
+            {value: 'parliamentary_meeting_note', text: 'Parliamentary meeting notes'},
+            {value: 'patent', text: 'Patent'},
+            {value: 'policy_document', text: 'Policy document'},
+            {value: 'report', text: 'Report'},
             {value: 'statute', text: 'Statute'},
-            {value: 'bill', text: 'Bill'}
+            {value: 'television_broadcast', text: 'Television Broadcast'},
+            {value: 'thesis', text: 'Thesis'},
+            {value: 'web_page', text: 'Web Page'},
+            {value: 'working_paper', text: 'Working Paper'}
         ];
 
         $scope.addAuthor = function () {
