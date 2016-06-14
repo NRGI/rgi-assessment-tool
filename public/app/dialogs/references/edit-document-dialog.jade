@@ -54,9 +54,9 @@ div.left-padding-lg.right-padding-lg
                                     autocomplete="off"
                                     required)
                                 .pull-left.col-lg-1.right-padding-med(ng-if="$last")
-                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
+                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="addAuthor()")
                                 .pull-left.col-lg-1(ng-if="!$last")
-                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="authorPop($index)")
+                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="deleteAuthor($index)")
 
                     // EDITORS
                     label
@@ -79,9 +79,9 @@ div.left-padding-lg.right-padding-lg
                                     ng-model="editor.last_name"
                                     autocomplete="off")
                                 .pull-left.col-lg-1.right-padding-med(ng-if="$last")
-                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="editorPush()")
+                                    glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="addEditor()")
                                 .pull-left.col-lg-1(ng-if="!$last")
-                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="editorPop($index)")
+                                    glyphicon.text-danger.glyphicon.glyphicon-minus-sign(ng-click="deleteEditor($index)")
 
                     //SOURCE
                     div
@@ -259,4 +259,4 @@ div.left-padding-lg.right-padding-lg
                                     autocomplete="off")
     div.modal-footer
         .col-lg-11
-            button.btn.btn-block.btn-success(ng-click="documentSave(new_doc_data)") Save document
+            button.btn.btn-block.btn-success(ng-click="saveDocument(new_doc_data)") Save document

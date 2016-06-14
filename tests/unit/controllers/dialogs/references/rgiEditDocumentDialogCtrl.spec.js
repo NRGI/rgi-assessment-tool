@@ -50,15 +50,15 @@ describe('rgiEditDocumentDialogCtrl', function () {
         ]);
     });
 
-    describe('#authorPush', function() {
+    describe('#addAuthor', function() {
         it('adds author full name to the authors list', function() {
             $scope.new_doc_data = {authors: []};
-            $scope.authorPush();
+            $scope.addAuthor();
             $scope.new_doc_data.authors.should.deep.equal([{first_name: '', last_name: ''}]);
         });
     });
 
-    describe('#authorPop', function() {
+    describe('#deleteAuthor', function() {
         it('removes author by the specified index', function() {
             $scope.new_doc_data = {authors: [
                 {first_name: 'Julia', last_name: 'Roberts'},
@@ -66,7 +66,8 @@ describe('rgiEditDocumentDialogCtrl', function () {
                 {first_name: 'Eric', last_name: 'Roberts'}
             ]};
 
-            $scope.authorPop(1);
+            $scope.deleteAuthor(1);
+
             $scope.new_doc_data.authors.should.deep.equal([
                 {first_name: 'Julia', last_name: 'Roberts'},
                 {first_name: 'Eric', last_name: 'Roberts'}
@@ -74,15 +75,15 @@ describe('rgiEditDocumentDialogCtrl', function () {
         });
     });
 
-    describe('#editorPush', function() {
+    describe('#addEditor', function() {
         it('adds editor full name to the editors list', function() {
             $scope.new_doc_data = {editors: []};
-            $scope.editorPush();
+            $scope.addEditor();
             $scope.new_doc_data.editors.should.deep.equal([{first_name: '', last_name: ''}]);
         });
     });
 
-    describe('#editorPop', function() {
+    describe('#deleteEditor', function() {
         it('removes editor by the specified index', function() {
             $scope.new_doc_data = {editors: [
                 {first_name: 'Julia', last_name: 'Roberts'},
@@ -90,7 +91,8 @@ describe('rgiEditDocumentDialogCtrl', function () {
                 {first_name: 'Eric', last_name: 'Roberts'}
             ]};
 
-            $scope.editorPop(1);
+            $scope.deleteEditor(1);
+
             $scope.new_doc_data.editors.should.deep.equal([
                 {first_name: 'Julia', last_name: 'Roberts'},
                 {first_name: 'Eric', last_name: 'Roberts'}
@@ -98,7 +100,7 @@ describe('rgiEditDocumentDialogCtrl', function () {
         });
     });
 
-    describe('#documentSave', function() {
+    describe('#saveDocument', function() {
         var mocks = {};
 
         beforeEach(function() {
@@ -148,7 +150,7 @@ describe('rgiEditDocumentDialogCtrl', function () {
             });
 
             afterEach(function() {
-                $scope.documentSave($scope.new_doc_data);
+                $scope.saveDocument($scope.new_doc_data);
                 mocks.notifier.verify();
             });
         });
@@ -183,7 +185,7 @@ describe('rgiEditDocumentDialogCtrl', function () {
                     });
 
                     mocks.notifier.expects('notify').withArgs('Document has been updated');
-                    $scope.documentSave($scope.new_doc_data);
+                    $scope.saveDocument($scope.new_doc_data);
                 });
 
                 it('closes the dialog', function() {
@@ -204,7 +206,7 @@ describe('rgiEditDocumentDialogCtrl', function () {
                     });
 
                     mocks.notifier.expects('error').withArgs(FAILURE_REASON);
-                    $scope.documentSave($scope.new_doc_data);
+                    $scope.saveDocument($scope.new_doc_data);
                     mocks.notifier.verify();
                 });
             });
@@ -218,19 +220,19 @@ describe('rgiEditDocumentDialogCtrl', function () {
 
                 it('adds protocol to the source if the protocol is not set', function() {
                     $scope.new_doc_data.source = 'google.com';
-                    $scope.documentSave($scope.new_doc_data);
+                    $scope.saveDocument($scope.new_doc_data);
                     $scope.new_doc_data.source.should.be.equal('http://google.com');
                 });
 
                 it('does not modify the source protocol if the protocol is set to `http`', function() {
                     $scope.new_doc_data.source = 'http://google.com';
-                    $scope.documentSave($scope.new_doc_data);
+                    $scope.saveDocument($scope.new_doc_data);
                     $scope.new_doc_data.source.should.be.equal('http://google.com');
                 });
 
                 it('does not modify the source protocol if the protocol is set to `https`', function() {
                     $scope.new_doc_data.source = 'https://google.com';
-                    $scope.documentSave($scope.new_doc_data);
+                    $scope.saveDocument($scope.new_doc_data);
                     $scope.new_doc_data.source.should.be.equal('https://google.com');
                 });
             });

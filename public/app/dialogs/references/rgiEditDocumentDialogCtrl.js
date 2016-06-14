@@ -36,23 +36,23 @@ angular.module('app')
             {value: 'bill', text: 'Bill'}
         ];
 
-        $scope.authorPush = function () {
+        $scope.addAuthor = function () {
             $scope.new_doc_data.authors.push({first_name: "", last_name: ""});
         };
 
-        $scope.editorPush = function () {
+        $scope.addEditor = function () {
             $scope.new_doc_data.editors.push({first_name: "", last_name: ""});
         };
 
-        $scope.authorPop = function (index) {
+        $scope.deleteAuthor = function (index) {
             $scope.new_doc_data.authors.splice(index, 1);
         };
 
-        $scope.editorPop = function (index) {
+        $scope.deleteEditor = function (index) {
             $scope.new_doc_data.editors.splice(index, 1);
         };
 
-        $scope.documentSave = function (docData) {
+        $scope.saveDocument = function (docData) {
             //check for minimum data
             if (!docData.title) {
                 rgiNotifier.error('You must provide a title!');
