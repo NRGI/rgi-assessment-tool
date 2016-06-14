@@ -26,7 +26,7 @@ div.left-padding-lg.right-padding-lg
                         ng-model="new_doc_data.type"
                         required)
                             option(
-                            ng-selected="{{new_doc_data.type == type.value}}"
+                            ng-selected="new_doc_data.type === type.value"
                             ng-repeat="type in doc_type"
                             autocomplete="off"
                             value="{{type.value}}") {{type.text}}
