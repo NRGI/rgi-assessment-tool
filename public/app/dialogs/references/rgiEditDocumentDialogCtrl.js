@@ -38,6 +38,7 @@ angular.module('app')
             {value: 'statute', text: 'Statute'},
             {value: 'bill', text: 'Bill'}
         ];
+
         $scope.authorPush = function () {
             $scope.new_doc_data.authors.push({first_name: "", last_name: ""});
         };
@@ -54,23 +55,22 @@ angular.module('app')
             $scope.new_doc_data.editors.splice(index, 1);
         };
 
-        $scope.documentSave = function (new_doc_data) {
+        $scope.documentSave = function (docData) {
             //check for minimum data
-            if (!$scope.new_doc_data.title) {
+            if (!docData.title) {
                 rgiNotifier.error('You must provide a title!');
-            } else if (!$scope.new_doc_data.type) {
+            } else if (!docData.type) {
                 rgiNotifier.error('You must provide a document type!');
-            } else if (!$scope.new_doc_data.publisher && (!$scope.new_doc_data.authors[0].first_name || !$scope.new_doc_data.authors[0].last_name)) {
+            } else if (!docData.publisher && (!docData.authors[0].first_name || !docData.authors[0].last_name)) {
                 rgiNotifier.error('You must provide either a publisher or an author!');
-            } else if (!$scope.new_doc_data.year) {
+            } else if (!docData.year) {
                 rgiNotifier.error('You must provide the year of publication!');
             } else {
-                if (new_doc_data.source) {
-                    if (new_doc_data.source.split('://')[0] !== 'http' && new_doc_data.source.split('://')[0] !== 'https') {
-                        new_doc_data.source = 'http://' + new_doc_data.source;
-                    }
+                if (docData.source && (['http', 'https'].indexOf(docData.source.split('://')[0]) === -1)) {
+                    docData.source = 'http://' + docData.source;
                 }
-                rgiDocumentMethodSrvc.updateDocument(new_doc_data).then(function () {
+
+                rgiDocumentMethodSrvc.updateDocument(docData).then(function () {
                     // TODO fix save notification
                     rgiNotifier.notify('Document has been updated');
                     ngDialog.close();
