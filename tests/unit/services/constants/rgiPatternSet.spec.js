@@ -1,7 +1,7 @@
 'use strict';
 
 describe('rgiPatternSet', function () {
-    var HUMAN_NAME_PATTERN, PASSWORD_PATTERN, VERSION_PATTERN,
+    var HUMAN_NAME_PATTERN, NUMERIC_RANGE_PATTERN, PASSWORD_PATTERN, VERSION_PATTERN,
         currentPattern,
         testPattern = function(description, testedValue, expectedResult) {
             it(description, function () {
@@ -11,8 +11,9 @@ describe('rgiPatternSet', function () {
 
     beforeEach(module('app'));
 
-    beforeEach(inject(function(_HUMAN_NAME_PATTERN_, _PASSWORD_PATTERN_, _VERSION_PATTERN_) {
+    beforeEach(inject(function(_HUMAN_NAME_PATTERN_, _NUMERIC_RANGE_PATTERN_, _PASSWORD_PATTERN_, _VERSION_PATTERN_) {
         HUMAN_NAME_PATTERN = _HUMAN_NAME_PATTERN_;
+        NUMERIC_RANGE_PATTERN = _NUMERIC_RANGE_PATTERN_;
         PASSWORD_PATTERN = _PASSWORD_PATTERN_;
         VERSION_PATTERN = _VERSION_PATTERN_;
     }));
@@ -28,6 +29,23 @@ describe('rgiPatternSet', function () {
         testPattern('declines a number', 7, false);
         testPattern('declines a name with a number', 'Oliver Stone 3', false);
         testPattern('declines a name with special characters', '@lex', false);
+    });
+
+    describe('NUMERIC_RANGE_PATTERN', function() {
+        beforeEach(function() {
+            currentPattern = NUMERIC_RANGE_PATTERN;
+        });
+
+        testPattern('accepts a single digit', '1', true);
+        testPattern('accepts an arbitrary positive number', '123', true);
+        testPattern('declines a negative number', '-3', false);
+        testPattern('accepts a dash-separated range', '7-8', true);
+        testPattern('accepts a dash-separated range with a space before the dash', '7 -8', true);
+        testPattern('accepts a dash-separated range with spaces before and after the dash', '7 - 8', true);
+        testPattern('accepts a dash-separated range with a space after the dash', '7- 8', true);
+        testPattern('accepts a dash and comma -separated range', '7-10, 14', true);
+        testPattern('accepts two dash -separated ranges', '7-10, 11-14', true);
+        testPattern('accepts a comma-separated range', '7,10, 14', true);
     });
 
     describe('PASSWORD_PATTERN', function() {
