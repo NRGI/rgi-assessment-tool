@@ -3,33 +3,22 @@
 describe('rgiEditDocumentDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $route, ngDialog, rgiIdentitySrvc, rgiNotifier, rgiDocumentMethodSrvc,
-        identityCurrentUserBackup, CURRENT_USER = 'CURRENT USER', DOCUMENT = 'ORIGINAL DOCUMENT';
+    var $scope, $route, rgiNotifier, rgiDocumentMethodSrvc, DOCUMENT = 'ORIGINAL DOCUMENT';
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$route_, _ngDialog_, _rgiIdentitySrvc_, _rgiNotifier_, _rgiDocumentMethodSrvc_) {
+        function ($rootScope, $controller, _$route_, _rgiNotifier_, _rgiDocumentMethodSrvc_) {
             $route = _$route_;
-            ngDialog = _ngDialog_;
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiDocumentMethodSrvc = _rgiDocumentMethodSrvc_;
 
-            identityCurrentUserBackup = _.clone(rgiIdentitySrvc.currentUser);
-            rgiIdentitySrvc.currentUser = CURRENT_USER;
-
             $scope = $rootScope.$new();
             $scope.$parent = {document: DOCUMENT};
-
             $controller('rgiEditDocumentDialogCtrl', {$scope: $scope});
         }
     ));
 
-    it('sets the current user data', function() {
-        $scope.current_user.should.be.equal(CURRENT_USER);
-    });
-
     it('sets the document data', function() {
-        $scope.new_doc_data.should.deep.equal(DOCUMENT);
+        $scope.new_doc_data.should.be.equal(DOCUMENT);
     });
 
     it('initializes the document type list', function() {
@@ -109,18 +98,6 @@ describe('rgiEditDocumentDialogCtrl', function () {
         });
     });
 
-    describe('#closeDialog', function() {
-        it('closes the dialog', function() {
-            var dialogMock = sinon.mock(ngDialog);
-            dialogMock.expects('close');
-
-            $scope.closeDialog();
-
-            dialogMock.verify();
-            dialogMock.restore();
-        });
-    });
-
     describe('#documentSave', function() {
         var mocks = {};
 
@@ -188,6 +165,8 @@ describe('rgiEditDocumentDialogCtrl', function () {
                 };
 
             beforeEach(function() {
+                $scope.closeThisDialog = sinon.spy();
+
                 $scope.new_doc_data = {
                     title: 'TITLE',
                     type: 'TYPE',
@@ -203,15 +182,12 @@ describe('rgiEditDocumentDialogCtrl', function () {
                         callback();
                     });
 
-                    mocks.dialog = sinon.mock(ngDialog);
-                    mocks.dialog.expects('close');
-
                     mocks.notifier.expects('notify').withArgs('Document has been updated');
                     $scope.documentSave($scope.new_doc_data);
                 });
 
                 it('closes the dialog', function() {
-                    mocks.dialog.verify();
+                    $scope.closeThisDialog.called.should.be.equal(true);
                 });
 
                 it('shows a notification message', function() {
@@ -269,9 +245,5 @@ describe('rgiEditDocumentDialogCtrl', function () {
                 mocks[mockName].restore();
             });
         });
-    });
-
-    afterEach(function() {
-        rgiIdentitySrvc.currentUser = identityCurrentUserBackup;
     });
 });

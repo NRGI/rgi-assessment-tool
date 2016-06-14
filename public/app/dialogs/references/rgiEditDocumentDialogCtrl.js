@@ -4,12 +4,9 @@ angular.module('app')
     .controller('rgiEditDocumentDialogCtrl', function (
         $scope,
         $route,
-        ngDialog,
         rgiDocumentMethodSrvc,
-        rgiIdentitySrvc,
         rgiNotifier
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_doc_data = $scope.$parent.document;
 
         $scope.doc_type = [
@@ -73,14 +70,10 @@ angular.module('app')
                 rgiDocumentMethodSrvc.updateDocument(docData).then(function () {
                     // TODO fix save notification
                     rgiNotifier.notify('Document has been updated');
-                    ngDialog.close();
+                    $scope.closeThisDialog();
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
             }
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
