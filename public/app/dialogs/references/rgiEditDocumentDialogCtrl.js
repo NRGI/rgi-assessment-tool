@@ -5,9 +5,13 @@ angular.module('app')
         $scope,
         $route,
         rgiDocumentMethodSrvc,
-        rgiNotifier
+        rgiNotifier,
+        HUMAN_NAME_PATTERN,
+        NUMERIC_RANGE_PATTERN
     ) {
         $scope.new_doc_data = $scope.$parent.document;
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
+        $scope.numericRangePattern = NUMERIC_RANGE_PATTERN;
 
         $scope.doc_type = [
             {value: 'bill', text: 'Bill'},
@@ -52,7 +56,7 @@ angular.module('app')
         };
 
         $scope.saveDocument = function (docData) {
-            //check for minimum data
+            // TODO check for minimum data
             if (!docData.title) {
                 rgiNotifier.error('You must provide a title!');
             } else if (!docData.type) {
@@ -62,12 +66,7 @@ angular.module('app')
             } else if (!docData.year) {
                 rgiNotifier.error('You must provide the year of publication!');
             } else {
-                if (docData.source && (['http', 'https'].indexOf(docData.source.split('://')[0]) === -1)) {
-                    docData.source = 'http://' + docData.source;
-                }
-
                 rgiDocumentMethodSrvc.updateDocument(docData).then(function () {
-                    // TODO fix save notification
                     rgiNotifier.notify('Document has been updated');
                     $scope.closeThisDialog();
                 }, function (reason) {

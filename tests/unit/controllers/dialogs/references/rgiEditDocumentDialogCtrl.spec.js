@@ -210,32 +210,6 @@ describe('rgiEditDocumentDialogCtrl', function () {
                 });
             });
 
-            describe('SOURCE CHANGE', function() {
-                beforeEach(function() {
-                    setStub(function(callback) {
-                        callback();
-                    });
-                });
-
-                it('adds protocol to the source if the protocol is not set', function() {
-                    $scope.new_doc_data.source = 'google.com';
-                    $scope.saveDocument($scope.new_doc_data);
-                    $scope.new_doc_data.source.should.be.equal('http://google.com');
-                });
-
-                it('does not modify the source protocol if the protocol is set to `http`', function() {
-                    $scope.new_doc_data.source = 'http://google.com';
-                    $scope.saveDocument($scope.new_doc_data);
-                    $scope.new_doc_data.source.should.be.equal('http://google.com');
-                });
-
-                it('does not modify the source protocol if the protocol is set to `https`', function() {
-                    $scope.new_doc_data.source = 'https://google.com';
-                    $scope.saveDocument($scope.new_doc_data);
-                    $scope.new_doc_data.source.should.be.equal('https://google.com');
-                });
-            });
-
             afterEach(function() {
                 documentMethodUpdateDocumentSpy.withArgs($scope.new_doc_data).called.should.be.equal(true);
             });
