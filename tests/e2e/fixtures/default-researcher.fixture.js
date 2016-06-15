@@ -7,7 +7,7 @@ module.exports = {
         console.log('Create `User` fixture');
 
         var salt = encrypt.createSalt(),
-            hash = encrypt.hashPwd(salt, 'jcust');
+            hash = encrypt.hashPwd(salt, 'cperry');
 
         mongoose.model('User').create({
             firstName: 'Chris',
