@@ -43,20 +43,33 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getRawAnswers = function(req, res, next) {
-    var fields = [
-        'assessment_ID',
-        'answer_ID',
-        'question_ID.question_criteria',
-        'researcher_score.text',
-        'researcher_score.name',
-        'researcher_score.value',
-        'researcher_score.letter',
-        'reviewer_score.text',
-        'reviewer_score.name',
-        'reviewer_score.value',
-        'reviewer_score.letter',
-        'status'
-    ];
+    // var fields = [
+    //     'assessment_ID',
+    //     'answer_ID',
+    //     'question_ID.question_criteria',
+    //     'researcher_score.text',
+    //     'researcher_score.name',
+    //     'researcher_score.value',
+    //     'researcher_score.letter',
+    //     'reviewer_score.text',
+    //     'reviewer_score.name',
+    //     'reviewer_score.value',
+    //     'reviewer_score.letter',
+    //     'status'
+    // ];
+    var raw_answer_header = [
+        'assessment_id',
+        'answer_id',
+        'status',
+        'question_text',
+        'researcher_score_letter',
+        'researcher_score_text',
+        'researcher_score_value',
+        'reviewer_score_letter',
+        'reviewer_score_text',
+        'reviewer_score_value'
+    ],
+        raw_answer_array = [];
 
     Answer.find(req.query)
         .lean()
@@ -64,7 +77,26 @@ exports.getRawAnswers = function(req, res, next) {
         .exec(function(err, answers) {
             if (err) { return next(err); }
             if (!answers) { return next(new Error('No answers found')); }
-            res.send(answers);
+            answers.forEach(function (answer) {
+                raw_answer_array.push({
+                    assessment_id: answer.assessment_ID,
+                    answer_id: answer.answer_ID,
+                    status: answer.status,
+                    question_text: answer.question_ID.question_text
+                });
+                if (answer.researcher_score) {
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
+                }
+                if (answer.reviewer_score) {
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
+                }
+            });
+
+            res.send({raw_answer_header:raw_answer_header, raw_answer_array: raw_answer_array});
     });
 }
 
