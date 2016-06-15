@@ -24,30 +24,28 @@
           });
         };
 
-    describe('REQUIRED FIELDS', function() {
-      it('activates the submit button if all required fields are set', function() {
-        checkButtonEnabled(true);
-      });
+    it('activates the submit button if all required fields are set', function() {
+      checkButtonEnabled(true);
+    });
 
-      it('disables the submit button if the first name is not set', function() {
-        setFieldContent('request.first_name', '');
-        checkButtonEnabled(false);
-      });
+    it('disables the submit button if the first name is not set', function() {
+      setFieldContent('request.first_name', '');
+      checkButtonEnabled(false);
+    });
 
-      it('disables the submit button if the last name is not set', function() {
-        setFieldContent('request.last_name', '');
-        checkButtonEnabled(false);
-      });
+    it('disables the submit button if the last name is not set', function() {
+      setFieldContent('request.last_name', '');
+      checkButtonEnabled(false);
+    });
 
-      it('disables the submit button if the email is not set', function() {
-        setFieldContent('request.email', '');
-        checkButtonEnabled(false);
-      });
+    it('disables the submit button if the email is not set', function() {
+      setFieldContent('request.email', '');
+      checkButtonEnabled(false);
+    });
 
-      it('disables the submit button if the issue description is not set', function() {
-        setFieldContent('request.issue_description', '');
-        checkButtonEnabled(false);
-      });
+    it('disables the submit button if the issue description is not set', function() {
+      setFieldContent('request.issue_description', '');
+      checkButtonEnabled(false);
     });
   });
 })();
