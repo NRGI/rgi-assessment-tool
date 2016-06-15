@@ -42,6 +42,10 @@ $ npm run-script webdriver-manager-update
 
 ####Run
 ```
+$ grunt test-server
+$ NODE_ENV=test node server.js
+```
+```
 $ grunt test
 ```
 
