@@ -1,0 +1,16 @@
+.container-fluid.page-container
+    .well
+        div.page-well
+            legend.h3.page-header Raw answers
+            .row
+                div.left-padding-lg.right-padding-lg.top-padding-med
+                    .row.pull-left.left-padding-lg.right-padding-lg(ng-if="current_user.isSupervisor()")
+                        .btn.btn-success(ng-click="downloadCsv()" ng-csv="raw_answer_array" csv-header="raw_answer_header" filename="raw_answers.csv") Download Raw CSV
+                    .pull-right
+                        form.form-inline
+                            .form-group
+                                input.form-control(ng-model="search_text", placeholder="Filter")
+                            .form-group.margin-left-med
+                                select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
+            .row
+                rgi-answer-raw-list-table

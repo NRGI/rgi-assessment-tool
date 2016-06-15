@@ -118,6 +118,7 @@ function createDefaultInterviewees() {
                 users: [],
                 creationDate: Date.now()
             });
+            console.log('Interviewees created...');
         } else if (collection.length === 0 && process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'question_staging') {
             Interviewee.create({
                 firstName: "Anonymous",
@@ -131,8 +132,8 @@ function createDefaultInterviewees() {
                 users: [],
                 creationDate: Date.now()
             });
+            console.log('Interviewees created...');
         }
-        console.log('Interviewees created...');
     });
 }
 

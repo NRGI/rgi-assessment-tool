@@ -179,6 +179,7 @@ function createDefaultUsers() {
                 assessments: [],
                 language:  'English'
             });
+            console.log('Users created...');
         } else if (collection.length === 0 && (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'question_staging')) {
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'jcust');
@@ -276,8 +277,8 @@ function createDefaultUsers() {
                 role: 'supervisor',
                 language:  'English'
             });
+            console.log('Users created...');
         }
-        console.log('Users created...');
     });
 }
 

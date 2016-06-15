@@ -7,4 +7,9 @@ angular.module('app')
         });
 
         return AnswerResource;
+    })
+    .factory('rgiAnswerRawSrvc', function ($resource) {
+        var AnswerRawResource = $resource('/api/raw_answers/:answer_ID', {answer_ID: '@answer_ID'}, {});
+
+        return AnswerRawResource;
     });

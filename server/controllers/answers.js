@@ -3,7 +3,9 @@
 
 var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
-    Assessment  = require('mongoose').model('Assessment');
+    Assessment  = require('mongoose').model('Assessment'),
+    json2csv    = require('json2csv'),
+    fs          = require('fs');
 
 exports.getAnswers = function (req, res, next) {
 
@@ -41,6 +43,32 @@ exports.getAnswers = function (req, res, next) {
         });
     }
 };
+
+exports.getRawAnswers = function(req, res, next) {
+    var fields = [
+        'assessment_ID',
+        'answer_ID',
+        'question_ID.question_criteria',
+        'researcher_score.text',
+        'researcher_score.name',
+        'researcher_score.value',
+        'researcher_score.letter',
+        'reviewer_score.text',
+        'reviewer_score.name',
+        'reviewer_score.value',
+        'reviewer_score.letter',
+        'status'
+    ];
+
+    Answer.find(req.query)
+        .lean()
+        .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
+        .exec(function(err, answers) {
+            if (err) { return next(err); }
+            if (!answers) { return next(new Error('No answers found')); }
+            res.send(answers);
+    });
+}
 
 exports.getAnswersByID = function (req, res, next) {
     //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
