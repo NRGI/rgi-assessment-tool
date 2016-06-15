@@ -14,5 +14,5 @@ exports.config = {
     defaultTimeoutInterval: 30000
   },
 
-  baseUrl: 'http://localhost:3030'
+  baseUrl: 'http://localhost:3131'
 };

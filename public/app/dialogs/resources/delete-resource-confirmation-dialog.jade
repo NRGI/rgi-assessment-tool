@@ -1,8 +1,7 @@
 div
    div.modal-header
       h4 Are you sure you want to delete this resource?
-   //div.modal-body
    div.modal-footer
-      button.btn.btn-danger(ng-click="resourceDelete()") Confirm
+      button.btn.btn-danger(ng-click="deleteResource()") Confirm
       | &nbsp;
-      button.btn.btn-default(ng-click="closeDialog()") Cancel
+      button.btn.btn-default(ng-click="closeThisDialog()") Cancel

@@ -88,14 +88,21 @@ angular
                 });
 
             if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] && !new_answer_data.new_answer_selection) {
-                rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
-                rgiNotifier.error('You must provide a justification');
-            } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
-                rgiNotifier.error('You must provide at least one supporting reference!');
-            } else if (rgiIdentitySrvc.currentUser.role === 'reviewer' && (new_answer_data.researcher_score.value !== $scope.question.question_criteria[new_answer_data.new_answer_selection].value) && !auth_match && !new_answer_data.question_ID.dependant) {
-                rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
+                return rgiNotifier.error('You must pick a score');
             } else {
+                var researcherAnswerConfirmed = (new_answer_data.researcher_score !== undefined) && new_answer_data.researcher_score.value ===
+                    $scope.question.question_criteria[new_answer_data.new_answer_selection].value;
+
+                if((rgiIdentitySrvc.currentUser.role !== 'reviewer') || !researcherAnswerConfirmed) {
+                    if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
+                        return rgiNotifier.error('You must provide a justification');
+                    } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
+                        return rgiNotifier.error('You must provide at least one supporting reference!');
+                    } else if (rgiIdentitySrvc.currentUser.role === 'reviewer' && !researcherAnswerConfirmed && !auth_match && !new_answer_data.question_ID.dependant) {
+                        return rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
+                    }
+                }
+
                 if (new_answer_data.new_answer_selection) {
                     new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
@@ -108,10 +115,17 @@ angular
             new_answer_data[rgiIdentitySrvc.currentUser.role + '_resolve_flag_required'] = false;
 
             if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] && new_answer_data.new_answer_selection) {
-                rgiNotifier.error('You must pick a score');
-            } else if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
-                rgiNotifier.error('You must provide a justification');
+                return rgiNotifier.error('You must pick a score');
             } else {
+                var researcherAnswerConfirmed = new_answer_data.researcher_score.value ===
+                    $scope.question.question_criteria[new_answer_data.new_answer_selection].value;
+
+                if((rgiIdentitySrvc.currentUser.role !== 'reviewer') || !researcherAnswerConfirmed) {
+                    if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
+                        return rgiNotifier.error('You must provide a justification');
+                    }
+                }
+
                 if (new_answer_data.new_answer_selection) {
                     new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
