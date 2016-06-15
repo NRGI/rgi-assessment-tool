@@ -3,9 +3,7 @@
 
 var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
-    Assessment  = require('mongoose').model('Assessment'),
-    json2csv    = require('json2csv'),
-    fs          = require('fs');
+    Assessment  = require('mongoose').model('Assessment');
 
 exports.getAnswers = function (req, res, next) {
 
