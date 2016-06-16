@@ -14,12 +14,12 @@ angular.module('app')
             {value: 'assessment_ID', text: 'Sort by assessment'},
             {value: 'answer_ID', text: 'Sort by answer id'},
             {value: 'status', text: 'Sort by Status'},
-            {value: 'researcher_score.letter', text: 'Researcher letter score'},
-            {value: 'researcher_score.text', text: 'Researcher score text'},
-            {value: 'researcher_score.value', text: 'Researcher score value'},
-            {value: 'reviewer_score.letter', text: 'Reviewer letter score'},
-            {value: 'reviewer_score.text', text: 'Reviewer score text'},
-            {value: 'reviewer_score.value', text: 'Reviewer score value'}
+            {value: 'researcher_score_letter', text: 'Researcher letter score'},
+            {value: 'researcher_score_text', text: 'Researcher score text'},
+            {value: 'researcher_score_value', text: 'Researcher score value'},
+            {value: 'reviewer_score_letter', text: 'Reviewer letter score'},
+            {value: 'reviewer_score_text', text: 'Reviewer score text'},
+            {value: 'reviewer_score_value', text: 'Reviewer score value'}
         ];
         $scope.sort_order = $scope.sort_options[0].value;
         var limit = 50,
