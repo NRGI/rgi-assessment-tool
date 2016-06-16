@@ -108,7 +108,7 @@ module.exports = function (app) {
     app.get('/api/countries/:country_ID', countries.getCountriesByID);
     
     //GET RAW ANSWERS
-    app.get('/api/raw_answers', auth.requiresApiLogin, answers.getRawAnswers);
+    app.get('/api/raw_answers/:limit/:skip', auth.requiresApiLogin, answers.getRawAnswers);
     
     // Send tech contact
     app.post('/contact_tech', contact.techSend);

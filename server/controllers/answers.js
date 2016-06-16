@@ -3,7 +3,8 @@
 
 var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
-    Assessment  = require('mongoose').model('Assessment');
+    Assessment  = require('mongoose').model('Assessment'),
+    async       = require('async');
 
 exports.getAnswers = function (req, res, next) {
 
@@ -43,62 +44,156 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getRawAnswers = function(req, res, next) {
-    // var fields = [
-    //     'assessment_ID',
-    //     'answer_ID',
-    //     'question_ID.question_criteria',
-    //     'researcher_score.text',
-    //     'researcher_score.name',
-    //     'researcher_score.value',
-    //     'researcher_score.letter',
-    //     'reviewer_score.text',
-    //     'reviewer_score.name',
-    //     'reviewer_score.value',
-    //     'reviewer_score.letter',
-    //     'status'
-    // ];
-    var raw_answer_header = [
-        'assessment_id',
-        'answer_id',
-        'status',
-        'question_text',
-        'researcher_score_letter',
-        'researcher_score_text',
-        'researcher_score_value',
-        'reviewer_score_letter',
-        'reviewer_score_text',
-        'reviewer_score_value'
-    ],
-        raw_answer_array = [];
+    var limit = Number(req.params.limit),
+        skip = Number(req.params.skip),
+        query = req.query;
 
-    Answer.find(req.query)
-        .lean()
-        .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
-        .exec(function(err, answers) {
-            if (err) { return next(err); }
-            if (!answers) { return next(new Error('No answers found')); }
-            answers.forEach(function (answer) {
-                raw_answer_array.push({
-                    assessment_id: answer.assessment_ID,
-                    answer_id: answer.answer_ID,
-                    status: answer.status,
-                    question_text: answer.question_ID.question_text
-                });
-                if (answer.researcher_score) {
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
-                }
-                if (answer.reviewer_score) {
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
-                }
-            });
-
-            res.send({raw_answer_header:raw_answer_header, raw_answer_array: raw_answer_array});
+    async.waterfall([
+        getHeaders,
+        getAnswerCount,
+        getAnswerSet
+    ], function (err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(result);
+        }
     });
-}
+    function getHeaders(callback) {
+        var raw_answer_header = [
+                'assessment_id',
+                'answer_id',
+                'status',
+                'question_text',
+                'researcher_score_letter',
+                'researcher_score_text',
+                'researcher_score_value',
+                'reviewer_score_letter',
+                'reviewer_score_text',
+                'reviewer_score_value'
+            ];
+        callback(null, raw_answer_header);
+    }
+    function getAnswerCount(raw_answer_header, callback) {
+        Answer.find(query).count().exec(function(err, answer_count) {
+            if(answer_count) {
+                callback(null, raw_answer_header, answer_count);
+            } else {
+                callback(err);
+            }
+        });
+    }
+    function getAnswerSet(raw_answer_header, answer_count, callback) {
+        Answer.find(query)
+            .lean()
+            .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
+            .sort({answer_ID: 'asc'})
+            .skip(skip * limit)
+            .limit(limit)
+            .exec(function(err, answers) {
+                var raw_answer_array = [],
+                    answer_len = answers.length,
+                    answer_counter = 0;
+                answers.forEach(function (answer) {
+                    answer_counter++
+                    raw_answer_array.push({
+                        assessment_id: answer.assessment_ID,
+                        answer_id: answer.answer_ID,
+                        status: answer.status,
+                        question_text: answer.question_ID.question_text
+                    });
+                    if (answer.researcher_score) {
+                        raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
+                        raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
+                        raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
+                    }
+                    if (answer.reviewer_score) {
+                        raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
+                        raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
+                        raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
+                    }
+                    if (answer_len === answer_counter) {
+                        callback(err, {raw_answer_header: raw_answer_header, raw_answer_array: raw_answer_array, count: answer_count});
+                    }
+                });
+            });
+    }
+
+
+    // async.waterfall([
+    //     function (callback) {
+    //         Answer.find(query).count().exec(callback);
+    //     },
+    //     function (answersNumber, callback) {
+    //
+    //     }
+    // ], function (err, result) {
+    //     if (err) {
+    //         res.send({reason: err.toString()});
+    //     } else{
+    //         res.send(result);
+    //     }
+    // });
+
+    // Answer.find(req.query)
+    //     .lean()
+    //     .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
+    //     .exec(function(err, answers) {
+    //         if (err) { return next(err); }
+    //         if (!answers) { return next(new Error('No answers found')); }
+    //         answers.forEach(function (answer) {
+    //             raw_answer_array.push({
+    //                 assessment_id: answer.assessment_ID,
+    //                 answer_id: answer.answer_ID,
+    //                 status: answer.status,
+    //                 question_text: answer.question_ID.question_text
+    //             });
+    //             if (answer.researcher_score) {
+    //                 raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
+    //                 raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
+    //                 raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
+    //             }
+    //             if (answer.reviewer_score) {
+    //                 raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
+    //                 raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
+    //                 raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
+    //             }
+    //         });
+    //
+    //         res.send({raw_answer_header:raw_answer_header, raw_answer_array: raw_answer_array});
+    // });
+};
+// exports.getDocuments = function(req, res) {
+//     var limit = Number(req.params.limit),
+//         skip = Number(req.params.skip),
+//         query = req.query;
+//
+//     query.title = {$exists: true};
+//
+//     async.waterfall([
+//         function (callback) {
+//             Doc.find(query).count().exec(callback);
+//         },
+//         function (documentsNumber, callback) {
+//             Doc.find(query)
+//                 .sort({
+//                     title: 'asc'
+//                 })
+//                 .skip(skip * limit)
+//                 .limit(limit)
+//                 .populate('users', 'firstName lastName')
+//                 .exec(function(err, documents) {
+//                     callback(err, {data: documents, count: documentsNumber});
+//                 });
+//         }
+//     ], function (err, result) {
+//         if (err) {
+//             res.send({reason: err.toString()});
+//         } else{
+//             res.send(result);
+//         }
+//     });
+// };
 
 exports.getAnswersByID = function (req, res, next) {
     //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')

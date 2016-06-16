@@ -9,8 +9,8 @@ angular.module('app')
         return AnswerResource;
     })
     .factory('rgiAnswerRawSrvc', function ($resource) {
-        var AnswerRawResource = $resource('/api/raw_answers/:answer_ID', {answer_ID: '@answer_ID'}, {
-            query: {method: 'GET', isArray: false}
+        var AnswerRawResource = $resource('/api/raw_answers/:limit/:skip/:answer_ID', {_id: '@answer_ID', limit: "@limit", skip: "@skip"}, {
+            query: {method: 'GET', isArray: false, cache: true}
         });
 
         return AnswerRawResource;

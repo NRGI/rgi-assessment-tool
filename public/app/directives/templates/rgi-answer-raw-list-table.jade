@@ -20,3 +20,4 @@
                     span.small(ng-if="answer.researcher_score_letter") {{answer.researcher_score_letter | ucfirst}} - {{answer.researcher_score_text}} (value: {{answer.researcher_score_value}})
                 td
                     span.small(ng-if="answer.reviewer_score_letter") {{answer.reviewer_score_letter | ucfirst}} - {{answer.reviewer_score_text}} (value: {{answer.reviewer_score_value}})
+div(ng-if='answers.length>49' infinite-scroll='loadMoreAnswers()' infinite-scroll-distance='1')

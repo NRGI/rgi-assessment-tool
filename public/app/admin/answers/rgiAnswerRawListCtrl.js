@@ -2,9 +2,11 @@
 
 angular.module('app')
     .controller('rgiAnswerRawListCtrl', function (
+        _,
         $scope,
-        rgiAnswerRawSrvc,
-        rgiIdentitySrvc) {
+        rgiIdentitySrvc,
+        rgiAnswerRawSrvc
+    ) {
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
 
@@ -20,48 +22,36 @@ angular.module('app')
             {value: 'reviewer_score.value', text: 'Reviewer score value'}
         ];
         $scope.sort_order = $scope.sort_options[0].value;
+        var limit = 50,
+            currentPage = 0,
+            totalPages = 0;
 
-        rgiAnswerRawSrvc.query({}, function (answer_data) {
-            console.log(answer_data);
-            $scope.raw_answer_header = answer_data.raw_answer_header;
-            $scope.raw_answer_array = answer_data.raw_answer_array;
-            // $scope.raw_answer_header = [
-            //     'assessment_id',
-            //     'answer_id',
-            //     'status',
-            //     'question_text',
-            //     'researcher_score_letter',
-            //     'researcher_score_text',
-            //     'researcher_score_value',
-            //     'reviewer_score_letter',
-            //     'reviewer_score_text',
-            //     'reviewer_score_value'
-            // ];
-            // // $scope.getArray = [{a: 1, b:2}, {a:3, b:4}];
-            // $scope.raw_answer_array = []
-            //
-            // answers.forEach(function (answer) {
-            //     $scope.raw_answer_array.push({
-            //         assessment_id: answer.assessment_ID,
-            //         answer_id: answer.answer_ID,
-            //         status: answer.status,
-            //         question_text: answer.question_ID.question_text
-            //     });
-            //     if (answer.researcher_score) {
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
-            //     }
-            //     if (answer.reviewer_score) {
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
-            //         $scope.raw_answer_array[$scope.raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
-            //     }
-            // });
+        $scope.busy = false;
 
-            //
-
-
-            $scope.answers = answer_data.raw_answer_array;
+        rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, function (response) {
+            console.log(response);
+            $scope.count = response.count;
+            $scope.answers = response.raw_answer_array;
+            $scope.raw_answer_header = response.raw_answer_header;
+            $scope.raw_answer_array = response.raw_answer_array;
+            totalPages = Math.ceil(response.count / limit);
+            currentPage = currentPage + 1;
         });
+
+        $scope.loadMoreAnswers = function () {
+            if ($scope.busy) {
+                return;
+            }
+            $scope.busy = true;
+
+            if(currentPage < totalPages) {
+                rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, function (response) {
+                    $scope.answers = _.union($scope.answers, response.raw_answer_array);
+                    $scope.raw_answer_array = _.union($scope.raw_answer_array, response.raw_answer_array);
+                    currentPage = currentPage + 1;
+                    $scope.busy = false;
+                });
+            }
+        };
+        
     });
