@@ -4,27 +4,19 @@ angular.module('app')
     .controller('rgiEditIntervieweeDialogCtrl', function (
         $scope,
         $route,
-        ngDialog,
-        rgiNotifier,
-        rgiIdentitySrvc,
-        rgiIntervieweeMethodSrvc
+        rgiIntervieweeMethodSrvc,
+        rgiNotifier
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.new_interviewee_data = $scope.$parent.interviewee;
         $scope.roles = ['government', 'cso', 'industry', 'expert', 'other'];
 
-        $scope.intervieweeSave = function (new_interviewee_data) {
-            // TODO fix save notification
+        $scope.saveInterviewee = function (interviewee) {
             // TODO error check
-            rgiIntervieweeMethodSrvc.updateInterviewee(new_interviewee_data).then(function () {
+            rgiIntervieweeMethodSrvc.updateInterviewee(interviewee).then(function () {
                 rgiNotifier.notify('Interviewee has been updated');
-                ngDialog.close();
+                $scope.closeThisDialog();
             }, function (reason) {
                 rgiNotifier.error(reason);
             });
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });

@@ -3,30 +3,19 @@
 describe('rgiEditIntervieweeDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $route, ngDialog, rgiIdentitySrvc, rgiNotifier, rgiIntervieweeMethodSrvc,
-        identitySrvcCurrentUserBackup, CURRENT_USER = 'CURRENT USER', INTERVIEWEE = 'INTERVIEWEE', mocks = {};
+    var $scope, $route, rgiNotifier, rgiIntervieweeMethodSrvc, INTERVIEWEE = 'INTERVIEWEE';
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$route_, _ngDialog_, _rgiIdentitySrvc_, _rgiNotifier_, _rgiIntervieweeMethodSrvc_) {
+        function ($rootScope, $controller, _$route_, _rgiNotifier_, _rgiIntervieweeMethodSrvc_) {
             $route = _$route_;
-            ngDialog = _ngDialog_;
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiIntervieweeMethodSrvc = _rgiIntervieweeMethodSrvc_;
 
-            identitySrvcCurrentUserBackup = _.clone(rgiIdentitySrvc.currentUser);
-            rgiIdentitySrvc.currentUser = CURRENT_USER;
-
             $scope = $rootScope.$new();
             $scope.$parent = {interviewee: INTERVIEWEE};
-
             $controller('rgiEditIntervieweeDialogCtrl', {$scope: $scope});
         }
     ));
-
-    it('sets the current user data', function() {
-        $scope.current_user.should.be.equal(CURRENT_USER);
-    });
 
     it('sets the interviewee data', function() {
         $scope.new_interviewee_data.should.be.equal(INTERVIEWEE);
@@ -36,17 +25,8 @@ describe('rgiEditIntervieweeDialogCtrl', function () {
         $scope.roles.should.deep.equal(['government', 'cso', 'industry', 'expert', 'other']);
     });
 
-    describe('#closeDialog', function() {
-        it('closes the dialog', function() {
-            mocks.dialog = sinon.mock(ngDialog);
-            mocks.dialog.expects('close');
-            $scope.closeDialog();
-            mocks.dialog.verify();
-        });
-    });
-
-    describe('#intervieweeSave', function() {
-        var intervieweeMethodUpdateIntervieweeStub, spies = {}, INTERVIEWEE = 'INTERVIEWEE',
+    describe('#saveInterviewee', function() {
+        var intervieweeMethodUpdateIntervieweeStub, mocks = {}, spies = {}, INTERVIEWEE = 'INTERVIEWEE',
             setUpStub = function(callback) {
                 spies.intervieweeMethodUpdateInterviewee = sinon.spy(function() {
                     return {then: callback};
@@ -65,15 +45,13 @@ describe('rgiEditIntervieweeDialogCtrl', function () {
                     callback();
                 });
 
-                mocks.dialog = sinon.mock(ngDialog);
-                mocks.dialog.expects('close');
-
+                $scope.closeThisDialog = sinon.spy();
                 mocks.notifier.expects('notify').withArgs('Interviewee has been updated');
-                $scope.intervieweeSave(INTERVIEWEE);
+                $scope.saveInterviewee(INTERVIEWEE);
             });
 
             it('closes the dialog', function() {
-                mocks.dialog.verify();
+                $scope.closeThisDialog.called.should.be.equal(true);
             });
 
             it('shows a confirmation message', function() {
@@ -89,16 +67,14 @@ describe('rgiEditIntervieweeDialogCtrl', function () {
                 callbackFailure(FAILURE_REASON);
             });
 
-            $scope.intervieweeSave(INTERVIEWEE);
+            $scope.saveInterviewee(INTERVIEWEE);
             mocks.notifier.verify();
         });
-    });
 
-    afterEach(function() {
-        rgiIdentitySrvc.currentUser = identitySrvcCurrentUserBackup;
-
-        Object.keys(mocks).forEach(function(mockName) {
-            mocks[mockName].restore();
+        afterEach(function() {
+            Object.keys(mocks).forEach(function(mockName) {
+                mocks[mockName].restore();
+            });
         });
     });
 });
