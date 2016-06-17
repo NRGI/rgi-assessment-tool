@@ -188,8 +188,8 @@ angular.module('app')
             },
             commentEdit: function(answer, comment) {
                 ngDialog.open({
-                    template: 'partials/dialogs/comments/comment-edit-dialog',
-                    controller: 'rgiCommentEditDialogCtrl',
+                    template: 'partials/dialogs/comments/edit-comment-dialog',
+                    controller: 'rgiEditCommentDialogCtrl',
                     className: 'ngdialog-theme-default dialogwidth800',
                     closeByNavigation: true,
                     data: {
