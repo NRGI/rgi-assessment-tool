@@ -68,7 +68,7 @@ describe('rgiEditCommentDialogCtrl', function () {
         });
 
         it('shows a notification message if the request succeeds', function() {
-            notifierMock.expects('notify').withArgs('Comment edited');
+            notifierMock.expects('notify').withArgs('The comment has been changed');
             setAnswerMethodUpdateAnswerStub(function(callback) {
                 callback();
                 return {finally: function(finalCallback) {finalCallback();}};

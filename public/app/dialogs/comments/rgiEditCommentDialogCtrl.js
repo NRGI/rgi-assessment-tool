@@ -19,7 +19,7 @@ angular.module('app')
 
             rgiAnswerMethodSrvc.updateAnswer($scope.ngDialogData.answer)
                 .then(function () {
-                    rgiNotifier.notify('Comment edited');
+                    rgiNotifier.notify('The comment has been changed');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 }).finally($scope.closeThisDialog);
