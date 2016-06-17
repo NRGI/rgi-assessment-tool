@@ -3,27 +3,18 @@
 describe('rgiEditCommentDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, rgiIdentitySrvc, rgiNotifier, rgiAnswerMethodSrvc,
-        identityCurrentUserBackup, CURRENT_USER = 'CURRENT USER', COMMENT_CONTENT = 'COMMENT CONTENT';
+    var $scope, rgiNotifier, rgiAnswerMethodSrvc, COMMENT_CONTENT = 'COMMENT CONTENT';
 
     beforeEach(inject(
-        function ($rootScope, $controller, _rgiIdentitySrvc_, _rgiNotifier_, _rgiAnswerMethodSrvc_) {
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
+        function ($rootScope, $controller, _rgiNotifier_, _rgiAnswerMethodSrvc_) {
             rgiNotifier = _rgiNotifier_;
             rgiAnswerMethodSrvc = _rgiAnswerMethodSrvc_;
-
-            identityCurrentUserBackup = _.clone(rgiIdentitySrvc.currentUser);
-            rgiIdentitySrvc.currentUser = CURRENT_USER;
 
             $scope = $rootScope.$new();
             $scope.ngDialogData = {comment: {content: COMMENT_CONTENT}};
             $controller('rgiEditCommentDialogCtrl', {$scope: $scope});
         }
     ));
-
-    it('sets the current user data', function() {
-        $scope.current_user.should.be.equal(CURRENT_USER);
-    });
 
     it('sets the comment content', function() {
         $scope.commentContent.should.be.equal(COMMENT_CONTENT);
@@ -96,9 +87,5 @@ describe('rgiEditCommentDialogCtrl', function () {
             notifierMock.verify();
             notifierMock.restore();
         });
-    });
-
-    afterEach(function() {
-        rgiIdentitySrvc.currentUser = identityCurrentUserBackup;
     });
 });

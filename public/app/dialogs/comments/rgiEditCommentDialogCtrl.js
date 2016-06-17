@@ -4,10 +4,8 @@ angular.module('app')
     .controller('rgiEditCommentDialogCtrl', function (
         $scope,
         rgiNotifier,
-        rgiAnswerMethodSrvc,
-        rgiIdentitySrvc
+        rgiAnswerMethodSrvc
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.commentContent = $scope.ngDialogData.comment.content;
 
         $scope.isCommentModificationValid = function() {
@@ -20,8 +18,7 @@ angular.module('app')
             rgiAnswerMethodSrvc.updateAnswer($scope.ngDialogData.answer)
                 .then(function () {
                     rgiNotifier.notify('The comment has been changed');
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                }).finally($scope.closeThisDialog);
+                }, rgiNotifier.error)
+                .finally($scope.closeThisDialog);
         };
     });
