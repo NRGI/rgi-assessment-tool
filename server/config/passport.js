@@ -1,8 +1,9 @@
 'use strict';
-var passport       = require('passport'),
-    mongoose       = require('mongoose'),
-    LocalStrategy  = require('passport-local').Strategy,
-    User           = mongoose.model('User');
+var passport        = require('passport'),
+    mongoose        = require('mongoose'),
+    LocalStrategy   = require('passport-local').Strategy,
+    // BearerStrategy  = require('passport-http-bearer').Strategy,
+    User            = mongoose.model('User');
 
 module.exports = function () {
     passport.use(new LocalStrategy(
@@ -16,6 +17,15 @@ module.exports = function () {
             });
         }
     ));
+    // passport.use(new BearerStrategy(
+    //     function(token, done) {
+    //         User.findOne({ token: token }, function (err, user) {
+    //             if (err) { return done(err); }
+    //             if (!user) { return done(null, false); }
+    //             return done(null, user, { scope: 'all' });
+    //         });
+    //     }
+    // ));
     // passport.use(new OAuth2Strategy({
     //         authorizationURL: 'https://www.example.com/oauth2/authorize',
     //         tokenURL: 'https://www.example.com/oauth2/token',
