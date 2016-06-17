@@ -1,6 +1,6 @@
 'use strict';
 
-describe('rgiCommentEditDialogCtrl', function () {
+describe('rgiEditCommentDialogCtrl', function () {
     beforeEach(module('app'));
 
     var $scope, rgiIdentitySrvc, rgiNotifier, rgiAnswerMethodSrvc,
@@ -17,7 +17,7 @@ describe('rgiCommentEditDialogCtrl', function () {
 
             $scope = $rootScope.$new();
             $scope.ngDialogData = {comment: {content: COMMENT_CONTENT}};
-            $controller('rgiCommentEditDialogCtrl', {$scope: $scope});
+            $controller('rgiEditCommentDialogCtrl', {$scope: $scope});
         }
     ));
 

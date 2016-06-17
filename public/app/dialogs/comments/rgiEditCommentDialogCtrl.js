@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiCommentEditDialogCtrl', function (
+    .controller('rgiEditCommentDialogCtrl', function (
         $scope,
         rgiNotifier,
         rgiAnswerMethodSrvc,
