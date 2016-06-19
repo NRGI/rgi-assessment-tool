@@ -4,32 +4,20 @@ angular.module('app')
     .controller('rgiResubmitAssessmentConfirmationDialogCtrl', function (
         $scope,
         $location,
-        $route,
-        ngDialog,
-        rgiNotifier,
-        rgiIdentitySrvc,
-        rgiAssessmentMethodSrvc
+        rgiAssessmentMethodSrvc,
+        rgiNotifier
     ) {
-        $scope.current_user = rgiIdentitySrvc.currentUser;
-        $scope.assessmentResubmit = function () {
-            var new_assessment_data = $scope.$parent.assessment;
+        $scope.resubmitAssessment = function () {
+            $scope.$parent.assessment.status = 'resubmitted';
+            $scope.$parent.assessment.mail = true;
 
-            new_assessment_data.status = 'resubmitted';
-            //MAIL NOTIFICATION
-            new_assessment_data.mail = true;
-
-            rgiAssessmentMethodSrvc.updateAssessment(new_assessment_data)
+            rgiAssessmentMethodSrvc.updateAssessment($scope.$parent.assessment)
                 .then(function () {
-                    ngDialog.close();
+                    $scope.closeThisDialog();
                     $location.path('/assessments');
-                    //$route.reload();
                     rgiNotifier.notify('Assessment submitted!');
                 }, function (reason) {
                     rgiNotifier.error(reason);
                 });
-        };
-
-        $scope.closeDialog = function () {
-            ngDialog.close();
         };
     });
