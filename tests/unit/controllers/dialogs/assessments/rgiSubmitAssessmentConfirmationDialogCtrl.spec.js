@@ -3,12 +3,11 @@
 describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, ngDialog, rgiNotifier, rgiAssessmentMethodSrvc, mocks = {};
+    var $scope, $location, rgiNotifier, rgiAssessmentMethodSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _ngDialog_, _rgiNotifier_, _rgiAssessmentMethodSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiAssessmentMethodSrvc_) {
             $location = _$location_;
-            ngDialog = _ngDialog_;
             rgiNotifier = _rgiNotifier_;
             rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
 
@@ -17,8 +16,8 @@ describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
         }
     ));
 
-    describe('#assessmentSubmit', function() {
-        var assessmentMethodUpdateAssessmentSpy, assessmentMethodUpdateAssessmentStub,
+    describe('#submitAssessment', function() {
+        var assessmentMethodUpdateAssessmentSpy, assessmentMethodUpdateAssessmentStub, mocks = {},
             setAssessmentMethodUpdateAssessmentStub = function(callback) {
                 assessmentMethodUpdateAssessmentSpy = sinon.spy(function() {
                     return {then: callback};
@@ -31,6 +30,7 @@ describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
         beforeEach(function() {
             mocks.notifier = sinon.mock(rgiNotifier);
             $scope.$parent = {assessment: {}};
+            $scope.closeThisDialog = sinon.spy();
         });
 
         describe('SUCCESS CASE', function() {
@@ -42,20 +42,17 @@ describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
                 mocks.$location = sinon.mock($location);
                 mocks.$location.expects('path').withArgs('/assessments');
 
-                mocks.dialog = sinon.mock(ngDialog);
-                mocks.dialog.expects('close');
-
                 mocks.notifier.expects('notify').withArgs('Assessment submitted!');
             });
 
             describe('TRIAL ASSESSMENT', function() {
                 beforeEach(function() {
                     $scope.$parent.assessment.status = 'trial_started';
-                    $scope.assessmentSubmit();
+                    $scope.submitAssessment();
                 });
 
                 it('closes the dialog', function() {
-                    mocks.dialog.verify();
+                    $scope.closeThisDialog.called.should.be.equal(true);
                 });
 
                 it('redirects to the assessments list page', function() {
@@ -73,7 +70,7 @@ describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
 
             it('sets the assessment status to `submitted` for a non-trial assessment', function() {
                 $scope.$parent.assessment.status = 'NOT trial_started';
-                $scope.assessmentSubmit();
+                $scope.submitAssessment();
                 $scope.$parent.assessment.status.should.be.equal('submitted');
             });
 
@@ -90,24 +87,14 @@ describe('rgiSubmitAssessmentConfirmationDialogCtrl', function () {
             });
 
             mocks.notifier.expects('error').withArgs(FAILURE_REASON);
-            $scope.assessmentSubmit();
+            $scope.submitAssessment();
             mocks.notifier.verify();
         });
-    });
 
-    describe('#closeDialog', function() {
-        it('closes the dialog', function() {
-            mocks.dialog = sinon.mock(ngDialog);
-            mocks.dialog.expects('close');
-
-            $scope.closeDialog();
-            mocks.dialog.verify();
-        });
-    });
-
-    afterEach(function() {
-        Object.keys(mocks).forEach(function(mockName) {
-            mocks[mockName].restore();
+        afterEach(function() {
+            Object.keys(mocks).forEach(function(mockName) {
+                mocks[mockName].restore();
+            });
         });
     });
 });
