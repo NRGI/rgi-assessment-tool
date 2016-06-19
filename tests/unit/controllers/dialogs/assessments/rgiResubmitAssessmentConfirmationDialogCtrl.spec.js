@@ -3,31 +3,21 @@
 describe('rgiResubmitAssessmentConfirmationDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $location, ngDialog, rgiIdentitySrvc, rgiNotifier, rgiAssessmentMethodSrvc,
-        identityCurrentUserBackup, CURRENT_USER = 'CURRENT USER', mocks = {};
+    var $scope, $location, rgiNotifier, rgiAssessmentMethodSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$location_, _ngDialog_, _rgiIdentitySrvc_, _rgiNotifier_, _rgiAssessmentMethodSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiAssessmentMethodSrvc_) {
             $location = _$location_;
-            ngDialog = _ngDialog_;
-            rgiIdentitySrvc = _rgiIdentitySrvc_;
             rgiNotifier = _rgiNotifier_;
             rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
-
-            identityCurrentUserBackup = _.clone(rgiIdentitySrvc.currentUser);
-            rgiIdentitySrvc.currentUser = CURRENT_USER;
 
             $scope = $rootScope.$new();
             $controller('rgiResubmitAssessmentConfirmationDialogCtrl', {$scope: $scope});
         }
     ));
 
-    it('sets current user data', function() {
-        $scope.current_user.should.be.equal(CURRENT_USER);
-    });
-
-    describe('#assessmentResubmit', function() {
-        var assessmentMethodUpdateAssessmentSpy, assessmentMethodUpdateAssessmentStub,
+    describe('#resubmitAssessment', function() {
+        var assessmentMethodUpdateAssessmentSpy, assessmentMethodUpdateAssessmentStub, mocks = {},
             setAssessmentMethodUpdateAssessmentStub = function(callback) {
                 assessmentMethodUpdateAssessmentSpy = sinon.spy(function() {
                     return {then: callback};
@@ -51,15 +41,13 @@ describe('rgiResubmitAssessmentConfirmationDialogCtrl', function () {
                 mocks.$location = sinon.mock($location);
                 mocks.$location.expects('path').withArgs('/assessments');
 
-                mocks.dialog = sinon.mock(ngDialog);
-                mocks.dialog.expects('close');
-
+                $scope.closeThisDialog = sinon.spy();
                 mocks.notifier.expects('notify').withArgs('Assessment submitted!');
-                $scope.assessmentResubmit();
+                $scope.resubmitAssessment();
             });
 
             it('closes the dialog', function() {
-                mocks.dialog.verify();
+                $scope.closeThisDialog.called.should.be.equal(true);
             });
 
             it('redirects to the assessments list page', function() {
@@ -84,26 +72,14 @@ describe('rgiResubmitAssessmentConfirmationDialogCtrl', function () {
             });
 
             mocks.notifier.expects('error').withArgs(FAILURE_REASON);
-            $scope.assessmentResubmit();
+            $scope.resubmitAssessment();
             mocks.notifier.verify();
         });
-    });
 
-    describe('#closeDialog', function() {
-        it('closes the dialog', function() {
-            mocks.dialog = sinon.mock(ngDialog);
-            mocks.dialog.expects('close');
-
-            $scope.closeDialog();
-            mocks.dialog.verify();
-        });
-    });
-
-    afterEach(function() {
-        rgiIdentitySrvc.currentUser = identityCurrentUserBackup;
-
-        Object.keys(mocks).forEach(function(mockName) {
-            mocks[mockName].restore();
+        afterEach(function() {
+            Object.keys(mocks).forEach(function(mockName) {
+                mocks[mockName].restore();
+            });
         });
     });
 });
