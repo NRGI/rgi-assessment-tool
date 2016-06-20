@@ -9,25 +9,21 @@ angular.module('app')
         rgiIntervieweeSrvc,
         rgiNotifier
     ) {
-        var
-            new_answer_data = $scope.$parent.$parent.answer,
-            ref_index = $scope.$parent.$parent.ref_index;
-
-        $scope.ref = new_answer_data.references[ref_index];
-        var dateField = $scope.ref.citation_type === 'interview' ? 'contact_date' : 'date_accessed';
+        var answerData = $scope.$parent.$parent.answer;
+        $scope.ref = answerData.references[$scope.$parent.$parent.ref_index];
 
         if($scope.ref.citation_type === 'interview') {
-            var intervieweeId = $scope.ref.interviewee_ID._id ? $scope.ref.interviewee_ID._id : $scope.ref.interviewee_ID;
+            var interviewee = $scope.ref.interviewee_ID._id ? $scope.ref.interviewee_ID._id : $scope.ref.interviewee_ID;
 
-            rgiIntervieweeSrvc.get({_id: intervieweeId}, function(interviewee) {
-                $scope.interviewee = interviewee;
+            rgiIntervieweeSrvc.get({_id: interviewee}, function(intervieweeData) {
+                $scope.interviewee = intervieweeData;
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
         }
 
         $scope.editReference = function(referenceIndex) {
-            if($scope.ref[dateField]) {
-                new_answer_data.references[referenceIndex] = $scope.ref;
-                rgiAnswerMethodSrvc.updateAnswer(new_answer_data).then(function () {
+            if($scope.ref[$scope.ref.citation_type === 'interview' ? 'contact_date' : 'date_accessed']) {
+                answerData.references[referenceIndex] = $scope.ref;
+                rgiAnswerMethodSrvc.updateAnswer(answerData).then(function () {
                     $rootScope.$broadcast('RESET_REFERENCE_ACTION');
                     rgiNotifier.notify('The reference has been edited');
                 }, function (reason) {
