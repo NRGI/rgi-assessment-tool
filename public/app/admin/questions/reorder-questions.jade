@@ -6,6 +6,8 @@
                 .panel.panel-default
                     .panel-heading.bottom-padding-med
                         button.btn.btn-success(ng-click="reorder()", ng-disabled="!reordered") Reorder
+                        | &nbsp;
+                        a.btn.btn-default(href="/admin/question-admin") Return to the Questions List
                 .panel.panel-primary(ng-repeat="precept in precepts track by precept.id" ng-class="{'empty-block': precept.data.length === 0}")
                     .panel-heading.bottom-padding-med
                         .panel-title
