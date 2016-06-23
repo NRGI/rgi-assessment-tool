@@ -24,7 +24,7 @@ angular.module('app')
             $scope.questions = questions;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
-        $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(function() {
+        var updateOrder = function() {
             var questionOrder = 0;
 
             $scope.precepts.forEach(function(precept) {
@@ -32,5 +32,9 @@ angular.module('app')
                     question.question_order = questionOrder++;
                 });
             });
+        };
+
+        $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(true, {
+            orderChanged: updateOrder
         });
     });

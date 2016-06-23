@@ -44,7 +44,7 @@ describe('rgiResourcesAdminCtrl', function () {
             stubs.httpResponseProcessorGetDefaultHandler = sinon.stub(rgiHttpResponseProcessorSrvc, 'getDefaultHandler',
                 spies.httpResponseProcessorGetDefaultHandler);
 
-            stubs.sortableGuideGetOptions = sinon.stub(rgiSortableGuideSrvc, 'getOptions', function(callback) {
+            stubs.sortableGuideGetOptions = sinon.stub(rgiSortableGuideSrvc, 'getDefaultOptions', function(callback) {
                 return callback;
             });
 

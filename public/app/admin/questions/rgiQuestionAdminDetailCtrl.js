@@ -97,7 +97,7 @@ angular.module('app')
             rgiDialogFactory.questionDelete($scope);
         };
 
-        $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(function() {
+        $scope.sortableOptions = rgiSortableGuideSrvc.getDefaultOptions(function() {
             $scope.question.question_criteria.forEach(function(criterion, index) {
                 criterion.order = index + 1;
             });
