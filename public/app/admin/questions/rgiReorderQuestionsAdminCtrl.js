@@ -9,6 +9,7 @@ angular.module('app')
         rgiSortableGuideSrvc
     ) {
         $scope.precepts = rgiPreceptGuideSrvc.getQuestionTemplates();
+        $scope.reordered = false;
 
         rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
             questions.forEach(function (question) {
@@ -22,6 +23,10 @@ angular.module('app')
             });
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
+        var isModified = function(question, field, newValueField) {
+            return [undefined, question[field]].indexOf(question[newValueField]) === -1;
+        };
+
         var updateOrder = function(event) {
             event.source.itemScope.question.newPrecept = parseInt(event.dest.sortableScope.precept.id.replace('precept_', ''));
             var questionOrder = 1;
@@ -29,6 +34,10 @@ angular.module('app')
             $scope.precepts.forEach(function(precept) {
                 precept.data.forEach(function(question) {
                     question.newOrder = questionOrder++;
+
+                    if(isModified(question, 'question_order', 'newOrder') || isModified(question, 'precept', 'newPrecept')) {
+                        $scope.reordered = true;
+                    }
                 });
             });
         };

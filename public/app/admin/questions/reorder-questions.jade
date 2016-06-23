@@ -5,7 +5,7 @@
             #questions_div.bottom-padding-med(data-ng-model="precepts")
                 .panel.panel-default
                     .panel-heading.bottom-padding-med
-                        button.btn.btn-success(ng-click="reorder()") Reorder
+                        button.btn.btn-success(ng-click="reorder()", ng-disabled="!reordered") Reorder
                 .panel.panel-primary(ng-repeat="precept in precepts track by precept.id", ng-if="precept.data.length > 0")
                     .panel-heading.bottom-padding-med
                         .panel-title
