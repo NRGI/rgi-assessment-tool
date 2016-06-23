@@ -5,7 +5,7 @@
             #questions_div.bottom-padding-med(data-ng-model="precepts")
                 .panel.panel-default
                     .panel-heading.bottom-padding-med
-                        button.btn.btn-success(ng-click="") Reorder / Regroup
+                        button.btn.btn-success(ng-click="reorder()") Reorder
                 .panel.panel-primary(ng-repeat="precept in precepts track by precept.id", ng-if="precept.data.length > 0")
                     .panel-heading.bottom-padding-med
                         .panel-title
@@ -20,7 +20,7 @@
                                     .col-md-5 Question Text
                                     .col-md-3 Component
                                     .col-md-1 Type
-                                div(data-as-sortable="sortableOptions", data-ng-model="questions")
+                                div(data-as-sortable="sortableOptions", data-ng-model="precept.data")
                                     .sortable-item(ng-repeat="question in precept.data track by question.question_order", data-as-sortable-item)
                                         .row(data-as-sortable-item-handle)
                                             .col-md-1 {{question.question_order}}

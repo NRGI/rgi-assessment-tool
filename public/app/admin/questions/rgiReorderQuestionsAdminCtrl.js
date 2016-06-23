@@ -20,21 +20,25 @@ angular.module('app')
                     return questionA.question_order - questionB.question_order;
                 });
             });
-
-            $scope.questions = questions;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load question data failure'));
 
-        var updateOrder = function() {
-            var questionOrder = 0;
+        var updateOrder = function(event) {
+            event.source.itemScope.question.newPrecept = parseInt(event.dest.sortableScope.precept.id.replace('precept_', ''));
+            var questionOrder = 1;
 
             $scope.precepts.forEach(function(precept) {
                 precept.data.forEach(function(question) {
-                    question.question_order = questionOrder++;
+                    question.newOrder = questionOrder++;
                 });
             });
         };
 
         $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(true, {
+            itemMoved: updateOrder,
             orderChanged: updateOrder
         });
+
+        $scope.reorder = function() {
+
+        };
     });
