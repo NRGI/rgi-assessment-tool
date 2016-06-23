@@ -34,7 +34,7 @@ angular.module('app')
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load ' +
             ($scope.resource_type === 'faq' ? 'FAQ' : $scope.resource_type) + ' data failure'));
 
-        $scope.sortableOptions = rgiSortableGuideSrvc.getOptions(function() {
+        $scope.sortableOptions = rgiSortableGuideSrvc.getDefaultOptions(function() {
             $scope.resources.forEach(function(resource, index) {
                 resource.newOrder = index + 1;
             });

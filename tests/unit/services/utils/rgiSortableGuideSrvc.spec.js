@@ -9,12 +9,12 @@ describe('rgiSortableGuideSrvc', function () {
         rgiSortableGuideSrvc = _rgiSortableGuideSrvc_;
     }));
 
-    describe('#getOptions', function() {
+    describe('#getDefaultOptions', function() {
         var sortableOptions, orderChangedCallback;
 
         beforeEach(function() {
             orderChangedCallback = sinon.spy();
-            sortableOptions = rgiSortableGuideSrvc.getOptions(orderChangedCallback);
+            sortableOptions = rgiSortableGuideSrvc.getDefaultOptions(orderChangedCallback);
         });
 
         it('does not allow duplicates', function() {
