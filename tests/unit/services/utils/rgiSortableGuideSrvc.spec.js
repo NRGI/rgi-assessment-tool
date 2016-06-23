@@ -40,4 +40,21 @@ describe('rgiSortableGuideSrvc', function () {
                 .should.be.equal(false);
         });
     });
+
+    describe('#getOptions', function() {
+        var sortableOptions, ADDITIONAL_OPTION = 'ADDITIONAL OPTION';
+
+        beforeEach(function() {
+            sortableOptions = rgiSortableGuideSrvc.getOptions(true, {additionalOption: ADDITIONAL_OPTION});
+        });
+
+        it('accepts regrouping if it is allowed', function() {
+            sortableOptions.accept({itemScope: {sortableScope: {$id: 'first one'}}}, {$id: 'another one'})
+                .should.be.equal(true);
+        });
+
+        it('sets an additional option', function() {
+            sortableOptions.additionalOption.should.be.equal(ADDITIONAL_OPTION);
+        });
+    });
 });
