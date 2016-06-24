@@ -85,29 +85,7 @@ exports.updateQuestion = function (req, res) {
                     res.status(400);
                     return res.send({ reason: err.toString() });
                 }
-                //TODO deal with change in question order
-                if (question.question_order !== question_update.question_order) {
-                    var new_loc = question_update.question_order,
-                        old_loc = question.question_order,
-                        query = Question.find({});
 
-                    query.sort({question_order: 1}).exec(function (err, q) {
-                        var q_array = q.filter(function (el) {
-                                return el.question_order !== old_loc;
-                            }),
-                            q_el = q[old_loc - 1];
-
-                        q_array.splice(new_loc - 1, 0, q_el);
-
-                        q_array.forEach(function (element, index) {
-                            Question.findOne({_id: element._id}).exec(function (err, q_up) {
-                                q_up.question_order = index + 1;
-                                q_up.save();
-                            });
-                        });
-                    });
-                    question.question_order = question_update.question_order;
-                }
                 question.question_v = question.question_v + 1;
                 question.question_use = question_update.question_use;
                 question.question_order = question_update.question_order;

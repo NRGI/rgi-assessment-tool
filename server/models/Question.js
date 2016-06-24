@@ -45,8 +45,8 @@ questionSchema = new Schema({
         default: true},
     question_order: {
         type: Number,
-        required: '{PATH} is required',
-        unique: true},
+        required: '{PATH} is required'
+    },
     question_v: {
         type: Number,
         default: 0},
