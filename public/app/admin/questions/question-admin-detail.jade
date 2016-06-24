@@ -35,17 +35,14 @@
                 h4 Edit:
                 .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
                     fieldset
-                        .row: div(id="question_details_div").row-fluid.top-padding-med
-                            label.col-md-2.control-label(form="dependant")
-                                | Dependant? &nbsp;
-                                input(type="checkbox" ng-model="question.dependant")
-                            label.col-md-1.control-label(form="dejure")
+                        .row: #question-type-block.row-fluid.top-padding-med
+                            label.col-md-3.control-label(form="dejure")
                                 | Dejure? &nbsp;
-                                input(type="checkbox" ng-model="question.dejure")
+                                input(type="checkbox", ng-model="question.dejure")
                             //label.col-md-2.control-label(form="use")
                             //    | Use in assessments? &nbsp;
                             //    input(type="checkbox" ng-model="question.question_use")
-                            label.col-md-1.control-label(form="mode") Component
+                            label.col-md-2.control-label(form="mode") Component
                             .col-md-3
                                 select.form-group.form-control(
                                 ng-model="question.component"
@@ -55,39 +52,36 @@
                                 select.form-group.form-control(
                                 ng-model="question.question_type"
                                 ng-options="item.value as item.text for item in type_options")
-                        .row: div(id="question_details_div").row-fluid.top-padding-med
-                            label.col-md-1.control-label(form="order") Question Order
-                            .col-md-1
-                                input.form-group.form-control(
-                                name="order"
-                                type="number"
-                                ng-model="question.question_order")
-                            label.col-md-1.control-label(form="label") Question Label
+                        .row: #question-details-block.row-fluid.top-padding-med
+                            label.col-md-2.control-label(form="label") Question Label
                             .col-md-1
                                 input.form-group.form-control(
                                 name="label"
                                 ng-model="question.question_label")
-                            label.col-md-1.control-label(form="precept") NRC Precept
+                            label.col-md-2.control-label(form="precept") NRC Precept
                             .col-md-4
                                 select.form-group.form-control(
                                 ng-model="question.precept"
                                 ng-options="item.value as item.text for item in precept_options")
-                        .row: div(id="question_text_div").row-fluid.top-padding-med
+                        .row: #question-text-block.row-fluid.top-padding-med
                             label(form="text") Question Text
                             .form-group.left-padding-lg.right-padding-lg(required)
                                 textarea.form-control(
                                 name="question_text"
                                 type="textbox"
                                 ng-model="question.question_text")
-                        .row: div(id="link_question").row-fluid.top-padding-med
+                        .row: #question-dependency-block.row-fluid.top-padding-med
                             .pull-left
+                                label.col-md-2.control-label(form="dependant")
+                                    | Dependant? &nbsp;
+                                    input(type="checkbox" ng-model="question.dependant")
                                 label.col-md-1.control-label Link to
-                                .col-md-5
+                                .col-md-4
                                     select.form-group.form-control(
                                     ng-model="linkedQuestion"
                                     ng-options="item as item.question_text for item in questions | filter:{question_text: '!' + question.question_text}"
                                     ng-change="resetLinkedOption()")
-                                .col-md-5
+                                .col-md-4
                                     select.form-group.form-control(
                                     ng-if="linkedQuestion.question_criteria.length > 0"
                                     ng-model="question.linkedOption"
