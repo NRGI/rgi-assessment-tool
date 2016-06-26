@@ -11,7 +11,6 @@ var auth                    = require('./auth'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
     response                = require('../controllers/general-response'),
-    multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
     users                   = require('../controllers/users');
 
@@ -72,7 +71,6 @@ module.exports = function (app) {
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
-    app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
     app.get('/api/snapshot-upload', auth.requiresApiLogin,  documents.uploadUrlSnapshot);
     app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
