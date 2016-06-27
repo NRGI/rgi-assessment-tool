@@ -1,0 +1,12 @@
+{
+  "node": true,
+  "strict": true,
+  "curly": true,
+  "newcap": false,
+  "globals": {
+    "afterEach": false,
+    "beforeEach": false,
+    "describe": false,
+    "it": false
+  }
+}
