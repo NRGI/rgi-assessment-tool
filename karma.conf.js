@@ -26,9 +26,9 @@ module.exports = function (config) {
             'public/vendor/jquery/dist/jquery.js',
             'public/vendor/lodash/lodash.js',
             'public/vendor/toastr/toastr.js',
-            'tests/unit/app.js',
+            'tests/unit/client/app.js',
             'public/app/**/*.js',
-            'tests/unit/**/*.spec.js'
+            'tests/unit/client/**/*.spec.js'
         ],
 
 
