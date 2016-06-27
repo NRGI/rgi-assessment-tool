@@ -79,7 +79,7 @@ module.exports = function (grunt) {
         },
         shell: {
             clearDb: {
-                command: 'node ./tests/clear-db.js'
+                command: 'node ./tests/e2e/clear-db.js'
             },
             loadFixtures: {
                 command: 'node ./tests/e2e/load-fixtures.js'
@@ -136,6 +136,6 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
     grunt.registerTask('server', ['express', 'watch']);
-    grunt.registerTask('test', ['protractor_webdriver', 'protractor']);
+    grunt.registerTask('test:e2e', ['protractor_webdriver', 'protractor']);
     grunt.registerTask('test-server', ['shell']);
 };

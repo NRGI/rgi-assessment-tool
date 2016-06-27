@@ -46,7 +46,7 @@ $ grunt test-server
 $ NODE_ENV=test node server.js
 ```
 ```
-$ grunt test
+$ grunt test:e2e
 ```
 
 ##TODO
