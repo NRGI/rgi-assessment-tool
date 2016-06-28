@@ -31,7 +31,7 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 ###Unit Tests
 ####Client
 ```
-$ karma start
+$ grunt test:client
 ```
 ####Server
 ```
