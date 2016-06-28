@@ -58,6 +58,14 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['tests/unit/server/**/*.spec.js']
+            }
+        },
         protractor_webdriver: {
             start: {
                 options: {
@@ -128,6 +136,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-mocha-test');
 
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
@@ -137,5 +146,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['uglify']);
     grunt.registerTask('server', ['express', 'watch']);
     grunt.registerTask('test:e2e', ['protractor_webdriver', 'protractor']);
+    grunt.registerTask('test:server', ['mochaTest']);
     grunt.registerTask('test-server', ['shell']);
 };
