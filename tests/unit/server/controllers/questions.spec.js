@@ -166,6 +166,249 @@ describe('`questions` module', function() {
         });
     });
 
+    describe('#updateQuestion', function() {
+        var spies = {}, USER_ID = 'user id',
+            initialize = function(hasSupervisorRole, questionSet) {
+                spies.userHasRole = sinon.spy(function() {return hasSupervisorRole;});
+
+                questionsModule.updateQuestion({
+                    body: questionSet,
+                    user: {hasRole: spies.userHasRole, _id: USER_ID}
+                }, {
+                    end: spies.endResponse,
+                    send: spies.sendResponse,
+                    status: spies.statusResponse
+                });
+            },
+            setFindQuestionStub = function(executeQuestionQueryCallback) {
+                spies.executeQuestionQuery = sinon.spy(executeQuestionQueryCallback);
+
+                spies.findOneQuestion = sinon.spy(function() {
+                    return {exec: spies.executeQuestionQuery};
+                });
+
+                utils.setModuleLocalVariable(questionsModule, 'Question', {
+                    findOne: spies.findOneQuestion
+                });
+            };
+
+        beforeEach(function() {
+            ['sendResponse', 'endResponse', 'statusResponse'].forEach(function(spyName) {
+                spies[spyName] = sinon.spy();
+            });
+        });
+
+        describe('INCOMPLETE DATA CASE', function() {
+            beforeEach(function() {
+                initialize(false);
+            });
+
+            it('ends the connection', function() {
+                expect(spies.endResponse.called).to.equal(true);
+            });
+
+            it('responds 404 status', function() {
+                expect(spies.statusResponse.withArgs(404).called).to.equal(true);
+            });
+        });
+
+        describe('SINGLE QUESTION CASE', function() {
+            describe('FIND QUESTION FAILURE CASE', function() {
+                var ERROR = 'ERROR';
+
+                beforeEach(function() {
+                    setFindQuestionStub(function(callback) {
+                        callback(ERROR);
+                    });
+
+                    initialize(true, {});
+                });
+
+                it('responds with status 400', function() {
+                    expect(spies.statusResponse.withArgs(400).called).to.equal(true);
+                });
+
+                it('responds with the error description', function() {
+                    expect(spies.sendResponse.withArgs({reason: ERROR}).called).to.equal(true);
+                });
+            });
+
+            describe('FIND QUESTION SUCCESS CASE', function() {
+                var originalQuestion, questionData, ORIGINAL_QUESTION_VERSION = 1,
+                    setSaveQuestionStub = function(saveQuestionCallback) {
+                        spies.saveQuestion = sinon.spy(saveQuestionCallback);
+                        originalQuestion.save = spies.saveQuestion;
+                    };
+
+                beforeEach(function() {
+                    originalQuestion = {question_v: ORIGINAL_QUESTION_VERSION};
+                    questionData = {
+                        component: 'question_component',
+                        question_use: 'question_use',
+                        question_order: 'question_order',
+                        question_type: 'question_type',
+                        question_label: 'question_use',
+                        precept: 'precept',
+                        indicator: 'indicator',
+                        dejure: 'dejure',
+                        question_text: 'question_text',
+                        dependant: 'dependant',
+                        question_criteria: 'question_criteria',
+                        question_guidance_text: 'question_guidance_text',
+                        question_dependancies: 'question_dependancies',
+                        comments: 'comments',
+                        linkedOption: 'linkedOption'
+                    };
+
+                    setFindQuestionStub(function(callback) {
+                        callback(null, originalQuestion);
+                    });
+                });
+
+                describe('SAVE QUESTION SUCCESS CASE', function() {
+                    beforeEach(function() {
+                        setSaveQuestionStub(function(callback) {
+                            callback();
+                        });
+
+                        initialize(true, questionData);
+                    });
+
+                    it('updates the question data', function() {
+                        [
+                            'component',
+                            'question_use',
+                            'question_order',
+                            'question_type',
+                            'question_label',
+                            'precept',
+                            'indicator',
+                            'dejure',
+                            'dependant',
+                            'question_criteria',
+                            'question_guidance_text',
+                            'question_dependancies',
+                            'comments',
+                            'linkedOption'
+                        ].forEach(function(field) {
+                            expect(originalQuestion[field]).to.equal(questionData[field]);
+                        });
+
+                        expect(originalQuestion.question_v).to.equal(ORIGINAL_QUESTION_VERSION + 1);
+                        expect(originalQuestion.component_text).to.equal('Question component');
+                        expect(originalQuestion.last_modified.modified_by).to.equal(USER_ID);
+
+                        var now = new Date().getTime();
+                        var questionTimeStamp = new Date(originalQuestion.last_modified.modified_dateti).getTime();
+                        expect(now - questionTimeStamp < 100).to.equal(true);
+                    });
+
+                    it('does not close the connection', function() {
+                        expect(spies.endResponse.notCalled).to.equal(true);
+                    });
+                });
+
+                it('closes the connection in case of save question failure', function() {
+                    setFindQuestionStub(function(callback) {
+                        callback(null, originalQuestion);
+                    });
+
+                    setSaveQuestionStub(function(callback) {
+                        callback(true);
+                    });
+
+                    initialize(true, questionData);
+
+                    expect(spies.endResponse.called).to.equal(true);
+                });
+
+                afterEach(function() {
+                    expect(spies.saveQuestion.called).to.equal(true);
+                });
+            });
+        });
+
+        describe('MULTIPLE QUESTIONS CASE', function() {
+            var QUESTION_ID = 'QUESTION ID';
+
+            describe('FIND QUESTION FAILURE CASE', function() {
+                var ERROR = 'ERROR';
+
+                beforeEach(function() {
+                    setFindQuestionStub(function(callback) {
+                        callback(ERROR);
+                    });
+
+                    initialize(true, {0: {_id: QUESTION_ID}, length: 1});
+                });
+
+                it('responds with status 400', function() {
+                    expect(spies.statusResponse.withArgs(400).called).to.equal(true);
+                });
+
+                it('responds with the error description', function() {
+                    expect(spies.sendResponse.withArgs({reason: ERROR}).called).to.equal(true);
+                });
+            });
+
+            describe('FIND QUESTION SUCCESS CASE', function() {
+                var QUESTION, ORIGINAL_QUESTION_VERSION = 1, ASSESSMENTS = 'ASSESSMENTS',
+                    setQuestion = function(saveQuestionCallback) {
+                        spies.saveQuestion = sinon.spy(saveQuestionCallback);
+                        QUESTION = {question_v: ORIGINAL_QUESTION_VERSION, save: spies.saveQuestion};
+                    },
+                    getInitialization = function(setQuestionCallback) {
+                        return function() {
+                            setQuestion(setQuestionCallback);
+
+                            setFindQuestionStub(function(callback) {
+                                callback(null, QUESTION);
+                            });
+
+                            initialize(true, {0: {_id: QUESTION_ID, assessments: ASSESSMENTS}, length: 1});
+                        };
+                    };
+
+                describe('SAVE QUESTION SUCCESS CASE', function() {
+                    beforeEach(getInitialization(function(callback) {
+                        callback();
+                    }));
+
+                    it('increments the question version', function() {
+                        expect(QUESTION.question_v).to.equal(ORIGINAL_QUESTION_VERSION + 1);
+                    });
+
+                    it('assigns assessments to the question', function() {
+                        expect(QUESTION.assessments).to.equal(ASSESSMENTS);
+                    });
+
+                    it('does not close the connection', function() {
+                        expect(spies.endResponse.notCalled).to.equal(true);
+                    });
+                });
+
+                it('closes the connection in case of save question failure', function() {
+                    getInitialization(function(callback) {
+                        callback(true);
+                    })();
+                    expect(spies.endResponse.called).to.equal(true);
+                });
+
+                afterEach(function() {
+                    expect(spies.saveQuestion.called).to.equal(true);
+                });
+            });
+
+            afterEach(function() {
+                expect(spies.findOneQuestion.withArgs({_id: QUESTION_ID}).called).to.equal(true);
+            });
+        });
+
+        afterEach(function() {
+            expect(spies.userHasRole.withArgs('supervisor').called).to.equal(true);
+        });
+    });
+
     describe('#deleteQuestion', function() {
         var sendResponseSpy, removeQuestionSpy, ERROR = 'ERROR', ID = 'ID',
             setStub = function(error) {
