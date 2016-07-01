@@ -300,7 +300,7 @@ describe('`questions` module', function() {
                         expect(originalQuestion.last_modified.modified_by).to.equal(USER_ID);
 
                         var now = new Date().getTime();
-                        var questionTimeStamp = new Date(originalQuestion.last_modified.modified_dateti).getTime();
+                        var questionTimeStamp = new Date(originalQuestion.last_modified.modified_date).getTime();
                         expect(now - questionTimeStamp < 100).to.equal(true);
                     });
 
