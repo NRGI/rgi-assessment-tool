@@ -1,26 +1,21 @@
 'use strict';
-/* global require */
 
 var Question = require('mongoose').model('Question');
 
 exports.getQuestions = function (req, res) {
-    var query = Question.find(req.query);
-    query.exec(function (err, collection) {
+    Question.find(req.query).exec(function (err, collection) {
         res.send(collection);
     });
 };
 
 exports.getQuestionsByID = function (req, res) {
-    Question.findOne({_id: req.params.id})
-        .exec(function (err, question) {
-            res.send(question);
-        });
+    Question.findOne({_id: req.params.id}).exec(function (err, question) {
+        res.send(question);
+    });
 };
 
-
 exports.getQuestionTextByID = function (req, res) {
-    var query = Question.findOne({_id: req.params.id}).select({ "question_text": 1});
-    query.exec(function (err, question) {
+    Question.findOne({_id: req.params.id}).select({ "question_text": 1}).exec(function (err, question) {
         res.send(question);
     });
 };
@@ -32,7 +27,7 @@ exports.createQuestions = function (req, res) {
         Question.create(new_question, function (err) {
             if (err) {
                 res.status(400);
-                return res.send({reason: err.toString()});
+                return res.send({ reason: err.toString() });
             }
         });
     }
@@ -42,6 +37,7 @@ exports.createQuestions = function (req, res) {
     }
     res.send();
 };
+
 exports.updateQuestion = function (req, res) {
     var new_question_data, i,
         question_update = req.body,
@@ -119,13 +115,7 @@ exports.updateQuestion = function (req, res) {
 };
 
 exports.deleteQuestion = function (req, res) {
-
     Question.remove({_id: req.params.id}, function (err) {
-        if (!err) {
-            res.send();
-        } else {
-            return res.send({ reason: err.toString() });
-        }
+        res.send(err ? {reason: err.toString()} : undefined);
     });
-    res.send();
 };
