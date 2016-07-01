@@ -6,6 +6,7 @@ angular.module('app')
         $scope,
         $rootScope,
         rgiDialogFactory,
+        rgiAssessmentSrvc,
         rgiDocumentSrvc,
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
@@ -17,6 +18,28 @@ angular.module('app')
 
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.busy = false;
+
+        $scope.assessment_filter_options = [
+            {value: 'all', text: 'Show all documents'}
+            // {value: 'type', text: 'Sort by document type'},
+            // {value: 'assessments', text: 'Sort by attached assessments'}
+        ];
+
+        $scope.assessment_filter = $scope.assessment_filter_options[0].value;
+
+        rgiAssessmentSrvc.query({}, function (assessments) {
+            if(assessments.reason) {
+                rgiNotifier.error('No assessments');
+            } else {
+                assessments.forEach(function(assessment) {
+                    console.log(assessment);
+                    $scope.assessment_filter_options.push({
+                        value: assessment.assessment_ID,
+                        text: assessment.country + ' ' + assessment.year + ' ' + assessment.version
+                    });
+                });
+            }
+        });
 
         rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
             if(response.reason) {
