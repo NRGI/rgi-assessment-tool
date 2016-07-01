@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     sinon = require('sinon');
 
-var modelStub = sinon.stub(mongoose, 'model', function() {});
+var modelStub;
 
 module.exports = {
     getControllerPath: function(controller) {
@@ -14,5 +14,8 @@ module.exports = {
     },
     setModuleLocalVariable: function(moduleObject, variableName, variableValue) {
         moduleObject.__set__(variableName, variableValue);
+    },
+    stubModel: function() {
+        modelStub = sinon.stub(mongoose, 'model', function() {});
     }
 };

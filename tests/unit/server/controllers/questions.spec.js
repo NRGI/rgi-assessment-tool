@@ -4,8 +4,10 @@ var expect = require('chai').expect,
     rewire = require('rewire'),
     sinon = require('sinon');
 
-var utils = require('../utils'),
-    questionsModule = rewire(utils.getControllerPath('questions'));
+var utils = require('../utils');
+
+utils.stubModel();
+    var questionsModule = rewire(utils.getControllerPath('questions'));
 utils.restoreModel();
 
 describe('`questions` module', function() {
