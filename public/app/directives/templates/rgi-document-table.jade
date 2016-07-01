@@ -1,4 +1,10 @@
 div.table-responsive
+    .pull-left
+        form.form-inline
+            .form-group
+                select.form-control(ng-model="assessment_filter"
+                ng-disabled="documents.length < 1"
+                ng-options="item.value as item.text for item in assessment_filter_options")
     .pull-right
         form.form-inline
             .form-group
@@ -11,6 +17,7 @@ div.table-responsive
                 ng-model="sort_order"
                 ng-disabled="documents.length < 1"
                 ng-options="item.value as item.text for item in sort_options")
+
     table.table.table-hover.table-striped.table-condensed.left-padding-lg.right-padding-lg(ng-if="documents.length > 0")
         thead
             tr
