@@ -123,7 +123,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
 
         //INTERVIEWS
         div(ng-if="ref_selection==='interview'")
-            .modal-form(name="new_human_form")
+            form.modal-form(name="new_human_form")
                 .row
                     .col-lg-4
                         button.btn.btn-block.btn-primary(
@@ -190,54 +190,59 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         // NEW INTERVIEWEE
                         div(ng-if="intervieweeType === 'new'")
                             h4 New interviewee
-                            .row.form-group
+                            .row
                                 // FIRST NAME
-                                .pull-left.col-lg-6
+                                .form-group.pull-left.col-lg-6
                                     input.form-control(
                                     name="firstName"
                                     type="text"
                                     placeholder="First name (required)..."
+                                    ng-pattern="humanNamePattern"
                                     ng-model="new_interviewee.firstName"
+                                    required
                                     autocomplete="off")
                                 // LAST NAME
-                                .pull-left.col-lg-6
+                                .form-group.pull-right.col-lg-6
                                     input.form-control(
                                     name="lastName"
                                     type="text"
                                     placeholder="Last name (required)..."
+                                    ng-pattern="humanNamePattern"
                                     ng-model="new_interviewee.lastName"
+                                    required
                                     autocomplete="off")
-                            .row.form-group.right-padding-med
-                                .pull-left.col-lg-6
-                                    select.form-control(ng-model="new_interviewee.role")
-                                        option(value="" selected disabled) Select type of organization (required)...
-                                        option(ng-repeat="role in role_opts" value="{{role.value}}") {{role.text}}
+                            .row
+                                .form-group.pull-left.col-lg-6
+                                    select.form-control(ng-model="new_interviewee.role", required)
+                                        option(value="", selected, disabled) Select type of organization (required)...
+                                        option(ng-repeat="role in role_opts", value="{{role.value}}") {{role.text}}
                                 //.pull-left.col-lg-6
                                 //    select.form-control(ng-model="new_interviewee.salutation")
                                 //        option(value="" selected disabled) Select salutation (required)...
                                 //        option(ng-repeat="sal in salutation_opts" value="{{sal}}") {{sal | ucfirst}}
 
-                            .row.form-group
+                            .row
                                 // EMAIL
-                                .pull-left.col-lg-6
+                                .form-group.pull-left.col-lg-6
                                     input.form-control(
                                     name="email"
-                                    type="text"
+                                    type="email"
                                     placeholder="Interviewee email..."
                                     ng-model="new_interviewee.email"
+                                    required
                                     autocomplete="off")
                                 // PHONE
-                                .pull-left.col-lg-6
+                                .form-group.pull-right.col-lg-6
                                     input.form-control(
                                     name="phone"
-                                    type="text"
+                                    type="phone"
                                     placeholder="Interviewee phone number..."
                                     ng-model="new_interviewee.phone"
                                     autocomplete="off")
 
-                            .row.form-group
+                            .row
                                 // TITLE
-                                .pull-left.col-lg-6
+                                .form-group.pull-left.col-lg-6
                                     input.form-control(
                                     name="title"
                                     type="text"
@@ -245,7 +250,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     ng-model="new_interviewee.title"
                                     autocomplete="off")
                                 // ORGANIZATION
-                                .pull-left.col-lg-6
+                                .form-group.pull-right.col-lg-6
                                     input.form-control(
                                     name="organization"
                                     type="text"
@@ -255,6 +260,9 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
 
                             .modal-footer(ng-if="intervieweeType")
                                 .col-lg-6
-                                    button.btn.btn-block.btn-success(ng-click="interviewRefSubmit(new_interviewee)") Create reference
+                                    button.btn.btn-block.btn-success(
+                                        ng-click="interviewRefSubmit(new_interviewee)"
+                                        ng-disabled="new_human_form.$invalid"
+                                    ) Create reference
                                 .col-lg-6
                                     button.btn.btn-block.btn-danger(ng-click="closeDialog()") Cancel

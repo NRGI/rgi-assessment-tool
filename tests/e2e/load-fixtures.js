@@ -7,7 +7,7 @@ var async = require('async'),
 
 var testEnvironment = 'test',
     config = require('../../server/config/config')[testEnvironment],
-    models = require('../models');
+    models = require('./models');
 
 Object.keys(models).forEach(function(modelName) {
     require('../../server/models/' + models[modelName]);

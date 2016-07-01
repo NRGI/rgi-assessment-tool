@@ -4,9 +4,15 @@
   "curly": true,
   "newcap": false,
   "globals": {
+    "_": false,
     "afterEach": false,
+    "angular": false,
     "beforeEach": false,
     "describe": false,
-    "it": false
+    "expect": false,
+    "inject": false,
+    "it": false,
+    "should": false,
+    "sinon": false
   }
 }

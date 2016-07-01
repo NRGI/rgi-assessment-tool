@@ -5,6 +5,8 @@ div(id="questions_div").bottom-padding-med
             //button.btn.btn-success(ng-click="newQuestionDialog()" disabled) New Question
             | &nbsp;
             button.btn.btn-default(ng-csv="getExportedQuestions()" filename="question_set.csv") Export as CSV
+            | &nbsp;
+            a.btn.btn-primary(href="/admin/reorder-questions") Reorder
             form.form-inline.pull-right
                 .form-group
                     input.form-control(ng-model="search_text", placeholder="Filter")
