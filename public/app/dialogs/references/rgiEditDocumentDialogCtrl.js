@@ -57,14 +57,20 @@ angular.module('app')
 
         $scope.saveDocument = function (docData) {
             // TODO check for minimum data
+            $scope.disable_button = true;
+
             if (!docData.title) {
                 rgiNotifier.error('You must provide a title!');
+                $scope.disable_button = false;
             } else if (!docData.type) {
                 rgiNotifier.error('You must provide a document type!');
+                $scope.disable_button = false;
             } else if (!docData.publisher && (!docData.authors[0].first_name || !docData.authors[0].last_name)) {
                 rgiNotifier.error('You must provide either a publisher or an author!');
+                $scope.disable_button = false;
             } else if (!docData.year) {
                 rgiNotifier.error('You must provide the year of publication!');
+                $scope.disable_button = false;
             } else {
                 rgiDocumentMethodSrvc.updateDocument(docData).then(function () {
                     rgiNotifier.notify('Document has been updated');
