@@ -40,7 +40,7 @@ describe('`questions` module', function() {
         });
     });
 
-    describe('#getQuestionsByID', function() {
+    describe('#getQuestionByID', function() {
         var QUESTION = 'QUESTION', ID = 'ID', sendResponseSpy, findOneQuestionSpy, execQuerySpy,
             setStub = function(execCallback) {
                 execQuerySpy = sinon.spy(execCallback);
@@ -59,7 +59,7 @@ describe('`questions` module', function() {
                 callback(null, QUESTION);
             });
 
-            questionsModule.getQuestionsByID({params: {id: ID}}, {send: sendResponseSpy});
+            questionsModule.getQuestionByID({params: {id: ID}}, {send: sendResponseSpy});
         });
 
         it('creates a request to get a question collection', function() {
