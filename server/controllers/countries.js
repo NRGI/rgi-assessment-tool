@@ -1,33 +1,23 @@
 'use strict';
-/* global require */
 
 var Country = require('mongoose').model('Country');
 
-exports.getCountries = function (req, res, next) {
-    var query = Country.find(req.query);
-
-    query.exec(function (err, countries) {
+var getCountrySet = function(methodName, criteria, errorMessage, res, next) {
+    Country[methodName](criteria).exec(function (err, countrySet) {
         if (err) {
             return next(err);
         }
-        if (!countries) {
-            return next(new Error('No countries found'));
+        if (!countrySet) {
+            return next(new Error(errorMessage));
         }
-        res.send(countries);
+        res.send(countrySet);
     });
 };
 
+exports.getCountries = function (req, res, next) {
+    getCountrySet('find', req.query, 'No countries found', res, next);
+};
 
 exports.getCountriesByID = function (req, res, next) {
-    var query = Country.findOne({country_ID: req.params.country_ID});
-
-    query.exec(function (err, country) {
-        if (err) {
-            return next(err);
-        }
-        if (!country) {
-            return next(new Error('No country found'));
-        }
-        res.send(country);
-    });
+    getCountrySet('findOne', {country_ID: req.params.country_ID}, 'No country found', res, next);
 };
