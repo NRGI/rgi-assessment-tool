@@ -1,6 +1,7 @@
 'use strict';
 
 var Question = require('mongoose').model('Question');
+var generalResponse = require('./general-response');
 
 exports.getQuestions = function (req, res) {
     Question.find(req.query).exec(function (err, collection) {
@@ -20,24 +21,19 @@ exports.getQuestionTextByID = function (req, res) {
     });
 };
 
-var
-    processError = function(err, res) {
-        res.status(400);
-        return res.send({ reason: err.toString() });
-    },
-    getCloseConnectionHandler = function(res) {
-        return function (err) {
-            if (err) {
-                return res.end();
-            }
-        };
+var getCloseConnectionHandler = function(res) {
+    return function (err) {
+        if (err) {
+            return res.end();
+        }
     };
+};
 
 exports.createQuestions = function (req, res) {
     req.body.forEach(function(new_question) {
         Question.create(new_question, function (err) {
             if (err) {
-                return processError(err, res);
+                return generalResponse.respondError(err, res);
             }
         });
     });
@@ -57,7 +53,7 @@ exports.updateQuestion = function (req, res) {
         var getCallback = function(assessments) {
             return function (err, question) {
                 if (err) {
-                    return processError(err, res);
+                    return generalResponse.respondError(err, res);
                 }
 
                 question.question_v = question.question_v + 1;
@@ -73,7 +69,7 @@ exports.updateQuestion = function (req, res) {
         Question.findOne({_id: updatedData._id})
             .exec(function (err, question) {
                 if (err) {
-                    return processError(err, res);
+                    return generalResponse.respondError(err, res);
                 }
 
                 [
