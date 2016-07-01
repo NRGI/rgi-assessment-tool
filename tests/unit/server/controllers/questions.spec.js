@@ -243,12 +243,12 @@ describe('`questions` module', function() {
                 beforeEach(function() {
                     originalQuestion = {question_v: ORIGINAL_QUESTION_VERSION};
                     questionData = {
-                        component: 'question_component',
                         question_use: 'question_use',
                         question_order: 'question_order',
                         question_type: 'question_type',
                         question_label: 'question_use',
                         precept: 'precept',
+                        component: 'question_component',
                         indicator: 'indicator',
                         dejure: 'dejure',
                         question_text: 'question_text',
@@ -276,14 +276,15 @@ describe('`questions` module', function() {
 
                     it('updates the question data', function() {
                         [
-                            'component',
                             'question_use',
                             'question_order',
                             'question_type',
                             'question_label',
                             'precept',
+                            'component',
                             'indicator',
                             'dejure',
+                            'question_text',
                             'dependant',
                             'question_criteria',
                             'question_guidance_text',
