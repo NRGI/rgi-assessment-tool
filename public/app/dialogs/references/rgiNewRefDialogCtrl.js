@@ -18,6 +18,7 @@ angular.module('app')
         rgiIntervieweeMethodSrvc,
         rgiNotifier,
         rgiUtilsSrvc,
+        HUMAN_NAME_PATTERN,
         FILE_SIZE_LIMIT
     ) {
         var getHttpFailureHandler = function(alternativeMessage) {
@@ -32,6 +33,7 @@ angular.module('app')
         $scope.interviewee_list = [];
         $scope.document_list = [];
         $scope.selected_doc = 'none';
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 
         $scope.role_opts = [
             {text: 'Government', value: 'government'},
