@@ -29,9 +29,13 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 ##Tests
 
 ###Unit Tests
-####Run
+####Client
 ```
-$ karma start
+$ grunt test:client
+```
+####Server
+```
+$ grunt test:server
 ```
 
 ###E2E Tests
@@ -46,7 +50,7 @@ $ grunt test-server
 $ NODE_ENV=test node server.js
 ```
 ```
-$ grunt test
+$ grunt test:e2e
 ```
 
 ##TODO

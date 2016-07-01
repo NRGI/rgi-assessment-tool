@@ -58,6 +58,19 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
+        },
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['tests/unit/server/**/*.spec.js']
+            }
+        },
         protractor_webdriver: {
             start: {
                 options: {
@@ -79,7 +92,7 @@ module.exports = function (grunt) {
         },
         shell: {
             clearDb: {
-                command: 'node ./tests/clear-db.js'
+                command: 'node ./tests/e2e/clear-db.js'
             },
             loadFixtures: {
                 command: 'node ./tests/e2e/load-fixtures.js'
@@ -128,6 +141,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
@@ -136,6 +151,8 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
     grunt.registerTask('server', ['express', 'watch']);
-    grunt.registerTask('test', ['protractor_webdriver', 'protractor']);
+    grunt.registerTask('test:e2e', ['protractor_webdriver', 'protractor']);
+    grunt.registerTask('test:client', ['karma']);
+    grunt.registerTask('test:server', ['mochaTest']);
     grunt.registerTask('test-server', ['shell']);
 };

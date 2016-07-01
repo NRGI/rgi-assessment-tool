@@ -101,6 +101,11 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller:  'rgiQuestionAdminDetailCtrl',
             resolve: routeRoleChecks.supervisor
         })
+        .when('/admin/reorder-questions', {
+            templateUrl: '/partials/admin/questions/reorder-questions',
+            controller:  'rgiReorderQuestionsAdminCtrl',
+            resolve: routeRoleChecks.supervisor
+        })
         // RAW ANSWER LIST
         .when('/admin/answer-raw-list', {
             templateUrl: '/partials/admin/answers/answer-raw-list',

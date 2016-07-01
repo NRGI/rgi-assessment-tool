@@ -11,7 +11,6 @@ var auth                    = require('./auth'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
     response                = require('../controllers/general-response'),
-    multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
     users                   = require('../controllers/users');
 
@@ -40,7 +39,7 @@ module.exports = function (app) {
     ///// QUESTIONS CRUD ////////
     /////////////////////////////
     app.get('/api/questions', auth.requiresApiLogin, questions.getQuestions);
-    app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionsByID);
+    app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionByID);
     app.post('/api/questions', auth.requiresRole('supervisor'), questions.createQuestions);
     app.put('/api/questions', auth.requiresApiLogin, questions.updateQuestion);
     app.delete('/api/questions/:id', auth.requiresRole('supervisor'), questions.deleteQuestion);
@@ -72,7 +71,6 @@ module.exports = function (app) {
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
-    app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
     app.get('/api/snapshot-upload', auth.requiresApiLogin,  documents.uploadUrlSnapshot);
     app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);

@@ -4,11 +4,11 @@ var mongoose = require('mongoose'),
     async = require('async');
 
 var testEnvironment = 'test',
-    config = require('../server/config/config')[testEnvironment],
+    config = require('../../server/config/config')[testEnvironment],
     models = require('./models');
 
 Object.keys(models).forEach(function(modelName) {
-    require('../server/models/' + models[modelName]);
+    require('../../server/models/' + models[modelName]);
 });
 
 mongoose.connect(config.db);

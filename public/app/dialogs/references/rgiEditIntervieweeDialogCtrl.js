@@ -5,10 +5,12 @@ angular.module('app')
         $scope,
         $route,
         rgiIntervieweeMethodSrvc,
-        rgiNotifier
+        rgiNotifier,
+        HUMAN_NAME_PATTERN
     ) {
         $scope.new_interviewee_data = $scope.$parent.interviewee;
         $scope.roles = ['government', 'cso', 'industry', 'expert', 'other'];
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
 
         $scope.saveInterviewee = function (interviewee) {
             // TODO error check

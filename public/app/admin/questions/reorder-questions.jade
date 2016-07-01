@@ -1,0 +1,32 @@
+.container-fluid.page-container
+    .well
+        .page-well
+            legend.h3.page-header Reorder Questions
+            #questions-list.bottom-padding-med(data-ng-model="precepts")
+                .panel.panel-default
+                    .panel-heading.bottom-padding-med
+                        button.btn.btn-success(ng-click="reorder()", ng-disabled="!reordered") Reorder
+                        | &nbsp;
+                        a.btn.btn-default(href="/admin/question-admin") Return to the Questions List
+                .panel.panel-primary(ng-repeat="precept in precepts track by precept.id" ng-class="{'empty-block': precept.data.length === 0}")
+                    .panel-heading.bottom-padding-med
+                        .panel-title
+                            div(role="button", data-toggle="collapse", href="#{{::precept.id}}") {{::precept.label}}- {{precept.data.length}} questions
+                    .panel-collapse.collapse(id="{{::precept.id}}", data-columnindex="{{$index}}")
+                        .panel-body
+                            .container-fluid
+                                .row.header-block
+                                    .col-md-1 Label
+                                    .col-md-1 Version
+                                    .col-md-6 Question Text
+                                    .col-md-3 Component
+                                    .col-md-1 Type
+                                div(data-as-sortable="sortableOptions", data-ng-model="precept.data")
+                                    .sortable-item(data-as-sortable-item, ng-if="precept.data.length === 0")
+                                    .sortable-item(ng-repeat="question in precept.data track by question.question_order", data-as-sortable-item)
+                                        .row(data-as-sortable-item-handle)
+                                            .col-md-1 {{::question.question_label}}
+                                            .col-md-1 {{::question.question_v}}
+                                            .col-md-6 {{::question.question_text}}
+                                            .col-md-3 {{::question.component_text}}
+                                            .col-md-1 {{::question.question_type}}
