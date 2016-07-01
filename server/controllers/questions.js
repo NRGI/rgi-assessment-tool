@@ -101,7 +101,7 @@ exports.updateQuestion = function (req, res) {
                     question.component_text = (component[0].toUpperCase() + component.substr(1)).replace('_', ' ');
                 }
 
-                question.last_modified = {modified_by: req.user._id, modified_dateti: new Date().toISOString()};
+                question.last_modified = {modified_by: req.user._id, modified_date: new Date().toISOString()};
                 question.question_v = question.question_v + 1;
                 question.save(getCloseConnectionHandler(res));
             });
