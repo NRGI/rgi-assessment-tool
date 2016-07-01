@@ -20,21 +20,20 @@ exports.getQuestionTextByID = function (req, res) {
     });
 };
 
-exports.createQuestions = function (req, res) {
-    var new_questions = req.body;
+var processError = function(err, res) {
+    res.status(400);
+    return res.send({ reason: err.toString() });
+};
 
-    function createNewQuestion (new_question) {
+exports.createQuestions = function (req, res) {
+    req.body.forEach(function(new_question) {
         Question.create(new_question, function (err) {
             if (err) {
-                res.status(400);
-                return res.send({ reason: err.toString() });
+                return processError(err, res);
             }
         });
-    }
+    });
 
-    for (var i = 0; i < new_questions.length; i += 1) {
-        createNewQuestion(new_questions[i]);
-    }
     res.send();
 };
 
@@ -50,8 +49,7 @@ exports.updateQuestion = function (req, res) {
         var getCallback = function(assessments) {
             return function (err, question) {
                 if (err) {
-                    res.status(400);
-                    return res.send({ reason: err.toString() });
+                    return processError(err, res);
                 }
 
                 question.question_v = question.question_v + 1;
@@ -78,8 +76,7 @@ exports.updateQuestion = function (req, res) {
                     });
                 };
                 if (err) {
-                    res.status(400);
-                    return res.send({ reason: err.toString() });
+                    return processError(err, res);
                 }
 
                 question.question_v = question.question_v + 1;
