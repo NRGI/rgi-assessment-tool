@@ -39,7 +39,7 @@ module.exports = function (app) {
     ///// QUESTIONS CRUD ////////
     /////////////////////////////
     app.get('/api/questions', auth.requiresApiLogin, questions.getQuestions);
-    app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionsByID);
+    app.get('/api/questions/:id', auth.requiresApiLogin, questions.getQuestionByID);
     app.post('/api/questions', auth.requiresRole('supervisor'), questions.createQuestions);
     app.put('/api/questions', auth.requiresApiLogin, questions.updateQuestion);
     app.delete('/api/questions/:id', auth.requiresRole('supervisor'), questions.deleteQuestion);

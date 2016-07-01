@@ -8,7 +8,7 @@ exports.getQuestions = function (req, res) {
     });
 };
 
-exports.getQuestionsByID = function (req, res) {
+exports.getQuestionByID = function (req, res) {
     Question.findOne({_id: req.params.id}).exec(function (err, question) {
         res.send(question);
     });
