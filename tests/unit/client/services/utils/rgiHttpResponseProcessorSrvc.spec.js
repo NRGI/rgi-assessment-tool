@@ -131,6 +131,11 @@ describe('rgiHttpResponseProcessorSrvc', function () {
                 rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: ''})
                     .should.be.equal('Unknown error occurred');
             });
+
+            it('returns the default message if no error message provided and the data are null', function() {
+                rgiHttpResponseProcessorSrvc.getMessage({status: 'not defined status', data: null})
+                    .should.be.equal('Unknown error occurred');
+            });
         });
     });
 
