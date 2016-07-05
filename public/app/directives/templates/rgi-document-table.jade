@@ -3,7 +3,7 @@ div.table-responsive
         form.form-inline
             .form-group
                 select.form-control(ng-model="assessment_filter"
-                ng-disabled="documents.length < 1"
+                ng-disabled="!assessment_filter && (documents.length < 1)"
                 ng-options="item.value as item.text for item in assessment_filter_options")
     .pull-right
         form.form-inline
@@ -46,7 +46,5 @@ div.table-responsive
                 td.col-md-1
                     a(ng-if="doc.answers.length <= 0", ng-click="deleteDocument(doc)").btn.btn-danger Delete
                     a(ng-if="doc.answers.length > 0", disabled).btn.btn-danger Delete
-
-    h1.text-danger(ng-if="documents.length < 1") No documents uploaded
 
 div(ng-if='documents.length>49' infinite-scroll='loadMoreDocs()' infinite-scroll-distance='0')
