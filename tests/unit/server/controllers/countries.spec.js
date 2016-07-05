@@ -57,26 +57,26 @@ describe('`countries` module', function() {
         });
     });
 
-    describe('#getCountriesByID', function() {
+    describe('#getCountryByID', function() {
         var COUNTRY_ID = 'country id';
 
         it('submits the error for further processing if an error occurs', function() {
             var ERROR = 'error';
             initialize('findOne', 'countryFindOne', ERROR);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
             expect(spies.next.withArgs(ERROR).called).to.equal(true);
         });
 
         it('submits a special error for further processing if no contries found', function() {
             initialize('findOne', 'countryFindOne', null, false);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
             expect(spies.next.withArgs(new Error('No country found')).called).to.equal(true);
         });
 
         it('submits a special error for further processing if no contries found', function() {
             var COUNTRIES = 'countries';
             initialize('findOne', 'countryFindOne', null, COUNTRIES);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, {send: spies.next});
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, {send: spies.next});
             expect(spies.next.withArgs(COUNTRIES).called).to.equal(true);
         });
 

@@ -18,6 +18,6 @@ exports.getCountries = function (req, res, next) {
     getCountrySet('find', req.query, 'No countries found', res, next);
 };
 
-exports.getCountriesByID = function (req, res, next) {
+exports.getCountryByID = function (req, res, next) {
     getCountrySet('findOne', {country_ID: req.params.country_ID}, 'No country found', res, next);
 };
