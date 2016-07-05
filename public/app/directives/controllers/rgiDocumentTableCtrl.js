@@ -9,22 +9,11 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiDocumentSrvc,
         rgiHttpResponseProcessorSrvc,
-        rgiIdentitySrvc,
         rgiNotifier
     ) {
-        var limit = 50,
-            currentPage = 0,
-            totalPages = 0;
-
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+        var currentPage, totalPages, limit = 50;
         $scope.busy = false;
-
-        $scope.assessment_filter_options = [
-            {value: 'all', text: 'Show all documents'}
-            // {value: 'type', text: 'Sort by document type'},
-            // {value: 'assessments', text: 'Sort by attached assessments'}
-        ];
-
+        $scope.assessment_filter_options = [{value: '', text: 'Show all documents'}];
         $scope.assessment_filter = $scope.assessment_filter_options[0].value;
 
         rgiAssessmentSrvc.query({}, function (assessments) {
@@ -32,7 +21,6 @@ angular.module('app')
                 rgiNotifier.error('No assessments');
             } else {
                 assessments.forEach(function(assessment) {
-                    console.log(assessment);
                     $scope.assessment_filter_options.push({
                         value: assessment.assessment_ID,
                         text: assessment.country + ' ' + assessment.year + ' ' + assessment.version
@@ -41,16 +29,31 @@ angular.module('app')
             }
         });
 
-        rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
-            if(response.reason) {
-                rgiNotifier.error('Load document data failure');
-            } else {
-                $scope.count = response.count;
-                $scope.documents = response.data;
-                totalPages = Math.ceil(response.count / limit);
-                currentPage = currentPage + 1;
+        $scope.$watch('assessment_filter', function(assessment) {
+            currentPage = 0;
+            totalPages = 0;
+            var searchOptions = {skip: currentPage, limit: limit};
+
+            if(assessment) {
+                searchOptions.assessments = assessment;
             }
-        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
+
+            rgiDocumentSrvc.queryCached(searchOptions, function (response) {
+                if(response.reason) {
+                    rgiNotifier.error('Load document data failure');
+                } else {
+                    $scope.count = response.count;
+                    $scope.documents = response.data;
+
+                    if($scope.documents.length === 0) {
+                        rgiNotifier.error('No documents uploaded');
+                    }
+
+                    totalPages = Math.ceil(response.count / limit);
+                    currentPage = 1;
+                }
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
+        });
 
         $scope.loadMoreDocs = function() {
             if ($scope.busy) {
