@@ -105,7 +105,7 @@ module.exports = function (app) {
     });
     // GET COUNTRY
     app.get('/api/countries', countries.getCountries);
-    app.get('/api/countries/:country_ID', countries.getCountriesByID);
+    app.get('/api/countries/:country_ID', countries.getCountryByID);
     
     //GET RAW ANSWERS
     // app.get('/api/raw_answers/:limit/:skip', auth.requiresApiLogin, answers.getRawAnswers);
