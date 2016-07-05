@@ -273,6 +273,30 @@ exports.uploadRemoteFile = function (req, res) {
     });
 };
 
+exports.fileCheck = function (req, res) {
+    uploadFile(req.files.file, req, function (err, document) {
+        if (err) {
+            res.status(400);
+            res.send({reason: err.toString()});
+        } else {
+            res.send(document);
+        }
+    });
+};
+
+// exports.getDocuments = function (req, res) {
+//     var limit = Number(req.params.limit),
+//         skip = Number(req.params.skip),
+//         query = Doc.find(req.query);
+//     console.log(skip);
+//     console.log(limit);
+//     console.log(query);
+//
+//     query.exec(function (err, collection) {
+//         res.send(collection);
+//     });
+// };
+
 exports.getDocuments = function(req, res) {
     var limit = Number(req.params.limit),
         skip = Number(req.params.skip),
