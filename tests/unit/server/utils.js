@@ -15,6 +15,9 @@ module.exports = {
     getModelPath: function(model) {
         return getUnitPath('models', model);
     },
+    getUtilityPath: function(utility) {
+        return getUnitPath('utilities', utility);
+    },
     restoreModel: function() {
         modelStub.restore();
     },
