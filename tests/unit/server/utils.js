@@ -3,11 +3,17 @@
 var mongoose = require('mongoose'),
     sinon = require('sinon');
 
-var modelStub;
+var modelStub,
+    getUnitPath = function(unitType, unitName) {
+        return '../../../../server/' + unitType + '/' + unitName;
+    };
 
 module.exports = {
     getControllerPath: function(controller) {
-        return '../../../../server/controllers/' + controller;
+        return getUnitPath('controllers', controller);
+    },
+    getModelPath: function(model) {
+        return getUnitPath('models', model);
     },
     restoreModel: function() {
         modelStub.restore();
