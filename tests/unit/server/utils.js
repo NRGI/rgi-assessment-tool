@@ -21,6 +21,9 @@ module.exports = {
     restoreModel: function() {
         modelStub.restore();
     },
+    getModuleLocalVariable: function(moduleObject, variableName) {
+        return moduleObject.__get__(variableName);
+    },
     setModuleLocalVariable: function(moduleObject, variableName, variableValue) {
         moduleObject.__set__(variableName, variableValue);
     },
