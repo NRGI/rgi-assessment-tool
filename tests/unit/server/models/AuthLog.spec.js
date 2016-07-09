@@ -73,7 +73,7 @@ describe('`AuthLog` model', function() {
         });
     });
 
-    describe('#getMostRecent', function() {
+    describe('#list', function() {
         var ITEMS_PER_PAGE = 10, PAGE = 1, USER_ID = 'user id';
 
         beforeEach(function() {
