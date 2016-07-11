@@ -2,25 +2,28 @@
 /* global require */
 
 var Interviewee = require('mongoose').model('Interviewee');
+var generalResponse = require('./general-response');
 
-exports.getInterviewees = function (req, res, next) {
-    var query = Interviewee.find(req.query);
+var getIntervieweeSet = function(method, criteria, errorMessage, res, next) {
+    Interviewee[method](criteria).exec(function (err, interviewees) {
+        if (err) {
+            return next(err);
+        }
 
-    query.exec(function (err, interviewees) {
-        if (err) { return next(err); }
-        if (!interviewees) { return next(new Error('No interviewees found')); }
+        if (!interviewees) {
+            return next(new Error(errorMessage));
+        }
+
         res.send(interviewees);
     });
 };
 
-exports.getIntervieweeByID = function (req, res, next) {
-    var query = Interviewee.findOne({_id: req.params.id});
+exports.getInterviewees = function (req, res, next) {
+    getIntervieweeSet('find', req.query, 'No interviewees found', res, next);
+};
 
-    query.exec(function (err, interviewee) {
-        if (err) { return next(err); }
-        if (!interviewee) { return next(new Error('No interviewee found')); }
-        res.send(interviewee);
-    });
+exports.getIntervieweeByID = function (req, res, next) {
+    getIntervieweeSet('findOne', {_id: req.params.id}, 'No interviewee found', res, next);
 };
 //noinspection JSUnusedLocalSymbols
 exports.createInterviewee = function (req, res, next) {
@@ -30,13 +33,12 @@ exports.createInterviewee = function (req, res, next) {
 
     //noinspection JSUnusedLocalSymbols
     Interviewee.create(interviewee_data, function (err, interviewee) {
-        // console.log(err);
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate email and phone number combination');
             }
-            res.status(400);
-            return res.send({reason: err.toString()});
+
+            return generalResponse.respondError(err, res);
         } else {
             res.send(interviewee);
         }
@@ -48,8 +50,7 @@ exports.updateInterviewee = function (req, res) {
 
     query.exec(function (err, interviewee) {
         if (err) {
-            res.status(400);
-            return res.send({reason: err.toString()});
+            return generalResponse.respondError(err, res);
         }
         interviewee.firstName = interviewee_updates.firstName;
         interviewee.lastName = interviewee_updates.lastName;
