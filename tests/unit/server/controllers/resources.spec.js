@@ -50,7 +50,7 @@ describe('`resources` module', function() {
         });
     });
 
-    describe('#getResourcesByID', function() {
+    describe('#getResourceByID', function() {
         var RESOURCE_ID = 'resource id', RESOURCE = 'resource';
 
         beforeEach(function() {
@@ -61,7 +61,7 @@ describe('`resources` module', function() {
             });
 
             utils.setModuleLocalVariable(resourcesModule, 'Resource', {findOne: spies.resourceFindOne});
-            resourcesModule.getResourcesByID({params: {id: RESOURCE_ID}}, {send: spies.responseSend});
+            resourcesModule.getResourceByID({params: {id: RESOURCE_ID}}, {send: spies.responseSend});
         });
 
         it('submits a request to get a resource data by its id', function() {

@@ -82,7 +82,7 @@ module.exports = function (app) {
     //// CONTENT RESOURCES ///
     //////////////////////////
     app.get('/api/resources', auth.requiresApiLogin, resources.getResources);
-    app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourcesByID);
+    app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourceByID);
     app.post('/api/resources', auth.requiresRole('supervisor'), resources.createResource);
     app.put('/api/resources', auth.requiresRole('supervisor'), resources.updateResource);
     app.delete('/api/resources/:id', auth.requiresRole('supervisor'), resources.deleteResource);

@@ -11,7 +11,7 @@ exports.getResources = function (req, res) {
         });
 };
 
-exports.getResourcesByID = function (req, res) {
+exports.getResourceByID = function (req, res) {
     Resource.findOne({_id: req.params.id}).exec(function (err, resource) {
         res.send(resource);
     });
