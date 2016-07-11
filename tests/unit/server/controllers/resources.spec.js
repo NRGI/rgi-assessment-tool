@@ -128,14 +128,14 @@ describe('`resources` module', function() {
                 describe('UNAUTHORIZED CASE', function() {
                     beforeEach(function() {
                         spies.responseEnd = sinon.spy();
-                        spies.responseStatus = sinon.spy();
+                        spies.responseSendStatus = sinon.spy();
                         setAuthorized(false);
                         req.user = {hasRole: spies.userHasRole};
-                        resourcesModule[method](req, {end: spies.responseEnd, status: spies.responseStatus});
+                        resourcesModule[method](req, {end: spies.responseEnd, sendStatus: spies.responseSendStatus});
                     });
 
                     it('responds with 404 status code', function() {
-                        expect(spies.responseStatus.withArgs(404).called).to.equal(true);
+                        expect(spies.responseSendStatus.withArgs(404).called).to.equal(true);
                     });
 
                     it('closes the connection', function() {
