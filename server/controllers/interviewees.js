@@ -13,7 +13,7 @@ exports.getInterviewees = function (req, res, next) {
     });
 };
 
-exports.getIntervieweesByID = function (req, res, next) {
+exports.getIntervieweeByID = function (req, res, next) {
     var query = Interviewee.findOne({_id: req.params.id});
 
     query.exec(function (err, interviewee) {

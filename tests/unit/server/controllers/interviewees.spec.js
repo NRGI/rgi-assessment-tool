@@ -56,7 +56,7 @@ describe('`interviewees` module', function() {
         });
     });
 
-    describe('#getIntervieweesByID', function() {
+    describe('#getIntervieweeByID', function() {
         var INTERVIEWEE_ID = 'id';
 
         beforeEach(function() {
@@ -68,7 +68,7 @@ describe('`interviewees` module', function() {
 
             utils.setModuleLocalVariable(intervieweesModule, 'Interviewee', {findOne: spies.intervieweeFindOne});
             spies.next = sinon.spy();
-            intervieweesModule.getIntervieweesByID({params: {id: INTERVIEWEE_ID}}, {send: spies.responseSend}, spies.next);
+            intervieweesModule.getIntervieweeByID({params: {id: INTERVIEWEE_ID}}, {send: spies.responseSend}, spies.next);
         });
 
         it('sends a request to get interviewee list', function() {
