@@ -96,9 +96,10 @@
                                     .col-md-1
                                         .form-group
                                             input.form-control(
-                                            name="choiceValue"
+                                            name="choiceValue{{$index}}"
                                             type="number"
                                             ng-model="choice.value"
+                                            ng-change="validateOptionValue($index, 'value', 'choiceValue')"
                                             required)
                                     .col-md-1
                                         .form-group
@@ -111,10 +112,11 @@
                                     .col-md-9
                                         .form-group
                                             textarea.form-control(
-                                            name="choice"
+                                            name="choiceText{{$index}}"
                                             type="textbox"
                                             placeholder="Enter text"
                                             ng-model="choice.text"
+                                            ng-change="validateOptionValue($index, 'text', 'choiceText')"
                                             required)
                                     .col-md-1
                                         button.btn.btn-danger(
