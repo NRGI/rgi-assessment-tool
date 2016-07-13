@@ -91,26 +91,29 @@
                                 .col-md-1: b: p.text-right Option Value
                                 .col-md-1: b: p.text-right Option Letter
                                 .col-md-9: b: p Option Text
-                            .row.form-group.sortable-item(name="question_options_form", ng-repeat="choice in question.question_criteria", data-as-sortable-item)
+                            .row.sortable-item(name="question_options_form", ng-repeat="choice in question.question_criteria", data-as-sortable-item)
                                 div(data-as-sortable-item-handle)
                                     .col-md-1
-                                        input.form-control(
-                                        name="choiceValue"
-                                        type="number"
-                                        ng-model="choice.value"
-                                        required)
+                                        .form-group
+                                            input.form-control(
+                                            name="choiceValue"
+                                            type="number"
+                                            ng-model="choice.value"
+                                            required)
                                     .col-md-1
-                                        input.form-control(
-                                        name="choiceLabel"
-                                        ng-model="choice.letter"
-                                        required)
+                                        .form-group
+                                            input.form-control(
+                                            name="choiceLabel"
+                                            ng-model="choice.letter"
+                                            required)
                                     .col-md-9
-                                        textarea.form-control(
-                                        name="choice"
-                                        type="textbox"
-                                        placeholder="Enter text"
-                                        ng-model="choice.text"
-                                        required)
+                                        .form-group
+                                            textarea.form-control(
+                                            name="choice"
+                                            type="textbox"
+                                            placeholder="Enter text"
+                                            ng-model="choice.text"
+                                            required)
                                     .col-md-1
                                         button.btn.btn-danger(
                                         ng-click="questionOptionDelete($index)"
