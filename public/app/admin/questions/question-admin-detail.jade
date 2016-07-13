@@ -103,8 +103,9 @@
                                     .col-md-1
                                         .form-group
                                             input.form-control(
-                                            name="choiceLabel"
+                                            name="choiceLabel{{$index}}"
                                             ng-model="choice.letter"
+                                            ng-change="validateOptionLetter($index)"
                                             maxlength="1"
                                             required)
                                     .col-md-9
