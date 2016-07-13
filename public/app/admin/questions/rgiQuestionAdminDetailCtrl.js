@@ -69,6 +69,23 @@ angular.module('app')
             });
         };
 
+        $scope.validateOptionLetter = function(currentOptionIndex) {
+            var letters = [], currentOptionLetter = '';
+
+            if($scope.question !== undefined) {
+                $scope.question.question_criteria.forEach(function(option, optionIndex) {
+                    if(optionIndex === currentOptionIndex) {
+                        currentOptionLetter = option.letter;
+                    } else if(option.letter) {
+                        letters.push(option.letter);
+                    }
+                });
+            }
+
+            $scope.question_content_form['choiceLabel' + currentOptionIndex].$setValidity('duplicated',
+                letters.indexOf(currentOptionLetter) === -1);
+        };
+
         $scope.questionClear = function () {
             $route.reload();
         };
