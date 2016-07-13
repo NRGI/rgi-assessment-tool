@@ -19,7 +19,7 @@
                     .pull-right
                         button.btn.btn-primary(
                         ng-click="questionUpdate()"
-                        ng-disabled="profileForm.$invalid") Save question
+                        ng-disabled="question_content_form.$invalid") Save question
                         | &nbsp;
                         //button.btn.btn-danger(ng-click="deleteConfirmDialog()" disabled) Delete question
                         //| &nbsp;
@@ -33,7 +33,7 @@
             hr
             .row.left-padding-med.right-padding-med.bottom-padding-lg: div
                 h4 Edit:
-                .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
+                form(name="question_content_form").form-horizontal.row-fluid.right-padding-lg.left-padding-lg
                     fieldset
                         .row: #question-type-block.row-fluid.top-padding-med
                             label.col-md-3.control-label(form="dejure")
