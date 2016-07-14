@@ -41,7 +41,7 @@ describe('rgiDocumentTableCtrl', function () {
     });
 
     it('initializes the assessment filter options', function() {
-        $scope.assessment_filter_options.should.deep.equal([{value: '', text: 'Show all documents'}]);
+        $scope.assessment_filter_options.should.deep.equal([]);
     });
 
     it('sets the assessment filter value', function() {
@@ -68,7 +68,6 @@ describe('rgiDocumentTableCtrl', function () {
             }]);
 
             $scope.assessment_filter_options.should.deep.equal([
-                {value: '', text: 'Show all documents'},
                 {value: 'AF-2001-PI', text: 'Afghanistan 2001 Pilot'}
             ]);
         });
