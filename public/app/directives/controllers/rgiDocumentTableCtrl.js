@@ -13,8 +13,8 @@ angular.module('app')
     ) {
         var currentPage, totalPages, limit = 50;
         $scope.busy = false;
-        $scope.assessment_filter_options = [{value: '', text: 'Show all documents'}];
-        $scope.assessment_filter = $scope.assessment_filter_options[0].value;
+        $scope.assessment_filter_options = [];
+        $scope.assessment_filter = '';
 
         rgiAssessmentSrvc.query({}, function (assessments) {
             if(assessments.reason) {

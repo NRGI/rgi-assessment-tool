@@ -4,7 +4,8 @@ div.table-responsive
             .form-group
                 select.form-control(ng-model="assessment_filter"
                 ng-disabled="!assessment_filter && (documents.length < 1)"
-                ng-options="item.value as item.text for item in assessment_filter_options")
+                ng-options="item.value as item.text for item in assessment_filter_options | orderBy: 'text'")
+                    option(value="") Show all documents
     .pull-right
         form.form-inline
             .form-group
