@@ -99,14 +99,14 @@
                                             name="choiceValue{{$index}}"
                                             type="number"
                                             ng-model="choice.value"
-                                            ng-change="validateOptionValue($index, 'value', 'choiceValue')"
+                                            ng-change="validateOptionValue('value', 'choiceValue')"
                                             required)
                                     .col-md-1
                                         .form-group
                                             input.form-control(
                                             name="choiceLabel{{$index}}"
                                             ng-model="choice.letter"
-                                            ng-change="validateOptionValue($index, 'letter', 'choiceLabel')"
+                                            ng-change="validateOptionValue('letter', 'choiceLabel')"
                                             maxlength="1"
                                             required)
                                     .col-md-9
@@ -116,7 +116,7 @@
                                             type="textbox"
                                             placeholder="Enter text"
                                             ng-model="choice.text"
-                                            ng-change="validateOptionValue($index, 'text', 'choiceText')"
+                                            ng-change="validateOptionValue('text', 'choiceText')"
                                             required)
                                     .col-md-1
                                         button.btn.btn-danger(

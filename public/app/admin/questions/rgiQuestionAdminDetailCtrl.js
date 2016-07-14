@@ -69,21 +69,32 @@ angular.module('app')
             });
         };
 
-        $scope.validateOptionValue = function(currentOptionIndex, optionField, elementNamePrefix) {
-            var values = [], currentOptionValue = '';
+        var getOptionsValues = function(optionField) {
+            var values = [];
 
+            $scope.question.question_criteria.forEach(function(option) {
+                values.push(option[optionField]);
+            });
+
+            return values;
+        };
+
+        $scope.validateOptionValue = function(optionField, elementNamePrefix) {
             if($scope.question !== undefined) {
+                var valid, values = getOptionsValues(optionField);
+
                 $scope.question.question_criteria.forEach(function(option, optionIndex) {
-                    if(optionIndex === currentOptionIndex) {
-                        currentOptionValue = option[optionField];
-                    } else if(option[optionField]) {
-                        values.push(option[optionField]);
-                    }
+                    valid = true;
+
+                    values.forEach(function(value, valueIndex) {
+                        if((value === option[optionField]) && (optionIndex !== valueIndex)) {
+                            valid = false;
+                        }
+                    });
+
+                    $scope.question_content_form[elementNamePrefix + optionIndex].$setValidity('duplicated', valid);
                 });
             }
-
-            $scope.question_content_form[elementNamePrefix + currentOptionIndex].$setValidity('duplicated',
-                values.indexOf(currentOptionValue) === -1);
         };
 
         $scope.questionClear = function () {
