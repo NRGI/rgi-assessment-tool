@@ -63,7 +63,13 @@ angular.module('app')
             $scope.busy = true;
 
             if(currentPage < totalPages) {
-                rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
+                var searchOptions = {skip: currentPage, limit: limit};
+
+                if($scope.assessment_filter) {
+                    searchOptions.assessments = $scope.assessment_filter;
+                }
+
+                rgiDocumentSrvc.query(searchOptions, function (response) {
                     if(response.reason) {
                         rgiNotifier.error('Documents loading failure');
                     } else {
