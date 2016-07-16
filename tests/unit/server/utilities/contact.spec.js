@@ -38,6 +38,91 @@ describe('`contact` utility', function() {
     });
 
     describe('GENERAL EMAILS', function() {
+        describe('#techSend', function() {
+            var BODY, EMAIL = 'name@mail.com', FIRST_NAME = 'Name', LAST_NAME = 'Surname', TOOL = 'nrgi',
+                ISSUE_VALUE = 'issue value', ISSUE_NAME = 'issue name', ISSUE_DESCRIPTION = 'issue description',
+                SUPERVISOR_EMAIL = 'supervisor@mail.com', SUPERVISOR_FIRST_NAME = 'supervisor name',
+                SUPERVISOR_LAST_NAME = 'supervisor surname', specialFields = {},
+                checkEmails = function(os, browser, browserVersion) {
+                    checkEmailBody("Hi,<p>" + "<a href='mailto:"+ EMAIL + "'>" + FIRST_NAME + ' ' + LAST_NAME +
+                    "</a> is having an issue with the " + TOOL.toUpperCase() + " tool. Please find more info below.<p>" +
+                    "<ul><li><b>Issue</b>: " + ISSUE_NAME + "</li><<li><b>Issue description</b>: " +
+                    ISSUE_DESCRIPTION + "</li>" + "<li><b>OS</b>: " + os + "</li><li><b>Browser</b>: " +
+                    browser + "</li><li><b>Browser version</b>: " + browserVersion + "</li></ul>", 0);
+
+                    checkEmailBody("Hi " + FIRST_NAME + ' ' + LAST_NAME + "\,<p>" +
+                    "Thanks for contacting us about an issue with the " + TOOL.toUpperCase() +
+                    "tool. I'm sorry for the inconvenience\, we will contact you shortly. " +
+                    "In the meantime please look at the info you supplied below and let us know if any of it is incorrect.<p>" +
+                    "<ul><li><b>Issue</b>: " + ISSUE_NAME + "</li><<li><b>Issue description</b>: " + ISSUE_DESCRIPTION +
+                    "</li>" + "<li><b>OS</b>: " + os + "</li><li><b>Browser</b>: " + browser +
+                    "</li><li><b>Browser version</b>: " + browserVersion + "</li></ul>", 1);
+                };
+
+            beforeEach(function() {
+                spies.responseSend = sinon.spy();
+                BODY = {
+                    assessment: {
+                        supervisor_ID: [
+                            {email: SUPERVISOR_EMAIL, firstName: SUPERVISOR_FIRST_NAME, lastName: SUPERVISOR_LAST_NAME}
+                        ]
+                    },
+                    email: EMAIL,
+                    first_name: FIRST_NAME,
+                    last_name: LAST_NAME,
+                    issue: {name: ISSUE_NAME, value: ISSUE_VALUE},
+                    issue_description: ISSUE_DESCRIPTION,
+                    tool: TOOL
+                };
+
+                ['browser', 'browserVersion', 'os'].forEach(function(field) {
+                    specialFields[field] = 'None supplied';
+                });
+            });
+
+            it('sends emails with default content if no special field is set', function() {});
+
+            it('sends emails with browser verion if it is set', function() {
+                specialFields.browserVersion = '40';
+                BODY.browser_ver = specialFields.browserVersion;
+            });
+
+            it('sends emails with browser info if it is set', function() {
+                specialFields.browser = 'Google Chrome';
+                BODY.browser = specialFields.browser;
+            });
+
+            it('sends emails with browser name if it is set', function() {
+                specialFields.browser = 'Chrome';
+                BODY.browser_text = specialFields.browser;
+            });
+
+            it('sends emails with OS info if it is set', function() {
+                specialFields.os = 'Windows XP';
+                BODY.os = specialFields.os;
+            });
+
+            it('sends emails with OS name if it is set', function() {
+                specialFields.os = 'Windows';
+                BODY.os_text = specialFields.os;
+            });
+
+            afterEach(function() {
+                contact.techSend({body: BODY}, {send: spies.responseSend});
+                checkEmails(specialFields.os, specialFields.browser, specialFields.browserVersion);
+
+                checkEmailSubject('NRGI Issue: ' + ISSUE_VALUE, 0);
+                expect(mandrill.messages[0].to).to.deep.equal([
+                    {email: siteEmail, name: 'Assessment tool tech support'},
+                    {email: SUPERVISOR_EMAIL, name: SUPERVISOR_FIRST_NAME + ' ' + SUPERVISOR_LAST_NAME}
+                ]);
+
+                checkEmailRecipient(EMAIL, FIRST_NAME + ' ' + LAST_NAME, 1);
+                checkEmailSubject('Confirmation of ' + ISSUE_VALUE + ' support ticket', 1);
+                checkEmailSender(siteEmail, 1);
+            });
+        });
+
         describe('#new_user_confirmation', function() {
             var TOKEN = 'token';
 
