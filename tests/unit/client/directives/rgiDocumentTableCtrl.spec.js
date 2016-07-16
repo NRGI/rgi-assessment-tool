@@ -199,6 +199,15 @@ describe('rgiDocumentTableCtrl', function () {
             });
         });
 
+        it('sends a request including filtering criteria if the filtering criteria are set', function() {
+            $scope.assessment_filter = 'KG-2016-MI';
+            callbacks.documentQueryCached({count: 51, data: []});
+
+            $scope.loadMoreDocs();
+            spies.documentQuery.withArgs({skip: 1, limit: 50, assessments: $scope.assessment_filter})
+                .called.should.be.equal(true);
+        });
+
         it('does not send a request to get more documents if all documents are shown already', function() {
             callbacks.documentQueryCached({count: 1, data: []});
             $scope.loadMoreDocs();
