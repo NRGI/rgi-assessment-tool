@@ -50,9 +50,9 @@ describe('`contact` utility', function() {
                     ISSUE_DESCRIPTION + "</li>" + "<li><b>OS</b>: " + os + "</li><li><b>Browser</b>: " +
                     browser + "</li><li><b>Browser version</b>: " + browserVersion + "</li></ul>", 0);
 
-                    checkEmailBody("Hi " + FIRST_NAME + ' ' + LAST_NAME + "\,<p>" +
+                    checkEmailBody("Hi " + FIRST_NAME + ' ' + LAST_NAME + ",<p>" +
                     "Thanks for contacting us about an issue with the " + TOOL.toUpperCase() +
-                    "tool. I'm sorry for the inconvenience\, we will contact you shortly. " +
+                    "tool. I'm sorry for the inconvenience, we will contact you shortly. " +
                     "In the meantime please look at the info you supplied below and let us know if any of it is incorrect.<p>" +
                     "<ul><li><b>Issue</b>: " + ISSUE_NAME + "</li><<li><b>Issue description</b>: " + ISSUE_DESCRIPTION +
                     "</li>" + "<li><b>OS</b>: " + os + "</li><li><b>Browser</b>: " + browser +
