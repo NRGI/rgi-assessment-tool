@@ -6,8 +6,7 @@ var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
 // send email to tech support
 exports.techSend = function (req, res) {
-    var issue_os, issue_browser, issue_browser_ver,
-        message_content = req.body,
+    var message_content = req.body,
         issue_tool = message_content.tool.toUpperCase(),
         issue_full_name = message_content.first_name + " " + message_content.last_name,
         supervisor_email = [{email: siteEmail, name: 'Assessment tool tech support'}];
@@ -17,29 +16,10 @@ exports.techSend = function (req, res) {
             supervisor_email.push({email: supervisor.email, name: supervisor.firstName + ' ' + supervisor.lastName});
         });
     }
-    if (message_content.os) {
-        issue_os = message_content.os;
-    } else {
-        if(message_content.os_text) {
-            issue_os = message_content.os_text;
-        } else {
-            issue_os = 'None supplied';
-        }
-    }
-    if (message_content.browser) {
-        issue_browser = message_content.browser;
-    } else {
-        if(message_content.browser_text) {
-            issue_browser = message_content.browser_text;
-        } else {
-            issue_browser = 'None supplied';
-        }
-    }
-    if (message_content.browser_ver) {
-        issue_browser_ver = message_content.browser_ver;
-    } else {
-        issue_browser_ver = 'None supplied';
-    }
+
+    var issue_os = message_content.os || message_content.os_text || 'None supplied';
+    var issue_browser = message_content.browser || message_content.browser_text || 'None supplied';
+    var issue_browser_ver = message_content.browser_ver || 'None supplied';
     //send an e-mail to technical support
     mandrill('/messages/send', {
         message: {
@@ -62,8 +42,8 @@ exports.techSend = function (req, res) {
             to: [{email: message_content.email, name: issue_full_name}],
             from_email: siteEmail,
             subject: 'Confirmation of ' + message_content.issue.value + ' support ticket',
-            html: "Hi " + issue_full_name + "\,<p>" +
-            "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience\, we will contact you shortly. " +
+            html: "Hi " + issue_full_name + ",<p>" +
+            "Thanks for contacting us about an issue with the " + issue_tool + "tool. I'm sorry for the inconvenience, we will contact you shortly. " +
             "In the meantime please look at the info you supplied below and let us know if any of it is incorrect.<p>" +
             "<ul><li><b>Issue</b>: " + message_content.issue.name + "</li><<li><b>Issue description</b>: " + message_content.issue_description + "</li>" +
             "<li><b>OS</b>: " + issue_os + "</li><li><b>Browser</b>: " + issue_browser + "</li><li><b>Browser version</b>: " + issue_browser_ver + "</li></ul>"
