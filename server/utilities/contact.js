@@ -4,6 +4,11 @@ var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE
     siteEmail = 'tech-support@resourcegovernance.org';
 
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
+
+var processFailure = function (err, res) {
+    console.log(err ? JSON.stringify(err) : res);
+};
+
 // send email to tech support
 exports.techSend = function (req, res) {
     var message_content = req.body,
@@ -31,10 +36,7 @@ exports.techSend = function (req, res) {
             "<ul><li><b>Issue</b>: " + message_content.issue.name + "</li><<li><b>Issue description</b>: " + message_content.issue_description + "</li>" +
             "<li><b>OS</b>: " + issue_os + "</li><li><b>Browser</b>: " + issue_browser + "</li><li><b>Browser version</b>: " + issue_browser_ver + "</li></ul>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 
     //send a confirmation e-mail to user
     mandrill('/messages/send', {
@@ -48,10 +50,8 @@ exports.techSend = function (req, res) {
             "<ul><li><b>Issue</b>: " + message_content.issue.name + "</li><<li><b>Issue description</b>: " + message_content.issue_description + "</li>" +
             "<li><b>OS</b>: " + issue_os + "</li><li><b>Browser</b>: " + issue_browser + "</li><li><b>Browser version</b>: " + issue_browser_ver + "</li></ul>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
+
     res.send();
 };
 
@@ -74,10 +74,7 @@ exports.new_user_confirmation = function (contact_packet, token) {
             'Thanks!<p>' +
             'The RGI Team.'
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 exports.reset_password_confirmation = function (user, token) {
@@ -95,10 +92,7 @@ exports.reset_password_confirmation = function (user, token) {
             'Thanks!<p>' +
             'The RGI Team.'
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 //TODO delete user confirmation
 exports.delete_user_confirmation = function (contact_packet) {
@@ -123,10 +117,7 @@ exports.new_assessment_assignment = function (contact_packet, type) {
             "Thanks!<p>" +
             "The RGI Team."
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when trial assessment is submitted or resubmitted
@@ -143,10 +134,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
     //send email to submitter that it went through
     mandrill('/messages/send', {
         message: {
@@ -159,10 +147,7 @@ exports.trial_assessment_submission = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when assessment is submitted or resubmitted
@@ -179,10 +164,7 @@ exports.assessment_submission = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
     //send email to submitter that it went through
     mandrill('/messages/send', {
         message: {
@@ -195,10 +177,7 @@ exports.assessment_submission = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team.<p>"
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when trial answers need to be reviewed by researcher or reviewer
@@ -215,10 +194,7 @@ exports.trial_assessment_return = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team."
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when flags need to be reviewed by researcher or reviewer
@@ -235,10 +211,7 @@ exports.flag_review = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team."
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when reassigning to researcher or reviewer
@@ -254,10 +227,7 @@ exports.assessment_reassignment = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team."
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 // email when reassigning to researcher or reviewer
@@ -273,10 +243,7 @@ exports.trial_assessment_continue = function (contact_packet) {
             "Thanks!<p>" +
             "The RGI Team."
         }
-    }, function (err, res) {
-        if (err) { console.log( JSON.stringify(err) ); }
-        else { console.log(res); }
-    });
+    }, processFailure);
 };
 
 
