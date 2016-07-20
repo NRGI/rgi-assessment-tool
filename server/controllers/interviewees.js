@@ -38,7 +38,7 @@ exports.createInterviewee = function (req, res, next) {
                 err = new Error('Duplicate email and phone number combination');
             }
 
-            return generalResponse.respondError(err, res);
+            return generalResponse.respondError(res, err);
         } else {
             res.send(interviewee);
         }
@@ -50,7 +50,7 @@ exports.updateInterviewee = function (req, res) {
 
     query.exec(function (err, interviewee) {
         if (err) {
-            return generalResponse.respondError(err, res);
+            return generalResponse.respondError(res, err);
         }
         interviewee.firstName = interviewee_updates.firstName;
         interviewee.lastName = interviewee_updates.lastName;

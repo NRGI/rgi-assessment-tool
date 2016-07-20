@@ -17,7 +17,7 @@ describe('`general-response` module', function() {
             });
 
             res.status = sinon.spy();
-            actualResult = generalResponseModule.respondError(ERROR, res);
+            actualResult = generalResponseModule.respondError(res, ERROR);
         });
 
         it('sends status code 400', function() {
@@ -42,7 +42,7 @@ describe('`general-response` module', function() {
             });
 
             res.sendStatus = sinon.spy();
-            actualResult = generalResponseModule.respondStatus(STATUS, res);
+            actualResult = generalResponseModule.respondStatus(res, STATUS);
         });
 
         it('sends status code 400', function() {
