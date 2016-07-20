@@ -2,7 +2,7 @@
 /* global require */
 
 var Resource = require('mongoose').model('Resource');
-var generalResponse = require('./general-response');
+var generalResponse = require('../utilities/general-response');
 
 exports.getResources = function (req, res) {
     Resource.find(req.query).sort('order').exec(function (err, resources) {
