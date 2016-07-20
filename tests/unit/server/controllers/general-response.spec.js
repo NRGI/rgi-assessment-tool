@@ -3,11 +3,49 @@
 var expect = require('chai').expect,
     sinon = require('sinon');
 
-
 var utils = require('../utils'),
     generalResponseModule = require(utils.getControllerPath('general-response'));
 
 describe('`general-response` module', function() {
+    describe('#getObjectSet', function() {
+        var spies, callbacks = {}, METHOD_NAME = 'getObjectSet', CRITERIA = 'criteria', ERROR_MESSAGE = 'error message';
+
+        beforeEach(function() {
+            spies = {responseSend: sinon.spy()};
+
+            spies[METHOD_NAME] = sinon.spy(function() {
+                return {exec: function(callback) {
+                    callbacks.getObjectSet = callback;
+                }};
+            });
+
+            generalResponseModule.getObjectSet(spies, METHOD_NAME, CRITERIA, ERROR_MESSAGE, {send: spies.responseSend});
+        });
+
+        it('submits a request ti get the object data', function() {
+            expect(spies[METHOD_NAME].withArgs(CRITERIA).called).to.equal(true);
+        });
+
+        describe('CALLBACK', function() {
+            it('responds with the error description if an error occurs', function() {
+                var ERROR = 'error';
+                callbacks.getObjectSet(ERROR);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
+            });
+
+            it('responds with a special error description if no objects are found', function() {
+                callbacks.getObjectSet(null, null);
+                expect(spies.responseSend.withArgs({reason: new Error(ERROR_MESSAGE).toString()}).called).to.equal(true);
+            });
+
+            it('responds with the objects data if the data are found', function() {
+                var OBJECTS = 'objects';
+                callbacks.getObjectSet(null, OBJECTS);
+                expect(spies.responseSend.withArgs(OBJECTS).called).to.equal(true);
+            });
+        });
+    });
+
     describe('#respondError', function() {
         var actualResult, res, ERROR = 'error', RESPONSE_SENT = 'RESPONSE SENT';
 
