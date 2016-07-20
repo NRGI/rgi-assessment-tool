@@ -33,7 +33,7 @@ exports.createQuestions = function (req, res) {
     req.body.forEach(function(new_question) {
         Question.create(new_question, function (err) {
             if (err) {
-                return generalResponse.respondError(err, res);
+                return generalResponse.respondError(res, err);
             }
         });
     });
@@ -53,7 +53,7 @@ exports.updateQuestion = function (req, res) {
         var getCallback = function(assessments) {
             return function (err, question) {
                 if (err) {
-                    return generalResponse.respondError(err, res);
+                    return generalResponse.respondError(res, err);
                 }
 
                 question.question_v = question.question_v + 1;
@@ -69,7 +69,7 @@ exports.updateQuestion = function (req, res) {
         Question.findOne({_id: updatedData._id})
             .exec(function (err, question) {
                 if (err) {
-                    return generalResponse.respondError(err, res);
+                    return generalResponse.respondError(res, err);
                 }
 
                 [

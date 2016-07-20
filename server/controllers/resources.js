@@ -25,7 +25,7 @@ exports.createResource = function (req, res) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate email');
             }
-            return generalResponse.respondError(err, res);
+            return generalResponse.respondError(res, err);
         } else {
             res.send();
         }
@@ -55,12 +55,12 @@ exports.updateResource = function (req, res) {
     var resource_update = req.body;
 
     if (!req.user.hasRole('supervisor')) {
-        return generalResponse.respondStatus(404, res);
+        return generalResponse.respondStatus(res, 404);
     }
 
     Resource.findOne({_id: resource_update._id}).exec(function (err, resource) {
         if (err) {
-            return generalResponse.respondError(err, res);
+            return generalResponse.respondError(res, err);
         }
         resource.head = resource_update.head;
         resource.body = resource_update.body;
@@ -68,7 +68,7 @@ exports.updateResource = function (req, res) {
 
         resource.save(function (err) {
             if (err) {
-                return generalResponse.respondError(err, res);
+                return generalResponse.respondError(res, err);
             }
         });
     });
@@ -77,7 +77,7 @@ exports.updateResource = function (req, res) {
 
 exports.deleteResource = function (req, res) {
     if (!req.user.hasRole('supervisor')) {
-        return generalResponse.respondStatus(404, res);
+        return generalResponse.respondStatus(res, 404);
     }
     Resource.remove({_id: req.params.id}, function (err) {
         if (!err) {
