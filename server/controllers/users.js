@@ -3,6 +3,7 @@
 
 var User                = require('mongoose').model('User'),
     ResetPasswordToken  = require('mongoose').model('ResetPasswordToken'),
+    generalResponse     = require('./general-response'),
     encrypt             = require('../utilities/encryption'),
     contact             = require('../utilities/contact');
 
@@ -59,8 +60,8 @@ exports.createUser = function (req, res) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate Username');
             }
-            res.status(400);
-            return res.send({reason: err.toString()});
+
+            return generalResponse.respondError(res, err);
         }
 
         ResetPasswordToken.createByUser(user._id, function(err, tokenData) {
@@ -75,8 +76,7 @@ exports.updateUser = function (req, res) {
     var user_update = req.body;
 
     if (req.user._id != user_update._id && !req.user.hasRole('supervisor')) {
-        res.status(403);
-        return res.end();
+        return generalResponse.respondStatus(res, 403);
     }
 
     User.findOne({_id: req.body._id}).exec(function (findUserError, user) {
@@ -92,11 +92,9 @@ exports.updateUser = function (req, res) {
         };
 
         if (findUserError) {
-            res.status(400);
-            res.send({ reason: findUserError.toString() });
+            generalResponse.respondError(res, findUserError);
         } else if(user === null) {
-            res.status(404);
-            res.send({reason: 'User not found'});
+            generalResponse.respondError(res, 'User not found', 404);
         } else {
             if (user_update.password && user_update.password.length > 0) {
                 user.setPassword(user_update.password, function (setPasswordError) {
