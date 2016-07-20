@@ -18,11 +18,11 @@ describe('`resources` module', function() {
     });
 
     describe('#getResources', function() {
-        var QUERY = 'query', RESOURCES = 'resources';
+        var QUERY = 'query';
 
         beforeEach(function() {
             spies.resourceExec = sinon.spy(function(callback) {
-                callback(true, RESOURCES);
+                callbacks.resourceExec = callback;
             });
 
             spies.resourceSort = sinon.spy(function() {
@@ -45,18 +45,28 @@ describe('`resources` module', function() {
             expect(spies.resourceSort.withArgs('order').called).to.equal(true);
         });
 
-        it('responds with the found resources', function() {
-            expect(spies.responseSend.withArgs(RESOURCES).called).to.equal(true);
+        describe('CALLBACK', function() {
+            it('responds with the found resources if no error occurs', function() {
+                var RESOURCES = 'resources';
+                callbacks.resourceExec(null, RESOURCES);
+                expect(spies.responseSend.withArgs(RESOURCES).called).to.equal(true);
+            });
+
+            it('responds with the error description if an error occurs', function() {
+                var ERROR = 'error';
+                callbacks.resourceExec(ERROR);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
+            });
         });
     });
 
     describe('#getResourceByID', function() {
-        var RESOURCE_ID = 'resource id', RESOURCE = 'resource';
+        var RESOURCE_ID = 'resource id';
 
         beforeEach(function() {
             spies.resourceFindOne = sinon.spy(function() {
                 return {exec: function(callback) {
-                    callback(true, RESOURCE);
+                    callbacks.resourceExec = callback;
                 }};
             });
 
@@ -68,8 +78,18 @@ describe('`resources` module', function() {
             expect(spies.resourceFindOne.withArgs({_id: RESOURCE_ID}).called).to.equal(true);
         });
 
-        it('responds with the the resource data', function() {
-            expect(spies.responseSend.withArgs(RESOURCE).called).to.equal(true);
+        describe('CALLBACK', function() {
+            it('responds with the resource data if no error occurs', function() {
+                var RESOURCE = 'resource';
+                callbacks.resourceExec(null, RESOURCE);
+                expect(spies.responseSend.withArgs(RESOURCE).called).to.equal(true);
+            });
+
+            it('responds with the error description if an error occurs', function() {
+                var ERROR = 'error';
+                callbacks.resourceExec(ERROR);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
+            });
         });
     });
 
