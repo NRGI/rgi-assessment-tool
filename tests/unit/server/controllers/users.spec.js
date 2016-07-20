@@ -12,16 +12,11 @@ utils.restoreModel();
 
 describe('`users` module', function() {
     var spies = {}, callbacks = {}, USER_ID = 'user id',
-        getUserFindCallbackCheck = function(callbackName) {
+        getUserFindCallbackCheck = function(callbackName, err) {
             return function() {
                 var USER_DATA = 'user data';
-                callbacks[callbackName](null, USER_DATA);
-                expect(spies.responseSend.withArgs(USER_DATA).called).to.equal(true);
-            };
-        },
-        getUserFindCallbackTestCase = function(callbackName) {
-            return function() {
-                it('responds with the user data', getUserFindCallbackCheck(callbackName));
+                callbacks[callbackName](err || null, USER_DATA);
+                expect(spies.responseSend.withArgs(err ? {reason: err.toString()} : USER_DATA).called).to.equal(true);
             };
         },
         setUserHasRoleSpy = function(result) {
@@ -51,7 +46,10 @@ describe('`users` module', function() {
             expect(spies.userFindOne.withArgs({_id: USER_ID}).called).to.equal(true);
         });
 
-        describe('CALLBACK', getUserFindCallbackTestCase('userFindOne'));
+        describe('CALLBACK', function() {
+            it('responds with the user data if no error occurs', getUserFindCallbackCheck('userFindOne'));
+            it('responds with the error description if an error occurs', getUserFindCallbackCheck('userFindOne', 'err'));
+        });
     });
 
     describe('#getUsers', function() {
@@ -87,6 +85,7 @@ describe('`users` module', function() {
             expect(spies.userFind.withArgs(QUERY).called).to.equal(true);
             expect(spies.userHasRole.withArgs('supervisor').called).to.equal(true);
             getUserFindCallbackCheck('userFind')();
+            getUserFindCallbackCheck('userFind', 'find user error')();
         });
     });
 
@@ -192,7 +191,7 @@ describe('`users` module', function() {
                 describe('CREATE RESET PASSWORD TOKEN CALLBACK', function() {
                     it('sends a notification about the newly created user', function() {
                         var TOKEN_ID = 'token id';
-                        callbacks.resetPasswordTokenCreateByUser(true, {_id: TOKEN_ID});
+                        callbacks.resetPasswordTokenCreateByUser(null, {_id: TOKEN_ID});
 
                         expect(spies.contactNewUserConfirmation.withArgs({
                             send_name: CURRENT_USER.firstName + ' ' + CURRENT_USER.lastName,
@@ -202,6 +201,11 @@ describe('`users` module', function() {
                             rec_email: BODY.email,
                             rec_role: 'Modified role'
                         }, TOKEN_ID).called).to.equal(true);
+                    });
+
+                    it('does not send a notification if an error occurs', function() {
+                        callbacks.resetPasswordTokenCreateByUser(true);
+                        expect(spies.contactNewUserConfirmation.called).to.equal(false);
                     });
                 });
             });
