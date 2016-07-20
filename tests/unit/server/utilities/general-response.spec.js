@@ -4,7 +4,7 @@ var expect = require('chai').expect,
     sinon = require('sinon');
 
 var utils = require('../utils'),
-    generalResponseModule = require(utils.getControllerPath('general-response'));
+    generalResponseUtility = require(utils.getUtilityPath('general-response'));
 
 describe('`general-response` module', function() {
     describe('#getObjectSet', function() {
@@ -19,7 +19,7 @@ describe('`general-response` module', function() {
                 }};
             });
 
-            generalResponseModule.getObjectSet(spies, METHOD_NAME, CRITERIA, ERROR_MESSAGE, {send: spies.responseSend});
+            generalResponseUtility.getObjectSet(spies, METHOD_NAME, CRITERIA, ERROR_MESSAGE, {send: spies.responseSend});
         });
 
         it('submits a request ti get the object data', function() {
@@ -60,7 +60,7 @@ describe('`general-response` module', function() {
 
         describe('DEFAULT STATUS', function() {
             beforeEach(function() {
-                actualResult = generalResponseModule.respondError(res, ERROR);
+                actualResult = generalResponseUtility.respondError(res, ERROR);
             });
 
             it('sends status code 400', function() {
@@ -78,7 +78,7 @@ describe('`general-response` module', function() {
 
         it('sends provided status code', function() {
             var STATUS_CODE = 500;
-            actualResult = generalResponseModule.respondError(res, ERROR, STATUS_CODE);
+            actualResult = generalResponseUtility.respondError(res, ERROR, STATUS_CODE);
             expect(res.status.withArgs(STATUS_CODE).called).to.equal(true);
         });
     });
@@ -92,7 +92,7 @@ describe('`general-response` module', function() {
             });
 
             res.sendStatus = sinon.spy();
-            actualResult = generalResponseModule.respondStatus(res, STATUS);
+            actualResult = generalResponseUtility.respondStatus(res, STATUS);
         });
 
         it('sends status code 400', function() {
@@ -120,13 +120,13 @@ describe('`general-response` module', function() {
         describe('terminate processing', function() {
             it('send status code if it is set', function() {
                 var STATUS = 'status';
-                generalResponseModule.submit({status: STATUS}, res);
+                generalResponseUtility.submit({status: STATUS}, res);
                 expect(res.sendStatus.withArgs(STATUS).called).to.equal(true);
             });
 
             it('send error description if it is set', function() {
                 var ERROR = 'error';
-                generalResponseModule.submit({error: ERROR}, res);
+                generalResponseUtility.submit({error: ERROR}, res);
                 expect(res.send.withArgs({reason: ERROR}).called).to.equal(true);
             });
 
@@ -137,7 +137,7 @@ describe('`general-response` module', function() {
 
         it('send error description if it is set', function() {
             var RESULT = 'result';
-            generalResponseModule.submit({result: RESULT}, res);
+            generalResponseUtility.submit({result: RESULT}, res);
             expect(res.send.withArgs(RESULT).called).to.equal(true);
         });
     });

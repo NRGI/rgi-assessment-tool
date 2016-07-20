@@ -3,7 +3,7 @@
 
 var User                = require('mongoose').model('User'),
     ResetPasswordToken  = require('mongoose').model('ResetPasswordToken'),
-    generalResponse     = require('./general-response'),
+    generalResponse     = require('../utilities/general-response'),
     encrypt             = require('../utilities/encryption'),
     contact             = require('../utilities/contact');
 
