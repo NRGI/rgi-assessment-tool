@@ -9,27 +9,39 @@ var utils = require('../utils'),
 
 describe('`general-response` module', function() {
     describe('#respondError', function() {
-        var actualResult, res = {}, ERROR = 'error', RESPONSE_SENT = 'RESPONSE SENT';
+        var actualResult, res, ERROR = 'error', RESPONSE_SENT = 'RESPONSE SENT';
 
         beforeEach(function() {
+            res = {};
+            res.status = sinon.spy();
+
             res.send = sinon.spy(function() {
                 return RESPONSE_SENT;
             });
-
-            res.status = sinon.spy();
-            actualResult = generalResponseModule.respondError(res, ERROR);
         });
 
-        it('sends status code 400', function() {
-            expect(res.status.withArgs(400).called).to.equal(true);
+        describe('DEFAULT STATUS', function() {
+            beforeEach(function() {
+                actualResult = generalResponseModule.respondError(res, ERROR);
+            });
+
+            it('sends status code 400', function() {
+                expect(res.status.withArgs(400).called).to.equal(true);
+            });
+
+            it('responds with the error description', function() {
+                expect(res.send.withArgs({reason: ERROR}).called).to.equal(true);
+            });
+
+            it('returns result of sent response', function() {
+                expect(actualResult).to.equal(RESPONSE_SENT);
+            });
         });
 
-        it('responds with the error description', function() {
-            expect(res.send.withArgs({reason: ERROR}).called).to.equal(true);
-        });
-
-        it('returns result of sent response', function() {
-            expect(actualResult).to.equal(RESPONSE_SENT);
+        it('sends provided status code', function() {
+            var STATUS_CODE = 500;
+            actualResult = generalResponseModule.respondError(res, ERROR, STATUS_CODE);
+            expect(res.status.withArgs(STATUS_CODE).called).to.equal(true);
         });
     });
 

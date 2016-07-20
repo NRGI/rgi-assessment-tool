@@ -1,7 +1,7 @@
 'use strict';
 
-exports.respondError = function(res, err) {
-    res.status(400);
+exports.respondError = function(res, err, statusCode) {
+    res.status(statusCode || 400);
     return res.send({reason: err.toString()});
 };
 
