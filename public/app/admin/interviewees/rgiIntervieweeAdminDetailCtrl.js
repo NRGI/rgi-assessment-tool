@@ -9,7 +9,6 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiNotifier,
         rgiUserSrvc,
-        rgiUserListSrvc,
         rgiHttpResponseProcessorSrvc,
         rgiIntervieweeSrvc,
         rgiIntervieweeAnswerSrvc,
@@ -61,7 +60,7 @@ angular.module('app')
                 rgiHttpResponseProcessorSrvc.resetHandledFailuresNumber();
 
                 interviewee.users.forEach(function (el) {
-                    rgiUserListSrvc.get({_id: el}, function(linkedUser) {$scope.user_list.push(linkedUser);},
+                    rgiUserSrvc.getCached({_id: el}, function(linkedUser) {$scope.user_list.push(linkedUser);},
                         rgiHttpResponseProcessorSrvc.getNotRepeatedHandler('Load user list failure'));
                 });
 

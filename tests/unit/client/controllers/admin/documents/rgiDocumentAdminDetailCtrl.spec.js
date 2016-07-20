@@ -3,18 +3,18 @@
 describe('rgiDocumentAdminDetailCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, $routeParams, rgiDialogFactory, rgiDocumentSrvc, rgiUserListSrvc,
+    var $scope, $routeParams, rgiDialogFactory, rgiDocumentSrvc, rgiUserSrvc,
         documentGetStub, documentGetSpy,
-        userListGetStub, userListGetSpy,
+        userGetCachedStub, userGetCachedSpy,
         document_ID = 'document id', $routeParamsDocument_ID,
         document = {users: ['user-id-1', 'user-id-2']};
 
     beforeEach(inject(
-        function ($rootScope, $controller, _$routeParams_, _rgiDialogFactory_, _rgiDocumentSrvc_, _rgiUserListSrvc_) {
+        function ($rootScope, $controller, _$routeParams_, _rgiDialogFactory_, _rgiDocumentSrvc_, _rgiUserSrvc_) {
             $routeParams = _$routeParams_;
             rgiDialogFactory = _rgiDialogFactory_;
             rgiDocumentSrvc = _rgiDocumentSrvc_;
-            rgiUserListSrvc = _rgiUserListSrvc_;
+            rgiUserSrvc = _rgiUserSrvc_;
 
             $scope = $rootScope.$new();
             $routeParamsDocument_ID = $routeParams.document_ID;
@@ -28,10 +28,10 @@ describe('rgiDocumentAdminDetailCtrl', function () {
             /*jslint unparam: false*/
             documentGetStub = sinon.stub(rgiDocumentSrvc, 'get', documentGetSpy);
 
-            userListGetSpy = sinon.spy(function (criterion, callback) {
+            userGetCachedSpy = sinon.spy(function (criterion, callback) {
                 callback(criterion._id.replace('-id', ''));
             });
-            userListGetStub = sinon.stub(rgiUserListSrvc, 'get', userListGetSpy);
+            userGetCachedStub = sinon.stub(rgiUserSrvc, 'getCached', userGetCachedSpy);
 
             $controller('rgiDocumentAdminDetailCtrl', {$scope: $scope});
         }
@@ -61,6 +61,6 @@ describe('rgiDocumentAdminDetailCtrl', function () {
     afterEach(function () {
         $routeParams.document_ID = $routeParamsDocument_ID;
         documentGetStub.restore();
-        userListGetStub.restore();
+        userGetCachedStub.restore();
     });
 });

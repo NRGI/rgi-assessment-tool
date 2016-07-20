@@ -5,7 +5,7 @@ angular.module('app')
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         rgiQuestionSrvc,
-        rgiUserListSrvc
+        rgiUserSrvc
     ) {
         $scope.current_user = rgiIdentitySrvc.currentUser;
         var
@@ -37,7 +37,7 @@ angular.module('app')
         };
 
         var getOption = function(options, optionData) {
-            var foundOption;
+            var foundOption = null;
 
             options.forEach(function(option) {
                 if(option.text === optionData.text) {
@@ -62,7 +62,7 @@ angular.module('app')
 
         $scope.getUser = function(userId) {
             if(!users.hasOwnProperty(userId)) {
-                users[userId] = rgiUserListSrvc.get({_id: userId});
+                users[userId] = rgiUserSrvc.getCached({_id: userId});
             }
             return users[userId];
         };
