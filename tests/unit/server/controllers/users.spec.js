@@ -35,7 +35,7 @@ describe('`users` module', function() {
         spies.responseSend = sinon.spy();
     });
 
-    describe('#getUsersByID', function() {
+    describe('#getUserByID', function() {
         beforeEach(function() {
             spies.userFindOne = sinon.spy(function() {
                 return {exec: function(callback) {
@@ -44,7 +44,7 @@ describe('`users` module', function() {
             });
 
             utils.setModuleLocalVariable(usersModule, 'User', {findOne: spies.userFindOne});
-            usersModule.getUsersByID({params: {id: USER_ID}}, {send: spies.responseSend});
+            usersModule.getUserByID({params: {id: USER_ID}}, {send: spies.responseSend});
         });
 
         it('submits a request to find a user by provided id', function() {
