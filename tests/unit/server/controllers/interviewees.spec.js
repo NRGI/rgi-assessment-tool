@@ -28,8 +28,7 @@ describe('`interviewees` module', function() {
             });
 
             utils.setModuleLocalVariable(intervieweesModule, 'Interviewee', {find: spies.intervieweeFind});
-            spies.next = sinon.spy();
-            intervieweesModule.getInterviewees({query: QUERY}, {send: spies.responseSend}, spies.next);
+            intervieweesModule.getInterviewees({query: QUERY}, {send: spies.responseSend});
         });
 
         it('sends a request to get interviewee list', function() {
@@ -40,12 +39,13 @@ describe('`interviewees` module', function() {
             it('submits the error for further processing if an error occurs', function() {
                 var ERROR = 'error';
                 callbacks.intervieweeFind(ERROR);
-                expect(spies.next.withArgs(ERROR).called).to.equal(true);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
             });
 
             it('submits a generated error for further processing if no interviewees are found', function() {
                 callbacks.intervieweeFind(false, null);
-                expect(spies.next.withArgs(new Error('No interviewees found')).called).to.equal(true);
+                expect(spies.responseSend.withArgs({reason: new Error('No interviewees found').toString()}).called)
+                    .to.equal(true);
             });
 
             it('responds with interviewees list if the list is not empty and got without any error', function() {
@@ -67,8 +67,7 @@ describe('`interviewees` module', function() {
             });
 
             utils.setModuleLocalVariable(intervieweesModule, 'Interviewee', {findOne: spies.intervieweeFindOne});
-            spies.next = sinon.spy();
-            intervieweesModule.getIntervieweeByID({params: {id: INTERVIEWEE_ID}}, {send: spies.responseSend}, spies.next);
+            intervieweesModule.getIntervieweeByID({params: {id: INTERVIEWEE_ID}}, {send: spies.responseSend});
         });
 
         it('sends a request to get interviewee list', function() {
@@ -79,12 +78,13 @@ describe('`interviewees` module', function() {
             it('submits the error for further processing if an error occurs', function() {
                 var ERROR = 'error';
                 callbacks.intervieweeFindOne(ERROR);
-                expect(spies.next.withArgs(ERROR).called).to.equal(true);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
             });
 
             it('submits a generated error for further processing if no interviewee is found', function() {
                 callbacks.intervieweeFindOne(false, null);
-                expect(spies.next.withArgs(new Error('No interviewee found')).called).to.equal(true);
+                expect(spies.responseSend.withArgs({reason: new Error('No interviewee found').toString()}).called)
+                    .to.equal(true);
             });
 
             it('responds with the interviewee data if the interviewee is found and got without any error', function() {
