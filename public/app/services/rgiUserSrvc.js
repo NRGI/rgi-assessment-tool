@@ -3,6 +3,7 @@
 angular.module('app')
     .factory('rgiUserSrvc', function ($resource) {
         var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
+            getCached: {method : 'GET', cache: true},
             update: {method: 'PUT', isArray: false}
         });
 

@@ -54,33 +54,6 @@ describe('`users` module', function() {
         describe('CALLBACK', getUserFindCallbackTestCase('userFindOne'));
     });
 
-    describe('#getUsersListByID', function() {
-        beforeEach(function() {
-            spies.userSelect = sinon.spy(function() {
-                return {exec: function(callback) {
-                    callbacks.userFindOne = callback;
-                }};
-            });
-
-            spies.userFindOne = sinon.spy(function() {
-                return {select: spies.userSelect};
-            });
-
-            utils.setModuleLocalVariable(usersModule, 'User', {findOne: spies.userFindOne});
-            usersModule.getUsersListByID({params: {id: USER_ID}}, {send: spies.responseSend});
-        });
-
-        it('submits a request to find a user by provided id', function() {
-            expect(spies.userFindOne.withArgs({_id: USER_ID}).called).to.equal(true);
-        });
-
-        it('select user special fields only', function() {
-            expect(spies.userSelect.withArgs({firstName: 1, lastName: 1, email: 1, role: 1}).called).to.equal(true);
-        });
-
-        describe('CALLBACK', getUserFindCallbackTestCase('userFindOne'));
-    });
-
     describe('#getUsers', function() {
         var QUERY = 'query',
             initialize = function(userFindResult, hasRole) {
