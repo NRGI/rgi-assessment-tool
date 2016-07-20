@@ -2,22 +2,20 @@
 
 var Country = require('mongoose').model('Country');
 
-var getCountrySet = function(methodName, criteria, errorMessage, res, next) {
+var getCountrySet = function(methodName, criteria, errorMessage, res) {
     Country[methodName](criteria).exec(function (err, countrySet) {
-        if (err) {
-            return next(err);
+        if (!err && !countrySet) {
+            err = new Error(errorMessage);
         }
-        if (!countrySet) {
-            return next(new Error(errorMessage));
-        }
-        res.send(countrySet);
+
+        res.send(err ? {reason: err.toString()} : countrySet);
     });
 };
 
-exports.getCountries = function (req, res, next) {
-    getCountrySet('find', req.query, 'No countries found', res, next);
+exports.getCountries = function (req, res) {
+    getCountrySet('find', req.query, 'No countries found', res);
 };
 
-exports.getCountryByID = function (req, res, next) {
-    getCountrySet('findOne', {country_ID: req.params.country_ID}, 'No country found', res, next);
+exports.getCountryByID = function (req, res) {
+    getCountrySet('findOne', {country_ID: req.params.country_ID}, 'No country found', res);
 };
