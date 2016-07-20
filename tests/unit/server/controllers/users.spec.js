@@ -226,7 +226,7 @@ describe('`users` module', function() {
             beforeEach(function() {
                 spies.responseEnd = sinon.spy();
                 usersModule.updateUser({body: {_id: USER_ID}, user: getCurrentUser('another user id', false)},
-                    {end: spies.responseEnd, status: spies.responseStatus});
+                    {end: spies.responseEnd, sendStatus: spies.responseStatus});
             });
 
             it('closes the connection', function() {
