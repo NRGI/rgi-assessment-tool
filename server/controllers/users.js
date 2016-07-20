@@ -18,7 +18,7 @@ exports.getUsers = function (req, res) {
     });
 };
 
-exports.getUsersByID = function (req, res) {
+exports.getUserByID = function (req, res) {
     User.findOne({_id: req.params.id}).exec(function (err, user) {
         res.send(user);
     });

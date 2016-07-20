@@ -21,7 +21,7 @@ module.exports = function (app) {
     ///// USERS CRUD ////////
     /////////////////////////
     app.get('/api/users', auth.requiresApiLogin, users.getUsers);
-    app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUsersByID);
+    app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUserByID);
     app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
     app.put('/api/users', auth.requiresApiLogin, users.updateUser);
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
