@@ -4,22 +4,12 @@
 var Interviewee = require('mongoose').model('Interviewee');
 var generalResponse = require('./general-response');
 
-var getIntervieweeSet = function(method, criteria, errorMessage, res) {
-    Interviewee[method](criteria).exec(function (err, interviewees) {
-        if (!err && !interviewees) {
-            err = new Error(errorMessage);
-        }
-
-        res.send(err ? {reason: err.toString()} : interviewees);
-    });
-};
-
 exports.getInterviewees = function (req, res) {
-    getIntervieweeSet('find', req.query, 'No interviewees found', res);
+    generalResponse.getObjectSet(Interviewee, 'find', req.query, 'No interviewees found', res);
 };
 
 exports.getIntervieweeByID = function (req, res) {
-    getIntervieweeSet('findOne', {_id: req.params.id}, 'No interviewee found', res);
+    generalResponse.getObjectSet(Interviewee, 'findOne', {_id: req.params.id}, 'No interviewee found', res);
 };
 //noinspection JSUnusedLocalSymbols
 exports.createInterviewee = function (req, res, next) {
