@@ -1,7 +1,7 @@
 'use strict';
 
 var Question = require('mongoose').model('Question');
-var generalResponse = require('./general-response');
+var generalResponse = require('../utilities/general-response');
 
 exports.getQuestions = function (req, res) {
     Question.find(req.query).exec(function (err, collection) {

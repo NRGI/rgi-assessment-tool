@@ -2,7 +2,7 @@
 /* global require */
 
 var Interviewee = require('mongoose').model('Interviewee');
-var generalResponse = require('./general-response');
+var generalResponse = require('../utilities/general-response');
 
 exports.getInterviewees = function (req, res) {
     generalResponse.getObjectSet(Interviewee, 'find', req.query, 'No interviewees found', res);
