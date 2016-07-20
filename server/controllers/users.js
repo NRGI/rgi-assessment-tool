@@ -15,13 +15,13 @@ exports.getUsers = function (req, res) {
     }
 
     query.exec(function (err, collection) {
-        res.send(collection);
+        res.send(err ? {reason: err.toString()} : collection);
     });
 };
 
 exports.getUserByID = function (req, res) {
     User.findOne({_id: req.params.id}).exec(function (err, user) {
-        res.send(user);
+        res.send(err ? {reason: err.toString()} : user);
     });
 };
 
@@ -65,7 +65,9 @@ exports.createUser = function (req, res) {
         }
 
         ResetPasswordToken.createByUser(user._id, function(err, tokenData) {
-            contact.new_user_confirmation(contact_packet, tokenData._id);
+            if(!err) {
+                contact.new_user_confirmation(contact_packet, tokenData._id);
+            }
         });
 
         res.send();
