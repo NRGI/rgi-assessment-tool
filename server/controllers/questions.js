@@ -39,8 +39,7 @@ exports.updateQuestion = function (req, res) {
     var updatedData = req.body;
 
     if (!req.user.hasRole('supervisor')) {
-        res.status(404);
-        return getCloseConnectionHandler(res)(true);
+        return generalResponse.respondStatus(res, 404);
     }
 
     if (updatedData['0']) {
@@ -83,7 +82,7 @@ exports.updateQuestion = function (req, res) {
                     'comments',
                     'linkedOption'
                 ].forEach(function(field) {
-                        question[field] = updatedData[field];
+                    question[field] = updatedData[field];
                 });
 
                 var component = updatedData.component;
