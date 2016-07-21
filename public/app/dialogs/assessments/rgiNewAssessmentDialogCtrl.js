@@ -19,6 +19,10 @@ angular.module('app')
         rgiUtilsSrvc
     ) {
         rgiCountrySrvc.query({country_use: true}, function(countries) {
+            countries.sort(function(countryA, countryB) {
+                return countryA.country > countryB.country;
+            });
+
             $scope.countries = countries;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
 
