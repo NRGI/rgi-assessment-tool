@@ -6,7 +6,7 @@ var expect = require('chai').expect,
 var utils = require('../utils'),
     generalResponseUtility = require(utils.getUtilityPath('general-response'));
 
-describe('`general-response` module', function() {
+describe('`general-response` utility', function() {
     describe('#getObjectSet', function() {
         var spies, callbacks = {}, METHOD_NAME = 'getObjectSet', CRITERIA = 'criteria', ERROR_MESSAGE = 'error message';
 
@@ -22,7 +22,7 @@ describe('`general-response` module', function() {
             generalResponseUtility.getObjectSet(spies, METHOD_NAME, CRITERIA, ERROR_MESSAGE, {send: spies.responseSend});
         });
 
-        it('submits a request ti get the object data', function() {
+        it('submits a request to get the object data', function() {
             expect(spies[METHOD_NAME].withArgs(CRITERIA).called).to.equal(true);
         });
 
