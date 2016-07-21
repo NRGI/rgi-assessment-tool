@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDocumentTableCtrl', ['_', '$scope', '$rootScope', 'rgiDialogFactory', 'rgiAssessmentSrvc', 'rgiDocumentSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', function (
+    .controller('rgiDocumentTableCtrl', function (
         _,
         $scope,
         $rootScope,
@@ -9,19 +9,30 @@ angular.module('app')
         rgiAssessmentSrvc,
         rgiDocumentSrvc,
         rgiHttpResponseProcessorSrvc,
+        rgiIdentitySrvc,
         rgiNotifier
     ) {
-        var currentPage, totalPages, limit = 100;
+        var limit = 100,
+            currentPage = 0,
+            totalPages = 0;
 
+        $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.busy = false;
-        $scope.assessment_filter_options = [];
-        $scope.assessment_filter = '';
+
+        $scope.assessment_filter_options = [
+            {value: 'all', text: 'Show all documents'}
+            // {value: 'type', text: 'Sort by document type'},
+            // {value: 'assessments', text: 'Sort by attached assessments'}
+        ];
+
+        $scope.assessment_filter = $scope.assessment_filter_options[0].value;
 
         rgiAssessmentSrvc.query({}, function (assessments) {
             if(assessments.reason) {
                 rgiNotifier.error('No assessments');
             } else {
                 assessments.forEach(function(assessment) {
+                    console.log(assessment);
                     $scope.assessment_filter_options.push({
                         value: assessment.assessment_ID,
                         text: assessment.country + ' ' + assessment.year + ' ' + assessment.version
@@ -30,31 +41,16 @@ angular.module('app')
             }
         });
 
-        $scope.$watch('assessment_filter', function(assessment) {
-            currentPage = 0;
-            totalPages = 0;
-            var searchOptions = {skip: currentPage, limit: limit};
-
-            if(assessment) {
-                searchOptions.assessments = assessment;
+        rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
+            if(response.reason) {
+                rgiNotifier.error('Load document data failure');
+            } else {
+                $scope.count = response.count;
+                $scope.documents = response.data;
+                totalPages = Math.ceil(response.count / limit);
+                currentPage = currentPage + 1;
             }
-
-            rgiDocumentSrvc.queryCached(searchOptions, function (response) {
-                if(response.reason) {
-                    rgiNotifier.error('Load document data failure');
-                } else {
-                    $scope.count = response.count;
-                    $scope.documents = response.data;
-
-                    if($scope.documents.length === 0) {
-                        rgiNotifier.error('No documents uploaded');
-                    }
-
-                    totalPages = Math.ceil(response.count / limit);
-                    currentPage = 1;
-                }
-            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
-        });
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load document data failure'));
 
         $scope.loadMoreDocs = function() {
             if ($scope.busy) {
@@ -64,13 +60,7 @@ angular.module('app')
             $scope.busy = true;
 
             if(currentPage < totalPages) {
-                var searchOptions = {skip: currentPage, limit: limit};
-
-                if($scope.assessment_filter) {
-                    searchOptions.assessments = $scope.assessment_filter;
-                }
-
-                rgiDocumentSrvc.query(searchOptions, function (response) {
+                rgiDocumentSrvc.query({skip: currentPage, limit: limit}, function (response) {
                     if(response.reason) {
                         rgiNotifier.error('Documents loading failure');
                     } else {
@@ -85,8 +75,4 @@ angular.module('app')
         $scope.deleteDocument = function(doc) {
             rgiDialogFactory.deleteDocument($scope, doc);
         };
-
-        $scope.unlink = function(doc) {
-            rgiDialogFactory.unlinkDocument($scope, doc);
-        };
-    }]);
+    });
