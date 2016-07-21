@@ -15,12 +15,6 @@ exports.getQuestionByID = function (req, res) {
     });
 };
 
-exports.getQuestionTextByID = function (req, res) {
-    Question.findOne({_id: req.params.id}).select({question_text: 1}).exec(function (err, questionText) {
-        res.send(questionText);
-    });
-};
-
 var getCloseConnectionHandler = function(res) {
     return function (err) {
         if (err) {
