@@ -339,15 +339,15 @@ describe('rgiDialogFactory', function () {
 
         describe('#deleteInterviewee', function () {
             it('opens a dialog', function() {
-                var INTERVIEWEE = 'INTERVIEWEE';
-                rgiDialogFactory.deleteInterviewee({}, INTERVIEWEE);
+                var INTERVIEWEE = 'INTERVIEWEE', redirectToIntervieweeList = 'redirect';
+                rgiDialogFactory.deleteInterviewee({}, INTERVIEWEE, redirectToIntervieweeList);
 
                 spies.openDialog.withArgs({
                     template: 'partials/dialogs/interviewees/delete-interviewee-dialog',
                     controller: 'rgiDeleteIntervieweeDialogCtrl',
                     className: 'ngdialog-theme-default',
                     closeByNavigation: true,
-                    scope: {interviewee: INTERVIEWEE}
+                    scope: {interviewee: INTERVIEWEE, redirectToIntervieweeList: redirectToIntervieweeList}
                 }).called.should.be.equal(true);
             });
         });

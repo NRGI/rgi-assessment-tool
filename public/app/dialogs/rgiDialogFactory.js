@@ -218,8 +218,10 @@ angular.module('app')
                     scope: $scope
                 });
             },
-            deleteInterviewee: function($scope, interviewee) {
+            deleteInterviewee: function($scope, interviewee, redirectToIntervieweeList) {
                 $scope.interviewee = interviewee;
+                $scope.redirectToIntervieweeList = redirectToIntervieweeList;
+
                 ngDialog.open({
                     template: 'partials/dialogs/interviewees/delete-interviewee-dialog',
                     controller: 'rgiDeleteIntervieweeDialogCtrl',
