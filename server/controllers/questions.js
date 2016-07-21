@@ -4,20 +4,20 @@ var Question = require('mongoose').model('Question');
 var generalResponse = require('../utilities/general-response');
 
 exports.getQuestions = function (req, res) {
-    Question.find(req.query).exec(function (err, collection) {
-        res.send(collection);
+    Question.find(req.query).exec(function (err, questions) {
+        res.send(err ? {reason: err.toString()} : questions);
     });
 };
 
 exports.getQuestionByID = function (req, res) {
     Question.findOne({_id: req.params.id}).exec(function (err, question) {
-        res.send(question);
+        res.send(err ? {reason: err.toString()} : question);
     });
 };
 
 exports.getQuestionTextByID = function (req, res) {
-    Question.findOne({_id: req.params.id}).select({ "question_text": 1}).exec(function (err, question) {
-        res.send(question);
+    Question.findOne({_id: req.params.id}).select({question_text: 1}).exec(function (err, questionText) {
+        res.send(questionText);
     });
 };
 

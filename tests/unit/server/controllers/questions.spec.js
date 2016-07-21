@@ -11,65 +11,73 @@ utils.stubModel();
 utils.restoreModel();
 
 describe('`questions` module', function() {
+    var callbacks = {}, spies = {};
+
     describe('#getQuestions', function() {
-        var COLLECTION = 'COLLECTION', QUERY = 'QUERY', sendResponseSpy, findQuestionSpy, execQuerySpy,
-            setStub = function(execCallback) {
-                execQuerySpy = sinon.spy(execCallback);
-
-                findQuestionSpy = sinon.spy(function() {
-                    return {exec: execQuerySpy};
-                });
-
-                utils.setModuleLocalVariable(questionsModule, 'Question', {find: findQuestionSpy});
-            };
+        var QUERY = 'QUERY';
 
         beforeEach(function() {
-            sendResponseSpy = sinon.spy();
-
-            setStub(function(callback) {
-                callback(null, COLLECTION);
+            spies.questionFind = sinon.spy(function() {
+                return {exec: function(callback) {
+                    callbacks.questionFind = callback;
+                }};
             });
 
-            questionsModule.getQuestions({query: QUERY}, {send: sendResponseSpy});
+            spies.responseSend = sinon.spy();
+            utils.setModuleLocalVariable(questionsModule, 'Question', {find: spies.questionFind});
+            questionsModule.getQuestions({query: QUERY}, {send: spies.responseSend});
         });
 
         it('creates a request to get a question collection', function() {
-            expect(findQuestionSpy.withArgs(QUERY).called).to.equal(true);
+            expect(spies.questionFind.withArgs(QUERY).called).to.equal(true);
         });
 
-        it('sends question collection as the response', function() {
-            expect(sendResponseSpy.withArgs(COLLECTION).called).to.equal(true);
+        describe('CALLBACK', function() {
+            it('responds with question collection if no error occurs', function() {
+                var QUESTIONS = 'questions';
+                callbacks.questionFind(null, QUESTIONS);
+                expect(spies.responseSend.withArgs(QUESTIONS).called).to.equal(true);
+            });
+
+            it('responds with the error description if an error occurs', function() {
+                var ERROR = 'error';
+                callbacks.questionFind(ERROR);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
+            });
         });
     });
 
     describe('#getQuestionByID', function() {
-        var QUESTION = 'QUESTION', ID = 'ID', sendResponseSpy, findOneQuestionSpy, execQuerySpy,
-            setStub = function(execCallback) {
-                execQuerySpy = sinon.spy(execCallback);
-
-                findOneQuestionSpy = sinon.spy(function() {
-                    return {exec: execQuerySpy};
-                });
-
-                utils.setModuleLocalVariable(questionsModule, 'Question', {findOne: findOneQuestionSpy});
-            };
+        var ID = 'ID';
 
         beforeEach(function() {
-            sendResponseSpy = sinon.spy();
-
-            setStub(function(callback) {
-                callback(null, QUESTION);
+            spies.questionFindOne = sinon.spy(function() {
+                return {exec: function(callback) {
+                    callbacks.questionFindOne = callback;
+                }};
             });
 
-            questionsModule.getQuestionByID({params: {id: ID}}, {send: sendResponseSpy});
+            spies.responseSend = sinon.spy();
+            utils.setModuleLocalVariable(questionsModule, 'Question', {findOne: spies.questionFindOne});
+            questionsModule.getQuestionByID({params: {id: ID}}, {send: spies.responseSend});
         });
 
         it('creates a request to get a question collection', function() {
-            expect(findOneQuestionSpy.withArgs({_id: ID}).called).to.equal(true);
+            expect(spies.questionFindOne.withArgs({_id: ID}).called).to.equal(true);
         });
 
-        it('sends question collection as the response', function() {
-            expect(sendResponseSpy.withArgs(QUESTION).called).to.equal(true);
+        describe('CALLBACK', function() {
+            it('responds with the question if no error occurs', function() {
+                var QUESTION = 'question';
+                callbacks.questionFindOne(null, QUESTION);
+                expect(spies.responseSend.withArgs(QUESTION).called).to.equal(true);
+            });
+
+            it('responds with the error description if an error occurs', function() {
+                var ERROR = 'error';
+                callbacks.questionFindOne(ERROR);
+                expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
+            });
         });
     });
 
