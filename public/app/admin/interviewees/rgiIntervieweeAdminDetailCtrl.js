@@ -38,16 +38,18 @@ angular.module('app')
                     });
                 }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
-                rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
-                    answers.forEach(function(answer) {
-                        answer.references.forEach(function(ref) {
-                            if((ref.citation_type === 'interview') && (ref.interviewee_ID === interviewee._id)) {
-                                ref.interviewee_ID = interviewee;
-                                $scope.references.push(ref);
-                            }
+                if($scope.interviewee.answers.length > 0) {
+                    rgiIntervieweeAnswerSrvc.query({answers: $scope.interviewee.answers}, function(answers) {
+                        answers.forEach(function(answer) {
+                            answer.references.forEach(function(ref) {
+                                if((ref.citation_type === 'interview') && (ref.interviewee_ID === interviewee._id)) {
+                                    ref.interviewee_ID = interviewee;
+                                    $scope.references.push(ref);
+                                }
+                            });
                         });
-                    });
-                }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee answers failure'));
+                    }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee answers failure'));
+                }
 
                 assessments.forEach(function (el) {
                     if (interviewee.assessments.indexOf(el.assessment_ID) < 0) {
