@@ -12,7 +12,7 @@ angular.module('app')
         rgiIdentitySrvc,
         rgiNotifier
     ) {
-        var limit = 50,
+        var limit = 100,
             currentPage = 0,
             totalPages = 0;
 
