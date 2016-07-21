@@ -81,45 +81,6 @@ describe('`questions` module', function() {
         });
     });
 
-    describe('#getQuestionTextByID', function() {
-        var QUESTION = 'TEXT', ID = 'ID', sendResponseSpy, findOneQuestionSpy, execQuerySpy, selectSpy,
-            setStub = function(execCallback) {
-                execQuerySpy = sinon.spy(execCallback);
-
-                selectSpy = sinon.spy(function() {
-                    return {exec: execQuerySpy};
-                });
-
-                findOneQuestionSpy = sinon.spy(function() {
-                    return {select: selectSpy};
-                });
-
-                utils.setModuleLocalVariable(questionsModule, 'Question', {findOne: findOneQuestionSpy});
-            };
-
-        beforeEach(function() {
-            sendResponseSpy = sinon.spy();
-
-            setStub(function(callback) {
-                callback(null, QUESTION);
-            });
-
-            questionsModule.getQuestionTextByID({params: {id: ID}}, {send: sendResponseSpy});
-        });
-
-        it('creates a request to get a question collection', function() {
-            expect(findOneQuestionSpy.withArgs({_id: ID}).called).to.equal(true);
-        });
-
-        it('selects the `question text` field only', function() {
-            expect(selectSpy.withArgs({'question_text': 1}).called).to.equal(true);
-        });
-
-        it('sends question collection as the response', function() {
-            expect(sendResponseSpy.withArgs(QUESTION).called).to.equal(true);
-        });
-    });
-
     describe('#createQuestions', function() {
         var QUESTIONS = ['SUCCESS', 'FAILURE'], createQuestionSpy, sendResponseSpy, statusResponseSpy,
             setStub = function(callback) {
