@@ -148,6 +148,7 @@ describe('`questions` module', function() {
                 }, {
                     end: spies.endResponse,
                     send: spies.sendResponse,
+                    sendStatus: spies.statusResponse,
                     status: spies.statusResponse
                 });
             },
