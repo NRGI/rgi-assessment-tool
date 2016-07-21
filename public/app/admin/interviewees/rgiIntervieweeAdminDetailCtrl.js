@@ -73,6 +73,10 @@ angular.module('app')
             rgiDialogFactory.intervieweeEdit($scope);
         };
 
+        $scope.deleteInterviewee = function() {
+            rgiDialogFactory.deleteInterviewee($scope, $scope.interviewee, true);
+        };
+
         // $scope.addAssessment = function () {
         //     if ($scope.add_assessment === undefined) {
         //         rgiNotifier.error('You must select an assessment from the dropdown!');
