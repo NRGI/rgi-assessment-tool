@@ -38,7 +38,6 @@
                 td.col-md-1
                     a(href="/admin/interviewees-admin/{{interviewee._id}}").btn.btn-warning Edit
                 td.col-md-1
-                    a(ng-if="interviewee.answers.length <= 0", ng-click="deleteInterviewee(interviewee)").btn.btn-danger Delete
-                    a(ng-if="interviewee.answers.length > 0", disabled).btn.btn-danger Delete
+                    a(ng-disabled="interviewee.answers.length > 0", ng-click="deleteInterviewee(interviewee)").btn.btn-danger Delete
 
     h1.text-danger(ng-if="interviewees.length <= 0") No interviewees created
