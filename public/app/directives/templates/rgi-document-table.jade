@@ -48,4 +48,4 @@ div.table-responsive
                     a(ng-if="doc.answers.length <= 0", ng-click="deleteDocument(doc)").btn.btn-danger Delete
                     a(ng-if="doc.answers.length > 0", disabled).btn.btn-danger Delete
 
-div(ng-if='documents.length>49' infinite-scroll='loadMoreDocs()' infinite-scroll-distance='0')
+div(ng-if='documents.length>99' infinite-scroll='loadMoreDocs()' infinite-scroll-distance='0')

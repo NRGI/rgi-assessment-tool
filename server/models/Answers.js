@@ -81,7 +81,7 @@ scoreHistorySchema = new Schema({
         text: String,
         value: Number
     },
-    justification: String
+    justification: htmlSettings
     /////ERROR CALCULATION
 });
 
