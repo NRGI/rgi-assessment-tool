@@ -3,10 +3,11 @@
 describe('rgiDeleteIntervieweeDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, rgiNotifier, rgiIntervieweeMethodSrvc;
+    var $scope, $location, rgiNotifier, rgiIntervieweeMethodSrvc;
 
     beforeEach(inject(
-        function ($rootScope, $controller, _rgiNotifier_, _rgiIntervieweeMethodSrvc_) {
+        function ($rootScope, $controller, _$location_, _rgiNotifier_, _rgiIntervieweeMethodSrvc_) {
+            $location = _$location_;
             rgiNotifier = _rgiNotifier_;
             rgiIntervieweeMethodSrvc = _rgiIntervieweeMethodSrvc_;
 
@@ -37,21 +38,35 @@ describe('rgiDeleteIntervieweeDialogCtrl', function () {
                     callback();
                 });
 
-                mocks.notifier.expects('notify').withArgs('The interviewee has been deleted');
                 $scope.closeThisDialog = sinon.spy();
+            });
+
+            describe('WITHOUT REDIRECT', function() {
+                beforeEach(function() {
+                    mocks.notifier.expects('notify').withArgs('The interviewee has been deleted');
+                    $scope.deleteInterviewee();
+                });
+
+                it('closes the dialog', function() {
+                    $scope.closeThisDialog.called.should.be.equal(true);
+                });
+
+                it('removes the interviewee from the list', function() {
+                    $scope.interviewees.should.deep.equal([{_id: 'FIRST INTERVIEWEE ID'}, {_id: 'LAST INTERVIEWEE ID'}]);
+                });
+
+                it('shows a confirmation message', function() {
+                    mocks.notifier.verify();
+                });
+            });
+
+            it('redirects to the interviewee list if redirect flag is set', function() {
+                mocks.$location = sinon.mock($location);
+                mocks.$location.expects('path').withArgs('/admin/interviewees-admin');
+                $scope.redirectToIntervieweeList = true;
+
                 $scope.deleteInterviewee();
-            });
-
-            it('closes the dialog', function() {
-                $scope.closeThisDialog.called.should.be.equal(true);
-            });
-
-            it('removes the interviewee from the list', function() {
-                $scope.interviewees.should.deep.equal([{_id: 'FIRST INTERVIEWEE ID'}, {_id: 'LAST INTERVIEWEE ID'}]);
-            });
-
-            it('shows a confirmation message', function() {
-                mocks.notifier.verify();
+                mocks.$location.verify();
             });
         });
 

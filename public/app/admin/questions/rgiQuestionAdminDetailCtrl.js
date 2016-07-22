@@ -52,12 +52,21 @@ angular.module('app')
         };
 
         $scope.questionOptionAdd = function () {
-            var order = $scope.question.question_criteria.length + 1;
+            var values = getOptionsValues('value');
+            values.sort();
+
+            var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            var letters = getOptionsValues('letter');
+
+            alphabet = alphabet.filter(function(letter) {
+                return letters.indexOf(letter) === -1;
+            });
 
             $scope.question.question_criteria.push({
-                order: order,
-                value: order,
-                text: ''
+                letter: alphabet.length > 0 ? alphabet[0] : '',
+                order: $scope.question.question_criteria.length + 1,
+                text: '',
+                value: values.length > 0 ? values[values.length - 1] + 1 : 1
             });
         };
 
@@ -67,6 +76,34 @@ angular.module('app')
             $scope.question.question_criteria.forEach(function (el, i) {
                 el.order = i + 1;
             });
+        };
+
+        var getOptionsValues = function(optionField) {
+            var values = [];
+
+            $scope.question.question_criteria.forEach(function(option) {
+                values.push(option[optionField]);
+            });
+
+            return values;
+        };
+
+        $scope.validateOptionValue = function(optionField, elementNamePrefix) {
+            if($scope.question !== undefined) {
+                var valid, values = getOptionsValues(optionField);
+
+                $scope.question.question_criteria.forEach(function(option, optionIndex) {
+                    valid = true;
+
+                    values.forEach(function(value, valueIndex) {
+                        if((value === option[optionField]) && (optionIndex !== valueIndex)) {
+                            valid = false;
+                        }
+                    });
+
+                    $scope.question_content_form[elementNamePrefix + optionIndex].$setValidity('duplicated', valid);
+                });
+            }
         };
 
         $scope.questionClear = function () {

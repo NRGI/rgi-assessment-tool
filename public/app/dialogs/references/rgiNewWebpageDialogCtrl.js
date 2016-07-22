@@ -66,7 +66,6 @@ angular.module('app')
                     new_ref_data = {
                         citation_type: 'document',
                         document_ID: new_document._id,
-                        // mendeley_ID
                         file_hash: new_document.file_hash,
                         date_accessed: new Date($scope.ref_date_accessed).toISOString(),
                         author: current_user_ID

@@ -92,13 +92,32 @@ describe('rgiQuestionAdminDetailCtrl', function () {
     });
 
     describe('#questionOptionAdd', function () {
-        it('adds a placeholder to add a new option', function () {
-            var questionChoice, originalItemsNumber = $scope.question.question_criteria.length;
-            $scope.questionOptionAdd();
+        var questionChoice;
 
+        beforeEach(function() {
+            $scope.question.question_criteria = [{
+                letter: 'a',
+                order: 1,
+                value: 2
+            }];
+
+            $scope.questionOptionAdd();
             questionChoice = $scope.question.question_criteria[$scope.question.question_criteria.length - 1];
-            questionChoice.order.should.be.equal(originalItemsNumber + 1);
-            questionChoice.value.should.be.equal(originalItemsNumber + 1);
+        });
+
+        it('adds a new option with the next `order` value', function () {
+            questionChoice.order.should.be.equal(2);
+        });
+
+        it('adds a new option with the next `value` value', function () {
+            questionChoice.value.should.be.equal(3);
+        });
+
+        it('adds a new option with the next `order` value', function () {
+            questionChoice.letter.should.be.equal('b');
+        });
+
+        it('adds a new option with an empty `text` value', function () {
             questionChoice.text.should.be.equal('');
         });
     });
@@ -248,6 +267,33 @@ describe('rgiQuestionAdminDetailCtrl', function () {
 
             dialogFactoryMock.verify();
             dialogFactoryMock.restore();
+        });
+    });
+
+    describe('#validateOptionValue', function() {
+        var NAME_PREFIX = 'choiceLabel';
+
+        beforeEach(function() {
+            $scope.question = {question_criteria: [{letter: 'a'}, {letter: 'b'}, {letter: 'c'}, {letter: 'a'}]};
+            $scope.question_content_form = {};
+
+            for(var optionIndex = 0; optionIndex < $scope.question.question_criteria.length; optionIndex++) {
+                $scope.question_content_form[NAME_PREFIX + optionIndex] = {$setValidity: sinon.spy()};
+            }
+
+            $scope.validateOptionValue('letter', NAME_PREFIX);
+        });
+
+        it('marks invalid the fields with duplicated values', function() {
+            $scope.question_content_form[NAME_PREFIX + 0].$setValidity.withArgs('duplicated', false).called.should.be.equal(true);
+            $scope.question_content_form[NAME_PREFIX + 3].$setValidity.withArgs('duplicated', false).called.should.be.equal(true);
+        });
+
+        it('marks invalid the fields with duplicated values', function() {
+            $scope.question_content_form[NAME_PREFIX + 1].$setValidity.withArgs('duplicated', false).called.should.be.equal(false);
+            $scope.question_content_form[NAME_PREFIX + 1].$setValidity.withArgs('duplicated', true).called.should.be.equal(true);
+            $scope.question_content_form[NAME_PREFIX + 2].$setValidity.withArgs('duplicated', false).called.should.be.equal(false);
+            $scope.question_content_form[NAME_PREFIX + 2].$setValidity.withArgs('duplicated', true).called.should.be.equal(true);
         });
     });
 

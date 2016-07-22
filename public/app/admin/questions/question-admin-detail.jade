@@ -19,7 +19,7 @@
                     .pull-right
                         button.btn.btn-primary(
                         ng-click="questionUpdate()"
-                        ng-disabled="profileForm.$invalid") Save question
+                        ng-disabled="question_content_form.$invalid") Save question
                         | &nbsp;
                         //button.btn.btn-danger(ng-click="deleteConfirmDialog()" disabled) Delete question
                         //| &nbsp;
@@ -33,7 +33,7 @@
             hr
             .row.left-padding-med.right-padding-med.bottom-padding-lg: div
                 h4 Edit:
-                .form-horizontal(name="question_content_form").row-fluid.right-padding-lg.left-padding-lg
+                form(name="question_content_form").form-horizontal.row-fluid.right-padding-lg.left-padding-lg
                     fieldset
                         .row: #question-type-block.row-fluid.top-padding-med
                             label.col-md-3.control-label(form="dejure")
@@ -91,26 +91,33 @@
                                 .col-md-1: b: p.text-right Option Value
                                 .col-md-1: b: p.text-right Option Letter
                                 .col-md-9: b: p Option Text
-                            .row.form-group.sortable-item(name="question_options_form", ng-repeat="choice in question.question_criteria", data-as-sortable-item)
+                            .row.sortable-item(name="question_options_form", ng-repeat="choice in question.question_criteria", data-as-sortable-item)
                                 div(data-as-sortable-item-handle)
                                     .col-md-1
-                                        input.form-control(
-                                        name="choiceValue"
-                                        type="number"
-                                        ng-model="choice.value"
-                                        required)
+                                        .form-group
+                                            input.form-control(
+                                            name="choiceValue{{$index}}"
+                                            type="number"
+                                            ng-model="choice.value"
+                                            ng-change="validateOptionValue('value', 'choiceValue')"
+                                            required)
                                     .col-md-1
-                                        input.form-control(
-                                        name="choiceLabel"
-                                        ng-model="choice.letter"
-                                        required)
+                                        .form-group
+                                            input.form-control(
+                                            name="choiceLabel{{$index}}"
+                                            ng-model="choice.letter"
+                                            ng-change="validateOptionValue('letter', 'choiceLabel')"
+                                            maxlength="1"
+                                            required)
                                     .col-md-9
-                                        textarea.form-control(
-                                        name="choice"
-                                        type="textbox"
-                                        placeholder="Enter text"
-                                        ng-model="choice.text"
-                                        required)
+                                        .form-group
+                                            textarea.form-control(
+                                            name="choiceText{{$index}}"
+                                            type="textbox"
+                                            placeholder="Enter text"
+                                            ng-model="choice.text"
+                                            ng-change="validateOptionValue('text', 'choiceText')"
+                                            required)
                                     .col-md-1
                                         button.btn.btn-danger(
                                         ng-click="questionOptionDelete($index)"

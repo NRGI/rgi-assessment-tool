@@ -2,95 +2,61 @@
 /* global require */
 
 var Resource = require('mongoose').model('Resource');
+var generalResponse = require('../utilities/general-response');
 
 exports.getResources = function (req, res) {
-    Resource.find(req.query)
-        .sort('order')
-        .exec(function (err, resources) {
-            res.send(resources);
-        });
-};
-
-exports.getResourcesByID = function (req, res) {
-    Resource.findOne({_id: req.params.id}).exec(function (err, resource) {
-        res.send(resource);
+    Resource.find(req.query).sort('order').exec(function (err, resources) {
+        res.send(err ? {reason: err.toString()} : resources);
     });
 };
 
-exports.createResource = function (req, res, next) {
-    var resource_data = req.body;
+exports.getResourceByID = function (req, res) {
+    Resource.findOne({_id: req.params.id}).exec(function (err, resource) {
+        res.send(err ? {reason: err.toString()} : resource);
+    });
+};
 
+exports.createResource = function (req, res) {
     //noinspection JSUnusedLocalSymbols
-    Resource.create(resource_data, function (err, resource) {
+    Resource.create(req.body, function (err, resource) {
         if (err) {
             if (err.toString().indexOf('E11000') > -1) {
                 err = new Error('Duplicate email');
             }
-            res.status(400);
-            return res.send({reason: err.toString()});
+
+            return generalResponse.respondError(res, err);
         } else {
             res.send();
         }
     });
 };
 
-//exports.createQuestions = function (req, res, next) {
-//    var new_questions = req.body;
-//
-//    function createNewQuestion (new_question) {
-//        Question.create(new_question, function (err, question) {
-//            if (err) {
-//                res.status(400);
-//                return res.send({reason: err.toString()});
-//            }
-//        });
-//    }
-//
-//    for (var i = 0; i < new_questions.length; i += 1) {
-//        createNewQuestion(new_questions[i]);
-//    }
-//    res.send();
-//};
-
-
 exports.updateResource = function (req, res) {
-    var resource_update = req.body;
-
     if (!req.user.hasRole('supervisor')) {
-        res.status(404);
-        return res.end();
+        return generalResponse.respondStatus(res, 404);
     }
 
-    Resource.findOne({_id: resource_update._id}).exec(function (err, resource) {
+    Resource.findOne({_id: req.body._id}).exec(function (err, resource) {
         if (err) {
-            res.status(400);
-            return res.send({ reason: err.toString() });
+            return generalResponse.respondError(res, err);
         }
-        resource.head = resource_update.head;
-        resource.body = resource_update.body;
-        resource.order = resource_update.order;
+
+        ['head', 'body', 'order'].forEach(function(field) {
+            resource[field] = req.body[field];
+        });
 
         resource.save(function (err) {
-            if (err) {
-                res.status(400);
-                res.send({reason: err.toString()});
-            }
+            return err ? generalResponse.respondError(res, err) : res.send();
         });
     });
-    res.send();
 };
 
 exports.deleteResource = function (req, res) {
     if (!req.user.hasRole('supervisor')) {
-        res.status(404);
-        return res.end();
+        return generalResponse.respondStatus(res, 404);
     }
+
     Resource.remove({_id: req.params.id}, function (err) {
-        if (!err) {
-            res.send();
-        } else {
-            return res.send({ reason: err.toString() });
-        }
+        res.send(err ? {reason: err.toString()} : undefined);
     });
-    res.send();
 };

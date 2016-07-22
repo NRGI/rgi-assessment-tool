@@ -10,7 +10,8 @@ var auth                    = require('./auth'),
     interviewees            = require('../controllers/interviewees'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
-    response                = require('../controllers/general-response'),
+    response                = require('../utilities/general-response'),
+    multipartMiddleware     = require('connect-multiparty')(),
     resetPasswordTokens     = require('../controllers/reset-password-tokens'),
     users                   = require('../controllers/users');
 
@@ -20,8 +21,7 @@ module.exports = function (app) {
     ///// USERS CRUD ////////
     /////////////////////////
     app.get('/api/users', auth.requiresApiLogin, users.getUsers);
-    app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUsersByID);
-    app.get('/api/user-list/:id', auth.requiresApiLogin, users.getUsersListByID);
+    app.get('/api/users/:id', auth.requiresRole('supervisor'), users.getUserByID);
     app.post('/api/users', auth.requiresRole('supervisor'), users.createUser);
     app.put('/api/users', auth.requiresApiLogin, users.updateUser);
     app.delete('/api/users/:id', auth.requiresRole('supervisor'), users.deleteUser);
@@ -71,6 +71,7 @@ module.exports = function (app) {
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
     /////////////////////////
+    app.post('/file-upload', auth.requiresApiLogin,  multipartMiddleware, documents.fileCheck);
     app.get('/api/snapshot-upload', auth.requiresApiLogin,  documents.uploadUrlSnapshot);
     app.get('/api/remote-file-upload', auth.requiresApiLogin,  documents.uploadRemoteFile);
     app.get('/api/remote-file/upload-progress/:statusId', auth.requiresApiLogin,  documents.getRemoteFileUploadStatus);
@@ -80,7 +81,7 @@ module.exports = function (app) {
     //// CONTENT RESOURCES ///
     //////////////////////////
     app.get('/api/resources', auth.requiresApiLogin, resources.getResources);
-    app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourcesByID);
+    app.get('/api/resources/:id', auth.requiresApiLogin, resources.getResourceByID);
     app.post('/api/resources', auth.requiresRole('supervisor'), resources.createResource);
     app.put('/api/resources', auth.requiresRole('supervisor'), resources.updateResource);
     app.delete('/api/resources/:id', auth.requiresRole('supervisor'), resources.deleteResource);
@@ -89,7 +90,7 @@ module.exports = function (app) {
     ///// INTERVIEWEE CRUD ///
     //////////////////////////
     app.get('/api/interviewees', auth.requiresApiLogin, interviewees.getInterviewees);
-    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweesByID);
+    app.get('/api/interviewees/:id', auth.requiresApiLogin, interviewees.getIntervieweeByID);
     app.get('/api/interviewee-answers/:answers', auth.requiresApiLogin, interviewees.parseCriterion, answers.getAnswers);
     app.post('/api/interviewees', auth.requiresApiLogin, interviewees.createInterviewee);
     app.put('/api/interviewees', auth.requiresApiLogin, interviewees.updateInterviewee);
@@ -103,7 +104,7 @@ module.exports = function (app) {
     });
     // GET COUNTRY
     app.get('/api/countries', countries.getCountries);
-    app.get('/api/countries/:country_ID', countries.getCountriesByID);
+    app.get('/api/countries/:country_ID', countries.getCountryByID);
     
     //GET RAW ANSWERS
     // app.get('/api/raw_answers/:limit/:skip', auth.requiresApiLogin, answers.getRawAnswers);
@@ -113,11 +114,7 @@ module.exports = function (app) {
     // Send tech contact
     app.post('/contact_tech', contact.techSend);
 
-
     app.post('/login', auth.authenticate, auth.passUser);
-    //app.post('/login', auth.authenticate, mendeley.tokenExist, mendeley.validateToken, authMendeley.getToken, mendeley.createToken,
-    //    authMendeley.getToken, mendeley.updateToken, auth.passUser);
-
     app.post('/logout', auth.logout);
 
     app.all('/api/*', function (req, res) {

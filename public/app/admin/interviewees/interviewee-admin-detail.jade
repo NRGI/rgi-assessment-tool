@@ -8,7 +8,7 @@
                     | &nbsp;
                     a(href="{{document.s3_url}}" target="_blank").btn.btn-default Link to document
                     | &nbsp;
-                    button.btn.btn-danger.popover-dialog(popover="Feature coming" popover-trigger="mouseenter" ng-click="") Delete
+                    button.btn.btn-danger.popover-dialog(ng-click="deleteInterviewee()", ng-disabled="interviewee.answers.length > 0") Delete
                 .row-fluid.top-padding-med
                     table.table.table-hover.table-striped.table-condensed
                         thead

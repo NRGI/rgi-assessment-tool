@@ -1,23 +1,12 @@
 'use strict';
 
 var Country = require('mongoose').model('Country');
+var generalResponse = require('../utilities/general-response');
 
-var getCountrySet = function(methodName, criteria, errorMessage, res, next) {
-    Country[methodName](criteria).exec(function (err, countrySet) {
-        if (err) {
-            return next(err);
-        }
-        if (!countrySet) {
-            return next(new Error(errorMessage));
-        }
-        res.send(countrySet);
-    });
+exports.getCountries = function (req, res) {
+    generalResponse.getObjectSet(Country, 'find', req.query, 'No countries found', res);
 };
 
-exports.getCountries = function (req, res, next) {
-    getCountrySet('find', req.query, 'No countries found', res, next);
-};
-
-exports.getCountriesByID = function (req, res, next) {
-    getCountrySet('findOne', {country_ID: req.params.country_ID}, 'No country found', res, next);
+exports.getCountryByID = function (req, res) {
+    generalResponse.getObjectSet(Country, 'findOne', {country_ID: req.params.country_ID}, 'No country found', res);
 };

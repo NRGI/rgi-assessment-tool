@@ -26,30 +26,31 @@ describe('`countries` module', function() {
         };
 
     beforeEach(function() {
-        spies.next = sinon.spy();
+        spies.responseSend = sinon.spy();
     });
 
     describe('#getCountries', function() {
         var QUERY = 'query';
 
-        it('submits the error for further processing if an error occurs', function() {
+        it('responds with the error description if an error occurs', function() {
             var ERROR = 'error';
             initialize('find', 'countryFind', ERROR);
-            countriesModule.getCountries({query: QUERY}, undefined, spies.next);
-            expect(spies.next.withArgs(ERROR).called).to.equal(true);
+            countriesModule.getCountries({query: QUERY}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
         });
 
-        it('submits a special error for further processing if no contries found', function() {
-            initialize('find', 'countryFind', null, false);
-            countriesModule.getCountries({query: QUERY}, undefined, spies.next);
-            expect(spies.next.withArgs(new Error('No countries found')).called).to.equal(true);
+        it('responds with a special error description if no countries are found', function() {
+            initialize('find', 'countryFind', null, null);
+            countriesModule.getCountries({query: QUERY}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs({reason: new Error('No countries found').toString()}).called)
+                .to.equal(true);
         });
 
-        it('submits a special error for further processing if no contries found', function() {
+        it('responds with the countries data if the data  are found', function() {
             var COUNTRIES = 'countries';
             initialize('find', 'countryFind', null, COUNTRIES);
-            countriesModule.getCountries({query: QUERY}, {send: spies.next});
-            expect(spies.next.withArgs(COUNTRIES).called).to.equal(true);
+            countriesModule.getCountries({query: QUERY}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs(COUNTRIES).called).to.equal(true);
         });
 
         afterEach(function() {
@@ -57,27 +58,28 @@ describe('`countries` module', function() {
         });
     });
 
-    describe('#getCountriesByID', function() {
+    describe('#getCountryByID', function() {
         var COUNTRY_ID = 'country id';
 
-        it('submits the error for further processing if an error occurs', function() {
+        it('responds with the error description if an error occurs', function() {
             var ERROR = 'error';
             initialize('findOne', 'countryFindOne', ERROR);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
-            expect(spies.next.withArgs(ERROR).called).to.equal(true);
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs({reason: ERROR.toString()}).called).to.equal(true);
         });
 
-        it('submits a special error for further processing if no contries found', function() {
-            initialize('findOne', 'countryFindOne', null, false);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, undefined, spies.next);
-            expect(spies.next.withArgs(new Error('No country found')).called).to.equal(true);
+        it('responds with a special error description if no country is found', function() {
+            initialize('findOne', 'countryFindOne', null, null);
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs({reason: new Error('No country found').toString()}).called)
+                .to.equal(true);
         });
 
-        it('submits a special error for further processing if no contries found', function() {
-            var COUNTRIES = 'countries';
-            initialize('findOne', 'countryFindOne', null, COUNTRIES);
-            countriesModule.getCountriesByID({params: {country_ID: COUNTRY_ID}}, {send: spies.next});
-            expect(spies.next.withArgs(COUNTRIES).called).to.equal(true);
+        it('responds with the country data if the data are found', function() {
+            var COUNTRY = 'country';
+            initialize('findOne', 'countryFindOne', null, COUNTRY);
+            countriesModule.getCountryByID({params: {country_ID: COUNTRY_ID}}, {send: spies.responseSend});
+            expect(spies.responseSend.withArgs(COUNTRY).called).to.equal(true);
         });
 
         afterEach(function() {
