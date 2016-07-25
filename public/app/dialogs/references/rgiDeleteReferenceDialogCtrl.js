@@ -43,41 +43,45 @@ angular.module('app')
                 return belongingAnswerFound;
             },
             getReferencedObjectId = function(reference, field) {
-                var referencedObjectData = reference[field];
-                return referencedObjectData._id ? referencedObjectData._id : referencedObjectData;
+                var referencedObject = reference[field];
+                return referencedObject && referencedObject._id ? referencedObject._id : referencedObject;
             },
             removeReferencedObjectAnswer = function(referencedObject) {
-                var answerIndex = referencedObject.answers.indexOf(answer.answer_ID);
+                if(referencedObject && referencedObject.answers) {
+                    var answerIndex = referencedObject.answers.indexOf(answer.answer_ID);
 
-                if(answerIndex > -1) {
-                    referencedObject.answers.splice(answerIndex, 1);
+                    if(answerIndex > -1) {
+                        referencedObject.answers.splice(answerIndex, 1);
+                    }
                 }
             },
             supplementReferencedObjectAnswers = function(referencedObject) {
-                if(referencedObject.answers.indexOf(answer.answer_ID) === -1) {
+                if(referencedObject && referencedObject.answers && (referencedObject.answers.indexOf(answer.answer_ID) === -1)) {
                     referencedObject.answers.push(answer.answer_ID);
                 }
             },
             cleanUpReferencedObjectAssessments = function(referencedObject) {
-                var assessmentIdCollection = [];
+                if(referencedObject && referencedObject.answers && referencedObject.assessments) {
+                    var assessmentIdCollection = [];
 
-                referencedObject.assessments.forEach(function(assessmentId) {
-                    if(!isAssessmentReferenceFound(assessmentId, referencedObject.answers)) {
-                        assessmentIdCollection.push(assessmentId);
-                    }
-                });
+                    referencedObject.assessments.forEach(function(assessmentId) {
+                        if(!isAssessmentReferenceFound(assessmentId, referencedObject.answers)) {
+                            assessmentIdCollection.push(assessmentId);
+                        }
+                    });
 
-                assessmentIdCollection.forEach(function(assessmentId) {
-                    referencedObject.assessments.splice(referencedObject.assessments.indexOf(assessmentId), 1);
-                });
+                    assessmentIdCollection.forEach(function(assessmentId) {
+                        referencedObject.assessments.splice(referencedObject.assessments.indexOf(assessmentId), 1);
+                    });
+                }
             },
             supplementReferencedObjectAssessments = function(referencedObject) {
-                if(referencedObject.assessments.indexOf(answer.assessment_ID) === -1) {
+                if(referencedObject && referencedObject.assessments && (referencedObject.assessments.indexOf(answer.assessment_ID) === -1)) {
                     referencedObject.assessments.push(answer.assessment_ID);
                 }
             },
             cleanUpReferencedObject = function(field, storage, saveObject, promiseList) {
-                if(!isAnotherReferenceFound(field)) {
+                if(!isAnotherReferenceFound(field) && (getReferencedObjectId(currentReference, field) !== null)) {
                     storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
                         removeReferencedObjectAnswer(referencedObject);
                         cleanUpReferencedObjectAssessments(referencedObject);
@@ -86,7 +90,7 @@ angular.module('app')
                 }
             },
             supplementReferencedObject = function(field, storage, saveObject, promiseList) {
-                if(!isAnotherReferenceFound(field)) {
+                if(!isAnotherReferenceFound(field) && (getReferencedObjectId(currentReference, field) !== null)) {
                     storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
                         supplementReferencedObjectAnswers(referencedObject);
                         supplementReferencedObjectAssessments(referencedObject);
