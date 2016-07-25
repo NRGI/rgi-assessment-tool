@@ -2,7 +2,7 @@
 
 describe('rgiDocumentTableCtrl', function () {
     beforeEach(module('app'));
-    var $scope, args = {}, callbacks = {}, mocks = {}, spies = {}, stubs = {},
+    var $scope, args = {}, callbacks = {}, mocks = {}, spies = {}, stubs = {}, ITEMS_PER_PAGE = 100,
         rgiDialogFactory, rgiDocumentSrvc;
 
     beforeEach(inject(function (
@@ -96,7 +96,7 @@ describe('rgiDocumentTableCtrl', function () {
                 });
 
                 it('submits a request with search options to get documents', function() {
-                    spies.documentQueryCached.withArgs({skip: 0, limit: 50}).called.should.be.equal(true);
+                    spies.documentQueryCached.withArgs({skip: 0, limit: ITEMS_PER_PAGE}).called.should.be.equal(true);
                 });
 
                 it('processes HTTP failures', function() {
@@ -105,7 +105,7 @@ describe('rgiDocumentTableCtrl', function () {
 
                 describe('DOCUMENT QUERY HANDLER', function() {
                     describe('SUCCESS CASE', function() {
-                        var DOCUMENTS, ITEMS_NUMBER = 113;
+                        var DOCUMENTS, ITEMS_NUMBER = ITEMS_PER_PAGE * 2 + 13;
 
                         it('shows an error message if the response is empty', function() {
                             DOCUMENTS = [];
@@ -136,7 +136,8 @@ describe('rgiDocumentTableCtrl', function () {
             it('submits a request with search options and the assessment to get documents if an assessment is set', function() {
                 var ASSESSMENT = 'AF-2016-PI';
                 callbacks.scopeWatch(ASSESSMENT);
-                spies.documentQueryCached.withArgs({skip: 0, limit: 50, assessments: ASSESSMENT}).called.should.be.equal(true);
+                spies.documentQueryCached.withArgs({skip: 0, limit: ITEMS_PER_PAGE, assessments: ASSESSMENT})
+                    .called.should.be.equal(true);
             });
         });
     });
@@ -159,12 +160,12 @@ describe('rgiDocumentTableCtrl', function () {
 
         describe('SEND A REQUEST TO GET MORE DOCS', function() {
             beforeEach(function() {
-                callbacks.documentQueryCached({count: 51, data: []});
+                callbacks.documentQueryCached({count: ITEMS_PER_PAGE + 1, data: []});
                 $scope.loadMoreDocs();
             });
 
             it('sends a request to get more documents if not all documents are shown', function() {
-                spies.documentQuery.withArgs({skip: 1, limit: 50}).called.should.be.equal(true);
+                spies.documentQuery.withArgs({skip: 1, limit: ITEMS_PER_PAGE}).called.should.be.equal(true);
             });
 
             it('processes HTTP failures', function() {
@@ -201,10 +202,10 @@ describe('rgiDocumentTableCtrl', function () {
 
         it('sends a request including filtering criteria if the filtering criteria are set', function() {
             $scope.assessment_filter = 'KG-2016-MI';
-            callbacks.documentQueryCached({count: 51, data: []});
+            callbacks.documentQueryCached({count: ITEMS_PER_PAGE + 1, data: []});
 
             $scope.loadMoreDocs();
-            spies.documentQuery.withArgs({skip: 1, limit: 50, assessments: $scope.assessment_filter})
+            spies.documentQuery.withArgs({skip: 1, limit: ITEMS_PER_PAGE, assessments: $scope.assessment_filter})
                 .called.should.be.equal(true);
         });
 

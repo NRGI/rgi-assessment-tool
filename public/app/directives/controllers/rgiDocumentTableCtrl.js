@@ -11,11 +11,7 @@ angular.module('app')
         rgiHttpResponseProcessorSrvc,
         rgiNotifier
     ) {
-        var limit = 100,
-            currentPage = 0,
-            totalPages = 0;
-
-        $scope.current_user = rgiIdentitySrvc.currentUser;
+        var currentPage, totalPages, limit = 100;
 
         $scope.busy = false;
         $scope.assessment_filter_options = [];
