@@ -81,7 +81,7 @@ angular.module('app')
                 }
             },
             cleanUpReferencedObject = function(field, storage, saveObject, promiseList) {
-                if(!isAnotherReferenceFound(field) && (getReferencedObjectId(currentReference, field) !== null)) {
+                if(!isAnotherReferenceFound(field) && getReferencedObjectId(currentReference, field)) {
                     storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
                         removeReferencedObjectAnswer(referencedObject);
                         cleanUpReferencedObjectAssessments(referencedObject);
@@ -90,7 +90,7 @@ angular.module('app')
                 }
             },
             supplementReferencedObject = function(field, storage, saveObject, promiseList) {
-                if(!isAnotherReferenceFound(field) && (getReferencedObjectId(currentReference, field) !== null)) {
+                if(!isAnotherReferenceFound(field) && getReferencedObjectId(currentReference, field)) {
                     storage.get({_id: getReferencedObjectId(currentReference, field)}, function (referencedObject) {
                         supplementReferencedObjectAnswers(referencedObject);
                         supplementReferencedObjectAssessments(referencedObject);
