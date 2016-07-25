@@ -269,26 +269,40 @@ describe('rgiDeleteReferenceDialogCtrl', function () {
                     var INTERVIEWEE,
                         ANOTHER_ASSESSMENT_ID = 'AU-2016-MI', ANOTHER_ANSWER_ID = ANOTHER_ASSESSMENT_ID + '-2';
 
-                    beforeEach(function() {
-                        INTERVIEWEE = {
-                            answers: [ANOTHER_ANSWER_ID, CURRENT_ANSWER_ID],
-                            assessments: ['dummy assessment id', CURRENT_ASSESSMENT_ID, ANOTHER_ASSESSMENT_ID]
-                        };
+                    describe('EXISTING INTERVIEWEE', function() {
+                        beforeEach(function() {
+                            INTERVIEWEE = {
+                                answers: [ANOTHER_ANSWER_ID, CURRENT_ANSWER_ID],
+                                assessments: ['dummy assessment id', CURRENT_ASSESSMENT_ID, ANOTHER_ASSESSMENT_ID]
+                            };
 
-                        callbacks.intervieweeGet(INTERVIEWEE);
-                        expectedPromises.push(intervieweeMethodUpdateIntervieweePromise);
+                            callbacks.intervieweeGet(INTERVIEWEE);
+                            expectedPromises.push(intervieweeMethodUpdateIntervieweePromise);
+                        });
+
+                        it('updates the interviewee data', function() {
+                            expect(spies.intervieweeMethodUpdateInterviewee.called).to.equal(true);
+                        });
+
+                        it('removes the answer id from the interviewee answer list', function() {
+                            expect(INTERVIEWEE.answers).to.deep.equal([ANOTHER_ANSWER_ID]);
+                        });
+
+                        it('cleans up the interviewee assessment list', function() {
+                            expect(INTERVIEWEE.assessments).to.deep.equal([ANOTHER_ASSESSMENT_ID]);
+                        });
                     });
 
-                    it('updates the interviewee data', function() {
-                        expect(spies.intervieweeMethodUpdateInterviewee.called).to.equal(true);
-                    });
+                    describe('INTERVIEWEE NOT FOUND', function() {
+                        beforeEach(function() {
+                            INTERVIEWEE = null;
+                            callbacks.intervieweeGet(INTERVIEWEE);
+                            expectedPromises.push(intervieweeMethodUpdateIntervieweePromise);
+                        });
 
-                    it('removes the answer id from the interviewee answer list', function() {
-                        expect(INTERVIEWEE.answers).to.deep.equal([ANOTHER_ANSWER_ID]);
-                    });
+                        it('executed without errors', function() {
 
-                    it('cleans up the interviewee assessment list', function() {
-                        expect(INTERVIEWEE.assessments).to.deep.equal([ANOTHER_ASSESSMENT_ID]);
+                        });
                     });
                 });
             });
