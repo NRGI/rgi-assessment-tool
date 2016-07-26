@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "valid",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f567ac61fbbc1ae1c4ca772ff45ba23f831c31a.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Interim%20Petroleum%20Mining%20Code/$File/JPDA%20Interim%20PMC%202%20April%2003.pdf"
+  },
+  {
+    "_id": "jpeg",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc4f09374463b576f60f7bc1b4c2495da2261a8.jpg"
+  },
+  {
+    "_id": "docx",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fda993b2e66eb179e39e21627e7ec5f529d7e9c9.docx",
+    "source": "http://www.grss-mof.org"
+  },
+  {
+    "_id": "broken-file",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49b4d261870732853582622597449957c0b443d1.pdf",
+    "source": "http://www.menlh.go.id/DATA/PP-Nomor-27-Tahun-2012.pdf"
+  },
+  {
+    "_id": "incorrect-path-no-source",
+    "s3_url": "https://s3.amazonaws.com/'rgi-documents'/65574f946a8dde120d00a616959abd1f00591326.pdf"
+  }
+]
