@@ -6,68 +6,65 @@ const https = require('https');
 const PDFParser = require("pdf2json/pdfparser");
 
 const filePath = require('./file-path');
-const logger = require('./logger');
 
-exports.handleNotPdfDocument = function(notPdfDocument) {
-    logger.log(notPdfDocument._id + ' is not a PDF file.');
-};
-
-exports.handlePdfDocument = function(pdfDocument, field, validHandler, invalidHandler) {
+exports.handlePdfDocument = function(pdfDocument, field, getValidHandler, getInvalidHandler, callback) {
     var fileAbsolutePath = filePath.getDownloadFilePath(pdfDocument._id);
     var file = fs.createWriteStream(fileAbsolutePath);
     var documentDownloader = pdfDocument[field].indexOf('https://') > -1 ? https : http;
 
-    try {
-        documentDownloader.get(pdfDocument[field], function(response) {
-            response.pipe(file);
+    documentDownloader.get(pdfDocument[field], function(response) {
+        response.pipe(file);
 
-            file.on('finish', function() {
-                file.close(function() {
-                    var pdfParser = new PDFParser();
-                    pdfParser.on("pdfParser_dataError", invalidHandler);
-                    pdfParser.on("pdfParser_dataReady", validHandler);
-                    pdfParser.loadPDF(fileAbsolutePath);
+        file.on('finish', function() {
+            file.close(function() {
+                var pdfParser = new PDFParser();
+                pdfParser.on("pdfParser_dataReady", getValidHandler(pdfDocument, callback));
+
+                pdfParser.on("pdfParser_dataError", function() {
+                    getInvalidHandler(pdfDocument, callback)();
                 });
+
+                pdfParser.loadPDF(fileAbsolutePath);
             });
         });
-    } catch(error) {
-        handleUnprocessedPdfDocument(pdfDocument);
-    }
+    }).on('error', function() {
+        handleUnprocessedPdfDocument(pdfDocument, callback);
+    });
 };
 
-exports.getInvalidS3PdfDocumentHandler = function(pdfDocument) {
+exports.getInvalidS3PdfDocumentHandler = function(pdfDocument, callback) {
     return function() {
         if(pdfDocument.source) {
-            exports.handlePdfDocument(pdfDocument, 'source', getValidSourcePdfDocumentHandler(pdfDocument),
-                getInvalidSourcePdfDocumentHandler(pdfDocument));
+            exports.handlePdfDocument(pdfDocument, 'source', getValidSourcePdfDocumentHandler,
+                getInvalidSourcePdfDocumentHandler, callback);
         } else {
-            handleInvalidS3PdfDocumentWithoutSource(pdfDocument);
+            handleInvalidS3PdfDocumentWithoutSource(pdfDocument, callback);
         }
     };
 };
 
-exports.getValidS3PdfDocumentHandler = function(pdfDocument) {
+exports.getValidS3PdfDocumentHandler = function(pdfDocument, callback) {
     return function() {
-        logger.log(pdfDocument._id + ' is a properly uploaded PDF document.');
+        callback('valid', pdfDocument);
     };
 };
 
-var handleInvalidS3PdfDocumentWithoutSource = function(pdfDocument) {
-    logger.log(pdfDocument._id + ' is a PDF document without source.');
+var handleInvalidS3PdfDocumentWithoutSource = function(pdfDocument, callback) {
+    callback('source-required', pdfDocument);
 };
 
-var handleUnprocessedPdfDocument = function(pdfDocument) {
-    logger.log(pdfDocument._id + ' has not been processed.');
+var handleUnprocessedPdfDocument = function(pdfDocument, callback) {
+    callback('unprocessed', pdfDocument);
 };
 
-var getValidSourcePdfDocumentHandler = function(document) {
+var getValidSourcePdfDocumentHandler = function(pdfDocument, callback) {
     return function() {
-        logger.log(document._id + ' is a broken PDF document but it can be uploaded from' + document.source + '.');
+        callback('fix-available', pdfDocument);
     };
 };
 
-var getInvalidSourcePdfDocumentHandler = function(document) {
+var getInvalidSourcePdfDocumentHandler = function(pdfDocument, callback) {
     return function() {
-        logger.log(document._id + ' is a broken PDF document with broken source.');
+        callback('broken-source', pdfDocument);
     };
 };
