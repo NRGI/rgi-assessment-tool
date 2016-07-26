@@ -5,6 +5,12 @@ const path = require('path');
 const url = require('url');
 const PDFParser = require("pdf2json/pdfparser");
 
+const filePath = require('./file-path');
+
+var handleNotPdfDocument = function(notPdfDocument) {
+    console.error(notPdfDocument.s3_url + ' is not a PDF file.');
+};
+
 var processPdfDocument = function(documentUrl, validHandler, invalidHandler) {
     var pdfParser = new PDFParser();
     pdfParser.on("pdfParser_dataError", validHandler);
@@ -24,15 +30,7 @@ var getValidS3PdfDocumentHandler = function(pdfDocument) {
     };
 };
 
-var handleNotPdfDocument = function(notPdfDocument) {
-    console.error(notPdfDocument.s3_url + ' is not a PDF file.');
-};
-
-var getInputFilePath = function(env) {
-    return __dirname + '/input/' + env + '.json';
-};
-
-fs.readFile(getInputFilePath(process.env.NODE_ENV), 'utf8', function (err, data) {
+fs.readFile(filePath.getInputFilePath(process.env.NODE_ENV), 'utf8', function (err, data) {
     if(err) {
         console.log('read document list error');
     } else {
