@@ -3,32 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
-const PDFParser = require("pdf2json/pdfparser");
 
 const filePath = require('./file-path');
-
-var handleNotPdfDocument = function(notPdfDocument) {
-    console.error(notPdfDocument.s3_url + ' is not a PDF file.');
-};
-
-var processPdfDocument = function(documentUrl, validHandler, invalidHandler) {
-    var pdfParser = new PDFParser();
-    pdfParser.on("pdfParser_dataError", validHandler);
-    pdfParser.on("pdfParser_dataReady", invalidHandler);
-    pdfParser.loadPDF(documentUrl);
-};
-
-var getInvalidS3PdfDocumentHandler = function(pdfDocument) {
-    return function() {
-        console.error(pdfDocument.s3_url + ' HAS BEEN SUCCESSFULLY OPEN.');
-    };
-};
-
-var getValidS3PdfDocumentHandler = function(pdfDocument) {
-    return function() {
-        console.error(pdfDocument.s3_url + ' cannot be open.');
-    };
-};
+const fileHandlers = require('./file-handlers');
 
 fs.readFile(filePath.getInputFilePath(process.env.NODE_ENV), 'utf8', function (err, data) {
     if(err) {
@@ -40,10 +17,10 @@ fs.readFile(filePath.getInputFilePath(process.env.NODE_ENV), 'utf8', function (e
             const urlComponents = url.parse(inputDocument.s3_url);
 
             if(path.extname(urlComponents.pathname) !== '.pdf') {
-                handleNotPdfDocument(inputDocument);
+                fileHandlers.handleNotPdfDocument(inputDocument);
             } else {
-                processPdfDocument(inputDocument.s3_url, getValidS3PdfDocumentHandler(inputDocument),
-                    getInvalidS3PdfDocumentHandler(inputDocument));
+                fileHandlers.handlePdfDocument(inputDocument.s3_url, fileHandlers.getValidS3PdfDocumentHandler(inputDocument),
+                    fileHandlers.getInvalidS3PdfDocumentHandler(inputDocument));
             }
         });
     }
