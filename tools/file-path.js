@@ -1,13 +1,17 @@
 'use strict';
 
-var getFileAbsolutePath = function(folderName, fileSubPath) {
-    return __dirname + '/' + folderName + '/' + fileSubPath + '.json';
+var getFileAbsolutePath = function(folderName, fileSubPath, extension) {
+    return __dirname + '/' + folderName + '/' + fileSubPath + '.' + (extension || 'json');
 };
 
-exports.getInputFilePath = function(env) {
-    return getFileAbsolutePath('input', env);
+exports.getDownloadFilePath = function(fileName) {
+    return getFileAbsolutePath('downloads', process.env.NODE_ENV + '/' + fileName, 'pdf');
 };
 
-exports.getOutputFilePath = function(env, fileName) {
-    return getFileAbsolutePath('output', env + '/' + fileName);
+exports.getInputFilePath = function() {
+    return getFileAbsolutePath('input', process.env.NODE_ENV);
+};
+
+exports.getOutputFilePath = function(fileName) {
+    return getFileAbsolutePath('output', process.env.NODE_ENV + '/' + fileName);
 };

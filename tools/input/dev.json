@@ -5,18 +5,18 @@
     "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Interim%20Petroleum%20Mining%20Code/$File/JPDA%20Interim%20PMC%202%20April%2003.pdf"
   },
   {
-    "_id": "jpeg",
+    "_id": "not-pdf",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc4f09374463b576f60f7bc1b4c2495da2261a8.jpg"
   },
   {
-    "_id": "docx",
-    "s3_url": "https://s3.amazonaws.com/rgi-documents/fda993b2e66eb179e39e21627e7ec5f529d7e9c9.docx",
-    "source": "http://www.grss-mof.org"
-  },
-  {
-    "_id": "broken-file",
+    "_id": "broken-file-but-valid-source",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/49b4d261870732853582622597449957c0b443d1.pdf",
     "source": "http://www.menlh.go.id/DATA/PP-Nomor-27-Tahun-2012.pdf"
+  },
+  {
+    "_id": "broken-file-invalid-source",
+    "s3_url": "https://s3.amazonaws.com/'rgi-documents'/adec74001c9913cccef6a0e3d0323c09182f03ea.pdf",
+    "source": "http://www.dmr.gov.za/publications/summary/121-directories/8961-d1-information-2016-pdf-.html"
   },
   {
     "_id": "incorrect-path-no-source",
