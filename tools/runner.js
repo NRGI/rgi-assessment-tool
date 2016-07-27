@@ -12,33 +12,32 @@ fs.readFile(filePath.getInputFilePath(), 'utf8', function (dataError, serialized
     if(dataError) {
         logger.log('read document list error');
     } else {
-        var recordsNumberFilePath = filePath.getRecordsNumberFilePath();
+        var configFilePath = filePath.getConfigFilePath();
 
-        fs.readFile(recordsNumberFilePath, 'utf8', function (recordsNumberError, serializedRecordsNumberData) {
-            if(recordsNumberError) {
+        fs.readFile(configFilePath, 'utf8', function (configError, serializedConfig) {
+            if(configError) {
                 logger.log('read document list error');
             } else {
-                var recordsNumberData = JSON.parse(serializedRecordsNumberData);
+                var config = JSON.parse(serializedConfig);
                 var data = JSON.parse(serializedData);
 
                 var processPortion = function() {
-                    if(recordsNumberData.processed < data.length) {
-                        var portion = data.slice(recordsNumberData.processed,
-                            recordsNumberData.processed + recordsNumberData.portion);
+                    if(config.processed < data.length) {
+                        var portion = data.slice(config.processed, config.processed + config.portion);
 
                         documentsChecker.check(portion, function() {
-                            recordsNumberData.processed += portion.length;
-                            logger.log('Processed ' + recordsNumberData.processed + ' of ' + data.length + ' i.e. ' +
-                                (recordsNumberData.processed / data.length * 100).toFixed(1) + '%');
-                            fs.writeFile(recordsNumberFilePath, JSON.stringify(recordsNumberData), processPortion);
+                            config.processed += portion.length;
+                            fs.writeFile(configFilePath, JSON.stringify(config), processPortion);
+
+                            logger.log('Processed ' + config.processed + ' of ' + data.length + ' i.e. ' +
+                                (config.processed / data.length * 100).toFixed(1) + '%');
                         });
                     }
                 };
 
-                logger.log('Already processed ' + recordsNumberData.processed + ' of ' + data.length + ' i.e. ' +
-                    (recordsNumberData.processed / data.length * 100).toFixed(1) + '%');
-
                 processPortion();
+                logger.log('Already processed ' + config.processed + ' of ' + data.length + ' i.e. ' +
+                    (config.processed / data.length * 100).toFixed(1) + '%');
             }
         });
     }

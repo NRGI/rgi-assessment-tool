@@ -16,6 +16,6 @@ exports.getOutputFilePath = function(fileName) {
     return getFileAbsolutePath('output', process.env.NODE_ENV + '/' + fileName);
 };
 
-exports.getRecordsNumberFilePath = function() {
-    return getFileAbsolutePath('records-number', process.env.NODE_ENV);
+exports.getConfigFilePath = function() {
+    return getFileAbsolutePath('config', process.env.NODE_ENV);
 };
