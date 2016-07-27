@@ -21,10 +21,19 @@ fs.readFile(filePath.getInputFilePath(), 'utf8', function (dataError, serialized
                 var recordsNumberData = JSON.parse(serializedRecordsNumberData);
                 var data = JSON.parse(serializedData);
 
-                documentsChecker.check(data, function() {
-                    recordsNumberData.processed += data.length;
-                    fs.writeFile(recordsNumberFilePath, JSON.stringify(recordsNumberData));
-                });
+                var processPortion = function() {
+                    if(recordsNumberData.processed < data.length) {
+                        var portion = data.slice(recordsNumberData.processed,
+                            recordsNumberData.processed + recordsNumberData.portion);
+
+                        documentsChecker.check(portion, function() {
+                            recordsNumberData.processed += portion.length;
+                            fs.writeFile(recordsNumberFilePath, JSON.stringify(recordsNumberData), processPortion);
+                        });
+                    }
+                };
+
+                processPortion();
             }
         });
     }
