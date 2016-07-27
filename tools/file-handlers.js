@@ -3,7 +3,7 @@
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-const PDFParser = require("pdf2json/pdfparser");
+const PDFParser = require('pdf2json/pdfparser');
 
 const filePath = require('./file-path');
 
@@ -18,10 +18,10 @@ exports.handlePdfDocument = function(pdfDocument, field, getValidHandler, getInv
         file.on('finish', function() {
             file.close(function() {
                 var pdfParser = new PDFParser();
-                pdfParser.on("pdfParser_dataReady", getValidHandler(pdfDocument, callback));
+                pdfParser.on('pdfParser_dataReady', getValidHandler(pdfDocument, callback));
 
-                pdfParser.on("pdfParser_dataError", function() {
-                    getInvalidHandler(pdfDocument, callback)();
+                pdfParser.on('pdfParser_dataError', function() {
+                    fs.unlink(fileAbsolutePath, getInvalidHandler(pdfDocument, callback));
                 });
 
                 pdfParser.loadPDF(fileAbsolutePath);
@@ -45,7 +45,9 @@ exports.getInvalidS3PdfDocumentHandler = function(pdfDocument, callback) {
 
 exports.getValidS3PdfDocumentHandler = function(pdfDocument, callback) {
     return function() {
-        callback('valid', pdfDocument);
+        fs.unlink(filePath.getDownloadFilePath(pdfDocument._id), function() {
+            callback('valid', pdfDocument);
+        });
     };
 };
 
@@ -54,7 +56,9 @@ var handleInvalidS3PdfDocumentWithoutSource = function(pdfDocument, callback) {
 };
 
 var handleUnprocessedPdfDocument = function(pdfDocument, callback) {
-    callback('unprocessed', pdfDocument);
+    fs.unlink(filePath.getDownloadFilePath(pdfDocument._id), function() {
+        callback('unprocessed', pdfDocument);
+    });
 };
 
 var getValidSourcePdfDocumentHandler = function(pdfDocument, callback) {
