@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "_id": "56e49091d2bffb0c00c80612",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d7a30771216e2a14e9fb3b68e81898a67ce07b6.pdf",
+    "source": "http://www.state.gov/documents/organization/227167.pdf"
+  },
+  {
+    "_id": "56e4941bd2bffb0c00c8061c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b1ba0d5d079547f07ead3e2189caf5938ee59a1.pdf",
+    "source": "http://www.securitycouncilreport.org/atf/cf/%7B65BFCF9B-6D27-4E9C-8CD3-CF6E4FF96FF9%7D/Somalia%20S%20RES%202023.pdf"
+  },
+  {
+    "_id": "56e4a361d2bffb0c00c8063b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d33285bc9b7a4216f82b7c98bcc8411c71648ca7.pdf"
+  },
+  {
+    "_id": "56e4e07dd2bffb0c00c80661",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27448101df6a5102f4983bd53506a456175834d7.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/cha95574.pdf"
+  },
+  {
+    "_id": "56e4e1cfd2bffb0c00c8066a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/893eceb33dbea46ea466a389aae7b110580f6483.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/cha141623.pdf"
+  },
+  {
+    "_id": "56e4e284d2bffb0c00c80674",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28d8e785d1eb93302adc17765e3a11b8e6c5d0a4.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/cha95576.pdf"
+  },
+  {
+    "_id": "56e4ebb4d2bffb0c00c80691",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c36584aff8443161867ad974413fc94dc4b788e2.pdf",
+    "source": "http://www.ccsrp-tchad.org/w1/images/publication_ccsrp/RAPPORT_ANNUEL_2013.pdf"
+  },
+  {
+    "_id": "56e4ecf7d2bffb0c00c8069b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17c9402c5749d4fcb9625c9322926ee19e6987c2.pdf",
+    "source": "http://cerdi.org/uploads/ed/2015/2015.15.pdf"
+  }
+]
