@@ -8,7 +8,7 @@ const url = require('url');
 const fileHandlers = require('./file-handlers');
 const filePath = require('./file-path');
 
-exports.check = function(inputDocuments) {
+exports.check = function(inputDocuments, done) {
     var outputDocuments = {
         'broken-source': [],
         'fix-available': [],
@@ -45,8 +45,14 @@ exports.check = function(inputDocuments) {
     });
 
     async.parallel(promises, function() {
+        promises = [];
+
         Object.keys(outputDocuments).forEach(function(fileName) {
-            fs.writeFile(filePath.getOutputFilePath(fileName), JSON.stringify(outputDocuments[fileName]));
+            promises.push(function(callback) {
+                fs.writeFile(filePath.getOutputFilePath(fileName), JSON.stringify(outputDocuments[fileName]), callback);
+            });
         });
+
+        async.parallel(promises, done);
     });
 };
