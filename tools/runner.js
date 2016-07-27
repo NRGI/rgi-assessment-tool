@@ -6,8 +6,6 @@ const documentsChecker = require('./check-documents');
 const filePath = require('./file-path');
 const logger = require('./logger');
 
-logger.initialize();
-
 fs.readFile(filePath.getInputFilePath(), 'utf8', function (dataError, serializedData) {
     if(dataError) {
         logger.log('read document list error');
@@ -21,11 +19,15 @@ fs.readFile(filePath.getInputFilePath(), 'utf8', function (dataError, serialized
                 var config = JSON.parse(serializedConfig);
                 var data = JSON.parse(serializedData);
 
+                if(config.log.mute) {
+                    logger.initialize();
+                }
+
                 var processPortion = function() {
                     if(config.processed < data.length) {
                         var portion = data.slice(config.processed, config.processed + config.portion);
 
-                        documentsChecker.check(portion, function() {
+                        documentsChecker.check(portion, config, function() {
                             config.processed += portion.length;
                             fs.writeFile(configFilePath, JSON.stringify(config), processPortion);
 

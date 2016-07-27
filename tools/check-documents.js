@@ -7,8 +7,9 @@ const url = require('url');
 
 const fileHandlers = require('./file-handlers');
 const filePath = require('./file-path');
+const logger = require('./logger');
 
-exports.check = function(inputDocuments, done) {
+exports.check = function(inputDocuments, config, done) {
     var outputDocuments = {
         'broken-source': [],
         'fix-available': [],
@@ -30,6 +31,10 @@ exports.check = function(inputDocuments, done) {
 
     inputDocuments.forEach(function(document) {
         const urlComponents = url.parse(document.s3_url);
+
+        if(config.log.detailed) {
+            logger.log(document._id + ' is being processed.');
+        }
 
         if(path.extname(urlComponents.pathname) !== '.pdf') {
             outputDocuments['not-pdf'].push(document);

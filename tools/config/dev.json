@@ -1,1 +1,8 @@
-{"processed":0,"portion":2}
+{
+  "processed": 0,
+  "portion": 2,
+  "log": {
+    "mute": true,
+    "detailed": false
+  }
+}
