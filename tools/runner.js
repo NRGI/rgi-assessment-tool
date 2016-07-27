@@ -28,10 +28,15 @@ fs.readFile(filePath.getInputFilePath(), 'utf8', function (dataError, serialized
 
                         documentsChecker.check(portion, function() {
                             recordsNumberData.processed += portion.length;
+                            logger.log('Processed ' + recordsNumberData.processed + ' of ' + data.length + ' i.e. ' +
+                                (recordsNumberData.processed / data.length * 100).toFixed(1) + '%');
                             fs.writeFile(recordsNumberFilePath, JSON.stringify(recordsNumberData), processPortion);
                         });
                     }
                 };
+
+                logger.log('Already processed ' + recordsNumberData.processed + ' of ' + data.length + ' i.e. ' +
+                    (recordsNumberData.processed / data.length * 100).toFixed(1) + '%');
 
                 processPortion();
             }
