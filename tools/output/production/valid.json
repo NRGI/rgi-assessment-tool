@@ -700,5 +700,55 @@
     "_id": "56e809f94b4e9d0c004591e0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c7380f862c4d4740a8c1e9215a990d4758310774.docx",
     "source": "http://www.gov.kg/?page_id=30199&lang=ru"
+  },
+  {
+    "_id": "56e80fd04b4e9d0c0045926b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9c926591722cdd9badfc0c85285aa862336c55c.pdf",
+    "source": "http://cabinet.iq/ArticleShow.aspx?ID=1471"
+  },
+  {
+    "_id": "56e80f404b4e9d0c00459262",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d309fe9c4cb505af701799cd6a943aa4fddeaff2.pdf",
+    "source": "http://cabinet.iq/ArticleShow.aspx?ID=1487"
+  },
+  {
+    "_id": "56e80e604b4e9d0c0045924a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b6779d47c386a07888b73505d3b7787eabc361a.pdf",
+    "source": "http://cabinet.iq/ArticleShow.aspx?ID=1495"
+  },
+  {
+    "_id": "56e8119c4b4e9d0c00459287",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88de9bd6e3f62090c22d159cbb4b224548801037.pdf",
+    "source": "http://www.moo.oil.gov.iq/PCLD/PCLD/FIELD.html"
+  },
+  {
+    "_id": "56e8115a4b4e9d0c00459285",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bf6f736d832d6eed4eb8fa4d62a872d5bbff470.pdf",
+    "source": "http://www.ntc.gov.ly/index.php?option=com_k2&view=item&id=126:%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-59-%D9%84%D8%B3%D9%86%D8%A9-2012%D9%85-%D8%A8%D8%B4%D8%A3%D9%86-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9&Itemid=10"
+  },
+  {
+    "_id": "56e81e4f4b4e9d0c004592e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/433233a347d1688a86c57a3d57d0ceac6f79cb64.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/news/constitution-b-a-t.pdf"
+  },
+  {
+    "_id": "56e8152f4b4e9d0c004592b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1756f06ad47bfda7134a9d204f88a512a8e0338b.pdf",
+    "source": "http://www.moo.oil.gov.iq/PCLD/PCLD/contractus&company.html"
+  },
+  {
+    "_id": "56e813d04b4e9d0c004592aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5734319c8956429ee18f28575c4844bf34ed6ae.pdf",
+    "source": "http://www.moo.oil.gov.iq/PCLD/PCLD/PDF/1.pdf"
+  },
+  {
+    "_id": "56e812fd4b4e9d0c00459294",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8389850f33935591039cc6793797088229302ab.pdf",
+    "source": "http://www.kazna.gov.kg/index.php/ispolnenie-byudzheta/otchety-ob-ispolnenii-byudzheta/file/257-dec-2015"
+  },
+  {
+    "_id": "56e81a8f4b4e9d0c004592d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3cf22f3da0ad4bb72018883924510a57bfe3794.pdf",
+    "source": "http://www.oil.gov.iq/index.php?name=Pages&op=page&pid=81"
   }
 ]
