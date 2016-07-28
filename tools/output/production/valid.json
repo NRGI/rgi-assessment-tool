@@ -795,5 +795,48 @@
   {
     "_id": "56e820a04b4e9d0c0045931a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/784580a65a4091e423123daeb59f66bbd6b1fbaa.pdf"
+  },
+  {
+    "_id": "56e82f594b4e9d0c0045945f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45e84963269d40083dc0abea7d6061b599cf7777.pdf",
+    "source": "http://sonagas-ge.com/wp-content/uploads/2012/12/decretocreacion.pdf"
+  },
+  {
+    "_id": "56e82b204b4e9d0c004593e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70880ad6e8ac500f01bc995c47ee2d81da5bee34.pdf",
+    "source": "http://www.iraqld.iq/(S(pnr3ts45cgwfjiue0eh3u345))/LoadLawBook.aspx?SP=ALL&SC=220220065962040&PageNum=1"
+  },
+  {
+    "_id": "56e82c374b4e9d0c00459404",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d5f3a995b502c7ff2f9b46dc498f693d7f2eeb9.pdf",
+    "source": "http://www.slp.wa.gov.au/pco/prod/FileStore.nsf/Documents/MRDocument:28155P/$FILE/Mining%20Regulations%201981%20-%20[10-h0-03].pdf?OpenElement"
+  },
+  {
+    "_id": "56e8311d4b4e9d0c0045947a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89a90839d51e60b85c6b33e0b3f9a98596acd3fc.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?SP=&SC=180120067386593&PageNum=2"
+  },
+  {
+    "_id": "56e82bd44b4e9d0c004593f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/975400e577483e50b75ab47bcda60d01839b7cc2.pdf",
+    "source": "http://eiti.ekon.go.id/en/scoping-2012-2013/?aid=859&sa=1"
+  },
+  {
+    "_id": "56e8304b4b4e9d0c0045946c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c1976e36a24dd608f902fe3776ddc8cd4f429ba.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/journal-officiel/2007/2007F/Jo1032007.pdf"
+  },
+  {
+    "_id": "56e82c964b4e9d0c00459417",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f2354aa70c90c9ee040c4fdcc6eb6a215763f4e.PDF"
+  },
+  {
+    "_id": "56e82ab54b4e9d0c004593d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1c729fbbcd311e5aaff43817599571a7afd8c55.pdf"
+  },
+  {
+    "_id": "56e830474b4e9d0c0045946a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ea9aa45843842fd9e8b6fd65e3fd3559706d63f.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/97125"
   }
 ]
