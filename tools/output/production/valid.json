@@ -1118,5 +1118,48 @@
   {
     "_id": "56e953684b4e9d0c00459ba8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0d435f3f8292ad156c87d0757aa5991d5aca781a.pdf"
+  },
+  {
+    "_id": "56e95ad44b4e9d0c00459c0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f0d40c29dfb3b59f036600fd4818078ed1c2a53.pdf",
+    "source": "http://www.congopetrole.fr/societes_et_agences_sous_tutelle/la_snpc.html"
+  },
+  {
+    "_id": "56e95f174b4e9d0c00459c2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c83244a662554ac8b91592fc0686baa739da3c4.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/congo/Congo-Code-1994-hydrocarbures.pdf"
+  },
+  {
+    "_id": "56e95b2d4b4e9d0c00459c0f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3099cfab43aa1a2e837ed94dfddafcd4d4a300a1.pdf"
+  },
+  {
+    "_id": "56e958c54b4e9d0c00459bf4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a2b2f3a009f756d6200d79ab8d6fea3c3a5c060.pdf",
+    "source": "http://www.onhym.com/pdf/Mines/CONVENTIONS%20TYPE/Contrt%20de%20Cession_Type.pdf"
+  },
+  {
+    "_id": "56e9574f4b4e9d0c00459bd7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75be404b3f197e22d602f74058da62ec9e6f75c1.pdf",
+    "source": "http://www.onhym.com/pdf/Mines/CONVENTIONS%20TYPE/CONVENTION%20DE%20RECHERCHETYPE.pdf"
+  },
+  {
+    "_id": "56e962e04b4e9d0c00459c5c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd234923aee449bd4e9d87685f4489f912f3a711.pdf",
+    "source": "http://www.congopetrole.fr"
+  },
+  {
+    "_id": "56e962344b4e9d0c00459c4d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00a446c56bbec1998da0228bb01556838bb38134.pdf",
+    "source": "http://www.turkmenistan.gov.tm/?id=7578"
+  },
+  {
+    "_id": "56e95ff94b4e9d0c00459c37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f98bc1b37673a25dc7d68638507058b30524eeb6.pdf"
+  },
+  {
+    "_id": "56e962e84b4e9d0c00459c64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9dc91fe096beb908f015d26c90b4d448cea8e1.docx",
+    "source": "http://www.gheiti.gov.gh/site/index.php?option=com_content&view=article&id=200:the-ghana-chamber-of-mines-publish-what-you-pay-2013&catid=1:latest-news&Itemid=29"
   }
 ]
