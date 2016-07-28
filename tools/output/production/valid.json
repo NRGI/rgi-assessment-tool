@@ -750,5 +750,50 @@
     "_id": "56e81a8f4b4e9d0c004592d7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a3cf22f3da0ad4bb72018883924510a57bfe3794.pdf",
     "source": "http://www.oil.gov.iq/index.php?name=Pages&op=page&pid=81"
+  },
+  {
+    "_id": "56e82ab14b4e9d0c004593ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c065c870d79fa8b96d1d10078ce4845beef6942.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2006/2006F/006/TF2006973.pdf"
+  },
+  {
+    "_id": "56e827324b4e9d0c0045938a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/daceeba5983fdee59bcb2d5d605d1a2fea965656.pdf"
+  },
+  {
+    "_id": "56e825224b4e9d0c00459362",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcd3e341ceb393e34db4a5bb1224317428432f51.pdf"
+  },
+  {
+    "_id": "56e823ea4b4e9d0c0045934d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/363f1ac4ab392ec25899ac5b3c641cb49b422142.pdf"
+  },
+  {
+    "_id": "56e81f974b4e9d0c004592f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc522f0bc7b186f3b943c4fae9adbae04435167c.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/codes/minier.pdf"
+  },
+  {
+    "_id": "56e820244b4e9d0c00459304",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2bd56bb29fcdbb92c3c60eca62a2fe06f0cfefd.pdf",
+    "source": "http://soc.oil.gov.iq/index.php?name=Pages&op=page&pid=104"
+  },
+  {
+    "_id": "56e8295e4b4e9d0c004593b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f04824576e0a079b912fde23a72d51a1f81c8b86.pdf",
+    "source": "http://www.thejakartapost.com/news/2015/10/12/natural-resources-from-curse-blessing.html"
+  },
+  {
+    "_id": "56e822a74b4e9d0c00459335",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9b58a224de673cb39b86446afbbdc06169a8e8e.pdf"
+  },
+  {
+    "_id": "56e8221b4b4e9d0c0045932a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1774f3f44be77daa2c5306fffb47101fceb2f5a5.pdf",
+    "source": "http://www.cabinet.iq/ArticleShow.aspx?ID=6671"
+  },
+  {
+    "_id": "56e820a04b4e9d0c0045931a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/784580a65a4091e423123daeb59f66bbd6b1fbaa.pdf"
   }
 ]
