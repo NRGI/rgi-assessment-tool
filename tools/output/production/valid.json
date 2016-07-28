@@ -858,5 +858,30 @@
     "_id": "56e8323b4b4e9d0c004594bd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2d8448f2af8bde7dc6838810b54425f722da6e06.docx",
     "source": "http://soros.kg/archives/16940"
+  },
+  {
+    "_id": "56e8354d4b4e9d0c00459579",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e17c18389beda50cd491f6d8165e7d21b72c8e3c.pdf",
+    "source": "http://www.dmp.wa.gov.au/Minerals/Legislation-and-compliance-6224.aspx"
+  },
+  {
+    "_id": "56e837c84b4e9d0c004595ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/670c4a45f5c75a9fc3ae3e44df7aaf06655f0923.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2004/2004F/040/TF2004421.pdf"
+  },
+  {
+    "_id": "56e836c64b4e9d0c004595b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0df481586def84713c8053332abe52a55cf692bf.pdf",
+    "source": "http://www.equatorialoil.com/PDFs%20for%20download/Reglamento_de_Petroleo_Espanol.pdf"
+  },
+  {
+    "_id": "56e836014b4e9d0c00459599",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ded03e0c988f1914277d3aa8f6bea8f9f3808381.png",
+    "source": "http://www.portaltransparencia.gob.mx/pot/concesion/consultarConcesion.do?method=muestraDetalle&idConcesion=243613&_idDependencia=00010&viaLocation=true"
+  },
+  {
+    "_id": "56e838524b4e9d0c004595bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b67cd7c7c2419a98987762254517309efc172f2c.csv",
+    "source": "http://www.siam.economia.gob.mx/work/models/siam/Resource/Avisos/opendata.csv"
   }
 ]
