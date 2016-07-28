@@ -1095,5 +1095,28 @@
     "_id": "56e94bd14b4e9d0c00459b4d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/fbed3d8b14a89e7f3c7ee2d0a60a291efcfb727c.pdf",
     "source": "http://www.mays-mouissi.com/wp-content/uploads/2015/03/Budget_loi_de_finances_2015_p.pdf"
+  },
+  {
+    "_id": "56e94cef4b4e9d0c00459b5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/470b54350818691083605da2ef4cd7a80d8215c5.pdf",
+    "source": "http://www.wipo.int/edocs/lexdocs/laws/fr/ga/ga002fr.pdf"
+  },
+  {
+    "_id": "56e94d764b4e9d0c00459b6b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0009e0c258a2403e1a736a914de8226568e1b480.pdf",
+    "source": "http://www.wipo.int/edocs/lexdocs/laws/fr/ga/ga019fr.pdf"
+  },
+  {
+    "_id": "56e94fee4b4e9d0c00459b8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc92aa20118e625be4cc4aaacb6738bd115b0ad1.pdf",
+    "source": "http://www.jeuneafrique.com/8146/economie/congo-brazzaville-snpc-va-lever-1-5-milliard-de-dollars/"
+  },
+  {
+    "_id": "56e951da4b4e9d0c00459b93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7736fd8fdd49986cb3ba2c58e5bd7154206bd2f5.pdf"
+  },
+  {
+    "_id": "56e953684b4e9d0c00459ba8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d435f3f8292ad156c87d0757aa5991d5aca781a.pdf"
   }
 ]
