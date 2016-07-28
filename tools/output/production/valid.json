@@ -677,5 +677,28 @@
     "_id": "56e8031d4b4e9d0c00459173",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/42451603c6b51d0e5cdaddbdb0272738834790bc.png",
     "source": "http://www.mop.ir/portal/home/?event/35298/29939/37095/شرکت-ملی-نفت-ایران"
+  },
+  {
+    "_id": "56e80cb04b4e9d0c00459203",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9a2d4b87a4031462bc0ac4d06324fc41973acd3.pdf",
+    "source": "http://inicio.ifai.org.mx/LFTAIPG/LFTAIPG.pdf"
+  },
+  {
+    "_id": "56e80c2c4b4e9d0c004591f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebf47ba307eab7e7ba80c3b5309dad6a6b49bbe5.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/ref/lgtaip.htm"
+  },
+  {
+    "_id": "56e80d5e4b4e9d0c00459225",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e76ff9a61ed03bd079828193dc30d3cd6a657c1.pdf"
+  },
+  {
+    "_id": "56e809a54b4e9d0c004591d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5beb1ee48f122b27da963e104c35475e5ae6fd5d.png"
+  },
+  {
+    "_id": "56e809f94b4e9d0c004591e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7380f862c4d4740a8c1e9215a990d4758310774.docx",
+    "source": "http://www.gov.kg/?page_id=30199&lang=ru"
   }
 ]
