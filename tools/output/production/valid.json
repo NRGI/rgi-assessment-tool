@@ -838,5 +838,25 @@
     "_id": "56e830474b4e9d0c0045946a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3ea9aa45843842fd9e8b6fd65e3fd3559706d63f.docx",
     "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/97125"
+  },
+  {
+    "_id": "56e831f44b4e9d0c004594af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3fd58bd207ab252d8acd3f4c61693297ddcd7ab.pdf",
+    "source": "http://mmie.gob.gq/en/?page_id=2945"
+  },
+  {
+    "_id": "56e8318c4b4e9d0c0045949c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f98392a27e24770999dd06b6c3d991cf3a55195c.pdf",
+    "source": "http://www.worldbank.org/en/country/equatorialguinea/overview"
+  },
+  {
+    "_id": "56e8318b4b4e9d0c00459499",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55171c774e54f1dc0abfe51723c42a7bdfcf092f.pdf",
+    "source": "https://www.federationpress.com.au/bookstore/book.asp?isbn=9781760020323"
+  },
+  {
+    "_id": "56e8323b4b4e9d0c004594bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d8448f2af8bde7dc6838810b54425f722da6e06.docx",
+    "source": "http://soros.kg/archives/16940"
   }
 ]
