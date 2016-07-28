@@ -1186,5 +1186,28 @@
     "_id": "56e96c4d4b4e9d0c00459ce8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8ff61286daa109242e6cd9d59e1c497475a0820b.pdf",
     "source": "http://crudeaccountability.org/wp-content/uploads/2012/04/20111016-PrivatePocketPresidentBerdymukhamedov.pdf"
+  },
+  {
+    "_id": "56e96cbf4b4e9d0c00459cf5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a9bebc62468ec297bccab308e553e87301df173.pdf",
+    "source": "https://www.globalwitness.org/en-gb/archive/european-bank-reconstruction-and-development-re-opens-purse-turkmenistan-despite-lack/"
+  },
+  {
+    "_id": "56e96e774b4e9d0c00459d1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73424443499f3612a747085843eca1ae90450280.pdf"
+  },
+  {
+    "_id": "56e973334b4e9d0c00459d3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dfc8735ec67a150a80efe221f6f2a52f9c9390b.pdf"
+  },
+  {
+    "_id": "56e972774b4e9d0c00459d34",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9651565080c926fd27e4c285c10d898f54272e3e.doc",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/31_110814.pdf"
+  },
+  {
+    "_id": "56e97a804b4e9d0c00459d78",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e42721060ddb7b3593ec4bdbe793cc8a1df4874.png",
+    "source": "http://www.she.gob.ec/biblioteca/"
   }
 ]
