@@ -1071,5 +1071,29 @@
   {
     "_id": "56e93a954b4e9d0c00459a93",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0ee439a28db1053787740470d52f17f43ce65859.pdf"
+  },
+  {
+    "_id": "56e947564b4e9d0c00459b03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a600283a23b8e4528c2e9d2f763fb7ec1890a8d9.pdf"
+  },
+  {
+    "_id": "56e949664b4e9d0c00459b1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c56f73e33a51431cd38ee793dcf6c426294130d6.pdf",
+    "source": "http://www.siam.economia.gob.mx/es/siam/p_Titulos"
+  },
+  {
+    "_id": "56e94a284b4e9d0c00459b33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2cce597ccbb7cc8b4b20d9d794a0bda2972c938.pdf",
+    "source": "http://www.ocpgroup.ma/group/financial-information"
+  },
+  {
+    "_id": "56e94a514b4e9d0c00459b35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d45dc151470ccd8427573351263c19ded229d1a7.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/gabon/Gabon-Loi-2014-11-hydrocarbures.pdf"
+  },
+  {
+    "_id": "56e94bd14b4e9d0c00459b4d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbed3d8b14a89e7f3c7ee2d0a60a291efcfb727c.pdf",
+    "source": "http://www.mays-mouissi.com/wp-content/uploads/2015/03/Budget_loi_de_finances_2015_p.pdf"
   }
 ]
