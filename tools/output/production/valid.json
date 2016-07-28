@@ -908,5 +908,30 @@
     "_id": "56e83aa64b4e9d0c004595e7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/be32fbde2f6c54db36212acaebff65942f62495d.pdf",
     "source": "http://www.equatorialoil.com/PDFs%20for%20download/EG%20Hydrocarbons%20Law%20(Spanish).pdf"
+  },
+  {
+    "_id": "56e843a34b4e9d0c00459673",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78b38c616be7161588924dc3c620c7b040b3af06.pdf",
+    "source": "http://www.pemex.com/responsabilidad/social/inversion_social/Documents/Seguimiento_Donativos_2015_3.pdf"
+  },
+  {
+    "_id": "56e843f84b4e9d0c0045967f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8971362d96de74a61cad11380ab9f41f9aec46b6.pdf",
+    "source": "http://www.eueom.eu/files/dmfile/tchad_constitution_15_juillet_2005_fr1.pdf"
+  },
+  {
+    "_id": "56e8463b4b4e9d0c004596df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4937031c7989aa4fb1231606aa3a9e27e636ec72.pdf",
+    "source": "http://www.security-legislation.ly/ar/node/32065"
+  },
+  {
+    "_id": "56e8425e4b4e9d0c0045966e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e98ad667ce4eccc80887d1a3769c243f5c81f6d6.docx",
+    "source": "http://www.kumtor.kg/ru/social-responsibility/development-fund/postanovlenie-pravitelstva-kyrgyzskoi/"
+  },
+  {
+    "_id": "56e8459b4b4e9d0c004596bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3645e5e83aeb82b22ef833fc16b3a96c64939961.docx",
+    "source": "http://rus.azattyk.org/content/article/27568774.html"
   }
 ]
