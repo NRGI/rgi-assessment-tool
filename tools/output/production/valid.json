@@ -1161,5 +1161,30 @@
     "_id": "56e962e84b4e9d0c00459c64",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9dc91fe096beb908f015d26c90b4d448cea8e1.docx",
     "source": "http://www.gheiti.gov.gh/site/index.php?option=com_content&view=article&id=200:the-ghana-chamber-of-mines-publish-what-you-pay-2013&catid=1:latest-news&Itemid=29"
+  },
+  {
+    "_id": "56e96b8a4b4e9d0c00459cd5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e10c5bff83b85838972358bcb9bcb9dd90167b3f.pdf",
+    "source": "https://bitcoin.org/bitcoin.pdf"
+  },
+  {
+    "_id": "56e964294b4e9d0c00459c81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e522efdf9f884d93d6ed86eac3a78e25e1b7fc24.pdf",
+    "source": "http://www.pagesclaires.com/Congo-Brazzaville/Departement-de-Brazzaville/Brazzaville/Brazzaville/Ministere-des-Finances-du-Budget-et-du-Portefeuille-Public"
+  },
+  {
+    "_id": "56e965724b4e9d0c00459caf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52c32f181c7dc82d67b3d4fa4be53ddfc7fd3649.pdf",
+    "source": "http://www.ebrd.com/downloads/legal/irc/countries/turkmenistan.pdf"
+  },
+  {
+    "_id": "56e96b7a4b4e9d0c00459cd3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a16b1b997a738dd40458fbd041c2344dee0fe28.pdf",
+    "source": "http://www.ebrd.com/downloads/country/strategy/turkmenistan.pdf"
+  },
+  {
+    "_id": "56e96c4d4b4e9d0c00459ce8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ff61286daa109242e6cd9d59e1c497475a0820b.pdf",
+    "source": "http://crudeaccountability.org/wp-content/uploads/2012/04/20111016-PrivatePocketPresidentBerdymukhamedov.pdf"
   }
 ]
