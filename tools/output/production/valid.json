@@ -883,5 +883,30 @@
     "_id": "56e838524b4e9d0c004595bd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b67cd7c7c2419a98987762254517309efc172f2c.csv",
     "source": "http://www.siam.economia.gob.mx/work/models/siam/Resource/Avisos/opendata.csv"
+  },
+  {
+    "_id": "56e83d714b4e9d0c0045961a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bbf4f2e71d9282242cf39db477698c2d842d020.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2004/2004F/040/TF2004421.pdf"
+  },
+  {
+    "_id": "56e83b314b4e9d0c004595f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9f727c95bdc3b63143810ccee315357efec8876.pdf",
+    "source": "http://www.equatorialoil.com/PDFs%20for%20download/EG%20Hydrocarbons%20Law%20(English%20Translation)_v7.1.pdf"
+  },
+  {
+    "_id": "56e83f3a4b4e9d0c0045963a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2fa84155f9b7253a31b3d03c8cc5934cdb18e276.pdf",
+    "source": "http://www.dof.gob.mx/nota_detalle_popup.php?codigo=5395229"
+  },
+  {
+    "_id": "56e840d24b4e9d0c00459657",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f80bb44453a3c1349f162139f076b4f0f01d5300.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/31_110814.pdf"
+  },
+  {
+    "_id": "56e83aa64b4e9d0c004595e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be32fbde2f6c54db36212acaebff65942f62495d.pdf",
+    "source": "http://www.equatorialoil.com/PDFs%20for%20download/EG%20Hydrocarbons%20Law%20(Spanish).pdf"
   }
 ]
