@@ -655,5 +655,27 @@
     "_id": "56e7eb2e4b4e9d0c004590b0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/afca9a3318b600ce485e0a8b0480807d1925bda5.pdf",
     "source": "http://www.mof.gov.iq/pages/ar/FederalBudgetLaw.aspx"
+  },
+  {
+    "_id": "56e806cc4b4e9d0c004591b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a0add8170a125970ee25db9d1b9b9d3daee40f6.pdf",
+    "source": "http://www.parliament.iq/details.aspx?LawIDF=14738"
+  },
+  {
+    "_id": "56e7fe4c4b4e9d0c0045913f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/def2c151fdffea7cbea503d87a2ea7d0d2a947c8.pdf"
+  },
+  {
+    "_id": "56e809494b4e9d0c004591c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9841060d91ca1ee9a074fcd4f9cea07bacba8d7e.pdf"
+  },
+  {
+    "_id": "56e7fcc74b4e9d0c00459129",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12807e184d13015df02b99f1bb5ef487a70e8ece.pdf"
+  },
+  {
+    "_id": "56e8031d4b4e9d0c00459173",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42451603c6b51d0e5cdaddbdb0272738834790bc.png",
+    "source": "http://www.mop.ir/portal/home/?event/35298/29939/37095/شرکت-ملی-نفت-ایران"
   }
 ]
