@@ -1209,5 +1209,55 @@
     "_id": "56e97a804b4e9d0c00459d78",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8e42721060ddb7b3593ec4bdbe793cc8a1df4874.png",
     "source": "http://www.she.gob.ec/biblioteca/"
+  },
+  {
+    "_id": "56e97bf44b4e9d0c00459d95",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ae0f9a85cae2cb5ba5488a818c0deb52ed60983.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=6600&lang=en"
+  },
+  {
+    "_id": "56e983244b4e9d0c00459dd0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8844037a7ef231a263698d8f21b8f513fe4bb6c9.PDF",
+    "source": "http://www.foia.gov.tt/sites/default/files/FOIA1999.PDF"
+  },
+  {
+    "_id": "56e97cde4b4e9d0c00459da2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67a99701c9b8f94510af16658273e03f4aef7993.pdf",
+    "source": "http://www.sgg.cg/index.asp"
+  },
+  {
+    "_id": "56e982724b4e9d0c00459dc2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72b41a720bef7768b7b566647b4c5624d889c84b.pdf",
+    "source": "http://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/62.01.pdf"
+  },
+  {
+    "_id": "56e97b974b4e9d0c00459d93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb3fef3b102c96d977b15395d501e305584dfff0.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/164-Petroleum_Regulation_Order_2013.pdf"
+  },
+  {
+    "_id": "56e988124b4e9d0c00459e1b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/362400f8ba4066c7c18b1b6150613a11678e3867.pdf",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/27"
+  },
+  {
+    "_id": "56e987c14b4e9d0c00459e0e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/566508a8e995a997663e8d0de315e34adc435869.pdf",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/26"
+  },
+  {
+    "_id": "56e986db4b4e9d0c00459dfd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/551b489097af4eca9be58ba8021a6c4ca035948b.pdf",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/25"
+  },
+  {
+    "_id": "56e988634b4e9d0c00459e2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9063763f40f86781839f34095dd185798a2dbe42.pdf",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/28"
+  },
+  {
+    "_id": "56e987804b4e9d0c00459e06",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d5efac2733acaad0c7c130e1db76632a8e8fbca.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2014/02/PSC-Register-FY-2010-2011-List-for-EITI.pdf"
   }
 ]
