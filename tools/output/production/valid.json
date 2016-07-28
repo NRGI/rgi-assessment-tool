@@ -977,5 +977,52 @@
     "_id": "56e85ab54b4e9d0c004597a0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/533986d53744d736abb4256d7fcc97dfee8125d2.doc",
     "source": "http://www.turkmenistan.ru/_data/documents/oilgaslaw-20_08_08.doc"
+  },
+  {
+    "_id": "56e860be4b4e9d0c00459806",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40453d8018367d70745e2365800f00df24d7de84.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2014/2014G/105/Tg2014591.pdf"
+  },
+  {
+    "_id": "56e863cc4b4e9d0c00459846",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4fe589032f0faab4d45c061bbcaed443ef0f6ce8.pdf",
+    "source": "http://www.iace.tn/wp-content/uploads/2015/10/Pre%CC%81sentation-CPG.pdf"
+  },
+  {
+    "_id": "56e861bc4b4e9d0c00459819",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfc2f9e0b3dc5278c6824b377bac5d3cb20b16c8.pdf",
+    "source": "http://noc.ly/index.php/en/about-us-2"
+  },
+  {
+    "_id": "56e86c634b4e9d0c00459883",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06284eb1b92407b51bd2b1fecef0189c4eadfda4.pdf",
+    "source": "http://www.security-legislation.ly/ar/node/33192"
+  },
+  {
+    "_id": "56e869654b4e9d0c00459879",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d17741a056de30b3fb4182a2bd42afd5c758ce47.pdf",
+    "source": "http://www.imf.org/external/pubs/ft/scr/2015/cr15260.pdf"
+  },
+  {
+    "_id": "56e879414b4e9d0c004598df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebdb65ac3eb25057596023bf883505e3fcb1373a.pdf"
+  },
+  {
+    "_id": "56e87a644b4e9d0c004598f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c533212a6fa2a25a38cb9185b67aa08bc629cbaa.pdf"
+  },
+  {
+    "_id": "56e873634b4e9d0c004598a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b97e6ad52a9a624d83688e4f51790b0e7c5c116.pdf",
+    "source": "http://www.swfinstitute.org/swfs/equatorial-guinea-ffg/"
+  },
+  {
+    "_id": "56e86d6a4b4e9d0c00459885",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8256a7b41167c53e6bd16169152bd51f18d9e24.pdf",
+    "source": "https://www.beac.int/download/BEAC_Rapport_G%C3%A9n%C3%A9ral2014.pdf"
+  },
+  {
+    "_id": "56e876474b4e9d0c004598c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/119c4ff39a869eb34dacd290d290df4987d62f7d.pdf"
   }
 ]
