@@ -1024,5 +1024,52 @@
   {
     "_id": "56e876474b4e9d0c004598c0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/119c4ff39a869eb34dacd290d290df4987d62f7d.pdf"
+  },
+  {
+    "_id": "56e8a2304b4e9d0c0045995e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33afe55a8832772801489dee0f5c480cb02f0ee9.pdf",
+    "source": "http://www.fmped.org.mx/informes/"
+  },
+  {
+    "_id": "56e882b34b4e9d0c00459923",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c3eff3b371821e6403875c13ac32471d58bbe89.pdf",
+    "source": "http://www.libya-businessnews.com/2015/11/03/global-interest-in-libya-oil-gas-noc-chairman/"
+  },
+  {
+    "_id": "56e89ede4b4e9d0c00459956",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a7db2bf91e46d7e227a5532afaa4235334a9e3c.pdf",
+    "source": "http://www.fmped.org.mx/"
+  },
+  {
+    "_id": "56e87b8d4b4e9d0c004598f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79191aaf280b08b7f1288cf55cb590626c7bf37d.pdf",
+    "source": "http://www.qalaa.ly/images/The%20Libyan%20Petroleum%20Law.pdf"
+  },
+  {
+    "_id": "56e92c3e4b4e9d0c00459a46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44fd4584d0d15227f20b1404a7d0856b1447d1d5.pdf",
+    "source": "http://www.itie-congo.org/index.php?option=com_content&view=article&id=102&Itemid=127"
+  },
+  {
+    "_id": "56e8d2ef4b4e9d0c004599ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69ea1aa30fad968832f8774c6dc674ee2b3bd540.pdf"
+  },
+  {
+    "_id": "56e9456a4b4e9d0c00459aed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38197ba6de5133ee320ee6779a8a834474333c45.pdf"
+  },
+  {
+    "_id": "56e8ce7e4b4e9d0c004599be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e26b1bf55772d5f18d0c1dd18cc1b2595d61243.doc",
+    "source": "http://moj.gov.vn/vbpq/Lists/Vn%20bn%20php%20lut/View_Detail.aspx?ItemID=26489"
+  },
+  {
+    "_id": "56e8c76c4b4e9d0c004599af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de2365fcd3295f413495b75a4dff4f47df6ab39c.doc",
+    "source": "http://vanban.chinhphu.vn/portal/page/portal/chinhphu/hethongvanban?class_id=1&mode=detail&document_id=156031"
+  },
+  {
+    "_id": "56e93a954b4e9d0c00459a93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ee439a28db1053787740470d52f17f43ce65859.pdf"
   }
 ]
