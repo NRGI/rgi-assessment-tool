@@ -933,5 +933,49 @@
     "_id": "56e8459b4b4e9d0c004596bf",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3645e5e83aeb82b22ef833fc16b3a96c64939961.docx",
     "source": "http://rus.azattyk.org/content/article/27568774.html"
+  },
+  {
+    "_id": "56e85a7e4b4e9d0c0045979d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69d3021e42d6d54c00f02d417efb2d671248ecc2.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2016/2016F/003/Tf201518034.pdf"
+  },
+  {
+    "_id": "56e849564b4e9d0c00459726",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f38265dfb99524102167a47481d89901490658e.pdf",
+    "source": "http://www.equatorialoil.com/Petroleum_legislation.html"
+  },
+  {
+    "_id": "56e8487f4b4e9d0c00459715",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9560deb095fc2075a9c70ada92ddb272697c218f.pdf",
+    "source": "http://mmie.gob.gq/en/?page_id=2961"
+  },
+  {
+    "_id": "56e84d044b4e9d0c0045973c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e28ba2fb4c678da3b0fa991305e4dd81201fb707.pdf",
+    "source": "http://mmie.gob.gq/en/?page_id=2955"
+  },
+  {
+    "_id": "56e853e64b4e9d0c00459776",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec5ce1cf897fa7ae1a5ac4cf90ce61ba2c8852e8.pdf"
+  },
+  {
+    "_id": "56e85fcd4b4e9d0c004597fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dad73e65666115107c7ced7656b3ddebe2088f4c.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2007/2007F/103/TF2007651.pdf"
+  },
+  {
+    "_id": "56e85c8a4b4e9d0c004597bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/570484bd5f5bccd07bb42def17a3cec14053b5e0.pdf",
+    "source": "http://planipolis.iiep.unesco.org/upload/Equatorial%20Guinea/Equatorial%20Guinea_ODM_2005.pdf"
+  },
+  {
+    "_id": "56e85c024b4e9d0c004597b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a1b7dce6558a278b37a6712703fa6c2c1b40eda.pdf",
+    "source": "http://www.cmeyanchama.com/Documents/Guinee/CCA-ESPANOL.pdf"
+  },
+  {
+    "_id": "56e85ab54b4e9d0c004597a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/533986d53744d736abb4256d7fcc97dfee8125d2.doc",
+    "source": "http://www.turkmenistan.ru/_data/documents/oilgaslaw-20_08_08.doc"
   }
 ]
