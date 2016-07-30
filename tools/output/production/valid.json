@@ -1277,5 +1277,53 @@
   {
     "_id": "56e988784b4e9d0c00459e2f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ced40a274d0f8b0315ba07c911ee8c38881d91a6.doc"
+  },
+  {
+    "_id": "56e996b04b4e9d0c00459f19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adbeb31b24a482987dc4ea95f5fbd2ed901100c3.pdf"
+  },
+  {
+    "_id": "56e98c8e4b4e9d0c00459e7b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/697a11c8295d02d70d35f09b5a1b8f21c475702f.pdf",
+    "source": "http://www.ocpgroup.ma/media/faqs/what-ownership-structure-ocp"
+  },
+  {
+    "_id": "56e98e1c4b4e9d0c00459e9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3048a0f297c592690c5422806cec11e2067b0d81.pdf",
+    "source": "http://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/89E200B65DCF6DE9052578C30077AC47/$FILE/DS_014-92-EM.pdf"
+  },
+  {
+    "_id": "56e994544b4e9d0c00459ef1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c36c50ab0811f7b1c3dab1bb5cb3b0f9eaf0b1a.pdf",
+    "source": "http://www.african-markets.com/pdf/fr/Guide_des_Fonds_Souverains_Africains_FR.pdf"
+  },
+  {
+    "_id": "56e98f114b4e9d0c00459eb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39f1c40c018ecbab1a6c63de56f6cd9ef5900852.pdf",
+    "source": "http://www.finances.gov.ma/Docs/DB/2016/depp_fr.pdf"
+  },
+  {
+    "_id": "56e99f504b4e9d0c00459f71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c53231bdbecbad25ece672ea41d60f32d0f4fbf7.pdf",
+    "source": "http://www.ingemmet.gob.pe/documents/73138/148668/ROF_INGEMMET.pdf/ced465ed-ae10-4694-b3e2-eaa3d294c4e9"
+  },
+  {
+    "_id": "56e99d394b4e9d0c00459f64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/759b571502c2d8704e85197fe3aa7d97d7acce80.pdf",
+    "source": "http://www.justice.gov.za/legislation/constitution/SAConstitution-web-eng.pdf"
+  },
+  {
+    "_id": "56e99ede4b4e9d0c00459f6e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/014987ffb5c07a582b455d76cfac555559c5ae55.pdf",
+    "source": "http://www.dfa.gov.za/department/accessinfo_act.pdf"
+  },
+  {
+    "_id": "56e999834b4e9d0c00459f50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45d044c53a0c8619c2d88bfc96002ac8b949a8de.pdf"
+  },
+  {
+    "_id": "56e998834b4e9d0c00459f44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de887dcfd68210f4edfb7d57e16688c83a9bc394.pdf",
+    "source": "http://www.finance.gov.tt/wp-content/uploads/2013/11/State-Enterprises-Investment-Programme-2014.pdf"
   }
 ]
