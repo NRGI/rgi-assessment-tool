@@ -3,5 +3,10 @@
     "_id": "56e834404b4e9d0c0045954c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/77c195d085751cbe417499c175c814977251ab6f.PDF",
     "source": "http://www.dmp.wa.gov.au/Minerals/Legislation-and-compliance-6224.aspx"
+  },
+  {
+    "_id": "56e98a7e4b4e9d0c00459e51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2172f5e29637c677895b84153d31b4658bd139fb.pdf",
+    "source": "http://www.guardian.co.tt/business/2014-12-03/details-withheld-new-production-sharing-contracts"
   }
 ]

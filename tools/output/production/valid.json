@@ -1259,5 +1259,23 @@
     "_id": "56e987804b4e9d0c00459e06",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3d5efac2733acaad0c7c130e1db76632a8e8fbca.pdf",
     "source": "http://www.energy.gov.tt/wp-content/uploads/2014/02/PSC-Register-FY-2010-2011-List-for-EITI.pdf"
+  },
+  {
+    "_id": "56e988da4b4e9d0c00459e3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d638cf702dc560b34a01a86cc30057b8070c1fb.pdf",
+    "source": "http://www.oilgas.gov.tm/en/blog/156/on-the-highway-tejen-sarahs-opened-a-modern-gas-station"
+  },
+  {
+    "_id": "56e98c344b4e9d0c00459e75",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2ef216b5af95715cbd12862118905c224d6800b.pdf",
+    "source": "http://www.technip.com/sites/default/files/technip/fields/publications/attachments/technip_in_turkmenistan_may_2015_web.pdf"
+  },
+  {
+    "_id": "56e989a34b4e9d0c00459e48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7da5e972b94b346d3fed771ab6a1fe40fb805cf8.pdf"
+  },
+  {
+    "_id": "56e988784b4e9d0c00459e2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ced40a274d0f8b0315ba07c911ee8c38881d91a6.doc"
   }
 ]
