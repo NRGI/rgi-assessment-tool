@@ -36,8 +36,9 @@ exports.check = function(inputDocuments, config, done) {
             logger.log(document._id + ' is being processed.');
         }
 
-        if(path.extname(urlComponents.pathname) !== '.pdf') {
+        if(path.extname(urlComponents.pathname).toLowerCase() !== '.pdf') {
             outputDocuments['not-pdf'].push(document);
+            logger.log(document._id + ' is marked as NOT PDF!');
         } else {
             promises.push(function(callback) {
                 fileHandlers.handlePdfDocument(document, 's3_url', fileHandlers.getValidS3PdfDocumentHandler,
