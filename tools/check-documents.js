@@ -10,24 +10,37 @@ const filePath = require('./file-path');
 const logger = require('./logger');
 
 exports.check = function(inputDocuments, config, done) {
-    var outputDocuments = {
-        'broken-source': [],
-        'fix-available': [],
-        'not-pdf': [],
-        'source-required': [],
-        'valid': [],
-        'unprocessed': []
-    };
+    var
+        promises = [], outputDocuments = {
+            'broken-source': [],
+            'fix-available': [],
+            'not-pdf': [],
+            'source-required': [],
+            'valid': [],
+            'unprocessed': []
+        },
+        saveResults = function() {
+            promises = [];
+
+            Object.keys(outputDocuments).forEach(function(fileName) {
+                promises.push(function(callback) {
+                    fs.writeFile(filePath.getOutputFilePath(fileName), JSON.stringify(outputDocuments[fileName]), callback);
+                });
+            });
+
+            async.parallel(promises, done);
+        };
 
     Object.keys(outputDocuments).forEach(function(outputFileName) {
-        fs.readFile(filePath.getOutputFilePath(outputFileName), 'utf8', function (err, processedData) {
-            if(!err) {
-                outputDocuments[outputFileName] = outputDocuments[outputFileName].concat(JSON.parse(processedData));
-            }
+        promises.push(function(callback) {
+            fs.readFile(filePath.getOutputFilePath(outputFileName), 'utf8', function (err, processedData) {
+                if (!err) {
+                    outputDocuments[outputFileName] = outputDocuments[outputFileName].concat(JSON.parse(processedData));
+                }
+                callback();
+            });
         });
     });
-
-    var promises = [];
 
     inputDocuments.forEach(function(document) {
         const urlComponents = url.parse(document.s3_url);
@@ -50,15 +63,5 @@ exports.check = function(inputDocuments, config, done) {
         }
     });
 
-    async.parallel(promises, function() {
-        promises = [];
-
-        Object.keys(outputDocuments).forEach(function(fileName) {
-            promises.push(function(callback) {
-                fs.writeFile(filePath.getOutputFilePath(fileName), JSON.stringify(outputDocuments[fileName]), callback);
-            });
-        });
-
-        async.parallel(promises, done);
-    });
+    async.parallel(promises, saveResults);
 };
