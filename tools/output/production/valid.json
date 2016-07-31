@@ -1361,5 +1361,54 @@
     "_id": "56e9aa704b4e9d0c0045a019",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e3579210b6b4d8544c5c8646bcc2d7b212583bbb.pdf",
     "source": "http://www.miningweekly.com/article/dmr-duty-bound-to-give-info-on-mineral-rights-end-disturbing-reports-2012-03-09"
+  },
+  {
+    "_id": "56e9b5904b4e9d0c0045a066",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8c2072d8e8c95a1be3b8e97a865fa78735f31a7.pdf",
+    "source": "http://www.moneyweb.co.za/archive/sas-sovereign-wealth-fund-off-the-table/"
+  },
+  {
+    "_id": "56e9b3064b4e9d0c0045a057",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f529b42ac6f7cd7a26a2d220bf5b8fa1ec998b81.pdf",
+    "source": "http://public.eblib.com/choice/publicfullrecord.aspx?p=1762219"
+  },
+  {
+    "_id": "56e9b8294b4e9d0c0045a078",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/999bd12b08d0473fcd1b0ae133a9a8428d1fb567.pdf",
+    "source": "http://www.swfinstitute.org/sovereign-wealth-fund-rankings/"
+  },
+  {
+    "_id": "56e9b0e24b4e9d0c0045a038",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b5ea220b5474aef3166d5c945103612060e0239.pdf",
+    "source": "http://ngc.co.tt/wp-content/uploads/2015/09/NGC-FINANCIALS-SPREADS.pdf"
+  },
+  {
+    "_id": "56e9b8344b4e9d0c0045a07a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/987a78760f3c3edcd16c3cd78094c7ad2e5aca03.pdf",
+    "source": "http://www.she.gob.ec/wp-content/uploads/downloads/2016/01/Prestaci%C3%B3n-de-Servicios-Bloque-28-2015.pdf"
+  },
+  {
+    "_id": "56e9be2b4b4e9d0c0045a094",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21c4cf705b6ad5f0d42b4d3fe6de89026e6c8849.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/Sub_Oil_Gas_Mgmt_20151125.pdf"
+  },
+  {
+    "_id": "56e9bec14b4e9d0c0045a097",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25c24ad91ecd425ee2ce4a79fc35e5b166940522.pdf",
+    "source": "http://www.auditorgeneral.gov.tt/sites/default/files/Accounting%20Manual%20Comptroller%20of%20Accounts.pdf"
+  },
+  {
+    "_id": "56e9bfc14b4e9d0c0045a0aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b757321869297518d51e0661e832de4552b9c0c.pdf",
+    "source": "http://rgd.legalaffairs.gov.tt/Laws2/Alphabetical_List/lawspdfs/25.04.pdf"
+  },
+  {
+    "_id": "56e9c0f74b4e9d0c0045a0bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbc52687cf0f2ff38824addd1500c206c33f0cbb.pdf",
+    "source": "http://www.auditorgeneral.gov.tt/sites/default/files/Accounting%20Manual%20Comptroller%20of%20Accounts.pdf"
+  },
+  {
+    "_id": "56e9c1df4b4e9d0c0045a0cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a3a33986612e374081735aa9eb5fb8de9131814.doc"
   }
 ]
