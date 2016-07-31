@@ -8,5 +8,10 @@
     "_id": "56e98a7e4b4e9d0c00459e51",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2172f5e29637c677895b84153d31b4658bd139fb.pdf",
     "source": "http://www.guardian.co.tt/business/2014-12-03/details-withheld-new-production-sharing-contracts"
+  },
+  {
+    "_id": "578da962b79aee2000bf6383",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c28e926b65a112ecc360f27548f3484383c81e98.xlsx",
+    "source": "http://presto.hacienda.gob.mx/presto/files/system/mashlets/app_menu/index.html?param_lenguaje=1¶m_tema=3¶m_subtema=14#"
   }
 ]

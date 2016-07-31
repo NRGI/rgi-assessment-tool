@@ -1347,5 +1347,19 @@
   {
     "_id": "56e9a64f4b4e9d0c00459fe9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ee0431708c3aa37ec2164467cb5b643f9518557b.jpg"
+  },
+  {
+    "_id": "56e9a6ea4b4e9d0c00459ff3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20deb3d3b5988e32239e07c53512bb25fc80aacc.jpg"
+  },
+  {
+    "_id": "56e9a9cd4b4e9d0c0045a010",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e9a2c0ae72177d723b1643e49eb2ef3536f0354.pdf",
+    "source": "http://www.opendemocracy.org.za/index.php/blog/108-statement-mining-lekgotla-fails-to-acknowledge-and-address-key-challenges-in-south-africa-s-extractive-sector-say-rights-groups"
+  },
+  {
+    "_id": "56e9aa704b4e9d0c0045a019",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3579210b6b4d8544c5c8646bcc2d7b212583bbb.pdf",
+    "source": "http://www.miningweekly.com/article/dmr-duty-bound-to-give-info-on-mineral-rights-end-disturbing-reports-2012-03-09"
   }
 ]
