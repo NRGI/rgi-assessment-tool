@@ -1325,5 +1325,27 @@
     "_id": "56e998834b4e9d0c00459f44",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/de887dcfd68210f4edfb7d57e16688c83a9bc394.pdf",
     "source": "http://www.finance.gov.tt/wp-content/uploads/2013/11/State-Enterprises-Investment-Programme-2014.pdf"
+  },
+  {
+    "_id": "56e9a05d4b4e9d0c00459f9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1a748cf8e5051194cfc4853b268b503b713dd1c.jpg"
+  },
+  {
+    "_id": "56e9a0a44b4e9d0c00459fa4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a06f8cd4be460248b6cfc559d59c3d3437b76de.jpg"
+  },
+  {
+    "_id": "56e9a12a4b4e9d0c00459fb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/495df437d9142b81227be06ea0f3f2e55ff3fe5d.pdf",
+    "source": "http://www.ingemmet.gob.pe/concesiones-otorgadas"
+  },
+  {
+    "_id": "56e9a3ab4b4e9d0c00459fca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0047a060137d38bc755831f19c31d903aa8ff1f1.pdf",
+    "source": "http://www.finance.gov.tt/wp-content/uploads/2015/10/SEIP-2016.pdf"
+  },
+  {
+    "_id": "56e9a64f4b4e9d0c00459fe9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee0431708c3aa37ec2164467cb5b643f9518557b.jpg"
   }
 ]
