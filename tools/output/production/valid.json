@@ -1555,5 +1555,27 @@
     "_id": "56eaa37e8e5b6b0c003a6fcb",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/4c0b0b9fd841d621f7657e307bc13d156baa6226.doc",
     "source": "http://www.ordenjuridico.gob.mx/listDependencia.php?catEstado=&busquedaf=Lineamientos+para+la+aplicaci%F3n+de+los+recursos+del+Fondo+para+el+Desarrollo+Regional+Sustentable+de+Estados+y+Municipios+Mineros&image.x=0&image.y=0&gotoCtrl=1&HCat=O.titulo%2C+CT.tipo%2CO.fechaPub+asc&idDep=18&idPoder=1&idGrupo=2&idDepUp=0&liberado=no&idEst=18&poder=ejecutivo&Old_busquedaf="
+  },
+  {
+    "_id": "56eaa46b8e5b6b0c003a6fe9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d918184d21c619f2e49e6d44a02a42f20ba6807a.pdf"
+  },
+  {
+    "_id": "56eaab678e5b6b0c003a704d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26d29d851304b09aafbc3a582b6ddba29010f960.pdf",
+    "source": "http://www.state.gov/e/eb/ifd/oma/fiscaltransparency/243692.htm"
+  },
+  {
+    "_id": "56eac22e8e5b6b0c003a7095",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dffa32e1d8e0aacaa7b5b21ea364d772bab05538.pdf"
+  },
+  {
+    "_id": "56eaa55b8e5b6b0c003a7013",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/216099d797abdd73d9d07febe3d575298f27450d.pdf"
+  },
+  {
+    "_id": "56eaa45d8e5b6b0c003a6fe7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce0206fa62a266d4e1ee56716def13c6c92c3dd9.pdf",
+    "source": "http://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20339%20-%20National%20Trust%20Fund%20Act%201988.pdf"
   }
 ]
