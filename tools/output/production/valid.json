@@ -1482,5 +1482,29 @@
   {
     "_id": "56e9ff974b4e9d0c0045a1e9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/51bf0d41bc68058eb25921ae0789da4b66b53152.pdf"
+  },
+  {
+    "_id": "56ea17fe4b4e9d0c0045a225",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d9231debad67eff877ae4c358a1cc965e10611f.pdf"
+  },
+  {
+    "_id": "56ea59f68e5b6b0c003a6d30",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae738d096cc6dc72d8ce78785684371915d9bd23.pdf",
+    "source": "https://www.globalwitness.org/sites/default/files/south_sudan_briefing_june14_web.pdf"
+  },
+  {
+    "_id": "56ea66a68e5b6b0c003a6d55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/41be64caacb5f23f5b0b9987c26afdcbd718e77b.pdf",
+    "source": "http://www.tresor.economie.gouv.fr/10211_le-secteur-petrolier-au-gabon-2013"
+  },
+  {
+    "_id": "56ea6d5a8e5b6b0c003a6d80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39f9ff32838630fd2748a042973ab317bfab62d2.pdf",
+    "source": "http://www.cmi.no/file/300/SSLS-Oil- and-Sustainable-Peace.pdf"
+  },
+  {
+    "_id": "56ea72a68e5b6b0c003a6d9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7f8386acd0cd8c1a72145c39334e7ce5aa7c0c6.pdf",
+    "source": "http://www.theoilandgasyear.com/content/uploads/2015/01/Preview_TOGY_Gabon_2014.pdf"
   }
 ]
