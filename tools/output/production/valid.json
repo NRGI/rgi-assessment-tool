@@ -1623,5 +1623,29 @@
   {
     "_id": "56eb101b8e5b6b0c003a728e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/391a1a9ede5d58531e7c4b006a47a3ff57bf91c1.pdf"
+  },
+  {
+    "_id": "56eb10488e5b6b0c003a7291",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6b844b4448e87dd98692936e00091b59db2fc40.pdf",
+    "source": "http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesCanada2015Review.pdf"
+  },
+  {
+    "_id": "56eb12e58e5b6b0c003a729c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d737313b80c941f3397aa978a7ec2a3f58303e92.pdf",
+    "source": "http://http://http://www.mireme.gov.mz/index.php?option=com_phocadownload&view=category&id=5:lei&Itemid=150"
+  },
+  {
+    "_id": "56eb14368e5b6b0c003a72a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/110d86ff599a8c1864984e8dfd5f14fc6119c616.pdf",
+    "source": "http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesCanada2015Review.pdf"
+  },
+  {
+    "_id": "56eb15b78e5b6b0c003a72b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e065d1f876aa04662bb046095652a4d818763217.pdf",
+    "source": "http://www.iea.org/publications/freepublications/publication/EnergyPoliciesofIEACountriesCanada2015Review.pdf"
+  },
+  {
+    "_id": "56eb1f5b8e5b6b0c003a72ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b49eb5b1efbeb79e48ac52c9f46fcc8863fb3dc.pdf"
   }
 ]
