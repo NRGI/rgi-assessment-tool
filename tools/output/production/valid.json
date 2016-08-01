@@ -1668,5 +1668,26 @@
     "_id": "56eb30848e5b6b0c003a7327",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6cc893b49a19463d2f07b8c0de2741c59a8c892f.xlsx",
     "source": "http://www2.hidrocarburos.gob.bo/index.php/viceministerios/97-viceministerio-de-exploracion-y-expltacion-de-hidrocarburos/liquidaci%C3%B3n-de-regalias-y-participaci%C3%B3n-al-tgn.html"
+  },
+  {
+    "_id": "56eb56108e5b6b0c003a7360",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00d2e70ec02c9e6590d79874f4ef2a78623a11aa.pdf"
+  },
+  {
+    "_id": "56eb63988e5b6b0c003a7377",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b59b79558bf59c99e162dd2631106c7d9f69122.pdf"
+  },
+  {
+    "_id": "56eb64088e5b6b0c003a7386",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e98cf7e1ef8c9912eb88cb77573b89e256d551b.doc"
+  },
+  {
+    "_id": "56eba8f9e31c3a0c00237ed1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c7e299be86264899cdc8a36f42ced039d0d3dc4.pdf",
+    "source": "http://www.dno.gov.mz/docs/PES_OE2016/Lei_OE2016.pdf"
+  },
+  {
+    "_id": "56ebb450e31c3a0c00237efd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64db7a00a91908095ae518ef026e29613d7bc14f.pdf"
   }
 ]
