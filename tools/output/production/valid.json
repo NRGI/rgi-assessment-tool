@@ -1410,5 +1410,30 @@
   {
     "_id": "56e9c1df4b4e9d0c0045a0cf",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1a3a33986612e374081735aa9eb5fb8de9131814.doc"
+  },
+  {
+    "_id": "56e9c9744b4e9d0c0045a109",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e28855c12ef76c2fd34c8f5797b3ef77e4620a43.pdf",
+    "source": "http://rgd.legalaffairs.gov.tt/Laws2/Alphabetical_List/lawspdfs/70.09.pdf"
+  },
+  {
+    "_id": "56e9c4184b4e9d0c0045a0e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0ebac4005dd25f6931ad7d913019daeb62b2c2b.pdf",
+    "source": "https://www.researchgate.net/publication/282877365_Fiscal_Federalism_of_Non-Renewable_Natural_Resources_Principles_and_Practices_of_Revenue_Sharing_and_Equalization"
+  },
+  {
+    "_id": "56e9c36f4b4e9d0c0045a0dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e60977c37f20e9655590bdfebc716878d3091e55.pdf",
+    "source": "http://www.auditorgeneral.gov.tt/sites/default/files/Accounting%20Manual%20Comptroller%20of%20Accounts.pdf"
+  },
+  {
+    "_id": "56e9ca574b4e9d0c0045a11b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b4da5236a2d5f8b544dcbd365e30e75f1a33953.pdf",
+    "source": "http://www.proyectosapp.pe/RepositorioAPS/0/0/JER/PAMINEROPERU/Resumen_Ejecutivo_MineroPeru.pdf"
+  },
+  {
+    "_id": "56e9cd704b4e9d0c0045a12f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9a0bb73ef29edcbc67e9845cd968b7e42ffd0ae.pdf",
+    "source": "http://finance.gov.tt/wp-content/uploads/2015/09/HSF-Quarterly-Report-April-June-2015.pdf"
   }
 ]
