@@ -1459,5 +1459,28 @@
     "_id": "56e9d7414b4e9d0c0045a1a3",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee30e6543c29278216affed192a6ee230ce6ff4.pdf",
     "source": "http://historico.tsj.gov.ve/legislacion/LeyesOrganicas/16.-GO_38493.pdf"
+  },
+  {
+    "_id": "56ea02b24b4e9d0c0045a203",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68ab4bc24a24386082d62ab3ff79675d35ef600c.pdf",
+    "source": "http://www4.eppetroecuador.ec/lotaip/pdfs/2015/agosto/soportes/DECRETO%201351A.pdf"
+  },
+  {
+    "_id": "56e9fe824b4e9d0c0045a1e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95d1bc48e88ce57b2bcc63030fa103f5cb3b0293.pdf"
+  },
+  {
+    "_id": "56ea062a4b4e9d0c0045a215",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac39632d6c3c4f3a4965baaf110fc89a280a6bc6.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/04/Planes-enero-20154.pdf"
+  },
+  {
+    "_id": "56e9db7f4b4e9d0c0045a1be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8ce58bdb8681f4aa4d1d6f13f788398b60bc11b.pdf",
+    "source": "http://historico.tsj.gov.ve/legislacion/enmienda2009.pdf"
+  },
+  {
+    "_id": "56e9ff974b4e9d0c0045a1e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51bf0d41bc68058eb25921ae0789da4b66b53152.pdf"
   }
 ]
