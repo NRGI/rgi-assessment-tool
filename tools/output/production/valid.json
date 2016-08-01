@@ -1734,5 +1734,29 @@
     "_id": "56ebe548e31c3a0c00238090",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2d320e54e4f823c508bd0665373ba747840ba6b9.pdf",
     "source": "http://www.azmec.co.zm/downloads/acts/Mines%20and%20Minerals%20Development%20Act%20(General%20Regulations)%20SI%20No%207%20of%202016.pdf"
+  },
+  {
+    "_id": "56ebeb6ee31c3a0c002380ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2665eb02041ed42c0819ec9348bdebf9667d859.pdf",
+    "source": "http://www.luse.co.zm/wp-content/uploads/2015/10/ZCCM-IH-Preferential-Secondary-Market-Offer-Information-Supplement.pdf"
+  },
+  {
+    "_id": "56ebedbbe31c3a0c002380ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7aab115ce27d473a2dc13babb9b452c811a05610.pdf",
+    "source": "http://planipolis.iiep.unesco.org/upload/South%20Sudan/South%20Sudan_Transitional_constitution_2011.pdf"
+  },
+  {
+    "_id": "56ebedcee31c3a0c002380f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d268cb3b3c7bd6c69b4a1f90f2eb08d1dd6987a.pdf",
+    "source": "http://www2.deloitte.com/content/dam/Deloitte/mx/Documents/energy-resources/mining-industry-mexico.pdf"
+  },
+  {
+    "_id": "56ebee6fe31c3a0c00238108",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3be3a065e101f66798e1ffa3bf4f760bc0061080.pdf",
+    "source": "https://www.kpmg.com/Ca/en/industry/Mining/Documents/Mexico.pdf"
+  },
+  {
+    "_id": "56ebef0be31c3a0c0023811e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5bb868169a315ac85a4c32ffb0464f0f267b4471.pdf"
   }
 ]
