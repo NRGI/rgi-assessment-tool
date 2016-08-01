@@ -1577,5 +1577,28 @@
     "_id": "56eaa45d8e5b6b0c003a6fe7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ce0206fa62a266d4e1ee56716def13c6c92c3dd9.pdf",
     "source": "http://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20339%20-%20National%20Trust%20Fund%20Act%201988.pdf"
+  },
+  {
+    "_id": "56eaf2608e5b6b0c003a720a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f674ebdd5e39d5f139b83e2d7d4c2753e2704b44.pdf"
+  },
+  {
+    "_id": "56eac7048e5b6b0c003a70bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/595c13f80c112a1d1c4b11188b53f7078effaad3.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/work/models/Finanzas_Publicas/docs/congreso/infotrim/2015/ivt/01inf/itinfp_201504.pdf"
+  },
+  {
+    "_id": "56eaefe58e5b6b0c003a71f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa88464be191966d832e914fc71fd31e54a64ce2.pdf",
+    "source": "http://www.congreso.gob.pe/Docs/files/CONSTITUTION_27_11_2012_ENG.pdf"
+  },
+  {
+    "_id": "56eacbfc8e5b6b0c003a70ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/710a85185bd2cb568c6155b2a54cb11c2d7cdae1.pdf",
+    "source": "http://www.gob.mx/sedatu/prensa/entrega-gobierno-de-la-republica-primeros-recursos-del-fondo-minero-a-municipios-para-obras-sociales"
+  },
+  {
+    "_id": "56eaf3b48e5b6b0c003a7222",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee58b4d0adb4a4c266b305f1c870876de9fcc26.pdf"
   }
 ]
