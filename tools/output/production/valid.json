@@ -1506,5 +1506,29 @@
     "_id": "56ea72a68e5b6b0c003a6d9a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b7f8386acd0cd8c1a72145c39334e7ce5aa7c0c6.pdf",
     "source": "http://www.theoilandgasyear.com/content/uploads/2015/01/Preview_TOGY_Gabon_2014.pdf"
+  },
+  {
+    "_id": "56ea7f408e5b6b0c003a6e4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/500378826e8c6bdd67a7a6bb2ceaf40d7a895c59.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/gab107255.pdf"
+  },
+  {
+    "_id": "56ea75848e5b6b0c003a6dab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b817ad03cd9f44c22b2d78a37132e6d82d44722e.pdf",
+    "source": "http://www.bloomberg.com/research/stocks/private/snapshot.asp?privcapid=222945651"
+  },
+  {
+    "_id": "56ea75b28e5b6b0c003a6dad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0aa8b1ca3eb01179ef6c663acc09344ae77007b.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/loi_finale_2009_et_2008_fr.pdf"
+  },
+  {
+    "_id": "56ea773e8e5b6b0c003a6dc4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e12cab346e7f9b261f40790d24034741ec392966.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/decret_titres_miniers_fr_vf_19-10-08.pdf"
+  },
+  {
+    "_id": "56ea79a38e5b6b0c003a6df1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/375a0437e32bfb3c53cbfda082aaf9bcd7cf7004.pdf"
   }
 ]
