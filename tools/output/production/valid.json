@@ -1709,5 +1709,30 @@
     "_id": "56ebd4ace31c3a0c00237ffb",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fa1c5b5af80f3a3ccc23cf3b45a8f0cbcc76551.docx",
     "source": "http://pib.nic.in/newsite/PrintRelease.aspx?relid=137638"
+  },
+  {
+    "_id": "56ebeaa5e31c3a0c002380ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/378676fd2fa886d21a2703fc0caa8633400e3e7c.pdf",
+    "source": "http://www.siam.economia.gob.mx/swb/work/models/siam/Resource/18/1/images/LEY_MINERA_2006.pdf"
+  },
+  {
+    "_id": "56ebdb70e31c3a0c0023806a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84cb4733c44d759d03dab332c2539cf6d7b84892.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/The%20Mines%20and%20Minerals%20Act%2C%202015.pdf"
+  },
+  {
+    "_id": "56ebdeafe31c3a0c00238075",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/92a8e240e69e54ec9ecae2258cfc8e642dac9171.pdf",
+    "source": "http://www.postzambia.com/news.php?id=15194"
+  },
+  {
+    "_id": "56ebea01e31c3a0c002380b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2fb93c13e52245a6e95d471763b836ca52d80df3.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/1_29ene16.pdf"
+  },
+  {
+    "_id": "56ebe548e31c3a0c00238090",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d320e54e4f823c508bd0665373ba747840ba6b9.pdf",
+    "source": "http://www.azmec.co.zm/downloads/acts/Mines%20and%20Minerals%20Development%20Act%20(General%20Regulations)%20SI%20No%207%20of%202016.pdf"
   }
 ]
