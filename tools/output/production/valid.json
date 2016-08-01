@@ -1647,5 +1647,26 @@
   {
     "_id": "56eb1f5b8e5b6b0c003a72ce",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6b49eb5b1efbeb79e48ac52c9f46fcc8863fb3dc.pdf"
+  },
+  {
+    "_id": "56eb55988e5b6b0c003a7357",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59109badca316d7c8bd0976638cb5db46a34b1dc.pdf"
+  },
+  {
+    "_id": "56eb1fbe8e5b6b0c003a72d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/650742938c4b5ff695cf690dcdc2b5f969bddbbe.pdf"
+  },
+  {
+    "_id": "56eb419a8e5b6b0c003a733b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec66920e95df4558dee18980b36165641ad0f4b5.pdf"
+  },
+  {
+    "_id": "56eb2dd18e5b6b0c003a7307",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7dff8f963e9ba7d0e244ff96b2445c3bd1c077bf.pdf"
+  },
+  {
+    "_id": "56eb30848e5b6b0c003a7327",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6cc893b49a19463d2f07b8c0de2741c59a8c892f.xlsx",
+    "source": "http://www2.hidrocarburos.gob.bo/index.php/viceministerios/97-viceministerio-de-exploracion-y-expltacion-de-hidrocarburos/liquidaci%C3%B3n-de-regalias-y-participaci%C3%B3n-al-tgn.html"
   }
 ]
