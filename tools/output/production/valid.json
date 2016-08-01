@@ -1758,5 +1758,29 @@
   {
     "_id": "56ebef0be31c3a0c0023811e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5bb868169a315ac85a4c32ffb0464f0f267b4471.pdf"
+  },
+  {
+    "_id": "56ebff9ce31c3a0c002381eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4a944fdda61579c369169c0fbf5eb33bb9bc723.pdf"
+  },
+  {
+    "_id": "56ec055fe31c3a0c0023820a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d6d9ad183f884b84be584ddbe333cbc58ded5b7e.pdf",
+    "source": "http://ghanachamberofmines.org/media/publications/Frequently_Asked_Questions_-__August_2014.pdf"
+  },
+  {
+    "_id": "56ebf80fe31c3a0c00238197",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9956992df83d370abc98092510dc8bc297c23b4.pdf",
+    "source": "https://eiti.org/files/zeiti_bo_report_-_final_version_13_07_15_0.pdf"
+  },
+  {
+    "_id": "56ec0500e31c3a0c00238202",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a07a76ab1db5531dff6486dab8fef8e39e4e3c3f.pdf",
+    "source": "https://www.zra.org.zm/siteSearchController.htm?googleSearch=2015%20budget%20speech"
+  },
+  {
+    "_id": "56ebf27ee31c3a0c0023814a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f61fd30c6e513bbd524a5f1fc46067dd13a8f18.pdf",
+    "source": "http://dghindia.org/pdf/2014-15.pdf"
   }
 ]
