@@ -1689,5 +1689,25 @@
   {
     "_id": "56ebb450e31c3a0c00237efd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/64db7a00a91908095ae518ef026e29613d7bc14f.pdf"
+  },
+  {
+    "_id": "56ebb5d1e31c3a0c00237f07",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1399311fb3c6e2cf01cf633a5b947e57fcfa278f.pdf",
+    "source": "https://eiti.org/files/Sharing%20Natural%20Resource%20Revenues%20with%20Affected%20Communities%20-%20Policy%20Options%20for%20Mozambique.pdf"
+  },
+  {
+    "_id": "56ebd0e3e31c3a0c00237fac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da7898a1c4b78545077b248185be5adf795a57fa.pdf",
+    "source": "https://www.norad.no/globalassets/import-2162015-80434-am/www.norad.no-ny/filarkiv/ofd/pea-mozambique-2013-ilpi.pdf"
+  },
+  {
+    "_id": "56ebd371e31c3a0c00237fce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5247c27a8014b5159c62d3550d61404390a97a2e.doc",
+    "source": "http://www.siam.economia.gob.mx/es/siam/p_Formatos"
+  },
+  {
+    "_id": "56ebd4ace31c3a0c00237ffb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fa1c5b5af80f3a3ccc23cf3b45a8f0cbcc76551.docx",
+    "source": "http://pib.nic.in/newsite/PrintRelease.aspx?relid=137638"
   }
 ]
