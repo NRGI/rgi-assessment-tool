@@ -1530,5 +1530,30 @@
   {
     "_id": "56ea79a38e5b6b0c003a6df1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/375a0437e32bfb3c53cbfda082aaf9bcd7cf7004.pdf"
+  },
+  {
+    "_id": "56ea8e938e5b6b0c003a6f1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/150db152508b379910f0bf8f1d7b13e60795b29e.pdf",
+    "source": "https://www.eia.gov/beta/international/analysis_includes/countries_long/Sudan_and_South_Sudan/sudan.pdf"
+  },
+  {
+    "_id": "56ea93268e5b6b0c003a6f40",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/277e99bbf98aa4eaad7cc14c038af236b2f991c9.pdf",
+    "source": "http://www.energy-oil-gas.com/2015/10/13/gabon-oil-company-2/"
+  },
+  {
+    "_id": "56ea99a78e5b6b0c003a6f92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35a3f1405ede822ab0b88ce79c2799beba9c1e6e.pdf",
+    "source": "https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwi2lJb-1MfLAhUDax4KHQTQCXEQFggdMAA&url=http%3A%2F%2Fwww.linklaters.com%2Fpdfs%2Fmkt%2Fparis%2FA19126299_v0.1_Gabon_Hydrocarbons_NL_Dec_2014_WEB.pdf&usg=AFQjCNEQWTxdH6NYx9ngtOFb8JvES7F3uA&sig2=6DoTCLNiM4iumXnJymzqzA"
+  },
+  {
+    "_id": "56eaa41e8e5b6b0c003a6fdc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f2ed22b9c1433d565b66fab8c0fc361dbe5f80b.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LFMPED_110814.pdf"
+  },
+  {
+    "_id": "56eaa37e8e5b6b0c003a6fcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c0b0b9fd841d621f7657e307bc13d156baa6226.doc",
+    "source": "http://www.ordenjuridico.gob.mx/listDependencia.php?catEstado=&busquedaf=Lineamientos+para+la+aplicaci%F3n+de+los+recursos+del+Fondo+para+el+Desarrollo+Regional+Sustentable+de+Estados+y+Municipios+Mineros&image.x=0&image.y=0&gotoCtrl=1&HCat=O.titulo%2C+CT.tipo%2CO.fechaPub+asc&idDep=18&idPoder=1&idGrupo=2&idDepUp=0&liberado=no&idEst=18&poder=ejecutivo&Old_busquedaf="
   }
 ]
