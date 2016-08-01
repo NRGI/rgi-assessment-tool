@@ -1782,5 +1782,28 @@
     "_id": "56ebf27ee31c3a0c0023814a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7f61fd30c6e513bbd524a5f1fc46067dd13a8f18.pdf",
     "source": "http://dghindia.org/pdf/2014-15.pdf"
+  },
+  {
+    "_id": "56ec0719e31c3a0c0023823a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4c3c7988cb9ea66812548b02b2b24caee25917c.pdf",
+    "source": "http://www.boem.gov/GOMESA/"
+  },
+  {
+    "_id": "56ec120de31c3a0c002382b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c28bac1b928ca3f91d53f3ea916cdd4b6fdd1cd.pdf",
+    "source": "https://www.norad.no/en/front/thematic-areas/oil-for-development/where-we-are/south-sudan/"
+  },
+  {
+    "_id": "56ec05c2e31c3a0c00238213",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ab52d67792fb7b3ed32206eb37624997ff38b2e.pdf"
+  },
+  {
+    "_id": "56ec1159e31c3a0c002382a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d5b1f67b8159c7cd7049a0502baad54213779f0.pdf"
+  },
+  {
+    "_id": "56ec124ae31c3a0c002382b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82dcb13aed964836fe1b1adb291e8d7fbb68ad94.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/03/INFORME-PAM-2014-para-web.pdf"
   }
 ]
