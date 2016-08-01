@@ -1435,5 +1435,29 @@
     "_id": "56e9cd704b4e9d0c0045a12f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e9a0bb73ef29edcbc67e9845cd968b7e42ffd0ae.pdf",
     "source": "http://finance.gov.tt/wp-content/uploads/2015/09/HSF-Quarterly-Report-April-June-2015.pdf"
+  },
+  {
+    "_id": "56e9ce444b4e9d0c0045a14f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4cf2ac705a9c11ec4d14ea27bb4e691085f8a83f.pdf",
+    "source": "http://www.miningweekly.com/article/aemfc-granted-mining-and-prospecting-rights-minister-2010-10-11"
+  },
+  {
+    "_id": "56e9cf374b4e9d0c0045a15b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08bdfb1d6f55ead42d13f7ec8196e7436e287a1b.pdf",
+    "source": "http://aemfc.co.za.dedi59.flk1.host-h.net/images/reports/2014-Annual-Report-77246-African-Exploration-AFS.pdf"
+  },
+  {
+    "_id": "56e9d1d34b4e9d0c0045a181",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/797f4841adb9bf9515f49f7a06ad4d059b41fa78.PDF"
+  },
+  {
+    "_id": "56e9d6fb4b4e9d0c0045a1a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f0606f5a9c584982078d15162cd75e4510a5fc2.pdf",
+    "source": "http://www.cefgroup.co.za/aemfc/"
+  },
+  {
+    "_id": "56e9d7414b4e9d0c0045a1a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee30e6543c29278216affed192a6ee230ce6ff4.pdf",
+    "source": "http://historico.tsj.gov.ve/legislacion/LeyesOrganicas/16.-GO_38493.pdf"
   }
 ]
