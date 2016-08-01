@@ -1600,5 +1600,28 @@
   {
     "_id": "56eaf3b48e5b6b0c003a7222",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee58b4d0adb4a4c266b305f1c870876de9fcc26.pdf"
+  },
+  {
+    "_id": "56eaf5598e5b6b0c003a722d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e7e2f7c909c4cc792e868f35e73a0622d819776.pdf",
+    "source": "http://apps5.mineco.gob.pe/transferencias/cuadros/Hoja1_1.aspx"
+  },
+  {
+    "_id": "56eaf6418e5b6b0c003a724b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f92d4238cee2170f510203fa52f46a745133b89.pdf",
+    "source": "http://www.chambredesrepresentants.ma/sites/default/files/loi/113.14.pdf"
+  },
+  {
+    "_id": "56eaf67a8e5b6b0c003a7255",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2d30e234d75838868d33c94d2491a5d6f75dae4.pdf",
+    "source": "http://www.fec.org.ma/Textes/Loi_orga_n14.112.pdf"
+  },
+  {
+    "_id": "56eb033d8e5b6b0c003a7283",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd709d3574ea5baf541273201bb4a9732cc012a6.pdf"
+  },
+  {
+    "_id": "56eb101b8e5b6b0c003a728e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/391a1a9ede5d58531e7c4b006a47a3ff57bf91c1.pdf"
   }
 ]
