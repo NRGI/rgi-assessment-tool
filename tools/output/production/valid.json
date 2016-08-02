@@ -1876,5 +1876,30 @@
     "_id": "56ec3686e31c3a0c00238458",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/877ed515db099dca6a79b0e1d5faa0a82b841a2d.pdf",
     "source": "http://wsp.presidencia.gov.co/Normativa/actos-legislativos/Documents/2011/ActoLegislativo-05-18julio2011.pdf"
+  },
+  {
+    "_id": "56ec380ee31c3a0c00238473",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90945d179eeec5113fdba0016e2b60bbc775b5e3.pdf",
+    "source": "http://revistas.utadeo.edu.co/index.php/RAI/article/download/1033/1067"
+  },
+  {
+    "_id": "56ec3d9de31c3a0c00238527",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79a65349c6ebe922a9bb2ba233287fe0ea3c57fb.pdf",
+    "source": "http://www.minhacienda.gov.co/portal/page/portal/HomeMinhacienda/SistGralRegalias/FAE_FONPET/2015/MENSUAL%20MARZO%202015%20r1.pdf"
+  },
+  {
+    "_id": "56ec3be8e31c3a0c002384e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b6fdd15b6967b99ebec59789e7881bbf57b8097.pdf",
+    "source": "http://righttoinformation.gov.in/rti-act.pdf"
+  },
+  {
+    "_id": "56ec3cd0e31c3a0c00238509",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9092d3b9a6c9d6d35a2ba9e41aaf8d9a06368559.pdf",
+    "source": "http://wsp.presidencia.gov.co/Normativa/actos-legislativos/Documents/2011/ActoLegislativo-05-18julio2011.pdf"
+  },
+  {
+    "_id": "56ec3930e31c3a0c002384a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/030232d03c0b7a1416154696d3ed9eb138807475.pdf?sequence=1",
+    "source": "https://publications.iadb.org/bitstream/handle/11319/6681/ICS-BOOK-Transparent-Governance-in-an-Age-of-Abundance.pdf?sequence=1"
   }
 ]
