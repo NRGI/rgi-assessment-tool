@@ -1901,5 +1901,29 @@
     "_id": "56ec3930e31c3a0c002384a7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/030232d03c0b7a1416154696d3ed9eb138807475.pdf?sequence=1",
     "source": "https://publications.iadb.org/bitstream/handle/11319/6681/ICS-BOOK-Transparent-Governance-in-an-Age-of-Abundance.pdf?sequence=1"
+  },
+  {
+    "_id": "56ec3f91e31c3a0c00238540",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3964379c6e56d499c3bccd6cad595c8c0dd796b.pdf",
+    "source": "http://www.banrep.gov.co/sites/default/files/publicaciones/archivos/re_181.pdf"
+  },
+  {
+    "_id": "56ec4a46e31c3a0c002385ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/787cad6fe515c8a5608476ae3087aae86dbb3bd2.docx",
+    "source": "http://www.pwc.com/gx/en/industries/energy-utilities-mining/mining/territories/ghana.html"
+  },
+  {
+    "_id": "56ec5f6de31c3a0c002385e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a62e439734f04c4fc560aa0b809c1d66608af64d.pdf",
+    "source": "https://useiti.doi.gov/explore/disbursements/"
+  },
+  {
+    "_id": "56ec6088e31c3a0c002385e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c61473d96b10aae022a746b6b2b6a7e7b56aeb46.pdf"
+  },
+  {
+    "_id": "56ec61a9e31c3a0c002385ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b729e47b7f406f2e976239b4384adb734ff0c78.pdf",
+    "source": "http://www.revenuewatch.org/sites/default/files/documents/nrgi_contract_disclosure_briefing_eng_20150310.pdf"
   }
 ]
