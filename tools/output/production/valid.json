@@ -1853,5 +1853,28 @@
     "_id": "56ec3144e31c3a0c00238415",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c37a2616d53eef9f6c4e1927adaea0260b8e3fda.pdf",
     "source": "http://www.ongcindia.com/wps/wcm/OngcHTML/Annual_Report_2014_15/images/AR-14-15.pdf"
+  },
+  {
+    "_id": "56ec335de31c3a0c0023842b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ab3ea9df1ce1a0591ea95d29082686bf7359c92.pdf"
+  },
+  {
+    "_id": "56ec339de31c3a0c0023842e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2b41200396a945d804b41eaf7b9bba98b509496.pdf",
+    "source": "http://www.gheiti.gov.gh/site/index.php?option=com_phocadownload&view=category&id=32:2014&Itemid=54"
+  },
+  {
+    "_id": "56ec33b3e31c3a0c00238430",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5844e11e879e9cf538b4e53efe9f005a9d9afec7.pdf",
+    "source": "http://www.ins.gov.co:81/normatividad/Leyes/LEY%201530%20DE%202012.pdf"
+  },
+  {
+    "_id": "56ec3459e31c3a0c00238432",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/756c7b29ff4c95509ca94e7cd2198452fd376d16.pdf"
+  },
+  {
+    "_id": "56ec3686e31c3a0c00238458",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/877ed515db099dca6a79b0e1d5faa0a82b841a2d.pdf",
+    "source": "http://wsp.presidencia.gov.co/Normativa/actos-legislativos/Documents/2011/ActoLegislativo-05-18julio2011.pdf"
   }
 ]
