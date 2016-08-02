@@ -56,23 +56,19 @@
     text(ng-if="ref.comment" ng-bind-html="ref.comment")
     text(ng-if="!ref.comment")  N/A
 
-.row.top-padding-med.button-set(ng-if="ref.author._id===identity.currentUser._id")
+.row.top-padding-med.button-set(ng-if="ref.author._id === identity.currentUser._id")
     button.btn.btn-primary(
     ng-click="showRestoreReferenceDialog($index)"
     ng-if="ref.hidden"
-    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Restore Reference
+    ng-disabled="(['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && (assessment.edit_control !== identity.currentUser._id))") Restore Reference
     button.btn.btn-danger(
     ng-click="deleteReferenceConfirmation($index)"
     ng-if="!ref.hidden"
-    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted' || (getOwnReferencesNumber() <= 1)") Delete Reference
+    ng-disabled="(['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || (references.length <= 1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && ((getOwnReferencesNumber() <= 1) || (assessment.edit_control !== identity.currentUser._id)))") Delete Reference
     | &nbsp;
     button.btn.btn-primary(
-    ng-click="showEditDocumentReferenceDialog($index)"
-    ng-if="(ref.citation_type!=='interview') && !ref.hidden"
-    ng-disabled="(assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted')") Edit Reference
-    button.btn.btn-primary(
-    ng-if="(ref.citation_type==='interview') && !ref.hidden"
-    ng-click="showEditInterviewReferenceDialog($index)"
-    ng-disabled="assessment.edit_control!==identity.currentUser._id || assessment.status === 'submitted' || assessment.status === 'trial_submitted'") Edit reference
+    ng-if="!ref.hidden"
+    ng-click="ref.citation_type === 'interview' ? showEditInterviewReferenceDialog($index) : showEditDocumentReferenceDialog($index)"
+    ng-disabled="(['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && (assessment.edit_control !== identity.currentUser._id))") Edit Reference
 
 hr
