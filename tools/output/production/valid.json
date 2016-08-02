@@ -1805,5 +1805,28 @@
     "_id": "56ec124ae31c3a0c002382b9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/82dcb13aed964836fe1b1adb291e8d7fbb68ad94.pdf",
     "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/03/INFORME-PAM-2014-para-web.pdf"
+  },
+  {
+    "_id": "56ec1590e31c3a0c00238301",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cec75ade24f022d6e19e30f58912dc8de22fb90e.pdf"
+  },
+  {
+    "_id": "56ec2342e31c3a0c0023835c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab5614620be9ec91cb706cd67bb0750bd7392421.pdf",
+    "source": "http://www.anm.gov.co/sites/default/files/contrato_283-95.pdf"
+  },
+  {
+    "_id": "56ec1392e31c3a0c002382dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d6e0f346dfbc975b242d1ef2833917011833fbb.pdf"
+  },
+  {
+    "_id": "56ec138be31c3a0c002382da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd2c7fa0e585654fd8bfb1c1d353a7fe9797e1ae.pdf",
+    "source": "http://www.eppetroecuador.ec/wp-content/uploads/downloads/2015/08/folleto.pdf"
+  },
+  {
+    "_id": "56ec163be31c3a0c00238304",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc67ae1c18e43cf4683b318509a77c3c91cf5a5e.pdf",
+    "source": "http://wsp.presidencia.gov.co/Normativa/Leyes/Documents/LEY%201712%20DEL%2006%20DE%20MARZO%20DE%202014.pdf"
   }
 ]
