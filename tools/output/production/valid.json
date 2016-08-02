@@ -1828,5 +1828,30 @@
     "_id": "56ec163be31c3a0c00238304",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/cc67ae1c18e43cf4683b318509a77c3c91cf5a5e.pdf",
     "source": "http://wsp.presidencia.gov.co/Normativa/Leyes/Documents/LEY%201712%20DEL%2006%20DE%20MARZO%20DE%202014.pdf"
+  },
+  {
+    "_id": "56ec25ffe31c3a0c00238370",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c146f63cc34ced36007c518ffff8444bfa5b9b42.pdf",
+    "source": "http://www.anm.gov.co/sites/default/files/DocumentosAnm/informe_gestion_2015.pdf"
+  },
+  {
+    "_id": "56ec2a59e31c3a0c0023838f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/707e1b7b1763d131f43fa42ab1d4ee508b56dc50.pdf",
+    "source": "http://www.contraloriagen.gov.co/documents/10136/182119332/Libro_mineria_sep3_2013.pdf/65bf77a0-8b0b-430a-9726-dad0e72639c6"
+  },
+  {
+    "_id": "56ec2cf9e31c3a0c002383b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/41141af3ccb0abbe13d6875af554eed174d561f7.pdf",
+    "source": "http://www.eppetroecuador.ec/wp-content/uploads/downloads/2016/03/ESTADO-FINANCIERO-A-DICIEMBRE-2015.pdf"
+  },
+  {
+    "_id": "56ec3064e31c3a0c0023840c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77511eed788d95b92544bd8ec5f053c99cea1f7a.pdf",
+    "source": "http://wsp.presidencia.gov.co/Normativa/actos-legislativos/Documents/2011/ActoLegislativo-05-18julio2011.pdf"
+  },
+  {
+    "_id": "56ec3144e31c3a0c00238415",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c37a2616d53eef9f6c4e1927adaea0260b8e3fda.pdf",
+    "source": "http://www.ongcindia.com/wps/wcm/OngcHTML/Annual_Report_2014_15/images/AR-14-15.pdf"
   }
 ]
