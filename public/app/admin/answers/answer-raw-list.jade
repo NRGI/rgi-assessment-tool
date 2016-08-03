@@ -5,7 +5,7 @@
             .row
                 .left-padding-lg.right-padding-lg.top-padding-med
                     .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
-                        .btn.btn-success(ng-click="downloadCsv()" ng-csv="raw_answer_array" csv-header="raw_answer_header" filename="raw_answers.csv") Download Raw CSV
+                        .btn.btn-success(ng-click="downloadCsv()" ng-csv="getExportedAnswersData()" csv-header="raw_answer_header" filename="raw_answers.csv") Download Raw CSV
                     .pull-right
                         form.form-inline
                             .form-group

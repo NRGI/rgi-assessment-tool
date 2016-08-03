@@ -34,18 +34,43 @@ angular.module('app')
         $scope.sort_order = $scope.sort_options[0].value;
         $scope.busy = false;
         $scope.answers = [];
-        $scope.raw_answer_array = [];
 
         var limit = 50, currentPage = 0, allAnswersLoaded = false,
             addAnswers = function(answers) {
                 if(!answers.reason) {
                     $scope.answers = $scope.answers.concat(answers);
-                    $scope.raw_answer_array = $scope.raw_answer_array.concat(answers);
                     currentPage++;
+                }
+            },
+            expandScore = function(outputAnswer, inputAnswer, scoreType) {
+                if(inputAnswer[scoreType + '_score']) {
+                    ['letter', 'text', 'value'].forEach(function(field) {
+                        outputAnswer[scoreType + '_score_' + field] = inputAnswer[scoreType + '_score'][field];
+                    });
                 }
             };
 
         rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, addAnswers);
+
+        $scope.getExportedAnswersData = function() {
+            var answers = [];
+
+            $scope.answers.forEach(function(answerData) {
+                var answer = {};
+
+                ['assessment_ID', 'answer_ID', 'status'].forEach(function(field) {
+                    answer[field.toLowerCase()] = answerData[field];
+                });
+
+                answer.question_text = answerData.question_ID.question_text;
+                expandScore(answer, answerData, 'researcher');
+                expandScore(answer, answerData, 'reviewer');
+
+                answers.push(answer);
+            });
+
+            return answers;
+        };
 
         $scope.loadMoreAnswers = function () {
             if ($scope.busy) {
