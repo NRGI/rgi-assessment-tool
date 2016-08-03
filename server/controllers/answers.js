@@ -7,7 +7,6 @@ var Answer      = require('mongoose').model('Answer'),
     async       = require('async');
 
 exports.getAnswers = function (req, res, next) {
-
     if (req.user.hasRole('supervisor')) {
         Answer.find(req.query)
             .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
@@ -43,13 +42,12 @@ exports.getAnswers = function (req, res, next) {
     }
 };
 
-exports.getRawAnswers = function(req, res, next) {
+exports.getRawAnswers = function(req, res) {
     var limit = Number(req.params.limit),
         skip = Number(req.params.skip),
         query = req.query;
 
     async.waterfall([
-        getHeaders,
         getAnswerCount,
         getAnswerSet
     ], function (err, result) {
@@ -59,31 +57,12 @@ exports.getRawAnswers = function(req, res, next) {
             res.send(result);
         }
     });
-    function getHeaders(callback) {
-        var raw_answer_header = [
-                'assessment_id',
-                'answer_id',
-                'status',
-                'question_text',
-                'researcher_score_letter',
-                'researcher_score_text',
-                'researcher_score_value',
-                'reviewer_score_letter',
-                'reviewer_score_text',
-                'reviewer_score_value'
-            ];
-        callback(null, raw_answer_header);
+
+    function getAnswerCount(callback) {
+        Answer.find(query).count().exec(callback);
     }
-    function getAnswerCount(raw_answer_header, callback) {
-        Answer.find(query).count().exec(function(err, answer_count) {
-            if(answer_count) {
-                callback(null, raw_answer_header, answer_count);
-            } else {
-                callback(err);
-            }
-        });
-    }
-    function getAnswerSet(raw_answer_header, answer_count, callback) {
+
+    function getAnswerSet(answer_count, callback) {
         Answer.find(query)
             .lean()
             .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
@@ -91,29 +70,32 @@ exports.getRawAnswers = function(req, res, next) {
             .skip(skip * limit)
             .limit(limit)
             .exec(function(err, answers) {
-                var raw_answer_array = [],
-                    answer_len = answers.length,
-                    answer_counter = 0;
+                var raw_answer_array = [], answer_len = answers.length, answer_counter = 0;
+
                 answers.forEach(function (answer) {
-                    answer_counter++
+                    answer_counter++;
+
                     raw_answer_array.push({
                         assessment_id: answer.assessment_ID,
                         answer_id: answer.answer_ID,
                         status: answer.status,
                         question_text: answer.question_ID.question_text
                     });
+
                     if (answer.researcher_score) {
                         raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
                         raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
                         raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
                     }
+
                     if (answer.reviewer_score) {
                         raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
                         raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
                         raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
                     }
+
                     if (answer_len === answer_counter) {
-                        callback(err, {raw_answer_header: raw_answer_header, raw_answer_array: raw_answer_array, count: answer_count});
+                        callback(err, {raw_answer_array: raw_answer_array, count: answer_count});
                     }
                 });
             });
