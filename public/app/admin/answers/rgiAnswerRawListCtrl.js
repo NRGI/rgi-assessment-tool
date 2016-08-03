@@ -33,15 +33,16 @@ angular.module('app')
 
         $scope.sort_order = $scope.sort_options[0].value;
         $scope.busy = false;
-        var limit = 50, currentPage = 0, totalPages = 0;
+        $scope.answers = [];
+        $scope.raw_answer_array = [];
+        var limit = 50, currentPage = 0, allAnswersLoaded = false;
 
-        rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, function (response) {
-            $scope.count = response.count;
-            $scope.answers = response.raw_answer_array;
-            $scope.raw_answer_array = response.raw_answer_array;
-
-            totalPages = Math.ceil(response.count / limit);
-            currentPage++;
+        rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, function (answers) {
+            if(!answers.reason) {
+                $scope.answers = answers;
+                $scope.raw_answer_array = answers;
+                currentPage++;
+            }
         });
 
         $scope.loadMoreAnswers = function () {
@@ -51,16 +52,21 @@ angular.module('app')
 
             $scope.busy = true;
 
-            if(currentPage < totalPages) {
+            if(!allAnswersLoaded) {
                 rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}).$promise
-                    .then(function (response) {
-                        $scope.answers = _.union($scope.answers, response.raw_answer_array);
-                        $scope.raw_answer_array = _.union($scope.raw_answer_array, response.raw_answer_array);
-                        currentPage++;
-                    }).finally(function() {
+                    .then(function (answers) {
+                        if(!answers.reason) {
+                            $scope.answers = $scope.answers.concat(answers);
+                            $scope.raw_answer_array = $scope.raw_answer_array.concat(answers);
+                            currentPage++;
+
+                            if (answers.length < limit) {
+                                allAnswersLoaded = true;
+                            }
+                        }
+                    }).finally(function () {
                         $scope.busy = false;
                     });
             }
         };
-        
     });
