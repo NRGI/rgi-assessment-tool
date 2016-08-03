@@ -51,30 +51,7 @@ exports.getRawAnswers = function(req, res) {
         .skip(Number(req.params.skip) * limit)
         .limit(limit)
         .exec(function(err, answers) {
-            var raw_answer_array = [];
-
-            answers.forEach(function (answer) {
-                raw_answer_array.push({
-                    assessment_id: answer.assessment_ID,
-                    answer_id: answer.answer_ID,
-                    status: answer.status,
-                    question_text: answer.question_ID.question_text
-                });
-
-                if (answer.researcher_score) {
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
-                    raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
-                }
-
-                if (answer.reviewer_score) {
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
-                    raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
-                }
-            });
-
-            res.send(err ? {reason: err.toString()} : raw_answer_array);
+            res.send(err ? {reason: err.toString()} : answers);
         });
 };
 
