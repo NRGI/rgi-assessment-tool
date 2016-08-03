@@ -35,15 +35,17 @@ angular.module('app')
         $scope.busy = false;
         $scope.answers = [];
         $scope.raw_answer_array = [];
-        var limit = 50, currentPage = 0, allAnswersLoaded = false;
 
-        rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, function (answers) {
-            if(!answers.reason) {
-                $scope.answers = answers;
-                $scope.raw_answer_array = answers;
-                currentPage++;
-            }
-        });
+        var limit = 50, currentPage = 0, allAnswersLoaded = false,
+            addAnswers = function(answers) {
+                if(!answers.reason) {
+                    $scope.answers = $scope.answers.concat(answers);
+                    $scope.raw_answer_array = $scope.raw_answer_array.concat(answers);
+                    currentPage++;
+                }
+            };
+
+        rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, addAnswers);
 
         $scope.loadMoreAnswers = function () {
             if ($scope.busy) {
@@ -55,14 +57,10 @@ angular.module('app')
             if(!allAnswersLoaded) {
                 rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}).$promise
                     .then(function (answers) {
-                        if(!answers.reason) {
-                            $scope.answers = $scope.answers.concat(answers);
-                            $scope.raw_answer_array = $scope.raw_answer_array.concat(answers);
-                            currentPage++;
+                        addAnswers(answers);
 
-                            if (answers.length < limit) {
-                                allAnswersLoaded = true;
-                            }
+                        if (!answers.reason && (answers.length < limit)) {
+                            allAnswersLoaded = true;
                         }
                     }).finally(function () {
                         $scope.busy = false;
