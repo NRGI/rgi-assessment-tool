@@ -3,8 +3,7 @@
 
 var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
-    Assessment  = require('mongoose').model('Assessment'),
-    async       = require('async');
+    Assessment  = require('mongoose').model('Assessment');
 
 exports.getAnswers = function (req, res, next) {
     if (req.user.hasRole('supervisor')) {
@@ -43,64 +42,40 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getRawAnswers = function(req, res) {
-    var limit = Number(req.params.limit),
-        skip = Number(req.params.skip),
-        query = req.query;
+    var limit = Number(req.params.limit);
 
-    async.waterfall([
-        getAnswerCount,
-        getAnswerSet
-    ], function (err, result) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(result);
-        }
-    });
+    Answer.find(req.query)
+        .lean()
+        .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
+        .sort({answer_ID: 'asc'})
+        .skip(Number(req.params.skip) * limit)
+        .limit(limit)
+        .exec(function(err, answers) {
+            var raw_answer_array = [];
 
-    function getAnswerCount(callback) {
-        Answer.find(query).count().exec(callback);
-    }
-
-    function getAnswerSet(answer_count, callback) {
-        Answer.find(query)
-            .lean()
-            .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
-            .sort({answer_ID: 'asc'})
-            .skip(skip * limit)
-            .limit(limit)
-            .exec(function(err, answers) {
-                var raw_answer_array = [], answer_len = answers.length, answer_counter = 0;
-
-                answers.forEach(function (answer) {
-                    answer_counter++;
-
-                    raw_answer_array.push({
-                        assessment_id: answer.assessment_ID,
-                        answer_id: answer.answer_ID,
-                        status: answer.status,
-                        question_text: answer.question_ID.question_text
-                    });
-
-                    if (answer.researcher_score) {
-                        raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
-                        raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
-                        raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
-                    }
-
-                    if (answer.reviewer_score) {
-                        raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
-                        raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
-                        raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
-                    }
-
-                    if (answer_len === answer_counter) {
-                        callback(err, {raw_answer_array: raw_answer_array, count: answer_count});
-                    }
+            answers.forEach(function (answer) {
+                raw_answer_array.push({
+                    assessment_id: answer.assessment_ID,
+                    answer_id: answer.answer_ID,
+                    status: answer.status,
+                    question_text: answer.question_ID.question_text
                 });
-            });
-    }
 
+                if (answer.researcher_score) {
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_letter = answer.researcher_score.letter;
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_text = answer.researcher_score.text;
+                    raw_answer_array[raw_answer_array.length-1].researcher_score_value = answer.researcher_score.value;
+                }
+
+                if (answer.reviewer_score) {
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_letter = answer.reviewer_score.letter;
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_text = answer.reviewer_score.text;
+                    raw_answer_array[raw_answer_array.length-1].reviewer_score_value = answer.reviewer_score.value;
+                }
+            });
+
+            res.send(err ? {reason: err.toString()} : raw_answer_array);
+        });
 };
 
 exports.getAnswersByID = function (req, res, next) {
