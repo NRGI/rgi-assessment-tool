@@ -1,8 +1,9 @@
 legend References
     text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor()") (required):
-.bottom-padding-med(
+
+#biblio_div.bottom-padding-med(
     ng-if="((identity.currentUser._id === assessment.edit_control) && (['resubmitted', 'submitted'].indexOf(assessment.status) === -1))|| identity.currentUser.isExternalReviewer() || identity.currentUser.isSupervisor()"
-    id="biblio_div")
+)
     .row
         .col-md-5.pull-left.top-padding-med
             select.form-group.form-control.pull-left(
@@ -17,10 +18,10 @@ legend References
                 ng-repeat="ref in ref_type track by ref.value"
                 value="{{::ref.value}}") {{::ref.text}}
 
-div(id="prev_bib" ng-if="!isReferenceListEmpty()")
+#prev_bib(ng-if="!isReferenceListEmpty()")
     .row.left-padding-lg.right-padding-lg
         h4 Citations
-        .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references", ng-if="!ref.hidden")
+        .row.left-padding-lg.bottom-padding-med(ng-repeat="ref in references track by ref._id", ng-if="!ref.hidden")
             div(ng-include="'/partials/directives/templates/partials/reference'")
-        .row.left-padding-lg.bottom-padding-med.deleted(ng-repeat="ref in references", ng-if="ref.hidden && (ref.author._id === identity.currentUser._id)")
+        .row.left-padding-lg.bottom-padding-med.deleted(ng-repeat="ref in references track by ref._id", ng-if="ref.hidden && (ref.author._id === identity.currentUser._id)")
             div(ng-include="'/partials/directives/templates/partials/reference'")
