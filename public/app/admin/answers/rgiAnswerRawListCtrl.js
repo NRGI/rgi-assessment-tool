@@ -19,16 +19,26 @@ angular.module('app')
         ];
 
         $scope.raw_answer_header = [
-            'assessment_id',
-            'answer_id',
-            'status',
+            'answer_ID',
+            'question_order',
             'question_text',
+            'status',
             'researcher_score_letter',
-            'researcher_score_text',
-            'researcher_score_value',
+            'researcher_score_justification',
             'reviewer_score_letter',
-            'reviewer_score_text',
-            'reviewer_score_value'
+            'reviewer_score_justification',
+            'final_score_letter',
+            'external_answer_letter',
+            'external_justification',
+            'external_comment',
+            'researcher_score_history_date',
+            'researcher_score_history_order',
+            'researcher_score_history_score_letter',
+            'researcher_score_history_justification',
+            'reviewer_score_history_date',
+            'reviewer_score_history_order',
+            'reviewer_score_history_score_letter',
+            'reviewer_score_history_justification'
         ];
 
         $scope.sort_order = $scope.sort_options[0].value;
@@ -42,11 +52,28 @@ angular.module('app')
                     currentPage++;
                 }
             },
-            expandScore = function(outputAnswer, inputAnswer, scoreType) {
+            copyScore = function(outputAnswer, inputAnswer, scoreType) {
                 if(inputAnswer[scoreType + '_score']) {
-                    ['letter', 'text', 'value'].forEach(function(field) {
-                        outputAnswer[scoreType + '_score_' + field] = inputAnswer[scoreType + '_score'][field];
-                    });
+                    outputAnswer[scoreType + '_score_letter'] = inputAnswer[scoreType + '_score'].letter;
+                }
+            },
+            copyScoreWithJustification = function(outputAnswer, inputAnswer, scoreType) {
+                outputAnswer[scoreType + '_justification'] = inputAnswer[scoreType + '_justification'];
+                copyScore(outputAnswer, inputAnswer, scoreType);
+            },
+            copyScoreHistory = function(outputAnswer, inputAnswer, scoreType) {
+                var prefix = scoreType + '_score_history';
+
+                if(inputAnswer[prefix].length > 0) {
+                    var scoreHistory = inputAnswer[prefix][inputAnswer[prefix].length - 1];
+                    outputAnswer[prefix + '_date'] = scoreHistory.date;
+                    outputAnswer[prefix + '_order'] = scoreHistory.order;
+
+                    if(scoreHistory.score) {
+                        outputAnswer[prefix + '_score_letter'] = scoreHistory.score.letter;
+                    }
+
+                    outputAnswer[prefix + '_justification'] = scoreHistory.justification;
                 }
             };
 
@@ -58,14 +85,24 @@ angular.module('app')
             $scope.answers.forEach(function(answerData) {
                 var answer = {};
 
-                ['assessment_ID', 'answer_ID', 'status'].forEach(function(field) {
-                    answer[field.toLowerCase()] = answerData[field];
-                });
-
+                answer.answer_ID = answerData.answer_ID;
+                answer.question_order = answerData.question_order;
                 answer.question_text = answerData.question_ID.question_text;
-                expandScore(answer, answerData, 'researcher');
-                expandScore(answer, answerData, 'reviewer');
+                answer.status = answerData.status;
 
+                copyScoreWithJustification(answer, answerData, 'researcher');
+                copyScoreWithJustification(answer, answerData, 'reviewer');
+                copyScore(answer, answerData, 'final');
+
+                if(answerData.external_answer.length > 0) {
+                    var externalAnswer = answerData.external_answer[answerData.external_answer.length - 1];
+                    answer.external_answer_letter = externalAnswer.score.letter;
+                    answer.external_justification = externalAnswer.justification;
+                    answer.external_comment = externalAnswer.comment;
+                }
+
+                copyScoreHistory(answer, answerData, 'researcher');
+                copyScoreHistory(answer, answerData, 'reviewer');
                 answers.push(answer);
             });
 
