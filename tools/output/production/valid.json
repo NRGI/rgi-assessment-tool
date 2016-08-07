@@ -2092,5 +2092,51 @@
   {
     "_id": "56ed239ee31c3a0c00238a14",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/977b0b00067627234d43641333222d3e83549d85.doc"
+  },
+  {
+    "_id": "56ed2654e31c3a0c00238a38",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4aca789fbfe039a73e7850fbe9a5a19cc66fc70c.pdf"
+  },
+  {
+    "_id": "56ed29a4e31c3a0c00238a63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e7ed9444a1b89d66dbd7e9822692c9e4ecb867f.pdf",
+    "source": "http://www.national-assembly.org.kh/ViewLawFile.aspx?LawDID=167"
+  },
+  {
+    "_id": "56ed2c2ee31c3a0c00238a89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d851d57d1776d238128788275aae02f3e4fac5ef.pdf",
+    "source": "http://www.tamtaminfo.com/communique-de-presse-du-ministere-du-mines-et-du-developpement-industriel/"
+  },
+  {
+    "_id": "56ed2db2e31c3a0c00238aa0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6fc9a0875593777859e3bc81e3a9ffc4c111359.pdf",
+    "source": "http://www.national-assembly.org.kh/ViewLawFile.aspx?LawDID=236"
+  },
+  {
+    "_id": "56ed3074e31c3a0c00238ab3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5197fe372abe7b26cdb099ff84eddea331de9fb9.docx"
+  },
+  {
+    "_id": "56ed4835e31c3a0c00238b09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c487ad20e9f8019bfbb038b94203b628ce7d1a2.pdf",
+    "source": "https://www.data.boem.gov/homepg/data_center/other/WebStore/pimaster.asp?appid=11"
+  },
+  {
+    "_id": "56ed3389e31c3a0c00238aba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5222abee4bfce430eeffea695b9d15c3c0f2fd7.pdf"
+  },
+  {
+    "_id": "56ed45e5e31c3a0c00238af5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c726483987820dd19f70aea26a89b9f03a7243b.pdf",
+    "source": "http://www.spm.gov.cm/documentation/textes-legislatifs-et-reglementaires/article/decret-n-20052176pm-du-16-juin-2005-portant-creation-organisation-et-fonctionnement-du-comite-de.html"
+  },
+  {
+    "_id": "56ed41a6e31c3a0c00238ae4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccf9109f4cf2a2b96c592320b9b3762108549806.pdf",
+    "source": "http://www.spm.gov.cm/documentation/textes-legislatifs-et-reglementaires/article/decret-n-20052176pm-du-16-juin-2005-portant-creation-organisation-et-fonctionnement-du-comite-de.html"
+  },
+  {
+    "_id": "56ed35ace31c3a0c00238ac6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1cdbb34ac2827aff8553d885e3da0a521fce422.docx"
   }
 ]
