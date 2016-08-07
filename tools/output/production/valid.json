@@ -1998,5 +1998,53 @@
     "_id": "56ec94e6e31c3a0c002387f0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f748f99b0a8216774fc1991f6905e47ee8ef9a08.pdf",
     "source": "http://wsp.presidencia.gov.co/Normativa/Leyes/Documents/LEY%201712%20DEL%2006%20DE%20MARZO%20DE%202014.pdf"
+  },
+  {
+    "_id": "56ec9f10e31c3a0c00238835",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c61cc19bc3b6c9d6e8997803ec2f86a29ee256a.docx",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/relacion-inversionistas/acciones/composicion-accionaria/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziLf0N3d09gg28LRxNjQwcPX0CzDydzA0NPM31C7IdFQEWYAL4/"
+  },
+  {
+    "_id": "56eca3c3e31c3a0c00238852",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45b8690b303e384ce3a0c921c9f88f1c9a86bd1e.docx",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/nuestra-empresa/sala-de-prensa/noticias/Noticias-2015/Noticias-2015/ecopetrol-obtiene-recursos-para-el-plan-de-inversiones-2015-atraves-de-credito-internacional-por-uss1925millones/!ut/p/z0/vZDBTsMwDIafhUOPUdJKm7ZjhVARdExoIEYuk8nMCGROFnsVj086JNiJI7d8iv3Zv7XVa20JBr8D8ZEgFH620818WXfd9crczh6XV6Zt--ndQ983963RK2R9o-3fRcXi3w8H22rrIgl-il6jiwklx7BBrswPVYaOyJJB4T5lZKgMQwC1RVWQRqYo3nng35dqTD2pzMlNcmZT8UU8EqqM7pg5skowqoNKAWiUehowcwmL3xYFZfZQoPy5jFsvsdQIZgJ3OolKMasjcz1vJnsfwtg5Bmzy4nKx0zaBvJWO13gW8b_WSB_d04zbiy-f76P4/"
+  },
+  {
+    "_id": "56ecb542e31c3a0c00238880",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ded35064eea9228d903d48e3d9fa6e03d206ecc.pdf"
+  },
+  {
+    "_id": "56ecb948e31c3a0c00238882",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31bebb5e9ca2541502fbe33f2d195e451b9fc3f4.pdf"
+  },
+  {
+    "_id": "56ecbdaee31c3a0c00238890",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c80861408b2baa12ef889522c726d04a6f73ff4.pdf",
+    "source": "http://us.practicallaw.com/9-525-1545?source=relatedcontent"
+  },
+  {
+    "_id": "56ece501e31c3a0c002388e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/879489a297911d99e9eadfab64177cd0fc090da2.pdf",
+    "source": "http://www.national-assembly.org.kh/ViewLawFile.aspx?LawDID=307"
+  },
+  {
+    "_id": "56eceaeee31c3a0c002388f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbacb0dd7c04fb2690cdaa0056d838092450dde8.pdf",
+    "source": "http://www.mme.gov.kh/detail-info.php?wconid=304"
+  },
+  {
+    "_id": "56eceda7e31c3a0c00238902",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b25316bf4df535dc605ba25c5f7a4fe3a6782f8.pdf",
+    "source": "http://www.mme.gov.kh/administrator/gd-link-page.php?gd1=925"
+  },
+  {
+    "_id": "56ecf3d6e31c3a0c0023890d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/676996f5c0181ecf3dd6ec6c58d9e0de29c3c65c.pdf",
+    "source": "http://www.dmr.go.th/ewt_dl_link.php?nid=78951&filename=royal"
+  },
+  {
+    "_id": "56ed11dae31c3a0c00238961",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bc0a38c993ba1b9c2ff6095fbc6d1644c9a0c05.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/Zambia%20Revenue%20Authority%20Act.pdf"
   }
 ]
