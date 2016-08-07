@@ -2046,5 +2046,51 @@
     "_id": "56ed11dae31c3a0c00238961",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7bc0a38c993ba1b9c2ff6095fbc6d1644c9a0c05.pdf",
     "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/Zambia%20Revenue%20Authority%20Act.pdf"
+  },
+  {
+    "_id": "56ed16f2e31c3a0c0023897b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96114f089e03412cc3f24aec56bb5ae993f9c8b0.DOC"
+  },
+  {
+    "_id": "56ed172fe31c3a0c0023897d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/070c579850b9a0ffc0edacbcb800545bcf3324ee.DOC"
+  },
+  {
+    "_id": "56ed188fe31c3a0c002389a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7135fb95b47e186fbd722c0b9431afaf37380d0b.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/Zambia%20Revenue%20Authority%20Act.pdf"
+  },
+  {
+    "_id": "56ed196ce31c3a0c002389a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9779fb548939f4ecd036f4f87997e75c9f40aebe.pdf",
+    "source": "http://www.national-assembly.org.kh/ViewLawFile.aspx?LawDID=496"
+  },
+  {
+    "_id": "56ed1ebce31c3a0c002389e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b3b23fde4b39a954816824417eb6f6d6db8c206.pdf",
+    "source": "http://www.thesaigontimes.vn/122578/Dau-tho-va-ngan-sach.html"
+  },
+  {
+    "_id": "56ed2144e31c3a0c002389f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31f6dbd6bbdee2c4672fbb51e35b1a96d06c371c.pdf",
+    "source": "http://www.nbc.org.kh/english/publications/balance_of_payment.php"
+  },
+  {
+    "_id": "56ed251ce31c3a0c00238a2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2608bf74eae97fff4f7c3b2b139dcdcb21efd24.pdf",
+    "source": "http://www.mef.gov.kh/tofe.html"
+  },
+  {
+    "_id": "56ed224ae31c3a0c002389f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e9945e0ea1e496f2b1a34ebdb83f056eda7750a.pdf"
+  },
+  {
+    "_id": "56ed239fe31c3a0c00238a16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2aed800865a6862121d747f0210c2eb93b4470a0.pdf",
+    "source": "http://www.nbc.org.kh/english/publications/balance_of_payment.php"
+  },
+  {
+    "_id": "56ed239ee31c3a0c00238a14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/977b0b00067627234d43641333222d3e83549d85.doc"
   }
 ]
