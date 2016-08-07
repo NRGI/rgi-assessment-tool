@@ -1925,5 +1925,78 @@
     "_id": "56ec61a9e31c3a0c002385ec",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7b729e47b7f406f2e976239b4384adb734ff0c78.pdf",
     "source": "http://www.revenuewatch.org/sites/default/files/documents/nrgi_contract_disclosure_briefing_eng_20150310.pdf"
+  },
+  {
+    "_id": "56ec696be31c3a0c0023865c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/384aa631183a53a1df345572c318701f4df701b3.pdf",
+    "source": "https://www.fin.gc.ca/fedprov/eqp-eng.asp"
+  },
+  {
+    "_id": "56ec6733e31c3a0c0023862e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef8a709dd3e864cd1532d57b131288a7418dcb0d.pdf",
+    "source": "https://www.fin.gc.ca/access/fedprov-eng.asp"
+  },
+  {
+    "_id": "56ec6a00e31c3a0c00238675",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d4bcbf04f438432c5a7d2f8a0be0a5b73af4a69.pdf",
+    "source": "https://www.fin.gc.ca/fedprov/cht-eng.asp"
+  },
+  {
+    "_id": "56ec651ee31c3a0c0023861b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd38ebd946426ae37b6da25dbfc2ee713ca5c3ed.pdf"
+  },
+  {
+    "_id": "56ec6911e31c3a0c00238642",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9ef33e6b4a55ac7f4b828b48aab7eca596990e1f.pdf",
+    "source": "https://www.mef.gob.pe/contenidos/tributos/tbl_imp_er/DL_00776.pdf"
+  },
+  {
+    "_id": "56ec6a75e31c3a0c0023868e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96f46c33c84c6a9698f65cd383c369604961d67f.pdf",
+    "source": "https://www.fin.gc.ca/fedprov/cst-eng.asp"
+  },
+  {
+    "_id": "56ec6b45e31c3a0c002386b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f9387a6f4ccc09f04effd723d33b3ebfe617762.pdf",
+    "source": "https://www.fin.gc.ca/n16/data/16-027_1-eng.asp"
+  },
+  {
+    "_id": "56ec7bd3e31c3a0c00238736",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e65e48a349487b63416f01ae91493d766d31e19.pdf",
+    "source": "http://www.oas.org/juridico/PDFs/mesicic4_per_ley27245.pdf"
+  },
+  {
+    "_id": "56ec6ae8e31c3a0c002386a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63bd32d9bac905e020c8e8e0c52a5edfdbc74403.pdf",
+    "source": "https://www.fin.gc.ca/fedprov/tff-eng.asp"
+  },
+  {
+    "_id": "56ec8279e31c3a0c00238772",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c1cb1d5e66f175404fdf71da14987402ec9f5209.pdf",
+    "source": "http://www.gouv.ne/docpdf/constitution.pdf"
+  },
+  {
+    "_id": "56ec97f1e31c3a0c00238808",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cd52e51e68c55b35b5082f17e16ae62babb6ff7.pdf",
+    "source": "http://www.anh.gov.co/Asignacion-de-areas/Contratos%20EP%20y%20TEAS%20firmados/CONTRATOS%20SUSCRITOS%202015.pdf"
+  },
+  {
+    "_id": "56ec9d91e31c3a0c0023882d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae7030a77ed269f7b14982abde9c402ee12e3da6.pdf"
+  },
+  {
+    "_id": "56ec98cbe31c3a0c00238811",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/385ccc2f3296e49d25c054aa3282165e291b1181.pdf",
+    "source": "http://www.anh.gov.co/Asignacion-de-areas/Contratos%20EP%20y%20TEAS%20firmados/CTO%20VMM%203%20ADICIONAL%202015.pdf"
+  },
+  {
+    "_id": "56ec98d4e31c3a0c00238813",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f0daf357b73a82040ac5021876c6868c62a967ab.pdf",
+    "source": "http://www.anh.gov.co/Asignacion-de-areas/Contratos%20EP%20y%20TEAS%20firmados/CTO%20VMM%203%20ADICIONAL%202015.pdf"
+  },
+  {
+    "_id": "56ec94e6e31c3a0c002387f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f748f99b0a8216774fc1991f6905e47ee8ef9a08.pdf",
+    "source": "http://wsp.presidencia.gov.co/Normativa/Leyes/Documents/LEY%201712%20DEL%2006%20DE%20MARZO%20DE%202014.pdf"
   }
 ]
