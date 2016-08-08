@@ -2616,5 +2616,78 @@
     "_id": "56ee5a9de31c3a0c0023959d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/147c86567a1ec78328b178275187ca1caa37f2cc.docx",
     "source": "http://license.uz/uz/"
+  },
+  {
+    "_id": "56ee6f43e31c3a0c002396db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df1a90d5c6e94900e5e14cc1a58b114152d90a93.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/decret_taxes_et_redevances_minieres_fr.pdf"
+  },
+  {
+    "_id": "56ee6e02e31c3a0c002396a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6463b94b091c7aabc9ef3c38b5a707bbd3fa53c.pdf",
+    "source": "http://www.refworld.org/pdfid/3fc4c1e94.pdf"
+  },
+  {
+    "_id": "56ee6c92e31c3a0c0023968b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d17c289fda0b5041f7ab2b88ef813d7504d1b137.pdf"
+  },
+  {
+    "_id": "56ee6d37e31c3a0c0023968d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45b67502554dd31b93da1e28aa9b99a6321c02ed.pdf",
+    "source": "http://www.htb.gov.ye/userfiles/file/Laws%20and%20regulations/Financial%20Law%20No_%20(8)%20for%20the%20year%201990%20E.pdf"
+  },
+  {
+    "_id": "56ee6d8ce31c3a0c0023969f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e65ad80f08f622e5773533efcc44f8f832c556d8.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/PUBLIC_FINANCE_MANAGEMENT_ACT_2015.pdf"
+  },
+  {
+    "_id": "56ee7055e31c3a0c002396fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/992bb08c4a6ac497eb27c51a67ea6c8e1aeff742.pdf",
+    "source": "http://www.yemen-nic.info/ministations/detail.php?ID=10203"
+  },
+  {
+    "_id": "56ee7293e31c3a0c0023971b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aca9cb9cba93deff0f29551ae75027b6ce8da87f.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=22900"
+  },
+  {
+    "_id": "56ee73a1e31c3a0c00239747",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93bdf199e800153d7833a62a0075667617d269fc.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ee749de31c3a0c00239764",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/454d79a2fd992f8537923ce6737b51e81732d8b2.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ee7524e31c3a0c0023976f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59dc2cc2958e21d60167731078d152c9c44528d5.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ee7887e31c3a0c002397ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/76124b5c33f36d4ce7ca2724969da487dcede4b2.pdf"
+  },
+  {
+    "_id": "56ee7594e31c3a0c00239781",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68c4976531e49067b31f0d06eee37cff4adc5613.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ee760de31c3a0c0023978e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/356954fc2f1212ddb440ab1862617f4c50218aab.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ee76cee31c3a0c0023979d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e60d3f49d81852465f3c635e603d1db52568e142.pdf",
+    "source": "https://eiti.org/report/mauritania/2013"
+  },
+  {
+    "_id": "56ee76d3e31c3a0c0023979f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/633233f65fd52baa8f65cc91ea6bfd6855a3fe72.docx",
+    "source": "http://www.lex.uz/mobileact/1049036"
   }
 ]
