@@ -2463,5 +2463,42 @@
     "_id": "56ee042ce31c3a0c002392ac",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8a63d89d4870c5be4e91f2e4912ffbb75b826b79.pdf",
     "source": "https://repository.library.georgetown.edu/bitstream/handle/10822/558542/CIRSSummaryReport3PoliticalEconomyoftheGulf2011.pdf?sequence=5"
+  },
+  {
+    "_id": "56ee04abe31c3a0c002392de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbe2da88d012fe7b98776c815d5b76b9b465cd95.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee056ee31c3a0c0023931e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/879700fc26a4663086de1ad5e8c6abfe2fa8047f.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee0473e31c3a0c002392be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25c4f734e887c1603ef19f35c246dda5fefc8131.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee0528e31c3a0c00239307",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28e93ac554e5fda9d9f673c6f44a7a8a7a318d90.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee04e6e31c3a0c002392f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00c57255928cf68b2f4a141b87003a869997bc94.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee0a6ee31c3a0c002393d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22de2e8a6c1f4dfaa63fa15dfd2a55de370a6b8b.pdf"
+  },
+  {
+    "_id": "56ee086fe31c3a0c0023937d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c307e44657c822e9c7e4f5e1906fac484d674e12.pdf"
+  },
+  {
+    "_id": "56ee08ede31c3a0c002393ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f471a6e450a76081508aff648863b785079c776d.png"
   }
 ]
