@@ -2549,5 +2549,72 @@
     "_id": "56ee4efce31c3a0c002394ef",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a9ef9ad0a98cd63ba28e465bb6dac5f8b2294e95.docx",
     "source": "http://gov.uz"
+  },
+  {
+    "_id": "56ee50aee31c3a0c002394fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/174cddf2e991513f98ac365aaadac3ba9ac390fd.pdf",
+    "source": "http://mom.gov.af/Content/files/State%20Owned%20Enterprise%20Law.pdf"
+  },
+  {
+    "_id": "56ee515ae31c3a0c00239500",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d492884aa703be78461ae177440a21649bc926ae.pdf"
+  },
+  {
+    "_id": "56ee51e7e31c3a0c00239510",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5749b8a803c274f2136e436a78cf5ff8e4c74893.pdf"
+  },
+  {
+    "_id": "56ee52dfe31c3a0c00239528",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bb856f90f86d24ecd2337cb6db4596d863670b2.docx",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "56ee5b7ce31c3a0c002395a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fa6c0816f8143caa05d14ff5ab9b625bbb58185.pdf"
+  },
+  {
+    "_id": "56ee56f1e31c3a0c0023956a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b6226cd10b09da60e76706689b3530796769642.pdf",
+    "source": "http://www.malaysia-today.net/malaysias-oil-royalty-rumble/"
+  },
+  {
+    "_id": "56ee59c6e31c3a0c0023958b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd1b0e01c4683636d5b75ecf974766d69ff8738f.pdf",
+    "source": "http://www.ilkap.gov.my/download/pekeliling/agc/Act61.pdf"
+  },
+  {
+    "_id": "56ee69afe31c3a0c0023964a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1ae7ab0af52e6858519a40370dcd3376c4ab274.pdf",
+    "source": "http://www.petroleum.go.ug/news/38/Government-Incorporates-the-National-Oil-Company-NOC"
+  },
+  {
+    "_id": "56ee6559e31c3a0c0023960c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94afe9f7b36da8357dbad43578488ad44b52fb79.pdf",
+    "source": "http://www.petroleum.go.ug/news/48/Government-of-Uganda-receives-seven-bidders-for-the-First-Licensing-Round"
+  },
+  {
+    "_id": "56ee6671e31c3a0c00239621",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30ea2268e8b05e453cd06a170c251da7ab7fbf3a.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/mauritanie/Mauritanie-Code-2000-de-commerce.pdf"
+  },
+  {
+    "_id": "56ee6970e31c3a0c00239648",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8b8fa8b01f972dd4d51776a3b68ceea08128f98.pdf",
+    "source": "http://mof.gov.ye/files/budget/2014/data/c/s/as.pdf"
+  },
+  {
+    "_id": "56ee6094e31c3a0c002395de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf7a5040765d1a1e121f8a5c0d7bb0bca3384f6a.pdf",
+    "source": "http://www.treasury.gov.my/pdf/bajet/maklumat_bajet_kerajaan/2015/pendahuluan.pdf"
+  },
+  {
+    "_id": "56ee5442e31c3a0c00239542",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a620a863833dc17ea94a49eac6715563848aaf4c.docx",
+    "source": "http://data.gov.uz/uz/datasets/527?page=35"
+  },
+  {
+    "_id": "56ee5a9de31c3a0c0023959d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/147c86567a1ec78328b178275187ca1caa37f2cc.docx",
+    "source": "http://license.uz/uz/"
   }
 ]
