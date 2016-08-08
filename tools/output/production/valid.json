@@ -2236,5 +2236,53 @@
     "_id": "56ed822de31c3a0c00238d26",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b9ac4be6e93b09a1570b2e14d6b1c1b67cb15788.pdf",
     "source": "http://finmin.nic.in/14fincomm/14fcreng.pdf"
+  },
+  {
+    "_id": "56ed9440e31c3a0c00238e16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f230ef678055b2246d4b92c25520d0b2ab1ed89.pdf",
+    "source": "http://www.asambleanacional.gob.ve/uploads/leyes/2010-06-17/doc_8954743057286eb0f0865249e7b2d9fab9210ad9.pdf"
+  },
+  {
+    "_id": "56ed9797e31c3a0c00238e5b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc471e1879a82a7accf1114cb10b8c46a63ec9ed.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/9.ThePetroleum(RefiningConversionTransimissionandMidstreamStorage)ActNo4of2013_.pdf"
+  },
+  {
+    "_id": "56ed8314e31c3a0c00238d2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06fb6d6811b82ab7232fc1bf04bb600fcefcb486.pdf",
+    "source": "http://www.pdvsa.com/index.php?tpl=interface.sp/design/readmenu.tpl.html&newsid_obj_id=76&newsid_temas=6"
+  },
+  {
+    "_id": "56ed8bd3e31c3a0c00238d6f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/edb7605d265579b7d373a2a167cc2f564c517189.PDF",
+    "source": "http://www.pdvsa.com/"
+  },
+  {
+    "_id": "56ed9b5ce31c3a0c00238e99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/530c3d3874bb1a7d8ee3189eed9439fabe62cd2e.pdf"
+  },
+  {
+    "_id": "56ed9ddde31c3a0c00238ed0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67fb852d46ac98889ba85fe09fad128e740ea5f4.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "56ed9901e31c3a0c00238e64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3a7b1796a95c72c64301e89b58db21d1221b0e1.pdf",
+    "source": "http://en.trend.az/casia/turkmenistan/2107241.html"
+  },
+  {
+    "_id": "56ed9c3ae31c3a0c00238eb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3fa1fd24f5bae6e5e264e25b353b518a7a09689.pdf",
+    "source": "http://moj.gov.sd/publication.php"
+  },
+  {
+    "_id": "56ed9936e31c3a0c00238e70",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cbb835def1987ec159e2e1686e8334863bcc2a4.doc",
+    "source": "http://moj.gov.sd/content/lawsv4/9/15.htm"
+  },
+  {
+    "_id": "56ed9785e31c3a0c00238e59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02442e5646ab2c1c1e35861ada87d1aa14aaf35c.doc"
   }
 ]
