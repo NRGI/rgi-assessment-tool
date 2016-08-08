@@ -2404,5 +2404,24 @@
     "_id": "56ede8ece31c3a0c002391ae",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a0a149e4c32d411210b82bf44dafcc40b6c6bf52.pdf",
     "source": "http://www.bcv.org.ve/fem/pdf/leyfem.pdf"
+  },
+  {
+    "_id": "56edee85e31c3a0c002391f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28ed00a18fdb37fe01907014ee07a2721f676374.pdf",
+    "source": "http://www.bcv.org.ve/fem/fms.htm"
+  },
+  {
+    "_id": "56edeb6ee31c3a0c002391d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd8af4b0ddf0eb5f6d8fdba4e858878d878b9f26.pdf",
+    "source": "http://www.pdvsa.com/index.php?tpl=interface.sp/design/readmenuprinc.tpl.html&newsid_temas=39"
+  },
+  {
+    "_id": "56edea01e31c3a0c002391c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7cf3285e22f940b818458996bea8764c0b0f21c0.pdf",
+    "source": "https://www.constituteproject.org/constitution/United_Arab_Emirates_2004.pdf"
+  },
+  {
+    "_id": "56eded83e31c3a0c002391ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f83d86a472bd5db0678b4f24e1abb9128f21a9b5.png"
   }
 ]
