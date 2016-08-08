@@ -2500,5 +2500,54 @@
   {
     "_id": "56ee08ede31c3a0c002393ba",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f471a6e450a76081508aff648863b785079c776d.png"
+  },
+  {
+    "_id": "56ee0cffe31c3a0c00239419",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0f6c2aeedca067cb1991a83829eb7754b1681fa.png",
+    "source": "http://www.thestar.com.my/business/business-news/2014/12/12/epf-raises-stake-in-sapken-to-1348/"
+  },
+  {
+    "_id": "56ee3f15e31c3a0c00239476",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec1bf4724642f2b50ff29593dd96c458768f0e71.docx",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "56ee2777e31c3a0c00239435",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/073efe7c1c41ae1570a0f9beb137a30b1148cad6.PDF",
+    "source": "http://www.pdvsa.com/interface.sp/database/fichero/free/9704/1690.PDF"
+  },
+  {
+    "_id": "56ee4571e31c3a0c0023948a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efefefbc968ec22bc5ab53d7ccefcad1d112f689.pdf",
+    "source": "http://mom.gov.af/Content/files/Afghanistan-%20Minerals%20Law-19-May-2015%20English.pdf"
+  },
+  {
+    "_id": "56ee319ce31c3a0c00239446",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aec109af68616e6060313969027a6cd559e7fb2a.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "56ee4e37e31c3a0c002394d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0657b76da2d14a1e870044ce60a2feb114c7b5f.pdf"
+  },
+  {
+    "_id": "56ee45fbe31c3a0c0023948d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d949c8dd8aa694d57796eb7b9c1104135fbbd0aa.pdf",
+    "source": "http://mom.gov.af/Content/files/Afghanistan-%20Minerals%20Law-19-May-2015%20English.pdf"
+  },
+  {
+    "_id": "56ee4c29e31c3a0c002394c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45d8764e968833e40d90e2e30354666c93e16f85.xlsx",
+    "source": "http://mom.gov.af/en/page/1384"
+  },
+  {
+    "_id": "56ee4dace31c3a0c002394d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f57b270482b95733eb08db50aeeb9a2100344ff.docx",
+    "source": "http://my.gov.uz"
+  },
+  {
+    "_id": "56ee4efce31c3a0c002394ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9ef9ad0a98cd63ba28e465bb6dac5f8b2294e95.docx",
+    "source": "http://gov.uz"
   }
 ]
