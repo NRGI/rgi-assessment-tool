@@ -2713,5 +2713,30 @@
     "_id": "56ee7dd3e31c3a0c00239828",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/30d5d76d6adfbb6ded4f2b6abfa4507f5bb36aa2.pdf",
     "source": "http://yeiti.org/en/reports/annual-reports/annual-report-2013"
+  },
+  {
+    "_id": "56ee84bfe31c3a0c0023987f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f029a59bf1b01c6b9dcc0ad947d5ab8eaf28ee37.pdf",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "56ee820fe31c3a0c0023984d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39487c6ff2c40888f863cde32789d723e692593b.pdf",
+    "source": "http://www.sig.bf/2015/10/compte-rendu-du-conseil-des-ministres-mcom-crcnt-n037-2015-du-mercredi-14-octobre/"
+  },
+  {
+    "_id": "56ee889ae31c3a0c002398fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e346eb431438497439261690f5849a95dc8365b7.pdf",
+    "source": "http://www.legiburkina.bf/m/Sommaires_JO/D%C3%A9cret_2010_00075.htm"
+  },
+  {
+    "_id": "56ee80eee31c3a0c0023983e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4b74c260b53fc1ccbb6457588bb309df6039a1f.pdf",
+    "source": "http://www.sig.bf/2015/01/3511/"
+  },
+  {
+    "_id": "56ee8855e31c3a0c002398f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79cbb6d2d85ca62fb78d44546ab3426d4575fff1.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2382409"
   }
 ]
