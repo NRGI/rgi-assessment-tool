@@ -2689,5 +2689,29 @@
     "_id": "56ee76d3e31c3a0c0023979f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/633233f65fd52baa8f65cc91ea6bfd6855a3fe72.docx",
     "source": "http://www.lex.uz/mobileact/1049036"
+  },
+  {
+    "_id": "56ee8011e31c3a0c0023983a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca4080a16f579c3438eeb57fe298d3a6ec3ade64.pdf",
+    "source": "http://www.ung.uz/uploads/ustav/ung_ustav_ru.pdf"
+  },
+  {
+    "_id": "56ee7d21e31c3a0c0023981e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75f35d6941f3fb3ab62b95a5345a558d771b5d59.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=11522"
+  },
+  {
+    "_id": "56ee79e9e31c3a0c002397fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc2a425d26353875d87ba8507ed3ae635421aba8.pdf"
+  },
+  {
+    "_id": "56ee78bee31c3a0c002397d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30c5c76fb1f7ffedaa9ba9a7de664114627b29bb.pdf",
+    "source": "http://vnr500.com.vn/Charts/Index?chartId=1"
+  },
+  {
+    "_id": "56ee7dd3e31c3a0c00239828",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30d5d76d6adfbb6ded4f2b6abfa4507f5bb36aa2.pdf",
+    "source": "http://yeiti.org/en/reports/annual-reports/annual-report-2013"
   }
 ]
