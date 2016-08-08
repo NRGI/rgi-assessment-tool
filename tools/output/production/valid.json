@@ -2423,5 +2423,45 @@
   {
     "_id": "56eded83e31c3a0c002391ee",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f83d86a472bd5db0678b4f24e1abb9128f21a9b5.png"
+  },
+  {
+    "_id": "56ee0318e31c3a0c00239267",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09160beb10ea089a64d0f32edb32ece1104f1aaf.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee02a3e31c3a0c00239259",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a0a1db09cc7123d065a5a99cfab532ee43416b2.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56edef9ce31c3a0c00239210",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d472eeea0ce5707176ef2dd671ea485ea484b439.pdf",
+    "source": "http://www1.worldbank.org/publicsector/pe/BudgetLaws/UEAFederalLaw23.pdf"
+  },
+  {
+    "_id": "56ee0438e31c3a0c002392ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2b4bfc259245e33e7c161391f5f23948c831315.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee03bee31c3a0c0023928b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe03a3a45d1d3ece5fa0f7ae76ab3d70954c9168.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee03fee31c3a0c0023929d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95028971e56eccce70a4181b78e066f5c64b02da.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee037ae31c3a0c0023927e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4cb327cd6b5860d960953ae946c19b32e5dfbf39.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "56ee042ce31c3a0c002392ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a63d89d4870c5be4e91f2e4912ffbb75b826b79.pdf",
+    "source": "https://repository.library.georgetown.edu/bitstream/handle/10822/558542/CIRSSummaryReport3PoliticalEconomyoftheGulf2011.pdf?sequence=5"
   }
 ]
