@@ -2138,5 +2138,103 @@
   {
     "_id": "56ed35ace31c3a0c00238ac6",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d1cdbb34ac2827aff8553d885e3da0a521fce422.docx"
+  },
+  {
+    "_id": "56ed490fe31c3a0c00238b1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abf7e3a9403f3b12b2f83cec5505121b8a3a92c0.pdf"
+  },
+  {
+    "_id": "56ed4a29e31c3a0c00238b37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c052b1fa0b4c49b9b1ca1b081cc789a412f4be07.pdf"
+  },
+  {
+    "_id": "56ed4abce31c3a0c00238b3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2be2116062a039654d123ff723c5392e7dd0dd3c.pdf",
+    "source": "http://www.minepat.gov.cm"
+  },
+  {
+    "_id": "56ed4c0de31c3a0c00238b3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c4a915161c1001dbe72fe6c32fa0bdde926aaff.pdf",
+    "source": "http://www.kpdnkk.gov.my/kpdnkkv3/images/KPDNKK/PDF/Akta-Akta/kpdnkk/Act%20144%20-%20Petroleum%20Development%20Act%201974_1.pdf"
+  },
+  {
+    "_id": "56ed4ca1e31c3a0c00238b47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa82c924c175f674d6fb88711df5de7ec9e7b53e.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=169%3Asignature-contrat-petrolier-bloc-thali&catid=46%3Aautres-actualite&Itemid=69&lang=en"
+  },
+  {
+    "_id": "56ed5325e31c3a0c00238b8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/336f61e16da4d513db98aee49b60a9fbe3fa44e0.pdf",
+    "source": "http://www.britannica.com/topic/equity"
+  },
+  {
+    "_id": "56ed6105e31c3a0c00238c1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4429b410b81c25e3ad8508d3229fc1b4f007eef.pdf",
+    "source": "http://statistics.onrr.gov/ReportTool.aspx"
+  },
+  {
+    "_id": "56ed5e40e31c3a0c00238bf9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f4255502ca88c9849c9249440ea80f115bd58ea.pdf",
+    "source": "http://www.politifact.com/truth-o-meter/statements/2010/may/13/mary-landrieu/landrieu-says-louisiana-doesnt-get-one-single-penn/"
+  },
+  {
+    "_id": "56ed4f42e31c3a0c00238b75",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c76e5ae71981198abcad057eda9a7c5084db3b86.pdf",
+    "source": "http://WWW.SNH.CM/INDEX.PHP?OPTION=COM_CONTENT&VIEW=CATEGORY&ID=42&ITEMID=69&LANG=EN"
+  },
+  {
+    "_id": "56ed4de4e31c3a0c00238b61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd2ec848d2bde2c47fe01a51f92c70a3d3b1ee54.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=170%3Asignature-convention-gaziere-cameroun&catid=46%3Aautres-actualite&Itemid=86&lang=en"
+  },
+  {
+    "_id": "56ed6a7be31c3a0c00238c7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34adbe206fe30d046f880efbe3432943b936d915.pdf",
+    "source": "http://www.mpetromin.gob.ve/repositorio/imagenes/file/normativas/leyes/LEY_ORGANICA_DE_HIDROCARBUROS_GASEOSOS.pdf"
+  },
+  {
+    "_id": "56ed6b1de31c3a0c00238c80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/493f70a0667eb2933315e8e4871a554287f277c4.pdf",
+    "source": "https://useiti.doi.gov/downloads/USEITI_executive-summary_2015-12-22.pdf"
+  },
+  {
+    "_id": "56ed67fae31c3a0c00238c66",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb217999df5f3a389a6c1d468041dcae94593a7f.pdf",
+    "source": "https://useiti.doi.gov/downloads/USEITI_executive-summary_2015-12-22.pdf"
+  },
+  {
+    "_id": "56ed62bce31c3a0c00238c45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8309b0373b8099f97031dc28e56f6147cb139772.pdf",
+    "source": "https://useiti.doi.gov/how-it-works/revenues/"
+  },
+  {
+    "_id": "56ed65f1e31c3a0c00238c57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a076aeb4d080b6b8f2bb01a7af0c1cfd12bce66.pdf",
+    "source": "http://finance.rajasthan.gov.in/doc/12fcreng.pdf"
+  },
+  {
+    "_id": "56ed6e1be31c3a0c00238c9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bd4b3cd30d5379e607c6bc1618a248310092731.pdf",
+    "source": "https://useiti.doi.gov/downloads/USEITI_executive-summary_2015-12-22.pdf"
+  },
+  {
+    "_id": "56ed7cf5e31c3a0c00238cf1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/454050feafa1fef3fb4d3e93e41c13ae42f541c6.pdf",
+    "source": "http://www.vicepresidencia.gob.ec/wp-content/uploads/downloads/2013/09/Ley-Orgánica-de-Transparencia-y-Acceso-a-la-Información-Pública-publicada-en-el-Registro-Oficial-Suplemento-No.-337-del-18-de-mayo-de-2004.pdf"
+  },
+  {
+    "_id": "56ed7d8ae31c3a0c00238cfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5c8a0d100f44beb357657ae3bc7570baf667897.pdf",
+    "source": "http://www.asambleanacional.gov.ec/documentos/constitucion_de_bolsillo.pdf"
+  },
+  {
+    "_id": "56ed80b0e31c3a0c00238d10",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01f65b098a05cdab1eac344d3ed912d0d2a86ed5.pdf",
+    "source": "http://www.commission-anticorruption.gov.az/upload/file/Law%20on%20%20freedom%20of%20information.pdf"
+  },
+  {
+    "_id": "56ed822de31c3a0c00238d26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9ac4be6e93b09a1570b2e14d6b1c1b67cb15788.pdf",
+    "source": "http://finmin.nic.in/14fincomm/14fcreng.pdf"
   }
 ]
