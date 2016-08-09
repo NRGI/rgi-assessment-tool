@@ -2738,5 +2738,27 @@
     "_id": "56ee8855e31c3a0c002398f8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/79cbb6d2d85ca62fb78d44546ab3426d4575fff1.docx",
     "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2382409"
+  },
+  {
+    "_id": "56ee8cbce31c3a0c00239963",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd109e28321d6f70d06aba975ed94a446a12b78c.pdf"
+  },
+  {
+    "_id": "56ee8923e31c3a0c00239915",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/153e2333221c421faa7723b05caf6399a77eda18.pdf"
+  },
+  {
+    "_id": "56ee8aaee31c3a0c00239932",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/116264db039edbbd12b983183e58206cc00f702c.pdf",
+    "source": "http://www.cer.uz/ru/publications/CER_AD_NEFTEGAZ_2013_12.pdf"
+  },
+  {
+    "_id": "56ee8f77e31c3a0c00239990",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0629e03075dfe3c68d9fb7f2bb51d81406b0cfb.pdf"
+  },
+  {
+    "_id": "56ee9228e31c3a0c002399e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a55a847c499e90bacccda684785298bf29e91971.pdf",
+    "source": "https://timorgap.com/databases/website.nsf/vwAll/Resource-AnnualReport_TIMORGAP_PubVer_English/$File/AnnualReport_TIMORGAP_PubVer_English.pdf?openelement"
   }
 ]
