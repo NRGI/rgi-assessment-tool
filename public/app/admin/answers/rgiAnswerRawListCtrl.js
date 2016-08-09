@@ -78,6 +78,13 @@ angular.module('app')
                         outputAnswer[prefix + '_' + field] = '';
                     });
                 }
+            },
+            copyResearcherScoreHistory = function(outputAnswer, researcherScoreHistory, index) {
+                if(researcherScoreHistory.length >= index) {
+                    var historyRecord = researcherScoreHistory[researcherScoreHistory.length - index];
+                    outputAnswer['Time stamp score ' + index] = historyRecord.date;
+                    outputAnswer['Researcher score ' + index] = historyRecord.score ? historyRecord.score.letter : '';
+                }
             };
 
         rgiAnswerRawSrvc.query({skip: currentPage, limit: limit}, addAnswers);
@@ -109,7 +116,8 @@ angular.module('app')
                 answer.external_justification = externalAnswer.justification;
                 answer.external_comment = externalAnswer.comment;
 
-                copyScoreHistory(answer, answerData, 'researcher');
+                copyResearcherScoreHistory(answer, answerData.researcher_score_history, 1);
+                copyResearcherScoreHistory(answer, answerData.researcher_score_history, 2);
                 copyScoreHistory(answer, answerData, 'reviewer');
                 answers.push(answer);
             });
