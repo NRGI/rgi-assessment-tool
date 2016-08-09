@@ -53,9 +53,8 @@ angular.module('app')
                 }
             },
             copyScore = function(outputAnswer, inputAnswer, scoreType) {
-                if(inputAnswer[scoreType + '_score']) {
-                    outputAnswer[scoreType + '_score_letter'] = inputAnswer[scoreType + '_score'].letter;
-                }
+                var field = scoreType + '_score';
+                outputAnswer[field + '_letter'] = inputAnswer[field] ? inputAnswer[field].letter : '';
             },
             copyScoreWithJustification = function(outputAnswer, inputAnswer, scoreType) {
                 outputAnswer[scoreType + '_justification'] = inputAnswer[scoreType + '_justification'];
@@ -74,6 +73,10 @@ angular.module('app')
                     }
 
                     outputAnswer[prefix + '_justification'] = scoreHistory.justification;
+                } else {
+                    ['date', 'order', 'score_letter', 'justification'].forEach(function(field) {
+                        outputAnswer[prefix + '_' + field] = '';
+                    });
                 }
             };
 
@@ -94,12 +97,17 @@ angular.module('app')
                 copyScoreWithJustification(answer, answerData, 'reviewer');
                 copyScore(answer, answerData, 'final');
 
+                var externalAnswer;
+
                 if(answerData.external_answer.length > 0) {
-                    var externalAnswer = answerData.external_answer[answerData.external_answer.length - 1];
-                    answer.external_answer_letter = externalAnswer.score.letter;
-                    answer.external_justification = externalAnswer.justification;
-                    answer.external_comment = externalAnswer.comment;
+                    externalAnswer = answerData.external_answer[answerData.external_answer.length - 1];
+                } else {
+                    externalAnswer = {comment: '', justification: '', score: {letter: ''}};
                 }
+
+                answer.external_answer_letter = externalAnswer.score.letter;
+                answer.external_justification = externalAnswer.justification;
+                answer.external_comment = externalAnswer.comment;
 
                 copyScoreHistory(answer, answerData, 'researcher');
                 copyScoreHistory(answer, answerData, 'reviewer');
