@@ -2760,5 +2760,28 @@
     "_id": "56ee9228e31c3a0c002399e3",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a55a847c499e90bacccda684785298bf29e91971.pdf",
     "source": "https://timorgap.com/databases/website.nsf/vwAll/Resource-AnnualReport_TIMORGAP_PubVer_English/$File/AnnualReport_TIMORGAP_PubVer_English.pdf?openelement"
+  },
+  {
+    "_id": "56ee92b3e31c3a0c002399ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca932d9c64db3ff675f08767bcc64f1f27b1669d.pdf"
+  },
+  {
+    "_id": "56ee92f0e31c3a0c002399ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1dfcf0168f52fe59d73f2dfb0b5f47ef189ae876.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2304138"
+  },
+  {
+    "_id": "56ee92f1e31c3a0c002399f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/afd5299d589ab7325b3b2588a9f718216fe2dc49.pdf"
+  },
+  {
+    "_id": "56ee9381e31c3a0c002399f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/930aecb59ade75917ec3159e3cfca9bc58da2046.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/PetrolActPassedJul05En.pdf"
+  },
+  {
+    "_id": "56ee93e7e31c3a0c00239a04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/227357b8498035beeaed4684d26dbe0d2c6c4352.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Interim%20Petroleum%20Mining%20Code/$File/JPDA%20Interim%20PMC%202%20April%2003.pdf?openelement"
   }
 ]
