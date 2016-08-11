@@ -6,7 +6,6 @@ var commentSchema, questionSchema, Question,
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     ObjectId        = mongoose.Schema.Types.ObjectId,
-    Schemaless      = mongoose.Schema.Types.Mixed,
     Html            = mongoose.Types.Html,
     enu = {
         values: 'scored context shadow'.split(' '),
@@ -88,7 +87,7 @@ questionSchema = new Schema({
     mapping_external: String, ///Mapping: External
     comments: [commentSchema],
     last_modified: {
-        modified_by: Schemaless, // Pull from curretn user _id value but needs to handle legacy comments
+        modified_by: {type: ObjectId, ref: 'User'}, // Pull from curretn user _id value but needs to handle legacy comments
         modified_date: {
             type: Date,
             default: Date.now}}

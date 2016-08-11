@@ -20,6 +20,7 @@ exports.getRawQuestions = function(req, res) {
 
     Question.find(req.query)
         .lean()
+        .populate('last_modified.modified_by', 'firstName lastName username email role')
         .sort({question_order: 'asc'})
         .skip(Number(req.params.skip) * limit)
         .limit(limit)
