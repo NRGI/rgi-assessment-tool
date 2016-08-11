@@ -106,10 +106,9 @@ module.exports = function (app) {
     app.get('/api/countries', countries.getCountries);
     app.get('/api/countries/:country_ID', countries.getCountryByID);
     
-    //GET RAW ANSWERS
-    // app.get('/api/raw_answers/:limit/:skip', auth.requiresApiLogin, answers.getRawAnswers);
-    // app.get('/api/raw_answers/:limit/:skip', auth.apiAuthenticate, answers.getRawAnswers);
+    //GET RAW DATA
     app.get('/api/raw_answers/:limit/:skip', answers.getRawAnswers);
+    app.get('/api/raw-questions/:limit/:skip', questions.getRawQuestions);
 
     // Send tech contact
     app.post('/contact_tech', contact.techSend);
