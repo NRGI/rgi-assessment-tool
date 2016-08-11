@@ -2830,5 +2830,53 @@
   {
     "_id": "56ee9ed6e31c3a0c00239ba1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/140825c39e128700eccb8b6a5b128f93a31b158d.pdf"
+  },
+  {
+    "_id": "56eea0d8e31c3a0c00239bc2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6e6652b96d58131f0ba5eed42862273b4144b85.pdf"
+  },
+  {
+    "_id": "56eea12ce31c3a0c00239bc5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a24457f7f660b250fdb1426c980ccca291d2a446.pdf",
+    "source": "http://www.kt.com.kw/ba/dostour.htm"
+  },
+  {
+    "_id": "56eea5d0e31c3a0c00239c07",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd231aa53c0d414c10723a5bdcd526008f10710a.pdf",
+    "source": "https://www.bancocentral.tl/Download/Publications/PFund%20Law%202011%20Consolidated_en.pdf"
+  },
+  {
+    "_id": "56eea5aae31c3a0c00239c04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eeefd19ca201097a29b3a85ef6883a54978d10ca.doc",
+    "source": "http://faolex.fao.org/cgi-bin/faolex.exe?rec_id=040495&database=faolex&search_type=link&table=result&lang=eng&format_name=@ERALL"
+  },
+  {
+    "_id": "56eea7e1e31c3a0c00239c2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfcd2eb4fcfab05bfbca039bff08df4f9873161e.jpg",
+    "source": "http://www.sonara.cm/nous-connaitre"
+  },
+  {
+    "_id": "56eeabbee31c3a0c00239c75",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50d2295eee5a2e922f9c6eae4a2dcf19c50c6366.pdf",
+    "source": "http://www.eitimongolia.mn/sites/default/files/uploads/validationworks/MoF.pdf"
+  },
+  {
+    "_id": "56eea9e1e31c3a0c00239c42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a58c50ed5c13966a12c7cdeb74858ec20e800eb.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/NOC/2011/DL31-2011TimorGapPt.pdf"
+  },
+  {
+    "_id": "56eea858e31c3a0c00239c36",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1cad0e26453004660e757911be05149046bcb6fc.pdf",
+    "source": "http://www.eisourcebook.org/cms/December%202015/Cameroon%20Gas%20Code%202012.pdf"
+  },
+  {
+    "_id": "56eeaa09e31c3a0c00239c44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9959b15de47f82f33789d6913e2f7e7bd04ce5c5.pdf"
+  },
+  {
+    "_id": "56eeaa38e31c3a0c00239c46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1115e296c8bbfc14cdf9438adc2dea4703f3a42.docx",
+    "source": "http://www.legalinfo.mn"
   }
 ]
