@@ -17,27 +17,28 @@ angular.module('app')
         ];
 
         $scope.busy = false;
-        $scope.answers = [];
+        $scope.questions = [];
+        $scope.itemsPerPage = 50;
 
-        var limit = 50, currentPage = 0, allAnswersLoaded = false,
-            addAnswers = function(answers) {
-                if(!answers.reason) {
-                    $scope.answers = $scope.answers.concat(answers);
+        var currentPage = 0, allItemsLoaded = false,
+            addQuestions = function(questions) {
+                if(!questions.reason) {
+                    $scope.questions = $scope.questions.concat(questions);
                     currentPage++;
                 }
             };
 
-        rgiQuestionRawSrvc.query({skip: currentPage, limit: limit}, addAnswers);
+        rgiQuestionRawSrvc.query({skip: currentPage, limit: $scope.itemsPerPage}, addQuestions);
 
         $scope.getExportedData = function() {
-            var answers = [];
+            var questions = [];
 
-            $scope.answers.forEach(function(answerData) {
-                var answer = {};
-                answers.push(answer);
+            $scope.questions.forEach(function(questionData) {
+                var question = {};
+                questions.push(question);
             });
 
-            return answers;
+            return questions;
         };
 
         $scope.loadMore = function () {
@@ -47,13 +48,13 @@ angular.module('app')
 
             $scope.busy = true;
 
-            if(!allAnswersLoaded) {
-                rgiQuestionRawSrvc.query({skip: currentPage, limit: limit}).$promise
-                    .then(function (answers) {
-                        addAnswers(answers);
+            if(!allItemsLoaded) {
+                rgiQuestionRawSrvc.query({skip: currentPage, limit: $scope.itemsPerPage}).$promise
+                    .then(function (questions) {
+                        addQuestions(questions);
 
-                        if (!answers.reason && (answers.length < limit)) {
-                            allAnswersLoaded = true;
+                        if (!questions.reason && (questions.length < $scope.itemsPerPage)) {
+                            allItemsLoaded = true;
                         }
                     }).finally(function () {
                         $scope.busy = false;
