@@ -1,0 +1,38 @@
+.container-fluid.page-container
+    .well
+        .page-well
+            legend.h3.page-header Raw answers
+            .row
+                .left-padding-lg.right-padding-lg.top-padding-med
+                    .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
+                        .btn.btn-success(ng-click="downloadCsv()" ng-csv="getExportedAnswersData()" csv-header="raw_answer_header" filename="raw_answers.csv") Download Raw CSV
+                    .pull-right
+                        form.form-inline
+                            .form-group
+                                input.form-control(ng-model="search_text", placeholder="Filter")
+                            .form-group.margin-left-med
+                                select.form-control(ng-model="sort_order", ng-options="item.value as item.text for item in sort_options")
+            .row
+                .top-padding-lg(ng-class="{'assessment-list-supervisor': current_user.isSupervisor()}")
+                    table.table.table-hover
+                        thead
+                            tr
+                                th.col-md-1 Assessment ID
+                                th.col-md-1 Answer ID
+                                th.col-md-1 Status
+                                th.col-md-3 Question text
+                                th.col-md-1 Researcher score
+                                th.col-md-1 Reviewer score
+                        tbody
+                            tr(ng-repeat="answer in answers | filter: search_text | orderBy: sort_order")
+                                td: a(href="/admin/assessments-admin/{{answer.assessment_ID}}") {{answer.assessment_ID}}
+                                td
+                                    a(ng-if="answer.status != 'assigned'" href="/admin/assessments-admin/answer/{{answer.answer_ID}}") {{answer.answer_ID}}
+                                    span(ng-if="answer.status == 'assigned'") {{answer.answer_ID}}
+                                td {{answer.status}}
+                                td {{answer.question_ID.question_text}}
+                                td
+                                    span.small(ng-if="answer.researcher_score.letter") {{answer.researcher_score.letter | ucfirst}} - {{answer.researcher_score.text}} (value: {{answer.researcher_score.value}})
+                                td
+                                    span.small(ng-if="answer.reviewer_score.letter") {{answer.reviewer_score.letter | ucfirst}} - {{answer.reviewer_score.text}} (value: {{answer.reviewer_score.value}})
+                div(ng-if="answers.length>49", infinite-scroll="loadMoreAnswers()", infinite-scroll-distance="1")
