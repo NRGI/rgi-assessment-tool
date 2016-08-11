@@ -2996,5 +2996,25 @@
     "_id": "56eec923e31c3a0c00239ef4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8f1d03480862b3887a729df75cc447efc32d7e88.pdf",
     "source": "http://geology.gov.kz/images/stories/spravochnik/uvs.pdf"
+  },
+  {
+    "_id": "56eecf05e31c3a0c00239f8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7af9326ed44c8bdff2abde83cc5dcee589b9578.pdf"
+  },
+  {
+    "_id": "56eed74ce31c3a0c00239ff4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6ff856b93c68e566823bb79a5d1b438b3f39b1d.pdf"
+  },
+  {
+    "_id": "56eecfb0e31c3a0c00239fab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/051d777127a2e01c7092ce5bfaa97d49a340418e.pdf"
+  },
+  {
+    "_id": "56eed148e31c3a0c00239fb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08cb9603b8ee1648e4bd737a05909163c9fdb1f4.pdf"
+  },
+  {
+    "_id": "56eed43ce31c3a0c00239fe2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a98ad6c78b864710517791940d6d08d84af71e3f.doc"
   }
 ]
