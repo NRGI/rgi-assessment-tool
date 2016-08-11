@@ -2971,5 +2971,30 @@
     "_id": "56eec387e31c3a0c00239e5b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b4b9e2a97dee726d26653bece191755a3d55587e.pdf",
     "source": "http://finance.alberta.ca/publications/budget/quarterly/2015/2015-16-3rd-Quarter-Fiscal-Update.pdf"
+  },
+  {
+    "_id": "56eece62e31c3a0c00239f7f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f5972d325e29daf7930d04ed4fd25a0f0dd15e6.pdf",
+    "source": "http://resources.lawscopeonline.com/LFN/OIL_PROSPECTING_LICENCES_(CONVERSION_TO_OIL__MINING_LEASES,_ETC.)_REGULATIONS_S.I._5_2004.htm"
+  },
+  {
+    "_id": "56eeca6ee31c3a0c00239f20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf3fd034f26bd36689f1292088c792bf0a0260e3.pdf",
+    "source": "http://www.aisa.org.af/Content/Media/Documents/856PFEM5112014183540373553325325.pdf"
+  },
+  {
+    "_id": "56eecef4e31c3a0c00239f8b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2682c11ef77b2bb93329210270ad427d943b2440.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/Nigeria's_PIB.pdf"
+  },
+  {
+    "_id": "56eecccae31c3a0c00239f58",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/afefb8ebc4c7ed8a368f4f256b727657b657986b.pdf",
+    "source": "http://www.nigeria-law.org/Legislation/LFN/LFNMainPage.htm"
+  },
+  {
+    "_id": "56eec923e31c3a0c00239ef4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f1d03480862b3887a729df75cc447efc32d7e88.pdf",
+    "source": "http://geology.gov.kz/images/stories/spravochnik/uvs.pdf"
   }
 ]
