@@ -2783,5 +2783,30 @@
     "_id": "56ee93e7e31c3a0c00239a04",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/227357b8498035beeaed4684d26dbe0d2c6c4352.pdf",
     "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Interim%20Petroleum%20Mining%20Code/$File/JPDA%20Interim%20PMC%202%20April%2003.pdf?openelement"
+  },
+  {
+    "_id": "56ee94abe31c3a0c00239a1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38c5cbed9b797cf4b0f2b4c8e03b763943e25b20.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Petroleum%20Mining%20Code/$File/PMCtoCoM0602.pdf?openelement"
+  },
+  {
+    "_id": "56ee9646e31c3a0c00239a59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d9ecba35be8effb6b184f709ff475103d9640c9.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/NOC/2011/DL31-2011TimorGapPt.pdf"
+  },
+  {
+    "_id": "56ee96a2e31c3a0c00239a6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab57ff03c41041f1f90fabc3b095a40b6a3c7f40.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2304140"
+  },
+  {
+    "_id": "56ee973ee31c3a0c00239a84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f10cdac88dd808e852a323f9ba84329deadb87f9.docx",
+    "source": "http://lex.uz/pages/GetAct.aspx?lact_id=1004514"
+  },
+  {
+    "_id": "56ee980fe31c3a0c00239ab5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e8ef3e15ca157a315a2910191cb550951a99b5d.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB1en.pdf"
   }
 ]
