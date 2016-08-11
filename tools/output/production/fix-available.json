@@ -13,5 +13,10 @@
     "_id": "56eedc1de31c3a0c0023a064",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5d6be75be025f046421581eb24535dfc512ff039.pdf",
     "source": "http://mom.gov.af/Content/files/Afghanistan-%20Minerals%20Law-19-May-2015%20English.pdf"
+  },
+  {
+    "_id": "56eedda7e31c3a0c0023a0a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1b22bd2bc7ce43304e660b5bca859b885873b97.pdf",
+    "source": "http://www.aisa.org.af/Content/Media/Documents/856PFEM5112014183540373553325325.pdf"
   }
 ]

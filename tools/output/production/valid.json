@@ -3033,5 +3033,22 @@
   {
     "_id": "56eedc9ae31c3a0c0023a080",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/95add601f9bf827496fe225fc7d6c1ab2db3b5f4.pdf"
+  },
+  {
+    "_id": "56eedd17e31c3a0c0023a094",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f14894d5333d9354958a481d85aefc99460185d.pdf"
+  },
+  {
+    "_id": "56eede5ae31c3a0c0023a0b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/764a6ef76917c54a6b8b888b53ca777470d72661.pdf"
+  },
+  {
+    "_id": "56eedf83e31c3a0c0023a0cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/706b5055d0cdf00ab9c899a5b78c7961910a5f8a.pdf"
+  },
+  {
+    "_id": "56eee02ee31c3a0c0023a0dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc3b0e01f802ab244df2fafb04275c7a4c22626b.pdf",
+    "source": "http://kuwaitalyawm.media.gov.kw"
   }
 ]
