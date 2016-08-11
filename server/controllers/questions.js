@@ -15,6 +15,19 @@ exports.getQuestionByID = function (req, res) {
     });
 };
 
+exports.getRawQuestions = function(req, res) {
+    var limit = Number(req.params.limit);
+
+    Question.find(req.query)
+        .lean()
+        .sort({question_order: 'asc'})
+        .skip(Number(req.params.skip) * limit)
+        .limit(limit)
+        .exec(function(err, answers) {
+            res.send(err ? {reason: err.toString()} : answers);
+        });
+};
+
 var getCloseConnectionHandler = function(res) {
     return function (err) {
         if (err) {
