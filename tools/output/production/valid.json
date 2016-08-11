@@ -2878,5 +2878,49 @@
     "_id": "56eeaa38e31c3a0c00239c46",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b1115e296c8bbfc14cdf9438adc2dea4703f3a42.docx",
     "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "56eeb255e31c3a0c00239cfe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0799f869a99b6229979727db04a6f98c282d6dc0.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/NOC/2011/DL31-2011TimorGapPt.pdf"
+  },
+  {
+    "_id": "56eeb01be31c3a0c00239ca4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e36a0ff9ce2c3cca1c3a94c1f2910f1a96bfc79d.pdf"
+  },
+  {
+    "_id": "56eeaf7ce31c3a0c00239ca2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e75a7d0b4b5c6bd4a371523ed02abd207fc70510.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-PSC%20JPDA%20-%2006-101(A)/$File/PSC%20JPDA%20-%2006-101(A).pdf?openelement"
+  },
+  {
+    "_id": "56eeb2d8e31c3a0c00239d0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0bab37c15b1e5ff455470078e921883905e6afa.pdf",
+    "source": "http://www.mram.gov.mn"
+  },
+  {
+    "_id": "56eeb923e31c3a0c00239dc8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57956fa8fd27ea5471888d55d431a705f32a90c2.pdf",
+    "source": "http://www.dgtcfm.cm/index.php/en/invest-in-cameroon/93-en/information/1135-2015-finance-law-cfa-f-3746-6-billion-for-the-implementation-of-cameroon-government%E2%80%99s-economic.html"
+  },
+  {
+    "_id": "56eeb438e31c3a0c00239d48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4898f6685e4017ab644465e59eeecd1778c8b884.pdf",
+    "source": "http://mof.gov.ye/files/f_account/2013/c.html"
+  },
+  {
+    "_id": "56eeb98ee31c3a0c00239dcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23d83569ea7b1ea0cc214a91a8fe1dfa024330d6.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?SC=290320063592085"
+  },
+  {
+    "_id": "56eeb673e31c3a0c00239d92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac5855c42bd773c74cacb44c73c1545695b213b0.docx",
+    "source": "http://news.cameroon-today.com/cameroon-business-news-sonara-gets-money/6787/"
+  },
+  {
+    "_id": "56eeae69e31c3a0c00239c99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c03a91c611e04ed9560093d67a1cce3181d58ea.docx",
+    "source": "http://www.businessincameroon.com/economy/0203-3951-sonara-ranked-first-company-in-cameroon"
   }
 ]
