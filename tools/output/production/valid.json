@@ -2947,5 +2947,29 @@
     "_id": "56eeba84e31c3a0c00239ddc",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d8f6c6817f26803b8d2a81db77aa2e2fba5e01c1.docx",
     "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "56eec8cde31c3a0c00239ef1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19b931d703a0ea692a58a1825687eb3b814edcaf.pdf"
+  },
+  {
+    "_id": "56eec723e31c3a0c00239ed2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11204e9a25e8c3c97f2d76e35356f2a51a94ea4b.pdf",
+    "source": "http://www.csph.cm/index.php/en/"
+  },
+  {
+    "_id": "56eec5eae31c3a0c00239eba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/957c0d57de8a8135adb49b049058811555c03c0c.pdf",
+    "source": "http://geology.gov.kz/images/stories/spravochnik/uvs.pdf"
+  },
+  {
+    "_id": "56eec466e31c3a0c00239e82",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d958eaec03633ffa27e8145477bc4f0fb4f95b4.pdf",
+    "source": "http://finance.alberta.ca/publications/budget/quarterly/2015/2015-16-3rd-Quarter-Fiscal-Update.pdf"
+  },
+  {
+    "_id": "56eec387e31c3a0c00239e5b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4b9e2a97dee726d26653bece191755a3d55587e.pdf",
+    "source": "http://finance.alberta.ca/publications/budget/quarterly/2015/2015-16-3rd-Quarter-Fiscal-Update.pdf"
   }
 ]
