@@ -3016,5 +3016,22 @@
   {
     "_id": "56eed43ce31c3a0c00239fe2",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a98ad6c78b864710517791940d6d08d84af71e3f.doc"
+  },
+  {
+    "_id": "56eed950e31c3a0c0023a020",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcd3e9eb7d05c07bb6e1f52dadc6e8d71275a8c2.docx",
+    "source": "http://mom.gov.af/en/page/1357/industries"
+  },
+  {
+    "_id": "56eeda58e31c3a0c0023a02b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc49942ecc773079696c3aabb49e6197e2d2cb09.PDF"
+  },
+  {
+    "_id": "56eedbbde31c3a0c0023a05e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/621e39044650b19265c453541dfd64c4faad54b2.PDF"
+  },
+  {
+    "_id": "56eedc9ae31c3a0c0023a080",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95add601f9bf827496fe225fc7d6c1ab2db3b5f4.pdf"
   }
 ]
