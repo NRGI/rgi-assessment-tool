@@ -2808,5 +2808,27 @@
     "_id": "56ee980fe31c3a0c00239ab5",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0e8ef3e15ca157a315a2910191cb550951a99b5d.pdf",
     "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB1en.pdf"
+  },
+  {
+    "_id": "56ee9d45e31c3a0c00239b7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c06eed4c956e70867f6f64d240bdc09e36385101.pdf",
+    "source": "http://www.gouv.ne/docpdf/constitution.pdf"
+  },
+  {
+    "_id": "56ee98a5e31c3a0c00239ae7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0d9d929288a3c36473f824a1a3be933e6d6ad10.pdf"
+  },
+  {
+    "_id": "56ee9c71e31c3a0c00239b5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d7ca2c0fa42e63e22fdee55589543a9f01169bc.pdf"
+  },
+  {
+    "_id": "56ee9bc2e31c3a0c00239b43",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8853f69c8e947b5ade4c00015591359ca6238724.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE15/BksJan15/BB1-31Jan2015en.pdf"
+  },
+  {
+    "_id": "56ee9ed6e31c3a0c00239ba1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/140825c39e128700eccb8b6a5b128f93a31b158d.pdf"
   }
 ]
