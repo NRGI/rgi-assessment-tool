@@ -19,8 +19,8 @@
                                 th.col-md-1 Version
                                 th.col-md-10 Text
                         tbody
-                            tr(ng-repeat="answer in answers | filter: search_text | orderBy: 'question_order'")
-                                td {{answer.question_order}}
-                                td {{answer.question_v}}
-                                td {{answer.question_text}}
-                div(ng-if="answers.length>49", infinite-scroll="loadMore()", infinite-scroll-distance="1")
+                            tr(ng-repeat="question in questions | filter: search_text | orderBy: 'question_order'")
+                                td {{question.question_order}}
+                                td {{question.question_v}}
+                                td {{question.question_text}}
+                div(ng-if="questions.length > (itemsPerPage - 1)", infinite-scroll="loadMore()", infinite-scroll-distance="1")
