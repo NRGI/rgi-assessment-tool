@@ -2922,5 +2922,30 @@
     "_id": "56eeae69e31c3a0c00239c99",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9c03a91c611e04ed9560093d67a1cce3181d58ea.docx",
     "source": "http://www.businessincameroon.com/economy/0203-3951-sonara-ranked-first-company-in-cameroon"
+  },
+  {
+    "_id": "56eebb58e31c3a0c00239e01",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8df0b55183dbce3a2180c247fcd4795bf3d082b.pdf",
+    "source": "https://www.icrc.org/ihl-nat/0/7e3ee07f489d674dc1256ae9002e3915/$FILE/Constitution%20Cameroon%20-%20EN.pdf"
+  },
+  {
+    "_id": "56eec0e6e31c3a0c00239e28",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15b33e6c206745812d1671320966f43984e549be.pdf",
+    "source": "http://www.cifor.org/publications/pdf_files/articles/AAssembe-Mvondo1302.pdf"
+  },
+  {
+    "_id": "56eec25ee31c3a0c00239e3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f2923c11d1e4f3fe2eb93dad79fc03f28a4a7e5.pdf",
+    "source": "http://http://http://www.fni.no/pdf/FNI-R0810.pdf"
+  },
+  {
+    "_id": "56eec2c8e31c3a0c00239e47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4981bb391f8d92f42d8810d702c59c0f628a85e7.pdf",
+    "source": "http://www.finance.alberta.ca/business/ahstf/quarterly-reports/2015-3rdq/Heritage-Fund-2015-16-3rd-Quarter-Report.pdf"
+  },
+  {
+    "_id": "56eeba84e31c3a0c00239ddc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8f6c6817f26803b8d2a81db77aa2e2fba5e01c1.docx",
+    "source": "http://www.legalinfo.mn"
   }
 ]
