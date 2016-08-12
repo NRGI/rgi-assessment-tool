@@ -3070,5 +3070,47 @@
     "_id": "56eedda7e31c3a0c0023a0a0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b1b22bd2bc7ce43304e660b5bca859b885873b97.pdf",
     "source": "http://www.aisa.org.af/Content/Media/Documents/856PFEM5112014183540373553325325.pdf"
+  },
+  {
+    "_id": "56eee495e31c3a0c0023a1ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4b66e929e8b061c2c35273ba4b3bbd7b58eafc9.pdf"
+  },
+  {
+    "_id": "56eee507e31c3a0c0023a1d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ca76a4d281e55767079a2354e6552b06cdbcbd0.pdf"
+  },
+  {
+    "_id": "56eee123e31c3a0c0023a0eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6063b3285c61a346e6fec1c90658db9416b24f1b.pdf"
+  },
+  {
+    "_id": "56eee28de31c3a0c0023a143",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15e051bb1273d8856a7645ba9b753d857be9d1bd.pdf"
+  },
+  {
+    "_id": "56eee3a1e31c3a0c0023a17d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb8f69496f968281cb3ed921cacc8174ed4f2ee6.pdf"
+  },
+  {
+    "_id": "56eee562e31c3a0c0023a1f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f924e0129e49926faa88562e6385e309e73f9bed.pdf",
+    "source": "http://www.kt.com.kw/ba/dostour.htm"
+  },
+  {
+    "_id": "56eee662e31c3a0c0023a222",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f1441a81e64addf292ae19392f454b58d09bd22.pdf",
+    "source": "http://adilet.zan.kz/eng/docs/K080000095_"
+  },
+  {
+    "_id": "56eee6d4e31c3a0c0023a23d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ee53f9eebb5414909aece30800cf629e8080798.pdf"
+  },
+  {
+    "_id": "56eee653e31c3a0c0023a220",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c1739b0eacab7872cc134d2ce2712e223660121.pdf"
+  },
+  {
+    "_id": "56eeeca9e31c3a0c0023a27c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b9e2dcaf62291fe9f410bc49306b7a261eeec4b.pdf"
   }
 ]
