@@ -37,7 +37,7 @@ angular.module('app')
                     .then(function (answers) {
                         addAnswers(answers);
 
-                        if (!answers.reason && (answers.length < $scope.portionSize)) {
+                        if (!answers.reason && (answers.data.length < $scope.portionSize)) {
                             allAnswersLoaded = true;
                         }
                     }).finally(function () {
