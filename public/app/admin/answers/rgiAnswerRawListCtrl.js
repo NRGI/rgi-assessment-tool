@@ -31,10 +31,10 @@ angular.module('app')
             'external_answer_letter',
             'external_justification',
             'external_comment',
-            'researcher_score_history_date',
-            'researcher_score_history_order',
-            'researcher_score_history_score_letter',
-            'researcher_score_history_justification',
+            'Researcher score 1',
+            'Time stamp score 1',
+            'Researcher score 2',
+            'Time stamp score 2',
             'reviewer_score_history_date',
             'reviewer_score_history_order',
             'reviewer_score_history_score_letter',
@@ -82,8 +82,8 @@ angular.module('app')
             copyResearcherScoreHistory = function(outputAnswer, researcherScoreHistory, index) {
                 if(researcherScoreHistory.length >= index) {
                     var historyRecord = researcherScoreHistory[researcherScoreHistory.length - index];
-                    outputAnswer['Time stamp score ' + index] = historyRecord.date;
                     outputAnswer['Researcher score ' + index] = historyRecord.score ? historyRecord.score.letter : '';
+                    outputAnswer['Time stamp score ' + index] = historyRecord.date;
                 }
             };
 
