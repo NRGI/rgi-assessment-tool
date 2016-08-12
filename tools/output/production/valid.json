@@ -3112,5 +3112,29 @@
   {
     "_id": "56eeeca9e31c3a0c0023a27c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5b9e2dcaf62291fe9f410bc49306b7a261eeec4b.pdf"
+  },
+  {
+    "_id": "56eeee3fe31c3a0c0023a2a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fc29157f9f1c73b8fe5e21667a094f450129c40.pdf",
+    "source": "https://www.kpc.com.kw/about/what-we-do"
+  },
+  {
+    "_id": "56eeecbae31c3a0c0023a27e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad8a02d250db5ed5b38ffb1b4eb1fe70aeaf7c8d.pdf"
+  },
+  {
+    "_id": "56eef111e31c3a0c0023a2e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb38f1c0ce8eef0287d2e46c7791c9ffed533bdd.pdf",
+    "source": "http://www.herald.co.zw/zmdc-signs-kamativi-jv/"
+  },
+  {
+    "_id": "56eeefb3e31c3a0c0023a2c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01de172764e74c911148e9233b53dc029e8c433f.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/nrgi_sharing_Myanmar_Revenue-Sharing.pdf"
+  },
+  {
+    "_id": "56eeeffee31c3a0c0023a2c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16a9ba7ab737562cd3d73245795f95b582c2f54a.pdf",
+    "source": "http://fletcher.tufts.edu/~/media/Fletcher/Microsites/swfi/pdfs/2012/profiles/KIA%20Fund%20Profile_v2.pdf"
   }
 ]
