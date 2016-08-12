@@ -5,7 +5,7 @@
             .row
                 .left-padding-lg.right-padding-lg.top-padding-med
                     .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
-                        .btn.btn-success(ng-click="downloadCsv()", ng-csv="getExportedData()", csv-header="questionListHeader", filename="raw_questions.csv") Download Raw CSV
+                        .btn.btn-success(ng-click="downloadCsv()", ng-csv="questions", csv-header="questionListHeader", filename="raw_questions.csv") Download Raw CSV
                     .pull-right
                         form.form-inline
                             .form-group
@@ -23,4 +23,4 @@
                                 td {{question.question_order}}
                                 td {{question.question_v}}
                                 td {{question.question_text}}
-                div(ng-if="questions.length > (itemsPerPage - 1)", infinite-scroll="loadMore()", infinite-scroll-distance="1")
+                div(ng-if="questions.length > (portionSize - 1)", infinite-scroll="loadMore()", infinite-scroll-distance="1")
