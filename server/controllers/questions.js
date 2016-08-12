@@ -15,18 +15,75 @@ exports.getQuestionByID = function (req, res) {
     });
 };
 
-exports.getRawQuestions = function(req, res) {
-    var limit = Number(req.params.limit);
+exports.getQuestionsPortion = function(req, res, next) {
+    var portionSize = Number(req.params.limit);
 
     Question.find(req.query)
         .lean()
         .populate('last_modified.modified_by', 'firstName lastName username email role')
         .sort({question_order: 'asc'})
-        .skip(Number(req.params.skip) * limit)
-        .limit(limit)
-        .exec(function(err, answers) {
-            res.send(err ? {reason: err.toString()} : answers);
+        .skip(Number(req.params.skip) * portionSize)
+        .limit(portionSize)
+        .exec(function(err, questions) {
+            if(err) {
+                res.send({reason: err.toString()});
+            } else {
+                req.questions = questions;
+                next();
+            }
         });
+};
+
+exports.getExportedQuestionsData = function(req, res) {
+    var questions = [],
+        getCriteriaFieldSet = function(question, field) {
+            var values = [];
+
+            question.question_criteria.forEach(function(criterion) {
+                values.push(criterion[field]);
+            });
+
+            return JSON.stringify(values).split('"').join('\'');
+        };
+
+    req.questions.forEach(function(questionData) {
+        var question = {}, lastModified = questionData.last_modified, lastModifiedBy = lastModified.modified_by;
+
+        ['question_order', 'question_v', 'question_text'].forEach(function(field) {
+            question[field] = questionData[field];
+        });
+
+        ['letter', 'text'].forEach(function(field) {
+            question['question_criteria_' + field] = getCriteriaFieldSet(questionData, field);
+        });
+
+        if(lastModifiedBy.firstName && lastModifiedBy.lastName) {
+            question.last_modified_modified_by = lastModifiedBy.firstName + ' ' + lastModifiedBy.lastName +
+            (lastModifiedBy.email ? ' (' + lastModifiedBy.email + ')' : '');
+        } else {
+            question.last_modified_modified_by = lastModifiedBy.email;
+        }
+
+        question.last_modified_modified_date = lastModified.modified_date;
+
+        Object.keys(question).forEach(function(field) {
+            if((question[field] === undefined) || (question[field] === null)) {
+                question[field] = '';
+            }
+        });
+
+        questions.push(question);
+    });
+
+    res.send({data: questions, header: [
+        'question_order',
+        'question_v',
+        'question_text',
+        'question_criteria_letter',
+        'question_criteria_text',
+        'last_modified_modified_by',
+        'last_modified_modified_date'
+    ]});
 };
 
 var getCloseConnectionHandler = function(res) {

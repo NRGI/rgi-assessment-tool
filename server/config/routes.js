@@ -108,7 +108,7 @@ module.exports = function (app) {
     
     //GET RAW DATA
     app.get('/api/raw_answers/:limit/:skip', answers.getAnswersPortion, answers.getExportedAnswersData);
-    app.get('/api/raw-questions/:limit/:skip', questions.getRawQuestions);
+    app.get('/api/raw-questions/:limit/:skip', questions.getQuestionsPortion, questions.getExportedQuestionsData);
 
     // Send tech contact
     app.post('/contact_tech', contact.techSend);
