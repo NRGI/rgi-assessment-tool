@@ -4291,5 +4291,30 @@
     "_id": "56f559b9e31c3a0c0023cce5",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/207fcc9634dabd27adecfafaa0aede46c11e1bc3.xlsx",
     "source": "http://blgf.gov.ph/wp-content/uploads/2015/12/FY-2014-FISCAL-DATA.xls"
+  },
+  {
+    "_id": "56f55e61e31c3a0c0023cd2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6109e88105d33bdd1dd23cadce6a74399e4d1915.pdf",
+    "source": "http://www.gppb.gov.ph/laws/laws/PD_1177.pdf"
+  },
+  {
+    "_id": "56f5aa6ae31c3a0c0023ceee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77fc67bcbe9c41641d9bfe67c8ae5bbef2977ae7.pdf",
+    "source": "https://www.hss.de/fileadmin/centralasia/Kirgistan/downloads/Publikationen/150313_kanybek.pdf"
+  },
+  {
+    "_id": "56f55e19e31c3a0c0023cd2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ec060c78bbb8cef34671c85ff145f0474d01629.doc",
+    "source": "http://citykr.kg/start/ru/pravo/zakon-kr/360-n-1480-xii-q-q"
+  },
+  {
+    "_id": "56f56b91e31c3a0c0023cd65",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebd7ab689b205f82c152e913961349e1dc9574d1.docx",
+    "source": "http://24.kg/ekonomika/29692/"
+  },
+  {
+    "_id": "56f56cffe31c3a0c0023cd74",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a9b4e74d140898603494d46bb0e1808a6b0aa57.docx",
+    "source": "http://knews.kg/2015/09/18/v-kyirgyizstane-planiruetsya-sozdat-47-fondov-razvitiya-regionov/"
   }
 ]
