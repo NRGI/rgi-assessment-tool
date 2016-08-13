@@ -4780,5 +4780,77 @@
     "_id": "56fc8c8d808c650d005d760e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/50197179a6e1c6518a8dd757b1ebd81ae5d578f0.pdf",
     "source": "https://www.sgr.gov.co/LinkClick.aspx?fileticket=k4J3F-CTsfI%3d&tabid=358"
+  },
+  {
+    "_id": "56fcabd7808c650d005d7703",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c52ee05c2c281b7cad0ec95efe76ce835289588.pdf",
+    "source": "http://www.mme.gov.kh/administrator/menu-link-page.php?menu=53"
+  },
+  {
+    "_id": "56fc95e6808c650d005d7654",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2f23c8a0c07b97052fa3b09af16b589c494ec50.pdf",
+    "source": "http://www.anh.gov.co/Operaciones-Regalias-y-Participaciones/Regalias/Estadisticas/FAEP/CUPOS%20FAEP%202015.pdf"
+  },
+  {
+    "_id": "56fca88b808c650d005d7701",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df19cba0dc626612a54e820297993bf9d7976c42.pdf"
+  },
+  {
+    "_id": "56fca680808c650d005d76f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea8c85eb76fa3a74a174bbef98c5c66f982fc329.pdf",
+    "source": "http://www.mef.gov.kh/laws-and-regulation.html"
+  },
+  {
+    "_id": "56fc94ef808c650d005d7648",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9843ff6fd945b952657e66d6e56836b6afdb68b8.pdf"
+  },
+  {
+    "_id": "56fd240e808c650d005d79db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/612961c2b01d6cad5439f51176e6a796c81d995f.pdf",
+    "source": "http://www.siam.economia.gob.mx/swb/work/models/siam/Resource/18/1/images/REGLAMENTO_DE_LA_LEY_MINERA.pdf"
+  },
+  {
+    "_id": "56fd2a25808c650d005d7a78",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8776e0a97f5b8911da1a7d003f98feb2c2e4dc61.pdf",
+    "source": "http://busca.datos.gob.mx/#!/conjuntos/concesiones-mineras/"
+  },
+  {
+    "_id": "56fd2928808c650d005d7a60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13ac51cb93584a1933990e9947b85c3544ba1b99.pdf"
+  },
+  {
+    "_id": "56fcad18808c650d005d770e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10a14c4b83696f52d17bcc269877fa392dc942e3.pdf",
+    "source": "http://www.moc.gov.kh/en-us/official-documents"
+  },
+  {
+    "_id": "56fcae58808c650d005d7720",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d20d4731203fd031d06adf3750ec3416d20aa71a.pdf",
+    "source": "http://www.ncdd.gov.kh/km/legal-framework/prakas"
+  },
+  {
+    "_id": "56fd3846808c650d005d7bf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1adb8fb13542f007384ae93e8039e686a308ac4b.pdf",
+    "source": "http://gabonreview.com/blog/blocs-petroliers-signature-5-contrats-dexploration-partage-production/"
+  },
+  {
+    "_id": "56fd3388808c650d005d7b7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9eebea4504916e701fdab778b16e8f9ec7444a8c.pdf",
+    "source": "http://www.oxfordbusinessgroup.com/news/le-gabon-signe-sept-contrats-de-partage-de-production-pétrolière"
+  },
+  {
+    "_id": "56fd3a8b808c650d005d7c3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c99cde1a82c250b16cba860def09b4ec8ee24c87.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/110_181215.pdf"
+  },
+  {
+    "_id": "56fd3b07808c650d005d7c4c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c21398907f3f1b17301f02c8a3ec4094929c571.pdf",
+    "source": "http://www.dof.gob.mx/nota_detalle.php?codigo=5404049&fecha=14/08/2015"
+  },
+  {
+    "_id": "56fd4154808c650d005d7cf5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd79f8d0ccb1d27586f2ce6f37d8765ac372a294.pdf",
+    "source": "http://www.petronas.com.my/partnering-us/licensing-registration/Documents/30NOV2015%20ENGLISH%20PANDUAN%20AM.pdf"
   }
 ]
