@@ -3745,5 +3745,29 @@
     "_id": "56f14b11e31c3a0c0023b4fe",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d9ddfb6ba3d572736d8436e40d717c8e36ec9050.docx",
     "source": "http://timesofoman.com/article/74921/Business/Oman-sets-up-OMR100m-mining-firm;-to-float-shares-to-public"
+  },
+  {
+    "_id": "56f14dc0e31c3a0c0023b579",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f12b216be843f5a1ddd1211f243f04485de31ac6.pdf"
+  },
+  {
+    "_id": "56f14b8de31c3a0c0023b50d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/962733f389a5410a3ae7e809c16c66a31e9427d0.docx",
+    "source": "http://www.sgrf.gov.om/about.html"
+  },
+  {
+    "_id": "56f14bf9e31c3a0c0023b519",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9958b30e7b64090ab3dfb20538f167f765399148.docx",
+    "source": "http://af.reuters.com/article/energyOilNews/idAFL8N15U3VS?sp=true"
+  },
+  {
+    "_id": "56f14c80e31c3a0c0023b543",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0255befffa722b943a4ceac09f638df98a6dc52.docx",
+    "source": "http://www.oif.om/"
+  },
+  {
+    "_id": "56f14d2fe31c3a0c0023b566",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7aef9773c87b1b7d1c5badc79a00c6c7eaecf6ac.docx",
+    "source": "http://www.sovereignwealthcenter.com/fund-profiles.html"
   }
 ]
