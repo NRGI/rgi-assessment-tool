@@ -33,5 +33,10 @@
     "_id": "56fc3fef808c650d005d7398",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/14694425c8b92a23ec73049d9e7f23b5328ae91a.pdf",
     "source": "http://www.funcionpublica.gov.co/manualdelestado/libreria/documentos/r1000.pdf"
+  },
+  {
+    "_id": "57001bb2808c650d005d8c98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4fc7c90eb8125498272a12ff0ae95207f891c7e.xlsx",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/Licencias-y-solicitudes-DGM-260116.xlsx"
   }
 ]

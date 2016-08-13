@@ -5192,5 +5192,25 @@
     "_id": "570006a5808c650d005d8c55",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6e5d0d9fb9cc0c0473bc4d903c4c1d60df9f008a.pdf",
     "source": "http://www.mem.gob.gt/wp-content/themes/mem/files/reglamento_organico_interno.pdf"
+  },
+  {
+    "_id": "57001ae9808c650d005d8c8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4aee1915f9cea5fb5172cd24a529d347dca7901.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/Ot_santarosa.pdf"
+  },
+  {
+    "_id": "57001fda808c650d005d8ca3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87e940881e3781fbb62acf57e2c80553f239f500.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/ANUARIO-ESTAD%C3%8DSTICO-MINERO-2014.pdf"
+  },
+  {
+    "_id": "57002187808c650d005d8cae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/793e4b1b70fbc1de6371c2c11fc1158af43d1fa9.pdf",
+    "source": "http://www.prensalibre.com/economia/mem-rechaza-mas-moratoria"
+  },
+  {
+    "_id": "570039dd808c650d005d8cc6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1517099d80fb60cd0130a928505cf1612551f4ff.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/2._Mining_Law_and_its_Regulation.pdf"
   }
 ]
