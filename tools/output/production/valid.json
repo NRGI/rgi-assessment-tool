@@ -5068,5 +5068,30 @@
     "_id": "56fea033808c650d005d898a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1d079a4d4470a2e2cfa58f518af0eb753ec3a789.pdf",
     "source": "http://www.ghaudit.org/gas/site/reports/download_report/480"
+  },
+  {
+    "_id": "56fea8b7808c650d005d89f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcf3f349157c30b2af8aa53876e1588fa3cf0121.pdf",
+    "source": "http://www.finance.gov.tt/wp-content/uploads/2015/06/BOD101-Appointment-List.pdf"
+  },
+  {
+    "_id": "56feaabb808c650d005d8a0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f604e9ba7ebbe6ad3c8e3aad81cf56fbcc8ad9b.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=150"
+  },
+  {
+    "_id": "56feab24808c650d005d8a1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62c08d80a13871d95167b250d42a09b62b45a2db.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?q=n&format=&max=30&offset=30"
+  },
+  {
+    "_id": "56feac33808c650d005d8a2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26b0356e2c4a86c8c75ff0525947c05c8134c03f.pdf",
+    "source": "http://ngc.co.tt/about/history/the-ngc-story/"
+  },
+  {
+    "_id": "56feaf93808c650d005d8a5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcb4231fbdb86ce070367a4dc5a6031d6e32564a.png",
+    "source": "http://www.investidorpetrobras.com.br/en/debt/indebtedness-and-leverage"
   }
 ]
