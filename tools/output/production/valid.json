@@ -3136,5 +3136,51 @@
     "_id": "56eeeffee31c3a0c0023a2c2",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/16a9ba7ab737562cd3d73245795f95b582c2f54a.pdf",
     "source": "http://fletcher.tufts.edu/~/media/Fletcher/Microsites/swfi/pdfs/2012/profiles/KIA%20Fund%20Profile_v2.pdf"
+  },
+  {
+    "_id": "56eef27fe31c3a0c0023a311",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c71e201bae49912c54e0c5ffecc20e72c0eb3fc9.pdf"
+  },
+  {
+    "_id": "56eef1fde31c3a0c0023a2ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c895cbae2e109fe97bdfa87e62ab4ecfda8934a.pdf",
+    "source": "http://www.herald.co.zw/headway-in-3bn-platinum-project/"
+  },
+  {
+    "_id": "56eef55ae31c3a0c0023a37c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c370390155c865a02041db6303a48188bf0429c0.pdf"
+  },
+  {
+    "_id": "56eef542e31c3a0c0023a37a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/270d7a223617c0edcb02178ffe1e53910df48cfa.pdf",
+    "source": "https://www.eia.gov/beta/international/analysis_includes/countries_long/United_Arab_Emirates/uae.pdf"
+  },
+  {
+    "_id": "56eef5d7e31c3a0c0023a39e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a92625ac82241efb21aa6862483781b530ee7a3.pdf"
+  },
+  {
+    "_id": "56eef648e31c3a0c0023a3af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1ac509744fc1a7a8745d63907026f7fe0bc8959.pdf",
+    "source": "http://www.ifswf.org/sites/default/files/Publications/FundProfiles.pdf"
+  },
+  {
+    "_id": "56eef716e31c3a0c0023a3e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5ec954d1cc9d121aad06af4e9caf8e29fd65abf.pdf"
+  },
+  {
+    "_id": "56eef84fe31c3a0c0023a3f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e83829a20ec0c03bc909bb10442b2a757a14e526.pdf",
+    "source": "http://www.marjanca.ae/files/reports/4-BMI%20UAE%20Oil%20and%20Gas%20Competitive%20Intelligence%20Report%202010-10-01.pdf"
+  },
+  {
+    "_id": "56eef954e31c3a0c0023a41a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96d83943188f4cb21763ae2b22b822fe31cdcfac.docx",
+    "source": "https://www.zawya.com/story/ADNOC__Total_sign_New_ADCO_Concession_Agreement-ZAWYA20150129110352/"
+  },
+  {
+    "_id": "56eefa87e31c3a0c0023a43a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e939cd24c8997f232507a3f12499d722a79e91e1.pdf",
+    "source": "http://www.kmg.kz/en/about/"
   }
 ]
