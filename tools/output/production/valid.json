@@ -3321,5 +3321,30 @@
     "_id": "56ef196fe31c3a0c0023a6ad",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/cc5d5a3d7fb83fcf807a0b9f07a49cc94ee71627.docx",
     "source": "http://almeezan.gov.qa/LawPage.aspx?id=4105&language=en"
+  },
+  {
+    "_id": "56ef1a1ae31c3a0c0023a6c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4161092aae05786a65482abdce8c3d712fe4835.pdf",
+    "source": "http://portal.www.gov.qa/wps/wcm/connect/5a5512804665e3afa54fb5fd2b4ab27a/Constitution+of+Qatar+EN.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "56ef1b13e31c3a0c0023a6e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24f5fdab9d2eec753ea7575f067c43a3887c32a7.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/NRF_Azerbaijan_September2013.pdf"
+  },
+  {
+    "_id": "56ef19d1e31c3a0c0023a6be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d43173cc4250f4a5f257a98942f525fcc4d6d869.pdf",
+    "source": "http://www.erc.az/files/neshrler/RM_Azerbaijan_ERC_2013_ENG.pdf"
+  },
+  {
+    "_id": "56ef1b0de31c3a0c0023a6e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f67523aa6722545073137c8e44d41126c342166.pdf",
+    "source": "https://dpr.gov.ng/index/wp-content/uploads/2016/01/2014-Oil-Gas-Industry-Annual-Report-1.pdf"
+  },
+  {
+    "_id": "56ef1a9de31c3a0c0023a6da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b8944a9f6a3c1a6b1950d489f44b857cfdac720.docx",
+    "source": "http://www.almeezan.qa/LawPage.aspx?id=2716&language=en"
   }
 ]
