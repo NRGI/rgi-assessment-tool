@@ -3862,5 +3862,50 @@
   {
     "_id": "56f25736e31c3a0c0023ba92",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9597c104c23b0d8bbe4a1b1672bdf56dd5dc2b96.pdf"
+  },
+  {
+    "_id": "56f25ee9e31c3a0c0023bad2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f569dc5ab579dc193d5e3653b6977c97689ea3a.pdf",
+    "source": "http://www.itie-congo.org/index.php?option=com_content&view=article&id=102&Itemid=127"
+  },
+  {
+    "_id": "56f26276e31c3a0c0023baf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b38df59664e6564ceabc5d5d41c44fa7431af7fd.pdf"
+  },
+  {
+    "_id": "56f264b4e31c3a0c0023bb1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f38164357fd3b77ffb0c2a6d0ad8104af1181ed2.pdf",
+    "source": "http://www.congopetrole.fr/activites_du_ministere/textes_decrets_et_arretes.html"
+  },
+  {
+    "_id": "56f269f8e31c3a0c0023bb8a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e96e140a43894606f3bae464b94f3f6282b733d.pdf"
+  },
+  {
+    "_id": "56f26cb9e31c3a0c0023bbab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b7d6ebbe98ad9a8ab02dcea93fab09213bfd95e.pdf",
+    "source": "http://www.itie-congo.org/images/rapport13/fairlinks-congo-rapport-itie-2013.pdf"
+  },
+  {
+    "_id": "56f280bfe31c3a0c0023bd0e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/093861ce8f431fada930d6091e777d0ebe8e2fcd.pdf",
+    "source": "http://www.eprocure.gov.bd/resources/common/ViewAwardedContracts.jsp?pkgLotId=78262&tenderid=47545&userId=38794"
+  },
+  {
+    "_id": "56f279c9e31c3a0c0023bca4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5bcb768a2b295b50e5648414d4acc99172430758.pdf"
+  },
+  {
+    "_id": "56f27b71e31c3a0c0023bcb4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7239862a7de630d015d71d91c83f21137dd312b1.pdf",
+    "source": "http://www.swfinstitute.org/sovereign-wealth-fund-rankings/"
+  },
+  {
+    "_id": "56f26f64e31c3a0c0023bbfe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8a4425d92fee2b95d57b32429958379c5b7f582.pdf"
+  },
+  {
+    "_id": "56f26eb5e31c3a0c0023bbd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c31f8fe69d02a713bdd9042bd4de21c82a3138f.pdf"
   }
 ]
