@@ -5354,5 +5354,79 @@
     "_id": "570103f2e9b2730c0066bba4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/40b993e4a2e3ee0d0655ad1677d95503de384071.docx",
     "source": "http://www.tresor.mr/fr/plus.php?tb=lKesq5qj"
+  },
+  {
+    "_id": "57011d9ce9b2730c0066bc72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb258a735b1f481145809368e380fa5df32d157b.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/mauritanie/Mauritanie-Code-2010-hydrocarbures-bruts.pdf"
+  },
+  {
+    "_id": "570115a9e9b2730c0066bc3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c0c00895dba929ef305ccbe487ea2dc1b418432.pdf",
+    "source": "http://www.rimgerddes.org/wp-content/uploads/2014/01/JO1106.pdf"
+  },
+  {
+    "_id": "57011744e9b2730c0066bc4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d41d20928a6794641ebce985557414065001b43e.pdf",
+    "source": "http://itie-mr.org/images/Decret%202014-001%20SMHPM.pdf"
+  },
+  {
+    "_id": "57011467e9b2730c0066bc3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a861d07e454b11149f60cb3a7ec6bcf23f8046e.pdf",
+    "source": "https://pmg.org.za/policy-document/274/"
+  },
+  {
+    "_id": "570119b3e9b2730c0066bc64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe34278601cf89350c779150c8a124c25f5cd513.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/fiche_descriptive_des_titres_miniers_d_exploitation.pdf"
+  },
+  {
+    "_id": "570139c4e9b2730c0066bca7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb2f4f734dd8275c56b0ba8a6c318ce4e922388d.pdf",
+    "source": "http://www.petroleum.nic.in/ordact.pdf"
+  },
+  {
+    "_id": "57015b30e9b2730c0066bd2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/baa771e9b4c2105085e95d2e666c0b5146cac857.pdf",
+    "source": "http://www.gailonline.com/final_site/pdf/shareholding_pattern_as_on_30.09.2015.pdf"
+  },
+  {
+    "_id": "57013af2e9b2730c0066bcb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbb26f1d7da9bc4b912a833a144118673591fd79.pdf",
+    "source": "http://www.petroleum.nic.in/pngrules.pdf"
+  },
+  {
+    "_id": "570159d0e9b2730c0066bd22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af711eff61509b83aaddbe75abc2aff8b88f35ee.pdf",
+    "source": "http://www.ongcindia.com/wps/wcm/connect/4783314d-441b-4f7b-a19b-3a4113d86642/sdqdec15.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "57011fcce9b2730c0066bc81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f2b7bbe1e6473516f1cb8fb7a9c90e6746910ca.doc"
+  },
+  {
+    "_id": "57015ca1e9b2730c0066bd37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ceb4fd3c5ccbeeab934f08fe4c88362110b7b42.pdf",
+    "source": "http://www.oil-india.com/Document/Financial/S_H_P_31_12_2015_N_S_E.pdf"
+  },
+  {
+    "_id": "57015e8be9b2730c0066bd43",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d222148f62413eff7435aeb7bcb11a2d551d3954.pdf",
+    "source": "https://www.iocl.com/download/SHP_Dec_15.pdf"
+  },
+  {
+    "_id": "570164fae9b2730c0066bd50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f3b4bbbf5964bc8dadba27d8b8174fb2ce6fd18.pdf",
+    "source": "http://www.helplinelaw.com/docs/the-oil-and-natural-gas-commission-act-1959/chapter-iv-miscellaneous"
+  },
+  {
+    "_id": "5701679be9b2730c0066bd5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec8e3ba4a511bd44830c45391d07d6c9de04a30e.pdf",
+    "source": "http://www.oecd.org/eco/surveys/South-Africa-OECD-economic-survey-overview.pdf"
+  },
+  {
+    "_id": "5701a0dee9b2730c0066bde1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/290aadbc0f459a0b6b2463c03a711e16fcf78da7.pdf",
+    "source": "http://www.petronas.com.my/investor-relations/Documents/financial-operational-review/Financial%20Operational%20Report%20Year%20Ended%2031%20December%202015%20(FY2015).pdf"
   }
 ]
