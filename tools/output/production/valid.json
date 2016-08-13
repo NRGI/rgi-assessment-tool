@@ -3489,5 +3489,30 @@
     "_id": "56efd312e31c3a0c0023ab0d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e2736cf3a4223bafb8dfdd6e5d92c1d87856e313.pdf",
     "source": "http://www.mf.uz/media/file/state-budget/1/ispolnenie_2015_godovoy.pdf"
+  },
+  {
+    "_id": "56efd41fe31c3a0c0023ab21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0df2bbf5914332a3b70c67545f16276d3afc6ca6.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2304140"
+  },
+  {
+    "_id": "56efd4fce31c3a0c0023ab41",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a8644d6e236ec68563f778542d4b43cb8e15c20.docx",
+    "source": "http://my.gov.uz/ru/getPublicService/332?item_id=540&action=view"
+  },
+  {
+    "_id": "56efdb8fe31c3a0c0023ab92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40663397428de950f4c0e21c83777c9bcfbe4eea.docx",
+    "source": "http://lex.uz/pages/getpage.aspx?lact_id=2516171#2517304"
+  },
+  {
+    "_id": "56efdd5fe31c3a0c0023abad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe16dfe139ed4fd62bcc28ab6cd5c2776bfb3e2b.jpg",
+    "source": "http://www.ung.uz/ru/business/indicators"
+  },
+  {
+    "_id": "56efde79e31c3a0c0023abc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad2897e0ae16fa996e1139f280bd849e53e1e764.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/1998/17/section/4"
   }
 ]
