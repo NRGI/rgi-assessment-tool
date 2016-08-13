@@ -5329,5 +5329,30 @@
   {
     "_id": "5700f420e9b2730c0066bb21",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/df9b347a36f8b33def4222ee3399e1bbd0ee8707.pdf"
+  },
+  {
+    "_id": "5700f936e9b2730c0066bb6f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53ae4b029eea5e0f0a6c7997fb7a20beeef63e55.pdf",
+    "source": "http://legimauritanie.net/appel_jo.php?num_jo=889&num_page=439.gif&date_du_jo=30/10/1996&x_3=-1&annee=1996&l_c=7&l_pk=148"
+  },
+  {
+    "_id": "5701026ce9b2730c0066bb99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e16bdf53fddf43fd8152aa478187182708bd4de.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/cameroun/Cameroun-Code-petrolier-1999.pdf"
+  },
+  {
+    "_id": "5700f491e9b2730c0066bb2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b43318b93651facd5b23eef67193dee50d7a643.pdf",
+    "source": "http://siteresources.worldbank.org/EXTOGMC/Resources/336929-1266445624608/India_Conference_Finaldraft_Feb10.pdf"
+  },
+  {
+    "_id": "57010e14e9b2730c0066bbe6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a27f95b47ae76f5c6cfb1f81544cdef3c409242.pdf",
+    "source": "http://www.finances.gov.mr/ged.php?p=documents%2FMINISTERE_DES_FINANCES&orderby=nom&order=asc"
+  },
+  {
+    "_id": "570103f2e9b2730c0066bba4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40b993e4a2e3ee0d0655ad1677d95503de384071.docx",
+    "source": "http://www.tresor.mr/fr/plus.php?tb=lKesq5qj"
   }
 ]
