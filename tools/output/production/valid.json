@@ -4052,5 +4052,76 @@
   {
     "_id": "56f34cc9e31c3a0c0023c1cb",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/71577f498159df16ebafcfe5d542e2d042095e15.pdf"
+  },
+  {
+    "_id": "56f3539ae31c3a0c0023c1eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed914c864c773a96cb470d60a6c34db625f9f25c.pdf",
+    "source": "http://www.nevsun.com/pdf/Nevsun-2014-CSR-Report.pdf"
+  },
+  {
+    "_id": "56f35a3ce31c3a0c0023c202",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b8de0e2ea4725d1cb0263de11f9ab38820785eb.doc",
+    "source": "http://www.moem.gov.er"
+  },
+  {
+    "_id": "56f374e6e31c3a0c0023c25b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db0b0159fb3bdb967d15b5065c1c98053f0a8671.pdf"
+  },
+  {
+    "_id": "56f37d94e31c3a0c0023c28b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/155eaeabafbbaf18eac3eeee233ae131e6e9ac6d.pdf",
+    "source": "http://www.journaldutchad.com/article.php?aid=934"
+  },
+  {
+    "_id": "56f37ffae31c3a0c0023c299",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b0525f14c8de66770d3e3e5ea6695dd553cfaa6.pdf"
+  },
+  {
+    "_id": "56f386cfe31c3a0c0023c2ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d736c5b3d8c737e7f423a859e2e7519b1860833.pdf"
+  },
+  {
+    "_id": "56f38db1e31c3a0c0023c2c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77b3cef8886ab1cfed498d9d96b2b630ba41b929.pdf",
+    "source": "http://asignaciones.energia.gob.mx/motorBusqueda.Aspx"
+  },
+  {
+    "_id": "56f38ec0e31c3a0c0023c2cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34cdaeddeaab6b9b30c8c4160365ddd6eaed82f0.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/boveda-digital.html"
+  },
+  {
+    "_id": "56f3c2ade31c3a0c0023c322",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96b79332c2aa0136a8215b7c0abe084aee1f0ba8.docx",
+    "source": "http://www.geology.kg/geol/index.php?option=com_content&view=article&id=166:on-subsoil&catid=79&Itemid=286&lang=en"
+  },
+  {
+    "_id": "56f3c43ee31c3a0c0023c336",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be4e618f4781c38ed39a12d773a16286dad6dc89.docx",
+    "source": "http://www.geology.kg/geol/index.php?option=com_content&view=article&id=142:polozhenie-o-poryadke-litsenzirovaniya-nedropolzovaniya&catid=70&Itemid=177&lang=ru"
+  },
+  {
+    "_id": "56f41b7ae31c3a0c0023c61f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c76bb09240625a24f4caaa483c4181b86799a03e.pdf"
+  },
+  {
+    "_id": "56f3dc0ee31c3a0c0023c43b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5b384e1fee1a369213225f26d8e9772c368ef48.doc",
+    "source": "http://www.kenesh.kg/lawprojects/DocumentDownload.ashx?type...id..."
+  },
+  {
+    "_id": "56f3defde31c3a0c0023c475",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/944386c3df507a491a3fc69b0d45848e235ea330.docx",
+    "source": "http://www.kumtor.kg/en/about/centerra-gold-inc/"
+  },
+  {
+    "_id": "56f3f110e31c3a0c0023c502",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4a3bb60f7335286c3c79a4c6b14d049e8d052e5.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/33763"
+  },
+  {
+    "_id": "56f41e82e31c3a0c0023c656",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/775ea66a2532f553276f4e50de8b3049710de4e0.pdf",
+    "source": "http://www.mom.gov.et/upload/mining.pdf"
   }
 ]
