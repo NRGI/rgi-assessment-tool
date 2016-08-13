@@ -3247,5 +3247,30 @@
     "_id": "56ef0dfae31c3a0c0023a580",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a64f8fcd3df661b4c74224b4e14b36b866383998.jpg",
     "source": "http://www.kia.gov.kw/en/ABOUTKIA/OrganizationStructure/Pages/OVERVIEWFUNDS.aspx"
+  },
+  {
+    "_id": "56ef0fc1e31c3a0c0023a5ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e35060e610f10a7c08535a6072b81dc7d16ea8e6.pdf",
+    "source": "http://www.energy.alberta.ca/Tenure/1087.asp"
+  },
+  {
+    "_id": "56ef0f95e31c3a0c0023a5ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f2717a8d5402b1bddb4512a53c5db296bac925b.pdf",
+    "source": "https://www.sec.gov/comments/df-title-xv/resource-extraction-issuers/resourceextractionissuers-60.pdf"
+  },
+  {
+    "_id": "56ef115ae31c3a0c0023a5da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7729d8d7fe1fe0f9a47321b07934249fc96fc7ec.pdf",
+    "source": "http://af.reuters.com/article/commoditiesNews/idAFL8N14628L20151217"
+  },
+  {
+    "_id": "56ef1072e31c3a0c0023a5d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02f797119ba2cf4d73797bf12e84235c3d57c66d.pdf",
+    "source": "http://www.taxes.gov.az/uploads/qanun/2016/mecelle_eng.pdf"
+  },
+  {
+    "_id": "56ef0ec5e31c3a0c0023a59c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa1a3d32b7516163296b8cd435fc90a27cd5b9ca.doc",
+    "source": "http://www.erc.az/files/neshrler/RM_Azerbaijan_ERC_2013_ENG.pdf"
   }
 ]
