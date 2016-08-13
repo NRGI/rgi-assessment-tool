@@ -5477,5 +5477,99 @@
     "_id": "57024637e9b2730c0066c19d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b4edfb5c9ad7b4881225c005fe0e8793ffe1edc5.pdf",
     "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Atribuisaun%20Lisensa%20-%202015"
+  },
+  {
+    "_id": "57026866e9b2730c0066c2a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d52566ce70e00c31f3f311077eeec7b6b5b6d57.pdf",
+    "source": "http://www.socar.az/socar/assets/documents/en/socar-financial-reports/Financial%20report%202014.pdf"
+  },
+  {
+    "_id": "57027379e9b2730c0066c377",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39d1f89afa3f438350123eb09e9e6e13e6c857ef.pdf"
+  },
+  {
+    "_id": "5702741be9b2730c0066c399",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7cd4208f5865f273ad909b8a4ece4dfe6647d4e6.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/work/models/Finanzas_Publicas/docs/paquete_economico/lif/lif_2016.pdf"
+  },
+  {
+    "_id": "57027612e9b2730c0066c3b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23420576cc5ad08dde5c9aae2e862e423d6e8a8c.pdf",
+    "source": "http://www.gob.mx/cms/uploads/attachment/file/55629/DISTRIBUCION_DE_RECURSOS_POR_ESTADO_Y_MUNICIPIO_SEDATU_ok.pdf"
+  },
+  {
+    "_id": "57027748e9b2730c0066c3c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/985c8baf2d7896e7971930951589da2214973dd1.pdf",
+    "source": "http://www.milenio.com/region/Fondo_Minero_Velardena-Comunidad_Las_Playas-Edith_Orozco_Machado_0_712128845.html"
+  },
+  {
+    "_id": "57027871e9b2730c0066c3db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efdac4ee275d3dfbeda5314e42087cf1b1308487.pdf"
+  },
+  {
+    "_id": "57027d4ae9b2730c0066c3f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/030016bad9467ccc97ece25fb3a9b836d60df9d7.docx"
+  },
+  {
+    "_id": "57027da3e9b2730c0066c40a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5124abedad27194f9e0c14e25c531956586b7a1.pdf"
+  },
+  {
+    "_id": "57027dd8e9b2730c0066c40c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccb3351ae61a5d78468f545de2646f158e3b321d.pdf",
+    "source": "http://www.milenio.com/negocios/Bansefi-administrara-recursos-Fondo-Minero_0_474552552.html"
+  },
+  {
+    "_id": "57027e11e9b2730c0066c41f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c96f9e48d1f44463d189614bf72c485f35c21150.pdf",
+    "source": "https://www.regjeringen.no/contentassets/712e1fc123f84e3ea21368770360596d/no/pdfa/stp200020010036000dddpdfa.pdf"
+  },
+  {
+    "_id": "57028087e9b2730c0066c449",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/390259f3a6f4bf19d5b2be2cb123afb5aaef76b6.pdf"
+  },
+  {
+    "_id": "570280d5e9b2730c0066c453",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/436b9192d663d8fde806579bbb2a559d6dcf472d.pdf"
+  },
+  {
+    "_id": "57028188e9b2730c0066c456",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a51389cc8c6e43e15583806347eca88efca0919b.pdf",
+    "source": "https://www.regjeringen.no/contentassets/899ac257df2648d788942b78c6d59787/no/pdfs/stm201320140027000dddpdfs.pdf"
+  },
+  {
+    "_id": "570282f0e9b2730c0066c47d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5da04ca651889dd78e21ed6003620fd66aff263a.pdf",
+    "source": "http://www.mundominero.mx/notacompleta.php?id=2644"
+  },
+  {
+    "_id": "57028331e9b2730c0066c47f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12f091877b63f6b936f11b251431e6cc78a60adf.pdf",
+    "source": "http://www.treasury.gov.za/legislation/bills/2014/Division%20of%20Revenue%20Bill%2005-2014.pdf"
+  },
+  {
+    "_id": "570285f6e9b2730c0066c49b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb1079237336ea5454d76c5d4c48c6613a917c93.pdf",
+    "source": "http://www.treasury.gov.za/documents/national%20budget/2015/review/Annexure%20W1.pdf"
+  },
+  {
+    "_id": "5702867ce9b2730c0066c49d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/443b064dda3fdc1ffdd98e014d8574ad479c24f0.pdf",
+    "source": "https://lovdata.no/dokument/NL/lov/1996-11-29-72#KAPITTEL_11"
+  },
+  {
+    "_id": "57028a2de9b2730c0066c502",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4148360041231abbcde4446f469d51c865e2843d.pdf",
+    "source": "http://egazette.nic.in/(S(h2qsv0gzda5a2bivbgmygzrm))/EnhancedSearch.aspx"
+  },
+  {
+    "_id": "57028abfe9b2730c0066c537",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/905c74da31a86fa722b6fc391955d6672ab3a2ed.pdf",
+    "source": "http://www.investidorpetrobras.com.br/en/annual-reports/form-20f"
+  },
+  {
+    "_id": "57028d0de9b2730c0066c579",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9168f4ec5b0e00c7df00cf41952f74d2cadeefba.pdf",
+    "source": "http://www.mca.gov.in/Ministry/pdf/CompaniesAct2013.pdf"
   }
 ]
