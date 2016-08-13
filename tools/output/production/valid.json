@@ -3907,5 +3907,150 @@
   {
     "_id": "56f26eb5e31c3a0c0023bbd1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8c31f8fe69d02a713bdd9042bd4de21c82a3138f.pdf"
+  },
+  {
+    "_id": "56f2af1ee31c3a0c0023bd93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf90979c68d6403040988a352a5f3eae9affa974.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=7307"
+  },
+  {
+    "_id": "56f2b170e31c3a0c0023bda2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3425115d209f69b6bc94e3e21e7af3ef66526d4.pdf",
+    "source": "http://mmie.gob.gq/en/?p=3902"
+  },
+  {
+    "_id": "56f2b36ce31c3a0c0023bdb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/238011b9ac59ffcc461d664aec3eb7a0136e6104.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=6600"
+  },
+  {
+    "_id": "56f2b56be31c3a0c0023bdc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ff1c5b11d1fe0c2b03f2882c77d524a7e253ab7.pdf",
+    "source": "http://www.mprs.gov.mg/wp-content/uploads/2014/10/code-minier-5.pdf"
+  },
+  {
+    "_id": "56f2b580e31c3a0c0023bdc9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23c7540922fe4b4e4a62287131c1a58d323c6c89.pdf",
+    "source": "http://eiti-madagascar.org/loi-sur-les-grands-investissements-miniers-lgim-2005/"
+  },
+  {
+    "_id": "56f2bc5ae31c3a0c0023bdff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13d19d07daedf6b7816d85cbeca41f9b7e96d54b.pdf"
+  },
+  {
+    "_id": "56f2bc83e31c3a0c0023be02",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e24ec81346395ac61990965a6a89368507cd62d2.pdf",
+    "source": "http://www.mom.gov.et/upload/Mineral%20Proclamation.pdf"
+  },
+  {
+    "_id": "56f2beb7e31c3a0c0023be1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ec1cf220013c0514a3210968a2202e4299ad47c.pdf",
+    "source": "http://www.sernageomin.cl/pdf/mineria/estadisticas/anuario/anuario2014.pdf"
+  },
+  {
+    "_id": "56f2bf6ae31c3a0c0023be2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/468c89c01fd95bbb63a4db2459cddec9cf758afe.pdf",
+    "source": "http://www.gob.cl/cuenta-publica/2015/sectorial/2015_sectorial_ministerio-mineria.pdf"
+  },
+  {
+    "_id": "56f2c010e31c3a0c0023be37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9812d31d4cd7b565580c49490f102f981c48c59a.pdf",
+    "source": "http://eiti-madagascar.org/downloads/Rapport-final-dereconciliation-ITIE-Madagascar-Exercice-2013-(sans-annexes).pdf"
+  },
+  {
+    "_id": "56f2c60fe31c3a0c0023be63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44eb79af6204f7db42dfebfc0097d2c21d717d6d.pdf",
+    "source": "http://www.mom.gov.et/upload/Mineral%20Licensing%20and%20Administration%20Directorate.pdf"
+  },
+  {
+    "_id": "56f2c762e31c3a0c0023be6e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b41b66a670799dd24cfc72a1e50f2b2e4430be86.pdf",
+    "source": "http://www.momines.gov.et/documents/715418/0/EEITI+Report++2013-2014+Final+edditions/40eab0d2-ac7d-48af-b931-e0353d36466b?version=1.0"
+  },
+  {
+    "_id": "56f2d168e31c3a0c0023bec9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/347b370289355247260badcbf7070c561133215c.pdf"
+  },
+  {
+    "_id": "56f2d99fe31c3a0c0023bf00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/787a352a2af72da0c5f405d49acbb787a3a9853d.doc",
+    "source": "http://www.mofed.gov.et/English/Pages/Home.aspx"
+  },
+  {
+    "_id": "56f2de2fe31c3a0c0023bf32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2d6b976d931b0aa43b332bcd2c41c7103a23e83.pdf",
+    "source": "http://www.ogfj.com/articles/2015/06/equatorial-guinea-s-energy-ministry-and-gepetrol-make-key-changes.html"
+  },
+  {
+    "_id": "56f2e0e0e31c3a0c0023bf52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ced393716a5451c96c06a21f9756595d7524f68a.pdf",
+    "source": "http://www.africaneconomicoutlook.org/fileadmin/uploads/aeo/2015/CN_data/Cn_Long_FR/Guinee_equatoriale_2015.pdf"
+  },
+  {
+    "_id": "56f2e2e5e31c3a0c0023bf86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1def3500d88e8ca50d6eac73cf116f6e5e6a18ff.doc",
+    "source": "http://kj.sdibt.edu.cn/edit/uploadfile/file/zys/zystlssxz.pdf"
+  },
+  {
+    "_id": "56f2e5e1e31c3a0c0023bfa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6160690a393a6ac39a61d2216764e2e9b9fecb1.pdf",
+    "source": "http://www.sernageomin.cl/catastrominero.php"
+  },
+  {
+    "_id": "56f2e641e31c3a0c0023bfbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fba794e9178cbde4ba3a4f8b27e75616c476ae1b.pdf",
+    "source": "http://kj.sdibt.edu.cn/edit/uploadfile/file/zys/zystlssxz.pdf"
+  },
+  {
+    "_id": "56f2e684e31c3a0c0023bfcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84c9b221bd06723238b0cae826844c0c4abe1512.pdf"
+  },
+  {
+    "_id": "56f2f75be31c3a0c0023c108",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88fa13044829574867ed1089b3938bbaf1ccddf6.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=6577&idParte=&idVersion=1976-04-01"
+  },
+  {
+    "_id": "56f2ed7fe31c3a0c0023c062",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a57efb767906199fa90875cc861fea17952c946c.pdf",
+    "source": "http://www.dipres.gob.cl/596/w3-propertyvalue-20854.html"
+  },
+  {
+    "_id": "56f2f231e31c3a0c0023c0ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab13495eac6c4fc6293734815b9eb64d2d73d2d2.pdf",
+    "source": "https://www.fitchratings.com/site/fitch-home/pressrelease?id=990565"
+  },
+  {
+    "_id": "56f2ee3ae31c3a0c0023c06c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de2edd47d2606bfa081f0a87a910208db6d2fb1a.pdf",
+    "source": "http://www.canaccordgenuitygroup.com/EN/Documents/CCRF%20Fund%20Announcement_Final_Feb%209%2012.pdf"
+  },
+  {
+    "_id": "56f2f49be31c3a0c0023c0d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccb3115e27398dce77e9fb5066afba23767514e0.pdf"
+  },
+  {
+    "_id": "56f2faece31c3a0c0023c12c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/776b6bfe7aac6ae599ea510339d391b5dfad56d1.pdf",
+    "source": "http://www.guineaecuatorialpress.com/"
+  },
+  {
+    "_id": "56f300f5e31c3a0c0023c16e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ad6d68e35b562c8a0c8c36fb0dd825feaf567fe.pdf",
+    "source": "https://www.codelco.com/prontus_codelco/site/artic/20150327/asocfile/20150327131944/resultados2014_codelco4.pdf"
+  },
+  {
+    "_id": "56f31370e31c3a0c0023c18e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b184f06763b5a2406c2422ccec90bebeed0e831.pdf",
+    "source": "http://www.svs.cl/institucional/inc/inf_financiera/ifrs/safec_ifrs_verarchivo.php?auth=&send=&rut=61704000&mm=12&aa=2014&archivo=pdf_61704000_201412_c_20150421180928.pdf&desc_archivo=Estados%20financieros%20(PDF)&tipo_archivo=PDF"
+  },
+  {
+    "_id": "56f31495e31c3a0c0023c199",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/becca3055e31c6075b4ec9d43b48d8f2b8e2fa3d.pdf",
+    "source": "http://www.leychile.cl/Navegar?idLey=20790"
+  },
+  {
+    "_id": "56f34cc9e31c3a0c0023c1cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71577f498159df16ebafcfe5d542e2d042095e15.pdf"
   }
 ]
