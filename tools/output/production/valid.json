@@ -5428,5 +5428,54 @@
     "_id": "5701a0dee9b2730c0066bde1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/290aadbc0f459a0b6b2463c03a711e16fcf78da7.pdf",
     "source": "http://www.petronas.com.my/investor-relations/Documents/financial-operational-review/Financial%20Operational%20Report%20Year%20Ended%2031%20December%202015%20(FY2015).pdf"
+  },
+  {
+    "_id": "5701aa9de9b2730c0066bdfd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef4cce81407af0c2e28cacfde3ed8d328ae0b874.pdf",
+    "source": "http://www.geni.org/globalenergy/library/national_energy_grid/malaysia/MalaysiaCountryAnalysisBrief.shtml"
+  },
+  {
+    "_id": "5701ae32e9b2730c0066be0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bdc8cb3c4b38315958a99bdd6db6350d62fdbbc7.pdf",
+    "source": "https://www.audit.gov.my/images/pdf/LKAN2014/Siri3/NEGERI/KEWANGAN/pahang%20-%20laporan%20ketua%20audit%20negara%20penyata%20kewangan%202014.pdf"
+  },
+  {
+    "_id": "570208aee9b2730c0066be25",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4eae49e3f0f26466ac1e6328da6cc10b2a30664f.pdf"
+  },
+  {
+    "_id": "57021bc0e9b2730c0066be54",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/669f4ef4f65baf96d64db7e11abe4bbca7fd4eb5.pdf",
+    "source": "https://www.eia.gov/beta/international/analysis_includes/countries_long/Malaysia/malaysia.pdf"
+  },
+  {
+    "_id": "57021cb2e9b2730c0066be60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40064043d7ff798d08acb1c5f2435edd2524319f.pdf",
+    "source": "http://www.treasury.gov.my/pdf/ucapan/2014/siaranmedia_khas.pdf"
+  },
+  {
+    "_id": "57022795e9b2730c0066bec2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/745cd3557faafd65313a917c1193f0babc30d8fe.pdf",
+    "source": "http://ideas.org.my/wp-content/uploads/2015/05/KWAN.pdf"
+  },
+  {
+    "_id": "5702280ee9b2730c0066becc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0381bf183014d78dfa3b120d0725954e041637bc.pdf",
+    "source": "http://www.thestar.com.my/business/business-news/2013/07/03/world-bank-petronas-investments-ensure-sustainable-oil-wealth/"
+  },
+  {
+    "_id": "57022b7fe9b2730c0066bef6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ddcdc14b013ccba5fa11ba8d1cdd9d2553b6009.pdf",
+    "source": "http://www.themalaymailonline.com/malaysia/article/like-norway-create-malaysian-millionaires-with-special-oil-fund-mp-suggests"
+  },
+  {
+    "_id": "57023c80e9b2730c0066c170",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7189b822a8a6628cb1ab45011c5586e22db760b0.pdf",
+    "source": "http://www.petronas.com.my/investor-relations/Documents/financial-results/Financial%20Report%20Financial%20Year%20Ended%2031%20December%202015%20(FY2015).pdf"
+  },
+  {
+    "_id": "57024637e9b2730c0066c19d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4edfb5c9ad7b4881225c005fe0e8793ffe1edc5.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Atribuisaun%20Lisensa%20-%202015"
   }
 ]
