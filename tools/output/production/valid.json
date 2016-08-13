@@ -5664,5 +5664,29 @@
   {
     "_id": "5702bfabe9b2730c0066c871",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2092b1e4ddf9f8287404162e8c5f2d8d88bedf36.pdf"
+  },
+  {
+    "_id": "5702c062e9b2730c0066c888",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f80f3f5be5fabd5d16789a654d201b7214f319b9.pdf",
+    "source": "http://www.oilfund.az/uploads/status.pdf"
+  },
+  {
+    "_id": "5702c3f9e9b2730c0066c8b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ef1359a3e671541ee4ae795bfc2ecc4a1204ddc.pdf",
+    "source": "http://www.udape.gob.bo/portales_html/dossierweb2015/htms/doss0302.htm"
+  },
+  {
+    "_id": "5702c009e9b2730c0066c874",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/478f6f3f64b2075b9da0761dde3534b009a12394.pdf"
+  },
+  {
+    "_id": "5702c1ace9b2730c0066c893",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9821ca1c714772cf466f2bfbc91bc5d5494f42f5.pdf",
+    "source": "http://www.oilfund.az/uploads/4-eng-programofrevenues.pdf"
+  },
+  {
+    "_id": "5702c432e9b2730c0066c8b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a8b7c6d60a35c42edd05e9526d9d85ec7755114.pdf",
+    "source": "http://www.azpromo.az/uploads/legislation/Tax_Code-eng_51b1e2d2d6ea4.pdf"
   }
 ]
