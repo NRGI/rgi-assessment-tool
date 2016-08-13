@@ -3514,5 +3514,28 @@
     "_id": "56efde79e31c3a0c0023abc3",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ad2897e0ae16fa996e1139f280bd849e53e1e764.pdf",
     "source": "http://www.legislation.gov.uk/ukpga/1998/17/section/4"
+  },
+  {
+    "_id": "56efe18de31c3a0c0023abf4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c25312148834a7599f69d4f82b4654e1e3f90f6.docx",
+    "source": "http://www.gazeta.uz/2012/11/14/population/"
+  },
+  {
+    "_id": "56efe3bce31c3a0c0023ac38",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/810c076aadc547882ef8c3f4be9836da015258ea.xlsx"
+  },
+  {
+    "_id": "56efe3d4e31c3a0c0023ac3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5bbf714e4614dc7410db8e817ea092ff45fde0c.docx",
+    "source": "http://lex.uz/pages/GetAct.aspx?lact_id=1004514"
+  },
+  {
+    "_id": "56efea7ce31c3a0c0023acb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a949bcf307c9fb883c1ddb13c31e4c502becc20.pdf",
+    "source": "http://www.foia.gov/about.html"
+  },
+  {
+    "_id": "56efe7e4e31c3a0c0023ac82",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e43d6d7a175ef5769ebc2c74b3bf5ec20d48f703.pdf"
   }
 ]
