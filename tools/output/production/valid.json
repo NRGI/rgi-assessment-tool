@@ -3346,5 +3346,28 @@
     "_id": "56ef1a9de31c3a0c0023a6da",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8b8944a9f6a3c1a6b1950d489f44b857cfdac720.docx",
     "source": "http://www.almeezan.qa/LawPage.aspx?id=2716&language=en"
+  },
+  {
+    "_id": "56ef1b6ee31c3a0c0023a6f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12fcbb06c70e050febb914ad19ab24577a505d1b.pdf"
+  },
+  {
+    "_id": "56ef1b7be31c3a0c0023a6f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd8c5e893eaaacb40208bf74015691e3c705503d.docx",
+    "source": "http://www.almeezan.qa/LawPage.aspx?id=2600&language=en"
+  },
+  {
+    "_id": "56ef1d3ee31c3a0c0023a750",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9ca50b1c4265d852295bcd6ab8e88566e8cbaafc.pdf",
+    "source": "http://www.euromoney.com/Article/3112458/Angola-fund-launch-leaves-questions-unanswered.html"
+  },
+  {
+    "_id": "56ef1dc9e31c3a0c0023a75c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9be52171119ff439e86a8d4056ee49c0a352188.pdf"
+  },
+  {
+    "_id": "56ef1e28e31c3a0c0023a76a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/584dcad81341bbdb6e81478d1b937f2bad9951cc.pdf",
+    "source": "http://www.nigeria-law.org/Nigerian%20National%20Petroleum%20Corporation%20Act.htm"
   }
 ]
