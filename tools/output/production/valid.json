@@ -3464,5 +3464,30 @@
     "_id": "56efa579e31c3a0c0023aa12",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/77a4cdccaf4d734bc628984320bd0182d5295326.docx",
     "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=14667"
+  },
+  {
+    "_id": "56efa74fe31c3a0c0023aa1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bee34bae6a16e4914d14c87ca80193b84d47f664.docx",
+    "source": "http://www.lex.uz/pages/getact.aspx?lact_id=111181"
+  },
+  {
+    "_id": "56efae57e31c3a0c0023aa29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3feab6da729f210a641877de1fed2271336b06c5.docx",
+    "source": "http://www.ung.uz/ru/stockholders/filings/indicators/result_2015"
+  },
+  {
+    "_id": "56efca01e31c3a0c0023aa93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be919e469a8e615d2b236730d67de72c073ecbf2.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2304140"
+  },
+  {
+    "_id": "56efcba7e31c3a0c0023aaa6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00962034621e46741962206acad10ded2decb4f7.docx",
+    "source": "http://lex.uz/pages/getpage.aspx?lact_id=2516171#2517304"
+  },
+  {
+    "_id": "56efd312e31c3a0c0023ab0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2736cf3a4223bafb8dfdd6e5d92c1d87856e313.pdf",
+    "source": "http://www.mf.uz/media/file/state-budget/1/ispolnenie_2015_godovoy.pdf"
   }
 ]
