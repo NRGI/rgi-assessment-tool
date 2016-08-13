@@ -4732,5 +4732,53 @@
     "_id": "56fc43d6808c650d005d73e2",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/be77e4e2e0d5c9d91fc2502be3a7f3163b7d0bff.pdf",
     "source": "http://www.eiti.upme.gov.co/EITI/sites/default/files/Executive%20Summary%20EITI%20Colombia%20Report.pdf"
+  },
+  {
+    "_id": "56fc471a808c650d005d742b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/464aeee715eb21c67b1c9a7c3e75ba869b1811f7.pdf",
+    "source": "http://www.constitucioncolombia.com/titulo-12/capitulo-4/articulo-360"
+  },
+  {
+    "_id": "56fc44f3808c650d005d7405",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/473baa737621323d413791c8c52da20b14f60648.pdf"
+  },
+  {
+    "_id": "56fc53e9808c650d005d74a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfcbaa8c0633471503200dfabaa3dac437d652b2.pdf",
+    "source": "https://sicodis.dnp.gov.co/Reportes/DistribucionEntidadConceptos.aspx"
+  },
+  {
+    "_id": "56fc47c0808c650d005d743c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b13d2204a48b90acb98e104c2d8146c21424240c.pdf",
+    "source": "http://www.constitucioncolombia.com/titulo-12/capitulo-4/articulo-361"
+  },
+  {
+    "_id": "56fc5572808c650d005d74bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1db4b6716447d4092097eb022dc86ebbaf0512f3.xlsx",
+    "source": "https://sicodis.dnp.gov.co/Reportes/DistribucionEntidadConceptos.aspx"
+  },
+  {
+    "_id": "56fc57c1808c650d005d74e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f90ded66ae275531a40fae6ae4cc2cd8ae866ad0.pdf",
+    "source": "http://www.minhacienda.gov.co/portal/page/portal/2B6D5C037662208BE050090A1F00585E"
+  },
+  {
+    "_id": "56fc6210808c650d005d7537",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d428eccda5ba65c0ae541e5883f37016fd0a54c.pdf"
+  },
+  {
+    "_id": "56fc892a808c650d005d75e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5dd788ec4b93cf65f67527bbe2df251243962b6.pdf",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/nuestra-empresa/sala-de-prensa/boletines-de-prensa/Boletines-2014/contenido/ecopetrol-anuncia-plan-de-inversiones-de-2015-para-mantener-produccion-con-mayor-eficiencia-en-costos/!ut/p/z1/3ZNLb8IwDMc_yw4co6RPyrHj0A3Gew_IBaXB3TK1SWkD2vbp57Jp4jBASOyy3P6O_XNsx5TTOeVabNWzsMpokaNe8HDZGTlJcjNjfRYMIxbHiRtMHyZeHPn0aefADpyYUY7X0diJk1vm9JNphEZ3Fk96_e51dxzQR8opl9qW9oUuQJoSbGXyJdQt9qNaTG-gtpUgUJQV1KLFapELsgKCUjc6NTlYpaH-3egyx28xabQFbffIROiNlkqQMhe6CVV6C1WNtX-RMC4gpcDMhWhioUK4WW2kRBeCPLS_m4pApqSCHQkae21N3RRWSrWii1AyP0uzkIADPvGhI0garlLSFk4n9VxwUz_8buSRTvFTg-A7lyOjWGCK9mFGm87OfPNx4Mi9NNC7MND3Lw0MLw0Mzgb2Tv0U3Gn1ul7zGBev2Yg3S-f_a_OwQrcadAfP2DhhX5Cdmb0a_zR3WTwUkfdO9Md9VhTL4ZCINGJeUG4_7uApvvoEjZ8XIA!!/dz/d5/L2dBISEvZ0FBIS9nQSEh/"
+  },
+  {
+    "_id": "56fc897c808c650d005d75ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4a75a41a74ae6c5e8c73a670eed176ce27ef6a4.pdf",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/nuestra-empresa/sala-de-prensa/noticias/Noticias-2015/Noticias-2015/ecopetrol-obtiene-recursos-para-el-plan-de-inversiones-2015-atraves-de-credito-internacional-por-uss1925millones/!ut/p/z0/vZDBTsMwDIafhUOPUdJKm7ZjhVARdExoIEYuk8nMCGROFnsVj086JNiJI7d8iv3Zv7XVa20JBr8D8ZEgFH620818WXfd9crczh6XV6Zt--ndQ983963RK2R9o-3fRcXi3w8H22rrIgl-il6jiwklx7BBrswPVYaOyJJB4T5lZKgMQwC1RVWQRqYo3nng35dqTD2pzMlNcmZT8UU8EqqM7pg5skowqoNKAWiUehowcwmL3xYFZfZQoPy5jFsvsdQIZgJ3OolKMasjcz1vJnsfwtg5Bmzy4nKx0zaBvJWO13gW8b_WSB_d04zbiy-f76P4/"
+  },
+  {
+    "_id": "56fc8c8d808c650d005d760e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50197179a6e1c6518a8dd757b1ebd81ae5d578f0.pdf",
+    "source": "https://www.sgr.gov.co/LinkClick.aspx?fileticket=k4J3F-CTsfI%3d&tabid=358"
   }
 ]
