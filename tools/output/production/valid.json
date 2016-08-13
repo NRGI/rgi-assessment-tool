@@ -5688,5 +5688,28 @@
     "_id": "5702c432e9b2730c0066c8b9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6a8b7c6d60a35c42edd05e9526d9d85ec7755114.pdf",
     "source": "http://www.azpromo.az/uploads/legislation/Tax_Code-eng_51b1e2d2d6ea4.pdf"
+  },
+  {
+    "_id": "5702c493e9b2730c0066c8c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94de48c6c80cd83c0c2350e3c449d75a28304670.pdf",
+    "source": "http://www.ypfb.gob.bo/es/12-informacion-financiera/41-estados-financieros.html"
+  },
+  {
+    "_id": "5702c514e9b2730c0066c8dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ccc4fb5c265a599c4762b50d7d14ce303538f21.pdf"
+  },
+  {
+    "_id": "5702c94de9b2730c0066c958",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9830aeb65d7d33d82b61d63e5ba679ee8afdf564.pdf",
+    "source": "http://www.oilfund.az/uploads/presentation2015eng.pdf"
+  },
+  {
+    "_id": "5702cfade9b2730c0066c9a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e762c9ceaaae75bd56d5e57bb861ccc474d82aea.pdf",
+    "source": "https://www.bcb.gob.bo/webdocs/11_comunicados/35-110909COMcreditoYPFB_1.pdf"
+  },
+  {
+    "_id": "5702d0dbe9b2730c0066c9b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f85e3d2937bd286e4d2f2f4323b03bdb9dd65c4.pdf"
   }
 ]
