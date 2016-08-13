@@ -15,5 +15,18 @@
   {
     "_id": "56f6aecbe31c3a0c0023d205",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/4b7eff5ec95eb601ddc67a9a56163f97f3ed3ee3.pdf"
+  },
+  {
+    "_id": "56fc2865808c650d005d72c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2d916475a9b82d5a41e1dac23a8db3c7ed3c55c.pdf"
+  },
+  {
+    "_id": "56fc298b808c650d005d72c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d53725e78392aad42417fa236cf8f009d83e4308.pdf"
+  },
+  {
+    "_id": "56fc29d2808c650d005d72c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc118d8c47f28943c66b8456edee9046a07bcf9.pdf",
+    "source": "http://www.eiti.upme.gov.co/eiti/sites/default/files/INFORME_EITI_2013.pdf"
   }
 ]

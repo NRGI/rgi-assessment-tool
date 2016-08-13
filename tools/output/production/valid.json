@@ -4678,5 +4678,15 @@
     "_id": "56fc1c41808c650d005d7261",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/35f7403d954ca09aa548447bd6c4364edbc4316c.pdf",
     "source": "http://www.gobiernobogota.gov.co/Documentacion/Ley%201712/normatividad/Ley%201712%20de%202014.pdf"
+  },
+  {
+    "_id": "56fc2682808c650d005d72ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0955513218a6f240c1da600b38d8061490ac820d.pdf",
+    "source": "http://www.cmc.gov.co:8080/CmcFrontEnd/consulta/index.cmc"
+  },
+  {
+    "_id": "56fc2f2c808c650d005d72d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a069fa069d4297fba98934da08287e42269d5b9.pdf",
+    "source": "http://www.eiti.upme.gov.co/EITI/reporte-eiti/marco-institucional"
   }
 ]
