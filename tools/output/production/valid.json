@@ -3182,5 +3182,29 @@
     "_id": "56eefa87e31c3a0c0023a43a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e939cd24c8997f232507a3f12499d722a79e91e1.pdf",
     "source": "http://www.kmg.kz/en/about/"
+  },
+  {
+    "_id": "56eefd36e31c3a0c0023a4a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed7f7fd6e92dc16d31ae3f00126025c59c02c71f.pdf",
+    "source": "http://www.qp.alberta.ca/documents/Acts/f25.pdf"
+  },
+  {
+    "_id": "56eefb33e31c3a0c0023a44e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1b9f5ed7d150f25df50550d2b4c514b299104b0.pdf",
+    "source": "http://www.ideationcenter.com/media/file/The_Vital_Role_of_Sovereign_Wealth_FundsL.pdf"
+  },
+  {
+    "_id": "56eefe7fe31c3a0c0023a4b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9cca06cecb804fc66d3e96d6e1f7b73ecf6bf0c.pdf"
+  },
+  {
+    "_id": "56eefaeae31c3a0c0023a43f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bad548d26ed7c82d956dcad95299f70a7f55fd7a.jpg",
+    "source": "https://books.google.com.kw/books?id=bManAgAAQBAJ&pg=PT67&lpg=PT67&dq=size+of+general+reserve+fund+kia&source=bl&ots=E_0Dh21Hqt&sig=1bX2GVwzk85PWombX51Jiv-XSLo&hl=en&sa=X&ved=0ahUKEwjNnOCU_c_LAhWFNhoKHXB1DucQ6AEISTAH#v=onepage&q&f=false"
+  },
+  {
+    "_id": "56eefc8ce31c3a0c0023a482",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e87a6abfe787059b9a3a90ffd8b603fcc5242864.docx",
+    "source": "http://gulfnews.com/business/sectors/investment/uae-swfs-major-players-globally-1.1534808"
   }
 ]
