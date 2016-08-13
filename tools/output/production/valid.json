@@ -4261,5 +4261,20 @@
     "_id": "56f54a50e31c3a0c0023cc37",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8903273c0d4598a3fc67b71dcb14010a0c49625c.pdf",
     "source": "http://www.gov.ph/downloads/2012/07jul/20120706-EO-0079-BSA.pdf"
+  },
+  {
+    "_id": "56f5504fe31c3a0c0023cc7e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c34fc73c80c756210ab74993bfe038327b527d48.pdf",
+    "source": "http://unavailable"
+  },
+  {
+    "_id": "56f54d01e31c3a0c0023cc6a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9704ef989c0bf9370f390ff4cf7b8bc750052e4.pdf",
+    "source": "http://pmdc.com.ph/history.htm"
+  },
+  {
+    "_id": "56f5540de31c3a0c0023ccb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f246eb54668acd168cdab8a62ea0d4956c26380f.pdf",
+    "source": "http://www.fmped.org.mx/informes/%7B674A65FE-3005-C11A-8AE8-8254FD8F2A0C%7D.pdf"
   }
 ]
