@@ -18,5 +18,10 @@
     "_id": "56ebd2a7e31c3a0c00237fbd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3e9eec139d8c2040d77b0e8ff89b9c94c2fe188c.pdf",
     "source": "http://www.azmec.co.zm"
+  },
+  {
+    "_id": "56f5490ce31c3a0c0023cc26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7be00ecf8fcc4b3293f0d82905abd154f2eee7b4.pdf",
+    "source": "http://www.mgb.gov.ph/attachments/article/50/Feb_2016_MPSA_2A.pdf"
   }
 ]
