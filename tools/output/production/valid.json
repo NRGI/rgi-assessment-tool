@@ -4276,5 +4276,20 @@
     "_id": "56f5540de31c3a0c0023ccb3",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f246eb54668acd168cdab8a62ea0d4956c26380f.pdf",
     "source": "http://www.fmped.org.mx/informes/%7B674A65FE-3005-C11A-8AE8-8254FD8F2A0C%7D.pdf"
+  },
+  {
+    "_id": "56f55c6fe31c3a0c0023cd14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/424d95877dabe35cf9324dec1f83ff00541ef292.pdf",
+    "source": "http://www.gppb.gov.ph/laws/laws/PD_1177.pdf"
+  },
+  {
+    "_id": "56f55827e31c3a0c0023cccc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2937e0c4dc5b53341b7099ff59038d5fbcea805.pdf",
+    "source": "http://blgf.gov.ph/wp-content/uploads/2015/11/Metadata1.pdf"
+  },
+  {
+    "_id": "56f559b9e31c3a0c0023cce5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/207fcc9634dabd27adecfafaa0aede46c11e1bc3.xlsx",
+    "source": "http://blgf.gov.ph/wp-content/uploads/2015/12/FY-2014-FISCAL-DATA.xls"
   }
 ]
