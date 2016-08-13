@@ -3537,5 +3537,28 @@
   {
     "_id": "56efe7e4e31c3a0c0023ac82",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e43d6d7a175ef5769ebc2c74b3bf5ec20d48f703.pdf"
+  },
+  {
+    "_id": "56f00ee2e31c3a0c0023add9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3467532afc53da787ee6fd1179dd704aaf5f9b21.pdf"
+  },
+  {
+    "_id": "56efee1ae31c3a0c0023acfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61e4a5b4c6586f35ab44606b310bddc0e287b0ff.pdf",
+    "source": "http://www.treasury.wa.gov.au/uploadedFiles/_Treasury/Investments/Future_Fund_Report_March_Quarter_2015.pdf"
+  },
+  {
+    "_id": "56f01317e31c3a0c0023adf9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee2781f456783986a18df0db252a474738ca3e07.pdf",
+    "source": "http://transparencia.minmineria.cl/Transparencia/secretoreserva/secretoreserva.html"
+  },
+  {
+    "_id": "56efed5ae31c3a0c0023acdf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fed73a661437406bd262e4cf5f981e1e2603a6a.pdf",
+    "source": "http://www.slp.wa.gov.au/pco/prod/FileStore.nsf/Documents/MRDocument:24356H/$FILE/Western%20Australian%20Future%20Fund%20Act%202012%20-%20[00-a0-04].html?OpenElement"
+  },
+  {
+    "_id": "56f00e97e31c3a0c0023add1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79199eeb478b96765f31162df8b8ba62930d07ee.pdf"
   }
 ]
