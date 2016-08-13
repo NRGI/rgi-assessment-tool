@@ -5281,5 +5281,53 @@
     "_id": "5700cfbee9b2730c0066b9d9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/74b7cc4a15a40c9d98fa1673b031fd61b9811368.pdf",
     "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB3Bte.pdf"
+  },
+  {
+    "_id": "5700d153e9b2730c0066b9f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7dfcca82ed38f4f3ad35814157a063349d433fc.pdf",
+    "source": "http://www.oidb.gov.in/index2.asp?slid=248&sublinkid=109"
+  },
+  {
+    "_id": "5700d5fae9b2730c0066ba2d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3955fed416db072324c17e3310d8daedeacbfba5.pdf",
+    "source": "http://finmin.nic.in/reports/AnnualReport2014-15.pdf"
+  },
+  {
+    "_id": "5700d64de9b2730c0066ba33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35007511f557fbd49066af17e29e20f45ca5c73c.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/parl/Lei2016PNpassedPt.pdf"
+  },
+  {
+    "_id": "5700d7bee9b2730c0066ba4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ded0ca8dedcd465aa64f1bd444152b0d851ba21.pdf",
+    "source": "http://www.petroleum.nic.in/docs/Annual_Report/AR14-15.pdf"
+  },
+  {
+    "_id": "5700d5c5e9b2730c0066ba2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f26b43fe03536ad6d9516b82c392e2a89c72c5e9.pdf"
+  },
+  {
+    "_id": "5700dce6e9b2730c0066ba89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36619cbc6333e9144ff971b06ee6aa14962ce8d6.pdf",
+    "source": "https://www.bancocentral.tl/Download/Publications/Quarterly-Report42_en.pdf"
+  },
+  {
+    "_id": "5700e24ee9b2730c0066bac8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/192560c5038d16a261f60a98d7ac9cea385b8795.pdf",
+    "source": "https://www.bancocentral.tl/Download/PFPerformance/Performance_78_Dec15_en.pdf"
+  },
+  {
+    "_id": "5700ebdfe9b2730c0066baf0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20ee8d46a276f03bd4b74a00a4a03830a7d201f9.pdf",
+    "source": "http://www.apfinance.gov.in/uploads/budget-2016-17-books/Volume-II.pdf"
+  },
+  {
+    "_id": "5700ed55e9b2730c0066baf2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d927f3a8221f61cce3b10a8813dcf3e518cd6a3d.pdf",
+    "source": "http://www.tresor.mr/fr/"
+  },
+  {
+    "_id": "5700f420e9b2730c0066bb21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df9b347a36f8b33def4222ee3399e1bbd0ee8707.pdf"
   }
 ]
