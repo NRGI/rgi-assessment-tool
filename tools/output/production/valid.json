@@ -5212,5 +5212,49 @@
     "_id": "570039dd808c650d005d8cc6",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1517099d80fb60cd0130a928505cf1612551f4ff.pdf",
     "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/2._Mining_Law_and_its_Regulation.pdf"
+  },
+  {
+    "_id": "57003c1b808c650d005d8cd3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be0352f86f57f313e418a3888cc799f16fb5473f.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/2._Mining_Law_and_its_Regulation.pdf"
+  },
+  {
+    "_id": "57003ef8808c650d005d8ce2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/380afb6384e66d96b166f168cb8107da60053b71.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/1._Ley_de_Mineria_y_su_Reglamento.pdf"
+  },
+  {
+    "_id": "57005253808c650d005d8d04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72277eee6b26327f75d04ce79d75a12e78d05e0b.pdf",
+    "source": "http://www.minfin.gob.gt/downloads/leyes_aporte_mineria/DOCTOS_b.pdf"
+  },
+  {
+    "_id": "570051e3808c650d005d8cf9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87806edf2a66c81142f469e3d277cf3070d6f036.pdf",
+    "source": "http://www.minfin.gob.gt/downloads/leyes_aporte_mineria/DOCTOS.pdf"
+  },
+  {
+    "_id": "5700784b808c650d005d8d7e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67f463a6e968fafb6ad3e6adc7ff401345cd62c3.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/PetrolActPassedJul05En.pdf"
+  },
+  {
+    "_id": "57007ccf808c650d005d8d91",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f567ac61fbbc1ae1c4ca772ff45ba23f831c31a.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Interim%20Petroleum%20Mining%20Code/$File/JPDA%20Interim%20PMC%202%20April%2003.pdf?openelement"
+  },
+  {
+    "_id": "570082d9808c650d005d8da4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a41a2e1e969b3ff587ce187151580440f85ab53.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Petroleum%20Mining%20Code/$File/PMCtoCoM0602.pdf?openelement"
+  },
+  {
+    "_id": "5700aedbe9b2730c0066b92f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a94fa5e175f831a91a217af2ea7daa17eb84bcf.doc"
+  },
+  {
+    "_id": "5700bff9e9b2730c0066b980",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86d1b280f87b3bdcd644a1e5db441b4895ffd2b1.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB3Bte.pdf"
   }
 ]
