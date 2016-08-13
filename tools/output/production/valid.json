@@ -5256,5 +5256,30 @@
     "_id": "5700bff9e9b2730c0066b980",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/86d1b280f87b3bdcd644a1e5db441b4895ffd2b1.pdf",
     "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB3Bte.pdf"
+  },
+  {
+    "_id": "5700cb3ae9b2730c0066b9af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5cfdb5a72952b9100712c1b89076240a10ac449.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/parl/Lei2016PNpassedPt.pdf"
+  },
+  {
+    "_id": "5700cca5e9b2730c0066b9bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/598cdbfb0c009e7ca83e8b340837723420de0c67.pdf",
+    "source": "http://www.oidb.gov.in/index1.asp?linkid=128"
+  },
+  {
+    "_id": "5700cd61e9b2730c0066b9c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89989c09c4a1b0f958cc875687e7669db485b096.pdf",
+    "source": "http://www.oidb.gov.in/index2.asp?slid=249&sublinkid=108"
+  },
+  {
+    "_id": "5700cdd7e9b2730c0066b9d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dacaf2473e68e2d4aafc7d962d3b17aef81a4ba.pdf",
+    "source": "http://www.oidb.gov.in/index2.asp?slid=245&sublinkid=107"
+  },
+  {
+    "_id": "5700cfbee9b2730c0066b9d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74b7cc4a15a40c9d98fa1673b031fd61b9811368.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB3Bte.pdf"
   }
 ]
