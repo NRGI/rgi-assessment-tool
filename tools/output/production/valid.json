@@ -4490,5 +4490,193 @@
   {
     "_id": "56f6db42e31c3a0c0023d384",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b7be9575e41752b0f54ae534b4f5f595058d2841.pdf"
+  },
+  {
+    "_id": "56f6dd51e31c3a0c0023d395",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4be3e57d1aa457cfa3130e2652baa9c914777e17.pdf"
+  },
+  {
+    "_id": "56f6dc80e31c3a0c0023d38b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65fa0079a0d0f6f0d6eb0c3bed6d0f846efb0b2a.pdf"
+  },
+  {
+    "_id": "56f767aae31c3a0c0023d420",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c9ab120aacddbc08cd0fd3fac9fcad8b8fd96a0.pdf"
+  },
+  {
+    "_id": "56f7671fe31c3a0c0023d41b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0e0682f73a06e484da4b99ddbb7ec5a81f13f7c.pdf"
+  },
+  {
+    "_id": "56f7cd0ae31c3a0c0023d496",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a17fe18f9dce7ecefaf8a2b84f85ccd102419abb.pdf",
+    "source": "https://www.chathamhouse.org/sites/files/chathamhouse/publications/research/2016-03-08-turkmenistan-bohr.pdf"
+  },
+  {
+    "_id": "56f86e01e31c3a0c0023d5da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44d62eae2334770e14e7e9fe23b70eda434144c3.pdf",
+    "source": "http://www.turkmenistan.gov.tm/?id=9964"
+  },
+  {
+    "_id": "56f80ba0e31c3a0c0023d540",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/754430dfc946407b47a4a36d7a584de6edeb196d.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/gha85046.pdf"
+  },
+  {
+    "_id": "56f86631e31c3a0c0023d598",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d32379025b360416a40e6c62ff362828cc2b3df.pdf",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/index"
+  },
+  {
+    "_id": "56f7d02be31c3a0c0023d4a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86fb4f784e7fe1707f384c5fdb0a970c0d2fdd64.pdf"
+  },
+  {
+    "_id": "56f875b2e31c3a0c0023d6c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b0e48fce1ccabb1a2a89774d5b11bd98161e2e9.pdf",
+    "source": "http://crudeaccountability.org/wp-content/uploads/2012/04/20111016-PrivatePocketPresidentBerdymukhamedov.pdfg=AFQjCNE7Ea-cyonLbysyqX_uoYsI2sSNDg&sig2=os_5l8t_EXt5RRujofT_5Q"
+  },
+  {
+    "_id": "56f8fb80e31c3a0c0023d6f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d07a027e30cc94e56fff92d00f010a9e4d2f3a8.pdf"
+  },
+  {
+    "_id": "56f937cee31c3a0c0023d747",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cd2adc455d5a61f437aa5918e40ee292e9e2d7d.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/gha85046.pdf"
+  },
+  {
+    "_id": "56f95095e31c3a0c0023d802",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14858d8f0161d7a47d66493cb75ee203a3dd0816.pdf",
+    "source": "http://www.politicsresources.net/docs/ghanaconst.pdf"
+  },
+  {
+    "_id": "56f9398ae31c3a0c0023d751",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7bffd1fafa5ada1aa9c306e4c276750acca00b1.pdf"
+  },
+  {
+    "_id": "56f91724e31c3a0c0023d71f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/805a4a922d3b31c9e0ed21241f41299fc8936d6b.pdf",
+    "source": "http://www.leiti.org.lr/contracts-and-concessions.html"
+  },
+  {
+    "_id": "56f967f0e31c3a0c0023d88d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61b14eb0aaa34754c480c9c7af85b805ad2e1c09.pdf",
+    "source": "http://www.politicsresources.net/docs/ghanaconst.pdf"
+  },
+  {
+    "_id": "56f97805e31c3a0c0023d900",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc70901d3c2183e15c6b638abed6416d1a7cc0be.pdf"
+  },
+  {
+    "_id": "56f96af8e31c3a0c0023d8c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/66bd2dd153f9a3645ae46fbc811a837cfee87c79.pdf",
+    "source": "http://www.politicsresources.net/docs/ghanaconst.pdf"
+  },
+  {
+    "_id": "56f98a8fe31c3a0c0023d957",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51dbd432bfdc8095643f60cdf6d5a164e2b1d8e8.pdf"
+  },
+  {
+    "_id": "56f9b28fe31c3a0c0023da20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b42cc91b3ca31be5e2547e48371a6d8ad3971f4f.pdf"
+  },
+  {
+    "_id": "56fa5a17e31c3a0c0023dacf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/096561c894a1cbcece16d740edbb8f2c194157e1.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/decret_titre_minier_modifie_francais.pdf"
+  },
+  {
+    "_id": "56fa5945e31c3a0c0023dac4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6276c4e324cea6953ca4bf139fb7377a2096965.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/loi_portant_c_mt_francais_2012.pdf"
+  },
+  {
+    "_id": "56fa58afe31c3a0c0023dab2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9eddbada448e0e5c0042418b52883d8ef30f9e7f.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/loi_miniere_2012.pdf"
+  },
+  {
+    "_id": "56fa5bb4e31c3a0c0023dae4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/593af85668b7c7c6b8b0fc1e98b543989fa1b0c8.pdf",
+    "source": "http://itie-mr.org/images/Dcret_2006.pdf"
+  },
+  {
+    "_id": "56fa0105e31c3a0c0023da5e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0ef3a43e8bd10140f271c30daf813b192f696af.pdf",
+    "source": "http://www.ly.undp.org/content/dam/libya/docs/UNDP%20Libya%20Rapid%20Diagnostic%20of%20Local%20Governance%20-%20Synthesis%20Report%20(Final%20Version).pdf"
+  },
+  {
+    "_id": "56fa5d0de31c3a0c0023dafb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d126697ae3dcf0df3b9539cef7275e5acdf83a5.pdf",
+    "source": "http://itie-mr.org/images/Decret2009.pdf"
+  },
+  {
+    "_id": "56fa5f40e31c3a0c0023db0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b2d8a84717a0ddd41a29e66e521251457305366.pdf",
+    "source": "http://itie-mr.org/images/code%20minier%202014.pdf"
+  },
+  {
+    "_id": "56fa691ce31c3a0c0023db47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ddcae6d4b967cf0342ded1f3991e5bcfb7da4a5.pdf",
+    "source": "http://cridem.org/C_Info.php?article=670567"
+  },
+  {
+    "_id": "56fabb49e31c3a0c0023ddb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be9ebf5f60935c8456460b389125b7fcac6366b8.pdf",
+    "source": "http://mpme-tchad.org/fr/index.php/fr/"
+  },
+  {
+    "_id": "56fabd38e31c3a0c0023ddbb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/083d468e83662385ede67ae9f42e9f5fea2aed63.pdf",
+    "source": "http://finances.gouv.td/index.php/fr/"
+  },
+  {
+    "_id": "56fbaa52e31c3a0c0023df98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2744b65d4bce8c8f424b6be4b13de119adb951fe.pdf"
+  },
+  {
+    "_id": "56fbe526e31c3a0c0023e207",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0762ac9c2416b840a44063682d89daaa527d24e6.pdf",
+    "source": "http://www.mef.gov.kh/must-see-documents.html"
+  },
+  {
+    "_id": "56fbf3ace31c3a0c0023e306",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c637ef698c45e5954edfc4da4b4a7eae4afea20.pdf",
+    "source": "http://www.mef.org.kh"
+  },
+  {
+    "_id": "56fbf4fde31c3a0c0023e31e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dcd8d5d2d5c5da252c251589da15a57c8979f82b.pdf",
+    "source": "http://www.ncdd.org.kh_en"
+  },
+  {
+    "_id": "56fc0296e31c3a0c0023e3fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9979a2b923e24bdff79d1893ee28802f29664c8.pdf",
+    "source": "http://www.petrole.gouv.ga/411-page-en-construction/"
+  },
+  {
+    "_id": "56fc185fe31c3a0c0023e4d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46f0ca0f295d7fc4eec18faa0e581395c9a0d265.pdf",
+    "source": "https://www.cepici.ci/web/docs/loi-n%C2%B0-96--669-du-29-septembre-1996-portant-code-petrolier.pdf"
+  },
+  {
+    "_id": "56fc1edc808c650d005d7281",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d368881cf0d14ad6b1d3af7ac0042197dcfd158c.pdf",
+    "source": "http://www.anm.gov.co/?q=informe-de-materilidad"
+  },
+  {
+    "_id": "56fc216f808c650d005d728e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f515fd113a58805a149b66b5d56f7b019c889c9.csv",
+    "source": "http://test.com"
+  },
+  {
+    "_id": "56fc21a8808c650d005d7290",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11622eff3115ef8f122666a09d56054feadc7594.csv"
+  },
+  {
+    "_id": "56fc1c41808c650d005d7261",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35f7403d954ca09aa548447bd6c4364edbc4316c.pdf",
+    "source": "http://www.gobiernobogota.gov.co/Documentacion/Ley%201712/normatividad/Ley%201712%20de%202014.pdf"
   }
 ]
