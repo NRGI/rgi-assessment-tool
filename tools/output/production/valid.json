@@ -4467,5 +4467,28 @@
     "_id": "56f6b2c2e31c3a0c0023d234",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/53ce9e0249467e9cc594aa7fa2db8ccc544009cd.xlsx",
     "source": "http://myanmareiti.org/content/myanmar-first-eiti-report"
+  },
+  {
+    "_id": "56f6b337e31c3a0c0023d250",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a7474583f692f0c3f88ee2806007ed64be246eee.pdf",
+    "source": "http://myanmareiti.org/content/myanmar-first-eiti-report"
+  },
+  {
+    "_id": "56f6b3a7e31c3a0c0023d263",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78d515812568b799cb02a4caa91467a407c2258e.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2016/03/18/090224b082e8301f/1_0/Rendered/PDF/Main0report.pdf"
+  },
+  {
+    "_id": "56f6c37ee31c3a0c0023d288",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb2a1104cf7acc7445b4cd5b2d7d0aca4e8924b1.pdf"
+  },
+  {
+    "_id": "56f6d839e31c3a0c0023d360",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ee8afdba5d12563b2bd77adb151544ab7349f25.pdf",
+    "source": "http://www.mining.gov.mm/MGE/1.MGE/Details.asp?submenuID=17&sid=704"
+  },
+  {
+    "_id": "56f6db42e31c3a0c0023d384",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7be9575e41752b0f54ae534b4f5f595058d2841.pdf"
   }
 ]
