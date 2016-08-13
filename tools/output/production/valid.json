@@ -3272,5 +3272,54 @@
     "_id": "56ef0ec5e31c3a0c0023a59c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/aa1a3d32b7516163296b8cd435fc90a27cd5b9ca.doc",
     "source": "http://www.erc.az/files/neshrler/RM_Azerbaijan_ERC_2013_ENG.pdf"
+  },
+  {
+    "_id": "56ef12aae31c3a0c0023a5f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/786f7eca17237a9b58ba86029faf954080d0e354.pdf",
+    "source": "http://www.energy.alberta.ca/OilSands/pdfs/GDE_OST_2009.pdf"
+  },
+  {
+    "_id": "56ef1327e31c3a0c0023a60a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e25bbe90324c89c4a170d2f3a9b8dcf10626d05f.pdf",
+    "source": "http://www.taxes.gov.az/uploads/qanun/2016/mecelle_eng.pdf"
+  },
+  {
+    "_id": "56ef136fe31c3a0c0023a60f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02abe4eaca7a2dfd3eac9daf51c58a56c4624072.pdf",
+    "source": "http://www.energy.alberta.ca/Tenure/1314.asp"
+  },
+  {
+    "_id": "56ef1447e31c3a0c0023a63b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d07118bf4ffc6b4c1e4057b7963f1a8fea2e111b.pdf",
+    "source": "http://www.energy.alberta.ca/OilSands/831.asp"
+  },
+  {
+    "_id": "56ef148de31c3a0c0023a648",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9fb977f96cfc7a398de91ecb19c9de3867d76be3.PDF"
+  },
+  {
+    "_id": "56ef154ce31c3a0c0023a658",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5e6626045d782608c6f3dc8d9e64a31e05c8d7d.pdf",
+    "source": "http://www.energy.alberta.ca/Tenure/883.asp"
+  },
+  {
+    "_id": "56ef15ace31c3a0c0023a66e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85ef2f10d326c1463651d9fb56d93a61c8fed0f7.pdf",
+    "source": "http://www.energy.alberta.ca/OilSands/828.asp"
+  },
+  {
+    "_id": "56ef1811e31c3a0c0023a69f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b984807b84db5ebc2ab4d94de932f16698cacbb2.pdf",
+    "source": "http://www.energy.alberta.ca/Org/Publications/AR2015.pdf"
+  },
+  {
+    "_id": "56ef1937e31c3a0c0023a6aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c776d0df139f369dc6c6a53ec6f798302078a16d.pdf",
+    "source": "http://finance.alberta.ca/publications/budget/budget2015-october/energy.pdf"
+  },
+  {
+    "_id": "56ef196fe31c3a0c0023a6ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc5d5a3d7fb83fcf807a0b9f07a49cc94ee71627.docx",
+    "source": "http://almeezan.gov.qa/LawPage.aspx?id=4105&language=en"
   }
 ]
