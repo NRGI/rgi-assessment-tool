@@ -28,5 +28,10 @@
     "_id": "56f54b31e31c3a0c0023cc4d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6931d4e3c89d977eb7703b71de5f7839b2626609.pdf",
     "source": "http://www.mgb.gov.ph/attachments/article/50/Feb_2016_FTAA_2A.pdf"
+  },
+  {
+    "_id": "56fc3fef808c650d005d7398",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14694425c8b92a23ec73049d9e7f23b5328ae91a.pdf",
+    "source": "http://www.funcionpublica.gov.co/manualdelestado/libreria/documentos/r1000.pdf"
   }
 ]

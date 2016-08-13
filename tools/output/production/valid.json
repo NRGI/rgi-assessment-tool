@@ -4688,5 +4688,49 @@
     "_id": "56fc2f2c808c650d005d72d4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0a069fa069d4297fba98934da08287e42269d5b9.pdf",
     "source": "http://www.eiti.upme.gov.co/EITI/reporte-eiti/marco-institucional"
+  },
+  {
+    "_id": "56fc371a808c650d005d7326",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f531d69f396115c636a1e9b8faefee9746f4edb8.pdf",
+    "source": "https://www.minminas.gov.co/documents/10180/655199/Decreto-520-2003.pdf/2282f736-cf55-4d37-9911-043d3a9bcaf8"
+  },
+  {
+    "_id": "56fc365a808c650d005d731c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51fb66cf231dab8dd8372cd7b89ed4f962bce0ec.pdf",
+    "source": "https://www.minminas.gov.co/documents/10180/655199/Decreto-254-2004.pdf/5eb2f820-64d8-401a-9f4b-d6b06f0c3d19"
+  },
+  {
+    "_id": "56fc3b96808c650d005d7360",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfcebc65ae1bf02bafc429505daac71f978e6e5b.pdf",
+    "source": "https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/3281.pdf"
+  },
+  {
+    "_id": "56fc30aa808c650d005d72f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73ecd16c0c2188a20b2cffcdaaf88f9288b4c08e.pdf",
+    "source": "http://www.eiti.upme.gov.co/EITI/sites/default/files/Executive%20Summary%20EITI%20Colombia%20Report.pdf"
+  },
+  {
+    "_id": "56fc3eed808c650d005d7395",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bdb3e93c972c9fc55a8839182fe194fe4c5c4769.pdf"
+  },
+  {
+    "_id": "56fc4367808c650d005d73d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ccdefc8bee706d074a64db6a53c3c9424211d91.pdf",
+    "source": "http://maparegalias.sgr.gov.co/#/"
+  },
+  {
+    "_id": "56fc41b2808c650d005d73c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a929c81d52aa98052d7c0e3a47b0403e0399ca3c.pdf",
+    "source": "https://www.sgr.gov.co/Normativa.aspx"
+  },
+  {
+    "_id": "56fc43bc808c650d005d73df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27cebaedbe62e0b4ac8889856c9eb62e65f2c2c4.pdf",
+    "source": "http://www.eiti.upme.gov.co/EITI/sites/default/files/Executive%20Summary%20EITI%20Colombia%20Report.pdf"
+  },
+  {
+    "_id": "56fc43d6808c650d005d73e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be77e4e2e0d5c9d91fc2502be3a7f3163b7d0bff.pdf",
+    "source": "http://www.eiti.upme.gov.co/EITI/sites/default/files/Executive%20Summary%20EITI%20Colombia%20Report.pdf"
   }
 ]
