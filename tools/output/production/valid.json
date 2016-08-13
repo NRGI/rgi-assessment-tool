@@ -4994,5 +4994,54 @@
     "_id": "56fe786d808c650d005d86d8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c154112dd828b9539b94cd20bb9eeb6d4ab39865.png",
     "source": "http://www.investidorpetrobras.com.br/en/corporate-governance/capital-ownership"
+  },
+  {
+    "_id": "56fe80e0808c650d005d87a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86f6ab226119143cf93e7f2f951e1858f309a1bb.pdf",
+    "source": "http://pef.hacienda.gob.mx/work/models/PEF/2016/docs/28/r28_afpe28.pdf"
+  },
+  {
+    "_id": "56fe7fc5808c650d005d876e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/769f264bd49507f77f15c74f3b5d99589281fb1e.pdf"
+  },
+  {
+    "_id": "56fe81cd808c650d005d87bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b104742018a0bec4854a40a20c47552448fc925.pdf",
+    "source": "http://pef.hacienda.gob.mx/work/models/PEF/2016/docs/33/r33_afpe33.pdf"
+  },
+  {
+    "_id": "56fe8541808c650d005d8838",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbf38fda42e0f4ed81f989e44086e5bcfe410f2b.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/31_110814.pdf"
+  },
+  {
+    "_id": "56fe829d808c650d005d87d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3be6e3622070d60f87c8e11f1fd13aa87c54efa.pdf",
+    "source": "http://www.chihuahua.gob.mx/atach2/sf/uploads/indtfisc/leyingresos2016.pdf"
+  },
+  {
+    "_id": "56fe858e808c650d005d8846",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aefbaa5839b58596ad7df0a7e3c6f523045b9724.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
+  },
+  {
+    "_id": "56fe86d9808c650d005d8865",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ab83bd28ca868128d62d32c4de606cf3e10c717.pdf",
+    "source": "http://www.dof.gob.mx/nota_detalle.php?codigo=5361462&fecha=25/09/2014"
+  },
+  {
+    "_id": "56fe8adb808c650d005d88a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0136ce9349ded3e9a6aac9a4fec3a641331c0597.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
+  },
+  {
+    "_id": "56fe8bca808c650d005d88b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/250898acc3799345cfe93040527b63adfb55e870.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
+  },
+  {
+    "_id": "56fe8c53808c650d005d88c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa0b17ce23f6048207fe5a9d4db42a59840e0c6f.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
   }
 ]
