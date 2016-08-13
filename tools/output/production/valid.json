@@ -5043,5 +5043,30 @@
     "_id": "56fe8c53808c650d005d88c1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/aa0b17ce23f6048207fe5a9d4db42a59840e0c6f.pdf",
     "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
+  },
+  {
+    "_id": "56fe8cfc808c650d005d88de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19f386deb668d2e7995a41efbd63e5514edf119c.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=p&format=&offset=90"
+  },
+  {
+    "_id": "56fe8e0d808c650d005d88fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b0dce6a187d6039f4eb396a131d00f30cf855ef.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=f&format=&offset=270"
+  },
+  {
+    "_id": "56fe8eba808c650d005d8917",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c762b5b54643e5242e9b5f7b4ae91a5e9c1416a.pdf",
+    "source": "http://www.ocpfoundation.org/docs/publications/fr/FondationOCP_RA_VF.pdf"
+  },
+  {
+    "_id": "56fe901f808c650d005d8944",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71bb8c3a3151a8e48a552034930a4c90c6448aab.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/Deepwater_Model_PSC_CBO_2013.pdf"
+  },
+  {
+    "_id": "56fea033808c650d005d898a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d079a4d4470a2e2cfa58f518af0eb753ec3a789.pdf",
+    "source": "http://www.ghaudit.org/gas/site/reports/download_report/480"
   }
 ]
