@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "_id": "56f5f8e1e31c3a0c0023cf9d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26a804adac3a13b330820d508f3b5ff13de0720a.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2016/03/18/090224b082e8301f/1_0/Rendered/PDF/Main0report.pdf"
+  },
+  {
+    "_id": "56f6a5d4e31c3a0c0023d1e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00db527868ce12fc51d83cb6224be1b03bbc14db.pdf"
+  },
+  {
+    "_id": "56f6aeace31c3a0c0023d203",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/027c53c3137867a432e11ce5309354bb5070e2b2.pdf"
+  },
+  {
+    "_id": "56f6aecbe31c3a0c0023d205",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b7eff5ec95eb601ddc67a9a56163f97f3ed3ee3.pdf"
+  }
+]
