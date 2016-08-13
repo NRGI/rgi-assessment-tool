@@ -3581,5 +3581,69 @@
   {
     "_id": "56f01ba7e31c3a0c0023ae66",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8e83c51a43db89ed1f025bba48a389153d917333.pdf"
+  },
+  {
+    "_id": "56f0352de31c3a0c0023af09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4aa714fd3a72481c620aa12d2b52870a2c59771.pdf",
+    "source": "http://www.cochilco.cl/descargas/estadisticas/basedatos/produccion/1.1_Produccion_cobre_por_empresas_mensual-2000.xls"
+  },
+  {
+    "_id": "56f03283e31c3a0c0023aef2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed4983f4bc8896e0435fcea15189ca065c16488e.pdf",
+    "source": "http://www.cochilco.cl/estadisticas/produccion.asp"
+  },
+  {
+    "_id": "56f040e3e31c3a0c0023afa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/187ad1703a9954a54b333646aee091ce68d60865.pdf"
+  },
+  {
+    "_id": "56f03d62e31c3a0c0023af64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14e7a3bcccda2ffa29e50c5bd07995e452e88043.pdf"
+  },
+  {
+    "_id": "56f0499ce31c3a0c0023b029",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c974e60676af5dcae4c45eb4bfc8c699cb194cb.pdf"
+  },
+  {
+    "_id": "56f041dce31c3a0c0023afc0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c16c44ae2e02ab6cc4289a9b4b0d3a8643dc2ffb.pdf"
+  },
+  {
+    "_id": "56f04a72e31c3a0c0023b046",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/721a507b8ff63b929c309dc8b4d799f166e7d240.pdf",
+    "source": "http://www.palantirsolutions.com/software-applications/cx-suite-portfolio-planning/fiscal-guides"
+  },
+  {
+    "_id": "56f04b23e31c3a0c0023b069",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f89c8fa34c2f0f2613084054531cd88c3f003ea5.pdf"
+  },
+  {
+    "_id": "56f04e5ee31c3a0c0023b0b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2246945af70fe141d694ac0853b33fd8f047e1bd.pdf"
+  },
+  {
+    "_id": "56f04f07e31c3a0c0023b0ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4eef0e14a25539388990fdc926c693541cc12a91.docx",
+    "source": "http://www.oman-oil.com/About.html"
+  },
+  {
+    "_id": "56f05053e31c3a0c0023b0cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c54ff83eea09038f6560ddb6f83b75823019da0.pdf",
+    "source": "http://www.enami.cl/images/stories/pdf/reglamento/leyorgyanicadeenamidl153.pdf"
+  },
+  {
+    "_id": "56f051abe31c3a0c0023b0dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e67f2714ade4865a280078bbbe31d647c75bd23e.pdf",
+    "source": "http://www.acepghana.com/contract/petroleum/?page=1&q="
+  },
+  {
+    "_id": "56f04923e31c3a0c0023b017",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3504d1437444e98aaf4b9046df8a295e05ec6e61.docx",
+    "source": "http://www.2b1stconsulting.com/bp-and-oman-oil-signed-khazzan-and-makarem-tight-gas-project/"
+  },
+  {
+    "_id": "56f049fee31c3a0c0023b034",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/023eb066ed5b59eb988b2cbb3daca6d705c9b755.docx",
+    "source": "http://timesofoman.com/article/76376/Business/Energy/Oman-signs-oil-concession-agreement-for-block-7"
   }
 ]
