@@ -3206,5 +3206,28 @@
     "_id": "56eefc8ce31c3a0c0023a482",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e87a6abfe787059b9a3a90ffd8b603fcc5242864.docx",
     "source": "http://gulfnews.com/business/sectors/investment/uae-swfs-major-players-globally-1.1534808"
+  },
+  {
+    "_id": "56ef08dfe31c3a0c0023a50f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e6e7518105ba0fea87f8bbb5e682a0e96b8370b.pdf"
+  },
+  {
+    "_id": "56ef0989e31c3a0c0023a511",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b53abc0a1d64a167f6f1a41d4f92cabf5b4db22.pdf",
+    "source": "http://www.kia.gov.kw/en/ABOUTKIA/OrganizationStructure/Pages/TRANSPARENCY.aspx"
+  },
+  {
+    "_id": "56eefee9e31c3a0c0023a4b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57e13ede542b7e4c8f2a955d521f18ce2a6bddb4.pdf",
+    "source": "http://www.kmg.kz/en/manufacturing/upstream/"
+  },
+  {
+    "_id": "56ef0ad6e31c3a0c0023a530",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54661b9038447f76762d788da06215c153ca5c56.pdf"
+  },
+  {
+    "_id": "56ef0770e31c3a0c0023a500",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5ead2d56534c9531fa7f8b1b4fc0b43f0b64077.jpg",
+    "source": "http://www.kia.gov.kw/en/ABOUTKIA/Pages/Overview.aspx"
   }
 ]
