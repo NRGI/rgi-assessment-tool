@@ -4945,5 +4945,54 @@
     "_id": "56fe3799808c650d005d8278",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ad5e3080f1a36ea5cfe566bb50be4ab627d063d6.pdf",
     "source": "http://ideas.org.my/wp-content/uploads/2015/05/KWAN.pdf"
+  },
+  {
+    "_id": "56fe4aed808c650d005d840c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb3f3e552759e056e49622904667045ef320628a.pdf"
+  },
+  {
+    "_id": "56fe50f9808c650d005d84de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/274a56d7a4794c2ddc1a02115385ecf68b976b0e.pdf",
+    "source": "http://tnews.ir/news/578f57778804.html"
+  },
+  {
+    "_id": "56fe50ec808c650d005d84dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79645f99af710d1b2179966efe33053c683fc6bb.pdf",
+    "source": "http://busca.datos.gob.mx/#!/conjuntos/directorio-de-la-mineria-mexicana/"
+  },
+  {
+    "_id": "56fe4fa3808c650d005d8491",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/591f85d00e6c7dd49ba95b000cc6e7646000a36b.csv",
+    "source": "http://busca.datos.gob.mx/#!/conjuntos/directorio-de-la-mineria-mexicana/"
+  },
+  {
+    "_id": "56fe5713808c650d005d8542",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8724a5d3fa9683121c54349f59fb63a424197de2.docx",
+    "source": "http://www.spm.gov.cm/documentation/textes-legislatifs-et-reglementaires/article/decret-n-20052176pm-du-16-juin-2005-portant-creation-organisation-et-fonctionnement-du-comite-de.html"
+  },
+  {
+    "_id": "56fe5dd6808c650d005d85e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e65c1dc0ff4858ae6091a0ccb85a29464ee39bb.pdf",
+    "source": "http://www.shana.ir/fa/newsagency/230880/جزئیات-بودجه-سال-94-شرکت-ملی-نفت-ایران"
+  },
+  {
+    "_id": "56fe584b808c650d005d8562",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a69327d0cfd748532aa84c15171f94ebce6b1e4.pdf",
+    "source": "http://isna.ir/fa/news/94111308449/مناقصات-نفتی-ایران-اردیبهشت-برگزار-می-شود"
+  },
+  {
+    "_id": "56fe598a808c650d005d8574",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/165b3900655f798eac66d37737ac80012d93fd4a.pdf",
+    "source": "http://www.ilna.ir/بخش-اقتصادی-4/344320-قراردادهای-جدید-نفتی-محرمانه-است-ولی-پیش-نویس-محرمانه-نیست-منتقدین-راحت-بگویند-نظام-را-قبول-ندارند"
+  },
+  {
+    "_id": "56fe5bd6808c650d005d85c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b82cdc8504d64941174828fd4e8e2385a847c81e.pdf",
+    "source": "http://www.state.gov/documents/organization/227141.pdf"
+  },
+  {
+    "_id": "56fe786d808c650d005d86d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c154112dd828b9539b94cd20bb9eeb6d4ab39865.png",
+    "source": "http://www.investidorpetrobras.com.br/en/corporate-governance/capital-ownership"
   }
 ]
