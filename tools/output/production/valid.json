@@ -3229,5 +3229,23 @@
     "_id": "56ef0770e31c3a0c0023a500",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d5ead2d56534c9531fa7f8b1b4fc0b43f0b64077.jpg",
     "source": "http://www.kia.gov.kw/en/ABOUTKIA/Pages/Overview.aspx"
+  },
+  {
+    "_id": "56ef0c4de31c3a0c0023a549",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57be8d99565aa1a219fa8fc315d943deb8f10bf8.pdf",
+    "source": "http://socar.az/socar/en/company/regulations/socar-charter"
+  },
+  {
+    "_id": "56ef0e4ee31c3a0c0023a590",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbe6ffd09cd68b57800a47fc5f6c3f4a8fb85db2.pdf"
+  },
+  {
+    "_id": "56ef0d4be31c3a0c0023a564",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bd3cafce2df2728492378c2b1d7fa0dfe04b2d7.docx"
+  },
+  {
+    "_id": "56ef0dfae31c3a0c0023a580",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a64f8fcd3df661b4c74224b4e14b36b866383998.jpg",
+    "source": "http://www.kia.gov.kw/en/ABOUTKIA/OrganizationStructure/Pages/OVERVIEWFUNDS.aspx"
   }
 ]
