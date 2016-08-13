@@ -3560,5 +3560,26 @@
   {
     "_id": "56f00e97e31c3a0c0023add1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/79199eeb478b96765f31162df8b8ba62930d07ee.pdf"
+  },
+  {
+    "_id": "56f01501e31c3a0c0023ae08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4669a4e3771cffc8b684de0b2425cdbe30b22984.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=6578"
+  },
+  {
+    "_id": "56f0155be31c3a0c0023ae13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83d34df520470cc896835dd113d821b80963f9ab.pdf"
+  },
+  {
+    "_id": "56f0169de31c3a0c0023ae1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d81ef3e28b9db8cb68b13ab64851fee49ac93e85.pdf"
+  },
+  {
+    "_id": "56f01b93e31c3a0c0023ae63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04c42caa1f6821064245e3465999452a92fe129b.pdf"
+  },
+  {
+    "_id": "56f01ba7e31c3a0c0023ae66",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e83c51a43db89ed1f025bba48a389153d917333.pdf"
   }
 ]
