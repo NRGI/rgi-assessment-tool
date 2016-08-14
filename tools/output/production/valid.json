@@ -5711,5 +5711,72 @@
   {
     "_id": "5702d0dbe9b2730c0066c9b4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2f85e3d2937bd286e4d2f2f4323b03bdb9dd65c4.pdf"
+  },
+  {
+    "_id": "5702d478e9b2730c0066c9c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06582d960621f74b155b99a129dfa0e1ada29198.pdf"
+  },
+  {
+    "_id": "5702d50fe9b2730c0066c9dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcd2768a73955ea63683f0fea982e4edb05f9d53.pdf"
+  },
+  {
+    "_id": "5702d705e9b2730c0066c9ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3a87a557e8f43446a1ac034930330c40ea46ac0.pdf",
+    "source": "http://www.jubileobolivia.org.bo/"
+  },
+  {
+    "_id": "5702ded0e9b2730c0066ca50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dcf631ae0bfce4672fd5f6f4c4b77ff1aa770ebb.pdf",
+    "source": "http://www.ypfb.gob.bo/es/component/phocadownload/category/86-boletines.html?download=1026:bolet%C3%ADn-estad%C3%ADstico-enero-junio-2015?download=1014:bolet%C3%ADn-estad%C3%ADstico-enero-marzo-2015."
+  },
+  {
+    "_id": "5702e0f7e9b2730c0066ca5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f339f98377a367118f93974760c304b16e1b43dc.pdf",
+    "source": "http://plataformaenergetica.org/content/34301"
+  },
+  {
+    "_id": "57033fe4176f800c00901612",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5e81452cff42cba774778cbf3dc02544399ad2f.pdf",
+    "source": "http://www.forum.mn/policyissue/MineralsLawOfMongolia20090919_en.pdf"
+  },
+  {
+    "_id": "57033472176f800c009015dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/76589de0a33b1133f18ee8c6dd100e83c82179ac.pdf",
+    "source": "http://mram.gov.mn/mram_new/images/stories/mram/statistek/2015/monthly_report_2016.01.04.pdf"
+  },
+  {
+    "_id": "57035464176f800c00901637",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20f39032a85a8da8070401c7917929613af9c16d.docx",
+    "source": "http://www.legalinfo.mn/law/details/310"
+  },
+  {
+    "_id": "57033acd176f800c009015f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba39193363a471fe8ea6d2152ac874435f63c449.pdf",
+    "source": "http://www.forum.mn/policyissue/MineralsLawOfMongolia20090919_en.pdf"
+  },
+  {
+    "_id": "57034aae176f800c0090162d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81d1665646d95053359a174fdf5ceff98b7a0a13.pdf",
+    "source": "http://mram.gov.mn/wp-content/uploads/2015/04/monthly_report_2016.02.pdf"
+  },
+  {
+    "_id": "57035a5b176f800c00901675",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10a21be3483efa11ca8d3a599ad16b777284f574.pdf",
+    "source": "http://www.legalinfo.mn/annex/details/6041?lawid=9487"
+  },
+  {
+    "_id": "57035a0a176f800c0090166f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/768a1a248cda2712ea5db431999fc24cafccc092.pdf"
+  },
+  {
+    "_id": "57035739176f800c00901650",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61e7860517c59c33199b97c85c9bad9d31ac64b7.docx",
+    "source": "http://en.mongolianminingjournal.com/content/23936.shtml"
+  },
+  {
+    "_id": "57036487176f800c009016ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27a6304549d22931560c416e85dceacfb3904511.pdf",
+    "source": "http://www.forum.mn/policyissue/MineralsLawOfMongolia20090919_en.pdf"
   }
 ]
