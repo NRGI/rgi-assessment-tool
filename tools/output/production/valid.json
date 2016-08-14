@@ -5778,5 +5778,78 @@
     "_id": "57036487176f800c009016ce",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/27a6304549d22931560c416e85dceacfb3904511.pdf",
     "source": "http://www.forum.mn/policyissue/MineralsLawOfMongolia20090919_en.pdf"
+  },
+  {
+    "_id": "570377c9176f800c0090178c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97e56c58f827da77f9adae0bac4e15d9571cff35.pdf",
+    "source": "http://www.mram.gov.mn"
+  },
+  {
+    "_id": "57037898176f800c009017a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9f6d866da3ffd73b6bd2a59919422177bcc34a0.pdf",
+    "source": "http://en.montsame.mn/mining/13-billion-usd-investment-signed-tsagaan-suvarga-mining-developments"
+  },
+  {
+    "_id": "57037812176f800c0090179a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/795c12c9223e017857693cc4a04ac8bd0a174d7b.pdf",
+    "source": "http://economy.news.mn/content/224715.shtml"
+  },
+  {
+    "_id": "57037762176f800c0090177b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a1e7f7a2a288d70122f72a878a835628dc23f23.pdf",
+    "source": "http://www.mram.gov.mn"
+  },
+  {
+    "_id": "570365c0176f800c009016eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c3e83674515e2761082c9060b19b1cfec808736.pdf",
+    "source": "http://www.forum.mn/policyissue/MineralsLawOfMongolia20090919_en.pdf"
+  },
+  {
+    "_id": "57038bad176f800c00901898",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6a7b1735b9d66a9ba71d15747b4092c4b668b3a.pdf",
+    "source": "http://congresoime.com.mx/data/documents/SEDATU.pdf"
+  },
+  {
+    "_id": "5703dd26176f800c00901b14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e41f96c6f314aa3e519cb7871f3c64ba8821f5f6.pdf",
+    "source": "http://www.anp.gov.br/?pg=78136&m=&t1=&t2=&t3=&t4=&ar=&ps=&1459779003016"
+  },
+  {
+    "_id": "5703e84f176f800c00901bb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1819aed41225518b713bbc8ed8eabe8c024a5111.pdf",
+    "source": "http://www.she.gob.ec/biblioteca/"
+  },
+  {
+    "_id": "5703eea9176f800c00901c61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a15ad039e6366e74a3a3e4fcd54d3cd597d20e7.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/68ab4bc24a24386082d62ab3ff79675d35ef600c.pdf"
+  },
+  {
+    "_id": "5703f049176f800c00901c9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acc74ce9d10526de9c65c571d4e59b4b654fd9e8.pdf"
+  },
+  {
+    "_id": "5703f23d176f800c00901ce1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f76d166100a5f8e047466c919b8c6ff2c459035.pdf",
+    "source": "http://www.csph.cm/images/publications/structure_des_prix/2015/en/Fuel%20price%20of%20july%202015.pdf"
+  },
+  {
+    "_id": "5703f908176f800c00901d1e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bde18fb787b646ec04dc827d4108e1db13fb9b4.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2010/Lei/L12351.htm"
+  },
+  {
+    "_id": "57040730176f800c00901d55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb4441f1c00d6f61a5bce24ecafaab926da896f8.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/Lei/L11887.htm"
+  },
+  {
+    "_id": "570409c2176f800c00901d7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53753836d939b9151e393dfd89af9f2cbc490b72.pdf"
+  },
+  {
+    "_id": "57040afb176f800c00901d89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fb1628c6b8e9fc739aafdbfdc097dd286bf267f.pdf",
+    "source": "http://contenido.bce.fin.ec/documentos/PublicacionesNotas/Catalogo/Apuntes/ae53.pdf"
   }
 ]
