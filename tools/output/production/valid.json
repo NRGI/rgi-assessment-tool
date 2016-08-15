@@ -5851,5 +5851,49 @@
     "_id": "57040afb176f800c00901d89",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fb1628c6b8e9fc739aafdbfdc097dd286bf267f.pdf",
     "source": "http://contenido.bce.fin.ec/documentos/PublicacionesNotas/Catalogo/Apuntes/ae53.pdf"
+  },
+  {
+    "_id": "57040d4c176f800c00901dd5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00eab04241eb134f4e3b4c4f9b09f9ed2068ded3.pdf",
+    "source": "http://contenido.bce.fin.ec/documentos/PublicacionesNotas/Catalogo/Apuntes/ae53.pdf"
+  },
+  {
+    "_id": "570468a4176f800c00901f0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d834d8552af19113352debc261322cc951f5f43b.pdf",
+    "source": "https://es.wikipedia.org/wiki/Yacimientos_Petrol%C3%ADferos_Fiscales_Bolivianos"
+  },
+  {
+    "_id": "5704532b176f800c00901e9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b3a0e26f762d975b782b7a6ed440704ff2199d4.pdf",
+    "source": "http://medios.economiayfinanzas.gob.bo/MH/documentos/DC_interes/2015/Directrices-Presupuestarias-Gestion-2016-FF.pdf"
+  },
+  {
+    "_id": "570486ab176f800c00901f9b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3e3731072509367b3b6e03b4aa051a71adcd6bb.pdf",
+    "source": "http://zfxxgk.ndrc.gov.cn/Attachment/%E3%80%8A%E5%9B%BD%E5%AE%B6%E5%8F%91%E5%B1%95%E5%92%8C%E6%94%B9%E9%9D%A9%E5%A7%94%E5%91%98%E4%BC%9A%E6%94%BF%E5%BA%9C%E4%BF%A1%E6%81%AF%E5%85%AC%E5%BC%80%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%E3%80%8B.pdf"
+  },
+  {
+    "_id": "57048bf5176f800c00901fc5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/898946518fba7ef3166d7a68cb4490f8e7eac266.pdf",
+    "source": "https://en.wikipedia.org/wiki/List_of_government-owned_companies_of_China"
+  },
+  {
+    "_id": "57048d3f176f800c00901fe2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b7996d173c26bc82176e03b0d03c6903ec455dd.pdf",
+    "source": "http://fortune.com/2015/07/22/china-global-500-government-owned/"
+  },
+  {
+    "_id": "57048fb0176f800c00901ffd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eda471ffae573a5b91c2721158905306b87c51b6.pdf"
+  },
+  {
+    "_id": "5704363e176f800c00901e57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2ba4a44ab53a19d21217e58b244fc640e13d449.docx",
+    "source": "http://www.gov.cn/zhengce/content/2015-04/21/content_9644.htm#"
+  },
+  {
+    "_id": "5704373f176f800c00901e61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d386c7cccc8cfa9fc8239c4fff2404ed84a9576e.docx",
+    "source": "http://zfxxgk.nea.gov.cn/ndbg/201603/t20160321_2210.htm"
   }
 ]
