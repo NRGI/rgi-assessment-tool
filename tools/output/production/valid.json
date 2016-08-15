@@ -5895,5 +5895,20 @@
     "_id": "5704373f176f800c00901e61",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d386c7cccc8cfa9fc8239c4fff2404ed84a9576e.docx",
     "source": "http://zfxxgk.nea.gov.cn/ndbg/201603/t20160321_2210.htm"
+  },
+  {
+    "_id": "57048fb7176f800c00901fff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6905030dc128e3652f30b65a3ce7cdceef8a0bc.pdf",
+    "source": "http://www.sinopec.com/about_sinopec/our_company/company.shtml"
+  },
+  {
+    "_id": "57049143176f800c0090202a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40e81f552b5313986dcfc6b2e9a9b16de1bd16ac.pdf",
+    "source": "http://www.sinopec.com/download/reports/2015/20160329/download/2016032917C.pdf"
+  },
+  {
+    "_id": "5704920d176f800c00902058",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08cab21fa5d5308cc680f68113b24fd3ac56f8e4.pdf",
+    "source": "http://www.itieniger.ne/images/DOC_SITE_ITIE/Rapport_Definitif_2013_01-12-2015.pdf"
   }
 ]

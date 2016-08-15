@@ -28,5 +28,10 @@
     "_id": "56fc29d2808c650d005d72c7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc118d8c47f28943c66b8456edee9046a07bcf9.pdf",
     "source": "http://www.eiti.upme.gov.co/eiti/sites/default/files/INFORME_EITI_2013.pdf"
+  },
+  {
+    "_id": "570493c4176f800c0090206c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9157676f7dfcbba2018e7b62bd3e89cfa03271ab.pdf",
+    "source": "http://www.npc.gov.cn/npc/xinwen/2014-04/25/content_1861279.htm"
   }
 ]
