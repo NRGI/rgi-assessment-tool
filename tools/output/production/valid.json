@@ -5924,5 +5924,73 @@
   {
     "_id": "5704c911176f800c009021c0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ef8761d5f73c2101801ccbc9c6ce991a37ab5e4d.pdf"
+  },
+  {
+    "_id": "5704cebb176f800c009021fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b89c5fbfd8a34b0de08a24e08e7b04e3674493c.pdf"
+  },
+  {
+    "_id": "5704d414176f800c0090224a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a02da7b28e4208d593926960116b53d90731139.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/niger/Niger-Decret-2006-265-application-loi-miniere.pdf"
+  },
+  {
+    "_id": "5704dd03176f800c00902278",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4992d7e9506e02191e8ccc36c4a4e9acf13d8e8.pdf",
+    "source": "http://www.osiwa.org/wp-content/uploads/2015/02/revenus_des_industries_extractives_du_niger-final_2.pdf"
+  },
+  {
+    "_id": "5704deb7176f800c0090228b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbcc4d74c350e93cd796f6b0f64e3b5e7ef2ca14.pdf"
+  },
+  {
+    "_id": "5704f1cc176f800c0090236b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4368e1139c407a201475c4db768d52a21fcecf03.pdf",
+    "source": "http://bdlaws.minlaw.gov.bd/print_sections_all.php?id=378"
+  },
+  {
+    "_id": "5704f1ed176f800c00902370",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b657b7657769c330dc14941b2878dfa7d23df003.pdf"
+  },
+  {
+    "_id": "5704f2fb176f800c00902391",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f7e49b363bd7336588fc28c4d612fb14a051052.pdf"
+  },
+  {
+    "_id": "5704f370176f800c009023a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0232fcba778654f18f6af2afc23d1e195a97f2d.pdf"
+  },
+  {
+    "_id": "5704f3dc176f800c009023b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1b0ca5479fdbf37bba2637f7a2cc9b1ba794dd1.pdf"
+  },
+  {
+    "_id": "5704f3e3176f800c009023b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1134aa013b7f367cb5e42ac32491396820c1a263.pdf"
+  },
+  {
+    "_id": "5705026a176f800c00902421",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/031e6019a01820814ceac25ce5a1fc5944d7324e.pdf",
+    "source": "http://www.energyandminerals.go.ug/"
+  },
+  {
+    "_id": "570501f3176f800c00902413",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9bddda98591078aab0b5bbffcc82279071dbc066.pdf",
+    "source": "http://www.dmp.wa.gov.au/GeoView-WA-Interactive-1467.aspx"
+  },
+  {
+    "_id": "57050c8b176f800c0090247e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee0b2a709ad78df532043232cf662634226f05eb.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "57050a25176f800c00902465",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/429cdad5928a9479f0a49bcdcb4c178d8c471ecb.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/12.Petroleum(EDP)Act2013_.pdf"
+  },
+  {
+    "_id": "5704fcf2176f800c009023f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9bf7b9442e85acc1bdfddc9d3b21ee23334833.pdf",
+    "source": "http://www.dmp.wa.gov.au/documents/Stats_Digest_2014-15.pdf"
   }
 ]
