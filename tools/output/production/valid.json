@@ -5992,5 +5992,55 @@
     "_id": "5704fcf2176f800c009023f9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9bf7b9442e85acc1bdfddc9d3b21ee23334833.pdf",
     "source": "http://www.dmp.wa.gov.au/documents/Stats_Digest_2014-15.pdf"
+  },
+  {
+    "_id": "57050db0176f800c0090248f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/044de5037add01ad688cc678f6e46845d9b69c7e.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "5705101b176f800c009024c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62b33153b26cedee664c4a68a94107e00662f65e.pdf",
+    "source": "http://www.parliament.go.ug/new/images/stories/acts/2012/Companies%20Act%202012.pdf"
+  },
+  {
+    "_id": "57051405176f800c00902544",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6cddc5f209d850172b0d98713b78b1995bf200d9.pdf",
+    "source": "http://www.erdenesmongol.mn"
+  },
+  {
+    "_id": "5705156c176f800c00902569",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc8af0546a1f9113deb71deba7c270a4abf1f033.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/documents/nrgi_financing-options-noc.pdf"
+  },
+  {
+    "_id": "57051ae8176f800c009025e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6cadfd605e4aaaf982c3bc673c3c41d43bcf0ee.pdf",
+    "source": "https://www.chathamhouse.org/sites/files/chathamhouse/public/Research/Africa/0113pr_ugandaoil.pdf"
+  },
+  {
+    "_id": "5705285f394b050c00e01e9b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b3a3a13e3faf9a309c15f6a96f5c647e10d38bd.pdf",
+    "source": "http://www.adb.org/news/adb-loan-erdenes-mongol-will-support-economic-diversification-drive"
+  },
+  {
+    "_id": "57051fc3176f800c00902637",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0cdf712df0c2698d22ce4e468c428af80ade536.pdf",
+    "source": "http://www.primature.gov.ml/images/pdf/accord-pour-la-paix-et-de-reconciliation-au-mali.pdf"
+  },
+  {
+    "_id": "570527ec394b050c00e01e8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/234f1eb585f723bb669abafdd3751d8eb0790484.pdf",
+    "source": "http://erdenes.surgalt.mn/file_upload/files/1%20EMGL%20Durem.pdf"
+  },
+  {
+    "_id": "570529cc394b050c00e01edf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6f7db55c12b34d1949d8c23166eff77404a0a37.pdf",
+    "source": "http://www.humanrights.dk/files/media/dokumenter/business/rapport_niger_basse_def.pdf"
+  },
+  {
+    "_id": "570528ab394b050c00e01eaa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d247c4ed94e157b21435e4ad6f73c973125c83eb.pdf",
+    "source": "http://mongolia.gogo.mn/r/149995"
   }
 ]
