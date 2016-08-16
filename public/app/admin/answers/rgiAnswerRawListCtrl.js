@@ -12,37 +12,39 @@ angular.module('app')
         $scope.sort_order = $scope.sort_options[0].value;
         $scope.busy = false;
         $scope.answers = [];
-        $scope.portionSize = 50;
 
-        var currentPage = 0, allAnswersLoaded = false,
+        var portionSize = 100, currentPage = 0, allAnswersLoaded = false,
             addAnswers = function(answers) {
                 if(!answers.reason) {
                     $scope.answers = $scope.answers.concat(answers.data);
                     $scope.answersHeader = answers.header;
                     currentPage++;
                 }
+            },
+            fetchAnswers = function () {
+                if ($scope.busy) {
+                    return;
+                }
+
+                $scope.busy = true;
+
+                if(!allAnswersLoaded) {
+                    rgiAnswerRawSrvc.query({skip: currentPage, limit: portionSize}).$promise
+                        .then(function (answers) {
+                            addAnswers(answers);
+
+                            if (!answers.reason && (answers.data.length < portionSize)) {
+                                allAnswersLoaded = true;
+                            }
+                        }).finally(function () {
+                            $scope.busy = false;
+
+                            if(!allAnswersLoaded) {
+                                fetchAnswers();
+                            }
+                        });
+                }
             };
 
-        rgiAnswerRawSrvc.query({skip: currentPage, limit: $scope.portionSize}, addAnswers);
-
-        $scope.loadMoreAnswers = function () {
-            if ($scope.busy) {
-                return;
-            }
-
-            $scope.busy = true;
-
-            if(!allAnswersLoaded) {
-                rgiAnswerRawSrvc.query({skip: currentPage, limit: $scope.portionSize}).$promise
-                    .then(function (answers) {
-                        addAnswers(answers);
-
-                        if (!answers.reason && (answers.data.length < $scope.portionSize)) {
-                            allAnswersLoaded = true;
-                        }
-                    }).finally(function () {
-                        $scope.busy = false;
-                    });
-            }
-        };
+        fetchAnswers();
     });
