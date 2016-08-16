@@ -5,7 +5,7 @@
             .row
                 .left-padding-lg.right-padding-lg.top-padding-med
                     .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
-                        .btn.btn-success(ng-click="downloadCsv()", ng-csv="answers", csv-header="answersHeader", filename="raw_answers.csv") Download Raw CSV
+                        button.btn.btn-success(ng-click="downloadCsv()", ng-csv="answers", csv-header="answersHeader", filename="raw_answers.csv", ng-disabled="busy") Download Raw CSV
                     .pull-right
                         form.form-inline
                             .form-group
@@ -33,4 +33,3 @@
                                     span.small(ng-if="answer.researcher_score_letter") {{answer.researcher_score_letter | ucfirst}}
                                 td
                                     span.small(ng-if="answer.reviewer_score_letter") {{answer.reviewer_score_letter | ucfirst}}
-                div(ng-if="answers.length > (portionSize - 1)", infinite-scroll="loadMoreAnswers()", infinite-scroll-distance="1")
