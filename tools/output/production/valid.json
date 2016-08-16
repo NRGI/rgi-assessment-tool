@@ -6042,5 +6042,30 @@
     "_id": "570528ab394b050c00e01eaa",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d247c4ed94e157b21435e4ad6f73c973125c83eb.pdf",
     "source": "http://mongolia.gogo.mn/r/149995"
+  },
+  {
+    "_id": "57053f50394b050c00e02088",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47bb318ccbea7a33f68b39dcf06d374b2405069a.pdf",
+    "source": "https://itportal.decc.gov.uk/web_files/recent_licences/oglicences.htm"
+  },
+  {
+    "_id": "57052b83394b050c00e01ef5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb3f59d17c9d8fc6775a2192c91cae94bf7c0dfe.pdf",
+    "source": "http://nigerdiaspora.net/les-infos-du-pays/assemblee-nationale/item/68778-journee-parlementaire-d-information-vers-la-creation-d-un-fonds-pour-les-generations-futures"
+  },
+  {
+    "_id": "570534bd394b050c00e01fca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d57247375b9e1026b74cc3b9841ccb384df2eec8.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/1995/1434/made"
+  },
+  {
+    "_id": "57053692394b050c00e02003",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/206a8f2416bfc229b4c726f2418dca9f35e32514.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/1998/17/pdfs/ukpga_19980017_en.pdf"
+  },
+  {
+    "_id": "5705380a394b050c00e02022",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d93ab9e705dbcf0f6546ee87fe88a1624a56cb6d.xlsx",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/487112/14R_Offers_by_Operator_v3.xlsx"
   }
 ]
