@@ -5910,5 +5910,19 @@
     "_id": "5704920d176f800c00902058",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/08cab21fa5d5308cc680f68113b24fd3ac56f8e4.pdf",
     "source": "http://www.itieniger.ne/images/DOC_SITE_ITIE/Rapport_Definitif_2013_01-12-2015.pdf"
+  },
+  {
+    "_id": "57049ac0176f800c009020b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2008f9e817a4601c8f1d77f0da706c132070599e.pdf",
+    "source": "http://www.zgkyb.com/yw/20160324_28092.htm"
+  },
+  {
+    "_id": "5704b835176f800c00902188",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed8acce483bd697d40f29f7ba322378373a0055f.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "5704c911176f800c009021c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef8761d5f73c2101801ccbc9c6ce991a37ab5e4d.pdf"
   }
 ]

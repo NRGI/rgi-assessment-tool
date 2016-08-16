@@ -29,9 +29,20 @@
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc118d8c47f28943c66b8456edee9046a07bcf9.pdf",
     "source": "http://www.eiti.upme.gov.co/eiti/sites/default/files/INFORME_EITI_2013.pdf"
   },
+
   {
     "_id": "570493c4176f800c0090206c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9157676f7dfcbba2018e7b62bd3e89cfa03271ab.pdf",
     "source": "http://www.npc.gov.cn/npc/xinwen/2014-04/25/content_1861279.htm"
+  },
+  {
+    "_id": "5704960e176f800c00902093",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee13684783227073b5a8bc5d79572740d5435ad.pdf",
+    "source": "http://www.china5e.com/news/news-877583-1.html"
+  },
+  {
+    "_id": "5704b0ad176f800c0090214e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e91c93a88d056ff092ac982c57a0f9067f91a452.pdf",
+    "source": "http://www.eitimongolia.mn"
   }
 ]
