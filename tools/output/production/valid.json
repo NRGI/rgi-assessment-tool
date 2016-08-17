@@ -6257,5 +6257,98 @@
   {
     "_id": "57067f0c5753331200141be4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/254e438429d343e0f1e43d320ecc4ce2a68a4374.pdf"
+  },
+  {
+    "_id": "57068dca5753331200141c51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c1e9e3632ec1ea630cb762654ecb5ddb2186cc6.pdf",
+    "source": "http://www.onapre.gob.ve/index.php/publicaciones/descargas/finish/48-titulo-ii/362-ley-de-presupuesto-2015-titulo-ii"
+  },
+  {
+    "_id": "5706a9b15753331200141cfe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b22dff4924e17e14439a6312059d61b1dab8c00f.pdf",
+    "source": "http://www.bcv.org.ve/fem/fem.asp"
+  },
+  {
+    "_id": "5706b5325753331200141d3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c31e43c2ecab1509399b26194a1d4a856b061ff.pdf",
+    "source": "http://monitorlegislativo.net/wp-content/uploads/2014/11/Cuenta-MEF-2015.pdf"
+  },
+  {
+    "_id": "5706bcf05753331200141d64",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64ce4a817d93aa8c67b43a006f4a07f5d027214e.pdf",
+    "source": "http://en.libyaschannel.com/2015/05/13/europe-and-us-concerned-at-battle-over-libyas-financial-institutions/"
+  },
+  {
+    "_id": "5706c3575753331200141dae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c83fabf5669d1da4ee75ad43a1e0e03176ba6cc.pdf",
+    "source": "http://www.cbl.gov.ly/ar/images/stories/bohot/CBLassets2015.pdf"
+  },
+  {
+    "_id": "5706c7295753331200141dcd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db63b5beac8f67cbbfb5ea5390c49cab3ab7f701.pdf",
+    "source": "http://www.fonden.gob.ve"
+  },
+  {
+    "_id": "5706ccfd5753331200141e46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4683c533e95e3c0bd805e6069779cba05a63bb20.pdf",
+    "source": "http://www.akhbarlibya24.net/2015/04/11/%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA%D8%A9-%D8%AA%D8%AA%D9%81%D9%82-%D8%B9%D9%84%D9%89-%D8%B5%D8%B1%D9%81-%D9%85%D9%8A%D8%B2%D8%A7%D9%86%D9%8A%D8%A9-%D9%84/"
+  },
+  {
+    "_id": "5706d64e5753331200141ea1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aeaa49b23c97b3f67ddbe68cc5392b2c7d252f00.pdf",
+    "source": "http://www.reuters.com/article/libya-oil-idUSL5N10Y0BI20150823"
+  },
+  {
+    "_id": "5706cbf35753331200141e29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/136cb5392dd18d3328ad186d7a1a9acb9c71aa40.pdf",
+    "source": "http://www.reuters.com/article/us-venezuela-chavez-fund-idUSBRE88P0N020120926"
+  },
+  {
+    "_id": "5706d6bd5753331200141eb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d6fa98cc26f2478f97709676eaa2b0fdc8fc0c3a.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2015-11-05/east-libya-seeks-to-grab-oil-contracts-amid-fight-with-rivals"
+  },
+  {
+    "_id": "5706d74c5753331200141ebb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25c0992644360d91ffd86f80c0d1e876fd6400d2.pdf",
+    "source": "http://www.offshoreenergytoday.com/libyas-noc-central-bank-woo-oil-majors-in-london-in-struggle-for-contracts/"
+  },
+  {
+    "_id": "5706de135753331200141f3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da681c40a58afb5b97c74e953f49e960f4a81445.pdf",
+    "source": "http://www.log.gov.ly/home/"
+  },
+  {
+    "_id": "5706d7955753331200141ebd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0faa7812496b6ba9dad17f65185de27e9444ba43.pdf"
+  },
+  {
+    "_id": "5706de105753331200141f39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74aaa7aaa809cb41c475f255b832a7cba8939459.pdf"
+  },
+  {
+    "_id": "5706de785753331200141f48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f37c61d6433a3e09bbf901814453cc8dd5f4da7.pdf",
+    "source": "http://mof.gov.ly/"
+  },
+  {
+    "_id": "57072f545753331200142098",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4943754816fb7cd904926852932abd1cc081d66.pdf",
+    "source": "http://www.sonangol.co.ao/English/AboutSonangolEP/OurHistory/Pages/Our-History.aspx"
+  },
+  {
+    "_id": "570728ae575333120014205e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d66452b85853a6a19a2c46274b7b3ecd139bb06.pdf",
+    "source": "http://www.constcourt.gov.az/laws/26"
+  },
+  {
+    "_id": "5706df455753331200141f59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3da78e61b94256d696477f74745ffe1e0e6e89eb.pdf",
+    "source": "http://noc.ly/index.php/en/"
+  },
+  {
+    "_id": "5706dfed5753331200141f75",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d09579b9ab6f51ec563f9686851ced96cc1a576.pdf",
+    "source": "http://www.opec.org/opec_web/en/76.htm"
   }
 ]
