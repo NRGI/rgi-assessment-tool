@@ -6350,5 +6350,53 @@
     "_id": "5706dfed5753331200141f75",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0d09579b9ab6f51ec563f9686851ced96cc1a576.pdf",
     "source": "http://www.opec.org/opec_web/en/76.htm"
+  },
+  {
+    "_id": "570758a0575333120014213f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7162d6c189bfe0e45082a927817200441f6e67b5.pdf",
+    "source": "http://www.embassyeritrea.org/press_statements/2013_Jan16_Ambassador_Girmas_Interview_with_Bloomberg_News.pdf"
+  },
+  {
+    "_id": "5707375557533312001420dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c878f0c1cc9339645101e30fccd9478c1a201880.pdf",
+    "source": "http://www.oilfund.az/uploads/ferman1en.pdf"
+  },
+  {
+    "_id": "5707301957533312001420a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a934f218528ff2a3924168c73576f094c52b8a78.pdf",
+    "source": "http://www.oilfund.az/en_US/hesabat-arxivi/rublukh/2015_1/2015_1_4/"
+  },
+  {
+    "_id": "570747345753331200142125",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1ae65e83b80c00fccf618a2e47196907c170e1a.pdf",
+    "source": "http://www.shabait.com/editorial/press-release/21400-statement-delivered-by-ambassador-girma-asmerom"
+  },
+  {
+    "_id": "570771ab5753331200142192",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7dfb0c0f6a1a12e3e5ac675b0a2bdeb59e7fb103.pdf",
+    "source": "http://www.congopetrole.fr/activites_du_ministere/textes_decrets_et_arretes.html"
+  },
+  {
+    "_id": "5707772057533312001421af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32b406d3a16f0c874dec91a409dc99ef56a7419c.pdf",
+    "source": "http://www.investir-afrique.com/doc_2015/loi_de_finances_2015_congo_brazzaville.pdf"
+  },
+  {
+    "_id": "5707a0c95753331200142289",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/819f0beae48ffdc4799fa4adbffae08f43a41313.pdf",
+    "source": "http://www.inp-mz.com/core/uploads/Mz5Rnd-PR-28Oct2015-ENG.pdf"
+  },
+  {
+    "_id": "5707a85957533312001422a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b05030fe92e6be666fb95e38aa8d7826c728117.pdf"
+  },
+  {
+    "_id": "5707a95657533312001422bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27315bc4b5de7396f8324a1ed488ff2bdb8fa042.pdf",
+    "source": "https://www.google.co.mz/#q=Fifth+EITI%E2%80%90M+Report+%E2%80%93+2012EITI+MOZAMBIQUE"
+  },
+  {
+    "_id": "570754675753331200142134",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a02919fa4e36c0c15c8eeddbcbe6c76fdc41a3fc.doc"
   }
 ]
