@@ -6208,5 +6208,54 @@
     "_id": "5706634857533312001419f4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d398b60a190cb910ce00d6b23740b11f0f7d92cb.pdf",
     "source": "http://file:///C:/Users/businge/Downloads/Petroleum%20Revenue%20Management%20-%20Uganda%20Capacity%20needs%20assessment%20report.pdf"
+  },
+  {
+    "_id": "5706664d5753331200141a33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/591202deb75844d0f429c2a1f71658a4e778851a.pdf",
+    "source": "https://www.daily-mail.co.zm/?p=35661"
+  },
+  {
+    "_id": "57066c7b5753331200141aa7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f5dd6830a55cbdafd1e9ed98266e7243041e84f.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/amendment_act/Constitution%20of%20Zambia%20%20(Amendment),%202016-Act%20No.%202_0.pdf"
+  },
+  {
+    "_id": "57066ceb5753331200141ab5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca3e01f4a91f8eb09db2a007a72deafe0185732c.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2013/cr1336.pdf"
+  },
+  {
+    "_id": "570668e25753331200141a72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d06230231b09fd9baefb40b1d78ae79ec982e13.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/doc00249620150217080303.pdf"
+  },
+  {
+    "_id": "5706678f5753331200141a65",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bebc200630af7ee810172fedd5499286473590fa.pdf",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/noticias.php?option=view&idNot=3506"
+  },
+  {
+    "_id": "570672df5753331200141b33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0042d4316a12cd8442bc8b5395ce6ef9efa0b4f9.pdf",
+    "source": "http://www.swfinstitute.org/swfs/libyan-investment-authority/"
+  },
+  {
+    "_id": "57066d415753331200141abb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df1991e1eed0b1b5417736724d7c4c7d48428bf8.pdf",
+    "source": "https://radiotamazuj.org/en/article/unexplained-227-million-shifted-nilepet"
+  },
+  {
+    "_id": "57066d855753331200141abe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67f219e79c3c169a2575e29f49c09fc7e960f174.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/amendment_act/Constitution%20of%20Zambia%20%20(Amendment),%202016-Act%20No.%202_0.pdf"
+  },
+  {
+    "_id": "570672905753331200141b21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/131adf600f3813c304206bf722fd43a833be4b0f.pdf",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/noticias.php?option=view&idNot=3573"
+  },
+  {
+    "_id": "57067f0c5753331200141be4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/254e438429d343e0f1e43d320ecc4ce2a68a4374.pdf"
   }
 ]
