@@ -6398,5 +6398,53 @@
   {
     "_id": "570754675753331200142134",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a02919fa4e36c0c15c8eeddbcbe6c76fdc41a3fc.doc"
+  },
+  {
+    "_id": "5707b9d0575333120014233f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87b42554b585c9b9149e78ca3602c7b34179285f.pdf",
+    "source": "https://eiti.org/fr/node/7294"
+  },
+  {
+    "_id": "5707c0155753331200142347",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a9f9c3f0a4f3bd73205b391fca588b1e3be819b.doc",
+    "source": "http://www.rosnedra.gov.ru/article/7640.html"
+  },
+  {
+    "_id": "5707c3c25753331200142366",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f02cad4afbd61c7b4a7bd58eb558fb8c92f6b3d.pdf",
+    "source": "https://www.petrotrin.com/en/About%20Us/Our%20Company.aspx"
+  },
+  {
+    "_id": "5707c4b75753331200142382",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65bee1688c4cadda13823b9ef8745176fe518c36.pdf",
+    "source": "http://ngc.co.tt/about/activities/"
+  },
+  {
+    "_id": "5707c5d35753331200142395",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ae48581b974d6fe59eca07b412cb03357e4a88c.pdf",
+    "source": "https://openmap.mineral.ru/Standard/GetRef.ashx?id=827&md5=f71b8cb904ecd951"
+  },
+  {
+    "_id": "5707dd7957533312001424a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01c18bdab57def0da3d769c52970fe961a7f32ed.pdf",
+    "source": "http://www.pcldiraq.com/index.php?p=calendar"
+  },
+  {
+    "_id": "5707da875753331200142475",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f49649bf5343e99d2f5b547803e629b804e637f.pdf"
+  },
+  {
+    "_id": "5707c8cc57533312001423b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20fec3f10fba19cffc7a3f621c5407378a37f2cf.pdf",
+    "source": "https://www.petrotrin.com/Investor%20Relations/Financial%20Reports.aspx"
+  },
+  {
+    "_id": "5707d6835753331200142452",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb4946dd0d3146e31e99a379020a2e6f2b48b6a8.pdf"
+  },
+  {
+    "_id": "5707c74257533312001423b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9968ad1e78c564d4bce867ae82a6b719db65cc2e.pdf",
+    "source": "http://www.eisourcebook.org/cms/Dec%202012/South%20Sudan,%20draft%20Petroleum%20Revenue%20Management%20Bill,%202012.pdf"
   }
 ]
