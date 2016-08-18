@@ -7559,5 +7559,135 @@
     "_id": "570cda0c575333120014446f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/95b6c6fe5a17981100db66698af4c1a762fb95f2.PDF",
     "source": "http://soguipami-gn.com/images/ETATSFINANCIERS/RapportGeneraletspecialcertifieducommissaireauxcomptes2013.PDF"
+  },
+  {
+    "_id": "570d32425753331200144ac7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe49801d7b4ce13f252e51d4b9a950aaa0eb7f0b.pdf",
+    "source": "http://www.ifswf.org/member-profiles/alberta-heritage-savings-trust-fund"
+  },
+  {
+    "_id": "570d304c5753331200144aa1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf83059d93f610acb542ec12df57f19ebbc4d986.pdf",
+    "source": "http://www.finance.alberta.ca/business/ahstf/faqs.html"
+  },
+  {
+    "_id": "570d317e5753331200144ab8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5339c0226640209df97f2d0d7fc1fa03050c442d.pdf",
+    "source": "http://www.finance.alberta.ca/business/ahstf/faqs.html"
+  },
+  {
+    "_id": "570d346a5753331200144aec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d79439d26c637bbda6e8f7587fcdd84f642d5630.pdf",
+    "source": "http://www.alberta.ca/release.cfm?xID=337774697B3F2-C122-077C-1B10DED443BF0F35"
+  },
+  {
+    "_id": "570d335a5753331200144ad7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aebec9f75291e1be49b2641513592fc608711eb7.pdf",
+    "source": "http://cwf.ca/wp-content/uploads/2015/10/CWF_AB_Budget_Analysis_2013-2014-1.pdf"
+  },
+  {
+    "_id": "570d366c5753331200144b13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/291b0cd4b3bbd0d5a0b01408ede17a63fa72180e.pdf"
+  },
+  {
+    "_id": "570d37025753331200144b29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af41fba7081e6ae1954230a3195d2736748ebc0e.pdf",
+    "source": "http://www.tigraybopf.gov.et/plan.html"
+  },
+  {
+    "_id": "570d37745753331200144b42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6aea518555459088e705aab95ad884bf9d3ecdb.pdf",
+    "source": "http://www.southinvest.gov.et/publications.htm"
+  },
+  {
+    "_id": "570d37cb5753331200144b55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50488a4f5a00a6f8deae97050173d3d569a32a42.pdf",
+    "source": "http://www.oromiabofed.org/index.php?option=com_content&view=category&layout=blog&id=45&Itemid=62"
+  },
+  {
+    "_id": "570d38375753331200144b6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d877a4cefe2991fac8909c0d7e6b85b1bda3518f.pdf",
+    "source": "http://www.mofed.gov.et/English/Resources/Documents/GTP%20APR%202005%20EFY%20English.pdf"
+  },
+  {
+    "_id": "570d3b8f5753331200144ba9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6aa8e1628a98b6cd9dd2b92ec6f2d394f8750437.pdf"
+  },
+  {
+    "_id": "570d42545753331200144c4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/500ff49e2692c18cba1117f9bedd5f562e593fd3.pdf"
+  },
+  {
+    "_id": "570d49c85753331200144ca5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84e5794a7417dd961c4eeed9be22196c64f739eb.xlsx",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-annuelles-a-l-export-des-derives-de-phosphate/resource/d847f411-4646-4a11-bd86-98cee38f381b"
+  },
+  {
+    "_id": "570d4ad45753331200144cb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e1ff2a4e12234aecf6dab5dcd639f3277ac686a.pdf",
+    "source": "http://www.cpg.com.tn/Fr/les-ventes_11_19"
+  },
+  {
+    "_id": "570d4bda5753331200144cbb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af6507f04fb95281abadb05ead43e8946ef032bb.pdf",
+    "source": "http://www.agenceecofin.com/phosphate/0501-25538-tunisie-la-production-de-phosphate-chute-a-gafsa-et-induit-lourdes-pertes-financieres-a-cpg"
+  },
+  {
+    "_id": "570d6cce5753331200144d3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d8475721b35cc279d062f7565ed4554271e52f9.pdf",
+    "source": "http://www.swfinstitute.org/fund/chile.php"
+  },
+  {
+    "_id": "570dc6e15753331200144d71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8485d2910ee8226116e897ecb70f519d8be514dd.pdf",
+    "source": "http://www.dica.gov.mm/sites/dica.gov.mm/files/document-files/foreigninvestmentlaw.pdf"
+  },
+  {
+    "_id": "570dc9465753331200144d7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc1a71397e2cbf31febb6583b19ebbe71e625fb3.pdf",
+    "source": "http://www.burmalibrary.org/docs5/Myanmar_Constitution-2008-en.pdf"
+  },
+  {
+    "_id": "570dcac65753331200144d8a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60f56d316b7ec9fe17b4ba22058168cbf4fbd088.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2016/03/18/090224b082e8301f/1_0/Rendered/PDF/Main0report.pdf"
+  },
+  {
+    "_id": "570dd4bd5753331200144da3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29ac6c061a388925985043464deb502570ad98b3.pdf",
+    "source": "http://arakanoilwatch.org/wp-content/uploads/2016/03/Breaking-the-Curse-Eng.pdf"
+  },
+  {
+    "_id": "570ddb335753331200144dd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c94375110d0b630a0e195c92280d1b2f4472c00.pdf",
+    "source": "http://aptel.gov.in/pdf/PETROLEUM%20ACT.pdf"
+  },
+  {
+    "_id": "570dde355753331200144df7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f80c254bf37e755f88130013b097dd051147cdd.pdf"
+  },
+  {
+    "_id": "570de2355753331200144e11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8aefa621935110b8061e9bd13829640011e75e7.pdf",
+    "source": "https://www.jccp.or.jp/international/conference/docs/32-jccp-mr-win-maw-presentation.pdf"
+  },
+  {
+    "_id": "570de7155753331200144e2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4282f2421cbd0b74feac40a0891f974139d3942d.pdf",
+    "source": "http://www.mof.gov.mm/sites/default/files/2013-14%20Law_English_.pdf"
+  },
+  {
+    "_id": "570de8d45753331200144e3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/021083318c0b531880671b8b6fab8ee696bbbe4c.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2015/cr15267.pdf"
+  },
+  {
+    "_id": "570dea0e5753331200144e4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2acedf3cca253c2156105622c7bb69f25477aa80.pdf",
+    "source": "http://www.mof.gov.mm/sites/default/files/Budget%20Law%20English%20PDF_0.pdf"
+  },
+  {
+    "_id": "570ded365753331200144e68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ee39e80c4a645e21f85cf123f2e88edfb112cac.pdf"
   }
 ]

@@ -44,5 +44,13 @@
     "_id": "5704b0ad176f800c0090214e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e91c93a88d056ff092ac982c57a0f9067f91a452.pdf",
     "source": "http://www.eitimongolia.mn"
+  },
+  {
+    "_id": "570dd8b05753331200144dbe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c83adac6eac3f494c9a99e2a173d4ddd0c42d7b.pdf"
+  },
+  {
+    "_id": "570dee705753331200144e6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/387e7809dda48aceac21c98cad008eb383cb8f42.pdf"
   }
 ]
