@@ -52,5 +52,9 @@
   {
     "_id": "570dee705753331200144e6c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/387e7809dda48aceac21c98cad008eb383cb8f42.pdf"
+  },
+  {
+    "_id": "57105e0b57533312001457e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52feaa9a818e4c6ab2cad655825b06939cce9cb7.pdf"
   }
 ]
