@@ -6758,5 +6758,95 @@
     "_id": "570a24e35753331200142c9b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0d36eab7996e82479b7159fcbc489d90b81c8d1f.docx",
     "source": "http://www.mof.gov.iq/pages/ar/AnalyticalReport.aspx#"
+  },
+  {
+    "_id": "570a38995753331200142d72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f63d13577d27e721053ea26a4985916d3d6ff420.pdf",
+    "source": "http://www.ungd.uz/news/2015/10/30/buhbal1_3_15"
+  },
+  {
+    "_id": "570a41845753331200142dd8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51d222fc0d345bb742adb4e5bd623235dec95faa.pdf",
+    "source": "http://openinfo.csm.gov.uz/view.php?tbl=resolutions&id=3090&act=print"
+  },
+  {
+    "_id": "570a39b25753331200142d90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdc9fb26bb12831d2851589bebc4ca12c99f5db1.pdf",
+    "source": "http://www.mof.gov.bd/en/budget/14_15/mtbf/en/MBF_42_Energy_English.pdf"
+  },
+  {
+    "_id": "570a416d5753331200142dd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5790c9e7ddf3089ef21d8629d11d126f269bd2eb.pdf"
+  },
+  {
+    "_id": "570a42135753331200142de2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03c2a4f635e4dc6c7c5d8d55b6ea84defbff1f4b.pdf"
+  },
+  {
+    "_id": "570a42325753331200142def",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/66a7a45e73d3380c5d26ec4ea81860654fa87c0f.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2013/cr13218.pdf"
+  },
+  {
+    "_id": "570a434b5753331200142e0f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/557fb83d72d0984b310cb80ccfa2e6568ab1f6d5.pdf",
+    "source": "http://www.mof.gov.bd/en/"
+  },
+  {
+    "_id": "570a43985753331200142e1b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f04f43ad4577321bbcd2749f87990b8f0d685e0d.pdf"
+  },
+  {
+    "_id": "570a43c25753331200142e25",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ac4bc09fe79d3d56b95b7076d4471bb625814c7.pdf"
+  },
+  {
+    "_id": "570a3e105753331200142da9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b03fff40036289df02942cfe6bcdc6457b6134c2.xlsx",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/487112/14R_Offers_by_Operator_v3.xlsx"
+  },
+  {
+    "_id": "570a44605753331200142e4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f14035ca6ac2619381f656e78d39c229b787ed30.pdf"
+  },
+  {
+    "_id": "570a5b455753331200142ebc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b42c2ff4b02161b595a04b9b015bdaa2a8ea282d.pdf"
+  },
+  {
+    "_id": "570aa54a5753331200142f61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22f89f818df03c82fce52750bdda86fc9816be69.pdf",
+    "source": "http://www.budgetmof.gov.af/images/stories/DGB/BPRD/National%20Budget/1395%20Budget/BProvincaialBreakdown/1395%20Development%20Budget%20Provincial%20Breakdown.pdf"
+  },
+  {
+    "_id": "570aa9645753331200142f6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4c8fbdfd4bd5ea8017278a2d27db89ce3353cce.pdf",
+    "source": "http://www.budgetmof.gov.af/images/stories/DGB/BPRD/National%20Budget/1393/Final%20Dari%20provincial%20for%20upload.pdf"
+  },
+  {
+    "_id": "570aabcd5753331200142f81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71127b64e61ecf1aeb5d1d94c2dd448d660d7f92.pdf"
+  },
+  {
+    "_id": "570a44605753331200142e4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f14035ca6ac2619381f656e78d39c229b787ed30.pdf"
+  },
+  {
+    "_id": "570a5b455753331200142ebc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b42c2ff4b02161b595a04b9b015bdaa2a8ea282d.pdf"
+  },
+  {
+    "_id": "570aa54a5753331200142f61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22f89f818df03c82fce52750bdda86fc9816be69.pdf",
+    "source": "http://www.budgetmof.gov.af/images/stories/DGB/BPRD/National%20Budget/1395%20Budget/BProvincaialBreakdown/1395%20Development%20Budget%20Provincial%20Breakdown.pdf"
+  },
+  {
+    "_id": "570aa9645753331200142f6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4c8fbdfd4bd5ea8017278a2d27db89ce3353cce.pdf",
+    "source": "http://www.budgetmof.gov.af/images/stories/DGB/BPRD/National%20Budget/1393/Final%20Dari%20provincial%20for%20upload.pdf"
+  },
+  {
+    "_id": "570aabcd5753331200142f81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71127b64e61ecf1aeb5d1d94c2dd448d660d7f92.pdf"
   }
 ]
