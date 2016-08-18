@@ -8598,5 +8598,76 @@
     "_id": "571793de9735d112001c9f4b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9660190d486c10ff1b38fc65e8767ec185fad07a.pdf",
     "source": "http://en.nac-kh.org/httpdocs/naweb/english/ViewLawFile.aspx?LawDID=154"
+  },
+  {
+    "_id": "5718b0289735d112001ca6f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7802347770c58bc90a0f7e74234fefeb22da2a94.pdf",
+    "source": "http://file:///C:/Users/Ben/Downloads/FullReport.pdf"
+  },
+  {
+    "_id": "5718b9629735d112001ca72a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc4d7be2f70198a3845a54aff17c22cdf6b0acb3.pdf",
+    "source": "http://www.slp.wa.gov.au/pco/prod/FileStore.nsf/Documents/MRDocument:27598P/$FILE/Environmental%20Protection%20Act%201986%20-%20[08-d0-02].pdf?OpenElement"
+  },
+  {
+    "_id": "5718ba019735d112001ca742",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/683a061c64c1d705a0c719c56c12a8b38247f459.pdf",
+    "source": "http://timesgabon.com/22-02-2016-gabon-oil-company-4-questions-de-jeune-afrique-a-arnauld-engandji-directeur-general/"
+  },
+  {
+    "_id": "5718c5ed9735d112001ca869",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8bc730a2c0c9e97cffb0201df341d59ef3a9bffa.pdf",
+    "source": "http://www.environment.gov.au/epbc/publications/factsheet-epbc-act-frequently-asked-questions"
+  },
+  {
+    "_id": "5718c8019735d112001ca875",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbb29fa657addafd5840f254f03c14f33e3fee48.pdf",
+    "source": "https://www.legislation.gov.au/Details/C2016C00322"
+  },
+  {
+    "_id": "5718ca759735d112001ca89f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ad88436d649f43896732fcbc28fe8a744a31638.pdf"
+  },
+  {
+    "_id": "5718ccc89735d112001ca8aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f935f1bea0e541b478a526f5df3663a0bbf7e2bd.pdf",
+    "source": "http://www.epa.wa.gov.au/eia/Pages/default.aspx"
+  },
+  {
+    "_id": "5718d1b89735d112001ca8cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e3162630a00b033526eb81c790c85f8389e9397.pdf"
+  },
+  {
+    "_id": "5718d2559735d112001ca8d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/207c558345f31585f479610cefcfb323762671ba.pdf"
+  },
+  {
+    "_id": "5718d85e9735d112001ca96d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8a757a989fbb86a339548acd55d4935848616ae.pdf",
+    "source": "http://www.epa.wa.gov.au/EIA/EPAReports/Pages/default.aspx?cat=EPA%20Reports&url=EIA/EPAReports"
+  },
+  {
+    "_id": "57195545ee434c0c00447720",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c07ea3ec35f4f57cac94ee9fbd225dbc9c4310b.pdf",
+    "source": "http://www.mme.gov.br/documents/10584/1251866/Relat%C3%B3rio+Semestral+de+Atividades+MME+n3+-+1+Sem+2015.pdf/314ce663-1d13-46bf-aa39-47af7997e75b"
+  },
+  {
+    "_id": "57195718ee434c0c00447767",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/522a21f7f0d30b08208ca776c83388dfd38af1a0.pdf",
+    "source": "http://www.reuters.com/article/venezuela-pdvsa-bonds-idUSL1N0O015C20140514"
+  },
+  {
+    "_id": "5718f8679735d112001caa58",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dbf951da3434d9d182b502443dfdad2b712473b2.pdf",
+    "source": "http://aynaliraqnews.com/index.php?aa=news&id22=48134"
+  },
+  {
+    "_id": "5718ec3e9735d112001caa2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec96e5935dc1dab1312bfbba73d71adf5819fbb5.pdf"
+  },
+  {
+    "_id": "57195065ee434c0c004476c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1581bcce3fa37ee00954f62e6a877eaf3af4ff5e.png",
+    "source": "http://www3.transparencia.gov.br/jsp/contratos/contratoBuscaAvancada.jsf"
   }
 ]
