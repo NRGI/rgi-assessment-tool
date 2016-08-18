@@ -6992,5 +6992,78 @@
     "_id": "570ba02e57533312001436e4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/beb00e0f44f96bcdde6f9b041526219736dbadfb.pdf?method=1",
     "source": "https://ogis.archives.gov/Assets/Unknown/open-foia.pdf?method=1"
+  },
+  {
+    "_id": "570ba570575333120014379f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47310a90c33bcbe61509955a00ca8aad0292fda1.pdf",
+    "source": "https://useiti.doi.gov/downloads/USEITI_executive-summary_2015-12-22.pdf"
+  },
+  {
+    "_id": "570ba79657533312001437c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22b1d4e9bf768a974bf4758855065e7011755d5a.pdf",
+    "source": "https://eiti.org/files/YEM3_11_apr_2014.pdf"
+  },
+  {
+    "_id": "570baa4757533312001437ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d42898a9400f91870de7e34f12b67efe59cb499f.PNG",
+    "source": "http://www.swfinstitute.org/fund/oldfundpages/adiaold.php"
+  },
+  {
+    "_id": "570bb011575333120014382a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea5a1752d49d16d7e0d153745fed738303deacde.pdf"
+  },
+  {
+    "_id": "570bb0d25753331200143840",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a92f0b097e6a8f2ab10fa315eed9c2dde02811f2.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2014/2014A/105/Ta2014591.pdf"
+  },
+  {
+    "_id": "570bb134575333120014384f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9e4cad2d5deab73d01968d8178a5e7c6b508d21.pdf",
+    "source": "http://www.bct.gov.tn/bct/siteprod/pnrd.jsp?la=AN"
+  },
+  {
+    "_id": "570bb1c95753331200143863",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ea90afa011c103f42274bd5fc30e3830b7b9646.pdf",
+    "source": "http://www.finances.gov.tn/images/BUDGET_CITOYEN_2015_.pdf"
+  },
+  {
+    "_id": "570ba2255753331200143744",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0f7102707879c8b70101d5a9df78e90a4153299.docx",
+    "source": "http://sepocye.com/indexOriginal.php"
+  },
+  {
+    "_id": "570ba2c35753331200143767",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/750df380102bc830d04adaf605fef4161b3f7f86.PNG"
+  },
+  {
+    "_id": "570ba4fa5753331200143795",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4224f057bde2d3d6f41c18f50cc801b25ceb28e3.PNG",
+    "source": "http://www.swfinstitute.org/fund-rankings/"
+  },
+  {
+    "_id": "570ba08f57533312001436f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ddcccc4f3299e84247a11406c9168d9848e173d.PNG",
+    "source": "https://books.google.ae/books?id=U75Fxg7UX-sC&pg=PA77&lpg=PA77&dq=adNOC+IS+FUNDED+BY++by+budget+allocation&source=bl&ots=RlQE2OPxQM&sig=enHqIci8rXcHsieGmTcGFbRw-6U&hl=en&sa=X&ved=0ahUKEwjZ7bOO383LAhWKtRQKHblNAPQQ6AEILzAE#v=onepage&q=adNOC%20IS%20FUNDED%20BY%20%20by%20budget%20allocation&f=false"
+  },
+  {
+    "_id": "570ba0b357533312001436fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4d35b1d8df6275c7d457027ab95ed987865459a.docx",
+    "source": "http://www.wsj.com/articles/oil-companies-begin-to-give-up-on-yemen-1425480765"
+  },
+  {
+    "_id": "570ba1135753331200143719",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cc45a5343b6d50c76e0cbd0b3950f55b3485056.docx",
+    "source": "http://www.reuters.com/article/us-yemen-crisis-idUSKBN0LA1NT20150207"
+  },
+  {
+    "_id": "570ba1f05753331200143737",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c36039a108607ef60cadbea24bd6d1e473775018.PNG",
+    "source": "http://www.swfinstitute.org/swfs/abu-dhabi-investment-authority/"
+  },
+  {
+    "_id": "570ba1f35753331200143739",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be1d7d41e8052d91dfa4a5360d64dc18792756c5.docx",
+    "source": "http://www.petromasila.com"
   }
 ]
