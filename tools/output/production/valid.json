@@ -10803,5 +10803,30 @@
     "_id": "572aace71c7e780100db181e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ccef48e7251aa352f905ac055784d57964d52aa0.pdf",
     "source": "http://www.resourcegovernance.org/sites/default/files/NRF_Overview_EN.pdf"
+  },
+  {
+    "_id": "572b1e7a1c7e780100db1912",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e947ba088bbf8d96941da00a9fb3e1ed978b90b.pdf",
+    "source": "http://www.donya-e-eqtesad.com/news/391156/"
+  },
+  {
+    "_id": "572b205e1c7e780100db191a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4770d0b7d213e9b5fcacc8112af1da68ec3b9ec0.pdf",
+    "source": "http://www.taxbank.ir/Matters?law=Direct&start=155"
+  },
+  {
+    "_id": "572aadcf1c7e780100db1823",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b14156407332b5decd1ded88bfb2a5c292adddb.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/JPDA"
+  },
+  {
+    "_id": "572aae841c7e780100db1839",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9626575b009fbd57a884ee1a76f6b0770013fdcb.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/TLEA"
+  },
+  {
+    "_id": "572ab1951c7e780100db1856",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04ec53932122e49198d5971cdc80b3b4c2485885.jpg",
+    "source": "https://eiti.org/TimorLeste"
   }
 ]
