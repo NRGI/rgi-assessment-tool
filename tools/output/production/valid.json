@@ -9598,5 +9598,78 @@
     "_id": "571ff7df1751960d00766667",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ebf0e7d13848db667e5bcd1e75b0d3f45b7eaeb5.pdf",
     "source": "http://www.udape.gob.bo/portales_html/dossierweb2015/htms/doss0302.htm"
+  },
+  {
+    "_id": "572197081751960d00767040",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b348d6bd3dcbe4b5339f40f47af81024cbb351e.pdf",
+    "source": "https://xzsp.nea.gov.cn/nea/?action=jieguogongkai&filter=150"
+  },
+  {
+    "_id": "572197761751960d00767048",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28eb6a48fb1b7c1d768a15a4ac951b69d8c22e3d.docx",
+    "source": "http://NA"
+  },
+  {
+    "_id": "572199311751960d0076706b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/851052d65885ddb7376af2fabd40e0de05f6fe39.pdf",
+    "source": "http://www.nea.gov.cn/zfxxgk/gkzn.htm"
+  },
+  {
+    "_id": "572199a81751960d00767076",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e71ac75f95689596f4632403fe9e057f4a90698c.pdf",
+    "source": "http://www.nea.gov.cn/gjnyj/index.htm"
+  },
+  {
+    "_id": "57219a921751960d0076707c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1237323ae3205cf737274f894c62dcedd9dcd3b5.pdf"
+  },
+  {
+    "_id": "57219b5d1751960d00767092",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4238f59cc79b5ee60406f2be99f3f60cbd3b6ce6.pdf",
+    "source": "http://www.sinopecgroup.com/group/en/companyprofile/AboutSinopecGroup/"
+  },
+  {
+    "_id": "57219c9a1751960d007670be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05ec89027ba6226584976b3ca7358cb139f910b1.pdf",
+    "source": "http://english.sinopec.com/download_center/reports/2015/20160329/download/2016032918C.pdf"
+  },
+  {
+    "_id": "5721a3871751960d00767119",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb7e2157d0087eb494eabd8889cdca8df2be7df0.pdf",
+    "source": "http://news.xinhuanet.com/ziliao/2005-03/17/content_2709622.htm"
+  },
+  {
+    "_id": "5721a4151751960d00767136",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4a46f712dd0c3f430ba1e7f3a64a849ce250df3.pdf",
+    "source": "http://www.chinatax.gov.cn/n810341/n810755/c1151105/content.html"
+  },
+  {
+    "_id": "5721a8e61751960d00767172",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/360d7275bc2d12092b5892df897eaa8f686450bd.pdf"
+  },
+  {
+    "_id": "5721aa0b1751960d00767189",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9edeca37d8184c48cbfc53d4c7b2efc21bd968ee.pdf",
+    "source": "http://www.mof.gov.cn/zhuantihuigu/czjbqk2011/cztz2011/201208/t20120831_679806.html"
+  },
+  {
+    "_id": "5721ae251751960d007671b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68ab511255d7b7ed5f264d49beb03576d6531989.pdf",
+    "source": "http://www.chinatax.gov.cn/2013/n2925/"
+  },
+  {
+    "_id": "5721ae9b1751960d007671ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85efb240ce3f3485e4689c0a4cb0d65ef1dd5cbc.pdf",
+    "source": "http://www.mof.gov.cn/index.htm"
+  },
+  {
+    "_id": "5721b5a01751960d00767211",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04ff9b451354bfb4a945ce2046fb626dd68556a7.pdf",
+    "source": "http://www.nbc.org.kh/download_files/publication/annual_rep_eng/Annual-Report-2014-Eng.pdf"
+  },
+  {
+    "_id": "5721b8b31751960d00767220",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b63a7fe944bc32c953b5d43256aea77ab3da28f7.pdf",
+    "source": "http://www.tax.gov.kh/en/brief.php"
   }
 ]
