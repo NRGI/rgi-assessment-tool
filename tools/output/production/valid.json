@@ -10631,5 +10631,177 @@
   {
     "_id": "5729f5341c7e780100db10fb",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5f85a10498ddc18c0d1dbaa0d20ce5085d9fc2b4.doc"
+  },
+  {
+    "_id": "572a0b981c7e780100db12e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd87731b0b2f0a020f2bbd36066d1214f55a3fb9.pdf",
+    "source": "http://www.pcldiraq.com/index.php?p=bid_results"
+  },
+  {
+    "_id": "572a0afb1c7e780100db12c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/986d7099a2b900a653549c71c1c486f8d6e49b8f.pdf",
+    "source": "http://www.pcldiraq.com/index.php?p=bid_results"
+  },
+  {
+    "_id": "572a01cf1c7e780100db122f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6748d0a0a58fc3a8beac769a5f5740ed105a1b97.pdf",
+    "source": "http://www.dmp.wa.gov.au/Environment/Abandoned-mines-projects-18193.aspx"
+  },
+  {
+    "_id": "572a0e471c7e780100db1344",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c116b5f4c686d27d7bf6570ad37a99a01f33e0f.pdf",
+    "source": "http://www.pcldiraq.com/index.php?p=area"
+  },
+  {
+    "_id": "572a00cb1c7e780100db1214",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5da898f53c3dc59aaac45cb56500fd29eb593d5.pdf",
+    "source": "http://www.dmp.wa.gov.au/Documents/Environment/Abandoned_mines_policy.pdf"
+  },
+  {
+    "_id": "572a0fb21c7e780100db1359",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3011c8f0ba531ee1aefb9be91f9d597ba7ef55cb.pdf",
+    "source": "http://www.nnpcgroup.com/NNPCBusiness/UpstreamVentures/OilProduction.aspx"
+  },
+  {
+    "_id": "572a10401c7e780100db1367",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c98c5616ced4191f120d232843610ee5e3f132a.pdf"
+  },
+  {
+    "_id": "572a11591c7e780100db138c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f680fc298ea99bf1a92eeb7665dbb649c1e41817.pdf",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/index2.php"
+  },
+  {
+    "_id": "572a119e1c7e780100db1396",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2842286412552037801dbc7dab7ab02e707b372a.pdf",
+    "source": "http://www.pdvsa.com"
+  },
+  {
+    "_id": "572a13301c7e780100db13e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06a101f2a2e5b2f4f841d1a25c82e5dafb7f6514.pdf",
+    "source": "http://www.bankofbotswana.bw/index.php/content/2009110613006-legislation-and-bylaws"
+  },
+  {
+    "_id": "572a14391c7e780100db140d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a884efd1f7fb3aba4721d62a40325c8b3ae7c89d.pdf",
+    "source": "http://www.bankofbotswana.bw/assets/uploaded/BoB%20AR%202014%20WEB%20MAIN.pdf"
+  },
+  {
+    "_id": "572a171d1c7e780100db1436",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd8aad6289a5ee677addc725faa5fcc3dcffae59.pdf",
+    "source": "http://www.moo.oil.gov.iq/PCLD/PCLD/PDF/1.pdf"
+  },
+  {
+    "_id": "572a184a1c7e780100db1456",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d48571daf0f5dc0c8c0abd6edfe4c7c08873fb31.pdf",
+    "source": "http://www.gov.bw/Global/2016%20People's%20guide%20to%20the%20Budget%20(3).pdf"
+  },
+  {
+    "_id": "572a1c201c7e780100db1472",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9e8e731f06b7169af1b55e05c452a012928d44e.pdf",
+    "source": "http://tax.mof.gov.iq/uploads/shfa/m3amlat%20almowatneen/sharekat/دليل%20املاء%20تصريح%20ضريبة%20الشركات.pdf"
+  },
+  {
+    "_id": "572a1d951c7e780100db1485",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/424ee2ce4f641ea741cad3d75d3404125108aae6.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?SC=310520109361304"
+  },
+  {
+    "_id": "572a22701c7e780100db14c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d034dd9e42ba1482256477db227b8df2a66b8538.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?SC=190220129326429"
+  },
+  {
+    "_id": "572a23091c7e780100db14ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4e45f95570d7d82b43810a9d792cd1a2e0716e2.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "572a235f1c7e780100db14d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70a90f2218bed2e7b48d3fcfb07314999e22d820.pdf",
+    "source": "https://eiti.org/countries/other"
+  },
+  {
+    "_id": "572a30d91c7e780100db1544",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75a1b8dce297f9fcd8f6ec7b26159666a4700afa.pdf"
+  },
+  {
+    "_id": "572a50221c7e780100db15e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93268b7dcf3d8367f1af99effddebb3cc9512563.pdf",
+    "source": "http://diariorombe.cl/2015/09/03/la-petrolera-hess-despide-15-trabajadores-y-continuara-el-proceso-de-despido-en-bata/"
+  },
+  {
+    "_id": "572a50581c7e780100db15f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59f143be508a28f4b501ec60685916ade125e173.pdf",
+    "source": "http://mmie.gob.gq/?s=rehabilit"
+  },
+  {
+    "_id": "572a697d1c7e780100db1659",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aba538249b1352c7e888b96fa76508a3d49558be.pdf",
+    "source": "http://sonagas-ge.com/en/"
+  },
+  {
+    "_id": "572a69ee1c7e780100db1661",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a579e33af15572975777cfba1d85082bac33842f.pdf",
+    "source": "http://www.gepetrolenergy.com/"
+  },
+  {
+    "_id": "572a73231c7e780100db1697",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/944c156a9f33b1779206bdf004136d18e8d95656.pdf",
+    "source": "http://www.cgr.gob.ve/site_content.php?Cod=070"
+  },
+  {
+    "_id": "572a75271c7e780100db16a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee5fd10f7ff89af301740f7cf571484959ba7b5d.pdf",
+    "source": "http://www.cgr.gob.ve/pdf/sisroe/ENTES_EDO_MUN.pdf"
+  },
+  {
+    "_id": "572a77ed1c7e780100db16b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06714ea07f8a477d05f5fe8217f4439bbf00cdb8.pdf",
+    "source": "http://www.cgr.gob.ve/pdf/instrumentos/resol_40153.pdf"
+  },
+  {
+    "_id": "572a81451c7e780100db16d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce7793eb26fd57f49eb8da50cecf50762b479f6a.pdf",
+    "source": "http://www.cgr.gob.ve/site_content.php?Cod=047"
+  },
+  {
+    "_id": "572a907e1c7e780100db1705",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e038c7f13d79cb6ee78132ed3961ecc225eaf1f2.pdf",
+    "source": "http://prokum.esdm.go.id/kepmen/2014/Kepmen%20ESDM%204042%202014.pdf"
+  },
+  {
+    "_id": "572a90ba1c7e780100db1707",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e6b8e2a5bea7267cfbf29fe616062aa7a3bfbc8.pdf",
+    "source": "http://www.cgr.gob.ve/site_informes_management.php?Cod=026"
+  },
+  {
+    "_id": "572a91ca1c7e780100db172a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/07ab57689e80883aafc3520fbb8232a6e235133e.pdf",
+    "source": "http://jdih.esdm.go.id/peraturan/Kepmen-esdm-4618-Th-2015.pdf"
+  },
+  {
+    "_id": "572a985b1c7e780100db1793",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2cc73024db20d59cc11c4b0baf684efef6ee12a.pdf",
+    "source": "http://jdih.esdm.go.id/peraturan/Kepmen-esdm-4620-2015.pdf"
+  },
+  {
+    "_id": "572aa26e1c7e780100db17c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be548d3a4d68213716ecc2dbdf3e7553f738e66d.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/LafaekMap"
+  },
+  {
+    "_id": "572aa7f51c7e780100db17f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5ccd18bd579fa04b1f2d12433281010f62939d6.docx"
+  },
+  {
+    "_id": "572aa9f41c7e780100db180b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/656d9dbbb16fb0f37d3412b5e6e0c49599426f41.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Home"
+  },
+  {
+    "_id": "572aace71c7e780100db181e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccef48e7251aa352f905ac055784d57964d52aa0.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/NRF_Overview_EN.pdf"
   }
 ]
