@@ -56,5 +56,10 @@
   {
     "_id": "57105e0b57533312001457e9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/52feaa9a818e4c6ab2cad655825b06939cce9cb7.pdf"
+  },
+  {
+    "_id": "5722085d1751960d007673ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1862f71f9852513085eb8b32c3438bd6e4030cb0.pdf",
+    "source": "http://www.rosneft.com/attach/0/58/80/a_report_2014_eng.pdf"
   }
 ]
