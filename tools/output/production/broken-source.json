@@ -48,5 +48,15 @@
     "_id": "571abf8764e8080c00df001a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a0348f79338dc299be81c9a44ec27871128d6a12.pdf",
     "source": "http://www.minfin.gob.gt/subsitios/fideicomisos/archivos/nuevo/1.pdf"
+  },
+  {
+    "_id": "571ee0bd1751960d00765d20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a67eedd16bd8722e9ab6b05b643f714b7dde7020.pdf",
+    "source": "http://www.scpm.gob.ec/wp-content/uploads/2013/08/INFORME-FINAL-9-de-agosto-de-2013-PARA-WEB.pdf"
+  },
+  {
+    "_id": "571edfad1751960d00765d0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d08ab368e16038bf39448d490a1ec0b227712c5.pdf",
+    "source": "http://www.grupofaro.org/sites/default/files/archivos/publicaciones/2014/2014-02-17/lupa_fiscal_petrolera_2012.pdf"
   }
 ]
