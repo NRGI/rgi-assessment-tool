@@ -10510,5 +10510,126 @@
     "_id": "57265be958161e0100ccb5b1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/39e89882ca05e8bb6e7bbb040ed6672300fc021e.xlsx",
     "source": "http://www3.inegi.org.mx/sistemas/sisept/default.aspx?t=mamb341&s=est&c=35616"
+  },
+  {
+    "_id": "5728e1085ffe0c01006dfd39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e70d20d1e59c93298029960affc789c3d2b2e5d8.pdf"
+  },
+  {
+    "_id": "5728e2875ffe0c01006dfd48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e90028e8858ebcd9c0590e5f4f5cd4ea6171a59.pdf"
+  },
+  {
+    "_id": "572900735ffe0c01006dfdd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbcf5c4a0f44798f8f658f145707186400cd7ff7.pdf",
+    "source": "http://www.amnestyusa.org/our-work/countries/africa/equatorial-guinea"
+  },
+  {
+    "_id": "57290f6e5ffe0c01006dfe2d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a85104826922ef02d9947ff843735e06ce9f6b8e.pdf",
+    "source": "http://noticias.juridicas.com/base_datos/Admin/ref.html"
+  },
+  {
+    "_id": "572910165ffe0c01006dfe37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d24cf01d435cf007860dbfc33252d22b8b8b9f9.pdf",
+    "source": "http://noticias.juridicas.com/base_datos/Admin/lef.html"
+  },
+  {
+    "_id": "572919485ffe0c01006dfe9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0643a6ff9c4f66d44e7b772a34e6563b7f275556.pdf",
+    "source": "http://www.imf.org/external/pubs/ft/scr/2015/cr15249.pdf"
+  },
+  {
+    "_id": "57291abb5ffe0c01006dfea5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2ca6832d73d6b10487819f05832942c6647ecca.pdf",
+    "source": "http://www.dagsavisen.no/nyemeninger/en-b%C3%A6rekraftig-forvaltning-av-oljeformuen-1.715619"
+  },
+  {
+    "_id": "57293bcb1c7e780100db0b3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/172bab4e938d5816b3e3c89df60bf41ea50328f1.pdf",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "5729b46e1c7e780100db0d2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21813637afa814f19f1cc38ae60c7ba735ea77df.pdf",
+    "source": "http://www.sgm.gob.mx/index.php?option=com_content&task=view&id=125&Itemid=67"
+  },
+  {
+    "_id": "5729b5871c7e780100db0d3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72223489b02f966ef1e75eb037c88d171edf84e7.pdf",
+    "source": "http://www.inegi.org.mx/prod_serv/contenidos/espanol/bvinegi/productos/integracion/sociodemografico/Mineria/2014/702825067069.pdf"
+  },
+  {
+    "_id": "5729b80f1c7e780100db0d79",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b9e226192440d33a7a2701433210766f757ff9c.pdf",
+    "source": "http://www.sgm.gob.mx/productos/pdf/ChapterIV_2014.pdf"
+  },
+  {
+    "_id": "5729b90f1c7e780100db0d91",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccbac28b5fa88aa3c3fd08ae1b9ea6a31d095179.pdf",
+    "source": "http://www.sgm.gob.mx/index2.php?option=com_content&task=view&id=59&pop=1&page=0&Itemid=67"
+  },
+  {
+    "_id": "5729bdd31c7e780100db0def",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2dc62350eb82c1ed4521cd54b855586f6ba033b.pdf"
+  },
+  {
+    "_id": "5729be4c1c7e780100db0e02",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3521a8cf15a713a343ccf911fe5d01c50b7d170b.pdf",
+    "source": "http://www3.inegi.org.mx/sistemas/sisept/default.aspx?t=mamb02&s=est&c=34159"
+  },
+  {
+    "_id": "5729e9761c7e780100db101a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/41fefb8a1e450fff040ca054e1795ea2a089335d.pdf",
+    "source": "http://www.theguardian.com/world/2016/apr/22/australia-to-follow-uk-in-creating-public-register-of-shell-companies"
+  },
+  {
+    "_id": "5729f40b1c7e780100db10db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eec5d529a59ffe4163ce904fcf996743ac656b46.pdf",
+    "source": "https://en.wikipedia.org/wiki/Uganda_National_Oil_Company"
+  },
+  {
+    "_id": "5729edf51c7e780100db105f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/304a8736cf0e4a5e4a4a2476cd728b3d38ba162d.pdf",
+    "source": "http://www.pcldiraq.com/index.php?p=calendar"
+  },
+  {
+    "_id": "5729e9941c7e780100db101c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6cf2b67b2f4f5d8d91935bb52e51a8711122058.pdf",
+    "source": "http://www.globaltaxjustice.org/australia-backs-public-register-of-beneficial-ownership/"
+  },
+  {
+    "_id": "5729ecae1c7e780100db104e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/decf2efa6fe9d5a651e16b8a53f9f60652854653.pdf",
+    "source": "http://www.parliament.go.ug/new/images/stories/speeches/bud15.pdf"
+  },
+  {
+    "_id": "5729f8fa1c7e780100db115d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/91c6e1fbc47bd5eb2e923d0b48ba6b4fbd4280de.pdf",
+    "source": "http://parlinfo.aph.gov.au/parlInfo/download/legislation/bills/s981_first-senate/toc_pdf/1423920.pdf;fileType=application%2Fpdf"
+  },
+  {
+    "_id": "5729f6041c7e780100db1120",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c6b94713222ada98afcf828126443bc3fa3c50d.pdf",
+    "source": "http://www.moo.oil.gov.iq/studies/STUDIES/forums.html"
+  },
+  {
+    "_id": "5729fee11c7e780100db11ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c59e01a5b651eeb902bef8534bc65cc816d9ead4.pdf",
+    "source": "http://www.dmp.wa.gov.au/Documents/Environment/MRF_yearly_report_2015.pdf"
+  },
+  {
+    "_id": "5729fb111c7e780100db1182",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0807430bff7788caa9caad9f1b09fd13d44e6ee.docx",
+    "source": "https://tgol.dmp.wa.gov.au/Citrix/AccessPlatform/site/default.aspx"
+  },
+  {
+    "_id": "5729fc8b1c7e780100db119b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c81ab98a2a88592164b3d5c73703bfda0372b06e.doc",
+    "source": "http://igoil.gov.iq/ig/?p=99#more-99"
+  },
+  {
+    "_id": "5729f5341c7e780100db10fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f85a10498ddc18c0d1dbaa0d20ce5085d9fc2b4.doc"
   }
 ]
