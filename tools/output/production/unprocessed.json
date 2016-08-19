@@ -61,10 +61,5 @@
     "_id": "5722085d1751960d007673ed",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1862f71f9852513085eb8b32c3438bd6e4030cb0.pdf",
     "source": "http://www.rosneft.com/attach/0/58/80/a_report_2014_eng.pdf"
-  },
-  {
-    "_id": "572b70a21c7e780100db1ba7",
-    "s3_url": "https://s3.amazonaws.com/rgi-documents/43573bf3fa54e38f9ed4337110c148b7705cfe98.csv",
-    "source": "http://busca.datos.gob.mx/#!/conjuntos/concesiones-mineras/"
   }
 ]

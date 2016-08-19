@@ -11085,5 +11085,10 @@
     "_id": "572caad61c7e780100db2287",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/21f78ef1b361c47cd1261f8160fbc1ecf5a07136.PNG",
     "source": "https://www.moenr.gov.ae/en/home.aspx"
+  },
+  {
+    "_id": "572b70a21c7e780100db1ba7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43573bf3fa54e38f9ed4337110c148b7705cfe98.csv",
+    "source": "http://busca.datos.gob.mx/#!/conjuntos/concesiones-mineras/"
   }
 ]
