@@ -8669,5 +8669,147 @@
     "_id": "57195065ee434c0c004476c4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1581bcce3fa37ee00954f62e6a877eaf3af4ff5e.png",
     "source": "http://www3.transparencia.gov.br/jsp/contratos/contratoBuscaAvancada.jsf"
+  },
+  {
+    "_id": "57195a33ee434c0c00447806",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abfa540abb39e859d04940f5c1ee7bf446525bc8.pdf",
+    "source": "http://file:///C:/Users/patriciavar/Downloads/REUTERS%20Petrobras%20voting%20shares%20(1).pdf"
+  },
+  {
+    "_id": "57196017ee434c0c0044781c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/009220a42f270ff660b06e51647484e86d8de4f1.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2015-06-25/venezuela-enlists-russia-china-on-bond-sale-to-ease-cash-crunch"
+  },
+  {
+    "_id": "571963b9ee434c0c00447844",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49a6e9dd8c96f166c77abcfc436d8b3c28ca1677.pdf",
+    "source": "http://cbonds.com/news/item/781189"
+  },
+  {
+    "_id": "571957e6ee434c0c004477aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5803d32cbb0ec69a2acb020dec9cbb9aca9e03fe.pdf",
+    "source": "http://file:///C:/Users/patriciavar/Downloads/DFP-4T15-US$-Ingl%C3%AAs.pdf"
+  },
+  {
+    "_id": "5719652aee434c0c00447856",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5078447e1518c1545ea53fe8ae0dee165d9de3e.pdf",
+    "source": "http://www.dinero.com.ve/din/destacados/pdvsa-anuncia-emisi-n-de-bonos-por-5000-millones"
+  },
+  {
+    "_id": "57197725ee434c0c00447879",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/252cb9078a8e9ea0ec7e7058b61a73067fc7b7d1.pdf",
+    "source": "http://www.minfin.gob.gt/archivos/liquidacion/diciembre2015/liquida_2015.pdf"
+  },
+  {
+    "_id": "57197a4dee434c0c00447891",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac7be04f155fe5e88e2ca0faf98225175e5244d7.pdf",
+    "source": "http://transparencia.minfin.gob.gt/transparencia/"
+  },
+  {
+    "_id": "57197ac6ee434c0c00447897",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d25484c3e5788344c1a1988ecab0acf131917bf9.png",
+    "source": "http://www.investidorpetrobras.com.br/en/corporate-governance/capital-ownership"
+  },
+  {
+    "_id": "5719b272ee434c0c0044793f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcb2a0b7a6d4a990bd53785ec2b3de52efb7f55f.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/MEMORIA-DE-LABORES-2015.pdf"
+  },
+  {
+    "_id": "5719dd96ee434c0c0044799a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef2a8a6154ff75e3f6954f54efc3dcc92f50a27f.pdf",
+    "source": "http://business-humanrights.org/en/pdf-mining-royalties-a-global-study-of-their-impact-on-investors-government-and-civil-society"
+  },
+  {
+    "_id": "5719debcee434c0c004479b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44819bc2fd427fdaa224dc2128ae5ca3fa0ba612.pdf",
+    "source": "http://www.gov.bw/en/Ministries--Authorities/Ministries/Ministry-of-Minerals-Energy-and-Water-Resources-MMWER/Tools--Services/Services--Forms/Mineral-Revenue-Collection-royalties/"
+  },
+  {
+    "_id": "5719d261ee434c0c00447957",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/daf583d0d0acba3e1097b4ff2f8d92fcdb44025d.pdf",
+    "source": "https://www.cia.gov/library/publications/the-world-factbook/fields/2080.html"
+  },
+  {
+    "_id": "5719f09dee434c0c00447a5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/812177d1c3595fdd7625209fcc6bc0e7bd4b3fb7.pdf",
+    "source": "http://www.monakasat.com/tender.htm"
+  },
+  {
+    "_id": "5719f4c0ee434c0c00447a9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dcd6ea7ea086b6f02c324025bb55b37f7cf9468e.pdf",
+    "source": "http://www.petroleum.gov.eg/ar/ProjectsandActivities/StrategicProjects/Pages/default.aspx"
+  },
+  {
+    "_id": "571a093eee434c0c00447b79",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9752a49fd68d8469f6dafb39a8c06a2962706577.png",
+    "source": "http://www.resourcegovernance.org/our-work/country/egypt"
+  },
+  {
+    "_id": "571a0ab9ee434c0c00447b90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65b739c79a235ea658432dd6daf4ecb9b8638228.pdf",
+    "source": "http://www.gulfoilandgas.com/webpro1/prod1/suppliercat.asp?sid=3236"
+  },
+  {
+    "_id": "571a0c66ee434c0c00447ba9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7af91e9707a508076d5cd2e781e82d1d6f2d0839.pdf",
+    "source": "http://us.practicallaw.com/7-565-7867?source=relatedcontent"
+  },
+  {
+    "_id": "571a0cbcee434c0c00447bab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8fabd63dd783f47d126ccdfca99fb98f3279bca.xlsx",
+    "source": "http://www.sovereignwealthcenter.com"
+  },
+  {
+    "_id": "571a15e5ee434c0c00447bed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2bebe68c6d3de825de7842043fcff67f17ba8cb7.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2014-11-28/egpc-to-get-1-5b-loan-to-pay-foreign-energy-companies-debt"
+  },
+  {
+    "_id": "571a16a4ee434c0c00447bfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7c7829c12514ad1f105d711445574ffebb01f33.pdf"
+  },
+  {
+    "_id": "571a1a2bee434c0c00447c13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/208b9c9705490c80e94839f756af892f1374bdcd.pdf",
+    "source": "http://www.mof.gov.eg/English/Papers_and_Studies/Pages/Budget2013-2014.aspx"
+  },
+  {
+    "_id": "571a1bccee434c0c00447c39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c65e01af2b17d1c911e080c09d2e0484d84e912b.pdf"
+  },
+  {
+    "_id": "571a1d62ee434c0c00447c51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8860653632e3c2620efca07179f5b0598f096365.pdf"
+  },
+  {
+    "_id": "571aa2e764e8080c00deffd7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/007abb403ae4fb4b0fbf7ec5e3367034f4d1dd12.pdf",
+    "source": "http://www.minfin.gob.gt/archivos/presua2015/inicio.htm"
+  },
+  {
+    "_id": "5719edb7ee434c0c00447a3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b809332b48f86920962a212d9dcdf5ae8f90c8b5.docx",
+    "source": "http://www.f-law.net/law/threads/21032-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-203-%D9%84%D8%B3%D9%86%D8%A9-1991%D8%A8%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D9%82%D8%B7%D8%A7%D8%B9-%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%85"
+  },
+  {
+    "_id": "571958fcee434c0c004477db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29bc4345d871323a411ad18787f7056d1b30f447.png",
+    "source": "http://www.mme.gov.br/web/guest/entidades-vinculadas-e-afins/ppsa"
+  },
+  {
+    "_id": "571ac56b64e8080c00df0098",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69be9427fb06e5dd38a90b02d75f986221d5a361.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/10-9-dic-2015.pdf"
+  },
+  {
+    "_id": "571acb2064e8080c00df00aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1de2e03eb64f1b74d198116004e6396d034b317f.pdf",
+    "source": "http://medios.economiayfinanzas.gob.bo/MH/documentos/2015/separatas/boletin_estadistico_TGN_2014_Final.pdf"
+  },
+  {
+    "_id": "571acfa964e8080c00df00c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05bb55f08d194b83f00093d8a279113df232da5a.pdf",
+    "source": "http://eitiguatemala.org.gt/wp-content/uploads/2013/09/Informe-EITI-2012-2013-RFinal-4.pdf"
   }
 ]

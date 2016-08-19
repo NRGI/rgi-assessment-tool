@@ -43,5 +43,10 @@
     "_id": "5700581e808c650d005d8d42",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/19094183cfdb6e5d242c9761cac963b6c1762477.pdf",
     "source": "http://www.minfin.gob.gt/archivos/presua2015/inicio.htm"
+  },
+  {
+    "_id": "571abf8764e8080c00df001a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0348f79338dc299be81c9a44ec27871128d6a12.pdf",
+    "source": "http://www.minfin.gob.gt/subsitios/fideicomisos/archivos/nuevo/1.pdf"
   }
 ]
