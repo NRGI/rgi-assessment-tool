@@ -10828,5 +10828,118 @@
     "_id": "572ab1951c7e780100db1856",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/04ec53932122e49198d5971cdc80b3b4c2485885.jpg",
     "source": "https://eiti.org/TimorLeste"
+  },
+  {
+    "_id": "572b240e1c7e780100db192e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b3abbcdccaf1114087e1a510fb77837d5f23710.pdf"
+  },
+  {
+    "_id": "572b247a1c7e780100db1936",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c4108ecbbb3b7d42d2501b397e54abd4080fa57d.pdf"
+  },
+  {
+    "_id": "572b417c1c7e780100db19ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/778a95747d8e416be09917086f64d7e40dbf078d.pdf",
+    "source": "https://eiti.org/files/tl-eiti_report_2013edit.pdf"
+  },
+  {
+    "_id": "572b45d01c7e780100db19c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/379f33af9bf2d95237a39b9be52b829c8b5dca34.jpg",
+    "source": "http://www.eiti.tl/secretariat/reports/tl-eiti-reports/finish/21-english/221-tl-eiti-report-2013"
+  },
+  {
+    "_id": "572b49271c7e780100db19dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35d439bd1a177d4da2db0076caebadd225770dad.pdf",
+    "source": "http://www.bp.com/content/dam/bp/pdf/energy-economics/statistical-review-2015/bp-statistical-review-of-world-energy-2015-full-report.pdf"
+  },
+  {
+    "_id": "572b50451c7e780100db19f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df79fb451155dbbdcd0c337f7f59000c15975f1b.pdf",
+    "source": "http://www.ny-forum-africa.com/lang/content_fr/downloads/Gabon_Investor_Zone_Brochure.pdf"
+  },
+  {
+    "_id": "572b56561c7e780100db1a14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53f2c3d552a792aec341fa52258439ba4c8a63c1.pdf",
+    "source": "http://www.total.ga/sites/totalgabon/files/atoms/files/totalgabon_rfa_2014_activites_rev.pdf"
+  },
+  {
+    "_id": "572b5a7d1c7e780100db1a2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e014f052380e5ece58bdc43728ff90fb25cff66.pdf",
+    "source": "http://www.total.ga/sites/totalgabon/files/atoms/files/total_gabon_rapport_financier_annuel_2015_presentation.pdf"
+  },
+  {
+    "_id": "572b675c1c7e780100db1aee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a12733538e687c47f75c03ce81338d5ce83b4a79.pdf",
+    "source": "http://www.petrole.gouv.ga/397-ancien-site/11-documents-utiles/310-rapports-d-activites/"
+  },
+  {
+    "_id": "572b68191c7e780100db1aff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b62ad4a53fdd8c8812d98ef35c88e9cf1db845f.pdf",
+    "source": "http://www.petrole.gouv.ga/334-autres-informations/430-statistiques-du-secteur/"
+  },
+  {
+    "_id": "572b831d1c7e780100db1ce5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79953701380648a8f8d85e97951cdb35d662e2eb.pdf",
+    "source": "http://enrin.grida.no/htmls/turkmen/soe2/index.htm"
+  },
+  {
+    "_id": "572b84571c7e780100db1cfe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bf32ddc0aaa15404bdeae8c4cf68e46c86c93e2.pdf",
+    "source": "http://www.ebrd.com/esia.html?filterCountry=Turkmenistan"
+  },
+  {
+    "_id": "572b87941c7e780100db1d42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c27f26aa60fd99a6b3b7244e5e4f1b6ce1bc03de.PDF",
+    "source": "http://www.pdvsa.com"
+  },
+  {
+    "_id": "572b93ad1c7e780100db1dcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06cdff8b9b7d73acdf47cc8800f09423dc49f4c0.pdf"
+  },
+  {
+    "_id": "572b94361c7e780100db1dd3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28fa0960266400127794a61318211e84d8ac6e1b.pdf"
+  },
+  {
+    "_id": "572b97f31c7e780100db1de7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01b80a2c49bf2282c325aeed3a3546e2bc1d34cf.pdf"
+  },
+  {
+    "_id": "572b985c1c7e780100db1def",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3039af01230eb7c23c37e4cc00a8fafdef347f36.pdf"
+  },
+  {
+    "_id": "572bc3561c7e780100db1ebd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b3cd48ceba776e87a1c4445b4c262bc806f8c8f.pdf",
+    "source": "http://www.lapatilla.com/site/2016/05/03/an-tendra-la-potestad-de-controlar-las-licenciasde-exploracion-y-explotacion-de-gas/"
+  },
+  {
+    "_id": "572bc3e01c7e780100db1ec7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74c0df231b168f8942e51524cc38af084df4e207.pdf",
+    "source": "http://www.mercadodedinerove.com/actualidad/11247-parlamento-venezolano-aprobo-proyecto-reforma-la-ley-organica-hidrocarburos-gaseosos/"
+  },
+  {
+    "_id": "572bcaee1c7e780100db1ed2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8d7e1decff31d8b4ca5523110a7c1d8fc236d1e.pdf",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/secciones.php?option=view&idS=174"
+  },
+  {
+    "_id": "572c1ae21c7e780100db1f13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/701fcd454ed78f4a929bac51db8481a9bb2968e5.pdf"
+  },
+  {
+    "_id": "572c30b71c7e780100db1f33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a5d1d0082b7dc8b1c88556fe2232f8d5df4abd8.pdf",
+    "source": "http://refsa.org/wp/wp-content/uploads/2013/07/OG-Scoping-Report-Malaysia-final-20130701.pdf"
+  },
+  {
+    "_id": "572c51a31c7e780100db1f89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e123e393ef5ad029bf91cb4466eea8441101ae4.pdf",
+    "source": "http://mongolianeconomy.mn/en/i/8843"
+  },
+  {
+    "_id": "572c52281c7e780100db1f98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8df56ed3a8186138e798c7687e3d6c0853617653.pdf",
+    "source": "http://www.erdenesmongol.mn/content/14206.shtml"
   }
 ]
