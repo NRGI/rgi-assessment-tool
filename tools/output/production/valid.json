@@ -11090,5 +11090,130 @@
     "_id": "572b70a21c7e780100db1ba7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/43573bf3fa54e38f9ed4337110c148b7705cfe98.csv",
     "source": "http://busca.datos.gob.mx/#!/conjuntos/concesiones-mineras/"
+  },
+  {
+    "_id": "572cbddf1c7e780100db23dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8f94c9aab14ca45bbb0b21f247ba04727b558d2.pdf",
+    "source": "http://www.ongcindia.com/wps/wcm/connect/7dcaf9eb-4919-4009-8518-dfc33ff6f873/CDA+Rules.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "572cbf191c7e780100db23ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3bfa36da874ee77c4c3b5867918168adb91e651.pdf",
+    "source": "http://asgabat.net/stati/zakonodatelstvo-turkmenistana/zakon-turkmenistana-o-naloge-na-pribyl.html"
+  },
+  {
+    "_id": "572cc0851c7e780100db2432",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e8360c2cf9dfb3bbdad9dc4b05deb1791a3e491.PNG",
+    "source": "http://www.sovereignwealthcenter.com/fund-profiles.html"
+  },
+  {
+    "_id": "572cc39e1c7e780100db246c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3957616845639600f01f5333dc8a9d36fb7d94b.pdf",
+    "source": "http://www.ipic.ae/media/125481/ipic-sign-acc-june-2015.pdf"
+  },
+  {
+    "_id": "572cc4cb1c7e780100db2494",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53508717d6f27a9484ae8cc210b6d7d7bf494040.pdf",
+    "source": "http://minjust.gov.tm/ru/mmerkezi/doc_view.php?doc_id=8381"
+  },
+  {
+    "_id": "572cc4f81c7e780100db2496",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13a925506a806f4c4df78bb6de84c00b33b09da2.pdf",
+    "source": "http://www.adia.ae/En/pr/ADIA_Review_2014_Web.pdf"
+  },
+  {
+    "_id": "572cc57a1c7e780100db24b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f61cd6b32c6cf16c2d07610216ad29cc26268c2f.pdf",
+    "source": "https://www.worldbank.org/ifa/rosc_aa_turkmenistan_eng.pdf"
+  },
+  {
+    "_id": "572cc5841c7e780100db24b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d60bf1be37269e1f63b105ffb9f8e26abacf422c.pdf",
+    "source": "https://www.mubadala.com/en/investors"
+  },
+  {
+    "_id": "572cc64f1c7e780100db24e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/41da5dfd5908d84eaf21efb3a7afa93c826335c1.PNG",
+    "source": "http://www.eia.gov.ae/?page_id=53"
+  },
+  {
+    "_id": "572cc7501c7e780100db24f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21173bb5a092ff2ef54810b9d810e07e4e927aa4.PNG",
+    "source": "http://www.adcouncil.ae/?page_id=41"
+  },
+  {
+    "_id": "572cce301c7e780100db2571",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2c4c1d9fe49e8f47e7bf36f19def3f6638cf1c3.pdf",
+    "source": "http://www.state.gov/documents/organization/253191.pdf"
+  },
+  {
+    "_id": "572cf0ff1c7e780100db2690",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bda2d647a9ebfd0a09e91dc90b764a93f5766fdb.pdf",
+    "source": "http://www.bloomberg.com/research/stocks/private/board.asp?privcapId=7942797"
+  },
+  {
+    "_id": "572cfde41c7e780100db26d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f88ee1769262c7da2f0b574b11cb12c15eb46fde.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2013/cr13322.pdf"
+  },
+  {
+    "_id": "572cc7de1c7e780100db2513",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4afe4f3b9efe8759e79343ccb8d821158ed6e459.pdf",
+    "source": "http://www.icd.gov.ae/wp-content/uploads/2015/08/ICD-Audited-Consolidated-FS-Dec-2014.pdf"
+  },
+  {
+    "_id": "572d10ec1c7e780100db2785",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62ffe885c07e09721ca3d5d45c67cf40d71c1dda.pdf",
+    "source": "http://www.cemac.int/sites/default/files/documents/files/Convention_Cour_de_Justice.pdf"
+  },
+  {
+    "_id": "572d0fef1c7e780100db2777",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79fc94b407baea1fb064857ffcfbaff4cbba829d.pdf",
+    "source": "http://www.cemac.int/sites/default/files/documents/files/Statut_CC.pdf"
+  },
+  {
+    "_id": "572d05961c7e780100db272d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7af4977cc2101b84b3b5c2b71f0a1303953b217d.pdf",
+    "source": "http://www.imf.org/external/datamapper/FiscalRules/map/map.htm"
+  },
+  {
+    "_id": "572d13de1c7e780100db27a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e4af98b2b8319330c053e19b3ded763e454da98.pdf",
+    "source": "http://www.cemac.int/search/node/comptes"
+  },
+  {
+    "_id": "572cfe111c7e780100db26e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/804089a69bb607bdf46a7a81357590dd20eaffba.pdf",
+    "source": "https://www.imf.org/external/datamapper/FiscalRules/Fiscal%20Rules%20at%20a%20Glance%20-%20Background%20Paper.pdf"
+  },
+  {
+    "_id": "572d14051c7e780100db27b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a33d18fb6ebaeb0eaeef713090dd19bd67f5d33.pdf",
+    "source": "https://www.beac.int/index.php/publications/rapports-annuels"
+  },
+  {
+    "_id": "572d394c1c7e780100db288b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/024b36837c80a72bee27d28143fe03841d1f19eb.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=75839"
+  },
+  {
+    "_id": "572d39e51c7e780100db289b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da0ad648074ba0b09b07692996e58ebd39021784.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=1352"
+  },
+  {
+    "_id": "572d4f8c1c7e780100db2909",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f329199811768404e7d2eedff33c76b28e851e38.jpg",
+    "source": "http://Www.mrdc.com.pg"
+  },
+  {
+    "_id": "572d50341c7e780100db290b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39ceffd85053d2e33957042dcd160d30a291da99.png",
+    "source": "http://www.brasil-rounds.gov.br/portugues/contato.asp"
+  },
+  {
+    "_id": "572cc8b21c7e780100db2522",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a372082e17d582e42df90a293182f8770d9c5a40.PNG",
+    "source": "http://www.rakia.ae/"
   }
 ]
