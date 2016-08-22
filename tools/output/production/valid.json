@@ -11399,5 +11399,27 @@
   {
     "_id": "572eef131c7e780100db312d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1b3c826bbb6ad2699c7550f2fd3a259c9bccc531.rtf"
+  },
+  {
+    "_id": "572f3c951c7e780100db33b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e089893a24d56ef3bfc93ef274049542c4b32e4.pdf"
+  },
+  {
+    "_id": "572f41881c7e780100db33cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4db0ad8c4a4cb12eda1c859b13996f0899f713a5.pdf",
+    "source": "http://www.mof.gov.iq/Pages/ar/MonthlyReportForFiscalYear.aspx#"
+  },
+  {
+    "_id": "572f2b2b1c7e780100db331e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69057a5e5a502c73d0326c75932d6abb409b0730.pdf",
+    "source": "http://www.petrologcongo.com/sites/default/files/documents/Plan%20de%20surveillance%20environnementale_Carriere%20de%20DIONGA.pdf"
+  },
+  {
+    "_id": "572f34111c7e780100db337b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c17a33f9e88ab3c0ce832ea6aa721118e4e7639e.pdf"
+  },
+  {
+    "_id": "572f2aa41c7e780100db3314",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e1b55eaab07cd84474b61b8d61ae306df1302bc.pdf"
   }
 ]
