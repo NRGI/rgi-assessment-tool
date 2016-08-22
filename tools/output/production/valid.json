@@ -11215,5 +11215,78 @@
     "_id": "572cc8b21c7e780100db2522",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a372082e17d582e42df90a293182f8770d9c5a40.PNG",
     "source": "http://www.rakia.ae/"
+  },
+  {
+    "_id": "572dba371c7e780100db2a12",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0d7355a4f142085ca0fbdf8833ab02c1ed409ba.pdf",
+    "source": "http://www.mof.gov.iq/Pages/ar/MonthlyReportForFiscalYear.aspx"
+  },
+  {
+    "_id": "572dbf121c7e780100db2a74",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed7c2915c9f1ebcdc1bb4a1b9912e9c4304a7774.pdf",
+    "source": "https://eiti.org/fr/niger"
+  },
+  {
+    "_id": "572db4591c7e780100db29fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3e20e269326ce9a14d5315f3a4825ae1a49c6fb.pdf",
+    "source": "http://tax.mof.gov.iq/uploads/pdf/enjazzat/التقرير%20%20السنوي%20لانجازات%20الهيئة%20%202011.pdf"
+  },
+  {
+    "_id": "572dafa61c7e780100db29d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abce1007e11ca3444e80aa9586fa4103a8a7315f.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?page=1&SC=&BookID=23445"
+  },
+  {
+    "_id": "572dc3e71c7e780100db2aa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/789da0d6e0bbbd3dfedfa2eb588a7e5325768866.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?page=1&SC=&BookID=28411"
+  },
+  {
+    "_id": "572dc2631c7e780100db2a95",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/858dceaea3e3914630b464f256511653b9342ce0.pdf"
+  },
+  {
+    "_id": "572dc7201c7e780100db2ae0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/542dbbfa15bb5e351f50fb7c27474eebc98441af.pdf",
+    "source": "https://www.kpmg.com/Africa/en/KPMG-in-Africa/Documents/2015%20Q1%20Snapshots/KPMG_Gabon%202015Q1.pdf"
+  },
+  {
+    "_id": "572dcb8e1c7e780100db2af0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c0c6ae8e2924b92cd5ae091c5f533fc8d78010e.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?page=1&SC=&BookID=29526"
+  },
+  {
+    "_id": "572dce0f1c7e780100db2b0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2deecc3d90a6db3766843f91f52d7964ae6899e.pdf",
+    "source": "http://www.charteredclub.com/what-is-financial-year-fiscal-year-assessment-year-in-india/"
+  },
+  {
+    "_id": "572dd03b1c7e780100db2b0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/190b2de4493c3910bc66e3a82a7ead458924fa5f.pdf",
+    "source": "http://www.d-raqaba-m.iq/pdf/annual2014_part1.pdf"
+  },
+  {
+    "_id": "572dd2541c7e780100db2b46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85a06151f788d5ffceb7444038234d55c3208504.pdf",
+    "source": "http://www.gnlu.ac.in/centredoc/gcbit/Income-Tax-Act-1961.pdf"
+  },
+  {
+    "_id": "572ddec01c7e780100db2b79",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96f4cca827bc697830cb8560b32a446eff8026bf.pdf",
+    "source": "http://www.unionbudget.nic.in/budget2015-2016/budget.asp"
+  },
+  {
+    "_id": "572df1831c7e780100db2b92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4700fe0aa5a9a50b8604459aca188c4cb99d1e47.pdf",
+    "source": "http://www.mines.gouv.ne/spip.php?rubrique21"
+  },
+  {
+    "_id": "572e0b4e1c7e780100db2bcd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5204c0c040e359e19f500ecb20447cc0dac169e6.pdf",
+    "source": "http://www.petroleum.nic.in/orgacti.htm"
+  },
+  {
+    "_id": "572d562e1c7e780100db292d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb465c5b65c6904cf2b518057aff509037f4e5bd.png"
   }
 ]
