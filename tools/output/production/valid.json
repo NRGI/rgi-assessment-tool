@@ -11288,5 +11288,25 @@
   {
     "_id": "572d562e1c7e780100db292d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/cb465c5b65c6904cf2b518057aff509037f4e5bd.png"
+  },
+  {
+    "_id": "572e65f41c7e780100db2d33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81e5116d51aae44db6d5e96531d9c8848ab0756c.pdf",
+    "source": "http://www.uzinfoinvest.uz/eng/why_uzbekistan/#3"
+  },
+  {
+    "_id": "572e82ee1c7e780100db2d9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63e1cafe4b456e69dae232d4aa6a8306ce324f9a.pdf",
+    "source": "http://www.tesouro.fazenda.gov.br/documents/10180/335809/FSB_Demonstracoes_Financeiras_2014/91e426f7-6722-417d-b4cb-0f198db8073e"
+  },
+  {
+    "_id": "572e81521c7e780100db2d86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f65de1c44a8453d861859016a1ac24cf3fcc0c52.pdf",
+    "source": "http://cer.uz/upload/iblock/90d/qzvizimpgsjexdsy%20zffgwbcxogch%203.pdf"
+  },
+  {
+    "_id": "572e77671c7e780100db2d72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5cd737dae20c27c303c03827d35673919945081.pdf",
+    "source": "http://www.she.gob.ec/wp-content/uploads/downloads/2013/08/NORMATIVA_HIDROCARBURIFERA.pdf"
   }
 ]
