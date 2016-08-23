@@ -58,5 +58,10 @@
     "_id": "571edfad1751960d00765d0d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7d08ab368e16038bf39448d490a1ec0b227712c5.pdf",
     "source": "http://www.grupofaro.org/sites/default/files/archivos/publicaciones/2014/2014-02-17/lupa_fiscal_petrolera_2012.pdf"
+  },
+  {
+    "_id": "573190371c7e780100db4589",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94e867b1dcd42eb9fff31d412cdc098e1dfd9721.docx",
+    "source": "http://uzneftegaz.uz/uploads/docs/itogi_2015.docx"
   }
 ]
