@@ -11421,5 +11421,102 @@
   {
     "_id": "572f2aa41c7e780100db3314",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7e1b55eaab07cd84474b61b8d61ae306df1302bc.pdf"
+  },
+  {
+    "_id": "572f424c1c7e780100db33d3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/514ac284ed449b91e29783cabefb468f9713151d.pdf",
+    "source": "http://www.mof.gov.iq/pages/ar/FinalAccounting.aspx"
+  },
+  {
+    "_id": "572f42fd1c7e780100db33eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed17464fe2656bdb4df7ff8902571896e9792ca9.pdf"
+  },
+  {
+    "_id": "572f434b1c7e780100db33ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d6a8797d9f5eb429bcc03d20809dc23aedc410b.pdf",
+    "source": "http://www.incometaxindia.gov.in/Documents/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "_id": "572f43a61c7e780100db33f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85ac9cc0a08c79b5bb65d0abab090b008bbe75c9.pdf"
+  },
+  {
+    "_id": "572f43f91c7e780100db33f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83b90f27bc9c217dca7ad699b33556f5d90d48bf.pdf",
+    "source": "http://www.somooil.gov.iq/index.php/2015-11-14-05-40-7/46-2015"
+  },
+  {
+    "_id": "572f46651c7e780100db3437",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd481dcba47c780e1b74227e7bb9e0366d5d6169.pdf",
+    "source": "http://www.oil.gov.iq/index.php?name=sthlak"
+  },
+  {
+    "_id": "572f47b21c7e780100db344f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/108e6b97273cd707f0e785942342caa8ad18cc20.jpg",
+    "source": "http://www.incometaxindia.gov.in/Pages/about-us/who-we-are.aspx"
+  },
+  {
+    "_id": "572f482b1c7e780100db3451",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f90bd9aa690737d4c5b5b75b479e0508c7de652e.pdf"
+  },
+  {
+    "_id": "572f58851c7e780100db3513",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f78dac7efe5f4d0c9994e2199a06d9fd1093d99e.pdf",
+    "source": "http://www.somooil.gov.iq/index.php/2015-11-14-05-40-7/45-2015-11-19-10-42-03"
+  },
+  {
+    "_id": "572f5b151c7e780100db353c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a75afaaaa730a399bf5924bf07bd17e64e8af5b.pdf",
+    "source": "https://eiti.org/news-events/eiti-invited-libya-follow-oil-transparency-standard"
+  },
+  {
+    "_id": "572f635c1c7e780100db3556",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7b4b059b7ce1a812f1d71d849e2b47b5687261b.pdf",
+    "source": "http://lawmin.nic.in/olwing/coi/coi-english/Const.Pock%202Pg.Rom8Fsss(9).pdf"
+  },
+  {
+    "_id": "572f69391c7e780100db355e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4da65c4bae769d08707b62bf8cd9336f531a3d64.pdf",
+    "source": "https://data.gov.in/catalog/cag-state-audit-reports"
+  },
+  {
+    "_id": "572f860e1c7e780100db35dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fd2650901db232f2fa2bc7259f96e8a60412e16.pdf",
+    "source": "http://www.kapitalis.com/kapital/28618-gafsa-la-production-de-phosphate-en-baisse-au-cours-du-1er-trimestre-2015.html"
+  },
+  {
+    "_id": "572f89171c7e780100db35e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8b37e50f86fe331995dbfe2bf00bd34dc0a7892.pdf",
+    "source": "http://www.jeuneafrique.com/230794/economie/tunisie-la-compagnie-des-phosphates-de-gafsa-baisse-le-rideau/"
+  },
+  {
+    "_id": "572f6dfc1c7e780100db356d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51cb00162834d4d7675d2fa909ec48ca935c45cb.pdf",
+    "source": "http://cag.gov.in/sites/default/files/audit_report_files/Union_Compliance_Direct_Tax_Revenue_Dept_3_2015.pdf"
+  },
+  {
+    "_id": "573005501c7e780100db3747",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9d5c25d56b072845646f0817b21bf5f05e64a5f.pdf",
+    "source": "http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra;jsessionid=A1CBB5610EE0C472A677AAC722613EBA.proposicoesWeb1?codteor=1450077&filename=PL+4988/2016"
+  },
+  {
+    "_id": "573026181c7e780100db3769",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e8bef1fb473b5bf540361be5a63e01446ae4bddd.pdf",
+    "source": "https://www.mof.gov.tl/wp-content/uploads/2015/12/Lei_No-_12-_2011_Primeira_alteração_à_Lei_No-_9_2005_Lei_do_Fundo_Petrol%C3%ADfero.pdf"
+  },
+  {
+    "_id": "573047a01c7e780100db37aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/361149e604afdecf45c048884cd666ee6ada07b6.pdf",
+    "source": "http://www.d-raqaba-m.iq/pages_ar/repo_final_ar.aspx"
+  },
+  {
+    "_id": "57304d251c7e780100db37cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbef86c3042f5f31c6aac02faf69cf3a64f518ee.pdf",
+    "source": "http://www.imf.org/external/pubs/ft/scr/2016/cr1686.pdf"
+  },
+  {
+    "_id": "57304fe11c7e780100db37f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ff9e0afb07d403d41d7b7ad0546bab2116fb2c4.pdf",
+    "source": "http://www.soc-basrah.com/aboutus.php?lang=ar"
   }
 ]
