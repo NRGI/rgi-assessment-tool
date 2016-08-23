@@ -12368,5 +12368,79 @@
     "_id": "573347911c7e780100db5edf",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0e4f2085ae8b21ddf63c4f7398fffb658f8b1c1f.pdf",
     "source": "http://www.snh.cm/ComPresse/Communique-CA-Dec-2015-une-page-bilingue.pdf"
+  },
+  {
+    "_id": "5733afabadb6670c0096078d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/857eb967d69f4e4c5611bd7d58901de693681800.pdf",
+    "source": "http://prodavinci.com/2015/10/20/actualidad/venezuela-conozca-el-presupuesto-presentado-por-el-gobierno-a-la-an-para-2016-monitorprodavinci/"
+  },
+  {
+    "_id": "5733ff65adb6670c009607c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42b7281fea063f70fcffa47be77e20c17c690a8a.pdf",
+    "source": "http://www.minfi.gov.cm/index.php/en/impots-et-taxes-appliques/oil-sector"
+  },
+  {
+    "_id": "57340a03adb6670c009607ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ad190afeb924e4215494ab0930bd145f4cb17da.pdf",
+    "source": "http://www.minfi.gov.cm/index.php/documents#finance_report"
+  },
+  {
+    "_id": "57342706adb6670c0096084d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f00502181153eba4dec31cbca3d0e4a3cd45d4a2.pdf",
+    "source": "http://supcourt.uz/upload/userfiles/imagesfiles/75a4baaf5c9f67f74d8977c4fc92bb35.pdf"
+  },
+  {
+    "_id": "57342fcaadb6670c0096086c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc7aa4584c82286a503969ce7ef1943265b3b097.docx",
+    "source": "https://www.prc.cm/en/the-presidency/49-organisation/attached-services/79-minstry-of-the-supreme-state-audit-mincsp?highlight=WyJzdXByXHUwMGVhbWUiLCJzdGF0ZSIsImF1ZGl0Iiwic3VwcmVtZSBzdGF0ZSIsInN1cHJlbWUgc3RhdGUgYXVkaXQiLCJzdGF0ZSBhdWRpdCJd"
+  },
+  {
+    "_id": "57342fd2adb6670c0096086e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f6029bfc261a7d1ebfb6df619d7aebd4574c2aa.pdf",
+    "source": "http://www.constitution.ru/en/10003000-02.htm"
+  },
+  {
+    "_id": "57343ac6adb6670c009608e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8f57df2c3bf99de699a304d36b10e2c13e60cdf.pdf"
+  },
+  {
+    "_id": "5734445eadb6670c00960976",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/445f27471fd9ce607006e95372642c33d601722d.pdf",
+    "source": "http://lex.uz/pages/getpage.aspx?lact_id=2911871"
+  },
+  {
+    "_id": "5734448aadb6670c00960978",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e630fb3c1d07dcfb049becc37664b7b79d37e4dc.pdf",
+    "source": "http://gabonreview.com/blog/code-hydrocarbures-enfin-adopte/"
+  },
+  {
+    "_id": "5734477fadb6670c009609ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d96d6b9b04ea7c35631a50049c2b83ea81399a65.pdf",
+    "source": "http://www.snh.cm/financeSNH/Comptes/Fonctionnement/2012/Certif_FCT_2012.pdf"
+  },
+  {
+    "_id": "57344810adb6670c009609c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f75c1d8e835b9128e31c13384dfdc8101af6ceb5.pdf",
+    "source": "http://gabonreview.com/blog/ultra-deep-offshore-gabonais-shell-total-desormais-course/"
+  },
+  {
+    "_id": "57344ccaadb6670c00960a1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33cf441d9e96b734e633e26ca0830c8da8a8ac43.pdf",
+    "source": "http://lex.uz/pages/getact.aspx?lact_id=111457"
+  },
+  {
+    "_id": "573453f4adb6670c00960a78",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/217dc82bbd00e2a2945c551846aca892f67b367c.pdf",
+    "source": "http://rg.ru/2016/03/16/glava-minprirody-rasskazal-kogda-v-rossii-zakonchitsia-neft.html"
+  },
+  {
+    "_id": "573454a3adb6670c00960a8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b244560edcf35e303a6a79718d22cf16ce3ea3b.pdf",
+    "source": "https://www.vedomosti.ru/business/articles/2015/11/27/618609-2016-goda-zapasi-nefti-gaza-budut-pereschitani-rentabelnosti"
+  },
+  {
+    "_id": "57345567adb6670c00960a9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52599577e000e000520ac36a486f60b799799a34.xlsx",
+    "source": "http://www.ungd.uz/shareholders"
   }
 ]
