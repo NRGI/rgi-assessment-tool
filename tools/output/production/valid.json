@@ -12442,5 +12442,299 @@
     "_id": "57345567adb6670c00960a9e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/52599577e000e000520ac36a486f60b799799a34.xlsx",
     "source": "http://www.ungd.uz/shareholders"
+  },
+  {
+    "_id": "57345598adb6670c00960aa0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c37287c1e938e3209941473c9d97630b73865f4.pdf",
+    "source": "http://rg.ru/2014/09/10/iskop-dok.html"
+  },
+  {
+    "_id": "573456d0adb6670c00960ab4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22132968bb95fd85f207a97a27887c11aa250616.pdf",
+    "source": "http://ivo.garant.ru/#/document/70409758"
+  },
+  {
+    "_id": "573459d0adb6670c00960ae4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82fb647dc66ad7e344111eca8413a22a133bdd15.pdf",
+    "source": "http://www.ung.uz/uploads/docs/affil_2015.htm"
+  },
+  {
+    "_id": "57345b4fadb6670c00960b0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c472007dc4c15c6d54b74450769f6ba33aa5dce.pdf",
+    "source": "http://www.ung.uz/uploads/docs/fiz_affiliat_22072014.pdf"
+  },
+  {
+    "_id": "57345ccfadb6670c00960b2d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d4927e77bad7be925a6e04eb577c1caa5b0ae0d.pdf",
+    "source": "http://base.garant.ru/10900200/45/#block_200264"
+  },
+  {
+    "_id": "57346680adb6670c00960c23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cca9e016d887eac7ae61b86277cf4e6e3683fb35.pdf",
+    "source": "http://www.gabon-services.com/l-actualite/toute-l-actualite/5800/petrole-deux-contrats-d-exploitation-et-de-partage-de-production"
+  },
+  {
+    "_id": "57346cbfadb6670c00960cba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/704a7cdcbf15ddf618f10d27bd09569d9e0d7b7a.pdf",
+    "source": "http://www.gaboneco.com/gabon-contrats-petroliers-de-type-nouveau-pour-perenco-oil-gas-gabon.html"
+  },
+  {
+    "_id": "57346cbeadb6670c00960cb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c95447af2e4681ec02215f676dad554e5d03fa2.pdf",
+    "source": "http://envfor.nic.in/legis/env/env1.html"
+  },
+  {
+    "_id": "57346752adb6670c00960c3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/979754ffa582bce4e78bb5e951f048e0f378dcfd.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=14667"
+  },
+  {
+    "_id": "57345dbbadb6670c00960b49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9565c68a84726e411a7f55d5ef738c38deb92db5.pdf",
+    "source": "http://base.garant.ru/10105771/1/"
+  },
+  {
+    "_id": "573489b7adb6670c00960e3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b63010b844c86ec3d47cb9493f42e19714713b94.pdf",
+    "source": "http://www.uemoa.int/Pages/PUBLICATIONS/RapportsMultilaterale.aspx"
+  },
+  {
+    "_id": "573487f7adb6670c00960e14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a6a70b60e29e9d14780840e5ab07a3a664d31c1.pdf",
+    "source": "http://ciperchile.cl/2011/05/18/“el-sistema-de-concesion-de-propiedad-minera-se-presta-para-una-concentracion-gigantesca-abuso-y-mal-uso”/"
+  },
+  {
+    "_id": "5734886dadb6670c00960e22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba0c4d801a8b24cd0174f43fea0b8f7078a789e1.pdf",
+    "source": "http://ciperchile.cl/2011/05/16/mineros-de-papel-quienes-son-los-20-mayores-duenos-de-conceciones-mineras/"
+  },
+  {
+    "_id": "5734757cadb6670c00960d68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/92e816772c69c98e634a0f0091cee564e9dc8761.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=18793"
+  },
+  {
+    "_id": "57346d8fadb6670c00960cd4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18fd7f44b1714ca743287a0ad82b41997271b96a.pdf",
+    "source": "http://us.practicallaw.com/0-503-2029"
+  },
+  {
+    "_id": "57348a92adb6670c00960e52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b37535b15ef945d59cfedd8cd9e9836c1dadfb1.docx",
+    "source": "http://N/A"
+  },
+  {
+    "_id": "57349154adb6670c00960eb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b6a34c26771ad04cd183dc16af64bc6174591fe.pdf",
+    "source": "http://base.garant.ru/10108595/3/#block_300"
+  },
+  {
+    "_id": "57349218adb6670c00960ed2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af32ac0fb3cba4c91342a4050d1cc91d346f54e4.pdf",
+    "source": "http://base.garant.ru/12125350/6/#block_600"
+  },
+  {
+    "_id": "57349e66adb6670c00960f24",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/739c76699b821a23a7c9fc121ec09646bf6e085e.pdf",
+    "source": "http://www.finances.gouv.ml/sites/default/files/LoiFinances/ldf2016-2/index.html"
+  },
+  {
+    "_id": "5734a302adb6670c00960f84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/642c37f3b953506d5953e38bd654c36f50f0734a.pdf",
+    "source": "http://www.finances.gouv.ml/sites/default/files/LoiFinances/ldf2016-2/docs/etatL.pdf"
+  },
+  {
+    "_id": "5734a454adb6670c00960f99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6dc0a0afb7b11eb4a954bb916e0409956a254a3.pdf",
+    "source": "http://www.finances.gouv.ml/sites/default/files/LoiFinances/ldf2016-2/docs/etatC.pdf"
+  },
+  {
+    "_id": "5734a8ffadb6670c00960fc6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cd746360153afac6ac84d2bd0db8af3486dccd5.pdf",
+    "source": "http://www.tullowoil.com/media/press-releases/onal-agreement-with-the-government-of-gabon"
+  },
+  {
+    "_id": "5734a970adb6670c00960fd8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13bf605899f70704539526aa108e96fc49b76ef6.pdf",
+    "source": "http://www.tsj.gob.ve/en/gaceta-oficial"
+  },
+  {
+    "_id": "5734a990adb6670c00960fdb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f7261c5a96fc51b99068e447479117fd58b2e8d.pdf",
+    "source": "http://www.tullowoil.com/Media/docs/default-source/Media/Press-releaes/tullow-oil-plc---onal-agreement-with-the-government-of-gabon-2.pdf?sfvrsn=2"
+  },
+  {
+    "_id": "5734aabbadb6670c0096101a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/119f6e2b9d8402e7835fc631cc9d049bf708cb71.pdf",
+    "source": "http://www.ft.com/cms/s/0/cd4024d0-6dad-11e5-8171-ba1968cf791a.html#axzz48STKR92h"
+  },
+  {
+    "_id": "5734ac9eadb6670c0096106a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36780b8f00b80fbb8250a9e7f15f94c67bab2a93.pdf",
+    "source": "http://base.garant.ru/12158458/"
+  },
+  {
+    "_id": "5734ace9adb6670c0096106f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9691fc88b5183891cf68c2a3d2ba7cae922c24e3.pdf",
+    "source": "http://www.dghindia.org/BlockInformation.aspx?blockID=29"
+  },
+  {
+    "_id": "5734ad47adb6670c0096107b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6950ec0a81c7a098a788113293ca57fba995d994.pdf",
+    "source": "http://base.garant.ru/70547172/#block_1000"
+  },
+  {
+    "_id": "5734adf5adb6670c009610a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf36889f35b3be208619379a28e2a57e7e10d239.pdf",
+    "source": "http://www.dgepf.ga/1-actualites/178-tullow-oil-se-repositionne-sur-le-petrole-donal-et-dezanga/#.VzStJ6vi-f4"
+  },
+  {
+    "_id": "5734aef2adb6670c009610d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7e5ffac3f2e8981a876966cc5a74ac8b5d35dba.pdf",
+    "source": "http://www.dghindia.org/BlockInformation.aspx?blockID=3"
+  },
+  {
+    "_id": "5734af93adb6670c009610e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33d4f866663ac03287178c50e7085b2fb79d6324.pdf",
+    "source": "http://www.sec.gov/Archives/edgar/data/906424/000110465905047833/a05-17375_120f.htm#Item16b_CodeOfEthics_144529"
+  },
+  {
+    "_id": "5734b3fbadb6670c00961179",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20d27592a4811f6c5f3bf8d9034d8e992921aaa0.pdf",
+    "source": "http://www.dghindia.org/SedimentaryBasins.aspx"
+  },
+  {
+    "_id": "5734b112adb6670c00961127",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25a8407dc0b6dd628c785b069813440a90861815.pdf",
+    "source": "http://www.gazprom.com/f/posts/60/591327/2002-06-28-code-of-corporate-governance-behavior-en.pdf"
+  },
+  {
+    "_id": "5734b170adb6670c00961136",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/139bd5cbab5b0d3d35a8523bb3257cbad6b032f9.pdf",
+    "source": "http://www.gazprom.com/f/posts/60/591327/2014-02-25-codex-of-corporate-ethics-en.pdf"
+  },
+  {
+    "_id": "5734b1c8adb6670c00961148",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af484f7619456497879bbcb0a42bc4a15752689f.pdf",
+    "source": "http://www.rosneft.com/attach/0/02/76/Kodeks_eng.pdf"
+  },
+  {
+    "_id": "5734b4ccadb6670c00961189",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbac93e9be0e83e83daa7463f4dfc9717ce62861.pdf",
+    "source": "http://www.dghindia.org/SedimentaryBasins.aspx"
+  },
+  {
+    "_id": "5734bfb9adb6670c009612de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc655a1732166563b8e517696ee637babab8121c.pdf",
+    "source": "http://www.sernageomin.cl/detalle-noticia.php?iIdNoticia=67"
+  },
+  {
+    "_id": "5734c1c5adb6670c009612ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c02f531156946a8f942d9051c676a108efe29582.pdf",
+    "source": "http://www.sinia.cl/1292/w3-article-32879.html"
+  },
+  {
+    "_id": "5734c2aaadb6670c009612f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c35f63c74f5932e2cf3acaa18eebb342e6ba49df.pdf",
+    "source": "http://www.cochilco.cl/quienes/areas-fiscal-intro.asp"
+  },
+  {
+    "_id": "5734c54cadb6670c00961307",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/780d7a367f6677d5b2a177ee70e57201694cc951.pdf",
+    "source": "http://ec.europa.eu/DocsRoom/documents/4922/attachments/1/translations/en/renditions/pdf"
+  },
+  {
+    "_id": "5734e5a9adb6670c00961378",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20be3079d0f10efe7de2e8842706c955e94a70ea.pdf",
+    "source": "https://transparencia.org.ve/wp-content/uploads/2016/05/TRANSPARENCIA-VENEZUELA-ante-LA-REFORMA-LOAFSP.pdf"
+  },
+  {
+    "_id": "5734ee90adb6670c0096139d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/308de8be3cfcf936c2a51704ac4a2c5ca289d916.pdf",
+    "source": "https://carloseramos.files.wordpress.com/2013/10/marco-plurianual-del-presupuesto-2014-2016.pdf"
+  },
+  {
+    "_id": "5734f009adb6670c009613a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b170299a3c742c3b42f95d08986d501f76c2703.pdf",
+    "source": "http://www.onapre.gob.ve/index.php/publicaciones/83-publicaciones"
+  },
+  {
+    "_id": "57350253adb6670c009613e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3216fa89a641db8a7027923bb828e651167f4708.pdf",
+    "source": "http://www.minem.gob.pe/minem/archivos/file/Mineria/PUBLICACIONES/ANUARIOS/2015/03%20PRODUCCION.pdf"
+  },
+  {
+    "_id": "57350a24adb6670c0096144b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2affb9746ddacf9fa79aa60b5165dcf1a6e35c60.pdf",
+    "source": "http://www.eluniversal.com/noticias/economia/presupuesto-2016-billon-548574-millones-bolivares_79653"
+  },
+  {
+    "_id": "57351169adb6670c009614c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29594dc5232ba86f25667d56bf196147489bae32.pdf"
+  },
+  {
+    "_id": "57350e51adb6670c0096148b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8798e58cb3f0d20b547c54af1b8616b6d7fdf47d.pdf"
+  },
+  {
+    "_id": "57350f3badb6670c0096149c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33a83357d2aba10cc89d61ed356e9fc6f358e5a2.pdf"
+  },
+  {
+    "_id": "57350f95adb6670c0096149e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d190c2401fb7cfce62a2cc9bd95853a066a2f861.pdf"
+  },
+  {
+    "_id": "57351745adb6670c00961524",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f271b96fcfdc90e66a87c97f288ba1b9346d134.pdf"
+  },
+  {
+    "_id": "57351dc3adb6670c00961535",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc7266c32813ba147095427fb4f06ffa8823ac86.pdf",
+    "source": "http://www.elespectador.com/noticias/economia/nicolas-maduro-informo-ingresos-petroleros-de-venezuela-articulo-617313"
+  },
+  {
+    "_id": "573522cbadb6670c0096158f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b7fdac2a0d8f6e3a547dd4bfbe322c1ff7c3b41.pdf",
+    "source": "http://eitiperu.minem.gob.pe/documentos/1-%2010%20a%C3%B1os%20EITI%20Per%C3%BA.pdf"
+  },
+  {
+    "_id": "57352434adb6670c0096159e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbfb0b12aba07a682d3299544840632598817ca7.pdf",
+    "source": "https://eiti.org/files/Peru-2013-EITI-Report.pdf"
+  },
+  {
+    "_id": "57352efeadb6670c009615ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/871c1fcd6ef57665c6421d3a334c19a88973e076.pdf",
+    "source": "http://monitorlegislativo.net/wp-content/uploads/2014/11/Memoria-MEF-2015.pdf"
+  },
+  {
+    "_id": "57353201adb6670c009615dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7201cfb7ab00e090c94f592804a9b134d0643cbc.pdf",
+    "source": "http://www.americaeconomia.com/economia-mercados/finanzas/gasto-publico-en-venezuela-registra-caida-de-33-debido-la-inflacion"
+  },
+  {
+    "_id": "5735560fadb6670c0096161a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff381c2f500ff42452c09e959ccaa08553a2f0bc.pdf",
+    "source": "http://www.mefbp.gob.ve/index.php?option=com_content&view=article&id=227&Itemid=340"
+  },
+  {
+    "_id": "573574e3adb6670c009616c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53bb7512c592477897330e7faf393ebbfb9679b9.pdf",
+    "source": "http://www.dghindia.org/Publication.aspx"
+  },
+  {
+    "_id": "57357bc7adb6670c009616e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/58ff843b615c0b2573bca1bcb1873d16d479fce5.pdf"
+  },
+  {
+    "_id": "57357cb0adb6670c009616e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/873cfb75126dd3ffc093db3b127215e8c39419e7.pdf",
+    "source": "http://license.uz/ru/license/20/"
+  },
+  {
+    "_id": "57350e94adb6670c00961493",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43157f2123b9645ab4913a6f4fab1b565e44474c.csv",
+    "source": "http://www.cenbank.org/rates/crudeoil.asp?year=2014"
   }
 ]
