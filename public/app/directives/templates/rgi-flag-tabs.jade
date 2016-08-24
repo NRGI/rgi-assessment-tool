@@ -24,28 +24,17 @@
             .panel-collapse.collapse(
             id="collapse{{flag._id}}"
             role="tabpanel"
-            ng-if="flag.addressed"
+            ng-class="{'in': !flag.addressed}"
             aria-labelledby="heading{{flag._id}}")
                 .panel-body
                     .row.left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
                         label Addressed?
                             | &nbsp;
                             input(type="checkbox" ng-model="flag.addressed")
-                    .row.left-padding-lg.right-padding-lg.flag-panel-content(ng-bind-html="flag.content") {{flag.content}}
-                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === identity.currentUser._id")
-                        button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
-            .panel-collapse.collapse.in(
-            id="collapse{{flag._id}}"
-            role="tabpanel"
-            ng-if="!flag.addressed"
-            aria-labelledby="heading{{flag._id}}")
-                .panel-body
-                    .row.left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
-                        label Addressed?
-                            | &nbsp;
-                            input(type="checkbox", ng-model="flag.addressed")
-
-                    .row.left-padding-lg.right-padding-lg.wrap-content(ng-bind-html="flag.content")
+                    .row.left-padding-lg.right-padding-lg.flag-panel-content(
+                        ng-bind-html="flag.content"
+                        ng-class="flag.addressed ? 'flag-panel-content' : 'wrap-content'"
+                    )
                     .row.pull-right.right-padding-lg(ng-if="flag.author._id === identity.currentUser._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
         .top-padding-lg
