@@ -30,7 +30,7 @@
                     .row.left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
                         label Addressed?
                             | &nbsp;
-                            input(type="checkbox" ng-model="flag.addressed")
+                            input(type="checkbox", ng-model="flag.addressed", ng-change="saveFlag()")
                     .row.left-padding-lg.right-padding-lg.flag-panel-content(
                         ng-bind-html="flag.content"
                         ng-class="flag.addressed ? 'flag-panel-content' : 'wrap-content'"
