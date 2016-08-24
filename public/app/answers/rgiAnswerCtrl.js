@@ -5,10 +5,12 @@ angular.module('app')
         $scope,
         $routeParams,
         rgiAnswerSrvc,
+        rgiAnswerMethodSrvc,
         rgiAssessmentSrvc,
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
-        rgiIdentitySrvc
+        rgiIdentitySrvc,
+        rgiNotifier
     ) {
         $scope.page_type = 'answer';
         $scope.isCollapsed = false;
@@ -57,6 +59,15 @@ angular.module('app')
                 $scope.answer = answer;
                 $scope.flags = answer.flags;
             }, processFailureResponse);
+        };
+
+        $scope.saveFlag = function() {
+            rgiAnswerMethodSrvc.updateAnswer($scope.answer)
+                .then(function () {
+                    rgiNotifier.notify('Flag saved');
+                }, function () {
+                    rgiNotifier.notify('Save flag failure');
+                });
         };
 
         $scope.isChoiceChanged = function() {
