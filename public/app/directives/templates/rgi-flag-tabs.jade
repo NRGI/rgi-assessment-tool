@@ -52,7 +52,5 @@
             div(
             ng-repeat="flag in answer.flags"
             ng-if="!identity.currentUser.isSupervisor() && flag.addressed_to._id!==identity.currentUser._id")
-                i.glyphicon.glyphicon-warning-sign.text-warning
-                    text(ng-if="identity.currentUser.isResearcher()")  Flag to Researcher:
-                    text(ng-if="identity.currentUser.isReviewer()")  Flag to Reviewer:
+                i.glyphicon.glyphicon-warning-sign.text-warning  Flag to {{flag.addressed_to.role|role|ucfirst}}:
                 text.wrap-content(ng-bind-html="flag.content")
