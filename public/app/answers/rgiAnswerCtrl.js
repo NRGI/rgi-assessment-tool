@@ -14,9 +14,10 @@ angular.module('app')
         $scope.isCollapsed = false;
 
         var originallySubmitted = {},
+            answerCriteria = {answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)},
             processFailureResponse = rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure');
 
-        rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+        rgiAnswerSrvc.get(answerCriteria, function (answer) {
             $scope.answer = answer;
             $scope.flags = answer.flags;
             $scope.references = answer.references;
@@ -46,13 +47,13 @@ angular.module('app')
         }, processFailureResponse);
 
         var resetReference = function() {
-            rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+            rgiAnswerSrvc.get(answerCriteria, function (answer) {
                 $scope.references = answer.references;
             }, processFailureResponse);
         };
 
         var resetAnswer = function() {
-            rgiAnswerSrvc.get({answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)}, function (answer) {
+            rgiAnswerSrvc.get(answerCriteria, function (answer) {
                 $scope.answer = answer;
                 $scope.flags = answer.flags;
             }, processFailureResponse);
