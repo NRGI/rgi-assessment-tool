@@ -12736,5 +12736,473 @@
     "_id": "57350e94adb6670c00961493",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/43157f2123b9645ab4913a6f4fab1b565e44474c.csv",
     "source": "http://www.cenbank.org/rates/crudeoil.asp?year=2014"
+  },
+  {
+    "_id": "57357d3dadb6670c009616e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5cf184c7a6493f32fbafacc130f925a592ba32dc.pdf",
+    "source": "http://base.garant.ru/180285/"
+  },
+  {
+    "_id": "57357eb1adb6670c00961710",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d47b1534d23e6de9510e57413c7614f4ec11442d.docx",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=245457"
+  },
+  {
+    "_id": "57358003adb6670c0096171b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10bd0c472f0994e8d64d12c2d2ac92d2693d1696.pdf",
+    "source": "https://www.consultant.ru/law/review/lawmaking/reglduma/"
+  },
+  {
+    "_id": "5735812dadb6670c0096172f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6de3cc6da3941a3a99308d6c0cb6537f18050941.pdf",
+    "source": "http://www.fmc.uz/legisl.php?id=license_perechen_vedomstv"
+  },
+  {
+    "_id": "57358fd6adb6670c00961761",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a09ca1080d93dcde15dc600afe14c6a91c179e8.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=245452"
+  },
+  {
+    "_id": "5735e65eadb6670c009619a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53f53bd8ee85184a1a957e8bdcdc6af4764f6a10.pdf",
+    "source": "http://www.sernageomin.cl/mineria-c-exploracion.php"
+  },
+  {
+    "_id": "5735e69dadb6670c009619a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c479c8cd8b191dcac8bcaa7ac978d062727e98d9.pdf",
+    "source": "http://www.boz.zm/"
+  },
+  {
+    "_id": "5735e753adb6670c009619bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9402495a0e8d9f8e8f5cef8a17a6c7413ca49912.pdf",
+    "source": "http://www.sernageomin.cl/mineria-c-explotacion.php"
+  },
+  {
+    "_id": "5735e7cdadb6670c009619d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e17b117abd618f05c9fc7943665b391cf11c83ee.pdf",
+    "source": "http://www.sernageomin.cl/mineria-c-exploracion.php"
+  },
+  {
+    "_id": "5735f4e8adb6670c00961a3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b505adad51a55b3bb90988da12761309a1e55a59.pdf",
+    "source": "http://base.garant.ru/12135842/"
+  },
+  {
+    "_id": "57360d37adb6670c00961ae7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adc133eb460289162bec5fe2412dd81bc5a310e3.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/441394/Appendix_1_Field_Unit_Version_of_UK_Reserves_Tables_2015.pdf"
+  },
+  {
+    "_id": "57360da8adb6670c00961af4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71cfd3f578598cb0e3a61e2a3ae399108b5e1e14.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-uk-field-data"
+  },
+  {
+    "_id": "5735fa10adb6670c00961a89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55fe4137f5cd53e9624323e256461066f0f99bf0.pdf",
+    "source": "http://base.garant.ru/12106440/1/"
+  },
+  {
+    "_id": "57361471adb6670c00961b80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efc1712f6fa36ee885f815dfe67c5500fe2c9123.pdf",
+    "source": "https://www.gov.uk/government/publications/extractive-industries-transparency-initiative-payments-report-2014"
+  },
+  {
+    "_id": "57362039adb6670c00961cc8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85acf2af7763bee19c3a9c09a510de84caf382fa.pdf",
+    "source": "https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends"
+  },
+  {
+    "_id": "573620e8adb6670c00961cd0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/919d1caf7d657cd3aa3cac47307241fea09da310.pdf"
+  },
+  {
+    "_id": "573626b4adb6670c00961d39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/876938e31e93753d351e74fce9ef8f6e597d676b.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-licence-data"
+  },
+  {
+    "_id": "57362d57adb6670c00961df8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b079b4d0edb72c00b5775cbe9a2414e8d1b81b0.pdf",
+    "source": "https://data.gov.uk/dataset/extractive-industries-transparency-initiative-report-tables"
+  },
+  {
+    "_id": "57362c49adb6670c00961da1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a64f1bfeb855d3879ea41ab0b525a53b1f4ac40d.pdf",
+    "source": "http://www.hacienda.cl/preguntas-frecuentes/presupuesto/cuales-son-los-plazos-para-presentar-el.html"
+  },
+  {
+    "_id": "57362ca1adb6670c00961db5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/368bfd2dd6a5e1d1717272f92d10882fff586ac1.pdf",
+    "source": "http://www.sii.cl/diccionario_tributario/dicc_a.htm"
+  },
+  {
+    "_id": "573624b4adb6670c00961d1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef6f5e0b7dcadc93aef79c506c159e7d840a6399.pdf",
+    "source": "https://eiti.org/united-kingdom"
+  },
+  {
+    "_id": "5736358cadb6670c00961ee4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8bafcb4c8b124e106e4a45f42100ed9ee6792b52.pdf",
+    "source": "http://www.siam.economia.gob.mx/es/siam/p_2014"
+  },
+  {
+    "_id": "573635f9adb6670c00961f03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd64b2789427f209c6c4926ef24787a19173c659.pdf",
+    "source": "http://www3.inegi.org.mx/sistemas/temas/default.aspx?s=est&c=21385"
+  },
+  {
+    "_id": "57363229adb6670c00961ec4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/48499dfd4a30c2271fef74130475a4d3f06e6b67.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=6374"
+  },
+  {
+    "_id": "57363566adb6670c00961ed8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c10e6c81d717a669dac06b175894b75bf5c241d7.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=6368"
+  },
+  {
+    "_id": "57363113adb6670c00961eb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c830acc05403b9ee2866766e928eacff12d40e0.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508193/HMT_Budget_2016_Web_Accessible.pdf"
+  },
+  {
+    "_id": "573657faadb6670c00961fc5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ad917760730dc94b4772d61f4db383363accab3.pdf",
+    "source": "http://www.comunicacion.gob.bo/?q=20140722/16157"
+  },
+  {
+    "_id": "57365ad1adb6670c00961fed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe475bbcd990678957c62220a00c1fc1d2800e52.pdf",
+    "source": "https://www.eldia.com.bo/index.php?cat=1&pla=3&id_articulo=183271"
+  },
+  {
+    "_id": "57367210adb6670c00962042",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb3d149a0ee7f44d59324aa7ea5ca4f9b09cf179.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=239219"
+  },
+  {
+    "_id": "57367279adb6670c0096204c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7e91f0a72f052878e3dca65af790b85d5def9db.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1018335"
+  },
+  {
+    "_id": "57368009adb6670c009620a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7b843c60a8abbdcd46701dfb280f8d4b8cfbe0b.pdf",
+    "source": "http://www.eljoropo.com/site/2015/01/23/distribucion-del-situado-constitucional-de-venezuela-por-estado-presupuesto-2015/"
+  },
+  {
+    "_id": "57368e32adb6670c0096216b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/92e33d4dd726eb3d626446dcec1b0cae8fa54230.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=49%3Acomptesnhenglish&catid=44&Itemid=54&lang=fr"
+  },
+  {
+    "_id": "57368647adb6670c00962104",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d0a2132fded6f585372f675cff57d09dafee46e.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=142%3Aagreement-transfer-non-exclusive-exploration-production-data-cameroon&catid=58%3Areglementation&Itemid=74&lang=fr"
+  },
+  {
+    "_id": "57368d4aadb6670c00962163",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0131878d3080e3e16efd4c70bf8202e6b1f8a9b4.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=49%3Acomptesnhenglish&catid=44&Itemid=54&lang=fr"
+  },
+  {
+    "_id": "573680e2adb6670c009620b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3d246889c9c5c2cd74e176c5526ba632c20655a.pdf",
+    "source": "http://www.eljoropo.com/site/2015/01/23/situado-constitucional-a-nivel-municipal-presupuesto-2015/"
+  },
+  {
+    "_id": "573683cdadb6670c009620e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0927bcb9bd38cbe79e1580590efd24de77a5ede7.pdf",
+    "source": "http://www.anh.gob.bo/InsideFiles/Inicio/Banner/Banner_Id-30-160128-0143-2.pdf"
+  },
+  {
+    "_id": "5736b773adb6670c0096234d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db38e9384111af68071993fe6261c2ce209da04d.pdf",
+    "source": "http://runrun.es/nacional/venezuela-2/146996/alcaldias-en-riesgo-de-quiebra-financiera.html"
+  },
+  {
+    "_id": "5736f03dadb6670c00962384",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61806defe64748d7aee74ab95f5e02c54b2198ce.pdf",
+    "source": "http://constitution.uz/en/clause/index"
+  },
+  {
+    "_id": "5736aba1adb6670c0096228f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae976df07c8bc961f10f12a3e2e9106411fd322a.pdf",
+    "source": "http://www.ypfb.gob.bo/es/transparencia/informes-tecnicos.html"
+  },
+  {
+    "_id": "5736b023adb6670c009622e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/679e89224011edf6235327e0397e0b956e883c4b.pdf",
+    "source": "http://On the website of YPFB \"All Right Reserved\" which means that YPFB is published not renounce copyright information"
+  },
+  {
+    "_id": "5736a77fadb6670c0096223d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3accd3182c7a9e272e59d84595bc508dfbf1f1ed.pdf",
+    "source": "http://www.udape.gob.bo"
+  },
+  {
+    "_id": "573702efadb6670c00962451",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/292c64f8a415159d7e9bd9da2ca92e68302ef6d8.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/mauritanie/Mauritanie-Code-2000-environnement.pdf"
+  },
+  {
+    "_id": "573703a3adb6670c0096245f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9891177c7fffc6cf5fe30c9e3a21da08a08ee8c1.pdf",
+    "source": "http://droit-afrique.com/upload/doc/mauritanie/Mauritanie-Decret-2004-94-etude-impact-environnemental.pdf"
+  },
+  {
+    "_id": "57370119adb6670c00962438",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a70ad3efac999a8742afffdc6e4bf922700264f1.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=1220419"
+  },
+  {
+    "_id": "57370448adb6670c0096246b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb90ed44626c354a66cfaf8c4114db18e4d71d32.pdf",
+    "source": "http://www.petrole.gov.mr/IMG/pdf/decret_eie_2007.pdf"
+  },
+  {
+    "_id": "57370711adb6670c00962490",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ffdae25138252d98bda33ba2ebbb5ad0b9b291d2.pdf",
+    "source": "http://www.etap.com.tn/index.php?id=1168&lg=3"
+  },
+  {
+    "_id": "57370812adb6670c0096249a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b491a1dfd97607da1bf761ca38297e5bdb897d31.pdf",
+    "source": "http://www.iraqld.iq/LoadLawBook.aspx?page=1&SC=&BookID=30110"
+  },
+  {
+    "_id": "573708afadb6670c009624a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b035908fa9fd6df76541457839ab258bab446da.pdf",
+    "source": "http://catalog.industrie.gov.tn/group/energie?page=1"
+  },
+  {
+    "_id": "57370995adb6670c009624c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e12c3ea11fc7be947bc8aa8071b3af974f02398.pdf",
+    "source": "http://catalog.industrie.gov.tn/group/gaz-naturel"
+  },
+  {
+    "_id": "57370cbbadb6670c009624df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9034da79991068e70e70b04bc1410440e10e2156.pdf",
+    "source": "http://www.oil.gov.iq/index.php?name=News&file=article&sid=1115"
+  },
+  {
+    "_id": "57370d92adb6670c009624e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15e4292e36c7c31c17bf21a3791785e5ea209c3b.pdf",
+    "source": "http://www.uzgeolcom.uz/ru/documents/806/11301/"
+  },
+  {
+    "_id": "57371ac9adb6670c00962596",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55bfaf49d2b38a8dc497eb7b31425a32905b5f57.pdf",
+    "source": "http://www.eib.org/attachments/pipeline/20080319_esia_fr.pdf"
+  },
+  {
+    "_id": "57371e4dadb6670c00962612",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c1a8f0c03805b5d3a96a3ac45f5a1f4f6bb92313.pdf",
+    "source": "http://www.tunisieindustrie.gov.tn/template.php?code=162&pere=156"
+  },
+  {
+    "_id": "5737296cadb6670c0096266e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a804f5650b9a88f7cc1a72949fc7add5fef0b994.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-revenus-de-l-etap-au-titre-de-l-exercice-2013-2014/resource/f6618a06-bf8b-4e70-ab7f-75d7be571141"
+  },
+  {
+    "_id": "57372b00adb6670c00962694",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4095bbdfb228050304ad2cfc3e2b78bea7e2661e.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/production-petroliere-mensuelle-par-champs/resource/1f07d5fe-da84-472b-adf6-013e697a7fac"
+  },
+  {
+    "_id": "57372bf1adb6670c009626b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6d0a8200695deed04647ed7bbc0a5d81948bda3.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/production-mensuelle-du-gaz-commercial-par-champ/resource/0434d375-f205-457f-ae76-0eed94e0633c"
+  },
+  {
+    "_id": "57372e1aadb6670c009626c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d4b193521526c50569dd5c67ce2329f9de1b0a9.pdf",
+    "source": "http://www.oil.gov.iq/index.php?name=News&file=article&sid=258"
+  },
+  {
+    "_id": "573732faadb6670c0096271b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/843c7168dadd13235d15129dbcd156e669ca5086.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "573734dfadb6670c00962723",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45c1e4a1a406d800327d74828facc5fc884cd6a9.pdf",
+    "source": "http://soc.oil.gov.iq/index.php?name=Pages&op=page&pid=120"
+  },
+  {
+    "_id": "57373578adb6670c00962731",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f0a395494ab8831152d097c6db286ce252bec3b.pdf",
+    "source": "http://www.gheiti.gov.gh/site/index.php?option=com_content&view=article&id=90:ghana-achieves-compliant-status-of-the-transparency-standard-eiti&catid=1:latest-news&Itemid=29"
+  },
+  {
+    "_id": "57373626adb6670c00962740",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8cc35f2bc7ec51ceabf5504ecc579fca8bf0a08.pdf"
+  },
+  {
+    "_id": "57373a55adb6670c00962790",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32dfc4f6bbc5ecc91cbefa6ece76472cb4bb1e51.pdf",
+    "source": "http://www.mof.gov.iq/pages/ar/ExternalDebt.aspx"
+  },
+  {
+    "_id": "57373ac9adb6670c0096279a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b34dc02cac8560190917485db4e444194352014.pdf",
+    "source": "http://www.mof.gov.iq/pages/ar/InternalDebt.aspx"
+  },
+  {
+    "_id": "57374377adb6670c009627ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f20a2dde80e435e56d65d6bf6c13bee3ea937114.pdf"
+  },
+  {
+    "_id": "57374bf2adb6670c009627ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d0f29afb7a0a4a7e2dd3f3047aa7ffc30b12766.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=25373&idParte=0"
+  },
+  {
+    "_id": "573752b6adb6670c0096280a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4747cccc6f351bd68faf02a4f80c2ab93860486.pdf",
+    "source": "http://www.snh.cm/PublicationHydrocarbures/Plaquette%20SNH_2016_web-English.pdf"
+  },
+  {
+    "_id": "57375a1fadb6670c00962824",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c7665e9e35745a87c1767f62dfade01eee65b90.pdf",
+    "source": "http://fliphtml5.com/mcwz/nhhq"
+  },
+  {
+    "_id": "57375e00adb6670c0096284d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19eb9489c08b90588d65af116c37ce1352bb7c5e.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/export-produits-petroliers/resource/ca325c7b-3aa7-45aa-a285-a1e0cde5b4fd"
+  },
+  {
+    "_id": "57375f83adb6670c00962867",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ec5dac2229a911abb5ade3d9117d5c28f91e3fb.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/exportation-annuelle-du-petrole/resource/1911fd1c-c823-4ff0-9ec8-1264bad56077"
+  },
+  {
+    "_id": "57376656adb6670c009628d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ded75c57b54c124d5c7dd0e4b73ba5c41baa152.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset?groups=energie&page=2"
+  },
+  {
+    "_id": "57376454adb6670c009628a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c75585e52a0f464aa9acf214e992631e66db24f4.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset"
+  },
+  {
+    "_id": "5737642fadb6670c009628a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75dc3b9a40a69e1878a285432cd24e971974ad70.pdf"
+  },
+  {
+    "_id": "57376688adb6670c009628d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d1d4cda9484428847c924d0dbbee2978a79ca17.pdf"
+  },
+  {
+    "_id": "57376938adb6670c0096291b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c903e0d7c6aa761577d1ceb62f421bf56c6f1fe1.pdf",
+    "source": "https://eiti.org/files/CAC%2075%20-%20ITIE%20Congo%20-%20Rapport%20de%20Validation%20-%20FR-1.pdf"
+  },
+  {
+    "_id": "57376c14adb6670c00962959",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb7cce64940c7bab61636fc9da8b8242045fe894.pdf",
+    "source": "http://data.industrie.gov.tn/licence/"
+  },
+  {
+    "_id": "573775a0adb6670c009629bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc3233d310d9a3b19a9f99c0392f677738e98021.pdf",
+    "source": "http://www.peru.gob.pe/normas/docs/LEY_27806.pdf"
+  },
+  {
+    "_id": "573776faadb6670c009629f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfe74437e0cb4bf0f41181e5ebc0f9a7c70be6ab.pdf",
+    "source": "http://www.mef.gob.pe/index.php?option=com_content&view=article&id=833%3Adecreto-supremo-nd-072-2003-pcm&catid=298%3Anormas-legales&Itemid=100143&lang=es"
+  },
+  {
+    "_id": "57377312adb6670c009629a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/199fb6eab31708540465c75b1b18ff910aa8e74e.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "5737764eadb6670c009629d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61e5b7b4303198d69f1cb605211b956fd99b5d36.pdf",
+    "source": "http://www.peru.gob.pe/normas/docs/LEY_27806.pdf"
+  },
+  {
+    "_id": "57378a04adb6670c00962aac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55ea7177552a67a5ba10fe1ef454db2f64638998.pdf",
+    "source": "http://www.sii.cl/sobre_el_sii/acerca/mision.htm"
+  },
+  {
+    "_id": "573779bfadb6670c00962a19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4dade9b0bdd559d7b5a0f7351aa52068ce9bcff9.pdf"
+  },
+  {
+    "_id": "57377a51adb6670c00962a1b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b881cca8f57724e152f30a8b9f0114b8453c6f4.pdf",
+    "source": "http://www.tap.info.tn/ar/index.php/2012-06-19-10-06-48/2012-06-19-10-09-15/74148-%D8%AA%D9%88%D9%86%D8%B3-%D8%AA%D8%B3%D8%B9%D9%89-%D8%A7%D9%84%D9%89-%D8%A8%D9%84%D9%88%D8%B1%D8%A9-%D9%85%D9%88%D9%82%D9%81-%D8%AD%D8%A7%D8%B3%D9%85-%D9%85%D9%86-%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A9-%D8%A7%D9%84%D8%B4%D9%81%D8%A7%D9%81%D9%8A%D8%A9-%D9%81%D9%89-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC%D9%8A%D8%A9"
+  },
+  {
+    "_id": "57378527adb6670c00962a72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30f7075b451f68697f795df8e2bf39559dc57736.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1067194"
+  },
+  {
+    "_id": "5736f232adb6670c009623a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7751bc1ed1b985e4ad93752f89735cfb3cd595a1.xlsx",
+    "source": "http://www.mof.gov.iq/pages/ar/FinalAccounting.aspx"
+  },
+  {
+    "_id": "5736f2cbadb6670c009623ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/baf050bdf3a5529181724fc6cef44c07637ba5d0.xlsx",
+    "source": "http://www.mof.gov.iq/pages/ar/AnalyticalReport.aspx"
+  },
+  {
+    "_id": "573616a3adb6670c00961bbe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f461183604e7c1d04c840ec0832c8690a721e277.csv",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/518263/uk-eiti-2014-report-export-and-import-data.csv"
+  },
+  {
+    "_id": "57361ae3adb6670c00961bfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd1914b2fcf3cabc461d60a8f2ebffce887214ed.xlsx",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/518950/ET_4.3.xls"
+  },
+  {
+    "_id": "57361e50adb6670c00961c84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f56c59c267d64bf0ee4e5bb881f8e51a718249f.xlsx",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/518945/ET_3.10.xls"
+  },
+  {
+    "_id": "5736140badb6670c00961b78",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9f3cfed98f88b3c7dc558312771c8d28ab6972d.xlsx",
+    "source": "https://itportal.decc.gov.uk/pprs/report2.xlsx"
+  },
+  {
+    "_id": "57378589adb6670c00962a7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c69eb59bd4fce040a90a85b9e710105a2ec2c82.pdf",
+    "source": "http://www.ey.com/Publication/vwLUAssets/Chile_enacts_tax_reform/$FILE/2014G_CM4782_Chilean%20tax%20reform%20is%20enacted.pdf"
+  },
+  {
+    "_id": "5735c60eadb6670c009618f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4bd7e5ba06e9b4c9a259864baa8e4b57744b782c.pdf"
+  },
+  {
+    "_id": "5735ca28adb6670c0096190d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/866d3b13ce2fdcf197430db089d81760fc06c65c.pdf",
+    "source": "http://igoil.gov.iq/ig/?page_id=870"
+  },
+  {
+    "_id": "5735de11adb6670c0096196c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd262d4c3d2c1c71b78f5ad15e95fce090c7b8aa.pdf",
+    "source": "http://webcache.googleusercontent.com/search?q=cache:http://www.mewd.gov.zm/"
+  },
+  {
+    "_id": "5735e4efadb6670c0096198c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c1bde0c972e6d3de77f0d207210836864844b5a.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=158&Itemid=50&lang=fr"
+  },
+  {
+    "_id": "5735e53cadb6670c0096198e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b521b27cda7e668b97e31b85e9061dd4549a4f3c.pdf",
+    "source": "http://www.mofnp.gov.zm/index.php"
   }
 ]
