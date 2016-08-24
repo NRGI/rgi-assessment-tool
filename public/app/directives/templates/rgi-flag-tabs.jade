@@ -1,17 +1,12 @@
-div(id="flags_div").bottom-padding-med
+#flags_div.bottom-padding-med
     legend Flags:
-    div.panel-group(
-    id="prev_flags_div"
-    role="tablist"
-    aria-multiselectable="true")
+    #prev_flags_div.panel-group(role="tablist", aria-multiselectable="true")
 
-        div.panel(
+        .panel(
         ng-repeat="flag in flags"
-        ng-if="current_user.isSupervisor() || (!flag.addressed && (flag.addressed_to._id===current_user._id))"
+        ng-if="identity.currentUser.isSupervisor() || (!flag.addressed && (flag.addressed_to._id === identity.currentUser._id))"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
-            div.panel-heading(
-            role="tab"
-            id="heading{{flag._id}}")
+            .panel-heading(role="tab", id="heading{{flag._id}}")
                 h4.panel-title
                     div(
                     style="text-align: left;"
@@ -25,43 +20,39 @@ div(id="flags_div").bottom-padding-med
                         b {{ flag.author.role|role }}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
-                        h6.pull-right Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
-            div(
+                        h6.pull-right(ng-if="identity.currentUser.isSupervisor()") Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
+            .panel-collapse.collapse(
             id="collapse{{flag._id}}"
-            class="panel-collapse collapse"
             role="tabpanel"
             ng-if="flag.addressed"
             aria-labelledby="heading{{flag._id}}")
-                div.panel-body
-                    .row.left-padding-lg(ng-if="current_user.isSupervisor()")
+                .panel-body
+                    .row.left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
                         label Addressed?
                             | &nbsp;
                             input(type="checkbox" ng-model="flag.addressed")
                     .row.left-padding-lg.right-padding-lg.flag-panel-content(ng-bind-html="flag.content") {{flag.content}}
-                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === current_user._id")
+                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === identity.currentUser._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
-            div(
+            .panel-collapse.collapse.in(
             id="collapse{{flag._id}}"
-            class="panel-collapse collapse in"
             role="tabpanel"
             ng-if="!flag.addressed"
             aria-labelledby="heading{{flag._id}}")
-                div.panel-body
-                    .row.left-padding-lg(ng-if="current_user.isSupervisor()")
+                .panel-body
+                    .row.left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
                         label Addressed?
                             | &nbsp;
-                            input(
-                            type="checkbox"
-                            ng-model="flag.addressed")
+                            input(type="checkbox", ng-model="flag.addressed")
 
                     .row.left-padding-lg.right-padding-lg.wrap-content(ng-bind-html="flag.content")
-                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === current_user._id")
+                    .row.pull-right.right-padding-lg(ng-if="flag.author._id === identity.currentUser._id")
                         button.btn.btn-primary(ng-click="flagEdit(flag, $index)") Edit
-        div.top-padding-lg
+        .top-padding-lg
             div(
             ng-repeat="flag in answer.flags"
-            ng-if="!current_user.isSupervisor() && flag.addressed_to._id!==current_user._id")
+            ng-if="!identity.currentUser.isSupervisor() && flag.addressed_to._id!==identity.currentUser._id")
                 i.glyphicon.glyphicon-warning-sign.text-warning
-                    text(ng-if="current_user.isResearcher()")  Flag to Researcher:
-                    text(ng-if="current_user.isReviewer()")  Flag to Reviewer:
+                    text(ng-if="identity.currentUser.isResearcher()")  Flag to Researcher:
+                    text(ng-if="identity.currentUser.isReviewer()")  Flag to Reviewer:
                 text.wrap-content(ng-bind-html="flag.content")
