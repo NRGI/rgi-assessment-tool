@@ -118,5 +118,10 @@
   {
     "_id": "572e77501c7e780100db2d6f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ed34b65d23091aefe231d26d0de0e99ea96d619f.pdf"
+  },
+  {
+    "_id": "5739aecd9492a51800957be0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b92c98f5c05604a38cf7301d70c457172ccc65ef.pdf",
+    "source": "http://www.courdescomptes.ma/upload/MoDUle_3/File_3_275.pdf"
   }
 ]

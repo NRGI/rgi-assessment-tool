@@ -13420,5 +13420,296 @@
     "_id": "57386a58adb6670c00963101",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5acc4371fbcc5bbb9495ce6b9228aa1a685499f0.xlsx",
     "source": "http://minfin.ru/ru/perfomance/nationalwealthfund/statistics/fnb_key/"
+  },
+  {
+    "_id": "57388cb5adb6670c009633f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ec1a4182377230952a5cea6051a5a6ffaf11fb3.pdf",
+    "source": "http://base.garant.ru/12177506/"
+  },
+  {
+    "_id": "57389447adb6670c0096348b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ca4f4b66faf8131d2cd732a9a81720f77aecd16.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset?groups=phosphate"
+  },
+  {
+    "_id": "57389539adb6670c0096349d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3985e3165b4758907054b4bc3b1504eb513c3302.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/2000/20/pdfs/ukpga_20000020_en.pdf"
+  },
+  {
+    "_id": "57389d66adb6670c00963540",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfebbc0d3621361fe00b7da83f9d4e6149d10b26.pdf",
+    "source": "http://www.rosneft.com/attach/0/23/02/MDA_ENG_4Q2015_.pdf"
+  },
+  {
+    "_id": "57389e22adb6670c00963557",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d51429692687d0ad0a30657665ba1d433ee4910a.pdf",
+    "source": "http://www.gazprom.com/about/subsidiaries/list-items/"
+  },
+  {
+    "_id": "57389f4cadb6670c00963565",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b8a6b58895f72668018db993e856e529308e9c1.pdf",
+    "source": "http://www.gazprom.com/f/posts/12/001311/2015-mgt-report-en.pdf"
+  },
+  {
+    "_id": "5738a676adb6670c00963590",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6f6d0ee3932176dc87a8cf1a95a4b85f8bc00e9.pdf",
+    "source": "http://www.mch.cl/2015/02/02/gobierno-estudia-suscribir-pacto-para-transparentar-pagos-que-mineras-hacen-al-estado/"
+  },
+  {
+    "_id": "5738a8dbadb6670c009635a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83184c417d4a1f5fc3906bfc2f271d2f4613c731.pdf",
+    "source": "http://www.elmostrador.cl/noticias/opinion/2015/11/02/por-que-chile-no-transparenta-los-impuestos-mineros/"
+  },
+  {
+    "_id": "5738a9e1adb6670c009635bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5956ae27504edcdb03bbef76d8daae1c3f87fee6.pdf",
+    "source": "http://45.33.78.228/sites/default/files/PROCEDURES_PHASE_EXPLOITATION.pdf"
+  },
+  {
+    "_id": "5738ab79adb6670c009635f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6df72ba8c86421d32e9cf5aba4dc53cc3713d2dd.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-taxation"
+  },
+  {
+    "_id": "5738acc3adb6670c00963616",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/628147e57aa817bd4b5f2ea8a1662190439eec10.pdf",
+    "source": "http://N/A"
+  },
+  {
+    "_id": "5738af94adb6670c0096364a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95c3c96439107c5cf288086e413a8e57afe1d8c4.pdf",
+    "source": "http://www.mines.gouv.ml/attribution-des-titres"
+  },
+  {
+    "_id": "5738b131adb6670c00963671",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75fc82e25f7b7bc8203ed69120ad521e146492e1.pdf",
+    "source": "https://www.gov.uk/government/publications/rates-and-allowances-corporation-tax/rates-and-allowances-corporation-tax"
+  },
+  {
+    "_id": "5738ba1eadb6670c009636a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62f6818aa8703ddea546acec0ff3b5e20437f7d4.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/2010/4/pdfs/ukpga_20100004_en.pdf"
+  },
+  {
+    "_id": "5738bc14adb6670c009636b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed42668691f0f45ca2bdf03dbdd3471ec54c0dee.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-annuelles-a-l-export-des-derives-de-phosphate/resource/d847f411-4646-4a11-bd86-98cee38f381b"
+  },
+  {
+    "_id": "5738bc5badb6670c009636b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36d024927237b6588682efffe92fff37f95db415.pdf",
+    "source": "https://www.gov.uk/hmrc-internal-manuals/oil-taxation-manual/ot20206"
+  },
+  {
+    "_id": "5738be13adb6670c009636d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/076aeaedbbcf624e47ded4e9f7067ed8a009bf86.pdf",
+    "source": "https://www.gov.uk/hmrc-internal-manuals/oil-taxation-manual"
+  },
+  {
+    "_id": "5738be61adb6670c009636e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4daf16f7d0c3ae4dd5c5bac96ec35888cbc5f51.pdf"
+  },
+  {
+    "_id": "5738cabaf3e08812002f7591",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc7916bf4257597084340eeac7199a19c0a6b8c1.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/2005/11/pdfs/ukpga_20050011_en.pdf"
+  },
+  {
+    "_id": "5738d1ed9492a518009572ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03a73180710bc39fecfb6799b5c0d93da260d78c.pdf",
+    "source": "http://www.ins.tn/en/themes/commerce-ext%C3%A9rieur"
+  },
+  {
+    "_id": "5738d3d99492a518009572d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/262cd3708459b650b0cc57a2b3ddc28114daea6e.pdf",
+    "source": "http://www.ins.tn/en/themes/commerce-ext%C3%A9rieur#sub-367"
+  },
+  {
+    "_id": "5738d4409492a518009572e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9029eca184ac6eb809df3e9c6c5f69e4995bc08.pdf",
+    "source": "http://www.tsj.gob.ve/gaceta-oficial#"
+  },
+  {
+    "_id": "5738d8799492a5180095732c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45077e469c1750bacf4962fbfbdc8d7a1bb6dea0.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-annuelles-a-l-export-des-derives-de-phosphate/resource/d847f411-4646-4a11-bd86-98cee38f381b"
+  },
+  {
+    "_id": "5738f3479492a5180095738e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bae95ca6e7af0711d25a51cec327698dfbc137f7.pdf",
+    "source": "http://N/A"
+  },
+  {
+    "_id": "5738f3fa9492a5180095739a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e43af065f07433906846cbe5be73ef13f97c661e.pdf",
+    "source": "http://www.eluniversal.com/opinion/120626/mas-fonden-menos-presupuesto"
+  },
+  {
+    "_id": "57390d299492a518009573d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e24a180a9e46236259aee5f56c24e17c6676853d.pdf",
+    "source": "http://www.tsj.gob.ve/en/gaceta-oficial"
+  },
+  {
+    "_id": "5739205a9492a518009573ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02ab3c23207d142f1de7e9ae84af0bb8ebaef258.pdf",
+    "source": "http://www.sii.cl/contribuyentes/empresas_por_sector/mineria.pdf"
+  },
+  {
+    "_id": "573921279492a518009573fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd3cb56d66961b3a2465113f7138abcc8efa8952.pdf",
+    "source": "http://www.cochilco.cl/estadisticas/impuesto.asp"
+  },
+  {
+    "_id": "573922db9492a51800957426",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/760aef0559180078e9fd6ce835932fed18fe9dcd.pdf"
+  },
+  {
+    "_id": "573926fc9492a5180095747c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54bbf86a9aad3a4a53483aa857c38ed3484da32f.pdf",
+    "source": "http://www.dipres.gob.cl/572/articles-133158_doc_pdf.pdf"
+  },
+  {
+    "_id": "5739295a9492a5180095749a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/691d582b7502efd8f0c47f8745c58c0d8cbda8ec.pdf",
+    "source": "http://www.dipres.gob.cl/572/articles-138159_doc_pdf.pdf"
+  },
+  {
+    "_id": "573929ed9492a518009574a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e85cabe2e8b4879dcaddf721bd4aa6cd30ee445b.pdf",
+    "source": "http://www.dipres.gob.cl/572/w3-propertyvalue-15889.html"
+  },
+  {
+    "_id": "573963ae9492a5180095754a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5623c43d804f5454a90360e2f0652dc6fa89b8ee.pdf",
+    "source": "http://www.consultant.ru/document/cons_doc_LAW_19671/dacfe90c50f4f43979deae724dbcdc29317e1f38/"
+  },
+  {
+    "_id": "573964ed9492a51800957558",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c13b1447199d6789d70aeb81dafc7a4ba27428f.pdf",
+    "source": "http://www.rosneft.com/about/Glance/OperationalStructure/"
+  },
+  {
+    "_id": "573969739492a518009575b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c6e122a7bec046e85392e96cf925eac60c3e25c.pdf",
+    "source": "http://base.garant.ru/12164283/"
+  },
+  {
+    "_id": "573984599492a51800957642",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bef98e8cc6784e9c4578fedc3460fdb53eb95226.pdf"
+  },
+  {
+    "_id": "5739897a9492a51800957677",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17fd58f508c88c58dadd06059ec341cd60c571c8.pdf"
+  },
+  {
+    "_id": "57398aff9492a5180095768b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b62e759e9d1dfa4de003e4a5e4e360ee91786653.pdf",
+    "source": "http://www.jeuneafrique.com/309619/economie/gabon-mort-six-blesses-explosion-site-petrolier-dobangue/"
+  },
+  {
+    "_id": "57398b649492a5180095769d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ee000d8cc050cf145962662bed1a5d8ccfdcb61.pdf",
+    "source": "http://epaoilandgas.org/Downloads/NTS_eni%20Ghana%20OCTP%20phase%201%20and%202_rev04_3.pdf"
+  },
+  {
+    "_id": "57398d6b9492a518009576d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb1be1b5c8f98c98b2706f02a2d66ed0622d35f6.pdf",
+    "source": "http://www.gaboneconomie.net/ge/index.php/eau-energie/item/1602-addax-petroleum-la-production-d-obangue-suspendue"
+  },
+  {
+    "_id": "573991009492a51800957733",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8139816e3a475a21e3e7c7f04ccb7fa99b8844f0.pdf",
+    "source": "http://pravo.gov.ru/ipsdata/?docbody=&prevDoc=102349721&backlink=1&&nd=102150462"
+  },
+  {
+    "_id": "573992539492a51800957776",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd608955893b6f620d7c2f8fcecfa99651a11bc4.pdf",
+    "source": "http://www.ocpgroup.ma/sites/default/files/alldocs/consolidated-financial-statement-2014.pdf"
+  },
+  {
+    "_id": "573996659492a51800957888",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b625374a53b647da430a0232d84527b5515416b.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/maroc/Maroc-Loi-1995-17-societes-anonymes.pdf"
+  },
+  {
+    "_id": "5739977a9492a518009578a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75c49ae921bfa8fa6f01189415ad6afce4cf7806.pdf",
+    "source": "http://www.ocpgroup.ma/sites/default/files/PR_OCP_%202015_Financial_results.pdf"
+  },
+  {
+    "_id": "57399afc9492a51800957914",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9d028451efde5dd322a60b3ad0b2a32e125fdcd.pdf",
+    "source": "http://www.ocpgroup.ma/group/group-overview/main-companies"
+  },
+  {
+    "_id": "57399b3b9492a51800957924",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9ada0f5a9033ced59e14238b49774fd59e8ecca.pdf",
+    "source": "http://base.garant.ru/187621/"
+  },
+  {
+    "_id": "57399b4f9492a51800957927",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1f86fb8ffdd1b161edfa910f75245b0868f0f99.pdf",
+    "source": "http://www.ocpgroup.ma/sites/default/files/alldocs/ETATS%20FINANCIERS%202015.pdf"
+  },
+  {
+    "_id": "57399bf09492a51800957948",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7af21d7d05fbc8ecf4be45740653022d9b6438c5.pdf",
+    "source": "http://www.gazprom.com/about/management/directors/"
+  },
+  {
+    "_id": "57399c939492a5180095795b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d775905d8d83c18292e820ddf73f7271a097fb96.pdf",
+    "source": "http://www.rosneft.com/about/board/"
+  },
+  {
+    "_id": "57399fdb9492a518009579bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8590a1c648e302dcea8d53dbc745e87e553bbd20.pdf",
+    "source": "https://my.gov.uz/ru/regService/1154"
+  },
+  {
+    "_id": "57399ffd9492a518009579ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba5c68028fa7c7cf3a78a3e75b9784a3c6889603.pdf",
+    "source": "http://www.garant.ru/products/solution/mobile_tech/"
+  },
+  {
+    "_id": "5739a3269492a51800957a35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b86f9ac6a135667545a8f63c76aa43d73032ecdc.pdf",
+    "source": "http://www.gosnadzor.ru/activity/control/acts/mining/erwrr234.doc"
+  },
+  {
+    "_id": "5739a8399492a51800957afa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/449704fb3d718df312b7bdadfb4f8b99c346870b.pdf",
+    "source": "http://www.snh.cm/PublicationHydrocarbures/snh-infos-47-48_siteweb.pdf"
+  },
+  {
+    "_id": "5739a8539492a51800957aff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f473dc6a650775a997a9abe2e9cc1faf0844d3ba.pdf",
+    "source": "http://www.gosnadzor.ru/industrial/oil/"
+  },
+  {
+    "_id": "5739aae39492a51800957b91",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/149cce60e4ddac878531baf28c256b57184d9618.pdf",
+    "source": "https://eiti.org/files/english-eiti-standard_0.pdf"
+  },
+  {
+    "_id": "5739ab139492a51800957b9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19f844b01db46f12c4741b8ed1f61cae2a03cad1.pdf",
+    "source": "http://adala.justice.gov.ma/production/legislation/fr/affaire/code%20des%20juriductions%20financieres.htm"
+  },
+  {
+    "_id": "5739adcb9492a51800957bc0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06932397b06878d759ab4a0aae8e9a054d285bc2.pdf",
+    "source": "http://www.uzgeolcom.uz/en/entrepreneur/selection-criteria/"
+  },
+  {
+    "_id": "5739ae5c9492a51800957bcd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c73d3433d63ab205d99b533f38ac01d039edab61.pdf",
+    "source": "http://base.garant.ru/12120191/"
+  },
+  {
+    "_id": "5739ae729492a51800957bcf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d294b875631ac56fbfdfc17d07f6a27829ce55b.pdf",
+    "source": "http://www.leconomiste.com/article/980981-entreprises-publiquesla-cour-des-comptes-chez-les-poids-lourds"
   }
 ]
