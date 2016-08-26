@@ -64,7 +64,7 @@
     button.btn.btn-danger(
     ng-click="deleteReferenceConfirmation($index)"
     ng-if="!ref.hidden && ((ref.author._id === identity.currentUser._id) || identity.currentUser.isSupervisor())"
-    ng-disabled="(['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || (references.length <= 1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && ((getOwnReferencesNumber() <= 1) || (assessment.edit_control !== identity.currentUser._id)))") Delete Reference
+    ng-disabled="!identity.currentUser.isSupervisor() && ((['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || (references.length <= 1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && ((getOwnReferencesNumber() <= 1) || (assessment.edit_control !== identity.currentUser._id))))") Delete Reference
     | &nbsp;
     button.btn.btn-primary(
     ng-if="!ref.hidden && (ref.author._id === identity.currentUser._id)"
