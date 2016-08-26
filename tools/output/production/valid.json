@@ -13932,5 +13932,102 @@
     "_id": "573a03619492a518009583a4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/cd8cc0e4487cf0b01fc2fa17d49fe39267379c26.pdf",
     "source": "http://www.afdb.org/fileadmin/uploads/afdb/Documents/Policy-Documents/Gabon_-_APRV_Projet_FFBC_FR.pdf"
+  },
+  {
+    "_id": "573a0a539492a51800958550",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ac28f87b9a1ec30da9c5b18b554ba590e38f5f8.pdf"
+  },
+  {
+    "_id": "573a0cc49492a5180095858d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3edb99e935711c8ff55fd6c5f5035d7f7f1ca5b5.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/361479/The_14th_Round_Q_and_A.pdf"
+  },
+  {
+    "_id": "573a0d479492a5180095859c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4614b7731db7c636ee03e97f94b5fa1d6e4d7a44.pdf",
+    "source": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:C:2014:188:FULL&from=EN"
+  },
+  {
+    "_id": "573a0eb69492a518009585bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5493f6bc8e817b4f8125a3d657249bd22aef7cc5.pdf"
+  },
+  {
+    "_id": "573a0fc49492a518009585f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10b4fb0351dac56d9128bf6113bbfaaad4b28fff.pdf",
+    "source": "http://www.dgi.ga/IMG/pdf_IRPP_NOUVEAU.pdf"
+  },
+  {
+    "_id": "573a11d0d876a41e004d00bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ca58148b522718e9b3a0cca6b6ca4b7d4c7624d.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/2014/1686/pdfs/uksi_20141686_en.pdf"
+  },
+  {
+    "_id": "573a1296d876a41e004d00d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e773a7f662dc5b78e54f69598fa8492380f9ebb.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-licensing-rounds"
+  },
+  {
+    "_id": "573a1a60d876a41e004d013f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47d81b90f4c6d38d1fad77cafc61d453dc14f2dc.pdf"
+  },
+  {
+    "_id": "573a1aebd876a41e004d0154",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8dbdff47a1a4cd4013e2ab1213e85ef24efb688.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2016/02/MEEI-Consolidated-Monthly-Bulletins_Jan-Dec-2015.pdf"
+  },
+  {
+    "_id": "573a1bf3d876a41e004d016a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccbe7c0a4b08bda9934c36da081e7f37104c1bd1.pdf",
+    "source": "http://www.contraloria.cl/SicaProd/SICAv3-BIFAPortalCGR/faces/detalleInforme?docIdcm=bb42113b031fe4fa8197ba5926db55b8&_adf.ctrl-state=kk46ric0y_15"
+  },
+  {
+    "_id": "573a1c23d876a41e004d0170",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8350b2fe64e118f71902424aa1ad3a8b55c7f33c.pdf",
+    "source": "http://www.central-bank.org.tt/external-sector-monthly"
+  },
+  {
+    "_id": "573a1d00d876a41e004d0194",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3206ce34aacdefc22d43347d1d9ed591102d459.pdf",
+    "source": "http://www.contraloria.cl/SicaProd/SICAv3-BIFAPortalCGR/faces/buscadorBifa?_adf.ctrl-state=kk46ric0y_23"
+  },
+  {
+    "_id": "573a1e4dd876a41e004d01b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/741e0d5cc768fd8ecc6bd7f042eef259dcdd9b3d.pdf",
+    "source": "http://www.elmostrador.cl/noticias/pais/2016/04/06/platas-politicas-ex-funcionarias-de-sii-solicitan-a-contraloria-auditar-a-la-entidad-por-evidente-y-grave-inactividad/"
+  },
+  {
+    "_id": "573a1eeed876a41e004d01c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d09ab159561deda9d06b018670feb1dfb8412b3.pdf",
+    "source": "http://www.central-bank.org.tt/content/data-centre"
+  },
+  {
+    "_id": "573a2651d876a41e004d028b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6a2c10db388b5dc0596c35115047c6964aeb84a.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=30667&buscar=19.300"
+  },
+  {
+    "_id": "573a2a0ed876a41e004d02a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d83f0c252a9753dec5597e755a494c86eed100b.pdf",
+    "source": "http://www.central-bank.org.tt/node/857"
+  },
+  {
+    "_id": "573a311bd876a41e004d0302",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2eda2d0821b9d41ad42bc08fb536a0f99ef70fe.pdf",
+    "source": "https://eiti.org/TrinidadandTobago"
+  },
+  {
+    "_id": "573a32fdd876a41e004d0310",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/228e068d7c79bc11805d92677ee08129b6b9f519.pdf",
+    "source": "https://eiti.org/TrinidadandTobago/reports"
+  },
+  {
+    "_id": "573a35b3d876a41e004d032a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed3c8f778a488601494eb0d4cf4837af428e7178.pdf",
+    "source": "http://mx.reuters.com/article/topNews/idMXL1E8KO6CV20120926"
+  },
+  {
+    "_id": "573a2dc2d876a41e004d02df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab45def8d2e03759c6bf906002bfe797b1bc845f.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2014/02/PSC-Register-FY-2010-2011-List-for-EITI.pdf"
   }
 ]
