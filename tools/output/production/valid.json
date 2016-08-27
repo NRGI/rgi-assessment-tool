@@ -14190,5 +14190,219 @@
   {
     "_id": "573aed28d876a41e004d0c2c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b2a434de235d22da4e94c0d3c011ba7bb1d494d2.pdf"
+  },
+  {
+    "_id": "573af44bd876a41e004d0d04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/012f054d29ec459e43171b3922ccf9ddd951f765.pdf",
+    "source": "http://government.ru/docs/22720/"
+  },
+  {
+    "_id": "573af1f4d876a41e004d0cb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06ffa83907cce1adf9afa39b945a89864e4c325d.pdf",
+    "source": "http://www.dgi.ga/spip.php?article179"
+  },
+  {
+    "_id": "573aefccd876a41e004d0c76",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0f623f0ee8aba37f722ce34d1bcfde1e0ffb4d9.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=category&id=57&Itemid=2&lang=fr"
+  },
+  {
+    "_id": "573aefa5d876a41e004d0c74",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2832a806bfecf2bf8089fed2ab628d721a30e26.pdf",
+    "source": "http://www.uzgeolcom.uz/ru/entrepreneur/applicants/829/"
+  },
+  {
+    "_id": "573af375d876a41e004d0cd7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84aff78660b9ec1c2e218920560dfbd4bc2d47fb.pdf"
+  },
+  {
+    "_id": "573af761d876a41e004d0d9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78e2a8fe8ec167097a84d1a0e5d446d872125c5e.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=frontpage&Itemid=1&lang=fr"
+  },
+  {
+    "_id": "573af6d0d876a41e004d0d85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d0a71ded6b8fb355598d2026571c0ddd01f5805.pdf",
+    "source": "http://173.254.25.235/~dgtcfmcm/index.php/fr/"
+  },
+  {
+    "_id": "573af728d876a41e004d0d92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de62158002291c6ac0933ac789b59bf125a88301.pdf",
+    "source": "http://mauritanides-mr.com/wp-content/uploads/2014/03/guideinvestisseur.pdf"
+  },
+  {
+    "_id": "573af54bd876a41e004d0d3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a8e59047673c57f52cdbf22a3c93eaed8d5f570.pdf",
+    "source": "http://www.gazeta.ru/business/2016/05/16/8230601.shtml"
+  },
+  {
+    "_id": "573af699d876a41e004d0d7e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d258174c87350dc8cac1901468a4d159dcbc69c4.pdf"
+  },
+  {
+    "_id": "573af7b8d876a41e004d0daa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32b072ce12bbad15da0ed8c4c0d3f27a66b1d6d2.pdf",
+    "source": "http://base.garant.ru/10900200/37/#block_20025"
+  },
+  {
+    "_id": "573af7d7d876a41e004d0dbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6372a082f57854077d00aa7563b8852c9b0733a9.pdf"
+  },
+  {
+    "_id": "573af9a8d876a41e004d0e45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3128bf0f29e1572b60eb082af5968b3e5ce65233.pdf",
+    "source": "http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/Russian-Federation-Corporate-Withholding-taxes"
+  },
+  {
+    "_id": "573afcd1d876a41e004d0ebf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01b9996519b3f7b0c481fa28dcbafbf004cf61bc.pdf",
+    "source": "http://reu.uz/science/publications/detail.php?ID=179"
+  },
+  {
+    "_id": "573afdcad876a41e004d0ee2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c8c85816181d1817e309c7c1a0eb6b5b2a54549.pdf",
+    "source": "http://ria.ru/economy/20141126/1035228246.html"
+  },
+  {
+    "_id": "573aff35d876a41e004d0f00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba73925e7b112e20c6a95542650e473dcba436de.pdf",
+    "source": "http://www.nefttrans.ru/news/petronas-vyshla-iz-dvukh-srp-v-uzbekistane.html"
+  },
+  {
+    "_id": "573aff89d876a41e004d0f05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad51e6790f5eab12b5b7f76e33f0a78372700c3f.pdf",
+    "source": "https://www.kpmg.com/Africa/en/IssuesAndInsights/Articles-Publications/Documents/Oil%20and%20Gas%20in%20Africa.pdf"
+  },
+  {
+    "_id": "573aff90d876a41e004d0f11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38be2e8681b62f820e77c503b6523cf40c4a8b67.pdf"
+  },
+  {
+    "_id": "573affabd876a41e004d0f16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/753af5c76a02431970e136aad5529d709ca52c37.pdf",
+    "source": "http://www.chambredecommerce.mr/images/Code_General_des_Impots-2013.pdf"
+  },
+  {
+    "_id": "573affbed876a41e004d0f18",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7af6f69682691a19c5c9366f205b813c21590fa9.xlsx",
+    "source": "http://minenergo.gov.ru/en/activity/statistic"
+  },
+  {
+    "_id": "573b02e0d876a41e004d1003",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8344b4fc247ad2b9b34d3ebc0e6c72e2912038d3.pdf",
+    "source": "http://lex.uz/pages/GetAct.aspx?lact_id=1616026"
+  },
+  {
+    "_id": "573b02cfd876a41e004d1001",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14d20af4def120a8bebb6a525226827d598172eb.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "573b00d8d876a41e004d0f85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba36343bba6d66fbeba0873f028487e6b7f1495e.pdf"
+  },
+  {
+    "_id": "573b02e7d876a41e004d1006",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4a1a55d6a61b62d2735341315872f422292baf4.pdf",
+    "source": "http://timor-leste.gov.tl/wp-content/uploads/2010/03/Law_2005_8_petroleum_taxation_law_.pdf"
+  },
+  {
+    "_id": "573b0387d876a41e004d101d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11168b3077d8a336cf41739ed09258248f90ef34.pdf",
+    "source": "https://eiti.org/countries/other"
+  },
+  {
+    "_id": "573b04d5d876a41e004d1075",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80c6afa352da6fffd8b6f4c42383be0c51a3f3a4.pdf"
+  },
+  {
+    "_id": "573b0664d876a41e004d10fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30f64efda16365844ce93c449c918d48e6c1e60c.pdf",
+    "source": "http://www.oil.gov.iq/index.php?name=sthlak"
+  },
+  {
+    "_id": "573b0737d876a41e004d1132",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b90bea2e3a6ee0f3b6e8325f1910c78e8a2ae4ce.pdf"
+  },
+  {
+    "_id": "573b0750d876a41e004d1134",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2ccb8cd1592afa88b489353865d3e5d392584a7.xlsx",
+    "source": "http://minenergo.gov.ru/en/activity/statistic"
+  },
+  {
+    "_id": "573b0e12d876a41e004d1294",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87f964b6ba49ed1a9685ed0df73002aaa8c75f54.pdf",
+    "source": "http://base.garant.ru/12164203/"
+  },
+  {
+    "_id": "573b0e38d876a41e004d1296",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12933b9f261201d19d636425296c6fcaf17468e6.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/journal-officiel/2000/2000A/Ja00900.pdf"
+  },
+  {
+    "_id": "573b0ec1d876a41e004d12aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b46e515cea88f4fafe6aaa85fe88847ba70e4206.pdf",
+    "source": "http://www.kuna.net.kw/ArticlePrintPage.aspx?id=2007637&language=ar"
+  },
+  {
+    "_id": "573b11a2d876a41e004d1329",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/040bd0c4cd7c69a77dcae3a77479901b1d459f0c.pdf",
+    "source": "http://government.ru/gov/info/"
+  },
+  {
+    "_id": "573b1208d876a41e004d1337",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f74ef59f3a92bf867e049d8c9d7fd617de101456.pdf",
+    "source": "http://www.rosneft.com/about/board/Andrey_Belousov/"
+  },
+  {
+    "_id": "573b126ed876a41e004d1345",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43bad86ab9142531a7f11bb587cf3a8f34ff778a.pdf",
+    "source": "http://www.rosneft.com/about/board/Alexander_Novak/"
+  },
+  {
+    "_id": "573b13a2d876a41e004d136f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35ca68c9c0acbd4b450d5328bf3c7e3bccc4c5ca.pdf"
+  },
+  {
+    "_id": "573b1426d876a41e004d1377",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b23cb842bbe2f4e1cbaa193e610c4f495829a33b.pdf",
+    "source": "http://www.petrole.gov.mr/index.php?lang=fr"
+  },
+  {
+    "_id": "573b14dcd876a41e004d139b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d71fb96b0d2de3f59071de664a47707505dcd6c2.pdf",
+    "source": "http://base.garant.ru/12123862/"
+  },
+  {
+    "_id": "573b14ecd876a41e004d13a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca44ccbf86e32b4d56826d3a53b74b8e57315975.png"
+  },
+  {
+    "_id": "573b1543d876a41e004d13d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3fd29089040291c10bfe28da6195f8dbe4aa3755.pdf",
+    "source": "http://www.mauripem.com/production.html"
+  },
+  {
+    "_id": "573b1581d876a41e004d13f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/242719925b2b16d21d12d0f457a216ab1a8d5d9a.pdf",
+    "source": "http://www.rbc.ru/newspaper/2015/10/13/56bc95139a7947299f72ba49"
+  },
+  {
+    "_id": "573b18bad876a41e004d14ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77c548b7ab788190dead21ae1da365dbb6b49b48.pdf"
+  },
+  {
+    "_id": "573b1969d876a41e004d14fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e52a437467845aa4e64880c6a9a16cd3ab9a40a.pdf",
+    "source": "http://asozd2.duma.gov.ru/main.nsf/(SpravkaNew)?OpenAgent&RN=911755-6&02"
+  },
+  {
+    "_id": "573affcfd876a41e004d0f1a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8642226d2beeeab8988d9be000b9d7ad6da9d805.docx"
+  },
+  {
+    "_id": "573afff7d876a41e004d0f24",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a05a4a35e575944b9ba092c1da49cd0a6cb17125.xlsx",
+    "source": "http://minenergo.gov.ru/en/activity/statistic"
   }
 ]
