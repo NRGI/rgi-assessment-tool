@@ -8,7 +8,8 @@ angular.module('app')
                 ngModel: '=',
                 disabled: '=',
                 name: '@',
-                placeholder: '@'
+                placeholder: '@',
+                limit: '@'
             },
             controller: 'rgiWysiwygCtrl',
             templateUrl: '/partials/directives/templates/rgi-wysiwyg'

@@ -48,13 +48,15 @@
                                             ng-if="identity.currentUser.isExternalReviewer()"
                                             name="final_choice_comment"
                                             ng-model="final_choice.comment"
-                                            placeholder="Justification (4,000 character limit)..."
+                                            limit="1350"
+                                            placeholder="Justification (1,350 character limit)..."
                                         )
                                         rgi-wysiwyg(
                                             ng-if="identity.currentUser.isSupervisor()"
                                             name="final_choice_justification"
                                             ng-model="final_choice.justification"
-                                            placeholder="Justification (4,000 character limit)..."
+                                            limit="1350"
+                                            placeholder="Justification (1,350 character limit)..."
                                         )
 
     .modal-footer

@@ -2,7 +2,7 @@
 
 angular.module('app')
     .controller('rgiWysiwygCtrl', function ($scope) {
-        $scope.editorContentMaxLength = 4000;
+        $scope.editorContentMaxLength = $scope.limit || 4000;
         $scope.taToolbarOptions = [
             ['undo', 'redo', 'clear'],
             ['bold', 'italics', 'underline'],
