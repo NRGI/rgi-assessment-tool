@@ -14123,5 +14123,72 @@
     "_id": "573a9573d876a41e004d0684",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/98b7cb432fafbcf06b3be003ba43ac0c8ed5bbee.pdf?openelement",
     "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-JPDA%20PSC%2011%20-%20106/$File/JPDA%20PSC%2011%20-%20106.pdf?openelement"
+  },
+  {
+    "_id": "573abeb7d876a41e004d0811",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e59572b7a7317ea047c0c5bb3ea5c25a8bd187bf.pdf"
+  },
+  {
+    "_id": "573abf8fd876a41e004d0831",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d3cf1a67fca4438a589beffb185ecdbb09a39dd.pdf"
+  },
+  {
+    "_id": "573ac37cd876a41e004d0874",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a44cb38299db2606b7d01fa8a8870dab8358a96d.pdf",
+    "source": "https://www.icrc.org/ihl-nat/0/7e3ee07f489d674dc1256ae9002e3915/$FILE/Constitution%20Cameroon%20-%20EN.pdf"
+  },
+  {
+    "_id": "573ad56bd876a41e004d08ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d08c8c51798580b79ea0d5d7a8102500443165e.pdf"
+  },
+  {
+    "_id": "573ad5f5d876a41e004d08f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfc0e5afcccc3d11ae573baf09dc4c602c633809.pdf",
+    "source": "http://www.moen.gov.iq/المشاريع"
+  },
+  {
+    "_id": "573ad8dcd876a41e004d0964",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b936c9753822f8a2cf25d876b039c970f3577462.pdf"
+  },
+  {
+    "_id": "573ad933d876a41e004d097a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26b15318145477146fb1ddddaef9ccf02f29ebec.pdf"
+  },
+  {
+    "_id": "573ade3ad876a41e004d09ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0f44514dceaeddc795120155c4fd914606f279c.pdf"
+  },
+  {
+    "_id": "573adebcd876a41e004d0a02",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3c0778b71d77967ea96d994185bcc2d7243ddac.pdf"
+  },
+  {
+    "_id": "573ae316d876a41e004d0a9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24cf4f39ead2536ca9d94f5ad520a81cdb15ad38.pdf",
+    "source": "http://iraqieconomists.net/ar/2016/01/17/شبكة-الاقتصاديين-العراقيين-تنشر-عقد-خ/"
+  },
+  {
+    "_id": "573ae4a3d876a41e004d0ac1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0da02c685d98834d14d24f819286b298df957161.pdf",
+    "source": "http://www.uzgeolcom.uz/ru/about/central_office/otdel-litsenzirovaniya-polzovaniya-nedrami-/"
+  },
+  {
+    "_id": "573ae9fbd876a41e004d0b5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/697f9043e3698bce95f6ee88a3dc48cf477c1f53.pdf",
+    "source": "http://www.uzgeolcom.uz/ru/about/reports/account/962/12751/"
+  },
+  {
+    "_id": "573aeadfd876a41e004d0b90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a46083d452a829a6b8a9f524b202e461f250d75.xlsx",
+    "source": "https://www.nalog.ru/rn48/related_activities/statistics_and_analytics/forms/5975862/"
+  },
+  {
+    "_id": "573aec66d876a41e004d0bf3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae27023ad5b32fcb1a848fccbf2e1ff209bb19ee.xlsx",
+    "source": "https://www.nalog.ru/rn48/related_activities/statistics_and_analytics/forms/5432274/"
+  },
+  {
+    "_id": "573aed28d876a41e004d0c2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2a434de235d22da4e94c0d3c011ba7bb1d494d2.pdf"
   }
 ]
