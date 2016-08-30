@@ -14520,5 +14520,53 @@
     "_id": "573b2465d876a41e004d17d8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3f28770f4f65ff4015163004a600eaaea4fb3cfc.xlsx",
     "source": "http://www.rosnedra.gov.ru/category/144.html"
+  },
+  {
+    "_id": "573b43e6d876a41e004d1ab5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7226887672c7c2c3d6da22fb4eadb96e4a3ff5c5.pdf",
+    "source": "http://www.sea.gob.cl/evaluacion-ambiental/informacion-linea-base-eia"
+  },
+  {
+    "_id": "573b44ead876a41e004d1acf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28fe83bf847d3b719ad2d6cc16721dba2a401f78.pdf",
+    "source": "http://infofirma.sea.gob.cl/DocumentosSEA/MostrarDocumento?docId=48/14/079268d53638be34910d01f86e41fb0d1868"
+  },
+  {
+    "_id": "573b3895d876a41e004d19f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/409ba0018de05964ae0e8157b0a0a7901973c0aa.pdf",
+    "source": "http://sea.gob.cl"
+  },
+  {
+    "_id": "573b385ed876a41e004d19dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bedcd7f0975dca622ca042f72fc2793868ac90f7.pdf",
+    "source": "http://www.jeuneafrique.com/298361/economie/standard-poors-abaisse-la-note-du-gabon/"
+  },
+  {
+    "_id": "573b44edd876a41e004d1ad1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c07656f5711b9c087364b9841d91d4449a3d214.pdf",
+    "source": "http://www.dmp.wa.gov.au/Environmental-Assessment-and-1471.aspx"
+  },
+  {
+    "_id": "573b4964d876a41e004d1b2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/99a28445cd67aea9b9710fbe0f37c1c6b6b230b4.pdf",
+    "source": "http://www.masen.org.ma/upload/environnement/Masen_OZZ_WaterESIA_LAP.pdf"
+  },
+  {
+    "_id": "573b49e4d876a41e004d1b3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0c19e4bbbc7a3af1aa4b50ff466340c183acd61.doc"
+  },
+  {
+    "_id": "573b4de5d876a41e004d1b73",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a145e04e455c83a6caa696e455c5315ebe0f42a5.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1010459"
+  },
+  {
+    "_id": "573b50aad876a41e004d1b98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5056700fbc4281fa47ee98065192dc9ef7ecaa2b.pdf"
+  },
+  {
+    "_id": "573b4315d876a41e004d1a98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27abf622167caf1c92155afe9fbe10267476c7a0.DOCX",
+    "source": "https://www.legislation.gov.au/Details/C2016C00258/Html/Volume_2#_Toc447708545"
   }
 ]
