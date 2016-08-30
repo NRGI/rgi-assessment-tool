@@ -14892,5 +14892,78 @@
     "_id": "573c1a22d876a41e004d26d4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c1a751597c53cc2e9ff91dcbdd0bfde681547c25.pdf",
     "source": "http://donya-e-eqtesad.com/SiteKhan/980626"
+  },
+  {
+    "_id": "573c23c6d876a41e004d2880",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b0df14f0ac59d93e41a1d9403b8fdd997ff6507.pdf",
+    "source": "http://economy.gov.ru/wps/wcm/connect/d8297656-48da-4d60-aec3-1d3d27ee908e/%D0%A1%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B5+%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F2017_2019.pdf?MOD=AJPERES&CACHEID=d8297656-48da-4d60-aec3-1d3d27ee908e"
+  },
+  {
+    "_id": "573c245ed876a41e004d2899",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/996091de8881646f2ad964a3066213479a615f0c.pdf",
+    "source": "http://rc.majlis.ir/fa/content/iran_constitution"
+  },
+  {
+    "_id": "573c257ed876a41e004d28ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c38612a33edb606df7943951306eef2a9981969c.pdf",
+    "source": "http://www.embassyofafghanistan.org/sites/default/files/documents/constitution2004_english.pdf"
+  },
+  {
+    "_id": "573c3466d876a41e004d2917",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b3ae2507683d9438981b210d980ea4e83744bca.pdf",
+    "source": "http://www.dgi.ga/spip.php?article2"
+  },
+  {
+    "_id": "573c35ead876a41e004d292c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8dfb99c5314d3d2d0859405c2ad83e38b712314.pdf",
+    "source": "http://www.bgs.ac.uk/afghanminerals/scripts/home.cfc?method=getSearchResults&lang=eng&Inventory_Number=&Title_English=Hajigak&Author_Name_English=&Geocode=&Commodity_Code=&Keyphrase_English=&start=1"
+  },
+  {
+    "_id": "573c3694d876a41e004d292e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56671bfab1e5f5456a1aef2d9d64a7ae81b4558d.pdf",
+    "source": "https://eiti.org/files/CAC%2075%20-%20Validation%20report%20-%20EITI%20Cameroon%20-%20EN%20(1).pdf"
+  },
+  {
+    "_id": "573c3843d876a41e004d2936",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc9d1bec8743390ce80948b4e054e4f4ea348ba6.pdf",
+    "source": "http://www.bgs.ac.uk/afghanMinerals/docs/Hajigak_A4.pdf"
+  },
+  {
+    "_id": "573c3c31d876a41e004d2984",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27e5b0bcef747c0585b00d0b846adfb02340275a.pdf"
+  },
+  {
+    "_id": "573c3f2ad876a41e004d29cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/807cb4d6f40af92c55d9a0cd4aed6c942cb08537.pdf"
+  },
+  {
+    "_id": "573c3f30d876a41e004d29ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd9def88ba397afc04b2ae6bfba92b3b8a3eb9cc.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2015-09-08/russia-dismantles-fiscal-rules-as-oil-volatility-rattles-budget"
+  },
+  {
+    "_id": "573c43a1d876a41e004d2ad9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f27dd4d2ff67ef2833ab490f2157c74e5bbbb42d.pdf",
+    "source": "http://www.austlii.edu.au/au/legis/wa/consol_act/aga2006157/s25.html"
+  },
+  {
+    "_id": "573c4056d876a41e004d2a14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dddaef50ccbac5988b70ffcfe9feb3f758958e9e.pdf",
+    "source": "http://www.dgi.ga/IMG/pdf_Decret_122-PR-MECIT.pdf"
+  },
+  {
+    "_id": "573c4042d876a41e004d2a0f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71fd31f0276dafbf4ced462c68cf428cdba914f2.pdf",
+    "source": "http://base.garant.ru/71237740/#block_14"
+  },
+  {
+    "_id": "573c438bd876a41e004d2ad7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e15034ee578dab8fecad62119b4b286c499eca6.pdf",
+    "source": "http://www.ocppc.ma/sites/default/files/OCPPCPP1517.pdf"
+  },
+  {
+    "_id": "573c4375d876a41e004d2ad0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d94fd7d0e8b092d93d4cf37eb42d25481d96be50.pdf",
+    "source": "http://audit.gov.ru/search/?how=d&q=%D0%B4%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D0%B8"
   }
 ]
