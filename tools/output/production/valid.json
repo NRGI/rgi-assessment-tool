@@ -14614,5 +14614,124 @@
     "_id": "573b6dc4d876a41e004d1ca9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e3a57ec9f4038bd4428862943e71b40a0e424759.pdf",
     "source": "http://www.energy.gov.tt/our-business/affiliated-companies/oil-and-gas-operating-companies-local/"
+  },
+  {
+    "_id": "573b7f17d876a41e004d1e3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae38c794af72b50ec41ff3329267225f16b1cbba.pdf",
+    "source": "http://www.energy.gov.tt/petroleum-regulations/"
+  },
+  {
+    "_id": "573b8355d876a41e004d1e8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2845c30628a3e60b428c4cd493fcc4be7bedaa3.pdf",
+    "source": "http://www.sea.gob.cl/sites/default/files/migration_files/guias/Guia_Reasentamiento_20140609.pdf"
+  },
+  {
+    "_id": "573b857ad876a41e004d1ea0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f59e06a1f4cf28be9f7988e50555bb9b9689d6a.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=1053563"
+  },
+  {
+    "_id": "573b8664d876a41e004d1ecd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/91cf05622571985fa557d65504726ecf042ce752.pdf"
+  },
+  {
+    "_id": "573b868ad876a41e004d1ecf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e0b0eb154a91c9f24715b1142bac08ef749ca05.pdf",
+    "source": "http://aofm.gov.au/statistics/public-register-of-government-borrowings/"
+  },
+  {
+    "_id": "573b8f6dd876a41e004d1f62",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f05e7c66f2491f18ef695500215daa578a14686.pdf",
+    "source": "http://www.statehouse.go.ug/sites/default/files/attachments/Constitution_1995.pdf"
+  },
+  {
+    "_id": "573b99a0d876a41e004d1fe1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef2fe93cec50f57af5b6b56df9b8f8b638692935.pdf",
+    "source": "http://www.opm.go.ug/assets/media/resources/6/Constitution.pdf"
+  },
+  {
+    "_id": "573b9e92d876a41e004d2022",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd8287934e1bcf02904b98ee9cd69924cb037f9d.pdf",
+    "source": "http://www.sgm.gob.mx/index.php?option=com_content&task=view&id=125&Itemid=67"
+  },
+  {
+    "_id": "573ba0bcd876a41e004d2050",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d549144a567798a30a919e33e5e2c2318e0d2d01.pdf",
+    "source": "http://www.nevsun.com/responsibility/human-rights/Bisha-HRIA-Audit-2015.pdf"
+  },
+  {
+    "_id": "573ba135d876a41e004d2065",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f2d82021a35946d3d1e36b5e4e9f8ab678c80c4.pdf",
+    "source": "http://www.siam.economia.gob.mx/es/siam/vv_2014"
+  },
+  {
+    "_id": "573bb265d876a41e004d20de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba90670b39e460e81175edca159ef218a4a6258e.pdf",
+    "source": "http://www.lexivox.org/norms/BO-L-N762.xhtml"
+  },
+  {
+    "_id": "573ba9edd876a41e004d209d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ebee9d12aa294a06c166ee558166867df7a4439.pdf",
+    "source": "http://nrgibroker.com/otc-2016-mexico-seeks-to-enhance-energy-sector-accountability/"
+  },
+  {
+    "_id": "573ba709d876a41e004d2092",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/188ca4f06b5f29ef3923a60f01a99f1988cc9a1a.pdf",
+    "source": "https://eiti.org/Mexico"
+  },
+  {
+    "_id": "573ba621d876a41e004d2088",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/002c4798ab25f8abab2f6f6dbb47fcf696e33821.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "573bb1c3d876a41e004d20d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d5649e9ac4d2842961839dc7fac9c9614245c70.pdf",
+    "source": "http://www.fmbolivia.net/noticia78811-senado-sanciona-contrato-de-servicios-petroleros-de-exploracin-y-explotacin-del-rea-carohuaicho-8c.html"
+  },
+  {
+    "_id": "573bbaf0d876a41e004d216a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0267f03fc628fe1aecc8dd467e74358a899e96ac.pdf",
+    "source": "https://declaranet.gob.mx/docs/dof_2015_04_29_sfp.pdf"
+  },
+  {
+    "_id": "573bb46dd876a41e004d20fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/104b00a74514cf705a9838acd4cde9f9a5940d7a.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/240_181215.pdf"
+  },
+  {
+    "_id": "573bb601d876a41e004d2112",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45842073aa252e7cd2b880647663ad0cbae3d8ab.pdf",
+    "source": "http://www.gob.mx/sfp/articulos/servidor-publico-en-mayo-presenta-tu-declaracion-de-modificacion-patrimonial"
+  },
+  {
+    "_id": "573bbd99d876a41e004d217f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/41b215a8a4259d04877d9bcab8b272569c7833ed.pdf",
+    "source": "https://es.sott.net/article/44301-Detras-de-la-Ley-3-de-3-el-poder-empresarial-en-Mexico"
+  },
+  {
+    "_id": "573bc066d876a41e004d219a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/110a4785c93c080f7077a9f23e84f7cff6fed190.pdf",
+    "source": "http://www.elmundo.es/internacional/2015/05/29/5567b311ca47410b558b45af.html"
+  },
+  {
+    "_id": "573bc204d876a41e004d21ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31daf38268d13d48f00c95bce52047be1d4bca35.pdf",
+    "source": "http://mgb.gov.ph/attachments/article/53/PFMPSA.pdf"
+  },
+  {
+    "_id": "573bc25ad876a41e004d21b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9de76adb70cc69a070a1a3e35955f92ce65c1d47.pdf",
+    "source": "http://ph-eiti.org/document/EITI-Report/First-Country-Report/Annexes_Volume_I_Contextual_Information.pdf"
+  },
+  {
+    "_id": "573bc3c5d876a41e004d21da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b63801d3482af5776da7ce390909d958d4764cc.pdf",
+    "source": "http://www.gob.mx/se/"
+  },
+  {
+    "_id": "573bc43ed876a41e004d21e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9da826fd2952addeb41c0b528ab9d7d5e6e0a89.pdf",
+    "source": "http://www.economia.gob.mx/files/transparencia/gobmx/transparencia.html"
   }
 ]
