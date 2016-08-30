@@ -68,5 +68,10 @@
     "_id": "573b2fbed876a41e004d1938",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a650753c997aca6c3d2bb081137d018e24fc2e94.pdf",
     "source": "http://www.masen.org.ma/upload/.../Masen_NOORoIII_SESIA_Volume_1Main_Text.pdf"
+  },
+  {
+    "_id": "573bebe9d876a41e004d2473",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04dfee74cbc024d94b629097496714fe53a04790.pdf",
+    "source": "http://www.mgb.gov.ph/attachments/article/50/Apr_2016_MPSA_2A.pdf"
   }
 ]
