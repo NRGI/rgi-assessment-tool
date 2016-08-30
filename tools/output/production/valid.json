@@ -14568,5 +14568,51 @@
     "_id": "573b4315d876a41e004d1a98",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/27abf622167caf1c92155afe9fbe10267476c7a0.DOCX",
     "source": "https://www.legislation.gov.au/Details/C2016C00258/Html/Volume_2#_Toc447708545"
+  },
+  {
+    "_id": "573b512ad876a41e004d1ba4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eed1934dd23956f0cd1881b056491a882dfc86ec.pdf"
+  },
+  {
+    "_id": "573b51c5d876a41e004d1bb9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42859c4e42ef047e6a598cf60c4f0d4dc5e7d969.pdf",
+    "source": "http://integritycommission.org.tt/New/Reports/2015%20Annual%20Report%20The%20Integrity%20Commission%20of%20Trinidad%20and%20Tobago's%2027th%20Annual%20Report%20to%20Parliament.pdf"
+  },
+  {
+    "_id": "573b5318d876a41e004d1bc1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9b72e46ed8021325748e7fba3a0bc06ecba30a3.pdf",
+    "source": "http://www.guardian.co.tt/news/2015-05-21/ventour-quits-integrity-commission"
+  },
+  {
+    "_id": "573b54acd876a41e004d1bd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5106d9a28b95080617e60d4643e4baf2ebc09875.pdf"
+  },
+  {
+    "_id": "573b550ed876a41e004d1bde",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ca4bd5916713b0d94ffd730533e429cbb37341d.pdf"
+  },
+  {
+    "_id": "573b6597d876a41e004d1c17",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c0d9065e3d79723e066fe6c58e957e917c5ee10.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=c&format=&offset=270"
+  },
+  {
+    "_id": "573b6648d876a41e004d1c26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bca6883079b29f6b8c8d39e8ba2997b538c2200d.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=c&format=&offset=270"
+  },
+  {
+    "_id": "573b6885d876a41e004d1c3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/727e058f67916ab4138cf99fd0d9ba19d0ebed95.pdf"
+  },
+  {
+    "_id": "573b6d68d876a41e004d1c9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e70bf1fc7ad04b8819c6487e94c5e1df39205eba.pdf",
+    "source": "http://rgd.legalaffairs.gov.tt/manual.html"
+  },
+  {
+    "_id": "573b6dc4d876a41e004d1ca9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3a57ec9f4038bd4428862943e71b40a0e424759.pdf",
+    "source": "http://www.energy.gov.tt/our-business/affiliated-companies/oil-and-gas-operating-companies-local/"
   }
 ]
