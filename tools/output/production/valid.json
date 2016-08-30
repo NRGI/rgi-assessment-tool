@@ -14475,5 +14475,50 @@
     "_id": "573b2315d876a41e004d1773",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/027a4e9094c48d5d8a95790cb610c3ce94ad2915.pdf",
     "source": "http://www.afdb.org/fileadmin/uploads/afdb/Documents/Environmental-and-Social-Assessments/Maroc-Projet_de_renforcement_des_infrastructures_entre_Casablanca_et_Marrakech-R%C3%A9sum%C3%A9_de_EIES-_FR_-_08_2015.pdf"
+  },
+  {
+    "_id": "573b2e92d876a41e004d1919",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8343f651e73400193b99d3a6b754ca50989b3c64.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=category&id=44&Itemid=54&lang=fr"
+  },
+  {
+    "_id": "573b2f19d876a41e004d1927",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbbaa1ee1c20b78bf4c37f9695cf72dfa243d082.pdf",
+    "source": "http://www.statistics-cameroon.org/manager.php?id=8"
+  },
+  {
+    "_id": "573b25a2d876a41e004d1813",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf0f226d513cd8a9cb8bb650b2a150ef61a79027.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/339843/FCO535_Doing_Business_in_Cameroon_update2.pdf"
+  },
+  {
+    "_id": "573b2477d876a41e004d17df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0b4c54937201e7ca44af040c917cd328f6dd8be.pdf",
+    "source": "http://www.gaboneconomie.net/ge/index.php/eau-energie/item/1293-petrole-l-audit-de-gabon-oil-attendu"
+  },
+  {
+    "_id": "573b34edd876a41e004d1998",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/064545bcf380b4ecadbcae0170e244052ea9256b.pdf",
+    "source": "http://sig.sea.gob.cl/mapaLineasBaseEIA/"
+  },
+  {
+    "_id": "573b36e4d876a41e004d19bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b68100299035927954c093fbad89714ded2b38b.pdf",
+    "source": "http://seia.sea.gob.cl/expediente/expedientesEvaluacion.php?modo=ficha&id_expediente=2130577300"
+  },
+  {
+    "_id": "573b354fd876a41e004d199d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9f9212c90736932bf7cb6e6f509a58d09631d3a.pdf",
+    "source": "https://eiti.org/fr/news/gabon-publishes-oil-and-mining-revenues-2007-10"
+  },
+  {
+    "_id": "573b383fd876a41e004d19d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8510142ac15fb1ce58d18e92eb5be5fd0d87e32e.pdf",
+    "source": "http://adala.justice.gov.ma/production/legislation/ar/civil/expropriationar.htm"
+  },
+  {
+    "_id": "573b2465d876a41e004d17d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f28770f4f65ff4015163004a600eaaea4fb3cfc.xlsx",
+    "source": "http://www.rosnedra.gov.ru/category/144.html"
   }
 ]

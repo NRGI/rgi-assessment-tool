@@ -63,5 +63,10 @@
     "_id": "573190371c7e780100db4589",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/94e867b1dcd42eb9fff31d412cdc098e1dfd9721.docx",
     "source": "http://uzneftegaz.uz/uploads/docs/itogi_2015.docx"
+  },
+  {
+    "_id": "573b2fbed876a41e004d1938",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a650753c997aca6c3d2bb081137d018e24fc2e94.pdf",
+    "source": "http://www.masen.org.ma/upload/.../Masen_NOORoIII_SESIA_Volume_1Main_Text.pdf"
   }
 ]
