@@ -14404,5 +14404,76 @@
     "_id": "573afff7d876a41e004d0f24",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a05a4a35e575944b9ba092c1da49cd0a6cb17125.xlsx",
     "source": "http://minenergo.gov.ru/en/activity/statistic"
+  },
+  {
+    "_id": "573b19b6d876a41e004d1513",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbb12ac31d51a2455af07f12d0d91fc4e722076b.pdf",
+    "source": "http://www.radiosawa.com/articleprintview/25711.html"
+  },
+  {
+    "_id": "573b1b94d876a41e004d1573",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f47f33a276d034d4a8f37bc93bf8ea47d46606f0.pdf"
+  },
+  {
+    "_id": "573b1a17d876a41e004d152f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22e6cc9f6e99820060ec3c9fcc8cb06a5c6fcd62.pdf",
+    "source": "http://www.dgi.ga/spip.php?article126"
+  },
+  {
+    "_id": "573b1b45d876a41e004d156d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5ef0bb91ade10a67a82ab81eda5989c75aa5ae9.pdf"
+  },
+  {
+    "_id": "573b19dbd876a41e004d1516",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3e1af9b6048a25b6723c7d45c0841bbc355333e.pdf"
+  },
+  {
+    "_id": "573b1c8bd876a41e004d15c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/596550b9ccfa56461796a1cf5741440aa2a7966e.pdf",
+    "source": "http://www.etap.com.tn/index.php?id=1510&lg=3"
+  },
+  {
+    "_id": "573b1bd4d876a41e004d157c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5badc1679ec7ddbb2088db9c1cf7404f8197a83c.pdf"
+  },
+  {
+    "_id": "573b1eb0d876a41e004d1685",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efbbf152064d968b00da712d45b64ebc8ca77f21.pdf",
+    "source": "http://www.nilepet.com/"
+  },
+  {
+    "_id": "573b2378d876a41e004d17a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83d4cb90a3e2bb3ac9a44d0036a7e696bc3f1e50.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=145&Itemid=55&lang=fr"
+  },
+  {
+    "_id": "573b1c07d876a41e004d1594",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ed7fd36025977b90ea80416ecdbc1228ca135fe.xlsx",
+    "source": "http://www.cbr.ru/statistics/?PrtId=svs"
+  },
+  {
+    "_id": "573b1e35d876a41e004d1669",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abd7346ebb17f6a76562e99668c34c887d85e54d.xlsx",
+    "source": "http://roskazna.ru/ispolnenie-byudzhetov/federalnyj-byudzhet/183/"
+  },
+  {
+    "_id": "573b1f68d876a41e004d1697",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bada4d6e97ad500ce29ec544d3fb27e910e974fd.pdf",
+    "source": "http://www.f-law.net/law/threads/45358-(%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8)-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-12-03-%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%A3%D8%AB%D9%8A%D8%B1-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9"
+  },
+  {
+    "_id": "573b21e3d876a41e004d1725",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ae457bcd7875f2859027f7bfc1bb72bc2750480.pdf",
+    "source": "http://fr.africatime.com/articles/secteur-des-hydrocarbures-total-gabon-epinglee-par-le-fisc"
+  },
+  {
+    "_id": "573b21e7d876a41e004d1727",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2f03455591f820ab41471ee8359b45673cb5489.pdf",
+    "source": "http://www.eib.org/attachments/pipeline/20100236_eia_fr.pdf"
+  },
+  {
+    "_id": "573b2315d876a41e004d1773",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/027a4e9094c48d5d8a95790cb610c3ce94ad2915.pdf",
+    "source": "http://www.afdb.org/fileadmin/uploads/afdb/Documents/Environmental-and-Social-Assessments/Maroc-Projet_de_renforcement_des_infrastructures_entre_Casablanca_et_Marrakech-R%C3%A9sum%C3%A9_de_EIES-_FR_-_08_2015.pdf"
   }
 ]
