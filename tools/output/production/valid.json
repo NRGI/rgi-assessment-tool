@@ -15494,5 +15494,46 @@
   {
     "_id": "573d0764d876a41e004d4607",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/62bae163598f73308af7b447a9e558f1d81bb721.pdf"
+  },
+  {
+    "_id": "573d0ad4d876a41e004d4651",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3929f3b6f3d7bb88df8bec8b738902320d025cc5.pdf",
+    "source": "http://www.azernews.az/region/92128.html"
+  },
+  {
+    "_id": "573d13e2d876a41e004d471e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ebfe9fed1a293a5261b0d44dff4c46d1a359aa4.pdf"
+  },
+  {
+    "_id": "573d1531d876a41e004d4736",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d66d44853a3d2922ed6f6bf9fcf497ff9cea0eb7.pdf"
+  },
+  {
+    "_id": "573d185dd876a41e004d4759",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84744d930267a1426db4c45cfc38ee4bd659cd29.pdf"
+  },
+  {
+    "_id": "573d18c8d876a41e004d4762",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9f870b161d427a67d60edc57735ba4c906f9911.pdf"
+  },
+  {
+    "_id": "573d1a36d876a41e004d477d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94ba39f90df7d90752f54c1d49aad1352907ba44.pdf"
+  },
+  {
+    "_id": "573d1a95d876a41e004d479a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93701ffa1fee91c9342d8570c308ae02541b7a03.pdf"
+  },
+  {
+    "_id": "573d1bc8d876a41e004d47a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d281eb9ba29fb5fca7eb653a64f81f911977315.pdf"
+  },
+  {
+    "_id": "573d1f9cd876a41e004d47f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0eb7629f2233f0f41c1c2eeb401842dddb6fb087.pdf"
+  },
+  {
+    "_id": "573d1fc2d876a41e004d47fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50a485e0ce296808d7ab945bdc5f5d6e250f6c7b.pdf"
   }
 ]
