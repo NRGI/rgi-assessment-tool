@@ -15225,5 +15225,97 @@
   {
     "_id": "573c7a2cd876a41e004d34f1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/47656e8e7570218988a7c4e1c40a1a28347e2119.pdf"
+  },
+  {
+    "_id": "573c9708d876a41e004d38da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94abbd65d01c79917a1304d42da8a59e64be132f.pdf",
+    "source": "http://legitchad.cefod-tchad.org/texte/1613"
+  },
+  {
+    "_id": "573c9519d876a41e004d3890",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22648100768b3aec7cac1b99ad184beb579e38d5.pdf"
+  },
+  {
+    "_id": "573c956dd876a41e004d38a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa29a47fd31f3f04c9c83d735ded315db776faa7.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "573c89c1d876a41e004d374e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8f74e6531fc3fe59b64a1183ccfecd48159afd9.pdf",
+    "source": "http://www.news.gov.tt/content/ministry-energy-signs-production-sharing-contracts-two-deep-water-blocks#.VzyKPvmDGko"
+  },
+  {
+    "_id": "573c9b74d876a41e004d39cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64bf742765d5fd2c3c1c9ac2efc345b56f1051fc.pdf"
+  },
+  {
+    "_id": "573c9c46d876a41e004d39df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42d329da60c604740a1b9c5d4a8b2bf0588d0918.pdf"
+  },
+  {
+    "_id": "573c9d2fd876a41e004d3a09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4bf84040ef3f84a36d15d4e2b2626a658c8980d5.pdf",
+    "source": "http://www.energy.gov.tt/about-us/the-organisation/divisions/contract-management-division/"
+  },
+  {
+    "_id": "573c9777d876a41e004d38f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e80bc4dcc0951c5dff32f2e3814ae4e0ff5621df.pdf"
+  },
+  {
+    "_id": "573c9cc6d876a41e004d39e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e163de90e3713e397dc340d1df15aba4bcb694d7.pdf",
+    "source": "http://www.energy.gov.tt/about-us/what-we-do/"
+  },
+  {
+    "_id": "573ca350d876a41e004d3b04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/111d8f2277882a31eee83928b4b88e438c66145d.pdf",
+    "source": "http://mali.revenuesystems.org/login/auth"
+  },
+  {
+    "_id": "573ca324d876a41e004d3af8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/48872a0b755c34931199c65ccb2d0235095ca598.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2014/04/2013-Deep-water-bid-round-april-2-2014.pdf"
+  },
+  {
+    "_id": "573c9ec7d876a41e004d3a36",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42c59fd2829855e8a73f98aa1546a5e927d7e341.pdf"
+  },
+  {
+    "_id": "573c9e6ad876a41e004d3a2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f96605cf8713091228f266e9ba6e7ebcae55ac02.pdf"
+  },
+  {
+    "_id": "573ca0e0d876a41e004d3a8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d7273951b58f54bc8bf9e431ac06be751cb58fd.pdf"
+  },
+  {
+    "_id": "573ca55bd876a41e004d3b62",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4818088b7c419b2abf7711581fd315d921e79a61.docx",
+    "source": "http://laws.ghanalegal.com/acts/id/17/section/149/Annual_General_Meetings"
+  },
+  {
+    "_id": "573ca5b1d876a41e004d3b6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4121da488415a0048dc615b392095007de71d7cb.pdf",
+    "source": "http://mali.revenuesystems.org/desktop/desktop?workSpaceId=191198#"
+  },
+  {
+    "_id": "573ca740d876a41e004d3bad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f1aeecc231b453d326c8b66c8f81b160b7645d9.pdf",
+    "source": "http://mali.revenuesystems.org/homeInformation/mainMap?workSpaceId=191198"
+  },
+  {
+    "_id": "573ca826d876a41e004d3bfe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f6af8f401cc4080f12d34f94b1f56995b1779af.pdf"
+  },
+  {
+    "_id": "573ca8edd876a41e004d3c2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f113b497b1e6bbef47dbce9d6fbecb389a49d32.pdf",
+    "source": "http://pubs.iied.org/12554FIIED.html?g=Mali"
+  },
+  {
+    "_id": "573c92b4d876a41e004d3860",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/550d6c350aa359ea36cbacc3798dc461499f013f.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/Deepwater_Model_PSC_CBO_2013.pdf"
   }
 ]
