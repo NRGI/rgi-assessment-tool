@@ -15432,5 +15432,67 @@
   {
     "_id": "573ccf47d876a41e004d407e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c50907c4a875ac90a01b1fb19a784e8862614c69.pdf"
+  },
+  {
+    "_id": "573cd13dd876a41e004d40b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7635b595605e4dad8a9cd75152b4aab38e0e8719.pdf"
+  },
+  {
+    "_id": "573cd250d876a41e004d40f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7a5a86fe3ed18d16848bbb8da42d74efb36d02d.pdf"
+  },
+  {
+    "_id": "573ceb92d876a41e004d4333",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47862c8be6c1dd9cd6d6672d06fef0cfd41e329b.pdf"
+  },
+  {
+    "_id": "573cf044d876a41e004d4367",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0bc8ea8d82c680678676d54f60a9865affab8b9d.pdf"
+  },
+  {
+    "_id": "573cf05cd876a41e004d436f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5a3a9e986d7e560e39d865b0bf11074563be364.pdf"
+  },
+  {
+    "_id": "573cf2e1d876a41e004d437f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df151e3a9c4b6dd6b4c38c014b411248710c04cf.pdf"
+  },
+  {
+    "_id": "573cf525d876a41e004d43a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee626ccc64b2373cb919dee181c8675a92dc9f6f.pdf"
+  },
+  {
+    "_id": "573cf931d876a41e004d4416",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7f5e3375316ffeb6ad085b758ce40b82073aea2.pdf"
+  },
+  {
+    "_id": "573cf991d876a41e004d4424",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ce6f703a660cb20c6ead2e7f13549e213a61dca.pdf"
+  },
+  {
+    "_id": "573cfd1ad876a41e004d44b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb1775b45368e270dd6fa1f67b641ad37a2552c5.pdf"
+  },
+  {
+    "_id": "573d0108d876a41e004d452a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc8fac1f5bb3a8ded0354184befc33c388493749.pdf",
+    "source": "http://www.menpet.gob.ve/noticias/recientes/noticias.php?option=view&idNot=1375"
+  },
+  {
+    "_id": "573d0230d876a41e004d4545",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/788ae5666904d2bdb978aa9497cbbecb7189ea20.pdf",
+    "source": "http://www.pdvsa.com"
+  },
+  {
+    "_id": "573d06a6d876a41e004d45ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4daf9a8014d5fae3a3c946f9f3b2c22722c3c119.pdf"
+  },
+  {
+    "_id": "573d06cbd876a41e004d45f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27dea335af4470ca78d43d1d7a31cab7e8e9f364.pdf"
+  },
+  {
+    "_id": "573d0764d876a41e004d4607",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62bae163598f73308af7b447a9e558f1d81bb721.pdf"
   }
 ]
