@@ -15535,5 +15535,49 @@
   {
     "_id": "573d1fc2d876a41e004d47fa",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/50a485e0ce296808d7ab945bdc5f5d6e250f6c7b.pdf"
+  },
+  {
+    "_id": "573d2260d876a41e004d482a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/336ab4568264f779cc86bf5e384db74a713bb6d8.pdf",
+    "source": "http://www.gov.cn/gongbao/content/2004/content_62714.htm"
+  },
+  {
+    "_id": "573d26f0d876a41e004d483c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b97596de949f124b877ad0d9e10b4fa9d219f04d.pdf",
+    "source": "http://www.mlr.gov.cn/zwgk/flfg/kczyflfg/200406/t20040625_292.htm"
+  },
+  {
+    "_id": "573d27e7d876a41e004d484e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72922c711644755ced4f865746b50406aed5d9c1.pdf",
+    "source": "http://www.mlr.gov.cn/sjpd/zybg/2015/201510/P020151030354927826737.pdf"
+  },
+  {
+    "_id": "573d5726d876a41e004d4a12",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d9a4c8533a559875a38d05c9359ccbd1a9544c5.pdf"
+  },
+  {
+    "_id": "573d5f69d876a41e004d4acb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e481d557aed1ae75e5f9672fc5f5db2d17985c9b.pdf"
+  },
+  {
+    "_id": "573d6f34d876a41e004d4c3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f791c507981d6c28627962cccc4c69eefe15009a.pdf",
+    "source": "http://fortuneofafrica.com/southsudan/oil-and-gas-companies-in-south-sudan/"
+  },
+  {
+    "_id": "573d684fd876a41e004d4b32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/567e20dc9b95e10de8d99d4dd5ca62973e22351a.pdf"
+  },
+  {
+    "_id": "573d6e96d876a41e004d4c05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/48f479528b71ada6e729d26fbde9677ebadbdd47.pdf"
+  },
+  {
+    "_id": "573d68f7d876a41e004d4b3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf0bb6c15a65624186e0b475205ce671ff8539e0.pdf"
+  },
+  {
+    "_id": "573d705bd876a41e004d4c80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/defb4eab1e2da1fbe3bc9d770047efc76f1f6a2c.pdf"
   }
 ]
