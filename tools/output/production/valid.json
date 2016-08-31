@@ -15132,5 +15132,98 @@
   {
     "_id": "573c64e5d876a41e004d3139",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/aadbdb78bde72112d4f895c0835f86f21bb850e9.pdf"
+  },
+  {
+    "_id": "573c6571d876a41e004d3166",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc8645369b35995a05837966363fd6ace5b4cd4c.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Public%20Tendering%20in%20Respect%20of%20Petroleum%20Contracts%20Award%20Decree%20Law%20No.7-2005%20/$File/Decree-Law-2005-7-Public%20Tendering%20of%20Petrlm%20contract%20awards.pdf?openelement"
+  },
+  {
+    "_id": "573c65a2d876a41e004d316c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfd85d9b01dd53eb2ec2cdd689f4ad5ae2ab95e6.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/Bid_Round_Prequalifaication_Criteria.pdf"
+  },
+  {
+    "_id": "573c6618d876a41e004d317d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/947a3763c9a60c6f71000327a29a70aa62b3593f.pdf",
+    "source": "https://www.oxfordenergy.org/wpcms/wp-content/uploads/2015/10/WPM-601.pdf"
+  },
+  {
+    "_id": "573c68bdd876a41e004d31c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d21521e25de3839b5b5221bbc627a65de99d096.pdf",
+    "source": "https://www.oxfam.org.au/what-we-do/mining/free-prior-and-informed-consent/"
+  },
+  {
+    "_id": "573c6a35d876a41e004d31d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3892d01a0b6ff6a1ac61734466368f1776d6813.pdf"
+  },
+  {
+    "_id": "573c6b42d876a41e004d325b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b664fba08e711a882994045c1d0c81b5086efaa2.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/NOGP_Implementation_20151.pdf"
+  },
+  {
+    "_id": "573c6b52d876a41e004d325e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/027af7b37b3be00c18007f8351744eaed5809108.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-ANP%20Decree%20Law%20No.20-2008%20/$File/Decree-Law-2008-20-ANP%20decree%20law.pdf?openelement"
+  },
+  {
+    "_id": "573c6c33d876a41e004d3287",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4110022ed09095f56c65e6ae6f08e559e225cef.pdf",
+    "source": "http://www.ndf.ir/%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%B5%D9%86%D8%AF%D9%88%D9%82/%D8%A7%D8%B3%D8%A7%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D9%88-%D9%86%D8%B8%D8%A7%D9%85%D9%86%D8%A7%D9%85%D9%87"
+  },
+  {
+    "_id": "573c6ff5d876a41e004d32a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a0962689bc8c2d431871005f5a2c8c363459cb1.pdf",
+    "source": "http://www.finances.gov.ma/Docs/DB/2016/BC%202016%20V%20FR%20%2030-12-2015.pdf"
+  },
+  {
+    "_id": "573c726cd876a41e004d32d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/356af300e0efc99353a972c9e41351c491ef54c1.pdf",
+    "source": "http://www.finances.gov.ma/Docs/dtfe/2016/NC%20231%20mai%202016.pdf"
+  },
+  {
+    "_id": "573c7300d876a41e004d32e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/113cbc0a04d0de9edf189d78a69726c2b7c2b2c4.pdf",
+    "source": "http://www.finances.gov.ma/Docs/dtfe/2016/NC-DTFE-02_2016.pdf"
+  },
+  {
+    "_id": "573c758bd876a41e004d339f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30223f157f30540c4af0f48193ecad03ea61dfa5.pdf?openelement",
+    "source": "http://www.anpm.tl/webs/anptlweb.nsf/vwAll/Resource-05052016_EoI%20Details%20signed/$File/05052016_EoI%20Details%20signed.pdf?openelement"
+  },
+  {
+    "_id": "573c75d7d876a41e004d33ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0508240517ebefd5b43d7394f1558ce732098f05.pdf",
+    "source": "http://www.petroleum.go.ug/uploads/resources/Status_of_Licensing_Map_2014.pdf"
+  },
+  {
+    "_id": "573c781cd876a41e004d349d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b4041d14490b31e19c5796ad86c4a0d4730755b.pdf",
+    "source": "http://www.energy.gov.tt/for-investors/bid-rounds/competitive-bid-round-2013-deepwater/"
+  },
+  {
+    "_id": "573c78d6d876a41e004d34c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf022fc79cae17ee144feeb9cbca345f414140ec.pdf"
+  },
+  {
+    "_id": "573c7da6d876a41e004d355f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e16a8eab15ccc32491da82ff49d8f9f8a76c0ef0.pdf"
+  },
+  {
+    "_id": "573c83fad876a41e004d36a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59febbaa8b24c1a2e8d0cd9c045899fdb4d4726c.pdf"
+  },
+  {
+    "_id": "573c7a07d876a41e004d34e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d03bca57a5bb872b31747176814c5acf9176c1d.pdf"
+  },
+  {
+    "_id": "573c862ed876a41e004d36ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2af90eac0e1979a011644623b69f22f57c616695.pdf"
+  },
+  {
+    "_id": "573c7a2cd876a41e004d34f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47656e8e7570218988a7c4e1c40a1a28347e2119.pdf"
   }
 ]
