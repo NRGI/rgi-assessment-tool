@@ -854,5 +854,168 @@
   {
     "_id": "573f121fd876a41e004d71e9",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d0091a91c001ad69134e7fd6c2747f7342ee5957.pdf"
+  },
+  {
+    "_id": "573f1916d876a41e004d72b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10bec1900f3a67cf6066966d25d9e1ca64df6b73.pdf"
+  },
+  {
+    "_id": "573f195dd876a41e004d72ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff7ae085dabd8a8cdaa4e9c5e16dc4f177d31f09.pdf",
+    "source": "http://snifa.sma.gob.cl/v2/Fiscalizacion"
+  },
+  {
+    "_id": "573f1312d876a41e004d7213",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccf30459f0f61674174b487ab399e35e96931f64.pdf",
+    "source": "https://www.kpmg.com/KW/en/services/Tax/Documents/Kuwait%20Tax%20Summary-September%202013.pdf"
+  },
+  {
+    "_id": "573f12a8d876a41e004d7202",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/611a5eafe972d3ccc0b2ca924df32bd6633b3793.pdf",
+    "source": "http://kdipa.gov.kw/wp-content/uploads/E022008.pdf"
+  },
+  {
+    "_id": "573f14dad876a41e004d7243",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2445724a83c978565b05e6c64680eccac576c435.pdf"
+  },
+  {
+    "_id": "573f1c8dd876a41e004d735b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c8b8740281c86b2d562b4a05601df7dd5a71784.pdf",
+    "source": "http://laws.gov.tt/ttdll-web/revision/download/23348?type=amendment."
+  },
+  {
+    "_id": "573f1a82d876a41e004d72e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17818a209acc9d5d9a61232e0a230ddcb666ad47.pdf",
+    "source": "https://www.regjeringen.no/no/aktuelt/nar-ansatte-eier-aksjer/id2484719/"
+  },
+  {
+    "_id": "573f1d98d876a41e004d739a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa2c640fee1f0f31bd9a6d0f898f84ab108e27a8.pdf"
+  },
+  {
+    "_id": "573f2071d876a41e004d73dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b30b24d397dc3001f8a0defe8e207cbcc410a29.pdf",
+    "source": "http://www.guardian.co.tt/news/2015-02-19/chaguaramas-oil-spill-causes-havoc"
+  },
+  {
+    "_id": "573f198ed876a41e004d72c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90ae61ae738e204f8755700b3d677dd453cef034.pdf",
+    "source": "https://www.grette.no/fagforum/offentlig-ansattes-private-aksjeposter--et-problem-som-rokker-ved-den-grunnleggende-tilliten-til-den-offentlige-forvaltning/"
+  },
+  {
+    "_id": "573f2081d876a41e004d73e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6500d76e7916c7612f659101136ff178aa2bce0b.pdf"
+  },
+  {
+    "_id": "573f20d8d876a41e004d73eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ec2de27f34b5d0f0aa1c4eeb229582a7e951e88.pdf",
+    "source": "http://www.trinidadexpress.com/news/No-compensation-from-Petrotrin-271828791.html"
+  },
+  {
+    "_id": "573f221dd876a41e004d740e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/066046bc586cc0d79fcb76e06c83b6ecd6b66128.pdf",
+    "source": "https://www.riksrevisjonen.no/rapporter/Sider/Dokument1For2014.aspx"
+  },
+  {
+    "_id": "573f22d2d876a41e004d7422",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09b1b236fea2d55a0b9fd863baa3007377b13096.pdf"
+  },
+  {
+    "_id": "573f23f3d876a41e004d7470",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8cfa733c19308f67d1fdad8ee0e1a76678349e5e.pdf",
+    "source": "http://www.statsbudsjettet.no/upload/Revidert_2016/dokumenter/pdf/stm2.pdf"
+  },
+  {
+    "_id": "573f2b96d876a41e004d75ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba9f4620e8469be2f12c1ce73f94eb42038c2577.pdf",
+    "source": "http://www.bloomberg.com/research/stocks/private/board.asp?privcapId=11710354"
+  },
+  {
+    "_id": "573f243fd876a41e004d7477",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02f6b7b7af8dc3ad5ba0aa55657be09cd178e0ac.pdf"
+  },
+  {
+    "_id": "573f2a5cd876a41e004d757a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ddb3ff3908da2a77a3edd13166a531c1c6a174b.pdf",
+    "source": "http://eitimexico.org/wp-content/uploads/2016/03/Diagnostico_de_transparencia_IIEE_Mexico_fn.pdf"
+  },
+  {
+    "_id": "573f2698d876a41e004d7519",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0543884ec8999a41a87520c2a850d92d2d4cd325.pdf",
+    "source": "https://www.stortinget.no/no/Saker-og-publikasjoner/Statsbudsjettet/statsbudsjettet-2016/"
+  },
+  {
+    "_id": "573f25d0d876a41e004d7506",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b8286987349b48929c04269f421155c63811808.pdf",
+    "source": "https://www.stortinget.no/globalassets/pdf/statsbudsjettet-2016/blabok2016.pdf"
+  },
+  {
+    "_id": "573f2f7cd876a41e004d763a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4083eee1724bda10c17efcd18b661e49d7ee44b.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/2008/225/pdfs/uksi_20080225_en.pdf"
+  },
+  {
+    "_id": "573f2d38d876a41e004d75eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98aa31ab261c166768eb4ef729c0909055846177.pdf",
+    "source": "http://www.mofep.gov.gh/sites/default/files/reports/petroleum/Petroleum-Receipts-Q1-2016.pdf"
+  },
+  {
+    "_id": "573f2d7fd876a41e004d75f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1fcb73b87fc24ff8d2e35d71eecc6e9d7fa30607.pdf",
+    "source": "https://www.ssb.no/offentlig-sektor/statistikker/offogjeld/aar/2015-11-26#content"
+  },
+  {
+    "_id": "573f2e17d876a41e004d7609",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/860023b5b0ffeb555e26503a33c7e1fb7220795c.pdf",
+    "source": "https://www.ssb.no/offentlig-sektor/statistikker/offogjeld/aar/2015-11-26?fane=om#content"
+  },
+  {
+    "_id": "573f2fc9d876a41e004d7644",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53956e8916bef80ac94347a2b0f762e3ae847e9d.pdf",
+    "source": "http://www.legislation.gov.uk/ukpga/2016/20/pdfs/ukpga_20160020_en.pdf"
+  },
+  {
+    "_id": "573f3047d876a41e004d7652",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ea4e307408689428fe8c87b43b14dd98dad8ddf.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-measurement-of-petroleum"
+  },
+  {
+    "_id": "573f30f9d876a41e004d7686",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93c56a10997f46e88034987cb35caf334b879158.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-decc-public-registers-of-enforcement-activity"
+  },
+  {
+    "_id": "573f2ff5d876a41e004d764f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb1972871bbcfb3fd028f610edc4d4ec496fdfe4.pdf",
+    "source": "http://static.norges-bank.no/Upload/Statsgjeld/nokkeltall/no/Tabell1_utestaende_gjeld.pdf?v=04042016095942&ft=.pdf"
+  },
+  {
+    "_id": "573f30cdd876a41e004d767e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb1fedfc8d29ec448c5f6668597bcdbba695eec6.pdf",
+    "source": "http://static.norges-bank.no/pages/104895/Statsgjeld_1kv2016.pdf?v=12042016105414&ft=.pdf"
+  },
+  {
+    "_id": "573f3092d876a41e004d7669",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6add772c53e3ef68529faaa8a92e0d4f9ef62d4a.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/470442/DECC_Offshore_Inspectorate_Enforcement_Policy_-_October_2015.pdf"
+  },
+  {
+    "_id": "573f34eed876a41e004d7746",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f08e176c361b11eddf2d184050afa05287cd639d.pdf",
+    "source": "http://none"
+  },
+  {
+    "_id": "573f381fe4ebd4240056a996",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6dcc33786a9e8ef3a9901324b0b51e2a15babc0e.pdf",
+    "source": "http://none"
+  },
+  {
+    "_id": "573f39d1e4ebd4240056a9fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b667afd2ad3e924674a6aed315c6c44b9a978f0.pdf"
+  },
+  {
+    "_id": "573f3c4ee4ebd4240056aa4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/619a5d1e29b995b79c965431a0dadde93afb581e.pdf",
+    "source": "http://www.afdb.org/fileadmin/uploads/afdb/Documents/Environmental-and-Social-Assessments/Cameroon%20-%20Kribi%20Power%20Project%20216MW%20Gas%20Plant%20%26%20225kV%20%20%20Transmission%20Line.pdf"
   }
 ]
