@@ -831,5 +831,28 @@
   {
     "_id": "573f06d1d876a41e004d7099",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6f0d14cfef14a8bc1dadc2adb3dcc157fcdb34c3.pdf"
+  },
+  {
+    "_id": "573f0e51d876a41e004d716e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/938a5c55c72e35521e04f334ebd5db4ae630649e.pdf",
+    "source": "https://www.regjeringen.no/no/dokumenter/horing---okt-apenhet-om-informasjon-om-eiere-i-aksjeselskaper/id2468940/"
+  },
+  {
+    "_id": "573f10fed876a41e004d71b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23effb9859b192f7d2413e0cd49be406427822c7.pdf"
+  },
+  {
+    "_id": "573f110ed876a41e004d71b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/619040499c937266e097edc3fd1e633045ff644f.pdf",
+    "source": "http://documents.worldbank.org/curated/en/2015/06/24594664/environmental-social-impact-assessment-eshia-ghana-octp-block-phase-two"
+  },
+  {
+    "_id": "573f1173d876a41e004d71c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/edf9f35c546846fdd3883955936efc3783b957c9.pdf",
+    "source": "http://www.laondaverde.org/laondaverde/international/files/seiareport.pdf"
+  },
+  {
+    "_id": "573f121fd876a41e004d71e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0091a91c001ad69134e7fd6c2747f7342ee5957.pdf"
   }
 ]
