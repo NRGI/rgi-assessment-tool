@@ -809,5 +809,27 @@
     "_id": "573ee695d876a41e004d6ae1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f3f4f48bdc49ef3c8c5710a96c873cea120e766d.docx",
     "source": "http://www.sunrise.ug/business/201502/russian-firm-selected-to-build-refinery-but-queries-persist.html"
+  },
+  {
+    "_id": "573f0963d876a41e004d70e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85c838872d11b534b7ca3a1756b6ff8938e114bd.pdf",
+    "source": "https://www.stortinget.no/globalassets/pdf/innstillinger/stortinget/2014-2015/inns-201415-298.pdf"
+  },
+  {
+    "_id": "573f0d08d876a41e004d7160",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a392509d4d4676eb99573c554995f8c866159947.pdf"
+  },
+  {
+    "_id": "573f094dd876a41e004d70e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f6ae1185469d90b79d3f48aff243b289003ff51.pdf"
+  },
+  {
+    "_id": "573f0a2cd876a41e004d70f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fb0440ed13bf1fabb7ca065d18fbc6587126ef7.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Taxa%20Selu%20-%20No.%204%20-%202015"
+  },
+  {
+    "_id": "573f06d1d876a41e004d7099",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f0d14cfef14a8bc1dadc2adb3dcc157fcdb34c3.pdf"
   }
 ]
