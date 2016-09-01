@@ -362,5 +362,49 @@
     "_id": "573dc67dd876a41e004d570f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/be9a751a8f897a4d3c2b54ff8bf4059c0fe7851b.pdf",
     "source": "http://www.ocpgroup.ma/sites/default/files/alldocs/Rapport_Annuel_OCP_2014.pdf"
+  },
+  {
+    "_id": "573e32b7d876a41e004d5e29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/599c39fea5ba7a6c17069a8c000f2f434679dba8.pdf"
+  },
+  {
+    "_id": "573e32acd876a41e004d5e27",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6f33399ba6eec9d5e5f0551729bfef544043257.pdf",
+    "source": "http://www.snh.cm/index.php?searchword=Bloc&ordering=&searchphrase=all&Itemid=74&option=com_search&lang=fr"
+  },
+  {
+    "_id": "573e2e5ad876a41e004d5e0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d17339208cbe1499d5c03c4d11461a3ff2505a6.pdf",
+    "source": "http://www.ema.co.tt/new/images/policies/national-environmental-policy2006.pdf"
+  },
+  {
+    "_id": "573e2d7cd876a41e004d5df1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/733e2974f02e7ac92e53d2c3cc0fad5801e8487d.pdf",
+    "source": "http://www.ema.co.tt/docs/legal/cur/Act_3_of_2000.pdf"
+  },
+  {
+    "_id": "573e3877d876a41e004d5e5e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6861350895edf707fd23c1fd68cd988c20c4a85.pdf",
+    "source": "http://fracking.cedha.net/wp-content/uploads/2014/03/VENEZUELA_Decreto-1257-del-13-03-1996_normas-sobre-Evaluacion-Amiental-de-actividades-susceptibles-de-degradar-el-ambiente.pdf"
+  },
+  {
+    "_id": "573e3dccd876a41e004d5ea8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38ef5740c84ac39b02c1651450629b87593bf96b.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?q=o"
+  },
+  {
+    "_id": "573e3106d876a41e004d5e1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/777257c331982435ce5d947483f93f41ae94401c.pdf",
+    "source": "http://www.ema.co.tt/docs/techServ/cec/Executive%20Summary2824.pdf"
+  },
+  {
+    "_id": "573e3383d876a41e004d5e35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6fc44f659836907733067dcc718b9bda623ca75.pdf",
+    "source": "http://www.ema.co.tt/new/images/cec_eias/4413/TOC4413.pdf"
+  },
+  {
+    "_id": "573e3731d876a41e004d5e4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/897a354084e5e062c7d326e0a017816c77b1ee7f.pdf",
+    "source": "http://historico.tsj.gob.ve/gaceta_ext/Diciembre/221206/221206-5833-12.html"
   }
 ]
