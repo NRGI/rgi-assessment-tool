@@ -474,5 +474,52 @@
     "_id": "573e8febd876a41e004d63ce",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/62e66b2ca4437dad90cb9ce0de87943e38ae07e1.pdf",
     "source": "http://www2.hidrocarburos.gob.bo/index.php/transparencia/audiencia-p%C3%BAblica/category/70-aundiancia-publica-de-cuentas-final-2015-inicial-2016.html"
+  },
+  {
+    "_id": "573e906fd876a41e004d63da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00a4f683b768d37b33e65057a341dcb1f4bac444.pdf",
+    "source": "http://www1.ypfb.gob.bo/index.php?option=com_content&view=article&id=3577:ypfb-y-empresas-petroleras-protocolizan-contratos-de-exploracion-y-explotacion&catid=121:agencia-de-noticias&Itemid=196"
+  },
+  {
+    "_id": "573ea541d876a41e004d6477",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89b034beff7e4de2cbf841182bc07c95e9065253.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-30-10-13%20Public%20Notice%20Section%2019%20of%20PMC-Summary%20of%20PSC%20JPDA%2011-106-AL/$File/30-10-13%20Public%20Notice%20Section%2019%20of%20PMC-Summary%20of%20PSC%20JPDA%2011-106-AL.pdf?openelement"
+  },
+  {
+    "_id": "573eb169d876a41e004d6583",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71e191ec0d8b36b6cbe378c0d0e8fa3a13b81d23.pdf",
+    "source": "http://siteresources.worldbank.org/INTUZBEKISTAN/Resources/CFAA_Russian.pdf"
+  },
+  {
+    "_id": "573ea839d876a41e004d649f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d78a55734606cdc227a38b0349bf396e78f878a1.doc"
+  },
+  {
+    "_id": "573eac33d876a41e004d6506",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac5b2fdd6ddc7725fe7d66c4d7cb3d4786d31925.jpg"
+  },
+  {
+    "_id": "573eb605d876a41e004d6610",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6496fe4cb175a2b8b7c1a0f7973d5e7d095800f.docx",
+    "source": "http://pib.nic.in/newsite/PrintRelease.aspx?relid=115810"
+  },
+  {
+    "_id": "573e95a6d876a41e004d6434",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/284c59dfad4dccda4abfdd4c175595c7464869ea.doc",
+    "source": "https://www.mof.gov.tl/wp-content/uploads/2016/01/2015_Contractors_2014_Annua_Income_TaxReturnform_Guide.doc"
+  },
+  {
+    "_id": "573ea2d1d876a41e004d6459",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49109ee43a084d4000e76a210d82bf6f398c14c4.jpg"
+  },
+  {
+    "_id": "573eb20bd876a41e004d65a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/202925d8770933e6c824548d2f4412e3b29da6ac.pdf",
+    "source": "http://lex.uz/pages/getpage.aspx?lact_id=2304140"
+  },
+  {
+    "_id": "573e94bdd876a41e004d6429",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97613b3e8de9383b366ce57ced462d8a925e23af.pdf",
+    "source": "http://timor-leste.gov.tl/wp-content/uploads/2010/03/Law_2005_8_petroleum_taxation_law_.pdf"
   }
 ]
