@@ -406,5 +406,73 @@
     "_id": "573e3731d876a41e004d5e4e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/897a354084e5e062c7d326e0a017816c77b1ee7f.pdf",
     "source": "http://historico.tsj.gob.ve/gaceta_ext/Diciembre/221206/221206-5833-12.html"
+  },
+  {
+    "_id": "573e3fb2d876a41e004d5ed8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10b3494f04d13f2bba0df69a537dd4cfd26cb13f.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?q=o"
+  },
+  {
+    "_id": "573e3fb3d876a41e004d5eda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e620e879dd8ceafe95af58946b94d68000bfabb.pdf"
+  },
+  {
+    "_id": "573e4402d876a41e004d5f3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c9c66bbd6c372545e2235497013084d4bbb40a6.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=category&id=42&Itemid=69&lang=fr"
+  },
+  {
+    "_id": "573e4501d876a41e004d5f51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ad9561e7049c740e714d2d7681c7cbcf4166312.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/National_Oil_Spill_Contingency_Plan_2013.pdf"
+  },
+  {
+    "_id": "573e47fad876a41e004d5f8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11c4cc22fb86a1e2e07d9d3ad6698927e2dfdb6b.pdf"
+  },
+  {
+    "_id": "573e4963d876a41e004d5fb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0450178757fd48862d29d00c46a4149b8ffaf2e.pdf"
+  },
+  {
+    "_id": "573e499ed876a41e004d5fb9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51c9dfa104ac17e9110bbd073aef6ee4cb5c84c2.pdf"
+  },
+  {
+    "_id": "573e5161d876a41e004d6043",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fb8e658a8c9e13b34b5a5e420b7c68963c38d90.pdf"
+  },
+  {
+    "_id": "573e57e4d876a41e004d61a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f016bfc9eabc5cc10eadd3ca7b2446014c2dc9d0.pdf",
+    "source": "http://sigot.geoportalsb.gob.ve/centro_documentacion/index.php#"
+  },
+  {
+    "_id": "573e62bdd876a41e004d6207",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb936bae370a6db6edd01425fcdccac007d749ef.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=173%3Anew-blocks-on-offer&catid=46%3Aautres-actualite&Itemid=2&lang=fr"
+  },
+  {
+    "_id": "573e6514d876a41e004d622f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93037219110b5cf9192de0b860ccbb0076369b42.pdf",
+    "source": "http://www.laohamutuk.org/misc/AMPGovt/08/BP1_2008_En.pdf"
+  },
+  {
+    "_id": "573e6ea5d876a41e004d629e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/932e6c0a82d3125ffd74510f63a891cb68a7622d.pdf"
+  },
+  {
+    "_id": "573e6f0fd876a41e004d62a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/934b558bb530a30f9313dcf36e0545e28049a4fc.pdf"
+  },
+  {
+    "_id": "573e72a9d876a41e004d62e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/718f98fb54bfbfe7cc35da82a872d2ba23de8e3c.pdf",
+    "source": "http://www.lexivox.org/norms/BO-DS-28324.xhtml#norm"
+  },
+  {
+    "_id": "573e8febd876a41e004d63ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62e66b2ca4437dad90cb9ce0de87943e38ae07e1.pdf",
+    "source": "http://www2.hidrocarburos.gob.bo/index.php/transparencia/audiencia-p%C3%BAblica/category/70-aundiancia-publica-de-cuentas-final-2015-inicial-2016.html"
   }
 ]
