@@ -2282,5 +2282,124 @@
   {
     "_id": "57428093e4ebd4240056de9f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/63a8ce114f7ca484af61467289afc0389b491e70.pdf"
+  },
+  {
+    "_id": "57429960e4ebd4240056df50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d1586e9fd6ca513b8b2d5ccd70e7a875f1e6f1a.pdf",
+    "source": "http://mgb.gov.ph/attachments/article/162/MIS(2015)%20(1)%20(1).pdf"
+  },
+  {
+    "_id": "57429c32e4ebd4240056df63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/616aad9744a87b7589e2a148fdbe4f14f914e113.pdf",
+    "source": "http://www.coa.gov.ph/index.php/national-government-agencies-1/category/5608-2014-1"
+  },
+  {
+    "_id": "57429e91e4ebd4240056df6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fac2c26a094651cb9aaff0d64efb16a5627c344b.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/DBCC_MATTERS/Mid-Year%20Reports/FY%202015%20DBCC%20Mid-Year%20Report_Final.pdf"
+  },
+  {
+    "_id": "57429fa1e4ebd4240056df82",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f60ce346912543645ecb4f47d00699456ae03429.docx",
+    "source": "http://www.monitor.co.ug/Business/Government-oil-account-has-Shs119b/-/688322/2942994/-/d5dunoz/-/index.html"
+  },
+  {
+    "_id": "57429fdee4ebd4240056df85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3009bcbd9058b7f971b6716d9352e59f5f46464c.pdf",
+    "source": "http://www.treasury.gov.ph/wp-content/uploads/2016/02/yr_outstandingdebt.pdf"
+  },
+  {
+    "_id": "5742a043e4ebd4240056df9d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06bbd7736d41ad90c5c83781e238f339ec0cd042.pdf",
+    "source": "https://books.google.cm/books?id=aFX1k-hdUHkC&pg=PA26&lpg=PA26&dq=Operational+guidelines+of+SNH+Cameroon&source=bl&ots=W5v9nrjFj5&sig=8H37L4DulpYNoawSgi2eNRaqR9g&hl=en&sa=X&ved=0ahUKEwiVw-_Jtu_MAhXGIsAKHRDcDvgQ6AEISjAI#v=onepage&q=Operational%20guidelines%20of%20SNH%20Cameroon&f=false"
+  },
+  {
+    "_id": "5742b375e4ebd4240056e133",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/233b6be95db9ef5bbfd30c29cca7537576f1e568.pdf",
+    "source": "https://eiti.org/Madagascar/reports"
+  },
+  {
+    "_id": "5742a003e4ebd4240056df87",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8342f912f0d21fe3869c3c7a1575b92042645aaf.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=article&id=68&Itemid=61&lang=en"
+  },
+  {
+    "_id": "5742a28fe4ebd4240056dfb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb08df2f47843f620e1a3a220c78f6aff775f297.pdf",
+    "source": "https://eiti.org/files/English_EITI%20STANDARD_11July_0.pdf"
+  },
+  {
+    "_id": "5742a6d1e4ebd4240056e014",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00323a208f186dec9f2c1570e9a44aa822324d74.pdf",
+    "source": "http://www.gov.ph/1991/10/10/republic-act-no-7160/"
+  },
+  {
+    "_id": "5742b461e4ebd4240056e14e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b45ce353d825729b66789f1e701a3cf3733217d1.pdf",
+    "source": "http://www.trade.gov/static/doc_tg_Hajigak_Request.pdf"
+  },
+  {
+    "_id": "5742b471e4ebd4240056e151",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8534460a829255402812f74240ff5454b5cb7c5.pdf",
+    "source": "http://www.laohamutuk.org/econ/debt/LeiOrsJesFin13_2009RevEn.pdf"
+  },
+  {
+    "_id": "5742b551e4ebd4240056e173",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46abcafbb7a95bdd7fe20ce8e2f1d320c0163d90.pdf",
+    "source": "http://www.abernales.com/dilg-doe98-01.htm"
+  },
+  {
+    "_id": "5742b744e4ebd4240056e1ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f065565dcbcb366225fac9580467adf7046636bd.pdf"
+  },
+  {
+    "_id": "5742bbc0e4ebd4240056e284",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ba1ebc3262699732c57e0b2833d6c3a9739a2f7.pdf",
+    "source": "http://www.mj.gov.tl/jornal/public/docs/2013/serie_1/serie1_no27.pdf"
+  },
+  {
+    "_id": "5742bbe3e4ebd4240056e28f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c66afa15f0f10800617aee419bc60ca9755b54d1.pdf",
+    "source": "http://www.oag.go.ug/wp-content/uploads/2015/12/UGANDA-REVENUE-AUTHORITY-PROJECT-REPORT-OF-THE-AUDITOR-GENERAL-2014.pdf"
+  },
+  {
+    "_id": "5742bf51e4ebd4240056e2f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21524e963c889fb4ec314f29cee1451b11b07eeb.pdf",
+    "source": "http://magazinedelafrique.com/gabon-oil-company-le-petit-poucet-test/2/"
+  },
+  {
+    "_id": "5742b99de4ebd4240056e24d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7036598be33c09329d308cae894503739c1d102.pdf",
+    "source": "http://www.oag.go.ug/wp-content/uploads/2016/03/UGANDA-REVENUE-AUTHORITY-CORPORATE-SERVICES-REPORT-OF-THE-AUDITOR-GENERAL-2015.pdf"
+  },
+  {
+    "_id": "5742c98ce4ebd4240056e468",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/517a07ac20ce91498db458c8f1f2321c8822fa96.pdf",
+    "source": "http://www.cbk.gov.kw/en/statistics-and-publication/statistical-releases/quarterly.jsp?selYear=2015&selMonth=tcm%3A10-120325-1024&selTable=120428&publication-id=10&table-type=2&btn-submit=Submit"
+  },
+  {
+    "_id": "5742c072e4ebd4240056e32b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60f688a778ea39fb66acd8081691a4c6a59f08c3.pdf",
+    "source": "http://www.coa.gov.ph/phocadownload/userupload/issuances/Audit-Sectors/LGS/COA_LGS_Memo03262014.pdf"
+  },
+  {
+    "_id": "5742c787e4ebd4240056e41d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b77c95eaec98b9b25bbf6dab670a2451a3fbe3f0.pdf",
+    "source": "http://www.reuters.com/article/gabon-vitol-idUSL5N0B1GDS20130204"
+  },
+  {
+    "_id": "5742c4ede4ebd4240056e37f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbb2e54a2115f964154142b3f759a5b8814b0f84.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=312462#697295"
+  },
+  {
+    "_id": "5742b78ee4ebd4240056e1d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4d143b8e75ac70965864d454e89748c189932fe.docx",
+    "source": "http://www.ulii.org/ug/legislation/consolidated-act/196"
+  },
+  {
+    "_id": "5742b53ee4ebd4240056e171",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0dd62e44340264c06d9928604b709e2692a5a3c.docx",
+    "source": "http://www.ulii.org/ug/legislation/consolidated-act/196"
   }
 ]
