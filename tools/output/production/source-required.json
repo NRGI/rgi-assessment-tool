@@ -139,5 +139,9 @@
   {
     "_id": "573f3399d876a41e004d7725",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9af02daaec89bfbf94d49905a3495e3dcd76626b.pdf"
+  },
+  {
+    "_id": "573fd94be4ebd4240056b3e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b13ccfda99f3e7ce6c33de01ad7bd7f340daf65.pdf?openelement"
   }
 ]
