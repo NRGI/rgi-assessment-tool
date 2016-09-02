@@ -2593,5 +2593,153 @@
     "_id": "5742eccbe4ebd4240056ec24",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/1d9762313f85826920adad4e5543a56df189f394.pdf",
     "source": "http://www.europarl.europa.eu/thinktank/en/document.html?reference=LDM_BRI(2014)140758"
+  },
+  {
+    "_id": "5742ed61e4ebd4240056ec5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b7909296724006822db814bee542594afaee602.pdf",
+    "source": "https://www.minminas.gov.co/anuario-estadistico-minero"
+  },
+  {
+    "_id": "5742edf4e4ebd4240056ec76",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d08094b9686355322c4a39b4e09575852b75348.pdf",
+    "source": "http://www.anm.gov.co/sites/default/files/DocumentosAnm/cartilladelinversionista-13052014.pdf"
+  },
+  {
+    "_id": "5742ef3fe4ebd4240056eccb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/213895f189599a86cf34f7eefc3c9fbb7cc60531.pdf",
+    "source": "http://baochinhphu.vn/Chinh-sach-moi/Nhung-diem-moi-trong-Luat-Ke-toan-sua-doi/245239.vgp"
+  },
+  {
+    "_id": "5742f2fee4ebd4240056ed1b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff70cfbb4437c73414fa5e664dc8a8b19d0cd78d.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/Uganda,%20enviro%20impact%20assessment%20guidelines.pdf"
+  },
+  {
+    "_id": "5742f400e4ebd4240056ed39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/997c33d0d45e9087acc5296d20e085f9d33d25a0.pdf",
+    "source": "http://www.minepat.gov.cm/index.php/en/modules-menu/doc_download/109-growth-and-employment-strategy-paper"
+  },
+  {
+    "_id": "5742f485e4ebd4240056ed5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d59de38cb9206c496396051574746ca787b2eb06.pdf",
+    "source": "http://www.nemaug.org/regulations/national_environment_act.pdf"
+  },
+  {
+    "_id": "5742f4a4e4ebd4240056ed6b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98fcf3a94d45af6229ce126613616a547cf2bcb2.pdf",
+    "source": "http://www.minfi.gov.cm/images/documents/nouveau%20regime%20financier%20de%20l'etat.pdf"
+  },
+  {
+    "_id": "5742f57be4ebd4240056ed86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15114f1bcb73bb7f504bfeca27a2c6c4a7c739ef.pdf",
+    "source": "http://www.nemaug.org/regulations/eia_egulations.pdf"
+  },
+  {
+    "_id": "5742fc7be4ebd4240056ee8c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/01a5ed085aaec3f9ab29f4b2735492bf8aabccd6.pdf",
+    "source": "http://www.moj.gov.vn/vbpq/lists/vn%20bn%20php%20lut/view_detail.aspx?itemid=28825"
+  },
+  {
+    "_id": "5742fcffe4ebd4240056eeb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05e8a0abe2aa01a17ccd4b5a32906ff005caade5.pdf",
+    "source": "http://www.minfi.gov.cm/images/documents/EXECUTION%20BUDGETAIRE%20MARS%202015.pdf"
+  },
+  {
+    "_id": "5742fdd1e4ebd4240056eef3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/482fa35ed3d4a7bbbff254b9f0fe0d02574b0431.pdf",
+    "source": "http://www.minfi.gov.cm/index.php/fr/documents"
+  },
+  {
+    "_id": "57430ab6e4ebd4240056f06a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79e82b503cc9b45d47af66277bd771ef2197db6b.pdf",
+    "source": "http://www.dane.gov.co/files/investigaciones/pib/ambientales/cuentas_ambientales/cuenta_activos_mineria_energia/CP_Act_mineria_energia_2013_2014_provisional.pdf"
+  },
+  {
+    "_id": "57430a4be4ebd4240056f048",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/442772526ebaae82ff8f9b8d25802896b4c05a32.pdf",
+    "source": "http://www.nemaug.org/images/docs/EIA%20TRENDS%20FOR%202014%202015%20FINANCIAL%20YEAR.pdf"
+  },
+  {
+    "_id": "57430789e4ebd4240056f00b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35bab4c917a59a487042fc05f0cd8f6aa3f08cf9.pdf",
+    "source": "http://www.nemaug.org/images/docs/APPROVED%20PROJECTS%20BY%20NEMA%20DURING%20FY%202013%20-%202014.pdf"
+  },
+  {
+    "_id": "57430cc2e4ebd4240056f09f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a58189ee37413ebc5726504f582fcae811e2cfdf.pdf",
+    "source": "http://www.sovmines.com/sovereign-mines-of-guinea/"
+  },
+  {
+    "_id": "57430e64e4ebd4240056f104",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5e9b1a28bc4e63279bc72520d47a8facaff954f9.pdf"
+  },
+  {
+    "_id": "57430f11e4ebd4240056f150",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2aae1b21600c2d14b4f0fcf7b532377c2b0f222.pdf",
+    "source": "http://www.spm.gov.cm/uploads/media/GOVERNMENT_S_ECONOMIC__FINANCIAL__SOCIAL_AND_CULTURAL_PROGRAM__FISCAL_YEAR_2015.pdf"
+  },
+  {
+    "_id": "574310bae4ebd4240056f16f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1cbcf07b8dcd654e84828b5bdd9a88f05730d986.png",
+    "source": "http://www.simco.gov.co/simco/Estad%C3%ADsticas/Producci%C3%B3n/tabid/121/Default.aspx"
+  },
+  {
+    "_id": "5743117be4ebd4240056f18d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5acc89dd56dbb2ee985292cb2c31abe9f31ed420.xlsx",
+    "source": "http://www.upme.gov.co/generadorconsultas/Consulta_Series.aspx?idModulo=4&tipoSerie=116&grupo=355"
+  },
+  {
+    "_id": "57431da6e4ebd4240056f303",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc5663da9b4f784bdc4d689a8e6d3a40097e04d8.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=t&format=&offset=420"
+  },
+  {
+    "_id": "57431e58e4ebd4240056f319",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1c65dd5cf799ed60f22ce329a9d2bcb14755485.pdf",
+    "source": "http://www.moj.gov.vn/vbpq/lists/vn%20bn%20php%20lut/view_detail.aspx?itemid=23279"
+  },
+  {
+    "_id": "57431af2e4ebd4240056f284",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7171e9e71638f971962a8a9a9e8883a7df38dc9c.pdf"
+  },
+  {
+    "_id": "57432082e4ebd4240056f468",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f75ea2167d1114c5d48e0ec5467be6ac8f41ece6.pdf",
+    "source": "http://prokum.esdm.go.id/uu/2001/uu-21-2001.pdf"
+  },
+  {
+    "_id": "57431fbee4ebd4240056f3ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04de6d094c6e5be4be5d21f7dabbfa969cad0afb.pdf",
+    "source": "https://www.minerba.esdm.go.id/library/sijh/UU%2011-%202006.pdf"
+  },
+  {
+    "_id": "574326a2e4ebd4240056f7dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0965a639d70e361e67003ed763e6455931daa3f5.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/0965a639d70e361e67003ed763e6455931daa3f5.pdf"
+  },
+  {
+    "_id": "57432141e4ebd4240056f4ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ae605c3f2898e4bb2d0c00f3599eb396cbf2901.png",
+    "source": "http://www.simco.gov.co/simco/Estad%C3%ADsticas/Producci%C3%B3n/tabid/121/Default.aspx"
+  },
+  {
+    "_id": "5743284ce4ebd4240056f88e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ca20f47cd695b199c3c041f88773e0b35949db1.png",
+    "source": "http://www.simco.gov.co/Inicio/tabid/38/ctl/Terms/Default.aspx"
+  },
+  {
+    "_id": "57431575e4ebd4240056f1de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/197a10080da4254daa651521763fe3a529e79080.xlsx",
+    "source": "http://www.anm.gov.co/?q=anm_revela_cifras_oficiales_de_produccion_en_2015_"
+  },
+  {
+    "_id": "57431e42e4ebd4240056f317",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b6ca8eb138fd5c72d079e31c9592bab55f42626.xlsx",
+    "source": "http://www.upme.gov.co/generadorconsultas/Consulta_Exportaciones.aspx?idModulo=4"
+  },
+  {
+    "_id": "57430990e4ebd4240056f037",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/227114c44b8f2686378b785b32b633c616d83776.xlsx",
+    "source": "http://www.dane.gov.co/index.php/medio-ambiente/cuentas-ambientales"
   }
 ]
