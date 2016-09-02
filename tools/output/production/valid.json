@@ -1477,5 +1477,147 @@
     "_id": "573fec1ae4ebd4240056b509",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9035cb4bc2494c9b4fecba1d1cf29dc61c69d515.pdf",
     "source": "http://www.bir.gov.ph/images/bir_files/internal_communications_3/Full%20Text%20of%20RMO%202016/RMO%20No.%202-2016%20Annexes%20Table%201%20to%205.pdf"
+  },
+  {
+    "_id": "57401b70e4ebd4240056b7a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ad3fac554be623384ac967275f7e1b5f0373977.pdf",
+    "source": "http://ips.cap.anu.edu.au/sites/default/files/SSGM%20IB%202015_47.pdf"
+  },
+  {
+    "_id": "57401578e4ebd4240056b71c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9caf8592fdb798f58d9df955aaa1f7eccfe5903e.pdf",
+    "source": "https://www.mf.uz/en/"
+  },
+  {
+    "_id": "5740144fe4ebd4240056b6f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c70bf420ad4358e77720e884ac5d228994e15fee.pdf"
+  },
+  {
+    "_id": "57401662e4ebd4240056b72b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24b2ea7ee90ddffb7b645a8f1742d4ca8b610ca8.pdf",
+    "source": "http://news.uzreport.uz/news_4_r_127980.html"
+  },
+  {
+    "_id": "57401983e4ebd4240056b77b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/babc84cc570f661ef8589549f19761c617599c1e.doc"
+  },
+  {
+    "_id": "57401bc7e4ebd4240056b7a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98792ac9bace6e54b649e469a335ca73cc43baee.pdf",
+    "source": "http://mom.gov.af/en/news/46913"
+  },
+  {
+    "_id": "57401c55e4ebd4240056b7c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a30bca1340e4452912792e9f86a6fcd991d5f0ca.pdf",
+    "source": "http://mom.gov.af/en/news/1636"
+  },
+  {
+    "_id": "57401ce6e4ebd4240056b7dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61389101724efe077f5a52515ea85f7454893c28.pdf",
+    "source": "https://blogs.mediapart.fr/union-du-peuple-gabonais-upg/blog/120316/gabon-sinopec-addax-le-site-petrolier-dobangue-mandji-ndolou-est-en-flammes-1"
+  },
+  {
+    "_id": "57402223e4ebd4240056b86b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f7fe919ba10122a1ba6fe319290e73201bfbbda.PDF",
+    "source": "http://web.worldbank.org/archive/website01210/WEB/IMAGES/MULTI_-9.PDF"
+  },
+  {
+    "_id": "57402516e4ebd4240056b8d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/243a9d26b1350edc00933a423f551a65ef2a0684.pdf",
+    "source": "https://www.miga.org/Documents/Kibri_Action_Plan_07.pdf"
+  },
+  {
+    "_id": "57402a5ae4ebd4240056b960",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a12b9c08bc220fc97d875ee1eb89005576c8044.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57402655e4ebd4240056b8fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95e3847fcf2b42df5154e9e2dbd7be9868cd2aff.pdf",
+    "source": "http://mom.gov.af/en/news/48848"
+  },
+  {
+    "_id": "5740317ee4ebd4240056b9a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6bb47a766bda4cc234bf623fd9f6a06fa7e27fc.pdf",
+    "source": "http://formalites.industrie.gov.tn/fiche-autorisation-de-prospection-dhydrocarbures-34.html"
+  },
+  {
+    "_id": "574025e0e4ebd4240056b8e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83a8f719f68e9c2dc1eb143ba6cdfac7a017608e.pdf",
+    "source": "http://www.gaboneconomie.net/ge/index.php/eau-energie/item/1581-explosion-d-obangue-les-reservoirs-etaient-vetustes"
+  },
+  {
+    "_id": "57402df3e4ebd4240056b997",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46dedda58ba4f01d76978c68a749f20c6ceda16a.pdf",
+    "source": "https://eiti.org/files/Afghanistan_2011_EITI_Report.pdf"
+  },
+  {
+    "_id": "574037fbe4ebd4240056ba3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6590575f847a75e451838cd8b248508e29325cd0.pdf",
+    "source": "http://anti-corruption.gov.af/Content/files/%D9%82%D9%88%D8%A7%D9%86%DB%8C%D9%86%20%D9%88%20%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%DB%8C%DA%98%DB%8C%20%D9%87%D8%A7/HoO%20Law%20English%20version%201.pdf"
+  },
+  {
+    "_id": "5740460de4ebd4240056bb0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de42a9ff64e7dd9b0109856ae4d647029cd0da58.pdf",
+    "source": "http://gabonreview.com/blog/main-basse-suisse-petrole-africain/"
+  },
+  {
+    "_id": "57404822e4ebd4240056bb2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26cc2b6616e265cb62b99be40d18fb168beb1064.pdf"
+  },
+  {
+    "_id": "57404d69e4ebd4240056bb82",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9fc624bd445a9bbb1cc26b3fe398d6ac01a94352.pdf",
+    "source": "https://www.ladb.ch/fileadmin/files/documents/Rohstoffe/BigSpendersFinal.pdf"
+  },
+  {
+    "_id": "57405030e4ebd4240056bbb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f84f8a0ad6af6178c9b90567c03834ab1e48dca0.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/2014/DL36-2014SSBlandPt.pdf"
+  },
+  {
+    "_id": "57404ecfe4ebd4240056bb94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22bd1f8078a7831ed2cc231f23b126fc2b692aaf.pdf",
+    "source": "http://gabonreview.com/blog/gabon-oil-company-les-raisons-de-la-mise-a-lecart-de-serge-toulekima/"
+  },
+  {
+    "_id": "574059c9e4ebd4240056bbff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/431ed12e4e6d4cac97f27e3e7b8e462aebb6c6f6.pdf"
+  },
+  {
+    "_id": "57405983e4ebd4240056bbf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fde5ca32794afac22e774fb25f15f45ea8f0ee05.pdf"
+  },
+  {
+    "_id": "57405a36e4ebd4240056bc08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d1c3946327fe52d3fbcdb12bbd6819998839617.pdf"
+  },
+  {
+    "_id": "574066ade4ebd4240056bcf2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4392fa5e8f273b71ab0f8ae8dabd16c1169f103e.pdf",
+    "source": "https://www.epa.org.kw/index.php/en/dept-peiad-about-us"
+  },
+  {
+    "_id": "57405acce4ebd4240056bc13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29f3e99c32c1f909d77e6e52b51c9168139d9ee9.pdf"
+  },
+  {
+    "_id": "57406410e4ebd4240056bcb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a319e51826d615d34b320906980ab3cd70e3176.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/kuw141991.pdf"
+  },
+  {
+    "_id": "57403e57e4ebd4240056ba79",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8631439b583e452518b21d823484fb7fe3210749.doc"
+  },
+  {
+    "_id": "57406570e4ebd4240056bcde",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2753b8aaa1739e447c440f35f932338709d213f0.pdf",
+    "source": "http://kdipa.gov.kw/wp-content/uploads/2016/02/KDIPA-Investment-Guide-2016.pdf"
+  },
+  {
+    "_id": "5740563ce4ebd4240056bbe2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49bbe538f2313e5f96389b1fecc284e65d9fb3c8.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/2014/BNCTLcompensationforSuai2014.pdf"
   }
 ]
