@@ -29,6 +29,11 @@
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fc118d8c47f28943c66b8456edee9046a07bcf9.pdf",
     "source": "http://www.eiti.upme.gov.co/eiti/sites/default/files/INFORME_EITI_2013.pdf"
   },
+  {
+    "_id": "5741df14e4ebd4240056d797",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ce57e977df08269288fe4428cdc031d99105e71.pdf",
+    "source": "http://steel.gov.in/Annual%20Report%20(2012-13)/English/Annual%20Report%20(2012-13).pdf"
+  },
 
   {
     "_id": "570493c4176f800c0090206c",

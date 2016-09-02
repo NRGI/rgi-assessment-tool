@@ -2126,5 +2126,161 @@
   {
     "_id": "5741da50e4ebd4240056d6dd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e03f540dcc159d899507ef1eed4d6263c1af4117.pdf"
+  },
+  {
+    "_id": "5741db07e4ebd4240056d6ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31e4da33e6de602cb143278c544eb8a6388a9eda.pdf",
+    "source": "http://www.lsb.gov.la/Industry14.php"
+  },
+  {
+    "_id": "5741dbb7e4ebd4240056d70c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59ddfa28200e7e26fe2caee502cc81d75ad0897d.pdf"
+  },
+  {
+    "_id": "5741e048e4ebd4240056d7bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4798e79c2e4b7e869e974e8e3556d3b9c28066f.pdf",
+    "source": "http://dgm.monre.gov.la/"
+  },
+  {
+    "_id": "5741e10de4ebd4240056d7ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4965c90fa403fecebbffd8cf1b8ad1ba63add086.pdf"
+  },
+  {
+    "_id": "5741e3e2e4ebd4240056d7dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0beaf7e145631b9e447e7f708a00d25cd2adc0f8.pdf",
+    "source": "http://www.lsb.gov.la"
+  },
+  {
+    "_id": "5741e815e4ebd4240056d844",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7425467fa19c1a3dbc5d464ab8153038b40e7244.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "5741e9ebe4ebd4240056d875",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f786fe02d479ece4dc198487da9117156e3492fc.pdf"
+  },
+  {
+    "_id": "5741ea39e4ebd4240056d881",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/716b8312cdc251933f9b7d232c464207c9a7cba6.pdf",
+    "source": "https://www.worklivelaos.com/state-leaders-employees-to-declare-assets/"
+  },
+  {
+    "_id": "5741ea88e4ebd4240056d88e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33b08764c95c28c75b9e1ac73b2bfda310fcdb73.pdf"
+  },
+  {
+    "_id": "5741f2b1e4ebd4240056d927",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69755d0a8ff4bf303414e7cd1d253f5f353d31e8.pdf",
+    "source": "http://Ghana operates the open door policy. The procedure to be followed to acquire a license is available on the website of Petroleum Commission(see document attached)."
+  },
+  {
+    "_id": "5741f342e4ebd4240056d93a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b89129de61716d482d7cfce39ea1158121b7e98.pdf"
+  },
+  {
+    "_id": "5741f7b1e4ebd4240056d96b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6608854970d092330430ab8b84e235ac97e2654.pdf"
+  },
+  {
+    "_id": "5741f905e4ebd4240056d978",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1144d692f1908957619e1418abdf61935ae0914e.pdf",
+    "source": "http://ghanaoilonline.org/2011/05/ghana-oil-contracts-made-public/"
+  },
+  {
+    "_id": "5741fd1ce4ebd4240056d9bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d247e12159acdcefe30b2642de2cbef3b798d71.pdf",
+    "source": "http://www.mofep.gov.gh/?q=news251013/ghana%E2%80%99s-public-debt-report"
+  },
+  {
+    "_id": "57420f6de4ebd4240056daf3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2052f9004c308255192473542000460f5de820cd.pdf"
+  },
+  {
+    "_id": "574204c5e4ebd4240056da51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75fbcb51c8212de2505b84a3dbc5a5d7d74d5641.pdf",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/noticias.php?option=view&idNot=3791"
+  },
+  {
+    "_id": "57420feee4ebd4240056dafb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4099023509a2476cab5955e59071e4ace8bf81e2.pdf"
+  },
+  {
+    "_id": "5742184de4ebd4240056db72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81208dc11662f3f64aaa663ebb1e92be47534528.pdf",
+    "source": "http://www.eisourcebook.org/cms/Dec%202012/Uganda%20Oil%20&%20Gas%20Revenue%20Management%20Policy.pdf"
+  },
+  {
+    "_id": "57421ba2e4ebd4240056db9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/371125f40a726de3ba6aca61ff8854b227668ec1.pdf",
+    "source": "http://www.cgr.gob.ve/site_informes_doings.php?Cod=027"
+  },
+  {
+    "_id": "57421c8ee4ebd4240056dbaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1da771bf2c8fea061d911f749056eaefad6d2659.pdf"
+  },
+  {
+    "_id": "57421d4ee4ebd4240056dbc2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d3b3809b704ced63016aa8f824127a720669f29.pdf"
+  },
+  {
+    "_id": "5742200fe4ebd4240056dbe1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d0bf308e218dd2a0b1ebc38837681cbe3f85c81.docx",
+    "source": "http://www.thecitizen.co.tz/News/Business/Uganda-s-oil-account-has--36m--central-bank-report-shows/-/1840414/2945214/-/xa6s0b/-/index.html"
+  },
+  {
+    "_id": "57422995e4ebd4240056dc4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0877af1f98d7379ca4f59c73a0f450945d13638f.pdf"
+  },
+  {
+    "_id": "574279a1e4ebd4240056de23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28319fc1ac35d232e57c2b2f7ec4e9a9bf452273.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=category&id=54&Itemid=65&lang=en"
+  },
+  {
+    "_id": "57427be2e4ebd4240056de4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30a8d8c43e265520dc26e4e8cc2f44be85dc22f1.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/OJE2016CircularJul2015Pt.pdf"
+  },
+  {
+    "_id": "57428093e4ebd4240056de9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63a8ce114f7ca484af61467289afc0389b491e70.pdf"
+  },
+  {
+    "_id": "5741fe89e4ebd4240056d9ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b59ec65ddd3251675fcbfa91e13c8a219ce94ba6.doc",
+    "source": "http://www.observer.ug/business/38-business/41820-ura-exempts-152-companies-from-withholding-tax"
+  },
+  {
+    "_id": "574201eae4ebd4240056da11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/809655a056bc338df7d2d3ad1fa764d26352ccc3.doc",
+    "source": "http://www.ulii.org/node/21653"
+  },
+  {
+    "_id": "574204f6e4ebd4240056da53",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb691f636fb82b6ffce1e4ff511a4eddf6049a91.docx",
+    "source": "http://www.actionaid.org/uganda/2014/07/uganda-revenue-authority-vs-tullow"
+  },
+  {
+    "_id": "5742200fe4ebd4240056dbe1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d0bf308e218dd2a0b1ebc38837681cbe3f85c81.docx",
+    "source": "http://www.thecitizen.co.tz/News/Business/Uganda-s-oil-account-has--36m--central-bank-report-shows/-/1840414/2945214/-/xa6s0b/-/index.html"
+  },
+  {
+    "_id": "57422995e4ebd4240056dc4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0877af1f98d7379ca4f59c73a0f450945d13638f.pdf"
+  },
+  {
+    "_id": "574279a1e4ebd4240056de23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28319fc1ac35d232e57c2b2f7ec4e9a9bf452273.pdf",
+    "source": "http://www.snh.cm/index.php?option=com_content&view=category&id=54&Itemid=65&lang=en"
+  },
+  {
+    "_id": "57427be2e4ebd4240056de4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30a8d8c43e265520dc26e4e8cc2f44be85dc22f1.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/OJE2016CircularJul2015Pt.pdf"
+  },
+  {
+    "_id": "57428093e4ebd4240056de9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63a8ce114f7ca484af61467289afc0389b491e70.pdf"
   }
 ]
