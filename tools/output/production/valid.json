@@ -1185,5 +1185,55 @@
     "_id": "573f4c30e4ebd4240056ab99",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/403ed2b58aea80a8dfc07e3b97f6f583fa9bcc73.docx",
     "source": "http://N/A"
+  },
+  {
+    "_id": "573f8adae4ebd4240056af20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95a1e27de5803b24c921303b12e8712fe2d0f4de.pdf",
+    "source": "http://www.opec.org/library/Annual%20Statistical%20Bulletin/interactive/current/FileZ/Main-Dateien/Section3.html"
+  },
+  {
+    "_id": "573f8aefe4ebd4240056af24",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e63abaf5b392308850c0b292f7d37dacd4693df0.pdf",
+    "source": "http://ctntworld.com/cnews3/index.php?option=com_content&view=article&id=13985:ema-no-fish-kill-in-chaguaramas&catid=137&Itemid=707"
+  },
+  {
+    "_id": "573f8b7ae4ebd4240056af46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db1885bb420164cf08dc6a4da8253a1af57d5fb2.pdf",
+    "source": "http://www.tradingeconomics.com/kuwait/crude-oil-production"
+  },
+  {
+    "_id": "573f8bf6e4ebd4240056af58",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e95d07f6d285fda398745f268a331250394b6bb7.pdf",
+    "source": "https://www.kpc.com.kw/about/our-story"
+  },
+  {
+    "_id": "573f8fcce4ebd4240056af8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24bd9a2f51fe280cbefc33230822491e144316f8.png",
+    "source": "http://anp.gov.br/?pg=69299&m=&t1=&t2=&t3=&t4=&ar=&ps=&1463782407882"
+  },
+  {
+    "_id": "573f90b4e4ebd4240056af99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b15846a9b89ddaf09afbbbf2767430f8ae0bfeb5.png",
+    "source": "http://www.bdep.gov.br/?pg=7490&m=&t1=&t2=&t3=&t4=&ar=&ps=&1463782545683"
+  },
+  {
+    "_id": "573f9227e4ebd4240056afcf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bdb4e6ad84dd2be2dd5382424f5dd297b7bdec34.pdf",
+    "source": "http://www.ema.co.tt/new/index.php/news-and-events/news/recent?limitstart=0"
+  },
+  {
+    "_id": "573f9299e4ebd4240056aff4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d85136aeb5436b393712ae33b19d04984bdcd7ef.pdf",
+    "source": "http://elheraldodesaltillo.mx/2016/05/17/encuentra-profepa-inconsistencias-en-autorizaciones-de-tajos/"
+  },
+  {
+    "_id": "573f8a32e4ebd4240056af09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f708802f3919880b4ee80a0fd9cecc0b7aad85a9.png",
+    "source": "http://www.bdep.gov.br/?lng=en&pg=7090"
+  },
+  {
+    "_id": "573f8aece4ebd4240056af22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/236407897792d77fae9aaf3de68c802873d14dc7.png",
+    "source": "http://www.bdep.gov.br/?lng=en&pg=7090"
   }
 ]
