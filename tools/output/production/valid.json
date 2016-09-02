@@ -1354,5 +1354,128 @@
     "_id": "573fdd75e4ebd4240056b401",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d1038d6202c2708904df8338bd1ac29818532c1d.pdf",
     "source": "http://www.dbm.gov.ph/wp-content/uploads/images/final%20technotes%20for%20ictss%20pdf.pdf"
+  },
+  {
+    "_id": "573fe686e4ebd4240056b49a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ce98b97038f9380e70c8e6c26fa2e62ead5436c.pdf",
+    "source": "http://www.pogc.ir/Default.aspx?tabid=95"
+  },
+  {
+    "_id": "573febc7e4ebd4240056b4fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c7708ef4801cc21b388d103f71755716dc7918f.pdf",
+    "source": "http://www.dof.gov.ph/index.php/data/statistics-bulletin/"
+  },
+  {
+    "_id": "573fe535e4ebd4240056b480",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8187a4c879f0cc8b4c09c30efa6cea30b5654d1.pdf",
+    "source": "http://www.gov.ph/constitutions/1987-constitution/#article-ix"
+  },
+  {
+    "_id": "573fe928e4ebd4240056b4d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e75aa51a08d8a521b7721779b54dca78cf93be16.pdf",
+    "source": "http://indiabudget.nic.in/ub2016-17/bs/bs.pdf"
+  },
+  {
+    "_id": "573ff289e4ebd4240056b57b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8363f58203a129430e34c9f29eda7279a19d25ac.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/BESF/BESF2016/C3.pdf"
+  },
+  {
+    "_id": "573ff0ace4ebd4240056b557",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00d3ce55c11ebdf5fddb0e2d1e3b6b8eb33b9ddb.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/BESF/BESF2016/C1.pdf"
+  },
+  {
+    "_id": "573ff327e4ebd4240056b58b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/689b8552ea0dcf60139b58b73fcd75cc38b8ddb0.pdf",
+    "source": "http://finmin.nic.in/the_ministry/dept_eco_affairs/budget/MediumtermExpWork_FRBM2015.pdf"
+  },
+  {
+    "_id": "573fede2e4ebd4240056b531",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b0c8ca006be3755c2c8333c0763cef201a3416e.pdf",
+    "source": "http://www.dbm.gov.ph/?page_id=14535"
+  },
+  {
+    "_id": "573ff6e4e4ebd4240056b5b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26b63a874d60f898337290455599e67a6d220ea3.pdf",
+    "source": "http://indiabudget.nic.in/ub2012-13/fb/bill6.pdf"
+  },
+  {
+    "_id": "573ff9ebe4ebd4240056b5c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9fe02cf73cbc612169cfbc4ab4e8f7b256940f9.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/2014/DL36-2014SSBlandPt.pdf"
+  },
+  {
+    "_id": "573ffd10e4ebd4240056b5e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f6ee26994454bc0f7fc20e8748080459273c6d5.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/2014/Res20-2014SuaiCompPt.pdf"
+  },
+  {
+    "_id": "573ff39de4ebd4240056b58d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ba8ffd50e727e4206f1796d982ff446235d08fb.pdf"
+  },
+  {
+    "_id": "573ffcd0e4ebd4240056b5dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39f4db70e839f54441e98ac6d6cb9dca9f7b6c79.pdf",
+    "source": "http://www.open-contracting.org/2013/09/04/waiting_for_manna_extractive_industries_in_cameroon/"
+  },
+  {
+    "_id": "573ffe95e4ebd4240056b61f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c26bd118fb56e018bd314866ec3a0544333ff79.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=2381138"
+  },
+  {
+    "_id": "573fff80e4ebd4240056b63b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b8f1035d30ef70240116dfbcfdab6786bfa222a.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=75839"
+  },
+  {
+    "_id": "573ffd22e4ebd4240056b5e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a70ec9bde27a2f972091e3e4ca27f322a4bf0f0.pdf"
+  },
+  {
+    "_id": "573ffddee4ebd4240056b616",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb4280f217133cd1e90a8c8dfb6a7f4337738415.pdf",
+    "source": "http://www.cag.gov.in/sites/default/files/audit_report_files/Union_Finacne_Report_50_2015_0.pdf"
+  },
+  {
+    "_id": "57400389e4ebd4240056b65c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e02ab7d9379a73886b112b696c302bcdb364c960.PDF",
+    "source": "http://web.worldbank.org/archive/website01210/WEB/IMAGES/MULTI_-9.PDF"
+  },
+  {
+    "_id": "57400a51e4ebd4240056b68f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9ab6f9ea6b3f70a57300fa5995ebdf04df5ac37b.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/EIA/TMPSEIAExecSummMay2012.pdf"
+  },
+  {
+    "_id": "57400a84e4ebd4240056b691",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc72f77a8dd6b21e6c9b8dff7d8b57c5b6bcd59e.pdf",
+    "source": "http://indiabudget.nic.in/ub2016-17/rec/allrec.pdf"
+  },
+  {
+    "_id": "57401143e4ebd4240056b6c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bea57138b77cd705412be3b1faa26e3d5898bd55.pdf",
+    "source": "http://www.unionbudget.nic.in/ub2016-17/eb/allsbe.pdf"
+  },
+  {
+    "_id": "574011bbe4ebd4240056b6c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f9491a9c24dbf3fd270b75f69b60461a936e6f93.pdf",
+    "source": "http://www.unionbudget.nic.in/ub2016-17/eb/vol1.pdf"
+  },
+  {
+    "_id": "57401350e4ebd4240056b6e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fce6f1c99b1a8b6c3f54ac15edc5d8f7618fbd64.pdf",
+    "source": "http://uzgeolcom.uz/ru/"
+  },
+  {
+    "_id": "573ff1bce4ebd4240056b56a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9472d24b2165a329d2d87a05bcd924cb888addf1.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/BESF/BESF2016/C4.pdf"
+  },
+  {
+    "_id": "573fec1ae4ebd4240056b509",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9035cb4bc2494c9b4fecba1d1cf29dc61c69d515.pdf",
+    "source": "http://www.bir.gov.ph/images/bir_files/internal_communications_3/Full%20Text%20of%20RMO%202016/RMO%20No.%202-2016%20Annexes%20Table%201%20to%205.pdf"
   }
 ]
