@@ -1906,5 +1906,225 @@
     "_id": "574140e6e4ebd4240056cac7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8dc1f56208d86ae89a4bf8fdede00b2ebf18e2fd.jpg",
     "source": "https://www.timorgap.com/databases/website.nsf/vwAllNew2/Annual%20Reports"
+  },
+  {
+    "_id": "57417409e4ebd4240056ccaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bc3ad7e8971e39cb26a2b6de616ae4810d71446.pdf",
+    "source": "http://www.finances.gov.tn/index.php?option=com_content&view=article&id=295&Itemid=448&lang=ar-AA"
+  },
+  {
+    "_id": "57416f5ae4ebd4240056cc56",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3880323795d2d0cd28c8b031c9b45f623d4b1977.pdf"
+  },
+  {
+    "_id": "57416b2de4ebd4240056cbeb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6e5253a120f8e18f6f8f17bb5efb633e68ac661.pdf",
+    "source": "http://www.commerce.gov.mg/"
+  },
+  {
+    "_id": "57414b91e4ebd4240056cb44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9bb486ea6e467005f1f344bb2974904f9bff0b98.jpg",
+    "source": "https://www.timorgap.com/databases/website.nsf/vwAllNew2/Subsidiaries"
+  },
+  {
+    "_id": "57416deee4ebd4240056cc3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b455dc2f0cb3e5137231c27b1edb39dbbd5f5e1.jpg",
+    "source": "https://www.timorgap.com/databases/website.nsf/vwAll/HOME"
+  },
+  {
+    "_id": "57417673e4ebd4240056ccc2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f16aa00e860ca18d42ca823479814088e67f479c.pdf",
+    "source": "http://www.iort.gov.tn/WD120AWP/WD120Awp.exe/CTX_25444-15-UbqZmNYCqg/RechercheTexte/SYNC_-763000906"
+  },
+  {
+    "_id": "574176d1e4ebd4240056ccf4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43becb705030b9824208d01210349c5dd02f2ce2.pdf",
+    "source": "http://lawmin.nic.in/coi/coiason29july08.pdf"
+  },
+  {
+    "_id": "57417763e4ebd4240056cd0c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8443d511d1bb84c0a215746b9b3387529d7d7f0e.PDF"
+  },
+  {
+    "_id": "574177dee4ebd4240056cd1e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b750a2c0faec843d8f1c1b26f240e5540edb77c0.pdf"
+  },
+  {
+    "_id": "57417aebe4ebd4240056cd9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9672479623ff63f8033f3fab0b35878f28c34c2c.pdf"
+  },
+  {
+    "_id": "57417be2e4ebd4240056cdaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d776fa3152aa421868ce0903d04213de2a7c0bd.doc",
+    "source": "http://www.indexmundi.com/uganda/fiscal_year.html"
+  },
+  {
+    "_id": "57417e24e4ebd4240056cdf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ee6e0055119b249776709ae9e54e036ca63556b.pdf",
+    "source": "http://eiti-madagascar.org/eiti/statut/"
+  },
+  {
+    "_id": "574181dee4ebd4240056ce1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e3ec3237e74146add85b319745946f4e69b5f18.pdf",
+    "source": "http://anti-corruption.gov.af/en/page/test/7663"
+  },
+  {
+    "_id": "57418443e4ebd4240056ce63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/edecb8b505042d2dd12ad2304ab8eee1eef04fc2.pdf",
+    "source": "http://anti-corruption.gov.af/Content/files/Asset%20Declaration%206-Oct-12/10%20-%20%D9%85%D8%AD%D8%AA%D8%B1%D9%85%20%D9%88%D8%AD%D9%8A%D8%AF%20%D8%A7%D9%84%D9%84%D9%87%20%D8%B4%D9%87%D8%B1%D8%A7%D9%86%D9%8A%20%D9%88%D8%B2%D9%8A%D8%B1%20%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA%20%D9%88%20%D8%B5%D9%86%D8%A7%D9%8A%D8%B9.pdf"
+  },
+  {
+    "_id": "57418570e4ebd4240056ceae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/caf4304aaebe1b1bfaf17e2f638875e586273747.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=1824#1839"
+  },
+  {
+    "_id": "574188a3e4ebd4240056cece",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adc17741a162742365fd1d7a773207f1aa7ef61f.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=1630396"
+  },
+  {
+    "_id": "57418a81e4ebd4240056cedf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c10f68900dc0d6b2019e35f72a0e1a2057457e23.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=40146#44390"
+  },
+  {
+    "_id": "57418d7de4ebd4240056cf00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5db0b0eec2839865f2905356a9a2be9e2636968.pdf",
+    "source": "http://www.eac.int/customs/index.php?option=com_docman&task=doc_download&gid=65&Itemid=106."
+  },
+  {
+    "_id": "57418da9e4ebd4240056cf03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06b54fb8eb734be03173c3a06b80354ee4fcc418.pdf",
+    "source": "http://www.mofep.gov.gh/sites/default/files/reports/petroleum/Petroleum-Receipts-Q1-2016.pdf"
+  },
+  {
+    "_id": "57418e3be4ebd4240056cf18",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e768f3711b28f7094df0666f3ec11be08d63aee.pdf",
+    "source": "http://mom.gov.af/Content/files/Policies/English/English_National_Mining_Policy.pdf"
+  },
+  {
+    "_id": "57418f90e4ebd4240056cf35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4ff02fe9017f25496fc488f18de6bfa29bcc18c.pdf",
+    "source": "http://www.saiindia.gov.in/sites/default/files/audit_report_files/Union_Finacne_Report_50_2015_chap_2_0.pdf"
+  },
+  {
+    "_id": "574191b5e4ebd4240056cf60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d26ae48ffd5d5bdfd9f938309cb1e68232ea3b3d.pdf",
+    "source": "http://mom.gov.af/Content/files/MCC%20Afghan%20Gover%20Aynak%20Copper%20Contract%20English.pdf"
+  },
+  {
+    "_id": "574193ede4ebd4240056cf70",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/366c9c036f65510298276391537f6071aa08c1f9.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/522707/Ghana.pdf"
+  },
+  {
+    "_id": "57419635e4ebd4240056cf8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e65cc82cdfd151459603fd294f4467b3ac6eb86.pdf",
+    "source": "http://www.finances.gov.tn/index.php?option=com_content&view=article&id=295&Itemid=448&lang=ar-AA"
+  },
+  {
+    "_id": "5741a544e4ebd4240056d05c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c61b4175ccd15246db74760874439c25f440b5d6.pdf?openelement",
+    "source": "https://www.timorgap.com/databases/website.nsf/vwAllNew2/Resource-Newsletter%20of%20April%202016/$File/Newsletter%20of%20April%202016.pdf?openelement"
+  },
+  {
+    "_id": "5741a97fe4ebd4240056d0b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f0087f2f8f658723128e49a027881207fd43dc3.pdf",
+    "source": "http://www.iort.gov.tn/WD120AWP/WD120Awp.exe/CTX_3284-68-UcTIabiJrs/CodesJuridiques/SYNC_-749538953"
+  },
+  {
+    "_id": "5741ae76e4ebd4240056d113",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/487c54610f51a7400a203a439291cd4bd168448c.pdf",
+    "source": "http://gabonoil.com/wp-content/uploads/2015/01/Newsletter-Ngozo-N2-VF-PaPage.pdf"
+  },
+  {
+    "_id": "5741b131e4ebd4240056d14e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a92bdc2f649fc282bb862e442a2041c4cbfd9909.pdf",
+    "source": "http://www.petromin.gov.gh/agreements.html"
+  },
+  {
+    "_id": "5741b1e3e4ebd4240056d158",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7fe92566db1274f082bf60e9dac5e9a6cabe177.pdf",
+    "source": "http://gabonoil.com/wp-content/uploads/2015/01/NGOZO-MAG1-VA-PaP-20-PAGES-light.pdf"
+  },
+  {
+    "_id": "5741b2a0e4ebd4240056d16b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/814a30356a01929b059bcb45a5bbc4cef4b85a6a.pdf",
+    "source": "http://www.sgg-mali.ml/JO/2015/mali-jo-2015-46.pdf"
+  },
+  {
+    "_id": "5741b36ae4ebd4240056d19d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/949d38bc9f4d55e7d3f6f6a77c823fbd04796138.pdf",
+    "source": "http://maliactu.net/mali-lutte-contre-la-corruption-et-lenrichissement-illicite-les-deputes-donnent-leur-quitus-pour-la-creation-de-loffice-central/"
+  },
+  {
+    "_id": "5741b540e4ebd4240056d1f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77a5a25f62662dbbb927f02a29e696341b335692.pdf",
+    "source": "http://gabonoil.com/wp-content/uploads/2015/01/20p-NGOZO-MAG2-VF-BDpages-en-vis-a-vis-2.pdf"
+  },
+  {
+    "_id": "5741b8a2e4ebd4240056d28e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f36b4b0058abfbbf4c72eed0dfbfa91f8d2f8c8.pdf",
+    "source": "http://file:///C:/Users/user/Downloads/mineraland_petroleum_resources_development_actmprda%20(1).pdf"
+  },
+  {
+    "_id": "5741c207e4ebd4240056d36e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2baf3ba467e5f49aaccb6b7ed0f458f4901c5482.pdf",
+    "source": "http://gabonoil.com"
+  },
+  {
+    "_id": "5741c526e4ebd4240056d3ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e228bf91ccbb4e268529cdd4b7354a45a158e9a.pdf",
+    "source": "http://mom.gov.af/Content/files/Mining%20regulations(1).pdf"
+  },
+  {
+    "_id": "5741d381e4ebd4240056d5be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f806ce8c32792e7e1390cf615ef76b05bc8d5908.pdf",
+    "source": "https://www.codelco.com/prontus_codelco/site/artic/20160404/asocfile/20160404163300/05_fy_2015_results.pdf"
+  },
+  {
+    "_id": "5741d557e4ebd4240056d601",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5921f298cdaff2a195dbc2bafd819cdd5c765461.pdf",
+    "source": "http://siteresources.worldbank.org/INTLAOPRD/Resources/FR_2_EconomicGeology_.pdf"
+  },
+  {
+    "_id": "5741d63ce4ebd4240056d61b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/436e58cabb6204fe9772e8a4163ca6b400e64183.pdf",
+    "source": "http://siteresources.worldbank.org/LAOPRDEXTN/Resources/.../LDR2010_Mining.pdf"
+  },
+  {
+    "_id": "5741d693e4ebd4240056d626",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fab524f0b675b44acfb67f69f078332529a0cc1.pdf",
+    "source": "http://ipr.ias.nic.in/Docs/AIS_ConductRules1968.pdf"
+  },
+  {
+    "_id": "57417da2e4ebd4240056cdd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0ac97639005d18fb93cbfd61b0895e173be7030.pdf",
+    "source": "https://eiti.org/Madagascar"
+  },
+  {
+    "_id": "5741d71be4ebd4240056d641",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57f41d13cc62a0a4bf634faf9955aa8eb99eca1a.pdf",
+    "source": "http://persmin.nic.in/DOPT/EmployeesCorner/Acts_Rules/CCSRules_1964/CCS_Conduct_Rules_1964_Updated_27Feb15.pdf"
+  },
+  {
+    "_id": "5741d7cce4ebd4240056d661",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70e5420f9a76b4b162a9e7f107ebecbcd23385ca.pdf",
+    "source": "https://indialawyers.wordpress.com/2009/09/02/%E2%80%9Crestatement-of-values-of-judicial-life-code-of-conduct-adopted-in-the-chief-justices%E2%80%99-conference-in-december-1999/"
+  },
+  {
+    "_id": "5741d8b9e4ebd4240056d67d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a40feab37cb5f868b726e7b61d14a8e93fb478c9.pdf",
+    "source": "http://www.bol.gov.la/together_use/Annual%20Report%202014_ENG.pdf"
+  },
+  {
+    "_id": "5741d94ee4ebd4240056d69d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47c2760da0a8604d9d1918293738ef005a58fc83.pdf",
+    "source": "http://lawmin.nic.in/legislative/election/volume%201/representation%20of%20the%20people%20act,%201951.pdf"
+  },
+  {
+    "_id": "5741da50e4ebd4240056d6dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e03f540dcc159d899507ef1eed4d6263c1af4117.pdf"
   }
 ]
