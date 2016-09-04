@@ -3428,5 +3428,158 @@
   {
     "_id": "574483abcc1f670c00547fc8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7e6f71a4ce69da1d4f1b363acf4bd8cff2ccea53.doc"
+  },
+  {
+    "_id": "57449542cc1f670c00548462",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2fc5385992a35b83a317257fbbf24cfdc04161ff.pdf",
+    "source": "http://budgetresponsibility.org.uk/docs/dlm_uploads/Budget-Responsibility-and-National-Audit-Act-2011.pdf"
+  },
+  {
+    "_id": "574496f8cc1f670c005484c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/caf48a45efc53c74175e4c4e4eef795496663519.pdf",
+    "source": "http://budgetresponsibility.org.uk/efo/economic-fiscal-outlook-march-2016/"
+  },
+  {
+    "_id": "574499c1cc1f670c00548514",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9853161d9d61a0f52d31e20e31659344a61a3232.pdf",
+    "source": "https://www.petrotrin.com/en/Investor%20Relations/Governance.aspx"
+  },
+  {
+    "_id": "574497a1cc1f670c005484de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe9403688f9527e69fdce363252db036407f2501.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=7065"
+  },
+  {
+    "_id": "574498a0cc1f670c005484f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2a9d1faa90387f03c238e0e8a3546ec956fce47.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=75839"
+  },
+  {
+    "_id": "57449ca8cc1f670c0054853c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3dd02be88f73ec8780cad7e91797bd24b382e5c.pdf",
+    "source": "http://www.guardian.co.tt/news/2015-09-18/brooks-drayton-jupiter-key-state-boards"
+  },
+  {
+    "_id": "57449d10cc1f670c0054855e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a5430b1f982cdc3570261757cb7e1ebdd89ef94.pdf",
+    "source": "http://www.cng.co.tt/about/andrew-jupiter/"
+  },
+  {
+    "_id": "57449d82cc1f670c00548572",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/549be58f460d31232b154482da25b890f7299c80.pdf",
+    "source": "http://country.eiu.com/article.aspx?articleid=1804015964&Country=Laos&topic=Summary&subtopic=Basic+data"
+  },
+  {
+    "_id": "57449e6dcc1f670c005485b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb0681290e0a6bcc582d643d1f6a711327ec21dd.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=75839"
+  },
+  {
+    "_id": "57449e96cc1f670c005485b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21f69e3ee939b01ed69222feba43516baea1d380.pdf"
+  },
+  {
+    "_id": "57449f5acc1f670c005485e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f5612abafd2d885800ab0d4bb811654fd32616e.pdf"
+  },
+  {
+    "_id": "5744a328cc1f670c00548664",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/734659e8714cc3ec6317964b2cf9bf230bc77fec.pdf",
+    "source": "http://www.lukoil-overseas.uz/news/vrednogo-vozdeistviya-ne-obnaruzheno"
+  },
+  {
+    "_id": "5744a443cc1f670c00548689",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb801bb224069d6e202457b10dcde8041e527af1.pdf",
+    "source": "http://www.uz-kor.com/uzkorgas.php?s=6"
+  },
+  {
+    "_id": "5744a49fcc1f670c00548690",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1dae6ab71f6069c12a6c5e7b11a3b967cabca366.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991_pr011.html#360"
+  },
+  {
+    "_id": "5744a515cc1f670c005486b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/182be0f8b45e1bbecc726cd96f5632703708e4e9.pdf"
+  },
+  {
+    "_id": "5744a58ccc1f670c005486b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6eb91f9aab030436a2c94cdfd8de5562a738757c.pdf"
+  },
+  {
+    "_id": "5744aabdcc1f670c00548786",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52f8a3a9efffb9e82ac78d2dba18466c5d999d2b.pdf"
+  },
+  {
+    "_id": "5744abf2cc1f670c005487ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b772de1f161a44fd1cf02767647db6aabdc9dd7.pdf",
+    "source": "http://laws.gov.tt/ttdll-web2/revision/bytitle?max=30&q=c&format=&offset=330"
+  },
+  {
+    "_id": "5744acbdcc1f670c005487e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88f441f33ed44ca80672092015171325cc69c0ce.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=7065"
+  },
+  {
+    "_id": "5744ac83cc1f670c005487d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf0a4e8743595c268b69b9db434b8e0b9e1f1c33.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508170/debt_management_report_2016-2017_final.pdf"
+  },
+  {
+    "_id": "5744af54cc1f670c0054881e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24b20d5767b440711201bcb08ccc58615a7a4b02.pdf"
+  },
+  {
+    "_id": "5744b132cc1f670c00548858",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50c5a41bcca8082237be875f86b46ef4153f15db.pdf",
+    "source": "http://landportal.info/sites/landportal.info/files/the_uganda_national_land_policy-_february_2013.pdf"
+  },
+  {
+    "_id": "5744afa6cc1f670c0054882f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86b8375bb99e794020f116be66346be77467bbad.pdf"
+  },
+  {
+    "_id": "5744b49dcc1f670c005488b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7adc8ba7079a96d0087b2d1491d9beefc8fb2211.pdf",
+    "source": "http://finance.gov.tt/wp-content/uploads/2014/09/Budget-Statement-2015.pdf"
+  },
+  {
+    "_id": "5744b24bcc1f670c0054887b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e7781f48d7aea66f5e379cbbb965e9e5ba64391.pdf",
+    "source": "http://lex.uz/pages/getpage.aspx?lact_id=97661"
+  },
+  {
+    "_id": "5744ac41cc1f670c005487c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4935a65ec2b70d298f16844c0fb03bea03c6760f.xlsx",
+    "source": "http://www.dmo.gov.uk/documentview.aspx?docname=publications/quarterly/gilt-holdings-data-historical.xls&page=publications/quarterly"
+  },
+  {
+    "_id": "5744ae81cc1f670c0054880a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/66c1d9b77b465bbd00e2ab5779a2ef4bf8902cb4.doc",
+    "source": "http://www.ulii.org/ug/legislation/consolidated-act/227"
+  },
+  {
+    "_id": "5744a99dcc1f670c0054875a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/010c22ffb92bcb9145f217b9442bc717a51ad4e5.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html#12"
+  },
+  {
+    "_id": "5744aa60cc1f670c00548772",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69d398d5dae60a310d13f7cea0c1eddb90816348.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html#20"
+  },
+  {
+    "_id": "5744aab0cc1f670c00548784",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b17e52a7ccfbeca79777084bfba68fa6081e80aa.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario_pr001.html#22"
+  },
+  {
+    "_id": "57449180cc1f670c005483ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9bfa5c4e334247d0e237b7a0f3df5bb2d01b05d7.docx",
+    "source": "http://data.gov.gh/"
+  },
+  {
+    "_id": "57449292cc1f670c00548403",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06c7b525aef2412293faa5b9a08d99d21711ab4f.docx",
+    "source": "http://data.gheiti.gov.gh/#home"
   }
 ]
