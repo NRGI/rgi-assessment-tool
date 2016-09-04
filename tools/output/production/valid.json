@@ -3581,5 +3581,53 @@
     "_id": "57449292cc1f670c00548403",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/06c7b525aef2412293faa5b9a08d99d21711ab4f.docx",
     "source": "http://data.gheiti.gov.gh/#home"
+  },
+  {
+    "_id": "5744b76fcc1f670c00548923",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37312e91b423c7d8fb508ec6d9b88f42cd5a48df.pdf",
+    "source": "http://www.guardian.co.tt/business/2015-12-31/tt-chamber-urges-caution-hsf"
+  },
+  {
+    "_id": "5744b57ecc1f670c005488d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4944f9c491f0eaa7c6f79deef1594ceece6513c.pdf"
+  },
+  {
+    "_id": "5744b654cc1f670c005488f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d3d70e53ab5b0f62302b58f16a0aeb88f622d662.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=111457#164956"
+  },
+  {
+    "_id": "5744b7f8cc1f670c0054893f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/528b971bec40da3bd8e482dc837681f198c0366f.pdf"
+  },
+  {
+    "_id": "5744bb25cc1f670c00548977",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed0aa45357c2bed4baa37e674587df96b72fb37a.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio_pr014.html#461"
+  },
+  {
+    "_id": "5744bc1bcc1f670c00548981",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae2fe235a542ddc0d3f71b42cec2f79c9d666e00.pdf",
+    "source": "http://www.finance.gov.tt/category/reports/"
+  },
+  {
+    "_id": "5744bc40cc1f670c00548984",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88c6cd5aec07e64169906040bdbe182251ce4e17.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/decreto_0111_1996.html#3"
+  },
+  {
+    "_id": "5744bcc7cc1f670c0054899a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57ddada061124741dd7d05a85bb2e81a4992cbc6.pdf",
+    "source": "http://www.auditorgeneral.gov.tt/sites/default/files/Auditor%20General%27s%20Report%20on%20the%20Public%20Accounts%202015.pdf"
+  },
+  {
+    "_id": "5744b595cc1f670c005488d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54134adbed9876ee0c1d01a8abef772239149266.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario_pr001.html#24"
+  },
+  {
+    "_id": "5744b6aecc1f670c00548908",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f07123c772dfc53a5e40e47795185c23500e027.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0141_1994.html#16"
   }
 ]
