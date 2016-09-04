@@ -78,5 +78,15 @@
     "_id": "5743357ee4ebd4240056fb59",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/6193134910709b8837a8a19f2cb8acdb07651730.pdf",
     "source": "http://www.anm.gov.co/sites/default/files/decreto_4134_de_2011_0.pdf"
+  },
+  {
+    "_id": "574422729a0261f9007adcf9",
+    "s3_url": "https://s3.amazonaws.com/'rgi-documents'/adec74001c9913cccef6a0e3d0323c09182f03ea.pdf",
+    "source": "http://www.dmr.gov.za/publications/summary/121-directories/8961-d1-information-2016-pdf-.html"
+  },
+  {
+    "_id": "574422e09a0261f9007add21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77fb5201d0c75abc7e248c70189cb9138b08fb24.xlsx",
+    "source": "http://www.dmr.gov.za/publications/summary/121-directories/8960-d1-operating-mines-information-excel-2016.html"
   }
 ]

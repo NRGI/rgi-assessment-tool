@@ -3023,5 +3023,83 @@
     "_id": "57437ebc513d69210002fdbd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e01ce4371aa9f719b42dff5f4bbcaf1c93daaa57.docx",
     "source": "http://www.ulii.org/ug/legislation/statutory-instrument/2011/17"
+  },
+  {
+    "_id": "5743f39591a817330045bd6f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16facec7c214c5952202f22f58e67816f383a5a1.png",
+    "source": "http://uznature.uz/?q=ru/node/138"
+  },
+  {
+    "_id": "5743f51091a817330045bd87",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85b8210e0ffc7032a022acefb6d695d6cedc5456.png",
+    "source": "https://www.imf.org/external/np/rosc/cmr/fiscal.htm"
+  },
+  {
+    "_id": "5743f97791a817330045bde4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37f70186f01205c78519a52e9ed16bd64b9eb8f2.png",
+    "source": "http://www.dmr.gov.za/publications.html"
+  },
+  {
+    "_id": "57440262cd403f3c00d51417",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/451e4ec8ba70a872a2dfdaa2951c13f8fc384d25.pdf",
+    "source": "http://www.chamberofmines.org.za/industry-news/publications/facts-and-figures"
+  },
+  {
+    "_id": "57440505cd403f3c00d51438",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0da513499085a89352e9173455be067ed2727534.pdf",
+    "source": "http://www.gov.ph/1993/11/09/republic-act-no-7656/"
+  },
+  {
+    "_id": "57440592cd403f3c00d51443",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7fada18b48cf42126ab8b495e5eeeb9c898457cc.png",
+    "source": "http://www.businessincameroon.com/public-management/3110-5759-cameroon-4-249-8-billion-fcfa-for-2016-budget"
+  },
+  {
+    "_id": "57440718cd403f3c00d5146a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f666877ff7945d9e64cd65f6ff1d2d584ed062c.xlsx",
+    "source": "http://www.imf.org/external/datamapper/FiscalRules/map/map.htm"
+  },
+  {
+    "_id": "57440780cd403f3c00d5147d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7cfa4a5f868a5ec93c29aeab2f58a5ee286128e8.pdf",
+    "source": "http://pmdc.com.ph/documents%202013/audit%2012-2015.pdf"
+  },
+  {
+    "_id": "574407bccd403f3c00d51482",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/157d320dc855ad52dddd69612d140cb27493eb1a.png",
+    "source": "http://www.minfi.gov.cm/index.php/fr/salle-de-presse/actualites/364-budget-2016"
+  },
+  {
+    "_id": "574407edcd403f3c00d51492",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a482a05fda62b763d3da35b1aef8ff36b36f3d20.pdf",
+    "source": "http://www.dpsa.gov.za/dpsa2g/documents/acts®ulations/regulations1999/PSRegulations_16_07_2004.pdf"
+  },
+  {
+    "_id": "574414f03e1dc5c300bb3072",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8af2bd9770785824c267e8c84c030e1a80620ab3.pdf"
+  },
+  {
+    "_id": "57441c1ce3a8f1d500dc6483",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/204eb73ab4cc134b40b61a8323928d7bdad85a95.pdf",
+    "source": "https://www.beac.int/download/BEAC_Working_Paper_07_15.pdf"
+  },
+  {
+    "_id": "57440c57cd403f3c00d51535",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ae8439ef141a5a2b84cb2798ea0d95efea23e17.pdf",
+    "source": "http://www.dbm.gov.ph/?page_id=4273"
+  },
+  {
+    "_id": "57441bd3e3a8f1d500dc6471",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b8cdf89df3724c2909248e7cff1f724c7a654c6.pdf",
+    "source": "http://www.psc.gov.za/newsletters/docs/2010/PSC%20NEWS.pdf"
+  },
+  {
+    "_id": "57442095b3e36ff00040658b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9d081b538b18e574e497e72c02b9e82e20a849e.pdf"
+  },
+  {
+    "_id": "57440adbcd403f3c00d5150a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c951d32f3bad3d72eabbcfd43d6254d093ab0ab5.png",
+    "source": "https://www.mof.gov.tl/category/documents-and-forms/petroleum-fund-documents/petroleum-fund-annual-reports/?lang=en"
   }
 ]
