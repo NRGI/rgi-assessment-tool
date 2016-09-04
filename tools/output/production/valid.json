@@ -3101,5 +3101,205 @@
     "_id": "57440adbcd403f3c00d5150a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c951d32f3bad3d72eabbcfd43d6254d093ab0ab5.png",
     "source": "https://www.mof.gov.tl/category/documents-and-forms/petroleum-fund-documents/petroleum-fund-annual-reports/?lang=en"
+  },
+  {
+    "_id": "57443517cc1f670c0054706e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c296205ba37542024f8a9305a485e069f6d2b67c.pdf",
+    "source": "https://itportal.decc.gov.uk/information/licence_reports/offshorebyblock.html"
+  },
+  {
+    "_id": "574434d6cc1f670c00547056",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d082542feb8670f48444569dbae4349ffcc17d75.pdf",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-licence-data#getting-a-licence"
+  },
+  {
+    "_id": "574435cecc1f670c0054708c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a111c99c9772891251624bcf7c9b8000112b444f.pdf",
+    "source": "https://itportal.decc.gov.uk/information/licence_reports/offshorebylicence.html"
+  },
+  {
+    "_id": "5744362ccc1f670c0054709d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a307671ae046fcc7e88fa352ffacf595750873c.pdf",
+    "source": "https://itportal.decc.gov.uk/information/licence_reports/offshorebylicence.html"
+  },
+  {
+    "_id": "57443924cc1f670c005470cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aae2f489f3aa7e93ef38de9785756a90455d2203.pdf"
+  },
+  {
+    "_id": "574441ddcc1f670c005471b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a7012c2426b952a6ba76aa1d39cb0b6cb549f6b.pdf",
+    "source": "http://www.eiti.org"
+  },
+  {
+    "_id": "57443c21cc1f670c00547153",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9151126d35a22779f953e3381515af654c6d97c.pdf",
+    "source": "https://www.imf.org/external/french/pubs/ft/scr/2015/cr1547f.pdf"
+  },
+  {
+    "_id": "5744432acc1f670c005471e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce8a20d2c2d5f16840e8403054cdf6d3d6816da7.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001.html#17"
+  },
+  {
+    "_id": "574443e6cc1f670c00547206",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e74d2881b4ffd3a839664d85792002ff5cfc1a2c.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr003.html#163"
+  },
+  {
+    "_id": "57444560cc1f670c0054723b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/497acc27066d22f33772638ebc6cb5ff30cf03f1.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/442821/Charter_for_Budget_Responsibility_-_Summer_Budget_2015.pdf"
+  },
+  {
+    "_id": "574445a0cc1f670c00547245",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a3c2eb9483f3bd8ac50e9cd7aa43e3701bf0dbd.pdf",
+    "source": "https://www.gov.uk/government/publications/budget-2016-documents/budget-2016#the-uk-economy-and-public-finances-1"
+  },
+  {
+    "_id": "5744479dcc1f670c00547265",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4af84cb17f9c0a2077109c5a3f802f563a20a89.pdf"
+  },
+  {
+    "_id": "57444869cc1f670c00547272",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/798d0117d0566a0abcbda8e2f7b12e72920a4635.pdf"
+  },
+  {
+    "_id": "57444b22cc1f670c005472bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/767eea3ce3e4039c3850a2af2e151567173b9e98.pdf"
+  },
+  {
+    "_id": "57444bfbcc1f670c005472d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3b3f827184c2088f98d342895774cb0f3013443.pdf"
+  },
+  {
+    "_id": "57444e3cd65afd0f00acbdd7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14f2cd67ad384dc80a1f5e5ddea59332f28dc82a.pdf",
+    "source": "http://google.com"
+  },
+  {
+    "_id": "5744503acc1f670c00547382",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08ceff89b4ec8530b82c092eee55bdfc7fe02723.pdf"
+  },
+  {
+    "_id": "57445846cc1f670c0054748b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4674e5c2cb1ace7c37bc0c9eb8b8fb67a45e6cf.pdf"
+  },
+  {
+    "_id": "57444f61cc1f670c00547359",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2245e01f358c355b18563ad48cc098a1a78fe56a.pdf"
+  },
+  {
+    "_id": "57444fc3cc1f670c0054736d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/262bea90aaa1b1c7a8f633391ad41d7317c5817c.pdf"
+  },
+  {
+    "_id": "5744552dcc1f670c00547419",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c094e84ef4ca539fc4986b21595d4ea0054e0a7.pdf",
+    "source": "http://www.jeuneafrique.com/298361/economie/standard-poors-abaisse-la-note-du-gabon/"
+  },
+  {
+    "_id": "57445879cc1f670c00547496",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/402b2971f5986b63ddbc906419cc62365128fbee.pdf"
+  },
+  {
+    "_id": "574458fbcc1f670c005474ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94474f4f00d7e0202c59a8f1580db080d14f5ed3.pdf",
+    "source": "http://www.gabonlibre.com/Gabon-Dette-de-l-Etat-gabonais-Attention-au-pire-_a30619.html"
+  },
+  {
+    "_id": "57445985cc1f670c005474c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b0fc37c0874e2b2e6f1afc4b49cb7ca361fe7ca.pdf"
+  },
+  {
+    "_id": "57445b6dcc1f670c00547550",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7956912072bd2fafc34c7a91f4ad2e456f992be.pdf",
+    "source": "http://www.dette.ga/sites/default/files/FichiersUpload/strategie_dendettement_2013.pdf"
+  },
+  {
+    "_id": "57445d4dcc1f670c0054756a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c49369299d6d8aa0b27b1dfbd2acf1620a07525f.pdf",
+    "source": "http://www.mays-mouissi.com/wp-content/uploads/2015/03/Stratégie-dendettement-2015_LFR-2015.pdf"
+  },
+  {
+    "_id": "57445f60cc1f670c005475db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fee92bf1ca0fecbb9b797167a7ea670b68da17d.pdf",
+    "source": "http://www.ocpgroup.ma/excellence-mondiale/sites-de-production/youssoufia-site"
+  },
+  {
+    "_id": "57445ef2cc1f670c005475bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7090c1047ad6178d7d72f75035522815083212a8.pdf",
+    "source": "http://www.ocpgroup.ma"
+  },
+  {
+    "_id": "57446079cc1f670c0054761d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2e17af8603a913912cc7de3ed6c46c8b34b8861.pdf"
+  },
+  {
+    "_id": "57445fc0cc1f670c005475ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac9204f150ca554a8dfa1057004bfc71094a40f2.pdf"
+  },
+  {
+    "_id": "57446092cc1f670c0054762d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b191facd8aa7424f57b63ea55333169baaf1551e.pdf",
+    "source": "http://www.onhym.com/pdf/Publications/Onhym_Brochure_Mine.pdf"
+  },
+  {
+    "_id": "57446611cc1f670c00547713",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0a0e44108f08dd1d57b138dcf7c07da3f9da969.pdf"
+  },
+  {
+    "_id": "574465f3cc1f670c0054770c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c44965881dd2d19a0249f1c9039608cf6a277aae.pdf"
+  },
+  {
+    "_id": "57446a05cc1f670c005477ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24c2041231c800ae6cd8937602ac0d313562c63c.pdf",
+    "source": "http://www.oc.gov.ma/portal/sites/default/files/actualites/IPEE%20avril%202016.pdf"
+  },
+  {
+    "_id": "574466f4cc1f670c0054776e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73a4032e05f9a1f4505f128732c9674abe11dca9.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/107_23dic15.pdf"
+  },
+  {
+    "_id": "5744665bcc1f670c00547744",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8d185e7af19320538c34a01046842753f2f1579.pdf",
+    "source": "http://www.ocpgroup.ma/sites/default/files/alldocs/Plaquette%20IFRS%20juin%202015%20VF_0.pdf"
+  },
+  {
+    "_id": "57443947cc1f670c005470d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/359dcc5a653bfe22417730b954ee8dfbebd003fb.png",
+    "source": "http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=56882"
+  },
+  {
+    "_id": "57443c7ccc1f670c00547161",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f382d039cec8812acff4fd17342d6bfab4c9497.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr006.html#271"
+  },
+  {
+    "_id": "57443d70cc1f670c0054717d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79ac58b2351091b17bdbe999a92024bd1e8c4b28.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001.html#14"
+  },
+  {
+    "_id": "5744374dcc1f670c005470b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ee86ca4dee7a803feb55cb64c21aca8451ea05b.png",
+    "source": "https://www.funcionpublica.gov.co/sisjur/home/Norma1.jsp?i=321"
+  },
+  {
+    "_id": "57443874cc1f670c005470bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d67cd89eced8364b724e62f59e5bb8691ecab935.png",
+    "source": "http://www.sigep.gov.co/directorio"
+  },
+  {
+    "_id": "574431d3cac3b62601e1834b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79478d21880ac5803522e38d4a624aa35fc86a0a.png",
+    "source": "https://www.gov.uk/guidance/oil-and-gas-licence-data"
+  },
+  {
+    "_id": "57443216cac3b62601e18358",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d11f179860841041901575101294f92198529cf3.png",
+    "source": "https://itportal.decc.gov.uk/information/licence_reports/offshorebylicence.html"
   }
 ]
