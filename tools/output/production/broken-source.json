@@ -73,5 +73,10 @@
     "_id": "573bebe9d876a41e004d2473",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/04dfee74cbc024d94b629097496714fe53a04790.pdf",
     "source": "http://www.mgb.gov.ph/attachments/article/50/Apr_2016_MPSA_2A.pdf"
+  },
+  {
+    "_id": "5743357ee4ebd4240056fb59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6193134910709b8837a8a19f2cb8acdb07651730.pdf",
+    "source": "http://www.anm.gov.co/sites/default/files/decreto_4134_de_2011_0.pdf"
   }
 ]
