@@ -4004,5 +4004,76 @@
     "_id": "57456a1fcc1f670c00549898",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0a019ad13e22eb955e191631583b28c45db9f9f2.pdf",
     "source": "http://www.into-sa.com/uploads/download/file/12/Income_Tax_Act__1962_.pdf"
+  },
+  {
+    "_id": "574576c5cc1f670c00549a71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ceeb83051fb90d0eb80a4b9634c78f0d4564ab01.pdf",
+    "source": "https://www.gazeta.uz/2014/11/29/compensation/"
+  },
+  {
+    "_id": "57456cc3cc1f670c00549917",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3aebb94f6228e92ea5813ce2deaa17062a4894de.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=1804031"
+  },
+  {
+    "_id": "574572a3cc1f670c005499a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb7271f037646d2b422e1929a143e10218a87455.pdf"
+  },
+  {
+    "_id": "574575b6cc1f670c00549a4c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/343adf32b86252838ab5f06605503315cb6ab068.pdf",
+    "source": "http://www.into-sa.com/uploads/download/file/12/Income_Tax_Act__1962_.pdf"
+  },
+  {
+    "_id": "5745753fcc1f670c00549a2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5725b369401f13a0249c701f03025a4b77cdfc64.pdf",
+    "source": "http://www.treasury.gov.za/publications/annual%20reports/national%20treasury/nt%20annual%20report%202014-15.pdf"
+  },
+  {
+    "_id": "57457e51cc1f670c00549b2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a403d6788e93affb087b5ed26bb82a0a336317ac.pdf"
+  },
+  {
+    "_id": "57457cbccc1f670c00549af9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/294e4d549b08c4aebae9da9cd8eecfa47968acf2.pdf",
+    "source": "http://www.legislation.gov.uk/all?title=social%20impact"
+  },
+  {
+    "_id": "574579efcc1f670c00549ab3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4125109b16d4e9df1e19d3c98b94ed8245b9859e.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/1999/360/pdfs/uksi_19990360_en.pdf"
+  },
+  {
+    "_id": "57458226cc1f670c00549b9d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1dfb4d0c6424ac9a57bbfa38e110cef14dcc5ce2.pdf"
+  },
+  {
+    "_id": "57457b69cc1f670c00549ac9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c378025cd818ac11e80b6b0742f8190b835139ce.pdf",
+    "source": "http://www.treasury.gov.za/legislation/bills/2008/royalty/Royalty%20Bill%20-%202008.pdf"
+  },
+  {
+    "_id": "574587f0cc1f670c00549c92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/920970050404ba5653c827468c1d82685581c352.pdf",
+    "source": "http://www.treasury.gov.za/ministry/info.aspx"
+  },
+  {
+    "_id": "57458e2ccc1f670c00549d99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b009f9dcfcd88aa73e4800e432d8db975a32863.pdf",
+    "source": "http://www.gov.za/sites/www.gov.za/files/SARS_Annual_Repor_%202014_2015.pdf"
+  },
+  {
+    "_id": "57458c3ecc1f670c00549d47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e43879bc85ccf46131685ea4c8cef27a275cbce.pdf"
+  },
+  {
+    "_id": "57458712cc1f670c00549c63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/710a01f51c5238b8627f17b5044aed65e7639048.docx",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57458d75cc1f670c00549d73",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d06e7f90a05e116caf4e43fad59de626bc6ae714.pdf",
+    "source": "http://www.gov.za/sites/www.gov.za/files/a34-97.pdf"
   }
 ]
