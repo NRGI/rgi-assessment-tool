@@ -5153,5 +5153,53 @@
     "_id": "5747696150fa100c00845c1f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/83bafe8558c0bb7fd73af4fe92fdca4a702f2cd1.pdf",
     "source": "http://www.she.gob.ec/wp-content/uploads/downloads/2016/04/ESTADISTICA-HIDROCARBURIFERA-DERIVADOS-20151.pdf"
+  },
+  {
+    "_id": "574772b850fa100c00845d18",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97c62bec454aef8d0c4fd9f042aa2e502e2816bd.pdf",
+    "source": "http://www.she.gob.ec/biblioteca/"
+  },
+  {
+    "_id": "5747741950fa100c00845d50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a66eb7f799137592a090ba3fa08d2b865cdd25f3.pdf",
+    "source": "http://www.she.gob.ec/banco-de-informacion-petrolera/"
+  },
+  {
+    "_id": "5747929050fa100c00845f90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f7139dc58f5f62238ba7269417da1739d93ac6a.pdf",
+    "source": "http://ung.uznginf.uz/ru/stockholders"
+  },
+  {
+    "_id": "5747951250fa100c00845fc6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d938a6d3009a8d8132100d3cf85b77fe173c46c.pdf",
+    "source": "http://www.ungd.uz/uploads/docs/Godovoy_otchet_2014.pdf"
+  },
+  {
+    "_id": "5747eee950fa100c0084614c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4bb89d05b58d045ea6fe2a5822cbb0cc1bb73af2.pdf"
+  },
+  {
+    "_id": "5747e53a50fa100c008460db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d9b19b9dc44fdab72557345aed490cab4308cf1.pdf",
+    "source": "http://www.ung.uz/ru/stockholders/affiliates"
+  },
+  {
+    "_id": "5747b3ec50fa100c00846085",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/951d671ca0261f255e5099644a2a18b22ad62932.pdf",
+    "source": "http://openinfo.uz/ru/reports/978/"
+  },
+  {
+    "_id": "5747e3e650fa100c008460d3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/464068add940b36b8b98967b0eeaaede9916c186.pdf",
+    "source": "http://www.ung.uz/uploads/docs/affil_2015.htm"
+  },
+  {
+    "_id": "5747bbed50fa100c008460c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb48a314cc9fa832221c29c4a9278d66083f651c.pdf"
+  },
+  {
+    "_id": "5747978450fa100c00845fd8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44ddd233298074b74f776e5aabde932ddc0106f9.xlsx",
+    "source": "http://www.ungd.uz/shareholders/reports"
   }
 ]
