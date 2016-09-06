@@ -4912,5 +4912,80 @@
     "_id": "5747175150fa100c00844d22",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/268731a847b4a7b1279f424f527679cccc3c681c.pdf",
     "source": "http://www.treasury.gov.za/documents/mtbps/2015/adjustments/2015%20AENE%20Full%20document.pdf"
+  },
+  {
+    "_id": "5747272350fa100c0084514a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/602403083bf2357ef16db9ae91c3ca7d29c95709.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1052251"
+  },
+  {
+    "_id": "5747252650fa100c00845097",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a1dbe8f0052e4181f4fe7c94751d94e7c4a2679.pdf",
+    "source": "http://www.central-bank.org.tt/sites/default/files/HSF%20Pre%20Rotary%20Club%20of%20Port%20of%20Spain%20May%202008.pdf"
+  },
+  {
+    "_id": "574722cf50fa100c00844fce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efae5212e88f048350eb0f3a9dbf9ca02aea2bc6.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/work/models/Finanzas_Publicas/docs/congreso/fp/2016/FP_201603.pdf"
+  },
+  {
+    "_id": "57472a1e50fa100c008451ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a323f47b4116bef2caa73802a342fa3e79754ce.pdf",
+    "source": "http://www.ogj.com/articles/2015/02/recent-audit-shows-trinidad-and-tobago-with-500-million-bbl-of-3p-reserves.html"
+  },
+  {
+    "_id": "5747315f50fa100c00845360",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9ef891b014fd02a948798eceadfb64b5ccfc4910.pdf",
+    "source": "http://legitchad.cefod-tchad.org/texte/1840"
+  },
+  {
+    "_id": "5747288150fa100c008451cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40350c943b83d9bc8a57c3b19620247643994bc9.pdf",
+    "source": "http://piacghana.org/resources/2014PIAC252.pdf"
+  },
+  {
+    "_id": "574731d350fa100c00845376",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32e61639e1e05cf658678c2b8d5f78c31dcd405b.pdf",
+    "source": "http://www.centralbank.ae/en/pdf/reports/CBUAEAnnualReport-2015_En_2.pdf"
+  },
+  {
+    "_id": "5747325d50fa100c008453bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/630b27cc091836eaa4e937d57f8f877bb0311e83.pdf",
+    "source": "https://www.presidence.td/?_tsk=decrets"
+  },
+  {
+    "_id": "5747335950fa100c008453ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1b2eb1632b4444007d4b7c9afd64f5fa8cb620e.pdf",
+    "source": "http://www.dghindia.org/pdf/1DGH%20Annual%20Report%202011-12.pdf"
+  },
+  {
+    "_id": "5747360f50fa100c00845477",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6d4d09b64c260298230b5ae814d1e4416b9487f.pdf",
+    "source": "http://www.yicom.net/index.aspx"
+  },
+  {
+    "_id": "5747280450fa100c008451a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55f83fbb98b2fac4892b9b34ff60b0f96c2d8bea.docx",
+    "source": "https://www.mof.gov.ae/En/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "57472a2250fa100c008451ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b725757d5627fece561921e5ae45bafa2eae2db8.docx",
+    "source": "https://www.mof.gov.ae/En/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "5747271050fa100c00845142",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18cd54f297134c73b50b343bc07c1eb6a23c7e73.docx",
+    "source": "https://www.mof.gov.ae/En/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "574727db50fa100c00845197",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d89d491ea847e719138bb0c55e6898eeba5d5af4.docx",
+    "source": "https://www.mof.gov.ae/En/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "574733b950fa100c008453fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ef033ec9e8f777510d4181af82070262e48c618.pdf",
+    "source": "http://www.letchadanthropus-tribune.net/article-6488-868.html"
   }
 ]
