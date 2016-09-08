@@ -6149,5 +6149,295 @@
     "_id": "57498282101fd60f00ac02af",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/86496f5035970aa7bf1f761b56bbd3a2dbbf6f23.PNG",
     "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57498325409eaa1000c8f51e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d5ab5b9b5ec76b659292cfc3378914db5554931.pdf",
+    "source": "https://eiti.org/files/progressreport.pdf"
+  },
+  {
+    "_id": "5749843885b1950e00cb9251",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b84fed9f77c7e1e9878f6ad3828ae365ac84deb.pdf",
+    "source": "http://www.bistandsaktuelt.no/nyheter/2016/oljefondets-arsrapport/"
+  },
+  {
+    "_id": "5749849b85b1950e00cb9259",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c308865fb429ad0ff74eb5bbe1b213d823a156c4.pdf",
+    "source": "http://tax.gov.ye/r/index.php/income-tax#"
+  },
+  {
+    "_id": "57498721409eaa1000c8f57f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7d2dad7a5f5930e5e2490b3a88aee1df6e38c88.PNG",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=118&ThemeID=7"
+  },
+  {
+    "_id": "574987b185b1950e00cb929f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1d57b48104d7a21d34a864dcd61cb491cd55c65.pdf",
+    "source": "http://www.mof.gov.ye/regulations/laws/1073-mof-bylaw.html"
+  },
+  {
+    "_id": "574987d3101fd60f00ac0338",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b47a0d1821e69f4d870b6ceef0ece9b051842cca.pdf",
+    "source": "http://tax.gov.ye/r/index.php/regulations/tax-authority-regulation"
+  },
+  {
+    "_id": "57498c1785b1950e00cb92f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f93e82a296ee0b40249535a27f4533c9914dd35.pdf",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=118&ThemeID=7"
+  },
+  {
+    "_id": "5749889e409eaa1000c8f5a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/234c9146f446cb9c670bae8073162ce960e8b78b.pdf",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=118&ThemeID=7"
+  },
+  {
+    "_id": "57498e9a101fd60f00ac03a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4bfc0307e2c3ac90d81a1af0edb4e2f2ad3bda1.pdf"
+  },
+  {
+    "_id": "574991a085b1950e00cb9348",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e95cf77f691317f376be6afbee1585e8a7ed273f.pdf",
+    "source": "https://eiti.org/files/YEM3_11_apr_2014.pdf"
+  },
+  {
+    "_id": "5749914f409eaa1000c8f651",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09aa75f5132025ab075a93b26396d36d13d00124.pdf"
+  },
+  {
+    "_id": "574991fa409eaa1000c8f65a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/684f9207ec92fff97a6df030b8dd3e2b0407b838.pdf",
+    "source": "https://lovdata.no/dokument/NL/lov/1985-05-24-28/KAPITTEL_3#KAPITTEL_3"
+  },
+  {
+    "_id": "57499999409eaa1000c8f697",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/244acf415b5b1698d6e7661140bf569c3eadd14d.pdf",
+    "source": "https://www.stortinget.no/no/Saker-og-publikasjoner/Saker/Sak/?p=62444"
+  },
+  {
+    "_id": "57499962101fd60f00ac040f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/163ac11d7a3d66036ed02f304832edb5a93171d7.pdf",
+    "source": "https://www.stortinget.no/no/Saker-og-publikasjoner/Saker/Sak/?p=64478"
+  },
+  {
+    "_id": "57499869101fd60f00ac0403",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e2a5ea37a1faf48cc89446987e1513c4ebf914d.pdf",
+    "source": "http://publicofficialsfinancialdisclosure.worldbank.org/sites/fdl/files/assets/law-library-files/Chad_Public%20Officials%20Status%20Law_2001_fr.pdf"
+  },
+  {
+    "_id": "574992d885b1950e00cb936c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38c67376a1aa5a73f381634747cd08d14905f1d5.pdf",
+    "source": "http://www.alamiria.com/index.html"
+  },
+  {
+    "_id": "57499453101fd60f00ac03fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb78bf58e40ee7206e21f0ad7866aa316cbe32f2.pdf",
+    "source": "http://www.mof.gov.ye/files/budget/2014/data/c/41.pdf"
+  },
+  {
+    "_id": "57499e88409eaa1000c8f6bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e65e5950ae895c9db949c150c05c982f9e820be.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=11385"
+  },
+  {
+    "_id": "57499fb485b1950e00cb93bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ff979a80c7c82f13bcdb321fc027909e20ddad8.pdf"
+  },
+  {
+    "_id": "5749a05c101fd60f00ac044d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/343bb0c935d0b98b4f1a1737b6047260d3a32346.pdf",
+    "source": "http://users.unimi.it/dirpubesteuropa/wp-content/uploads/Costituzione-della-Repubblica-del-Kyrgyzistan.pdf"
+  },
+  {
+    "_id": "5749a14a85b1950e00cb93c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bec75df60243ad17508377e780a8bc1a9d0ca45e.pdf",
+    "source": "https://lovdata.no/dokument/NL/lov/1997-06-13-44/KAPITTEL_8#KAPITTEL_8"
+  },
+  {
+    "_id": "5749a230101fd60f00ac0454",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e6df2565d8ceab7a56bb2387e1d99835f873446.pdf",
+    "source": "https://lovdata.no/dokument/NL/lov/1975-06-13-35"
+  },
+  {
+    "_id": "5749a327409eaa1000c8f6d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/454634c6fb6031b50f67c6e92aeee4dc674b52f6.pdf",
+    "source": "https://lovdata.no/dokument/SF/forskrift/2014-12-05-1517?q=Milj%C3%B8-%20og%20arealavgift%20petroleum"
+  },
+  {
+    "_id": "5749a36985b1950e00cb93d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/940e6cf716c5039c3cbdbde8aecab4fbdb268522.pdf"
+  },
+  {
+    "_id": "5749a4c9101fd60f00ac0475",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2efc57ae699561f27d53969d37fa92bad2441b4f.pdf",
+    "source": "http://www.statoil.com/no/InvestorCentre/AnnualReport/AnnualReport2015/Documents/DownloadCentreFiles/01_KeyDownloads/2015%20Payments%20to%20governments.pdf"
+  },
+  {
+    "_id": "5749a5bf101fd60f00ac047a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c392b4e7a1b2b0a149145e31ca3767975f10e1b2.pdf",
+    "source": "http://www.alamiria.com/index.html"
+  },
+  {
+    "_id": "5749a63f101fd60f00ac047c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05df302c24b68e8585b79e916cc35caa961ae9dd.pdf",
+    "source": "https://www.regjeringen.no/no/aktuelt/218-milliarder-kroner-fra-petroleumsvirksomheten-i-2015/id2457011/"
+  },
+  {
+    "_id": "5749abf185b1950e00cb93fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1eb9e67106b2c66a064b50a3d068caeb251448b4.pdf",
+    "source": "http://www.statoil.com/no/InvestorCentre/AnnualReport/AnnualReport2015/Documents/DownloadCentreFiles/01_KeyDownloads/Annual_report_on_form_20-F.pdf"
+  },
+  {
+    "_id": "5749a71c101fd60f00ac0484",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/680c5c76d734e701601f174be10f1b1ea60f46f1.pdf",
+    "source": "http://26sep.net/news_details.php?sid=117016"
+  },
+  {
+    "_id": "5749a767101fd60f00ac0489",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5605676e431dcb32c19c0273f7eb0cd2bdfb94a3.pdf",
+    "source": "http://www.statoil.com/en/OurOperations/ExplorationProd/internationalFields/Pages/default.aspx"
+  },
+  {
+    "_id": "5749a7f2101fd60f00ac0498",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a864f75a76b9c4b75ca6ac3201d155f9623be7fc.pdf",
+    "source": "http://www.thelinkyemen.net/?q=news/8149"
+  },
+  {
+    "_id": "5749bc06409eaa1000c8f75b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43c8f16767f4120d086df3e50aa10043567f80c8.pdf"
+  },
+  {
+    "_id": "5749bbde409eaa1000c8f759",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/188cad36e465adce49f93d8a95cbf1a2c789e878.pdf",
+    "source": "http://www.petroleum.gov.eg/en/PublicServices/PetroleumCompanies/Pages/Default.aspx"
+  },
+  {
+    "_id": "5749b8e9101fd60f00ac0519",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/087bbb59ed831f854911efa725f72335a5291043.pdf",
+    "source": "https://www.regjeringen.no/contentassets/ebcba8f4a49c4af39003d65007647c51/no/pdfs/stm200320040038000dddpdfs.pdf"
+  },
+  {
+    "_id": "5749b9ec101fd60f00ac051b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9456b321bd522788bc862edb808a741afc681d7e.docx",
+    "source": "http://info.geology.kg/Licenses/LicensesList?isLicense=True"
+  },
+  {
+    "_id": "5749bb9785b1950e00cb945e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9461f569c24de13e75419008a7d0890402280a29.pdf",
+    "source": "https://www.regjeringen.no/contentassets/899ac257df2648d788942b78c6d59787/no/pdfs/stm201320140027000dddpdfs.pdf"
+  },
+  {
+    "_id": "5749bbde409eaa1000c8f759",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/188cad36e465adce49f93d8a95cbf1a2c789e878.pdf",
+    "source": "http://www.petroleum.gov.eg/en/PublicServices/PetroleumCompanies/Pages/Default.aspx"
+  },
+  {
+    "_id": "5749bc06409eaa1000c8f75b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43c8f16767f4120d086df3e50aa10043567f80c8.pdf"
+  },
+  {
+    "_id": "5749bc62101fd60f00ac0530",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebe8de73e165c485aaaeb52a9091a47f13e8c972.pdf",
+    "source": "http://www.egpc.com.eg/"
+  },
+  {
+    "_id": "5749bca8409eaa1000c8f76b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f58d6ec53d230574800429184ae7ae2b01d7eb58.pdf"
+  },
+  {
+    "_id": "5749be54101fd60f00ac0546",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40cefadef12a84f0f625388a5bc92efd9baf1588.pdf"
+  },
+  {
+    "_id": "5749bccf85b1950e00cb9470",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a37556b20525095ed4f16c90d42eb03fa2e0f2ec.pdf",
+    "source": "https://www.regjeringen.no/contentassets/899ac257df2648d788942b78c6d59787/no/pdfs/stm201320140027000dddpdfs.pdf"
+  },
+  {
+    "_id": "5749c73c409eaa1000c8f7c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0810384fa4e33d9d6690607832b23c7ed3d109a.pdf",
+    "source": "https://www.ssb.no/247027/statens-netto-kontantstrom-fra-petroleumsvirksomhet-mill.kr"
+  },
+  {
+    "_id": "5749c1b9101fd60f00ac0556",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f74a7ffb5ea2f7505003956f871ce74c3a8eb55f.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2015-10-28/statoil-quarterly-profit-falls-60-percent-after-crude-collapse"
+  },
+  {
+    "_id": "5749c4c8409eaa1000c8f7b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8333e152168215d09d5abf14977c5aad76fee96d.pdf",
+    "source": "https://lovdata.no/dokument/SF/forskrift/2009-06-26-856?q=eiti"
+  },
+  {
+    "_id": "5749c87785b1950e00cb94ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adb804d5316be56bf54002604f6a8417e78fa29b.pdf",
+    "source": "http://www.norskpetroleum.no/okonomi/statens-inntekter/"
+  },
+  {
+    "_id": "5749c2b1101fd60f00ac0565",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec733b594b3ea83f3f7db7a17cdb84ffd9fc1db7.pdf",
+    "source": "http://www.nasdaq.com/press-release/statoil-presents-annual-and-sustainability-reports-for-2015-20160318-00040"
+  },
+  {
+    "_id": "5749c9c7101fd60f00ac05b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c95371ff4707585f03d0a103f951fa41e5981d22.pdf"
+  },
+  {
+    "_id": "5749cc3b409eaa1000c8f805",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed30dd8d8f58353e43c749a7e39deaea68a9a00e.pdf",
+    "source": "https://www.petoro.no/%C3%85rsrapport-sider/2015/pdf/Nokkeltall.pdf"
+  },
+  {
+    "_id": "5749d10a85b1950e00cb952c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab3276bbe641c8e33ca9d57456660fb61228f1cf.pdf",
+    "source": "http://www.eiti.no/files/2016/02/2015-EITI-rapport-for-2014-002-L729583.pdf"
+  },
+  {
+    "_id": "5749d22e101fd60f00ac05e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c460179d0f1db68b3ae7ff726ecf39d914ebaeb9.pdf",
+    "source": "https://www.dgdoc.net/index.htm?sdsshop=statoil-sds"
+  },
+  {
+    "_id": "5749d3ac101fd60f00ac05f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19ec3acb7b98cf3d4c39b5055bbd36a1b00d2cdd.PNG",
+    "source": "http://www.fcsa.gov.ae/EnglishHome/ReportDetailsEnglish/tabid/121/Default.aspx?ItemId=2424&PTID=104&MenuId=1"
+  },
+  {
+    "_id": "5749bd2d85b1950e00cb947b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c56488c0215b3132b8df82107120133d040b0b3.doc",
+    "source": "http://www.geology.kg/index.php/pi/pi-6"
+  },
+  {
+    "_id": "5749b9ec101fd60f00ac051b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9456b321bd522788bc862edb808a741afc681d7e.docx",
+    "source": "http://info.geology.kg/Licenses/LicensesList?isLicense=True"
+  },
+  {
+    "_id": "57498d56101fd60f00ac03a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc84115b60590417822f186ca8db01afe91fa97a.doc"
+  },
+  {
+    "_id": "5749883285b1950e00cb92ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c796c364df043b7bf16c1281118fb2349ad4574.PNG",
+    "source": "https://www.dsc.gov.ae/en-us/Themes/Pages/Manufacturing-Energy-Water.aspx?Theme=29&year=2015#DSC_Tab1"
+  },
+  {
+    "_id": "57498976101fd60f00ac0366",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e800acb2cc3a0b487d72decb80b691a1556b6780.PNG",
+    "source": "https://view.officeapps.live.com/op/view.aspx?src=http://fcsa.gov.ae/ReportPDF/Oil%20and%20Gas%202009-2013.xlsx"
+  },
+  {
+    "_id": "5749a7f8101fd60f00ac049a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61b14c44a69bd493356f0809f5ab3ec3fa230b25.pdf",
+    "source": "http://www.statoil.com/en/ouroperations/explorationprod/ncs/Pages/default.aspx"
+  },
+  {
+    "_id": "5749b8e9101fd60f00ac0519",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/087bbb59ed831f854911efa725f72335a5291043.pdf",
+    "source": "https://www.regjeringen.no/contentassets/ebcba8f4a49c4af39003d65007647c51/no/pdfs/stm200320040038000dddpdfs.pdf"
+  },
+  {
+    "_id": "5749bb9785b1950e00cb945e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9461f569c24de13e75419008a7d0890402280a29.pdf",
+    "source": "https://www.regjeringen.no/contentassets/899ac257df2648d788942b78c6d59787/no/pdfs/stm201320140027000dddpdfs.pdf"
   }
 ]
