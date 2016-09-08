@@ -6439,5 +6439,49 @@
     "_id": "5749bb9785b1950e00cb945e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9461f569c24de13e75419008a7d0890402280a29.pdf",
     "source": "https://www.regjeringen.no/contentassets/899ac257df2648d788942b78c6d59787/no/pdfs/stm201320140027000dddpdfs.pdf"
+  },
+  {
+    "_id": "5749e0b485b1950e00cb9575",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/043d8bd1ba42adc024bb9e18277d06fffc4f985d.pdf",
+    "source": "https://dot.abudhabi.ae/wcms/forms/emiri_decree_no_6year_2006.pdf"
+  },
+  {
+    "_id": "5749d5e4409eaa1000c8f83d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8280f588ba5fa3bff6b2fc6cea2995d20e4b8a51.pdf",
+    "source": "http://www.statoil.com/no/about/corporategovernance/governingbodies/board/pages/default.aspx"
+  },
+  {
+    "_id": "5749f7a7409eaa1000c8f894",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61133c05df2c401432ad1e1a86a236598aee7fbd.pdf",
+    "source": "http://www.friendsofsoqotra.org/Bibliography/pdfs/EPL%201995%20English.pdf"
+  },
+  {
+    "_id": "574a0bf385b1950e00cb9656",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3451c85738971b078b12664d867f4cba1227524a.pdf"
+  },
+  {
+    "_id": "574a0e7b101fd60f00ac06f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9cd7999e0c5ae983ddcffe629512391f84042ed.pdf",
+    "source": "http://www.she.gob.ec/wp-content/uploads/downloads/2013/08/prestacion_de_servicios_bloque_03_2011_Jambeli.pdf"
+  },
+  {
+    "_id": "574a1264409eaa1000c8f94a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a33cc4a3d77d9d7e891f9c49134d70dfa8c4caf1.pdf",
+    "source": "http://www.asambleanacional.gov.ec/documentos/constitucion_de_bolsillo.pdf"
+  },
+  {
+    "_id": "5749d753409eaa1000c8f846",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a5fe00e33e2d000c50762d196ba8e171b1f3b47e.PNG",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=118&ThemeID=7"
+  },
+  {
+    "_id": "5749e175409eaa1000c8f85b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1e90323d56fb7842c47e2d82f3d3d5f283fd526.PNG",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d2030%26amp%3bCatID%3d5104%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "5749e194101fd60f00ac0623",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/506db3e05b888cdcdb37cb3645d3f00f4187441c.PNG",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d2030%26amp%3bCatID%3d5104%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
   }
 ]
