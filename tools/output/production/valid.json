@@ -5201,5 +5201,377 @@
     "_id": "5747978450fa100c00845fd8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/44ddd233298074b74f776e5aabde932ddc0106f9.xlsx",
     "source": "http://www.ungd.uz/shareholders/reports"
+  },
+  {
+    "_id": "5747f54850fa100c0084618c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff22e8f451e90585b52ab186b61213ae2636f042.pdf",
+    "source": "http://www.oag.go.ug/wp-content/uploads/2016/03/PETROLEUM-FUND-REPORT-OF-THE-AUDITOR-GENERAL-2015.pdf"
+  },
+  {
+    "_id": "5748024f50fa100c0084627b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5430af7025825a682b953dcc5f7db3107d13ae4.pdf",
+    "source": "https://eiti.org/yemen"
+  },
+  {
+    "_id": "5748022650fa100c00846271",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/467c57a802d6cf5f12b997e56e1c82919d43236e.pdf",
+    "source": "http://www.yeiti.org/news-events/news/yeiti-news/item/58-تعليق-عضويه-اليمن-من-قبل-الهئية-العالمية-لمبادرة-الشفافية-في-الصناعات-اﻻستخراجية"
+  },
+  {
+    "_id": "5747f26a50fa100c00846172",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b446b095c8f1d1f3da79042fa46407826c0e7e9b.pdf",
+    "source": "http://mram.gov.mn/?page_id=128"
+  },
+  {
+    "_id": "5747f3a450fa100c0084617f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38b02ea7a58560d709ba79f54084ae8fd3de386a.pdf",
+    "source": "https://www.bou.or.ug/bou/bou-downloads/publications/Annual_Reports/Rpts/All/Annual-Report-2014-2015.pdf"
+  },
+  {
+    "_id": "5748043350fa100c00846298",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9445b9878992e092948900bc9b05ca5ef3e52570.pdf",
+    "source": "https://eiti.org/yemen/reports"
+  },
+  {
+    "_id": "57480bfc50fa100c00846360",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8463ef6f3e7e6c7a2cf5a025844885d869d130bd.pdf",
+    "source": "http://siteresources.worldbank.org/EXTOGMC/Resources/YEMEN_PGI_Completion_Report.pdf"
+  },
+  {
+    "_id": "574803e750fa100c0084628f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5525b7d8694b847d1f7b94cdf7a3535f133bd8ac.pdf",
+    "source": "http://www.yeiti.org/en/reports"
+  },
+  {
+    "_id": "5748081850fa100c008462e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95abb3db7a59672894f068ebb0e3401197fb8f43.pdf",
+    "source": "http://www.rabatinvest.ma/index.php?option=com_content&view=article&id=856&Itemid=373&lang=fr"
+  },
+  {
+    "_id": "574806ff50fa100c008462c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd440037df8c49ddb79693fdfa411e69adab14c1.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=18859"
+  },
+  {
+    "_id": "5748107250fa100c008463e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c3aac434bc17aeb1bf1c478f3634b1f8785b841.pdf",
+    "source": "http://www.dgitchad-finances-gouv.org/"
+  },
+  {
+    "_id": "5748122b50fa100c0084646c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df64899f1f54bba84276c410523749b41596ba30.pdf",
+    "source": "http://www.pepa.com.ye/Investment/how%20you%20can%20invest%20in%20yemen.htm"
+  },
+  {
+    "_id": "57480f6f50fa100c008463c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/beabbb5668fa460a882cb5035da90ba41d7efb21.pdf",
+    "source": "http://openinfo.uz/ru/reports/978/"
+  },
+  {
+    "_id": "5748103550fa100c008463cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/518559747636e6d48f3a85114880f2ce56a0ba2f.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=22917"
+  },
+  {
+    "_id": "5748167650fa100c008464d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d02fcd42d3e5effcb9adc78f7a56ca680961b44.pdf",
+    "source": "http://www.ung.uz/uploads/docs/affil_2015.htm"
+  },
+  {
+    "_id": "57481e1750fa100c00846603",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f3a573271197af3acf0a5cc1dfa9b41b54dd6e8.pdf",
+    "source": "http://www.ung.uz/ru/stockholders/filings/audit_reports"
+  },
+  {
+    "_id": "57481dfc50fa100c00846601",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/764ca230268c946428c73cb5a41e957ffd3d1f5f.pdf",
+    "source": "http://www.mem.gov.ma/SitePages/TestesReglementaires/TRDDM.aspx"
+  },
+  {
+    "_id": "57481a4650fa100c008465b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/134f4938e4b3cbc544fb74f9cfdc87a6ec6d2c40.pdf",
+    "source": "http://openinfo.uz/ru/reports/978/"
+  },
+  {
+    "_id": "57481e7f50fa100c00846615",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4fc6082518bc049dfae87c9a663adeea7858fdff.pdf",
+    "source": "http://www.resourcegovernance.org/blog/panama-papers-give-further-impetus-beneficial-ownership-disclosure-ghana"
+  },
+  {
+    "_id": "5748190e50fa100c0084656f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25c14fe902e2520dbf03435c15f4bcd5643aae4b.pdf",
+    "source": "http://www.mem.gov.ma/SitePages/Default.aspx"
+  },
+  {
+    "_id": "5748244750fa100c008466df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23781fe2b1984d723cbcbeb4fc86d77156d7043a.pdf",
+    "source": "http://carte.onhym.com/MINES/"
+  },
+  {
+    "_id": "5748222350fa100c0084667a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d903c34ffcd2783203584146d17ae827b5b1a86.pdf",
+    "source": "http://www.oilandgasirc.org.gh/index.php"
+  },
+  {
+    "_id": "5748222250fa100c00846678",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/765acc5dba63b1b5672580ad33d1e27042a76433.pdf",
+    "source": "http://www.onhym.com/"
+  },
+  {
+    "_id": "57481e9a50fa100c00846617",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e5183923becf5e7f49d3bea42c00a47df00fca4.pdf",
+    "source": "http://www.ung.uz/uploads/audit/audit-2014-1.pdf"
+  },
+  {
+    "_id": "574823cc50fa100c008466d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc61fe0e957326f6917cee3509e441825860689d.pdf",
+    "source": "http://www.petroleum.nic.in/docs/GIPIP_Final_approved.pdf"
+  },
+  {
+    "_id": "574827a650fa100c00846730",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8dd8e856b709e6036ac38f7913959a796dd55e25.pdf",
+    "source": "http://mcsetender.kockw.com/commercial%20Documents/contract/files/NEW_ARCHIVES.pdf"
+  },
+  {
+    "_id": "574827db50fa100c00846746",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe93c3e26a8c23a58a6923f772fe95bef65d17ce.pdf",
+    "source": "http://www.dghindia.org/pdf/Resolution.pdf"
+  },
+  {
+    "_id": "574829ae50fa100c00846757",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/742fb5030f3cd2ee60b959184d0799e48ef8ba80.pdf",
+    "source": "http://www.moo.gov.kw/About-Us/Programs/Economic-Affairs/Production-Graph.aspx"
+  },
+  {
+    "_id": "57482aa750fa100c0084677d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8789cd4506be67c74079ca8173e81f2f53179e52.pdf",
+    "source": "http://www.myjoyonline.com/politics/2016/May-11th/10-csos-petition-mahama-over-secret-ownerships-of-mineral-concessions.php"
+  },
+  {
+    "_id": "57482b5850fa100c0084679c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fad78d9db12fac463c8e8ae179e92074904722f0.pdf",
+    "source": "http://m.peacefmonline.com/pages/local/news/201605/278851.php"
+  },
+  {
+    "_id": "5748343f50fa100c008468ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/40c8fc94ec1a7ed56b27e55e3ab3143a28314d3f.pdf",
+    "source": "http://www.dghindia.org/FunctionandResponsibility.aspx"
+  },
+  {
+    "_id": "57483c1250fa100c00846992",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59dabbbd1a1c14629a0694da03a748d8fc56cdb1.pdf",
+    "source": "https://track.unodc.org/LegalLibrary/LegalResources/Kuwait/Laws/Kuwait%20The%20Establishment%20of%20the%20State%20Audit%20Bureau%20Law%201964.pdf"
+  },
+  {
+    "_id": "5748376450fa100c00846952",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28be43381769f9e4104bd90920de94f07ec419cf.pdf",
+    "source": "http://www.lex.uz/Pages/GetAct.aspx?lact_id=2929475"
+  },
+  {
+    "_id": "57482d4850fa100c008467e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd2060ac21ef070b242a8939d8e174a9c0f198e8.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=64275"
+  },
+  {
+    "_id": "5748316150fa100c00846869",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2cf8fe182b3f3692f40869a42eaecdc843397ab.pdf",
+    "source": "http://www.centralbank.gov.ye/App_Upload/Ann_rep%202013_EN%20.pdf"
+  },
+  {
+    "_id": "57483d6f50fa100c0084699b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dac9f9171c003e211db511edcbf1140f1326c268.pdf",
+    "source": "http://www.sabq8.org/sabweb/home.aspx"
+  },
+  {
+    "_id": "574842a650fa100c008469d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aeac465da233f9a9ec9a60e252344a091fd31dcb.pdf",
+    "source": "http://www.riddac.org/document/pdf/tch-loienvironn.pdf"
+  },
+  {
+    "_id": "574844b750fa100c00846a1a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17e3cb37fa3b76ed7754cd2083903b8e6c91ccd4.pdf",
+    "source": "http://legitchad.cefod-tchad.org/texte/892"
+  },
+  {
+    "_id": "5748468a50fa100c00846a39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90ab7f88204ac1400f216cde92577a16b5efeb3c.pdf",
+    "source": "https://www.kpc.com.kw/press/KPCPublications/KPCWorld/en%2059.pdf"
+  },
+  {
+    "_id": "574846f050fa100c00846a49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d045c7452c91530fd8004257b0ec09a8328a4c6.pdf",
+    "source": "https://www.sabq8.org//sabweb/pages/reports/annualreports.aspx?ID=ISkPxlawqui7O+OJPsMZTLWpXqfQYOaczASH7XQNDX8="
+  },
+  {
+    "_id": "57484b2d50fa100c00846ac5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97e73cd70e68927d469d20dd18bd0c96af440677.pdf",
+    "source": "https://www.kpc.com.kw/Pages/KPC-Society.aspx"
+  },
+  {
+    "_id": "57484da750fa100c00846b17",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae240f90a6ec27a41d217f2293cec2b805fc10c1.pdf",
+    "source": ""
+  },
+  {
+    "_id": "57484f9050fa100c00846b3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/098ed2e743cb7a82e9d6f237c56e07bcc37e59b3.pdf",
+    "source": "http://cuentapublica.hacienda.gob.mx/en/CP/TomoII-2015"
+  },
+  {
+    "_id": "574850ab50fa100c00846b6a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96518d40a3402cddedf045afccb58012f1486ef6.pdf",
+    "source": "http://www.pepa.com.ye/About%20PEPA/pepa%20assignments.htm"
+  },
+  {
+    "_id": "5748512150fa100c00846b88",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9bdc9a21b51187808eb4a1156e791748c874ba1.pdf",
+    "source": "http://southsudanankara.org/docs/The%20Petroleum%20Act%202012.pdf"
+  },
+  {
+    "_id": "574858ac50fa100c00846c98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30393cf1372a7b5f2c1e89fad7b7565a5600213c.pdf",
+    "source": "http://www.ctc.gov.kw/layout/jsp/details/tenders_law.jsf#"
+  },
+  {
+    "_id": "57485abb50fa100c00846d35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0a9dd7c6be3406bd8d1e23d05ab4e0441e90a1b.pdf",
+    "source": "http://ppac.org.in/WriteReadData/userfiles/file/Govt_Link37.pdf"
+  },
+  {
+    "_id": "5748551450fa100c00846c2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f21d175422c570bb9530586a702f742abc074cd6.pdf",
+    "source": "http://www.pepa.com.ye/Downloads/downloads.htm"
+  },
+  {
+    "_id": "57485e7e50fa100c00846e5e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3314dfe5e611afa6cf59702cce8b86437cfad5e5.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LTF.pdf"
+  },
+  {
+    "_id": "57485ce650fa100c00846e1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f47c85d29e351a901bb473a616d00b06d909a4dd.pdf",
+    "source": "https://www.jccp.or.jp/international/conference/docs/s1-4_ali-presentation-4.pdf"
+  },
+  {
+    "_id": "5748614550fa100c00846ead",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea436bba93195d5e2e7eadd4c31956fed2dbe321.pdf"
+  },
+  {
+    "_id": "5748644950fa100c00846f12",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/268b92552ead4fcfa054a8597c017ce6cb437b3c.pdf",
+    "source": "https://www.kpc.com.kw/about/Leadership/KPC_Board_of_Directors"
+  },
+  {
+    "_id": "574863b650fa100c00846ef8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d2fff430dd5ada50cd675e7fbc8b02ec8bf7f97.pdf",
+    "source": "http://www.shcp.gob.mx/lashcp/marcojuridico/marcojuridicoglobal/reglamentos/83_rishcp.pdf"
+  },
+  {
+    "_id": "5748624950fa100c00846ec8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9f576992513938da24c29e069418720fd66c90e.pdf",
+    "source": "http://www.cochilco.cl/archivos/comunicados/20151007083642_2015_09_07_Inversion_en_la_mineria_chilena_-_desafios_y_oportunidades_V2.pdf"
+  },
+  {
+    "_id": "5748673450fa100c00846f4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2091d2d5a1cc91e0a00584e6aad2cd364d916e47.pdf",
+    "source": "https://core.ac.uk/download/files/14/2733799.pdf"
+  },
+  {
+    "_id": "57486cf750fa100c00846fe7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7032c00fc070446ed82d208502b2959899a8065.pdf",
+    "source": "http://www.dipres.gob.cl/594/w3-propertyvalue-2129.html"
+  },
+  {
+    "_id": "57486c8150fa100c00846fd9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b105e789a0f82acf47e510ef659a7f7260978d70.pdf",
+    "source": "https://www.ead.ae/Pages/Resources/environmental-laws.aspx"
+  },
+  {
+    "_id": "57486bc450fa100c00846fba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9d0851c6a48efb5854648b74c56532c43720893.pdf"
+  },
+  {
+    "_id": "57486c0950fa100c00846fbc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15838eba7d7f98c7848a7dc979c53bdb822f7947.pdf",
+    "source": "http://www.dipres.gob.cl/594/articles-143039_doc_pdf.pdf"
+  },
+  {
+    "_id": "5748764e50fa100c0084710b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b01491837ca71502387aa7b54c591e62d26d5100.pdf",
+    "source": "http://www.business-standard.com/article/pti-stories/won-t-cut-capex-despite-fall-in-oil-prices-revenue-ongc-116011500670_1.html"
+  },
+  {
+    "_id": "574874a650fa100c008470e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1fbfa3aa379b7df0ec7a2c9c2b48300b7e564442.pdf",
+    "source": "http://www.livemint.com/Companies/U6Udvh3pNC1TkM9PVwCBsL/ONGC-flirts-with-losses-as-crude-price-nears-its-production.html"
+  },
+  {
+    "_id": "574875a550fa100c008470f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5a75def35c1bdee06a22c7674fae9e3a0e93e12.pdf",
+    "source": "http://www.sonangol.co.ao/English/AreasOfActivity/Concessionary/Documents/Decree%2048-06-17-06-2015concess.pdf"
+  },
+  {
+    "_id": "5748797750fa100c00847186",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2120f6177c016f67426053703bb7cc3698b5a25.pdf",
+    "source": "http://af.reuters.com/article/idAFL8N0ZL05D20150705"
+  },
+  {
+    "_id": "57487a7550fa100c008471ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef9065a1a47bd719c09e16f044426d3b6d7790b7.pdf",
+    "source": "http://www.mines.gouv.ne/spip.php?article19"
+  },
+  {
+    "_id": "57487cc250fa100c008471fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c30f7ea099e0c0fe5bde1d6a91ef7a88f56ed6f2.pdf"
+  },
+  {
+    "_id": "57487ed750fa100c0084722c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19bd0e3ec4b86028b1826fe3d1643fd69d2a70b3.pdf",
+    "source": "http://www.sebi.gov.in/dp/ongc.pdf"
+  },
+  {
+    "_id": "57488644101fd60f00abfc39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5f27ec8808dd8f30d2a91d0a68aeb8bcaa31add.pdf",
+    "source": "http://aceproject.org/ero-en/regions/mideast/AE/united-arab-emirates-constitution-1996/view"
+  },
+  {
+    "_id": "57486e9050fa100c00847008",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36ab68f2fb491fa55d7e3658d72b29801cb254f6.PNG",
+    "source": "https://www.ead.ae/Pages/Resources/Publications.aspx"
+  },
+  {
+    "_id": "5748715150fa100c0084705b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9bae02a15aa58a44db6d9e8a6e211bac3cd3617.PNG",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d1033%26amp%3bCatID%3d8196%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57486a9450fa100c00846f95",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9dbbba741dea01bc0313011cd5caed3ab09375d1.PNG",
+    "source": "https://www.ead.ae/Pages/Resources/environmental-laws.aspx"
+  },
+  {
+    "_id": "5748634350fa100c00846ee6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b9ecae5ed8d4c44f058f70cc4729af452fdbcad.doc",
+    "source": "http://www.abckw.org/Main/SiteAssets/Kuwait.../5...2015/1242%20decree.doc"
+  },
+  {
+    "_id": "57485e8b50fa100c00846e60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ec6cfa5e7b40c12ec88185ebbfd654c8db2c7e0.docx",
+    "source": "http://www.arabianindustry.com/oil-gas/news/2015/oct/6/oman-to-award-oil-block-to-foreign-firm-by-2016-5175092/"
+  },
+  {
+    "_id": "5748610750fa100c00846ea8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e00a589e1ab525f92677e2168d55a7879b10caa5.docx",
+    "source": "http://www.geoexpro.com/articles/2015/03/offshore-and-deepwater-challenges-remain"
+  },
+  {
+    "_id": "5748582c50fa100c00846c73",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfd7d99493d83b1d358622d62f4b970d3a3c69e0.PNG",
+    "source": "http://www.moccae.gov.ae/en/home.aspx"
+  },
+  {
+    "_id": "57485c0c50fa100c00846d9d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b389868174ec199c1786c9793e677df2e129ae5.docx",
+    "source": "http://www.cba.edu.kw/reyadh/522/Oil%20Gas%20and%20Petrochemicals.docx"
   }
 ]
