@@ -5740,5 +5740,74 @@
     "_id": "5748b36a101fd60f00abfd43",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c3a3b13777c15a9c39b6ec53d29348c2e59b30ea.pdf",
     "source": "http://www.finance.alberta.ca/business/ahstf/annual-reports/2015/Heritage-Fund-2014-15-Annual-Report.pdf"
+  },
+  {
+    "_id": "5748c45685b1950e00cb8ced",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae831a1bb4c09edf4c700c99c7783db8ef5c8558.pdf",
+    "source": "http://www.gcc-legal.org/BrowseLaws.aspx?country=1"
+  },
+  {
+    "_id": "5748c2ac101fd60f00abfdc6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/062e66c1e8b13977e844b87f7428899117f509cc.pdf",
+    "source": "http://www.gcc-legal.org/DisplayLegislations.aspx?country=1&LawTreeSectionID=7811"
+  },
+  {
+    "_id": "5748cad6101fd60f00abfdec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4dbe8c7ac11b536497a515a0025be874124a667c.pdf",
+    "source": "http://www.gcc-legal.org/LawAsPDF.aspx?opt&country=1&LawID=3277"
+  },
+  {
+    "_id": "5748bf62409eaa1000c8ef81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8cb1132a4c4247629556ab371517eb60df86f2c.PDF",
+    "source": "http://www.pdvsa.com"
+  },
+  {
+    "_id": "5748d632101fd60f00abfe03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9bb232fe325c386283e59965da6772be46722612.pdf",
+    "source": "http://www.pdvsa.com/index.php?tpl=interface.en/design/biblioteca/readdoc.tpl.html&newsid_obj_id=6213&newsid_temas=111"
+  },
+  {
+    "_id": "5748ec43409eaa1000c8effc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72b8640d2c71355254df70895de99b7d06b8d547.pdf",
+    "source": "http://ung.uz/ru"
+  },
+  {
+    "_id": "5748eaf6409eaa1000c8eff6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfc6c69574e77230e9dbcec73ff870b43e8cb561.pdf",
+    "source": "http://ung.uz/ru/stockholders/filings/indicators/result_2015"
+  },
+  {
+    "_id": "5748cf5c101fd60f00abfdf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/786cbe21f7e3d105428129708b719e538b66c417.pdf",
+    "source": "http://www.assembly.ab.ca/ISYS/LADDAR_files/docs/committees/hs/legislature_29/session_1/20150625_0900_01_hs.pdf"
+  },
+  {
+    "_id": "5748da2085b1950e00cb8d22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5e127e3988beb028725dcdf6f50600b6d983358.pdf",
+    "source": "http://www.tsj.com"
+  },
+  {
+    "_id": "5748ed5585b1950e00cb8d57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf6b14cfb28c6399b2ab0ed2eee9c4fc9bab552f.pdf",
+    "source": "http://ung.uz/ru/business/indicators"
+  },
+  {
+    "_id": "57490ac0101fd60f00abfe94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94aaba2e863cb88b97575ffab1e859f1e40ca37c.PDF",
+    "source": "http://www.pdvsa.com"
+  },
+  {
+    "_id": "57490fd1101fd60f00abfea4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30b596253051c66f2b738ef287e1501b0e6beb0e.pdf",
+    "source": "http://www.mm.gov.mn/infos/lists/31"
+  },
+  {
+    "_id": "57491283101fd60f00abfeb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b213b17e3047f898077970cb012f6b4d599cd8e4.pdf",
+    "source": "http://mram.gov.mn/?page_id=128"
+  },
+  {
+    "_id": "57491642101fd60f00abfeca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42596f57f12381d6f42aeb92638a4e27b9d8b6de.pdf"
   }
 ]
