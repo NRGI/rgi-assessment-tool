@@ -98,5 +98,10 @@
     "_id": "5744b352cc1f670c00548898",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/da39a3ee5e6b4b0d3255bfef95601890afd80709.pdf",
     "source": "https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwj27cqgwPPMAhWVOsAKHQTfCp8QFggcMAA&url=http%3A%2F%2Fwww.procuraduria.gov.co%2Fportal%2Fmedia%2Ffile%2Fdescargas%2Fcartilla%2520vigencias%2520futuras%2520version%2520final.doc&usg=AFQjCNGyZF2avHqgR22QQ4__s-sOp4Lq2g&bvm=bv.122676328,d.ZGg"
+  },
+  {
+    "_id": "574dd7f80c38c60f00873db0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7013c10c4e7ad762a4ac1fb391a2c8fdd3904b1e.pdf",
+    "source": "http://www.finance.alberta.ca/publications/annual_repts/govt/ganrep15/goa-2014-15-annual-report-executive-summary.pdf"
   }
 ]
