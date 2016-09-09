@@ -7248,5 +7248,173 @@
     "_id": "574b2729101fd60f00ac0bec",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/cd28f6e3cfbe48362d39c287085a23b7dfbb9021.docx",
     "source": "http://gulfnews.com/business/sectors/energy/abu-dhabi-invites-oil-companies-to-bid-for-concession-1.1155690"
+  },
+  {
+    "_id": "574c4c4e1a5a9e1700ca039f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b9ec7df9be1edf27a17837405a96e0de00b4528.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=258298&idVersion=2007-02-12"
+  },
+  {
+    "_id": "574c475959c78e2100ce8296",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/353821ca20839ee99571bd2ed58c2f2530c7aebf.pdf",
+    "source": "http://www.assemblee-nationale.ga/182-page-en-construction/"
+  },
+  {
+    "_id": "574c48ca7d929a1800634903",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/758f2af52fa436d9d960e7d7675e51cd53c5fca5.pdf"
+  },
+  {
+    "_id": "574c49a659c78e2100ce82ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85085d372b6f683b0f8c494a48e84c02ff81894d.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LGEEPA_ANP.pdf"
+  },
+  {
+    "_id": "574c4d181a5a9e1700ca03ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dd0cfb1d320cb0191ac2e0dc7e334c8b793e0d8.pdf",
+    "source": "http://www.tresorpublic.ga/wp-content/uploads/2015/09/REF_PLFI_2014_version-finale-du-11_10_2013.pdf"
+  },
+  {
+    "_id": "574c523c7d929a1800634971",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/daf91256c787bf5d97a52dfbed6d681d61b71651.pdf"
+  },
+  {
+    "_id": "574c4fd17d929a1800634941",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98507b78126ec8e3ea149ca40e0dc92707c84c97.pdf",
+    "source": "http://www.almotamar.net/pda/114503.htm"
+  },
+  {
+    "_id": "574c529759c78e2100ce8337",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d135342b59bab0d64a0715a3f9fc7cdc9b2dbb6.pdf",
+    "source": "http://www.ingemmet.gob.pe/funciones-y-organigrama"
+  },
+  {
+    "_id": "574c536f59c78e2100ce8346",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa1011b859e6d7bb2094b4a296803139d595d960.pdf",
+    "source": "https://eiti.org/yemen/reports"
+  },
+  {
+    "_id": "574c528459c78e2100ce8335",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f80a8839c747e6b0b46d97fc0451411a4e691b4.pdf",
+    "source": "http://suracapulco.mx/2/la-minera-media-luna-no-cumplio-lo-que-prometio-denuncian-desplazados-de-sus-tierras-en-cocula/"
+  },
+  {
+    "_id": "574c53767d929a1800634982",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b6b1d32f513688524f09e7aed3cff4cb689e7b3.pdf",
+    "source": "http://www.wam.ae/en/news/emirates-economics/1395228674626.html#"
+  },
+  {
+    "_id": "574c53e71a5a9e1700ca0405",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6429fd5082f203a153a2aa9c6717fc1bc7e57d35.pdf",
+    "source": "http://www.peru.gob.pe/directorio/pep_directorio_detalle_institucion.asp?cod_institucion=94"
+  },
+  {
+    "_id": "574c54657d929a18006349a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7649865337c96c1c2d352692d87bc30de89f36c.pdf",
+    "source": "http://www.rosneft.com/attach/0/58/80/a_report_2013_eng.pdf"
+  },
+  {
+    "_id": "574c578959c78e2100ce836f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84eb0890b78345ee2f44ff931504b587236958b4.pdf",
+    "source": "http://www.yemen-nic.info/news/detail.php?ID=43155"
+  },
+  {
+    "_id": "574c57c059c78e2100ce8374",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf66a99e0f59840f2d17adb8032692b257e90b18.pdf",
+    "source": "http://www.yogc.com.ye/ar/view.asp?ID=97"
+  },
+  {
+    "_id": "574c582459c78e2100ce8379",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/411e9dfee2f56d41f203956c93ad737ceca40151.pdf",
+    "source": "http://infoleg.mecon.gov.ar/infolegInternet/anexos/195000-199999/196894/norma.htm"
+  },
+  {
+    "_id": "574c590d59c78e2100ce8384",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f85bcced50b10f04cf088597ecbb3e2b82b45b77.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/100000-104999/100591/texact.htm"
+  },
+  {
+    "_id": "574c5cfc7d929a1800634a20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70dd70274f0018db774f94874c78b964254666dd.pdf",
+    "source": "http://www.hacienda.cl/documento/descargar/id/16505"
+  },
+  {
+    "_id": "574c59531a5a9e1700ca0445",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d98f367d27771a7d12f9490f62a61e5fbc09c06c.pdf",
+    "source": "http://www.yogc.com.ye/ar/view.asp?ID=88"
+  },
+  {
+    "_id": "574c5d3f7d929a1800634a2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/787b1361ce75780ff76942ec7700853c719c839c.PDF",
+    "source": "http://www.ypf.com/inversoresaccionistas/Lists/InformeAnualForm20/YPF-20F-2015.PDF"
+  },
+  {
+    "_id": "574c5d7c1a5a9e1700ca04a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6ebbfd0509959315e603d100c0394b53f1a86a6.pdf",
+    "source": "http://www.hacienda.cl/documento/descargar/id/16507"
+  },
+  {
+    "_id": "574c5e537d929a1800634a4c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af0c5982db54c8e3158a3c25effe980a40e2519a.pdf",
+    "source": "http://suracapulco.mx/8/buscan-ong-cancelar-concesiones-mineras-por-violaciones-laborales-de-salud-y-ambientales/"
+  },
+  {
+    "_id": "574c61ab1a5a9e1700ca04fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d99274cf0cb344e2fbf4f5df1229825526e322af.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_docman&Itemid=101674&lang=es"
+  },
+  {
+    "_id": "574c62517d929a1800634a98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f1c78758afcaef6168cf123f204b3a56d15ae4e.pdf",
+    "source": "http://www.mef.gob.pe/index.php?option=com_docman&Itemid=101674&lang=es"
+  },
+  {
+    "_id": "574c63c87d929a1800634aac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc7b39ad087aef495cfe9af9266fd5db9ecfb94a.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_glossary&letter=A&id=442&lang=es"
+  },
+  {
+    "_id": "574c643459c78e2100ce8431",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6eafa0525b4b3cdefad0e5afc310ffb39882838b.pdf",
+    "source": "https://lovdata.no/dokument/NL/lov/1980-06-13-24"
+  },
+  {
+    "_id": "574c65821a5a9e1700ca0519",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86fbaf3cefb8c8506107f963f4fd8f050301ad47.pdf",
+    "source": "http://www.thenational.ae/business/energy/oil-concession-deal-for-the-people-of-abu-dhabi"
+  },
+  {
+    "_id": "574c729359c78e2100ce84d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2bdb542f419a6a38004a9806317e63174c6113f.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=258298&buscar=fondo+económico"
+  },
+  {
+    "_id": "574c7ab37d929a1800634bab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/983876365a04b9ecd640b0d2e6d1d82e44a40b72.pdf",
+    "source": "http://www.lia.com.mt"
+  },
+  {
+    "_id": "574c6b1959c78e2100ce848f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/368a13f4942d7f7eee3f4eb4e111867dae5f56e1.pdf",
+    "source": "http://www2.congreso.gob.pe/sicr/cendocbib/con4_uibd.nsf/1002BCF7DCFACAE705257C200052B47B/$FILE/28258.pdf"
+  },
+  {
+    "_id": "574c777259c78e2100ce8507",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f4d3bebcdfbdb3fcf2212d262523b8230d9568a.pdf",
+    "source": "http://www.sunat.gob.pe/institucional/quienessomos/funciones.html"
+  },
+  {
+    "_id": "574c5dd31a5a9e1700ca04b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/600cb8177de44fcef8e3f7993b793a7f3c94fe4a.docx",
+    "source": "http://blogs.platts.com/2015/04/28/adco-inpex-oil-award-little-surprise/"
+  },
+  {
+    "_id": "574c5f061a5a9e1700ca04d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35e5344fd3562e25da84bf11d0e739617ce55686.docx",
+    "source": "http://www.2b1stconsulting.com/abu-dhabi-welcome-new-comers-to/"
+  },
+  {
+    "_id": "574c60b67d929a1800634a8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/426c3e98ba747814cacc38da4e0db6df4b4b8148.docx",
+    "source": "http://www.rakpetroleum.ae/News/DNO-stock-exchange-releases/DNO-International-Signs-Amended-Concession-Agreement-for-the-Saleh-Area-Offshore-Ras-Al-Khaimah"
   }
 ]
