@@ -623,5 +623,274 @@
   {
     "_id": "574e825c44eb1d0e0029a8c6",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c1773679065229c954b5142ba9221287971d08f2.docx"
+  },
+  {
+    "_id": "574ef1bd4236e83200be5289",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97df92f916f9988de8aadff064d63af32eda0b69.pdf"
+  },
+  {
+    "_id": "574ef31b967abf2100e3bccf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7df1192fffea1a997e322ae950ac8d858ee37e81.pdf",
+    "source": "https://www.ecouncil.ae/en/Official-Gazette/Documents/English-2015/10th%20edition%20english.pdf"
+  },
+  {
+    "_id": "574ef4a601c3ce3300464c15",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7da5e992761d46391a0ca0dcc387e442679d12dd.pdf",
+    "source": "http://www.saudiaramco.com/en/home/HRJVSupport/BusinessPartners.html"
+  },
+  {
+    "_id": "574ef56b967abf2100e3bd00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9269cd18b575dc5e720372213c161dce9255dd6d.pdf",
+    "source": "http://www.mopm.gov.sa/arabic/rules-and-regulations/Pages/default.aspx"
+  },
+  {
+    "_id": "574ef5c501c3ce3300464c3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1de5706786472f3d314b6ea5d90fae9fba1f82e.pdf",
+    "source": "http://www.saudiaramco.com/en/home/opportunities/contracting-services.html"
+  },
+  {
+    "_id": "574ef811967abf2100e3bd4a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67d8255fbbdd70070c728460421e3fedfe457b83.pdf",
+    "source": "http://www.ctc.gov.kw/module/tenders/jsp/details/finishedTenderMain.jsf#"
+  },
+  {
+    "_id": "574ef65b4236e83200be5308",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d75975084f3a7bac1111854211a573977b3fc2a.pdf",
+    "source": "http://emirates-business.ae/aramco-awards-4-offshore-oil-gas-contracts/"
+  },
+  {
+    "_id": "574ef912967abf2100e3bd5e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ee8c2743afbb81e8dcdf0e63027396636940959.pdf",
+    "source": "http://www.geology.kg/geol/index.php?option=com_content&view=article&id=71&Itemid=194&lang=ru"
+  },
+  {
+    "_id": "574ef6de01c3ce3300464c67",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64b14c8eb0901b4e8d44235e1b6bb769dd722237.pdf",
+    "source": "http://www.arabianindustry.com/oil-gas/news/2015/sep/16/aramco-awards-47bn-contracts-for-fadhili-plant-5158543/"
+  },
+  {
+    "_id": "574f00f44236e83200be5415",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9d60b79dafd24e8329574fb45f38be21515ee2f.pdf",
+    "source": "http://www.ctc.gov.kw/index.jsf#"
+  },
+  {
+    "_id": "574ef9c6967abf2100e3bd6b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c92b3d492f49f83d4de7c6bf95a69e1ca93fef64.pdf",
+    "source": "http://www.bloomberg.com/research/stocks/private/snapshot.asp?privcapId=12455701"
+  },
+  {
+    "_id": "574efbd501c3ce3300464cca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39f30a431b087fa8a1b726b61ed954b84658e4ec.pdf",
+    "source": "http://www.saudiembassy.net/about/country-information/laws/The_Law_of_The_Provinces.aspx"
+  },
+  {
+    "_id": "574effaf967abf2100e3be10",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4841b5f24a05d8c312746756aa903e3ee519e2f.pdf",
+    "source": "http://www.geology.kg/geol/index.php?option=com_content&view=article&id=71&Itemid=194&lang=ru"
+  },
+  {
+    "_id": "574ef98c01c3ce3300464c96",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e861df22292f5d38b2d76a5af1c649a43f34ac0d.pdf",
+    "source": "http://www.bloomberg.com/news/features/2016-04-21/the-2-trillion-project-to-get-saudi-arabia-s-economy-off-oil"
+  },
+  {
+    "_id": "574f017d01c3ce3300464d55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e63d74b511cfe4d519199899612db1b0a2118c1e.pdf"
+  },
+  {
+    "_id": "574f0b3a4236e83200be54e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/049ae06f743ac1fbdd74edeb9fe3f8f3532a4149.pdf",
+    "source": "http://www.gcc-legal.org/DisplayLegislations.aspx?LawTreeSectionID=10787"
+  },
+  {
+    "_id": "574f014401c3ce3300464d4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16ed069f5cac789551269b4d7a46664ee18ac578.pdf",
+    "source": "http://www2.hidrocarburos.gob.bo/index.php/component/search/?searchword=EEIA&ordering=newest&searchphrase=any&limit=10"
+  },
+  {
+    "_id": "574f01f4967abf2100e3be4c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2b99983ffa3dd6858ad5b65c5340dc1a3f1924e.pdf",
+    "source": "http://www2.hidrocarburos.gob.bo/index.php/prensa/noticias/1426-mhe-realiza-inspecci%C3%B3n-socioambiental-al-proyecto-s%C3%ADsmica-2d-%C3%A1rea-huacareta-y-verifica-normal-desarrollo-de-actividades.html"
+  },
+  {
+    "_id": "574f2394967abf2100e3bfa4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b11a63f039c0b0b63c3cee47ec9903021b8eeb7.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=1993_112.cfm&leg_type=Regs&isbncln=9780779734986"
+  },
+  {
+    "_id": "574f10854236e83200be5513",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/317096a6dd64bb023676208e96b334caef383045.pdf",
+    "source": "http://www.ctc.gov.kw/layout/jsp/details/tenders_law.jsf#"
+  },
+  {
+    "_id": "574f116b01c3ce3300464e39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a29b657207561d95aca34f8eeec38faf69b9309f.pdf",
+    "source": "http://www.ctc.gov.kw/module/tenders/jsp/main.jsf#"
+  },
+  {
+    "_id": "574f340e01c3ce3300464ebe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5a00c582fc697b54329663a71f849d9d2d05e59.pdf",
+    "source": "http://senado.gob.bo/sites/default/files/leyesdiputados/LEY%20N%C2%BA%20769-2015.PDF"
+  },
+  {
+    "_id": "574f3352967abf2100e3bfbc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/127b8305827319abe576465d11e412120ea2ea5f.pdf",
+    "source": "http://www.assemblee-nationale.ga/182-page-en-construction/"
+  },
+  {
+    "_id": "574f32b44236e83200be55b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5266b75b69feb904fc15d61792782463c9b73398.pdf",
+    "source": "http://www.assemblee-nationale.ga/182-page-en-construction/"
+  },
+  {
+    "_id": "574f34b6967abf2100e3bfcc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05f6ae1d7d584a93f696604f112df436bf887162.pdf",
+    "source": "http://www.assemblee-nationale.ga/recherche"
+  },
+  {
+    "_id": "574f359d4236e83200be55c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52572cdbc417c3133bae1e5f57b34868b242c565.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=r17p3.cfm&leg_type=Acts&isbncln=9780779784073"
+  },
+  {
+    "_id": "574f387a4236e83200be55de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2e597bd16b28126e319b6d693a1054777f34287.pdf",
+    "source": "http://es.slideshare.net/benavifer/presupuesto-general-del-estado-2016-55422164"
+  },
+  {
+    "_id": "574f3b824236e83200be55f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b5ad7acd061e90713cde9cd2eff137302b2f52b.pdf",
+    "source": "http://www.union.sonapresse.com/search/node/FGIS"
+  },
+  {
+    "_id": "574f39f901c3ce3300464ef3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2747a3c0b16338b360098018e9a98e36e4fd0f6.pdf",
+    "source": "http://news.alibreville.com/h/11959.html"
+  },
+  {
+    "_id": "574f35ce4236e83200be55c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cf56c034cf384896643e938f5b0df98dc8420f5.pdf",
+    "source": "http://www.paginasiete.bo/economia/2016/1/2/ingresos-operacion-ypfb-bajan-este-82114.html"
+  },
+  {
+    "_id": "574f43614236e83200be5636",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b99ebe3dc481cb5668a4e449f75f4d1a01dd3b42.pdf",
+    "source": "http://www.sigma.gob.bo/pgn/pgn2015/ppto2015/3_detinst0513.htm"
+  },
+  {
+    "_id": "574f451201c3ce3300464f3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3ba92cf5f637bd854cd27109147e02f1fb28c76.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=S24.cfm&leg_type=Acts&isbncln=9780779784103"
+  },
+  {
+    "_id": "574f448d01c3ce3300464f32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95ea907818a2a24f2a1e384f4dd1c06b64408d6d.pdf",
+    "source": "http://noticias.guanajuato.gob.mx/2016/04/13/guanajuato-es-referente-en-la-industria-minera-a-nivel-nacional-e-internacional-destaco-el-gobernador-del-estado/"
+  },
+  {
+    "_id": "574f44f801c3ce3300464f35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b8d27d1968142039fbc719bf1f1fee55ab22602.pdf",
+    "source": "https://www.elsoldemexico.com.mx/republica/85433-aprueba-comite-del-fondo-minero-de-durango-148-mdp-para-60-obras-de-infraestructura-social"
+  },
+  {
+    "_id": "574f497901c3ce3300464f5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/431c0bf31f5df9ef5942d1cc83e6f93dda2a3fde.pdf"
+  },
+  {
+    "_id": "574f46114236e83200be5642",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f7617493d0e5b5f66086f5f3dd2abf0fe4c1d75.pdf",
+    "source": "http://adninformativo.mx/reciben-municipios-recursos-del-fondo-minero/"
+  },
+  {
+    "_id": "574f492e01c3ce3300464f55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f6b4818017a2688d5041d9bb8620d22b5e351a0.pdf",
+    "source": "http://www.pashtovoa.com/a/afghanistan-corruption-president-ghani-/3356916.html"
+  },
+  {
+    "_id": "574f48154236e83200be565d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17c07474ab1a6ff9540215310cb4de70500aced9.pdf"
+  },
+  {
+    "_id": "574f49514236e83200be5667",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f856082265cd40e6b211db77f752628b9cf653a.pdf",
+    "source": "https://www.mf.uz/media/file/state-budget/1/ispolnenie_2015_godovoy.pdf"
+  },
+  {
+    "_id": "574f4d244236e83200be5693",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1dec7fc29cf2692683aae574cc98391e8936fda.pdf",
+    "source": "http://www.ypfb.gob.bo/es/transparencia/gesti%C3%B3n-2014.html"
+  },
+  {
+    "_id": "574f4ceb4236e83200be5690",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e796d16633df95acac23009f4253e4c96c60e68.pdf",
+    "source": "http://www.ypfb.gob.bo/es/12-informacion-financiera/41-estados-financieros.html"
+  },
+  {
+    "_id": "574f59f801c3ce3300464fac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0791780c5195583ab1b9018e87d2a74f58c913c.pdf",
+    "source": "http://infoleg.mecon.gov.ar/infolegInternet/anexos/0-4999/804/norma.htm"
+  },
+  {
+    "_id": "574f5a9b01c3ce3300464fb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/316ffc9cafb05adcc804a324db9559bc52a36aa9.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16078/texact.htm"
+  },
+  {
+    "_id": "574f60e2967abf2100e3c0b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f832da018ae0b8af9ef06b51f54e37833a56093.pdf",
+    "source": "http://www.ibtimes.com/new-great-game-being-played-afghanistan-without-us-721708"
+  },
+  {
+    "_id": "574f6478967abf2100e3c0cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53f60e4c04f10be16e2fe62e5dfa85c2ae9409b4.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/0-4999/365/texact.htm"
+  },
+  {
+    "_id": "574f64f101c3ce3300464fea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c4f390297737a6fe4b8992e491fe6c044e3157bf.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/35000-39999/39523/texact.htm"
+  },
+  {
+    "_id": "574f654401c3ce3300464ff2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e3b4f7a07e06ffbe2851dce6226a6679150b969.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/110000-114999/112978/texact.htm"
+  },
+  {
+    "_id": "574f65e701c3ce3300464ff7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdb2b5e8b92f61c7d840a7c92404323ed8925c2e.pdf",
+    "source": "https://www.mf.uz/media/file/funds/road/budget/2015.pdf"
+  },
+  {
+    "_id": "574f4d9601c3ce3300464f77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c86d2ea3faee5e6bb2758c2ed97cf7e637f31ae7.docx",
+    "source": "http://www.gezitter.org/economics/47442_djeruy_teper_budet_rabotat_na_blago_naroda_/"
+  },
+  {
+    "_id": "574f3f7801c3ce3300464f20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9eca62d86b96b8d73202af52fe9862e7f30e381.docx",
+    "source": "http://rus.azattyk.org/a/27654963.html"
+  },
+  {
+    "_id": "574f3e1301c3ce3300464f14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e240f1182608035c101e3cdc3c4313522f54665f.docx",
+    "source": "http://www.gezitter.org/interviews/48164_bazarbay_mambetov_obschestvennyiy_deyatel_ekspert_v_ekonomicheskoy_politike_i_segodnya_suschestvuyut_mahinatsii_na_zolotorudnyih_mestorojdeniyah/print/"
+  },
+  {
+    "_id": "574f0b7b4236e83200be54e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04a52d078d48bc06589585fe0ab919a05b3ffc46.PNG",
+    "source": "http://www.aldhafra.com/En/Pages/OurPartners.aspx"
+  },
+  {
+    "_id": "574f0f18967abf2100e3bede",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/894ffd1e6e3962ffbfcfef459e2aee4b9812c6bf.docx"
+  },
+  {
+    "_id": "574f029c4236e83200be544b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/07c9a774f4fbebf53b549bf8d15bc4b9dff5f833.PNG",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d1033%26amp%3bCatID%3d6174%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "574ef7d4967abf2100e3bd42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/724ac8f1f4c79b836a6846fab3847c78e8ad7bf1.docx"
   }
 ]
