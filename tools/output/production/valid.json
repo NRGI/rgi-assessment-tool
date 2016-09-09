@@ -7863,5 +7863,251 @@
     "_id": "574d3ede1a5a9e1700ca0a60",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/167045b34e20c47f85fe4556a37dcd13aa03b296.pdf",
     "source": "http://mram.gov.mn/wp-content/uploads/2015/04/monthly_report_2016-APR1.pdf"
+  },
+  {
+    "_id": "574d465b700a1a2100f5050d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49691e7decf4499c748f13b57ec2a3237570fa06.pdf",
+    "source": "http://www.fgis-gabon.com/?page_id=384"
+  },
+  {
+    "_id": "574d407b700a1a2100f504bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/699f10d2ea72a80ce102ac06c2fede837ebca046.pdf",
+    "source": "https://www.africanlawbusiness.com/publications/mining-law/mining-law-2016/botswana/q-and-a"
+  },
+  {
+    "_id": "574d455859c78e2100ce89e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b705989efbfcc293b11fe7c29889d8d21535ec63.pdf",
+    "source": "http://www.fgis-gabon.com/?page_id=388"
+  },
+  {
+    "_id": "574d44e9700a1a2100f504f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d34a13db7dd77fb3d9c6b6870bbcda70ff60c865.pdf"
+  },
+  {
+    "_id": "574d48e259c78e2100ce8a0c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/07a97685aa831c9604b53bb5da053d5c0011f04c.pdf",
+    "source": "http://www.fgis-gabon.com/?page_id=279"
+  },
+  {
+    "_id": "574d492c700a1a2100f5051d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0178ae7a195f8c2b320b5489a5576ae86582dd0d.pdf",
+    "source": "http://www.gov.bw/en/Ministries--Authorities/Ministries/Ministry-of-Minerals-Energy-and-Water-Resources-MMWER/Tools--Services/Services--Forms/Prospecting-Licensing/"
+  },
+  {
+    "_id": "574d4cc71a5a9e1700ca0b07",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2673ce2e9025c48f741f63941294f3656417b570.pdf",
+    "source": "http://www.iemploi.net/offres/recherche/detail?offre=8276#.V01LqTfi-f4"
+  },
+  {
+    "_id": "574d50a71a5a9e1700ca0b24",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12d29b929ade6b489cb903674dcd8f23a6c17312.pdf",
+    "source": "http://www.miningreview.com/news/botwanas-bcl-picks-up-norilsk-nickel-africa-assets-for-337m/"
+  },
+  {
+    "_id": "574d4981700a1a2100f5052a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/520222906c650f72070350abde3a3483a5d91343.pdf",
+    "source": "http://www.mines.gov.bw/ml%20mp%20applications%20guide.pdf"
+  },
+  {
+    "_id": "574d51691a5a9e1700ca0b2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3dd422ae87af2b71b7ac14458e9c6aa174f37aec.pdf",
+    "source": "http://www.debswana.com/Pages/default.aspx"
+  },
+  {
+    "_id": "574d563e59c78e2100ce8aaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75428658792938201dce0b929e911bc6ada01d0c.pdf",
+    "source": "http://progrep.eiti.org/2016/glance/eiti-country-status-2007-2015"
+  },
+  {
+    "_id": "574d529e59c78e2100ce8a6e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80d512ace78547ddaf610f411effaa8ce01548e1.pdf",
+    "source": "http://en.montsame.mn/mining/13-billion-usd-investment-signed-tsagaan-suvarga-mining-developments"
+  },
+  {
+    "_id": "574d543c700a1a2100f505ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/068a8715150d4f0a737cbe5a9daec28938feb1b7.pdf",
+    "source": "http://www.remamx.org/sin-manifestacion-de-impacto-ambiental-minera-en-wirikuta-ferrari/"
+  },
+  {
+    "_id": "574d57181a5a9e1700ca0b79",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb697a0b1430ee6b75cfd3e2a59b67c54caf2d25.pdf"
+  },
+  {
+    "_id": "574d593f700a1a2100f505ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/061f3560ba25da732005561f223d602ecefedd66.pdf",
+    "source": "http://www.fgis-gabon.com/?page_id=175"
+  },
+  {
+    "_id": "574d593d59c78e2100ce8ac3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/196a3ef64a507d237dbb25623e890a681cb94782.pdf",
+    "source": "http://www.mines.gov.bw/PR-VOL-VII-CHP-44-02-MINES,QUARRIES,WORKS%20AND%20MECHINERY.pdf"
+  },
+  {
+    "_id": "574d5ac41a5a9e1700ca0b97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c602e45cb7accf9ce67635d0ef6a2fb62fcbc320.pdf",
+    "source": "http://www.competitionauthority.co.bw/sites/default/files/Mergers%20and%20Acquisitions%20Brochure.pdf"
+  },
+  {
+    "_id": "574d692e700a1a2100f5063a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b63e02defbda62fbef2163f53af502bf534ce368.pdf",
+    "source": "https://www.mf.uz/ru/component/search/?searchword=%D1%84%D0%BE%D0%BD%D0%B4%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8&searchphrase=all&Itemid=0"
+  },
+  {
+    "_id": "574d64321a5a9e1700ca0bb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90d74b5f4fef034346af4a65afe73e56f76968be.pdf",
+    "source": "http://www.gouvernement.ga/1-activites-du-gouvernement/2162-cour-des-comptes-loi-de-finances-2013-le-rapport-remis-au-gouvernement/"
+  },
+  {
+    "_id": "574d6a121a5a9e1700ca0bf1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e1844ffa2dd384b5e73ccfe193c3d76c4a16e49.pdf",
+    "source": "http://www.ufrd.uz/"
+  },
+  {
+    "_id": "574d6992700a1a2100f5063f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e26507c958d1387f110f8d80f5bfbf89242e741c.pdf",
+    "source": "https://www.gov.uz/ru/pages/government_sites"
+  },
+  {
+    "_id": "574d6b2659c78e2100ce8b27",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6d93ded249df997aafe4127272edc29d4e21569.pdf",
+    "source": "https://mineconomy.uz/ru/search/node/%D1%84%D0%BE%D0%BD%D0%B4%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F"
+  },
+  {
+    "_id": "574d69f7700a1a2100f50644",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1c6093c6f8b4f8597f5bb9f8c9257050163415f.pdf"
+  },
+  {
+    "_id": "574d73bb700a1a2100f50770",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e695626f62c01c6c9c91715140b079c7b722e21.pdf",
+    "source": "http://www.gov.bw/en/Ministries--Authorities/Ministries/Ministry-of-Minerals-Energy-and-Water-Resources-MMWER/Departments1/Department-of-geological-surveys/Support-Sections/"
+  },
+  {
+    "_id": "574d72d159c78e2100ce8bed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cae707427f0323f25b60ac54d3029227f33db4f1.pdf",
+    "source": "http://www.gov.bw/en/Ministries--Authorities/Ministries/Ministry-of-Minerals-Energy-and-Water-Resources-MMWER/Reports-and-Publications/Annual-Reports/Department-of-Mines-Annual-Reports/?p_id=3691"
+  },
+  {
+    "_id": "574d6eef1a5a9e1700ca0c35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b5eefcc365b8081e03c8deab0fc88022be41a7f.pdf",
+    "source": "http://www.thenational.ae/business/energy/exxonmobil-will-not-renew-bid-for-abu-dhabis-historic-onshore-concession"
+  },
+  {
+    "_id": "574d72fc1a5a9e1700ca0cd4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03876be3291cccc31df8c07ee97d8ee7472599fe.pdf",
+    "source": "http://www.cairn.info/revue-annales-de-geographie-2005-6-page-643.htm"
+  },
+  {
+    "_id": "574d70b81a5a9e1700ca0c7f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/27bcbd72c43bf23b5e5d0fb98140c764f3c46ec5.pdf",
+    "source": "http://www.centralbank.gov.ye/App_Upload/Jan2015.pdf"
+  },
+  {
+    "_id": "574d83421a5a9e1700ca0d8c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b79d69aab080652788eaffed4985ec48c60877dc.pdf",
+    "source": "http://www.arabianoilandgas.com/article-12080-adnoc-concession-confusion/"
+  },
+  {
+    "_id": "574d7d6359c78e2100ce8c84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a06bc491284120e64b69a4680e20d456fb977cb6.pdf",
+    "source": "http://www.lexology.com/library/detail.aspx?g=4f75ce0d-9d9d-4b4d-bdcf-3b903c90f0e1"
+  },
+  {
+    "_id": "574d788e700a1a2100f5079d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50f9570fd4035c5fb4374d9fe6485961d958a51c.pdf",
+    "source": "http://tax.gov.ye/r/"
+  },
+  {
+    "_id": "574d894059c78e2100ce8ced",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6dca11858fe63ddfe8e284c6adde87b669bbcf3.pdf",
+    "source": "http://www.ppadb.co.bw/documents/PPAD_Act_revised.pdf"
+  },
+  {
+    "_id": "574d951f1a5a9e1700ca0e02",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89ecf9964b793e3a705f756b9b4f471399ffda6e.pdf",
+    "source": "http://www.camimo.com/BD_noitalsig/bdlegisl_tchad.htm"
+  },
+  {
+    "_id": "574d869a1a5a9e1700ca0dc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c24ac647fa7343fa39a461f5391b53aabca9c44.pdf",
+    "source": "http://www.siam.economia.gob.mx/es/siam/Anual_2015"
+  },
+  {
+    "_id": "574d8f301a5a9e1700ca0ddf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/977e9bdf05cb75ceb322606f9a32c4d4595decb4.pdf"
+  },
+  {
+    "_id": "574da9756707ba0f00051c37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d29d2ce97a8c10ae6eee3409edcdbf55f01b1662.pdf",
+    "source": "http://informe.asf.gob.mx/"
+  },
+  {
+    "_id": "574d9c0044eb1d0e0029a02d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9267b03f5efc232de653646bd41fb3f67fe7042.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/work/models/Finanzas_Publicas/docs/paquete_economico/lif/lif_2016.pdf"
+  },
+  {
+    "_id": "574d962659c78e2100ce8d44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e870968d324fa2c4cb190e9e7e01d7100844f12c.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LFPRH_301215.pdf"
+  },
+  {
+    "_id": "574d9d7e0c38c60f00873a33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/58b588358076881c0c2028f25c09935fe880af8f.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/PEF_2016.pdf"
+  },
+  {
+    "_id": "574db2fe44eb1d0e0029a123",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00677c715a72db58dc5426a29f381bf5f367ccd2.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/work/models/Finanzas_Publicas/docs/paquete_economico/cgpe/cgpe_2016.pdf"
+  },
+  {
+    "_id": "574db3b06707ba0f00051ce3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f4a0da7800c99780ff8d22c8aafda391d209853.pdf",
+    "source": "http://finanzaspublicas.hacienda.gob.mx/es/Finanzas_Publicas/Paquete_Economico_y_Presupuesto"
+  },
+  {
+    "_id": "574db43144eb1d0e0029a153",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/340a24fb0a481ffe50b54626d534dd111252324c.pdf",
+    "source": "http://www.internationalbudget.org/wp-content/uploads/OBS2015-Questionnaire-Mexico.pdf"
+  },
+  {
+    "_id": "574db50b44eb1d0e0029a171",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61824c1aa584dd1e241470df4dfdef55707ae8a5.pdf",
+    "source": "http://www.thenational.ae/business/industry-insights/energy/adnoc-hopes-to-finish-oil-concession-bid-evaluation-in-three-to-four-months-for-biggest-onshore-fields"
+  },
+  {
+    "_id": "574db6f20c38c60f00873bbb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e8778df8898a3322562687b3dc46e27d534c8b9.PNG",
+    "source": "http://www.adco.ae/En/NewsnEvents/Pages/New-shareholder-agreements-signed.aspx"
+  },
+  {
+    "_id": "574db1766707ba0f00051caf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03f9c16c9f1de25ff36e48284e29d9a711471b06.docx",
+    "source": "http://: http://www.knews.kg/econom/34048/"
+  },
+  {
+    "_id": "574d8e08700a1a2100f50870",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d59766f81abfce8fc3f0a05fd0cc7f78adbabd1.docx",
+    "source": "https://www.cia.gov/library/publications/the-world-factbook/rankorder/2244rank.html"
+  },
+  {
+    "_id": "574d83bf1a5a9e1700ca0d97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4240fa5dbabaf04b3b3343e62021616f3656cc80.docx",
+    "source": "http://www.2b1stconsulting.com/bp-exxonmobil-knoc-shell-and-total-line-up-for-bab-sour-gas/"
+  },
+  {
+    "_id": "574d84ab59c78e2100ce8cb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9fee6436efd4f692d3681ce0f7ae3681de34f3d9.docx",
+    "source": "https://www.gov.uk/government/publications/uae-energy-concessions-the-year-ahead-april-2014/uae-energy-concessions-the-year-ahead"
+  },
+  {
+    "_id": "574d6cca700a1a2100f50675",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c68b90e7484f0aa2d86f03585c43f17813bdce9.docx",
+    "source": "http://gulfnews.com/business/sectors/energy/indian-energy-consortium-bidding-for-adnoc-concession-1.1709302"
+  },
+  {
+    "_id": "574d4345700a1a2100f504e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4104a64f1fd26b3a614245dcf450f26832a1336.docx",
+    "source": "http://faolex.fao.org/cgi-bin/faolex.exe?rec_id=128757&database=faolex&search_type=link&table=result&lang=eng&format_name=@ERALL"
   }
 ]
