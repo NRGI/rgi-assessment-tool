@@ -892,5 +892,80 @@
   {
     "_id": "574ef7d4967abf2100e3bd42",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/724ac8f1f4c79b836a6846fab3847c78e8ad7bf1.docx"
+  },
+  {
+    "_id": "574f65e74236e83200be5706",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8d5cb076cc46f25dcfcc06037152199a9981081.pdf",
+    "source": "http://www.mecon.gov.ar/sip/dniaf/destino_recaud.pdf"
+  },
+  {
+    "_id": "574f6a8a01c3ce3300465017",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec499298512d51109aa580165f9c2145c5f18725.pdf",
+    "source": "https://www.mf.uz/media/file/kap_remont/1.pdf"
+  },
+  {
+    "_id": "574f672701c3ce3300465006",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/540e01503f79c68945f208d500de050c92da370b.pdf",
+    "source": "https://www.mf.uz/media/file/funds/road/budget/2015.pdf"
+  },
+  {
+    "_id": "574f666d967abf2100e3c0e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb523453250fb83283f3375a44e3013c029e613a.pdf",
+    "source": "https://www.codelco.com/prontus_codelco/site/artic/20150604/asocfile/20150604185245/consolidated_financial_statements_codelco_dec2015.pdf"
+  },
+  {
+    "_id": "574f68ee4236e83200be5724",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0af52300bbc8a8b60e23e788643bf82202c886d.pdf",
+    "source": "https://www.mf.uz/media/file/kap_remont/1.pdf"
+  },
+  {
+    "_id": "574f6f99967abf2100e3c10d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab8de6347300ea247aa75164f2673b92f64d9fa1.pdf",
+    "source": "https://www.mf.uz/media/file/funds/melio/2014.pdf"
+  },
+  {
+    "_id": "574f6e0701c3ce330046501d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17c7ea84dc1489bec4ae87036ecc538b1a6160f7.pdf",
+    "source": "https://www.mf.uz/media/file/fondvoz/info_2015_godovoy.pdf"
+  },
+  {
+    "_id": "574f70ca967abf2100e3c11b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b5d0e1281e7892affe330c80fde3d4d1ce305b8.pdf",
+    "source": "https://www.mf.uz/media/file/state-budget/1/ispolnenie_2016_1kv.pdf"
+  },
+  {
+    "_id": "574f6e5a967abf2100e3c107",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74dca5f82de4b5e8b1b8d08aff3931952b586447.pdf",
+    "source": "http://www.pagina12.com.ar/diario/economia/2-218399-2013-04-20.html"
+  },
+  {
+    "_id": "574f6d51967abf2100e3c103",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f48c934eff27cf16a4e77514cd846fd08ceadb0.pdf",
+    "source": "http://www.infoleg.gob.ar/infolegInternet/anexos/210000-214999/211069/norma.htm"
+  },
+  {
+    "_id": "574f7aae4236e83200be5776",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e2a67e62c9fc18fcc73e4341bb043736db97525.pdf",
+    "source": "http://www.svs.cl/institucional/mercados/entidad.php?mercado=V&rut=61704000&grupo=&tipoentidad=RVEMI&row=AABbBQABwAAAA5IAAB&vig=VI&control=svs&pestania=32"
+  },
+  {
+    "_id": "574f7e8501c3ce3300465069",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac2849163285d8ffc464c6e22481c3426c9f3807.pdf",
+    "source": "https://www.uzdaily.uz/articles-id-26212.htm"
+  },
+  {
+    "_id": "574f806301c3ce330046506d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee67d23442c897ca75ac925989e0699dbe3649fd.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/1_29ene16.pdf"
+  },
+  {
+    "_id": "574f81b501c3ce330046506f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e93dd213d24b4718ab94b629c49ff8ff7132d948.pdf",
+    "source": "http://www.ut.uz/ru/ekonomika/rustam_azimov_vneshniy_dolg_uzbekistana_sostavlyaet_primerno_16_ot_vvp"
+  },
+  {
+    "_id": "574f82df967abf2100e3c177",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf21a119d642c2682bfde7994f47c52dce4a46eb.pdf",
+    "source": "https://www.gazeta.uz/2016/01/16/gdp/"
   }
 ]
