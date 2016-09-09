@@ -6483,5 +6483,171 @@
     "_id": "5749e194101fd60f00ac0623",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/506db3e05b888cdcdb37cb3645d3f00f4187441c.PNG",
     "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d2030%26amp%3bCatID%3d5104%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "574a1f58101fd60f00ac0759",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38fa01dcaaef4bfbfc4c9a04474adca83326c932.pdf",
+    "source": "http://www.dipres.gob.cl/594/w3-propertyvalue-15501.html"
+  },
+  {
+    "_id": "574a31c685b1950e00cb96d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c859c15035b52379d4a0cc3802dc0a24d0d658be.pdf",
+    "source": "http://www.ambiente.gob.ec/wp-content/uploads/downloads/2012/09/LEY-DE-GESTION-AMBIENTAL.pdf"
+  },
+  {
+    "_id": "574a200f409eaa1000c8f98c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0edb2bf4da834c1785285862b2a7c4f07bd6ce47.pdf",
+    "source": "http://www.dipres.gob.cl/594/articles-145705_doc_pdf.pdf"
+  },
+  {
+    "_id": "574a66a6409eaa1000c8fa16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1047cdab8d5afa7fbf32d8ff6890851067dcf60c.pdf"
+  },
+  {
+    "_id": "574a5abd409eaa1000c8f9e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/558859580dd5b7e30e2082b16b41f130294153f6.pdf",
+    "source": "http://www.cambodiaip.gov.kh/DocResources/ece9896b-eb95-4663-8b98-06ef2646bfd5_c786a043-b88d-4f64-9429-60a330efdc5f-en.pdf"
+  },
+  {
+    "_id": "574a693f85b1950e00cb9751",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/941bdc5d8964a56bc0aecdc9e9b474d148d1c786.pdf"
+  },
+  {
+    "_id": "574a525f101fd60f00ac07ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/874470b7e6251aa60c972f93f1f00a8d6afeefdf.pdf"
+  },
+  {
+    "_id": "574a69d2409eaa1000c8fa20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c527d3e55eff909860db87bb2007439f6ee70ca.pdf"
+  },
+  {
+    "_id": "574a780e101fd60f00ac082e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75c72c1eb2be051b5690e7d4f589905c6081aea3.pdf",
+    "source": "http://www.moe.gov.kh/sub-license-7-31#.Vu0J6-IrLrc"
+  },
+  {
+    "_id": "574a8fe6409eaa1000c8faaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c1370f7150f1d14a2c66bc8ad8143fc56b41ab74.pdf"
+  },
+  {
+    "_id": "574a8def409eaa1000c8faa2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f62c49882350a33bc87bf0d119d7095d47f6d180.pdf",
+    "source": "http://naa.gov.kh/public-audit-report.html"
+  },
+  {
+    "_id": "574a928585b1950e00cb97d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d547a362cb6f35ed39f0952d44f497f1ad70e9e.pdf",
+    "source": "http://naa.gov.kh/images/NAA/public_audit_report/public_audit_report_2013_kh.pdf"
+  },
+  {
+    "_id": "574a5c0485b1950e00cb9711",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70eaee0427818ac007e7d2524a9e0900260f3b68.doc"
+  },
+  {
+    "_id": "574a1366409eaa1000c8f95d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73a13a72895a256e5863a6b52e67198543d91765.DOC"
+  },
+  {
+    "_id": "574a471e101fd60f00ac0789",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b325f6562ffb445cb56d0bff0f2c78387f28e65d.doc"
+  },
+  {
+    "_id": "574aa49785b1950e00cb982d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fca27adc82a7b1e33f1376eada3a01b7f56d6a3.pdf",
+    "source": "http://www.stat.kg/media/statisticsoperational/131eff2b-a9e0-4ef9-b123-7a11d4e4109e.pdf"
+  },
+  {
+    "_id": "574aaad6409eaa1000c8fb15",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b29d4c3c01c5acade1151bc91bd73d7a01ab5343.pdf",
+    "source": "http://www.mining.gov.mm/DM/1.DM/details.asp?submenuID=7&sid=181"
+  },
+  {
+    "_id": "574ab196409eaa1000c8fb49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c678fa1e8374ceb23101b4e152d1f2af2056f0af.pdf",
+    "source": "http://downloads.openoil.net/contracts%2Fye%2Fye_Block-75_dd20070331_PSC_Occidental_TG.pdf"
+  },
+  {
+    "_id": "574ab4b4409eaa1000c8fb60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ef7498639ae19600cfa578ba9af0f5dbe921361.pdf",
+    "source": "http://www.unep.org/dewa/westasia/early_warning/TSUNAMI_YEMEN_LAYOUT.pdf"
+  },
+  {
+    "_id": "574ab8fc409eaa1000c8fb88",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ef23b2d6169c22a46344199ab46040ece6503dd.pdf",
+    "source": "http://www.pajhwok.com/en/2011/10/17/afghan-fiscal-year-start-january"
+  },
+  {
+    "_id": "574ab9b6409eaa1000c8fb92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db6f3c44b753ff97ed8ce6801ac81f6439445141.pdf",
+    "source": "http://www.lex.uz/pages/getpage.aspx?lact_id=10872"
+  },
+  {
+    "_id": "574abd3c85b1950e00cb98d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6077aeb96cf92beb8079c39e9bffa042f5b71599.pdf",
+    "source": "http://www.aisa.org.af/Content/Media/Documents/Income-Tax-Law-20091112014172556995553325325.pdf"
+  },
+  {
+    "_id": "574ac073409eaa1000c8fbb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f091f45594e64f5cc22263f13bcee83037ea3f91.pdf",
+    "source": "http://www.yemen-nic.info/db/laws_ye/detail.php?ID=11436"
+  },
+  {
+    "_id": "574ac132409eaa1000c8fbc7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd7152722d7319d4f36ab0e285e9123aa66d0f0f.pdf",
+    "source": "http://www.uzex.uz/en/trade/contractssum?number=&name=%D0%B3%D0%B0%D0%B7&tnved="
+  },
+  {
+    "_id": "574ac1dc101fd60f00ac0979",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/903ef94f9954a3c8df03067fc24539c7ae31a823.pdf",
+    "source": "http://www.yemen-nic.info/news/detail.php?ID=16868&phrase_id=1431860"
+  },
+  {
+    "_id": "574ac1f9409eaa1000c8fbcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8642a2fa46298c045f5a7e828f6e877a998e75f7.pdf",
+    "source": "http://www.uzex.uz/en/trade/contractscurrency?number=&name=%D0%BD%D0%B5%D1%84%D1%82&tnved="
+  },
+  {
+    "_id": "574ac30c409eaa1000c8fbd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4f582030be260fed8eba15a112517fd8fb03dae.pdf",
+    "source": "http://www.uzex.uz/en/pages/weekly-quotes"
+  },
+  {
+    "_id": "574ac429409eaa1000c8fbdb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c66e8cf1a709b5a5fcfd8f24c9342472c9025d5d.pdf",
+    "source": "http://www.uzex.uz/files/uploads/09-11-2015-13-11-2015.pdf"
+  },
+  {
+    "_id": "574ac52785b1950e00cb98e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b871f5bf8538948a31e096422f15b9bd5294d0dc.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2014/05/05/000442464_20140505103804/Rendered/PDF/E44640V10REVIS00Box385213B00PUBLIC0.pdf"
+  },
+  {
+    "_id": "574ac7f585b1950e00cb98f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd6956891327e5833facf6cb16149195cc95bd73.pdf"
+  },
+  {
+    "_id": "574ad6a685b1950e00cb9913",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6ea671ca0faf6ee6c9aed011b3b9c2f1de22439.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=598396"
+  },
+  {
+    "_id": "574ade1a101fd60f00ac09d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e347fe5de619936680863e86e3603035320a0aa.pdf",
+    "source": "https://www.adnoc.ae/en/images/pdf/ADNOCSustainabilityReport2014_English.pdf"
+  },
+  {
+    "_id": "574ae1d985b1950e00cb9945",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04f7f6839600c32471c85ad3d7614267c0bb0946.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=14667"
+  },
+  {
+    "_id": "574ae4c3409eaa1000c8fc39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2bce010bae93c424f63de71a769d19175e855789.pdf",
+    "source": "http://www.lex.uz/pages/GetAct.aspx?lact_id=2381138"
+  },
+  {
+    "_id": "574aea9c101fd60f00ac0a11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab6a13904f0f4acaf36c526aedd3aeac094b78ae.pdf",
+    "source": "http://www.uzgeolcom.uz/uz/"
   }
 ]
