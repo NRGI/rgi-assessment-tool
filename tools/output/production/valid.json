@@ -7490,5 +7490,129 @@
     "_id": "574c7ad67d929a1800634bae",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/66d0c811035c53cbb31355b1386fffa10ad02bd4.pdf",
     "source": "http://www.hacienda.cl/documento/descargar/id/14561"
+  },
+  {
+    "_id": "574c92b1700a1a2100f500d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/823ae41c7efe6e55b3a9639037b03d4a15da49a3.pdf",
+    "source": "http://www.npd.no/Global/Norsk/2-Tema/Utvinningstillatelser/TFO2014/Utlysning/Invitasjon_Brosjyretekst_TFO_2014.pdf"
+  },
+  {
+    "_id": "574c90a57d929a1800634c9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/515e38960a386e1cb862d2dd594c075516fc7e86.pdf",
+    "source": "http://www.etap.com.tn/index.php?id=1129&lg=3"
+  },
+  {
+    "_id": "574c8bb959c78e2100ce85f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c49acf295281fc92b005a49e0f1b090238413eb3.pdf",
+    "source": "http://www.finance.alberta.ca/publications/budget/budget2016/fiscal-plan-overview.pdf"
+  },
+  {
+    "_id": "574c925559c78e2100ce860c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a48456d7cba32770eef78749da3256f1c2ec481.pdf",
+    "source": "http://www.tunisieindustrie.gov.tn/telechargement.html"
+  },
+  {
+    "_id": "574c8acc1a5a9e1700ca06af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c90f862a574f4afd743df79838c4a8bc09ee2b9.pdf",
+    "source": "http://www.akhbar-libya.ly/libya-news/22605.html"
+  },
+  {
+    "_id": "574c93fd59c78e2100ce8621",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0af975e672abdf359815f01e5b8da5cd382458f7.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1050215"
+  },
+  {
+    "_id": "574c963959c78e2100ce862d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/279bc7c572b4f81bd08f93a09a66dc56cd98a6ae.pdf",
+    "source": "http://www.avhi.org"
+  },
+  {
+    "_id": "574c949859c78e2100ce8624",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bc7f700ff53d83280f44b2d475119474e8650ed.pdf",
+    "source": "http://www.hacienda.cl/documento/descargar/id/6436"
+  },
+  {
+    "_id": "574c9533700a1a2100f500fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8c418725c65e547609c5c0cf474b530df4b5c64.pdf",
+    "source": "http://www.hacienda.cl/documento/descargar/id/6437"
+  },
+  {
+    "_id": "574c96871a5a9e1700ca070a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e728ff7b952cb04d1be1ea799d37fe994e8dc7d8.pdf",
+    "source": "http://www.avhi.org"
+  },
+  {
+    "_id": "574c96c459c78e2100ce863b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6cfed6c4f1150650a8780ace2571ff7eb9718e20.pdf",
+    "source": "http://www.avhi.org"
+  },
+  {
+    "_id": "574c9b4c700a1a2100f50125",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/542b83e511f5fdb65a6fd84e51d4ea7c41126f50.pdf",
+    "source": "http://www.norskpetroleum.no/fakta/lisenser/"
+  },
+  {
+    "_id": "574c9d3659c78e2100ce8678",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de83da6a03f0da9acdc159e5d620b28ee0b38d2f.pdf",
+    "source": "http://www.norskpetroleum.no/produksjon/lisenser/006-c/"
+  },
+  {
+    "_id": "574c9dfe59c78e2100ce8685",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81b090cbf5b5d9fde1ab7393375f8ba93bcf9604.pdf",
+    "source": "http://factpages.npd.no/factpages/default.aspx?culture=nb-no&nav1=licence&nav2=PageView|All&nav3=1333089"
+  },
+  {
+    "_id": "574ca0051a5a9e1700ca0765",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6a6a17c6bb8b221dccdb7d0aa0c515ba4929b3a.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_actividad_economica.html"
+  },
+  {
+    "_id": "574ca4eb1a5a9e1700ca07b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1752807e2f487669c09065316faae1a0b2095eda.pdf",
+    "source": "http://www.finance.alberta.ca/publications/budget/quarterly/2015/2015-16-3rd-Quarter-Fiscal-Update.pdf"
+  },
+  {
+    "_id": "574ca6481a5a9e1700ca07c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af9b5ee1f785cb45cf7a2ecd1930ad5b6aaaa376.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_ruc.html"
+  },
+  {
+    "_id": "574ca6c559c78e2100ce86e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23137dadf04abba86fdaa72385c182a87086cf72.pdf"
+  },
+  {
+    "_id": "574ca6c11a5a9e1700ca07c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/487d066a342e8a5948822440eb3975d96e475778.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_ruc.html"
+  },
+  {
+    "_id": "574ca77859c78e2100ce870b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b745c347b72d5548c0d8cab6773964328fae741a.pdf",
+    "source": "http://www.finance.alberta.ca/publications/budget/budget2015-october/fiscal-plan-overview.pdf"
+  },
+  {
+    "_id": "574ca5791a5a9e1700ca07b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcbeb56d808fb39306184ac41ea3c6e1b7831d34.pdf",
+    "source": "http://www.finance.alberta.ca/publications/budget/budget2016/fiscal-plan-tables.pdf"
+  },
+  {
+    "_id": "574ca38d700a1a2100f5018f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89a69c286e4e26e12ef42ccd80482d9582eddb04.PNG",
+    "source": "https://www.adnoc.ae/en/home/index.aspx"
+  },
+  {
+    "_id": "574c983859c78e2100ce864a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa15bb9dc7511a57b70e9ccd2699cc20931ebc86.PNG",
+    "source": "https://www.abudhabi.ae/portal/public/en/departments/department_detail?docName=ADEGP_DF_136246_EN&_adf.ctrl-state=kzkdfc96d_4&_afrLoop=9969453654426615#!"
+  },
+  {
+    "_id": "574c9c9659c78e2100ce866e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efbdbef5a27ba1f0ec8a99892146bc63a8359cef.PNG",
+    "source": "https://www.rak.ae/en_US/web/rakportal/facts"
+  },
+  {
+    "_id": "574c9389700a1a2100f500df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/617529c201d186fc5d435d2a76ce77ac2973134f.pdf",
+    "source": "http://www.npd.no/Global/Norsk/2-Tema/Utvinningstillatelser/TFO2015/Utlysning/Innbydelse-til-aa-soke-om-utvinningstillatelse-for-petroleumTFO%202015_nor.pdf"
   }
 ]
