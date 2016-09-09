@@ -264,5 +264,122 @@
     "_id": "574dec730c38c60f00873e47",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/91628fd9afb409cb27b947d8bcbe2679fb3c7748.pdf",
     "source": "http://www.eppetroecuador.ec/wp-content/uploads/downloads/2015/08/decreto_eppetroecuador.pdf"
+  },
+  {
+    "_id": "574e16b56707ba0f0005225f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5982af081585524293a32612137cd5b06e4be188.pdf",
+    "source": "http://www2.congreso.gob.pe/sicr/cendocbib/con3_uibd.nsf/1ACC971CC90E7D1F052578C30077D23A/$FILE/Ley_28090.pdf"
+  },
+  {
+    "_id": "574e153f6707ba0f0005225c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8a87ac4ae600d435413becd0fdfb44606ab4d73.pdf",
+    "source": "http://www.bgs.ac.uk/AfghanMinerals/mininfo.htm"
+  },
+  {
+    "_id": "574e17776707ba0f00052265",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4195183306eb1700feb0a78523ff58603a3849c.pdf",
+    "source": "http://intranet2.minem.gob.pe/web/archivos/dgaam/legislacion/proy_regla_cierre_minas.pdf"
+  },
+  {
+    "_id": "574e086d44eb1d0e0029a6a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c74d4ecfd9e5ed6dea6280c331616c2a5b0244cd.pdf",
+    "source": "http://www.wipo.int/edocs/lexdocs/laws/fr/cd/cd001fr.pdf"
+  },
+  {
+    "_id": "574e09e66707ba0f000521d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f42a49ffbc37073f12c3d84084de06751b7ec4d5.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/rdc/RDC-Code-2002-minier.pdf"
+  },
+  {
+    "_id": "574e1b086707ba0f00052274",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c923e414a81db0b90e3e97ed6dd7402ebfe99a91.pdf"
+  },
+  {
+    "_id": "574e1fc40c38c60f0087410f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4c8d6e12232f7af35f4dbc65e7d4d96582825b3.pdf"
+  },
+  {
+    "_id": "574e22b50c38c60f00874150",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81cb2055491c9057fbfd4278c986763622bf1960.pdf"
+  },
+  {
+    "_id": "574e27176707ba0f000522fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2624bf8ba4c9626db01e00a06577b7b2f3abc85e.pdf",
+    "source": "http://www2.congreso.gob.pe/sicr/cendocbib/con4_uibd.nsf/B488007B66BDA11305257C200057CCF0/$FILE/29789.pdf"
+  },
+  {
+    "_id": "574e2b446707ba0f0005231b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0d96c70fa85e21572618b43747d21c7176ce7ae.pdf",
+    "source": "http://www.humanrights.dk/files/media/dokumenter/business/rapport_niger_basse_def.pdf"
+  },
+  {
+    "_id": "574e2cbd0c38c60f008741d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b8719c41fe7194383f7e3d2bc3d3cd4e50f0972.pdf",
+    "source": "https://eiti.org/countries/reports"
+  },
+  {
+    "_id": "574e2fd46707ba0f00052322",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb8795a6de1b750abc9f96da99402175e6cc27e4.pdf",
+    "source": "http://www.greenpeace.org/france/PageFiles/266521/abandonnes-dans-la-poussiere.pdf"
+  },
+  {
+    "_id": "574e3f586707ba0f00052336",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d16b829d41dda08e399ffa2fda0e99a7bb65acce.pdf",
+    "source": "https://www.aduana.cl/facultades-funciones-y-atribuciones-de-las-unidades-del-servicio/aduana/2009-04-14/104545.html"
+  },
+  {
+    "_id": "574e3fca0c38c60f008741e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a260f69c3c779a10b43be552c3b65ce6ef451ea.pdf",
+    "source": "https://www.tesoreria.cl/web/quienesSomos/irPrincipalesFunc.do"
+  },
+  {
+    "_id": "574e505644eb1d0e0029a841",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2285c16fb2d1b44a4ce13e0a6b25ebfbbc824ca6.pdf",
+    "source": "http://esrd.alberta.ca/lands-forests/land-industrial/programs-and-services/environmental-assessment/documents/EnvironmentalAssessmentProcess-Dec2015A.pdf"
+  },
+  {
+    "_id": "574e51436707ba0f00052346",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ad4660a849678a81376af287152f63e7261a45f.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=1993_111.cfm&leg_type=Regs&isbncln=9780779738137"
+  },
+  {
+    "_id": "574e5b5e44eb1d0e0029a85c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/000d74dba0d73b1a3d85277144e1cf5f28e6b2c5.pdf",
+    "source": "http://esrd.alberta.ca/lands-forests/land-industrial/programs-and-services/environmental-assessment/default.aspx"
+  },
+  {
+    "_id": "574e5bb36707ba0f0005235e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97c46b1099077038cc5d8566ad82b8333291a446.pdf",
+    "source": "http://ftp://ftp.gov.ab.ca/env/fs/EIA/"
+  },
+  {
+    "_id": "574e524c0c38c60f008741fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7664cfb4ca640b89f70465654eb1e771d91d795c.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=E12.cfm&leg_type=Acts&isbncln=9780779735495"
+  },
+  {
+    "_id": "574e5d7744eb1d0e0029a869",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10677bd195ec37a0d15c83f06cdcd2cf58bc2503.pdf",
+    "source": "http://www.lexivox.org/norms/BO-DS-24335.xhtml"
+  },
+  {
+    "_id": "574e692b44eb1d0e0029a88b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a431ee8162878816430650c4dd0942df114fd88.pdf",
+    "source": "http://www.cedib.org/post_type_titulares/ypfb-aprovecha-cierre-de-pasivos-en-aguarague-para-rehabilitar-pozos-y-perforar-nuevos-economia-bolivia-20-3-14/"
+  },
+  {
+    "_id": "574e637444eb1d0e0029a879",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a188a82098cdb1c188ad47601f407bb9ffb909aa.pdf",
+    "source": "http://en.president.az/azerbaijan/constitution"
+  },
+  {
+    "_id": "574e675a6707ba0f00052380",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f20acae26c809883b6cc8137e326d9d478d179c.PDF",
+    "source": "https://eiti.org/files/aze_eiti_report_2013.pdf"
+  },
+  {
+    "_id": "574e6a1444eb1d0e0029a891",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79f680918aac94be9f6b633538590e3596d1e407.pdf",
+    "source": "http://www.energiabolivia.com/index.php?option=com_content&view=article&id=767:ypfb-destina-bs-36-millones-para-el-cierre-tecnico-de-siete-pozos&catid=54&Itemid=172"
   }
 ]

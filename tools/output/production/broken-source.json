@@ -103,5 +103,10 @@
     "_id": "574dd7f80c38c60f00873db0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7013c10c4e7ad762a4ac1fb391a2c8fdd3904b1e.pdf",
     "source": "http://www.finance.alberta.ca/publications/annual_repts/govt/ganrep15/goa-2014-15-annual-report-executive-summary.pdf"
+  },
+  {
+    "_id": "574e5a8944eb1d0e0029a856",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/669e9250f341a9142dc1b7502aa81c05bbe07af4.pdf",
+    "source": "http://esrd.alberta.ca/lands-forests/land-industrial/programs-and-services/environmental-assessment/documents/EIA-AtGlance-Status-Dec11-2015.pdf"
   }
 ]
