@@ -107,6 +107,7 @@ module.exports = function (app) {
     app.get('/api/countries/:country_ID', countries.getCountryByID);
     
     //GET RAW DATA
+    app.get('/api/raw_answers/:limit/:skip/:country', answers.getAnswersPortion, answers.getExportedAnswersData);
     app.get('/api/raw_answers/:limit/:skip', answers.getAnswersPortion, answers.getExportedAnswersData);
     app.get('/api/raw-questions/:limit/:skip', questions.getQuestionsPortion, questions.getExportedQuestionsData);
 
