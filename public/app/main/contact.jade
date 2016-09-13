@@ -90,7 +90,7 @@
                         .col-md-5.pull-left.top-padding-med
                             .form-group.right-padding-med
                                 label.control-label Browser
-                                select.form-control.pull-left(ng-model="request.browser")
+                                select.form-control.pull-left(ng-model="request.browser", required)
                                     option(value="" selected disabled)
                                     option(ng-repeat="browser in browser_selection track by browser.value" value="{{::browser.value}}") {{::browser.name}}
                                 input.form-control(
@@ -103,7 +103,7 @@
                         .col-md-2.pull-left.top-padding-med
                             .form-group
                                 label.control-label Version
-                                input.form-control(type="text", ng-model="request.browser_ver", ng-pattern="versionPattern")
+                                input.form-control(type="text", ng-model="request.browser_ver", ng-pattern="versionPattern", required)
                         .clear-fix
 
                 #control_buttions.left-padding-lg.bottom-padding-lg.top-padding-lg
