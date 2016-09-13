@@ -1347,5 +1347,97 @@
     "_id": "5750855c117ecb0f001162f8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5c128335d85919ad4faf144660a82686ed69de31.pdf",
     "source": "https://www.mef.gob.pe/contenidos/pol_econ/marco_macro/MMM_2017_2019.pdf"
+  },
+  {
+    "_id": "575089985e93ec0f00dec486",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c196a2ce6fd8e84c837f338169d897a185494cd.pdf",
+    "source": "https://mef.gob.pe/index.php?option=com_content&view=article&id=2327&Itemid=101158&lang=es"
+  },
+  {
+    "_id": "575089ab4be7230f00b76283",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2315adfb3461f39cf3a787c67be29b37e5f066e1.pdf"
+  },
+  {
+    "_id": "575089c8117ecb0f00116313",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/845c7781a88d32044c7027b0ec9b062fe79bc01c.pdf"
+  },
+  {
+    "_id": "575089d55e93ec0f00dec48c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa3f8c7dd96dd9470ca485c3ea01899e08dd3a08.pdf",
+    "source": "https://mef.gob.pe/index.php?option=com_content&view=article&id=2327&Itemid=101158&lang=es"
+  },
+  {
+    "_id": "57508b7e4be7230f00b762a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe0242d68b70a5b4977bd3234ffd927a9b27e422.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/journal-officiel/1989/1989A/Ja00989.pdf"
+  },
+  {
+    "_id": "57508b8d4be7230f00b762a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db9dca641a86b03591b98df70fae98850d8666c0.pdf"
+  },
+  {
+    "_id": "57508e51117ecb0f0011632e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a508625914f3c82a12eb23d49c1494cf9dc7d9d.pdf",
+    "source": "https://mef.gob.pe/contenidos/presu_publ/presu_sect/Evaluacion_Global_2015.pdf"
+  },
+  {
+    "_id": "57508ec64be7230f00b762b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a83374fe647634b5e5463eed34190d8fc58b34d.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_content&view=article&id=4224&Itemid=101958&lang=es"
+  },
+  {
+    "_id": "57509060117ecb0f00116336",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c03d71fdd6c05391d9e8db1b588c6797a927a9c.pdf"
+  },
+  {
+    "_id": "575090e6117ecb0f00116339",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df9ba813f3a60444f1b491a801b3223e7011964a.pdf",
+    "source": "http://elcomercio.pe/economia/peru/peru-entre-paises-mayor-deuda-externa-america-latina-noticia-1871089"
+  },
+  {
+    "_id": "5750912c117ecb0f00116342",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb0ab2476d0319c39f303a7ce17c5e3810c6d58a.pdf",
+    "source": "https://mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122015.pdf"
+  },
+  {
+    "_id": "5750926c4be7230f00b762d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fc89fedf36dfc9742c783df03067c3da07f6846.pdf"
+  },
+  {
+    "_id": "57509a0f117ecb0f00116367",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6aee4a7bdacaa4bc331d138568cd7f0919351cb7.pdf",
+    "source": "http://tesis.pucp.edu.pe/repositorio/bitstream/handle/123456789/4627/CUEVA_HERRERA_STEVEN_IMPACTO.pdf?sequence=1"
+  },
+  {
+    "_id": "57509d8d117ecb0f0011637e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14d943f729d782a97d02113b144a2545c90c00e9.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_docman&task=doc_download&gid=6598&Itemid=101592&lang=es"
+  },
+  {
+    "_id": "57509ded5e93ec0f00dec4fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3541b9c68f59ea8d40d0ca7b628c9e11c79b9e7.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/per105620.pdf"
+  },
+  {
+    "_id": "57509ef14be7230f00b76309",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/896b152cff5c17f636dbd695a862d0a7dac0f2c5.pdf"
+  },
+  {
+    "_id": "5750a1a0117ecb0f00116391",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1201979f65c8b89d3c8d09127f369b7321e8c22a.pdf"
+  },
+  {
+    "_id": "5750a1c95e93ec0f00dec507",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8462ffc9b5b995a7a5e3f7b1c2364f58453f8f69.pdf"
+  },
+  {
+    "_id": "5750a79f4be7230f00b7634e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0de96f4b6e18d611d6c187c26cb9717f7018cf4e.pdf",
+    "source": "http://www.mef.gob.pe/index.php?option=com_content&view=article&id=457%3Aique-y-como-muestra-la-consulta&catid=270%3Atransf-a-gobiernos-nacional-regionales-y-locales&Itemid=100143&lang=es"
+  },
+  {
+    "_id": "5750a7ee117ecb0f001163c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c23a411fe0ccf37810c1ca40ad7eee199bb1c6b.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/resumenmensual.html"
   }
 ]
