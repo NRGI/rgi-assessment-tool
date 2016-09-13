@@ -42,9 +42,10 @@ exports.getAnswers = function (req, res, next) {
 };
 
 exports.getAnswersPortion = function(req, res, next) {
-    var limit = Number(req.params.limit);
+    var limit = Number(req.params.limit),
+        query = req.params.country ? {answer_ID: {$regex: new RegExp('^' + req.params.country + '.*')}} : {};
 
-    Answer.find(req.query)
+    Answer.find(query)
         .lean()
         .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
         .sort({answer_ID: 'asc'})
@@ -120,7 +121,7 @@ exports.getExportedAnswersData = function(req, res) {
         answers.push(answer);
     });
 
-    res.send({data: answers, header: [
+    res.send({data: answers, country: req.params.country, header: [
         'answer_ID',
         'question_order',
         'question_text',

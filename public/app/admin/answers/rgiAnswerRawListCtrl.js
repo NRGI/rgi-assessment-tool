@@ -1,17 +1,16 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAnswerRawListCtrl', function (_, $scope, rgiAnswerRawSrvc) {
-        $scope.sort_options = [
-            {value: 'answer_ID', text: 'Sort by answer id'},
-            {value: 'status', text: 'Sort by Status'},
-            {value: 'researcher_score_letter', text: 'Researcher letter score'},
-            {value: 'reviewer_score_letter', text: 'Reviewer letter score'}
-        ];
-
-        $scope.sort_order = $scope.sort_options[0].value;
+    .controller('rgiAnswerRawListCtrl', function (
+        _,
+        $scope,
+        rgiAnswerRawSrvc,
+        rgiCountrySrvc,
+        rgiHttpResponseProcessorSrvc
+    ) {
         $scope.busy = false;
         $scope.answers = [];
+        $scope.query = {country: ''};
 
         var portionSize = 100, currentPage = 0, allAnswersLoaded = false,
             addAnswers = function(answers) {
@@ -29,12 +28,20 @@ angular.module('app')
                 $scope.busy = true;
 
                 if(!allAnswersLoaded) {
-                    rgiAnswerRawSrvc.query({skip: currentPage, limit: portionSize}).$promise
-                        .then(function (answers) {
-                            addAnswers(answers);
+                    var query = {skip: currentPage, limit: portionSize};
 
-                            if (!answers.reason && (answers.data.length < portionSize)) {
-                                allAnswersLoaded = true;
+                    if($scope.query.country) {
+                        query.country = $scope.query.country.iso2;
+                    }
+
+                    rgiAnswerRawSrvc.query(query).$promise
+                        .then(function (answers) {
+                            if((!$scope.query.country && !answers.country) || (answers.country === $scope.query.country.iso2)) {
+                                addAnswers(answers);
+
+                                if (!answers.reason && (answers.data.length < portionSize)) {
+                                    allAnswersLoaded = true;
+                                }
                             }
                         }).finally(function () {
                             $scope.busy = false;
@@ -46,5 +53,22 @@ angular.module('app')
                 }
             };
 
-        fetchAnswers();
+        $scope.$watch('query.country', function() {
+            portionSize = 100;
+            currentPage = 0;
+            allAnswersLoaded = false;
+
+            $scope.busy = false;
+            $scope.answers = [];
+            fetchAnswers();
+        });
+
+        rgiCountrySrvc.query({country_use: true}, function(countries) {
+            countries.sort(function(countryA, countryB) {
+                return countryA.country > countryB.country;
+            });
+
+            $scope.countries = countries;
+            fetchAnswers();
+        }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
     });
