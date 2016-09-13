@@ -71,30 +71,15 @@ exports.getExportedAnswersData = function(req, res) {
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
         copyScoreHistory = function(outputAnswer, inputAnswer, scoreType) {
-            var prefix = scoreType + '_score_history';
+            var prefix = scoreType + '_score_history', scores = {};
 
-            if(inputAnswer[prefix].length > 0) {
-                var scoreHistory = inputAnswer[prefix][inputAnswer[prefix].length - 1];
-                outputAnswer[prefix + '_date'] = scoreHistory.date;
-                outputAnswer[prefix + '_order'] = scoreHistory.order;
-
-                if(scoreHistory.score) {
-                    outputAnswer[prefix + '_score_letter'] = scoreHistory.score.letter;
+            inputAnswer[prefix].forEach(function(scoreHistory) {
+                if((scoreHistory !== undefined) && (scoreHistory.score !== undefined)) {
+                    scores[scoreHistory.date.toISOString()] = scoreHistory.score.letter;
                 }
+            });
 
-                outputAnswer[prefix + '_justification'] = scoreHistory.justification;
-            } else {
-                ['date', 'order', 'score_letter', 'justification'].forEach(function(field) {
-                    outputAnswer[prefix + '_' + field] = '';
-                });
-            }
-        },
-        copyResearcherScoreHistory = function(outputAnswer, researcherScoreHistory, index) {
-            if(researcherScoreHistory.length >= index) {
-                var historyRecord = researcherScoreHistory[researcherScoreHistory.length - index];
-                outputAnswer['Researcher score ' + index] = historyRecord.score ? historyRecord.score.letter : '';
-                outputAnswer['Time stamp score ' + index] = historyRecord.date;
-            }
+            outputAnswer[prefix] = Object.keys(scores).length > 0 ? JSON.stringify(scores) : '';
         };
 
     var answers = [];
@@ -123,8 +108,7 @@ exports.getExportedAnswersData = function(req, res) {
         answer.external_justification = externalAnswer.justification;
         answer.external_comment = externalAnswer.comment;
 
-        copyResearcherScoreHistory(answer, answerData.researcher_score_history, 1);
-        copyResearcherScoreHistory(answer, answerData.researcher_score_history, 2);
+        copyScoreHistory(answer, answerData, 'researcher');
         copyScoreHistory(answer, answerData, 'reviewer');
 
         Object.keys(answer).forEach(function(field) {
@@ -149,14 +133,8 @@ exports.getExportedAnswersData = function(req, res) {
         'external_answer_letter',
         'external_justification',
         'external_comment',
-        'Researcher score 1',
-        'Time stamp score 1',
-        'Researcher score 2',
-        'Time stamp score 2',
-        'reviewer_score_history_date',
-        'reviewer_score_history_order',
-        'reviewer_score_history_score_letter',
-        'reviewer_score_history_justification'
+        'researcher_score_history',
+        'reviewer_score_history'
     ]});
 };
 
