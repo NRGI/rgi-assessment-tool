@@ -1,8 +1,8 @@
-div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
-    div.modal-header
+.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
+    .modal-header
         h3 New Document Reference
-    div.modal-body
-        .form-horizontal
+    .modal-body
+        form(name="newDocumentForm").form-horizontal
             // NEW DOC
             fieldset
                 div(ng-if="new_document.status!=='submitted'")
@@ -49,8 +49,9 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         .col-lg-12
                             input.form-control.right-padding-med(
                             name="source"
-                            type="text"
-                            placeholder="Source URL..."
+                            type="url"
+                            required
+                            placeholder="Source URL (required)..."
                             ng-model="new_document.source"
                             autocomplete="off")
 
@@ -73,41 +74,18 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                             ng-model="new_document.year"
                             autocomplete="off")
 
-                    //.row.form-group
-                    //    // INSTITUTION
-                    //    .pull-left.col-lg-6
-                    //        input.form-control(
-                    //        name="institution"
-                    //        type="text"
-                    //        placeholder="Institution..."
-                    //        ng-model="new_document.institution"
-                    //        autocomplete="off")
-                    //
-                    //    // CITY
-                    //    .pull-left.col-lg-6
-                    //        input.form-control(
-                    //        name="city"
-                    //        type="text"
-                    //        placeholder="City..."
-                    //        ng-model="new_document.city"
-                    //        autocomplete="off")
-
-
-
-
-
                 // EXISTING DOC
                 div(ng-if="new_document.status==='submitted'")
                     .row
                         // TITILE
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Title:
                                 h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
                                 h5(ng-if="!new_document.title")   N/A
                         // DOC TYPE
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Type:
@@ -115,7 +93,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                 h5(ng-if="!new_document.type")  N/A
                     //- AUTHOR
                     .row
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Author(s):
@@ -124,7 +102,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                                     text(ng-if="$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}}
                                 h5(ng-if="!new_document.authors")  N/A
                         // SOURCE
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Source:
@@ -133,37 +111,19 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
 
                     .row
                         // PUBLISHER
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Publisher:
                                 h5(ng-if="new_document.publisher")  {{new_document.publisher}}
                                 h5(ng-if="!new_document.publisher")  N/A
                         // YEAR
-                        div.col-md-6
+                        .col-md-6
                             .form-group.pull-left
                                 h5
                                     b Year:
                                 h5(ng-if="new_document.year")  {{new_document.year}}
                                 h5(ng-if="!new_document.year")  N/A
-
-                        //// INSTITUTION
-                        //div.col-md-6
-                        //    .form-group.pull-left
-                        //        h5
-                        //            b Institution:
-                        //        h5(ng-if="new_document.institution")  {{new_document.institution}}
-                        //        h5(ng-if="!new_document.institution")  N/A
-
-                    //
-                    //.row
-                    //    // CITY
-                    //    div.col-md-6
-                    //        .form-group.pull-left
-                    //            h5
-                    //                b City:
-                    //            h5(ng-if="new_document.city")  {{new_document.city}}
-                    //            h5(ng-if="!new_document.city")  N/A
 
                 .row.form-group
                     // LOCATION IN DOC
@@ -179,7 +139,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                     rgi-calendar(ng-model="ref_date_accessed", placeholder="Date accessed...")
 
                 //- COMMENT
-                .row(id="comment").form-group
+                #comment.row.form-group
                     .col-lg-12
                         textarea.form-control(
                         name="comment"
@@ -188,11 +148,11 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         ng-model="answer.new_ref_comment"
                         autocomplete="off")
 
-        div.spinner(ng-if="disable_button")
-            div.double-bounce1
-            div.double-bounce2
+        .spinner(ng-if="disable_button")
+            .double-bounce1
+            .double-bounce2
 
-    div.modal-footer
+    .modal-footer
         .col-lg-6
             button.btn.btn-block.btn-success(
             ng-click="documentRefSubmit(new_document)"
