@@ -2457,5 +2457,347 @@
     "_id": "5751e2d04be7230f00b76cdc",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0147fa8c2852c63027321b1707bbe507cc9ba717.docx",
     "source": "http://www.oman-oil.com/About.html"
+  },
+  {
+    "_id": "57522c1b4be7230f00b77016",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74e02c971ac0f94b7200f92ee2da79730b86b58a.pdf",
+    "source": "http://informe.asf.gob.mx/"
+  },
+  {
+    "_id": "575226c24be7230f00b76fe2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6d38e0885280a3d7a1dfa35fc2dc2ed771d675b.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LTF.pdf"
+  },
+  {
+    "_id": "57521c204be7230f00b76f92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47ad18db15939753d7f603867fa12c5d96f0a946.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/rf2015001.html"
+  },
+  {
+    "_id": "57521b694be7230f00b76f82",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad107cec58fd24d4bd0b7ee878850ed00dc2d901.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/"
+  },
+  {
+    "_id": "57522b215e93ec0f00ded1a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/074a3f60385a0f2a99dea47efd63a395dedd36e5.pdf",
+    "source": "http://informe.asf.gob.mx/#0"
+  },
+  {
+    "_id": "57523704425b9118008f42aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d447401ab1f08f9355b886305a96d7afb23b6944.pdf"
+  },
+  {
+    "_id": "575234d4425b9118008f42a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c27fd4c37d35c1c44d32a3110707e2ad5f428fa4.pdf"
+  },
+  {
+    "_id": "57522d0e4be7230f00b77029",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a213b0d0af90d89ae423b58e0924957ec4c7d59d.pdf"
+  },
+  {
+    "_id": "5752418d4be7230f00b7704d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2a9e3b2f4e016b8a7eb0f7de825d4808d8aeeee.pdf",
+    "source": "https://www.cia.gov/library/publications/the-world-factbook/geos/bm.html"
+  },
+  {
+    "_id": "57523e864be7230f00b77045",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e8eb5c8de00fda1ae28e9b91e6091f0d691e415.pdf",
+    "source": "https://www.google.com.bo/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiNzdiGoY3NAhXB6x4KHWNUCHkQFggbMAA&url=http%3A%2F%2Fwww.ypfb.gob.bo%2Fcomponent%2Fphocadownload%2Fcategory%2F72-publicaciones.html%3Fdownload%3D790%3Aresultados-de-gesti%25C3%25B3n-operativa-y-financiera-de-ypfb-2013&usg=AFQjCNFhXpQANg1CKleZdDrJ68FkOl8C7A&sig2=jvDgZI3ps-5N4WdyVmtMRA&cad=rjt"
+  },
+  {
+    "_id": "57524bb94be7230f00b77087",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e86f49ef26ddcef8ec121dc74942d2d07b774a06.pdf"
+  },
+  {
+    "_id": "57524b674be7230f00b7707d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e018dbb0095dbffcb14e24855ed1b5f6c8aef740.pdf"
+  },
+  {
+    "_id": "575249995e93ec0f00ded225",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b22755e2079f96488ec4c0a4bec5d36c85276621.pdf",
+    "source": "http://aer.ca/data-and-publications/statistical-reports/st3"
+  },
+  {
+    "_id": "5752460b5e93ec0f00ded20f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4e3925319f7ffb5d70fa14c2e3790491003b536.pdf"
+  },
+  {
+    "_id": "5752429c5e93ec0f00ded202",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0dbf1e090f821be5675cda1bc0cdea6756186a26.pdf",
+    "source": "http://www.pefa.org/en/assessment/files/1129/rpt/8131"
+  },
+  {
+    "_id": "57524bbd5e93ec0f00ded22b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/900a7b2c66423c71de9afca0c2e164bf915c90f7.pdf"
+  },
+  {
+    "_id": "57524c054be7230f00b7708c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/699a589238aba943451f1acf27453200c9934516.pdf",
+    "source": "http://aer.ca/data-and-publications/statistical-reports/st39"
+  },
+  {
+    "_id": "57524cc0425b9118008f42fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f194141661b8f2d92fa880996fa7e9139c2f3163.pdf"
+  },
+  {
+    "_id": "57524cf75e93ec0f00ded238",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bdf8cbff3397a5ed2ea16f7a9744a8fb97bec554.pdf",
+    "source": "http://aer.ca/data-and-publications/statistical-reports/capital-expenditures"
+  },
+  {
+    "_id": "57524db85e93ec0f00ded24e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff267b25f2d19c9a756f597a3e16233cc23e213e.pdf"
+  },
+  {
+    "_id": "57525f765e93ec0f00ded2ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/857720d4628c34348012635eb17393b36701461e.pdf",
+    "source": "http://www.dica.gov.mm/sites/dica.gov.mm/files/document-files/income_tax_law_amended_2011_eng.pdf"
+  },
+  {
+    "_id": "57525aef425b9118008f436a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4f932e254dafcd36f1415e0ae993e2505e7c51f.pdf",
+    "source": "http://www.burmalibrary.org/docs18/2014-03-24-Law_Amending_the_Income_Tax_Law-15-en.pdf"
+  },
+  {
+    "_id": "57525652425b9118008f4356",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fedc7e1c6edccbf5965dd36356937d57f17ab301.pdf",
+    "source": "https://home.kpmg.com/content/dam/kpmg/pdf/2016/05/tnf-myanmar-march-2016-union-budget.pdf"
+  },
+  {
+    "_id": "57525774425b9118008f435b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9cfb22f44a84109bd1be2782a1321fa2248e31f.pdf",
+    "source": "http://www.burmalibrary.org/docs21/2016-01-25-2016_National_Tax_Law-22-bu.pdf"
+  },
+  {
+    "_id": "57525e265e93ec0f00ded2a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c23ead5dcb294ccb52dca8e12eba3f90d0b21c2.pdf",
+    "source": "http://www.dfdl.com/resources/legal-and-tax-updates/highlights-of-five-new-myanmar-tax-laws/"
+  },
+  {
+    "_id": "57526c555e93ec0f00ded2df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aef2b2f553542691d07154472d42b29ee521a5f9.pdf"
+  },
+  {
+    "_id": "575261254be7230f00b77129",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/766275483afc5d9dd94f9fd28e70d8718621f574.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/11928-what-is-sexier-than-revising-gemstone-taxation-policies.html"
+  },
+  {
+    "_id": "57526ae74be7230f00b7713a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0345d85d6c9af73722d4210aff01aab943f80c3.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LHidro.pdf"
+  },
+  {
+    "_id": "57526870425b9118008f439e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65b1a853e5cb14cfb2f10528622bb810236c6a3e.pdf"
+  },
+  {
+    "_id": "57527c6e4be7230f00b7717b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5d96e7fa859421230767e7bd86eb02c3131f618.pdf",
+    "source": "http://www.geology.kg/images/auction/auktion.pdf"
+  },
+  {
+    "_id": "575278fe5e93ec0f00ded313",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7a9ea30f651f210c989d5676d82a22a853f1bb4.pdf",
+    "source": "http://SWECs Minimum Technical Requirements Internal as at 01062016"
+  },
+  {
+    "_id": "575280c54be7230f00b77194",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff1da9e038db14daab9c205ecb7b8f22383571a6.pdf"
+  },
+  {
+    "_id": "57527ed25e93ec0f00ded342",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51eed50c3addbdf7357160c22307611b5d2a6547.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/bgd42272.pdf"
+  },
+  {
+    "_id": "57527f8c5e93ec0f00ded34a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2531d8c121af28bb3a525d815954cab26527656.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "57527f085e93ec0f00ded345",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3abe31f90af2c2316aa73c1effbe1644c3015885.pdf",
+    "source": "http://download.pwc.com/mm/gobig/pdf/myanmar-business-guide-2016.pdf"
+  },
+  {
+    "_id": "575282fc425b9118008f4410",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ecfd7bcc027a859b21d663546f74845dd21d3afe.pdf",
+    "source": "http://www.eic.mn/eia/eiareport.php"
+  },
+  {
+    "_id": "57529e19425b9118008f447e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/916557d2bfb054a9affb39a4b7d82866c564ceb7.pdf"
+  },
+  {
+    "_id": "5752a9b6425b9118008f44ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7afd8c67fc91d32dd88bf43a7c0188e99933165.pdf"
+  },
+  {
+    "_id": "575282864be7230f00b7719c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43497533e7d7379ad67c959adcf93f3a2710dfcf.pdf",
+    "source": "http://www.eic.mn/eia/"
+  },
+  {
+    "_id": "57529660425b9118008f4466",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a56fa426bfd96ae087e8be012568c46e0bfeb558.pdf",
+    "source": "http://mizzima.com/news-domestic/myanmar-gem-firms-say-100m-%E2%80%98missing%E2%80%99-industry-fund"
+  },
+  {
+    "_id": "5752ab20425b9118008f44af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d145260a9b25fa7c3720a5d5c13192c6157a8fd5.pdf"
+  },
+  {
+    "_id": "5752bd5a425b9118008f44ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a00836976c5bab9f92b8c547d97aabb70fb2639.pdf",
+    "source": "http://www.oag.gov.mm/sites/default/files/legislation/2013/12/auditor_general.pdf"
+  },
+  {
+    "_id": "5752bd8e425b9118008f44ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/960a2f516c157eb91e20d53b9f990542c16f1215.pdf",
+    "source": "http://noc.ly/index.php/ar/companies/%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D9%85%D8%B4%D8%A7%D8%B1%D9%83%D8%A9#"
+  },
+  {
+    "_id": "5752b996425b9118008f44d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b10568dfac608c1853a4ef32938c29260628610.pdf",
+    "source": "http://www.oagmac.gov.mm/content/duties-powers"
+  },
+  {
+    "_id": "5752ae0a4be7230f00b77254",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a72ece71090f31599ff2a0caf5e9c31457b5f5a.pdf"
+  },
+  {
+    "_id": "5752c6ad425b9118008f4530",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20f2076e0ea5caf607947abc7fd9206de439b260.pdf"
+  },
+  {
+    "_id": "5752c9a45e93ec0f00ded498",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c499784bcf912465254765653ecc5b8467c9e1a.pdf",
+    "source": "http://www.sudantribune.net/%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%AA%D9%88%D9%82%D8%B9-%D8%B9%D9%84%D9%89,10673"
+  },
+  {
+    "_id": "5752c926425b9118008f4535",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d05ae87384475ac24248665a115bae0482386cf9.pdf"
+  },
+  {
+    "_id": "5752c15d5e93ec0f00ded463",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a1c46498417fba3e266add820e11d4848e781fd.pdf",
+    "source": "http://www.cbo-oman.org/pub_annual.htm"
+  },
+  {
+    "_id": "5752d0465e93ec0f00ded4aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84b9560e2f9b1465bd2e64ced244b8e701e03822.pdf",
+    "source": "http://www.sudapet.sd/cgi-sys/suspendedpage.cgi"
+  },
+  {
+    "_id": "5752cfb74be7230f00b772fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3179a9472b530e2529d21ff8b810029ce9f50498.pdf",
+    "source": "https://www.linkedin.com/company/sudapet-company--ptc"
+  },
+  {
+    "_id": "5752cba04be7230f00b772f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b4a53725a29c2d90b654ce2e976c593eedc9ab5.pdf",
+    "source": "http://www.mop.gov.sd/index.php/ar/pages/details/138"
+  },
+  {
+    "_id": "5752cb0a425b9118008f453c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c13340fd83c44b934ad866ded3b04a2a9e10ddc3.pdf",
+    "source": "http://www.alnilin.com/12742994.htm"
+  },
+  {
+    "_id": "5752d0d35e93ec0f00ded4b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/082e99128089663ea9ffc19b9ccbdc4d0ae2e294.pdf",
+    "source": "http://file:///C:/Nuha's%20work%20file/Website%20references/17OILGASMINE%20Salih%20Gaffar%20S6.pdf"
+  },
+  {
+    "_id": "5752da0e5e93ec0f00ded4cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b63d2b223466f3a6dfa4c8eb2c0c44bc929ba77f.pdf"
+  },
+  {
+    "_id": "5752deba4be7230f00b7731c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/279c0de8b3549ebc02ffbc6e2452ac5b55057b72.pdf",
+    "source": "http://www.doe.gov.my/eia/wp-content/uploads/2012/03/Environmental-Quality-Prescribed-Activities.pdf"
+  },
+  {
+    "_id": "5752dafa425b9118008f4568",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2040f8cf53a0a40db00923755fabb719a4c68fb2.pdf",
+    "source": "http://wiki.openoil.net/Sudapet"
+  },
+  {
+    "_id": "5752d4345e93ec0f00ded4c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a249d83d10cc6dd28cf3276e4ee187232401b8ad.pdf",
+    "source": "http://fliphtml5.com/download-pdf-file/221768"
+  },
+  {
+    "_id": "5752e5005e93ec0f00ded4e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f83e891de8768b7febcd779419666e572a85e4f.pdf"
+  },
+  {
+    "_id": "5752efde425b9118008f45ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34239ebbb6829a6a3321bb3bc883efa6fd4b0a7d.pdf"
+  },
+  {
+    "_id": "5752fe0f425b9118008f45fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8339eb91a71eededd3fb79aee3df4f5b0b889d8c.pdf",
+    "source": "http://www.etap.com.tn/index.php?id=1294"
+  },
+  {
+    "_id": "5752f3c15e93ec0f00ded520",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19bec330bd2a1821af4147d19144e5b8c78b4c64.pdf",
+    "source": "http://sti.gov.kg/stsdocuments/NK30.10.12.pdf"
+  },
+  {
+    "_id": "57530739425b9118008f4687",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52a5c71e8f9ac84d85d6d3a54a9a37894a211fd0.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/18490-new-environmental-impact-rules-released.html"
+  },
+  {
+    "_id": "5753052b425b9118008f466b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0448d3b97861152913fa10356edb0f44666a11c4.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/6ec4e01d-0e14-4534-8692-e9a3d1c7e366/resource/0f012b61-bd47-4771-b254-4e6ee03f6b0a/download/resultatsfinanciersetap2013.pdf"
+  },
+  {
+    "_id": "5753039e4be7230f00b773fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1a7bb4d7a5654d84290c3c57a96c8b0974402b8.pdf"
+  },
+  {
+    "_id": "5753007a425b9118008f461b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59589d7d9ce49d7d783d0bc233680367dcd7e176.PNG",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID=2030&CatID=6130&RefID=0&mnu=Cat"
+  },
+  {
+    "_id": "57530740425b9118008f4689",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9bddf91809ee1212b1a147f2f47f118888e576a1.PNG",
+    "source": "https://www.adnoc.ae/en/media/PressReleases.aspx?%26amp%3bPriMenuID%3d4%26amp%3bCatID%3d5096%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "5752f57d4be7230f00b77376",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/039a03b00b461c3aa00faf32b0ddfd648349ee9e.doc",
+    "source": "http://www.kazna.gov.kg/index.php/normativnye-dokumenty/zakony/file/20-zakon-kr-ob-osnovnykh-printsipakh-byudzhetnogo-prava-v-kr"
+  },
+  {
+    "_id": "5752c72a4be7230f00b772e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83d124f19b7d6acbc3c7483ba0ac2a2ab3d70ab1.docx",
+    "source": "http://gulfnews.com/news/gulf/oman/oman-oil-production-touches-unprecedented-1m-bpd-1.1566651"
+  },
+  {
+    "_id": "57527dab5e93ec0f00ded338",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e12e6907c67d9328925cfd56e0c9937841ad4eb.docx",
+    "source": "http://www.geology.kg/index.php/pi/pi-2"
+  },
+  {
+    "_id": "575279605e93ec0f00ded317",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b6f1f7118e2ddd19823848af5c06d019e25406b.docx",
+    "source": "http://www.mog.gov.om/"
+  },
+  {
+    "_id": "57527a0c5e93ec0f00ded31e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a65eb74585c895caedf8e5874e322747140c3c04.docx"
+  },
+  {
+    "_id": "57527423425b9118008f43c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77ce1b55c59d931ef8a03381dd089ef2308a1b86.docx",
+    "source": "http://minjust.gov.kg/?page_id=10620"
   }
 ]

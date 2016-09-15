@@ -108,5 +108,15 @@
     "_id": "574e5a8944eb1d0e0029a856",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/669e9250f341a9142dc1b7502aa81c05bbe07af4.pdf",
     "source": "http://esrd.alberta.ca/lands-forests/land-industrial/programs-and-services/environmental-assessment/documents/EIA-AtGlance-Status-Dec11-2015.pdf"
+  },
+  {
+    "_id": "575300344be7230f00b773b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9311b7e5d7119f30c7c8190f7bf0aa7c0677f15.xlsx",
+    "source": "http://catalog.industrie.gov.tn/dataset/53f10c9a-4185-45a9-bb1a-62e2649cc00b/resource/7f48732f-f07a-4c32-976c-81a1af6641b5/download/concessionetapenproduction.xlsx"
+  },
+  {
+    "_id": "57527560425b9118008f43c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46907dda35117c1cfa7170b3bcad7b36cb7fafa2.doc",
+    "source": "http://e-guillotine.kg/kyr/Mamlekettik-organdar/Fond-po-upravleniyu-gosudarstvennym-imuschestvom-pri-Pravitel-stve-KR/Zakon-O-koncessiyah-i-koncessionnyh-predpriyatiyah-v-Kyrgyzskoj-Respublike/zakon-o-koncessiyah-i-koncessionnyh-predpriyatiyah-KR"
   }
 ]
