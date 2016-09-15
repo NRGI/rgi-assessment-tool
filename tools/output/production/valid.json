@@ -1855,5 +1855,339 @@
     "_id": "5751303b5e93ec0f00dec857",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/728b3c185fe0ef8d1c91f56d2b96b61b370a6758.docx",
     "source": "http://www.geology.kg/index.php/konkursy/konkursy/251-zas-22"
+  },
+  {
+    "_id": "575154495e93ec0f00dec91d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d3ae0399d187cdc83afc4d7fe7cb1552acdd365.pdf"
+  },
+  {
+    "_id": "575155275e93ec0f00dec926",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78c374f52ad1b4d54c37a97748ea9d76bfb1d4ef.pdf",
+    "source": ""
+  },
+  {
+    "_id": "5751585b4be7230f00b767af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a49342378acf007fc009906a0255aeef4c2be0f0.pdf"
+  },
+  {
+    "_id": "575157d65e93ec0f00dec93d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abea2a51645f46b124fd61d878e1cf221a629923.pdf",
+    "source": "https://panamapapers.investigativecenters.org/botswana-diamond/"
+  },
+  {
+    "_id": "575160fa5e93ec0f00dec9d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e1c48740731e47a9e878309d9d7afb615a27de8.pdf"
+  },
+  {
+    "_id": "575160b24be7230f00b76838",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf59c441ae2cf12cdcd9e1da234c3700c221913d.pdf",
+    "source": "http://www.pyithuhluttaw.gov.mm/?q=eng"
+  },
+  {
+    "_id": "57515b5c4be7230f00b767ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2121cfb8695002766deb20701daa64b33521e074.pdf"
+  },
+  {
+    "_id": "57515aa1117ecb0f00116817",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5328c58a16cd0d8c7a3a6b4b72c6210feebdf543.pdf"
+  },
+  {
+    "_id": "57515bf44be7230f00b767f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc8d39adc179738cc92b9b7fe688d7c6fb6d713c.pdf"
+  },
+  {
+    "_id": "57516c085e93ec0f00deca5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ff4ac4776b78b5bfe18f54796a56235a3f4c1cc.pdf",
+    "source": "http://www.leconomistedufaso.bf/2015/09/21/true-gold-30-milliards-de-f-cfa-dinvestissement-et-560-emplois-locaux-crees/"
+  },
+  {
+    "_id": "5751702b4be7230f00b768d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfa5dfdb1759732b343a5c6611338cf945564920.pdf"
+  },
+  {
+    "_id": "57516492117ecb0f001168b0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8334ae3d22d612210da5ba5a40e082921303f02.pdf",
+    "source": "https://www.minambiente.gov.co/images/normativa/app/decretos/34-DECRETO%202041%20DEL%2015%20DE%20OCTUBRE%20DE%202014.pdf"
+  },
+  {
+    "_id": "57517a675e93ec0f00deca8c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f27893652affb21bf2f70d3b7a4324829713eb9e.pdf",
+    "source": "http://aureus-mining.com/wp-content/uploads/2014/04/ESIA_Update_for_Aureus_Mining_10_04_14_InclAppendicesRedSize.pdf"
+  },
+  {
+    "_id": "57517cdf117ecb0f0011694e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa382ca18ac48bec7ee2a243c5ce3416e86ac6a4.pdf"
+  },
+  {
+    "_id": "57517d1d117ecb0f00116951",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b219095fd6ad5361bfbf6922f63532738f80570e.pdf",
+    "source": "http://liberia.arcelormittal.com/~/media/Files/A/ArcelorMittal-Liberia/reports-and-presentations/phase-2-esia/volume-5-part-3-cultural-heritage-assessment.pdf"
+  },
+  {
+    "_id": "57517df9117ecb0f00116956",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca775367087564a5e342b229b4666cdab17d07c3.pdf",
+    "source": "http://www.gazprom-international.com/en/news-media/articles/petrobangla-calls-tender-exploration-bay-bengal"
+  },
+  {
+    "_id": "57518d985e93ec0f00decac7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2a07af4078a082250b251402d8433ac86603435.pdf"
+  },
+  {
+    "_id": "5751949e117ecb0f001169cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35bd610c428bcc918c518e08627746bb0ecc25cd.pdf",
+    "source": "http://www.resourcegovernance.org/our-work/country/botswana"
+  },
+  {
+    "_id": "575196a84be7230f00b76999",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20ae78eb69bd42daa4af82384b7670819f65e14c.pdf",
+    "source": "http://www.debswana.com/Media/Pages/Reports.aspx"
+  },
+  {
+    "_id": "5751907a4be7230f00b76955",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23c147055cf959909b2f5a22380f54d903b7fc9f.pdf"
+  },
+  {
+    "_id": "57518ef6117ecb0f00116994",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7bb506d84c788906cabde1a9c82fe41e5c74dd6.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "5751978c117ecb0f001169f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60649021b6ea34cbed4e39d89ebef73d71fa672b.pdf",
+    "source": "http://www.geology.kg/images/news/ads/protokoldjerui.pdf"
+  },
+  {
+    "_id": "575197054be7230f00b769a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3442257e8c1e2c1c9b3f3b9b8f6116e996cd16d3.pdf"
+  },
+  {
+    "_id": "57519a654be7230f00b769df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9717b87149bf7f15d9db4b92f1961590e1c6fe74.pdf",
+    "source": "http://www.etap.com.tn/rapports/RF-2014.pdf"
+  },
+  {
+    "_id": "5751974f5e93ec0f00decb38",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d96796f0d793a106488cdac33ef8447d88640e1.pdf",
+    "source": "http://www.debswana.com/Media/Reports/Annual%20Report%202013.pdf"
+  },
+  {
+    "_id": "57519de84be7230f00b76a38",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9177fdc85f569ef4d7056e1ef4f454b57afd563a.pdf",
+    "source": "http://www.debswana.com/About-Us/Pages/Our-Subsidiaries.aspx"
+  },
+  {
+    "_id": "57519fc05e93ec0f00decbb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/571d3ea6abe9c8cf8034dab4a575be5eb89b7e29.pdf",
+    "source": "http://www.finances.gov.ma/Docs/DB/2016/depp_fr.pdf"
+  },
+  {
+    "_id": "5751a2b64be7230f00b76a56",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6967de8a34539927d20c82d6dca1599d6ab44b89.pdf",
+    "source": "http://www.finances.gov.ma/Docs/2014/depp/Decret2_02_121.pdf"
+  },
+  {
+    "_id": "5751a3464be7230f00b76a5c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/276e146d9d737fa59fad7219df369d8c050f8c2a.pdf"
+  },
+  {
+    "_id": "5751a81b117ecb0f00116aaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8620bb589e69bdde15b9c27f99c8add14fea755b.pdf",
+    "source": "http://www.stat.gov.az/source/balance_fuel/indexen.php"
+  },
+  {
+    "_id": "5751a5615e93ec0f00decbda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b66fed2afba54421e120d66109bd36d71880dff.pdf"
+  },
+  {
+    "_id": "5751a8a75e93ec0f00decc19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56400042a5207f4d3feaf4910c638e6a0c22dab0.pdf",
+    "source": "http://socar.az/socar/en/economics-and-statistics/economics-and-statistics/oil-production"
+  },
+  {
+    "_id": "5751a9535e93ec0f00decc28",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5e42773246342ddc16f8a46864028bf512a286d2.pdf",
+    "source": "http://socar.az/socar/en/economics-and-statistics/economics-and-statistics/gas-production"
+  },
+  {
+    "_id": "5751abcc117ecb0f00116af8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b0dbb803b3399030aa26479ea454487bc4279af.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/2015/09/PDF_R01L02_CriteriosPrecalificacion.pdf"
+  },
+  {
+    "_id": "5751aa785e93ec0f00decc40",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6654197c91c46708a7f3765c02af84210a7815a5.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/2015/09/PDF_R01L02_BasesLicitacion.pdf"
+  },
+  {
+    "_id": "5751aeeb4be7230f00b76b08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26ddbd68093cc84df53ee53c158196abc3701c7f.pdf",
+    "source": "http://customs.gov.az/az/2016_ixracda_esas.html"
+  },
+  {
+    "_id": "5751ae13117ecb0f00116b11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fee749080a38f6d627197b723a74af0197c66daf.pdf",
+    "source": "http://customs.gov.az/az/2015_ixracda_esas.html"
+  },
+  {
+    "_id": "5751ad50117ecb0f00116b05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7af9654c0ea2d927653438fbe26e8de0f6ab6b3.pdf"
+  },
+  {
+    "_id": "5751ac5f5e93ec0f00decc5d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c171960598e55a598e0f85a71233b822ca0b2691.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/2015/12/R01L03_Bases-Licitacion_20151120.pdf"
+  },
+  {
+    "_id": "5751af6d5e93ec0f00decc7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b71ab85f9f6d544782f661bc4a5bd3f182808ef9.pdf"
+  },
+  {
+    "_id": "5751b002117ecb0f00116b28",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3096c5f66a070acdbfaf3ce35ac5a972f062d62d.pdf",
+    "source": "http://www.minfin.gv.ao/PortalMinfin/faces/petroleo?_adf.ctrl-state=1ajzn3m25n_314&wcnav.model=%2Foracle%2Fwebcenter%2Fportalapp%2Fnavigations%2Feconomianacional-navigationModel&_afrLoop=3966586236887288#"
+  },
+  {
+    "_id": "5751b0cf117ecb0f00116b42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8543fedcf67ff7f4fdfda2d0ff16fb6a4548f644.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/2016/05/201605165-4ta-Modificacion-a-Bases-sin-cc.pdf"
+  },
+  {
+    "_id": "5751b1194be7230f00b76b27",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/086663d91cfd3d5ac497f4e0b648c9403bd016d9.pdf",
+    "source": "https://www.globalwitness.org/sites/default/files/library/oil%20revenues%20in%20angola_0.pdf"
+  },
+  {
+    "_id": "5751b7684be7230f00b76b85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df9fd943259e8deebca93866d4b071e5661aa031.pdf",
+    "source": "http://www.azstat.org/customtables/frame.jsp"
+  },
+  {
+    "_id": "5751bc87117ecb0f00116bde",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad1bad85b87a30c323af122fdbd87b7ab34f6105.pdf",
+    "source": "http://surfacerights.alberta.ca/ApplicationTypes/RecoveryofRentals/ImportantRecoveryofRentalDecisions.aspx"
+  },
+  {
+    "_id": "5751bfc44be7230f00b76bc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c92593b600192f191be520cfab516f38995d04ae.pdf",
+    "source": "http://ablawg.ca/2015/05/22/section-27-of-the-surface-rights-act-and-the-potential-fallout-of-non-compliance/"
+  },
+  {
+    "_id": "5751bb915e93ec0f00decd49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f83764f86654ab30104153a604456ddd89ff06ef.pdf",
+    "source": "http://www.producer.com/2015/04/farmers-fume-over-surface-rights-board-compensation-refusal/"
+  },
+  {
+    "_id": "5751c2be117ecb0f00116bf6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a1d7aa4ca1d6b99a023e1f430b588a3c4e31a887.docx",
+    "source": "http://www.gnpcghana.com/investment.html"
+  },
+  {
+    "_id": "5751c4e44be7230f00b76bce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e16ec68f842c8b79b9540a802e60bb5b2aa07e2.pdf",
+    "source": "http://www.nevsun.com/pdf/2011-nevsun-csr-report.pdf"
+  },
+  {
+    "_id": "5751c5c9117ecb0f00116c08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9ea33d1f3024ab6e966ec36e00920c412d9ceb1.pdf",
+    "source": "http://www.nevsun.com/pdf/Nevsun-2012_CSR-Report.pdf"
+  },
+  {
+    "_id": "5751c7015e93ec0f00decd97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a40ed0817808cfa2666be993b638d39ed5ea3122.pdf"
+  },
+  {
+    "_id": "5751c7c75e93ec0f00decd9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16ae5da39bddb1af1f4ecde39d96687bd9fedea2.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=O06.cfm&leg_type=Acts&isbncln=9780779778737"
+  },
+  {
+    "_id": "57519b184be7230f00b769fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d9f6a6a9b0ef1ce453635fdcdca3224040f9082.pdf?MOD=AJPERES",
+    "source": "https://www.tgr.gov.ma/wps/wcm/connect/0aae1e1e-b5c5-4d85-b255-9109382c34e4/BSFP+Avril+2016.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "5751b9884be7230f00b76ba5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6776045b7a0151796f13e967785151fa5fd59c95.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr004.html#183"
+  },
+  {
+    "_id": "5751bb4f4be7230f00b76bab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57eb5dd781f7f52507a8802b3280ce8e3aad35db.docx",
+    "source": "http://www.myjoyonline.com/business/2016/May-31st/minority-threatens-to-reject-gnpcs-2016-budget.php"
+  },
+  {
+    "_id": "5751b25e5e93ec0f00deccbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7b2fb1096d0dc68bb6020abf63b88d91ce94e1e.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_1333_2009.html#TITULO V"
+  },
+  {
+    "_id": "5751b413117ecb0f00116b77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad0af81667118d985526c7d3d75269a9b77cc07b.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr004.html#204"
+  },
+  {
+    "_id": "5751b7d15e93ec0f00decd1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e48073b3dcc5f5206a118a436284e4bd5feaa98d.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr004.html#166"
+  },
+  {
+    "_id": "5751b88b4be7230f00b76b9b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6469fd4446186ed8387522d5913f77d45fcaeb36.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr004.html#174"
+  },
+  {
+    "_id": "5751af95117ecb0f00116b26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f3dc242141ff45e6b9020e18be90f5339d0b823.docx",
+    "source": "http://www.gra.gov.gh/docs/info/gra_act.pdf"
+  },
+  {
+    "_id": "5751ac995e93ec0f00decc5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9674ee7c8a160890879c381505f9c2db0ab5ee1.png",
+    "source": "http://vital.anla.gov.co/ventanillasilpa/Inicio/B%C3%BAsquedadeTramites/tabid/75/language/es-ES/Default.aspx"
+  },
+  {
+    "_id": "5751a82c5e93ec0f00decc0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a28951f8c782ec12ac50300745e6ca7684a5a9b8.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0099_1993_pr001.html#69"
+  },
+  {
+    "_id": "5751a4834be7230f00b76a63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5aaa52494ffbc79b2d2ffcf1786b53b7c54bc195.docx",
+    "source": "http://www.geology.kg/geol/index.php?option=com_content&view=article&id=142:polozhenie-o-poryadke-litsenzirovaniya-nedropolzovaniya&catid=70&Itemid=177&lang=ru"
+  },
+  {
+    "_id": "57519d15117ecb0f00116a46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73976106414c5096759732854b4b904971575477.docx",
+    "source": "http://www.graphic.com.gh/business/business-news/59422-gra-exceeds-2015-revenue-target.html"
+  },
+  {
+    "_id": "57519fbe117ecb0f00116a63",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5954aa6ff088a9c603ca013773db31cda4af531.docx",
+    "source": "http://info.geology.kg/Licenses/LicensesList?isLicense=True"
+  },
+  {
+    "_id": "5751991e117ecb0f00116a0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7526d36cdfd08453493e8be23139a4c4dfc912d3.docx",
+    "source": "http://www.mofep.gov.gh/divisions/fdu"
+  },
+  {
+    "_id": "575196eb117ecb0f001169e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bd7178fe7821792e4569c586c7509cd29e33351.docx",
+    "source": "http://www.geology.kg/index.php/konkursy/konkursy/192-2015-10-13-09-59-43"
+  },
+  {
+    "_id": "5751645a4be7230f00b7687a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9174c0a7dcfbb0d055009c89ebc66ee8b801f0b.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0099_1993_pr001.html#49"
+  },
+  {
+    "_id": "575167ed4be7230f00b768b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d686ab91939bc71d7c73991c41cda800b8ebab10.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0099_1993_pr001.html#57"
+  },
+  {
+    "_id": "575159ef4be7230f00b767c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d344dbf475eb799757cc15b226406d78c8c53418.docx",
+    "source": "http://www.gra.gov.gh/docs/info/dtrd/INCOME%20TAX%20ACT%202015%20(ACT%20896).pdf"
   }
 ]
