@@ -75,7 +75,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                             div.spinner(ng-if="fileUploading")
                                 div.double-bounce1
                                 div.double-bounce2
-                    .row.right-padding-lg.left-padding-lg(ng-if="uploader.queue.length>0")
+                    .row(ng-if="uploader.queue.length>0")
                         table.table
                             thead
                                 tr
