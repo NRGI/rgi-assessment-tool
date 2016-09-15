@@ -2189,5 +2189,273 @@
     "_id": "575159ef4be7230f00b767c0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d344dbf475eb799757cc15b226406d78c8c53418.docx",
     "source": "http://www.gra.gov.gh/docs/info/dtrd/INCOME%20TAX%20ACT%202015%20(ACT%20896).pdf"
+  },
+  {
+    "_id": "5751cd95117ecb0f00116c50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72b626bb5be4362b913306abadaad47e7c2df33b.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/pag-rondas/index.html#"
+  },
+  {
+    "_id": "5751d2055e93ec0f00decdfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9216d1ed778ad2bde635946e52aed516832ce7f.pdf",
+    "source": "http://www.eiti.az/index.php/en/senedler-2/registration-of-licenses"
+  },
+  {
+    "_id": "5751c8be5e93ec0f00decda9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc337b55edc050e1b13d32ab602d93d43cbf93fe.pdf",
+    "source": "http://www.cnh.gob.mx/_docs/Resoluciones/licitaciones_de_contratos.pdf"
+  },
+  {
+    "_id": "5751cf1a117ecb0f00116c71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/489faea2759a0ab835efeb1fec0dc05f49a82aaf.pdf",
+    "source": "http://www.eiti.az/index.php/en/reports/2014"
+  },
+  {
+    "_id": "5751ce4a117ecb0f00116c61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4bbb65ac9b3a989779ff9a3750e32b8dba1246d5.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/pdf/seguimientoL02/constanciainscripcion_area1_l02registrofiduciario.pdf"
+  },
+  {
+    "_id": "5751d34a5e93ec0f00dece0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d9cde42a7c40be9c897d60ab5ea2e1da5814fe2.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/Area2-R01L02-Resultados.pdf"
+  },
+  {
+    "_id": "5751d2db5e93ec0f00dece03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4095885d2da06f7b1948fae011e8e3333c12efa.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/Area2-R01L02-Resultados.pdf"
+  },
+  {
+    "_id": "5751d3ad4be7230f00b76c50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6af5441399d3851cceda3b6ff83b986bf95937cc.pdf",
+    "source": "http://ronda1.gob.mx/wp-content/uploads/Area4-R01L02-Resultados.pdf"
+  },
+  {
+    "_id": "5751d39e4be7230f00b76c4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2375009082202948007b127f171605354dd6607.pdf",
+    "source": "http://www.eiti.az/index.php/en/senedler-2/agreements"
+  },
+  {
+    "_id": "5751d209117ecb0f00116c8a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/91f422311e9486a838e9cbf79a74d8d1e63bb1d4.pdf",
+    "source": "http://www.shabait.com/news/local-news/21663-sichuan-company-bought-mining-share"
+  },
+  {
+    "_id": "5751d62a4be7230f00b76c68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3550ed5a035d994eb789fa5717b097c1d552efb7.pdf",
+    "source": "https://eiti.org/news/azerbaijan-downgraded-candidate-country"
+  },
+  {
+    "_id": "5751d5aa117ecb0f00116cb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29845b967a8b96d5aa0ea0ab1fdecb54d7026f13.pdf",
+    "source": "https://era.library.ualberta.ca/downloads/5d86p322r"
+  },
+  {
+    "_id": "5751d72c117ecb0f00116cc9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e5e51f5a048bfe6096662f554719ead3139c933.pdf"
+  },
+  {
+    "_id": "5751d78a117ecb0f00116cd2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/457ef77817575c966fccad47607515c20b610087.pdf"
+  },
+  {
+    "_id": "5751d48c4be7230f00b76c55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6e6dd8225ae92ff11277b2f7a43e30caa2f7d76.pdf",
+    "source": "http://ronda1.gob.mx/resultados-l03/"
+  },
+  {
+    "_id": "5751dcac5e93ec0f00dece52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3dddbd5cb394a349dc5785d6bb2c0ae7a4d2abe3.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/pag-rondas/index.html#"
+  },
+  {
+    "_id": "5751e0505e93ec0f00dece6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1074f1748e65c070f28a21a3c8d8cbc38253a28a.pdf",
+    "source": "http://www.azpromo.az/uploads/legislation/Law_on_registration_of_legal_entities-eng_51b1e3b6b2ceb.pdf"
+  },
+  {
+    "_id": "5751d86d4be7230f00b76c89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c083fca9eb4087d781f51a765cdede863f29584.pdf",
+    "source": "http://www.eiti.az/doc/legal_opinion%20_(SOFAZ)_eng.pdf"
+  },
+  {
+    "_id": "5751dbbb117ecb0f00116cf2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1c131d2963b0b8e6e7c1548cca76c8729ef3e1f.pdf",
+    "source": "http://www.azerbaijananonymousexplained.com/wp-content/uploads/2014/12/Azerbaijan_Anonymous.pdf"
+  },
+  {
+    "_id": "5751e2e64be7230f00b76cde",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/290a14c290bfbecb8ef6e225b81dc085d40a764a.pdf",
+    "source": "http://www.energy.alberta.ca/Oil/4081.asp"
+  },
+  {
+    "_id": "5751e64a5e93ec0f00decebc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9cf5643879fcbfd0b790709b8bec1e0400db0bd7.pdf",
+    "source": "http://www.energy.alberta.ca/Oil/4081.asp"
+  },
+  {
+    "_id": "5751e56b4be7230f00b76d19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26590a6bad9aa8f9bea42cbefabff9c1f277ba2f.pdf",
+    "source": "http://www.mef.gob.pe/contenidos/tesoro_pub/fef/informe_IVTrim2015_FEF.pdf"
+  },
+  {
+    "_id": "5751e7e04be7230f00b76d26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a32f9c5e2b860317594e62dc3c90e55a884e9e0.pdf",
+    "source": "http://www.fhoa.ca/about-freehold-mineral-rights.html"
+  },
+  {
+    "_id": "5751e2d8117ecb0f00116d2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10dfcdd6704e0ee4853a48c402c4eb648af9787a.pdf",
+    "source": "http://www.mef.gob.pe/contenidos/tesoro_pub/fef/informe_ITrim2016_FEF.pdf"
+  },
+  {
+    "_id": "5751ee365e93ec0f00decedf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff770782390373e027c5121b58ddc1724aae2823.pdf",
+    "source": "http://www.energy.alberta.ca/NaturalGas/727.asp"
+  },
+  {
+    "_id": "5751edcc425b9118008f3fc1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ffe010337c99513b230eb7c208080331cd97459d.pdf",
+    "source": "http://www.energy.alberta.ca/Oil/763.asp"
+  },
+  {
+    "_id": "5751ee944be7230f00b76d55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a26233499a77e0c76e31b8fe27bf0a63062f808e.pdf",
+    "source": "http://www.energy.alberta.ca/OilSands/791.asp"
+  },
+  {
+    "_id": "5751ed1c117ecb0f00116d85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46d7f5b40dcd1c85c6d04246d23ca6c35510aecb.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/pag-rondas/index.html#"
+  },
+  {
+    "_id": "5751eea35e93ec0f00decef1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/774332b58804e68aad0a228ffbb53d1871a40f16.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/pag-rondas/index.html#"
+  },
+  {
+    "_id": "5751f27c425b9118008f4029",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16704c37701dc067ef386504f2bc5119ca0d4ff4.doc",
+    "source": "http://cis-legislation.com/document.fwx?rgn=2596"
+  },
+  {
+    "_id": "5751f5754be7230f00b76db0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/725b4d103df2c4a0cd97c26dc558213707ecb054.pdf",
+    "source": "http://ronda1.gob.mx/l02-seguimiento-y-transparencia/#presentaron"
+  },
+  {
+    "_id": "5751f86b425b9118008f4051",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dca847aa5f3b2f8924658ad3f8ab22516dbad75f.pdf",
+    "source": "http://aer.ca/data-and-publications/statistical-reports/reserves-data"
+  },
+  {
+    "_id": "5751fa2a425b9118008f405a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4671142a4fafd1431d1a9f7116418ac56625d084.pdf",
+    "source": "http://www.etap.com.tn/rapports/RapportAnnuel/fr/files/res/downloads/RA%20ETAP%202014%20fin.pdf"
+  },
+  {
+    "_id": "5751fb494be7230f00b76dc9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33fc908a23fb04aa40d0725e3a521b01e80d6e9f.pdf"
+  },
+  {
+    "_id": "5752085c5e93ec0f00ded024",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/644320e3d8eba1059653934d38779e6b960fd833.pdf",
+    "source": "http://noc.ly/index.php/en/companies-2"
+  },
+  {
+    "_id": "5751fe4c5e93ec0f00decf9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b220987704150a44ad4e8e08dff2a863d26e32e.pdf",
+    "source": "http://ronda1.gob.mx/l03-seguimiento-y-transparencia/#presentaron"
+  },
+  {
+    "_id": "575206475e93ec0f00decffa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff74b177c0669fd7a4dfb017aa33dda0b007ed9b.pdf"
+  },
+  {
+    "_id": "57520b3d4be7230f00b76e97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/598a0e253a192d8049bfe78ea66efec85c7be6fc.pdf",
+    "source": "http://www.reuters.com/article/qatar-budget-idUSL5N0WC3Q520150311"
+  },
+  {
+    "_id": "575204fc5e93ec0f00decfec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32ff9d917edaa945bc0339148071fa5bd8956673.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LISR_181115.pdf"
+  },
+  {
+    "_id": "57520b46425b9118008f410a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbe4cc7c20d48f4e14dde7a2801b7c134b7e96d9.pdf",
+    "source": "http://noc.ly/index.php/ar/companies/%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D9%85%D8%B4%D8%A7%D8%B1%D9%83%D8%A9"
+  },
+  {
+    "_id": "57520d8e4be7230f00b76ec2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e4fcfa36cc4163e7af520a4df37989d91026461.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/93_171215.pdf"
+  },
+  {
+    "_id": "57520c655e93ec0f00ded079",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39479cee2c25e404149fa496d81d1c16b1ca5fd0.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/93_171215.pdf"
+  },
+  {
+    "_id": "57520b79425b9118008f410f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/656a0b9316d44ee9e69b3525b26868f55dc4bc74.pdf",
+    "source": "http://thepeninsulaqatar.com/news/qatar/310161/fiscal-year-to-start-on-jan-1-from-2016"
+  },
+  {
+    "_id": "57520b8a5e93ec0f00ded062",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e10b2873b02583d367400002abd3e072ae8585a6.pdf"
+  },
+  {
+    "_id": "5752103d4be7230f00b76eed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d39373ea1e256c8f7facea93c08e14c5033745c.pdf",
+    "source": "http://www.mellitahog.ly/ar/"
+  },
+  {
+    "_id": "57521185425b9118008f4179",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b5cd66207eabca640fc1562d9e3010cf38cbfce.pdf",
+    "source": "http://www.harouge.com/"
+  },
+  {
+    "_id": "575210e2425b9118008f4171",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/add615441bd6a1f512b57519ce2b8e77a5dda660.pdf",
+    "source": "http://www.wahaoil.net/index.php?option=com_content&view=article&id=3&Itemid=4&lang=en"
+  },
+  {
+    "_id": "575213145e93ec0f00ded0e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54d6919fd768afa3f0546c2d9492f8104ec72727.pdf",
+    "source": "http://www.moci.gov.lr/doc/Public%20Finance%20Management%20Act.pdf"
+  },
+  {
+    "_id": "57520fba425b9118008f415b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e56a72bf56876cd32bae7244209a80b66928cbd1.pdf",
+    "source": "http://www.zueitina.com.ly/"
+  },
+  {
+    "_id": "5752162e4be7230f00b76f49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f9cd8616719cc5d5b51d525d8c7abce6a85c824.pdf"
+  },
+  {
+    "_id": "575219f45e93ec0f00ded132",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5233097bf6c4b51c88e4999b899415577a78421f.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/derechosdesagregado.html"
+  },
+  {
+    "_id": "575218fc5e93ec0f00ded12f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a2768e5e14edae31b0d63b7ab8f876f232173f9.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/cuotascontractuales.html"
+  },
+  {
+    "_id": "575217024be7230f00b76f52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5cf21cda2d0c35e0f20496b7dc4b5acd13f7ad88.pdf",
+    "source": "http://www.fmped.org.mx/estadisticas/ingresosdesagregado001.html"
+  },
+  {
+    "_id": "575216fe425b9118008f41c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49f090af050c3431ea72a0a8299f04d1abf22308.pdf"
+  },
+  {
+    "_id": "5751e2d04be7230f00b76cdc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0147fa8c2852c63027321b1707bbe507cc9ba717.docx",
+    "source": "http://www.oman-oil.com/About.html"
   }
 ]
