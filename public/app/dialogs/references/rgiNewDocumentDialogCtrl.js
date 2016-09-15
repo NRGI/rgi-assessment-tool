@@ -39,17 +39,14 @@ angular.module('app')
             $scope.new_document.authors.push({first_name: "", last_name: ""});
         };
 
-        //$scope.editorPush = function () {
-        //    $scope.new_document.editors.push({first_name: "", last_name: ""});
-        //};
-
         $scope.authorPop = function (index) {
             $scope.new_document.authors.splice(index, 1);
         };
 
-        //$scope.editorPop = function (index) {
-        //    $scope.new_document.editors.splice(index, 1);
-        //};
+        var showErrorMessage = function(errorMessage) {
+            rgiNotifier.error(errorMessage);
+            $scope.disable_button = false;
+        };
 
         $scope.documentRefSubmit = function (new_document) {
             var new_user_data = rgiIdentitySrvc.currentUser;
@@ -57,20 +54,17 @@ angular.module('app')
 
             //check for minimum data
             if (!$scope.new_document.title) {
-                rgiNotifier.error('You must provide a title!');
-                $scope.disable_button = false;
+                showErrorMessage('You must provide a title!');
             } else if (!$scope.new_document.type) {
-                rgiNotifier.error('You must provide a document type!');
-                $scope.disable_button = false;
+                showErrorMessage('You must provide a document type!');
+            } else if (!$scope.newDocumentForm.source.$valid) {
+                showErrorMessage('You must provide the document source!');
             } else if (!$scope.new_ref_location) {
-                rgiNotifier.error('You must provide the page location!');
-                $scope.disable_button = false;
+                showErrorMessage('You must provide the page location!');
             } else if (!$scope.new_document.publisher && (!$scope.new_document.authors[0].first_name || !$scope.new_document.authors[0].last_name)) {
-                rgiNotifier.error('You must provide either a publisher or an author!');
-                $scope.disable_button = false;
+                showErrorMessage('You must provide either a publisher or an author!');
             } else if (!$scope.new_document.year) {
-                rgiNotifier.error('You must provide the year of publication!');
-                $scope.disable_button = false;
+                showErrorMessage('You must provide the year of publication!');
             } else {
                 var assessment_ID = $scope.$parent.assessment.assessment_ID,
                     question_ID = $scope.$parent.question._id,
