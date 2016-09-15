@@ -286,9 +286,10 @@ angular.module('app')
                     scope: $scope
                 });
             },
-            documentCreate: function($scope) {
+            documentCreate: function($scope, fileUrl) {
                 var scope = $scope;
                 scope.value = true;
+                scope.source = fileUrl;
 
                 ngDialog.close('ngdialog1');
                 ngDialog.openConfirm({

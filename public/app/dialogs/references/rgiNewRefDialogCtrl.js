@@ -21,6 +21,7 @@ angular.module('app')
         HUMAN_NAME_PATTERN,
         FILE_SIZE_LIMIT
     ) {
+        var remoteFileUrl;
         var getHttpFailureHandler = function(alternativeMessage) {
             return rgiHttpResponseProcessorSrvc.getDefaultHandler(alternativeMessage);
         };
@@ -261,7 +262,7 @@ angular.module('app')
                 scope.new_document = $scope.new_document;
                 //rgiDialogFactory[scope.ref_selection + 'Create']($scope);
                 if (scope.ref_selection === 'document') {
-                    rgiDialogFactory.documentCreate(scope);
+                    rgiDialogFactory.documentCreate(scope, remoteFileUrl);
                 } else if (scope.ref_selection === 'webpage') {
                     rgiDialogFactory.webpageCreate(scope);
                 }
@@ -274,6 +275,8 @@ angular.module('app')
         };
 
         $scope.uploadFileByUrl = function (fileUrl) {
+            remoteFileUrl = fileUrl;
+
             if (!$scope.isAllowedFileExtension(fileUrl)) {
                 rgiNotifier.error('Only ' + rgiAllowedFileExtensionGuideSrvc.getSerializedList() + ' files can be uploaded');
             } else {
