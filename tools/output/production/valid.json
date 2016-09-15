@@ -1562,5 +1562,298 @@
     "_id": "5750b4fd5e93ec0f00dec584",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a3dea0379ef7de5e9d0b34bbd22a96e4eec39a66.png",
     "source": "http://sie.energia.gob.mx/bdiController.do?action=cuadro&cvecua=PMXF4C01"
+  },
+  {
+    "_id": "5750cd434be7230f00b764d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7dfd7ab25aa7206bff233335d3b0cce13d5cb636.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_docman&task=doc_download&gid=6582&Itemid=101592&lang=es"
+  },
+  {
+    "_id": "5750ce9c4be7230f00b764de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32ab784451af07c0d0961d1187e8f1667fd4f97b.pdf"
+  },
+  {
+    "_id": "5750cdd35e93ec0f00dec67b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acf182c4cc3aaa975f4b115297a7c4995dd55777.pdf",
+    "source": "https://www.mef.gob.pe/index.php?option=com_content&view=article&id=4210%3Ael-directorio-del-fondo-de-estabilizacion-fiscal-autorizo-la-utilizacion-de-recursos-para-completar-la-estrategia-de-financiamiento-del-presupuesto-publico-para-el-ano-2015&catid=100%3Anotas-de-prensa-y-comunicados&Itemid=100148&lang=es"
+  },
+  {
+    "_id": "5750cfcd4be7230f00b764ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03d3cb4132bdb18972fb61f69c58b5a583d0be5f.pdf",
+    "source": "http://www.shabait.com/articles/nation-building/20248-mining-companies-exhibition-at-festival-eritrea-2015"
+  },
+  {
+    "_id": "5750d0c4117ecb0f00116547",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f355e967c5a56f09aa08ba9954faf24f3a33809.pdf",
+    "source": "http://www.servidorespublicos.gob.mx/declaranetRSPApp91/paginas/servidores_publicos/pag_busqueda.jsf"
+  },
+  {
+    "_id": "5750d4024be7230f00b76530",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74cc7c9f4c36aec493d3e5e72d67213d5ae94e6b.pdf",
+    "source": "https://beta.eiti.org/countries"
+  },
+  {
+    "_id": "5750db4f117ecb0f00116582",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/817c68721891daaf3a4fe3cd340710f70738747c.pdf"
+  },
+  {
+    "_id": "5750d39e117ecb0f00116566",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e49e1ee5db1134f1d006bf73b6611ef38092610e.pdf",
+    "source": "http://elcomercio.pe/economia/peru/cinco-preguntas-sobre-fondo-estabilizacion-fiscal-fef-noticia-1896120"
+  },
+  {
+    "_id": "5750d64e4be7230f00b7653a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad0a2f0419bb203e770f3e99fa592a5e66d34591.pdf",
+    "source": "http://www.financialsecrecyindex.com/database/j1368328.xml#t124"
+  },
+  {
+    "_id": "5750d35b5e93ec0f00dec6b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa73ec69d069b245df77add996499868e5cd7194.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/8_120116.pdf"
+  },
+  {
+    "_id": "5750e68a5e93ec0f00dec71b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2cd0b4b7d7d54e9fdfa4a6ce09b378fdbc7de67.pdf",
+    "source": "http://www.petroci.ci/index.php?numlien=170"
+  },
+  {
+    "_id": "5750e3f04be7230f00b7657d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9807cb1f57c8d4ce8f422f1e305ff4dfa48340b2.pdf",
+    "source": "https://www.pwc.co.za/en/assets/pdf/tax-summaries/eritrea_2014.pdf"
+  },
+  {
+    "_id": "5750dda95e93ec0f00dec6f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/142c80197997c9e4c317db63bc5e5f69a3aaf2b8.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/leis/L9478.htm"
+  },
+  {
+    "_id": "5750e088117ecb0f001165a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4bf4848daf4a8ff19ec4fa935f2d3c1ce50280d2.pdf"
+  },
+  {
+    "_id": "5750e2d05e93ec0f00dec70d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3244256aa2fce0c95be8d4c1eb8ed53480d8bd10.pdf",
+    "source": "http://www.petroci.ci/index.php?numlien=72"
+  },
+  {
+    "_id": "5750ee99117ecb0f001165ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2aceb07590d8bc770520dc8661ed158c2a21191.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2010/Lei/L12351.htm"
+  },
+  {
+    "_id": "5750e94e4be7230f00b76591",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b14d38b166492253d713e3b27a3117fbe3d9261e.pdf",
+    "source": "http://www.theafricareport.com/East-Horn-Africa/mining-eritrea-digs-deep-for-jobs.html"
+  },
+  {
+    "_id": "5750ed994be7230f00b765a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f0599f8e6c5450fd33b3a3587a2fdf5e228de841.pdf",
+    "source": "http://www.nevsun.com"
+  },
+  {
+    "_id": "5750e7794be7230f00b7658b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a52519f3ac59f0e32fa086e12c707e38f3a7100.pdf",
+    "source": "http://www.petroci.ci/index.php?numlien=171"
+  },
+  {
+    "_id": "5750eefb4be7230f00b765aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac2d9168ef4f82cbbec0688f30eb2867b0c97ac6.pdf"
+  },
+  {
+    "_id": "5750fa0f4be7230f00b765e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18abe906c4126fb2937525629c3a89961e4c2e98.pdf",
+    "source": "http://huquqburch.uz/uz/view/3864"
+  },
+  {
+    "_id": "5751014b5e93ec0f00dec797",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d2d567f7d5b06a5c2a3f3c64492c0fd76e3acc3.pdf",
+    "source": "http://uzbekistan.lv/frakcii-obsudili-otchet-schetnoj-palaty-6-03-2015/"
+  },
+  {
+    "_id": "5750f2725e93ec0f00dec751",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29cdf334b3c7f86219cdc4802d95cfa28a6d53af.pdf",
+    "source": "http://news.uzreport.uz/news_4_r_139280.html"
+  },
+  {
+    "_id": "5750f0e14be7230f00b765b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd528e3e744721ef02bb0cbff3a43a91334e606e.pdf"
+  },
+  {
+    "_id": "57510d2b5e93ec0f00dec7b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d76e56ca3b9d8072f49691538ac9a7b68f33ad8a.pdf",
+    "source": "http://www.ypfb.gob.bo/es/#"
+  },
+  {
+    "_id": "575114ef4be7230f00b76634",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc0c37176a7665431e4f218de133a4ef8d207224.pdf",
+    "source": "http://www.moem.gov.er/index.php?option=com_content&task=view&id=68&Itemid=55"
+  },
+  {
+    "_id": "57510e2d4be7230f00b76616",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a51712263baaad6c919d7770bed0aa6691867250.pdf",
+    "source": "http://www.uznature.uz/?q=ru/node/924"
+  },
+  {
+    "_id": "57510dd7117ecb0f00116675",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24bf1b0daa92ad82f641c60e908f3bb8ca54f7ab.pdf",
+    "source": "http://www.ypfb.gob.bo/es/informacion-institucional/corporacion/seguimiento-subsidiarias.html"
+  },
+  {
+    "_id": "575112575e93ec0f00dec7cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9c2b09e10933a6e98549da8ab2ed79749905e02.pdf",
+    "source": "https://sustainabledevelopment.un.org/content/documents/1034uzbekistan.pdf"
+  },
+  {
+    "_id": "57510f604be7230f00b7661d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ff543ce2de81302a57389738b6bb857908c170a.pdf"
+  },
+  {
+    "_id": "57511a375e93ec0f00dec7ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acb1ae0790814dd714de5fb978cbdf5646322e89.pdf",
+    "source": "http://cnh.gob.mx/1200.aspx"
+  },
+  {
+    "_id": "57511aa05e93ec0f00dec7f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3123da5a71b233b80f1454e6b844b916b9918d8.pdf",
+    "source": "http://www.finances.gov.ma/fr/Pages/LF-R%C3%A9f%C3%A9rentiel.aspx?m=Loi%20de%20finances%20et%20Budget#"
+  },
+  {
+    "_id": "5751195d5e93ec0f00dec7ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5cbd1d867b5750433ef0709a947db9aa6916f72c.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LORCME_110814.pdf"
+  },
+  {
+    "_id": "57511bc34be7230f00b76649",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62bfc77616a556b0883657f52aabd75150689969.pdf",
+    "source": "http://www.moem.gov.er/index.php?option=com_content&task=view&id=3&Itemid=75"
+  },
+  {
+    "_id": "5751195d5e93ec0f00dec7ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5cbd1d867b5750433ef0709a947db9aa6916f72c.pdf",
+    "source": "http://www.diputados.gob.mx/LeyesBiblio/pdf/LORCME_110814.pdf"
+  },
+  {
+    "_id": "57511a375e93ec0f00dec7ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acb1ae0790814dd714de5fb978cbdf5646322e89.pdf",
+    "source": "http://cnh.gob.mx/1200.aspx"
+  },
+  {
+    "_id": "57511aa05e93ec0f00dec7f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3123da5a71b233b80f1454e6b844b916b9918d8.pdf",
+    "source": "http://www.finances.gov.ma/fr/Pages/LF-R%C3%A9f%C3%A9rentiel.aspx?m=Loi%20de%20finances%20et%20Budget#"
+  },
+  {
+    "_id": "57511bc34be7230f00b76649",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62bfc77616a556b0883657f52aabd75150689969.pdf",
+    "source": "http://www.moem.gov.er/index.php?option=com_content&task=view&id=3&Itemid=75"
+  },
+  {
+    "_id": "57511c154be7230f00b7664b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6c68d5235992587ba77991cfdd37b1c44744d8d.pdf",
+    "source": "http://www.cnh.gob.mx/_docs/informe_labores_14_15.pdf"
+  },
+  {
+    "_id": "575129395e93ec0f00dec83b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c64d35449d0dd2fbcef2f77111c92e38cd4f578f.pdf"
+  },
+  {
+    "_id": "57512ad34be7230f00b76699",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1af7a62a9e708e9485b6f635158641c10aa5df3.pdf",
+    "source": "http://www.shabait.com/articles/nation-building/5170-symposium-highlighting-mining-and-energy-endeavors-in-two-decades-part-i"
+  },
+  {
+    "_id": "57512eac117ecb0f001166f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9523433a5e4d0a53399a1b1b82c6c77907a2addd.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "57512ca74be7230f00b766a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/858a8f4bf4916718d07acfe4f30e70eafe10116c.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "575135214be7230f00b766df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33a36b61edc271784e3e55c3d0b11aef8e30f192.pdf",
+    "source": "http://www.minorityvoices.org/news.php/fr/1161/botswana-diamonds-bring-no-benefits-to-basarwa"
+  },
+  {
+    "_id": "575132884be7230f00b766ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43b392ff739dcb13c91e9c8d5643135230b8dbb8.pdf",
+    "source": "http://www.geology.kg/index.php/konkursy/konkursy/251-zas-22"
+  },
+  {
+    "_id": "575131ad5e93ec0f00dec868",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d684f07bfdda0c945f0f39d68099ca5bdc5d324c.pdf",
+    "source": "http://www.geology.kg/index.php/konkursy/konkursy/251-zas-22"
+  },
+  {
+    "_id": "575132185e93ec0f00dec86b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b851676b52996ce66b6bb5dcd64b1dd55e210d93.pdf",
+    "source": "https://www.qp.com.qa/en/AboutQP/Pages/AboutUs.aspx"
+  },
+  {
+    "_id": "57513759117ecb0f0011672c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e51e53f407d6009d22f95e3f6fd47b975e1e9740.pdf",
+    "source": "http://www.ecmmw.org/new/wp-content/uploads/2014/12/Report-on-Land-Displacement-Inviluntarry-Resttlement-and-Compensation-Practices.pdf"
+  },
+  {
+    "_id": "57513c624be7230f00b76700",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32acdbe3fa2fae4debf7ed09c7651cab4296cfd6.pdf",
+    "source": "http://www.mram.gov.mn"
+  },
+  {
+    "_id": "57514ce75e93ec0f00dec8ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47e737a600cfa3e097eb63dbfb32899738fe8f24.pdf",
+    "source": "http://www.energy-pedia.com/news/qatar/bp-and-shell-among-bidders-to-run-qatar-oil-field-167593"
+  },
+  {
+    "_id": "5751484d117ecb0f0011678d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c78e279276ef2e148433fd00c272ad92611ec500.pdf",
+    "source": "http://www.gheiti.gov.gh/site/index.php?option=com_content&view=article&id=222&Itemid=66&limitstart=1"
+  },
+  {
+    "_id": "57515163117ecb0f001167bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c550ba27a2c88499ec354f6538ab4700694d208b.pdf",
+    "source": "http://www.debswana.com/Media/Reports/Debswana%20Report%20to%20Stakeholders%202014.pdf"
+  },
+  {
+    "_id": "57511c154be7230f00b7664b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6c68d5235992587ba77991cfdd37b1c44744d8d.pdf",
+    "source": "http://www.cnh.gob.mx/_docs/informe_labores_14_15.pdf"
+  },
+  {
+    "_id": "57514cde4be7230f00b7675e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5354258ca2d0c2f8b3a9357b2c6da61013b187c7.pdf",
+    "source": "http://www.mmegi.bw/index.php?aid=59763&dir=2016/may/06"
+  },
+  {
+    "_id": "5751542d117ecb0f001167cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e7e7cb8bb54111780ff5d92222bf0bc5de9d949.docx",
+    "source": "http://www.financialmail.co.za/features/2016/05/26/de-beers-secret-relationship-with-botswana"
+  },
+  {
+    "_id": "57513a814be7230f00b766f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7108e7101fd5769c158ca557444342de1cc36ff7.docx",
+    "source": "http://www.ghanaweb.com/GhanaHomePage/economy/artikel.php?ID=424909"
+  },
+  {
+    "_id": "57513d025e93ec0f00dec8ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd378ad8b913380b255592f99b9e6a9c90882780.docx",
+    "source": "http://www.sundaystandard.info/state-mining-and-community-case-basarwa-ckgr"
+  },
+  {
+    "_id": "57513e9e117ecb0f0011675b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e7dd42d3cab6662961fd68ca6e995ece3e96f6a.docx",
+    "source": "http://www.osisa.org/other/regional/existing-legal-and-institutional-frameworks"
+  },
+  {
+    "_id": "575141ee117ecb0f0011676e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf2d13f4976ce34205d12f75dbb2d9d289ba91aa.docx",
+    "source": "http://www.survivalinternational.org/tribes/bushmen"
+  },
+  {
+    "_id": "5751303b5e93ec0f00dec857",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/728b3c185fe0ef8d1c91f56d2b96b61b370a6758.docx",
+    "source": "http://www.geology.kg/index.php/konkursy/konkursy/251-zas-22"
   }
 ]
