@@ -3823,5 +3823,79 @@
     "_id": "57549714425b9118008f53d5",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c59b32f7feba0163ba1c7de6a927b0c5ac0125fe.docx",
     "source": "http://www.almeezan.qa/LawPage.aspx?id=4114&language=en"
+  },
+  {
+    "_id": "5754a6456a39261800370857",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94e9b66cd4349f58db4c59947f9eedcba7ba5950.pdf",
+    "source": "http://www.congopetrole.fr/societes_et_agences_sous_tutelle/la_snpc.html"
+  },
+  {
+    "_id": "5754ae916a39261800370882",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8293fc89a80f53747dc4cbee7016f6a602f96f9f.pdf",
+    "source": "http://www.itie-congo.org/index.php/2015-12-18-10-43-14/contrat-de-partage-de-production"
+  },
+  {
+    "_id": "5754a5046a39261800370855",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68d2945c1148deeafa5e118fab64829541a60adc.pdf",
+    "source": "http://www.minfin.gob.gt/archivos/presua2016/documentos/decreto.pdf"
+  },
+  {
+    "_id": "5754aad756c4301800aa414c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af5939b6f13c992842dc4fad7d9603e4601c2bba.pdf",
+    "source": "https://www.unibocconi.it/wps/wcm/connect/83cfaeaa-d5fd-4021-8021-15104503a863/SIL_Report_2015.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "5754b89f6a392618003708b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7daf3bd639c4537c186dd3af84054b8b296cd51.pdf",
+    "source": "http://www.minfin.gob.gt/images/archivos/estadisticas/doc203.pdf"
+  },
+  {
+    "_id": "5754b9166a392618003708b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3faaabb2296e2685b9a6528db6abfd167b005ad0.pdf",
+    "source": "http://www.minfin.gob.gt/images/archivos/estadisticas/doc251b.pdf"
+  },
+  {
+    "_id": "5754b87a56c4301800aa4181",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a01821eecc86af167969da4b124c510e8a4a76ec.pdf",
+    "source": "http://www.lexivox.org/norms/BO-DS-24051.html"
+  },
+  {
+    "_id": "5754b4516a392618003708a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5db4550a0fa37b6f351267eb6b8447821e86d2b4.pdf"
+  },
+  {
+    "_id": "5754aef056c4301800aa4160",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43ce783628d842673d1eee93e013c9a1498d5786.pdf",
+    "source": "https://www.bmv.com.mx/docs-pub/infoanua/infoanua_671471_2015_1.pdf"
+  },
+  {
+    "_id": "5754b936425b9118008f54a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fcb7737f5cc023af3218f2a17c3207131f60b759.pdf",
+    "source": "http://impuestos.gob.bo/images/normativa/rnd2013/RND%2010-0028-13.pdf"
+  },
+  {
+    "_id": "5754b97e425b9118008f54a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c676842fdb053010abeeac9a9a1925d5014ef6c6.pdf",
+    "source": "http://www.minfin.gob.gt/archivos/estadisticas/doc205.pdf"
+  },
+  {
+    "_id": "5754bb4d56c4301800aa41af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a577b13a6883de3424c18403e7b79cec248c467c.pdf",
+    "source": "https://www.qp.com.qa/en/SupplyManagement/Tenders/SupplyManagmentFiles/QP_HSE_Regulations_for_Contractors_Approved.pdf.pdf"
+  },
+  {
+    "_id": "5754bbb756c4301800aa41b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf284ba21b35427cc6ff410786c09e15e4d98f27.pdf",
+    "source": "http://www.oman-oil.com/News.php"
+  },
+  {
+    "_id": "5754bcac6a392618003708df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0bd448c4e4ae5750c4cd3bd815bcb407718d23a.pdf",
+    "source": "http://www.oocep.com/"
+  },
+  {
+    "_id": "5754acc0425b9118008f546a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d49991dd810650f11856928a59c0d112faff72a0.docx",
+    "source": "http://www.swfinstitute.org/sovereign-wealth-fund-rankings/"
   }
 ]
