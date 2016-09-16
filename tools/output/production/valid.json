@@ -3750,5 +3750,78 @@
     "_id": "5754759556c4301800aa3ec1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/714b86186337d3cb7968fdd6a3670088f8898cf2.png",
     "source": "http://E-mail"
+  },
+  {
+    "_id": "575493f96a3926180037079a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/feeab4bb5ab837ddf6e46f989134c696fbd61f68.pdf",
+    "source": "https://www.mof.gov.qa/en/Departments/UndersecretaryforFinancialAffairs/GovernmentAuditDepartment/Pages/default.aspx"
+  },
+  {
+    "_id": "5754971956c4301800aa40d3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c78c972f239451a697f03ca95d486a09651db16.pdf",
+    "source": "http://www.ohada.com/actes-uniformes/693/701/chapitre-1-comptes-consolides.html"
+  },
+  {
+    "_id": "5754954556c4301800aa40b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1952f008c39397f74f2ce273fe82c4c377c8641e.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/leis/L8666cons.htm"
+  },
+  {
+    "_id": "5754993b425b9118008f53e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0f681ee8eade8314f1ac8298e38f59e561bdb4a.pdf",
+    "source": "http://www.environment.org.ly/cgi-sys/suspendedpage.cgi"
+  },
+  {
+    "_id": "57549a2c425b9118008f53f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ddfede978ab786fc91da63c1282fb83092db0790.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/ang65046.pdf"
+  },
+  {
+    "_id": "575498a16a392618003707ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/385bd8d16572ff7152047c946cba341079749732.pdf"
+  },
+  {
+    "_id": "57549b9456c4301800aa4108",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04e69827b6f4d93d542dbac6e9522e47923ab919.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2015/08/31/090224b0828a4987/1_0/Rendered/PDF/Angola000Publi0ncial0Accountability.pdf"
+  },
+  {
+    "_id": "57549bac56c4301800aa410a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc0caca4c586a6f584431e1a0491928579fdd11b.pdf"
+  },
+  {
+    "_id": "57549bb36a3926180037080d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60f6c5114237b71f065c1fd79ebd1d81b99a59ff.pdf",
+    "source": "http://www.brasil-rounds.gov.br/arquivos/Edital_R13/contrato_R13_BE_PosRD09122015.pdf"
+  },
+  {
+    "_id": "57549c22425b9118008f5406",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c46f8d3ea8e8ac6cb1386262f69fc74f9fc9ef56.pdf",
+    "source": "http://www.itie-congo.org/images/rapports/kpmg13/rapport1ertrimestre.pdf"
+  },
+  {
+    "_id": "57549e096a39261800370825",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3580a6bfcb3babcca7d379d55682587ea478b0ac.pdf",
+    "source": "http://www.itie-congo.org/images/rapports/kpmg13/rapport4etrimestre.pdf"
+  },
+  {
+    "_id": "57549e9556c4301800aa4119",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04a1f61e20e00229d1f3639bd2f635522b7ef8e7.pdf",
+    "source": "http://www.finances.gov.ma/Docs/2013/depp/dahir-1-03-195.pdf"
+  },
+  {
+    "_id": "57549b1e56c4301800aa4102",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86fd45e86099b455b86e81a80dc1034dd8539c92.png",
+    "source": "http://www.brasil-rounds.gov.br/round_13/ingles_R13/edital.asp"
+  },
+  {
+    "_id": "575495d4425b9118008f53c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29ca2b5c60fddea3570bef412528cfaae973effa.docx",
+    "source": "http://www.planalto.gov.br/ccivil_03/leis/L9478.htm"
+  },
+  {
+    "_id": "57549714425b9118008f53d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c59b32f7feba0163ba1c7de6a927b0c5ac0125fe.docx",
+    "source": "http://www.almeezan.qa/LawPage.aspx?id=4114&language=en"
   }
 ]
