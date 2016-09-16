@@ -74,5 +74,10 @@
   {
     "_id": "574c665859c78e2100ce844e",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/87d8c798cd2e02b52f2b45395cfdfdd0fb716b77.pdf"
+  },
+  {
+    "_id": "57535fd04be7230f00b777ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b25933f2b4cde3b63dcde098dbbba3acb423b48b.PDF",
+    "source": "http://intranet2.minem.gob.pe/web/archivos/dgaam/certificado/RD_093_2016_MEM_DGAAM.PDF"
   }
 ]
