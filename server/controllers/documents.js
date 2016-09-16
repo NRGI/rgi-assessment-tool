@@ -10,9 +10,11 @@ var crypto              =   require('crypto'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
     FILE_SIZE_LIMIT     =   400 * 1024 * 1024,//400MB
+    path                =   require('path'),
     phantom             =   require('phantom'),
     //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
+    url                 =   require('url'),
     client              =   s3.createClient({
                                 maxAsyncS3: 20,     // this is the default
                                 s3RetryCount: 3,    // this is the default
@@ -84,7 +86,8 @@ var uploadFile = function(file, req, callback) {
 };
 
 var getFileExtension = function(filePath) {
-    return filePath.split('.')[filePath.split('.').length - 1];
+    var dottedExtension = path.extname(url.parse(filePath).pathname).toLowerCase();
+    return dottedExtension.split('.')[dottedExtension.split('.').length - 1];
 };
 
 var getFileName = function(timestamp, user, extension) {
