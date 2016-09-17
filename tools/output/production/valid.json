@@ -4364,5 +4364,293 @@
     "_id": "57550c4d6a39261800370b4a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d43b8fa2fccb3ede7cf449d36078537617307d48.docx",
     "source": "http://n/a"
+  },
+  {
+    "_id": "575573d28b97a32100c21c7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67b464ad8c6a4ba2857385ab3c9315f0fe23d82a.pdf",
+    "source": "http://minfin.ru/ru/perfomance/reservefund/statistics/res_key/"
+  },
+  {
+    "_id": "5755724397b9f721003b3028",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/874646138c32b2b9e17060bd93d489a5d2ac72dd.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/decreto_1414_de_2013.pdf"
+  },
+  {
+    "_id": "575574f697b9f721003b308c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b5798fc1da12fdd2e83bc9bb452762754ad47b0.pdf"
+  },
+  {
+    "_id": "57557772c51cd521005314f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4026c162aa0b8cc4a19f7e25189c0cc1d590d234.pdf",
+    "source": "http://www.infocom.gov.bd/ic/forms/rti_english.pdf"
+  },
+  {
+    "_id": "575577b297b9f721003b30d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/865f0e696115e01e7ff4bd138e53c50e30a91c9c.pdf",
+    "source": "http://www.diamonds.net/News/NewsItem.aspx?ArticleID=50175"
+  },
+  {
+    "_id": "575577dac51cd52100531507",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3a3ba48c731f85925d07585726539d1fbbfef79.pdf",
+    "source": "http://minenergo.gov.ru/en/activity/statistic"
+  },
+  {
+    "_id": "57557b7c8b97a32100c21d2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad338a87e54da8f59a619fe943b05d3e9840badd.pdf",
+    "source": "http://www.dtcbotswana.com/index.php"
+  },
+  {
+    "_id": "57557ca097b9f721003b314d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f32dbcfa9d8ec09966392158432e2389f4f680b3.pdf",
+    "source": "http://www.bpc.gov.bd/index.php"
+  },
+  {
+    "_id": "57557d0c8b97a32100c21d55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de62a2e197120732d6010440a8c7d00dfc475fb4.pdf",
+    "source": "http://www.debswana.com/About-Us/Pages/Board-of-Directors.aspx"
+  },
+  {
+    "_id": "57558329a20cc22a00db40b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/973b30654012a715870646a89c64811957163606.pdf",
+    "source": "http://www.finance.gov.bw/images/LawRegulations/Public%20Finance%20Management.pdf"
+  },
+  {
+    "_id": "5755858497b9f721003b31e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6005a5337c40494fe61c4d0b49afe1ee088508e.pdf",
+    "source": "http://www.finance.gov.bw/index.php?option=com_content&view=article&id=192&catid=23&Itemid=109"
+  },
+  {
+    "_id": "57558ad5a20cc22a00db4123",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0f5e2abe87da372ad373240083d2cbda7731f99.pdf",
+    "source": "http://www.bankofbotswana.bw/assets/uploaded/BOTSWANA%20PULA%20FUND%20-%20SANTIAGO%20PRINCIPLES%20(2).pdf"
+  },
+  {
+    "_id": "57558f5197b9f721003b3255",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ca3e6a673446c61a39453aca7158273bde187c3.pdf",
+    "source": "http://www.bankofbotswana.bw/assets/uploaded/AR%202015%20Text.pdf"
+  },
+  {
+    "_id": "575593ad97b9f721003b3282",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/294ffff68a2c440afc32b49c78b0b0aa10275fd7.pdf",
+    "source": "http://sidegap.com.co/sitio/wp-content/uploads/2015/06/plan_nacional_desarrollo.pdf"
+  },
+  {
+    "_id": "575598088b97a32100c21eda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52f12b09e3b3ffe9bc03bb231ec02c7f68fb290e.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/res_0831_27_nov_2015.pdf"
+  },
+  {
+    "_id": "57559c84a20cc22a00db4188",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c3964faf5433c282702db5e566058ef7a301d74.pdf",
+    "source": "http://www.corteconstitucional.gov.co/relatoria/2011/c-366-11.htm"
+  },
+  {
+    "_id": "5755a0d88b97a32100c21f2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fef2798ac5c520b1183a1c194ecabf25ef76d793.pdf",
+    "source": "http://www.nbrtaxcalculator.org/"
+  },
+  {
+    "_id": "5755a21aa20cc22a00db41b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2a225becaf1edf58bfeccee7479ef632b4a40bd.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/decreto_935_de_2013.pdf"
+  },
+  {
+    "_id": "5755a3098b97a32100c21f51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfa43eb135a59e6b8d481a1d63ee5c196668a41d.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/decreto_1300_de_2013.pdf"
+  },
+  {
+    "_id": "5755a38d8b97a32100c21f59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a3af55eaef3480669684b25159b571596fb1757.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/res_0428_26_junio_2013.pdf"
+  },
+  {
+    "_id": "5755a45e97b9f721003b32fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06c4ace6feb7bae00428505f38d97e7ba11cc45c.pdf",
+    "source": "http://190.24.134.67/SENTPROC/F11001032600020130008900S3PARAADUNTARAUTO20160218095723.doc"
+  },
+  {
+    "_id": "5755ad292d82c90f0035b6c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62484ca79545184b3738e37fdf9342972693edf3.pdf"
+  },
+  {
+    "_id": "5755ac822d82c90f0035b6b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f9a8e5fd60c880d9219e7c980eba2055247cf8a1.pdf"
+  },
+  {
+    "_id": "5755acf32d82c90f0035b6c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47b3a8169fb20526890866ef3d348adeb5a623e6.pdf"
+  },
+  {
+    "_id": "5755ad819774e60e00cba13b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c1495761af82e7e500766381ffdfc0c810c3a2cc.pdf"
+  },
+  {
+    "_id": "5755ae399774e60e00cba140",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9d81a4624815bcd594e671169c0dce7dcbd7b26.pdf"
+  },
+  {
+    "_id": "5755aeb69774e60e00cba154",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f63e9eabdaff760e24e22d3120e90ee1fdd77e7.pdf"
+  },
+  {
+    "_id": "5755af7c2d82c90f0035b6ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87b60acb18a79782d5a1d51b4e4866bf1ecdf1f4.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/DocumentosAnm/abeceevaluacionpropuestascontratoconcesion.pdf"
+  },
+  {
+    "_id": "5755c1a67f5da40f001f029d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/486c0d4e2354855fe4523996ab2e2cbc8060843d.pdf",
+    "source": "http://www.energy.alberta.ca/Tenure/1096.asp"
+  },
+  {
+    "_id": "5755cc969774e60e00cba22e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b53b2c9ba09cc540be24ba1b048e9be236a25159.pdf",
+    "source": "http://www.mof.gov.bd/en/budget/16_17/mtbf/en/42_Energy%20Division_English.pdf"
+  },
+  {
+    "_id": "5755cee39774e60e00cba23f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a4995ff89a4ec558dcf6a80482984653f2c66e0.pdf",
+    "source": "http://www.mof.gov.bd/en/budget/16_17/speech/BS_English_Final_1.6.16.pdf"
+  },
+  {
+    "_id": "5755d0332d82c90f0035b7be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a04c1feecfe916f315a3c1e06037208301507790.pdf",
+    "source": "https://www.ladb.ch/fileadmin/files/documents/Rohstoffe/DB_Un_contrat_raffine_Enquête_Fevrier_2015.pdf"
+  },
+  {
+    "_id": "5755d0c97f5da40f001f02f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/799b0680c62c524ccfe5136fd8bb4247b72e304d.pdf",
+    "source": "http://www.sovereignwealthcenter.com/fund/51/Public-Investment-Fund-New.html#/.V1GbWPkrKWg"
+  },
+  {
+    "_id": "5755d1317f5da40f001f02f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dca029eb1a69aaf100e1f802e8c4381072611af6.pdf",
+    "source": "http://www.sovereignwealthcenter.com/fund/39/Saudi-Arabian-Monetary-AgencyInvestment-Portfolio.html#/.V1GbZfkrKWg"
+  },
+  {
+    "_id": "5755d1da9774e60e00cba25c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7168d3538839fdacab609d72432ff46d3ec5049a.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2012/09/CODIGO_PLANIFICACION_FINAZAS.pdf"
+  },
+  {
+    "_id": "5755d3959774e60e00cba272",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02c373df298e5f5a4ee949da0e226ece73f4f732.pdf",
+    "source": "http://www.presidencia.gob.ec/presupuesto-de-2016-impulsara-la-inversion-en-sector-social-estrategico-y-productivo-presentacion/"
+  },
+  {
+    "_id": "5755d43a9774e60e00cba277",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a5795716ff1b80b8a787e272bf477de83295f846.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=1997_262.cfm&leg_type=Regs&isbncln=9780779783014&display=html"
+  },
+  {
+    "_id": "5755d4942d82c90f0035b7fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64265220a37fe66ef11c8bab59f8ce3e10af733c.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=1997_263.cfm&leg_type=Regs&isbncln=9780779780105&display=html"
+  },
+  {
+    "_id": "5755d5419774e60e00cba290",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81e65422bd8ae4171624db05dbb46a389bfae18e.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=2010_196.cfm&leg_type=Regs&isbncln=9780779754519"
+  },
+  {
+    "_id": "5755d6d82d82c90f0035b81b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3df56f16899a2d58e44aa8c62e7cec4485f4a982.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2016/04/Resumen-Ejecutivo-Justificativo-de-Ingresos-y-Gastos-Proforma-Presupuestaria-2016.pdf"
+  },
+  {
+    "_id": "5755d7472d82c90f0035b821",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd803ecfc965707555162fab71a9136bd4477c30.pdf",
+    "source": "http://www.juriscope.org/uploads/pdf/ohada/AUSCGIE%20fr.pdf"
+  },
+  {
+    "_id": "5755d7b79774e60e00cba2a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed01a7f232c33161c19e1c06b68f606a1ab98d27.pdf",
+    "source": "http://www.suinba.com/registros%20oficiales/R.O.%20EDICI%C3%93N%20ESPECIAL%20N%C2%B0%20411,%20MARTES%2008DICIEMBRE%202015.pdf"
+  },
+  {
+    "_id": "5755d8082d82c90f0035b831",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cc59be10e8b2157b24ea40796795d2c549659d0.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2015/11/Bolet%C3%ADn-de-Prensa-Proforma-Presupuestaria-2016_31-octubre-2015.pdf"
+  },
+  {
+    "_id": "5755bc107f5da40f001f0263",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/280f42e34b345c6555523c8842acf7fc189ff0cc.xlsx",
+    "source": "http://www.mof.gov.ae/Ar/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "5755bc352d82c90f0035b738",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c91dbb6fbfa291bc0a4785fdaaf422016948949d.docx",
+    "source": "http://www.not-palata.kg/index.php/rus/zakonodatelstvo/%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%D1%8B-%D0%BA%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D0%BA%D0%BE%D0%B9-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8/49-%D0%B7%D0%B5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81-%D0%BA%D1%80"
+  },
+  {
+    "_id": "5755c9b47f5da40f001f02c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ad6fa2c31e3dfc8b97bc3d46397bcc1a4b9e425.docx",
+    "source": "http://www.afrik.com/le-congo-brazzaville-relance-son-secteur-petrolier"
+  },
+  {
+    "_id": "5755cc009774e60e00cba22c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00ff2b96a737a8c94f36d0444cb964b923f8bee7.docx",
+    "source": "http://www.jeuneafrique.com/mag/282359/economie/brazzaville-met-cinq-blocs-petroliers-jeu/"
+  },
+  {
+    "_id": "5755aba37f5da40f001f01be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10018d79dd544d5730a5a7d1400806f2524340aa.xlsx",
+    "source": "http://www.mof.gov.ae/Ar/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "5755ac3c7f5da40f001f01d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e7b0f8976a0499f429e40c69e89fd8854c3ff26.xlsx",
+    "source": "http://www.mof.gov.ae/Ar/OpenData/Pages/default.aspx"
+  },
+  {
+    "_id": "575586c697b9f721003b31ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/776f46501b5bda1f171764643c7890b28d89c41f.docx",
+    "source": "http://www.nature.gov.kg/index.php/regulation/gosecoexpertiza.html?showall=&start=1"
+  },
+  {
+    "_id": "575587798b97a32100c21e00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98e8d03e127f8be54edd784945340708c7d4090e.docx",
+    "source": "http://www.kumtor.kg/en/mine-closure/"
+  },
+  {
+    "_id": "575589048b97a32100c21e20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0eaea1f516431041ee320578ed76a9da9d040c2.docx",
+    "source": "http://www.manasresources.com/environment.189.english.html"
+  },
+  {
+    "_id": "5755735f97b9f721003b305b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f5e6ab99deba3d15692f2f9c4a1e7b3091c1404.docx",
+    "source": "http://nature.gov.kg/lawbase/laws/02_ls_environmental_protection.xml"
+  },
+  {
+    "_id": "5755741d97b9f721003b3077",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55cdbba6d1810eca6e34b7c0735d5d777a57f297.docx",
+    "source": "http://nature.gov.kg/lawbase/laws/03_ls_ecological_assessment.xml"
+  },
+  {
+    "_id": "5755a6957f5da40f001f017e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80c9bc9502a2e9f992e8ecf39d26735b70c871de.docx",
+    "source": "http://nature.gov.kg/lawbase/laws/01_ls_ecological_safety.xml"
+  },
+  {
+    "_id": "57559bab97b9f721003b329e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be2abf23dab2bfcc874ed408e292ec6353bd0b9d.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_1382_2010.html"
+  },
+  {
+    "_id": "5755b0af7f5da40f001f021a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cb9f9d2068c30a82e50842eccd1e6d726451e81.docx",
+    "source": "http://kyrgyzaltyn.kg/%D1%8D%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-%D0%B8-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C/"
+  },
+  {
+    "_id": "57557e6d97b9f721003b3176",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dd758ed9c99bafb30b03be69bf8387bb8ee6d2c.pdf",
+    "source": "http://www.debswana.com/About-Us/Documents/Code%20of%20Conduct%20and%20Business%20Ethics.PDF"
+  },
+  {
+    "_id": "57557cf697b9f721003b3150",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/256c94177ad0d67a2e890cb5615265babac1216b.pdf",
+    "source": "http://www.emrd.gov.bd/"
   }
 ]

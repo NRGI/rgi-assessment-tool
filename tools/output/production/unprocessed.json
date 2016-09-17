@@ -79,5 +79,10 @@
     "_id": "57535fd04be7230f00b777ba",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b25933f2b4cde3b63dcde098dbbba3acb423b48b.PDF",
     "source": "http://intranet2.minem.gob.pe/web/archivos/dgaam/certificado/RD_093_2016_MEM_DGAAM.PDF"
+  },
+  {
+    "_id": "5755d1e37f5da40f001f0308",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28e62e69178de49044983ba6b03821d1b4443cee.pdf",
+    "source": "http://www.itie-congo.org/images/rapports/kpmg13/rapport1ertrimestre.pdf"
   }
 ]
