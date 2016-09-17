@@ -123,5 +123,15 @@
     "_id": "5754902356c4301800aa406b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/321160fbeccca198f31ac22110bd3d0ad16a6c5d.pdf",
     "source": "http://www.minfin.gob.gt/archivos/presua2015/documentos/pmul.pdf"
+  },
+  {
+    "_id": "5755db192d82c90f0035b83e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d51973f49487f48b3f964076e55f82d6f533984f.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2016/04/Informe-Ejecuci%C3%B3n-Ejercicio-Fiscal-2015.pdf"
+  },
+  {
+    "_id": "5755e0842d82c90f0035b878",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e613f177ec637c8edd1848f366385d77defc002.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2016/05/DEUDA-SECTOR-P%C3%9ABLICO-DEL-ECUADOR_abril2016.pdf"
   }
 ]

@@ -4652,5 +4652,93 @@
     "_id": "57557cf697b9f721003b3150",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/256c94177ad0d67a2e890cb5615265babac1216b.pdf",
     "source": "http://www.emrd.gov.bd/"
+  },
+  {
+    "_id": "5755de657f5da40f001f0385",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f89a700677fab7b35556d2fde10bfb51e959c04.pdf",
+    "source": "http://www.mof.gov.bd/en/budget/16_17/brief/en/At%20a%20Glance.pdf"
+  },
+  {
+    "_id": "5755dd9b2d82c90f0035b865",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03e3d84d571cf2606e1d13fe087d6df52a1ad6a1.pdf",
+    "source": "http://www.ft.com/intl/cms/s/0/1d08c4a4-ace0-11e2-9454-00144feabdc0.html#axzz4Ape6s5Xa"
+  },
+  {
+    "_id": "5755dbf82d82c90f0035b848",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/170ac71267ba81fc5ed8cd89fa2e8fe542453b44.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2016/04/Informe-Modificaciones-Presupuestarias-Ejercicio-Fiscal-2015.pdf"
+  },
+  {
+    "_id": "5755dc0c9774e60e00cba2ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9610cb0f6b6898e27f86e72288122a0033edab9d.pdf",
+    "source": "http://www.emrd.gov.bd/site/notices/8667536c-5e2f-4469-8430-c9f1c1ad2779/%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%B7%E0%A6%BF%E0%A6%95-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AC%E0%A7%87%E0%A6%A6%E0%A6%A8"
+  },
+  {
+    "_id": "5755e2907f5da40f001f03a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c7317e5528f67c8bd2c778cbcf7669f791a51ca.pdf",
+    "source": "http://www.energy.alberta.ca/Oil/573.asp"
+  },
+  {
+    "_id": "5755e2517f5da40f001f03a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ede80f79b0f745ed6db420241b690c59ab53a1b8.pdf",
+    "source": "http://www.energy.alberta.ca/About_Us/Royalty.asp"
+  },
+  {
+    "_id": "5755e0607f5da40f001f0389",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/746ca4609977ee916e57e7c67ed3db242cb4eca0.pdf",
+    "source": "http://www.finanzas.gob.ec/deuda-publica/"
+  },
+  {
+    "_id": "5755e07a9774e60e00cba2ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d587d8c8c15b8f2613f9fc39630474b8f6ab7e3.pdf",
+    "source": "https://www.google.com.bo/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&ved=0ahUKEwjLmO6kmpTNAhWDmh4KHbzXB-0QFggsMAM&url=http%3A%2F%2Fwww.ypfb.gob.bo%2Fcomponent%2Fphocadownload%2Fcategory%2F59-enero-diciembre-2009.html%3Fdownload%3D323%3Aunidad-de-retribucion-gestion-2009&usg=AFQjCNEpEUhfQUAIc016R9Qzqpvvmh9dKQ&sig2=2niNhqwjvBZeh5qioMaxUQ&bvm=bv.123664746,d.dmo"
+  },
+  {
+    "_id": "5755e2cc2d82c90f0035b896",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d88cbca992e6e9c244e00aa0dd45534878d67e8.pdf",
+    "source": "http://www.energy.alberta.ca/OilSands/584.asp"
+  },
+  {
+    "_id": "5755e30a2d82c90f0035b89b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69ea579bd82718fbad66f64eaa2cd3b4281979ef.pdf",
+    "source": "http://www.energy.alberta.ca/About_Us/996.asp"
+  },
+  {
+    "_id": "5755e3167f5da40f001f03aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a951b035bf15ab22398ea8ff13a577fefc5de60.pdf"
+  },
+  {
+    "_id": "5755e37d9774e60e00cba317",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a530e82fe28b517976d9452fb78a5261864cd3b.pdf",
+    "source": "http://www.qp.alberta.ca/1266.cfm?page=a15.cfm&leg_type=Acts&isbncln=9780779748716&display=html"
+  },
+  {
+    "_id": "5755e3cf9774e60e00cba31c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a71643e0d05da2fc5becbc4e735465261a078a1a.pdf",
+    "source": "http://www.mof.gov.bd/en/budget/15_16/ber/en/Ch-04.pdf"
+  },
+  {
+    "_id": "5755ef189774e60e00cba42a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e989f2766a0f94e9144e5648c4ffb2a6aff8735a.pdf",
+    "source": "http://www.ecuadorestrategicoep.gob.ec/images/leytransparencia/Base%20legal/Reglamentoparaasignacionderecursosproyectosdeinversionsocial.pdf"
+  },
+  {
+    "_id": "5755edbe2d82c90f0035b98c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d24c9b7f919bd97fffaac2855955ecc604a98c62.pdf",
+    "source": "http://training.energy.gov.ab.ca/36.asp"
+  },
+  {
+    "_id": "5755e8f37f5da40f001f043c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70c1a03a553c6eec954dbd6d0b48c03b52812c11.docx",
+    "source": "http://www.gezitter.org/search/?search=нарушения+при+выплате+компенсаций+за+землю+при+разработке+месторождений+в+2015+году"
+  },
+  {
+    "_id": "5755eadb9774e60e00cba3dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7324502aa747926d302de0e6a92035bf23bc4ce2.docx",
+    "source": "http://forum.eiti.org.kg/index.php?/topic/8-лицензирование-в-гдп-в-кыргызстане/page_st_120"
+  },
+  {
+    "_id": "5755e6232d82c90f0035b8dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e4af45cf1f7c93ae59151b9dfaa089a6a385564.pdf"
   }
 ]
