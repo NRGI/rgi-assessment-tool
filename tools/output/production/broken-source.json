@@ -153,5 +153,10 @@
     "_id": "575696a77f5da40f001f093a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c3eeee0a2545ac0e86a0b734a2d7446bfb07ccf8.pdf",
     "source": "http://www.mgb.gov.ph/attachments/article/50/May_2016_FTAA.pdf"
+  },
+  {
+    "_id": "57572bf17f5da40f001f12c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa2e294021fba3a1d97a5d28a1ca18cb7f589ae8.pdf",
+    "source": "http://www.finance.alberta.ca/publications/annual_repts/finance/annrep15/TBF-Ministry-Financial-Statements-2014-15.pdf"
   }
 ]
