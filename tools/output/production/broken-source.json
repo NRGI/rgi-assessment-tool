@@ -148,5 +148,10 @@
     "_id": "575645de7f5da40f001f0765",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/50ba7dea7960260edc5ba1541834d6fa07045c87.pdf",
     "source": "http://www.mgb.gov.ph/attachments/article/50/May_2016_FTAA.pdf"
+  },
+  {
+    "_id": "575696a77f5da40f001f093a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3eeee0a2545ac0e86a0b734a2d7446bfb07ccf8.pdf",
+    "source": "http://www.mgb.gov.ph/attachments/article/50/May_2016_FTAA.pdf"
   }
 ]
