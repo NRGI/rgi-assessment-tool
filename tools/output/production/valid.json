@@ -5661,5 +5661,214 @@
   {
     "_id": "5756eac92d82c90f0035c42f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b76e7af33c55405d61d5eb005abce8bbd00a7563.PNG"
+  },
+  {
+    "_id": "5757ebc17f5da40f001f16de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/724ac08b3cb96dfefc47aa0bd3ccb9eb1f30560b.pdf"
+  },
+  {
+    "_id": "5757edbf9774e60e00cbb5e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2408dee5ca674f4c8c94c24985e10af755bbef3.pdf"
+  },
+  {
+    "_id": "5757ec997f5da40f001f16ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32fa1898f54ccb4dc6f9e8182dd075708951ac92.pdf"
+  },
+  {
+    "_id": "5757ec719774e60e00cbb5e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/078f14fb87815ec03145636381b87a5b724ed746.pdf",
+    "source": "https://eiti.org/Liberia"
+  },
+  {
+    "_id": "5757edcf7f5da40f001f16f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/611d928c541b277653098183a20e9168f602d9e9.pdf",
+    "source": "http://www.investir-afrique.com/doc_2015/loi_de_finances_2015_congo_brazzaville.pdf"
+  },
+  {
+    "_id": "5757edee7f5da40f001f16f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1479c2fe6dc92ffd9ffa8761aa2bd902f5d897de.pdf"
+  },
+  {
+    "_id": "5757f1207f5da40f001f1745",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c0c6e439237853b49e0757830935d9448d95140.pdf",
+    "source": "http://cour-constitutionnelle.cg/docs/constitution_25_10_2015.pdf"
+  },
+  {
+    "_id": "5757f6009774e60e00cbb65c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/797ae05352ca70e5d22302b23cf01d0097db05fc.pdf",
+    "source": "http://adilet.zan.kz/rus/docs/V060004361_#z36"
+  },
+  {
+    "_id": "5757f5b47f5da40f001f1789",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adca427513a036e5e2d481802d55f2f97c53e617.pdf"
+  },
+  {
+    "_id": "5757f40b7f5da40f001f1773",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59eec0cc5368244f1e35668a28dd28450154e2e0.pdf",
+    "source": "http://www.clientearth.org/ressources-externes/congo/foncier/textes-juridiques-sur-la-decentralisation-.pdf"
+  },
+  {
+    "_id": "5757f60c9774e60e00cbb65f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7e8f013863f0891f88744c658ed3145b6bff785.pdf"
+  },
+  {
+    "_id": "5757ff929774e60e00cbb6ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af429734bc7e4b3c9b97ec1a37f6ce4bda019337.pdf"
+  },
+  {
+    "_id": "5758001f7f5da40f001f17f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a107c67c14cc4c24e1beb4c144e978cd3abb38ba.pdf"
+  },
+  {
+    "_id": "5757fe389774e60e00cbb6a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c99ca46f2be9ecc229f30b8e4034a9f10b7c7f8d.pdf",
+    "source": "http://library.fes.de/pdf-files/bueros/kamerun/05079.pdf"
+  },
+  {
+    "_id": "575800c7d1ffac1800494db1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/368acbc40e758cdb7ba9e87e166527511eadeb6d.pdf",
+    "source": "http://www.presidentrdc.cd/squelettes/pdf/budget2016.pdf"
+  },
+  {
+    "_id": "5757f8ec7f5da40f001f17bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2dbcb81d445190d234b54780d65f16d56f1a803.pdf",
+    "source": "http://www.afriquelocale.org/fr/cglu.../item/.../54_0c2a291c6b660f5b640f4038c4c7a222"
+  },
+  {
+    "_id": "575808067f5da40f001f183e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64eb1e923054079f07b17317029670924164dcf2.pdf",
+    "source": "http://www.azerbaijandecorexpo.com/document/azerbaijan_investment_guide.pdf"
+  },
+  {
+    "_id": "57580e399774e60e00cbb73c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7f77bc9f941a9e3c57ebea7a81f8e2683f59ea3.pdf",
+    "source": "http://www.erdenesmongol.mn/customer/list.shtml?type=board&sel=6084&subsel=6086&subsubsel=6124"
+  },
+  {
+    "_id": "575807047f5da40f001f182e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f10e619334915630d2fea2416aedbd3d2ea738d2.pdf",
+    "source": "http://www.african-markets.com/pdf/fr/Guide_des_Fonds_Souverains_Africains_FR.pdf"
+  },
+  {
+    "_id": "5758040f9774e60e00cbb6d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/848c9c66898e0f5b6d1b620fa3dbd3093494b6fc.pdf",
+    "source": "http://bura.brunel.ac.uk/bitstream/2438/6494/1/FulltextThesis.pdf"
+  },
+  {
+    "_id": "57581297d1ffac1800494e80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ad198af6bff80d35808d508841127d3d6ce4a9b.pdf",
+    "source": "http://www.feac.gov.et/images/downloads/proclamation_for_disclosure_and_registration_assets.pdf"
+  },
+  {
+    "_id": "575815387f5da40f001f18ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b32c7d82044d5600b03fda61ef0dc5bcbc80c9e.pdf",
+    "source": "http://www.feac.gov.et/index.php/organizational-functions-en/asset-diclosure-and-registration-en"
+  },
+  {
+    "_id": "5758176e7f5da40f001f18ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de01812d39f7d5ec1a0ce35db5d672fcd412fc3d.pdf"
+  },
+  {
+    "_id": "5758182f7f5da40f001f1900",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64678c9970c8ad1be4781b079f29695f55376e06.pdf",
+    "source": "https://itportal.decc.gov.uk/information/licence_reports/offshorebylicence.html"
+  },
+  {
+    "_id": "575818dcd1ffac1800494ecd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb09cb3ca72b76a8cb320eb5faf0dd5dc6a6bec2.pdf",
+    "source": "http://budget.kz/natsionalnyy-fond/"
+  },
+  {
+    "_id": "57581d5ac6074418004ad2b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b661b039733c82b95552ea471e1fceec9463956.pdf",
+    "source": "https://itportal.decc.gov.uk/environment/permits/eis/eisr004.htm"
+  },
+  {
+    "_id": "57581ec4d1ffac1800494f13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d69058ff711d6fc7c17b0d1acd8419573029b6f.pdf",
+    "source": "https://www.gov.uk/government/organisations/hm-revenue-customs/about"
+  },
+  {
+    "_id": "5758206d9774e60e00cbb81c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c239937d629b0d8f2c9c0ef451a7ed22fd2e191e.pdf"
+  },
+  {
+    "_id": "575837c1f4d5c90f0037c81d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4916741f90978656b4ad7adc85fe95fa252406e7.pdf"
+  },
+  {
+    "_id": "5758386de19efb0f007777c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d28c3f73e277aeb23ca4c76b8a57a74e43752d98.pdf",
+    "source": "http://www.energy.gov.tt/for-investors/archives/"
+  },
+  {
+    "_id": "575849bce19efb0f00777872",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/789a5152c34283aa93d06ccf90f26135e07fd929.pdf",
+    "source": "http://www.legislation.tn/detailtexte/Arr%C3%AAt%C3%A9-num-2016-1190-du-22-04-2016-jort-2016-033__2016033011904?shorten=bvuC"
+  },
+  {
+    "_id": "57584b33f4d5c90f0037c8e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/443a72a192d03a59592baf10dd7a172fad92ac55.pdf"
+  },
+  {
+    "_id": "57584f59e19efb0f0077789f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1fb807b571e2c17a92092fa39b924a5e290e6b2.pdf",
+    "source": "http://www.legislation.tn/detailtexte/Arr%C3%AAt%C3%A9-num-2016-1178-du-22-04-2016-jort-2016-033__2016033011784?shorten=bvuC"
+  },
+  {
+    "_id": "57584ffbe19efb0f007778a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bcfcede83a1f5d86283b3496eb1f2e677a2ec59.pdf",
+    "source": "http://www.legislation.tn/detailtexte/Arr%C3%AAt%C3%A9-num-2015-1384-du-03-11-2015-jort-2015-090__2015090013844?shorten=bvuC"
+  },
+  {
+    "_id": "5758530271bdf00e00611120",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5785b02d37d1c598e64b158a52642ce2f5b88d22.pdf",
+    "source": "http://www.erca.gov.et/images/Documents/Proclamation/Income_tax/55.pdf"
+  },
+  {
+    "_id": "575854bb71bdf00e00611137",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/937fef75ed7872f024ba4bdf07e864f17df0ce06.pdf"
+  },
+  {
+    "_id": "57581ccdc6074418004ad2ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf305b4aa42eff308759c2bfb90d123f5300c0a1.xlsx"
+  },
+  {
+    "_id": "57581103d1ffac1800494e69",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e08bf07f1e413b0a6b1d0a1ce35e2c27a4991b18.PNG",
+    "source": "http://www.sohbetna.com/business/uaelaw/federaldecreelawno4onthestablshmentiftheuaeinvestmentauthority/"
+  },
+  {
+    "_id": "5757ebb37f5da40f001f16dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7049863e41417fc39a53ca071c0275624cd6d725.png",
+    "source": "http://smida.gov.ua/reestr/?kod=00135390"
+  },
+  {
+    "_id": "5757eea07f5da40f001f1710",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6caf7be7f3bd278d77604a6fcc32d82b5a23f91.png",
+    "source": "http://www.kmu.gov.ua/control/uk/cardnpd?docid=248152310"
+  },
+  {
+    "_id": "5757f0479774e60e00cbb606",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/205b5a8f46228b986f01464815bfc8ae8789cc4f.docx",
+    "source": "http://fr.allafrica.com/stories/201604191357.html"
+  },
+  {
+    "_id": "57583ac1f4d5c90f0037c83c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7fa824dfcf612341541849b1f4cc0ded46c6de1d.docx",
+    "source": "http://timesofoman.com/article/74653/Oman/Government/His-Majesty-the-Sultan-issues-Royal-Decrees-on-9th-Five-Year-Plan-and-State's-General-Budget"
+  },
+  {
+    "_id": "57584eebf4d5c90f0037c90c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f41f8bedaddbe0e59ec1c2b117db39f13eaab66.docx"
+  },
+  {
+    "_id": "5757f51f9774e60e00cbb64d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c815d33586906d8fd36a08d328ce637e99fc836c.pdf",
+    "source": "http://www.investir-afrique.com/doc_2014/loi_de_finances_2014_congo_brazzaville.pdf"
+  },
+  {
+    "_id": "575819d99774e60e00cbb7be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/577537ca4a6c90e5a9149e076b10ece4575240a8.pdf"
   }
 ]
