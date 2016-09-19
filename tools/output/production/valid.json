@@ -4740,5 +4740,137 @@
   {
     "_id": "5755e6232d82c90f0035b8dd",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/4e4af45cf1f7c93ae59151b9dfaa089a6a385564.pdf"
+  },
+  {
+    "_id": "5755f5db9774e60e00cba4be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82fe593194911b5999cc98bd753815750b3a5e71.pdf",
+    "source": "http://www.ecuadorestrategicoep.gob.ec/images/leytransparencia/MatricesDiciembre2015/literal_h.pdf"
+  },
+  {
+    "_id": "5755f0879774e60e00cba441",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc478186f203e95a87394c1546f3b2ecb10bb4b2.pdf",
+    "source": "http://aer.ca/documents/about-us/AER_Brochure.pdf"
+  },
+  {
+    "_id": "5755f1e42d82c90f0035b9de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12ab11efb38b0489403a383dca8ee1e7105afb37.pdf",
+    "source": "http://www.ecuadorestrategicoep.38dec.net/wp-content/uploads/2016/03/InformeRendici%C3%B3nCuentas2015EEEP.pdf"
+  },
+  {
+    "_id": "5755f1849774e60e00cba45e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75bf40f81e4e82ae6087f94848cc007c354e6952.pdf",
+    "source": "http://www.planificacion.gob.ec/wp-content/uploads/downloads/2015/09/Nuevo-Sistema-de-Transferencias-a-Favor-de-los-GAD.pdf"
+  },
+  {
+    "_id": "575625c02d82c90f0035bbb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06a656c828d6f8972dfd8496bef727c83cb91fd1.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/bases-legales;jsessionid=vIeBLC+32079UtfDlvA1q9WB"
+  },
+  {
+    "_id": "575607ff7f5da40f001f05e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a2827be5f08b94f3a5ce811d127ae4c36f8b778.pdf",
+    "source": "http://europe.theoildrum.com/node/4513"
+  },
+  {
+    "_id": "57563c639774e60e00cba6cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88ee55861d0ebdc0ac171c4a596188fbd942586b.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/transparencia2"
+  },
+  {
+    "_id": "57563c9f2d82c90f0035bc1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e5236fc94727c02efd5b3807327c72496376d65.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/transparencia2"
+  },
+  {
+    "_id": "57563a287f5da40f001f06fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed16ba7df4a42265c43717c48313e7bcc3c479f3.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/transparencia2"
+  },
+  {
+    "_id": "57563bea7f5da40f001f06fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31ad7b3be001f9b16d67da8fa7f8f9d4ba05e7a6.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/transparencia2"
+  },
+  {
+    "_id": "575633ab9774e60e00cba699",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e485821278cd6f07882859ae25bc0cb7d4db646f.pdf",
+    "source": "http://www.sri.gob.ec/web/guest/167"
+  },
+  {
+    "_id": "57563e9e2d82c90f0035bc3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f13c89d948b8dce856acaf85387c3554fb2fbfd.pdf",
+    "source": "http://www.energy.alberta.ca/FTPPNG/20160309PSR.pdf"
+  },
+  {
+    "_id": "575643d52d82c90f0035bc6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3d3d90ecfb68ea76b339f606f0b95fa5ea9a175.pdf",
+    "source": "http://contracts.ph-eiti.org/contract/101"
+  },
+  {
+    "_id": "575648d19774e60e00cba76c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8da2730d112ac56efeda2beffe67a7d0f958e527.pdf",
+    "source": "http://bicoltoday.com/2015/12/23/mines-bureau-fails-target-of-rapu-rapu-%E2%82%B1125m-rehab-project/"
+  },
+  {
+    "_id": "575649627f5da40f001f079c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec081990a036d5ee4e873bcca193a53b539cd205.pdf"
+  },
+  {
+    "_id": "5756484d9774e60e00cba761",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2093549d3e35998a2e68570e380c0bb02cf81a60.pdf",
+    "source": "http://bayanihan.org/2014/03/04/denr-awaits-revised-rehab-plan-for-termination-of-rapu-rapu-mining/"
+  },
+  {
+    "_id": "57564cb92d82c90f0035bcea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3943d83d9ca04e94f7d204696aab1d8d0665975b.pdf",
+    "source": "http://www.coa.gov.ph/phocadownload/userupload/issuances/resolutions/reso1995/reso-95-208.doc"
+  },
+  {
+    "_id": "57564da07f5da40f001f07bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cee3f1ee41d5906e03571bd5005632924a976aae.pdf",
+    "source": "http://www.energy.alberta.ca/Tenure/607.asp"
+  },
+  {
+    "_id": "57566dc67f5da40f001f081a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/675461bbb6161e68bf990391853d26fd66b3303d.pdf",
+    "source": "http://www.eiti.az/index.php/en/senedler-2/agreements"
+  },
+  {
+    "_id": "575675969774e60e00cba81e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa9c782068edfcf154d7e911593cba386d68c3cf.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/decreto_4134_de_2011_0.pdf"
+  },
+  {
+    "_id": "575648297f5da40f001f078d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcb97fc8e068e5b335fd9258ddd09a05f4a65f3e.png",
+    "source": "http://www.treasury.gov.my/index.php?option=com_content&view=article&id=272&Itemid=2475&lang=en"
+  },
+  {
+    "_id": "575673782d82c90f0035bd7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/92123b5636e4af300a3491048640151b456c0003.pdf",
+    "source": "http://www.taxes.gov.az/modul.php?name=qanun&cat=16&lang=_eng"
+  },
+  {
+    "_id": "57563cf42d82c90f0035bc2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d2550fc76bd78e171409680260d1598f47c4230.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/Reports/2014%20Annual%20Report%20as%20of%20oct%2027.pdf"
+  },
+  {
+    "_id": "57560ca79774e60e00cba5e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf70f19e9a2fd55a4f879f84aee5f4b6940f0cf8.xlsx"
+  },
+  {
+    "_id": "575611ec9774e60e00cba5f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2114bc99e6f92c3846ca8ccc7d05f84a64c35058.jpg"
+  },
+  {
+    "_id": "57561e3e2d82c90f0035bb8c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e03d6f48f96f61356a7e252b430c044d3d0b9edb.png",
+    "source": "http://www.brasil-rounds.gov.br/round_13/portugues_R13/edital.asp"
+  },
+  {
+    "_id": "575607a89774e60e00cba57c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e380ca0873959964767f0483557b1d8c99d8d542.xlsx",
+    "source": "http://mom.gov.af/en/page/1384"
   }
 ]

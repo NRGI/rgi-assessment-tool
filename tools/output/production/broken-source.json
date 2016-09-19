@@ -133,5 +133,20 @@
     "_id": "5755e0842d82c90f0035b878",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7e613f177ec637c8edd1848f366385d77defc002.pdf",
     "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2016/05/DEUDA-SECTOR-P%C3%9ABLICO-DEL-ECUADOR_abril2016.pdf"
+  },
+  {
+    "_id": "575645372d82c90f0035bc81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a32208dbf3252be2b208e2c74c871c70192dd07.pdf",
+    "source": "http://www.mgb.gov.ph/attachments/article/50/May_2016_MPSA_2.pdf"
+  },
+  {
+    "_id": "57563e089774e60e00cba6ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9dd16807f783a20ed6bc5d511fdcc560b3b9ed47.pdf",
+    "source": "http://www.energy.alberta.ca/FTPOS/20151216OSR.pdf"
+  },
+  {
+    "_id": "575645de7f5da40f001f0765",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50ba7dea7960260edc5ba1541834d6fa07045c87.pdf",
+    "source": "http://www.mgb.gov.ph/attachments/article/50/May_2016_FTAA.pdf"
   }
 ]
