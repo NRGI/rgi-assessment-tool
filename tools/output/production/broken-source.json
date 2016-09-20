@@ -158,5 +158,10 @@
     "_id": "57572bf17f5da40f001f12c2",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/fa2e294021fba3a1d97a5d28a1ca18cb7f589ae8.pdf",
     "source": "http://www.finance.alberta.ca/publications/annual_repts/finance/annrep15/TBF-Ministry-Financial-Statements-2014-15.pdf"
+  },
+  {
+    "_id": "575ab4d377354d1700acc42c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4fec5397fc3f7e9b9a56bf550d38a3ce1519589.pdf",
+    "source": "http://www.e-qanun.az/framework/3852"
   }
 ]
