@@ -5870,5 +5870,134 @@
   {
     "_id": "575819d99774e60e00cbb7be",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/577537ca4a6c90e5a9149e076b10ece4575240a8.pdf"
+  },
+  {
+    "_id": "575858a4e19efb0f00777939",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7209bce3edd62b3205b9536793b34fd949182964.pdf",
+    "source": "http://www.legislation-securite.tn/sites/default/files/files/lois/Loi%20n%C2%B0%2072-40%20du%201%20Juin%201972%20(Ar).pdf"
+  },
+  {
+    "_id": "57585b2271bdf00e006111df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/889cef73ac77c9a1ca2288a7e0253542f63f0cc4.pdf"
+  },
+  {
+    "_id": "57585c13e19efb0f0077797e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13e33334d8247b7292623ed19f6874211abcab33.pdf",
+    "source": "http://www.almeezan.qa/LawPage.aspx?id=3957&language=en"
+  },
+  {
+    "_id": "57585c5ee19efb0f0077798a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1c94589816fedb6896665d10ba221b45e341a23.pdf",
+    "source": "http://allafrica.com/stories/201506101630.html"
+  },
+  {
+    "_id": "57585cbf71bdf00e006111fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1b150d27b2919b2fabbccb4d9b17a2e8b6fd96d.pdf",
+    "source": "http://allafrica.com/stories/201506082341.html"
+  },
+  {
+    "_id": "57585dbbf4d5c90f0037ca29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0d4e2657f551b5f517210ca70c3fdd37cc77355.pdf",
+    "source": "http://www.mme.gov.qa/cui/index.dox?siteID=2"
+  },
+  {
+    "_id": "57585cf1f4d5c90f0037ca21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87732d83a9ab59f14705b7a8fcec2bf143957003.pdf"
+  },
+  {
+    "_id": "57585ebaf4d5c90f0037ca3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd512e396aa70e4ba63797ec324709950e485251.pdf",
+    "source": "http://www.epa.gov.et/Download/Guidelines/mine%20and%20petroleum%20guidelin.pdf"
+  },
+  {
+    "_id": "57585dfce19efb0f007779a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8558c6d6ae1cd6b49d3dc9baf1dfd8f6c8074ce3.pdf",
+    "source": "https://www.google.co.uk/?ion=1&espv=2#q=qatar+petroleum+compensation+landowners"
+  },
+  {
+    "_id": "57585e75e19efb0f007779b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9357f0f8acbd43220b6e9cb95e958f3d0ef2ca22.pdf"
+  },
+  {
+    "_id": "57585ea0e19efb0f007779bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6db787cc5edb1ec55e19d87642893025db4b50e3.pdf",
+    "source": "http://uk.practicallaw.com/5-525-5499#a849878"
+  },
+  {
+    "_id": "57585f76f4d5c90f0037ca58",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d0fe0f4e5627300fbaaee92580b8bd927c58f77.pdf"
+  },
+  {
+    "_id": "575860a5f4d5c90f0037ca7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24b8fd5c4637a88c0ed9b124a3df05cfb514c2c5.pdf",
+    "source": "http://www.epa.gov.et/Download/EIA%20Documents%20for%20Review%20Comments/Zygogramma_EA,Jan19,2011.pdf"
+  },
+  {
+    "_id": "57586715e19efb0f00777a6f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c784571183832696aa7bdb5272197e86747e27a.pdf"
+  },
+  {
+    "_id": "5758699af4d5c90f0037cb11",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/986d7e623dc8b42b64a253b84381b6fef3afaf9f.pdf",
+    "source": "http://pef.hacienda.gob.mx/"
+  },
+  {
+    "_id": "575870cff4d5c90f0037cba6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05a6d48e67a69afb74479baf73e2cc790d06df86.pdf"
+  },
+  {
+    "_id": "57586759f4d5c90f0037caee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17914df2ae89052d11244adc7b740706b38c5d05.pdf",
+    "source": "https://www.hrw.org/world-report/2015/country-chapters/ethiopia"
+  },
+  {
+    "_id": "575872dff4d5c90f0037cbee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b260d724c4a45dda14cf4452ace13fa632dafca2.pdf",
+    "source": "http://www.assembleenationale.bf/L-Assemblee-nationale-donne-son-quitus-pour-la-creation-de-la-Cour-200"
+  },
+  {
+    "_id": "57587474e19efb0f00777bab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b8a13cb1a639f83e1ce42444ff1deb57b3e5054.pdf"
+  },
+  {
+    "_id": "5758786771bdf00e00611439",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7231a2f526623d51307172ca61b5a7fdbdb00fd4.pdf",
+    "source": "http://www.gob.mx/shcp/prensa/comunicado-de-prensa-073-2016"
+  },
+  {
+    "_id": "575873e5e19efb0f00777ba8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89e48e629a61745f2f7c2ee780291fbdaa0dad2e.pdf",
+    "source": "http://www.plancomm.gov.bd/wp-content/uploads/2015/02/13_Strategy-on-Local-Government-Strengthening.pdf"
+  },
+  {
+    "_id": "575873a5e19efb0f00777b9b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84ee6b80760500cea52d6b152cd8618dfefdd246.pdf"
+  },
+  {
+    "_id": "57585dfb71bdf00e00611217",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6cb04954a4151a6636a863f367e15affc43a6a0.pdf",
+    "source": "https://www.ilo.org/dyn/natlex/docs/ELECTRONIC/85156/95183/F804075597/ETH85156.pdf"
+  },
+  {
+    "_id": "57585f7af4d5c90f0037ca5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0800ca2a3c0563bce8e39aa9d1d30842aca21a1e.docx",
+    "source": "http://kyrgyzaltyn.kg/#"
+  },
+  {
+    "_id": "57585d85e19efb0f007779a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54e7e461d22f28b95f5d7c4b6a407a18df0c35cb.docx"
+  },
+  {
+    "_id": "5758559071bdf00e0061114a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e097c1d9035b7ec3b63ed708669d12be67481bc7.docx",
+    "source": "http://www.nbkr.kg/index1.jsp?item=47&lang=RUS"
+  },
+  {
+    "_id": "5758599f71bdf00e006111b5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0cb1b053c49670bdef90a290dff20b0879aa697.pdf"
+  },
+  {
+    "_id": "57586166e19efb0f00777a04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c27295c1e8c8bd273e6abd1b46a0c65b631eec60.pdf"
   }
 ]
