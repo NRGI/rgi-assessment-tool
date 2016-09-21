@@ -1325,5 +1325,296 @@
     "_id": "575d68f94572730f00d8e77f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/7145385cdef90a0952b11bc29b35526ce1bc111f.png",
     "source": "http://www.brasil-rounds.gov.br/Resultado_Rodadas/round12-Acre-MadredeDios_SAC.asp"
+  },
+  {
+    "_id": "575d6ede4572730f00d8e811",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ee22315e71788847bad4df7c40393e9a24a4eb3b.pdf",
+    "source": "http://www.minhacienda.gov.co/HomeMinhacienda/ShowProperty?nodeId=%2FOCS%2FP_MHCP_WCC-040856%2F%2FidcPrimaryFile&revision=latestreleased"
+  },
+  {
+    "_id": "575d6efe8b27530e00aa2f7e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb5370916c5330ea7eea786c78d3b2ca4a55242a.pdf",
+    "source": "http://minfinrdc.com/minfin/wp-content/uploads/2015/08/Communiqué-officiel-n003-du-20-août-2015.pdf"
+  },
+  {
+    "_id": "575d70368b27530e00aa2fa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/efcb0126ebf8ba1de3995cb38860bb8219ad95b4.pdf",
+    "source": "http://www.african-markets.com/pdf/fr/Guide_des_Fonds_Souverains_Africains_FR.pdf"
+  },
+  {
+    "_id": "575d732d4572730f00d8e84a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6643f078cb6683b4014e2fc5ad51344117167ca2.pdf",
+    "source": "http://www.ie.ufrj.br/images/pos-graducao/ppge/VINICIUS_ACCURSO_COIMBRA.pdf"
+  },
+  {
+    "_id": "575d74e84572730f00d8e87d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0fd964fda70bd6caa7450986d4266adf06fc5fb.pdf",
+    "source": "https://www.mof.gov.om/%D8%A7%D9%84%D8%AA%D9%82%D8%A7%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9/%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8-%D8%A7%D9%84%D8%AE%D8%AA%D8%A7%D9%85%D9%8A-%D9%84%D9%84%D8%AF%D9%88%D9%84%D8%A9"
+  },
+  {
+    "_id": "575d7c256974880f005bc452",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5cbf9e5bbc529226c7a4b21575d2b082ade4bf95.pdf",
+    "source": "http://www.cgu.gov.br/assuntos/auditoria-e-fiscalizacao/avaliacao-da-gestao-dos-administradores/prestacao-de-contas-do-presidente-da-republica/arquivos/2016/pcpr2015.pdf"
+  },
+  {
+    "_id": "575d7c984572730f00d8e8cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2f28c4615b894f6e7802b656e52e686e096be73.pdf",
+    "source": "http://crudeaccountability.org/campaigns/turkmenistan/"
+  },
+  {
+    "_id": "575d7f676974880f005bc479",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ebed18a838bef91a4249bbd370a1a66370275d5.pdf",
+    "source": "http://www.doe.gov.my/eia/eia-reports-approved-peia-deia/"
+  },
+  {
+    "_id": "575d8cd04572730f00d8e98a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0e06fac42d0ba6c6148fc89d66dfc938b4baa58.pdf",
+    "source": "http://www.mines-rdc.cd/fr/documents/Contrat_gcm_renzo.pdf"
+  },
+  {
+    "_id": "575d90f38b27530e00aa3118",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9079ec723e4d8d27225250dbcd4f06424f781518.pdf",
+    "source": "http://www.orcamentofederal.gov.br/orcamentos-anuais/orcamento-2016/loa/loa-2016-volume-i.pdf"
+  },
+  {
+    "_id": "575d8c034572730f00d8e985",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4c82dae5a2de3ee0356175abfa606868cbacfa9.pdf",
+    "source": "http://nigerdiaspora.net/les-nouvelles-du-pays/environnement-niger/item/48473-le-niger-r%C3%A9alise-sa-premi%C3%A8re-vente-directe-duranium"
+  },
+  {
+    "_id": "575d91808b27530e00aa312f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0bd6f7be04cadabc8edc5cbf407e52764f22ad5.pdf"
+  },
+  {
+    "_id": "575d93358b27530e00aa3155",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fcc459898bb643f7179216de428a566c4de29ca5.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/DocumentosAnm/abeceevaluacionpropuestascontratoconcesion.pdf"
+  },
+  {
+    "_id": "575d965a6974880f005bc58a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d88ba9f6bf351a55a8f5f2345dca564094d48b58.pdf"
+  },
+  {
+    "_id": "575d96cc8b27530e00aa317d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97cb98cf0106de4502bb0d9e9daeb0301c15ac9f.pdf",
+    "source": "http://www.oilfund.az/en_US/news/1077/100/SOFAZ-revenue-and-expenditure-Statement-for-January-March-2016.asp"
+  },
+  {
+    "_id": "575d979d6974880f005bc592",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/964f7abd817cef238121ff4fe367a4a290377268.pdf",
+    "source": "http://www.mincommerce.gov.dz/fichiers16/textreglement/fmpublic.pdf"
+  },
+  {
+    "_id": "575d984e6974880f005bc599",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfd755bfeb798df128bbb34d9bb35c0cc6a75473.pdf",
+    "source": "http://www.cpg.com.tn/Fr/l-environnement_11_64"
+  },
+  {
+    "_id": "575d9a2f4572730f00d8ea2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e798d78b8839fa8cae685d8a481c5cf02bbeba1.pdf",
+    "source": "http://www.cms-bfl.com/Flash-info-Algerie--Marches-Sonatrach--la-nouvelle-directive-R17-02-28-2011"
+  },
+  {
+    "_id": "575d9c708b27530e00aa31b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ace1e1cc4504d81d704edb610ce9b2d33e22ecf.pdf",
+    "source": "http://www.finance.gov.az/sites/default/files/Budget_law_2015.pdf"
+  },
+  {
+    "_id": "575d9f3b6974880f005bc605",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe3a47c5c4a0fe5820788a2a4f1f15a3134afa8b.pdf",
+    "source": "http://www.finance.gov.az/en/node/1875"
+  },
+  {
+    "_id": "575da37a4572730f00d8eabe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83b85902d5b4dcbac40fca9acd80c0d8c59e97bb.pdf"
+  },
+  {
+    "_id": "575d9d296974880f005bc5ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2f1268ea6e58fa31ee4c6a75906ec7ac6f29b2f.pdf",
+    "source": "http://archives.tsa-algerie.com/economie-et-business/sonatrach-la-nouvelle-directive-de-passation-des-marches-pour-lutter-contre-la-corruption_11425.html"
+  },
+  {
+    "_id": "575da4a48b27530e00aa322a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bc4a5f2ff790ea1e237cedaf59bc0867c51b88c.pdf",
+    "source": "http://www.oilfund.az/uploads/Investment%20Guidelines_nov3.pdf"
+  },
+  {
+    "_id": "575da5cd8b27530e00aa323f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57ed8115395eadb4ad073a92a7b0e371d593da78.pdf",
+    "source": "http://www.liberte-algerie.com/est/les-dispositions-du-nouveau-code-des-marches-publics-passees-en-revue-241231/print/1"
+  },
+  {
+    "_id": "575da41c6974880f005bc631",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6338952039ab93e942e39f90c5abc653399ed8a1.pdf",
+    "source": "http://www.impots.gouv.ne/"
+  },
+  {
+    "_id": "575da70c4572730f00d8eaf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fff01b99d49ae25b209254498996035d7659152.pdf",
+    "source": "http://idg.receita.fazenda.gov.br/sobre/prestacoes-de-contas/arquivos-e-imagens/2014/rg/rg-rfb-ex2014.pdf"
+  },
+  {
+    "_id": "575db0f66974880f005bc695",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b325a3761ccd55c616aea1e8dd156a6f7a16b451.pdf",
+    "source": "http://www.oilfund.az/uploads/5-eng-long-term.pdf"
+  },
+  {
+    "_id": "575db2094572730f00d8eb66",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a405a6e141c94ea9150b7938b0baffa4bad3196.pdf"
+  },
+  {
+    "_id": "575dac6f6974880f005bc67a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36831eba4dce8e176cbfd224716d5a3842930655.pdf",
+    "source": "http://idg.receita.fazenda.gov.br/sobre/prestacoes-de-contas/arquivos-e-imagens/2014/ra/ra201502923-cgu-rfb-ex2014.pdf"
+  },
+  {
+    "_id": "575db66f4572730f00d8eb8b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f6af1586ec95c0e4dbe752561293095e9970679.pdf",
+    "source": "https://www.mof.gov.om/Legislation-and-Financial-Laws"
+  },
+  {
+    "_id": "575db6f74572730f00d8eb91",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b83457380ccd0b26b9b0fb0a19b590efbeb8c59a.pdf",
+    "source": "http://www.erc.az/files/neshrler/RM_Azerbaijan_ERC_2013_ENG.pdf"
+  },
+  {
+    "_id": "575db8308b27530e00aa32d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebb149b725593beacbc2e87b41c838e32d6f27c0.pdf",
+    "source": "http://nxt.anp.gov.br/NXT/gateway.dll/leg/folder_resolucoes/resolucoes_conama/1997/rconama%20237%20-%201997.xml"
+  },
+  {
+    "_id": "575db35b6974880f005bc69f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd8dadef6e44c93ef3fcd5be96fde0857fa7ab0c.pdf",
+    "source": "http://www.mma.gov.br/port/conama/legislacao/CONAMA_RES_CONS_1994_023.pdf"
+  },
+  {
+    "_id": "575d7aed4572730f00d8e8b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77cfee18e93d80e5509c2a683ffc02f8cd98a35f.pdf",
+    "source": "https://www.chathamhouse.org/publication/turkmenistan-power-politics-and-petro-authoritarianism"
+  },
+  {
+    "_id": "575d77f06974880f005bc41e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bf3d719ef01ffaf9da4e2d9ef0fb19c649a3d6d.pdf",
+    "source": "http://leganet.cd/Legislation/Droit%20Public/Constitution.2011.pdf"
+  },
+  {
+    "_id": "575d80e16974880f005bc480",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/294d0db044595621e02f7fff03bd0ebdefd2e519.pdf",
+    "source": "http://www.budget.gouv.cd/2012/budget2016/promulgue/depenses_2016.pdf"
+  },
+  {
+    "_id": "575dab9c6974880f005bc66c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11360a15e5511596b242dac76dd0e7472f4d1c68.pdf",
+    "source": "http://www.corteconstitucional.gov.co/relatoria/2016/c-035-16.htm"
+  },
+  {
+    "_id": "575db75e4572730f00d8eb94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cbf0a5d7133fd0f67993de86644d43376e7dd4a6.png",
+    "source": "http://geoinf.kiev.ua/wp/zviti-map.php?rep=spec_dozvil&seqnom=73703"
+  },
+  {
+    "_id": "575db7796974880f005bc6be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/651097966805008eaf291572254cc2e844a3e0be.docx",
+    "source": "http://minfin.kg/ru/novosti/byudzhet/zakony/zakon-kr-o-respublikanskom-byudzhete-kyrgyzskoy-re2715.html"
+  },
+  {
+    "_id": "575db8306974880f005bc6c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4cac3eef942d640504fd82d30481e13b8df7df6.png",
+    "source": "http://geoinf.kiev.ua/wp/interaktyvni-karty-spetsdozvoliv.htm"
+  },
+  {
+    "_id": "575db8676974880f005bc6d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c2523cb6913efc3be20544ade5c733a7faf67e6.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr001.html#53"
+  },
+  {
+    "_id": "575db2d94572730f00d8eb69",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/722375890c60616b9ad3e153cd9be150d5405596.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr006.html#260"
+  },
+  {
+    "_id": "575daad18b27530e00aa325f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acda817f9056f64323790b0b38b6a2dc1a618524.png",
+    "source": "http://www.fazenda.gov.br/acesso-a-informacao/copy_of_auditorias"
+  },
+  {
+    "_id": "575daa8d6974880f005bc65d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1cd436982d91b3fc47f29694847d8adf551a2b6d.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr008.html#355"
+  },
+  {
+    "_id": "575d9e1c6974880f005bc5f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25a5620901dc0f93d4baac85e1a5794e0f4c5e1e.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr008.html#355"
+  },
+  {
+    "_id": "575d9f2e6974880f005bc603",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/632a4906afbba6414639a875a7f0b068e46e3411.png",
+    "source": "https://www.anm.gov.co/?q=content/ronda-minera"
+  },
+  {
+    "_id": "575d82694572730f00d8e91a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a438538b7335545128770f2aaf50be500af58799.docx",
+    "source": "http://www.oilgas.gov.tm/catalog/333"
+  },
+  {
+    "_id": "575d88b16974880f005bc4e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/621332fb264acc419cd0d24c6846f401b43d4e67.docx",
+    "source": "http://minfin.kg/userfiles/ufiles/zaklyuchenie_schetnoy_palaty_po_byudzhetu_na_20162018_gg.pdf"
+  },
+  {
+    "_id": "575d7ea48b27530e00aa3069",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80266e497e09dced96487531e0a9e884e7e72f4a.docx",
+    "source": "http://www.oilgas.gov.tm/en/m/page/page/26"
+  },
+  {
+    "_id": "575d81dd4572730f00d8e90a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2f2ad0a9c35078aac966172cbf167333f21e61e.png",
+    "source": "http://portal.tcu.gov.br/contas/contas-do-governo-da-republica/"
+  },
+  {
+    "_id": "575d82428b27530e00aa3091",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2d70a376a0dea69c51d75997b804e122e29372c.png",
+    "source": "https://www.sgr.gov.co/Prensa/ComunicadosdePrensa.aspx?Search=congreso&SearchType=Keyword"
+  },
+  {
+    "_id": "575d73ee6974880f005bc3e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b06cad5c768c28a34fdc91075b42d1047fc304b3.docx",
+    "source": "http://www.ogj.com/articles/print/volume-113/issue-12/transportation/turkmenistan-positions-itself-as-eurasian-natural-gas-power.html"
+  },
+  {
+    "_id": "575d77e34572730f00d8e89e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b57452b573fd1fd61e90b44d05373e0c57264625.png",
+    "source": "http://www.valor.com.br/politica/3824672/lei-que-altera-ldo-para-abandonar-meta-fiscal-de-2014-e-publicada"
+  },
+  {
+    "_id": "575d6f268b27530e00aa2f88",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3e0cc9f3a0a571df76a41de5c72472349a070e8.png",
+    "source": "http://www.minhacienda.gov.co/HomeMinhacienda/faces/oracle/webcenter/portalapp/pages/sistgralregalias/FAE_FONPET.jspx?_afrLoop=2823703129943354&_afrWindowMode=0&_afrWindowId=null#!%40%40%3F_afrWindowId%3Dnull%26_afrLoop%3D2823703129943354%26_afrWindowMode%3D0%26_adf.ctrl-state%3Dez8oyu1fj_4"
+  },
+  {
+    "_id": "575d7d934572730f00d8e8cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/393480a00bc0c85d24a10ad95546b678143d67c0.docx",
+    "source": "http://minfin.kg/ru/novosti/byudzhet/zakony/zakon-kr-o-respublikanskom-byudzhete-kyrgyzskoy-re2715.html"
+  },
+  {
+    "_id": "575d7dd08b27530e00aa304f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ed623d424c8fa323c3e19657c84d4e02fd25eae.png",
+    "source": "http://g1.globo.com/politica/noticia/2016/03/em-comissao-ministro-da-fazenda-diz-que-governo-nao-cometeu-crime.html"
+  },
+  {
+    "_id": "575d7e8d6974880f005bc469",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ecff7eb685523e6259717f64179cebfe57a3dc7.png",
+    "source": "https://www.dnp.gov.co/DNP/gestion/mecanismos-de-control-y-rendicion-de-cuentas/Paginas/congreso-de-la-republica.aspx"
+  },
+  {
+    "_id": "575d9caf8b27530e00aa31ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2219f92d1b49e465ff614e0a08b41567a6405ed.png",
+    "source": "http://www.orcamentofederal.gov.br/orcamentos-anuais/orcamento-2016/orcamentos_anuais_view?anoOrc=2016"
+  },
+  {
+    "_id": "575db38a8b27530e00aa32a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0eec96134d3148d432dc72a2df7b1d8c9c218382.png",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0685_2001_pr007.html#296"
   }
 ]
