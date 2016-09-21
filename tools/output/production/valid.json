@@ -2012,5 +2012,222 @@
     "_id": "575db9b74572730f00d8ebc0",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/be53c5023c2fe6c2463092ca51e68c7319f9c0d7.png",
     "source": "http://zakon5.rada.gov.ua/laws/show/132/94-%D0%B2%D1%80"
+  },
+  {
+    "_id": "575eb06500a9830f0002424c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf9c8df8891550a01cc030047a4b66add1fdca6e.pdf",
+    "source": "http://www.stats.gov.cn/tjsj/ndsj/2014/indexeh.htm"
+  },
+  {
+    "_id": "575eb1e09fbe4d0f00942c46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d95ce240a770e23382f2a5f90186515fe8195e4.pdf",
+    "source": "http://data.stats.gov.cn/english/easyquery.htm?cn=A01"
+  },
+  {
+    "_id": "575ebb389fbe4d0f00942c7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/231c403be06141b919398ef2379ff2b002796922.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "575eba519fbe4d0f00942c7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0d4cd72ecf11d5344ddc8607f48605e16e68f00.pdf",
+    "source": "https://eiti.org/faqs#China"
+  },
+  {
+    "_id": "575ec2dac263f80f00ea7d85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7033253d8fbcb889bac830b4f5cd7145ee48afe3.pdf"
+  },
+  {
+    "_id": "575ec89400a9830f000242c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d7daeb2fe3b698d051de189110f29e3ff370c440.pdf",
+    "source": "http://www.mlr.gov.cn/zwgk/flfg/kczyflfg/201207/t20120727_1125629.htm"
+  },
+  {
+    "_id": "575eca9700a9830f000242d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4fd0a36baa229330f306aa05e18aed9fbf9aa66.pdf",
+    "source": "http://mycoordinates.org/understanding-marine-cadastre-system-in-malaysia/"
+  },
+  {
+    "_id": "575ee298c263f80f00ea7e73",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc20d8448ce09783112fcda7b2a36b58f05e8f99.pdf",
+    "source": "http://www.camara.leg.br/internet/comissao/index/mista/orca/ldo/LDO2016/Lei_13242/Texto_Lei.pdf"
+  },
+  {
+    "_id": "575eec391cbeac18002da967",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/245435f44294638946fb4b038d6aef201ba08584.pdf"
+  },
+  {
+    "_id": "575eebf19fbe4d0f00942dd5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ccceda4cae5dec5e7ca39090dfffeec5723f2b05.pdf",
+    "source": "http://www.anh.gov.co/Asignacion-de-areas/Paginas/contratosfirmadosEyP-TEAS.aspx"
+  },
+  {
+    "_id": "575ee9439fbe4d0f00942db7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7010521e63a409cda1f331b5c8f9345506cb350.pdf",
+    "source": "http://www.fazenda.gov.br/acesso-a-informacao/institucional/legislacao/2012/arquivos/portaria203.pdf"
+  },
+  {
+    "_id": "575eebbe1cbeac18002da962",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/66815a4c2a595d8a29b47e0f7d246ccb10d655e3.pdf"
+  },
+  {
+    "_id": "575eef5a9fbe4d0f00942e14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/519603777823773d47cb672d1582b3d2e32df3b2.pdf"
+  },
+  {
+    "_id": "575f00c4c263f80f00ea7f35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a665ce78c90a1b7ee70661c959118f5424cbdfc5.pdf",
+    "source": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=6&cad=rja&uact=8&ved=0ahUKEwjm_5KT1aXNAhXHeCYKHZPoBu8QFgg9MAU&url=http%3A%2F%2Fwww.archivogeneral.gov.co%2Fsites%2Fall%2Fthemes%2Fnevia%2FPDF%2FTransparencia%2FLEY_190_DE_1995.pdf&usg=AFQjCNF_HzaW60SY2kk1qYZJfF8slzGWhg"
+  },
+  {
+    "_id": "575f01eb9fbe4d0f00942e33",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61aa21403c5d1ae92e25eaadc1f8c5dfa7dcfab2.pdf",
+    "source": "https://www.funcionpublica.gov.co/sisjur/normas/Norma1.jsp?i=67636#0"
+  },
+  {
+    "_id": "575f0dd31cbeac18002da9db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3114678dd49c94b260a6f3575b9551f785be0733.pdf",
+    "source": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwi0vKaU4qXNAhXDSSYKHSGoB3oQFggeMAA&url=https%3A%2F%2Fwww.gov.uk%2Fgovernment%2Fuploads%2Fsystem%2Fuploads%2Fattachment_data%2Ffile%2F522717%2FColombia__1_.pdf&usg=AFQjCNHrep9GYKxmTrHrPrmVuffm4Muszw"
+  },
+  {
+    "_id": "575f0983c263f80f00ea7f49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c212b3a4e0609632c3c1ab97c540c1cffecac2e5.pdf",
+    "source": "https://www.funcionpublica.gov.co/-/el-31-de-marzo-vence-plazo-para-que-todos-los-servidores-publicos-presenten-su-declaracion-de-bienes-y-rentas"
+  },
+  {
+    "_id": "575f166fc263f80f00ea7f77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c084c5f678aa87ff56c021bd2e025e1ea0d05843.pdf"
+  },
+  {
+    "_id": "575f0a429fbe4d0f00942e44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ef7c1a66b5d08a386b730ec46ce9de6d126aaf7.pdf",
+    "source": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiZ2tmq3qXNAhXKSyYKHbqVASwQFggeMAA&url=https%3A%2F%2Fwww.minminas.gov.co%2Fdocuments%2F10180%2F987773%2FInf.018-2015%2BVerificaci%25C3%25B3n%2B-%2BSIGEP-ABRIL.pdf%2F177f39fc-29f3-463f-a83c-25b33ea67b7c&usg=AFQjCNGPwQKTP57h46s5Fyqghg1DIc_8Yw"
+  },
+  {
+    "_id": "575f27fbc263f80f00ea8035",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf1eacdf1ff624568c6c1583625e3926646f7c77.pdf",
+    "source": "http://www.thestar.com.my/business/business-news/2016/05/09/petronas-petrovietnam-extend-psc-for-10-more-years/"
+  },
+  {
+    "_id": "575f18b4c263f80f00ea7f88",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3f1316a252113793669a8397260557a9a001d98.pdf",
+    "source": "http://www.sipg.gov.co/Inicio/tabid/38/ctl/Terms/language/es-CO/Default.aspx"
+  },
+  {
+    "_id": "575f28609fbe4d0f00942f0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a59b3d509c7a92b431caee0e369d849db018eac7.pdf",
+    "source": "http://www.thestar.com.my/business/business-news/2015/02/28/shamsul-no-more-rsc-for-third-party-for-now/"
+  },
+  {
+    "_id": "575f23e59fbe4d0f00942eae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db95ff0d0ddcb066cc35686dc6ef378d117d30cc.pdf"
+  },
+  {
+    "_id": "575f3b641cbeac18002dab7b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63f73d7a3274b8c3bda1fe69674b43b0e993941e.pdf",
+    "source": "http://www.doe.gov.my/eia/eia-reports-approved-peia-deia/"
+  },
+  {
+    "_id": "575f28c8c263f80f00ea803f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83e4f744b539d0367acbf9caaf7f4c07d9a74a50.pdf",
+    "source": "https://www.mef.gob.pe/contenidos/tesoro_pub/lin_inversion/Lineamientos_inversion_dic2015.pdf"
+  },
+  {
+    "_id": "575f3c031cbeac18002dab94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8860db0b2234b33734badbf3c48df3753b3f6ac1.pdf",
+    "source": "http://www.doe.gov.my/eia/eia-reports-approved-peia-deia/"
+  },
+  {
+    "_id": "575f3ba91cbeac18002dab87",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da3aa1fdfc45445426260fcbcd871806c0cefb6c.pdf",
+    "source": "http://www.doe.gov.my/eia/eia-reports-approved-peia-deia/"
+  },
+  {
+    "_id": "575f2b141cbeac18002daad2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5da73424fd3bfdf2115e651c7e7e99f38b41c5c.pdf"
+  },
+  {
+    "_id": "575f4c34a970a80e00233916",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c49779d479f48923a1f012c7461a3ce7eede28f.pdf",
+    "source": "http://www.kptg.gov.my/sites/default/files/article/Act%20486-PENGAMBILAN.pdf"
+  },
+  {
+    "_id": "575f44031cbeac18002dabdb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5e515bd718ea12f39efc0ff5ad206d7702465db.pdf",
+    "source": "http://ekas.doe.gov.my/ekas/eia/upload/Ex_Sum/201501210940280.Ringkasan%20Eksekutif.pdf?s_JENIS_LAPORAN=PEIA&s_NEGERI=11&s_TAHUN=&ID_PROJEK=12892&ID=12892&jenis=PEIA"
+  },
+  {
+    "_id": "575f4fd4a970a80e00233951",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97b33e8fda73f1b7b98d64b71c183b7bab735ab8.pdf",
+    "source": "https://www.audit.gov.my/index.php/en/laporan/persekutuan"
+  },
+  {
+    "_id": "575f514fa970a80e00233962",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acb4a87f7fb1386ee9e16bfd71fef2ff42c0d348.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/decreto/d3000.htm"
+  },
+  {
+    "_id": "575f5a28a970a80e0023397a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6b0b8a218ab4665638a3bd0c3ea25ebcd0f0b4c.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/mal13278.pdf"
+  },
+  {
+    "_id": "575f5caca970a80e0023398c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00108b0457109c608371048aba92a3a30f037e5e.pdf",
+    "source": "http://www.mma.gov.br/port/conama/legiabre.cfm?codlegi=656"
+  },
+  {
+    "_id": "575f63eaa970a80e002339a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e64bb1fccaa9be8adcc3a0c30c76c67a92744ec5.pdf",
+    "source": "http://www.anp.gov.br/brasil-rounds/round8/round8/guias_r8/perfuracao_r8/Legisla%C3%A7%C3%A3o/Portaria%20ANP%20025-02.PDF"
+  },
+  {
+    "_id": "575f40661cbeac18002dabbc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cf6e93ee43c4c9761ba3e41b2b5ce1f35128797.pdf",
+    "source": "http://www.doe.gov.my/eia/wp-content/uploads/2010/07/TOR_for_DEIA.pdf"
+  },
+  {
+    "_id": "575f40281cbeac18002dabb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bdf44e52c818e87bd28ddf8a86ae76118a1d1a4.pdf",
+    "source": "http://eia.doe.gov.my/escv8/dokumen_esc/eia-emp_guidance_doc.pdf"
+  },
+  {
+    "_id": "575f4c27a970a80e00233913",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a5d876b7b1bb83cd0e8f76972a7a14e8abc5760.png",
+    "source": "http://www.tse.jus.br/eleicoes/eleicoes-anteriores/eleicoes-2014/candex"
+  },
+  {
+    "_id": "575f24fcc263f80f00ea8003",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed07bd47d753b13a8ce20829a359fb84dbb0cd45.docx",
+    "source": "https://www.imf.org/external/np/sec/pr/2015/pr15510.htm"
+  },
+  {
+    "_id": "575f10ed9fbe4d0f00942e57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3896f5694b03ca66b06ea755c428c83e2155f81b.png",
+    "source": "http://es.presidencia.gov.co/noticia/160511-Presidente-Santos-intervendra-Cumbre-Mundial-Anticorrupcion"
+  },
+  {
+    "_id": "575ee5291cbeac18002da944",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/877f5e9acd6a41f05d2705fa6692b150f8aa5120.docx",
+    "source": "http://www.planalto.gov.br/ccivil_03/decreto/D2850.htm"
+  },
+  {
+    "_id": "575eda7fc263f80f00ea7e58",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a07fbc75965e933550c283acf5e37d1489d85531.docx",
+    "source": "http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+  },
+  {
+    "_id": "575edb541cbeac18002da931",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2841f9863b039a9445db01ce7e93d4e4686258ec.docx"
+  },
+  {
+    "_id": "575ef0701cbeac18002da9b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aac4ff01398fc23292277bc6c68c306c6c752244.png",
+    "source": "https://beta.eiti.org/countries"
+  },
+  {
+    "_id": "575f046a1cbeac18002da9bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7ca7e90e69375ba1aab1d7ca2287e4224f5e828.xlsx",
+    "source": "https://www.funcionpublica.gov.co/sisjur/normas/Norma1.jsp?i=67636#0"
   }
 ]
