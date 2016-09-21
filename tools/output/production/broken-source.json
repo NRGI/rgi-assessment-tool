@@ -163,5 +163,10 @@
     "_id": "575ab4d377354d1700acc42c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/e4fec5397fc3f7e9b9a56bf550d38a3ce1519589.pdf",
     "source": "http://www.e-qanun.az/framework/3852"
+  },
+  {
+    "_id": "575bef343204460f004ef8b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d4598162ade5a04197904fe7fd6ee236d95fec7.pdf",
+    "source": "http://www.treasury.gov.my/index.php?option=com_content&view=article&id=6442:economic-report-2015-2016&catid=262&Itemid=2478&lang=en"
   }
 ]
