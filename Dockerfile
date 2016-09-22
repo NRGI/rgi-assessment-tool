@@ -17,13 +17,6 @@ RUN     yum install -y git nodejs npm
 RUN     yum install -y bzip2 fontconfig freetype libfontconfig.so.1 libfreetype.so.6 libstdc++.so.6 tar.x86_64 urw-fonts wget
 RUN		npm install -g bower forever
 
-#Install Phantom JS
-RUN     wget http://phantomjs.googlecode.com/files/phantomjs-1.8.1-linux-x86_64.tar.bz2 -O /usr/local/share/phantomjs-1.8.1-linux-x86_64.tar.bz2 && ls /usr/local/share
-RUN     tar jxvf /usr/local/share/phantomjs-1.8.1-linux-x86_64.tar.bz2 -C /usr/local/share
-RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
-RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
-RUN     ln -s /usr/local/share/phantomjs-1.8.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
-
 # Build src
 ADD     package.json /tmp/package.json
 RUN     cd /tmp && npm install --production
