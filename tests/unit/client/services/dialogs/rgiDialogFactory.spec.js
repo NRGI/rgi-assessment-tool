@@ -594,8 +594,10 @@ describe('rgiDialogFactory', function () {
         });
 
         describe('#documentCreate', function () {
+            var FILE_URL = 'file url';
+
             beforeEach(function() {
-                rgiDialogFactory.documentCreate({});
+                rgiDialogFactory.documentCreate({}, FILE_URL);
             });
 
             it('closes open dialogs', function() {
@@ -609,7 +611,7 @@ describe('rgiDialogFactory', function () {
                     showClose:false,
                     className: 'ngdialog-theme-default dialogwidth800',
                     closeByNavigation: true,
-                    scope: {value: true}
+                    scope: {value: true, source: FILE_URL}
                 }).called.should.be.equal(true);
             });
         });
