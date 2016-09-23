@@ -2946,5 +2946,596 @@
     "_id": "576133890d74f80f007e91b7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/5972641a4f06a743812b6303494904d411f4a1bc.docx",
     "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/97125"
+  },
+  {
+    "_id": "57638857b4a1b60e0091d2e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e609c7d90d768133fe26870f1dcdf8c2c15103fd.pdf",
+    "source": "http://esdm.go.id/siaran-pers/55-siaran-pers/8431-hasil-lelang-wilayah-kerja-migas-konvensional-tahun-2015.html"
+  },
+  {
+    "_id": "57638f8d5263db0f005a351f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26df2bc10c45b8564171d9061e7d479510ae9658.pdf",
+    "source": "http://www.perpustakaan.kemenkeu.go.id/FOLDERDOKUMEN/7b90db408bbd-undang-undang-nomor-36-tahun-2008.pdf"
+  },
+  {
+    "_id": "576385ce4ff8ae0f000882bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4a0113f6e3bb15bce5959566c16008243161ce0.pdf",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/decreto_0111_1996.html"
+  },
+  {
+    "_id": "57638c945263db0f005a34f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29909733b7b608fa65a3283c62c59b4d58d2b3f5.pdf"
+  },
+  {
+    "_id": "576382fe4ff8ae0f000882ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/846cc7c2b38bef21c5ace849d8784293cba608dc.pdf",
+    "source": "http://e-wkmigas.esdm.go.id/index.php/information/unconventional-working-area-booklet"
+  },
+  {
+    "_id": "576392dd5263db0f005a352c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56c89bdde9608f35136f101143423933df8d5b92.pdf",
+    "source": "http://www.anggaran.depkeu.go.id/peraturan/PMK%2079%202012.pdf"
+  },
+  {
+    "_id": "57639e2e5263db0f005a3533",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0cb9d8c3ab15f0b71ecc1456e5433ca48fb6d92.pdf",
+    "source": "http://www.kemenag.go.id/file/dokumen/uu281999.pdf"
+  },
+  {
+    "_id": "57639fa34ff8ae0f0008834e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4300e7e54e9d7e558480617a29db41f7316d6859.pdf",
+    "source": "http://acch.kpk.go.id/statistik-rekapitulasi-lhkpn"
+  },
+  {
+    "_id": "5763a2e65263db0f005a3545",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ba0914d186fc6c67cc2309019213142cfb59776.pdf",
+    "source": "http://www.ilo.org/wcmsp5/groups/public/---ed_protect/---protrav/---ilo_aids/documents/legaldocument/wcms_174556.pdf"
+  },
+  {
+    "_id": "5763a67d5263db0f005a3552",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a21115334c00885b3ad0ca1b8e8b95f39545f303.pdf",
+    "source": "https://eiti.org/report/indonesia/2013"
+  },
+  {
+    "_id": "5763a84d4ff8ae0f00088370",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc4731a0bcb57b25af053faea8368a76b8cf1e85.pdf",
+    "source": "http://rocana.kemenperin.go.id/phocadownload/Raker_2016/11.%20bahan%20djmigas%20-%20rapat%20kerja%20kementerian%20perindustrian%202016.pdf"
+  },
+  {
+    "_id": "5763ab91b4a1b60e0091d372",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b79391d094954eca5c4ffd6eacf50482eb173b08.pdf",
+    "source": "https://www.bps.go.id/linkTabelStatis/view/id/1011"
+  },
+  {
+    "_id": "5763d706b4a1b60e0091d446",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/396121122c63398bcf886518c4847da200831d79.pdf",
+    "source": "https://www.zra.org.zm/"
+  },
+  {
+    "_id": "5763d8fcb4a1b60e0091d450",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc95533e82f55516079c5f1fa3b9ceb14f32f77b.pdf",
+    "source": "http://www.forum-algerie.com/threads/14589-La-fiscalit%C3%A9-en-Alg%C3%A9rie"
+  },
+  {
+    "_id": "5763de63b4a1b60e0091d455",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87e34b38e2437d0b5b55f8422cb3bbf13f9b61ff.pdf",
+    "source": "http://www.joradp.dz/"
+  },
+  {
+    "_id": "5763e8e45263db0f005a366d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de387d213ff3fe66a7f44d4a747031fc601a1705.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "5763ff85b4a1b60e0091d485",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad86085d8a16087e21d26cab9741aafa97fd0d19.pdf",
+    "source": "http://www.mfdgi.gov.dz/index.php/2014-03-24-14-21-47/services-exterieurs/85-direction-des-grandes-entreprises-dge"
+  },
+  {
+    "_id": "5764038b4ff8ae0f00088498",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/983ee7c7f45826b4dd0e69aa13dbc504d209a035.pdf",
+    "source": "http://www.ons.dz/IMG/pdf/AnRes10-12No30.pdf"
+  },
+  {
+    "_id": "576405dcb4a1b60e0091d4b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a0269a1dfcb29450ed6e1e05b626c94481cf1ff.pdf",
+    "source": "http://www.ons.dz/IMG/pdf/AQCFRED14.pdf"
+  },
+  {
+    "_id": "57640bdbb4a1b60e0091d4e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10bf120eab86a7c7838732088a317f3a4fbcbc30.pdf",
+    "source": "http://www.mfdgi.gov.dz/index.php/2014-03-24-14-21-47/direction-generale-des-impots"
+  },
+  {
+    "_id": "57640d06b4a1b60e0091d4eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f046165af4e1483aaa945df0055b917cb5087ea.pdf",
+    "source": "http://www.ccomptes.org.dz/textes_regissant_cc.html"
+  },
+  {
+    "_id": "57640b565263db0f005a36e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/645dd04c5b7ab0119991b927d36cb89478d633f6.pdf",
+    "source": "http://www.mf.gov.dz/article/72/Inspection--G%C3%A9n%C3%A9rale-des-Finances/520/L%E2%80%99IGF-en-tant-qu%E2%80%99organe-d%E2%80%99aide-%C3%A0-la-d%C3%A9cision.html"
+  },
+  {
+    "_id": "576454762374af0f00289aa3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f874ff180b081b0dd1f3b5ecf42a42aa201f8f9.pdf",
+    "source": "https://www.kpmg.com/Global/en/services/Tax/regional-tax-centers/asia-pacific-tax-centre/Documents/CountryProfiles/mongolia-2014.pdf"
+  },
+  {
+    "_id": "576450ce3362520e00436b45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd352df601d1b945b43747c43f5ec321c4bd37e0.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "576454eb3362520e00436b50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53e594c44ac25df911dbac05829b6d0eabca0642.pdf",
+    "source": "http://www.ey.com/Publication/vwLUAssetsPI/tax-guide-mongolia-june-2015/$FILE/ey-tax-guide-mongolia-june-2015.pdf"
+  },
+  {
+    "_id": "5764bb8603b3c80e005628f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9fc6f079547c1e6e026a54ff926dea5edc4b9135.pdf"
+  },
+  {
+    "_id": "5764bbc435f8850e00700b97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7c2ac5c1782023d16fecfc69ea14dc85158e027.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2016/cr1681.pdf"
+  },
+  {
+    "_id": "5764e27b35f8850e00700ba3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57891a7984ba86494c53d55d6423c77d4eba9888.pdf",
+    "source": "http://www.mta.mn/uploads/assets/file/program_det01202015082312847.pdf"
+  },
+  {
+    "_id": "5764e9e335f8850e00700bb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c578f2cd58f36d4ea0d832708dcabf8ed60f30dd.pdf",
+    "source": "http://www.mne.gov.mn"
+  },
+  {
+    "_id": "5764ea3d03b3c80e00562926",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/554fe81332998b7b071ac7b27c2e16f13e8d5842.pdf",
+    "source": "http://www.forum.mn"
+  },
+  {
+    "_id": "5764eb7b35f8850e00700bc4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a69975c6d9dd07cd4211751acc2d6ba911ccfa8a.pdf",
+    "source": "http://www.mm.gov.mn/"
+  },
+  {
+    "_id": "5765274003b3c80e00562980",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4e9ca12b4e50114949fd3b1ab810c206284225e.pdf",
+    "source": "http://www.joradp.dz/FTP/jo-francais/2004/F2004084.pdf"
+  },
+  {
+    "_id": "57650d2603b3c80e00562967",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/beaf4f0d3d7a23f9707c455019629110a3fb9115.pdf",
+    "source": "http://www.sonatrach.com/declaration_PDG_GazSchiste_FracturationHydroulique.html"
+  },
+  {
+    "_id": "57650fe503b3c80e00562976",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d53e2a241c47d0c95093d28ea399319275ff3174.pdf",
+    "source": "http://www.sonatrach.com/hse-politique.html"
+  },
+  {
+    "_id": "5765061635f8850e00700bf9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/360bbd619bed73b707c72121889c29d50407cadf.pdf",
+    "source": "http://www.alnaft.gov.dz/IMG/pdf/-22.pdf"
+  },
+  {
+    "_id": "5765178903b3c80e0056297d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f53b3e0dedd96cc52f6120b151ecab2b0cc0930.pdf",
+    "source": "http://sdhoran.asso.dz/wp-content/uploads/2015/03/Loi-n_-98-04-protection-du-patrimoine.pdf"
+  },
+  {
+    "_id": "576528a835f8850e00700c30",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c957cc9f360d46fa35399415cef8bc2c2163caf7.pdf",
+    "source": "http://www.joradp.dz/FTP/jo-francais/2003/F2003043.pdf"
+  },
+  {
+    "_id": "57652f5435f8850e00700c49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10562904ac12cad3dc80cd073c657111f7d795ec.pdf",
+    "source": "http://adila.blogs.nouvelobs.com/archive/2011/01/08/le-prix-des-degats.html"
+  },
+  {
+    "_id": "57653aa803b3c80e005629a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1268b20f0fddef193be6d02055d6a30e11f2990f.pdf",
+    "source": "http://wwww.mram.gov.mn"
+  },
+  {
+    "_id": "5765472235f8850e00700c6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c4f76f70f43885e8aaf08755132b7e3110ee837b.pdf",
+    "source": "http://www.lesoirdalgerie.com/articles/2006/04/09/article.php?sid=36746&cid=2"
+  },
+  {
+    "_id": "57654da335f8850e00700c7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14976049bb5c1fba0e9067f772671144a30e15db.pdf",
+    "source": "http://www.lematindz.net/news/8952-scandale-de-sonatrach-larbre-qui-cache-la-foret.html"
+  },
+  {
+    "_id": "57640a835263db0f005a36e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a4c0f92256c1bf233f3862df13449cb1ce7af6ca.png",
+    "source": "http://www.minorityvoices.org/news.php/fr/1161/botswana-diamonds-bring-no-benefits-to-basarwa"
+  },
+  {
+    "_id": "576404a8b4a1b60e0091d4ab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/486f7b09d06bbf900ac3a8be5cbd4bc5af9638a5.png",
+    "source": "https://www.indabaplatform.com/ids/widgets/vcardDisplayIndicators4RWI.html?horseId=1952&subcatId=617&showscore=true"
+  },
+  {
+    "_id": "5763ae91b4a1b60e0091d386",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6804921cb4b2ef7aa45729db904b3352bfa9071a.jpg",
+    "source": "http://migas.esdm.go.id/post/category/petadandata/petacadangan"
+  },
+  {
+    "_id": "57640fc25263db0f005a36f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35abd09ed7f3aed4361435774412c3cceb9beb17.pdf",
+    "source": "http://www.tsa-algerie.com/wp-content/uploads/2015/12/doc_0262.compressed.pdf"
+  },
+  {
+    "_id": "5765566535f8850e00700c93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f625dddde49c8ebfcc8181e0f0044dd6534a89a.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/104/Ta2015531.pdf"
+  },
+  {
+    "_id": "5765656235f8850e00700ca8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d9f05d5b061dc40498ebc9b90eaa842211b090d.pdf",
+    "source": "http://www.gct.com.tn/"
+  },
+  {
+    "_id": "576579a403b3c80e00562a01",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/432a2cb58b00f30702458268953e2960b3c31578.pdf",
+    "source": "http://www.cpg.com.tn/Fr/le-partenariat_11_68"
+  },
+  {
+    "_id": "57657c5835f8850e00700ce4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de06f06ebfde03c00dc83bfec0c6a645a91bdb26.pdf",
+    "source": "http://www.cpg.com.tn/Fr/la-production_11_16"
+  },
+  {
+    "_id": "57657d1635f8850e00700ce7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/796f4103150d5671c90dfac8be580bada77e83ba.pdf",
+    "source": "http://www.cpg.com.tn/Fr/les-ventes_11_19"
+  },
+  {
+    "_id": "5765c20503b3c80e00562aea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a5cbf971addf3f0d20d1b8f1f036ecb5485eab63.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-annuelles-a-l-export-des-derives-de-phosphate/resource/d847f411-4646-4a11-bd86-98cee38f381b"
+  },
+  {
+    "_id": "57659a8103b3c80e00562a8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2da424ee7d16bc95ae3b113a0af07c13b69a527c.pdf",
+    "source": "http://portal.sat.gob.gt/sitio/index.php/estadisticas/47-estadicas-tributarias/254-estadisticas-tributarias.html"
+  },
+  {
+    "_id": "5765c27035f8850e00700d93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d5c99ba1179eb451b0a983eaf1408dbf42aa4f8.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-locales-mensuelles-des-derives-de-phosphate-tonne/resource/60692b28-bd68-406c-8e17-b79639d8bf1d"
+  },
+  {
+    "_id": "57662f47c4ea390e00097210",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4734eb740b0d974c90b1eaa14de96a8acbe07c4.pdf",
+    "source": "http://www.ccomptes.org.dz/champ_d_intervention.html"
+  },
+  {
+    "_id": "57663a2dc4ea390e00097264",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/19b491e56fe971596a7d79dad1774db04946ee29.pdf",
+    "source": "http://kreschatic.kiev.ua/files/bg2016pdf.pdf"
+  },
+  {
+    "_id": "576640f8c4ea390e00097282",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e8f80370796deab1ae35da1a5113f36e564211bd.pdf",
+    "source": "http://www.moef.gov.bd/"
+  },
+  {
+    "_id": "5766504ec4ea390e00097290",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32d9c210872f4408b0f90e894882f6e3af26c9f4.pdf",
+    "source": "https://www.ti-bangladesh.org/beta3/index.php/en/activities/4635-rules-violated-in-acquiring-land-and-paying-compensations-in-rampal-and-matarbari-projects"
+  },
+  {
+    "_id": "57669d24c4ea390e000972ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ae98bf341ff4d1081ca9ab2b699e5cca7383137.pdf",
+    "source": "http://www.energianeuquen.gov.ar/index.php"
+  },
+  {
+    "_id": "57669e46c4ea390e000972f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95ce34f97e6fa10af95ef16386f4bf1ab45e44fd.pdf",
+    "source": "http://www.ypf.com/Paginas/home.aspx"
+  },
+  {
+    "_id": "57669f70c4ea390e000972f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64d4e18f2baa43bf31bddeb1b69255fac0e2c7d2.pdf",
+    "source": "http://www.energia.gob.ar/home/hidrocarburos.php"
+  },
+  {
+    "_id": "5766a1e2c4ea390e00097311",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3d42d934fdaff47ed86621175d709615e16ba4e.pdf",
+    "source": "http://energiaynegocios.com.ar/2015/07/2773/"
+  },
+  {
+    "_id": "5766a03ec4ea390e000972fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8d060fc367230d5e37e603d04f8783fea776c25.pdf",
+    "source": "http://energiaynegocios.com.ar/2016/01/american-energy-partners-se-asocia-ypf-para-desarrollar-piloto-en-vaca-muerta/"
+  },
+  {
+    "_id": "5766a5fac4ea390e0009735e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c16711f29a1d9e03bc9f28fe378451371e73afdf.pdf",
+    "source": "http://www.enarsa.com.ar/index.php/es/empresa"
+  },
+  {
+    "_id": "5766a510c4ea390e00097351",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e18017e7d04ec61e004779fba337a79c57cd19c6.pdf",
+    "source": "http://www.enarsa.com.ar/images/pdf/informegestion2008.pdf"
+  },
+  {
+    "_id": "5766a425c4ea390e00097348",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8d89f9adf3a9b979fe40dc2737b61e14956f2bf.pdf",
+    "source": "http://www.enarsa.com.ar/index.php/es/queesenarsa/72-leyenarsa"
+  },
+  {
+    "_id": "5766a715c4ea390e00097369",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/732b6c10ba5bc4e90b42b86aaf8e89186221ed81.pdf",
+    "source": "http://www.ofephi.com.ar/"
+  },
+  {
+    "_id": "5766a3ccc4ea390e00097341",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d21f5ca68cb45c1b2baef092c34221c0d2f876c8.pdf",
+    "source": "http://www.anggaran.depkeu.go.id/Content/Publikasi/NK%20APBN/UU%20APBN%202016.pdf"
+  },
+  {
+    "_id": "5766ab30c4ea390e000973a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1cd303c5adf1ff23e5b904ae4471a78f8ceb8a3d.pdf",
+    "source": "http://elinversoronline.com/2015/09/el-presupuesto-2016-preve-para-enarsa-un-80-menos-de-fondos-que-este-ano/"
+  },
+  {
+    "_id": "5766ad02c4ea390e000973b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f47aba7dcab0c275f6d35232c470450a20c4dab0.pdf",
+    "source": "http://www.lanacion.com.ar/1809160-las-seis-empresas-con-mas-deuda-son-del-estado;"
+  },
+  {
+    "_id": "5766afb5c4ea390e000973b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e69bcc9e5ebcdf0139ecdf9b741aaa5b09e21bc.pdf",
+    "source": "http://www.cpg.com.tn/Fr/presentation_11_7"
+  },
+  {
+    "_id": "5766afa9c4ea390e000973b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdd678082449d0a148a6c3a58c06b4fb215a870d.pdf",
+    "source": "http://www.somasintb.org/wp-content/uploads/2014/01/Peranan-Pemda-dalam-EITI.pdf"
+  },
+  {
+    "_id": "5766bd4dc4ea390e0009742a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8799810a86ab0b7798ae3b8df3e8be09f8fcbf76.pdf",
+    "source": "http://www.cifor.org/ilea/Database/instrumen/UU-no-15-thn-2004_pemeriksaan-keuangan.pdf"
+  },
+  {
+    "_id": "5766baa4c4ea390e00097414",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f275079265a65676d1cb2f7682796aa77637a2d0.pdf",
+    "source": "http://www.kemenkeu.go.id/sites/default/files/pdf-peraturan/Final%20No.113-PMK.02-2009.pdf"
+  },
+  {
+    "_id": "5766c92fc4ea390e00097455",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/403103f83621e7cb55b14e77f75e47a7f8b4e99b.pdf",
+    "source": "http://servicios.infoleg.gob.ar/infolegInternet/anexos/130000-134999/130056/texact.htm"
+  },
+  {
+    "_id": "5766b555c4ea390e000973e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/319c8e62f75bfbe631b4380194b75b6ff04bfe8e.pdf",
+    "source": "http://rgi.nrgi-assessment.org/assessments/answer/ID-2016-HY-054"
+  },
+  {
+    "_id": "5766d9fdc4ea390e00097464",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a1e1108b4ff40598814308c2bb44cdcef3f5b8db.pdf",
+    "source": "http://www.ccomptes.org.dz/programmes_annuels.html"
+  },
+  {
+    "_id": "5766e371c4ea390e0009749f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d6601e9cfca3a33b21f9eba912695d028408d26.pdf",
+    "source": "http://www.ons.dz/IMG/pdf/AnRes10-12No30.pdf"
+  },
+  {
+    "_id": "5766e6fec4ea390e000974bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8edf4aa518e21f0ee3f420933262718b81215b94.pdf",
+    "source": "http://www.gov.cn/flfg/2008-10/28/content_1134207.htm"
+  },
+  {
+    "_id": "5766e86cc4ea390e000974cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3beb49b7ed3633abd56df1fa6c0f1fc385ce2a37.pdf",
+    "source": "http://www.sonatrach.com/PDF/Code_de_conduite.pdf"
+  },
+  {
+    "_id": "5766e90bc4ea390e000974d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f0d4b80834ab041bf83a41d1ce7183a6197ce177.pdf"
+  },
+  {
+    "_id": "5766ebeac4ea390e000974e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6e9e07ce723817a50e98ade1e542c8da53456e1.pdf",
+    "source": "http://www.mof.gov.cn/zhengwuxinxi/caizhengwengao/caizhengbuwengao2008/caizhengbuwengao20081/200805/t20080519_29015.html"
+  },
+  {
+    "_id": "5766ecf6c4ea390e000974f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df60e67293e400ca0d490af5fa968153ccc37a74.pdf",
+    "source": "http://www.cnpc.com.cn/cnpc/ndbg/201605/d771eb8830d24fa7b08146443aec4c3f/files/53ec34b8ee2f40c2af475cd87ba315b8.pdf"
+  },
+  {
+    "_id": "5766ee74c4ea390e000974f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a6fdd08892343ad14dd64aac997f2bea3bd52a0.pdf",
+    "source": "http://yss.mof.gov.cn/2015czys/201503/t20150324_1206236.html"
+  },
+  {
+    "_id": "5766f09cc4ea390e000974fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/580e90f57ae5086ef758e11956ab038e8e35051c.pdf",
+    "source": "http://www.arc-angola.com/portuguese/downloads/Oil%20Decree%20(PIEPD).pdf"
+  },
+  {
+    "_id": "5766f456c4ea390e00097511",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aeb69986322c5fd47a78ad786a502effa58298bd.pdf",
+    "source": "http://www.gov.cn/flfg/2005-10/28/content_85478.htm"
+  },
+  {
+    "_id": "5766f55ac4ea390e00097513",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc44c00493e0bc372e2d9485a447b6721eecc42f.pdf",
+    "source": "http://www.arc-angola.com/portuguese/downloads/Decreto%20Executivo%2087_12_Regulamento%20CP%20Projectos%20Sujeitos%20a%20AIA%20(Port).pdf"
+  },
+  {
+    "_id": "5766f6c7c4ea390e0009751a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/959ba4c33d40687bf46be4bcd8c2a5d26ff17866.pdf",
+    "source": "http://www.csrc.gov.cn/pub/shenzhen/xxfw/tzzsyd/ssgs/zh/zhxx/201504/t20150430_275948.htm"
+  },
+  {
+    "_id": "5766f9cac4ea390e0009752f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c03324fbd789e4941c9c1201d78201170570e84.pdf",
+    "source": "http://www.petrochina.com.cn/ptr/rdxx/201604/460f9d4dcf424cde80235f817afdc5c7/files/b10bec77a3934acab3bffb07d84f089d.pdf"
+  },
+  {
+    "_id": "5767030887b1fb1700a0c749",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a49d90ebaa382a3046e5cf6179f789811e98c4e.pdf"
+  },
+  {
+    "_id": "5767039487b1fb1700a0c74b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/505482ecaf6a4957c48458b6a9a1388988182fbb.pdf"
+  },
+  {
+    "_id": "5767059e87b1fb1700a0c75b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33c1666768409b55a19e93d374038c82dc6a3ae7.pdf",
+    "source": "http://www.mofcom.gov.cn/article/swfg/swfgbl/201101/20110107351772.shtml"
+  },
+  {
+    "_id": "576705eb87b1fb1700a0c760",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df230948b9bca8ac406e339b44c78b0f878c8162.pdf",
+    "source": "http://www.audit.gov.cn/n1992130/n1992165/n1993676/2388387.html"
+  },
+  {
+    "_id": "5767090e87b1fb1700a0c76f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35ee1d2fb8ba5f10f6155ed17337fb8b912d21e1.pdf"
+  },
+  {
+    "_id": "57671fca87b1fb1700a0c7a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1727715039377365f9e31d7c637965004888887.pdf",
+    "source": "http://ejournal.ip.fisip-unmul.ac.id/site/wp-content/uploads/2015/02/eJournal%20Ilmu%20Pemerintahan%20(02-20-15-09-11-34).pdf"
+  },
+  {
+    "_id": "5767269287b1fb1700a0c7cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/331f21df7bb81cdd5590ba4f46a744b0aadb95ce.pdf"
+  },
+  {
+    "_id": "576728b187b1fb1700a0c7fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/25d9ef9a5e282474a9162e1455119dd52def4028.pdf",
+    "source": "http://www.chevronindonesia.com/documents/IndonesiaFactSheet.pdf"
+  },
+  {
+    "_id": "576729a087b1fb1700a0c80b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02f2ede81334f9e514c017fb9cf2800f2e0629b1.pdf",
+    "source": "http://bnpb.go.id/ppid/file/UU_24_2007.pdf"
+  },
+  {
+    "_id": "57672dac87b1fb1700a0c863",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ab00abc2c0ba8ddb2f34903b84edbdf1b05e60f.pdf",
+    "source": "http://www.iberglobal.com/files/2015/indonesia_eia.pdf"
+  },
+  {
+    "_id": "5767331935d0260e00b483a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5e79afecdadca2069a993317a68109c5b982b6c3.pdf",
+    "source": "http://www.petrobangla.org.bd/data_marketing_customer_base.php"
+  },
+  {
+    "_id": "576813c33295200f00d9e272",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5b9ff442590e84c80eee7a06e2e9507d52e30cb.pdf",
+    "source": "http://www.banguat.gob.gt/inc/ver.asp?id=vmc/vmc08"
+  },
+  {
+    "_id": "5768061a3295200f00d9e19c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0047156fa20f1b01159d8347820edd2b4b0d9875.pdf"
+  },
+  {
+    "_id": "57672f6a87b1fb1700a0c893",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ad68c2a6da3854243bf8f612a630962d7ce497e.pdf",
+    "source": "http://pwyp-indonesia.org/wp-content/uploads/2015/04/LaporanRisetRehabilitasiPascaTambangMigas-opt.pdf"
+  },
+  {
+    "_id": "57680a8a3295200f00d9e256",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e1f289ca29ede5507954608f866b67e9efdf33b.pdf",
+    "source": "http://www.minfin.gob.gt/index.php/presupuestos-aprobados"
+  },
+  {
+    "_id": "5768186ffa73340e00377fda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e170866ac20c07af08a06b4020d9b98d1fc97b48.pdf",
+    "source": "http://www.minfin.gob.gt/index.php/?option=com_content&view=article&id=1829&Itemid=430"
+  },
+  {
+    "_id": "576820e1577cc10f002c7ce7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4bd09274781b54abe5ee157b15e0a8da07bede9.pdf",
+    "source": "http://www.kmg.kz/en/investors/reports/reports/"
+  },
+  {
+    "_id": "57681eba3295200f00d9e353",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d08dd5c690a2300a61966eab995d84677597419.pdf"
+  },
+  {
+    "_id": "5768210e577cc10f002c7ce9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30601ec6f23d1c9c12a4c3840fdc75c103cdb97b.pdf",
+    "source": "http://www.shilendans.gov.mn"
+  },
+  {
+    "_id": "5766a2e8c4ea390e00097331",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2b45f440527cc16b0805a5a169131a28aa2a053.pdf",
+    "source": "http://www.anggaran.depkeu.go.id/Content/Publikasi/NK%20APBN/NK%20RAPBN%202016.pdf"
+  },
+  {
+    "_id": "5766a184c4ea390e0009730b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1edcf397ae69850cd544b1465788481ee4018938.pdf",
+    "source": "http://www.bpk.go.id/assets/files/lkpp/2014/lkpp_2014_1433386975.pdf"
+  },
+  {
+    "_id": "5766a1e6c4ea390e00097313",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b5544da4885abfc8d76c4c0c14e8a197faad211.pdf",
+    "source": "http://www.bpk.go.id/assets/files/lkpp/2015/lkpp_2015_1465543119.pdf"
+  },
+  {
+    "_id": "5766bbf7c4ea390e0009741e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/76414a6e946089ced6cf4e62b417ef3124ba8c9b.pdf",
+    "source": "http://www.ikpi.or.id/sites/default/files/peraturan_pajak/17%20PMK%2003%202013.pdf"
+  },
+  {
+    "_id": "57672c6587b1fb1700a0c855",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b03b69b99f06054ccfc42e56564a74243725f09a.pdf",
+    "source": "http://www.petrobangla.org.bd/Citizen%20Charter.pdf"
+  },
+  {
+    "_id": "5767279087b1fb1700a0c7de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/759800cbc145d080b9233cb6422e125c66c56a0b.pdf",
+    "source": "http://www.skkmigas.go.id/wp-content/uploads/2014/09/PTK-048_2012_Manajemen-Krisis.pdf"
+  },
+  {
+    "_id": "57659bc435f8850e00700d59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b93f2a72035343997134f2fc96e8b7b29ed5096.pdf?101215185941",
+    "source": "http://www.kas.de/wf/doc/kas_18657-1522-4-30.pdf?101215185941"
+  },
+  {
+    "_id": "576815e13295200f00d9e27b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bd9e16cf2f13c1239f4b96623ff75ee3f205da0.pdf",
+    "source": "http://dcp-web.minfin.gob.gt/Documentos/Estadisticas/Reporte_Operaciones_Credito_Publico.pdf"
+  },
+  {
+    "_id": "5766a831c4ea390e00097371",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2027ff00d537fcc1c751241fac50d5d163146115.jpg",
+    "source": "http://www.djppr.kemenkeu.go.id/page/load/21"
+  },
+  {
+    "_id": "57663534c4ea390e00097234",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b216814455183bd3de2520668c1f41d9ce992f25.docx",
+    "source": "http://zakon3.rada.gov.ua/laws/show/132/94-%D0%B2%D1%80/print1466315626864534"
+  },
+  {
+    "_id": "576635f0c4ea390e0009723d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52920b0d5c495b94cc5cc1943a13cd3908480f38.docx",
+    "source": "http://zakon3.rada.gov.ua/laws/show/2456-17/print1466315626864534"
+  },
+  {
+    "_id": "5765a65803b3c80e00562abd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b8eb3e2656c402b9fad75a63b4fbeef67f77209.png",
+    "source": "http://zakon2.rada.gov.ua/laws/show/185-16/conv"
+  },
+  {
+    "_id": "5765a74e35f8850e00700d74",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aba201e8c36cc6e5de22505ebb1c7fbae8acb54b.png",
+    "source": "http://www.kmu.gov.ua/control/uk/cardnpd?docid=248688402"
   }
 ]
