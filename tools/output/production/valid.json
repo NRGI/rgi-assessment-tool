@@ -3537,5 +3537,30 @@
     "_id": "5765a74e35f8850e00700d74",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/aba201e8c36cc6e5de22505ebb1c7fbae8acb54b.png",
     "source": "http://www.kmu.gov.ua/control/uk/cardnpd?docid=248688402"
+  },
+  {
+    "_id": "57682352fa73340e003780ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf283e619e9fbf401e2399c76307039f0ee8543a.PDF",
+    "source": "http://www.kmg.kz/upload/corporate_management/equity/2016/CFS_3m_20160331.PDF"
+  },
+  {
+    "_id": "576824803295200f00d9e379",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a1f8d16062cf6eb2c4d180d237fff1709a7c976a.pdf",
+    "source": "http://dzayer24.com/le-proces-se-poursuit-sonatrach-n-est-pas-soumise-aux-enquetes-de-la-cour-des-comptes-569dc4bdac2e4cda2b8b4873-a"
+  },
+  {
+    "_id": "5768353b577cc10f002c7d28",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05f8570a57509d66d018366a954b28e9c56b7608.pdf",
+    "source": "https://itportal.decc.gov.uk/web_files/recent_licences/licences/P2275.pdf"
+  },
+  {
+    "_id": "57683d98577cc10f002c7d3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a4d59151105e0d4bff6d8eef914943310410b6f.pdf",
+    "source": "http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=297"
+  },
+  {
+    "_id": "57683e2d3295200f00d9e3bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b035b650d7cdae088bc5cc44289a297ea98f9a04.pdf",
+    "source": "http://www.anla.gov.co/terminos-referencia"
   }
 ]
