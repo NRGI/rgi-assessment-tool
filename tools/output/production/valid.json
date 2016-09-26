@@ -3562,5 +3562,75 @@
     "_id": "57683e2d3295200f00d9e3bb",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b035b650d7cdae088bc5cc44289a297ea98f9a04.pdf",
     "source": "http://www.anla.gov.co/terminos-referencia"
+  },
+  {
+    "_id": "57684ea2fa73340e00378147",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/759d5d5684a9191d8677c91e497116b84855b59b.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/production-mensuelle-du-gaz-commercial-par-champ/resource/0434d375-f205-457f-ae76-0eed94e0633c"
+  },
+  {
+    "_id": "57684cff3295200f00d9e40e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b95342a44cd98ff2bf8084ba5230331cb0f54a15.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-revenus-de-l-etap-au-titre-de-l-exercice-2013-2014/resource/f6618a06-bf8b-4e70-ab7f-75d7be571141"
+  },
+  {
+    "_id": "57685308577cc10f002c7de9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ece82fa3ccee03bb84a7f19ba00ccb6f35c1d979.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset?groups=energie&page=2"
+  },
+  {
+    "_id": "57684e07577cc10f002c7d80",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f49a725fa6afb63cfde0236ee033a26e6e4a8df4.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/production-petroliere-mensuelle-par-champs/resource/1f07d5fe-da84-472b-adf6-013e697a7fac"
+  },
+  {
+    "_id": "57686a893295200f00d9e483",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64707bae28ecfd032c2d044fd7f123b24f1d901c.pdf",
+    "source": "http://africanmanager.com/11_tunisie-energie-lheure-est-a-la-transparence-82-conventions-publiees-sur-le-site-du-ministere/"
+  },
+  {
+    "_id": "57695523b757680f00c4a739",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37694b1103212b480e431638cbe0510d504cb2a5.pdf"
+  },
+  {
+    "_id": "57686bf73295200f00d9e498",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f1e53731a963c5a6c9f7a57642925da1c6e57e8.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset?groups=contrats-petroliers"
+  },
+  {
+    "_id": "576944daac969b0f00e926a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e04b46c3aa14a8a60ff1c289ad06418ce51eede4.pdf"
+  },
+  {
+    "_id": "576955c3b757680f00c4a740",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/58f20136c3e395c59e1e5a1c78dd4dca7ce40f1a.pdf"
+  },
+  {
+    "_id": "5769456cb757680f00c4a708",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5131da1dfc06ab714a93dbb9640818f73e1d992a.pdf",
+    "source": "http://www.gov.cn/gongbao/content/2004/content_62922.htm"
+  },
+  {
+    "_id": "576956fdb757680f00c4a755",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82ce39ea0ddbd48a9d1ee94086c384e12c2b0b19.pdf"
+  },
+  {
+    "_id": "57695f45ac969b0f00e9273a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/082603323aa149a72e8b0739a57004b36b04b905.pdf"
+  },
+  {
+    "_id": "5769636eac969b0f00e92753",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1967cee2ca2e15080cf13f051919d930b27137ac.pdf",
+    "source": "http://WWW.mayerbrown.com"
+  },
+  {
+    "_id": "57696944ac969b0f00e9277b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12f3bde209ca17d3f3a7d68a5f802bfa84f6f129.pdf",
+    "source": "http://bjoil.sinopec.com/bjoil/Resource/Pdf/%E5%91%98%E5%B7%A5%E5%AE%88%E5%88%99.pdf"
+  },
+  {
+    "_id": "57697ea5ac969b0f00e9279f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54b991e3ae7b2cf2f17136694a2eabfc91e6e9ac.pdf",
+    "source": "http://www.iace.tn/wp-content/uploads/2015/10/Pre%CC%81sentation-CPG.pdf"
   }
 ]
