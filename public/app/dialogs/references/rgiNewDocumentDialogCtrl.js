@@ -58,7 +58,7 @@ angular.module('app')
                 showErrorMessage('You must provide a title!');
             } else if (!$scope.new_document.type) {
                 showErrorMessage('You must provide a document type!');
-            } else if (!$scope.newDocumentForm.source.$valid) {
+            } else if (($scope.new_document.status !== 'submitted') && !$scope.newDocumentForm.source.$valid) {
                 showErrorMessage('You must provide the document source!');
             } else if (!$scope.new_ref_location) {
                 showErrorMessage('You must provide the page location!');
