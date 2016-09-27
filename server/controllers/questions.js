@@ -35,27 +35,31 @@ exports.getQuestionsPortion = function(req, res, next) {
 };
 
 exports.getExportedQuestionsData = function(req, res) {
-    var questions = [],
-        getCriteriaFieldSet = function(question, field) {
-            var values = [];
-
-            question.question_criteria.forEach(function(criterion) {
-                values.push(criterion[field]);
-            });
-
-            return JSON.stringify(values).split('"').join('\'');
+    var questions = [], maximalOptionsNumber = 0,
+        OPTION_FIELDS = ['letter', 'text'], BASIC_FIELDS = ['question_order', 'question_v', 'question_text'],
+        getSetOptionHandler = function(question, optionIndex, options) {
+            return function(field) {
+                var outputFieldName = 'question_criteria_' + field + (optionIndex + 1);
+                question[outputFieldName] = optionIndex < options.length ? options[optionIndex][field] : undefined;
+            };
         };
+
+    req.questions.forEach(function(questionData) {
+        if(questionData.question_criteria.length > maximalOptionsNumber) {
+            maximalOptionsNumber = questionData.question_criteria.length;
+        }
+    });
 
     req.questions.forEach(function(questionData) {
         var question = {}, lastModified = questionData.last_modified, lastModifiedBy = lastModified.modified_by;
 
-        ['question_order', 'question_v', 'question_text'].forEach(function(field) {
+        BASIC_FIELDS.forEach(function(field) {
             question[field] = questionData[field];
         });
 
-        ['letter', 'text'].forEach(function(field) {
-            question['question_criteria_' + field] = getCriteriaFieldSet(questionData, field);
-        });
+        for(var optionIndex = 0; optionIndex < maximalOptionsNumber; optionIndex++) {
+            OPTION_FIELDS.forEach(getSetOptionHandler(question, optionIndex, questionData.question_criteria));
+        }
 
         if(lastModifiedBy) {
             if(lastModifiedBy.firstName && lastModifiedBy.lastName) {
@@ -77,15 +81,18 @@ exports.getExportedQuestionsData = function(req, res) {
         questions.push(question);
     });
 
-    res.send({data: questions, header: [
-        'question_order',
-        'question_v',
-        'question_text',
-        'question_criteria_letter',
-        'question_criteria_text',
-        'last_modified_modified_by',
-        'last_modified_modified_date'
-    ]});
+    var columns = BASIC_FIELDS.slice(),
+        getColumnNameHandler = function(columnNames, optionIndex) {
+            return function(field) {
+                columnNames.push('question_criteria_' + field + (optionIndex + 1));
+            };
+        };
+
+    for(var optionIndex = 0; optionIndex < maximalOptionsNumber; optionIndex++) {
+        OPTION_FIELDS.forEach(getColumnNameHandler(columns, optionIndex));
+    }
+
+    res.send({data: questions, header: columns.concat(['last_modified_modified_by', 'last_modified_modified_date'])});
 };
 
 var getCloseConnectionHandler = function(res) {
