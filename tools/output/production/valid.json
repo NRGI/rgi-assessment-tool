@@ -3632,5 +3632,54 @@
     "_id": "57697ea5ac969b0f00e9279f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/54b991e3ae7b2cf2f17136694a2eabfc91e6e9ac.pdf",
     "source": "http://www.iace.tn/wp-content/uploads/2015/10/Pre%CC%81sentation-CPG.pdf"
+  },
+  {
+    "_id": "57698466ac969b0f00e927b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94a50f9cf15097794bf5d2cfd35002924a0858aa.pdf",
+    "source": "http://www.iace.tn/wp-content/uploads/2015/10/ExecutiveSummary_CPGVF1.pdf"
+  },
+  {
+    "_id": "57699e46ac969b0f00e9282c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fb5ea8403036e07116666b431446f32131e1140.pdf",
+    "source": "https://eiti.org/news-events/president-south-sudan-commits-global-transparency-standard"
+  },
+  {
+    "_id": "576980e889081e10004bb308",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/900c309d6a8b786e5fb41928f61b3dbc7d09407e.pdf",
+    "source": "http://www.cpg.com.tn/Fr/presentation_11_38"
+  },
+  {
+    "_id": "5769831f89081e10004bb310",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c950a5591aad55f6b399b65ae5c7625434e02e64.pdf",
+    "source": "http://www.webmanagercenter.com/actualite/economie/2015/05/22/163955/tunisie-phosphate-bientot-un-audit-approfondi-sur-la-gestion-de-la-cpg"
+  },
+  {
+    "_id": "57698ed2ac969b0f00e927c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6db8304163db69f15f082e67021dd3c8dbb39fdd.pdf",
+    "source": "https://issuu.com/mineconomdev/docs/soe_report_1q15"
+  },
+  {
+    "_id": "576a145a6c99780f00dd619f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7c1bb43600112f8bba162a856b05b7988b3461b.pdf",
+    "source": "http://www.imf.org/external/pubs/ft/scr/2016/cr16127.pdf"
+  },
+  {
+    "_id": "576a39456c99780f00dd61c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4c4638a1968740233bdc871c99d29bc72534c11.pdf"
+  },
+  {
+    "_id": "576a12d989081e10004bb3ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e94782b1bd3815ed54d9e6cf5810d852df2516ae.pdf",
+    "source": "http://www.aps.dz/en/economy/10086-steep-fall-in-revenues-in-2015-obliges-algeria-to-diversify-economy"
+  },
+  {
+    "_id": "576a114e89081e10004bb3a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c4a2300e052187754436f170c63c9a3e8972dbdd.pdf",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_1333_2009.html"
+  },
+  {
+    "_id": "576a33826c99780f00dd61bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0dd80532378538ead22c60505856921b56e98a0d.pdf",
+    "source": "http://www.legalinfo.mn"
   }
 ]
