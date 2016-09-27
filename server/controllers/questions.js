@@ -57,11 +57,13 @@ exports.getExportedQuestionsData = function(req, res) {
             question['question_criteria_' + field] = getCriteriaFieldSet(questionData, field);
         });
 
-        if(lastModifiedBy.firstName && lastModifiedBy.lastName) {
-            question.last_modified_modified_by = lastModifiedBy.firstName + ' ' + lastModifiedBy.lastName +
-            (lastModifiedBy.email ? ' (' + lastModifiedBy.email + ')' : '');
-        } else {
-            question.last_modified_modified_by = lastModifiedBy.email;
+        if(lastModifiedBy) {
+            if(lastModifiedBy.firstName && lastModifiedBy.lastName) {
+                question.last_modified_modified_by = lastModifiedBy.firstName + ' ' + lastModifiedBy.lastName +
+                (lastModifiedBy.email ? ' (' + lastModifiedBy.email + ')' : '');
+            } else {
+                question.last_modified_modified_by = lastModifiedBy.email;
+            }
         }
 
         question.last_modified_modified_date = lastModified.modified_date;
