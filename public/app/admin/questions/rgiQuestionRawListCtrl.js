@@ -4,7 +4,7 @@ angular.module('app')
     .controller('rgiQuestionRawListCtrl', function (_, $scope, rgiQuestionRawSrvc) {
         $scope.busy = false;
         $scope.questions = [];
-        $scope.portionSize = 50;
+        $scope.portionSize = 100;
 
         var currentPage = 0, allItemsLoaded = false,
             addQuestions = function(questions) {
