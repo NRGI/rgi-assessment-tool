@@ -11,7 +11,6 @@ var crypto              =   require('crypto'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
     FILE_SIZE_LIMIT     =   400 * 1024 * 1024,//400MB
     path                =   require('path'),
-    phantom             =   require('phantom'),
     //MendeleyToken     =   require('mongoose').model('MendeleyToken'),
     upload_bucket       =   process.env.DOC_BUCKET,
     url                 =   require('url'),
@@ -97,101 +96,6 @@ var getFileName = function(timestamp, user, extension) {
 exports.getRemoteFileUploadStatus = function (req, res) {
     FileUploadStatus.findOne({_id: req.params.statusId}, function(err, uploadStatus) {
         res.send(uploadStatus);
-    });
-};
-
-exports.uploadUrlSnapshot = function(req, res) {
-    var width = 1024, height = 768, timeoutPeriod = 240000,
-        terminateWithError = function(errorCode, ph) {
-            res.send({error: errorCode});
-            console.log(errorCode);
-
-            if(ph) {
-                ph.exit();
-            }
-        };
-
-    phantom.create().then(function(ph) {
-        ph.createPage().then(function(page) {
-            page.setting('resourceTimeout', timeoutPeriod).then(function() {
-                page.property('viewportSize', {width: width, height: height}).then(function () {
-                    var timeout = setTimeout(function () {
-                        terminateWithError('PAGE_LOADING_TIMEOUT_EXPIRED', ph);
-                    }, timeoutPeriod);
-
-                    page.open(req.query.url).then(function () {
-                        clearTimeout(timeout);
-
-                        page.evaluate(function () {
-                            if ([undefined, null].indexOf(document) !== -1) {
-                                return undefined;
-                            }
-
-                            if ([undefined, null].indexOf(document.body) !== -1) {
-                                return undefined;
-                            }
-
-                            if ([undefined, null].indexOf(document.body.offsetHeight) !== -1) {
-                                return undefined;
-                            }
-
-                            return document.body.offsetHeight;
-                        }).then(function (actualHeight) {
-                            if (actualHeight === undefined) {
-                                terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
-                            } else if (actualHeight > 3000) {
-                                terminateWithError('TOO_LARGE_SIZE', ph);
-                            } else {
-                                page.property('viewportSize', {width: width, height: actualHeight}).then(function () {
-                                    page.open(req.query.url).then(function () {
-                                        var filePath = '/tmp/' + getFileName(new Date().getTime(), req.user._id, 'png');
-                                        page.render(filePath);
-
-                                        var interval = setInterval(function () {
-                                            fs.exists(filePath, function (renderingCompleted) {
-                                                if (renderingCompleted) {
-                                                    uploadFile({path: filePath, type: mime.lookup(filePath)}, req,
-                                                        function (errorUpload, doc) {
-                                                            fs.unlink(filePath);
-
-                                                            if (errorUpload) {
-                                                                terminateWithError('S3_TRANSFER_FAILURE', ph);
-                                                            } else {
-                                                                res.send({result: doc});
-                                                            }
-                                                        }
-                                                    );
-
-                                                    page.close();
-                                                    ph.exit();
-                                                    clearInterval(interval);
-                                                }
-                                            });
-                                        }, 250);
-                                    }).catch(function () {
-                                        terminateWithError('PAGE_CONNECT_FAILURE', ph);
-                                    });
-                                }).catch(function () {
-                                    terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
-                                });
-                            }
-                        }).catch(function () {
-                            terminateWithError('PAGE_DEFINE_HEIGHT_FAILURE', ph);
-                        });
-                    }).catch(function () {
-                        terminateWithError('PAGE_CONNECT_FAILURE', ph);
-                    });
-                }).catch(function () {
-                    terminateWithError('VIEWPORT_RESIZE_FAILURE', ph);
-                });
-            }).catch(function () {
-                terminateWithError('SET_TIMEOUT_FAILURE', ph);
-            });
-        }).catch(function() {
-            terminateWithError('PAGE_OPEN_FAILURE', ph);
-        });
-    }).catch(function() {
-        terminateWithError('PHANTOM_INITIALIZATION_FAILURE');
     });
 };
 
