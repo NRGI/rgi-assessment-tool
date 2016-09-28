@@ -3681,5 +3681,128 @@
     "_id": "576a33826c99780f00dd61bf",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0dd80532378538ead22c60505856921b56e98a0d.pdf",
     "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "576a54c76c99780f00dd61e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ddf0fea5483a925f10d269e5983f7a6acdd433ee.pdf"
+  },
+  {
+    "_id": "576a582f6c99780f00dd61eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f17a5698b822abd4a26e6ba1cf2017f417cd7c54.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/053/Ta201507704.pdf"
+  },
+  {
+    "_id": "576a57bd89081e10004bb408",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d001fe62716d64d26fad300b7a8dc18ba3b4f664.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/033/Ta201504294.pdf"
+  },
+  {
+    "_id": "576a58b389081e10004bb40e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fe50a950c53f7aed92bfef207129d6e642841d4.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2014/2014A/063/Ta201411714.pdf"
+  },
+  {
+    "_id": "576a4d0389081e10004bb3e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a1bcd0f337175ad3154da9cbfbaaab7d12c31af8.pdf",
+    "source": "http://www.audit.gov.mn/files/report/compliance/hugjil-san.pdf"
+  },
+  {
+    "_id": "576a59d289081e10004bb418",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/617c823dc9e98b044e40b442bd664bd13cf1333b.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2011/2011A/073/Ta201112544.pdf"
+  },
+  {
+    "_id": "576a5aab89081e10004bb422",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8435388f6fcbb1e45213e765ea955846b084f28b.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2012/2012A/052/Ta201208584.pdf"
+  },
+  {
+    "_id": "576a59386c99780f00dd61f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f373a93d7eb22ce2b12d34e556e928e0deb0194d.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/039/Ta201505214.pdf"
+  },
+  {
+    "_id": "576a71f7dc52a20e0038afaa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5da866197da3d3735b67ba1b6f434b7817d1704a.pdf",
+    "source": "http://www.cpg.com.tn/Fr/presentation_11_70"
+  },
+  {
+    "_id": "576a602189081e10004bb42e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd020594948fad97dbdfef55e0360c8e7e044668.pdf",
+    "source": "http://www.resourcegovernance.org/blog/tunisia-embraces-emerging-global-norm-contract-disclosure"
+  },
+  {
+    "_id": "576a7bc9dc52a20e0038b001",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de508d4e57eaa0363d4477db1a69dd8494d4442f.pdf"
+  },
+  {
+    "_id": "576ab095dc52a20e0038b0e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/07cec896d94ce74c09c37f192d693e803dd8ce42.pdf",
+    "source": "http://www.mep.gov.cn/gkml/hbb/bgg/201503/W020150317552378469245.pdf"
+  },
+  {
+    "_id": "576a7c60dc52a20e0038b007",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b339c51d0b3ecedd38da5fb840e51ff275239ee.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset?groups=phosphate"
+  },
+  {
+    "_id": "576a759489081e10004bb53f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/052bb0e50d9d4edf63c086125b4d6a3bfec5e7bf.pdf",
+    "source": "http://www.ptba.co.id/public/uploads/UU_4-2009(ABNR).pdf"
+  },
+  {
+    "_id": "576a9b6f89081e10004bb626",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e519ed20c3a1482c7ba4fa4276b114f7d32a2d13.pdf",
+    "source": "http://www.sinopec.com/media_centre/announcements/20160329/download/201603296C.pdf"
+  },
+  {
+    "_id": "576ab3756c99780f00dd6461",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c4d73da4e4be4afe89481526a8ac68c0edfa025.pdf",
+    "source": "http://hps.mep.gov.cn/jsxm/xmsl/"
+  },
+  {
+    "_id": "576ac756dc52a20e0038b178",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45577f5b1d4dffef9b988671cda8f0888d9bfa84.pdf",
+    "source": "http://jdih.esdm.go.id/peraturan/Kepmen-esdm-4620-2015.pdf"
+  },
+  {
+    "_id": "576ad1166c99780f00dd652f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a6fc7d41043d4cd99e3c49a0524e02e960d535d.pdf",
+    "source": "http://rocana.kemenperin.go.id/phocadownload/Raker_2016/12.%20dirjen%20minerba%20-%20dukungan%20penyediaan%20bahan%20baku%20untuk%20pembangunan%20industri%20berbasis%20minerba.pdf"
+  },
+  {
+    "_id": "576adbe089081e10004bb72a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/696cd689f0d47a869e75df2a8e7653323e16ef98.pdf",
+    "source": "https://www.bps.go.id/linkTabelStatis/view/id/1032"
+  },
+  {
+    "_id": "576ae03389081e10004bb734",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0dbed0e056721f075373063c1e542baf1fa5a72a.pdf",
+    "source": "https://www.bps.go.id/linkTableDinamis/view/id/1126"
+  },
+  {
+    "_id": "576af6a389081e10004bb879",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f6f438a79b72df87a8a41c12cf437352ac776de7.pdf",
+    "source": "http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=34493"
+  },
+  {
+    "_id": "576afd82dc52a20e0038b332",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0e2d65a193ddd81f10f1d16f8510fe098bffad2.pdf",
+    "source": "http://www.eltiempo.com/colombia/llano-7-dias/denuncias-para-petroleras-en-el-meta/16553868"
+  },
+  {
+    "_id": "576b081b618e4f0f001362b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/283f943df04bbfcbf1a618b506e4e661485926ec.pdf",
+    "source": "http://publicaciones.uexternado.edu.co/mineria-y-desarrollo-tomo-4-mineria-y-comunidades-impactos-44-conflictos-y-participacion-ciudadana-teoria-juridica.html"
+  },
+  {
+    "_id": "576b23bb54da9e0f00e6b4bc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d48fbf2064aa232d38d8ab77d2d9603088f84220.pdf",
+    "source": "http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=43236"
+  },
+  {
+    "_id": "576b803fda4c630f00976208",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/857d85256c68568def83c0e6a3291649eb792f63.pdf",
+    "source": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwj9j6nlv73NAhWJOo8KHTZPAisQFggjMAE&url=https%3A%2F%2Fwww.ekon.go.id%2Fhukum%2Fdownload%2F1049%2F484%2Fpp-no-77-tahun-2014.pdf&usg=AFQjCNGMzcJ7JENZBPrKJRvEAY7JqctM7A&sig2=AKYA4D1I5CZe6itS8xE7zg&bvm=bv.125221236,d.c2I"
   }
 ]
