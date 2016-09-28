@@ -41,7 +41,6 @@
     "node-mandrill": "^1.0.1",
     "passport": "~0.3.2",
     "passport-local": "^1.0.0",
-    "phantom": "^2.0.4",
     "request": "^2.55.0",
     "s3": "^4.3.1",
     "stylus": "~0.54.5",
