@@ -5215,5 +5215,353 @@
     "_id": "5777f07db4ac590f00cd47d7",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/335c9532ab8bcc1f9752a1f1c5f99fd84bbd7e06.xlsx",
     "source": "https://sicodis.dnp.gov.co/Reportes/Rep_TotalesDepartamentoYMunicipios.aspx"
+  },
+  {
+    "_id": "577853a8b4ac590f00cd4843",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9df44d12718ec9cef7fb73bab7ee8d1b762ec5c4.pdf",
+    "source": "http://Not available"
+  },
+  {
+    "_id": "57788f943dcdd30f0039dfa0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae6b415610659255bce6f3918eed79d7436569c7.pdf",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/nuestra-empresa/quienes-somos/acerca-de-ecopetrol/estructura-organizacional"
+  },
+  {
+    "_id": "57788fb00ff3ee0f001f031f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/171322d980034baf46999e7eeabb6c8c68ca0e03.pdf",
+    "source": "http://www.joradp.dz/TRV/Fcons.pdf"
+  },
+  {
+    "_id": "577890d80ff3ee0f001f0329",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d49f6a9e5a0f24c91c8f39b1f6d745d5b32eca7.pdf",
+    "source": "http://JORADP.DZ"
+  },
+  {
+    "_id": "57789365b4ac590f00cd4884",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cea51f1159f80c0709e58dc8854eb0fb7290cf1.pdf",
+    "source": "http://www.ecopetrol.com.co/wps/portal/es/ecopetrol-web/responsabilidad-corporativa/etica-y-cumplimiento/informacion-relacionada/codigo-de-etica"
+  },
+  {
+    "_id": "577894b23dcdd30f0039dfbc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf1581b076319885840aac1b3130eda229026f58.pdf",
+    "source": "http://www.mf.gov.dz/"
+  },
+  {
+    "_id": "5778a4303dcdd30f0039dfff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39538cdafa27657f2450e651a77a66b5c0091e2e.pdf",
+    "source": "http://www.pte.gov.co/WebsitePTE/Index"
+  },
+  {
+    "_id": "5778a4aeb4ac590f00cd48d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32d925b163970aace0a1819a9b28456555622f3f.pdf",
+    "source": "http://www.pte.gov.co/WebsitePTE/Index"
+  },
+  {
+    "_id": "5778a5580ff3ee0f001f0392",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8e82a4ccf7e404c543cc0e5f14134425283637b.pdf",
+    "source": "http://www.pte.gov.co/WebsitePTE/Index"
+  },
+  {
+    "_id": "5778a5a33dcdd30f0039e00a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a109b01282d9d301d47deb0ee5b088749aac79f.pdf",
+    "source": "http://www.pte.gov.co/WebsitePTE/Index"
+  },
+  {
+    "_id": "577903ecb4ac590f00cd4907",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56a0332d71a3ae5c5abf3f48777479e8220f14e5.pdf"
+  },
+  {
+    "_id": "5778a9463dcdd30f0039e010",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ebd0775dd885faffd9685e63aadbc88482de8bb.pdf",
+    "source": "http://www.banrep.gov.co/sites/default/files/paginas/BoletinDePu58.pdf"
+  },
+  {
+    "_id": "5779048a3dcdd30f0039e02e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b44c4e4408a85d07aa5b6a399bc6db211cb31aa5.pdf"
+  },
+  {
+    "_id": "5778a8b90ff3ee0f001f0399",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/045a538d715525840a138fe11a7064e666892854.pdf",
+    "source": "http://www.banrep.gov.co/boletin-deuda-externa"
+  },
+  {
+    "_id": "5779067b3dcdd30f0039e03e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06415809f8016f7d698f9318aa443ffe21943126.pdf"
+  },
+  {
+    "_id": "57790c29b4ac590f00cd4921",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44687f30744496ca2e413ae691a1537d82e17cc1.pdf"
+  },
+  {
+    "_id": "5779e4b3b4ac590f00cd4987",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26ae271acb735fe4295b8ad15832c2688e40e008.pdf"
+  },
+  {
+    "_id": "5779e59c3dcdd30f0039e0a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8cb1953093e3a2643cc2e880e14d178ba52d46d.pdf"
+  },
+  {
+    "_id": "5779ee063dcdd30f0039e0c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/828bc1089d849eadc4a439d7ccfdefd91c013484.pdf",
+    "source": "http://www.capmas.gov.eg/Pages/ShowPDF.aspx?page_id=http://www.censusinfo.capmas.gov.eg/Metadata-ar-v4.2/index.php/catalog/"
+  },
+  {
+    "_id": "577a2b450ff3ee0f001f0504",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ab433224dddcdc44b4f22f282b2e8d0fa5ca6c9.pdf",
+    "source": "http://www.miningne.ws/2016/05/12/south-africa-takes-steps-to-split-oil-gas-laws-from-mining/"
+  },
+  {
+    "_id": "577a266b0ff3ee0f001f04f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c55bc28c9bc4b9d10f1a5436515ec0a6b0b0ebff.pdf"
+  },
+  {
+    "_id": "5779f97f3dcdd30f0039e10e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad5589454ae907a28cf1c63b6f1f0d00e94ea1b6.pdf",
+    "source": "http://www.mti.gov.eg/affiliates/industry/ica/about.htm"
+  },
+  {
+    "_id": "5779f2d73dcdd30f0039e0f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/326e7121feda18938d7484c8387bc2c8cdfac03e.pdf",
+    "source": "http://www.emraonline.com/aboutemra/pages/view/29"
+  },
+  {
+    "_id": "5779f5dfb4ac590f00cd49c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36833357a7d58d53c53f386f380d4ef8f3efad88.pdf"
+  },
+  {
+    "_id": "577a381e0ff3ee0f001f0528",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9491849f390b44e1240916aee8853a19fa9ed2.pdf"
+  },
+  {
+    "_id": "577a4192b4ac590f00cd4a76",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1595155a7843d9dc2fae449386e4873d311c50d5.pdf"
+  },
+  {
+    "_id": "577a4f3d3dcdd30f0039e1a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c996c489398571e95156903d10d8b95b94a4947e.pdf",
+    "source": "https://eiti.org/files/tl-eiti_report_2013edit.pdf"
+  },
+  {
+    "_id": "577a42a53dcdd30f0039e179",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37c87d0673a6413db0d559799ca5ec4ecaa6bc3e.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-RO-Annual%20Report%202015%20ENGLISH%20FINAL/$File/RO-Annual%20Report%202015%20ENGLISH%20FINAL.pdf?openelement"
+  },
+  {
+    "_id": "577a5ed2b4ac590f00cd4aac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b069129704f05d0a8e96c200b73a568d1d4522f.pdf",
+    "source": "http://www.reportingoilandgas.org/mp-questions-haste-in-selling-oil-blocks/"
+  },
+  {
+    "_id": "577a5fc13dcdd30f0039e1c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c10ec4d900f57456886ff29cf342c00bf893305d.pdf",
+    "source": "http://citifmonline.com/2015/10/21/iea-wants-oil-blocks-auctioned/"
+  },
+  {
+    "_id": "577a6b3c0ff3ee0f001f05a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3167b74fd1f437fe5d39da1ba42da937df506b46.pdf"
+  },
+  {
+    "_id": "577a6bd93dcdd30f0039e1db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/baec8debcccd03cfab38406a793ab0459ba7bcbf.pdf",
+    "source": "https://www.environment.co.za/poisoning-carcinogens-heavy-metals-mining/dmr-samrad-portal-only-serves-mining-interest-not-public.html"
+  },
+  {
+    "_id": "577a7c72b4ac590f00cd4b54",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56864463d1585b8b001ae436f0e9b79a61d293a3.pdf"
+  },
+  {
+    "_id": "577a7f023dcdd30f0039e28b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42d3476c105316bc93927d478182896abfd48656.pdf",
+    "source": "https://www.ensafrica.com/news/South-African-withholding-taxes?Id=1702&STitle=tax%20ENSight"
+  },
+  {
+    "_id": "577a856fb4ac590f00cd4b8f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef1140a94467b901710ac6a449d8b5007f1783ec.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2016-05-11/south-africa-takes-steps-to-split-oil-gas-laws-from-mining"
+  },
+  {
+    "_id": "577a8e4eb4ac590f00cd4ba2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e58d11170f8b0368008d0944a476516dfeade323.pdf",
+    "source": "http://www.werksmans.com/legal-briefs-view/struggle-achieve-cooperative-governance-continues/"
+  },
+  {
+    "_id": "577a8f563dcdd30f0039e2c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b282838c03fdb54ee1fdf26c90fa46f956803e1f.pdf"
+  },
+  {
+    "_id": "577a7d710ff3ee0f001f064e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ae030a7f89b548133de43df2efa9ba15edb4394.pdf"
+  },
+  {
+    "_id": "577a94520ff3ee0f001f0694",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8097da2793004626f151b4cc1f818da2a9c9c6e7.pdf"
+  },
+  {
+    "_id": "577a97540ff3ee0f001f06a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04c0ef25fd5d80d01eb2dd0be2451c73cb3274af.pdf"
+  },
+  {
+    "_id": "577a98ca3dcdd30f0039e2dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/484c8702cfe03e384557a6d4f15fd2cce8a2b1b0.pdf",
+    "source": "http://www.chinatax.gov.cn/n810341/n810755/c1141838/content.html"
+  },
+  {
+    "_id": "577a9a06b4ac590f00cd4bd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/687780cb2d38047637ddcb2ea131f28859bc0b95.pdf",
+    "source": "http://hd.chinatax.gov.cn/guoshui/action/GetArticleView1.do?id=1746&flag=1"
+  },
+  {
+    "_id": "577aa6f50ff3ee0f001f06cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9aced8357f768877bf4894da9487ad7d38614a29.pdf"
+  },
+  {
+    "_id": "577aa8fcb4ac590f00cd4c06",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0eba66ccd393b4468668cd23af16f71a2f14cffc.pdf"
+  },
+  {
+    "_id": "577aad463dcdd30f0039e31f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/567cff4f1f2a54e34bc708a449b658c6dba07eba.pdf"
+  },
+  {
+    "_id": "577aaf1a3dcdd30f0039e325",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b19d1f8c111018cc773ccd8a1f174c18026328ba.pdf"
+  },
+  {
+    "_id": "577aaf97b4ac590f00cd4c19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2e992df6eb7d90376a455e17351b67d86a800c19.pdf"
+  },
+  {
+    "_id": "577ab3f60ff3ee0f001f06ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cef11e2fd80d0155a5aa6165bcc2607f99f3ddb.pdf"
+  },
+  {
+    "_id": "577abcdab4ac590f00cd4c48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe4db694b87553b982aee95a462c2469d183feb3.pdf",
+    "source": "http://www.gnpcghana.com/open_data.html"
+  },
+  {
+    "_id": "577ab88db4ac590f00cd4c39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/621c724f21d917ecec9452ebb11c0df4644afdbc.pdf",
+    "source": "http://www.gnpcghana.com/operations.html"
+  },
+  {
+    "_id": "577b1a74b4ac590f00cd4c8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29b7dcaa76354e2153b948ea42772d3a15a30bab.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Downstream%20Decree-Law%201-2012%20-%20English/$File/Decree-Law%20No.%201-2012%20on%20Downstream%20Sector%20-English%20Version.pdf?openelement"
+  },
+  {
+    "_id": "577b3ab0b4ac590f00cd4cb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/421e0d4f1518162fe25afec23b0652de853bc000.pdf",
+    "source": "http://taxsummaries.pwc.com/uk/taxsummaries/wwts.nsf/ID/JDCN-8EGQQW"
+  },
+  {
+    "_id": "577b1b71b4ac590f00cd4c97",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5a4193291d51e0531dcba7791eee32026eea446.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-First%20Amendment%20to%20Regulation%20No.%201.2012%20on%20Administrative%20Procedures.%20Requirements%20and%20Fees%20(English)/$File/First%20Amendment%20to%20Regulation%20No.%201.2012%20on%20Administrative%20Procedures.%20Requirements%20and%20Fees%20(English).pdf?openelement"
+  },
+  {
+    "_id": "577b35670ff3ee0f001f0766",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/914e9959b83f01a56bc1277a9f36032ab0a0be74.pdf",
+    "source": "http://www.sdms.gov.la/index.php?r=site/show&id=11"
+  },
+  {
+    "_id": "577b1cc13dcdd30f0039e38e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/668d4105c65db0218d2c92031a1d887b2dbaccb7.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Downstream%20Activity%20Inspection%20Division%20Regulation%20(Eng)%20/$File/Downstream%20Activity%20Inspection%20Division%20Regulation%20(Eng).pdf?openelement"
+  },
+  {
+    "_id": "577b3ed10ff3ee0f001f077a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ecd2d7552cd14df889b7e764ae13eb6fc0950db.pdf"
+  },
+  {
+    "_id": "577b48cf0ff3ee0f001f078c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b9e2d20c02bb0e0669f2a65aa1cd85b2a6668ae.pdf",
+    "source": "http://www.vientianetimes.org.la/sub-new/Previous_026/FreeContent/FreeConten_Laos_china.htm"
+  },
+  {
+    "_id": "577b61fc0ff3ee0f001f07ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/176f422d248c129f61c95d7e714291813bf8ed04.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-2008%20ANP%20Annual%20Report/$File/2008%20ANP%20Annual%20Report%20_Final.pdf?openelement"
+  },
+  {
+    "_id": "577b63adb4ac590f00cd4d06",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc5d9dacf085e3997df7739e7044e9b1021bfe9b.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-2009%20Annual%20Report/$File/FINAL-2009%20Annual%20Reportt_FOR%20PRINT_C.pdf?openelement"
+  },
+  {
+    "_id": "577b645e3dcdd30f0039e3fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14f25ec67101c06526f5f4b0909de1ffd77f7c66.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-2010%20ANP%20ANNUAL%20REPORT/$File/2010%20ANP%20ANNUAL%20REPORT.pdf?openelement"
+  },
+  {
+    "_id": "577b651b0ff3ee0f001f07ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac5c53b858191be925a1ee130674ca2175107dfa.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-2011%20Annual%20Report/$File/ANP%202011%20Annual%20Report.pdf?openelement"
+  },
+  {
+    "_id": "577b65f1b4ac590f00cd4d1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd48616ebf165dc7de4882110637f3be8dc2f840.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-2012%20ANP%20ANNUAL%20REPORT/$File/2012%20ANP%20ANNUAL%20REPORT.pdf?openelement"
+  },
+  {
+    "_id": "577b668f0ff3ee0f001f0802",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3036c29fc72c282df3cc49178f1e333419d54da.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-FINAL%20-%20Annual%20Report%202013-ENGLISH/$File/FINAL%20-%20Annual%20Report%202013-ENGLISH.pdf?openelement"
+  },
+  {
+    "_id": "577b67a23dcdd30f0039e42a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0413d8a35758bc45d538fdb222cbc063931a2ecd.pdf"
+  },
+  {
+    "_id": "577b6d4d0ff3ee0f001f085f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/99dc81bf190eed43d958071e49a5d8ceba84fb0b.pdf?openelement",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-JPDA%20PSC%2011%20-%20106/$File/JPDA%20PSC%2011%20-%20106.pdf?openelement"
+  },
+  {
+    "_id": "577b916fb4ac590f00cd4e92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/385b496d265fdbfa4d1f4233d5b0526effd6399a.pdf",
+    "source": "http://www.dmr.gov.za/publications/viewcategory/121-directories.html"
+  },
+  {
+    "_id": "577b76e50ff3ee0f001f089b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37b8fdf3704d91b48074f0a8e27d1b0f44c50c28.pdf"
+  },
+  {
+    "_id": "577b770cb4ac590f00cd4dbb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2df86762711e9ae4ba3bb167a9c1224022b37630.pdf"
+  },
+  {
+    "_id": "577b8f93b4ac590f00cd4e8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e32553ff69c3bbc0535664fffa81f83ae9a6e56d.docx",
+    "source": "http://english.ahram.org.eg/News/27137.aspx"
+  },
+  {
+    "_id": "577b36aab4ac590f00cd4cae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/736ad9b1c3934f7fbb8ee08ccf43f939cbe8b0ad.docx",
+    "source": "http://www.sdms.gov.la/index.php?r=site/show&id=11"
+  },
+  {
+    "_id": "577b0b3ab4ac590f00cd4c7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc9ece87e8fc0f116dc16cf2c65b7b0bc8894949.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Downstream"
+  },
+  {
+    "_id": "577b12050ff3ee0f001f073a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c8e6c6976a02df867b2dfab909b40bda7f000a3.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Taxa%20Selu%20-%20No.%203%20-%202016"
+  },
+  {
+    "_id": "577a3adf3dcdd30f0039e168",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d0259afc4c6b7a90066adaff1c6168dc0a0c8dd.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/pgLafaekDataGasListHTML"
+  },
+  {
+    "_id": "5778eedb3dcdd30f0039e01b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98ffc07e0fe025ea09b0f55413f83a6c18d23b8b.jpg",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwLafaek/LafaekA22CCCEDB5D5DCB9CA25770900073AEF"
+  },
+  {
+    "_id": "577b7e0b3dcdd30f0039e51b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea697e6ec5741cb82c9874efa78c1bb07d2f252b.pdf"
   }
 ]
