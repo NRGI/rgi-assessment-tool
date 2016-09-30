@@ -5,7 +5,14 @@
             .row
                 .left-padding-lg.right-padding-lg.top-padding-med
                     .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
-                        button.btn.btn-success(ng-click="downloadCsv()", ng-csv="answers", csv-header="answersHeader", filename="raw_answers.csv", ng-disabled="busy") Download Raw CSV
+                        button.btn.btn-success(
+                            ng-click="downloadCsv()"
+                            ng-csv="answers"
+                            csv-header="answersHeader"
+                            csv-column-order="answersHeader"
+                            filename="raw_answers.csv"
+                            ng-disabled="busy"
+                        ) Download Raw CSV
                     .pull-right
                         form.form-inline
                             .form-group.margin-left-med

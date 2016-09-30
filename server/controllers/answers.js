@@ -63,6 +63,10 @@ exports.getAnswersPortion = function(req, res, next) {
 
 exports.getExportedAnswersData = function(req, res) {
     var
+        scoreFieldIndex, SCORE_FIELDS = ['researcher', 'reviewer'],
+        getHistoryFieldPrefix = function(scoreType) {
+            return scoreType + '_score_history';
+        },
         copyScore = function(outputAnswer, inputAnswer, scoreType) {
             var field = scoreType + '_score';
             outputAnswer[field + '_letter'] = inputAnswer[field] ? inputAnswer[field].letter : '';
@@ -71,19 +75,50 @@ exports.getExportedAnswersData = function(req, res) {
             outputAnswer[scoreType + '_justification'] = inputAnswer[scoreType + '_justification'];
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
-        copyScoreHistory = function(outputAnswer, inputAnswer, scoreType) {
-            var prefix = scoreType + '_score_history', scores = {};
+        copyScoreHistory = function(outputAnswer, inputAnswer, scoreType, historySize) {
+            var prefix = getHistoryFieldPrefix(scoreType);
 
-            inputAnswer[prefix].forEach(function(scoreHistory) {
-                if((scoreHistory !== undefined) && (scoreHistory.score !== undefined)) {
-                    scores[scoreHistory.date.toISOString()] = scoreHistory.score.letter;
+            for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
+                var scoreHistory = inputAnswer[prefix][historyIndex];
+
+                if(scoreHistory !== undefined) {
+                    outputAnswer[prefix + '_date' + (historyIndex + 1)] = scoreHistory.date.toISOString();
+
+                    if(scoreHistory.score !== undefined) {
+                        outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
+                        outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
+                    }
+
+                    outputAnswer[prefix + '_justification' + (historyIndex + 1)] = scoreHistory.justification;
                 }
-            });
+            }
+        },
+        getHistoryFields = function(scoreType, historySize) {
+            var fields = [], POSTFIXES = ['date', 'order', 'score_letter', 'justification'];
 
-            outputAnswer[prefix] = Object.keys(scores).length > 0 ? JSON.stringify(scores) : '';
+            for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
+                for(var postfixIndex = 0; postfixIndex < POSTFIXES.length; postfixIndex++) {
+                    fields.push(getHistoryFieldPrefix(scoreType) + '_' + POSTFIXES[postfixIndex] + (historyIndex + 1));
+                }
+            }
+
+            return fields;
         };
 
     var answers = [];
+    var historyLength = {researcher: 0, reviewer: 0};
+    var scoreType, fieldName;
+
+    req.answers.forEach(function(answerData) {
+        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
+            scoreType = SCORE_FIELDS[scoreFieldIndex];
+            fieldName = getHistoryFieldPrefix(scoreType);
+
+            if(answerData[fieldName].length > historyLength[scoreType]) {
+                historyLength[scoreType] = answerData[fieldName].length;
+            }
+        }
+    });
 
     req.answers.forEach(function(answerData) {
         var answer = {};
@@ -93,8 +128,10 @@ exports.getExportedAnswersData = function(req, res) {
         answer.question_text = answerData.question_ID.question_text;
         answer.status = answerData.status;
 
-        copyScoreWithJustification(answer, answerData, 'researcher');
-        copyScoreWithJustification(answer, answerData, 'reviewer');
+        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
+            copyScoreWithJustification(answer, answerData, SCORE_FIELDS[scoreFieldIndex]);
+        }
+
         copyScore(answer, answerData, 'final');
 
         var externalAnswer;
@@ -109,8 +146,10 @@ exports.getExportedAnswersData = function(req, res) {
         answer.external_justification = externalAnswer.justification;
         answer.external_comment = externalAnswer.comment;
 
-        copyScoreHistory(answer, answerData, 'researcher');
-        copyScoreHistory(answer, answerData, 'reviewer');
+        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
+            scoreType = SCORE_FIELDS[scoreFieldIndex];
+            copyScoreHistory(answer, answerData, scoreType, historyLength[scoreType]);
+        }
 
         Object.keys(answer).forEach(function(field) {
             if((answer[field] === undefined) || (answer[field] === null)) {
@@ -121,7 +160,7 @@ exports.getExportedAnswersData = function(req, res) {
         answers.push(answer);
     });
 
-    res.send({data: answers, country: req.params.country, header: [
+    var exportedFields = [
         'answer_ID',
         'question_order',
         'question_text',
@@ -133,10 +172,12 @@ exports.getExportedAnswersData = function(req, res) {
         'final_score_letter',
         'external_answer_letter',
         'external_justification',
-        'external_comment',
-        'researcher_score_history',
-        'reviewer_score_history'
-    ]});
+        'external_comment'
+    ];
+
+    exportedFields = exportedFields.concat(getHistoryFields('researcher', historyLength.researcher));
+    exportedFields = exportedFields.concat(getHistoryFields('reviewer', historyLength.reviewer));
+    res.send({data: answers, country: req.params.country, header: exportedFields});
 };
 
 exports.getAnswersByID = function (req, res, next) {
