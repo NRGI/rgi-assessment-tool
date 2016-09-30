@@ -5563,5 +5563,102 @@
   {
     "_id": "577b7e0b3dcdd30f0039e51b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/ea697e6ec5741cb82c9874efa78c1bb07d2f252b.pdf"
+  },
+  {
+    "_id": "577b98a43dcdd30f0039e5a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d1551fffc166097218e2c3ef312677bfa9241f8.pdf",
+    "source": "http://portal.samradonline.co.za/default.aspx"
+  },
+  {
+    "_id": "577b98243dcdd30f0039e599",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e1c0bf6c130ae5a8a287f1d836388e8995d95e0d.pdf",
+    "source": "http://portal.samradonline.co.za/default.aspx"
+  },
+  {
+    "_id": "577b9245b4ac590f00cd4e9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/543414bdac47737110bdd6e3bb47440445ae3d94.pdf",
+    "source": "http://portal.samradonline.co.za/"
+  },
+  {
+    "_id": "577b9e1d0ff3ee0f001f0981",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/607be3cfaf012ee7e5886070b2544343681404c4.pdf"
+  },
+  {
+    "_id": "577bc526c7c24a0e0046240b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd733d418e2bbae9399c9f82514cc8555d49721c.pdf"
+  },
+  {
+    "_id": "577bd3f7c7c24a0e00462421",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c2481cde6cb5689c5b71c6f5a070a3d757232dd.pdf",
+    "source": "http://www.politicsweb.co.za/party/dmr-caught-doubledealing-mineral-rights-in-ncape--"
+  },
+  {
+    "_id": "577bd46f5d16770e00705a90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/435d878ed31a686364c9caf7c1da6599a7b413db.pdf",
+    "source": "http://www.miningweekly.com/article/dmr-remains-a-paia-compliancy-outlier-centre-for-environmental-rights-2016-01-22"
+  },
+  {
+    "_id": "577bdfc029f3860f00a22613",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e84f5a931dfc4b54c08ae4760d63ead850b6b61c.pdf",
+    "source": "http://www.ecopetrol.com.co/especiales/Libro60anios/esp/presentacion.htm"
+  },
+  {
+    "_id": "577be17c29f3860f00a2261d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc660f4e449b36cbbcb19ba79663b7a41553c1a8.pdf",
+    "source": "http://www.minhacienda.gov.co/HomeMinhacienda/ShowProperty;jsessionid=w59RptYY4GmpozDHWm7J9I-qJdbRfnhbhz0sb9D5wvR1k0mLy8Wm!2130935592?nodeId=%2FOCS%2FP_MHCP_WCC-042661%2F%2FidcPrimaryFile&revision=latestreleased"
+  },
+  {
+    "_id": "577bf555c7c24a0e0046245f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6944c43b41cbcabf076f09351d3969f37f6db61f.pdf",
+    "source": "http://www.vanguardia.com/economia/local/356137-palagua-la-cienaga-que-se-la-traga-el-petroleo"
+  },
+  {
+    "_id": "577bf61bc7c24a0e00462462",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d922db8efa6af0bbf20fb0dc901e51fbdcf5265.pdf",
+    "source": "http://www.colectivodeabogados.org/Saludamos-reversion-de-campo-Rubiales-y-denunciamos-pasivos-ambientales-y"
+  },
+  {
+    "_id": "577c147c29f3860f00a226ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec02fde4080c4dcc9802d71d8329263c781444ee.pdf",
+    "source": "http://www.mines.gouv.ml/categories/appels-doffre"
+  },
+  {
+    "_id": "577c29d8c7c24a0e004624df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cd08a83f4004b36a07394a78325742dea62fe94.pdf",
+    "source": "http://congreso.gob.gt/manager./images/BDF3BF91-FB41-6C68-C020-622221C9C64C.pdf"
+  },
+  {
+    "_id": "577c7275c7c24a0e0046252a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f490b409b4831d45953e0ab4903e610270e0eb7.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/SSB/EIA/TMP-EN-REP5_SEIA_Vol1%20Main%20Report%20Part%20A.pdf"
+  },
+  {
+    "_id": "577c774229f3860f00a22715",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f46b88b3b7fd3ecf58185a6aa3ae6a6fdcb46e46.pdf",
+    "source": "https://timorgap.com/databases/website.nsf/vwAll/Resource-Full_TIMOR%20GAP%202015%20Annual%20Report_EN_Final/$File/TIMOR%20GAP%202015%20Annual%20Report_EN_Final.pdf?openelement"
+  },
+  {
+    "_id": "577cb47a5d16770e00705bdf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71ea0d129e1442e6aba46f9d69d39c0f9b13decb.pdf",
+    "source": "http://www.saflii.org/za/legis/num_act/sarsa1997301.pdf"
+  },
+  {
+    "_id": "577cb9795d16770e00705be8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7017cb003a219df06e4e620f833ae1c2be1ef75.pdf"
+  },
+  {
+    "_id": "577ccd6d5d16770e00705c2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15b2ec1e2a8d394f9f098c0baa33786449518a09.pdf",
+    "source": "http://www.saflii.org/za/journals/DEREBUS/2013/151.pdf"
+  },
+  {
+    "_id": "577b97b63dcdd30f0039e597",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a351e31170acd2c8beb848a002ecbf76623ac5c0.png",
+    "source": "http://zakon5.rada.gov.ua/laws/show/254%D0%BA/96-%D0%B2%D1%80/print1465416211799803"
+  },
+  {
+    "_id": "577bd08729f3860f00a225e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4761d4adcbe994ca79bc3789356e1d6687d9fe4a.png",
+    "source": "http://zakon2.rada.gov.ua/laws/show/75-95-%D0%BF"
   }
 ]
