@@ -24,6 +24,6 @@
                             rgi-wysiwyg(
                                 name="justification"
                                 ng-model="answer[identity.currentUser.role + '_justification']"
-                                placeholder="Please provide your justification (1,350 character limit)..."
-                                limit="1350"
+                                placeholder="Please provide your justification (2,000 character limit)..."
+                                limit="2000"
                                 disabled="(assessment.edit_control !== identity.currentUser._id) || (['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1)")
