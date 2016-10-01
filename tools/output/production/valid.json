@@ -6025,5 +6025,579 @@
     "_id": "577fbde394991e170002f0c1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8eb385c3665389340ccad7b6a0c97040e0aa94f6.xlsx",
     "source": "http://www.ons.gov.uk/generator?uri=/economy/nationalaccounts/balanceofpayments/bulletins/uktrade/january2016/1b5fd6bf&format=xls"
+  },
+  {
+    "_id": "5782463f94991e170002f357",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12dc124215969b94232c09785c41bcd7f970cb0b.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "5782466394991e170002f35c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1037f7dcfefaffa0236b4e7f314b74b2cbce6a5f.pdf",
+    "source": "https://eiti.org/files/Rainbow%20Insight%20Report.pdf"
+  },
+  {
+    "_id": "578246b794991e170002f364",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/124c5cf052b98fcbc520de725468039ae076d68d.pdf"
+  },
+  {
+    "_id": "578247be4b7ddd18007c889b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aafc0d182c942470e2479cf1daeb95b800f828f9.pdf",
+    "source": "https://www.ophir-energy.com/wp-content/uploads/2015/09/Ophir-Myanmar-AD-03-Block-3D-MSS-IEE-Report-Final-February-2015__.pdf"
+  },
+  {
+    "_id": "57824abd4b7ddd18007c88b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97b3368de95f7907f60342dc8e3f41a6a4e8eef9.pdf",
+    "source": "https://www.saudiembassy.net/about/country-information/laws/The_Law_of_The_Provinces.aspx"
+  },
+  {
+    "_id": "578255e694991e170002f3c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62f508ed0925acb6045cd867f15cb88ea7833d03.pdf",
+    "source": "http://www.lift-fund.org/land"
+  },
+  {
+    "_id": "57824b231ba7dc1700a14fd3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd937c27f7ea0427725c62538b0346170307dfcc.pdf",
+    "source": "http://www.mopm.gov.sa/arabic/rules-and-regulations/Pages/default.aspx"
+  },
+  {
+    "_id": "5782579194991e170002f3c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22414efaf27248e6c2e991c4f930e7bab10ad01b.pdf"
+  },
+  {
+    "_id": "57825a711ba7dc1700a1501c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/786f85ec1674f115a619612c351c65a5f8b42b69.pdf"
+  },
+  {
+    "_id": "57824cf01ba7dc1700a14fed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05f88af2c86580816a907cf31e4ea9f356f2d837.pdf"
+  },
+  {
+    "_id": "57825ee61ba7dc1700a1502d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84ec22452524f0903b5dba4d6276fb35c80cf002.pdf"
+  },
+  {
+    "_id": "5782621b94991e170002f3f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57da488d56d311b6f4ea5e3231f6d680fbcc4b25.pdf"
+  },
+  {
+    "_id": "5782734a4b7ddd18007c892b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28f695f760fd052ccc52eda13af04e855a7e0ef1.pdf"
+  },
+  {
+    "_id": "578292d44b7ddd18007c8950",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/33237a92dede5c07de19fd5b0decb0d91548d29a.pdf",
+    "source": "http://www.saudiaramco.com/content/dam/Publications/annual-review/2015/English/AR-2015-SaudiAramco-English-numbers.pdf"
+  },
+  {
+    "_id": "5782a2011ba7dc1700a1507d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1627778cad658af756fda8eb2f934bc85d1e16d6.pdf",
+    "source": "http://www.gcc-legal.org/BrowseLaws.aspx?country=6"
+  },
+  {
+    "_id": "5782b5694b7ddd18007c89cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/595f3ed47f0c46b5899a6d9f6d67f3c67f9e4567.pdf",
+    "source": "http://siteresources.worldbank.org/EXTOGMC/Resources/336929-1266445624608/Argentina_Final.pdf"
+  },
+  {
+    "_id": "5782b3544b7ddd18007c89c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/76970c3fc0d816c5e9d6e091da343169f9102772.pdf",
+    "source": "http://www.noga.gov.bh/index.php?page=519"
+  },
+  {
+    "_id": "5782b1e894991e170002f48d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9889407b6f3cffcfdfaa8c51738769e2adf2f30.pdf",
+    "source": "http://www.noga.gov.bh/index.php?page=518"
+  },
+  {
+    "_id": "5782b74e94991e170002f4ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c73373dd8637a17bf0428037bfe4494789b56c54.pdf",
+    "source": "http://www.agn.gov.ar/files/informes/2015_192info.pdf"
+  },
+  {
+    "_id": "5782acea94991e170002f485",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54860048c19a7e4f48c0682d1f4d7c27fc358dca.pdf",
+    "source": "http://www.msia.gov.bh/ar/official-gazette/Pages/default.aspx"
+  },
+  {
+    "_id": "5782f05e4b7ddd18007c8a1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00c30d0206f4588e5a63d127d0681f489005f298.pdf"
+  },
+  {
+    "_id": "5782e0b61ba7dc1700a150e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/207df923d27974ff887010eace86033345ccdb6e.pdf",
+    "source": "http://data.stats.gov.cn/english/login.htm?m=toRegister"
+  },
+  {
+    "_id": "5782bfd394991e170002f4cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb3d70e43cce800d5ecdd35022b2d05d0daa8d45.pdf",
+    "source": "http://www.vivienda.gob.ar/docestadisticas.php"
+  },
+  {
+    "_id": "5782c0b94b7ddd18007c89e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7c5e5434a8cac3fd0ccba6b578186099e3c0441e.pdf",
+    "source": "http://www.vivienda.gob.ar/docestadisticas.php"
+  },
+  {
+    "_id": "5782edc694991e170002f4f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c8062904d84e1a05de84299f725bf243df06425.pdf"
+  },
+  {
+    "_id": "5782f37794991e170002f4fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e847e130faf999c95e424505e8e36c673e724a9f.pdf",
+    "source": "http://portal.mra.gov.pg/Map/"
+  },
+  {
+    "_id": "5782f9824b7ddd18007c8a35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c1a5d8009622c98856e9ff384a1fcf99b2b45a26.pdf",
+    "source": "http://www.petrominpng.com.pg/about/history.html"
+  },
+  {
+    "_id": "578300034b7ddd18007c8a3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bea6a29246a884caa648e580a8ffb521944588d.pdf",
+    "source": "http://www.emtv.com.pg/article.aspx?slug=Kumul-Minerals-Holdings-Launched&subcategory=Business"
+  },
+  {
+    "_id": "578304571ba7dc1700a15105",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62de55a32050906bbd3c3b8efa00cccc34f78d15.pdf",
+    "source": "http://displacementsolutions.org/wp-content/uploads/2015/05/LAND-ACQUISITION-LAW-AND-PRACTICE-IN-MYANMAR.pdf"
+  },
+  {
+    "_id": "578304f894991e170002f51d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a04a17337d786f62ec88f7606ef0465691e1a39c.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/21233-township-tells-farmers-not-to-protest-over-land.html"
+  },
+  {
+    "_id": "57830d894b7ddd18007c8a57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52acf7f99bdae162c4bba43ff865e0204d0d6d9f.pdf",
+    "source": "http://www.parliament.gov.pg/index.php/bills-and-legislation/view/kumul-minerals-holdings-limited-authorization-act-2015"
+  },
+  {
+    "_id": "578310c194991e170002f531",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/455b4ad7bd27cb211cf575d2206939219944be5b.pdf"
+  },
+  {
+    "_id": "578312134b7ddd18007c8a66",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7875ee881b0879d44ad3e735201a5911a3e2f4f.pdf"
+  },
+  {
+    "_id": "57831e5d94991e170002f566",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c818a1b0cdffae12d6f3448c607b249e8603b6e.pdf",
+    "source": "http://www.oecd.org/corporate/ca/corporategovernanceprinciples/1931117.pdf"
+  },
+  {
+    "_id": "578339f71ba7dc1700a15175",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad9cb604fbf96b1fecca994c988b38cb3d0ebdff.pdf",
+    "source": "http://stock.qq.com/a/20160519/012651.htm"
+  },
+  {
+    "_id": "57833aa21ba7dc1700a1517c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00dcd139969f54a0466d31d4fee3ce92e1bc393c.pdf",
+    "source": "http://www.mlr.gov.cn/kqsc/"
+  },
+  {
+    "_id": "578351bd4b7ddd18007c8b29",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82dec9a0998b6cd4b925f84ded709a8b498c3c38.pdf",
+    "source": "http://yss.mof.gov.cn/zhengwuxinxi/zhengceguizhang/201601/t20160125_1657149.html"
+  },
+  {
+    "_id": "578356bc94991e170002f61f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6cf6b3434f41e08d471d62f2300bf9c2b54dd0ea.pdf",
+    "source": "http://www.gov.cn/zwgk/2011-06/27/content_1893771.htm"
+  },
+  {
+    "_id": "578357ee1ba7dc1700a151ff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35aa780cebfb6ae79d8e652a40609581e5e9b178.pdf",
+    "source": "http://www.csostat.gov.mm/s2.1MA0206.htm"
+  },
+  {
+    "_id": "578358bd94991e170002f636",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e469de905d23f0c8326aee12da38b2a8c747a633.pdf",
+    "source": "http://health.0792jiankang.com/ldlh/1023.html"
+  },
+  {
+    "_id": "57835c694b7ddd18007c8c1e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53ac3525c9c0414afb27677bae322876bf09a0b3.pdf",
+    "source": "http://www.mepscc.cn/tabid/375/InfoID/1040/frtid/370/Default.aspx"
+  },
+  {
+    "_id": "57839448849be50f0034ef5b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/355b467a271f02fda0ecc135d3a5fd9f213da365.pdf"
+  },
+  {
+    "_id": "578388c02a769c0f00a452ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/255053dd497f8d907298a3140a52b59eeb956769.pdf"
+  },
+  {
+    "_id": "578388f6849be50f0034ef22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c620a50ea638df89b26d0535b463e84a3768579.pdf"
+  },
+  {
+    "_id": "5783c53f1dea880f00ecf41e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f752d3ad163f6aac5ab033fc088df84e926c621.pdf"
+  },
+  {
+    "_id": "5783dd59849be50f0034f054",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7172728ef2c65600b3242f5c735e21a86a8b398.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/512333/bis-16-161-beneficial-ownership-transparency.pdf"
+  },
+  {
+    "_id": "5783e5d71dea880f00ecf4d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cca4bd1c12b4c15077258f53f8fa2a1a434e4806.pdf",
+    "source": "https://eiti.org/united-kingdom"
+  },
+  {
+    "_id": "5783f4ab849be50f0034f068",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/89d49d0346dbe0d0bb02558d8f23387ae8a995bd.pdf",
+    "source": "http://www.theoilandgasyear.com/news/equatorial-guinea-inks-mou-with-shell/"
+  },
+  {
+    "_id": "5783f5bb1dea880f00ecf4f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c692f92e55b9a5e4162b7276e2e1421b431e9c0.pdf",
+    "source": "http://www.theoilandgasyear.com/news/equatorial-guinea-confirms-june-round/"
+  },
+  {
+    "_id": "5783fd921dea880f00ecf4f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c879175493f9af414c4b0d12e6bcc66664ac7859.pdf"
+  },
+  {
+    "_id": "5783feac2a769c0f00a4544e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8a6250e1a9a192572dbc475e0fd6a6fc22c1644.pdf",
+    "source": "http://mmie.gob.gq/en/?p=4041"
+  },
+  {
+    "_id": "57845a542a769c0f00a45462",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f78864fda80bfe9f9190ad9543c090ef22b2ba1a.PDF",
+    "source": "http://www.myanmarlegalservices.com/wp-content/uploads/pdf/Myanmar-Upstream-Oil&Gas-Sector(ATC_%20160516)_(1931596_1).PDF"
+  },
+  {
+    "_id": "57845fe4849be50f0034f087",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4b1db9885cd95e93227bc9a34c2d8ee91ea1b5b.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/11320-thai-firm-ptt-begins-natural-gas-exports-from-zawtika-site.html"
+  },
+  {
+    "_id": "57846748849be50f0034f0a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d99f13b958b255b1bdb845fabf6323e6f6dba4d7.pdf",
+    "source": "http://www.csostat.gov.mm/SAct.asp"
+  },
+  {
+    "_id": "57846e4c849be50f0034f0bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00271f864dd5a7449fd333fa0406915b819f0176.pdf"
+  },
+  {
+    "_id": "578470e41dea880f00ecf534",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5e6e362e08509c5ba634ebabab6ef71fb0e75635.pdf"
+  },
+  {
+    "_id": "578471e82a769c0f00a45488",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2d17b4d4e9d25fdc70c29ce2b3b46b0ccaea642.pdf"
+  },
+  {
+    "_id": "57847cc6849be50f0034f0e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a69d7aa84c4d2a44f778930998ea72489583f11a.pdf"
+  },
+  {
+    "_id": "578481e51dea880f00ecf56b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7053b240175d9bac098ffb6fab65aecbe8ebcfd.pdf",
+    "source": "https://eiti.org/news/basis-reform"
+  },
+  {
+    "_id": "5784faca2a769c0f00a45746",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7592ed8255fca8e1fa8c28ee165764dd18281409.pdf"
+  },
+  {
+    "_id": "5784f96f1dea880f00ecf7cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44d424cd2de3283f521d05578b329366823ad261.pdf",
+    "source": "http://www.myanmarparliament.gov.mm/en/search/node/oil"
+  },
+  {
+    "_id": "578485402a769c0f00a454e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4ae349365ec8d4c2a82a48edddac48e7ba5b520.pdf",
+    "source": "http://www.adb.org/sites/default/files/linked-documents/cps-png-2016-2020-ea.pdf"
+  },
+  {
+    "_id": "578505732a769c0f00a45776",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cba18c66bcb6ff46d073ef682501db339f639bc4.pdf",
+    "source": "https://www.gov.uk/government/organisations/oil-and-gas-authority"
+  },
+  {
+    "_id": "57851ec3feab041800f606f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbce7111413b3f01a792543e85f84ed392ebbc41.pdf",
+    "source": "http://www.jornalnoticias.co.mz/index.php/main/57322-petroleo-e-gas-natural-cresce-pressao-sobre-areas-com-potencial"
+  },
+  {
+    "_id": "578511ef849be50f0034f3a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03555d605fb0a6cf862a8edf53c978673f74bb1d.pdf",
+    "source": "https://www.gov.uk/government/news/new-onshore-oil-and-gas-blocks-to-be-offered"
+  },
+  {
+    "_id": "57850fba2a769c0f00a457bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bb75825a765878f58d7414318d1cd0bf3c06855.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/2014/1686/schedule/3/made"
+  },
+  {
+    "_id": "57850ec6849be50f0034f394",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b244e5b9fb3c57717dc7b6bef75c9e8a151a90a.pdf",
+    "source": "http://www.legislation.gov.uk/uksi/2014/1686/schedule/2/made"
+  },
+  {
+    "_id": "578513ff2a769c0f00a457f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6bfdad122ae0c0937d3b88fe814dea8e2718d4aa.pdf",
+    "source": "http://www.allenovery.com/SiteCollectionDocuments/geiprogram.pdf"
+  },
+  {
+    "_id": "578529023beb971800ca260b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa91eca9e7974e3e31a7a5953a64ee17914a7816.pdf",
+    "source": "http://www.independent.co.uk/news/uk/politics/eu-fiscal-rules-allow-uk-opt-out-2242391.html"
+  },
+  {
+    "_id": "57852132feab041800f60708",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e251fb331d25d229b850807867dca117dddb97ae.pdf",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/490999/Petroleum_Act_1998__Energy_Bill_2015-16_Keeling_Schedule__.pdf"
+  },
+  {
+    "_id": "5785294afeab041800f607e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c2806ac34a113e55e72dec52620c3ffb687c9a6.pdf",
+    "source": "http://www.economicshelp.org/blog/16901/debt/does-the-uk-need-a-fiscal-rule/"
+  },
+  {
+    "_id": "5785264854d5f71800e8436b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d1a3adad68938bbec57f5fc3146749d000e2d99.pdf"
+  },
+  {
+    "_id": "5785384fdd660e21003ddbf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6eeb3beb95e52e0ed6e8917334637549aaa38cf4.pdf",
+    "source": "http://mpe.kmu.gov.ua/minugol/doccatalog/document?id=245126339"
+  },
+  {
+    "_id": "57855179dd660e21003ddc20",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9bae2f9528f094f3fb56f0f900294e5204e4004.pdf",
+    "source": "https://www.boe.es/boe/dias/1965/04/23/pdfs/A05914-05924.pdf"
+  },
+  {
+    "_id": "578551d4feab041800f6084d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da6c8aa26ce070cf65cb628c25ab987470a89ef3.pdf",
+    "source": "https://www.boe.es/datos/pdfs/BOE/1968/027/R01430-01548.pdf"
+  },
+  {
+    "_id": "5785571fdd660e21003ddc52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/015ff882867116efc2f29f730ad145ee9765775d.pdf",
+    "source": "http://blogs.worldbank.org/africacan/avoiding-resource-curse-mozambique"
+  },
+  {
+    "_id": "5785592754d5f71800e843ec",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85d58d9a5d357314872704342fc122b31fae21bf.pdf",
+    "source": "http://mmie.gob.gq/en/?p=3992"
+  },
+  {
+    "_id": "57855a54feab041800f6087b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/082db559227241c12bcd0de70d151c9d26c1702c.pdf",
+    "source": "http://mmie.gob.gq/en/?p=3971"
+  },
+  {
+    "_id": "57855b6dfeab041800f6088d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/678e914aeaf0d141771ca333630041c0961cdc00.pdf",
+    "source": "http://opais.sapo.mz/index.php/entrevistas/76-entrevistas/33086--nao-temos-dinheiro-para-fundo-soberano-.html"
+  },
+  {
+    "_id": "578560ea54d5f71800e8442b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1595e613bf9cf700e2c0addedf8bdb2da44722a6.pdf",
+    "source": "http://opais.sapo.mz/index.php/entrevistas/76-entrevistas/33086--nao-temos-dinheiro-para-fundo-soberano-.html"
+  },
+  {
+    "_id": "57855f7afeab041800f608b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc2dfb19a6587d23b45c9d3e17ad870b67ce140e.pdf"
+  },
+  {
+    "_id": "57857577dd660e21003ddcbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d0aaaa16b0b3f4f7f30e21bf88ef95bc3dd433c.pdf",
+    "source": "https://www.imf.org/external/np/pp/2007/eng/030507.pdf"
+  },
+  {
+    "_id": "5785668954d5f71800e8444d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0331a3ba3917b244b6992506a2ecbc3212e7ae4.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2016-06-06/equatorial-guinea-opens-oil-block-sale-says-exxon-still-wanted"
+  },
+  {
+    "_id": "57856630feab041800f608c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60edfb0e520f13fe007d5519a75e52622a6509a6.pdf"
+  },
+  {
+    "_id": "57857edefeab041800f60915",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0cf0638cc4f2936df38e6413dd4115c570be1d5.pdf",
+    "source": "http://www.qia.qa/AboutUs/Pages/Our-Governance.aspx"
+  },
+  {
+    "_id": "57857f8254d5f71800e8449b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c45aef192977d9deb364c1bdb5af5063efc1ec7.pdf",
+    "source": "http://www.qia.qa/Investments/Pages/Investment-Framework.aspx"
+  },
+  {
+    "_id": "57858166feab041800f6091c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/929ed772ba511c35dc4a1560f751b64ace5f7a68.pdf",
+    "source": "http://www.qia.qa/Investments/Pages/Investment-Process.aspx"
+  },
+  {
+    "_id": "578590a2feab041800f6098b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23192f5ed790ee6cc81fe0f2ddd0b282554e2a3c.pdf",
+    "source": "https://www.imf.org/external/pubs/ft/scr/2013/cr1315.pdf"
+  },
+  {
+    "_id": "578575f1feab041800f608e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4607797006111b86529de4358f8f807c90739dbb.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/NRF_RWI_Complete_Report_EN.pdf"
+  },
+  {
+    "_id": "57862115dd660e21003dde0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77434d7deb1877f8b1b3ffec27fc6dad1f66229f.pdf",
+    "source": "http://www.resourcecontracts.org/contract/ocds-591adf-MM2774096611RC/view#/search/myanmar"
+  },
+  {
+    "_id": "578594bddd660e21003ddd4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/253f2c7ea59ff246c37098bf52b51c057e56757e.pdf",
+    "source": "https://www.mof.gov.qa/en/DownloadCenter/Pages/Budget.aspx"
+  },
+  {
+    "_id": "5785b948feab041800f609fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f5eb5dd554d7347ee0a90ae967e138c63929c27.pdf",
+    "source": "http://www.myanmarembassy.com/documents/Invitation%20for%20Bids.pdf"
+  },
+  {
+    "_id": "5785cb787e1fa4210029e0f5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53df2094f7a9dd7522c6b00c2049e48b3c9ef18d.pdf",
+    "source": "https://www.eia.gov/beta/international/rankings/#?prodact=3-6&iso=MMR&pid=3&aid=6&tl_id=6-A&tl_type=a&cy=2015"
+  },
+  {
+    "_id": "57862cfddd660e21003dde6a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31266b84bb4d01469d730b5a50ad1e1ebc342a4b.pdf",
+    "source": "https://www.gov.uk/government/collections/petroleum-revenue-tax-prt-and-government-revenues-from-uk-oil-and-gas-production"
+  },
+  {
+    "_id": "578639c1dd660e21003ddecd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dbb1a272a63118f9b4f823b5d63cd5e02841a251.pdf"
+  },
+  {
+    "_id": "578677bafeab041800f60e1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78053c804906b34bd19964a40cca6c3aeca5345e.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=8106&lang=en"
+  },
+  {
+    "_id": "5786779cfeab041800f60e1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/247cf0483338c05e3765db5761c59132e965570c.pdf"
+  },
+  {
+    "_id": "578678b8feab041800f60e3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df534db76f055c7f1d74c604b32f9d512a2d835d.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=7412"
+  },
+  {
+    "_id": "5786782cdd660e21003de115",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ab9e2c8a2bee75b035562524c5394f046632a39.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=7799"
+  },
+  {
+    "_id": "57867c78feab041800f60e8b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/28ae8878756df34a902bed428a6c127ea18cc563.pdf",
+    "source": "http://www.guineaecuatorialpress.com/buscador.php"
+  },
+  {
+    "_id": "5786917b7e1fa4210029e59b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/73eba321a808ccf52ef0e709e55354e350ef410e.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=8150"
+  },
+  {
+    "_id": "578691f77e1fa4210029e59e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/386c602be5b2ae0c33ab6d3d2a628515435cdb4e.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=7430"
+  },
+  {
+    "_id": "57869b3e7e1fa4210029e64d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8522579840ccb1042c951c1c9d38506cbedfbfe0.pdf",
+    "source": "http://www.oedigital.com/energy/oil/item/11399-exxon-gepetrol-in-equatorial-guinea-psc"
+  },
+  {
+    "_id": "5786b431feab041800f61010",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0354daf23dbb440d02bd054d6db380b5fa055f63.pdf",
+    "source": "http://eiti.org.ua/download/1099/"
+  },
+  {
+    "_id": "5786b61c7e1fa4210029e669",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d792deb2a173ca0b6877b42ce01d7b82e7a728ce.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/132/94-%D0%B2%D1%80"
+  },
+  {
+    "_id": "578359b61ba7dc1700a152b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfc57d52430dfe854ec5e061199a300b90cd4899.pdf",
+    "source": "http://baike.baidu.com/view/2635072.htm"
+  },
+  {
+    "_id": "578683897e1fa4210029e52a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2280782b0d9ba372c79f0811e9ceeb698ef06b18.png",
+    "source": "http://geoinf.kiev.ua/wp/zviti-map.php?rep=spec_dozvil&seqnom=10001"
+  },
+  {
+    "_id": "57868491dd660e21003de1ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2eac91cac536e7f22e23c9c1abac28ca475aa2d8.png",
+    "source": "https://beta.eiti.org/implementing_country/26"
+  },
+  {
+    "_id": "578685b3feab041800f60efb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6eae67fce6ad0657741010e94300ec49d06adde6.png",
+    "source": "https://eiti.org/ukraine"
+  },
+  {
+    "_id": "57868967feab041800f60f1a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e6c15b576817b12e71b9181aec67d3a37b8b38e.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/1702-18"
+  },
+  {
+    "_id": "578689efdd660e21003de1d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c90eaa0c70f5d59d10f86abbac6aa46a8b7b515.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/755-15/print1464095033695015"
+  },
+  {
+    "_id": "57868184feab041800f60ec7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/82ad0bc7137720aa3383e081d9a193cf69d8efe3.png",
+    "source": "http://zakon5.rada.gov.ua/laws/show/423-95-%D0%BF"
+  },
+  {
+    "_id": "5786835add660e21003de19f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b6081bc9a831d2ebb0986f1366135e51750bf97d.png",
+    "source": "http://geoinf.kiev.ua/wp/interaktyvni-karty-spetsdozvoliv.htm"
+  },
+  {
+    "_id": "5786756a7e1fa4210029e462",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c90b76c8338dffd99980abb7457aaeceb83692f3.png",
+    "source": "http://geoinf.kiev.ua/wp/interaktyvni-karty-spetsdozvoliv.htm"
+  },
+  {
+    "_id": "578624997e1fa4210029e194",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64e5952c60cb686b6ee2604f14e51f1d7b845054.xlsx",
+    "source": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/487112/14R_Offers_by_Operator_v3.xlsx"
+  },
+  {
+    "_id": "578535c7feab041800f60805",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8a7d8fce88bf177b4865906ce403633e454aca2.png",
+    "source": "http://geoinf.kiev.ua/wp/interaktyvna-karta-rodovyshch-korysnykh-kopalyn.htm"
+  },
+  {
+    "_id": "57853780feab041800f60808",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a281a643f20ec450a77563ddd84c0b657b332da8.png",
+    "source": "http://mpe.kmu.gov.ua/minugol/control/uk/publish/article?art_id=245086132&cat_id=35081"
+  },
+  {
+    "_id": "57853a7dfeab041800f60813",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85b317a99390a2a529dd846a23cecb305023de23.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/410-2015-%D1%80"
+  },
+  {
+    "_id": "5785333054d5f71800e84390",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64de3f3ec37e300985286c870d0c36771faf1c3f.png",
+    "source": "http://geoinf.kiev.ua/publikatsiyi/shchorichnyky/"
+  },
+  {
+    "_id": "5784bb1a849be50f0034f186",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9fa176932b3f9feb03e59430445ca6d93498a751.docx",
+    "source": "https://charltonsmyanmar.wordpress.com/2014/09/12/model-production-sharing-contract-in-myanmar/"
   }
 ]
