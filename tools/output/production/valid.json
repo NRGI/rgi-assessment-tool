@@ -6599,5 +6599,379 @@
     "_id": "5784bb1a849be50f0034f186",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9fa176932b3f9feb03e59430445ca6d93498a751.docx",
     "source": "https://charltonsmyanmar.wordpress.com/2014/09/12/model-production-sharing-contract-in-myanmar/"
+  },
+  {
+    "_id": "5786be88dd660e21003de2c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09e5de472f076dcabaae54d3f2c769967e8c96e6.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/TGapPN18Nov2015.pdf"
+  },
+  {
+    "_id": "5786c352feab041800f6102d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49f3fd62d320d2a7a33d201cbaf510047710093e.pdf"
+  },
+  {
+    "_id": "5786cccdfeab041800f61036",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0dbc65acac1b2c8f02a9f85c33f9468e0fcb1ca4.pdf",
+    "source": "http://rc.majlis.ir/fa/law/show/967556?keyword=قانون%20بودجه%20۱۳۹۵"
+  },
+  {
+    "_id": "5786ced1dd660e21003de2fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/672c1e5c1f436699c7c0ebba9d28374a72134b2b.pdf"
+  },
+  {
+    "_id": "5786cf6dfeab041800f61046",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2d61fd02097ea40d151af9cb2262f665a1760c7.pdf",
+    "source": "https://www.mof.gov.tl/wp-content/uploads/2015/11/Petroleum_Fund_Annual_Report_2014-Eng-ver-1.pdf"
+  },
+  {
+    "_id": "5786d1c3dd660e21003de31b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/165b6e8962f19bcbfa11110f4469f1ec2a835a81.pdf"
+  },
+  {
+    "_id": "5786d2e57e1fa4210029e6c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f35fa2e7be8cd1ecfac0c4bc0befe18374de843b.pdf"
+  },
+  {
+    "_id": "5786d7ff7e1fa4210029e6f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fda638f97042c50bad6517a7b152bfcffdc7199.pdf"
+  },
+  {
+    "_id": "5786d9b27e1fa4210029e705",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcd01854e5a32b9c262126bf9080dea7e769557b.pdf"
+  },
+  {
+    "_id": "5786dbe9dd660e21003de353",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/913368080e40a0961e20d931cf2f0fdc4e814213.pdf"
+  },
+  {
+    "_id": "5786dfe5feab041800f610c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/badb8a41763b2540162645ca30eb32cefb645106.pdf"
+  },
+  {
+    "_id": "5786dce07e1fa4210029e72e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7419ed5e06603e30ad2e54ebb137a7163e28a3a2.pdf"
+  },
+  {
+    "_id": "5786ddb47e1fa4210029e736",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7f1e63ed42b93bdee20b33cecc504d7615cf314.pdf"
+  },
+  {
+    "_id": "5786f4a07e1fa4210029e74b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c02c40ef75ff98d911046614b62f0707c7d6c801.pdf"
+  },
+  {
+    "_id": "5786fadc7e1fa4210029e756",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b18a56ade019837cda3be7581e7785e1b7e8025.pdf"
+  },
+  {
+    "_id": "5787b8dc7e1fa4210029e91f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc0a4790063cee6bea2ba88b541fa106be2cb7fb.pdf",
+    "source": "http://www.marathonoil.com/Global_Operations/Equatorial_Guinea/Social_Responsibility/"
+  },
+  {
+    "_id": "5787b698dd660e21003de53d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/403c67dac6a53916cc471b0216bfba382a201ea0.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=6582"
+  },
+  {
+    "_id": "5787b9eb7e1fa4210029e923",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2aefd92f8e466b5d835aa5630ecf5b28e4e99f6c.pdf",
+    "source": "http://www.guineaecuatorialpress.com/noticia.php?id=7870"
+  },
+  {
+    "_id": "5787ac8a7e1fa4210029e8cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75a2fd30df06d1409be02fc0601270ff2322c5ec.pdf"
+  },
+  {
+    "_id": "5787b6c8dd660e21003de540",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03f2b4a36d5eaa54ef4f944ceeea9a7c59d53be7.pdf",
+    "source": "http://www.guineaecuatorialpress.com"
+  },
+  {
+    "_id": "5787ba53dd660e21003de56a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00ac7eb1ccdf1994ee84036b03b4e2dbcc9f6d7f.pdf",
+    "source": "https://www.fhi360.org/countries/equatorial-guinea"
+  },
+  {
+    "_id": "5787bcd8db8fbd2100ad49a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0325ed36c6603f33a6b8e3f9e7552d88ad97c357.pdf",
+    "source": "http://africanbusinessmagazine.com/uncategorised/equatorial-guinea-oil-and-gas/"
+  },
+  {
+    "_id": "5787be05dd660e21003de587",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7697fd73887f9d2f7927ed4e260eb9108ee3418.pdf",
+    "source": "https://globenewswire.com/news-release/2015/04/01/721266/10127328/en/Equatorial-Guinea-Ratifies-New-ExxonMobil-Exploration-Agreement.html"
+  },
+  {
+    "_id": "5787d208db8fbd2100ad4a61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7ee8033c6b856b129aa4317d75f3bd151f5d3d9.pdf"
+  },
+  {
+    "_id": "5787d620dd660e21003de643",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/49895c9e2728834a423c80f7bcee9efaab6ea2d8.pdf"
+  },
+  {
+    "_id": "578854d85edd830f001714b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f087ba6247384b7240edf5ef33f099392dc08ee4.pdf",
+    "source": "http://www.petrominpng.com.pg/about/history.html"
+  },
+  {
+    "_id": "5787e4d07e1fa4210029eae3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b9a66afef700549c73ca27786a4fbbd8359a3caf.pdf",
+    "source": "http://gazeta.dt.ua/energy_market/komu-vidhodyat-nadra-_.html"
+  },
+  {
+    "_id": "5788541f5edd830f0017149b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b9f296cb3d2c21980ddc9327eb7214391bf969b.pdf"
+  },
+  {
+    "_id": "5787d889db8fbd2100ad4a7f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43bd1ffd238c47d7678888a7b72cd17aebfe242b.pdf",
+    "source": "http://www.guineaecuatorialpress.com"
+  },
+  {
+    "_id": "5788d9b85edd830f001718f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3658cead02d1d957c6c0d188da4c97d73c17dee7.pdf"
+  },
+  {
+    "_id": "5788ea735edd830f00171963",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c4acc69f5116455b4d38982a995c96d43023a75d.pdf"
+  },
+  {
+    "_id": "5788f0ae5edd830f00171983",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dbf13aea30f6c46c1f31d2b24ebc84cfe33e68e.pdf"
+  },
+  {
+    "_id": "5788ffa8a4bfd20e00e77589",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adda40d657d6c8199336745e9ffcd72f72d4ab34.pdf"
+  },
+  {
+    "_id": "5788f1435edd830f00171996",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ace829e698d97509d069f01ef2224ab9ddaa7e97.pdf"
+  },
+  {
+    "_id": "57890082a4bfd20e00e77594",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38cb181205bcdc2a2747cb5b1f2a137cc0dca064.pdf",
+    "source": "http://informburo.kz/novosti/akimat-astany-podal-v-sud-na-zemlevladelcev-ne-zhelayushchih-otdavat-svoi-uchastki-pod-gosnuzhdy.html"
+  },
+  {
+    "_id": "57890017a4bfd20e00e7758e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51fda6d11062954069b6c787e29dbe1eec99c49d.pdf",
+    "source": "http://www.agp.com.kz/?p=596"
+  },
+  {
+    "_id": "5789158b6013c50e0025f7dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a47d9e8d1aafb23267af8be5d5fa5c2843a05047.pdf",
+    "source": "http://kazakhstan.polpred.com/?cnt=69%3Fcnt%3D&ns=1§or=17&page=2"
+  },
+  {
+    "_id": "578923eea4bfd20e00e77625",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f528e09025431d92ad96f33c0c48f34f9083722.pdf",
+    "source": "http://yss.mof.gov.cn/2015js/"
+  },
+  {
+    "_id": "578929f56013c50e0025f7f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a090d1178ff80826147eecec3b5830a6fc90d665.pdf",
+    "source": "http://www.mireme.gov.mz/index.php?option=com_content&view=category&layout=blog&id=9&Itemid=101"
+  },
+  {
+    "_id": "578926e3a4bfd20e00e77637",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc2ff2a77777781a1052a40b2e0e66e93e98d3e2.pdf",
+    "source": "http://file:///C:/Users/Fatima/Desktop/NRGI/Sources/%C3%80rea%20de%20Hidrocarbonetos.htm"
+  },
+  {
+    "_id": "57892b56a4bfd20e00e77645",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60aff060f7dbc07313d542256910662d06ddcde0.pdf",
+    "source": "http://www.inp.gov.mz/pt/Noticias/2015"
+  },
+  {
+    "_id": "57892f2ba4bfd20e00e77660",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a821572929716c1662227268d2f66a02f0da5e1.pdf",
+    "source": "http://www.gov.cn/xinwen/2016-06/29/content_5086777.htm"
+  },
+  {
+    "_id": "5789242ba4bfd20e00e7762c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16d1410cfd8182d8c5b11da7c68f5961b38e6ae8.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/index.htm"
+  },
+  {
+    "_id": "57895f5ea4bfd20e00e776dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a79df0a82e33d9ed1daec48ce9714502b23dc355.pdf",
+    "source": "http://www.enh.co.mz/por/Quem-Somos/Historia-da-ENH"
+  },
+  {
+    "_id": "57895bdaa4bfd20e00e776c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d27e24f9ba245c8861b1636a088f6c998eaa7bf.pdf",
+    "source": "http://www.mireme.gov.mz/index.php?option=com_phocadownload&view=category&id=5:lei&Itemid=150"
+  },
+  {
+    "_id": "57895db4a4bfd20e00e776d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6aad012b2ccacb63de51285de3ff5cba1e9bbfff.pdf",
+    "source": "http://Sahara Reporter"
+  },
+  {
+    "_id": "578935bda4bfd20e00e77664",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1edd72b6a16fa31e6c58d59743478204cf7bbfb.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/201603/t20160325_1924193.html"
+  },
+  {
+    "_id": "5789418f6013c50e0025f811",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/170ccb67f0f474f9f79d128409fb073fe81e8d57.pdf"
+  },
+  {
+    "_id": "57897775a4bfd20e00e77730",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/907e8315dd2e9bcc66cbdbf325979a1666535038.pdf",
+    "source": "http://www.dno.gov.mz/docs/OE_PES2016/Fundamentacao_Lei_OE_2016.pdf"
+  },
+  {
+    "_id": "578967bda4bfd20e00e776e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e0dcff6c9fde444968eba4d18101d6b34a58c75.pdf",
+    "source": "http://www.mj.gov.tl/jornal/public/docs/2002_2005/leis_parlamento_nacional/13_2005.pdf"
+  },
+  {
+    "_id": "578960396013c50e0025f882",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df4e147d33e0b16ac3124c4f9514584adb2321a6.pdf",
+    "source": "http://www.enh.co.mz/por/Quem-Somos/Grupo-ENH"
+  },
+  {
+    "_id": "5789751ea4bfd20e00e7771f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c935edb9f562b412c215415e9e77f323a6a1e474.pdf"
+  },
+  {
+    "_id": "578968c4a4bfd20e00e776f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1de770a6d4d78086992f1dcd27d643eefbbe0c49.pdf",
+    "source": "http://www.laohamutuk.org/Oil/Project/TGapRes44/ANPAnnouncementTG29Jan2016.pdf"
+  },
+  {
+    "_id": "5789787da4bfd20e00e77737",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0d4ea6c9777cf2bff66d3e5f12c056ced393ea1.pdf",
+    "source": "http://www.dno.gov.mz/docs/OE_PES2016/Orc_cid2016.pdf"
+  },
+  {
+    "_id": "57897cf5a4bfd20e00e7773e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35e2b58d23ea1a0b8f5c34081f4cd8c8648cbab2.pdf",
+    "source": "http://www.dno.gov.mz/docs/OE2015/Orcam_Cidadao%202015_Versao_Final.pdf"
+  },
+  {
+    "_id": "57897eae6013c50e0025f8f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0795cfe2b61d8d3809bbfe6e7ff88a04eda3519.pdf",
+    "source": "http://www.dno.gov.mz/docs/orc_estado/execucao/REO_JAN_DEZ_2015.pdf"
+  },
+  {
+    "_id": "57897f99a4bfd20e00e77756",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9929fd5d2d72ef13f8fe67e6fd93c1ae1f83a780.pdf",
+    "source": "http://www.laohamutuk.org/econ/OGE16/BksMar2016/OGE16finalBB1en.pdf"
+  },
+  {
+    "_id": "5789f7736013c50e0025f97a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0bd536040f846f28add67e64b23039795d3d4b23.pdf"
+  },
+  {
+    "_id": "578a0ebaa4bfd20e00e77827",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/736aa9b7d3851c799a121d3b143326e301ae3aab.pdf",
+    "source": "http://www.worldbank.org/projects/P008507/uzen-oil-field-rehabilitation-project?lang=en"
+  },
+  {
+    "_id": "578a45efa4bfd20e00e77885",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a046e5d1eba8886ed186e8b4d8efd90d66015165.pdf"
+  },
+  {
+    "_id": "578a1864a4bfd20e00e7782e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e897fa2b25224e46ec5170a64568c08c4dcfb706.pdf",
+    "source": "http://geology.gov.kz/ru/presstsentr/informatsiya/nedropolzovateli-respubliki-kazakhstan/category/uglevodorodnoe-syre-2"
+  },
+  {
+    "_id": "5789f7cd6013c50e0025f97f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/228912bac7bcdaf87b1b12ef4b1753b0b2fd0684.pdf"
+  },
+  {
+    "_id": "578a405aa4bfd20e00e7787c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e157bbb87679ab32e384d5720d2debe6a69d3784.pdf",
+    "source": "https://www.odi.org/sites/odi.org.uk/files/odi-assets/publications-opinion-files/9268.pdf"
+  },
+  {
+    "_id": "578a540ba4bfd20e00e778b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce5d92b35dc451c475938839b6f3bed0a88a9153.pdf",
+    "source": "http://www.saudiaramco.com/en/home/news-media/news/lanxess.html"
+  },
+  {
+    "_id": "578a4ac9ffe8391700933e9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbb934d16751cd27d85aba8d06ddc86c218dd45b.pdf",
+    "source": "http://www.mofa.gov.sa/sites/mofaen/ServicesAndInformation/aboutKingDom/SaudiGovernment/Pages/BasicSystemOfGovernance35297.aspx"
+  },
+  {
+    "_id": "578a53daffe8391700933eaa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26fd522759ff1df4fd8889f922999884a0fac6ca.pdf",
+    "source": "http://www.businesswire.com/news/home/20150827005268/en/McDermott-Awarded-Lump-Sum-Contract-Saudi-Aramco"
+  },
+  {
+    "_id": "578a6188a4bfd20e00e778e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/188cac6f030d13d358b18bd345917ed47e516304.pdf",
+    "source": "https://www.mof.gov.sa/English/DownloadsCenter/Budget/Ministry's%20of%20Finance%20statment%20about%20the%20national%20budget%20for%202016.pdf"
+  },
+  {
+    "_id": "578a61c6ffe8391700933ee9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e980356c983c068c12f3669c2d94402179a4ef8.pdf",
+    "source": "https://www.cia.gov/library/publications/the-world-factbook/fields/2080.html"
+  },
+  {
+    "_id": "578909866013c50e0025f78c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e7c475477ee13e1a217f14a4be71ccfc0c4eeda.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "57890ca76013c50e0025f7a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b51670e05171d9cda5dc1c45e97cde5cd333f384.png",
+    "source": "http://www.geo.gov.ua/publikaciya/ogoloshennya-organizator-aukcionu-derzhavna-sluzhba-geologiyi-ta-nadr-ukrayiny"
+  },
+  {
+    "_id": "57890fe76013c50e0025f7c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af0668a8975a09e305fde961addc63ae9ba67200.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/615-2011-%D0%BF/page2"
+  },
+  {
+    "_id": "578905d0a4bfd20e00e775be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4297f03c17cd6fb3becb5685e2667cffa38cd08c.png",
+    "source": "http://www.geo.gov.ua/publikaciya/ogoloshennya-organizator-aukcionu-derzhavna-sluzhba-geologiyi-ta-nadr-ukrayiny"
+  },
+  {
+    "_id": "57886f545edd830f001714de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8d8dcc5327780a3c12b152aacaa9eb79a2fbd47.xlsx",
+    "source": "http://www.cnh.gob.mx/_docs/Reservas/base_reservas_2015.xlsx"
+  },
+  {
+    "_id": "578876305edd830f00171568",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d05d425854a5ff669ac706cf8d8d59465027352.xlsx",
+    "source": "http://www.cnh.gob.mx/_docs/DA_CSV/Gas_natural.xlsx"
+  },
+  {
+    "_id": "5787df31db8fbd2100ad4aac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d1c8bdecb4ed75a078329bf0241a6b98026e37f.png",
+    "source": "http://zakon2.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "578758fdfeab041800f6113a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18299dfe0b3b735574f9e8eebc78ad95ae06bd66.png",
+    "source": "http://declarations.com.ua/declaration/vulyk_95_139"
+  },
+  {
+    "_id": "57875d27db8fbd2100ad486e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2a57f347df20907f2559397920764375332b7583.png",
+    "source": "https://usr.minjust.gov.ua/ua/freesearch"
+  },
+  {
+    "_id": "57876783dd660e21003de406",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3fac058b673e7eb6e3d0af15b66a943b69c0da5.png",
+    "source": "http://zakon2.rada.gov.ua/laws/show/2665-14"
+  },
+  {
+    "_id": "57876c5adb8fbd2100ad48b4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff1dad68d9c1b2c4feb3bc7df92414a930d78e52.png",
+    "source": "http://www.geo.gov.ua/storinka/polozhennya-pro-derzhgeonadra-ukrayiny"
+  },
+  {
+    "_id": "578774de7e1fa4210029e81c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b82f8712e378425c23a5a721330972a72473e5f.png",
+    "source": "http://zakon4.rada.gov.ua/laws/show/615-2011-%D0%BF/print1465380160943057"
   }
 ]
