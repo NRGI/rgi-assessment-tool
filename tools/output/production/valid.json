@@ -6973,5 +6973,542 @@
     "_id": "578774de7e1fa4210029e81c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/9b82f8712e378425c23a5a721330972a72473e5f.png",
     "source": "http://zakon4.rada.gov.ua/laws/show/615-2011-%D0%BF/print1465380160943057"
+  },
+  {
+    "_id": "578a7cf7ffe8391700933f94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2bc98e1d4dd8babd37741f01e192390562c70ea3.pdf",
+    "source": "http://www.gab.gov.sa/article.php?id=10"
+  },
+  {
+    "_id": "578a7452ffe8391700933f6b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/909b2d97471f37b62126c6f6410e321674872a87.pdf",
+    "source": "https://www.mof.gov.sa/english/Pages/zakahinterest.aspx"
+  },
+  {
+    "_id": "578a6fe0a4bfd20e00e77906",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e4fcfd78279b4e84299fd87cc64e54ebca7ece7.pdf",
+    "source": "https://www.boe.gov.sa/printsystem.aspx?lang=ar&systemid=198&versionid=215"
+  },
+  {
+    "_id": "578a792ba4bfd20e00e77964",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c74f069f85691b10d170528ffacdc771d36e4f0.pdf",
+    "source": "http://www.gab.gov.sa/doc/moraqen.pdf"
+  },
+  {
+    "_id": "578a6c90ffe8391700933f10",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8bf60c63bded7ca7e1e08760263fdbc23fe52bd.pdf",
+    "source": "http://www-wds.worldbank.org/external/default/WDSContentServer/WDSP/IB/2007/09/19/000020953_20070919115824/Rendered/PDF/404050MNA.pdf"
+  },
+  {
+    "_id": "578a7f1cffe8391700933fa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a7da1ae26f2f5f7904dde2175b075e7a6584be3b.pdf",
+    "source": "http://www.saudilegal.com/saudilaw/18_law.html"
+  },
+  {
+    "_id": "578a8445ffe8391700933fb2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/290bb01afdd9fa8497e7e8fab0b7ab8645fa4684.pdf"
+  },
+  {
+    "_id": "578a7e89a4bfd20e00e77977",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aeb37e2feecf892fcabb1c781c9bc89c7c66ee0c.pdf",
+    "source": "http://nimonik.com/case_studies/audit_previews/ksa_audit_preview_health_safety_environment.pdf"
+  },
+  {
+    "_id": "578a807ba4bfd20e00e77985",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce2118895dfadc1fbf6ed7063a6a5ef40454ba1e.pdf",
+    "source": "http://en.energo.gov.kz/index.php?id=855"
+  },
+  {
+    "_id": "578a8deda4bfd20e00e779ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51d6fc1e8d237505c6224a0bca49f0043518bfd9.pdf",
+    "source": "http://fac.ksu.edu.sa/hidaithy/page/20213"
+  },
+  {
+    "_id": "578aa816ffe8391700934010",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a38fc2a1073790854646ccd714703629bfd8c2d0.pdf",
+    "source": "http://www.saudiaramco.com/en/home/search.html?q=annual"
+  },
+  {
+    "_id": "578a9bf5ffe8391700933feb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e0dfab80ea59906f0c24d214a71266cec89938c.pdf"
+  },
+  {
+    "_id": "578a9116ffe8391700933fe8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2ecaeaf87470edd1686b1309dd2426afcc59df6.pdf"
+  },
+  {
+    "_id": "578aa3cea4bfd20e00e779d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67c63e0f707ccabfe8020edd59e71c889eab9538.pdf",
+    "source": "http://www.iucn.org/content/launch-“communities-companies-and-conflict-report”-sharing-natural-resource-governance"
+  },
+  {
+    "_id": "578aa104a4bfd20e00e779d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f39707da3a5de075d1613b49135f59fd2f4fdf75.pdf",
+    "source": "http://oxfaminzimbabwe.org/MineReportFA.pdf"
+  },
+  {
+    "_id": "578b1a61ffe8391700934074",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05b0ba673f00c39fdf6529cfbc3f8dd7b6b9be78.pdf",
+    "source": "http://allafrica.com/stories/201511260419.html"
+  },
+  {
+    "_id": "578ab3eaffe839170093406f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d627fcb9e2f623f9827290893735dbbc4fd046e9.pdf",
+    "source": "http://rgi.nrgi-assessment.org/assessments/answer/ZW-2016-MI-079"
+  },
+  {
+    "_id": "578aaba0a4bfd20e00e779f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/284c23fcfe00a611adc1227cfadd066fbed7fee8.pdf",
+    "source": "http://www.oxfordbusinessgroup.com/overview/spotlight-fall-oil-prices-brings-fresh-attention-role-world%E2%80%99s-largest-oil-exporter-0"
+  },
+  {
+    "_id": "578b1d67a4bfd20e00e77a31",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/862134d921c9422ce1efeff9a9c859e207bd137f.pdf",
+    "source": "http://source.co.zw/2016/06/govt-shifts-hwange-debt-burden-to-taxpayer-after-spurning-50mln-loan-offer/"
+  },
+  {
+    "_id": "578aa85ca4bfd20e00e779e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88c2498a0775c8d5d1ef5097e5bd71072a136b4c.pdf",
+    "source": "http://www.saudiaramco.com/en/home/news-media/publications/corporate-reports/annual-review-2015.html"
+  },
+  {
+    "_id": "578b3acca4bfd20e00e77a3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06153c0a4e0bfcd91f164eca72071244f6ac8479.pdf",
+    "source": "http://www.ijhssnet.com/journals/Vol_3_No_11_June_2013/25.pdf"
+  },
+  {
+    "_id": "578b1e12ffe8391700934084",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/790bc892b681de20966bea8ae5be20428208c0f3.pdf",
+    "source": "http://www.financialgazette.co.zw/nicholas-van-hoogstraten-spurns-hwange/"
+  },
+  {
+    "_id": "578b4d37ffe83917009340a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34debc5013fabe0fbda859528c9704a6489de185.pdf",
+    "source": "http://energo.gov.kz/index.php?id=719"
+  },
+  {
+    "_id": "578b4f9fa4bfd20e00e77a54",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d35bd65503009dfa06b54b870826146df81cb44b.pdf",
+    "source": "http://portal.goszakup.gov.kz/portal/index.php/ru/oebs/showstat"
+  },
+  {
+    "_id": "578b531ba4bfd20e00e77a78",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad979c08ae6a652635adf81c7955f44322bd9e4d.pdf",
+    "source": "http://portal.goszakup.gov.kz/portal/index.php/ru/oebs/subjects"
+  },
+  {
+    "_id": "578b5103ffe83917009340de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/811453b828c1c91e8abaaeed76d6640860f92855.pdf",
+    "source": "https://tender.kz/TendersResults.aspx?tender_type_ids=&requester_type_ids=&requesters_ids=®ions_kods=&date_period=&keywords=%D0%BD%D0%B5%D1%84%D1%82%D1%8C&tru_ids=&date_from=&currCurrency=kzt&requesters_text=&page_num=0&sortIndex=-1&sortIndexPage=-1&hide_show_block=0&excluded_keywords=&sum_from=0&sum_to=1500000000000&chk_tender_title=true&chk_bid_title=true&chk_bid_description=true&chk_tru=false"
+  },
+  {
+    "_id": "578b6925b79aee2000bf5afa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d95f19b3ff5dbb041d48a06ed1046ae164c973a.pdf",
+    "source": "http://yss.mof.gov.cn/2015js/201607/t20160713_2355039.html"
+  },
+  {
+    "_id": "578b6affb79aee2000bf5b05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0dffe8f9db9a528915af80e81cc7903b163f4564.pdf",
+    "source": "http://www.mof.gov.cn/zhengwuxinxi/zhengcejiedu/2016zcjd/201605/t20160526_2037679.htm"
+  },
+  {
+    "_id": "578b777eb79aee2000bf5b45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b46798cd121ed58ea73f24aec54eb1f27229f67.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/201603/t20160325_1924463.html"
+  },
+  {
+    "_id": "578b77d34c5a5d1700de6713",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0424ad8cfad4b0c58ce24695a9a04e6f3b5d032.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/201603/t20160329_1928956.html"
+  },
+  {
+    "_id": "578b78134c5a5d1700de6715",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6330e8bfa31fa50b2e42e082876228fcac995e54.pdf",
+    "source": "http://www.saudiaramco.com/en/home/HRJVSupport/BusinessPartners.html"
+  },
+  {
+    "_id": "578b844db79aee2000bf5bf2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d20cb9bceb81d2a62eb21f49c6f4697a878e2a64.pdf",
+    "source": "http://www.minfin.gov.kz/irj/portal/anonymous?NavigationTarget=ROLES://portal_content/mf/kz.ecc.roles/kz.ecc.anonymous/kz.ecc.anonymous/kz.ecc.anonym_about_mininstry/about_ministry/regulations_fldr"
+  },
+  {
+    "_id": "578b7ea84c5a5d1700de6761",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abce0691adbb7c04a9c0a040e61305ae84016f94.pdf",
+    "source": "http://mci.gov.sa/en/LawsRegulations/SystemsAndRegulations/Documents/a16.pdf"
+  },
+  {
+    "_id": "578b7839b79aee2000bf5b55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e22f531e08e8c109d05d52d2cbf37b3215604fc2.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/201603/t20160329_1928957.html"
+  },
+  {
+    "_id": "578b83244c5a5d1700de678b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12711f2fb70da6a1365f66b0f7d8dafccc1c3353.pdf",
+    "source": "http://www.me.gov.ua/Documents/Download?id=d23b9a1a-575c-4d9a-95a1-0ba2bdad2d76"
+  },
+  {
+    "_id": "578b8190b79aee2000bf5ba1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e909f506fc3c4b814b03952eedbc96d89eb4af2d.pdf",
+    "source": "http://www.me.gov.ua/Documents/Download?id=7235c031-2e63-4e04-8f3f-6042725d98ab"
+  },
+  {
+    "_id": "578b92e84c5a5d1700de6844",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05d17ed34a49ffdf5009266ed6c94edf52daa7ff.pdf",
+    "source": "http://www.china-inv.cn/wps/portal/!ut/p/a1/jZDBCoJAEIafKGZaTe24aemaW4RIthdZInUhVwnp0NNnQkdX5zbwffwzPwjIQWj5VpXsVavl87cLpzihg2s_xRg5PSD1cM_PVsyO3mYAbpMACW1i8Am9_H0_pJHtJohoewRZsIsCd8sRmbPMx4mhuMw3ADP_xyNgyB8CyIv7vALRyb5eKV22kNdt8yjuGq4gjBemlhkYGx4BU4VzN3ZNlmX5JylTpr4Pfy4p/dl5/d5/L2dBISEvZ0FBIS9nQSEh/"
+  },
+  {
+    "_id": "578b84f8b79aee2000bf5c12",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/66761faeddb45bb06352e09624c41e004f6e9d8c.pdf"
+  },
+  {
+    "_id": "578b84f24c5a5d1700de67e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f68a770b38ee5ae79b609712c718c7db69cecee.pdf",
+    "source": "http://yss.mof.gov.cn/2015js/201607/t20160713_2354956.html"
+  },
+  {
+    "_id": "578ba903b79aee2000bf5d32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3da466117b9fad42bab47fe9de895d4205f0491f.pdf",
+    "source": "http://www.worldoil.com/news/2016/5/18/norway-offers-thirteen-companies-production-licenses-in-barents-sea"
+  },
+  {
+    "_id": "578ba3a14c5a5d1700de68c1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15df0470ef59c67b3ce701f2b516ca315d388c25.pdf",
+    "source": "http://www.npd.no/en/news/News/2014/Oil-Facts-app-on-all-platforms/"
+  },
+  {
+    "_id": "578babbeb79aee2000bf5d3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1a71ba76c55354fca4135ea115f0c9a20ed94c77.pdf",
+    "source": "https://www.regjeringen.no/en/aktuelt/announcement-23rd-licensing-round-awards/id2500936/"
+  },
+  {
+    "_id": "578bac2f4c5a5d1700de6925",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88351c814f5863e635f614e8837bb2072957715a.pdf",
+    "source": "http://www.npd.no/global/norsk/2-tema/utvinningstillatelser/tfo2014/utlysning/invitasjon_brosjyretekst_tfo_2014.pdf"
+  },
+  {
+    "_id": "578bad21b79aee2000bf5d4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5da9aba32a92a244c285d8aff241a4852c9ea1b4.pdf",
+    "source": "http://www.npd.no/Global/Norsk/2-Tema/Utvinningstillatelser/TFO2016/Utlysning/Invitation-to-apply-for-petroleum-production-licence%20-APA2016_eng.pdf"
+  },
+  {
+    "_id": "578baeb14c5a5d1700de6953",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c928fa1ce669b22b0e20a2e483b1a61e310eb6af.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/ec8f8ea6204e5b6bd49a53aa82121c7c006b63b4.pdf"
+  },
+  {
+    "_id": "578bb1dcb79aee2000bf5d8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb25cabdc1fa65f0f1a6d5402d9e27a2cb914dc1.pdf",
+    "source": "https://guide.eiti.org/en/guidance-note/license-allocations"
+  },
+  {
+    "_id": "578bae1e4c5a5d1700de694b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be789afe11121decb40cf578900808634aed5aa2.pdf",
+    "source": "http://www.npd.no/en/Regulations/Acts/Petroleum-activities-act/"
+  },
+  {
+    "_id": "578bbd3eb79aee2000bf5dcf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e429765d587d2563d961b4a8bef4a56cd315917.pdf",
+    "source": "http://www.conocophillips.no/NO/our-norway-operations/impact-assessments/Sider/default.aspx"
+  },
+  {
+    "_id": "578bb8efb79aee2000bf5dc0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c18fd6539c60cdb2f5906dd6eaff8ccbdcd5e504.PDF",
+    "source": "http://www.me.gov.ua/Documents/Download?id=edc23b35-c030-4201-a4ec-6ffef0be0173"
+  },
+  {
+    "_id": "578bb8ae4c5a5d1700de6981",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/282001652cd53c6eb063159dd971381dd74e9309.pdf",
+    "source": "http://www.norskpetroleum.no/en/economy/transparency-eiti/"
+  },
+  {
+    "_id": "578bb3204c5a5d1700de6969",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02942a469ea6ac03ea14131c169a13fa34297137.pdf",
+    "source": "http://www.npd.no/en/Reporting/Petroleum-register/"
+  },
+  {
+    "_id": "578bb7294c5a5d1700de6973",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f0817adf67ebf47b9fc91551021a2cd0200b5faa.pdf",
+    "source": "http://www.npd.no/Global/Engelsk/3-Publications/Reports/Why-Norway.pdf"
+  },
+  {
+    "_id": "578bc792b79aee2000bf5ded",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e067241910560b99a1f1f51f495c4637a3e4626.pdf",
+    "source": "http://www.miljodirektoratet.no/no/Tema/Olje_og_gass/Avvikling_offshore/"
+  },
+  {
+    "_id": "578bce6a4c5a5d1700de6a35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4b697c2b1a15cb9fa2890643cd992d15415608a8.pdf",
+    "source": "https://www.oxfamamerica.org/press/oxfam-applauds-payment-transparency-from-statoil/"
+  },
+  {
+    "_id": "578bc4fd4c5a5d1700de69c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bf26faeed09c286a16d861e441548908866ab750.pdf",
+    "source": "http://www.chambersandpartners.com/guide/practice-guides/location/271/8057/2135-200"
+  },
+  {
+    "_id": "578bc05f4c5a5d1700de69b3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e8798f29924fed03df440a24233e2dd36e256996.pdf",
+    "source": "http://www.conocophillips.no/Documents/English/Impact_Assessment_Ekofisk_Soer_FINAL.pdf"
+  },
+  {
+    "_id": "578bdd9db79aee2000bf5eee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3fba305563bd72ed8126d11f93e5b18bee7e4d3a.pdf",
+    "source": "http://af.reuters.com/article/commoditiesNews/idAFL3N17S2UT"
+  },
+  {
+    "_id": "578bd8cdb79aee2000bf5ed9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09a909f4f3003668ebd4a63468696f8387bfe9c5.pdf",
+    "source": "http://www.saudiaramco.com/en/home/about/governance/ethics-and-integrity.html"
+  },
+  {
+    "_id": "578bd7c94c5a5d1700de6aa0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23f8f86aaa9eb1fc2ebfb0a1bbbac2b5ea6fddc8.pdf",
+    "source": "http://www.saudiaramco.com/en/home/about/governance/leadership-team.html"
+  },
+  {
+    "_id": "578bd3dab79aee2000bf5e91",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c74840f5ca2c436f981057854ebcf48736637b22.pdf",
+    "source": "http://www.hegnar.no/Nyheter/Boers-finans/2015/06/Her-er-det-nye-Statoil-styret"
+  },
+  {
+    "_id": "578bd65bb79aee2000bf5ec4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ee62d0e5aa413ce5464ad26d4ec10a4fa4b4745.pdf",
+    "source": "http://www.aftenposten.no/norge/Dette-er-de-fem-storste-manglene-og-svakhetene-som-papekes-av-Riksrevisjonen-23443b.html"
+  },
+  {
+    "_id": "578bddce4c5a5d1700de6abb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29be47da5721960d4b01cdc9fea44724de4d876a.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2016-04-26/saudi-spot-crude-deal-in-china-seen-by-citi-as-dramatic-shift"
+  },
+  {
+    "_id": "578be2b84c5a5d1700de6afb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/455aca0f52a23bfaf9a5e80e8f206d4808b50341.pdf",
+    "source": "http://www.dn.no/nyheter/2016/05/11/2205/Revidert-nasjonalbudsjett/oljeinntektene-er-ikke-lenger-store-nok-n-bruker-vi-mer-enn-vi-fyller-p-i-oljefondet"
+  },
+  {
+    "_id": "578be6764c5a5d1700de6b0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff8f37cdd2a4bfa49eeaadcb70951f0dd64b300a.pdf",
+    "source": "http://www.aftenposten.no/meninger/leder/Aftenposten-mener-Regjeringens-kortsynte-budsjettpolitikk-68325b.html"
+  },
+  {
+    "_id": "578be645b79aee2000bf5f4d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78fead1e03882bd42905ac84841c21a20ad6ef15.pdf"
+  },
+  {
+    "_id": "578be56cb79aee2000bf5f44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d737752a1c2a734e4e9bf47ac01d64930cf36e8a.pdf",
+    "source": "http://www.abcnyheter.no/nyheter/politikk/2016/05/22/195218346/advarer-regjeringen-mot-oljedop"
+  },
+  {
+    "_id": "578be872b79aee2000bf5f84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8f0511190ab02a64aab95618846d180bccbfdae.pdf",
+    "source": "http://www.imf.org/external/datamapper/FiscalRules/map/map.htm"
+  },
+  {
+    "_id": "578beab24c5a5d1700de6b70",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd499a22901d75cd1ac6f63e06ccc38a690006f1.pdf",
+    "source": "https://www.mof.gov.sa/english/downloadscenter/pages/budget.aspx"
+  },
+  {
+    "_id": "578be7edb79aee2000bf5f7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74d100e0383b31d17c4710f6aa8e5c4d0e1dd741.pdf"
+  },
+  {
+    "_id": "578be886b79aee2000bf5f86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/662a18d9c2bec4b4973b202b07dbe182ffea9b0e.pdf",
+    "source": "http://e24.no/makro-og-politikk/statsbudsjettet-2016/statsbudsjettet-paa-1-2-3/23538008"
+  },
+  {
+    "_id": "578c0b3d4c5a5d1700de6c85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/819a1cb7a2365aaf6f190a1bf7ac6464d5a573f3.pdf"
+  },
+  {
+    "_id": "578beae8b79aee2000bf5fdb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df62f5dcd70da1d7be053c8d1cac31c792b5b971.pdf",
+    "source": "http://www.ssb.no/offentlig-sektor/statistikker/statsgjeld/kvartal/2016-05-13#content"
+  },
+  {
+    "_id": "578bec114c5a5d1700de6b8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7226e19d6be6a14fc852a7f2417c4066247b9d9.pdf",
+    "source": "https://www.nbim.no/fondet/"
+  },
+  {
+    "_id": "578bf0a64c5a5d1700de6c01",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a21968d7afdb4d80ddede2788b599de3eda09b72.pdf",
+    "source": "https://www.stortinget.no/globalassets/pdf/dokumentserien/2015-2016/dok9-201516.pdf"
+  },
+  {
+    "_id": "578c0c58b79aee2000bf60af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/438f3c23f6eae8495fdc59488c0e6bb0938a5c1e.pdf",
+    "source": "http://english.alarabiya.net/en/special-reports/saudi-budget-2016/2015/12/28/Saudi-Arabia-to-unveil-2016-budget.html"
+  },
+  {
+    "_id": "578c0cca4c5a5d1700de6c8a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/636f5afc5ec7e70018d1a5857e3f3a8b4129ca59.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2015-12-28/a-breakdown-of-the-2016-saudi-budget-and-its-implications"
+  },
+  {
+    "_id": "578c96bc4c5a5d1700de6d4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7acaa89cc078b9ef3a6c21737b91f743d07bb382.pdf",
+    "source": "http://www.kmg.kz/en/corporate_management/leadership/directors/"
+  },
+  {
+    "_id": "578c959b4c5a5d1700de6d43",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08a8b91f71f29668dfa2e254f59e724bd672ac29.pdf",
+    "source": "http://www.kmg.kz/kz/corporate_management/leadership/directors/"
+  },
+  {
+    "_id": "578c9777b79aee2000bf618e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/969e6c489b1b2378e2a7ff2cb43edcbf2e5b80dc.pdf",
+    "source": "http://www.kmg.kz/corporate_management/leadership/directors/"
+  },
+  {
+    "_id": "578cefd4b79aee2000bf61d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5eb24fc7d35cb23a0882ac50ffdce5b00d8ef6af.pdf"
+  },
+  {
+    "_id": "578cc7e94c5a5d1700de6d93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0cfdfb208d96a791a285d4c8489b5ea4f93e937.pdf"
+  },
+  {
+    "_id": "578ce69db79aee2000bf61ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b0e69e916723907a7cabc9522685cd06ddf1fd4.pdf"
+  },
+  {
+    "_id": "578ce3d24c5a5d1700de6da0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/992768344184ba8e49da1cbb34896f0accfaa6ab.pdf"
+  },
+  {
+    "_id": "578b4d3ea4bfd20e00e77a3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a5853e141c5ff147e44e1e3e86532fa524793ec.pdf",
+    "source": "http://www.chronicle.co.zw/masvingo-sues-renco-mine-over-300000/"
+  },
+  {
+    "_id": "578cd57bb79aee2000bf61be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00f09b33b81980f04cb9f20d274fed483063836a.xlsx"
+  },
+  {
+    "_id": "578bf5a04c5a5d1700de6c47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2564d98add609ed7b09ac802e7fd4d46e9412bdb.png",
+    "source": "http://ugv.com.ua/activities"
+  },
+  {
+    "_id": "578be7b1b79aee2000bf5f72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55faa2097e980120aae57ab64884f89dd1d97f3e.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/1405-viii"
+  },
+  {
+    "_id": "578bc8324c5a5d1700de69dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ad20f0515651af0ead3ba81eaa6512720aae76d.xlsx",
+    "source": "http://esep.kz/rus/show1/article/119"
+  },
+  {
+    "_id": "578b9486b79aee2000bf5cc0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f3aaaaf7d0155daecb8f01331de9c951c65b20e.xlsx",
+    "source": "http://kgd.gov.kz/ru/section/dinamika-postupleniy-nalogov-i-platezhey-v-nacionalnyy-fond"
+  },
+  {
+    "_id": "578ba69bb79aee2000bf5d2d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e50e58c799837338725489614ebf9b7bd28192c.xlsx",
+    "source": "http://web.worldbank.org/WBSITE/EXTERNAL/TOPICS/EXTPUBLICSECTORANDGOVERNANCE/0,,contentMDK:23352107~pagePK:148956~piPK:216618~theSitePK:286305,00.html"
+  },
+  {
+    "_id": "578b8e1cb79aee2000bf5c65",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ca6e1faa14d88f7d8c347275faa416bc2fbf635.png",
+    "source": "http://www.naftogaz.com/www/3/nakweb.nsf/0/EB041C7B5CF44620C2257F2B005371FC?"
+  },
+  {
+    "_id": "578b91fbb79aee2000bf5c6f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31af869c63c3f323a7da6a20c4b4807962bb2007.xlsx",
+    "source": "http://kgd.gov.kz/ru/content/fakticheskie-postupleniya-po-nalogam-i-platezham-v-gosudarstvennyy-byudzhet-za-2002-2016-gg"
+  },
+  {
+    "_id": "578b5099a4bfd20e00e77a5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63cf70cc3f1b855b584f25d7f42a9c1327ab184b.docx",
+    "source": "http://www.azernews.az/region/92128.html"
+  },
+  {
+    "_id": "578b53e5a4bfd20e00e77a7b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74708f8be8a41ae6969e84873cdea47f519477db.docx",
+    "source": "http://en.trend.az/business/energy/2105672.html"
+  },
+  {
+    "_id": "578b4eafa4bfd20e00e77a4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90c7299625c8506ef5bdf2078747d887c2878368.docx",
+    "source": "http://dep-nedra.mid.gov.kz/ru/pages/itogi-konkursa-v-vide-aukciona-na-poluchenie-prava-nedropolzovaniya"
+  },
+  {
+    "_id": "578d0e71b79aee2000bf6221",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b66112faca3197e09f0115e8a3b7ffe5e2dfa4d.pdf",
+    "source": "http://cuentapublica.hacienda.gob.mx/work/models/CP/2015/tomo/II/MAT_Print.I50.02.CON_EFE_GF.pdf"
+  },
+  {
+    "_id": "578d0d9a4c5a5d1700de6df6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83fc99042d5de239879f2634e0f7efd28061d919.pdf",
+    "source": "http://cuentapublica.hacienda.gob.mx/work/models/CP/2015/tomo/II/MAT_Print.I50.02.CON_EA_GF.pdf"
+  },
+  {
+    "_id": "578cffc34c5a5d1700de6dcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a373b5979ae12548ee19849b9eb321b461a1e781.pdf"
+  },
+  {
+    "_id": "578d1286b79aee2000bf6242",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0580bdec3cf795512e69d03aa7bdab6aabe6a26.png",
+    "source": "http://www.geo.gov.ua/publikaciya/perelik-dopushchenyh-pretendentiv-do-uchasti-u-i-aukcioni-z-prodazhu-specialnyh-0"
+  },
+  {
+    "_id": "578d14af4c5a5d1700de6e26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/082570934fe389a4e83c19007bee3ad97f7f764b.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "578d16324c5a5d1700de6e2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d058c1370614dc45fb00b10afc68f30a6028b590.png",
+    "source": "http://www.geo.gov.ua/publikaciya/perelik-peremozhciv-iii-aukcionu-z-prodazhu-specialnyh-dozvoliv-na-korystuvannya-nadramy"
+  },
+  {
+    "_id": "578d1a08b79aee2000bf6270",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/99ca0982e5bea4f71097049e12415dea4fd0d61e.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "578d1b89b79aee2000bf6275",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da3ac2476dd18129b4d3dc2fdfd9a174627719f6.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "578d07b14c5a5d1700de6dea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a077d4eacf832dc9328b3d72246cb096163a8d6.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/594-2011-%D0%BF"
+  },
+  {
+    "_id": "578d12394c5a5d1700de6e0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac2326d0074820b9036cb6e3d4cab16e614a9b2c.docx",
+    "source": "http://www.geo.gov.ua/publikaciya/perelik-dopushchenyh-pretendentiv-do-uchasti-u-i-aukcioni-z-prodazhu-specialnyh-0"
+  },
+  {
+    "_id": "578b553ea4bfd20e00e77a87",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7f1153a088d0ae43a85b3571b151456e2524e9a.png",
+    "source": "http://zakon5.rada.gov.ua/laws/show/2755-17/print1459502671631128"
+  },
+  {
+    "_id": "578b57a04c5a5d1700de657c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2c9244149225bb06db30f2610d005c9ebcb8baa3.pdf",
+    "source": ""
+  },
+  {
+    "_id": "578b5dff4c5a5d1700de6681",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bed3b3ff3fc450faa34297ef9ad15b90490afe06.png",
+    "source": "http://zakon3.rada.gov.ua/laws/show/80-19/conv/print1467752577786982"
+  },
+  {
+    "_id": "578b5eac4c5a5d1700de6686",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4326fd4582e87e5292726e5d3144e419a0534b1d.png",
+    "source": "http://censor.net.ua/news/340065/na_dotatsii_naftogazu_v_etom_godu_iz_byudjeta_potratyat_152_mlrd_yatsenyuk"
+  },
+  {
+    "_id": "578b6668b79aee2000bf5aea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f6f3e4d6b3f96a55f41313aa8fec7aafd2d368a.pdf",
+    "source": "http://yss.mof.gov.cn/2016czys/index.htm"
   }
 ]
