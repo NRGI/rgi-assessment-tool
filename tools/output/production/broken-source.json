@@ -168,5 +168,10 @@
     "_id": "575bef343204460f004ef8b1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3d4598162ade5a04197904fe7fd6ee236d95fec7.pdf",
     "source": "http://www.treasury.gov.my/index.php?option=com_content&view=article&id=6442:economic-report-2015-2016&catid=262&Itemid=2478&lang=en"
+  },
+  {
+    "_id": "578da962b79aee2000bf6383",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c28e926b65a112ecc360f27548f3484383c81e98.xlsx",
+    "source": "http://presto.hacienda.gob.mx/presto/files/system/mashlets/app_menu/index.html?param_lenguaje=1¶m_tema=3¶m_subtema=14#"
   }
 ]
