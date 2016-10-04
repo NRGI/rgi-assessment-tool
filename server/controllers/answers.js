@@ -81,10 +81,10 @@ exports.getExportedAnswersData = function(req, res) {
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
                 var scoreHistory = inputAnswer[prefix][historyIndex];
 
-                if(scoreHistory !== undefined) {
+                if(scoreHistory) {
                     outputAnswer[prefix + '_date' + (historyIndex + 1)] = scoreHistory.date.toISOString();
 
-                    if(scoreHistory.score !== undefined) {
+                    if(scoreHistory.score) {
                         outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
                         outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
                     }
