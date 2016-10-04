@@ -13,10 +13,6 @@
                             filename="raw_questions.csv"
                             ng-disabled="busy"
                         ) Download Raw CSV
-                    .pull-right
-                        form.form-inline
-                            .form-group
-                                input.form-control(ng-model="search_text", placeholder="Filter")
             .row
                 .top-padding-lg(ng-class="{'assessment-list-supervisor': current_user.isSupervisor()}")
                     table.table.table-hover
@@ -26,7 +22,7 @@
                                 th.col-md-1 Version
                                 th.col-md-10 Text
                         tbody
-                            tr(ng-repeat="question in questions | filter: search_text | orderBy: 'question_order'")
+                            tr(ng-repeat="question in questions | orderBy: 'question_order'")
                                 td {{question.question_order}}
                                 td {{question.question_v}}
                                 td {{question.question_text}}
