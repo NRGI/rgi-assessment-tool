@@ -4,13 +4,22 @@ angular.module('app')
     .controller('rgiQuestionRawListCtrl', function (_, $scope, rgiQuestionRawSrvc) {
         $scope.busy = false;
         $scope.questions = [];
+        $scope.questionListHeader = [];
         $scope.portionSize = 100;
 
         var currentPage = 0, allItemsLoaded = false,
             addQuestions = function(questions) {
                 if(!questions.reason) {
                     $scope.questions = $scope.questions.concat(questions.data);
-                    $scope.questionListHeader = questions.header;
+                    $scope.questionListHeader = _.uniq($scope.questionListHeader.concat(questions.header));
+
+                    ['last_modified_modified_by', 'last_modified_modified_date'].forEach(function(field) {
+                        if($scope.questionListHeader.indexOf(field) !== -1) {
+                            $scope.questionListHeader.splice($scope.questionListHeader.indexOf(field), 1);
+                            $scope.questionListHeader.push(field);
+                        }
+                    });
+
                     currentPage++;
                 }
             };
