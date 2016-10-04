@@ -11,12 +11,13 @@ angular.module('app')
         $scope.busy = false;
         $scope.answers = [];
         $scope.query = {country: ''};
+        $scope.answersHeader = [];
 
         var portionSize = 100, currentPage = 0, allAnswersLoaded = false,
             addAnswers = function(answers) {
                 if(!answers.reason) {
                     $scope.answers = $scope.answers.concat(answers.data);
-                    $scope.answersHeader = answers.header;
+                    $scope.answersHeader = _.uniq($scope.answersHeader.concat(answers.header));
                     currentPage++;
                 }
             },
