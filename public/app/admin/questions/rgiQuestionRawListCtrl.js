@@ -5,9 +5,8 @@ angular.module('app')
         $scope.busy = false;
         $scope.questions = [];
         $scope.questionListHeader = [];
-        $scope.portionSize = 100;
 
-        var currentPage = 0, allItemsLoaded = false,
+        var portionSize = 100, currentPage = 0, allItemsLoaded = false,
             addQuestions = function(questions) {
                 if(!questions.reason) {
                     $scope.questions = $scope.questions.concat(questions.data);
@@ -22,28 +21,28 @@ angular.module('app')
 
                     currentPage++;
                 }
+            },
+            fetchQuestions = function () {
+                if ($scope.busy) {
+                    return;
+                }
+
+                $scope.busy = true;
+
+                if(!allItemsLoaded) {
+                    rgiQuestionRawSrvc.query({skip: currentPage, limit: portionSize}).$promise
+                        .then(function (questions) {
+                            addQuestions(questions);
+                            allItemsLoaded = !questions.reason && (questions.data.length < portionSize);
+                        }).finally(function () {
+                            $scope.busy = false;
+
+                            if(!allItemsLoaded) {
+                                fetchQuestions();
+                            }
+                        });
+                }
             };
 
-        rgiQuestionRawSrvc.query({skip: currentPage, limit: $scope.portionSize}, addQuestions);
-
-        $scope.loadMore = function () {
-            if ($scope.busy) {
-                return;
-            }
-
-            $scope.busy = true;
-
-            if(!allItemsLoaded) {
-                rgiQuestionRawSrvc.query({skip: currentPage, limit: $scope.portionSize}).$promise
-                    .then(function (questions) {
-                        addQuestions(questions);
-
-                        if (!questions.reason && (questions.data.length < $scope.portionSize)) {
-                            allItemsLoaded = true;
-                        }
-                    }).finally(function () {
-                        $scope.busy = false;
-                    });
-            }
-        };
+        fetchQuestions();
     });
