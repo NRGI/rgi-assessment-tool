@@ -11,6 +11,7 @@
                             csv-header="questionListHeader"
                             csv-column-order="questionListHeader"
                             filename="raw_questions.csv"
+                            ng-disabled="busy"
                         ) Download Raw CSV
                     .pull-right
                         form.form-inline
@@ -29,4 +30,3 @@
                                 td {{question.question_order}}
                                 td {{question.question_v}}
                                 td {{question.question_text}}
-                div(ng-if="questions.length > (portionSize - 1)", infinite-scroll="loadMore()", infinite-scroll-distance="1")
