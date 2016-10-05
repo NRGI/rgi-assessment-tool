@@ -8417,5 +8417,264 @@
     "_id": "5793d022a76dc810001a1ea3",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/4d1eb6f555a275f7ebdc25e54e7c756868f261eb.xlsx",
     "source": "http://kgd.gov.kz/ru/content/2015-god-1"
+  },
+  {
+    "_id": "579fd454feb7493300f6de4e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d3a3bd128acac32e5b1c34d3bfe5f876180ba3fa.pdf"
+  },
+  {
+    "_id": "57a00a992a6aa53b003bd05b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3e65c3ff3baf160cdbe1b10cca202e32ffbd3bb.pdf",
+    "source": "http://www.mra.gov.pg/License.aspx"
+  },
+  {
+    "_id": "57a02968feb7493300f6dea7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f8f63843ee7604f2522922f6c3b5e9d71b5601c.pdf",
+    "source": "http://www.spm.gov.cm/documentation/textes-legislatifs-et-reglementaires/article/decret-n-20052176pm-du-16-juin-2005-portant-creation-organisation-et-fonctionnement-du-comite-de.html"
+  },
+  {
+    "_id": "57a011252a6aa53b003bd066",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd12d3f8066d91d120c3ca24425ea6bb2a917349.pdf",
+    "source": "http://www.monitor.co.ug/Business/Government-oil-account-has-Shs119b/-/688322/2942994/-/d5dunoz/-/index.html"
+  },
+  {
+    "_id": "57a03c41feb7493300f6dec2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f299d0b4712b63448706b8d44461377d444d47eb.pdf"
+  },
+  {
+    "_id": "57a05559feb7493300f6df55",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e198dc5db9492ae4b795bf66f84fbd36f01eb39.pdf",
+    "source": "http://sepocye.com"
+  },
+  {
+    "_id": "57a05c442a6aa53b003bd27c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/050f1e3ec7eeda5dbd823a0fa4f3a48967dde881.pdf",
+    "source": "http://www.camimo.com/BD_noitalsig/bdlegisl_cameroun_7.htm"
+  },
+  {
+    "_id": "57a059bbfeb7493300f6dfb2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1402205a54b76ea98c73cc416cd1cd2a14514344.pdf",
+    "source": "http://www.spm.gov.cm/en/documentation/laws-and-statutory-instruments.html"
+  },
+  {
+    "_id": "57a07fe82a6aa53b003bd2c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2027333e4eeb76d1224dd5b16643de152b34961.pdf"
+  },
+  {
+    "_id": "57a080994438b13400a9cba7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6897cbf5655116cb6dc3e1a85832158d78ee7d90.pdf",
+    "source": "http://www.snh.cm/CodePetrolier/codepetrolier.pdf"
+  },
+  {
+    "_id": "57a086144438b13400a9cbc1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/425bf43fff83eb35d098b7404d5ef37226e95127.pdf"
+  },
+  {
+    "_id": "57a08ef72a6aa53b003bd2e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30b86270dab940339ac0c9e2f6e71e0ad966790a.pdf",
+    "source": "http://www.cameroon-tribune.cm/index.php?option=com_content&view=article&id=91752:editorial-comment-imperative-efficiency-in-programme-budgeting&catid=20:editorial&Itemid=2"
+  },
+  {
+    "_id": "57a0d7d89464c53c0057293c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f87132a721d669f303ea090adb912940046dc89.pdf",
+    "source": "http://www.ins.tn/en/themes/commerce-ext%C3%A9rieur"
+  },
+  {
+    "_id": "57a0d6f8548a153d0017705a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22c34a01633b93de401cf918a2e602319d7d129b.pdf"
+  },
+  {
+    "_id": "57a0c2db548a153d00177033",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12b913627b6b2e29af510151cf6b83ffb6851cf1.pdf",
+    "source": "http://laws.ghanalegal.com/acts/id/119/district-assemblies-common-fund-act#"
+  },
+  {
+    "_id": "57a0a6aa2a6aa53b003bd2f6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e96ca7f32a1b9516c02bc1fbdd49cf087d04d535.pdf",
+    "source": "http://www.mram.gov.mn"
+  },
+  {
+    "_id": "57a0ce7173f4db44005ebebb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/417567222e1f3156e739d66655af74abe3d7f7df.pdf",
+    "source": "http://www.essahafa.info.tn/index.php?id=74&tx_ttnews%5Btt_news%5D=53394&tx_ttnews%5BbackPid%5D=5&cHash=1c119c6e5f"
+  },
+  {
+    "_id": "57a0cc7373f4db44005ebeb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fbe879a6998c1e7c0b9e128bf3296e7093321365.pdf",
+    "source": "http://ghaudit.org"
+  },
+  {
+    "_id": "57a0dbb59464c53c0057295d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54c61dc4a1bb60ef8d4ec51929f21f89cf06cbcc.pdf",
+    "source": "http://m.myjoyonline.com/marticles/news/government-owes-over-gh100-million-in-mining-royalties-to-communities"
+  },
+  {
+    "_id": "57a0e474548a153d0017709e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7ef06bc3680a4007bc92fc4d39bd91cdaf2b8cd7.pdf",
+    "source": "http://www.ghaudit.org/gas/site/news/news_detail/145"
+  },
+  {
+    "_id": "575d7c984572730f00d8e8cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2f28c4615b894f6e7802b656e52e686e096be73.pdf",
+    "source": "http://crudeaccountability.org/campaigns/turkmenistan/"
+  },
+  {
+    "_id": "57a129b873f4db44005ebf5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd9600170f28cb5b04b384f199b4a01f5cf50d05.pdf"
+  },
+  {
+    "_id": "57a1ed12548a153d001771ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9650f02dadbc9931fc2eb8e8fbf58426ebfc5067.pdf",
+    "source": "http://www.gra.gov.gh/docs/info/gra_act.pdf"
+  },
+  {
+    "_id": "57a1e9b373f4db44005ec07f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95afb9728c35f59a40582acb59584f962b5e939e.pdf",
+    "source": "http://www.graphic.com.gh/business/business-news/gra-exceeds-2015-revenue-target.html"
+  },
+  {
+    "_id": "57a12e1073f4db44005ebf69",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9cb5c1140feda87725ef23c1710d49df7f1d3c76.pdf",
+    "source": "http://www.eiti.tl/secretariat/reports/tl-eiti-reports/viewcategory/21-english"
+  },
+  {
+    "_id": "57a131389464c53c005729c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/442978e1b5e4093a8877827961647606aaf05a23.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-RO-Annual%20Report%202015%20FINAL/$File/RO-Annual%20Report%202015%20FINAL.pdf?openelement"
+  },
+  {
+    "_id": "57a22029548a153d001773eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/736939ddf11f07261681de67561267e0db46c9ad.pdf",
+    "source": "http://www.ghanaweb.com/GhanaHomePage/NewsArchive/artikel.php?ID=324887&utm_source=dlvr.it&utm_medium=facebook"
+  },
+  {
+    "_id": "579dd6dc32878e32004639cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29e613fc8a94dd6213e278c6c560d02bb3b1e071.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/Minerals%20and%20Mining%20Act%20703%20Ghana.pdf"
+  },
+  {
+    "_id": "57a2633b9464c53c00572eff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93cf7a80b03200713998af44ee2813fd34a9acba.pdf",
+    "source": "http://www.energyandminerals.go.ug/downloads/2014StatisticalAbstract.pdf"
+  },
+  {
+    "_id": "57a20c5a548a153d001773a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6b0546d8d5067bd74cfa50fe8f68bcd1374df67.pdf",
+    "source": "http://www.ghaudit.org"
+  },
+  {
+    "_id": "57a3ac0d8002fc0e000c97e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2a1eca965190249c1eb804b322c8b415ebb21b9f.pdf",
+    "source": "http://www.noga.gov.bh/index.php?page=525"
+  },
+  {
+    "_id": "57a3603796c6580f00559bc0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/590dd21d4d280754ece4f4ee1df327de584145c5.pdf",
+    "source": "http://www.myjoyonline.com/business/2015/March-30th/gra-tasked-to-retrieve-66m-from-prestea-sankofa-gold.php"
+  },
+  {
+    "_id": "57a26fac548a153d00177648",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/af3b3f85238cb56c347249473fa51f240e12b591.pdf",
+    "source": "https://www.globalwitness.org/en/campaigns/uganda/uganda-contract-allocation-briefing/"
+  },
+  {
+    "_id": "57a3da4a96c6580f00559d25",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/551ed5c02d5260989318fc361975b3ba34c97763.pdf"
+  },
+  {
+    "_id": "57a3d79a8002fc0e000c980f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec00c706a9e054c7074940e75a7b05878d2c9494.pdf"
+  },
+  {
+    "_id": "57a3f2c68002fc0e000c9849",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96b8698ac2809fbf9a45f9c6a47b7fb748577e60.pdf"
+  },
+  {
+    "_id": "57a3e18d96c6580f00559d47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/537ef0814089385e0d04685d31d9d7f0f323bb56.PDF"
+  },
+  {
+    "_id": "57a42c598002fc0e000c9877",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f40ce9ebf07c8767d158499bf91794940b1360e7.pdf",
+    "source": "https://www.google.ch/#q=ZMDC+Act"
+  },
+  {
+    "_id": "57a3ecfa8002fc0e000c9834",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ec74faadf5bad430722d2890a2185a72b10419f.pdf",
+    "source": "http://allafrica.com/stories/201502260144.html"
+  },
+  {
+    "_id": "57a3e0938002fc0e000c981d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71de294b0b7368f1d3422591b3190dfd010897a1.pdf"
+  },
+  {
+    "_id": "57a4877196c6580f00559e2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86d32db092e989ee770d06e90aba69bae5fe7168.pdf",
+    "source": "http://www.courdescomptes.nat.tn/Ar/telecharger_pdf.php?link=upload/1432913046.pdf&titre=%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%BA%D8%A7%D8%B2%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A"
+  },
+  {
+    "_id": "57a475a396c6580f00559e00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ed38fcd0c9948d019876fe0cd0628aa92714126.pdf",
+    "source": "http://www.tunisieindustrie.gov.tn/ministere-industrie.html#?"
+  },
+  {
+    "_id": "57a473bb8002fc0e000c98d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa913f88ae53e685a2a889e8905c5ed0872df8e9.pdf",
+    "source": "http://www.legislation.tn/recherche/legislatifs-reglementaires/type_loi/4/keyword/%D9%85%D8%AD%D8%B1%D9%88%D9%82%D8%A7%D8%AA%2B%D8%B1%D8%AE%D8%B5%D8%A9/sort/date/rpp/50"
+  },
+  {
+    "_id": "5765566535f8850e00700c93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f625dddde49c8ebfcc8181e0f0044dd6534a89a.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/104/Ta2015531.pdf"
+  },
+  {
+    "_id": "57a263c19464c53c00572f05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2ebcd0834418482520860eb6727ef7523cf644f.pdf",
+    "source": "http://www.energyandminerals.go.ug/downloads/2013StatisticalAbstract.pdf"
+  },
+  {
+    "_id": "57a491616462710f00b68b14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ed683f778eeec0fdab2ddf5dcfabe34aeeb5a74.xlsx",
+    "source": "http://catalog.industrie.gov.tn/dataset/f3b4e106-5781-4fb0-a2c7-a8012d8250b6/resource/a589cf1d-5c18-4c11-9618-7cd1859af2c7/download/concessionhydrocjanv2016.xls"
+  },
+  {
+    "_id": "57a03ef32a6aa53b003bd0fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34c4e97b8bbba52995e8641e07ec33c21e80d85b.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a0427cfeb7493300f6df23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe6d8078033d0392852191ba08f9c83c5f8fcc0f.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a03b6c2a6aa53b003bd0d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8d74244a141bdf0f306aefb6f785fa320e6fe27.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a03bd72a6aa53b003bd0d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d60a6cf541a4073a8ec067d394e61d6e1c1e05c0.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a03ca44438b13400a9ca35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/643af84c973c1af079006714b1180eed91012854.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a03ec0feb7493300f6ded0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e3142cd4973b1a892f721ae2c68a9ec8eb38d71.jpg",
+    "source": "http://www.yeiti.org/en/publications"
+  },
+  {
+    "_id": "57a068a52a6aa53b003bd2a8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2cefcf838295a2fcfb217f3bb226dbc69aa9c96.doc",
+    "source": "http://www.spm.gov.cm/documentation/textes-legislatifs-et-reglementaires/article/decret-n-2000465-du-30-juin-2000-fixant-les-modalites-dapplication-de-la-loi-n-99013-du-22-dece.html"
+  },
+  {
+    "_id": "57a1d252548a153d001771ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a49f2e6e7a80c7b0645b930adbd740a2c25ba9e8.pdf",
+    "source": "http://www.gra.gov.gh/docs/info/dtrd/INCOME%20TAX%20ACT%202015%20(ACT%20896).pdf"
   }
 ]

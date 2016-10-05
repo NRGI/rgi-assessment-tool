@@ -173,5 +173,10 @@
     "_id": "578da962b79aee2000bf6383",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/c28e926b65a112ecc360f27548f3484383c81e98.xlsx",
     "source": "http://presto.hacienda.gob.mx/presto/files/system/mashlets/app_menu/index.html?param_lenguaje=1¶m_tema=3¶m_subtema=14#"
+  },
+  {
+    "_id": "579ffe0c4438b13400a9c99d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8ec49b4cca66c96ef27aa5c8aaaf422a6656e6c.pdf",
+    "source": "https://www.bou.or.ug/bou/bou-downloads/publications/Annual_Reports/Rpts/All/Annual-Report-2014-2015.pdf"
   }
 ]
