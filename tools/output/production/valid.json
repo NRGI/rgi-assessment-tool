@@ -8514,11 +8514,6 @@
     "source": "http://www.ghaudit.org/gas/site/news/news_detail/145"
   },
   {
-    "_id": "575d7c984572730f00d8e8cc",
-    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2f28c4615b894f6e7802b656e52e686e096be73.pdf",
-    "source": "http://crudeaccountability.org/campaigns/turkmenistan/"
-  },
-  {
     "_id": "57a129b873f4db44005ebf5f",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/bd9600170f28cb5b04b384f199b4a01f5cf50d05.pdf"
   },
@@ -8621,11 +8616,6 @@
     "_id": "57a473bb8002fc0e000c98d6",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/fa913f88ae53e685a2a889e8905c5ed0872df8e9.pdf",
     "source": "http://www.legislation.tn/recherche/legislatifs-reglementaires/type_loi/4/keyword/%D9%85%D8%AD%D8%B1%D9%88%D9%82%D8%A7%D8%AA%2B%D8%B1%D8%AE%D8%B5%D8%A9/sort/date/rpp/50"
-  },
-  {
-    "_id": "5765566535f8850e00700c93",
-    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f625dddde49c8ebfcc8181e0f0044dd6534a89a.pdf",
-    "source": "http://www.legislation.tn/sites/default/files/fraction-journal-officiel/2015/2015A/104/Ta2015531.pdf"
   },
   {
     "_id": "57a263c19464c53c00572f05",
@@ -8840,11 +8830,6 @@
     "source": "http://www.mines.gouv.ml/conventions-avec-les-soci%C3%A9t%C3%A9s-min%C3%A8res"
   },
   {
-    "_id": "575dbe994572730f00d8ec05",
-    "s3_url": "https://s3.amazonaws.com/rgi-documents/f70d234fa8cba55fa461b978f0247238c93a9a42.pdf",
-    "source": "http://leganet.cd/Legislation/Droit%20economique/Code%20Minier/cd-codeminier.pdf"
-  },
-  {
     "_id": "57a7232b89ff962100b4b520",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/3dad0347216266febde3ac65a3a94d12aeb42b26.pdf",
     "source": "http://mali.revenuesystems.org/desktop/desktop?workSpaceId=191198#"
@@ -8886,5 +8871,483 @@
     "_id": "57a7071b8ad41c18008078e4",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/b578bc784af667312767aa306617b9eafd24fec3.pdf",
     "source": "http://www.gnpcghana.com/speeches/financial_doc.pdf"
+  },
+  {
+    "_id": "57a7507e89ff962100b4b6fa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b613eec6fd5a2275d799b12eb8fa740d2a82cfb.pdf",
+    "source": "http://www.gnpcghana.com/board_members.html"
+  },
+  {
+    "_id": "57a743fa89ff962100b4b65b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11b02cb26d4dbcecf39302153a706738902a37d5.pdf"
+  },
+  {
+    "_id": "57a7428289ff962100b4b64a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74210945448421ce54fb4913b881ac06424f5cc6.pdf"
+  },
+  {
+    "_id": "57a7e25dd9c4282a005ff3ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ee1d966504a341764f27d738cb7b9c548472d64.pdf",
+    "source": "http://www.ulii.org/ug/legislation/consolidated-act/226"
+  },
+  {
+    "_id": "57a76c5ad9c4282a005ff2d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4cded4cb13319c34315fbb528bee165293d5f06.pdf"
+  },
+  {
+    "_id": "57a884a5f849480e0036ca2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/177a7328e1bac27ecfce15e7e6036da2294e91b7.pdf",
+    "source": "http://www.ghanaweb.com/GhanaHomePage/NewsArchive/artikel.php?ID=355955"
+  },
+  {
+    "_id": "57a88b99b19d31160045d06c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7c0f9376c1c67d3c341d0d0f1940b3199550d4f.pdf",
+    "source": "http://www.epa.gov.gh/epa/publications/environmental-assessment-and-audit"
+  },
+  {
+    "_id": "57a7efa0d9c4282a005ff3f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/481586204c7be6c7a13ad34ac49115a667dbde75.pdf",
+    "source": "http://www.monitor.co.ug/News/National/Court-issues-new-order-on-land/688334-2935186-5aa716z/index.html"
+  },
+  {
+    "_id": "57a7e5c6d9c4282a005ff3e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f00df2ea5535b8cd4281a5dabfdae99cdbb909ce.pdf",
+    "source": "http://www.ulii.org/ug/legislation/consolidated-act/230"
+  },
+  {
+    "_id": "57a7e3b5d9c4282a005ff3df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c276d8cb8a2805ca3dedaed230759b5d7373668e.pdf"
+  },
+  {
+    "_id": "57a890af79240d1700a16566",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/800cec331985c5eca4c16bfb3775f71f721b4a8a.pdf",
+    "source": "http://www.epa.gov.gh/epa/documents"
+  },
+  {
+    "_id": "57a89dc61b1b322a00ffafa2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fa34c1f8c73591578f3007df6512223b461b435.pdf",
+    "source": "http://www.petrocom.gov.gh/assets/ghana_national_petroleum_corporation_law_1983(1).pdf"
+  },
+  {
+    "_id": "57a8d26f9d548e33002c9419",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d84b638c792885c8b95cd36eae112002d7c7ca6.pdf",
+    "source": "https://lauda.ulapland.fi/bitstream/handle/10024/62260/Kokko%26Buanes%26Koivurova%26Masloboev%26Pettersson.pdf?sequence=2"
+  },
+  {
+    "_id": "57a8d5f7a7abd40f005dfef6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a432de05fc5e5e89a18af17d9c57b541f44405b.pdf",
+    "source": "http://test.com"
+  },
+  {
+    "_id": "56ed9440e31c3a0c00238e16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f230ef678055b2246d4b92c25520d0b2ab1ed89.pdf",
+    "source": "http://www.asambleanacional.gob.ve/uploads/leyes/2010-06-17/doc_8954743057286eb0f0865249e7b2d9fab9210ad9.pdf"
+  },
+  {
+    "_id": "57a900d4a7abd40f005dff4a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8cbdb46c81dab7fc47e53bd4ba704aa3935f244.pdf",
+    "source": "http://www.gazpromexport.com/en/presscenter/news/1036/"
+  },
+  {
+    "_id": "57a8ecc1a7abd40f005dff44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/424ff41ac06979899a23eb29deacc3c1c859b73c.pdf"
+  },
+  {
+    "_id": "57a8f0c5df12ea0f00bd2c26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2937559adc1ba255d1be1571c07bb57303a1888.pdf",
+    "source": "http://www.sibnedra.com/uslugi/doks/AdReg_Lizenz.htm"
+  },
+  {
+    "_id": "57a9185ddf12ea0f00bd2c6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e852e4b1e6b8802abe32346223042ad060eafaa0.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/PSC%20model%20270805.pdf"
+  },
+  {
+    "_id": "57a91763df12ea0f00bd2c65",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43b15259750888685a507c5f75fe26a33f5391e6.pdf",
+    "source": "http://www.laohamutuk.org/Oil/PetRegime/JPDA%20PSC%208-05.pdf"
+  },
+  {
+    "_id": "57a911c5a7abd40f005dff68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4c6a458e3e47bd2ffea892fc28028f6a9663c71.pdf",
+    "source": "http://www.mj.gov.tl/jornal/public/docs/2002_2005/leis_parlamento_nacional/8_2005.pdf"
+  },
+  {
+    "_id": "5706b5325753331200141d3e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c31e43c2ecab1509399b26194a1d4a856b061ff.pdf",
+    "source": "http://monitorlegislativo.net/wp-content/uploads/2014/11/Cuenta-MEF-2015.pdf"
+  },
+  {
+    "_id": "57a925de970ec40f00449dde",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e302a8dec91e1165cc70cf180def0e9c857deca4.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law-2005-08.pdf"
+  },
+  {
+    "_id": "57a9204d970ec40f00449dcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31334e82b8d1a3f00abf93a9000f2fa5bc6dd410.pdf",
+    "source": "http://lacleptocraciadelsigloxxi.blogspot.com/2011/08/4-anos-sin-auditar-la-inauditable-caja.html"
+  },
+  {
+    "_id": "57a91b8fa7abd40f005dff7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7dfa2a962da8c9d3d1b283f05c4946bcadc344ca.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/PUBLIC%20CONSULTATION"
+  },
+  {
+    "_id": "57a929a7a7abd40f005dffc2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f01e26cdaa43cc2b224ea00e6d79b889a0fe933.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/vwAll/Resource-Timor%20Sea%20Treaty/$File/Timor%20Sea%20Treaty.pdf"
+  },
+  {
+    "_id": "57a90fe5970ec40f00449d90",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09a75cec02c00eedb61e4266e82da7891f913295.pdf",
+    "source": "http://www.lapatilla.com/site/2015/03/18/rodriguez-llego-la-hora-de-auditar-al-fonden-y-que-el-seniat-revele-a-las-empresas-cadiveras/"
+  },
+  {
+    "_id": "5714d158657fdd0c0091b7ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bbd11a9bcd96a81925b51eab1ff96fc935dc4f38.pdf",
+    "source": "http://www.mprs.gov.mg/?page_id=129"
+  },
+  {
+    "_id": "57a93a44970ec40f00449e10",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa278691f5636b29023b31fb32a37aba43722a7c.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "57a92c83a7abd40f005dffd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d1a898c15356b0ee8af93d42881efa2ff3558ef6.pdf",
+    "source": "https://www.bancocentral.tl/Download/Publications/Quarterly_Report44_%20Eng.pdf"
+  },
+  {
+    "_id": "57a92af9df12ea0f00bd2cb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a4e63c83b7bae30b20625730f6194445bbee12c.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law-2005-09.pdf"
+  },
+  {
+    "_id": "57048fb0176f800c00901ffd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eda471ffae573a5b91c2721158905306b87c51b6.pdf"
+  },
+  {
+    "_id": "57aa62833f0f7518006678d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0052dbe379a25dee6c8c1bdd7926857d31c2b19d.pdf",
+    "source": "http://www.ecologie.gov.mg/"
+  },
+  {
+    "_id": "57aa666aef6d2e2100cdc161",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/24e3d5f0de4798c86956ddf02ff00e79a4cccf23.pdf",
+    "source": "http://www.lexpressmada.com/blog/actualites/exploitation-miniere-soamahamanina-au-bord-de-limplosion/"
+  },
+  {
+    "_id": "57aa5ac93f0f7518006678ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1eeb1de35b5cfeff6893245ebdea7aa87624e55.pdf"
+  },
+  {
+    "_id": "57aa5f183f0f7518006678b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9af5a687abb2e1a71e56c80961129d8f70bc5dc.pdf"
+  },
+  {
+    "_id": "57aa7a9fef6d2e2100cdc1ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7142d8f3e9d7306f39840909e0dc24a317baebe9.pdf",
+    "source": "http://www.mof.gov.mn"
+  },
+  {
+    "_id": "57aa72df3f0f75180066794c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d35fb4671304c3209677fbc149061b4bafbb20c4.pdf",
+    "source": "http://www.lagazette-dgi.com/index.php?option=com_content&view=article&id=42266:mauvaise-gestion-a-la-kraoma-presidence-et-ministere-de-tutelle-pointes-du-doigt"
+  },
+  {
+    "_id": "57aa76113f0f751800667958",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f61817cfdb533e7be449bd0db1c10a91b82a6d43.pdf",
+    "source": "http://www.imf.org/external/datamapper/FiscalRules/map/map.htm"
+  },
+  {
+    "_id": "57aa6a3f3f0f7518006678ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ca6a9c25c5bacecb764b480eede8dd3a991f974.pdf",
+    "source": "http://www.kraoma.mg"
+  },
+  {
+    "_id": "57aa75153f0f751800667950",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/edb616955c5816a8f3f934938d3e0ae08b9de58e.pdf"
+  },
+  {
+    "_id": "57aa7ad5fdbddd21001382e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e1c898641785da7821739d92b3cbb4a058ab69a.pdf",
+    "source": "http://www.mof.gov.mn"
+  },
+  {
+    "_id": "57ab09cbfdbddd210013834d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1386c3c59d5f84414ab762425a4b831493d12f85.pdf"
+  },
+  {
+    "_id": "57ab1296fdbddd210013835e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6fd3b679bfa54551cff50d9d768d0a99691e6189.pdf"
+  },
+  {
+    "_id": "57aafd5efdbddd210013832b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a04661605a0fd75bed6112929d88880015c62c8.pdf"
+  },
+  {
+    "_id": "57ab0db7fdbddd2100138356",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/197db120fa46f3d818d5627e49757ddb3c778992.pdf"
+  },
+  {
+    "_id": "57ab2f303f0f751800667a0d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55cd579a8be2ca3f74b0eeba657d09ca8907681b.pdf",
+    "source": "http://www.bahrain.bh/wps/wcm/connect/33b31024-a46d-4b54-a4ff-298eaf971b9e/%D9%82%D8%B1%D8%A7%D8%B1%281%291998-%D8%A7%D9%84%D8%AA%D9%82%D9%88%D9%8A%D9%85%2B%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D9%8A%2B%D9%84%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA-.pdf?MOD=AJPERES"
+  },
+  {
+    "_id": "57ab3009c7d72d2a00c157a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80854e2bd810a3d38ec7f2ee2ef302a4ce1316ca.pdf",
+    "source": "http://www.bahrain.bh/wps/portal/!ut/p/a1/tZJNU8IwEIb_Ch56LNl-UFpvhQGRgcHhQ2gvTJoupQxNShpB_fUGuOgoggdzSt59dnbnfUNisiAxp_s8oyoXnG6P79hb9kbgWbZv92E660I4mri9QafnQMvSQPQFcJyOBrzmU_M5sD0fbusHe9i2Hl0NDIcAod8aD6bdNsCDc2P_hRNenT8nMYkZV6VakwgzsS-FVHS7RG7ASgiF0gDk-1wKXiDXlVoptcqO_nypfNJrKTKJWNUoT4_3vNJidRxU0gxTrPKMn14sT0nEGq7nMc82U88G0w0YNf2VTU2Huc0gsSDwnYRMkJ9XvWL2CfjNzTNw2a4-ibOtSE7RRyFPHD8jscQVSpT1F6nltVJldW-AAYfDoZ4JkW2xzkRRT9YG_NS1FpUii28wiXR0zYvZjBtk8keT-jd8lnyz28Whjlxwha96r__NvCxms1nhb1b5uPc-wLlJE__tEN59AJm8bww!/dl5/d5/L2dBISEvZ0FBIS9nQSEh/"
+  },
+  {
+    "_id": "57ab40173f0f751800667a7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f2730e1a21374abf5efdf6d7f41e849fbcf1b7c.pdf",
+    "source": "http://www.legalaffairs.gov.bh/AdvancedSearch.aspx"
+  },
+  {
+    "_id": "57ab5df4c7d72d2a00c1593e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a5bf1436353a1c8fa16f40f450da8d5342c0552.pdf",
+    "source": "http://citifmonline.com/2015/10/21/iea-wants-oil-blocks-auctioned/"
+  },
+  {
+    "_id": "57ab6307fdbddd21001385a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ad28f8003fca64accc7d9a095216f594f13c21b.pdf",
+    "source": "http://piacghana.org/resources/2014PIAC252.pdf"
+  },
+  {
+    "_id": "57ab68c21310622a009f8363",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b88e9a86393a9660e65b2f55c297da3fe0b41c50.pdf",
+    "source": "http://www.anp-tl.org/webs/anptlweb.nsf/pgLafaekFTPListl?OpenForm&Start=14&Count=3000"
+  },
+  {
+    "_id": "57ab69b13f0f751800667c92",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a7eed89527afb0c96443e03f17ff03277225d399.pdf",
+    "source": "http://mauritanides-mr.com/fr/event-info/mauritanias-industry-facts/"
+  },
+  {
+    "_id": "57ab6dac3f0f751800667ce0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/162bc3dd196a9af4b4f933ee6e3d64f18e9cec95.pdf",
+    "source": "http://mauritanides-mr.com/fr/event-info/mauritanias-industry-facts/"
+  },
+  {
+    "_id": "57ab793b3f0f751800667d50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/242cd391f632de5709c726f1b48242d5cd432fa7.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law-2003-03.pdf"
+  },
+  {
+    "_id": "57ab6e75c7d72d2a00c15a6a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22b0621f40104329a3e4d8af56214c42e9ff5ea9.pdf",
+    "source": "https://www.bancocentral.tl/Download/Publications/Quarterly-Report42_en.pdf"
+  },
+  {
+    "_id": "57ab7687c7d72d2a00c15aa6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c28264cb32a950d39cfd45cacbe08ae0247e16ac.pdf",
+    "source": "http://www.laohamutuk.org/Oil/tax/10BackTaxes.htm"
+  },
+  {
+    "_id": "57ab7087c7d72d2a00c15a72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b3c4b5f12b8ce117097ed6ddb6748c208bd084e3.pdf"
+  },
+  {
+    "_id": "57ab7bb51310622a009f841f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2482724aecd3df93ecad076aa0bb11fd3005ed30.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law%208-2008%20.pdf"
+  },
+  {
+    "_id": "57ab88671310622a009f8464",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1809107f564f400a46e5887676dbefebd317ab8a.pdf",
+    "source": "http://majles.marsad.tn/fr/docs/524eca867ea2c42e8eceec76"
+  },
+  {
+    "_id": "57ab7fce3f0f751800667d72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/658f7979b7873c54fe28dc882487c227d9807a50.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law%209-2011.pdf"
+  },
+  {
+    "_id": "57ab7c061310622a009f8424",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e458d48ae3d16562b2310df312f327918e6ab039.pdf",
+    "source": "http://m.le360.ma/page.php?link=/monde/mauritanie-les-mines-ont-rapporte-407-millions-de-dollars-a-letat-54297"
+  },
+  {
+    "_id": "57ab83cd1310622a009f8449",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12436a61e617940fe5e97e7087a069d9cd6a84c1.pdf",
+    "source": "http://www.mprs.gov.mg/?page_id=505"
+  },
+  {
+    "_id": "57abc08b58d61b0e009e53e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38f464ac46d9d340892577cbf0a83d6d94b5c09d.pdf",
+    "source": "http://www.laohamutuk.org/Agri/EnvLaw/2016/LHbaPDHJAIA31May2016te.pdf"
+  },
+  {
+    "_id": "57abbb9943d1ac0f009fd6d3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4eff53c474ce4d7c16ffd4a40ebd1eea00052804.pdf",
+    "source": "http://www.mj.gov.tl/jornal/public/docs/2011/serie_1/serie1_no7.pdf"
+  },
+  {
+    "_id": "57abc22343d1ac0f009fd6ef",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3895de55d162f6fa2343e76df2a04eeaa6094c24.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/Betano/EIA/16RefineryEIA.htm"
+  },
+  {
+    "_id": "57abbf88e82efb0f008d5f6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84b5db969ac1b2feaa11cc0162d7713741b385dc.pdf",
+    "source": "http://laohamutuk.blogspot.com/2014/05/environmental-licensing-who-needs-it.html"
+  },
+  {
+    "_id": "57abc9c743d1ac0f009fd706",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d36b484ea41f4098602c51042d7ab04b0b9a42b.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TasiMane/13SSBen.htm"
+  },
+  {
+    "_id": "57abd50943d1ac0f009fd73c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b2e8195ecf2be1ae6149340f416d8fb1e36aa5c.pdf",
+    "source": "http://www.egalinfo.mn"
+  },
+  {
+    "_id": "57abdd8fe82efb0f008d5ff3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/abe5f9cfd34284ad0539c5782cb5fe127befbf22.pdf",
+    "source": "http://www.arabianbusiness.com/qatar-set-change-fiscal-calendar-from-2016-579134.html#.V6vdM5grJnI"
+  },
+  {
+    "_id": "57ac2aeee82efb0f008d6014",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03ca78139306d2287c5ba526ad0124aaa9f52318.pdf",
+    "source": "http://www.audit.mn"
+  },
+  {
+    "_id": "57abfd0b43d1ac0f009fd783",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f6a584d298eed80dc4fbd386a73be98eb39c032.pdf",
+    "source": "http://www.legalinfo.mn"
+  },
+  {
+    "_id": "57ac3b1a58d61b0e009e553a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4df7a8212abf3dd583e875c764c0d8b70cfdfd9a.pdf"
+  },
+  {
+    "_id": "57ac3c4d43d1ac0f009fd84f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23253eaf60465af828622089924e66f552b345ca.pdf"
+  },
+  {
+    "_id": "57508b7e4be7230f00b762a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe0242d68b70a5b4977bd3234ffd927a9b27e422.pdf",
+    "source": "http://www.legislation.tn/sites/default/files/journal-officiel/1989/1989A/Ja00989.pdf"
+  },
+  {
+    "_id": "57ac6e0058d61b0e009e5684",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/990707998594ac67dc37821ffc8f7482d4e8d479.pdf",
+    "source": "http://itie-mr.org/index.php/en/2014-06-10-08-10-15/secteur-minier"
+  },
+  {
+    "_id": "57ac6f7943d1ac0f009fd9de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9746ccf6c49125eb815bbc2ea1bd723e63311b5e.pdf",
+    "source": "http://www.mauripem.com/"
+  },
+  {
+    "_id": "57ac7fc058d61b0e009e56ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9228e42d8b757ad021dc5e8d7e0709c074cf3f04.pdf"
+  },
+  {
+    "_id": "57acec6d58d61b0e009e57e2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a01e2ec9874c0622b0c49b7d5cd1e69a95b2a6b.pdf",
+    "source": "https://issuu.com/_dca/docs/sumario_legal_06052015/1"
+  },
+  {
+    "_id": "57acedf943d1ac0f009fdad4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03d16305288f9f41d51bb839eaf058f22ecb3408.pdf",
+    "source": "https://issuu.com/_dca/docs/sumario_legal_13022015/1"
+  },
+  {
+    "_id": "57ad18a1e459530e002fb435",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9875d87f6761e90a90e349d78ec1a7aa7e65afda.pdf",
+    "source": "http://www.cabinet.gov.mn"
+  },
+  {
+    "_id": "57ae3b6164d74e0f00ce277f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/520c82722bb38252c795b9ab6de1c348db25add9.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Decree-Laws/Decree-Law-2003-14.pdf"
+  },
+  {
+    "_id": "57ae36b164d74e0f00ce275d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d516865d1770c2dc3fa0d320807da442b52eaa6.pdf",
+    "source": "http://www.laohamutuk.org/Oil/TimorGAP/LHTRKartaAuditTG5Aug2014en.pdf"
+  },
+  {
+    "_id": "57ad1efecbde8c0e007e54de",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d025348605eceb522321419cf849e3bd8d4cafa5.pdf",
+    "source": "http://www.iltod.gov.mn"
+  },
+  {
+    "_id": "57ae35f464d74e0f00ce275a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/acdaa119ec4f72dee86ec67b706f2608e80a6d05.pdf",
+    "source": "http://www.cbr.ru/statistics/print.aspx?file=credit_statistics/gas.htm"
+  },
+  {
+    "_id": "57ad1f55e459530e002fb459",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1290a16a7661e442c414eeb9f2395c59034609d3.pdf",
+    "source": "http://www.iltod.gov.mn"
+  },
+  {
+    "_id": "57aeb999bb93120f002e1396",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a589b36e8113cdb2331632280bfa9f10a254d24.pdf",
+    "source": "https://www.sec.gov/comments/s7-42-10/s74210-90.pdf (Last accessed 13/08/2016)"
+  },
+  {
+    "_id": "57aebd5d64d74e0f00ce27f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3d61262dedd79ae07809ad11843c73c876fbff5.pdf",
+    "source": "http://www.snh.cm/ReglementationDesHydrocarbures/CONTRAT-TYPE-ANGLAIS-16-DECEMBRE-2014.pdf"
+  },
+  {
+    "_id": "57af3335bb93120f002e13cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20c87a507f5f8dc1b385b39e9de00a1151b263df.pdf",
+    "source": "http://ugandaradionetwork.com/s/govt-statement-on-kingfisher-production-license/"
+  },
+  {
+    "_id": "57af6a1864d74e0f00ce285c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f6c00e85e900f380eb1a8af5e29f29f0acc360c.pdf",
+    "source": "http://Equatorial Guinea"
+  },
+  {
+    "_id": "57af6d43bb93120f002e1419",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d199c338acbcdbad689f3c60c8896debef5b18ec.pdf"
+  },
+  {
+    "_id": "577d23a629f3860f00a228b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe6ce65a05c121b2bc4800dd0d63e2033086a137.pdf"
+  },
+  {
+    "_id": "57a8ffc6970ec40f00449d73",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fd96a4d64a0dbc4db7c5d46cc3760930f2c87ec.pdf",
+    "source": "https://www.rosneft.com/upload/site2/document_file/TnUlZT2ih4.pdf"
+  },
+  {
+    "_id": "57a913dfdf12ea0f00bd2c54",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b799293f5541e97a921a407a426e93679b3ac15.pdf",
+    "source": "http://mj.gov.tl/jornal/lawsTL/RDTL-Law/RDTL-Laws/Law-2003-03.pdf"
+  },
+  {
+    "_id": "5793a2cda76dc810001a1e36",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfb619129b4ed74a606fe704826876aa1a8a9b2b.pdf",
+    "source": "http://bigstory.ap.org/article/d08e76d3176840fc9809b313528befd4/uganda-hope-oil-production-2018-after-pipeline-deal"
+  },
+  {
+    "_id": "5785264854d5f71800e8436b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d1a3adad68938bbec57f5fc3146749d000e2d99.pdf"
+  },
+  {
+    "_id": "5777b64b0ff3ee0f001f01cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15ad255661c9fe79c7878cbfa43aeae9295e20e4.PDF"
+  },
+  {
+    "_id": "57ab7d641310622a009f842e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f35278009f22aed0d1b22c77fb72d87ac8055e2.pdf",
+    "source": "http://www.tribunais.tl/files/camara_contas/PARECER_CGE_2014.pdf"
+  },
+  {
+    "_id": "57abcdba58d61b0e009e542a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a8a37c8b407f953dc6bbcfc1eaf53b6df262cbb.pdf",
+    "source": "http://pdhj.tl/wp-content/uploads/2013/11/PDHJ-Publika-Rejultadu-Monitorizasaun-Ba-Implementasaun-Projetu-Alargamentu-Estrada-no-Irigasaun-Barazen-Tono-iha-RAEOA.pdf"
+  },
+  {
+    "_id": "5768061a3295200f00d9e19c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0047156fa20f1b01159d8347820edd2b4b0d9875.pdf"
   }
 ]
