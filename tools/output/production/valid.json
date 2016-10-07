@@ -979,5 +979,245 @@
     "_id": "57bc2f2c6124322a006601a1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/90c19d9ad3e9fca0304266943f6ffd6d5299363d.xlsx",
     "source": "http://www.energia.gob.ar/contenidos/verpagina.php?idpagina=3299"
+  },
+  {
+    "_id": "57be44449778d62a00fc1b7a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36c1251d00811ee98ef3def7457878fe084ea3a0.pdf",
+    "source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/exh11.pdf"
+  },
+  {
+    "_id": "57be4478b661f65700a446bb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/335ed8358ee00eb7ee90fd31d44f35b80ac1fb8d.pdf",
+    "source": "http://www.petrominpng.com.pg/news/Petromin%20Supports%20the%202015%20Pacific%20Games%20with%20K1%20Million.pdf"
+  },
+  {
+    "_id": "57be49089778d62a00fc1b9f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f521bd86705b2da98092f6706d5af143185c3e9b.pdf",
+    "source": "http://cridem.org/C_Info.php?article=684700"
+  },
+  {
+    "_id": "57be463e263b422300bae315",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5186c142cf2db2e56dfc7f7b4da05cd1fba01f56.pdf",
+    "source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+  },
+  {
+    "_id": "57be4af4263b422300bae333",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/258d5c89a32a2a29abcd7a323f0775d9fc0599fe.pdf",
+    "source": "http://www.eia.gov/petroleum/data.cfm#crude"
+  },
+  {
+    "_id": "57c00b7606701c2400e043f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d45472dceb16a16ae54f706f8dde2d1a9725b530.pdf"
+  },
+  {
+    "_id": "57c030c206701c2400e046b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7433a0d16811d0e99276ec7bb13b378f521f6a83.pdf",
+    "source": "http://cridem.org/C_Info.php?article=680421"
+  },
+  {
+    "_id": "57be4d4b263b422300bae353",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c66b26d4be0a75938797badbd48f7f9488bc827f.pdf",
+    "source": "http://www.eia.gov/dnav/pet/pet_crd_crpdn_adc_mbbl_m.htm"
+  },
+  {
+    "_id": "57c0465afdaf0f0f00a6bccb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/586fe71467e20f36da02891008f57d90dfed44c6.pdf"
+  },
+  {
+    "_id": "57c0408cfdaf0f0f00a6bcaf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc272a3072c6f6a0bfe0c6164df12d4a0dafa900.pdf"
+  },
+  {
+    "_id": "57c05b8a61c82a2e0016c9db",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/79ca748e805edb9dede8d459006326373d75c6b0.pdf",
+    "source": "https://www.eia.gov/dnav/pet/pet_move_exp_dc_NUS-Z00_mbblpd_m.htm"
+  },
+  {
+    "_id": "57c05efd61c82a2e0016ca03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5c9d4b570afb8206117847d4892039ddce4b89a.pdf",
+    "source": "https://www.bp.com/content/dam/bp/pdf/energy-economics/statistical-review-2016/bp-statistical-review-of-world-energy-2016-full-report.pdf"
+  },
+  {
+    "_id": "57c06550fdaf0f0f00a6be0c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83b3dd8105e86659e29870e7fd41f08b72533ecb.pdf",
+    "source": "http://www.ocpgroup.ma/"
+  },
+  {
+    "_id": "57c0666d6f400c1a00d9bade",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cb884799a952217852b07420642267972d72e35c.pdf",
+    "source": "http://servicios.infoleg.gob.ar/infolegInternet/anexos/160000-164999/164678/norma.htm"
+  },
+  {
+    "_id": "57c06a88fdaf0f0f00a6be3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/466b0db491aaca3858a474cbffcbf955045c4714.pdf",
+    "source": "http://www.ocpfoundation.org/home_en.htm"
+  },
+  {
+    "_id": "57c071a961c82a2e0016ca5c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc3aaa1f3a5079840e5bfcf97fe265d80838df6d.pdf",
+    "source": "http://www.eia.gov/about/copyrights_reuse.cfm"
+  },
+  {
+    "_id": "57c07a0461c82a2e0016ca96",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ca84db772581d0dc53f0551e42b0cf5a5957497.pdf",
+    "source": "https://www.data.boem.gov/homepg/data_center/leasing/leasing.asp#pdf"
+  },
+  {
+    "_id": "57c07f2b6f400c1a00d9bb68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ef5d8289fca2d950a04e8f734fe135161403d8d.pdf",
+    "source": "https://www.fas.org/sgp/crs/misc/R43186.pdf"
+  },
+  {
+    "_id": "57c0754961c82a2e0016ca71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8e6ef512e8ca61c1198fccd07ad2c17825bb636e.pdf",
+    "source": "https://indiankanoon.org/doc/783396/"
+  },
+  {
+    "_id": "57c0724a61c82a2e0016ca60",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/57633d5cf5bc7430a375aa8e8c0433351cf2cc75.pdf"
+  },
+  {
+    "_id": "57c0939c6f400c1a00d9bbb8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/11dbb8b25077ef9e32fb8849db446e4b64c7e832.pdf",
+    "source": "https://www.sec.gov/about/offices/oig/inspector_general_investigations_reports.shtml"
+  },
+  {
+    "_id": "57c07fd96f400c1a00d9bb70",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca7b24346b976bab43fce2dec2ac71c51acf9ffe.pdf",
+    "source": "https://www.gpo.gov/fdsys/pkg/USCODE-2010-title5/pdf/USCODE-2010-title5-app-ethicsing.pdf"
+  },
+  {
+    "_id": "57c091be61c82a2e0016cae4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f6fd634e1aee8db5303b3ca50b97d1ff9153f7d.pdf",
+    "source": "https://www.sec.gov/spotlight/disclosure-effectiveness.shtml"
+  },
+  {
+    "_id": "57c07fee61c82a2e0016cab2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fe978af641c1c6724e40939477f5768811ccd2f.pdf"
+  },
+  {
+    "_id": "57c084f761c82a2e0016cad4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b07000d4ccaf0a004dd769f9c734a304886d821.pdf"
+  },
+  {
+    "_id": "57c096cdfdaf0f0f00a6bf2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13f4a312c71e5d16761d95b04279f72ed766e114.pdf",
+    "source": "http://clerk.house.gov/public_disc/financial.aspx"
+  },
+  {
+    "_id": "57c098716f400c1a00d9bbc1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2cd38adf67f2caeb25bc7b289f4cc73b06a38cb1.pdf",
+    "source": "https://oge.gov/web/oge.nsf/Public%20Financial%20Disclosure"
+  },
+  {
+    "_id": "57c09df0fdaf0f0f00a6bf39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/778935ae1e2a6a92739e15c86b89effc188e2363.pdf"
+  },
+  {
+    "_id": "57c09e696f400c1a00d9bbcb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ae0de6a38b286ce53cd163f883157c2ac00cbf2.pdf",
+    "source": "https://www.congress.gov/bill/114th-congress/house-bill/4450/text"
+  },
+  {
+    "_id": "57c0a05861c82a2e0016cb08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd51c8291384c987b0551fee7e9d2a49baf206f4.pdf",
+    "source": "https://www.treasury.gov/press-center/press-releases/Pages/jl0409.aspx"
+  },
+  {
+    "_id": "57c0bc3761c82a2e0016cb1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e64416baec5e0e56c444b1ad210d357c6f2332c5.pdf",
+    "source": "https://www.sec.gov/answers/sched13.htm"
+  },
+  {
+    "_id": "57c0bcc661c82a2e0016cb22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f67edfbb34b84a7370010103540d1e806d2bac2.pdf",
+    "source": "https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp?search_text=%22oil%22%20and%20%22Form%20SC%2013D%22&isAdv=false"
+  },
+  {
+    "_id": "57c0bda061c82a2e0016cb25",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1400608911eb158027e38108b1d1c3b0a339a846.pdf",
+    "source": "https://aleph.openoil.net/search?q=Form%20SC%2013D&offset=0"
+  },
+  {
+    "_id": "57c0a29c6f400c1a00d9bbd2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eed76d00073c7bd28a11e2a605a84ec184ad54f5.pdf",
+    "source": "https://www.whitehouse.gov/the-press-office/2016/05/05/fact-sheet-obama-administration-announces-steps-strengthen-financial"
+  },
+  {
+    "_id": "57c0ca69fdaf0f0f00a6bf7d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68c95335f4dcd9973187c43b1475bc3717aaee78.pdf",
+    "source": "http://sie.energia.gob.mx/bdiController.do?action=cuadro&cvecua=PMXF4C02"
+  },
+  {
+    "_id": "57c0c7c16f400c1a00d9bc0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0ce575bf6afe1bf46fd275dc75bb43b85d923a46.pdf",
+    "source": "http://sie.energia.gob.mx/bdiController.do?action=cuadro&subAction=applyFormat"
+  },
+  {
+    "_id": "57c0d006fdaf0f0f00a6bf8b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a19c372a98adaadd9bca77e12a9670fa8d74e7a.pdf",
+    "source": "http://www.mem.gob.gt/mineria/catastro-minero/mapa-catastral-de-la-republica/"
+  },
+  {
+    "_id": "57c0cef86f400c1a00d9bc22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/86f0d1770b3efb008bda7ef9fe178e138f6fae75.pdf",
+    "source": "http://www.mem.gob.gt/mineria/catastro-minero/derechos-mineros-otorgados-por-depto/"
+  },
+  {
+    "_id": "57c0d0ad6f400c1a00d9bc37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8223bc5b0e963c040bb98a8c5cdd81ebfa25573.pdf"
+  },
+  {
+    "_id": "57c10dc5fdaf0f0f00a6c001",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a99a3b3b0e7ba1da1f44505664b44c2cfd2473e.pdf",
+    "source": "http://www.abc.net.au/news/2015-11-03/png-government-announces-huge-drop-in-revenue/6909078"
+  },
+  {
+    "_id": "57c0da67fdaf0f0f00a6bfa8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7f8d09bdf89ab6adcea699f4ca7931e93ab47294.pdf",
+    "source": "http://www.cnh.gob.mx/contratos/boveda-digital.html"
+  },
+  {
+    "_id": "57c1798161c82a2e0016cbd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/992b2e3dba9e8c72f9f998dd8224db7abdd49d42.pdf",
+    "source": ""
+  },
+  {
+    "_id": "57c0db46fdaf0f0f00a6bfad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab9e72f9a6b85e56dba51c6d259fd32478d4ba19.pdf",
+    "source": "http://www.boem.gov/uploadedFiles/BOEM/Oil_and_Gas_Energy_Program/Leasing/5BOEMRE_Leasing101.pdf"
+  },
+  {
+    "_id": "57c182546f400c1a00d9bd2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f3d33053da9a5e5c87cf5f2fea33f3a2d4ad1d7.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2348"
+  },
+  {
+    "_id": "57c18209fdaf0f0f00a6c085",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac3f158ae5a3a406943e5b0f59c0d9e2194d54ef.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2347"
+  },
+  {
+    "_id": "57c1828c61c82a2e0016cc4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b89114ffc6489bc7d5cb91d1f48bcc5bb07bca9b.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2353"
+  },
+  {
+    "_id": "57c17a5f6f400c1a00d9bcbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/928c9b6b69c2d1fc875b0edf11b9beab080305e0.pdf"
+  },
+  {
+    "_id": "57c17a016f400c1a00d9bcac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de6e79c42fb6c3b63ef869f26f9d074b72ecebe5.pdf"
+  },
+  {
+    "_id": "57c10ad9fdaf0f0f00a6bffe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f3ae730adc3dbffb58e98b83a1a9e1f095fe349.pdf",
+    "source": "http://www.tradingeconomics.com/papua-new-guinea/government-debt-to-gdp"
+  },
+  {
+    "_id": "57c0bd916f400c1a00d9bbf2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/755ef408cbcd5367725aef7462559c4c8adcf8b2.xlsx",
+    "source": "http://www.cnh.gob.mx/5600.aspx"
   }
 ]
