@@ -1219,5 +1219,255 @@
     "_id": "57c0bd916f400c1a00d9bbf2",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/755ef408cbcd5367725aef7462559c4c8adcf8b2.xlsx",
     "source": "http://www.cnh.gob.mx/5600.aspx"
+  },
+  {
+    "_id": "57c182e6fdaf0f0f00a6c092",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/098b8a0dd9b5bc2c4440666672fc7c979e208939.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2354"
+  },
+  {
+    "_id": "57c183606f400c1a00d9bd3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7661e338e00eef14d33e5c604fa693ae8591bbf.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2373"
+  },
+  {
+    "_id": "57c183c36f400c1a00d9bd42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5bbdfbcdd04401ca5a534671a386709f47e6878.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2392"
+  },
+  {
+    "_id": "57c184136f400c1a00d9bd47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/036331783f322b8774d8bdcc3f82f696af87b6db.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2398"
+  },
+  {
+    "_id": "57c18325fdaf0f0f00a6c099",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c59563f7a77739586f039b586c714d7128e9a8d8.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2355"
+  },
+  {
+    "_id": "57c1844661c82a2e0016cc67",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f54e65be4cb8bd506a527119eac1503796d1d2a.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2453"
+  },
+  {
+    "_id": "57c184776f400c1a00d9bd54",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ff66d4993d384f1e7a911165558dc3a18b2e043.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/verpagina.php?idpagina=2457"
+  },
+  {
+    "_id": "57c189e2fdaf0f0f00a6c0ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67722249eeea619d1e356d5f9ccac0f8a3c2e739.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/archivos/Reorganizacion/oportunidades_de_inversion/neuquen/revista.pdf"
+  },
+  {
+    "_id": "57c18b746f400c1a00d9bd98",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f900e1b92e90ecbad1b0f179117cc3f951e4b34.pdf",
+    "source": "http://www.energia.gov.ar/contenidos/archivos/Reorganizacion/oportunidades_de_inversion/La%20Pampa/Pliego-Licitacion.pdf"
+  },
+  {
+    "_id": "57c18c6d61c82a2e0016ccce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc1d2d26d408a4ef147d4dadcd4b709eed847689.pdf",
+    "source": "http://mopg.gov.sd/page/Laws_regulations"
+  },
+  {
+    "_id": "57c1ad5d61c82a2e0016cd0c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2921841858a22b85fc97e0f063e39cd4c6cf352.pdf",
+    "source": "http://www.boem.gov/Outer-Continental-Shelf-Lands-Act/"
+  },
+  {
+    "_id": "57c1921a61c82a2e0016ccea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/092b65fc84c22bcdd8a1b591bcc124d42cf03d8b.pdf",
+    "source": "http://www.energianeuquen.gov.ar/detalle.php?page=hidrocarburos&pageGIS=si&idsc=53&idc="
+  },
+  {
+    "_id": "57c19487fdaf0f0f00a6c118",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ba5d616fe612ffc35800c90b671d1668a2868f2.pdf",
+    "source": "https://www.afip.gob.ar/futCont/otros/sistemaTributarioArgentino/#l"
+  },
+  {
+    "_id": "57c19608fdaf0f0f00a6c11b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6b0c3e2486d3d2695f36edc884d95be9eeeeedd9.pdf",
+    "source": "http://servicios.infoleg.gob.ar/infolegInternet/anexos/40000-44999/44911/texact.htm"
+  },
+  {
+    "_id": "57c1b60461c82a2e0016cd1d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38b894bfc27527160694bee384db23d572a702f4.pdf",
+    "source": "http://eiti-madagascar.org/downloads/Rapport-final-de-reconciliation-ITIE-Madagascar-Exercice-2012-(sans-annexes).pdf"
+  },
+  {
+    "_id": "57c1c7d6fdaf0f0f00a6c14f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d085cb2e0adc7f711119f48bc8f2a4568aad2c42.pdf",
+    "source": "https://www.google.com/search?biw=1252&bih=655&q=%22unqualified+bidder%22+and+%22oil%22+site%3Agao.gov&oq=%22unqualified+bidder%22+and+%22oil%22+site%3Agao.gov&gs_l=serp.3...22884.24788.0.25597.6.6.0.0.0.0.119.400.5j1.6.0....0...1c.1.64.serp..0.0.0.1zCmmq7d_P0"
+  },
+  {
+    "_id": "57c1d9206f400c1a00d9be14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d8c3540d6fc3562cb65389844419a06fa6f719a.pdf",
+    "source": "http://www.sudantribune.net/%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%AA%D9%88%D9%82%D8%B9-%D8%B9%D9%84%D9%89,10673"
+  },
+  {
+    "_id": "57c1c6016f400c1a00d9bde9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/839cb5328257e07e2b5950749b8b24e99d015ceb.pdf",
+    "source": "http://query.nytimes.com/search/sitesearch/#/unqualified+bidder+gulf+of+mexico/"
+  },
+  {
+    "_id": "57c1c45efdaf0f0f00a6c148",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e96f9688b32044a5f31342fcc246716aa2d5c005.pdf",
+    "source": "http://www.boem.gov/Final-Rule-Summary/"
+  },
+  {
+    "_id": "57c1daf261c82a2e0016cd68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45209d450d811234289db117af651bc88a90825a.pdf",
+    "source": "http://mopg.gov.sd/"
+  },
+  {
+    "_id": "57c1dd7c61c82a2e0016cd81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1cacc3a3c6c4ef83f55eb78102498d9638f8aa3.pdf",
+    "source": "https://www.moenr.gov.ae/en/knowledge-center/reports.aspx"
+  },
+  {
+    "_id": "57c1dc44fdaf0f0f00a6c176",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/690476d17da1d260e23e96d1a3dbf594c713c7af.pdf",
+    "source": "http://www.boem.gov/Five-Year-Program-Details/"
+  },
+  {
+    "_id": "57c1dd5bfdaf0f0f00a6c184",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/986f02cef902af081161838cea5659db5571aa91.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57c1dde56f400c1a00d9be37",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6d0a221194f3d2004397bde71f07f885d848a94.pdf",
+    "source": "http://www.arablawsworld.com/abu-dhabi-local-laws.php?page_number=58"
+  },
+  {
+    "_id": "57c1dda061c82a2e0016cd86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61a711777e1260332699c214d569a916a1d276b8.pdf",
+    "source": "http://www.theeastafrican.co.ke/news/Seamic-mining-multinationals-EITI-exploitation-Africa/2558-2732108-view-printVersion-153achu/index.html"
+  },
+  {
+    "_id": "57c1e155fdaf0f0f00a6c1a7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43e006976c55480f56aed67b12c9794a359a7bf5.pdf",
+    "source": "http://www.boem.gov/uploadedFiles/BOEM/Oil_and_Gas_Energy_Program/Energy_Economics/Fair_Market_Value/GOMLeaseTermsRRSummary.pdf"
+  },
+  {
+    "_id": "57c1e0016f400c1a00d9be4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65d7c1a826ad2ebf4832889146055ecd2e1aca0b.pdf",
+    "source": "http://www.boem.gov/Summary-of-Procedures-For-Determining-Bid-Adequacy/"
+  },
+  {
+    "_id": "57c1de8261c82a2e0016cd96",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c543cc12a12bc952ad37643f2bacae27dac8500c.pdf",
+    "source": "http://www.boem.gov/Fair-Market-Value/"
+  },
+  {
+    "_id": "57c1e01bfdaf0f0f00a6c1a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/510ffbdd6708fdd5ab40db87857241106709426a.pdf",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=118&ThemeID=7"
+  },
+  {
+    "_id": "57c1e78dfdaf0f0f00a6c1df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8967821ed734aa861417be411f1a7b622cd2925.pdf",
+    "source": "http://www.gsenergy.co.kr//en/Default.aspx"
+  },
+  {
+    "_id": "57c1e76f61c82a2e0016cde7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/723e756e39fc1004dafc8942f3faa7db8cf6eea2.pdf",
+    "source": "http://ae.total.com/en-us"
+  },
+  {
+    "_id": "57c1e6bd6f400c1a00d9be7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df22910b43e6b311228da6d6f6b5ec61ab834894.pdf",
+    "source": "https://www.adnoc.ae/en/home/index.aspx"
+  },
+  {
+    "_id": "57c1e72f61c82a2e0016cde2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13f913aa302aec6e31662aaba17960def288f15b.pdf",
+    "source": "http://www.inpex.co.jp/english/"
+  },
+  {
+    "_id": "57c1e7d061c82a2e0016cdeb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6dc1086b4ac371a46e56f0d1f00be76547118866.pdf",
+    "source": "http://www.adco.ae/en/Pages/Default.aspx"
+  },
+  {
+    "_id": "57c1e8d4fdaf0f0f00a6c1ff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/878649a812771b94a207f7c99ad8ce9e12dba7b0.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57c1e9a46f400c1a00d9bea6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/590319f4b5c1f6d17b8438e3d8726389124471ee.pdf",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d2030%26amp%3bCatID%3d5104%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57c1ec746f400c1a00d9beb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6182e1401d262601cb7f7cf6a2d4736e3f0e27d1.pdf",
+    "source": "https://www.adnoc.ae/en/media/PressDescription.aspx?Press_Releases_ID=3083&PriMenuID=4&CatID=5096&mnu=Cat"
+  },
+  {
+    "_id": "57c1ecca61c82a2e0016ce16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c8fa00918617443c59ae6f98bc38e84e328431a3.pdf",
+    "source": "http://www.adco.ae/en/discover/corporateprofile/pages/ourshareholders.aspx"
+  },
+  {
+    "_id": "57c1ed7361c82a2e0016ce1a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ed59df4619a3d4366312d6e276dceadd4a890c6.pdf",
+    "source": "http://www.boem.gov/Sale-235-FNOS-Lease-Terms/"
+  },
+  {
+    "_id": "57c1ef5261c82a2e0016ce2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d6e2ef81916a2fdf093291f0b1c590656de7b410.pdf",
+    "source": "https://www.moenr.gov.ae/en/about-ministry/vision-and-mission.aspx#page=1"
+  },
+  {
+    "_id": "57c1edbb61c82a2e0016ce21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e9e3e312ce1127c836d33aac53333a33b43b765.pdf",
+    "source": "http://www.boem.gov/Oil-and-Gas-Energy-Program/Leasing/Regional-Leasing/Gulf-of-Mexico-Region/GOMR-Historical-Lease-Sale-Information.aspx"
+  },
+  {
+    "_id": "57c1f28c61c82a2e0016ce47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/74284c6715479e6ac08aee61c338e155eddf33d0.pdf",
+    "source": "https://www.rak.ae/en_US/web/rakportal/facts"
+  },
+  {
+    "_id": "57c1f2c6fdaf0f0f00a6c24d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/68b0df53bcec3026c4ec1c885926c3e2671985e0.pdf",
+    "source": "http://www.snoc.ae/"
+  },
+  {
+    "_id": "57c1edb76f400c1a00d9bec0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ffa64a99c5976e1b8634a01d95076765c5bbd367.pdf",
+    "source": "http://www.dubaisce.gov.ae/default.aspx"
+  },
+  {
+    "_id": "57c1f7d5fdaf0f0f00a6c2a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/adc2d17b3085ef013d8f5f88cbc1bf425b3cd663.pdf",
+    "source": "http://zadco.ae/en/aboutus/Shareholder/Pages/Shareholder.aspx"
+  },
+  {
+    "_id": "57c1f85bd30b7f2400bb3fd5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d91f18c2e8cb6c28f135cade34e0feb210b45a82.pdf",
+    "source": "http://www.alhosngas.com/Pages/GasExploration.aspx"
+  },
+  {
+    "_id": "57c1f7fad30b7f2400bb3fcf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d5349849c559ff7cb4678d77676f1779688097c.pdf",
+    "source": "http://www.adma-opco.com/en/menu/index.aspx?mnu=cat&PriMenuID=2&CatID=15"
+  },
+  {
+    "_id": "57c1f7acd30b7f2400bb3fc5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d2eabd70eec5fe3c5f4d54ad7793c541d464615.pdf",
+    "source": "http://www.adco.ae/en/Operations/Pages/ADCO-Operations.aspx"
+  },
+  {
+    "_id": "57c1f83561c82a2e0016cea5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78148899f88eba4ebb331c82eb75bb8a31c75039.pdf",
+    "source": "http://www.alhosngas.com/Pages/AboutUs/Shareholders.aspx"
+  },
+  {
+    "_id": "57c1e21a61c82a2e0016cdb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8fbec0bd2ac0855d971deee976ef2b72efeea8ef.xlsx",
+    "source": "http://fcsa.gov.ae/EnglishHome/ReportDetailsEnglish/tabid/121/Default.aspx?ItemId=2424&PTID=104&MenuId=1"
   }
 ]
