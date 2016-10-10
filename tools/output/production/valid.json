@@ -1469,5 +1469,501 @@
     "_id": "57c1e21a61c82a2e0016cdb1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/8fbec0bd2ac0855d971deee976ef2b72efeea8ef.xlsx",
     "source": "http://fcsa.gov.ae/EnglishHome/ReportDetailsEnglish/tabid/121/Default.aspx?ItemId=2424&PTID=104&MenuId=1"
+  },
+  {
+    "_id": "57c1f88861c82a2e0016ceb2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d4ba6fd81daff84fac229c9477f4f0cc3439a3d.pdf",
+    "source": "http://www.bunduq.com/en/about/companyprofile"
+  },
+  {
+    "_id": "57c1fa8d61c82a2e0016ced5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/893abcc07d39c4f8332c02349bc093668496cee8.pdf",
+    "source": "https://www.google.com/search?q=%22oil%22+and+%22Bureau+of+Ocean+Energy+Management%22+and+%22negotiable+terms%22+site%3Agao.gov&oq=%22oil%22+and+%22Bureau+of+Ocean+Energy+Management%22+and+%22negotiable+terms%22+site%3Agao.gov&gs_l=serp.3...34121.49581.0.49875.54.47.4.0.0.0.287.3801.26j10j2.38.0....0...1c.1.64.serp..15.0.0.7vsxlPc_f8A"
+  },
+  {
+    "_id": "57c1f98a61c82a2e0016cec1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0702053cc996a4cbbd7bd7e934534d29ed297f6.pdf",
+    "source": "http://search.usa.gov/search?affiliate=boem&query=negotiable%20terms"
+  },
+  {
+    "_id": "57c1f8bafdaf0f0f00a6c2b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/84196877aeb05630825d62d7c0ce68ece3f6ebb2.pdf",
+    "source": "http://www.aldhafra.com/En/Pages/WhereWeOperate.aspx"
+  },
+  {
+    "_id": "57c1f8ded30b7f2400bb3fe7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7cc70094822ed9007fdd63f66a35965870fecc6.pdf",
+    "source": "http://www.crescentpetroleum.com/html/onshore-sharjah-concession.html"
+  },
+  {
+    "_id": "57c1fe1161c82a2e0016cf1f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a25e300abb30d5bc96baefe359e8894cd06fe59.pdf",
+    "source": "http://www.adaa.abudhabi.ae/En/Publications/Pages/Publications.aspx?code=laws_regulations"
+  },
+  {
+    "_id": "57c20199fdaf0f0f00a6c35d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4581d5ab5ce053ec46a999a0905896cc8f7560ff.pdf",
+    "source": "https://www.ead.ae/Pages/Resources/Publications.aspx"
+  },
+  {
+    "_id": "57c1fcc5d30b7f2400bb401e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d4918655b913c29e7785e4f1667f2b3dc9327ed.pdf",
+    "source": "http://www.thenational.ae/business/energy/koreas-gs-energy-takes-3-stake-in-abu-dhabis-onshore-oilfields"
+  },
+  {
+    "_id": "57c2016361c82a2e0016cf68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0aea8cd4572ed2dd52547497a32f99c9d8e2e053.pdf",
+    "source": "http://www.moccae.gov.ae/en/home.aspx"
+  },
+  {
+    "_id": "57c20518d30b7f2400bb40ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/792eefc56761dd687aac4b56410bb9cc5bdb696b.pdf",
+    "source": "https://www.gulftalent.com/repository/ext/UAE_Labour_Law.pdf"
+  },
+  {
+    "_id": "57c208a761c82a2e0016cfd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1f2bca4aabfb54a5f7460ce3638d4e79c71ca4d.pdf",
+    "source": "https://www.moenr.gov.ae/en/media-centre/news-archive.aspx#page=1"
+  },
+  {
+    "_id": "57c207bed30b7f2400bb40d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1e96c5d95ccd75aa1cb2d1ddc352e1d88eacc3c6.pdf",
+    "source": "https://www.moenr.gov.ae/en/media-centre/news.aspx#page=1"
+  },
+  {
+    "_id": "57c2057a61c82a2e0016cf9a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/389e1960df7d13b646ab5b66339f495937f37d47.pdf",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d1033%26amp%3bCatID%3d8196%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57c205bf61c82a2e0016cfa3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87b8daac4e0f53f83c82b72fe3c2df2f308f83a3.pdf",
+    "source": "http://www.moccae.gov.ae/en/laws-and-legislations/federal-laws.aspx#page=1"
+  },
+  {
+    "_id": "57c2808cfdaf0f0f00a6c48a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/da8ad48f45e5aeb17e9164a4ad3b80487dbf299c.pdf",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID=2030&CatID=6130&RefID=0&mnu=Cat"
+  },
+  {
+    "_id": "57c28031d30b7f2400bb4181",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fea00b525ccd24c27a9ceeadce450054b4ba246f.pdf",
+    "source": "http://www.aldhafra.com/En/Pages/WhatWeDo.aspx"
+  },
+  {
+    "_id": "57c27eecfdaf0f0f00a6c443",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13a7eee3362b68c6b4973098513e334c2ec66ff4.pdf",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d1033%26amp%3bCatID%3d6174%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57c281dfd30b7f2400bb41a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/432b61df05e6558c154465825df86165bbc50a3e.pdf",
+    "source": "http://www.adaa.abudhabi.ae/En/AboutUs/Pages/Functions-Subject-Entities.aspx"
+  },
+  {
+    "_id": "57c28056d30b7f2400bb418f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6a24803e0cb0b7f7bc4186d8e7190916ae45932c.pdf",
+    "source": "http://Www.resourcecontracts.org/countries/ye"
+  },
+  {
+    "_id": "57c28916d30b7f2400bb41df",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebe7c7bc9cde3cd0abcfef033d4dadec0502c3a5.pdf",
+    "source": "https://www.scad.ae/en/pages/themesreleases.aspx?themeid=2"
+  },
+  {
+    "_id": "57c283bafdaf0f0f00a6c4a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16052c2697c6a8e6abe5a868ff3af56898902083.pdf",
+    "source": "http://gulfnews.com/business/sectors/energy/emarat-won-t-expand-fuel-retailing-business-in-dubai-1.1179936"
+  },
+  {
+    "_id": "57c2836d61c82a2e0016d065",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ea1b264e0c7663b0cc4f120fa2b2e95e07ee939.pdf",
+    "source": "https://www.adnoc.ae/en/media/PressReleases.aspx?%26amp%3bPriMenuID%3d4%26amp%3bCatID%3d5096%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57c2865a61c82a2e0016d07e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9af3fbff9a7314eb85e090b047e25237de196076.pdf",
+    "source": "https://www.adnoc.ae/en/Menu/index.aspx?PriMenuID%3d2030%26amp%3bCatID%3d5099%26amp%3bRefID%3d0%26amp%3bmnu%3dCat%22"
+  },
+  {
+    "_id": "57c289b12f58db38007c9ef1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/083a93af3c604a8276e1ecc1a6b487ab6cb6bf85.pdf",
+    "source": "https://www.scad.ae/en/pages/themesreleases.aspx?themeid=2"
+  },
+  {
+    "_id": "57c28a3e2f58db38007c9efe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0a603a7c6e751e64b90cac8c32045a7665368cd8.pdf",
+    "source": "https://www.scad.ae/en/Pages/ThemePublication.aspx?PID=7&ThemeID=1"
+  },
+  {
+    "_id": "57c2903735d50e2e00d9b8c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8d6d5fcd15884c4279280256f9922c87f7b238c.pdf",
+    "source": "http://zadco.ae/en/aboutus/Missionvisionvalues/Businessplanning/Pages/Businessplanning.aspx"
+  },
+  {
+    "_id": "57c28fa635d50e2e00d9b8b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6639707263cb464ae7d9cb11eed8d93815432702.pdf",
+    "source": "http://www.adma-opco.com/en/Menu/index.aspx?PriMenuID=4&CatID=50&RefID=0&mnu=Cat&log=0"
+  },
+  {
+    "_id": "57c28f5835d50e2e00d9b8b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d23c25f0de830151c3fd0dd7ec138b765979b56.pdf",
+    "source": "http://www.adco.ae/en/Operations/TPO/Pages/Overview.aspx"
+  },
+  {
+    "_id": "57c28ca42f58db38007c9f15",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2fcca7618e691dabc9c25bc66eea2ee9d40efff8.pdf",
+    "source": "https://www.scad.ae/en/pages/themesreleases.aspx?themeid=2"
+  },
+  {
+    "_id": "57c296266f947638007d0580",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50065e04ec4334031bacf77c728f1af46750c1d7.pdf",
+    "source": "http://www.thenational.ae/business/energy/adnoc-large-crude-sales-to-china-unsettle-asian-market"
+  },
+  {
+    "_id": "57c299c06f947638007d05a2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1159e7decfbf7f300cfdfd5b28be6b4326ee06ba.pdf",
+    "source": "http://www.uae-embassy.org/about-uae/about-government/key-members-government"
+  },
+  {
+    "_id": "57c29a4c71977919008fe001",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29937124217e133fd35ee87dd94e1941f9cfdca9.pdf",
+    "source": "https://www.ecouncil.ae/en/ADGovernment/Pages/MemberDetail.aspx?mid=3"
+  },
+  {
+    "_id": "57c2969944ed1942001e461d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/30242d4434e7e35c96a4a0ff2a64bafaa3f6a8fd.pdf",
+    "source": "https://www.adnoc.ae/en/Media/OilArchive.aspx?PriMenuID%3d3056%26CatID%3d8199%26RefID%3d0%26mnu%3dCat"
+  },
+  {
+    "_id": "57c2996644ed1942001e463f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba2979c96e33f2045ed5ff893266f6c23fb75a5c.pdf",
+    "source": "http://www.uae-embassy.org/about-uae/about-government/his-highness-sheikh-khalifa-bin-zayed-al-nahyan"
+  },
+  {
+    "_id": "57c29b226f947638007d05b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f002b5b9a2772c9168c08c5fdf63333f0cd2da06.pdf",
+    "source": "http://www.elixier.ae/media/document/ADNOC%20Code%20of%20conduct_REV_13%20Final%20for%20upload%20on%20all%20Group%20Company%20webpages%2015%20June%202016.pdf"
+  },
+  {
+    "_id": "57c2a6f871977919008fe054",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a1528fa856c492575627c0ebcaec8cf9942297c9.pdf"
+  },
+  {
+    "_id": "57c2a95c6f947638007d0606",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8388184513856a4dcc1408efebae58538580edd6.pdf",
+    "source": "http://www.sohbetna.com/business/uaelaw/federaldecreelawno4onthestablshmentiftheuaeinvestmentauthority/"
+  },
+  {
+    "_id": "57c2abaf6f947638007d0615",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1cde03f30b13c2ecfa0bab409b9322ab8c12d066.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2016-02-02/abu-dhabi-to-siphon-billions-from-adia-for-debt-fitch-predicts"
+  },
+  {
+    "_id": "57c2adbd71977919008fe077",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/044817f45f1e6f2b465df4cccab9fcbb606ecb56.pdf",
+    "source": "http://www.adia.ae/En/pr/ADIA_Review_2015_Web.pdf"
+  },
+  {
+    "_id": "57c2b88444ed1942001e4727",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e4f92fb8ce05ffa11d972f6819bdf4e0f58ed08.pdf",
+    "source": "http://www.adia.ae/En/Investment/Activities.aspx"
+  },
+  {
+    "_id": "57c2b2a644ed1942001e46e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdb93183e480c82553086e74d31bdc57cf1c2cb9.pdf",
+    "source": "http://www.adia.ae/En/Investment/Portfolio.aspx"
+  },
+  {
+    "_id": "57c2b2fe44ed1942001e46e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dcd270f45900f08e65cace5d9e7bdf6f4253c7c5.pdf",
+    "source": "http://www.adia.ae/En/Investment/Risks.aspx"
+  },
+  {
+    "_id": "57c2b6bb6f947638007d068e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b0dd006395e742aa31017174592cda6c7015a650.pdf",
+    "source": "http://www.libyaschannel.com/2016/08/05/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AD%D9%83%D9%85-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A-%D8%A8%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D8%AA%D8%B3%D9%84%D9%85/"
+  },
+  {
+    "_id": "57c2b09444ed1942001e46bf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a38ea55a3b4ced93e6809b560392f36cce11804f.pdf"
+  },
+  {
+    "_id": "57c2e55b71977919008fe141",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/39f516285db613fb82982f76d32e82045a9af1a4.pdf",
+    "source": "http://www.mog.gov.om/"
+  },
+  {
+    "_id": "57c2e5f36f947638007d070c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/808f0b57ad16dc205353d648211fd39095c42401.pdf",
+    "source": "http://www.data.gov.om/en/DataAnalysis/"
+  },
+  {
+    "_id": "57c2e49d71977919008fe138",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65916ada223bd7a97585e4b5f9748bc845c87b60.pdf",
+    "source": "http://faolex.fao.org/cgi-bin/faolex.exe?rec_id=128757&database=faolex&search_type=link&table=result&lang=eng&format_name=@ERALL"
+  },
+  {
+    "_id": "57c2e74071977919008fe155",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c907f53df35c98daa2c8c8a5b3bcfe84e7220c6.pdf",
+    "source": "http://www.oman-oil.com/index.php"
+  },
+  {
+    "_id": "57c2e79b44ed1942001e4796",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50bae4652039209f76c140a597c1f2781cbd5748.pdf",
+    "source": "http://www.bp.com/en/global/corporate/about-bp/bp-worldwide/bp-in-oman.html"
+  },
+  {
+    "_id": "57c2e80b71977919008fe15e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b40c035ae0186eb364c04f942fb5a2e2e3e6e709.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57c2e93571977919008fe166",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97c0f479416af2f3d592e6a5a4624e0e9b6831ee.pdf",
+    "source": "http://www.mocs.gov.om/"
+  },
+  {
+    "_id": "57c2edc26f947638007d074b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dd3a7c2a9a2bc6fc9268c7ff90bf9dfff6211888.pdf",
+    "source": "http://www.taxoman.gov.om/tax%20_system_inoman-features.html#main-page"
+  },
+  {
+    "_id": "57c2eed671977919008fe17b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/714dd2956360f6d97d0332aa70117baa26ddd4d9.pdf",
+    "source": "http://www.pdo.co.om/Publications/_PublicationsFile_Annual%20Report%202014201541515724.pdf"
+  },
+  {
+    "_id": "57c2efa86f947638007d0757",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4adbd90714ffee374a0f38a350703557093c6212.pdf",
+    "source": "http://www.hcfoman.com/news/2016/01/"
+  },
+  {
+    "_id": "57c2f4f744ed1942001e47ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ac3798bb2f35463073907f0d9f611e481067a65.pdf",
+    "source": "http://www.2b1stconsulting.com/bp-and-oman-oil-signed-khazzan-and-makarem-tight-gas-project/"
+  },
+  {
+    "_id": "57c2f65844ed1942001e47f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95fcbfa4ceb9d3a836879bd3084da9e49118fb64.pdf",
+    "source": "http://www.bp.com/en/global/corporate/press/press-releases/bp-deepens-commitment-to-oman.html"
+  },
+  {
+    "_id": "57c2f00071977919008fe189",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f69f6ee4d814cd1916429ad6bbc8c395e3392e56.pdf",
+    "source": "https://etendering.tenderboard.gov.om/product/publicDash?CTRL_STRDIRECTION=LTR&CTRL_USERID=User&CTRL_ROLEID=null&CTRL_SID=null"
+  },
+  {
+    "_id": "57c2f5666f947638007d0774",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96140ff92206b5c4ef2081a82ce1361cd6c69ffd.pdf",
+    "source": "https://www.energistics.org/Assets/ndr10-oman.ppt"
+  },
+  {
+    "_id": "57c2f38c71977919008fe19b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc8ddcb436fdb659feb9b25c9a6162ca8929b785.pdf",
+    "source": "https://www.venturesonsite.com/news/oman-ministry-of-oil-and-gas-invites-bids-for-5-new-onshore-and-offshore-blocks/"
+  },
+  {
+    "_id": "57c2fc9344ed1942001e483a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9421fabec1eb3dd8761e3df09d952e13dde8e77.pdf",
+    "source": "http://www.offshoreenergytoday.com/total-acquires-offshore-block-in-oman/"
+  },
+  {
+    "_id": "57c2f69a71977919008fe1c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87022271b0067c9730f3eb0c9b76fca4312b0efe.pdf",
+    "source": "http://timesofoman.com/article/76376/Business/Energy/Oman-signs-oil-concession-agreement-for-block-7"
+  },
+  {
+    "_id": "57c2fdd571977919008fe1f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/044a13c3ff16ba269c3b215f43d3c4b7e96f8159.pdf",
+    "source": "http://timesofoman.com/article/68127/Business/"
+  },
+  {
+    "_id": "57c2f8a571977919008fe1d0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52fb52d654fbf126db0bd8bb8805353fc56774d4.pdf",
+    "source": "http://omanobserver.om/oman-invites-bids-for-5-new-onshore-offshore-blocks/"
+  },
+  {
+    "_id": "57c2f8dc44ed1942001e480b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e3eea374475ae64db29e496b42a22881d5bf7c94.pdf",
+    "source": "http://textlab.io/doc/773731/the-investment-opportunities-link"
+  },
+  {
+    "_id": "57c301ee71977919008fe222",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/08084477613e0d29ce1eba3335005db9c0039c9d.pdf",
+    "source": "https://www.moci.gov.om/wps/portal/MoCI/MOCI%20home/Media%20Centre/Reports%20and%20Statistics/!ut/p/a1/rZPLVsIwEIafxUWXJUObXnRXFQSk0EPlSLPhtCWUCmlKG0B8egO6EOQiHrLKJP98-WeSIIIGiGThMk1CkfIsnG1iYg67joObT1hrdi3PAsevmz3stMF3dSkIfgrsB7cqBYbX1-rPVWhVd_PhvlGT222r9yhB4FvoFRFE4kzkYoKCZT5kPE6HNFNgwhndBAqEEV-Ir-mI5mEhGM1EqUCajRalKNYbQh6nIxRYtm4Y2AxVMDSsYl27VaNIhnFsRLeYGhDZ9r7jPUs2Puf4dD5Y5zq2rVhK4Mhw4FtwyuKu4EDX9wieKcG-2fO8hquBde4IWUULkWTGo-0bCJws0u0EkYKOaUGLyqKQyxMh8vJOAQVWq1Ul4TyZ0UrMWWW6UuBQ1oSXAg1-iVEgO2od82I3MPIvvOKTQND0KwObcG2gdjGw9Ydnm77N58SR341ngr7Lq_jnf8tZn9n6OlWnvdrYFUZk5MuPlzFjw05HJcHNJ0Z7wvI!/dl5/d5/L2dBISEvZ0FBIS9nQSEh/"
+  },
+  {
+    "_id": "57c2fe326f947638007d07d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87499f7af6cdac0703a25dcca816bd847692f1fa.pdf",
+    "source": "http://www.rigzone.com/news/article_pf.asp?a_id=30942"
+  },
+  {
+    "_id": "57c305126f947638007d0804",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55df7b8ef0d86e7ad93012a861435387d84ee754.pdf",
+    "source": "http://meca.work/en/files/maraseem/Decisions4727551402.pdf"
+  },
+  {
+    "_id": "57c300ee71977919008fe20b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2df728096391541611c6b8094ee008b2ea795dd7.pdf",
+    "source": "http://shop.theoilandgasyear.com/activities-in-omans-oil-and-gas-blocks-map/"
+  },
+  {
+    "_id": "57c3078f44ed1942001e48c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b8f0f4cb467a96e42ef2dc2718ce520db8a3000d.pdf",
+    "source": "http://www.bp.com/content/dam/bp/pdf/sustainability/country-reports/Sustainability_Report_oman_khazzan.pdf"
+  },
+  {
+    "_id": "57c30c5771977919008fe271",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c5b77a7135de289abea6deb4b16a7d0a247adee.pdf",
+    "source": "https://www.google.ae/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiqiK2Av-TOAhXEthoKHdJCBwAQFggcMAA&url=http%3A%2F%2Fwww.fiu.gov.om%2Ffiles%2FEnglish%2FLand%2520Registry%2520system%2520and%2520its%2520executive%2FROYAL%2520DECREE%2520No%5B1%5D.%25202-98-%2520Cadastre%2520Law.doc&usg=AFQjCNEY6HqYvKorKjPK-7l-hfYIKHZSTg&sig2=DWduGiA8bJrKFGkakRyCOw"
+  },
+  {
+    "_id": "57c309c171977919008fe256",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/655cd0216a61543777e843e3d12b45de685fc491.pdf"
+  },
+  {
+    "_id": "57c308266f947638007d081e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97c5fc49e43806dd3fb4671204e3a1f2da654875.pdf",
+    "source": "http://www.hcfoman.com/"
+  },
+  {
+    "_id": "57c30e196f947638007d083e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0841f1c36b7a9b3f30a1d434911e4caaeacd2158.pdf",
+    "source": "http://www.petrogasep.com/"
+  },
+  {
+    "_id": "57c309d044ed1942001e48e3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/505a39974c36933718c4f42c0e37d64332b8c4a6.pdf",
+    "source": "http://www.pdo.co.om/Publications/_PublicationsFile_PDO%20Sustainability%20Report20151711213.pdf"
+  },
+  {
+    "_id": "57c310936f947638007d0857",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/43fb2f748e809c0761fc069b55ce4bd02b028e03.pdf",
+    "source": "http://www.ilo.org/wcmsp5/groups/public/@ed_norm/@normes/documents/publication/wcms_100910.pdf"
+  },
+  {
+    "_id": "57c30efd44ed1942001e4920",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f414f91c089c840da220bb3bf4617d8a9436e75d.pdf",
+    "source": "http://www.isa.org.jm/files/documents/EN/NatLeg/Oman-RD8-2011-En.pdf"
+  },
+  {
+    "_id": "57c3120a71977919008fe2c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5fbcfde7406940210809585d1252abff8a7220fd.pdf",
+    "source": "http://www.oman-oil.com/News.php"
+  },
+  {
+    "_id": "57c3183744ed1942001e4998",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d78d1b4f4ed55acd4201cdc37f264de79bab87d.pdf",
+    "source": "http://www.boem.gov/Sale-231-Blocks-Receiving-Bids/"
+  },
+  {
+    "_id": "57c3168744ed1942001e4991",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6142722508cd9468aeef6d68b54449e19d87e16.pdf",
+    "source": "https://www.kockw.com/sites/EN/Pages/Search/Search.aspx?k=portal&cs=This%20Site&u=https%3A%2F%2Fwww.kockw.com%2Fsites%2FEN"
+  },
+  {
+    "_id": "57c31b592ccee94200fe7246",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b87965baab10ca6be42d41a3feae7c4bd3da7bd.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/moz117331ENG.pdf"
+  },
+  {
+    "_id": "57c321e544ed1942001e49e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce71b6af51b3a9b1d5dfbfcc4c0be44e5ce9173c.pdf",
+    "source": "http://www.boem.gov/Phase-II-Awarded-Leases-06-16-2015/"
+  },
+  {
+    "_id": "57c323d0f529c72300cd4edb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb7d15f8f4a86f713e2a09e52d1954e25841e586.pdf",
+    "source": "http://www.vda.pt/xms/files/Newsletters/2014/Petroleum_Law_translation.pdf"
+  },
+  {
+    "_id": "57c320f6f529c72300cd4ec5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46b7aecabb12669aecf26cf933661879217e52ee.pdf",
+    "source": "http://www.boem.gov/Sale-235/"
+  },
+  {
+    "_id": "57c328ed2ccee94200fe7289",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2b85c7d3401627d9e1c96d5962dc42e1bd936df.pdf",
+    "source": "http://www.oman-oil.com/News.php"
+  },
+  {
+    "_id": "57c329d544ed1942001e4a04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfc4d343a49d22194844d0b0d07592ac15521103.pdf",
+    "source": "http://www.oman-oil.com/News.php"
+  },
+  {
+    "_id": "57c32b852ccee94200fe72a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/38e98d8bd1621e701cf4d8a6f56f814e90476083.pdf",
+    "source": "http://www.muscatdaily.com/Archive/Business/Sultanate-gets-its-first-equity-based-VC-firm-4p9s"
+  },
+  {
+    "_id": "57c32f2944ed1942001e4a32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5bb981e7ff7e5f98cfa29c2fc73bda5ec406dcdb.pdf",
+    "source": "http://www.oman-oil.com/index.php"
+  },
+  {
+    "_id": "57c3302ff529c72300cd4f30",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/048d0ad4ce295f7062e86a164d5ea04b092e8b0a.pdf",
+    "source": "http://www.teriin.org/projects/nfa/pdf/working-paper-15-Governance-of-the-petroleum-and-natural-gas-sector-in-india-a-status-note.pdf"
+  },
+  {
+    "_id": "57c330c1f529c72300cd4f36",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03b087539b3dbada049880c12b9f7d2b62d8617e.pdf",
+    "source": "http://www.sistemapaese.esteri.it/NR/rdonlyres/21AE4FCC-8843-40F1-BC5A-077B72500378/81948/OmanOilComapny.pdf"
+  },
+  {
+    "_id": "57c32d0844ed1942001e4a2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0e88473881ad21e4b421e65f6d391091e156f6ba.pdf",
+    "source": "http://www.oman-oil.com/News.php"
+  },
+  {
+    "_id": "57c3350144ed1942001e4a50",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9dceeb1630daa444861a670cbca28fc1c2def2c4.pdf",
+    "source": ""
+  },
+  {
+    "_id": "57c3352244ed1942001e4a52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f31c1a567f653fe3426b7f81727f441e338f1a8f.pdf",
+    "source": "http://www.oman-oil.com/About.html"
+  },
+  {
+    "_id": "57c333d3f529c72300cd4f45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e8570b82a6659989cd90c85d6c9808407c30388d.pdf",
+    "source": "http://cridem.org/C_Info.php?article=53718"
+  },
+  {
+    "_id": "57c3394a2ccee94200fe7304",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20114231fc30676fcad28f6e9277f8f1c251dcbc.pdf",
+    "source": "http://www.sai.gov.om/en/AuditStandards.aspx"
+  },
+  {
+    "_id": "57c3370f2ccee94200fe72fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3b228b765998c42c17e14424f92c9eaa692509f2.pdf",
+    "source": "http://www.oman-oil.com/OOC-Brochure-2-Eng%20low.pdf"
+  },
+  {
+    "_id": "57c30ff844ed1942001e492d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f4ba28d84b2f3b3062724cfd4b80d21f1dd9166.pdf",
+    "source": "http://consultaprevia.cultura.gob.pe/wp-content/uploads/2014/11/Reglamento-de-la-Ley-N---29785-Decreto-Supremo-N---001-2012-MC.pdf"
+  },
+  {
+    "_id": "57c30f6044ed1942001e4926",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f88579e4a739ace3801944515b7effcc1d2f6dd.pdf",
+    "source": "http://www.senace.gob.pe/download/senacenormativa/NAS-4-6-03-RM-092-2014-MEM-DM.pdf"
+  },
+  {
+    "_id": "57c3132044ed1942001e497b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5db7323d648bd4bf26f9dd189655763cdb52b5e5.pdf",
+    "source": "https://www.fas.org/sgp/crs/misc/RL33404.pdf"
+  },
+  {
+    "_id": "57c31c0f2ccee94200fe7249",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/892bfa1fe241353448cb1e8a8940cdb7d7048de2.doc"
+  },
+  {
+    "_id": "57c23fccd30b7f2400bb411e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/198d343feae12e4a3fa43129230170e49fce92f7.png",
+    "source": "https://eiti.org/implementing_country/13"
   }
 ]
