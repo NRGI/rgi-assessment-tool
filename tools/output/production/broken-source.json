@@ -178,5 +178,10 @@
     "_id": "579ffe0c4438b13400a9c99d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f8ec49b4cca66c96ef27aa5c8aaaf422a6656e6c.pdf",
     "source": "https://www.bou.or.ug/bou/bou-downloads/publications/Annual_Reports/Rpts/All/Annual-Report-2014-2015.pdf"
+  },
+  {
+    "_id": "57caa3e8d29d5e11009cdcb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60a080254148c9d928481146d9235e9a7af2f11c.pdf",
+    "source": "http://Les Investissements Miniers en République Démocratique du Congo"
   }
 ]

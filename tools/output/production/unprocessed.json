@@ -89,5 +89,10 @@
     "_id": "575d97236974880f005bc58c",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a719832466a6d5bc253069fd942401274275e212.pdf",
     "source": "http://cider.uniandes.edu.co/@Publicaciones/PublicacionesCoedicion/PlanOrdenamientoMinero.pdf"
+  },
+  {
+    "_id": "57cd3b545191191b00ddce06",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8c39455258a341a956ef44bbb98fbf10a488f31b.pdf",
+    "source": "http://www.budget.gouv.cd/2012/budget2016/promulgue/depenses_2016.pdf"
   }
 ]
