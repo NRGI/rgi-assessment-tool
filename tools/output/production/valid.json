@@ -2454,5 +2454,496 @@
     "_id": "57c3ba0e2ccee94200fe750b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/925f6e3c3cf25a0ba3e9e230db48b4e1df4553b2.doc",
     "source": "http://faolex.fao.org/docs/texts/NER131380.doc"
+  },
+  {
+    "_id": "57c5405f78570d5600bcdfa9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ebbac6e168fb68de8daa8839918a0b4294907bbc.pdf",
+    "source": "http://www.mofnp.gov.zm/"
+  },
+  {
+    "_id": "57c54e0cc8862c5600057f61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26f8785a6942b56fe24c458357d8764a439216d0.pdf",
+    "source": "http://www.luse.co.zm/wp-content/uploads/2012/07/Issuers-and-sectors.pdf"
+  },
+  {
+    "_id": "57c53d4f78570d5600bcdf86",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9132b1eddeb5e7534a1d4708f7bd7af59ef5f492.pdf",
+    "source": "http://www.centurionlawfirm.com/wp-content/uploads/2015/10/CameroonEnergyReport_double.pdf"
+  },
+  {
+    "_id": "57c544d0c8862c5600057f19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80b8c6b94d9409e0528c0fafcb76fb732fcf63ea.pdf",
+    "source": "http://www.zccm-ih.com.zm/copper-mining-companies-mull-over-listing-of-shares-on-zambian-bourse-2/"
+  },
+  {
+    "_id": "57c5595c78570d5600bce07c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7cff64700a6648f32bcdd9a41582dee4397669d.pdf",
+    "source": "http://www.hidromineria.lapampa.gov.ar/index.php/sample-sites/aspecto-legal/book/50-decreto-1671-liquidacion-regalias/7-aspecto-legal-hidrocarburos"
+  },
+  {
+    "_id": "57c55d3978570d5600bce0aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7cc19b9f27550a3cb50b165db5a399bff75a792e.pdf",
+    "source": "http://www.energianeuquen.gov.ar/cms/files/contenido/90/fiscalizacion.png"
+  },
+  {
+    "_id": "57c551861bbf762d0080fcf5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c755825981a1aa1a2dfa33d46abc169111343060.pdf",
+    "source": "http://www.mewd.gov.zm/"
+  },
+  {
+    "_id": "57c5679678570d5600bce106",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/967aef91cf6413db669911ab5a5a0126c6804ea9.pdf",
+    "source": "http://www.agn.gov.ar/normas-de-creacion"
+  },
+  {
+    "_id": "57c5556a1bbf762d0080fd00",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f054bd569eee403d9336dfdd3c0b2d370f15cb52.pdf",
+    "source": "https://eiti.org/sites/default/files/documents/eiti_bo_factsheet_en_final_0.pdf"
+  },
+  {
+    "_id": "57c56a171bbf762d0080fd9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f8db532582e3d9803b4a00867a84c1fdc465c078.pdf",
+    "source": "http://www.agn.gov.ar/files/informes/2010_245info.pdf"
+  },
+  {
+    "_id": "57c5697a78570d5600bce10d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6555482b02ea48a35a3b186f3aa555f7046b9552.pdf",
+    "source": "http://www.agn.gov.ar/informes/listado-de-informes"
+  },
+  {
+    "_id": "57c570991bbf762d0080fe04",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e30f2fee7483c82f76cdbbfaec161e7e551c57d1.pdf",
+    "source": "https://www.zra.org.zm/commonHomePage.htm?viewName=organizationStructure"
+  },
+  {
+    "_id": "57c56e8bbe43bc74007464a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/be694693b5ce297771e870bbb332820de0839324.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/Zambia%20Revenue%20Authority%20Act.pdf"
+  },
+  {
+    "_id": "57c56b9d1bbf762d0080fdb4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94ed8f14f1e88023d3c666ea40d4a94748ce84e4.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/amendment_act/Constitution%20of%20Zambia%20%20(Amendment,%202016-Act%20No.%202_0.pdf"
+  },
+  {
+    "_id": "57c57dcbc8862c56000580a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2634b8cc2f6495e17ef4125801992e2f66994f94.pdf",
+    "source": "http://www.ecologialapampa.gov.ar/images/stories/Imagenes/Archivos/Normativa/DECRETO_458-05.pdf"
+  },
+  {
+    "_id": "57c5745dbe43bc740074650c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2b7ff0e39b006f9218035faec364f27403cae230.pdf",
+    "source": "http://www.biodiv.be/zambia/implementation/competent-institutions-and-national-authorities/mtenr"
+  },
+  {
+    "_id": "57c57c0fbe43bc7400746531",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/117e6bcc2f955c208652b390fe493e721edc68a2.pdf",
+    "source": "https://www.daily-mail.co.zm/?p=34889"
+  },
+  {
+    "_id": "57c57927c8862c560005809b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8cd4d94fcbfede509497cbffba3b225513f2abb8.pdf",
+    "source": "https://www.daily-mail.co.zm/?p=34889"
+  },
+  {
+    "_id": "57c571fe1bbf762d0080fe27",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13fc0581031cbba4ff8969d7d1505f2f2f15e2d5.pdf",
+    "source": "http://www2.medioambiente.gov.ar/mlegal/marco/ley25675.htm"
+  },
+  {
+    "_id": "57c590f51fa28837002b4e14",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7921e49f22dcdc00c08add420ef74e836d114e5.pdf",
+    "source": "http://www.siam.economia.gob.mx/es/siam/dlt_2015"
+  },
+  {
+    "_id": "57c58338c8862c56000580cd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/805370a857c177299bd4ddaaa2f7da621d48e425.pdf",
+    "source": "http://www.businesslicenses.gov.zm/index.php/license/details/id/174"
+  },
+  {
+    "_id": "57c58832c8862c5600058136",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72febdd20f8bfdfd678ae5960e9365cfa7456e1d.pdf",
+    "source": "http://www.skynewsarabia.com/web/v…"
+  },
+  {
+    "_id": "57c58235be43bc7400746555",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df09e8671c67e09a0096b5d38822219c5ce7094f.pdf",
+    "source": "http://www.businesslicenses.gov.zm/index.php/license/details/id/174"
+  },
+  {
+    "_id": "57c57ecabe43bc740074653f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/577b067148392fa6c5e3007a9e7c5088927270ee.pdf",
+    "source": "http://www.smallarmssurveysudan.org/fileadmin/docs/working-papers/HSBA-WP40-Oil.pdf"
+  },
+  {
+    "_id": "57c5930f7d3fbf60008d2065",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5abdaac431c4ef373894fa9d07cab899b52fe7e.pdf",
+    "source": "http://clickgrafix.co/mopg/licensing-guide/"
+  },
+  {
+    "_id": "57c5ad44e339aa1000c469d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77327accaeeda13589dd397a2d3110c7a553af0a.pdf",
+    "source": "http://www.sgm.gob.mx/index.php?option=com_content&task=view&id=187&Itemid=143"
+  },
+  {
+    "_id": "57c5a74de339aa1000c4694f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72bd018d62b56483c7deeb981704d2a0ce41f51d.pdf",
+    "source": "http://clickgrafix.co/mopg/epsa-frame-work/"
+  },
+  {
+    "_id": "57c5bb49e339aa1000c46a41",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/55cc2f69637fe90b3f34781618ce20baee694343.pdf",
+    "source": "http://uscode.house.gov/view.xhtml?req=corporate+income+tax+withholding&f=treesort&fq=true&num=7&hl=true&edition=prelim&granuleId=USC-prelim-title26-section56#56_1"
+  },
+  {
+    "_id": "57c5ad3e0611de1a00469900",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4f485d33495c5287731ed871023faba3517fc200.pdf",
+    "source": "http://www.myanmar-responsiblebusiness.org/pdf/SWIA/Oil-Gas/00-Myanmar-Oil-and-Gas-Sector-Wide-Assessment.pdf"
+  },
+  {
+    "_id": "57c5d1f0e339aa1000c46aa2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a3503211e2cec797dc854ab63b62f1063ee04b4.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-production-du-phosphate-depuis-1900/resource/2e6398fd-9cd5-48e1-8551-21bb12f6e2ba"
+  },
+  {
+    "_id": "57c5d3ac0611de1a00469a39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/484b6f96fc809f4c0dbb7e1f619930980086234f.pdf",
+    "source": "http://catalog.industrie.gov.tn/dataset/tn-les-ventes-annuelles-a-l-export-des-derives-de-phosphate/resource/d847f411-4646-4a11-bd86-98cee38f381b"
+  },
+  {
+    "_id": "57c5cb949337531100e6a733",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94477b11ec9fd6cfc28a467f7c1c3525ec139eef.PDF"
+  },
+  {
+    "_id": "57c5cc599337531100e6a736",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4f47d6ae615c878cb6f1a43f09cc50559f14a9a.pdf"
+  },
+  {
+    "_id": "57c5d0dee339aa1000c46aa0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80d8296b155e677d145e3ceb40c33dfa591199db.pdf",
+    "source": "http://www.slb.com/~/media/Files/resources/oilfield_review/ors89/apr89/3_cameroon.pdf"
+  },
+  {
+    "_id": "57c5d49e0611de1a00469a49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ac8c4c0bc604dff37500f7d6375df3351df7cc2e.pdf",
+    "source": "http://www.ins.tn/en/themes/commerce-ext%C3%A9rieur"
+  },
+  {
+    "_id": "57c5d9169337531100e6a7ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5504ba0bf9b8d95d8952a25d2f85d6f45d9dbe7.pdf",
+    "source": "http://cameroon.africadata.org/fr/Reports"
+  },
+  {
+    "_id": "57c5d4280611de1a00469a40",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/551b4e762ac29bfb02cbd24827d03a11ceb5995b.pdf"
+  },
+  {
+    "_id": "57c5d4560611de1a00469a42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b625a9050b7d4a0a4ef667d5d88b1c5e93f941c.pdf",
+    "source": "https://useiti.doi.gov/explore/federal-revenue-by-company/2015/"
+  },
+  {
+    "_id": "57c5dffc0611de1a00469ac5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c81750d0d89a5701be2d46d5ec818937b6c9bf8f.pdf",
+    "source": "http://statistics.onrr.gov/"
+  },
+  {
+    "_id": "57c5dd49e339aa1000c46b3b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e981e4dfdb36f61fed32b49a1a7f62e3697147de.pdf",
+    "source": "http://www.boem.gov/Fair-Market-Value-Determination/"
+  },
+  {
+    "_id": "57c5de889337531100e6a7d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7e0c5e6061050634a270bc87f6eb316c4ec58a01.pdf",
+    "source": "http://energy.usgs.gov/RegionalStudies/GulfCoast.aspx#381490-overview"
+  },
+  {
+    "_id": "57c5e2e00611de1a00469ad5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88376ae69f6254aac9b404b6caf5fb712dd0dc24.pdf",
+    "source": "http://www.goss.org/index.php/ministries/petroleum-mining"
+  },
+  {
+    "_id": "57c5ebee0611de1a00469b05",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e996e655222b0a52e0d8d6fed1f75e4ea17a53f.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57c5e80a9337531100e6a807",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/943c5f4766b5d14e4169c069d3987ad6f054d76d.pdf",
+    "source": "https://useiti.doi.gov/downloads/federal-revenue-by-company/"
+  },
+  {
+    "_id": "57c5e62b9337531100e6a7fc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3517a70e4426c3eb5f243213cbd81255e3bd2097.pdf",
+    "source": "http://statistics.onrr.gov/ReportTool.aspx"
+  },
+  {
+    "_id": "57c5edb89337531100e6a81b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b4bac8095625eaacafea282d666d1310f5d4767.pdf",
+    "source": "https://www.cordaid.org/en/projects/research-in-transparency-accountability/"
+  },
+  {
+    "_id": "57c5ec5ce339aa1000c46b8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4ebd96694f7e35865ab153dac57d7cf6aa9fe1b.pdf"
+  },
+  {
+    "_id": "57c5f33b0611de1a00469b1b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb0d38c5b001d35bfc2fa6481ecc0451a179e71b.pdf",
+    "source": "http://mpmisouthsudan.org/MiningLicensing.html"
+  },
+  {
+    "_id": "57c60b9d9337531100e6a8a3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6faa7b226ac020aef70780f62a6b49c91508fafd.pdf",
+    "source": "http://www.zimstat.co.zw/sites/default/files/img/publications/Underpinning/Statistics_Act.pdf"
+  },
+  {
+    "_id": "57c5f39de339aa1000c46ba7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c0ceb7a3a7e702dc6915806ec246c7da96b09e28.pdf",
+    "source": "http://portals.flexicadastre.com/southsudan/"
+  },
+  {
+    "_id": "57c600800611de1a00469b47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4fefeac376e9c008035df054eafb32e54cf33f93.pdf"
+  },
+  {
+    "_id": "57c614940611de1a00469ba0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/064608b3f532f1b5bb4a67776ed91b466a5322f8.pdf",
+    "source": "http://www.aljazeera.com/indepth/inpictures/2015/03/abandoned-oilfield-toxic-wasteland-south-sudan-150302125629518.html"
+  },
+  {
+    "_id": "57c6166c0611de1a00469bab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5eea2936b47cc1b52be0652a8ffdb9e1f577f03.pdf"
+  },
+  {
+    "_id": "57c62d4b0611de1a00469c77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d96e4df529a24c2faa0fb617c0cea4b5ca9c730.pdf",
+    "source": "http://www.snim.com/index.php/news-a-media/publications.html"
+  },
+  {
+    "_id": "57c6229e9337531100e6a932",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/afabb419638a422cf7d7b408b4a7a6fe1a1eed81.pdf",
+    "source": "http://www.financialafrik.com/2016/04/10/mauritanie-lex-adg-de-la-snim-defend-son-bilan/#.V8YiLVvJzIU"
+  },
+  {
+    "_id": "57c62b560611de1a00469c6d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/725aefa4c11ea8f04a4b5b71ac53bfd5b594fb93.pdf",
+    "source": "http://www.snim.com/index.php/news-a-media/publications.html"
+  },
+  {
+    "_id": "57c6d95fcfb6c22400860708",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9774df0d99b09cf44714eee0fa46ba96f8b02544.pdf",
+    "source": "http://mininfo.gov.sd/التوقيع-على-اتفاقية-للاستكشاف-النفطي/"
+  },
+  {
+    "_id": "57c66d530611de1a00469c89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c81f8d113802b5baf54f11b0728cc2ee1054668.pdf",
+    "source": "http://www.portaldogoverno.gov.mz/index.php/por/Imprensa/Noticias/PGR-atras-dos-gestores-que-nao-declaram-bens"
+  },
+  {
+    "_id": "57c66b019337531100e6a974",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98102bb1bc0d11086a48473394c818dbf86b1f6e.pdf",
+    "source": "http://www.mec.gov.mz/Legislacao/Legislacao/Lei%20Probidade%20P%C3%BAblica.pdf"
+  },
+  {
+    "_id": "57c700393bdcc52500485d89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ef36ab9be0d54a3a8508ff8ae07958100380edf.pdf",
+    "source": "http://energy.gov/sites/prod/files/nepapub/nepa_documents/RedDont/Req-NEPA.pdf"
+  },
+  {
+    "_id": "57c6e9fb5acca91b00e5ac12",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9e3fe89f639a6a37699f49cca6a8cd1729f2e7b7.pdf",
+    "source": "http://moj.gov.sd/content/lawsv4/12/1.htm"
+  },
+  {
+    "_id": "57c70151d202363800c17598",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/109c67ac7fef61e0d5da09395481e33deb459689.pdf",
+    "source": "https://www.law.cornell.edu/uscode/text/5/552"
+  },
+  {
+    "_id": "57c6ed3208e5e22e002497bd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0540745c7109bf5f95574627ecf0854753d4d606.pdf",
+    "source": "http://www.tax.gov.sd/documents/Al-dakal.pdf"
+  },
+  {
+    "_id": "57c705dad202363800c175ff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4ae7991382bd546400eb0286dbc664f050107e42.pdf",
+    "source": "http://www.boem.gov/nepaprocess/"
+  },
+  {
+    "_id": "57c72a70948dff2e007c4ac4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6595a15269a3ee96a4f4883c92a730d95c04978e.pdf",
+    "source": "http://www.jus.gob.ar/media/3136411/rg_3-2016.pdf"
+  },
+  {
+    "_id": "57c716ed3bdcc52500485ee3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2a050748fc270ba6f3f71d6d102db9e587ff4e3.pdf",
+    "source": "https://www.gpo.gov/fdsys/pkg/CFR-2012-title30-vol2/pdf/CFR-2012-title30-vol2-part254.pdf"
+  },
+  {
+    "_id": "57c70689948dff2e007c49a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5ee41a9972aeed44ebcc1843a8f9e4e99a83b00f.pdf",
+    "source": "http://www.boem.gov/Social-and-Economic-Impact-Ongoing-Studies-GOM/"
+  },
+  {
+    "_id": "57c705bed202363800c175fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0afbc742d8f82a80f09121d5882d35405042dcc6.pdf"
+  },
+  {
+    "_id": "57c73cdd948dff2e007c4af1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53455a15e48d5219697ad00089fbadc0afbbd429.pdf",
+    "source": "http://mpmisouthsudan.org/docs/PR06Oct2011.pdf"
+  },
+  {
+    "_id": "57c739f8948dff2e007c4aee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c7146479a9cb18ece28a9fddf38b7c8a63ec4bde.pdf",
+    "source": "http://www.bloomberg.com/news/articles/2016-05-26/south-sudan-oil-production-about-130-000-barrels-day-minister"
+  },
+  {
+    "_id": "57c73968d202363800c17778",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2c7d4c7076f7bcba6c4e412b1238ef56f21a2bd.pdf",
+    "source": "http://www.oilreviewafrica.com/downstream/downstream/south-sudan-oil-revenue-drops-amid-renewed-conflict"
+  },
+  {
+    "_id": "57c733aed202363800c17768",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/76706de0221f4c4502673eb3abd68d8473cd3fec.pdf",
+    "source": "http://www.boem.gov/BOEM-FY-2016-Budget-Justification/"
+  },
+  {
+    "_id": "57c7419cd202363800c177b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d8d6ddaf297a055b2eaa4d4c7a6f7e39a75c6c87.pdf",
+    "source": "http://mpmisouthsudan.org/Publications.html"
+  },
+  {
+    "_id": "57c73f5d3bdcc52500485fbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35eaf613b38e30746a52a3afd1b451ec75fbce01.pdf",
+    "source": "http://www.energia.rionegro.gov.ar/index.php?contID=12376"
+  },
+  {
+    "_id": "57c73f39948dff2e007c4afa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77291cc2e8ade66aa22a9f504811a14c6a6aa4e8.pdf",
+    "source": "https://www.sec.gov/comments/df-title-xv/resource-extraction-issuers/resourceextractionissuers-63.pdf"
+  },
+  {
+    "_id": "57c73eecd202363800c17799",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b045c1fcaa4a205c0cda3f77f6d21f31f4fae51a.pdf",
+    "source": "http://www.hidromineria.lapampa.gov.ar/index.php/empresas-productoras"
+  },
+  {
+    "_id": "57c74765948dff2e007c4b18",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93a596d4c6a4bab7ead10ef469571a637ecdc6a4.pdf",
+    "source": "http://www.greenpeace.org/argentina/Global/argentina/report/2015/bosques/Informe_Calilegua_FINAL.pdf"
+  },
+  {
+    "_id": "57c74a8a948dff2e007c4b27",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b7c0cc8b6db80381cdd54a699e36d305ee41260f.pdf",
+    "source": "http://mpmisouthsudan.org/index.html"
+  },
+  {
+    "_id": "57c759d4948dff2e007c4b4c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/023ca51229773ddb13de4a3472cc1b0c5efa955c.pdf",
+    "source": "http://servicios.infoleg.gob.ar/infolegInternet/anexos/30000-34999/31996/norma.htm"
+  },
+  {
+    "_id": "57c75de8d202363800c17809",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8954dfe91b3d9b61a914c10e89e192960e32a093.pdf",
+    "source": "http://www.reuters.com/article/us-southsudan-corruption-idUSBRE8530QI20120604"
+  },
+  {
+    "_id": "57c74efd3bdcc52500485fe5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d3712accf3d747764650cc3e6fc57c54ff5f0d56.pdf",
+    "source": "http://mpmisouthsudan.org/docs/PR13Jan2012.pdf"
+  },
+  {
+    "_id": "57c75e2ed202363800c1780f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5b5cb8f3b6333d1a90202f619f5bf783d11f25a0.pdf",
+    "source": "http://www.southsudannation.com/pres-kiirs-officials-sentenced-to-serve-life-in-jail-for-14m-theft-breaking-news/"
+  },
+  {
+    "_id": "57c77f36d202363800c1784c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdbdb346df6659bef6fd99a04cda40692350c433.pdf",
+    "source": "http://grss-mof.org/ministry/directorates/budget/"
+  },
+  {
+    "_id": "57c765143bdcc52500486057",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15dbdeb5beead81da2556e136d59a2b84c3cf89f.pdf",
+    "source": "http://www.snim.com/index.php/produits/marches.html"
+  },
+  {
+    "_id": "57c75eaed202363800c17815",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18526b1be5c5cd03da6b9720ba84d56e139e1179.pdf",
+    "source": "http://aasep.org.ar/noticias/"
+  },
+  {
+    "_id": "57c778e83bdcc52500486066",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b6ec9fd22de41c081273c2bc9fba7fa6a47dbed.pdf"
+  },
+  {
+    "_id": "57c77f16948dff2e007c4b99",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/106ce05f24547c8d9a79e3f8c6036f44da04ef7e.pdf"
+  },
+  {
+    "_id": "57c7aa5ad202363800c17895",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94582efa39b685b433567d102f962bb8216a95bf.pdf",
+    "source": "http://www.auditchamber-ss.org/reports-1-annual.html"
+  },
+  {
+    "_id": "57c78189d202363800c1784f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bf257973275eaf57150ba8b594573328577d349.pdf",
+    "source": "http://www.abc.net.au/news/2015-11-03/png-government-announces-huge-drop-in-revenue/6909078"
+  },
+  {
+    "_id": "57c7aa32d202363800c17893",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b04167536fb02c0cba73e42fdf1acafe09ffc936.pdf",
+    "source": "http://www.auditchamber-ss.org/reports-2-financial.html"
+  },
+  {
+    "_id": "57c79c2b3bdcc525004860c4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bf4f9bdda3ad1c8501d7bc7c6e2d2ef2c7f4786.pdf",
+    "source": "http://grss-mof.org/wp-content/uploads/2016/05/Final-Q-2-macro-fiscal-report-240316.pdf"
+  },
+  {
+    "_id": "57c53b0cc8862c5600057eab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3c18d955193938498f93d8f441e2f410d2bc404.pdf",
+    "source": "http://www.statistics-cameroon.org/news.php?id=345"
+  },
+  {
+    "_id": "57c5e1309337531100e6a7e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8d1d9fd4c4fdb7ad79cb880416697d6f3d94163d.pdf",
+    "source": "https://eiti.org/implementing_country/42"
+  },
+  {
+    "_id": "57c6154ae339aa1000c46c19",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/149a31c13f5bc4fb069f0639051cb74e1ffce135.pdf",
+    "source": "http://www.aljazeera.com/indepth/features/2015/03/soaked-oil-cost-war-south-sudan-150302102747401.html"
+  },
+  {
+    "_id": "57c6a0e60611de1a00469cfd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/548ab2e218c53b2a9ca1f154748b76689c1e440e.pdf",
+    "source": "http://businesslicenses.gov.zm/index.php/index/index/id/1"
+  },
+  {
+    "_id": "57c72afb948dff2e007c4ac9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78d00746adfadef6d1e3584ac86c728153aed259.pdf",
+    "source": "http://www.jus.gob.ar/media/2951604/resolucion_general_07-15_actualizada.pdf"
+  },
+  {
+    "_id": "57c79e683bdcc525004860c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d2145ff90d9d3e6819f7ec308f7fcb6734e64d2a.pdf",
+    "source": "http://grss-mof.org/documents/"
+  },
+  {
+    "_id": "57c6e6b508e5e22e00249712",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4afeba58dfc97d54d955a4cee2aed99f5f9e4703.jpg",
+    "source": "http://clickgrafix.co/mopg/wp-content/uploads/2015/11/blocksmap-e1447584727439.jpg"
+  },
+  {
+    "_id": "57c6d9122228241a007b0023",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea59cbbde1a9cc0596237f02d387001ed98d3797.png",
+    "source": "http://mopg.gov.sd/nodes/nodes/map"
+  },
+  {
+    "_id": "57c5dc290611de1a00469aaa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9132c7fc912798803dd15c36e4d541ffb902189e.xlsx",
+    "source": "http://cameroon.africadata.org/fr/Reports"
   }
 ]
