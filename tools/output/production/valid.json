@@ -3903,5 +3903,245 @@
   {
     "_id": "57cab06bd29d5e11009cdd2d",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/617fa3c66679ed561feb0b9c1d5be9d90bce6e5c.doc"
+  },
+  {
+    "_id": "57cd47da3a7bc019006dfdf7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59ad7827c32362276e4d7f49bb920bbd6a5ef775.pdf",
+    "source": "http://www.rfi.fr/afrique/20150226-rdc-le-non-versement-redevance-miniere-cree-polemique"
+  },
+  {
+    "_id": "57cd951c55088543005dde35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a39043d4a817454ff9fed2060401dc874623d1c2.pdf",
+    "source": "https://www.beac.int/index.php/beac/la-beac-a-40-ans/274-1972-2012-40-ans-dhistoire-de-la-beac"
+  },
+  {
+    "_id": "57cd68b3d362d33700c2d72a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6ba96cd8769dede95e22182368fa68aa55841bf1.pdf",
+    "source": "http://www.at.gov.mz/por/Media/Files/Lei-n1-34-2007-de-31-de-dezembro"
+  },
+  {
+    "_id": "57cd46943a7bc019006dfdb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/266643504069c77454bc685bec5db39186eb754b.pdf"
+  },
+  {
+    "_id": "57cd462649499b2500cf357a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef0e7070ca9c9991d65466b36f6fa165f27dc4b4.pdf",
+    "source": "http://renlac.com/download/renlac/autres/RAPPORT-DETUDE-SUR-LES-PERCEPTIONS-ET-PRESOMPTIONS-DE-CORRUPTION-DANS-LE-SECTEUR-MINIER-AU-BURKINA-FASO.pdf"
+  },
+  {
+    "_id": "57cdaf185755a34100ae703a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc8f66de75dd9b00965856d7cc1fa417356e7910.pdf",
+    "source": "http://energy.gov/sites/prod/files/nepapub/nepa_documents/RedDont/Req-NEPA.pdf"
+  },
+  {
+    "_id": "57cdb50155088543005ddeea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c20cca555504acde00cbc01f025ff56b7b0f9c8.pdf",
+    "source": "http://www.boem.gov/Submitting-Complete-Exploration-and-Development-Plans/"
+  },
+  {
+    "_id": "57cdb2cb55088543005ddec4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9be21082e5ef70162b87ed1739d7852a95bafb02.pdf",
+    "source": "http://www.uemoa.int/fr/directive-ndeg0597cmuemoa-relative-aux-lois-de-finances"
+  },
+  {
+    "_id": "57cdb1c055088543005ddeb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5f276ffd9fe62ce0469628baa739c511b030e45.pdf",
+    "source": "http://www.epw.senate.gov/cercla.pdf"
+  },
+  {
+    "_id": "57cd9826d362d33700c2dada",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b363f3d7344bfebd6f5e6a409b4760c2e013ae3.pdf"
+  },
+  {
+    "_id": "57cdcf555755a34100ae7129",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce08a4a9df39e9f41d2a3d5e386623dba3618529.pdf",
+    "source": ""
+  },
+  {
+    "_id": "57cdc8295755a34100ae7105",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3d6b9787c9868416c9dc16ae2ec9970d698a589d.pdf",
+    "source": "https://www.gpo.gov/fdsys/pkg/CFR-2011-title30-vol2/pdf/CFR-2011-title30-vol2-sec250-1701.pdf"
+  },
+  {
+    "_id": "57cdccac55088543005ddfa5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7282469e2e0bdfb6685c3ad545992ae4ab5cc417.pdf",
+    "source": "https://www.bsee.gov/site-page/tar-decommissioning-projects"
+  },
+  {
+    "_id": "57cdbbd65755a34100ae70a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3896355566302e3a9022faf6ef78c1f73fe534c9.pdf",
+    "source": "http://www.epw.senate.gov/opa90.pdf"
+  },
+  {
+    "_id": "57cdcc515755a34100ae710b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb174489a953d34417430cf3a32b338e46d8e28a.pdf",
+    "source": "http://www.gao.gov/assets/680/674353.pdf"
+  },
+  {
+    "_id": "57cdd37b55088543005de01f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/702ddf1682d79503ca87330e75f764ebe406f9c6.pdf",
+    "source": "http://www.impots.cm/index.php?page=fiscalite-petroliere&hl=fr_FR"
+  },
+  {
+    "_id": "57cddc4e22bdde4d00793d24",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/45132b5616fe0c7b08b0eb3847b0fc5bbab5b050.pdf",
+    "source": "http://ghana.revenuesystems.org/desktop/desktop?workSpaceId=120#"
+  },
+  {
+    "_id": "57cde6cca0d2d24b002db19f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/811e5845691878014e5dddabad37a405331b7958.pdf",
+    "source": "http://www.realites.com.tn/2014/01/compagnie-des-phosphates-de-gafsa-comment-eviter-le-naufrage-annonce/"
+  },
+  {
+    "_id": "57cde775a0d2d24b002db1a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4aba46f0177c45fa372f7a645e5c723ea624dfb3.pdf",
+    "source": "http://www.yeclo.com/2016/05/04/les-phosphates-de-gafsa-tunisie-enregistrent-un-d%C3%A9ficit-annuel-de-500-millions-de-dollars/"
+  },
+  {
+    "_id": "57cdf52fa0d2d24b002db1ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d16b1f596fa038e6963e84dda34c245c8c3c3c12.pdf",
+    "source": "http://www.eservices.gov.gh/MINCOM/SitePages/Guidelines-MiningLicence.aspx"
+  },
+  {
+    "_id": "57ce09bc6a7c6d570020e30d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09652e20ede384cd316c69fdf560ed6f050e2733.pdf",
+    "source": "https://home.kpmg.com/content/dam/kpmg/pdf/2015/08/papua-new-guinea-2015.pdf"
+  },
+  {
+    "_id": "57ce0b976a7c6d570020e310",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5a27dfdca451d02653fb4db7267b006a1a3f124e.pdf"
+  },
+  {
+    "_id": "57ce12806a7c6d570020e321",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90f59a069e84dfbd438a734b4d6d44d6938db824.pdf"
+  },
+  {
+    "_id": "57ce18416a7c6d570020e32b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f3a397849a948200552f2886d06226ce24d0def.pdf"
+  },
+  {
+    "_id": "57ce19f06a7c6d570020e333",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64709987ada9e03d9fed1ac76a31947aecdd43c2.pdf"
+  },
+  {
+    "_id": "57ce34156a7c6d570020e367",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bfa1189193e44828780ec0490d6ec71f7a3aae7e.PDF",
+    "source": "http://www.irc.gov.pg/Direct%20Tax.PDF"
+  },
+  {
+    "_id": "57ce33cd6a7c6d570020e365",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e015cc074858b44a93d82cab69eb90443248b9e4.pdf",
+    "source": "http://www.energy.gov.tt/wp-content/uploads/2013/11/Petroleum_Taxes_Act.pdf"
+  },
+  {
+    "_id": "57ce23466a7c6d570020e33e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f86e4ccc23c2da0b06c8458fb389228671511ac.pdf",
+    "source": "http://www.irc.gov.pg/"
+  },
+  {
+    "_id": "57ce46ea6a7c6d570020e3c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d0f980b9874fd52f8fd91e12532e41202b07751.pdf",
+    "source": "http://www.minfi.gov.cm/index.php/fr/organisation"
+  },
+  {
+    "_id": "57ce39a56a7c6d570020e39a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9d23bcb2296d9efdaaa90855e4141337c02b8f5.pdf",
+    "source": "https://www.google.tt/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiwnPiX5fnOAhXDmx4KHa_9AAsQFgggMAE&url=http%3A%2F%2Frgd.legalaffairs.gov.tt%2Flaws2%2Falphabetical_list%2Flawspdfs%2F75.01.pdf&usg=AFQjCNE7CquwmTHYklkt0VxP3hTMkplBgQ&sig2=X2lNWV9gNId8NNxy1KkfnA&bvm=bv.131783435,d.dmo"
+  },
+  {
+    "_id": "57ce47ca6a7c6d570020e3d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b43d06f0282851659eb86e5056c345d26fabc88e.pdf"
+  },
+  {
+    "_id": "57ce4b8d6a7c6d570020e3f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e2434d67d267a3bbe71db5699607eb88b455f4b.pdf"
+  },
+  {
+    "_id": "57ce4d426a7c6d570020e3fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b38f7259bec162bcc0bb18b23b1edd136a49df7.pdf",
+    "source": "http://pvc.vn/tinchitiet/tabid/93/id/1604/Tap-doan-Dau-khi-Quoc-gia-Viet-Nam-Vai-tro-va-trach-nhiem-doi-voi-nen-kinh-te.aspx"
+  },
+  {
+    "_id": "57ce55f6a0d2d24b002db2cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90be7bf033b89524478b4382c31fd6d37353bbc5.pdf",
+    "source": "http://www.misa.com.vn/tin-tuc/chi-tiet/newsid/48876/Lich-nop-cac-loai-bao-cao-Thue-nam-2016-cap-nhat-moi-nhat"
+  },
+  {
+    "_id": "57ce5a6a6a7c6d570020e413",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b8e462f178b9aa5bb4022d78c927f1f2bedb9f5.pdf",
+    "source": "http://www.moit.gov.vn/vn/tin-tuc/4524/pvn--nop-ngan-sach-nha-nuoc-an-tuong.aspx"
+  },
+  {
+    "_id": "57ce60906a7c6d570020e425",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9155e9d0cdf03a624b5939d6a2509d33b880f6a7.docx",
+    "source": "https://www.google.com.af/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&sqi=2&ved=0ahUKEwjyn6nEifrOAhVGvxQKHa_XBTwQFggwMAQ&url=http%3A%2F%2Fwadsam.com%2Fafghan-business-news%2Fno-contract-was-signed-with-the-indian-consortium-on-hajigak-mine-afghan-mines-minister-232%2F&usg=AFQjCNEK3yT5wykuQeVH9LE3TmasTCOkyA&sig2=-T9IOyziKpWUn7NXqw1_5A&bvm=bv.131783435,d.d24"
+  },
+  {
+    "_id": "57ce6c62a0d2d24b002db319",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eca92502c0574b6b736fa2e77a28ae1d2ec94cfc.pdf",
+    "source": "http://dgmv.gov.vn/index.php?option=com_k2&view=item&id=6252:t%C3%A1c-%C4%91%E1%BB%99ng-x%C3%A3-h%E1%BB%99i-c%E1%BB%A7a-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-khai-th%C3%A1c-kho%C3%A1ng-s%E1%BA%A3n&Itemid=357&lang=vi"
+  },
+  {
+    "_id": "57ce82af6a7c6d570020e4ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/93dc10be7e2eb13dbc2151b591438a6ca4a8bed2.pdf",
+    "source": "http://itie-tchad.org/wp-content/uploads/2016/03/Fair-Links-20160209-Tchad-ITIE-2013-Rapport-ITIE-2013-VP-1.pdf"
+  },
+  {
+    "_id": "57ce8c7093ee175500961baf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b43a244f87e2376f8a86c237ff477ed8b967c7f.pdf",
+    "source": "http://itie-tchad.org/wp-content/uploads/2016/08/Rapport-%C3%A9tude-de-cadrage-2014.pdf"
+  },
+  {
+    "_id": "57cebe816575976b0049f424",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bfdf7fd7a472ee9654a80aeda3f601da69273b0.pdf",
+    "source": "http://www.ccsrp-tchad.org/w1/images/publication_ccsrp/RAPPORT_ANNUEL_2013.pdf"
+  },
+  {
+    "_id": "57cebf4c0440d26900f728a5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7555b0409d4ee2c069dc2a7e2b5e6e48beeaa5a8.pdf",
+    "source": "http://cidadaniafiscal.blogspot.com/2013/09/tributacao-de-mais-valias_9.html"
+  },
+  {
+    "_id": "57cec5ee0440d26900f728b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/db108ae4cf9d59bfb9e6636cab8b52e7c75c3fca.pdf",
+    "source": "http://www.minfi.gov.cm/index.php/en/entreprises/48-entreprises/questions-fiscales1/154-the-issue-of-tax-pressure-in-cameroon"
+  },
+  {
+    "_id": "57cec8360440d26900f728f1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b02219b0d810f20cd9c8075ee0e2aa18b4b5e36d.pdf",
+    "source": "http://cidadaniafiscal.blogspot.com/2013/09/receitas-do-estado.html"
+  },
+  {
+    "_id": "57cf0b3077fee80f00cc23e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/167d9b2fe080d50759f13c1c1bac165ff65411ca.pdf",
+    "source": "http://www.sonatrach.com/PDF/abstract_2015_FR.pdf"
+  },
+  {
+    "_id": "57cf0fe677fee80f00cc242a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd92db801134c6e1283901b3c38b40958232c159.pdf",
+    "source": "http://www.sonatrach.com/rapport-annuel.html"
+  },
+  {
+    "_id": "57cf16280440d26900f72bf8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c77fdea8c4a4bac58b4b8f97c4af3e935edaf76f.pdf"
+  },
+  {
+    "_id": "57cf1ded77fee80f00cc2497",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfd76934ce3f6acfe81722a5e744690a58c2a57b.pdf",
+    "source": "http://www.mmtimes.com/index.php/national-news/6474-govt-opens-oil-and-gas-auction.html"
+  },
+  {
+    "_id": "57cf21b6bae3d5750011e00e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a640228819a06dbfc2e30a3a3aaba75ac260c5b4.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/14386-no-more-bidding-on-oil-and-gas-blocks-planned-until-at-least-2016-says-senior-moge-official.html"
+  },
+  {
+    "_id": "57cf23e1bae3d5750011e021",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dfff33f8eb63c169329c6bd78f43ae05b930f27e.pdf",
+    "source": "http://www.mmtimes.com/index.php/business/9977-government-announces-offshore-block-winners.html"
+  },
+  {
+    "_id": "57ced10d6575976b0049f4d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7db0032aa77515f49bcbe8edc026c9487da67aa1.docx"
   }
 ]
