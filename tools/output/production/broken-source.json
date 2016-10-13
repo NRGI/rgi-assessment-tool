@@ -183,5 +183,15 @@
     "_id": "57caa3e8d29d5e11009cdcb5",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/60a080254148c9d928481146d9235e9a7af2f11c.pdf",
     "source": "http://Les Investissements Miniers en République Démocratique du Congo"
+  },
+  {
+    "_id": "57dac30e341e064b00e34b23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e0c596f5ee8e6f0a2ba58479d667472ee7ee0621.pdf#page=18&zoom=70&search=Kumpulan Wang Amanah Negara",
+    "source": "http://www.parlimen.gov.my/files/opindex/pdf/OPDR26112014.pdf#page=18&zoom=70&search=Kumpulan Wang Amanah Negara"
+  },
+  {
+    "_id": "57dc41234ca5905500625ac8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe121b4d9f34c9a3e1df5b084b31f2100f9b7716.pdf",
+    "source": "https://www.audit.gov.my/images/pdf/2016/LKAN_2015_Siri1/FEDERAL/1%20-%20lkan2015%20penyata%20kew-5.pdf"
   }
 ]

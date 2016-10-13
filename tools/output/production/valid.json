@@ -5823,5 +5823,476 @@
     "_id": "57d7e014fda4e51a00adc153",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f110b4db4638d8b90c11c8ab043689d0a82d2227.docx",
     "source": "http://afrique.lepoint.fr/economie/afrique-dette-publique-attention-danger-23-02-2016-2020585_2258.php"
+  },
+  {
+    "_id": "57d96c11a9abe51900b02739",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad668d810f94005c0c622fc454bc8e381a7131ee.pdf",
+    "source": "http://www.budget.gouv.cd/budget-2017/"
+  },
+  {
+    "_id": "57d972b6b113d52400d595c7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3af651366d2c19000f3014f214c88aee2f5b6a34.pdf",
+    "source": "https://www.codelco.com/memoria2015/pdf/estados-financieros/en/codelco-financial-statements-2015.pdf"
+  },
+  {
+    "_id": "57d97544a5e8f63700a8870a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4610a85fd9b1827febe09e4b4fdaf5aa0376602.pdf",
+    "source": "http://www.budget.gouv.cd/2012/budget2017/circulaire_2017.pdf"
+  },
+  {
+    "_id": "57d99bbf61cf382300355e42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de951813cb66748c340b59d92506c25480808d06.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/378676fd2fa886d21a2703fc0caa8633400e3e7c.pdf"
+  },
+  {
+    "_id": "57d9ac493c189f410030f463",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9da88abdecd6366cdf245557541016c7e0fd81e1.pdf",
+    "source": "http://www.contraloria.cl/SicaProd/SICAv3-BIFAPortalCGR/faces/buscadorBifa?_adf.ctrl-state=fr5gl5d7j_3"
+  },
+  {
+    "_id": "57d9d14261cf382300355eda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b4b6cc1036042d716f6412553f0d71a69c6dfb69.pdf",
+    "source": ""
+  },
+  {
+    "_id": "57d9c2b861cf382300355ebb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bcbca1d44226d7b9af7e9abada5fce52593627c1.pdf"
+  },
+  {
+    "_id": "57d9c0e561cf382300355eb3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3ab910998eda4f26da190b9ae7b6008001abf0f8.pdf"
+  },
+  {
+    "_id": "57d9e28b3c189f410030f53d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1b0498bc337537e76e47c65b1eb33676b581f153.pdf"
+  },
+  {
+    "_id": "57d9dcbf61cf382300355f22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6f38eb7459b2321e0f5be0ee71ecd08685f01f76.pdf",
+    "source": "http://www.mays-mouissi.com/2016/05/13/classement-pays-dafrique-plus-endettes-2016/"
+  },
+  {
+    "_id": "57d9d96ab5e62c2e0042f7a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09812558bab27d673b0551da9c9e714c7e55516e.pdf",
+    "source": "http://www.radiookapi.net/2015/10/26/actualite/economie/rdc-le-projet-de-budget-2016-est-realiste-affirme-matata-ponyo"
+  },
+  {
+    "_id": "57d9db563c189f410030f520",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cfc5d8bd6b979b9123d59a5548e76e3221fb80be.pdf"
+  },
+  {
+    "_id": "57d9e81db5e62c2e0042f7e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2d57bf18dc736bba56a621a9a4379cd21cb0a9f.pdf"
+  },
+  {
+    "_id": "57d9f3d861cf382300355f68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e8ab08f201c95b073812cb833dc4643772fef7b.pdf",
+    "source": "https://www.santos.com/media/2049/041209_png_lng_project_signs_lng_sale_and_purchase_agreement_with_sinopec.pdf"
+  },
+  {
+    "_id": "57d9f6fc3c189f410030f59a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10dc6f8058a8557e5ab7de47864552240f92cece.pdf",
+    "source": "http://www.abc.net.au/news/2014-04-29/an-png-lng-production-begins-ahead-of-schedule/5418646"
+  },
+  {
+    "_id": "57d9e9cb61cf382300355f3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5cd5529f8d348421c672b44b2fecf6aa5f104ae.pdf",
+    "source": "http://www.congomines.org/system/attachments/assets/000/000/875/original/TCC_Notes_et_Commentaires_sur_le_Projet_de_Lancement_du_Rapport_ITIE-RDC_2014_(1).pdf?1444735764"
+  },
+  {
+    "_id": "57d9e8af61cf382300355f3a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6ed6490ffcc705d3f9f45bdfa2b044a55cf54d4.pdf",
+    "source": "http://www.congomines.org/system/attachments/assets/000/001/113/original/TCC_Notes_et_Commentaires_sur_le_Projet_du_Rapport_ITIE_2012.pdf?1462546345"
+  },
+  {
+    "_id": "57d9ebf13c189f410030f55c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e2c4d2990aeb6d29e55df5aa0c3a5612de47530.pdf",
+    "source": "http://www.businessadvantagepng.com/papua-new-guineas-png-lng-project-gets-money/"
+  },
+  {
+    "_id": "57d9ff4db5e62c2e0042f842",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eb38e648933a2ca1d19b9e1fd71eef7da9ede308.pdf",
+    "source": "http://www.appa.int/images/ministr/rdc.html"
+  },
+  {
+    "_id": "57da09293c189f410030f5c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4033c9c04f960fcd50d695665d01713ebd2035aa.pdf",
+    "source": "http://www.business-et-finances.com/cohydro-relance-des-activites-de-vente-au-reseau/"
+  },
+  {
+    "_id": "57da0f8db5e62c2e0042f875",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9f76050b37ddfcd9580f9fb21f1c1eba85526705.pdf"
+  },
+  {
+    "_id": "57da17e7b5e62c2e0042f8b6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fcadb337eb6e810aef09bae1a8e2653c65e26309.pdf"
+  },
+  {
+    "_id": "57da2f873c189f410030f699",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67bbd48280f2f33e7f80c75e67b3749436d79aff.pdf",
+    "source": "http://www.ecolex.org/details/legislation/petroleum-regulations-1974-pu-a-4321974-lex-faoc040266/?"
+  },
+  {
+    "_id": "57da8423f428982d005fd9d1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/98a8c144ad74ba73e5d6aada660a529c1d6991b4.pdf",
+    "source": "https://www.globalwitness.org/fr/archive/8356/"
+  },
+  {
+    "_id": "57da5291844bb63800feff42",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/36b4d2602dfa834944ce7559d51a6587d4f12a83.pdf",
+    "source": "http://cd.chm-cbd.net/implementation/fol320521/loi-portant-princ-fond-sur-l-env_2011.pdf"
+  },
+  {
+    "_id": "57da4951f428982d005fd92b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d4051b1a7ff4a460f09cdfa4c5dd82b37ee8dea9.pdf",
+    "source": "http://www.taxand.com.my/Tax%20and%20the%20Upstream%20OnG%20Sector%20-Malaysian%20BusinessAugust.pdf"
+  },
+  {
+    "_id": "57da48c0844bb63800feff2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/595d88b13c2f593f398cecbb746ee4d6d976d01d.pdf"
+  },
+  {
+    "_id": "57da4743844bb63800feff2a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/77fc5ae4aaba1f2885ce5edcf2aa68f8764d4e37.pdf",
+    "source": "http://www.petronas.com.my/media-relations/media-releases/Pages/article/PETRONAS-AWARDS-EXPLORATION-BLOCK-SK410B.aspx"
+  },
+  {
+    "_id": "57da8b2cded5383700b9aaa8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6fd06e74e8fa3d4b5496c3fa39372403e71452de.pdf"
+  },
+  {
+    "_id": "57daa7931afd164100200393",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44559bfb0ec987a6c1a0bfd952296b7d1b047321.pdf"
+  },
+  {
+    "_id": "57daa7e7341e064b00e34a2c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe14f31375eea45398d487f3ef999c9758e0d5ad.pdf",
+    "source": "http://www.afd.fr/webdav/site/afd/groups/Agence_Guinee/public/_vignettes_/AFD%20-%20Fiche-projet-PACV%20appui%20aux%20communaut%C3%A9s%20Guin%C3%A9e%20-%202014.pdf"
+  },
+  {
+    "_id": "57daa85f1afd16410020039f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72816f833ac4429cc1946edcd428b69fd122d4ee.pdf"
+  },
+  {
+    "_id": "57dab7cc1afd16410020041a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f31199f362a83edf6ae1acde3f2b586fbc61cf5c.pdf"
+  },
+  {
+    "_id": "57daba86c4f5bd4c00ca424b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e9a8cb62f7d66aeffe740cc27c7e91f424c9358.pdf"
+  },
+  {
+    "_id": "57dacb05c4f5bd4c00ca42eb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13282c16d2873ca395f452d8179e888895db0f52.pdf",
+    "source": "http://catastro.sernageomin.cl"
+  },
+  {
+    "_id": "57daf390c4f5bd4c00ca4402",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f307249e8684b0400de52cf48ec1fe24e40d5af6.pdf",
+    "source": "http://www.sernageomin.cl/propiedadminera.php"
+  },
+  {
+    "_id": "57db24961afd164100200632",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d42b5e85ad8d0aa9a7740beff3831e8115ef255d.pdf",
+    "source": "http://www.financialgazette.co.zw/indigenisation-no-one-size-fits-all/"
+  },
+  {
+    "_id": "57db3c262896f1560009e854",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb89871104ad4a15c7adfff4807e5c768ea82b49.pdf",
+    "source": "http://www.gcc-legal.org/LawAsPDF.aspx?country=0&LawID=4056"
+  },
+  {
+    "_id": "57db4fce99b4525500cc3c72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6346094f932486350d64c9ab7c3b12938c6abdbb.pdf",
+    "source": "http://www.mpi.org.au/2015/02/a-new-mine-for-woodlark-island/"
+  },
+  {
+    "_id": "57db1ce7341e064b00e34cca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/71df537c2ebb8e0752b8b439a1acc497855908e0.pdf",
+    "source": "http://www.parlzim.gov.zw/acts-list/public-finance-management-act-22-19"
+  },
+  {
+    "_id": "57db4c192896f1560009e8a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f5da3d744963c4b622a7b66e02a70007a16b6e0b.png",
+    "source": "http://portal.mra.gov.pg/Map/"
+  },
+  {
+    "_id": "57db7f9899b4525500cc3c9d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/46cda5341ea5dfd7c4af4e8e7db9723e0b6bcce5.pdf"
+  },
+  {
+    "_id": "57db80462896f1560009e8fe",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/708fe2fa8eaadaec8527e56529f9d44c3749a93c.pdf",
+    "source": "https://ramumine.wordpress.com/2016/08/19/oneills-full-statement-on-landowner-issues-in-bougainville-lng-provinces-and-ok-tedi/"
+  },
+  {
+    "_id": "57db814b2896f1560009e908",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4dee9e383878be508127caf4fe4797498cc2811c.pdf",
+    "source": "http://www.abc.net.au/news/2014-02-10/an-png-ok-tedi-assets-handover/5250694"
+  },
+  {
+    "_id": "57db9f4599b4525500cc3caf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3608ada8f34ce9f5c849b55f62345b3e326fd7be.pdf",
+    "source": "http://www.herald.co.zw/wp-content/uploads/2016/09/MID-YEAR-FISCAL-POLICY-final.pdf"
+  },
+  {
+    "_id": "57dbbbb199b4525500cc3ce1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0c7e1b0f274699d050504f8f8e5b11233219f0d.pdf",
+    "source": "https://platinum.petronas.com/MPM/ExplorationOppurtunities/Pages/Production-Sharing-Contract-Overview.aspx"
+  },
+  {
+    "_id": "57dbbc0e2896f1560009e951",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc3a128a3ed2e1d511f01b767fd59ee1409980f5.pdf",
+    "source": "https://platinum.petronas.com/MPM/ExplorationOppurtunities/Pages/Data%20Review%20and%20Block-Award-Process.aspx"
+  },
+  {
+    "_id": "57dbeea22896f1560009ebbf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ae80ef0797a45a31a867f3ddb4e93dfd06937d57.pdf"
+  },
+  {
+    "_id": "57dbd6272896f1560009eb6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c7eaf88cb82a5b99d8d3ef070e1e0ddb0d177cd.pdf",
+    "source": "https://www.newsday.co.zw/2016/05/26/external-forensic-auditors-zimra/"
+  },
+  {
+    "_id": "57dbbeb82896f1560009e9f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a93b0e92dda042e8b12450356afa8ca46c94af42.pdf",
+    "source": "http://guineeinfos.org/2016/03/30/bauxite-de-boffa-entre-mains-de-soguipami-africa-mining-intelligence/"
+  },
+  {
+    "_id": "57dc0f022896f1560009ebf0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06a13c53a1548ef16f854538da8420db0231f4e0.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2015/03/Matriz-de-Seguimiento-DADSySS-0019-20141.pdf"
+  },
+  {
+    "_id": "57dbf685fa36415f00da33d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/12c2219662c0c25a4326ba41153850d2ba68a568.pdf",
+    "source": "http://www.petronas.com.my/media-relations/media-releases/Pages/article/PETRONAS-AWARDS-BLOCK-PM323-TO-NEWFIELD-AND-PETRONAS-CARIGALI.aspx"
+  },
+  {
+    "_id": "57dbf8892896f1560009ebd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e49f4dec387878e182b81915bfa1d91b21657aa3.pdf",
+    "source": "http://www.petronas.com.my/media-relations/media-releases/Pages/article/PETRONAS-AWARDS-TWO-ULTRA-DEEPWATER-BLOCKS-TO-SHELL-AND-PETRONAS-CARIGALI.aspx"
+  },
+  {
+    "_id": "57dbf8eefa36415f00da33e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b030f3d4c3ba5a98a338181bb99532c5b3c266dc.pdf",
+    "source": "http://www.petronas.com.my/media-relations/media-releases/Pages/article/PETRONAS-AWARDS-EXPLORATION-BLOCK-SK410B.aspx"
+  },
+  {
+    "_id": "57dbefd14ca5905500625972",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/943c16e30f56a2024abb95b0727853fcc6826843.pdf"
+  },
+  {
+    "_id": "57dc37334ca5905500625a81",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fc2c830904c2b1f0b60c43343b3ee093b6dfec87.pdf",
+    "source": "http://seia.sea.gob.cl/expediente/expedientesEvaluacion.php?modo=ficha&id_expediente=2131795389"
+  },
+  {
+    "_id": "57dc1c28fa36415f00da348e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/beefb3430919880be5ae3d2aa5bce65cdd4ea339.pdf",
+    "source": "http://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20637%20-%20Loan%20(Local)%20Act%201959.pdf"
+  },
+  {
+    "_id": "57dc1cb7fa36415f00da3493",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/52184fb00ac7bc50af445f4966f528039b791150.pdf",
+    "source": "http://www.agc.gov.my/agcportal/uploads/files/Publications/LOM/EN/Act%20275.pdf"
+  },
+  {
+    "_id": "57dc322b2896f1560009ecb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d3ea9a5516b76178349b0160bcc6611a0419540.pdf",
+    "source": "http://www.petronas.com.my/our-business/downstream/oil/marketing-trading/crude-oil/Pages/default.aspx"
+  },
+  {
+    "_id": "57dc1c222896f1560009ec47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fdce82f98b03fd6aae15e862b66a3c534a848a5b.pdf",
+    "source": "http://www.hacienda.cl/documento/descargar/id/6436"
+  },
+  {
+    "_id": "57dc37e42896f1560009ecc1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/948068c7de1119080c04e865b9fdffaa47497916.pdf",
+    "source": "http://ejatlas.org/conflict/castilla-thermal-power-station-chile"
+  },
+  {
+    "_id": "57dc39432896f1560009ecc7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/909b691429f29eb5bfbd3b9e3b0f7187e06b2403.pdf",
+    "source": "http://www.treasury.gov.my/pdf/percukaian/penerbitan/buku_anggaran_hasil_kerajaan_persekutuan_2016.pdf"
+  },
+  {
+    "_id": "57dc4b42fa36415f00da3556",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b50995e535198261f4b92ebdad892c6c0aa575ed.pdf",
+    "source": "http://www.petroamazonas.gob.ec/petroamazonas-ep-asume-las-operaciones-del-campo-sacha/"
+  },
+  {
+    "_id": "57dc4c82fa36415f00da355c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/03b068019a4e7d8302dca3a109c029de84007c08.pdf",
+    "source": "http://rionapocem.com.ec/la-empresa/"
+  },
+  {
+    "_id": "57dc517ffa36415f00da3587",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/96a14b8dcb13a2266d538c030905f350146cbce2.pdf",
+    "source": "http://www.shgtj.gov.cn/zcfg/dzkc/201603/t20160330_680821.html"
+  },
+  {
+    "_id": "57dc542b4ca5905500625b31",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bb2c2c93293abc2af7d14c3a9ad431767e7be57c.pdf",
+    "source": "http://repositorio.cepal.org/bitstream/handle/11362/40308/S1600413_es.pdf"
+  },
+  {
+    "_id": "57dc69282896f1560009ed9e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa90d53bd0e88dda75860fcd5414d970e36c4df2.pdf"
+  },
+  {
+    "_id": "57dc69dc2896f1560009eda8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/690d6513d6968ce3a361701af9250db7a8f4dd9b.pdf",
+    "source": "http://www.anh.gov.co/Asignacion-de-areas/Paginas/Mapa-de-tierras.aspx"
+  },
+  {
+    "_id": "57dc6d5e2896f1560009edab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0c53cb9bb4f6da6b880cf2b8978e6a546276f7dc.pdf",
+    "source": "http://www.chinamineral.cn/sell/list.php?catid=29"
+  },
+  {
+    "_id": "57dc6dbbfa36415f00da35e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9f5b51e6f1aff550c65661b5e08d609d0dc3c50.pdf",
+    "source": "http://www.shumx.com/?action=menu&menuid=4"
+  },
+  {
+    "_id": "57dc6e094ca5905500625b8c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba38da89f2b1f20a6a86bae316233dc9a0d523a3.pdf",
+    "source": "http://www.cbmx.com.cn/index.php?m=list&a=index&cid=77"
+  },
+  {
+    "_id": "57dc70232896f1560009edb6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa7ee952b3e4aa72351aae2a0bd114cb8eedd1fa.pdf",
+    "source": "http://www.mlr.gov.cn/kyqsc/jggs/ckjjgs/201609/t20160914_6018608.htm"
+  },
+  {
+    "_id": "57dc6edffa36415f00da35fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d53e37f7a55c5b92bb62877c497514e2f99ebaa.pdf",
+    "source": "http://www.mlr.gov.cn/kyqsc/jggs/ckjjgs/"
+  },
+  {
+    "_id": "57dca5874ca5905500625bc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c70153703a6158856b12045d5906583876321668.pdf",
+    "source": "http://www.ypfb.gob.bo/es/transparencia/informes-tecnicos.html"
+  },
+  {
+    "_id": "57dcb1102896f1560009ee0b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37fe12cf5dfb8d0f99e7d6a46f267084a126b24a.pdf",
+    "source": "https://eiti.org/countries"
+  },
+  {
+    "_id": "57dcc15bfa36415f00da36a9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8d2ca961b55cb308d9f5ccfe4fa9655bb965d71.pdf",
+    "source": "http://www.audit.gov.cn/n1992130/n1992150/n1992500/3765990.html"
+  },
+  {
+    "_id": "57dcc1c44ca5905500625c35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/722afd35a5a84707a80cb889d17489cb82570edc.pdf",
+    "source": "http://www.audit.gov.cn/n1992130/n1992150/n1992500/n3765990.files/n3766419.pdf"
+  },
+  {
+    "_id": "57dcc7e74ca5905500625c4f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f3d04b4f9b6c7ab28a5cb2ab6bfee34a8e94ed63.pdf",
+    "source": "http://www.cnpc.com.cn/en/xhtml/pdf/2015_Annual_Report_online/0-2015_Annual_Report.pdf"
+  },
+  {
+    "_id": "57dcdbc9fa36415f00da36cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8756acea3767a9d169f03bfc8620441f7515e948.pdf"
+  },
+  {
+    "_id": "57dd3d152896f1560009ef03",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/92968829804406dfcaa6ada5f6e8753eb26f2350.pdf"
+  },
+  {
+    "_id": "57dd6d63fa36415f00da3810",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/02356fcd146b5d9ee37e99219e4f9d4d973b33ef.pdf",
+    "source": "http://www.nioclibrary.ir/oil-companies.html"
+  },
+  {
+    "_id": "57dd5b2a7171ce6000a358cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/091569fae4879c433526cc69d6e496fd9ea9ea92.pdf",
+    "source": "http://www.yemen-nic.info/ministations/section.php?SECTION_ID=466"
+  },
+  {
+    "_id": "57dd7113fa36415f00da382e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5eb2bb01381074e3e7f4bda7499f4660f354a987.pdf",
+    "source": "http://www.shana.ir/fa/newsagency/269220/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%A8%DB%8C-%D8%B3%D8%A7%D8%A8%D9%82%D9%87-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%88-%D8%B5%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA-%D9%86%D9%81%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86"
+  },
+  {
+    "_id": "57dd7163454c9a5f004a2bd4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c39c4084f11dd9e96d0ac1850d623ff34353df2.pdf",
+    "source": "http://www.shana.ir/en/newsagency/268938/Dy-Petroleum-Min-Iran-Has-Customers-for-All-Crude-Oil-Output"
+  },
+  {
+    "_id": "57dd9a44fa36415f00da3854",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5157fc3e2d3278ab4c2ff2c1e59788eafed20772.pdf",
+    "source": "http://www.herald.co.zw/zmdc-ordered-to-publish-financial-statements/"
+  },
+  {
+    "_id": "57ddaa1c7171ce6000a3595f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd19863bcdd516ff0e953d3002d12e61c54d5c10.pdf",
+    "source": "http://www.southsudannation.com/"
+  },
+  {
+    "_id": "57ddaa38fa36415f00da3875",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aef542254c72e90f656967f57612af0c403a24da.pdf",
+    "source": "https://radiotamazuj.org/"
+  },
+  {
+    "_id": "57ddb7b0fa36415f00da38a1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0fa159416542d6f493cf053a34d68f7833494e96.pdf",
+    "source": "http://en.mehrnews.com/news/116724/NIOC-resumes-oil-sales-to-Italy-s-Saras"
+  },
+  {
+    "_id": "57ddb9ae7171ce6000a35985",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ea6bd2e5db330e06e5886483a335082d722d0634.pdf",
+    "source": "http://www.shana.ir/en/newsagency/268186/NIOC-to-Act-with-Basket-of-3-Contract-Models"
+  },
+  {
+    "_id": "57ddc6a8fa36415f00da38d8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e4d5fe93404058d19dd476088d100f26c1b2202.pdf",
+    "source": "http://www.herald.co.zw/zmdc-speaks-on-govt-pay/"
+  },
+  {
+    "_id": "57ddc9d47171ce6000a359ae",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1e20f21d8e5c0443354cd0dc99c516165408768.pdf",
+    "source": "https://www.newsday.co.zw/2016/02/15/mugabe-squeezes-diamond-firms-over-bash/"
+  },
+  {
+    "_id": "57ddcc87fa36415f00da38e7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7af4023e51fdde24e008e18b85690af8d3d37e91.pdf",
+    "source": "http://youngzimbabwe.com/zimbabwe-diamond-tender-kicks-dubai/"
+  },
+  {
+    "_id": "57dd42d94ca5905500625d0c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/057e610ac3d12f4cc2d942caa30114851f6ba813.pdf",
+    "source": "http://www.thezimbabwean.co/2015/04/govt-loses-millions-as-ema/"
+  },
+  {
+    "_id": "57dbe5c699b4525500cc3f2b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca0dd542408e9a0eebd270b78a40f589f847d7da.xlsx",
+    "source": "http://customs.ru/index2.php?option=com_content&view=article&id=23959&Itemid=1978"
+  },
+  {
+    "_id": "57d9d6e5b5e62c2e0042f79d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2129f1e8bb79faedecf384655294c53c00a9963e.xlsx",
+    "source": "http://meih.st.gov.my/statistics?p_auth=XtBAWxu7&p_p_id=Eng_Statistic_WAR_STOASPublicPortlet&p_p_lifecycle=1&p_p_state=maximized&p_p_mode=view&p_p_col_id=column-1&p_p_col_pos=1&p_p_col_count=2&_Eng_Statistic_WAR_STOASPublicPortlet_execution=e1s1&_Eng_Statistic_WAR_STOASPublicPortlet__eventId=ViewStatistic5&categoryId=1&flowId=3"
+  },
+  {
+    "_id": "57d9d74d61cf382300355ef1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/60b0f32ce6f1fc56d3ce3060ae626e8dc0b4e452.xlsx",
+    "source": "http://meih.st.gov.my/statistics?p_auth=XtBAWxu7&p_p_id=Eng_Statistic_WAR_STOASPublicPortlet&p_p_lifecycle=1&p_p_state=maximized&p_p_mode=view&p_p_col_id=column-1&p_p_col_pos=1&p_p_col_count=2&_Eng_Statistic_WAR_STOASPublicPortlet_execution=e1s1&_Eng_Statistic_WAR_STOASPublicPortlet__eventId=ViewStatistic&categoryId=2&flowId=3"
+  },
+  {
+    "_id": "57da98f81afd16410020031e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0b3167d2debfe04920356f70726b6f22f3c745b3.PNG",
+    "source": "http://www.bloomberg.com/news/articles/2012-01-27/bhp-billiton-to-halt-bauxite-exploration-at-guinea-s-boffa-site"
+  },
+  {
+    "_id": "57ddaa787171ce6000a35961",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7e7f69481cb2403865604e0168a2ca7e2c06400.doc",
+    "source": "http://documents.worldbank.org/curated/.../RP8850revised01LIC10AFR1RPF1P106975.do..."
   }
 ]
