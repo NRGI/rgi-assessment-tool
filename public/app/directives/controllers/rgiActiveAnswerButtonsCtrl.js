@@ -96,7 +96,7 @@ angular
                 if((rgiIdentitySrvc.currentUser.role !== 'reviewer') || !researcherAnswerConfirmed) {
                     if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                         return rgiNotifier.error('You must provide a justification');
-                    } else if (rgiReferenceListSrvc.isEmpty(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
+                    } else if (!rgiReferenceListSrvc.isAnyBelongingToTheUserType(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
                         return rgiNotifier.error('You must provide at least one supporting reference!');
                     } else if (rgiIdentitySrvc.currentUser.role === 'reviewer' && !researcherAnswerConfirmed && !auth_match && !new_answer_data.question_ID.dependant) {
                         return rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
