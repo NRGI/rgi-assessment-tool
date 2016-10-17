@@ -193,5 +193,10 @@
     "_id": "57dc41234ca5905500625ac8",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/fe121b4d9f34c9a3e1df5b084b31f2100f9b7716.pdf",
     "source": "https://www.audit.gov.my/images/pdf/2016/LKAN_2015_Siri1/FEDERAL/1%20-%20lkan2015%20penyata%20kew-5.pdf"
+  },
+  {
+    "_id": "57fcd9cdd06b33001909e939",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5d1882798fe50d56640fadf225a5242f03c6fb8.pdf",
+    "source": "http://gheiti.gov.gh"
   }
 ]
