@@ -7,7 +7,6 @@ branches:
   only:
     - staging
     - master
-    - 536-version-images-with-latest-sha-dev
 
 before_script:
   - npm install --dev
