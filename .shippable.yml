@@ -22,8 +22,10 @@ script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
 after_success:
-  - sudo docker build -t nrgi/rgi-assessment-tool:$BRANCH .
   - sudo docker build -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
+  # Create the `latest` tag and force it in case the tag is already there from a previous build
+  - sudo docker tag -f nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
+
   - sudo docker push nrgi/rgi-assessment-tool:$BRANCH
   - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
 
