@@ -63,7 +63,7 @@ describe('rgiReferenceListSrvc', function () {
                 {author: {role: 'supervisor'}, hidden: false}
             ];
 
-            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, {role: ROLE}).should.not.be.equal(false);
+            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, {role: ROLE}).should.be.equal(true);
         });
 
         it('skips references without author role', function() {
@@ -72,7 +72,7 @@ describe('rgiReferenceListSrvc', function () {
                 {author: {role: 'supervisor'}, hidden: false}
             ];
 
-            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, {role: ROLE}).should.not.be.equal(true);
+            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, {role: ROLE}).should.be.equal(false);
         });
 
         it('returns `false` if the user is not set', function() {
@@ -82,7 +82,7 @@ describe('rgiReferenceListSrvc', function () {
                 {author: {role: 'supervisor'}, hidden: false}
             ];
 
-            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, undefined).should.not.be.equal(true);
+            rgiReferenceListSrvc.isAnyBelongingToTheUserType(references, undefined).should.be.equal(false);
         });
     });
 
