@@ -7,7 +7,7 @@ branches:
   only:
     - staging
     - master
-    - 543-trigger-deploy
+
 env:
   global:
     # Shippable API token used to trigger deploy
