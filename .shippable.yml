@@ -28,6 +28,8 @@ after_success:
   - sudo docker push nrgi/rgi-assessment-tool:$BRANCH
   - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
 
+  - ./deploy.sh
+
 integrations:
     hub:
       - integrationName: nrgiDockerHub
