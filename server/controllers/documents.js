@@ -82,6 +82,7 @@ var uploadFile = function(file, req, callback) {
                         log.error('the file ' + file_hash + '.' + file_extension +
                         ' has been failed to be transferred. The error is ' + err.stack);
                         console.error("unable to upload:", err.stack);
+                        fs.unlink(file.path);
                         callback('File transfer failed');
                     });
                     uploader.on('progress', function() {
@@ -90,6 +91,7 @@ var uploadFile = function(file, req, callback) {
                     uploader.on('end', function() {
                         log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
                         console.log("done uploading");
+                        fs.unlink(file.path);
 
                         Doc.create({
                             file_hash: file_hash,
