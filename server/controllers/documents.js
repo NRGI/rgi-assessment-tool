@@ -1,6 +1,7 @@
 'use strict';
 /* global require */
-var crypto              =   require('crypto'),
+var bunyan              =   require('bunyan'),
+    crypto              =   require('crypto'),
     fs                  =   require('fs'),
     mime                =   require('mime'),
     request             =   require('request'),
@@ -28,24 +29,37 @@ var crypto              =   require('crypto'),
                                 }
                             });
 
+var log = bunyan.createLogger({name: 'docs'});
 
 var uploadFile = function(file, req, callback) {
     var hash = crypto.createHash('sha1'),
         timestamp = new Date().toISOString(),
         file_extension = getFileExtension(file.path);
 
+    log.info('attempt to read the local file ' + file.path);
+
     fs.readFile(file.path, {encoding: 'utf8'}, function (err, data) {
+
+        if(err) {
+            log.error('error reading the local file ' + file.path + '. The error is ' + err);
+        } else {
+            log.info('read successfully the local file ' + file.path);
+        }
+
         hash.update(data);
         // get hashed value of file as fingerprint
         var file_hash = hash.digest('hex');
         // search documents for hashed file
+        log.info('search a document by the hash ' + file_hash + ' generated using the local file ' + file.path);
         Doc.findOne({file_hash: file_hash}, function (err, document) {
             // if file exists tag for reference
             if (document !== null) {
                 callback(null, document);
+                log.info('the hash ' + file_hash + ' is found. The file was uploaded already. Use the old document');
                 // if not upload to s3 with hashed value as file name,
                 // create record with hash value and end url
             } else {
+                log.info('the hash ' + file_hash + ' is not found. Transfer the file to S3');
                 // upload parameters
                 var params = {
                     localFile: file.path,
@@ -59,12 +73,15 @@ var uploadFile = function(file, req, callback) {
 
                 var uploader = client.uploadFile(params);
                 uploader.on('error', function(err) {
+                    log.error('the file ' + file_hash + '.' + file_extension +
+                        ' has been failed to be transferred. The error is ' + err.stack);
                     console.error("unable to upload:", err.stack);
                 });
                 uploader.on('progress', function() {
                     console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
                 });
                 uploader.on('end', function() {
+                    log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
                     console.log("done uploading");
                 });
 
@@ -181,6 +198,8 @@ exports.uploadRemoteFile = function (req, res) {
 };
 
 exports.fileCheck = function (req, res) {
+    log.info('UPLOAD A LOCAL FILE ' + req.files.file.path);
+
     uploadFile(req.files.file, req, function (err, document) {
         if (err) {
             res.status(400);
