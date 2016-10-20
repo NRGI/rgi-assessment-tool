@@ -134,6 +134,7 @@ exports.getRemoteFileUploadStatus = function (req, res) {
 };
 
 exports.uploadRemoteFile = function (req, res) {
+    log.info('UPLOAD A REMOTE FILE ' + req.query.url);
     FileUploadStatus.create({}, function(err, fileUploadStatus) {
         var timeoutId,
             timeoutPeriod = 20000,
@@ -153,6 +154,7 @@ exports.uploadRemoteFile = function (req, res) {
                         }
 
                         if(fileTotalSize > FILE_SIZE_LIMIT) {
+                            log.error('size of the remote file ' + req.query.url + ' exceeds the limit');
                             return res.send({reason: 'The file size is too large to be uploaded'});
                         }
 
@@ -160,6 +162,7 @@ exports.uploadRemoteFile = function (req, res) {
                         var filePath = '/tmp/' +
                             getFileName(new Date().getTime(), req.user._id, getFileExtension(req.query.url));
 
+                        log.info('copy the remote file ' + req.query.url + ' to ' + filePath);
                         var file = fs.createWriteStream(filePath);
                         response.pipe(file);
 
@@ -174,9 +177,14 @@ exports.uploadRemoteFile = function (req, res) {
                                 }
                             })
                             .on('end', function() {
+                                log.info('the remote file ' + req.query.url + ' has been successfully to ' + filePath);
                                 fileUploadStatus.setCompletion(1);
 
-                                file.close(function() {
+                                file.close(function(err) {
+                                    if(err) {
+                                        log.error('while closing the file ' + filePath + ' a failure occurred ' + err);
+                                    }
+
                                     uploadFile({path: filePath, type: mime.lookup(filePath)}, req, function (err, doc) {
                                         if (!err) {
                                             fileUploadStatus.setDocument(doc);
@@ -185,7 +193,13 @@ exports.uploadRemoteFile = function (req, res) {
                                 });
                             })
                             .on('error', function() {
-                                file.close(function() {
+                                log.error('the remote file ' + req.query.url + ' is failed to be copied to ' + filePath);
+
+                                file.close(function(err) {
+                                    if(err) {
+                                        log.error('while closing the file ' + filePath + ' a failure occurred ' + err);
+                                    }
+
                                     fs.unlink(filePath);
                                     fileUploadStatus.setCompletion(-1);
                                 });
@@ -198,17 +212,20 @@ exports.uploadRemoteFile = function (req, res) {
                         });
 
                     } else {
+                        log.error('the remote file ' + req.query.url + ' is not found');
                         res.send({reason: 'The file is not found'});
                     }
                 })
                 .on('error', function(err) {
                     clearTimeout(timeoutId);
+                    log.error('failed to get the remote file ' + req.query.url + '. The error is ' + err.toString());
                     res.send({reason: err.toString()});
                 });
 
 
             timeoutId = setTimeout(function() {
                 remoteFileRequest.abort();
+                log.error('request timeout of the remote file ' + req.query.url);
                 res.send({reason: 'File request timeout'});
             }, timeoutPeriod);
     });
