@@ -76,6 +76,7 @@ var uploadFile = function(file, req, callback) {
                     log.error('the file ' + file_hash + '.' + file_extension +
                         ' has been failed to be transferred. The error is ' + err.stack);
                     console.error("unable to upload:", err.stack);
+                    callback('File transfer failed');
                 });
                 uploader.on('progress', function() {
                     console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
@@ -83,19 +84,19 @@ var uploadFile = function(file, req, callback) {
                 uploader.on('end', function() {
                     log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
                     console.log("done uploading");
-                });
 
-                Doc.create({
-                    file_hash: file_hash,
-                    mime_type: file.type,
-                    s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
-                    modified: [{
-                        modified_by: req.user._id,
-                        modified_date: timestamp
-                    }],
-                    createdBy: req.user._id,
-                    creationDate: timestamp
-                }, callback);
+                    Doc.create({
+                        file_hash: file_hash,
+                        mime_type: file.type,
+                        s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
+                        modified: [{
+                            modified_by: req.user._id,
+                            modified_date: timestamp
+                        }],
+                        createdBy: req.user._id,
+                        creationDate: timestamp
+                    }, callback);
+                });
             }
         });
     });
