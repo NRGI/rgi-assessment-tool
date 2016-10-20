@@ -32,11 +32,18 @@ var bunyan              =   require('bunyan'),
 
 var log = bunyan.createLogger({
     name: 'docs',
-    stream: new BunyanSlack({
-        webhook_url: 'https://hooks.slack.com/services/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',
-        channel: '#doc-logs-local',
-        username: 'webhookbot'
-    })
+    streams: [
+        {
+            stream: new BunyanSlack({
+                webhook_url: 'https://hooks.slack.com/services/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',
+                channel: '#doc-logs-local',
+                username: 'webhookbot'
+            })
+        },
+        {
+            stream: require('bunyan-mongodb-stream')({model: require('mongoose').model('Log')})
+        }
+    ]
 });
 
 var uploadFile = function(file, req, callback) {

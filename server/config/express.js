@@ -21,6 +21,7 @@ var express             = require('express'),
     'Assessment',
     'AuthLog',
     'FileUploadStatus',
+    'Log',
     'ResetPasswordToken'
 ].forEach(function(modelName) {
     require('../models/' + modelName);
