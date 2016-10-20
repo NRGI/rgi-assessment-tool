@@ -1,6 +1,7 @@
 'use strict';
 /* global require */
 var bunyan              =   require('bunyan'),
+    BunyanSlack         =   require('bunyan-slack'),
     crypto              =   require('crypto'),
     fs                  =   require('fs'),
     mime                =   require('mime'),
@@ -29,7 +30,14 @@ var bunyan              =   require('bunyan'),
                                 }
                             });
 
-var log = bunyan.createLogger({name: 'docs'});
+var log = bunyan.createLogger({
+    name: 'docs',
+    stream: new BunyanSlack({
+        webhook_url: 'https://hooks.slack.com/services/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',
+        channel: '#doc-logs-local',
+        username: 'webhookbot'
+    })
+});
 
 var uploadFile = function(file, req, callback) {
     var hash = crypto.createHash('sha1'),
