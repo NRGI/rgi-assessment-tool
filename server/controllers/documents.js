@@ -39,66 +39,65 @@ var uploadFile = function(file, req, callback) {
     log.info('attempt to read the local file ' + file.path);
 
     fs.readFile(file.path, {encoding: 'utf8'}, function (err, data) {
-
         if(err) {
             log.error('error reading the local file ' + file.path + '. The error is ' + err);
+            callback('Read file failure');
         } else {
             log.info('read successfully the local file ' + file.path);
-        }
+            hash.update(data);
+            // get hashed value of file as fingerprint
+            var file_hash = hash.digest('hex');
+            // search documents for hashed file
+            log.info('search a document by the hash ' + file_hash + ' generated using the local file ' + file.path);
+            Doc.findOne({file_hash: file_hash}, function (err, document) {
+                // if file exists tag for reference
+                if (document !== null) {
+                    callback(null, document);
+                    log.info('the hash ' + file_hash + ' is found. The file was uploaded already. Use the old document');
+                    // if not upload to s3 with hashed value as file name,
+                    // create record with hash value and end url
+                } else {
+                    log.info('the hash ' + file_hash + ' is not found. Transfer the file to S3');
+                    // upload parameters
+                    var params = {
+                        localFile: file.path,
+                        s3Params: {
+                            Bucket: upload_bucket,
+                            Key: String(file_hash) + '.' + file_extension
+                            // other options supported by putObject, except Body and ContentLength.
+                            // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
+                        }
+                    };
 
-        hash.update(data);
-        // get hashed value of file as fingerprint
-        var file_hash = hash.digest('hex');
-        // search documents for hashed file
-        log.info('search a document by the hash ' + file_hash + ' generated using the local file ' + file.path);
-        Doc.findOne({file_hash: file_hash}, function (err, document) {
-            // if file exists tag for reference
-            if (document !== null) {
-                callback(null, document);
-                log.info('the hash ' + file_hash + ' is found. The file was uploaded already. Use the old document');
-                // if not upload to s3 with hashed value as file name,
-                // create record with hash value and end url
-            } else {
-                log.info('the hash ' + file_hash + ' is not found. Transfer the file to S3');
-                // upload parameters
-                var params = {
-                    localFile: file.path,
-                    s3Params: {
-                        Bucket: upload_bucket,
-                        Key: String(file_hash) + '.' + file_extension
-                        // other options supported by putObject, except Body and ContentLength.
-                        // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
-                    }
-                };
-
-                var uploader = client.uploadFile(params);
-                uploader.on('error', function(err) {
-                    log.error('the file ' + file_hash + '.' + file_extension +
+                    var uploader = client.uploadFile(params);
+                    uploader.on('error', function(err) {
+                        log.error('the file ' + file_hash + '.' + file_extension +
                         ' has been failed to be transferred. The error is ' + err.stack);
-                    console.error("unable to upload:", err.stack);
-                    callback('File transfer failed');
-                });
-                uploader.on('progress', function() {
-                    console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
-                });
-                uploader.on('end', function() {
-                    log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
-                    console.log("done uploading");
+                        console.error("unable to upload:", err.stack);
+                        callback('File transfer failed');
+                    });
+                    uploader.on('progress', function() {
+                        console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
+                    });
+                    uploader.on('end', function() {
+                        log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
+                        console.log("done uploading");
 
-                    Doc.create({
-                        file_hash: file_hash,
-                        mime_type: file.type,
-                        s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
-                        modified: [{
-                            modified_by: req.user._id,
-                            modified_date: timestamp
-                        }],
-                        createdBy: req.user._id,
-                        creationDate: timestamp
-                    }, callback);
-                });
-            }
-        });
+                        Doc.create({
+                            file_hash: file_hash,
+                            mime_type: file.type,
+                            s3_url: 'https://s3.amazonaws.com/' + upload_bucket + '/' + file_hash + '.' + file_extension,
+                            modified: [{
+                                modified_by: req.user._id,
+                                modified_date: timestamp
+                            }],
+                            createdBy: req.user._id,
+                            creationDate: timestamp
+                        }, callback);
+                    });
+                }
+            });
+        }
     });
 };
 
