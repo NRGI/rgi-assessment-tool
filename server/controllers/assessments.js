@@ -2,6 +2,7 @@
 /* global require */
 
 var error       = [],
+    logger      = require('../logger/logger'),
     Answer      = require('mongoose').model('Answer'),
     Assessment  = require('mongoose').model('Assessment'),
     User        = require('mongoose').model('User'),
@@ -293,15 +294,15 @@ exports.updateAssessment = function (req, res, next) {
                                             break;
 
                                         case 'external_review':
-                                            console.log('send over to external review email');
+                                            logger.log('send over to external review email');
                                             break;
 
                                         case 'final_approval':
-                                            console.log('final approval email');
+                                            logger.log('final approval email');
                                             break;
 
                                         default:
-                                            console.log('no email action');
+                                            logger.log('no email action');
                                             break;
                                     }
                                 }
@@ -366,15 +367,15 @@ exports.updateAssessment = function (req, res, next) {
                                             break;
 
                                         case 'external_review':
-                                            console.log('send over to external review email');
+                                            logger.log('send over to external review email');
                                             break;
 
                                         case 'final_approval':
-                                            console.log('final approval email');
+                                            logger.log('final approval email');
                                             break;
 
                                         default:
-                                            console.log('no email action');
+                                            logger.log('no email action');
                                             break;
                                     }
                                 }
