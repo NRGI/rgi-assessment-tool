@@ -2,12 +2,13 @@
 var express             = require('express'),
     mongoose            = require('mongoose'),
     stylus              = require('stylus'),
-    logger              = require('morgan'),
+    morgan              = require('morgan'),
     bodyParser          = require('body-parser'),
     cookieParser        = require('cookie-parser'),
     session             = require('express-session'),
     MongoStore          = require('connect-mongo')(session),
     passport            = require('passport'),
+    logger              = require('../logger/logger'),
     userModel           = require('../models/User'),
     countryModel        = require('../models/Countries'),
     questionModel       = require('../models/Question'),
@@ -36,7 +37,7 @@ module.exports = function (app, config, user, pass, env) {
     app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
     // set up logger
-    app.use(logger('dev'));
+    app.use(morgan('dev'));
     
     // authentication cofigs
     app.use(cookieParser());
@@ -56,9 +57,9 @@ module.exports = function (app, config, user, pass, env) {
     }
 
     var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error...'));
+    db.on('error', function() {logger.error('connection error...');});
     db.once('open', function callback() {
-        console.log('rgi db opened');
+        logger.log('rgi db opened');
     });
     // import default data
     userModel.createDefaultUsers();

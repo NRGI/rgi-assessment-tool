@@ -3,6 +3,7 @@ var mongoose        = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
 var resourceSchema, Resource,
+    logger          = require('../logger/logger'),
     Schema          = mongoose.Schema,
     //ObjectId        = mongoose.Schema.Types.ObjectId,
     Html            = mongoose.Types.Html,
@@ -213,7 +214,7 @@ function createDefaultResources() {
                 order: 9,
                 body: 'Interviews can be recorded as a type of reference in the assessment tool. When entering a new interview as a reference, the tool will ask you for basic contact details for your interviewee, which you are required to include but that will not be made public (i.e. all interviewees will remain anonymous). If you fail to include these details, or include incorrect contact details, for example to preserve an interviewee’s identity, your interview will not be included as a reference and you will be required to answer the question again.'
             });
-            console.log('Resources created...');
+            logger.log('Resources created...');
         }
     });
 }

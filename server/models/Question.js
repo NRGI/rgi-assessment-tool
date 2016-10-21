@@ -3,6 +3,7 @@ var mongoose        = require('mongoose');
 require('mongoose-html-2').loadType(mongoose);
 
 var commentSchema, questionSchema, Question,
+    logger          = require('../logger/logger'),
     mongooseHistory = require('mongoose-history'),
     Schema          = mongoose.Schema,
     ObjectId        = mongoose.Schema.Types.ObjectId,
@@ -291,7 +292,7 @@ function createDefaultQuestions() {
                 "comments": [],
                 last_modified: {"modified_by": "initiated", "modified_date": timestamp}
             });
-            console.log('Questions created...');
+            logger.log('Questions created...');
         }
     });
 }
