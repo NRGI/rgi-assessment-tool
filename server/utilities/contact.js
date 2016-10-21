@@ -1,6 +1,7 @@
 'use strict';
 
 var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE_ENV || 'development'],
+    logger = require('../logger/logger'),
     siteEmail = 'tech-support@resourcegovernance.org';
 
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
@@ -9,7 +10,7 @@ var sendMessage = function(message) {
         mandrill('/messages/send', {message: message}, processFailure);
     },
     processFailure = function (err, res) {
-        console.log(err ? JSON.stringify(err) : res);
+        logger.log(err ? JSON.stringify(err) : res);
     };
 
 // send email to tech support

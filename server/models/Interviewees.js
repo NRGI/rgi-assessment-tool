@@ -1,6 +1,7 @@
 'use strict';
 
 var intervieweeSchema, Interviewee,
+    logger          = require('../logger/logger'),
     mongoose        = require('mongoose'),
     //mongooseHistory = require('mongoose-history'),
     //options = {customCollectionName: "interviewee_hst"},
@@ -118,7 +119,7 @@ function createDefaultInterviewees() {
                 users: [],
                 creationDate: Date.now()
             });
-            console.log('Interviewees created...');
+            logger.log('Interviewees created...');
         } else if (collection.length === 0 && process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'question_staging') {
             Interviewee.create({
                 firstName: "Anonymous",
@@ -132,7 +133,7 @@ function createDefaultInterviewees() {
                 users: [],
                 creationDate: Date.now()
             });
-            console.log('Interviewees created...');
+            logger.log('Interviewees created...');
         }
     });
 }

@@ -2,6 +2,7 @@
 /* global require */
 var bunyan              =   require('bunyan'),
     BunyanSlack         =   require('bunyan-slack'),
+    logger              =   require('../logger/logger'),
     crypto              =   require('crypto'),
     fs                  =   require('fs'),
     mime                =   require('mime'),
@@ -88,16 +89,16 @@ var uploadFile = function(file, req, callback) {
                     uploader.on('error', function(err) {
                         log.error('the file ' + file_hash + '.' + file_extension +
                         ' has been failed to be transferred. The error is ' + err.stack);
-                        console.error("unable to upload:", err.stack);
+                        logger.error("unable to upload:", err.stack);
                         fs.unlink(file.path);
                         callback('File transfer failed');
                     });
                     uploader.on('progress', function() {
-                        console.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
+                        logger.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
                     });
                     uploader.on('end', function() {
                         log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
-                        console.log("done uploading");
+                        logger.log("done uploading");
                         fs.unlink(file.path);
 
                         Doc.create({
