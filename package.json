@@ -47,7 +47,8 @@
     "request": "^2.55.0",
     "s3": "^4.3.1",
     "stylus": "~0.54.5",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "winston-papertrail": "^1.0.3"
   },
   "devDependencies": {
     "async": "^1.5.2",
@@ -78,7 +79,6 @@
     "load-grunt-tasks": "^3.5.0",
     "mocha": "^2.4.5",
     "protractor": "^3.3.0",
-    "rewire": "^2.5.1",
-    "winston-papertrail": "^1.0.3"
+    "rewire": "^2.5.1"
   }
 }
