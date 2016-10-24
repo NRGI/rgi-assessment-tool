@@ -1,8 +1,8 @@
 'use strict';
 
-if(process.env.NODE_ENV === 'production') {
+if(['production'].indexOf(process.env.NODE_ENV) !== -1) {
     module.exports = require('./logger.production');
-} else if (process.env.NODE_ENV === 'staging') {
+} else if (['staging'].indexOf(process.env.NODE_ENV) !== -1) {
     module.exports = require('./logger.staging');
 } else {
     module.exports = require('./logger.development');
