@@ -31,7 +31,8 @@ RUN		cd /tmp && bower install --allow-root
 RUN		cd /tmp && grunt build && grunt hash
 RUN		rm -R /tmp/node_modules
 COPY	. /src
-RUN     cp -a /tmp/public/assets /src/public/assets
+RUN     cp -a /tmp/public/assets /src/public
+RUN     cp /tmp/server/includes/scripts.jade /src/server/includes/scripts.jade
 RUN		rm -R /tmp/public
 
 RUN     node -v
