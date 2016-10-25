@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAnswerCtrl', function (
+    .controller('rgiAnswerCtrl', ['$scope', '$routeParams', 'rgiAnswerSrvc', 'rgiAnswerMethodSrvc', 'rgiAssessmentSrvc', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', function (
         $scope,
         $routeParams,
         rgiAnswerSrvc,
@@ -91,4 +91,4 @@ angular.module('app')
         resetReference();
         $scope.$on('RESET_REFERENCE_ACTION', resetReference);
         $scope.$on('RESET_ANSWER_ACTION', resetAnswer);
-    });
+    }]);

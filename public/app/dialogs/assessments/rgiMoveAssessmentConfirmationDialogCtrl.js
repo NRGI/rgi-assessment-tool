@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiMoveAssessmentConfirmationDialogCtrl', function (
+    .controller('rgiMoveAssessmentConfirmationDialogCtrl', ['$scope', '$location', '$route', 'rgiAssessmentMethodSrvc', 'rgiAnswerSrvc', 'rgiAnswerMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', function (
         $scope,
         $location,
         $route,
@@ -111,4 +111,4 @@ angular.module('app')
                     return rgiNotifier.error('`' + $scope.action + '` case does not have a route!');
             }
         };
-    });
+    }]);

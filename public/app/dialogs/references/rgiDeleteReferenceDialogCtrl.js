@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteReferenceDialogCtrl', function (
+    .controller('rgiDeleteReferenceDialogCtrl', ['$scope', '$rootScope', '$q', 'rgiAnswerMethodSrvc', 'rgiDocumentSrvc', 'rgiDocumentMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIntervieweeSrvc', 'rgiIntervieweeMethodSrvc', 'rgiNotifier', function (
         $scope,
         $rootScope,
         $q,
@@ -123,4 +123,4 @@ angular.module('app')
         $scope.restoreReference = function() {
             modifyHiddenFlag(supplementReferencedObject, false, 'The reference has been restored');
         };
-    });
+    }]);

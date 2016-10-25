@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .controller('rgiActiveAnswerButtonsCtrl', function (
+    .controller('rgiActiveAnswerButtonsCtrl', ['_', '$scope', '$location', '$rootScope', '$routeParams', '$route', 'rgiAnswerSrvc', 'rgiAnswerFilterSrvc', 'rgiAnswerMethodSrvc', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', 'rgiQuestionSetSrvc', 'rgiReferenceListSrvc', 'rgiUrlGuideSrvc', 'rgiUtilsSrvc', function (
         _,
         $scope,
         $location,
@@ -173,4 +173,4 @@ angular
         $scope.finalChoiceDialog = function () {
             rgiDialogFactory.answerFinalChoice($scope);
         };
-    });
+    }]);

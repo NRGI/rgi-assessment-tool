@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewResourceDialogCtrl', function (
+    .controller('rgiNewResourceDialogCtrl', ['$scope', '$route', 'rgiNotifier', 'rgiResourcesMethodSrvc', function (
         $scope,
         $route,
         rgiNotifier,
@@ -28,4 +28,4 @@ angular.module('app')
                     });
             }
         };
-    });
+    }]);

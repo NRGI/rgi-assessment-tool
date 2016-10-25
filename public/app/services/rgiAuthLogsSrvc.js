@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAuthLogsSrvc', function ($http) {
+    .factory('rgiAuthLogsSrvc', ['$http', function ($http) {
         return {
             getTotalNumber: function(userId) {
                 return $http.get('/api/auth-logs/number/' + userId);
@@ -13,4 +13,4 @@ angular.module('app')
                 return $http.get('/api/auth-logs/recent/' + userId + '/' + action);
             }
         };
-    });
+    }]);

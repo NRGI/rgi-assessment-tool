@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewWebpageDialogCtrl', function (
+    .controller('rgiNewWebpageDialogCtrl', ['_', '$scope', '$route', '$rootScope', 'rgiUtilsSrvc', 'rgiNotifier', 'rgiAllowedFileExtensionGuideSrvc', 'rgiDocumentSrvc', 'rgiDocumentMethodSrvc', 'rgiIdentitySrvc', 'rgiAnswerMethodSrvc', 'rgiUserMethodSrvc', function (
         _,
         $scope,
         $route,
@@ -133,4 +133,4 @@ angular.module('app')
             $scope.closeThisDialog();
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
-    });
+    }]);

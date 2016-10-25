@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAnswerMethodSrvc', function (
+    .factory('rgiAnswerMethodSrvc', ['$q', 'rgiAnswerSrvc', 'rgiHttpResponseProcessorSrvc', function (
         $q,
         rgiAnswerSrvc,
         rgiHttpResponseProcessorSrvc
@@ -43,4 +43,4 @@ angular.module('app')
                 return dfd.promise;
             }
         };
-    });
+    }]);

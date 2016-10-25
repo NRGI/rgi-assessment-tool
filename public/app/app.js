@@ -20,7 +20,7 @@ angular.module('app', [
     'ui.mask'
 ]);
 
-angular.module('app').config(function ($routeProvider, $locationProvider) {
+angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   // role checks
     var routeRoleChecks = {
             supervisor: {auth: function (rgiAuthSrvc) {
@@ -192,9 +192,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
             controller: 'rgiAnswerCtrl',
             resolve: routeRoleChecks.user
         });
-});
+}]);
 
-angular.module('app').run(function ($location, $rootScope, $route, $window, rgiIdentitySrvc) {
+angular.module('app').run(['$location', '$rootScope', '$route', '$window', 'rgiIdentitySrvc', function ($location, $rootScope, $route, $window, rgiIdentitySrvc) {
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         if (rejection === 'not authorized') {
             $location.path('/');
@@ -208,4 +208,4 @@ angular.module('app').run(function ($location, $rootScope, $route, $window, rgiI
 
     $rootScope.identity = rgiIdentitySrvc;
     $rootScope.externalThreshold = 0.8;
-});
+}]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiUserAssessmentsSrvc', function (rgiUserMethodSrvc) {
+angular.module('app').factory('rgiUserAssessmentsSrvc', ['rgiUserMethodSrvc', function (rgiUserMethodSrvc) {
     var updateUser = function(user) {
         return rgiUserMethodSrvc.updateUser(user).$promise;
     };
@@ -28,4 +28,4 @@ angular.module('app').factory('rgiUserAssessmentsSrvc', function (rgiUserMethodS
             return updateUser(user);
         }
     };
-});
+}]);

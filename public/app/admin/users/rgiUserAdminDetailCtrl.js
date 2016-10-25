@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiUserAdminDetailCtrl', function (
+    .controller('rgiUserAdminDetailCtrl', ['$scope', '$routeParams', 'rgiDialogFactory', 'rgiDocumentSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiUserSrvc', function (
         $scope,
         $routeParams,
         rgiDialogFactory,
@@ -36,4 +36,4 @@ angular.module('app')
         $scope.addToAssessment = function () {
             rgiDialogFactory.assessmentAddReviewer($scope);
         };
-    });
+    }]);

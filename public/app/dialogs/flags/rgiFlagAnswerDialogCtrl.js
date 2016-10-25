@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiFlagAnswerDialogCtrl', function (
+    .controller('rgiFlagAnswerDialogCtrl', ['$scope', '$route', '$location', 'ngDialog', 'rgiNotifier', 'rgiIdentitySrvc', 'rgiAnswerMethodSrvc', function (
         $scope,
         $route,
         $location,
@@ -40,4 +40,4 @@ angular.module('app')
         $scope.closeDialog = function () {
             ngDialog.close();
         };
-    });
+    }]);

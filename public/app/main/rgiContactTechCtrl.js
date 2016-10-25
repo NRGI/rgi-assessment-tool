@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiContactTechCtrl', function (
+    .controller('rgiContactTechCtrl', ['$scope', '$location', 'rgiAssessmentSrvc', 'rgiContactMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', 'HUMAN_NAME_PATTERN', 'VERSION_PATTERN', function (
         $scope,
         $location,
         rgiAssessmentSrvc,
@@ -112,4 +112,4 @@ angular.module('app')
                 });
             }
         };
-    });
+    }]);

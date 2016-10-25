@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiUserMethodSrvc', function (
+    .factory('rgiUserMethodSrvc', ['$q', 'rgiHttpResponseProcessorSrvc', 'rgiUserSrvc', function (
         $q,
         rgiHttpResponseProcessorSrvc,
         rgiUserSrvc
@@ -39,4 +39,4 @@ angular.module('app')
                 return manipulateUser(user, '$update', true);
             }
         };
-    });
+    }]);

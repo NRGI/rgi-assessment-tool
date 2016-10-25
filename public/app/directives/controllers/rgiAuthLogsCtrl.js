@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAuthLogsCtrl', function (
+    .controller('rgiAuthLogsCtrl', ['$scope', 'rgiAuthLogsSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', function (
         $scope,
         rgiAuthLogsSrvc,
         rgiHttpResponseProcessorSrvc,
@@ -43,4 +43,4 @@ angular.module('app')
                 }
             }, processHttpFailure);
         });
-    });
+    }]);

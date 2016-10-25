@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAnswerRawListCtrl', function (
+    .controller('rgiAnswerRawListCtrl', ['_', '$scope', 'rgiAnswerRawSrvc', 'rgiCountrySrvc', 'rgiHttpResponseProcessorSrvc', function (
         _,
         $scope,
         rgiAnswerRawSrvc,
@@ -72,4 +72,4 @@ angular.module('app')
             $scope.countries = countries;
             fetchAnswers();
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
-    });
+    }]);

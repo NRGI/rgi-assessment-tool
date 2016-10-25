@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteIntervieweeDialogCtrl', function ($scope, $location, rgiIntervieweeMethodSrvc, rgiNotifier) {
+    .controller('rgiDeleteIntervieweeDialogCtrl', ['$scope', '$location', 'rgiIntervieweeMethodSrvc', 'rgiNotifier', function ($scope, $location, rgiIntervieweeMethodSrvc, rgiNotifier) {
         var getIntervieweeIndex = function(currentInterviewee) {
             var intervieweeIndex = -1;
 
@@ -28,4 +28,4 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
-    });
+    }]);

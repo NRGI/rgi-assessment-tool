@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiIntervieweeAdminCtrl', function (
+    .controller('rgiIntervieweeAdminCtrl', ['$scope', 'rgiIntervieweeSrvc', 'rgiHttpResponseProcessorSrvc', function (
         $scope,
         rgiIntervieweeSrvc,
         rgiHttpResponseProcessorSrvc
@@ -20,4 +20,4 @@ angular.module('app')
         rgiIntervieweeSrvc.query({}, function(interviewees) {
             $scope.interviewees = interviewees;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load interviewee data failure'));
-    });
+    }]);

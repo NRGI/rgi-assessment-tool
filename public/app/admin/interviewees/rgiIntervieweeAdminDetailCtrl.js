@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiIntervieweeAdminDetailCtrl', function (
+    .controller('rgiIntervieweeAdminDetailCtrl', ['$scope', '$route', '$routeParams', 'ngDialog', 'rgiIdentitySrvc', 'rgiNotifier', 'rgiUserSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIntervieweeSrvc', 'rgiIntervieweeAnswerSrvc', 'rgiIntervieweeMethodSrvc', 'rgiAssessmentSrvc', 'rgiDialogFactory', function (
         $scope,
         $route,
         $routeParams,
@@ -109,4 +109,4 @@ angular.module('app')
                 }
             }
         };
-    });
+    }]);

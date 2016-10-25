@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAssessmentMethodSrvc', function (
+    .factory('rgiAssessmentMethodSrvc', ['$q', 'rgiAssessmentSrvc', 'rgiHttpResponseProcessorSrvc', function (
         $q,
         rgiAssessmentSrvc,
         rgiHttpResponseProcessorSrvc
@@ -25,4 +25,4 @@ angular.module('app')
                 return saveAssessment(assessment, '$update');
             }
         };
-    });
+    }]);

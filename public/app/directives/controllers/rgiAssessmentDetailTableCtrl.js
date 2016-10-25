@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-    .controller('rgiAssessmentDetailTableCtrl', function (
+    .controller('rgiAssessmentDetailTableCtrl', ['$scope', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiQuestionSrvc', 'rgiUserSrvc', function (
         $scope,
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
@@ -70,4 +70,4 @@ angular.module('app')
         $scope.isAnswerAvailable = function(answer) {
             return isRootQuestion(answer) || isLinkedToAnsweredQuestion(answer, getAnsweredOptions());
         };
-    });
+    }]);

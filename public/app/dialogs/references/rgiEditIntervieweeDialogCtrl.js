@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiEditIntervieweeDialogCtrl', function (
+    .controller('rgiEditIntervieweeDialogCtrl', ['$scope', '$route', 'rgiIntervieweeMethodSrvc', 'rgiNotifier', 'HUMAN_NAME_PATTERN', function (
         $scope,
         $route,
         rgiIntervieweeMethodSrvc,
@@ -21,4 +21,4 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
-    });
+    }]);

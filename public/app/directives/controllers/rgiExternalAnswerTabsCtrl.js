@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiExternalAnswerTabsCtrl', function (
+    .controller('rgiExternalAnswerTabsCtrl', ['$scope', 'rgiDialogFactory', 'rgiIdentitySrvc', function (
         $scope,
         rgiDialogFactory,
         rgiIdentitySrvc
@@ -12,4 +12,4 @@ angular.module('app')
             return ($scope.answer.researcher_score.value !== score.value) &&
                 ($scope.answer.reviewer_score.value !== score.value);
         };
-    });
+    }]);

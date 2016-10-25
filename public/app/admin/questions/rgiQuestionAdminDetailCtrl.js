@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiQuestionAdminDetailCtrl', function (
+    .controller('rgiQuestionAdminDetailCtrl', ['$scope', '$route', '$routeParams', '$location', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiPreceptGuideSrvc', 'rgiQuestionMethodSrvc', 'rgiQuestionSrvc', 'rgiSortableGuideSrvc', function (
         $scope,
         $route,
         $routeParams,
@@ -139,4 +139,4 @@ angular.module('app')
                 criterion.order = index + 1;
             });
         });
-    });
+    }]);

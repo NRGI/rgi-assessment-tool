@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiReorderQuestionsAdminCtrl', function (
+    .controller('rgiReorderQuestionsAdminCtrl', ['$scope', '$q', 'rgiHttpResponseProcessorSrvc', 'rgiPreceptGuideSrvc', 'rgiNotifier', 'rgiQuestionSrvc', 'rgiQuestionMethodSrvc', 'rgiSortableGuideSrvc', function (
         $scope,
         $q,
         rgiHttpResponseProcessorSrvc,
@@ -79,4 +79,4 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
-    });
+    }]);

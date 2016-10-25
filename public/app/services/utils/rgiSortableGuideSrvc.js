@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiSortableGuideSrvc', function (_) {
+angular.module('app').factory('rgiSortableGuideSrvc', ['_', function (_) {
     var sortableGuide = {
         getOptions: function(acceptRegroup, extraOptions) {
             var options = {
@@ -23,4 +23,4 @@ angular.module('app').factory('rgiSortableGuideSrvc', function (_) {
     };
 
     return sortableGuide;
-});
+}]);

@@ -4,7 +4,7 @@ angular.module('app')
     .value('rgiToastr', toastr);
 
 angular.module('app')
-    .factory('rgiNotifier', function (rgiLogger, rgiToastr) {
+    .factory('rgiNotifier', ['rgiLogger', 'rgiToastr', function (rgiLogger, rgiToastr) {
         return {
             notify: function (msg) {
                 rgiToastr.success(msg);
@@ -15,4 +15,4 @@ angular.module('app')
                 rgiLogger.log(msg);
             }
         };
-    });
+    }]);

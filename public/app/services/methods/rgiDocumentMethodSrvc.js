@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiDocumentMethodSrvc', function (
+    .factory('rgiDocumentMethodSrvc', ['rgiDocumentSrvc', 'rgiResourceProcessorSrvc', function (
         rgiDocumentSrvc,
         rgiResourceProcessorSrvc
     ) {
@@ -13,4 +13,4 @@ angular.module('app')
                 return rgiResourceProcessorSrvc.delete(rgiDocumentSrvc, documentId);
             }
         };
-    });
+    }]);

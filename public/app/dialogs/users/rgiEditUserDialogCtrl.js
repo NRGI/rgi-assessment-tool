@@ -1,6 +1,6 @@
 'use strict';
 angular.module('app')
-    .controller('rgiEditUserDialogCtrl', function (
+    .controller('rgiEditUserDialogCtrl', ['$scope', '$route', '$timeout', 'rgiNotifier', 'rgiUserMethodSrvc', 'AVAILABLE_ROLES_SET', 'HUMAN_NAME_PATTERN', 'PASSWORD_PATTERN', function (
         $scope,
         $route,
         $timeout,
@@ -67,4 +67,4 @@ angular.module('app')
                 }
             }
         };
-    });
+    }]);

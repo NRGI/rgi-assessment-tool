@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewAssessmentDialogCtrl', function (
+    .controller('rgiNewAssessmentDialogCtrl', ['$scope', '$route', '$rootScope', '$location', 'rgiAnswerMethodSrvc', 'rgiAssessmentMethodSrvc', 'rgiAssessmentSrvc', 'rgiCountrySrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'MINERAL_TAGS_SET', 'rgiNotifier', 'rgiQuestionMethodSrvc', 'rgiQuestionSrvc', 'rgiUtilsSrvc', function (
         $scope,
         $route,
         $rootScope,
@@ -171,4 +171,4 @@ angular.module('app')
                 }
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         };
-    });
+    }]);
