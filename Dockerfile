@@ -23,11 +23,12 @@ RUN     cd /tmp && npm install
 RUN     mkdir -p /src && cp -a /tmp/node_modules /src
 ADD     Gruntfile.js /tmp/Gruntfile.js
 ADD     server/config/config.js /tmp/server/config/config.js
+ADD     server/includes/scripts.jade /tmp/server/includes/scripts.jade
 ADD     public /tmp/public
 ADD     .bowerrc /tmp/.bowerrc
 ADD     bower.json /tmp/bower.json
 RUN		cd /tmp && bower install --allow-root
-RUN		cd /tmp && grunt build
+RUN		cd /tmp && grunt build && grunt hash
 RUN		rm -R /tmp/node_modules
 COPY	. /src
 RUN     cp -a /tmp/public/assets /src/public/assets
