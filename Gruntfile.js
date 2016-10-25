@@ -8,6 +8,189 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        concat: {
+            options: {},
+            app: {
+                src: [
+                    'public/app/app.js',
+                    'public/app/common/rgiLogger.js',
+                    'public/app/common/rgiNotifier.js',
+                    'public/app/common/rgiFilters.js',
+                    'public/app/common/rgiUtilsSrvc.js',
+                    'public/app/main/rgiMainCtrl.js',
+                    'public/app/main/rgiContactTechCtrl.js',
+                    'public/app/main/rgiResourcesCtrl.js',
+
+                    'public/app/services/rgiAnswerSrvc.js',
+                    'public/app/services/rgiAnswerRawSrvc.js',
+                    'public/app/services/rgiAssessmentSrvc.js',
+                    'public/app/services/rgiAuthSrvc.js',
+                    'public/app/services/rgiAuthLogsSrvc.js',
+                    'public/app/services/rgiContactTechSrvc.js',
+                    'public/app/services/rgiCountrySrvc.js',
+                    'public/app/services/rgiDocumentSrvc.js',
+                    'public/app/services/rgiIdentitySrvc.js',
+                    'public/app/services/rgiIntervieweeSrvc.js',
+                    'public/app/services/rgiIntervieweeAnswerSrvc.js',
+                    'public/app/services/rgiPreceptGuideSrvc.js',
+                    'public/app/services/rgiQuestionSrvc.js',
+                    'public/app/services/rgiQuestionRawSrvc.js',
+                    'public/app/services/rgiResetPasswordSrvc.js',
+                    'public/app/services/rgiResourcesSrvc.js',
+                    'public/app/services/rgiUserSrvc.js',
+
+                    'public/app/services/utils/rgiAllowedFileExtensionGuideSrvc.js',
+                    'public/app/services/utils/rgiAnswerFilterSrvc.js',
+                    'public/app/services/utils/rgiAssessmentStatisticsGuideSrvc.js',
+                    'public/app/services/utils/rgiFileUploaderSrvc.js',
+                    'public/app/services/utils/rgiHttpResponseProcessorSrvc.js',
+                    'public/app/services/utils/rgiQuestionSetSrvc.js',
+                    'public/app/services/utils/rgiReferenceListSrvc.js',
+                    'public/app/services/utils/rgiResourceProcessorSrvc.js',
+                    'public/app/services/utils/rgiSortableGuideSrvc.js',
+                    'public/app/services/utils/rgiUrlGuideSrvc.js',
+                    'public/app/services/utils/rgiUserAssessmentsSrvc.js',
+
+                    'public/app/services/methods/rgiAnswerMethodSrvc.js',
+                    'public/app/services/methods/rgiAssessmentMethodSrvc.js',
+                    'public/app/services/methods/rgiContactMethodSrvc.js',
+                    'public/app/services/methods/rgiDocumentMethodSrvc.js',
+                    'public/app/services/methods/rgiIntervieweeMethodSrvc.js',
+                    'public/app/services/methods/rgiQuestionMethodSrvc.js',
+                    'public/app/services/methods/rgiResourcesMethodSrvc.js',
+                    'public/app/services/methods/rgiUserMethodSrvc.js',
+
+                    'public/app/services/constants/_.js',
+                    'public/app/services/constants/rgiAvailableRolesSet.js',
+                    'public/app/services/constants/rgiFileSizeLimit.js',
+                    'public/app/services/constants/rgiMineralTagsSet.js',
+                    'public/app/services/constants/rgiPatternSet.js',
+
+                    'public/app/directives/directives/rgi-active-answer-buttons.js',
+                    'public/app/directives/directives/rgi-answer-form.js',
+                    'public/app/directives/directives/rgi-answer-nav.js',
+                    'public/app/directives/directives/rgi-assessment-detail-table.js',
+                    'public/app/directives/directives/rgi-assessments-list-table.js',
+                    'public/app/directives/directives/rgi-auth-logs.js',
+                    'public/app/directives/directives/rgi-references.js',
+                    'public/app/directives/directives/rgi-calendar.js',
+                    'public/app/directives/directives/rgi-comments.js',
+                    'public/app/directives/directives/rgi-document-table.js',
+                    'public/app/directives/directives/rgi-flag-tabs.js',
+                    'public/app/directives/directives/rgi-external-answer-tabs.js',
+                    'public/app/directives/directives/rgi-interviewee-table.js',
+                    'public/app/directives/directives/rgi-prev-answers.js',
+                    'public/app/directives/directives/rgi-question-table.js',
+                    'public/app/directives/directives/rgi-user-table.js',
+                    'public/app/directives/directives/rgi-draggable-dialog.js',
+                    'public/app/directives/directives/rgi-wysiwyg.js',
+
+                    'public/app/directives/controllers/rgiActiveAnswerButtonsCtrl.js',
+                    'public/app/directives/controllers/rgiAnswerNavCtrl.js',
+                    'public/app/directives/controllers/rgiAssessmentsListTableCtrl.js',
+                    'public/app/directives/controllers/rgiAssessmentDetailTableCtrl.js',
+                    'public/app/directives/controllers/rgiAuthLogsCtrl.js',
+                    'public/app/directives/controllers/rgiReferencesCtrl.js',
+                    'public/app/directives/controllers/rgiCalendarCtrl.js',
+                    'public/app/directives/controllers/rgiCommentsCtrl.js',
+                    'public/app/directives/controllers/rgiDocumentTableCtrl.js',
+                    'public/app/directives/controllers/rgiFlagTabsCtrl.js',
+                    'public/app/directives/controllers/rgiExternalAnswerTabsCtrl.js',
+                    'public/app/directives/controllers/rgiIntervieweeTableCtrl.js',
+                    'public/app/directives/controllers/rgiQuestionTableCtrl.js',
+                    'public/app/directives/controllers/rgiUserTableCtrl.js',
+                    'public/app/directives/controllers/rgiWysiwygCtrl.js',
+
+                    'public/app/account/rgiNavBarLoginCtrl.js',
+                    'public/app/account/rgiProfileCtrl.js',
+                    'public/app/account/rgiRecoverPasswordCtrl.js',
+                    'public/app/account/rgiResetPasswordCtrl.js',
+
+                    'public/app/admin/users/rgiUserCreateCtrl.js',
+                    'public/app/admin/users/rgiUserAdminCtrl.js',
+                    'public/app/admin/users/rgiUserAdminDetailCtrl.js',
+                    'public/app/admin/questions/rgiQuestionAdminCtrl.js',
+                    'public/app/admin/questions/rgiQuestionAdminDetailCtrl.js',
+                    'public/app/admin/questions/rgiQuestionRawListCtrl.js',
+                    'public/app/admin/questions/rgiReorderQuestionsAdminCtrl.js',
+                    'public/app/admin/documents/rgiDocumentAdminCtrl.js',
+                    'public/app/admin/documents/rgiDocumentAdminDetailCtrl.js',
+                    'public/app/admin/answers/rgiAnswerRawListCtrl.js',
+                    'public/app/admin/interviewees/rgiIntervieweeAdminCtrl.js',
+                    'public/app/admin/interviewees/rgiIntervieweeAdminDetailCtrl.js',
+                    'public/app/admin/resources/rgiResourcesAdminCtrl.js',
+
+                    'public/app/assessments/rgiAssessmentsListCtrl.js',
+                    'public/app/assessments/rgiAssessmentDetailCtrl.js',
+                    'public/app/answers/rgiAnswerCtrl.js',
+
+                    'public/app/dialogs/rgiDialogFactory.js',
+                    'public/app/dialogs/assessments/rgiAssessmentStatusDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiAssignAssessmentDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiAssignAssessmentMultipleAssigneeDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiMoveAssessmentDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiMoveAssessmentConfirmationDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiSubmitAssessmentConfirmationDialogCtrl.js',
+                    'public/app/dialogs/assessments/rgiResubmitAssessmentConfirmationDialogCtrl.js',
+                    'public/app/dialogs/answers/rgiFinalChoiceDialogCtrl.js',
+                    'public/app/dialogs/answers/rgiGuidanceDialogCtrl.js',
+                    'public/app/dialogs/comments/rgiEditCommentDialogCtrl.js',
+                    'public/app/dialogs/comments/rgiDeleteCommentDialogCtrl.js',
+                    'public/app/dialogs/documents/rgiDeleteDocumentDialogCtrl.js',
+                    'public/app/dialogs/flags/rgiFlagAnswerDialogCtrl.js',
+                    'public/app/dialogs/flags/rgiFlagAnswerDialogCtrl.js',
+                    'public/app/dialogs/interviewees/rgiDeleteIntervieweeDialogCtrl.js',
+                    'public/app/dialogs/questions/rgiNewQuestionDialogCtrl.js',
+                    'public/app/dialogs/questions/rgiDeleteQuestionDialogCtrl.js',
+                    'public/app/dialogs/references/rgiEditReferenceDialogCtrl.js',
+                    'public/app/dialogs/references/rgiEditDocumentDialogCtrl.js',
+                    'public/app/dialogs/references/rgiEditIntervieweeDialogCtrl.js',
+                    'public/app/dialogs/references/rgiNewRefDialogCtrl.js',
+                    'public/app/dialogs/references/rgiDeleteReferenceDialogCtrl.js',
+                    'public/app/dialogs/references/rgiNewDocumentDialogCtrl.js',
+                    'public/app/dialogs/references/rgiNewWebpageDialogCtrl.js',
+                    'public/app/dialogs/resources/rgiDeleteResourceDialogCtrl.js',
+                    'public/app/dialogs/resources/rgiNewResourceDialogCtrl.js',
+                    'public/app/dialogs/users/rgiDeleteUserDialogCtrl.js',
+                    'public/app/dialogs/users/rgiEditUserDialogCtrl.js'
+                ],
+                dest: 'public/assets/app.js'
+            },
+            vendors: {
+                src: [
+                    'public/vendor/jquery/dist/jquery.js',
+                    'public/vendor/jquery-ui/jquery-ui.min.js',
+                    'public/vendor/jquery-truncate-html/jquery.truncate.js',
+                    'public/vendor/angular/angular.js',
+                    'public/vendor/bootstrap/dist/js/bootstrap.js',
+                    'public/vendor/angucomplete/angucomplete.js',
+                    'public/vendor/angular-bootstrap/ui-bootstrap.js',
+                    'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
+                    'public/vendor/angular-file-upload/angular-file-upload.js',
+                    'public/vendor/angular-filter/dist/angular-filter.js',
+                    'public/vendor/angular-resource/angular-resource.js',
+                    'public/vendor/angular-route/angular-route.js',
+                    'public/vendor/angular-sanitize/angular-sanitize.js',
+                    'public/vendor/angular-tablesort/js/angular-tablesort.js',
+                    'public/vendor/angular-ui-mask/dist/mask.min.js',
+
+                    'public/vendor/ng-csv/build/ng-csv.js',
+                    'public/vendor/ng-form-group/index.js',
+                    'public/vendor/ngDialog/js/ngDialog.js',
+                    'public/vendor/ngInfiniteScroll/build/ng-infinite-scroll.js',
+                    'public/vendor/ng-sortable/dist/ng-sortable.min.js',
+                    'public/vendor/ta-maxlength/ta-maxlength.js',
+                    'public/vendor/toastr/toastr.js',
+                    'public/vendor/textAngular/dist/textAngular-rangy.min.js',
+                    'public/vendor/textAngular/dist/textAngular-sanitize.min.js',
+                    'public/vendor/textAngular/dist/textAngular.min.js',
+                    'public/vendor/underscore/underscore.js',
+                    'public/vendor/angular-underscore/angular-underscore.min.js'
+                ],
+                dest: 'public/assets/vendors.js'
+            }
+        },
         express: {
             options: {},
             test: {
@@ -71,6 +254,17 @@ module.exports = function (grunt) {
                 src: ['tests/unit/server/**/*.spec.js']
             }
         },
+        ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
+            app: {
+                files: {
+                    'public/assets/app.js': ['public/assets/app.js'],
+                    'public/assets/vendors.js': ['public/assets/vendors.js']
+                }
+            }
+        },
         protractor_webdriver: {
             start: {
                 options: {
@@ -110,11 +304,16 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                report: 'min',
+                mangle: false
             },
-            build: {
-                src: 'src/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
+            app: {
+                src: ['public/assets/app.js'],
+                dest: 'public/assets/app.js'
+            },
+            vendors: {
+                src: ['public/assets/vendors.js'],
+                dest: 'public/assets/vendors.js'
             }
         },
         watch: {
@@ -133,6 +332,7 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -144,12 +344,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-karma');
 
+    grunt.loadNpmTasks('grunt-ng-annotate');
+
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-protractor-webdriver');
 
     grunt.loadNpmTasks('grunt-shell');
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('build', ['concat', 'ngAnnotate', 'uglify']);
     grunt.registerTask('server', ['express', 'watch']);
     grunt.registerTask('test:e2e', ['protractor_webdriver', 'protractor']);
     grunt.registerTask('test:client', ['karma']);
