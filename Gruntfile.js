@@ -326,6 +326,10 @@ module.exports = function (grunt) {
                     spawn: false
                 }
             },
+            js: {
+                files: ['public/app/**/*.js'],
+                tasks: ['build']
+            },
             stylus: {
                 files: ['public/css/*.styl'],
                 tasks: ['stylus:compile'],
