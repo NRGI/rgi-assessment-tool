@@ -55,6 +55,10 @@ dump
 node_modules
 public/vendor
 
+#JS builds
+public/assets/app.js
+public/assets/vendors.js
+
 #Webstorm files
 .idea
 
