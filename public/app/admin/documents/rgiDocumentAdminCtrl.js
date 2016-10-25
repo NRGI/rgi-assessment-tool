@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDocumentAdminCtrl', function ($scope) {
+    .controller('rgiDocumentAdminCtrl', ['$scope', function ($scope) {
         // filtering options
         $scope.sort_options = [
             {value: 'title', text: 'Sort by document title'},
@@ -10,4 +10,4 @@ angular.module('app')
         ];
 
         $scope.sort_order = $scope.sort_options[0].value;
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiEditCommentDialogCtrl', function (
+    .controller('rgiEditCommentDialogCtrl', ['$scope', 'rgiNotifier', 'rgiAnswerMethodSrvc', function (
         $scope,
         rgiNotifier,
         rgiAnswerMethodSrvc
@@ -21,4 +21,4 @@ angular.module('app')
                 }, rgiNotifier.error)
                 .finally($scope.closeThisDialog);
         };
-    });
+    }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiUrlGuideSrvc', function (rgiIdentitySrvc, rgiUtilsSrvc) {
+angular.module('app').factory('rgiUrlGuideSrvc', ['rgiIdentitySrvc', 'rgiUtilsSrvc', function (rgiIdentitySrvc, rgiUtilsSrvc) {
     var urlGuide = {
         getAssessmentsUrl: function() {
             return rgiIdentitySrvc.currentUser.role === 'supervisor' ? '/admin/assessments-admin' : '/assessments';
@@ -15,4 +15,4 @@ angular.module('app').factory('rgiUrlGuideSrvc', function (rgiIdentitySrvc, rgiU
     };
 
     return urlGuide;
-});
+}]);

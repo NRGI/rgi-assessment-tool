@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiAuthSrvc', function (
+angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiUserSrvc', function (
     $http,
     $q,
     rgiHttpResponseProcessorSrvc,
@@ -43,4 +43,4 @@ angular.module('app').factory('rgiAuthSrvc', function (
             return rgiIdentitySrvc.isAuthenticated() ? true : $q.reject('not authorized');
         }
     };
-});
+}]);

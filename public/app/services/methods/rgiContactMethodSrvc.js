@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiContactMethodSrvc', function (
+    .factory('rgiContactMethodSrvc', ['$q', 'rgiContactTechSrvc', 'rgiHttpResponseProcessorSrvc', function (
         $q,
         rgiContactTechSrvc,
         rgiHttpResponseProcessorSrvc
@@ -15,4 +15,4 @@ angular.module('app')
                 return dfd.promise;
             }
         };
-    });
+    }]);

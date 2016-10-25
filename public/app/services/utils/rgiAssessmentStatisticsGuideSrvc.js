@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAssessmentStatisticsGuideSrvc', function (rgiIdentitySrvc, rgiQuestionSetSrvc) {
+    .factory('rgiAssessmentStatisticsGuideSrvc', ['rgiIdentitySrvc', 'rgiQuestionSetSrvc', function (rgiIdentitySrvc, rgiQuestionSetSrvc) {
         return {
             getCounterSetTemplate: function(callback) {
                 rgiQuestionSetSrvc.loadQuestions(function() {
@@ -55,4 +55,4 @@ angular.module('app')
                 }
             }
         };
-    });
+    }]);

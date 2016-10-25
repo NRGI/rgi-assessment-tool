@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiMoveAssessmentDialogCtrl', function (
+    .controller('rgiMoveAssessmentDialogCtrl', ['$scope', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiUserSrvc', function (
         $scope,
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
@@ -54,4 +54,4 @@ angular.module('app')
         $scope.moveAssessment = function () {
             rgiDialogFactory.assessmentMoveConfirm($scope);
         };
-    });
+    }]);

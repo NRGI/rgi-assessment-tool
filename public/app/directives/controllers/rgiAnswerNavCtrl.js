@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .controller('rgiAnswerNavCtrl', function (
+    .controller('rgiAnswerNavCtrl', ['$scope', '$location', '$routeParams', 'rgiIdentitySrvc', 'rgiQuestionSetSrvc', 'rgiUrlGuideSrvc', function (
         $scope,
         $location,
         $routeParams,
@@ -54,4 +54,4 @@ angular
                 redirectToAnswerPage(questionOrders[questionOrders.length - 1]);
             }
         };
-    });
+    }]);

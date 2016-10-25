@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAssignAssessmentMultipleAssigneeDialogCtrl', function (
+    .controller('rgiAssignAssessmentMultipleAssigneeDialogCtrl', ['$scope', '$route', '$q', 'rgiAssessmentSrvc', 'rgiAssessmentMethodSrvc', 'rgiNotifier', 'rgiHttpResponseProcessorSrvc', 'rgiUserAssessmentsSrvc', 'rgiUserSrvc', function (
         $scope,
         $route,
         $q,
@@ -120,4 +120,4 @@ angular.module('app')
                     }
                 });
         };
-    });
+    }]);

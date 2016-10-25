@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiFinalChoiceDialogCtrl', function (
+    .controller('rgiFinalChoiceDialogCtrl', ['_', '$scope', '$location', '$routeParams', '$route', 'rgiAnswerSrvc', 'rgiAnswerMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', 'rgiQuestionSetSrvc', 'rgiUrlGuideSrvc', function (
         _,
         $scope,
         $location,
@@ -134,4 +134,4 @@ angular.module('app')
                     }).finally($scope.closeThisDialog);
             }
         };
-    });
+    }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiQuestionSetSrvc', function (rgiHttpResponseProcessorSrvc, rgiQuestionSrvc) {
+angular.module('app').factory('rgiQuestionSetSrvc', ['rgiHttpResponseProcessorSrvc', 'rgiQuestionSrvc', function (rgiHttpResponseProcessorSrvc, rgiQuestionSrvc) {
     var answers = [], questions = [];
 
     var getRootQuestions = function(roles, showAnsweredQuestions) {
@@ -173,4 +173,4 @@ angular.module('app').factory('rgiQuestionSetSrvc', function (rgiHttpResponsePro
     };
 
     return questionSet;
-});
+}]);

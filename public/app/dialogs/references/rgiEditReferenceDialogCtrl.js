@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiEditReferenceDialogCtrl', function (
+    .controller('rgiEditReferenceDialogCtrl', ['$scope', '$rootScope', 'rgiAnswerMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIntervieweeSrvc', 'rgiNotifier', function (
         $scope,
         $rootScope,
         rgiAnswerMethodSrvc,
@@ -33,4 +33,4 @@ angular.module('app')
                 rgiNotifier.error('You must select the date');
             }
         };
-    });
+    }]);

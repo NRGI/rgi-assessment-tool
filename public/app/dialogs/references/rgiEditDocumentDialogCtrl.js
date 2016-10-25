@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiEditDocumentDialogCtrl', function (
+    .controller('rgiEditDocumentDialogCtrl', ['$scope', '$route', 'rgiDocumentMethodSrvc', 'rgiNotifier', 'HUMAN_NAME_PATTERN', 'NUMERIC_RANGE_PATTERN', function (
         $scope,
         $route,
         rgiDocumentMethodSrvc,
@@ -80,4 +80,4 @@ angular.module('app')
                 });
             }
         };
-    });
+    }]);

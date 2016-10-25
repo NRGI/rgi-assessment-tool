@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiResetPasswordCtrl', function (
+    .controller('rgiResetPasswordCtrl', ['$scope', '$routeParams', '$location', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiResetPasswordSrvc', function (
         $scope,
         $routeParams,
         $location,
@@ -34,4 +34,4 @@ angular.module('app')
                 }
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler());
         };
-    });
+    }]);

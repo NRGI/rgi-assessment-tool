@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNavBarLoginCtrl', function (
+    .controller('rgiNavBarLoginCtrl', ['$scope', '$location', 'rgiAssessmentSrvc', 'rgiAuthSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', function (
         $scope,
         $location,
         rgiAssessmentSrvc,
@@ -68,4 +68,4 @@ angular.module('app')
                 $location.path('/');
             });
         };
-    });
+    }]);

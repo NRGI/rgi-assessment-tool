@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDocumentAdminDetailCtrl', function (
+    .controller('rgiDocumentAdminDetailCtrl', ['$scope', '$routeParams', 'rgiDialogFactory', 'rgiDocumentSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiUserSrvc', function (
         $scope,
         $routeParams,
         rgiDialogFactory,
@@ -25,4 +25,4 @@ angular.module('app')
         $scope.editDocumentDialog = function () {
             rgiDialogFactory.documentEdit($scope);
         };
-    });
+    }]);

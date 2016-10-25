@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
+angular.module('app').factory('rgiHttpResponseProcessorSrvc', ['$location', 'rgiIdentitySrvc', 'rgiNotifier', function (
     $location,
     rgiIdentitySrvc,
     rgiNotifier
@@ -65,4 +65,4 @@ angular.module('app').factory('rgiHttpResponseProcessorSrvc', function (
         };
 
     return httpResponseProcessor;
-});
+}]);

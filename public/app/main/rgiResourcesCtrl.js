@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiResourcesCtrl', function (
+    .controller('rgiResourcesCtrl', ['$scope', '$location', 'rgiHttpResponseProcessorSrvc', 'rgiResourcesSrvc', function (
         $scope,
         $location,
         rgiHttpResponseProcessorSrvc,
@@ -19,4 +19,4 @@ angular.module('app')
             $scope.resources = resources;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load ' +
             ($scope.resource_type === 'faq' ? 'FAQ' : $scope.resource_type) + ' data failure'));
-    });
+    }]);

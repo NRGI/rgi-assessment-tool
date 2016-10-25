@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiUtilsSrvc', function ($http, $q) {
+    .factory('rgiUtilsSrvc', ['$http', '$q', function ($http, $q) {
         return {
             flagCheck: function (flags) {
                 var disabled = false;
@@ -38,4 +38,4 @@ angular.module('app')
                 return deferred.promise;
             }
         };
-    });
+    }]);

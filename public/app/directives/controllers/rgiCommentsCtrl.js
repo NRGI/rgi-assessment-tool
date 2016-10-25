@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiCommentsCtrl', function (
+    .controller('rgiCommentsCtrl', ['$scope', 'rgiDialogFactory', 'rgiIdentitySrvc', 'rgiAnswerMethodSrvc', 'rgiQuestionMethodSrvc', 'rgiNotifier', function (
         $scope,
         rgiDialogFactory,
         rgiIdentitySrvc,
@@ -62,4 +62,4 @@ angular.module('app')
         $scope.deleteComment = function(comment) {
             rgiDialogFactory.deleteComment($scope, comment);
         };
-    });
+    }]);

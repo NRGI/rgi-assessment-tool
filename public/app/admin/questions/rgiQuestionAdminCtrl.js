@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiQuestionAdminCtrl', function (
+    .controller('rgiQuestionAdminCtrl', ['$scope', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiPreceptGuideSrvc', 'rgiQuestionSrvc', function (
         $scope,
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
@@ -56,4 +56,4 @@ angular.module('app')
         $scope.newQuestionDialog = function () {
             rgiDialogFactory.questionNew($scope);
         };
-    });
+    }]);
