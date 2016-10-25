@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiCalendarCtrl', function ($scope) {
+    .controller('rgiCalendarCtrl', ['$scope', function ($scope) {
         $scope.date_max_limit = new Date();
         $scope.date_options = {formatYear: 'yy', startingDay: 1};
         $scope.date_format = 'dd-MMMM-yyyy';
@@ -10,4 +10,4 @@ angular.module('app')
         $scope.openCalendar = function () {
             $scope.status.opened = true;
         };
-    });
+    }]);

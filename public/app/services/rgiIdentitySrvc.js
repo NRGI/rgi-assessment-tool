@@ -1,4 +1,4 @@
-angular.module('app').factory('rgiIdentitySrvc', function ($window, rgiUserSrvc) {
+angular.module('app').factory('rgiIdentitySrvc', ['$window', 'rgiUserSrvc', function ($window, rgiUserSrvc) {
     'use strict';
     var currentUser;
     // bootstrapped object to keep session alive
@@ -17,4 +17,4 @@ angular.module('app').factory('rgiIdentitySrvc', function ($window, rgiUserSrvc)
             return !!this.currentUser && this.currentUser.role === role;
         }
     };
-});
+}]);

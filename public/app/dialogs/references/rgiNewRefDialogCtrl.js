@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewRefDialogCtrl', function (
+    .controller('rgiNewRefDialogCtrl', ['$scope', '$http', '$rootScope', '$timeout', 'rgiAllowedFileExtensionGuideSrvc', 'rgiAnswerMethodSrvc', 'rgiAssessmentSrvc', 'rgiDialogFactory', 'rgiDocumentSrvc', 'rgiFileUploaderSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiIntervieweeSrvc', 'rgiIntervieweeMethodSrvc', 'rgiNotifier', 'rgiUtilsSrvc', 'HUMAN_NAME_PATTERN', 'FILE_SIZE_LIMIT', function (
         $scope,
         $http,
         $rootScope,
@@ -387,4 +387,4 @@ angular.module('app')
                 }
             }, getHttpFailureHandler('Load document data failure'));
         };
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiMainCtrl', function (
+    .controller('rgiMainCtrl', ['$scope', 'rgiIdentitySrvc', function (
         $scope,
         rgiIdentitySrvc
     ) {
@@ -11,4 +11,4 @@ angular.module('app')
             $scope.fullName = rgiIdentitySrvc.currentUser.firstName + " " + rgiIdentitySrvc.currentUser.lastName;
             $scope.role = rgiIdentitySrvc.currentUser.role;
         }
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiProfileCtrl', function (
+    .controller('rgiProfileCtrl', ['$scope', '$route', '$timeout', 'rgiIdentitySrvc', 'rgiNotifier', 'rgiUserMethodSrvc', 'HUMAN_NAME_PATTERN', 'PASSWORD_PATTERN', function (
         $scope,
         $route,
         $timeout,
@@ -65,4 +65,4 @@ angular.module('app')
                 }
             }
         };
-    });
+    }]);

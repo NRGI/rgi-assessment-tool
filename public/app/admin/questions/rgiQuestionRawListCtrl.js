@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiQuestionRawListCtrl', function (_, $scope, rgiQuestionRawSrvc) {
+    .controller('rgiQuestionRawListCtrl', ['_', '$scope', 'rgiQuestionRawSrvc', function (_, $scope, rgiQuestionRawSrvc) {
         $scope.busy = false;
         $scope.questions = [];
         $scope.questionListHeader = [];
@@ -45,4 +45,4 @@ angular.module('app')
             };
 
         fetchQuestions();
-    });
+    }]);

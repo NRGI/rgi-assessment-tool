@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewQuestionDialogCtrl', function (
+    .controller('rgiNewQuestionDialogCtrl', ['$scope', 'ngDialog', 'rgiNotifier', 'rgiIdentitySrvc', function (
         $scope,
         ngDialog,
         rgiNotifier,
@@ -69,4 +69,4 @@ angular.module('app')
             //         rgiNotifier.error(reason);
             //     });
         };
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiReferencesCtrl', function (
+    .controller('rgiReferencesCtrl', ['$scope', 'rgiDialogFactory', 'rgiIdentitySrvc', 'rgiReferenceListSrvc', function (
         $scope,
         rgiDialogFactory,
         rgiIdentitySrvc,
@@ -48,4 +48,4 @@ angular.module('app')
         $scope.showRestoreReferenceDialog = function(referenceIndex) {
             rgiDialogFactory.restoreReference($scope, referenceIndex);
         };
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAssessmentStatusDialogCtrl', function (
+    .controller('rgiAssessmentStatusDialogCtrl', ['$scope', 'rgiNotifier', 'rgiAssessmentMethodSrvc', function (
         $scope,
         rgiNotifier,
         rgiAssessmentMethodSrvc
@@ -41,4 +41,4 @@ angular.module('app')
                     setStatus(assessment, originalStatus);
                 }).finally($scope.closeThisDialog);
         };
-    });
+    }]);

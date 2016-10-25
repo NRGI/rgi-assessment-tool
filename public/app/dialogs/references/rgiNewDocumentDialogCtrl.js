@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewDocumentDialogCtrl', function (
+    .controller('rgiNewDocumentDialogCtrl', ['$scope', '$rootScope', 'rgiNotifier', 'rgiAnswerMethodSrvc', 'rgiDocumentSrvc', 'rgiDocumentMethodSrvc', 'rgiIdentitySrvc', 'rgiUserMethodSrvc', function (
         $scope,
         $rootScope,
         rgiNotifier,
@@ -149,4 +149,4 @@ angular.module('app')
             $scope.closeThisDialog();
             $rootScope.$broadcast('RESET_SELECTED_REFERENCE_ACTION');
         };
-    });
+    }]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteUserDialogCtrl', function (
+    .controller('rgiDeleteUserDialogCtrl', ['$scope', '$location', 'rgiUserMethodSrvc', 'rgiNotifier', function (
         $scope,
         $location,
         rgiUserMethodSrvc,
@@ -21,4 +21,4 @@ angular.module('app')
                 }).finally($scope.closeThisDialog);
             }
         };
-    });
+    }]);

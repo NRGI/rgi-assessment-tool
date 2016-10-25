@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiGuidanceDialogCtrl', function (
+    .controller('rgiGuidanceDialogCtrl', ['$scope', 'rgiAnswerMethodSrvc', 'rgiNotifier', function (
         $scope,
         rgiAnswerMethodSrvc,
         rgiNotifier
@@ -15,4 +15,4 @@ angular.module('app')
                 rgiNotifier.notify(reason);
                 $scope.closeThisDialog();
             });
-    });
+    }]);

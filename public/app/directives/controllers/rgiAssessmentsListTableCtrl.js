@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .controller('rgiAssessmentsListTableCtrl', function (
+    .controller('rgiAssessmentsListTableCtrl', ['$scope', '$location', '$rootScope', 'ngDialog', 'rgiAssessmentMethodSrvc', 'rgiAssessmentSrvc', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', function (
         $scope,
         $location,
         $rootScope,
@@ -94,4 +94,4 @@ angular
         $scope.reassignAssessmentDialog = function (assessment) {
             rgiDialogFactory.assessmentAssign($scope, assessment);
         };
-    });
+    }]);

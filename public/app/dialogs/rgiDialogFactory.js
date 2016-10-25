@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiDialogFactory', function (
+    .factory('rgiDialogFactory', ['ngDialog', 'rgiNotifier', function (
         ngDialog,
         rgiNotifier
     ) {
@@ -450,4 +450,4 @@ angular.module('app')
                 });
             }
         };
-    });
+    }]);

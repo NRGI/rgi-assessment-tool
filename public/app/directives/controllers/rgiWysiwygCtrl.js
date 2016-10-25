@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiWysiwygCtrl', function ($scope) {
+    .controller('rgiWysiwygCtrl', ['$scope', function ($scope) {
         $scope.editorContentMaxLength = $scope.limit || 4000;
         $scope.taToolbarOptions = [
             ['undo', 'redo', 'clear'],
@@ -11,4 +11,4 @@ angular.module('app')
             ['quote', 'insertLink'],
             ['charcount']
         ];
-    });
+    }]);

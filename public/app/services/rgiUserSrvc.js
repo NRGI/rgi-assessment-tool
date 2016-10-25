@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiUserSrvc', function ($resource) {
+    .factory('rgiUserSrvc', ['$resource', function ($resource) {
         var UserResource = $resource('/api/users/:_id', {_id: "@id"}, {
             getCached: {method : 'GET', cache: true},
             update: {method: 'PUT', isArray: false}
@@ -29,4 +29,4 @@ angular.module('app')
         };
 
         return UserResource;
-    });
+    }]);

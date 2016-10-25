@@ -2,7 +2,7 @@
 
 angular
     .module('app')
-    .controller('rgiUserAdminCtrl', function (
+    .controller('rgiUserAdminCtrl', ['$scope', 'rgiAssessmentSrvc', 'rgiAuthLogsSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiUserSrvc', function (
         $scope,
         rgiAssessmentSrvc,
         rgiAuthLogsSrvc,
@@ -40,4 +40,4 @@ angular
                 $scope.users.push(user);
             });
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
-    });
+    }]);

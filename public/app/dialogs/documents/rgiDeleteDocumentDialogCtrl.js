@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteDocumentDialogCtrl', function (
+    .controller('rgiDeleteDocumentDialogCtrl', ['$scope', 'rgiDocumentMethodSrvc', 'rgiNotifier', function (
         $scope,
         rgiDocumentMethodSrvc,
         rgiNotifier
@@ -27,4 +27,4 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
-    });
+    }]);

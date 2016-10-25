@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiSubmitAssessmentConfirmationDialogCtrl', function (
+    .controller('rgiSubmitAssessmentConfirmationDialogCtrl', ['$scope', '$location', 'rgiAssessmentMethodSrvc', 'rgiNotifier', function (
         $scope,
         $location,
         rgiAssessmentMethodSrvc,
@@ -21,4 +21,4 @@ angular.module('app')
                     rgiNotifier.error(reason);
                 });
         };
-    });
+    }]);

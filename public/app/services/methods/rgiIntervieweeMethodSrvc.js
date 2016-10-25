@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiIntervieweeMethodSrvc', function (
+    .factory('rgiIntervieweeMethodSrvc', ['rgiIntervieweeSrvc', 'rgiResourceProcessorSrvc', function (
         rgiIntervieweeSrvc,
         rgiResourceProcessorSrvc
     ) {
@@ -16,4 +16,4 @@ angular.module('app')
                 return rgiResourceProcessorSrvc.process(interviewee, '$update');
             }
         };
-    });
+    }]);

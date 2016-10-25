@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('rgiResourceProcessorSrvc', function ($q, rgiHttpResponseProcessorSrvc) {
+angular.module('app').factory('rgiResourceProcessorSrvc', ['$q', 'rgiHttpResponseProcessorSrvc', function ($q, rgiHttpResponseProcessorSrvc) {
     var resourceProcessor = {
         getResponseHandler: function(dfd) {
             return function (response) {
@@ -27,4 +27,4 @@ angular.module('app').factory('rgiResourceProcessorSrvc', function ($q, rgiHttpR
     };
 
     return resourceProcessor;
-});
+}]);

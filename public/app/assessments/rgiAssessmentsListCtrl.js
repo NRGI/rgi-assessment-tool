@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAssessmentsListCtrl', function (
+    .controller('rgiAssessmentsListCtrl', ['$scope', '$rootScope', '$routeParams', 'rgiAnswerSrvc', 'rgiAssessmentSrvc', 'rgiAssessmentStatisticsGuideSrvc', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', function (
         $scope,
         $rootScope,
         $routeParams,
@@ -107,4 +107,4 @@ angular.module('app')
         $scope.setAssessmentStatus = function(assessmentId, status) {
             rgiDialogFactory.setAssessmentStatus($scope, assessmentId, status);
         };
-    });
+    }]);

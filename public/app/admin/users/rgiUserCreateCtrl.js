@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiUserCreateCtrl', function (
+    .controller('rgiUserCreateCtrl', ['$scope', '$location', 'rgiNotifier', 'rgiUserMethodSrvc', 'AVAILABLE_ROLES_SET', 'HUMAN_NAME_PATTERN', function (
         $scope,
         $location,
         rgiNotifier,
@@ -34,4 +34,4 @@ angular.module('app')
                 });
             }
         };
-    });
+    }]);

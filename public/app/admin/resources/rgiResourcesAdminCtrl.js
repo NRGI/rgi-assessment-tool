@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiResourcesAdminCtrl', function (
+    .controller('rgiResourcesAdminCtrl', ['$scope', '$location', '$route', '$q', '_', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiResourcesSrvc', 'rgiResourcesMethodSrvc', 'rgiSortableGuideSrvc', function (
         $scope,
         $location,
         $route,
@@ -99,4 +99,4 @@ angular.module('app')
         $scope.showConfirmResourceDeletionDialog = function (resource) {
             rgiDialogFactory.deleteResource($scope, resource);
         };
-    });
+    }]);

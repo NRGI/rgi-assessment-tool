@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDeleteResourceDialogCtrl', function (
+    .controller('rgiDeleteResourceDialogCtrl', ['$scope', '$route', 'rgiNotifier', 'rgiResourcesMethodSrvc', function (
         $scope,
         $route,
         rgiNotifier,
@@ -16,4 +16,4 @@ angular.module('app')
                 rgiNotifier.error(reason);
             });
         };
-    });
+    }]);
