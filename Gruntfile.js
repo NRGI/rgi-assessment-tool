@@ -181,10 +181,11 @@ var vendorsFileList = [
 ];
 
 var vendorsBuildFilePath = 'public/assets/vendors.js';
+var appBuildFilePath = 'public/assets/app.js';
 
-var getSrcDestinationMapping = function(dest) {
+var getSrcDestinationMapping = function(dest, files) {
     var mapping = {};
-    mapping[dest] = [dest];
+    mapping[dest] = files === undefined ? [dest] : files;
     return mapping;
 };
 
@@ -301,12 +302,14 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            options: {
-                report: 'min',
-                mangle: false
+            options: {report: 'min', mangle: false},
+            app: {
+                options: {sourceMap: true, sourceMapIncludeSources: true},
+                files: getSrcDestinationMapping(appBuildFilePath, appFileList)
             },
-            app: {src: appFileList, dest: 'public/assets/app.js'},
-            vendors: {src: [vendorsBuildFilePath], dest: vendorsBuildFilePath}
+            vendors: {
+                files: getSrcDestinationMapping(vendorsBuildFilePath)
+            }
         },
         watch: {
             jade: {
