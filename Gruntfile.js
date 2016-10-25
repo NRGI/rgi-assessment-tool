@@ -4,6 +4,9 @@
 var testEnvironment = 'test';
 var config = require('./server/config/config')[testEnvironment];
 
+var fs = require('fs'),
+    crypto = require('crypto');
+
 var appFileList = [
     'public/app/app.js',
     'public/app/common/rgiLogger.js',
@@ -207,6 +210,10 @@ module.exports = function (grunt) {
                 }
             }
         },
+        hash: {
+            app: appBuildFilePath,
+            vendors: vendorsBuildFilePath
+        },
         jade: {
             compile: {
                 options: {
@@ -353,4 +360,62 @@ module.exports = function (grunt) {
     grunt.registerTask('test:client', ['karma']);
     grunt.registerTask('test:server', ['mochaTest']);
     grunt.registerTask('test-server', ['shell']);
+
+    grunt.registerMultiTask('hash', 'Rename the built JS files based on the file content', function() {
+        var filePath = this.data;
+        var done = this.async();
+        var hash = crypto.createHash('sha1');
+        var completed = {rename: false, linkChange: false};
+
+        var setCompleted = function(field) {
+            completed[field] = true;
+
+            if(completed.rename && completed.linkChange) {
+                done();
+            }
+        };
+
+        fs.readFile(filePath, {encoding: 'utf8'}, function (err, fileContent) {
+            if(err) {
+                grunt.log.writeln('failed to read the file ' + filePath + '. The error is ' + err);
+                done(false);
+            } else {
+                hash.update(fileContent);
+                var newFileName = filePath.replace('.js', '-' + hash.digest('hex') + '.js');
+                var scriptsFilePath = 'server/includes/scripts.jade';
+
+                fs.readFile('server/includes/scripts.jade', {encoding: 'utf8'}, function (err, fileContent) {
+                    if(err) {
+                        grunt.log.writeln('failed to read the file `scripts.jade`. The error is ' + err);
+                        done(false);
+                    } else {
+                        var updateContent = fileContent.replace(filePath.replace('public/', '/'),
+                            newFileName.replace('public/', '/'));
+
+                        fs.writeFile(scriptsFilePath, updateContent, function(err) {
+                            if(err) {
+                                grunt.log.writeln('failed to write the file `scripts.jade`. The error is ' + err);
+                                done(false);
+                            } else {
+                                setCompleted('linkChange');
+                            }
+                        });
+                    }
+
+                });
+
+                fs.rename(filePath, newFileName, function(err) {
+                    if(err) {
+                        grunt.log.writeln('unable to rename the file ' + filePath +' to ' + newFileName +
+                            '. The error is ' + err);
+                        done(false);
+                    } else {
+                        setCompleted('rename');
+                    }
+                });
+            }
+        });
+    });
+
+
 };
