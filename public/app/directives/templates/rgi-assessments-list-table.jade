@@ -14,7 +14,7 @@
                 th.col-sm-1
 
         tbody
-            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order")
+            tr(ng-repeat="assessment in assessments | filter: search_text | orderBy:sort_order", ng-if="!assessment.deleted")
                 //ASSESSMENT
                 td(ng-class="{'col-sm-1': current_user.isSupervisor(), 'col-sm-2': !current_user.isSupervisor()}")
                     div(ng-if="!current_user.isSupervisor() || assessment.status === 'unassigned'")
