@@ -124,6 +124,7 @@ var appFileList = [
     'public/app/dialogs/assessments/rgiAssessmentStatusDialogCtrl.js',
     'public/app/dialogs/assessments/rgiAssignAssessmentDialogCtrl.js',
     'public/app/dialogs/assessments/rgiAssignAssessmentMultipleAssigneeDialogCtrl.js',
+    'public/app/dialogs/assessments/rgiDeleteAssessmentDialogCtrl.js',
     'public/app/dialogs/assessments/rgiMoveAssessmentDialogCtrl.js',
     'public/app/dialogs/assessments/rgiMoveAssessmentConfirmationDialogCtrl.js',
     'public/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js',

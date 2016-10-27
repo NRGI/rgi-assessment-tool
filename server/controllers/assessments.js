@@ -80,6 +80,7 @@ exports.createAssessments = function (req, res) {
 
 exports.updateAssessment = function (req, res, next) {
     var assessment_init = false,
+        bySupervisorSubmitted = false,
         assessmentUpdates = req.body,
         timestamp = new Date().toISOString(),
         edit_control_id = assessmentUpdates.edit_control,
@@ -92,6 +93,7 @@ exports.updateAssessment = function (req, res, next) {
     if (req.user.role === 'supervisor') {
         contact_packet.admin_name = req.user.firstName + " " + req.user.lastName;
         contact_packet.admin_email = req.user.email;
+        bySupervisorSubmitted = true;
     }
     //TODO make sure i can res.send without breaking function
     contact_packet.admin = [];
@@ -232,14 +234,25 @@ exports.updateAssessment = function (req, res, next) {
                         }
                     });
 
-                    assessment.ext_reviewer_ID = assessmentUpdates.ext_reviewer_ID;
-                    assessment.supervisor_ID = assessmentUpdates.supervisor_ID;
-                    assessment.first_pass = assessmentUpdates.first_pass;
-                    assessment.edit_control = assessmentUpdates.edit_control;
-                    assessment.status = assessmentUpdates.status;
-                    assessment.documents = assessmentUpdates.documents;
-                    assessment.interviewees = assessmentUpdates.interviewees;
                     assessment.last_modified = {user: req.user._id, date: timestamp};
+
+                    var updatedFieldsSet = [
+                        'ext_reviewer_ID',
+                        'supervisor_ID',
+                        'first_pass',
+                        'edit_control',
+                        'status',
+                        'documents',
+                        'interviewees'
+                    ];
+
+                    if(bySupervisorSubmitted) {
+                        updatedFieldsSet.push('deleted');
+                    }
+
+                    updatedFieldsSet.forEach(function(field) {
+                        assessment[field] = assessmentUpdates[field];
+                    });
 
                     if(assessment.status!=='trial_continue') {
                         assessment.save(function (err) {

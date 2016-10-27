@@ -95,4 +95,8 @@ angular.module('app')
         $scope.moveAssessmentDialog = function () {
             rgiDialogFactory.assessmentMove($scope);
         };
+
+        $scope.deleteAssessmentDialog = function () {
+            rgiDialogFactory.deleteAssessment($scope);
+        };
     }]);
