@@ -40,7 +40,7 @@ angular.module('app')
             $scope.setStatus = function () {
                 var originalState = {status: assessment.status, editControl: assessment.edit_control};
                 setStatus($scope.newStatus);
-                assessment.edit_control = $scope.XYU.edit_control;
+                assessment.edit_control = $scope.editControl.selected;
 
                 rgiAssessmentMethodSrvc.updateAssessment(assessment)
                     .then(function () {
@@ -58,18 +58,18 @@ angular.module('app')
                 }
             });
 
-            $scope.XYU = {edit_control: getRecommendedEditControl($scope.newStatus), assignedUsers: []};
+            $scope.editControl = {selected: getRecommendedEditControl($scope.newStatus), availableUsers: []};
 
-            if($scope.XYU.edit_control === undefined) {
-                $scope.XYU.edit_control = assessment.edit_control;
+            if($scope.editControl.selected === undefined) {
+                $scope.editControl.selected = assessment.edit_control;
             }
 
             _.without(AVAILABLE_ROLES_SET, 'ext_reviewer').forEach(function(role) {
                 if(getAssignedUserByRole(role) !== undefined) {
                     if(role === 'supervisor') {
-                        $scope.XYU.assignedUsers = $scope.XYU.assignedUsers.concat(getAssignedUserByRole(role));
+                        $scope.editControl.availableUsers = $scope.editControl.availableUsers.concat(getAssignedUserByRole(role));
                     } else {
-                        $scope.XYU.assignedUsers.push(getAssignedUserByRole(role));
+                        $scope.editControl.availableUsers.push(getAssignedUserByRole(role));
                     }
                 }
             });

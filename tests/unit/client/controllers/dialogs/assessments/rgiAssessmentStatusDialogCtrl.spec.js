@@ -56,7 +56,7 @@ describe('rgiAssessmentStatusDialogCtrl', function () {
 
                  it('sets the `edit_control` assessment field if a reviewer is assigned to the assessment', function() {
                      $scope.assessments[0].reviewer_ID = 'REVIEWER';
-                     $scope.edit_control = $scope.assessments[0].reviewer_ID;
+                     $scope.editControl.selected = $scope.assessments[0].reviewer_ID;
                      $scope.setStatus();
                      $scope.assessments[0].edit_control.should.be.equal($scope.assessments[0].reviewer_ID);
                  });
