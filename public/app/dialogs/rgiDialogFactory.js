@@ -422,7 +422,7 @@ angular.module('app')
                 ngDialog.open({
                     template: 'partials/dialogs/assessments/assessment-status-dialog',
                     controller: 'rgiAssessmentStatusDialogCtrl',
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     closeByNavigation: true,
                     scope: $scope
                 });
