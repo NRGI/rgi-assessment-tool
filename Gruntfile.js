@@ -326,8 +326,12 @@ module.exports = function (grunt) {
                     spawn: false
                 }
             },
-            js: {
+            "js-app": {
                 files: ['public/app/**/*.js'],
+                tasks: ['uglify:app']
+            },
+            "js-vendors": {
+                files: ['public/vendor/**/*.js'],
                 tasks: ['build']
             },
             stylus: {
