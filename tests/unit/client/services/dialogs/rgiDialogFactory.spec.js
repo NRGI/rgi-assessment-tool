@@ -475,7 +475,7 @@ describe('rgiDialogFactory', function () {
                 spies.openDialog.withArgs({
                     template: 'partials/dialogs/assessments/assessment-status-dialog',
                     controller: 'rgiAssessmentStatusDialogCtrl',
-                    className: 'ngdialog-theme-default',
+                    className: 'ngdialog-theme-default dialogwidth800',
                     closeByNavigation: true,
                     scope: {assessmentId: ASSESSMENT_ID, newStatus: STATUS}
                 }).called.should.be.equal(true);
