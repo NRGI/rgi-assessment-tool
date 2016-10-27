@@ -1,44 +1,65 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiAssessmentStatusDialogCtrl', ['$scope', 'rgiNotifier', 'rgiAssessmentMethodSrvc', function (
-        $scope,
-        rgiNotifier,
-        rgiAssessmentMethodSrvc
-    ) {
-        var
-            setStatus = function(assessment, status) {
-                assessment.status = status;
-                $scope.statuses[$scope.assessmentId] = status;
+    .controller('rgiAssessmentStatusDialogCtrl', [
+        '_',
+        '$scope',
+        'rgiNotifier',
+        'rgiAssessmentMethodSrvc',
+        'ASSESSMENT_ROLES_SET',
+        'AVAILABLE_ROLES_SET',
+        function (
+            _,
+            $scope,
+            rgiNotifier,
+            rgiAssessmentMethodSrvc,
+            ASSESSMENT_ROLES_SET,
+            AVAILABLE_ROLES_SET
+        ) {
+            var
+                assessment = {},
+                getRecommendedEditControl = function(status) {
+                    var editControl;
 
-                if((status.indexOf('reviewer') === 0) && (assessment.reviewer_ID !== undefined)) {
-                    assessment.edit_control = assessment.reviewer_ID;
-                }
-            },
-            getAssessment = function() {
-                var foundAssessment = {};
+                    _.without(ASSESSMENT_ROLES_SET, 'ext_reviewer').forEach(function(role) {
+                        if((status.indexOf(role) === 0) && (assessment[role + '_ID'] !== undefined)) {
+                            editControl = assessment[role + '_ID'];
+                        }
+                    });
 
-                $scope.assessments.forEach(function(assessment) {
-                    if(assessment._id === $scope.assessmentId) {
-                        foundAssessment = assessment;
-                    }
-                });
+                    return editControl;
+                },
+                setStatus = function(status) {
+                    assessment.status = status;
+                    $scope.statuses[$scope.assessmentId] = status;
+                };
 
-                return foundAssessment;
+            $scope.setStatus = function () {
+                var originalState = {status: assessment.status, editControl: assessment.edit_control};
+                setStatus($scope.newStatus);
+                assessment.edit_control = $scope.edit_control;
+
+                rgiAssessmentMethodSrvc.updateAssessment(assessment)
+                    .then(function () {
+                        rgiNotifier.notify('Status changed!');
+                    }, function (reason) {
+                        rgiNotifier.error(reason);
+                        setStatus(originalState.status);
+                        assessment.edit_control = originalState.editControl;
+                    }).finally($scope.closeThisDialog);
             };
 
-        $scope.setStatus = function () {
-            var assessment = getAssessment(),
-                originalStatus = assessment.status;
+            $scope.assessments.forEach(function(availableAssessment) {
+                if(availableAssessment._id === $scope.assessmentId) {
+                    assessment = availableAssessment;
+                }
+            });
 
-            setStatus(assessment, $scope.newStatus);
+            $scope.userRoles = _.without(AVAILABLE_ROLES_SET, 'ext_reviewer');
+            $scope.edit_control = getRecommendedEditControl($scope.newStatus);
 
-            rgiAssessmentMethodSrvc.updateAssessment(assessment)
-                .then(function () {
-                    rgiNotifier.notify('Status changed!');
-                }, function (reason) {
-                    rgiNotifier.error(reason);
-                    setStatus(assessment, originalStatus);
-                }).finally($scope.closeThisDialog);
-        };
-    }]);
+            if($scope.edit_control === undefined) {
+                $scope.edit_control = assessment.edit_control;
+            }
+        }
+    ]);

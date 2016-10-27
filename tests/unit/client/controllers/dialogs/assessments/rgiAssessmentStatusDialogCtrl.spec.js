@@ -3,7 +3,9 @@
 describe('rgiAssessmentStatusDialogCtrl', function () {
     beforeEach(module('app'));
 
-    var $scope, rgiAssessmentMethodSrvc, rgiNotifier;
+    var $scope, rgiAssessmentMethodSrvc, rgiNotifier,
+        ASSESSMENT_ID = 'ASSESSMENT ID', EDIT_CONTROL = 'EDIT CONTROL',
+        NEW_STATUS = 'new status', ORIGINAL_STATUS = 'ORIGINAL STATUS';
 
     beforeEach(inject(
         function ($rootScope, $controller, _rgiAssessmentMethodSrvc_, _rgiNotifier_) {
@@ -11,13 +13,16 @@ describe('rgiAssessmentStatusDialogCtrl', function () {
             rgiNotifier = _rgiNotifier_;
             $scope = $rootScope.$new();
 
+            $scope.assessmentId = ASSESSMENT_ID;
+            $scope.assessments = [{_id: ASSESSMENT_ID, edit_control: EDIT_CONTROL, status: ORIGINAL_STATUS}];
+            $scope.newStatus = NEW_STATUS;
+
             $controller('rgiAssessmentStatusDialogCtrl', {$scope: $scope});
         }
     ));
 
      describe('#setStatus', function () {
          var mocks = {}, spies = {}, stubs = {},
-             ASSESSMENT_ID = 'ASSESSMENT ID', ORIGINAL_STATUS = 'ORIGINAL STATUS', EDIT_CONTROL = 'EDIT CONTROL',
              setUpdateAssessmentStub = function(callback) {
                  spies.assessmentMethodUpdateAssessment = sinon.spy(function() {
                      return {then: callback};
@@ -27,9 +32,6 @@ describe('rgiAssessmentStatusDialogCtrl', function () {
              };
 
          beforeEach(function() {
-             $scope.assessmentId = ASSESSMENT_ID;
-             $scope.assessments = [{_id: ASSESSMENT_ID, edit_control: EDIT_CONTROL, status: ORIGINAL_STATUS}];
-
              $scope.statuses = {};
              $scope.statuses[ASSESSMENT_ID] = ORIGINAL_STATUS;
 
@@ -54,6 +56,7 @@ describe('rgiAssessmentStatusDialogCtrl', function () {
 
                  it('sets the `edit_control` assessment field if a reviewer is assigned to the assessment', function() {
                      $scope.assessments[0].reviewer_ID = 'REVIEWER';
+                     $scope.edit_control = $scope.assessments[0].reviewer_ID;
                      $scope.setStatus();
                      $scope.assessments[0].edit_control.should.be.equal($scope.assessments[0].reviewer_ID);
                  });
