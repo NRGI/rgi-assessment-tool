@@ -30,8 +30,11 @@
                     ng-disabled="assessment_counters.length <= 0"
                     ng-if="identity.currentUser._id === assessment.edit_control && ['review_researcher', 'review_reviewer'].indexOf(assessment.status) > -1") Resubmit assessment
                 div(ng-if="identity.currentUser.isSupervisor()")
-                    button.btn.btn-success.pull-right(
-                    ng-click="moveAssessmentDialog()") Move assessment
+                    .row
+                        button.btn.btn-success.pull-right(ng-click="moveAssessmentDialog()") Move assessment
+                    br
+                    .row
+                        button.btn.btn-danger.pull-right(ng-click="deleteAssessmentDialog()") Delete
 
             .pull-left.left-padding-lg.bottom-padding-lg
                 .row(ng-if="identity.currentUser.isSupervisor()")
