@@ -13,6 +13,8 @@
                                 ng-model="editControl.selected"
                                 ng-options="user._id as (user.firstName + ' ' + user.lastName + ' (' + user.role + ')') for user in editControl.availableUsers"
                             )
+                        .text-warning.glyphicon.glyphicon-warning-sign.left-padding-lg
+                        | &nbsp; Only the selected user will be able to answer the assessment questions
     .modal-footer
         button.btn.btn-danger(ng-click="setStatus()") Confirm
         | &nbsp;
