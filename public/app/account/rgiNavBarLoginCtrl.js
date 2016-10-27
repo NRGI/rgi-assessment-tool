@@ -18,7 +18,7 @@ angular.module('app')
 
                 rgiAssessmentSrvc.query({}, function (assessments) {
                     assessments.forEach(function (assessment) {
-                        if (urls.indexOf(assessment.year + '_' + assessment.version) < 0) {
+                        if(!assessment.deleted && (urls.indexOf(assessment.year + '_' + assessment.version) < 0)) {
                             urls.push(assessment.year + '_' + assessment.version);
                             versions.push({
                                 year: assessment.year,
