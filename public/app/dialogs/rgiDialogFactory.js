@@ -202,6 +202,15 @@ angular.module('app')
                     }
                 });
             },
+            deleteAssessment: function($scope) {
+                ngDialog.open({
+                    template: 'partials/dialogs/assessments/delete-assessment-dialog',
+                    controller: 'rgiDeleteAssessmentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
+                    scope: $scope
+                });
+            },
             deleteComment: function($scope, comment) {
                 $scope.comment = comment;
                 ngDialog.open({
