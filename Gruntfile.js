@@ -135,7 +135,7 @@ var appFileList = [
     'public/app/dialogs/comments/rgiDeleteCommentDialogCtrl.js',
     'public/app/dialogs/documents/rgiDeleteDocumentDialogCtrl.js',
     'public/app/dialogs/flags/rgiFlagAnswerDialogCtrl.js',
-    'public/app/dialogs/flags/rgiFlagAnswerDialogCtrl.js',
+    'public/app/dialogs/flags/rgiFlagEditDialogCtrl.js',
     'public/app/dialogs/interviewees/rgiDeleteIntervieweeDialogCtrl.js',
     'public/app/dialogs/questions/rgiNewQuestionDialogCtrl.js',
     'public/app/dialogs/questions/rgiDeleteQuestionDialogCtrl.js',
