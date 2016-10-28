@@ -307,6 +307,21 @@ describe('rgiDialogFactory', function () {
             });
         });
 
+        describe('#deleteAssessment', function () {
+            it('opens a dialog', function() {
+                var SCOPE = 'scope';
+                rgiDialogFactory.deleteAssessment(SCOPE);
+
+                spies.openDialog.withArgs({
+                    template: 'partials/dialogs/assessments/delete-assessment-dialog',
+                    controller: 'rgiDeleteAssessmentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
+                    scope: SCOPE
+                }).called.should.be.equal(true);
+            });
+        });
+
         describe('#deleteComment', function () {
             it('opens a dialog', function() {
                 var COMMENT = 'COMMENT';
