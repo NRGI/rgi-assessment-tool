@@ -13,6 +13,11 @@ env:
     # Shippable API token used to trigger deploy
     - secure: PbZ0OyiwDjY2pcnrOOF8LnlWonxRz64vQYe2f/so8qoIKpIYBATKAkfn7bU4uXEbpkOKdFOiPcj9qNHOavP4FBO87L7z5/Cv5tFLtDjeqhb/1Ym6J6yTUKzrSIG2C9lxcIA1tXDcx+Rr/LYfRzlWgoOyrbJs7XBg+LJwzYCnv7LjHe2YVamtrFY8SG6jNKm3TXsz1hAomPKLLDyjdedoiKxJ4+z5wezcePQGaYBRN83lYLXWrvK+TArNLnq4/U17UQIByGO/6dFzUEnV4R7WOyk94QrbidFxIvpM2cllq8iuFFBuFlCeH3cak5RXpaN0bBpWxEj3u7DOKmw48WWHtA==
 
+integrations:
+  hub:
+    - integrationName: nrgiDockerHub
+      type: docker
+
 before_script:
   - npm install --dev
   - npm install -g bower phantomjs
@@ -20,13 +25,12 @@ before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
-
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
 
 after_success:
-  - sudo docker build -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
+  - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
   # Create the `latest` tag and force it in case the tag is already there from a previous build
   - sudo docker tag -f nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
 
@@ -34,8 +38,3 @@ after_success:
   - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
 
   - ./deploy.sh
-
-integrations:
-    hub:
-      - integrationName: nrgiDockerHub
-        type: docker
