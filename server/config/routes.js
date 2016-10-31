@@ -108,6 +108,7 @@ module.exports = function (app) {
 
     // PUBLIC API
     app.get('/api/public/answers/:assessment_ID', answers.listPublicData);
+    app.get('/api/public/documents/:assessment_ID', documents.listPublicData);
     app.get('/api/public/precepts', precepts.list);
     
     //GET RAW DATA
