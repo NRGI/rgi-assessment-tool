@@ -8,6 +8,7 @@ var auth                    = require('./auth'),
     countries               = require('../controllers/countries'),
     documents               = require('../controllers/documents'),
     interviewees            = require('../controllers/interviewees'),
+    precepts                = require('../controllers/precepts'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
     response                = require('../utilities/general-response'),
@@ -104,6 +105,9 @@ module.exports = function (app) {
     // GET COUNTRY
     app.get('/api/countries', countries.getCountries);
     app.get('/api/countries/:country_ID', countries.getCountryByID);
+
+    // PUBLIC API
+    app.get('/api/public/precepts', precepts.list);
     
     //GET RAW DATA
     app.get('/api/raw_answers/:limit/:skip/:country', answers.getAnswersPortion, answers.getExportedAnswersData);
