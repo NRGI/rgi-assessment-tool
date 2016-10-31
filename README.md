@@ -10,14 +10,19 @@ This tool is a custom webapp build on Node.js, Express and Angular. It is connec
 
 The tool allows researchers to complete RGI assessments, reviewers to review assessments and administrators to validate and authorize assessments.
 
+##Dependencies
+* Node.js
 
 ##Installation
 ***
 ***Method 1:*** Open terminal and run the following commands:
 
 		git clone 
-		cd 
-
+		cd
+		npm install
+		npm install -g bower grunt
+		bower install
+		grunt uglify
 
 ***Method 2:***  Install docker. From commande line run:
 	
@@ -25,6 +30,10 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 		docker run byndcivilization/rgi-assessment-tool -e "USER_ID=<db user name>"" -e "USER_KEY=<db pass>""
 
 		docker run -d=true -p 49160:3030 -e "USER_ID=<db user name>" -e "USER_KEY=<db pass>" byndcivilization/rgi-assessment-tool
+
+##Launch
+
+		node server
 
 ##Tests
 
