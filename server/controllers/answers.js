@@ -41,6 +41,21 @@ exports.getAnswers = function (req, res, next) {
     }
 };
 
+exports.listPublicData = function(req, res) {
+    if (req.params.assessment_ID !== undefined) {
+        Answer.find({assessment_ID: req.params.assessment_ID})
+            .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
+            .populate('references.author', 'firstName lastName role')
+            .exec(function (err, answers) {
+                if (err) { return res.send({reason: err}); }
+                res.send(answers);
+            });
+    } else {
+        res.sendStatus(404);
+        return res.end();
+    }
+};
+
 exports.getAnswersPortion = function(req, res, next) {
     var limit = Number(req.params.limit),
         query = req.params.country ? {answer_ID: {$regex: new RegExp('^' + req.params.country + '.*')}} : {};

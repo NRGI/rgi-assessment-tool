@@ -107,6 +107,7 @@ module.exports = function (app) {
     app.get('/api/countries/:country_ID', countries.getCountryByID);
 
     // PUBLIC API
+    app.get('/api/public/answers/:assessment_ID', answers.listPublicData);
     app.get('/api/public/precepts', precepts.list);
     
     //GET RAW DATA
