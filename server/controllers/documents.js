@@ -316,6 +316,19 @@ exports.getUploadStatusDocument = function (req, res) {
     });
 };
 
+exports.listPublicData = function(req, res) {
+    if (req.params.assessment_ID !== undefined) {
+        Doc.find({assessments: req.params.assessment_ID})
+            .exec(function (err, docs) {
+                if (err) { return res.send({reason: err}); }
+                res.send(docs);
+            });
+    } else {
+        res.sendStatus(404);
+        return res.end();
+    }
+};
+
 // exports.getUsersByID = function (req, res) {
 //     User.findOne({_id: req.params.id}).exec(function (err, user) {
 //         res.send(user);
