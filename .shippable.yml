@@ -11,7 +11,7 @@ branches:
 env:
   global:
     # Shippable API token used to trigger deploy
-    - secure: PbZ0OyiwDjY2pcnrOOF8LnlWonxRz64vQYe2f/so8qoIKpIYBATKAkfn7bU4uXEbpkOKdFOiPcj9qNHOavP4FBO87L7z5/Cv5tFLtDjeqhb/1Ym6J6yTUKzrSIG2C9lxcIA1tXDcx+Rr/LYfRzlWgoOyrbJs7XBg+LJwzYCnv7LjHe2YVamtrFY8SG6jNKm3TXsz1hAomPKLLDyjdedoiKxJ4+z5wezcePQGaYBRN83lYLXWrvK+TArNLnq4/U17UQIByGO/6dFzUEnV4R7WOyk94QrbidFxIvpM2cllq8iuFFBuFlCeH3cak5RXpaN0bBpWxEj3u7DOKmw48WWHtA==
+    - secure: Rq9LOfkJJGcSZRnLJBmf3f8czjIj00h4MpNN5O5oWXsHD58+6Ch+efxQjz5mRWCtIZUUpIXTqDId7bU0lHzEAO2Vn7Xdz8xpZZnT7ghKm+TgCeakYywBXrSqYQiFQFL/AcAPbucTsm9ZGdCRY/dug69iHM3ciSOE/WZv2YJpNipVdBtYZJccNgZAoIYsF8O3myJ75RRzuVe4XLGgYclMcsnJobKbPDE3pGvOcJonb2e99UWj5FnSRLgdJ1gcedu1BTCMg6YjTWq8mRb/nuMJrBW0bEBORmMbNJbceMbUNUFg20UBKqc4TXe1efcq7CcckBRRYHi4o9is6hTTn48Klg==
 
 integrations:
   hub:
