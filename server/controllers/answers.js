@@ -5,6 +5,37 @@ var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
     Assessment  = require('mongoose').model('Assessment');
 
+var filterAnswerScoreHistory = function(answer) {
+    ['researcher', 'reviewer'].forEach(function(role) {
+        var field = role + '_score_history';
+        answer[field] = getFilteredScoreHistory(answer[field]);
+    });
+};
+
+var getFilteredScoreHistory = function(rawHistory) {
+    if(rawHistory.length <= 1) {
+        return rawHistory;
+    }
+
+    var getScoreValue = function(score) {
+        return score === undefined ? undefined : score.value;
+    };
+
+    var filteredHistory = [rawHistory[0]];
+
+    for(var hisoryIndex = 1; hisoryIndex < rawHistory.length; hisoryIndex++) {
+        var prevHistoryRecord = rawHistory[hisoryIndex - 1];
+        var historyRecord = rawHistory[hisoryIndex];
+
+        if((getScoreValue(historyRecord.score) !== getScoreValue(prevHistoryRecord.score)) ||
+            (historyRecord.justification !== prevHistoryRecord.justification)) {
+            filteredHistory.push(historyRecord);
+        }
+    }
+
+    return filteredHistory;
+};
+
 exports.getAnswers = function (req, res, next) {
     if (req.user.hasRole('supervisor')) {
         Answer.find(req.query)
@@ -13,6 +44,11 @@ exports.getAnswers = function (req, res, next) {
             .exec(function (err, answers) {
                 if (err) { return next(err); }
                 if (!answers) { return next(new Error('No answers found')); }
+
+                answers.forEach(function(answer) {
+                    filterAnswerScoreHistory(answer);
+                });
+
                 res.send(answers);
             });
     } else {
@@ -48,6 +84,11 @@ exports.listPublicData = function(req, res) {
             .populate('references.author', 'firstName lastName role')
             .exec(function (err, answers) {
                 if (err) { return res.send({reason: err}); }
+
+                answers.forEach(function(answer) {
+                    filterAnswerScoreHistory(answer);
+                });
+
                 res.send(answers);
             });
     } else {
@@ -71,6 +112,11 @@ exports.getAnswersPortion = function(req, res, next) {
                 res.send({reason: err.toString()});
             } else {
                 req.answers = answers;
+
+                answers.forEach(function(answer) {
+                    filterAnswerScoreHistory(answer);
+                });
+
                 next();
             }
         });
@@ -209,6 +255,8 @@ exports.getAnswersByID = function (req, res, next) {
         .exec(function (err, answer) {
             if (err) { return next(err); }
             if (!answer) { return next(new Error('No answers found')); }
+
+            filterAnswerScoreHistory(answer);
             res.send(answer);
         });
 };
