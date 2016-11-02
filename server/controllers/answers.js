@@ -18,7 +18,7 @@ var getFilteredScoreHistory = function(rawHistory) {
     }
 
     var getScoreValue = function(score) {
-        return score === undefined ? undefined : score.value;
+        return (score === undefined) || (score === null) ? score : score.value;
     };
 
     var filteredHistory = [rawHistory[0]];
