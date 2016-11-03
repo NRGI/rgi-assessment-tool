@@ -184,6 +184,12 @@ exports.getExportedAnswersData = function(req, res) {
     req.answers.forEach(function(answerData) {
         var answer = {};
 
+        if(answerData.version === 'MI') {
+            answer.version = 'Minerals';
+        } else if(answerData.version === 'HY') {
+            answer.version = 'Hydrocarbons';
+        }
+
         answer.answer_ID = answerData.answer_ID;
         answer.question_order = answerData.question_order;
         answer.question_text = answerData.question_ID.question_text;
@@ -223,6 +229,7 @@ exports.getExportedAnswersData = function(req, res) {
 
     var exportedFields = [
         'answer_ID',
+        'version',
         'question_order',
         'question_text',
         'status',
