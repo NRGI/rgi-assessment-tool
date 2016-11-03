@@ -2,7 +2,26 @@
 
 angular
     .module('app')
-    .controller('rgiActiveAnswerButtonsCtrl', ['_', '$scope', '$location', '$rootScope', '$routeParams', '$route', 'rgiAnswerSrvc', 'rgiAnswerFilterSrvc', 'rgiAnswerMethodSrvc', 'rgiDialogFactory', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'rgiNotifier', 'rgiQuestionSetSrvc', 'rgiReferenceListSrvc', 'rgiUrlGuideSrvc', 'rgiUtilsSrvc', function (
+    .controller('rgiActiveAnswerButtonsCtrl', [
+        '_',
+        '$scope',
+        '$location',
+        '$rootScope',
+        '$routeParams',
+        '$route',
+        'rgiAnswerSrvc',
+        'rgiAnswerFilterSrvc',
+        'rgiAnswerMethodSrvc',
+        'rgiDialogFactory',
+        'rgiHttpResponseProcessorSrvc',
+        'rgiIdentitySrvc',
+        'rgiLogger',
+        'rgiNotifier',
+        'rgiQuestionSetSrvc',
+        'rgiReferenceListSrvc',
+        'rgiUrlGuideSrvc',
+        'rgiUtilsSrvc',
+    function (
         _,
         $scope,
         $location,
@@ -15,6 +34,7 @@ angular
         rgiDialogFactory,
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
+        rgiLogger,
         rgiNotifier,
         rgiQuestionSetSrvc,
         rgiReferenceListSrvc,
@@ -97,6 +117,12 @@ angular
                     if (!new_answer_data[rgiIdentitySrvc.currentUser.role + '_justification'] && !new_answer_data.question_ID.dependant) {
                         return rgiNotifier.error('You must provide a justification');
                     } else if (!rgiReferenceListSrvc.isAnyBelongingToTheUserType(new_answer_data.references, rgiIdentitySrvc.currentUser) && !new_answer_data.question_ID.dependant) {
+
+                        rgiLogger.info('====NO REFERENCE FOUND for ' + new_answer_data.answer_ID + '====');
+                        rgiLogger.info('++++user++++', JSON.stringify(rgiIdentitySrvc.currentUser), '++++++++++++');
+                        rgiLogger.info('----references----', JSON.stringify(new_answer_data.references), '---------');
+                        rgiLogger.info('==========================');
+
                         return rgiNotifier.error('You must provide at least one supporting reference!');
                     } else if (rgiIdentitySrvc.currentUser.role === 'reviewer' && !researcherAnswerConfirmed && !auth_match && !new_answer_data.question_ID.dependant) {
                         return rgiNotifier.error('You must provide at least one supporting reference for disagreements!');
