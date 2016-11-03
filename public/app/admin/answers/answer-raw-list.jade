@@ -7,6 +7,7 @@
                     .row.pull-left.left-padding-lg.right-padding-lg(ng-if="identity.currentUser.isSupervisor()")
                         button.btn.btn-success(
                             ng-click="downloadCsv()"
+                            add-bom="true"
                             ng-csv="answers"
                             csv-header="answersHeader"
                             csv-column-order="answersHeader"
