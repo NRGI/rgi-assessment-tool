@@ -198,5 +198,10 @@
     "_id": "57fcd9cdd06b33001909e939",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/d5d1882798fe50d56640fadf225a5242f03c6fb8.pdf",
     "source": "http://gheiti.gov.gh"
+  },
+  {
+    "_id": "5809a83f1ee10c002edd97ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/464b5316c092e3a3e53b97b39ebac8966e5991f4.pdf",
+    "source": "http://mospi.nic.in/mospi_new/upload/Energy_statistics_2016.pdf"
   }
 ]

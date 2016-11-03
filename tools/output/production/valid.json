@@ -10326,5 +10326,413 @@
     "_id": "5805b7e4c3c17a00381600a1",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/a5d98c01994af9d36b1e1bd7ea9ab8808b00a985.docx",
     "source": "https://eiti.org/node/4199"
+  },
+  {
+    "_id": "5808de4da5b07c001a8b2efb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/67a83746c31fc3d244c079c84fa5defd87d8f5ea.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/Ot_santarosa.pdf"
+  },
+  {
+    "_id": "5808df4dc375fa001a1658da",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63a13534bcb7d4b4126a052ccdf97d85b9b9c509.pdf",
+    "source": "http://www.mem.gob.gt/wp-content/uploads/2015/06/Ot_izabal.pdf"
+  },
+  {
+    "_id": "5808eb20a5b07c001a8b2f3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54049620208a55f1f55225c94703982291be8012.pdf",
+    "source": "http://www.ambiente.gob.ec/wp-content/uploads/downloads/2012/07/Ley-de-Gestio%C2%81n-Ambiental.pdf"
+  },
+  {
+    "_id": "5808ee46a5b07c001a8b2f57",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8750b7edbcc128c17e7ab2ac4933d48e987ed933.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2014/12/Estudio-de-Impacto-Ambiental-Expost-Del-Area-Parahuacu-Guanta.pdf"
+  },
+  {
+    "_id": "5808b753c29fff0010715576",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f20124a1b84e22686e8d906318bf7486d146633d.pdf"
+  },
+  {
+    "_id": "5808f0f7c375fa001a165942",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/725854bddbde988eca9aca9e9bb8ef15f3b984ea.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/06/R-Ejecutivo-EsIA-Exploratorio-y-de-Avanzada-Perico-01.pdf"
+  },
+  {
+    "_id": "5808ef0cc375fa001a165928",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/87334b3d397ac0057e7eec16d78f672a08c02574.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/06/ESTUDIO-DE-IMPACTO-AMBIENTAL-Y-PLAN-DE-MANEJO-AMBIENTAL-PARA-LA-FASE-EXPLORATORIA-Y-DE-AVANZADA-DEL-PROYECTO-PACAYACU-NORTE-1-UBICADO-EN-EL-AREA-LIBERTADOR-%E2%80%93-BLOQUE-57.pdf"
+  },
+  {
+    "_id": "5808eea4241fac001843eda7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ab4cba328b6a5cb07820e25d9dd74b915791491c.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/08/Resumen-Ejecutivo-del-Proyecto-%E2%80%9CReevaluaci%C3%B3n-Al-Estudio-De-Impacto-Y-Plan-De-Manejo-Ambiental-Expost-del-Complejo-Drago-%C3%81rea-Shushufindi-Bloque-57.pdf"
+  },
+  {
+    "_id": "5809055fc375fa001a16599d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83d3700ebdb503960b77d4e378a70b4d147b00b6.pdf",
+    "source": "http://www.petroamazonas.gob.ec/wp-content/uploads/downloads/2015/03/INFORME-PAM-2014-para-web.pdf"
+  },
+  {
+    "_id": "580907b4241fac001843ee3d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63620da13adf473c86e226569f93f63c174f2dd0.pdf",
+    "source": "https://issuu.com/petroamazonas/docs/rendicio__n_cuentas_2015"
+  },
+  {
+    "_id": "5809af881ee10c002edd97cf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/51c5aafd71b209cd8bd3dc05f745ea3fba524de0.pdf",
+    "source": "http://petroleum.nic.in/weekprod.htm"
+  },
+  {
+    "_id": "580932049f38b1002ef22bd2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81c277acb08e71543ebff38bddfd774769923851.pdf",
+    "source": "http://www.finanzas.gob.ec/wp-content/uploads/downloads/2015/11/34-Programaci%C3%B3n-Presupuestaria-Cuatrianual-2016-2019.pdf"
+  },
+  {
+    "_id": "580a4273c41e10004c84589c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/264f9e8e388aadd99e83cb5475b9c7084adfe6c8.pdf",
+    "source": "http://www.anla.gov.co/documentos/normativa/res_1543_060810.pdf"
+  },
+  {
+    "_id": "580a56261167970054e17ae4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/979147a029577d366a7825b305fcbb5035644878.pdf",
+    "source": "https://data.gov.in/catalog/reserves-crude-oil-india"
+  },
+  {
+    "_id": "580a554fc41e10004c8458d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06084e413977ff0040d9eafed2936d9e5242c2a9.pdf",
+    "source": "https://data.gov.in/catalog/importexport-crude-oil-and-petroleum-products"
+  },
+  {
+    "_id": "580a545bc41e10004c8458cb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8507b269ad7eab5ac902b914ba7ebe6aad4c75e9.pdf",
+    "source": "https://data.gov.in/catalog/exploration-and-production-crude-oil-natural-gas-india"
+  },
+  {
+    "_id": "580a6d0b69c2e100108b517c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/85ef366d574531d34f353f240e4809a00b7813a2.pdf",
+    "source": "https://www.unicauca.edu.co/versionP/sites/default/files/files/ley-1712-de-2014.pdf"
+  },
+  {
+    "_id": "580a43941167970054e17aab",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7870c4a72783887caf9584d8de2b6a11a59246a3.pdf",
+    "source": "http://www.anla.gov.co/documentos/normativa/res_1544_060810_%20tdr_explotacion_hidrocarburos.pdf"
+  },
+  {
+    "_id": "580a764b69c2e100108b5189",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/94dd2700c5cedbbe8b239e21670557170e0b4ef8.pdf",
+    "source": "http://www.upme.gov.co/generadorconsultas/Consulta_Series.aspx?idModulo=4&tipoSerie=116&grupo=356"
+  },
+  {
+    "_id": "580a781ac41e10004c845968",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9aedb959b4b11ba5ef809231cb7dd104b97988f.pdf",
+    "source": "http://www.upme.gov.co/generadorconsultas/Consulta_Series.aspx?idModulo=4&tipoSerie=116&grupo=356"
+  },
+  {
+    "_id": "580af9be1167970054e17c0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/00c52fcc66af4c52eb28fbfe0da28b29e9f1e9bd.pdf",
+    "source": "http://www2.hidrocarburos.gob.bo/index.php/marco-legal/resoluciones-ministeriales/file/106-resoluciones-ministeriales-2011.html?start=20"
+  },
+  {
+    "_id": "580a771c69c2e100108b5198",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/187fa801c0d83ff3a6b2157980868795322cf25f.pdf",
+    "source": "http://www.upme.gov.co/generadorconsultas/Consulta_Series.aspx?idModulo=4&tipoSerie=116&grupo=496&"
+  },
+  {
+    "_id": "580ac2edc41e10004c8459d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54ee21f93bf7965a77c474466d556d8b32c81c8a.pdf",
+    "source": "http://www.ypfb.gob.bo/es/"
+  },
+  {
+    "_id": "580b2f2f1167970054e17c5f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b5ff1cd8f05adfca74d93fcdd9fda1c775b52ef3.pdf",
+    "source": "http://www.zccm-ih.com.zm/what-we-do/"
+  },
+  {
+    "_id": "580b2752c41e10004c845a44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e2731fdcece97019e429fe211d105a04b4e4775d.pdf",
+    "source": "http://www.zccm-ih.com.zm/who-we-are/"
+  },
+  {
+    "_id": "580b282f69c2e100108b526b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9bd5f6c0be9776f2490798e3571894e8db4d9de.pdf",
+    "source": "http://www.zccm-ih.com.zm/structure/"
+  },
+  {
+    "_id": "580afc5d1167970054e17c1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1dabbaef1ea0c10bc3a686765e43efac2737ff7.pdf",
+    "source": "http://www.jubileobolivia.org.bo/publicaciones/cartillas/item/343-contratos-petroleros-exploracion-y-explotacion-de-hidrocarburos-en-bolivia.html"
+  },
+  {
+    "_id": "580b3ab81167970054e17c71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a7ed4024c3a7aa61df4c89bab8b6f5175dbeb9d.pdf",
+    "source": "http://www.parliament.gov.zm/sites/default/files/documents/acts/Securities%20Act.pdf"
+  },
+  {
+    "_id": "580b5fdd69c2e100108b528e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5c25c80c108cf09eb2890083f53a65d1c0f739c9.pdf",
+    "source": "http://www.banrep.gov.co/es/balanza-comercial"
+  },
+  {
+    "_id": "580b3d6469c2e100108b5284",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4e31efdfd22469c345b8f8ede62468f104db26c3.pdf",
+    "source": "http://www.zccm-ih.com.zm/zccm-notice-of-declaration-of-dividend-2/"
+  },
+  {
+    "_id": "580b702a69c2e100108b52b7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b01a29fadc6f1089bd0d69309c2c889028aaa22.pdf",
+    "source": "http://www.mca.gov.in/Ministry/pdf/Exemptions_to_govt_companies_05062015.pdf"
+  },
+  {
+    "_id": "580b80f81167970054e17cca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9596be320039f08cff1fedad9d74aa26b0dd4cb0.pdf",
+    "source": "http://www.eisourcebook.org/cms/Nov%202012/India%20NELP%209th%20Offer%20of%20Blocks.pdf"
+  },
+  {
+    "_id": "580bc3361167970054e17d09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9646bb9eed03e9636ce37d7bbc1afd240cc20e4.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2010/Lei/L12304.htm"
+  },
+  {
+    "_id": "580bd0f51167970054e17d21",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/23647a690c67fb31569727737898bc03cc86bce5.pdf",
+    "source": "http://www.investidorpetrobras.com.br/en/shares-and-dividends/shares"
+  },
+  {
+    "_id": "580b9c8cc41e10004c845ac6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75069c4c893a238550785c3944210ee3c6affbcf.pdf",
+    "source": "http://pib.nic.in/newsite/PrintRelease.aspx?relid=71301"
+  },
+  {
+    "_id": "580bd83a1167970054e17d47",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44253969d99e4032da68ca430bab26e49cbd4b47.pdf",
+    "source": "http://www.jubileobolivia.org.bo/publicaciones/revistas-especializadas/item/391-gobernanza-en-el-sector-hidrocarburos.html"
+  },
+  {
+    "_id": "580bd45b1167970054e17d36",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/816a04256baa75d5a1fd606c22f0ebd01ceaafc2.pdf",
+    "source": "http://cedla.org/sites/default/files/38%20A%20%20CONTRATO%20DE%20OPERACION%20YPFB%20-%20%20PETROBRAS%20-%20%20ANDINA%20-%20TOTAL-%20SAN%20ANTONIO.pdf"
+  },
+  {
+    "_id": "580bf0f5c41e10004c845b45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/95ebcacbbfe1fa13c71b6cf530bc0eed56521563.pdf",
+    "source": "https://www.anm.gov.co/?q=informe-de-materilidad&field_ano_eiti_value=0&field_empresas_de_materialidad_value=5"
+  },
+  {
+    "_id": "580bdef269c2e100108b5348",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a2a45373237329b60ba6a4f27383485de39819ef.pdf",
+    "source": "http://www.cedla.org/sites/default/files/boletin_el_observador_3_a1e1_diciembre_2006.pdf"
+  },
+  {
+    "_id": "580bf528c41e10004c845b5e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f0a2514819a98cd074e170e46f591d41e9742ec.pdf",
+    "source": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2010/Lei/L12351.htm"
+  },
+  {
+    "_id": "580bdfec69c2e100108b5356",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31d800fcaea6ca269ebe9f6881600551af9d5a80.pdf",
+    "source": "http://www.erbol.com.bo/noticia/economia/25092016/alianza_pdvsa_ypfb_expectativa_sin_resultados"
+  },
+  {
+    "_id": "580bdecc69c2e100108b5340",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/15e2b25e9da3420a60421bb0bc382d6ca1cc9856.pdf",
+    "source": "http://www.investidorpetrobras.com.br/en/annual-reports/report-administration"
+  },
+  {
+    "_id": "580c015f69c2e100108b53c5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f1354227c331f84eb35b403fb78ec3a2f2b923c9.pdf",
+    "source": "http://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-satelite/cuenta-satelite-ambiental-csa"
+  },
+  {
+    "_id": "580c0d98c41e10004c845bb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/90510f3228840d71c42a7c8e3574d70ea256af91.pdf",
+    "source": "https://www.minminas.gov.co/documents/10180/655199/Decreto-254-2004.pdf/5eb2f820-64d8-401a-9f4b-d6b06f0c3d19"
+  },
+  {
+    "_id": "580c2d6269c2e100108b5430",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/32a1626f60e358b9be128ee01552712efddd7a70.pdf",
+    "source": "https://www.anm.gov.co/?q=content/resolucion-0045-de-2012"
+  },
+  {
+    "_id": "580bf5f969c2e100108b5393",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a1cd4e2fd2a0331b450467034bd948dbe66aba1.pdf",
+    "source": "http://www.cedib.org/wp-content/uploads/2016/03/04-DS-2549-Otorga-a-YPFB-99-%C3%A1reas-reservadas-para-actividad-hidrocarbur%C3%ADfera-sola-o-asociada-a-otras-empresas.pdf"
+  },
+  {
+    "_id": "580c101ec41e10004c845bc3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b2917cb75e4de9685ba41ac7f4a270eab82431a6.pdf",
+    "source": "http://www.impuestos.gob.bo/images/comunicacion/varios/LEY-2492-16-10-14.pdf"
+  },
+  {
+    "_id": "580c93391167970054e17e77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a23356e65dfa3b5c4b7d32a4f20ba043f9ba1f9c.pdf",
+    "source": "http://mopg.gov.sd/page/map"
+  },
+  {
+    "_id": "580c96c969c2e100108b5490",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ff5d1a8a883385f9e37f352b8993622402d9753.pdf",
+    "source": "http://clickgrafix.co/mopg/concession-map/blocksmap/"
+  },
+  {
+    "_id": "580c95391167970054e17e8e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d0c035a595717cb7771de3fe347e154208bbef36.pdf",
+    "source": "http://www.sudantribune.net/%D8%A7%D9%84%D8%AD%D9%83%D9%88%D9%85%D8%A9-%D8%AA%D9%88%D9%82%D8%B9-%D8%B9%D9%84%D9%89,10673"
+  },
+  {
+    "_id": "580c300269c2e100108b544a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c88223829e1b79708f1e36a8cb381be98f66e06a.pdf",
+    "source": "http://www.corteconstitucional.gov.co/relatoria/2015/T-766-15.htm"
+  },
+  {
+    "_id": "580d36eb69c2e100108b553a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cf0a1940741b867516b99c68c835975701b448fe.pdf",
+    "source": "http://www.comunicacion.gob.bo/sites/default/files/docs/Decreto%20Supremo%20N%C2%BA%2028168%20Acceso%20a%20la%20Informacion_0.pdf"
+  },
+  {
+    "_id": "580ce0a969c2e100108b54c2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a85550579dc71d173dd8b8dd3cdd445fb2d7dc57.pdf",
+    "source": "http://www.cedla.org/content/1533"
+  },
+  {
+    "_id": "580d30b91167970054e17f52",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6fe072f58a323c3ed055b276e564dacbf6851069.pdf",
+    "source": "http://www.ypfb.gob.bo/es/transparencia/gesti%C3%B3n-2015.html"
+  },
+  {
+    "_id": "580cdf8b69c2e100108b54b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc0fc9c11f39aa349fa8f38fe82d8439aa6066a4.pdf",
+    "source": "http://petroleum.nic.in/docs/rti/MPSC%20NELP-IX.pdf"
+  },
+  {
+    "_id": "580ce1361167970054e17ed7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/05d7c4090c003614ca1d44d3a3faa09608caec80.pdf",
+    "source": "http://www.abyayalacolectivo.com/web/compartir/noticia/bolivia--exploracion-petrolera-en-la-amazonia-presenta-nuevos-desafios-al-proceso-de-cambio"
+  },
+  {
+    "_id": "580d5a9bc41e10004c845da3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/44be18754e4027b035c8f79934b84b6ef3b3b831.pdf",
+    "source": "http://www.anp.gov.br/wwwanp/royalties-e-outras-participacoes/participacoes-governamentais-consolidadas"
+  },
+  {
+    "_id": "580d4c7a1167970054e17fb0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50df723309fd221bae1a047d82c659581f8c689c.pdf",
+    "source": "http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=289#0"
+  },
+  {
+    "_id": "580d5dd2c41e10004c845dbc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/54cd3dbe9dfd1bb2706ea5f05882ebd136c5c7b9.pdf"
+  },
+  {
+    "_id": "580d4fe1c41e10004c845d2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4eea008150fa5571422eb1c83c8ca591ada9261.pdf",
+    "source": "http://www.contraloriagen.gov.co/web/sireci/normatividad"
+  },
+  {
+    "_id": "580d509f1167970054e17fc7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ed59e2ad7abbab010455842bc12c01fc6b6e8fdb.pdf",
+    "source": "http://www.revistas.unal.edu.co/index.php/anpol/article/view/43715/45378#1"
+  },
+  {
+    "_id": "580d5e18c41e10004c845dca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d909e4cf7e7261a417e5a892e47ebe3519d81187.pdf",
+    "source": "http://www.economiayfinanzas.gob.bo/index.php?opcion=com_contenido&ver=contenido&id=1648&id_item=230&seccion=230&categoria=330"
+  },
+  {
+    "_id": "580d8a171167970054e18143",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8dda74532ed0d6ddc3ff9f5845213e40443e3f56.pdf",
+    "source": "https://data.gov.in/catalog/reserves-crude-oil-india"
+  },
+  {
+    "_id": "580d67e2c41e10004c845e2e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3b690fc8b5c542ffcd4a43698a50cb2accccefa.pdf",
+    "source": "http://www.razonpublica.com/index.php/economia-y-sociedad/8324-la-miner%C3%ADa-en-el-plan-nacional-de-desarrollo.html"
+  },
+  {
+    "_id": "580d6c1dc41e10004c845e44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/401c70e74eb9705ab277200054211c90f63a9cec.pdf",
+    "source": "http://media.wix.com/ugd/ef61f6_4ec11b2e8d8b4186a6158e2d82071d3b.pdf"
+  },
+  {
+    "_id": "580d7008c41e10004c845e5c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f72ad37d88038e5726e9a42da13c4414858cb6d9.pdf",
+    "source": "http://www.secretariasenado.gov.co/senado/basedoc/ley_1753_2015.html"
+  },
+  {
+    "_id": "580d9c4ac41e10004c845edd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/42ba9712e87f231b3d4fea271add32d52f88f6ca.pdf",
+    "source": "http://www.simco.gov.co/Default.aspx?alias=www.simco.gov.co/cesar"
+  },
+  {
+    "_id": "580da21369c2e100108b5707",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c75bf0eb73ba0d9e082ea6e7f6d2955052091ae3.pdf",
+    "source": "http://www.colombiapuntomedio.com/Portals/0/BannerHome/Documentos/Mineria/2011/Irregularidades%20en%20la%20titulaci%C3%B3n%20minera..pdf"
+  },
+  {
+    "_id": "580d8aedc41e10004c845eb1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3560234fa1ca5c5852f6245299ee9285164af3e0.pdf",
+    "source": "https://data.gov.in/catalog/importexport-crude-oil-and-petroleum-products"
+  },
+  {
+    "_id": "580dabf769c2e100108b5754",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64b339e12bbebafcf72457a68a893d1f82ccc418.pdf",
+    "source": "http://nasaacin.org/informativo-nasaacin/contexto-colombiano/3056-multinacional-gran-colombia-gold-sigue-creando-problemas-en-marmato"
+  },
+  {
+    "_id": "580d8e9fc41e10004c845ec0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16dc6f23cf3b5199f29359b31ab3fae14084df43.pdf",
+    "source": "https://www.anm.gov.co/sites/default/files/evaluacion_de_propuestas_de_contrato_de_concesion.pdf"
+  },
+  {
+    "_id": "580db832293799005ef0cb74",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2eafcea32b1c1c10e0f53f1d01c287b333408977.pdf",
+    "source": "http://www.sudantribune.net/12-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D8%AC%D9%86%D9%8A%D9%87-%D8%B9%D8%AC%D8%B2,6919"
+  },
+  {
+    "_id": "580dace7293799005ef0cb08",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1aa4edb4a3da4207c023bd7f2fc855825afd4dff.pdf",
+    "source": "http://www.eltiempo.com/colombia/otras-ciudades/situacion-minera-en-marmato-caldas-no-mejora/15175695"
+  },
+  {
+    "_id": "580dae2f293799005ef0cb1e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9c89a047b88f4dbeafedf5ff6d9e6d85b4f555fc.pdf",
+    "source": "http://www.refworld.org/pdfid/4ba749762.pdf"
+  },
+  {
+    "_id": "580db05b69c2e100108b577a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/576aebdce216cc12ceae782929752acca282f013.pdf",
+    "source": "https://openknowledge.worldbank.org/handle/10986/3183"
+  },
+  {
+    "_id": "5809bf73957fde0036fd2c35",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/872c6f7290a21a2cf4f0ab96f0b178f0189b124e.pdf",
+    "source": "http://ogpl.gov.in/NDSAP/NDSAP-30Jan2012.pdf"
+  },
+  {
+    "_id": "5809beb61ee10c002edd97f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6d6ef5959c331645004901b58aebee364e51f6c7.pdf",
+    "source": "http://www.opendataresearch.org/sites/default/files/publications/Full%20-%20TERI%20OGD%20and%20energy%20resources%20July%202014-print.pdf"
+  },
+  {
+    "_id": "580b99bb69c2e100108b5305",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/59e5a7345971a15be5fb7b3da5850453710d6c74.pdf",
+    "source": "http://dghindia.gov.in//assets/downloads/56cc049f79208Resolution.pdf"
+  },
+  {
+    "_id": "580cd8eec41e10004c845c44",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7b8379f331dc87073ff8238dc6eed23d651d8388.pdf",
+    "source": "http://niti.gov.in/writereaddata/files/document_publication/Changing%20Financial%20Year.pdf"
+  },
+  {
+    "_id": "580a1909957fde0036fd2d6e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/050d10de8571e7ede1e4bc45f24d2bf4cc726e58.png",
+    "source": "http://gnpcghana.com"
+  },
+  {
+    "_id": "580a2caad1e8a20042ca09d9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a44b5dae91b9bf775751760d7306a9ade3b60c67.png",
+    "source": "http://gnpcghana.org"
+  },
+  {
+    "_id": "5809b8119f38b1002ef22d02",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6cb4a27a06b3b21abd302175a95ba22969e8768.xlsx",
+    "source": "http://petroleum.nic.in/weekprod.htm"
   }
 ]
