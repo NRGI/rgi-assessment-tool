@@ -5,14 +5,14 @@ var Answer      = require('mongoose').model('Answer'),
     Question    = require('mongoose').model('Question'),
     Assessment  = require('mongoose').model('Assessment');
 
-var filterAnswerScoreHistory = function(answer) {
+var filterAnswerScoreHistory = function(answer, skipJustificationComparison) {
     ['researcher', 'reviewer'].forEach(function(role) {
         var field = role + '_score_history';
-        answer[field] = getFilteredScoreHistory(answer[field]);
+        answer[field] = getFilteredScoreHistory(answer[field], skipJustificationComparison);
     });
 };
 
-var getFilteredScoreHistory = function(rawHistory) {
+var getFilteredScoreHistory = function(rawHistory, skipJustificationComparison) {
     if(rawHistory.length <= 1) {
         return rawHistory;
     }
@@ -28,7 +28,7 @@ var getFilteredScoreHistory = function(rawHistory) {
         var historyRecord = rawHistory[hisoryIndex];
 
         if((getScoreValue(historyRecord.score) !== getScoreValue(prevHistoryRecord.score)) ||
-            (historyRecord.justification !== prevHistoryRecord.justification)) {
+            ((historyRecord.justification !== prevHistoryRecord.justification) && !skipJustificationComparison)) {
             filteredHistory.push(historyRecord);
         }
     }
@@ -114,7 +114,7 @@ exports.getAnswersPortion = function(req, res, next) {
                 req.answers = answers;
 
                 answers.forEach(function(answer) {
-                    filterAnswerScoreHistory(answer);
+                    filterAnswerScoreHistory(answer, true);
                 });
 
                 next();
@@ -149,13 +149,11 @@ exports.getExportedAnswersData = function(req, res) {
                         outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
                         outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
                     }
-
-                    outputAnswer[prefix + '_justification' + (historyIndex + 1)] = scoreHistory.justification;
                 }
             }
         },
         getHistoryFields = function(scoreType, historySize) {
-            var fields = [], POSTFIXES = ['date', 'order', 'score_letter', 'justification'];
+            var fields = [], POSTFIXES = ['date', 'order', 'score_letter'];
 
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
                 for(var postfixIndex = 0; postfixIndex < POSTFIXES.length; postfixIndex++) {
