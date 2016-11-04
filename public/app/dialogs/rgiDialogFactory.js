@@ -68,9 +68,12 @@ angular.module('app')
                 });
             },
             assessmentMove: function ($scope) {
-                var scope = $scope;
+                var scope = $scope,
+                    getCounter = function(counter) {
+                        return scope.assessment_counters[counter] || 0;
+                    };
 
-                if (scope.assessment_counters.length > (scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved + scope.assessment_counters.finalized)) {
+                if((getCounter('flagged') + getCounter('approved') + getCounter('unresolved') + getCounter('finalized')) < scope.assessment_counters.length) {
                     rgiNotifier.error('You must approve or flag all questions!');
                 } else {
                     scope.value = true;
