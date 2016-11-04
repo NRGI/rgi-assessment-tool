@@ -1,9 +1,8 @@
 'use strict';
-var passport        = require('passport'),
-    AuthLog         = require('mongoose').model('AuthLog'),
+
+var AuthLog         = require('mongoose').model('AuthLog'),
     passport        = require('passport'),
     mongoose        = require('mongoose'),
-    LocalStrategy   = require('passport-local').Strategy,
     User            = mongoose.model('User');
 
 exports.authenticate = function (req, res, next) {
@@ -69,17 +68,11 @@ exports.apiAuthenticate = function (req, res, next) {
 
 // curl -X GET http://localhost:3030/api/raw_answers/50/0?user=cperry
 exports.logout = function (req, res) {
-    AuthLog.log(req.user._id, 'sign-out');
-    req.logout();
+    if (req.isAuthenticated()) {
+        AuthLog.log(req.user._id, 'sign-out');
+        req.logout();
+    }
     res.end();
-    //console.log(req.user);
-    //if (req.user===undefined) {
-    //    res.send({error: 'Unknown error logging out!'});
-    //} else {
-    //    AuthLog.log(req.user._id, 'sign-out');
-    //    req.logout();
-    //    res.end();
-    //}
 };
 
 exports.passUser = function (req, res) {
