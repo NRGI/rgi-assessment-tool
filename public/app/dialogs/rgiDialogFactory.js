@@ -69,7 +69,8 @@ angular.module('app')
             },
             assessmentMove: function ($scope) {
                 var scope = $scope;
-                if (scope.assessment_counters.length!==((scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved) || scope.assessment_counters.finalized)) {
+
+                if (scope.assessment_counters.length > (scope.assessment_counters.flagged + scope.assessment_counters.approved + scope.assessment_counters.unresolved + scope.assessment_counters.finalized)) {
                     rgiNotifier.error('You must approve or flag all questions!');
                 } else {
                     scope.value = true;
