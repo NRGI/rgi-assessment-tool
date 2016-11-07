@@ -125,15 +125,18 @@ exports.getAnswersPortion = function(req, res, next) {
 exports.getExportedAnswersData = function(req, res) {
     var
         scoreFieldIndex, SCORE_FIELDS = ['researcher', 'reviewer'],
+        getScoreFieldPrefix = function(scoreType) {
+            return scoreType + '_score';
+        },
         getHistoryFieldPrefix = function(scoreType) {
-            return scoreType + '_score_history';
+            return getScoreFieldPrefix(scoreType) + '_history';
         },
         copyScore = function(outputAnswer, inputAnswer, scoreType) {
-            var field = scoreType + '_score';
+            var field = getScoreFieldPrefix(scoreType);
             outputAnswer[field + '_letter'] = inputAnswer[field] ? inputAnswer[field].letter : '';
         },
         copyScoreWithJustification = function(outputAnswer, inputAnswer, scoreType) {
-            outputAnswer[scoreType + '_justification'] = inputAnswer[scoreType + '_justification'];
+            outputAnswer[getScoreFieldPrefix(scoreType) + '_justification'] = inputAnswer[scoreType + '_justification'];
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
         copyScoreHistory = function(outputAnswer, inputAnswer, scoreType, historySize) {
@@ -154,7 +157,7 @@ exports.getExportedAnswersData = function(req, res) {
             }
 
             if(scoreHistoryCollection.length > 0) {
-                outputAnswer[scoreType + '_justification_prev'] =
+                outputAnswer[getScoreFieldPrefix(scoreType) + '_justification_prev'] =
                     scoreHistoryCollection[scoreHistoryCollection.length - 1].justification;
             }
         },
