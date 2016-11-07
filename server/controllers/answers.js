@@ -149,6 +149,10 @@ exports.getExportedAnswersData = function(req, res) {
                         outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
                         outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
                     }
+
+                    if(historyIndex === (historySize - 1)) {
+                      outputAnswer[prefix + '_justification' + (historyIndex + 1)] = scoreHistory.justification;
+                    }
                 }
             }
         },
@@ -158,6 +162,10 @@ exports.getExportedAnswersData = function(req, res) {
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
                 for(var postfixIndex = 0; postfixIndex < POSTFIXES.length; postfixIndex++) {
                     fields.push(getHistoryFieldPrefix(scoreType) + '_' + POSTFIXES[postfixIndex] + (historyIndex + 1));
+                }
+
+                if(historyIndex === (historySize - 1)) {
+                  fields.push(getHistoryFieldPrefix(scoreType) + '_justification' + (historyIndex + 1));
                 }
             }
 
