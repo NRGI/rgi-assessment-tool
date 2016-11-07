@@ -141,10 +141,9 @@ exports.getExportedAnswersData = function(req, res) {
         },
         copyScoreHistory = function(outputAnswer, inputAnswer, scoreType, historySize) {
             var prefix = getHistoryFieldPrefix(scoreType);
-            var scoreHistoryCollection = inputAnswer[prefix];
 
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
-                var scoreHistory = scoreHistoryCollection[historyIndex];
+                var scoreHistory = inputAnswer[prefix][historyIndex];
 
                 if(scoreHistory) {
                     outputAnswer[prefix + '_date' + (historyIndex + 1)] = scoreHistory.date.toISOString();
@@ -154,11 +153,6 @@ exports.getExportedAnswersData = function(req, res) {
                         outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
                     }
                 }
-            }
-
-            if(scoreHistoryCollection.length > 0) {
-                outputAnswer[getScoreFieldPrefix(scoreType) + '_justification_prev'] =
-                    scoreHistoryCollection[scoreHistoryCollection.length - 1].justification;
             }
         },
         getHistoryFields = function(scoreType, historySize) {
@@ -240,10 +234,8 @@ exports.getExportedAnswersData = function(req, res) {
         'question_order',
         'question_text',
         'status',
-        'researcher_score_justification_prev',
         'researcher_score_justification',
         'researcher_score_letter',
-        'reviewer_score_justification_prev',
         'reviewer_score_justification',
         'reviewer_score_letter',
         'final_score_letter',
