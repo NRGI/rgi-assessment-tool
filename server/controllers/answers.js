@@ -138,9 +138,10 @@ exports.getExportedAnswersData = function(req, res) {
         },
         copyScoreHistory = function(outputAnswer, inputAnswer, scoreType, historySize) {
             var prefix = getHistoryFieldPrefix(scoreType);
+            var scoreHistoryCollection = inputAnswer[prefix];
 
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
-                var scoreHistory = inputAnswer[prefix][historyIndex];
+                var scoreHistory = scoreHistoryCollection[historyIndex];
 
                 if(scoreHistory) {
                     outputAnswer[prefix + '_date' + (historyIndex + 1)] = scoreHistory.date.toISOString();
@@ -149,11 +150,12 @@ exports.getExportedAnswersData = function(req, res) {
                         outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
                         outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
                     }
-
-                    if(historyIndex === (historySize - 1)) {
-                      outputAnswer[prefix + '_justification' + (historyIndex + 1)] = scoreHistory.justification;
-                    }
                 }
+            }
+
+            if(scoreHistoryCollection.length > 0) {
+                outputAnswer[scoreType + '_justification_prev'] =
+                    scoreHistoryCollection[scoreHistoryCollection.length - 1].justification;
             }
         },
         getHistoryFields = function(scoreType, historySize) {
@@ -162,10 +164,6 @@ exports.getExportedAnswersData = function(req, res) {
             for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
                 for(var postfixIndex = 0; postfixIndex < POSTFIXES.length; postfixIndex++) {
                     fields.push(getHistoryFieldPrefix(scoreType) + '_' + POSTFIXES[postfixIndex] + (historyIndex + 1));
-                }
-
-                if(historyIndex === (historySize - 1)) {
-                  fields.push(getHistoryFieldPrefix(scoreType) + '_justification' + (historyIndex + 1));
                 }
             }
 
@@ -239,8 +237,10 @@ exports.getExportedAnswersData = function(req, res) {
         'question_order',
         'question_text',
         'status',
+        'researcher_score_justification_prev',
         'researcher_score_justification',
         'researcher_score_letter',
+        'reviewer_score_justification_prev',
         'reviewer_score_justification',
         'reviewer_score_letter',
         'final_score_letter',
