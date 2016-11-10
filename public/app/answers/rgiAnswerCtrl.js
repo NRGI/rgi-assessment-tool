@@ -16,7 +16,8 @@ angular.module('app')
         $scope.isCollapsed = false;
 
         var originallySubmitted = {},
-            answerCriteria = {answer_ID: $routeParams.answer_ID, assessment_ID: $routeParams.answer_ID.substring(0, 2)},
+            answerIdComponents = $routeParams.answer_ID.split('-'),
+            answerCriteria = {answer_ID: $routeParams.answer_ID, assessment_ID: answerIdComponents[0]},
             processFailureResponse = rgiHttpResponseProcessorSrvc.getDefaultHandler('Load answer data failure');
 
         rgiAnswerSrvc.get(answerCriteria, function (answer) {
