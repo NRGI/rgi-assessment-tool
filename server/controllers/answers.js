@@ -101,6 +101,10 @@ exports.getAnswersPortion = function(req, res, next) {
     var limit = Number(req.params.limit),
         query = req.params.country ? {answer_ID: {$regex: new RegExp('^' + req.params.country + '.*')}} : {};
 
+    if(req.deletedAssessments !== undefined) {
+        query.assessment_ID = {$nin: req.deletedAssessments};
+    }
+
     Answer.find(query)
         .lean()
         .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
