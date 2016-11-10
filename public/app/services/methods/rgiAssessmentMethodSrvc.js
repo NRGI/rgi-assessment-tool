@@ -1,28 +1,21 @@
 'use strict';
 
 angular.module('app')
-    .factory('rgiAssessmentMethodSrvc', ['$q', 'rgiAssessmentSrvc', 'rgiHttpResponseProcessorSrvc', function (
-        $q,
+    .factory('rgiAssessmentMethodSrvc', ['rgiAssessmentSrvc', 'rgiResourceProcessorSrvc', function (
         rgiAssessmentSrvc,
-        rgiHttpResponseProcessorSrvc
+        rgiResourceProcessorSrvc
     ) {
-        var saveAssessment = function(assessment, action) {
-            var dfd = $q.defer();
-
-            assessment[action]().then(dfd.resolve,
-                rgiHttpResponseProcessorSrvc.getDeferredHandler(dfd, 'Save assessment failure'));
-
-            return dfd.promise;
-        };
-
         return {
             createAssessment: function (assessmentsData) {
                 var assessments = new rgiAssessmentSrvc(assessmentsData);
                 assessments.length = assessmentsData.length;
-                return saveAssessment(assessments, '$save');
+                return rgiResourceProcessorSrvc.process(assessments, '$save');
             },
             updateAssessment: function (assessment) {
-                return saveAssessment(assessment, '$update');
+                return rgiResourceProcessorSrvc.process(assessment, '$update');
+            },
+            deleteAssessment: function (assessmentId) {
+                return rgiResourceProcessorSrvc.delete(rgiAssessmentSrvc, assessmentId, 'assessment_ID');
             }
         };
     }]);

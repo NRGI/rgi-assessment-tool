@@ -3,124 +3,83 @@
 describe('rgiAssessmentMethodSrvc', function () {
     beforeEach(module('app'));
 
-    var rgiAssessmentMethodSrvc;
-    var $q, rgiAssessmentSrvc;
-    var stubs = {}, spies = {}, expectedPromise, REJECT_RESPONSE = 'REJECTED RESPONSE';
+    var rgiAssessmentMethodSrvc, rgiAssessmentSrvc, rgiResourceProcessorSrvc,
+        stubs = {}, spies = {};
 
-    beforeEach(inject(function (_rgiAssessmentMethodSrvc_, _$q_, _rgiAssessmentSrvc_, rgiHttpResponseProcessorSrvc) {
-        $q = _$q_;
+    beforeEach(inject(function (_rgiAssessmentMethodSrvc_, _rgiAssessmentSrvc_, _rgiResourceProcessorSrvc_) {
         rgiAssessmentSrvc = _rgiAssessmentSrvc_;
         rgiAssessmentMethodSrvc = _rgiAssessmentMethodSrvc_;
-
-        spies.httpResponseProcessorHandle = sinon.spy();
-        stubs.httpResponseProcessorHandle = sinon.stub(rgiHttpResponseProcessorSrvc, 'handle',
-            spies.httpResponseProcessorHandle);
-
-        stubs.httpResponseProcessorGetMessage = sinon.stub(rgiHttpResponseProcessorSrvc, 'getMessage',
-            function(response, alternativeMessage) {
-                return alternativeMessage;
-            });
+        rgiResourceProcessorSrvc = _rgiResourceProcessorSrvc_;
+        stubs = {};
     }));
 
     describe('#createAssessment', function () {
-        it('resolves the deferred in positive case', function () {
-            expectedPromise = 'POSITIVE';
+        var RESULT, ACTION = 'create', ASSESSMENTS_DATA = {data: 'dummy', length: 7};
 
-            stubs.assessmentSave = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
-                return {
-                    then: function(callback) {
-                        callback();
-                    }
-                };
+        beforeEach(function() {
+            spies.resourceProcessorProcess = sinon.spy(function() {
+                return ACTION;
             });
 
-            spies.$qDefer = sinon.spy();
-            stubs.$qDefer = sinon.stub($q, 'defer', function() {
-                return {
-                    resolve: spies.$qDefer,
-                    promise: expectedPromise
-                };
-            });
+            stubs.resourceProcessorProcess = sinon.stub(rgiResourceProcessorSrvc, 'process',
+                spies.resourceProcessorProcess);
 
-            rgiAssessmentMethodSrvc.createAssessment([expectedPromise]).should.be.equal(expectedPromise);
-            spies.$qDefer.called.should.be.equal(true);
+            RESULT = rgiAssessmentMethodSrvc.createAssessment(ASSESSMENTS_DATA);
         });
 
-        it('resolves the deferred in positive case', function () {
-            expectedPromise = 'NEGATIVE';
+        it('submits the data to the back end', function() {
+            spies.resourceProcessorProcess.called.should.be.equal(true);
+        });
 
-            stubs.assessmentSave = sinon.stub(rgiAssessmentSrvc.prototype, '$save', function() {
-                return {
-                    then: function(callbackPositive, callbackNegative) {
-                        callbackNegative(REJECT_RESPONSE);
-                    }
-                };
-            });
+        it('submit length of the collection', function() {
+            spies.resourceProcessorProcess.args[0][0].length.should.be.equal(ASSESSMENTS_DATA.length);
+        });
 
-            spies.$qDefer = sinon.spy();
-            stubs.$qDefer = sinon.stub($q, 'defer', function() {
-                return {
-                    reject: spies.$qDefer,
-                    promise: expectedPromise
-                };
-            });
+        it('saves the data', function() {
+            spies.resourceProcessorProcess.args[0][1].should.be.equal('$save');
+        });
 
-            rgiAssessmentMethodSrvc.createAssessment([expectedPromise]).should.be.equal(expectedPromise);
-            spies.$qDefer.should.have.been.calledWith('Save assessment failure');
+        it('returns result of the processing', function() {
+            RESULT.should.be.equal(ACTION);
         });
     });
 
     describe('#updateAssessment', function () {
-        it('resolves the deferred in positive case', function () {
-            expectedPromise = 'POSITIVE';
+        var RESULT, ACTION = 'update', ASSESSMENT = 'assessment';
 
-            spies.$qDefer = sinon.spy();
-            stubs.$qDefer = sinon.stub($q, 'defer', function() {
-                return {
-                    resolve: spies.$qDefer,
-                    promise: expectedPromise
-                };
+        beforeEach(function() {
+            spies.resourceProcessorProcess = sinon.spy(function() {
+                return ACTION;
             });
 
-            rgiAssessmentMethodSrvc.updateAssessment({
-                $update: function() {
-                    return {
-                        then: function(callbackPositive) {
-                            callbackPositive();
-                        }
-                    };
-                }
-            }).should.be.equal(expectedPromise);
+            stubs.resourceProcessorProcess = sinon.stub(rgiResourceProcessorSrvc, 'process',
+                spies.resourceProcessorProcess);
 
-            spies.$qDefer.called.should.be.equal(true);
+            RESULT = rgiAssessmentMethodSrvc.updateAssessment(ASSESSMENT);
         });
 
-        it('rejects the deferred in negative case', function () {
-            expectedPromise = 'NEGATIVE';
+        it('submits the assessment for further processing', function() {
+            spies.resourceProcessorProcess.withArgs(ASSESSMENT, '$update').called.should.be.equal(true);
+        });
 
-            spies.$qDefer = sinon.spy();
-            stubs.$qDefer = sinon.stub($q, 'defer', function() {
-                return {
-                    reject: spies.$qDefer,
-                    promise: expectedPromise
-                };
-            });
-
-            rgiAssessmentMethodSrvc.updateAssessment({
-                $update: function() {
-                    return {
-                        then: function(uselessCallbackPositive, callbackNegative) {
-                            callbackNegative({});
-                        }
-                    };
-                }
-            }).should.be.equal(expectedPromise);
-
-            spies.$qDefer.should.have.been.calledWith('Save assessment failure');
+        it('returns result of the processing', function() {
+            RESULT.should.be.equal(ACTION);
         });
     });
 
-    afterEach(function () {
+    describe('#deleteAssessment', function () {
+        it('submits the assessment for further processing', function() {
+            spies.resourceProcessorDelete = sinon.spy();
+            stubs.resourceProcessorDelete = sinon.stub(rgiResourceProcessorSrvc, 'delete',
+                spies.resourceProcessorDelete);
+
+            var ID = 'assessment id';
+            rgiAssessmentMethodSrvc.deleteAssessment(ID);
+            spies.resourceProcessorDelete.withArgs(rgiAssessmentSrvc, ID, 'assessment_ID').called.should.be.equal(true);
+        });
+    });
+
+    afterEach(function() {
         Object.keys(stubs).forEach(function(stubName) {
             stubs[stubName].restore();
         });
