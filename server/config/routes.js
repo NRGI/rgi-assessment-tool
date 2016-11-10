@@ -61,6 +61,7 @@ module.exports = function (app) {
     app.get('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.getAssessmentsByID);
     app.post('/api/assessments', auth.requiresRole('supervisor'), assessments.createAssessments);
     app.put('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.updateAssessment);
+    app.delete('/api/assessments/:assessment_ID', /*auth.requiresRole('supervisor'),*/ assessments.unlinkAssessment);
 
     /////////////////////////
     //// DOCUMENTS  /////////

@@ -19,9 +19,9 @@ angular.module('app').factory('rgiResourceProcessorSrvc', ['$q', 'rgiHttpRespons
 
             return dfd.promise;
         },
-        delete: function(className, objectId) {
+        delete: function(className, objectId, field) {
             var object = new className();
-            object.id = objectId;
+            object[field || 'id'] = objectId;
             return resourceProcessor.process(object, '$delete');
         }
     };
