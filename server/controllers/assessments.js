@@ -118,7 +118,7 @@ exports.unlinkAssessment = function(req, res) {
     });
 };
 
-exports.getAssessmentsByID = function (req, res, next) {
+exports.getAssessmentsByID = function (req, res) {
     Assessment.findOne({assessment_ID: req.params.assessment_ID, deleted: {$ne: true}})
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
@@ -126,8 +126,11 @@ exports.getAssessmentsByID = function (req, res, next) {
         .populate('ext_reviewer_ID', 'firstName lastName role email')
         .populate('last_modified.user', 'firstName lastName role email')
         .exec(function (err, assessment) {
-            if (err) { return next(err); }
-            res.send(assessment);
+            if(assessment === null) {
+                err = 'The requested assessment is not found';
+            }
+
+            res.send(err ? {reason: err.toString()} : assessment);
         });
 
 
