@@ -5,6 +5,9 @@ var error       = [],
     logger      = require('../logger/logger'),
     Answer      = require('mongoose').model('Answer'),
     Assessment  = require('mongoose').model('Assessment'),
+    Document    = require('mongoose').model('Documents'),
+    Interviewee = require('mongoose').model('Interviewee'),
+    Question    = require('mongoose').model('Question'),
     User        = require('mongoose').model('User'),
     _           = require('underscore'),
     async       = require('async'),
@@ -53,6 +56,67 @@ exports.setNonDeletedAssessmentCriteria = function(req, res, next) {
     });
 };
 
+exports.unlinkAssessment = function(req, res) {
+    var assessment_ID = req.params.assessment_ID;
+    var linkedData = [
+        {model: Document},
+        {model: Interviewee},
+        {model: Question},
+        {model: User, field: 'assessments.assessment_ID', unlink: function(assessments) {
+            var assessmentIndex = -1;
+
+            assessments.forEach(function(assessment, index) {
+                if(assessment.assessment_ID === assessment_ID) {
+                    assessmentIndex = index;
+                }
+            });
+
+            return assessmentIndex;
+        }}
+    ];
+
+    var getObjectUnlinker = function(object) {
+        return function(callback) {
+            object.save(callback);
+        };
+    };
+
+    var getUnlinker = function(model, field, getLinkedAssessmentIndex) {
+        return function(callback) {
+            if(getLinkedAssessmentIndex === undefined) {
+                getLinkedAssessmentIndex = function(assessments) {
+                    return assessments.indexOf(assessment_ID);
+                };
+            }
+
+            var criteria = {};
+            criteria[field || 'assessments'] = assessment_ID;
+
+            model.find(criteria).exec(function(err, objects) {
+                var unlinkObjects = [];
+
+                if(!err) {
+                    objects.forEach(function(object) {
+                        object.assessments.splice(getLinkedAssessmentIndex(object.assessments), 1);
+                        unlinkObjects.push(getObjectUnlinker(object));
+                    });
+                }
+
+                async.parallel(unlinkObjects, callback);
+            });
+        };
+    };
+
+    var unlinkModels = [];
+
+    linkedData.forEach(function(linkedItem) {
+        unlinkModels.push(getUnlinker(linkedItem.model, linkedItem.field, linkedItem.unlink));
+    });
+
+    async.parallel(unlinkModels, function (err) {
+        res.send(err ? {reason: err.toString()} : '');
+    });
+};
 
 exports.getAssessmentsByID = function (req, res, next) {
     Assessment.findOne({assessment_ID: req.params.assessment_ID, deleted: {$ne: true}})
