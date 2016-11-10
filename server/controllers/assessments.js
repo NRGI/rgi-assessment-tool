@@ -39,6 +39,20 @@ exports.getAssessments = function (req, res, next) {
         });
 };
 
+exports.setNonDeletedAssessmentCriteria = function(req, res, next) {
+    Assessment.find({deleted: true}).exec(function(err, assessments) {
+        if(!err) {
+            req.deletedAssessments = [];
+
+            assessments.forEach(function(assessment) {
+              req.deletedAssessments.push(assessment.assessment_ID);
+            });
+        }
+
+        next();
+    });
+};
+
 
 exports.getAssessmentsByID = function (req, res, next) {
     Assessment.findOne({assessment_ID: req.params.assessment_ID, deleted: {$ne: true}})

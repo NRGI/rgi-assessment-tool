@@ -113,10 +113,10 @@ module.exports = function (app) {
     app.get('/api/public/answers/:assessment_ID', answers.listPublicData);
     app.get('/api/public/documents/:assessment_ID', documents.listPublicData);
     app.get('/api/public/precepts', precepts.list);
-    
+
     //GET RAW DATA
-    app.get('/api/raw_answers/:limit/:skip/:country', answers.getAnswersPortion, answers.getExportedAnswersData);
-    app.get('/api/raw_answers/:limit/:skip', answers.getAnswersPortion, answers.getExportedAnswersData);
+    app.get('/api/raw_answers/:limit/:skip/:country', assessments.setNonDeletedAssessmentCriteria, answers.getAnswersPortion, answers.getExportedAnswersData);
+    app.get('/api/raw_answers/:limit/:skip', assessments.setNonDeletedAssessmentCriteria, answers.getAnswersPortion, answers.getExportedAnswersData);
     app.get('/api/raw-questions/:limit/:skip', questions.getQuestionsPortion, questions.getExportedQuestionsData);
 
     // Send tech contact
