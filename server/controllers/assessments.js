@@ -41,7 +41,7 @@ exports.getAssessments = function (req, res, next) {
 
 
 exports.getAssessmentsByID = function (req, res, next) {
-    Assessment.findOne({assessment_ID: req.params.assessment_ID})
+    Assessment.findOne({assessment_ID: req.params.assessment_ID, deleted: {$ne: true}})
         .populate('researcher_ID', 'firstName lastName role email')
         .populate('reviewer_ID', 'firstName lastName role email')
         .populate('supervisor_ID', 'firstName lastName role email')
