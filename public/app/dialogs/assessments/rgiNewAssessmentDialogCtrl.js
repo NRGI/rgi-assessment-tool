@@ -101,7 +101,7 @@ angular.module('app')
 
                 assessments.forEach(function (assessment) {
                     $scope.new_assessment.assessment_countries.forEach(function(country) {
-                        if((country.country.country === assessment.country) && !assessment.deleted) {
+                        if(country.country.country === assessment.country) {
                             country_deployed.value = true;
                             country_deployed.country = assessment.country;
                         }
