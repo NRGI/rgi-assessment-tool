@@ -115,7 +115,7 @@ angular.module('app')
                     rgiQuestionSrvc.query({assessment_ID: 'base'}, function (questions) {
                         $scope.new_assessment.assessment_countries.forEach(function (assessment_country) {
                             new_answer_set = [];
-                            new_assessment_ID = assessment_country.country.iso2 + "-" + new_assessment_year + "-" + new_assessment_ver;
+                            new_assessment_ID = assessment_country.country.country_ID + "-" + new_assessment_year + "-" + new_assessment_ver;
 
                             questions.forEach(function (question) {
                                 if (question.assessments.indexOf(new_assessment_ID) < 0) {
