@@ -55,6 +55,130 @@ exports.setNonDeletedAssessmentCriteria = function(req, res, next) {
         next();
     });
 };
+exports.renameAssessment = function(req, res) {
+    var assessment_ID = req.params.assessment_ID,
+        respond = function(err) {
+            res.send(err ? {reason: err.toString()} : '');
+        };
+
+    Assessment.findOne({assessment_ID: req.params.assessment_ID}).exec(function (err, assessment) {
+        if((err === null) && (assessment === null)) {
+            err = 'The requested assessment is not found';
+        }
+
+        if(err !== null) {
+            return respond(err);
+        }
+
+        var assessmentIdComponents = assessment_ID.split('-');
+
+        if(assessmentIdComponents[0] === assessment.ISO3) {
+            return respond('Already renamed');
+        }
+
+        assessmentIdComponents[0] = assessment.ISO3;
+        var newAssessmentId = assessmentIdComponents.join('-');
+        assessment.assessment_ID = newAssessmentId;
+
+        var getObjectRenamer = function(object) {
+            return function(callback) {
+                object.save(callback);
+            };
+        };
+
+        var getObjectInstance = function(objectData, modelName) {
+            if(modelName === 'User') {
+                return new User(objectData);
+            } else if(modelName === 'Question') {
+                return new Question(objectData);
+            } else if(modelName === 'Interviewee') {
+                return new Interviewee(objectData);
+            } else {
+                return new Document(objectData);
+            }
+        };
+
+        var getRenamer = function(model, modelName, field, getLinkedAssessmentIndex) {
+            return function(callback) {
+                if(getLinkedAssessmentIndex === undefined) {
+                    getLinkedAssessmentIndex = function(assessments) {
+                        return assessments.indexOf(assessment_ID);
+                    };
+                }
+
+                var criteria = {};
+                criteria[field || 'assessments'] = assessment_ID;
+
+                model.find(criteria).exec(function(err, objects) {
+                    var renameObjects = [];
+
+                    if(!err) {
+                        objects.forEach(function(object) {
+                            if(field === undefined) {
+                                object.assessments[getLinkedAssessmentIndex(object.assessments)] = newAssessmentId;
+                            } else {
+                                object.assessments[getLinkedAssessmentIndex(object.assessments)][field.split('.')[1]] = newAssessmentId;
+                            }
+
+                            if((object.answers !== undefined) && (object.answers !== null)) {
+                                for(var answerIndex = 0; answerIndex < object.answers.length; answerIndex++) {
+                                    object.answers[answerIndex] = object.answers[answerIndex].replace(assessment_ID, newAssessmentId);
+                                }
+                            }
+
+                            renameObjects.push(getObjectRenamer(getObjectInstance(object, modelName)));
+                        });
+                    }
+
+                    async.parallel(renameObjects, callback);
+                });
+            };
+        };
+
+        var getAnswerSaver = function(answer) {
+            return function(callback) {
+                answer.assessment_ID = newAssessmentId;
+                answer.answer_ID = answer.answer_ID.replace(assessment_ID, newAssessmentId);
+                answer.save(callback);
+            };
+        };
+
+        Answer.find({assessment_ID: req.params.assessment_ID}).exec(function (errAnswer, answers) {
+            if(errAnswer !== null) {
+                return respond(err);
+            }
+
+            var renameModels = [assessment.save];
+
+            answers.forEach(function(answer) {
+                renameModels.push(getAnswerSaver(answer));
+            });
+
+            [
+                {model: Document, modelName: 'Document'},
+                {model: Interviewee, modelName: 'Interviewee'},
+                {model: Question, modelName: 'Question'},
+                {model: User, modelName: 'User', field: 'assessments.assessment_ID', getIndex: function(assessments) {
+                    var assessmentIndex = -1;
+
+                    assessments.forEach(function(assessment, index) {
+                        if(assessment.assessment_ID === assessment_ID) {
+                            assessmentIndex = index;
+                        }
+                    });
+
+                    return assessmentIndex;
+                }}
+            ].forEach(function(linkedItem) {
+                renameModels.push(getRenamer(linkedItem.model, linkedItem.modelName, linkedItem.field, linkedItem.getIndex));
+            });
+
+            async.parallel(renameModels, function (err) {
+                res.send(err ? {reason: err.toString()} : 'ASSESSMENT RENAMED SUCCESSFULLY!!!');
+            });
+        });
+    });
+};
 
 exports.unlinkAssessment = function(req, res) {
     var assessment_ID = req.params.assessment_ID;
@@ -132,9 +256,6 @@ exports.getAssessmentsByID = function (req, res) {
 
             res.send(err ? {reason: err.toString()} : assessment);
         });
-
-
-
 };
 
 exports.createAssessments = function (req, res) {
