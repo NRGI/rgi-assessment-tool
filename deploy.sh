@@ -20,6 +20,7 @@ DEPLOY_BRANCHES=("staging" "master")
 if ! elementIn "$BRANCH" "${DEPLOY_BRANCHES[@]}" ;
 then
   echo "Skiping deploy as branch is not allowed for automatic deploy"
+  exit 0
 fi
 
 # Id of the Shippable project containing the deploy script.
