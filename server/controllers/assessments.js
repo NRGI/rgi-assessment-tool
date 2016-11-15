@@ -42,6 +42,12 @@ exports.getAssessments = function (req, res, next) {
         });
 };
 
+exports.list = function (req, res) {
+    Assessment.find({deleted: {$ne: true}}).exec(function (err, assessments) {
+        res.send(err ? {reason: err.toString()} : assessments);
+    });
+};
+
 exports.setNonDeletedAssessmentCriteria = function(req, res, next) {
     Assessment.find({deleted: true}).exec(function(err, assessments) {
         if(!err) {
