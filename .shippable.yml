@@ -20,7 +20,7 @@ integrations:
 
 before_script:
   - npm install --dev
-  - npm install -g bower phantomjs
+  - npm install -g bower@1.7.9 phantomjs
   - bower install
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
