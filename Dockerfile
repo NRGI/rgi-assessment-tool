@@ -15,7 +15,7 @@ RUN     yum install -y git nodejs npm
 
 # Install dependancies
 RUN     yum install -y bzip2 fontconfig freetype libfontconfig.so.1 libfreetype.so.6 libstdc++.so.6 tar.x86_64 urw-fonts wget
-RUN		npm install -g bower forever grunt
+RUN		npm install -g bower@1.7.9 forever grunt
 
 # Build src
 ADD     package.json /tmp/package.json
