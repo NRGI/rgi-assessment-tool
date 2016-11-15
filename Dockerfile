@@ -2,41 +2,34 @@ FROM	centos:centos7
 MAINTAINER Chris Perry, cperry@resourcegovernance.org
 
 # Enable EPEL for Node.js
-RUN     rpm -Uvh https://rpm.nodesource.com/pub_4.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+RUN rpm -Uvh https://rpm.nodesource.com/pub_4.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
-# Upgrade system
-RUN     yum -y clean all
-RUN     yum -y distro-sync
-RUN     yum -y update
-RUN     yum -y upgrade
+# Install system dependencies
+RUN yum install -y \
+    git \
+    nodejs \
+    bzip2 \
+    fontconfig \
+    freetype \
+    libfontconfig.so.1 \
+    libfreetype.so.6 \
+    libstdc++.so.6 \
+    tar.x86_64 \
+    urw-fonts \
+    wget &&\
+    # Cleanup to reduce image size
+    yum clean all
 
-# Install Node.js, npm, and git
-RUN     yum install -y git nodejs npm
-
-# Install dependancies
-RUN     yum install -y bzip2 fontconfig freetype libfontconfig.so.1 libfreetype.so.6 libstdc++.so.6 tar.x86_64 urw-fonts wget
-RUN		npm install -g bower@1.7.9 forever grunt
+RUN	npm install -g bower@1.7.9 forever grunt
 
 # Build src
-ADD     package.json /tmp/package.json
-RUN     cd /tmp && npm install
-RUN     mkdir -p /src && cp -a /tmp/node_modules /src
-ADD     Gruntfile.js /tmp/Gruntfile.js
-ADD     server/config/config.js /tmp/server/config/config.js
-ADD     server/includes/scripts.jade /tmp/server/includes/scripts.jade
-ADD     public /tmp/public
-ADD     .bowerrc /tmp/.bowerrc
-ADD     bower.json /tmp/bower.json
-RUN		cd /tmp && bower install --allow-root
-RUN		cd /tmp && grunt build && grunt hash
-RUN		rm -R /tmp/node_modules
-COPY	. /src
-RUN     cp -a /tmp/public/assets /src/public
-RUN     cp /tmp/server/includes/scripts.jade /src/server/includes/scripts.jade
-RUN		rm -R /tmp/public
+COPY . /src
+WORKDIR /src
 
-RUN     node -v
-RUN     npm -v
+RUN npm install && \
+    npm cache clear
+RUN	bower install --allow-root
+RUN grunt build && grunt hash
 
 EXPOSE  80
 
