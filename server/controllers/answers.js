@@ -2,6 +2,7 @@
 /* global require */
 
 var Answer      = require('mongoose').model('Answer'),
+    Country     = require('mongoose').model('Country'),
     Question    = require('mongoose').model('Question'),
     Assessment  = require('mongoose').model('Assessment');
 
@@ -105,25 +106,46 @@ exports.getAnswersPortion = function(req, res, next) {
         query.assessment_ID = {$nin: req.deletedAssessments};
     }
 
-    Answer.find(query)
-        .lean()
-        .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
-        .sort({answer_ID: 'asc'})
-        .skip(Number(req.params.skip) * limit)
-        .limit(limit)
-        .exec(function(err, answers) {
-            if(err) {
-                res.send({reason: err.toString()});
-            } else {
-                req.answers = answers;
+    var getIso2Code = function(iso3Code, countries) {
+        var iso2Code = iso3Code;
 
-                answers.forEach(function(answer) {
-                    filterAnswerScoreHistory(answer, true);
-                });
-
-                next();
+        countries.forEach(function(country) {
+            if(iso3Code === country.country_ID) {
+                iso2Code = country.iso2;
             }
         });
+
+        return iso2Code;
+    };
+
+    Country.find().exec(function (err, countries) {
+        if (err) {
+            return res.send({reason: err.toString()});
+        }
+
+        Answer.find(query)
+            .lean()
+            .populate('question_ID', 'question_label question_label question_text dejure question_criteria component_text precept')
+            .sort({answer_ID: 'asc'})
+            .skip(Number(req.params.skip) * limit)
+            .limit(limit)
+            .exec(function(err, answers) {
+                if(err) {
+                    res.send({reason: err.toString()});
+                } else {
+                    req.answers = answers;
+
+                    answers.forEach(function(answer) {
+                        var idComponents = answer.answer_ID.split('-');
+                        idComponents[0] = getIso2Code(idComponents[0], countries);
+                        answer.iso2_code = idComponents.join('-');
+                        filterAnswerScoreHistory(answer, true);
+                    });
+
+                    next();
+                }
+            });
+    });
 };
 
 exports.getExportedAnswersData = function(req, res) {
@@ -199,6 +221,7 @@ exports.getExportedAnswersData = function(req, res) {
         answer.question_order = answerData.question_order;
         answer.question_text = answerData.question_ID.question_text;
         answer.status = answerData.status;
+        answer.iso2_code = answerData.iso2_code;
 
         for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
             copyScoreWithJustification(answer, answerData, SCORE_FIELDS[scoreFieldIndex]);
