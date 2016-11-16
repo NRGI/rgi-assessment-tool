@@ -164,6 +164,7 @@ var vendorsFileList = [
     'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
     'public/vendor/angular-file-upload/angular-file-upload.js',
     'public/vendor/angular-filter/dist/angular-filter.js',
+    'public/vendor/angular-loading-bar/build/loading-bar.js',
     'public/vendor/angular-resource/angular-resource.js',
     'public/vendor/angular-route/angular-route.js',
     'public/vendor/angular-sanitize/angular-sanitize.js',
