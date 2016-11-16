@@ -22,9 +22,9 @@ The tool allows researchers to complete RGI assessments, reviewers to review ass
 		npm install
 		npm install -g bower grunt
 		bower install
-		grunt uglify
+		grunt build
 
-***Method 2:***  Install docker. From commande line run:
+***Method 2:***  Install docker. From command line run:
 	
 		docker pull byndcivilization/rgi-assessment-tool
 		docker run byndcivilization/rgi-assessment-tool -e "USER_ID=<db user name>"" -e "USER_KEY=<db pass>""
