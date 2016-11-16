@@ -3,6 +3,7 @@
 angular.module('app', [
     'angular.filter',
     'angularFileUpload',
+    'angular-loading-bar',
     'angular-underscore',
     'angucomplete',
     'as.sortable',
