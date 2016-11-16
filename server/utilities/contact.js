@@ -20,7 +20,7 @@ exports.techSend = function (req, res) {
         issue_full_name = message_content.first_name + " " + message_content.last_name,
         supervisor_email = [{email: siteEmail, name: 'Assessment tool tech support'}];
 
-    if (message_content.assessment) {
+    if (message_content.assessment && message_content.assessment.supervisor_ID) {
         message_content.assessment.supervisor_ID.forEach(function (supervisor) {
             supervisor_email.push({email: supervisor.email, name: supervisor.firstName + ' ' + supervisor.lastName});
         });
