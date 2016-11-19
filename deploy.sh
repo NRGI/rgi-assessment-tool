@@ -27,14 +27,11 @@ fi
 DEPLOY_PROJECT_ID=5804f143e8fe021000f9aed1
 BUILT_PROJECT_NAME=rgi
 
-
-echo "$COMMIT_MESSAGE"
-echo "$COMPARE_URL"
 # Trigger Shippable to run the deploy project and pass the current project name, branch, and latest commit hash, committer, commit message
 STATUS=$(curl -s\
   -H "Authorization: apiToken $API_TOKEN"\
   -H "Content-Type: application/json"\
-  -d "{\"branchName\":\"master\",\"globalEnv\": {\"PROJECT\":\"$BUILT_PROJECT_NAME\", \"PROJECT_BRANCH\":\"$BRANCH\", \"PROJECT_COMMIT\":\"$COMMIT\", \"PROJECT_REPO_FULL_NAME\":\"$REPO_FULL_NAME\", \"PROJECT_COMMITTER\":\"$COMMITTER\", \"PROJECT_COMMIT_TITLE\":\"test_commit_message\" }}"\
+  -d "{\"branchName\":\"master\",\"globalEnv\": {\"PROJECT\":\"$BUILT_PROJECT_NAME\", \"PROJECT_BRANCH\":\"$BRANCH\", \"PROJECT_COMMIT\":\"$COMMIT\", \"PROJECT_REPO_FULL_NAME\":\"$REPO_FULL_NAME\", \"PROJECT_COMMITTER\":\"$COMMITTER\", \"PROJECT_COMPARE_URL\":\"$COMPARE_URL\" }}"\
   "https://api.shippable.com/projects/$DEPLOY_PROJECT_ID/newBuild")
 echo "$STATUS"
 
