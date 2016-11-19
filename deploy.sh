@@ -31,7 +31,7 @@ BUILT_PROJECT_NAME=rgi
 STATUS=$(curl -s\
   -H "Authorization: apiToken $API_TOKEN"\
   -H "Content-Type: application/json"\
-  -d "{\"branchName\":\"master\",\"globalEnv\": {\"PROJECT\":\"$BUILT_PROJECT_NAME\", \"PROJECT_BRANCH\":\"$BRANCH\", \"PROJECT_COMMIT\":\"$COMMIT\", \"PROJECT_COMMITTER\":\"$COMMITTER\", \"PROJECT_COMMIT_MESSAGE\":\"$COMMIT_MESSAGE\" }}"\
+  -d "{\"branchName\":\"master\",\"globalEnv\": {\"PROJECT\":\"$BUILT_PROJECT_NAME\", \"PROJECT_BRANCH\":\"$BRANCH\", \"PROJECT_COMMIT\":\"$COMMIT\", \"PROJECT_REPO_FULL_NAME\":\"$REPO_FULL_NAME\", \"PROJECT_COMMITTER\":\"$COMMITTER\", \"PROJECT_COMMIT_MESSAGE\":\"$COMMIT_MESSAGE\" }}"\
   "https://api.shippable.com/projects/$DEPLOY_PROJECT_ID/newBuild")
 echo "$STATUS"
 
