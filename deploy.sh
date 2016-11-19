@@ -27,9 +27,9 @@ fi
 DEPLOY_PROJECT_ID=5804f143e8fe021000f9aed1
 BUILT_PROJECT_NAME=rgi
 
-echo $REPO_FULL_NAME
-echo $COMITTER
-echo $COMMIT_MESSAGE
+echo "$REPO_FULL_NAME"
+echo "$COMITTER"
+echo "$COMMIT_MESSAGE"
 # Trigger Shippable to run the deploy project and pass the current project name, branch, and latest commit hash, committer, commit message
 STATUS=$(curl -s\
   -H "Authorization: apiToken $API_TOKEN"\
