@@ -17,6 +17,18 @@ integrations:
   hub:
     - integrationName: nrgiDockerHub
       type: docker
+  notifications:
+    - integrationName: email
+      type: email
+      recipients:
+        - nrgi@vitaminsoftware.com
+        - sascha.elgin@gmail.com
+      branches:
+        only:
+          - master
+          - staging
+      on_success: change
+      on_failure: always      
 
 before_script:
   - npm install --dev
