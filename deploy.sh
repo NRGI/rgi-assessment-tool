@@ -33,6 +33,7 @@ STATUS=$(curl -s\
   -H "Content-Type: application/json"\
   -d "{\"branchName\":\"master\",\"globalEnv\": {\"PROJECT\":\"$BUILT_PROJECT_NAME\", \"PROJECT_BRANCH\":\"$BRANCH\", \"PROJECT_COMMIT\":\"$COMMIT\", \"PROJECT_REPO_FULL_NAME\":\"$REPO_FULL_NAME\", \"PROJECT_COMMITTER\":\"$COMMITTER\", \"PROJECT_COMPARE_URL\":\"$COMPARE_URL\" }}"\
   "https://api.shippable.com/projects/$DEPLOY_PROJECT_ID/newBuild")
+
 echo "$STATUS"
 
 if [[ "$STATUS" == *"runId"* ]]
