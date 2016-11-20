@@ -34,6 +34,9 @@ after_success:
   - rm -rf node_modules
   - rm -rf bower_components
 
+  # Create the version file
+  - ./create_version.sh
+  
   # Build image
   - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
 
