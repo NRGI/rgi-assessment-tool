@@ -291,7 +291,7 @@ describe('rgiAssignAssessmentDialogCtrl', function () {
         });
 
         it('shows an error message if no researcher assigned', function() {
-            mocks.notifier.expects('error').withArgs('No researcher data!');
+            mocks.notifier.expects('error').withArgs('You must select a researcher!');
             $scope.assessment = {researcher_ID: false};
             $scope.reassignAssessment();
         });
