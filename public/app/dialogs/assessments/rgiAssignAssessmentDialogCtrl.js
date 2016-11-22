@@ -113,7 +113,7 @@ angular.module('app')
 
         $scope.reassignAssessment = function () {
             if (!$scope.assessment.researcher_ID) {
-                rgiNotifier.error('No researcher data!');
+                rgiNotifier.error('You must select a researcher!');
             } else {
                 var promises = [];
 
@@ -123,7 +123,7 @@ angular.module('app')
                         var newAssignee = getUser(role, $scope.assessment[role + '_ID']);
 
                         //remove assessment from the old assignee
-                        if (oldAssignee && oldAssignee.assessments) {
+                        if (oldAssignee && (oldAssignee.assessments !== undefined) && (oldAssignee.assessments.length > 0)) {
                             promises.push(rgiUserAssessmentsSrvc.remove(oldAssignee, $scope.assessment));
                         }
 
