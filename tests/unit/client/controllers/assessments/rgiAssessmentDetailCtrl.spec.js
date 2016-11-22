@@ -6,16 +6,16 @@ describe('rgiAssessmentDetailCtrl', function () {
     var $scope, $routeParams,
         rgiAnswerSrvc, rgiAnswerFilterSrvc, rgiAssessmentSrvc, rgiAssessmentStatisticsGuideSrvc, rgiDialogFactory,
         rgiHttpResponseProcessorSrvc, rgiIdentitySrvc, rgiNotifier, rgiPreceptGuideSrvc, rgiQuestionSetSrvc,
-        ROLE = 'RESEARCHER', IS_SUPERVISOR = 'IS SUPERVISOR', ASSESSMENT_ID = 'ASSESSMENT ID',
+        ROLE = 'RESEARCHER', IS_SUPERVISOR = 'is supervisor', ASSESSMENT_ID = 'assessment id', NOT_FOUND = 'not found',
         backups = {}, spies = {}, stubs = {}, actualErrorHandlers = {}, dummyData,
         isFilteredAnswer = function(answer) {
             return answer.type === ROLE;
         },
-        initialize = function($controller, $rootScope, assessmentStatus) {
+        initialize = function($controller, $rootScope, assessmentStatus, assessmentNotFound) {
             dummyData = {
                 answers: [
-                    {question_ID: {precept: 1}, status: 'approved', type: 'RESEARCHER'},
-                    {question_ID: {precept: 2}, status: 'flagged', type: 'RESEARCHER'},
+                    {question_ID: {precept: 1}, status: 'approved', type: ROLE},
+                    {question_ID: {precept: 2}, status: 'flagged', type: ROLE},
                     {question_ID: {precept: 2}, status: 'unresolved', type: 'REVIEWER'}
                 ],
                 answerTemplates: [
@@ -35,10 +35,14 @@ describe('rgiAssessmentDetailCtrl', function () {
                 }
             };
 
-            dummyData.assessment.status = assessmentStatus;
+            if(assessmentNotFound) {
+                dummyData.assessment = {reason: NOT_FOUND};
+            } else {
+                dummyData.assessment.status = assessmentStatus;
+            }
+
             backups.currenUser = _.cloneDeep(rgiIdentitySrvc.currentUser);
             rgiIdentitySrvc.currentUser = dummyData.user;
-
             backups.assessmentId = $routeParams.assessment_ID;
             $routeParams.assessment_ID = ASSESSMENT_ID;
 
@@ -124,6 +128,24 @@ describe('rgiAssessmentDetailCtrl', function () {
         }
     ));
 
+    describe('ASSESSMENT NOT FOUND CASE', function() {
+        var mock;
+
+        beforeEach(inject(function($rootScope, $controller) {
+            mock = sinon.mock(rgiNotifier);
+            mock.expects('error').withArgs(NOT_FOUND);
+            initialize($controller, $rootScope, 'approved', true);
+        }));
+
+        it('shows an error message if fetching the assessment data fails', function() {
+            mock.verify();
+        });
+
+        afterEach(function() {
+            mock.restore();
+        });
+    });
+
     describe('FULL ASSESSMENT CASE', function() {
         beforeEach(inject(function($rootScope, $controller) {
             initialize($controller, $rootScope, 'approved');
@@ -201,7 +223,7 @@ describe('rgiAssessmentDetailCtrl', function () {
                     flagged: 0,
                     unresolved: 0,
                     data: [
-                        {question_ID: {precept: 1}, status: 'approved', type: 'RESEARCHER'}
+                        {question_ID: {precept: 1}, status: 'approved', type: ROLE}
                     ]
                 },
                 {
@@ -209,7 +231,7 @@ describe('rgiAssessmentDetailCtrl', function () {
                     flagged: 1,
                     unresolved: 0,
                     data: [
-                        {question_ID: {precept: 2}, status: 'flagged', type: 'RESEARCHER'}
+                        {question_ID: {precept: 2}, status: 'flagged', type: ROLE}
                     ]
                 }
             ]);
