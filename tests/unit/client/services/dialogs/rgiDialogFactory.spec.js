@@ -30,35 +30,30 @@ describe('rgiDialogFactory', function () {
             describe('#assessmentMove', function () {
                 var PARENT = 'PARENT', ACTION = 'ACTION';
 
-                it('opens a dialog if the data are valid', function() {
-                    rgiDialogFactory.assessmentMove({assessment_counters: {
-                        length: 3,
-                        approved: 1,
-                        flagged: 1,
-                        unresolved: 1
-                    }});
+                var checkDialogOpen = function(counters) {
+                    rgiDialogFactory.assessmentMove({assessment_counters: counters});
 
                     spies.openDialog.withArgs({
                         template: 'partials/dialogs/assessments/move-assessment-dialog',
                         controller: 'rgiMoveAssessmentDialogCtrl',
                         className: 'ngdialog-theme-default',
                         closeByNavigation: true,
-                        scope: {
-                            value: true,
-                            assessment_counters: {
-                                length: 3,
-                                approved: 1,
-                                flagged: 1,
-                                unresolved: 1
-                            }
-                        }
+                        scope: {value: true, assessment_counters: counters}
                     }).called.should.be.equal(true);
+                };
+
+                it('opens the dialog if all answers are approved or marked unresolved', function() {
+                    checkDialogOpen({length: 3, approved: 2, flagged: 0, unresolved: 1});
+                });
+
+                it('opens the dialog if at least one answer is flagged', function() {
+                    checkDialogOpen({length: 3, approved: 0, flagged: 1, unresolved: 0});
                 });
 
                 describe('INVALID DATA', function() {
                     beforeEach(function() {
                         mocks.notifier = sinon.mock(rgiNotifier);
-                        mocks.notifier.expects('error').withArgs('You must approve or flag all questions!');
+                        mocks.notifier.expects('error').withArgs('You must approve all questions or flag at least one!');
                     });
 
                     it('shows an error message if there are not finalized answers', function() {
@@ -71,8 +66,8 @@ describe('rgiDialogFactory', function () {
                     it('shows an error message if there are not approved or not flagged answers', function() {
                         rgiDialogFactory.assessmentMove({assessment_counters: {
                             length: 4,
-                            approved: 1,
-                            flagged: 1,
+                            approved: 2,
+                            flagged: 0,
                             unresolved: 1
                         }});
                     });
