@@ -130,6 +130,7 @@ var appFileList = [
     'public/app/dialogs/assessments/rgiNewAssessmentDialogCtrl.js',
     'public/app/dialogs/assessments/rgiSubmitAssessmentConfirmationDialogCtrl.js',
     'public/app/dialogs/assessments/rgiResubmitAssessmentConfirmationDialogCtrl.js',
+    'public/app/dialogs/answers/rgiEditAnswerJustificationDialogCtrl.js',
     'public/app/dialogs/answers/rgiFinalChoiceDialogCtrl.js',
     'public/app/dialogs/answers/rgiGuidanceDialogCtrl.js',
     'public/app/dialogs/comments/rgiEditCommentDialogCtrl.js',

@@ -256,6 +256,17 @@ angular.module('app')
                     scope: scope
                 });
             },
+            editAnswerJustification: function($scope, role) {
+                $scope.field = role + '_justification';
+
+                ngDialog.openConfirm({
+                    template: 'partials/dialogs/answers/edit-answer-justification-dialog',
+                    controller: 'rgiEditAnswerJustificationDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
+                    scope: $scope
+                });
+            },
             editDocumentReference: function ($scope, referenceIndex) {
                 $scope.ref_index = referenceIndex;
 
