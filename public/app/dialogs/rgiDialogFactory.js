@@ -73,8 +73,8 @@ angular.module('app')
                         return scope.assessment_counters[counter] || 0;
                     };
 
-                if((getCounter('flagged') + getCounter('approved') + getCounter('unresolved') + getCounter('finalized')) < scope.assessment_counters.length) {
-                    rgiNotifier.error('You must approve or flag all questions!');
+                if((getCounter('flagged') === 0) && ((getCounter('approved') + getCounter('unresolved') + getCounter('finalized')) < scope.assessment_counters.length)) {
+                    rgiNotifier.error('You must approve all questions or flag at least one!');
                 } else {
                     scope.value = true;
                     ngDialog.open({
