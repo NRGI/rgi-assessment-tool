@@ -8,7 +8,6 @@ var auth                    = require('./auth'),
     countries               = require('../controllers/countries'),
     documents               = require('../controllers/documents'),
     interviewees            = require('../controllers/interviewees'),
-    logs                    = require('../controllers/logs'),
     precepts                = require('../controllers/precepts'),
     questions               = require('../controllers/questions'),
     resources               = require('../controllers/resources'),
@@ -105,8 +104,6 @@ module.exports = function (app) {
     app.get('/partials/*', function (req, res) {
         res.render('../../public/app/' + req.params[0]);
     });
-    //SUBMIT LOG
-    app.post('/api/logs', logs.post);
     // GET COUNTRY
     app.get('/api/countries', countries.getCountries);
     app.get('/api/countries/:country_ID', countries.getCountryByID);
