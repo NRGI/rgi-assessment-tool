@@ -1,0 +1,25 @@
+.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
+    .modal-header
+        h3 Edit Justification
+    .modal-body
+        .row
+            form.form-horizontal
+                fieldset
+                    .row.left-padding-med
+                        ng-form
+                            .form-group
+                                .row.bottom-padding-med.top-padding-lg
+                                    .col-md-12
+                                        rgi-wysiwyg(
+                                            name="justification"
+                                            ng-model="answer[field]"
+                                            limit="2000"
+                                            placeholder="Justification (2,000 character limit)..."
+                                        )
+
+    .modal-footer
+        button.btn.btn-success(
+            ng-click="editJustification()"
+        ) Edit
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeThisDialog()") Cancel

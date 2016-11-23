@@ -49,6 +49,8 @@ div(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isExterna
             h5 Researcher justification:
             .left-padding-lg
                 .text-primary(ng-bind-html="answer.researcher_justification")
+            .left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
+                button.btn.btn-success(ng-click="editAnswerJustification('researcher')") Edit
 
     .bottom-padding-med
         div(ng-if="!answer.reviewer_score.letter")
@@ -62,6 +64,8 @@ div(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isExterna
             h5 Reviewer justification:
             .left-padding-lg
                 .text-primary(ng-bind-html="answer.reviewer_justification")
+            .left-padding-lg(ng-if="identity.currentUser.isSupervisor()")
+                button.btn.btn-success(ng-click="editAnswerJustification('reviewer')") Edit
 
     .bottom-padding-med.well
         h5 Options
