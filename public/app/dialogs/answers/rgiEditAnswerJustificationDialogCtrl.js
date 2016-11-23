@@ -16,7 +16,11 @@ angular.module('app')
                     rgiNotifier.error(reason);
                 }).finally(function() {
                     $scope.closeThisDialog();
-                    $scope.answer[$scope.field] = originalJustification;
                 });
+        };
+
+        $scope.closeDialog = function() {
+            $scope.answer[$scope.field] = originalJustification;
+            $scope.closeThisDialog();
         };
     }]);
