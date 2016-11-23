@@ -89,6 +89,10 @@ angular.module('app')
             return $scope.answer && $scope.answer[rgiIdentitySrvc.currentUser.role + '_resolve_flag_required'];
         };
 
+        $scope.editAnswerJustification = function(role) {
+            rgiDialogFactory.editAnswerJustification($scope, role);
+        };
+
         resetReference();
         $scope.$on('RESET_REFERENCE_ACTION', resetReference);
         $scope.$on('RESET_ANSWER_ACTION', resetAnswer);
