@@ -2,7 +2,6 @@
 /* global require */
 var bunyan              =   require('bunyan'),
     BunyanSlack         =   require('bunyan-slack'),
-    logger              =   require('../logger/logger'),
     crypto              =   require('crypto'),
     fs                  =   require('fs'),
     mime                =   require('mime'),
@@ -43,6 +42,9 @@ var log = bunyan.createLogger({
         },
         {
             stream: require('bunyan-mongodb-stream')({model: require('mongoose').model('Log')})
+        },
+        {
+            stream: process.stderr
         }
     ]
 });
@@ -89,16 +91,11 @@ var uploadFile = function(file, req, callback) {
                     uploader.on('error', function(err) {
                         log.error('the file ' + file_hash + '.' + file_extension +
                         ' has been failed to be transferred. The error is ' + err.stack);
-                        logger.error("unable to upload:", err.stack);
                         fs.unlink(file.path);
                         callback('File transfer failed');
                     });
-                    uploader.on('progress', function() {
-                        logger.log("progress", uploader.progressMd5Amount, uploader.progressAmount, uploader.progressTotal);
-                    });
                     uploader.on('end', function() {
                         log.info('the file ' + file_hash + '.' + file_extension + ' has been transferred successfully.');
-                        logger.log("done uploading");
                         fs.unlink(file.path);
 
                         Doc.create({
