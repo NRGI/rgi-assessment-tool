@@ -17,6 +17,18 @@ integrations:
   hub:
     - integrationName: nrgiDockerHub
       type: docker
+  notifications:
+    - integrationName: email
+      type: email
+      recipients:
+        - nrgi@vitaminsoftware.com
+        - sascha.elgin@gmail.com
+      branches:
+        only:
+          - master
+          - staging
+      on_success: change
+      on_failure: always      
 
 before_script:
   - npm install --dev
@@ -34,6 +46,9 @@ after_success:
   - rm -rf node_modules
   - rm -rf bower_components
 
+  # Create the version file
+  - ./create_version.sh
+  
   # Build image
   - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
 
