@@ -13,8 +13,8 @@ var logger = bunyan.createLogger({
     streams: [
         {
             stream: new BunyanSlack({
-                webhook_url: 'https://hooks.slack.com/services/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',
-                channel: '#email-logs-local',
+                webhook_url: 'https://hooks.slack.com/services/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',
+                channel: '#email-logs-staging',
                 username: 'webhookbot'
             })
         },
