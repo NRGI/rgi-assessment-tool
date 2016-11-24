@@ -1,17 +1,37 @@
 'use strict';
 
 var config = require('../config/config')[process.env.NODE_ENV = process.env.NODE_ENV || 'development'],
-    logger = require('../logger/logger'),
     siteEmail = 'tech-support@resourcegovernance.org';
+
+var bunyan =   require('bunyan'),
+    BunyanSlack = require('bunyan-slack');
 
 var mandrill = require('node-mandrill')(process.env.MANDRILL_APIKEY);
 
+var logger = bunyan.createLogger({
+    name: 'emails',
+    streams: [
+        {
+            stream: new BunyanSlack({
+                webhook_url: 'https://hooks.slack.com/services/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',
+                channel: '#email-logs-local',
+                username: 'webhookbot'
+            })
+        },
+        {
+            stream: require('bunyan-mongodb-stream')({model: require('mongoose').model('Log')})
+        },
+        {
+            stream: process.stderr
+        }
+    ]
+});
+
 var sendMessage = function(message) {
-        mandrill('/messages/send', {message: message}, processFailure);
-    },
-    processFailure = function (err, res) {
-        logger.log(err ? JSON.stringify(err) : res);
-    };
+    mandrill('/messages/send', {message: message}, function (err, res) {
+        return err ? logger.error(err) : logger.info(res);
+    });
+};
 
 // send email to tech support
 exports.techSend = function (req, res) {
