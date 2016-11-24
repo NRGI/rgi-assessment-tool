@@ -29,7 +29,13 @@ var logger = bunyan.createLogger({
 
 var sendMessage = function(message) {
     mandrill('/messages/send', {message: message}, function (err, res) {
-        return err ? logger.error(err) : logger.info(res);
+        if(err) {
+            logger.error('The email `' + message.subject + '` has not been sent because of the error');
+            logger.error(err);
+        } else {
+            logger.info('The email `' + message.subject + '` has been sent successfully. The response is');
+            logger.info(res);
+        }
     });
 };
 
