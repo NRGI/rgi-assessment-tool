@@ -4,10 +4,9 @@ var expect = require('chai').expect,
     rewire = require('rewire'),
     sinon = require('sinon');
 
-
 var utils = require('../utils');
 
-utils.stubModel();
+utils.stubModel(['Log']);
     var assessmentsModule = rewire(utils.getControllerPath('assessments'));
 utils.restoreModel();
 
