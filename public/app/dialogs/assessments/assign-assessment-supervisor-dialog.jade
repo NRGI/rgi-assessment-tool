@@ -9,7 +9,7 @@
                     select.form-group.form-control.right-padding-med(
                     name="supervisor_selector"
                     ng-model="assessment.supervisor_ID[$index]"
-                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in getFilteredAvailableUsers(assessment.supervisor_ID[$index])"
+                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in getFilteredAvailableUsers(assessment.supervisor_ID[$index]) | orderBy: 'lastName' | orderBy: 'firstName'"
                     required)
                         option(value="" selected disabled) Select supervisor...
                 .col-md-1
