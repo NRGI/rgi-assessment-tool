@@ -67,8 +67,8 @@
     ng-disabled="!identity.currentUser.isSupervisor() && ((['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || (references.length <= 1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && ((getOwnReferencesNumber() <= 1) || (assessment.edit_control !== identity.currentUser._id))))") Delete Reference
     | &nbsp;
     button.btn.btn-primary(
-    ng-if="!ref.hidden && (ref.author._id === identity.currentUser._id)"
+    ng-if="(!ref.hidden && (ref.author._id === identity.currentUser._id)) || identity.currentUser.isSupervisor()"
     ng-click="ref.citation_type === 'interview' ? showEditInterviewReferenceDialog($index) : showEditDocumentReferenceDialog($index)"
-    ng-disabled="(['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && (assessment.edit_control !== identity.currentUser._id))") Edit Reference
+    ng-disabled="!identity.currentUser.isSupervisor() && ((['submitted', 'trial_submitted'].indexOf(assessment.status) !== -1) || ((identity.currentUser.isResearcher() || identity.currentUser.isExternalReviewer()) && (assessment.edit_control !== identity.currentUser._id)))") Edit Reference
 
 hr
