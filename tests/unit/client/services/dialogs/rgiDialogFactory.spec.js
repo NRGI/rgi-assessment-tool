@@ -543,6 +543,21 @@ describe('rgiDialogFactory', function () {
             });
         });
 
+        describe('#editAnswerJustification', function () {
+            it('opens a dialog', function() {
+                var ROLE = 'role';
+                rgiDialogFactory.editAnswerJustification({}, ROLE);
+
+                spies.openConfirm.withArgs({
+                    template: 'partials/dialogs/answers/edit-answer-justification-dialog',
+                    controller: 'rgiEditAnswerJustificationDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
+                    scope: {field: ROLE + '_justification'}
+                }).called.should.be.equal(true);
+            });
+        });
+
         describe('#editDocumentReference', function () {
             it('opens a dialog', function() {
                 var REFERENCE = 'REFERENCE';
