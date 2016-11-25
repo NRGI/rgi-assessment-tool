@@ -27,7 +27,15 @@ module.exports = {
     setModuleLocalVariable: function(moduleObject, variableName, variableValue) {
         moduleObject.__set__(variableName, variableValue);
     },
-    stubModel: function() {
-        modelStub = sinon.stub(mongoose, 'model', function() {});
+    stubModel: function(skippedModelNames) {
+        var originalModels = {};
+
+        (skippedModelNames || []).forEach(function(modelName) {
+            originalModels[modelName] = mongoose.model(modelName);
+        });
+
+        modelStub = sinon.stub(mongoose, 'model', function(modelName) {
+            return Object.keys(originalModels).indexOf(modelName) === -1 ? undefined : originalModels[modelName];
+        });
     }
 };

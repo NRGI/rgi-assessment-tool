@@ -1,11 +1,9 @@
 'use strict';
 
 var expect = require('chai').expect,
-    mongoose = require('mongoose'),
     rewire = require('rewire'),
     sinon = require('sinon');
 
-mongoose.model('Log', mongoose.Schema({}));
 var utils = require('../utils');
 var logsModule = rewire(utils.getControllerPath('logs'));
 
