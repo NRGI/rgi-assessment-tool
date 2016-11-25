@@ -12,7 +12,7 @@
                     .form-group.col-md-8
                         select.form-group.form-control(
                         ng-model="assessment[role + '_ID']"
-                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers[role]"
+                        ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in availableUsers[role] | orderBy: 'lastName' | orderBy: 'firstName'"
                         required)
                             option(value="" selected disabled) Select {{::role|role}}...
             .modal-footer
