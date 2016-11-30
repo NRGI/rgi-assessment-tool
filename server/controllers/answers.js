@@ -276,8 +276,7 @@ exports.getExportedAnswersData = function(req, res) {
     res.send({data: answers, country: req.params.country, header: exportedFields});
 };
 
-exports.getAnswersByID = function (req, res, next) {
-    //.populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
+exports.getAnswersByID = function (req, res) {
     Answer.findOne({answer_ID: req.params.answer_ID})
         .populate('question_ID')
         .populate('external_answer.author', 'firstName lastName role external_type')
@@ -288,8 +287,19 @@ exports.getAnswersByID = function (req, res, next) {
         .populate('references.interviewee_ID', 'firstName lastName role')
         .populate('references.author', 'firstName lastName role')
         .exec(function (err, answer) {
-            if (err) { return next(err); }
-            if (!answer) { return next(new Error('No answers found')); }
+            var respondError = function(error) {
+                console.error('The answer ' + req.params.answer_ID + ' is not found');
+                res.status(400);
+                return res.send({reason: error.toString()});
+            };
+
+            if(err) {
+                return respondError(err);
+            }
+
+            if(!answer) {
+                return respondError(new Error('No answers found'));
+            }
 
             filterAnswerScoreHistory(answer);
             res.send(answer);
