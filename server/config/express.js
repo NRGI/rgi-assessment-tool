@@ -37,7 +37,8 @@ module.exports = function (app, config, user, pass, env) {
     app.set('views', config.rootPath + '/server/views');
     app.set('view engine', 'jade');
     // set up logger
-    app.use(morgan('dev'));
+    app.enable("trust proxy");
+    app.use(morgan('short'));
     
     // authentication cofigs
     app.use(cookieParser());
