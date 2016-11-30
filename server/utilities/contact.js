@@ -19,9 +19,6 @@ var logger = bunyan.createLogger({
             })
         },
         {
-            stream: require('bunyan-mongodb-stream')({model: require('mongoose').model('Log')})
-        },
-        {
             stream: process.stderr
         }
     ]
