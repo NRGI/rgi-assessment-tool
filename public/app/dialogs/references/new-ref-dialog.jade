@@ -34,7 +34,7 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         .row.bottom-padding-med
                             div.fileUpload.btn.btn-default
                                 span Select File
-                                input.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
+                                input#file-uploader.upload(type="file" nv-file-select uploader="uploader" ng-disabled="uploader.queue.length >= 1")
                         .row: h4: b OR
                         .row: h4 Please select a previously cited document:
                         .row.bottom-padding-med

@@ -194,6 +194,7 @@ angular.module('app')
         ///////////////
         $scope.fileUploading = false;
         $scope.answer_update = $scope.$parent.answer;
+
         var uploader = $scope.uploader = rgiFileUploaderSrvc.get({
             isHTML5: true,
             withCredentials: true,
@@ -251,8 +252,20 @@ angular.module('app')
             }
         });
 
+        var checksum, mimeType, fileReader = new FileReader();
+
+        fileReader.onload = function (event) {
+            checksum = CryptoJS.SHA1(event.target.result.replace('data:' + mimeType + ';base64,', '')).toString();
+        };
+
         uploader.onAfterAddingFile = function(item) {
-            item.formData.push({originalFileSize: item.file.size});
+            checksum = undefined;
+            mimeType = item.file.type;
+            fileReader.readAsDataURL(document.getElementById('file-uploader').files[0]);
+        };
+
+        uploader.onBeforeUploadItem = function(item) {
+            item.formData.push({checksum: checksum});
         };
 
         uploader.onCompleteItem = function (fileItem, response, status) {
