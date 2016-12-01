@@ -237,9 +237,21 @@ exports.fileCheck = function (req, res) {
         res.send({reason: error.toString()});
     };
 
-    if(req.body.originalFileSize != req.files.file.size) {
-        log.error('THE LOCAL FILE ' + req.files.file.path + ' WAS UPLOADED INCOMPLETELY');
-        return respondError('File upload error');
+    if(req.body.checksum !== undefined) {
+        var base64_encode = function (filePath) {
+            var bitmap = fs.readFileSync(filePath);
+            return new Buffer(bitmap).toString('base64');
+        };
+
+        var hash = crypto.createHash('sha1');
+        hash.update(base64_encode(req.files.file.path));
+        var checksum = hash.digest('hex');
+
+        if(checksum !== req.body.checksum) {
+            console.log('The local file ' + req.files.file.path + ' hash ' + checksum +
+            ' does not match the original one ' + req.body.checksum);
+            return respondError('File uploading failed');
+        }
     }
 
     uploadFile(req.files.file, req, function (err, document) {

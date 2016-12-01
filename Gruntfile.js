@@ -155,6 +155,7 @@ var appFileList = [
 ];
 
 var vendorsFileList = [
+    'public/vendor/cryptojslib/rollups/sha1.js',
     'public/vendor/jquery/dist/jquery.js',
     'public/vendor/jquery-ui/jquery-ui.min.js',
     'public/vendor/jquery-truncate-html/jquery.truncate.js',
