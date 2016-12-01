@@ -232,13 +232,18 @@ exports.uploadRemoteFile = function (req, res) {
 exports.fileCheck = function (req, res) {
     log.info('UPLOAD A LOCAL FILE ' + req.files.file.path);
 
+    var respondError = function(error) {
+        res.status(400);
+        res.send({reason: error.toString()});
+    };
+
+    if(req.body.originalFileSize != req.files.file.size) {
+        log.error('THE LOCAL FILE ' + req.files.file.path + ' WAS UPLOADED INCOMPLETELY');
+        return respondError('File upload error');
+    }
+
     uploadFile(req.files.file, req, function (err, document) {
-        if (err) {
-            res.status(400);
-            res.send({reason: err.toString()});
-        } else {
-            res.send(document);
-        }
+        return err ? respondError(err) : res.send(document);
     });
 };
 

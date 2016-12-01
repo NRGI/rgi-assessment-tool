@@ -251,6 +251,10 @@ angular.module('app')
             }
         });
 
+        uploader.onAfterAddingFile = function(item) {
+            item.formData.push({originalFileSize: item.file.size});
+        };
+
         uploader.onCompleteItem = function (fileItem, response, status) {
             $scope.uploader.queue = [];
             if (status === 400) {
