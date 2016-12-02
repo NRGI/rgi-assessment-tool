@@ -60490,5 +60490,69 @@
     "_id": "583f98cab65a8d000f011f7b",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/261f38bd97000b5e29e1186dca53453fde258da6.pdf",
     "source": "https://ickhmer.wordpress.com/2015/12/18/economy-of-geologic-potential-of-cambodia-copper-and-gold/"
+  },
+  {
+    "_id": "58404d12ae75d6000f01bf68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/895ff3aafc1fd91082f4c9874d1a6e44e4e6a1b8.pdf",
+    "source": "http://www.biodiv.be/civoire/implementation/loi-code-decrets-et-textes-sur-lenvironnement/decret-ndeg-96-894-du-8-novembre-1996-determinant-les-regles-et-procedures"
+  },
+  {
+    "_id": "58405270ae75d6000f01bfb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5912788e4e28c0beac7b2b4d483299b642bef1e0.pdf",
+    "source": "https://www.kpc.com.kw/press/KPCPublications/AnnualReports/AnnualRep2015-eng.pdf"
+  },
+  {
+    "_id": "58405aabae75d6000f01bfda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aef05e06df5b3cbfaa97865c1305ff7905ce741a.pdf"
+  },
+  {
+    "_id": "584073aaae75d6000f01c066",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7b9c1b455d8d22e058f8e23356c7ef8fe6d7921.pdf",
+    "source": "http://www.eia.gov/petroleum/production/#ng-tab"
+  },
+  {
+    "_id": "5840747a62d9d1000fd05f84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d706f66b8576a249e011c37224369e9b3799617d.pdf",
+    "source": "http://www.eia.gov/petroleum/production/#ng-tab"
+  },
+  {
+    "_id": "5840779862d9d1000fd05f93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef27dee563564fd65c5848e4fb5036ef5a461ed0.pdf",
+    "source": "https://www.boem.gov/Regulations/Notices-To-Lessees/2012/BOEM-NTL-2012-N01-pdf.aspx"
+  },
+  {
+    "_id": "584081bcae75d6000f01c08c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70312f796bfae1658ac5b3954b36f8e4f04aa865.pdf",
+    "source": "https://www.boem.gov/Sale-241-Phase-2-Award-Letter-4-21-2016/"
+  },
+  {
+    "_id": "58408275ae75d6000f01c099",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37a2f928f9b30d97aa566baee102e1db5415ed0a.pdf",
+    "source": "https://www.boem.gov/Sale-241-Phase-2-Decision-Matrix/"
+  },
+  {
+    "_id": "58408cec62d9d1000fd05fe3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f044697b4beb9fbc427af26070dcf22aa021de8f.pdf",
+    "source": "https://www.boem.gov/Record-of-Decision-Lease-Sale-241/"
+  },
+  {
+    "_id": "58408fd162d9d1000fd06004",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/372e1df2df58cc9dd20b67d4b0f7b17172d48637.pdf",
+    "source": "https://contenido.bce.fin.ec/home1/estadisticas/bolmensual/IEMensual.jsp"
+  },
+  {
+    "_id": "58409406ae75d6000f01c113",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/353a295b37f4b85aaa54cc0d347394ff6831298d.pdf",
+    "source": "http://www.mof.gov.kw/MofBudget/PDF/Disproprty-Law12-2014-2015.pdf"
+  },
+  {
+    "_id": "584094ae62d9d1000fd0606f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63782adb99ed9e87041fc0e3b83be9b7f0a3c9a4.pdf",
+    "source": "https://contenido.bce.fin.ec/home1/estadisticas/bolmensual/IEMensual.jsp"
+  },
+  {
+    "_id": "5840a050ae75d6000f01c193",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b31d394254659e011f9603c79a8f5070d1948657.pdf",
+    "source": "http://www.mof.gov.kw/MofBudget/MofBudgetDetail.aspx#generalBudget3"
   }
 ]
