@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiDocumentTableCtrl', function (
+    .controller('rgiDocumentTableCtrl', ['_', '$scope', '$rootScope', 'rgiDialogFactory', 'rgiAssessmentSrvc', 'rgiDocumentSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', function (
         _,
         $scope,
         $rootScope,
@@ -85,4 +85,8 @@ angular.module('app')
         $scope.deleteDocument = function(doc) {
             rgiDialogFactory.deleteDocument($scope, doc);
         };
-    });
+
+        $scope.unlink = function(doc) {
+            rgiDialogFactory.unlinkDocument($scope, doc);
+        };
+    }]);
