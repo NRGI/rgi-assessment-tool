@@ -27,7 +27,7 @@ div.table-responsive
                 th.col-md-1 Type
                 th.col-md-2 Cited by
                 th.col-md-1 Assessments
-                th(colspan="3").col-md-4.text-center Actions
+                th(colspan="4").col-md-4.text-center Actions
         tbody
             tr(ng-repeat="doc in documents | filter:search_text | orderBy:sort_order")
                 td.col-md-2 {{doc.title}}
@@ -42,8 +42,11 @@ div.table-responsive
                         a(href="/admin/assessments-admin/{{assessment}}") {{assessment}}
                 td.col-md-1
                     a(href="/admin/documents-admin/{{doc._id}}").btn-block.btn.btn-warning Metadata
-                td.col-md-2
-                    a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-default Link to document
+                td.col-md-1
+                    a(href="{{doc.s3_url}}" target="_blank").btn-block.btn.btn-default View
+                td.col-md-1
+                    a(ng-if="doc.answers.length > 0", ng-click="unlink(doc)").btn-block.btn.btn-danger Unlink
+                    a(ng-if="doc.answers.length <= 0", disabled).btn.btn-danger Unlink
                 td.col-md-1
                     a(ng-if="doc.answers.length <= 0", ng-click="deleteDocument(doc)").btn.btn-danger Delete
                     a(ng-if="doc.answers.length > 0", disabled).btn.btn-danger Delete

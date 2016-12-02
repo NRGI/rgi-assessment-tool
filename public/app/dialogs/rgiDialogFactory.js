@@ -436,6 +436,17 @@ angular.module('app')
                     scope: $scope
                 });
             },
+            unlinkDocument: function($scope, doc) {
+                $scope.document = doc;
+
+                ngDialog.open({
+                    template: 'partials/dialogs/documents/unlink-document-dialog',
+                    controller: 'rgiUnlinkDocumentDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
+                    scope: $scope
+                });
+            },
             userEdit: function($scope) {
                 var scope = $scope;
                 scope.value = true;
