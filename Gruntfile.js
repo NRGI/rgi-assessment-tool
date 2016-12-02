@@ -150,6 +150,7 @@ var appFileList = [
     'public/app/dialogs/references/rgiNewWebpageDialogCtrl.js',
     'public/app/dialogs/resources/rgiDeleteResourceDialogCtrl.js',
     'public/app/dialogs/resources/rgiNewResourceDialogCtrl.js',
+    'public/app/dialogs/documents/rgiUnlinkDocumentDialogCtrl.js',
     'public/app/dialogs/users/rgiDeleteUserDialogCtrl.js',
     'public/app/dialogs/users/rgiEditUserDialogCtrl.js'
 ];
