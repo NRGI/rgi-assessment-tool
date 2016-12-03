@@ -169,6 +169,7 @@ answerSchema = new Schema({
     dependancy_hidden: {
         type: Boolean,
         default: false},
+    modified: {type: Boolean, default: false},
     comments: [commentSchema],
     //TODO fix data model to separate human out to interviewees and roll web into citation including screen shot
     references: [referenceSchema]
