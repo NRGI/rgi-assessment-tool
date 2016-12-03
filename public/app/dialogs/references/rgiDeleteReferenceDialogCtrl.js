@@ -108,6 +108,11 @@ angular.module('app')
                 }
 
                 currentReference.hidden = hiddenStatus;
+
+                if(!hiddenStatus) {
+                    answer.modified = true;
+                }
+
                 promises.push(rgiAnswerMethodSrvc.updateAnswer(answer).$promise);
 
                 $q.all(promises).then(function() {

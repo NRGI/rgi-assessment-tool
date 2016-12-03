@@ -90,6 +90,8 @@ angular.module('app')
                 new_answer_data = $scope.answer_update,
                 current_user = $scope.current_user;
 
+            new_answer_data.modified = true;
+
             //error handling
             if (!new_answer_data.human_ref_comment) {
                 rgiNotifier.error('You must enter interview content!');
