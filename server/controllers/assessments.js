@@ -340,6 +340,23 @@ exports.updateAssessment = function (req, res, next) {
                     contact_packet.editor_email = user_editor.email;
                 }
 
+                var updateAnswersStatuses = function(criteria, updateData) {
+                    Answer.find(criteria).exec(function (err, answers) {
+                        answers.forEach(function (answer) {
+                            Object.keys(updateData).forEach(function(field) {
+                                answer[field] = updateData[field];
+                            });
+
+                            answer.save(function (err) {
+                                if (err) {
+                                    res.sendStatus(500);
+                                    return next(err);
+                                }
+                            });
+                        });
+                    });
+                };
+
                 Assessment.findOne({_id: assessmentUpdates._id}).exec(function (err, assessment) {
                     if (assessment.status === 'unassigned') {
                         assessment_init = true;
@@ -384,6 +401,8 @@ exports.updateAssessment = function (req, res, next) {
                             break;
                         case 'review_researcher':
                         case 'review_reviewer':
+                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                {modified: false});
                             assessment.last_review_date = {user: req.user._id, date: timestamp};
                             break;
                         case 'approved':
@@ -491,12 +510,16 @@ exports.updateAssessment = function (req, res, next) {
                                                 }
                                             } else {
                                                 contact.trial_assessment_return(contact_packet);
+                                                updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                    {modified: false});
                                             }
                                             break;
                                         case 'trial_submitted':
                                             contact.trial_assessment_submission(contact_packet);
                                             break;
                                         case 'trial_continue':
+                                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                {modified: false});
                                             contact.trial_assessment_continue(contact_packet);
                                             break;
                                         case 'submitted':
@@ -506,6 +529,8 @@ exports.updateAssessment = function (req, res, next) {
 
                                         case 'review_researcher':
                                         case 'review_reviewer':
+                                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                {modified: false});
                                             contact.flag_review(contact_packet);
                                             break;
 
@@ -532,17 +557,8 @@ exports.updateAssessment = function (req, res, next) {
                         });
                     } else {
                         assessment.status = 'assigned';
-                        Answer.find({assessment_ID: assessment.assessment_ID, question_trial: true}).exec(function (err, answers) {
-                            answers.forEach(function (answer) {
-                                answer.status = 'submitted';
-                                answer.save(function (err) {
-                                    if (err) {
-                                        res.sendStatus(500);
-                                        return next(err);
-                                    }
-                                });
-                            });
-                        });
+                        updateAnswersStatuses({assessment_ID: assessment.assessment_ID, question_trial: true},
+                            {status: 'submitted'});
                         assessment.save(function (err) {
                             if (err) {
                                 res.sendStatus(500);
@@ -564,12 +580,16 @@ exports.updateAssessment = function (req, res, next) {
 
                                         //TODO Need to handle group emails
                                         case 'researcher_trial':
+                                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                {modified: false});
                                             contact.trial_assessment_return(contact_packet);
                                             break;
                                         case 'trial_submitted':
                                             contact.trial_assessment_submission(contact_packet);
                                             break;
                                         case 'trial_continue':
+                                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                {modified: false});
                                             contact.trial_assessment_continue(contact_packet);
                                             break;
                                         case 'submitted':
@@ -579,6 +599,8 @@ exports.updateAssessment = function (req, res, next) {
 
                                         case 'review_researcher':
                                         case 'review_reviewer':
+                                            updateAnswersStatuses({assessment_ID: assessment.assessment_ID},
+                                                {modified: false});
                                             contact.flag_review(contact_packet);
                                             break;
 
