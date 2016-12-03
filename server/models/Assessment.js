@@ -19,6 +19,7 @@ assessmentSchema = new Schema({
         type: String,
         required: '{PATH} is required'}, // ISO3 of country
     deleted: Boolean,
+    resubmitted: {type: Boolean, default: false},
     country: {
         type: String,
         required: '{PATH} is required'}, // String of country name

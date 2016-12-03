@@ -52,6 +52,12 @@ angular.module('app')
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load user data failure'));
 
         $scope.moveAssessment = function () {
+            if(($scope.action.indexOf('_trial') > -1) || ($scope.action.indexOf('review_') > -1)) {
+                $scope.$parent.assessment.resubmitted = true;
+            } else if($scope.action.indexOf('assigned_') > -1) {
+                $scope.$parent.assessment.resubmitted = false;
+            }
+
             rgiDialogFactory.assessmentMoveConfirm($scope);
         };
     }]);
