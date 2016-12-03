@@ -106,6 +106,8 @@ angular
                 if (new_answer_data.new_answer_selection) {
                     new_answer_data[rgiIdentitySrvc.currentUser.role + '_score'] = $scope.question.question_criteria[new_answer_data.new_answer_selection];
                 }
+
+                new_answer_data.modified = true;
                 updateAnswer(new_answer_data, 'submitted', 'Answer submitted');
             }
         };
