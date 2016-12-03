@@ -344,13 +344,14 @@ exports.updateAnswer = function (req, res, next) {
             };
 
             setFields(answer, updateData, [
-                'status',
                 'comments',
-                'guidance_dialog',
-                'references',
-                'flags',
                 'external_answer',
-                'researcher_resolve_flag_required'
+                'flags',
+                'guidance_dialog',
+                'modified',
+                'references',
+                'researcher_resolve_flag_required',
+                'status'
             ]);
 
             answer.last_modified = {modified_by: req.user._id, modified_date: timestamp};
