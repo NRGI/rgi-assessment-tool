@@ -216,6 +216,8 @@ describe('rgiMoveAssessmentDialogCtrl', function () {
     });
 
      describe('#moveAssessment', function () {
+         var ngDialogMock;
+
          initializeController(false, false, 'unknown', 'researcher', {
              approved: 0,
              finalized: 0,
@@ -223,12 +225,17 @@ describe('rgiMoveAssessmentDialogCtrl', function () {
              length: 0
          });
 
-         it('opens a dialog', function () {
-             var ngDialogMock = sinon.mock(rgiDialogFactory);
+         beforeEach(function() {
+             ngDialogMock = sinon.mock(rgiDialogFactory);
              ngDialogMock.expects('assessmentMoveConfirm').withArgs($scope);
+         });
 
+         it('opens a dialog', function () {
+             $scope.action = 'no-resubmitted-flag-modification';
              $scope.moveAssessment();
+         });
 
+         afterEach(function() {
              ngDialogMock.verify();
              ngDialogMock.restore();
          });
