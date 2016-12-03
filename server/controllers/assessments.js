@@ -470,7 +470,8 @@ exports.updateAssessment = function (req, res, next) {
                         'edit_control',
                         'status',
                         'documents',
-                        'interviewees'
+                        'interviewees',
+                        'resubmitted'
                     ];
 
                     if(bySupervisorSubmitted) {

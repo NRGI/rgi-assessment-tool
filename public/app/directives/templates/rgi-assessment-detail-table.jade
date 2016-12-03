@@ -28,7 +28,7 @@ div(id="answers_div").bottom-padding-med
                     tbody
                         tr(
                         ng-repeat="answer in precept.data|filter: searchText|orderBy:sortOrder track by answer.answer_ID",
-                        ng-class="{'success': (['resubmitted', 'trial_submitted'].indexOf($parent.assessment.status) !== -1) && current_user.isSupervisor() && answer.modified}",
+                        ng-class="{'info': assessment.resubmitted && current_user.isSupervisor() && answer.modified}",
                         ng-if="(!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1) && isAnswerAvailable(answer)")
                             td.col-md-1.text-center {{::answer.question_ID.question_label}}
                             td.col-md-1 {{::answer.question_ID.component_text}}
