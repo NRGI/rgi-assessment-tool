@@ -247,6 +247,10 @@ describe('rgiAssessmentDetailCtrl', function () {
 
                     counters[field] = number;
                     $scope.assessment_counters = counters;
+
+                    if($scope.assessment_counters.submitted === undefined) {
+                        $scope.assessment_counters.submitted = 0;
+                    }
                 };
 
             describe('#moveAssessmentDialog', function() {
