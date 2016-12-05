@@ -15,7 +15,7 @@ elementIn () {
 }
 
 # Automatic deploy allowed for these branches only.
-DEPLOY_BRANCHES=("staging" "master")
+DEPLOY_BRANCHES=("staging" "master" "production")
 
 if ! elementIn "$BRANCH" "${DEPLOY_BRANCHES[@]}" ;
 then
