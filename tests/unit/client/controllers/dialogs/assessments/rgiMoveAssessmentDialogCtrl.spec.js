@@ -216,7 +216,12 @@ describe('rgiMoveAssessmentDialogCtrl', function () {
     });
 
      describe('#moveAssessment', function () {
-         var ngDialogMock;
+         var ngDialogMock,
+             checkMoveAssessment = function(action, expectedResubmittedValue) {
+                 $scope.action = action;
+                 $scope.moveAssessment();
+                 $scope.$parent.assessment.resubmitted.should.be.equal(expectedResubmittedValue);
+             };
 
          initializeController(false, false, 'unknown', 'researcher', {
              approved: 0,
@@ -230,9 +235,22 @@ describe('rgiMoveAssessmentDialogCtrl', function () {
              ngDialogMock.expects('assessmentMoveConfirm').withArgs($scope);
          });
 
-         it('opens a dialog', function () {
-             $scope.action = 'no-resubmitted-flag-modification';
-             $scope.moveAssessment();
+         it('just opens a dialog without the `resubmitted` flag modification', function () {
+             var NOT_MODIFIED = 'not modified';
+             $scope.$parent.assessment.resubmitted = NOT_MODIFIED;
+             checkMoveAssessment('no-resubmitted-flag-modification', NOT_MODIFIED);
+         });
+
+         it('sets the `resubmitted` flag if a trial assessment returned back for review', function () {
+             checkMoveAssessment('researcher_trial', true);
+         });
+
+         it('sets the `resubmitted` flag if a full assessment returned back for review', function () {
+             checkMoveAssessment('review_researcher', true);
+         });
+
+         it('sets the `resubmitted` flag if a full assessment returned back for review', function () {
+             checkMoveAssessment('assigned_researcher', false);
          });
 
          afterEach(function() {
