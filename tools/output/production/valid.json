@@ -1488,5 +1488,498 @@
     "_id": "5839acc0fb586d000f529f41",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/f59693bd49036b6838d610ddf48ed1f45e21c0ff.png",
     "source": "http://www.petroci.ci/index.php?numlien=32"
+  },
+  {
+    "_id": "583b0429963ca5000e0b0452",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd2bf4532035235dc382435fbcde4e67ecd91fd1.pdf",
+    "source": "http://hydrocarbures.gouv.cd/spip.php?rubrique43"
+  },
+  {
+    "_id": "583afdcffb586d000f52a40f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1033f4fb9cb674992e62472036eea7d6e2587fa5.pdf",
+    "source": "https://data.gov.in/catalog/importexport-crude-oil-and-petroleum-products"
+  },
+  {
+    "_id": "583b072afb586d000f52a480",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f38a840b6cb6acdf292c0c04c7372bb905349f7d.pdf",
+    "source": "http://www.itierdc.net/rapport-itie-rdc-2015/"
+  },
+  {
+    "_id": "583b183efb586d000f52a49a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/814c0a1fb7c47c2f33989b76560e368d9d2908ec.pdf",
+    "source": "http://fonctionpublique.gouv.cd/?page_id=37"
+  },
+  {
+    "_id": "583adb82fb586d000f52a245",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/83a81001522e6d0929cbbb4c1da4c47f6baada40.pdf",
+    "source": "https://eiti.org/es/node/7682"
+  },
+  {
+    "_id": "583b2d21963ca5000e0b04ff",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e001eebb06c5a667382dafd7da423075124d95f4.pdf",
+    "source": "http://www.eeaa.gov.eg/ngosgd/"
+  },
+  {
+    "_id": "583b26ddfb586d000f52a4ce",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/eaede39deb935669be6c0e85b470b26b3096475d.pdf",
+    "source": "http://www.leganet.cd/Legislation/Droit%20economique/Code%20Minier/Loi.15.012.01.08.2015.html"
+  },
+  {
+    "_id": "583b277ffb586d000f52a4dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6005bb4b5859af4f89a94040d4c9cc1893450d9f.pdf",
+    "source": "http://www.eeaa.gov.eg/portals/0/eeaaReports/N-Law/law4_text_en_amended.doc"
+  },
+  {
+    "_id": "583b269a963ca5000e0b04be",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6b1cb39a83fa3942494d5b1b208beabe5bd7ac1.pdf"
+  },
+  {
+    "_id": "583b3627963ca5000e0b0569",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7bd2291757c9eb8cc033aadc3aad3b729a65805b.pdf",
+    "source": "http://www.resourcecontracts.org/contract/ocds-591adf-EG6757313666RC/view#/pdf"
+  },
+  {
+    "_id": "583b3bfcfb586d000f52a59c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2478004b0f66ee86bee693060a0f4894ad84b5c9.pdf",
+    "source": "http://www.kazpravda.kz/uploads/redactors/files/53c9f8cb45fe71405745355.pdf"
+  },
+  {
+    "_id": "583b4aa2fb586d000f52a623",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bd63dcbefb513651b9f88558d9cd7fd585ea417.pdf",
+    "source": "http://www.kmgep.kz/details/ndownload.php?fn=670&lang=eng"
+  },
+  {
+    "_id": "583b4d8e963ca5000e0b0676",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9117c07ce366f8bc083c1f5426123adb2c86f0d9.pdf",
+    "source": "https://www.dailynews.co.zw/articles/2015/12/01/boost-for-sovereign-wealth-fund"
+  },
+  {
+    "_id": "583b4dc8963ca5000e0b0682",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5881ac44a9a6eb306548ed1e893d41520d93ec60.pdf",
+    "source": "http://www.kmg.kz/upload/corporate_management/equity/2015/kmg_annual_report_2015_en.pdf"
+  },
+  {
+    "_id": "583b4ea6fb586d000f52a655",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0368026e826d878b90fa5ae7a07a591caab9a206.pdf",
+    "source": "http://www.cubabusinessreport.com/the-oil-and-gas-industry-in-cuba/"
+  },
+  {
+    "_id": "583b517c963ca5000e0b06c0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/860bd47f8f7f774855741ab26642732e3f80f3d7.pdf",
+    "source": "http://oncubamagazine.com/economia-negocios/petroleo-en-cuba-cambia-la-dinamica-inversionista/"
+  },
+  {
+    "_id": "583b5500fb586d000f52a805",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/58e4465c9cce36f373f0e665fa0b0076e2d9eed2.pdf",
+    "source": "http://cooperaccion.org.pe/actualidad-minera-del-peru-185/123-actualidad-minera-del-peru-185/2448-toromocho"
+  },
+  {
+    "_id": "583b5473963ca5000e0b0849",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f9e58ba74cc62f00385818aa691969d7a36e5047.pdf",
+    "source": "http://convoca.pe/especiales/las-bambas/el-territorio-en-disputa-del-mayor-proyecto-minero-del-peru"
+  },
+  {
+    "_id": "583b6ff9fb586d000f52a8e5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/31395d5514cf8f0b92bd13ddcc6bfb441c9100fb.pdf",
+    "source": "http://buscadorlf.contraloria.gob.pe/BuscadorInformes/0/doc/3185673/Electronic.aspx"
+  },
+  {
+    "_id": "583b8595fb586d000f52a9c8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/88d0a216b9408cdf4710bf9fd985a56e79dbf1a9.pdf",
+    "source": "http://www.minem.gob.cu/ministerio"
+  },
+  {
+    "_id": "583b7f32fb586d000f52a99c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ff66d91035fef7912056b4ae5ee18c895ec6bf6e.pdf",
+    "source": "https://Embassy"
+  },
+  {
+    "_id": "583baac6fb586d000f52aa13",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d22ace82901b0a16b750c491086340df31f1ce3.pdf",
+    "source": "http://lb.ncdd.gov.kh/Share/Doc%20in%20Library/LAW-2011-3/Law%20issued%202011/2011%20Law%20on%20SNA%20Budget%20(small%20size).pdf"
+  },
+  {
+    "_id": "583ba9f9e2f0d7001827f113",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c087752510f85c5d11d81fcb4c6355d0927d30c5.pdf",
+    "source": "http://www.ccc.gov.kh/english/basic_text/Constitution%20of%20the%20Kingdom%20of%20Cambodia.pdf"
+  },
+  {
+    "_id": "583ba8a6fb586d000f52a9f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/feec3ab3f378b5739bd73c2877125300756d5c75.pdf",
+    "source": "http://www.ccc.gov.kh/khmer/basic_text/Constitution.pdf"
+  },
+  {
+    "_id": "583babf7fb586d000f52aa23",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2dc4bec915419dc1db30dd0261526a90412bcb83.pdf",
+    "source": "http://ncdd.gov.kh/cpdp/english/docs/reference/refer_book/14.pdf"
+  },
+  {
+    "_id": "583bc867e2f0d7001827f182",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8095038910bfc30c75aa2c11438c9c5228eaf0f4.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/9c4a915161c1001dbe72fe6c32fa0bdde926aaff.pdf"
+  },
+  {
+    "_id": "583bca5ce2f0d7001827f198",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5409dd754c881b02187169d48d79122461c5f8fc.pdf",
+    "source": "http://www.renaissanceminerals.com.au/cambodian-gold-project"
+  },
+  {
+    "_id": "583bcfa5fb586d000f52aa94",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a1b570f310511ea830ffbc08acb13f589dd04a6.pdf",
+    "source": "http://www.bloomberg.com/research/stocks/private/people.asp?privcapId=271529613"
+  },
+  {
+    "_id": "583bd42ae2f0d7001827f1d7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4bcf9afe4d8838c4cfb30f8414147a5416fcf49.pdf"
+  },
+  {
+    "_id": "583bcf1ce2f0d7001827f1b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34d36565dc5747b51f099b745bf32af8d0358af0.pdf",
+    "source": "http://www.barakahpetroleum.com/bop/index.php/corporate-info/bop-board-of-directio"
+  },
+  {
+    "_id": "583bd5a4e2f0d7001827f1e0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d75293553179788d5e4b1af0c562b090977a905.pdf",
+    "source": "http://geopacific.com.au/wp-content/uploads/2016/07/201607-Prospect-150-and-160-Resource-Estimates.compressed.pdf"
+  },
+  {
+    "_id": "583bdd3afb586d000f52aadf",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2ac22161984be0ec3661a2dc8839c28a75b9bc31.pdf",
+    "source": "http://www.ogj.com/articles/2016/09/petronas-lets-contracts-for-pengerang-complex.html"
+  },
+  {
+    "_id": "583bf42fe2f0d7001827f2dc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e5809bf599755c29977902759e514e86e29f86d3.pdf",
+    "source": "https://opendevelopmentcambodia.net/?s=gold"
+  },
+  {
+    "_id": "583bfeaae2f0d7001827f379",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/97a42fabe22740ca722bc0e9fb064530cb92ebbf.pdf",
+    "source": "http://www.ogj.com/articles/print/volume-102/issue-23/special-report/saudi-arabias-gas-sector-its-role-and-growth-opportunities.html"
+  },
+  {
+    "_id": "583bf222e2f0d7001827f2b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65d4915da2479f5b26eeda4e5ccb5fb299c8c731.pdf",
+    "source": "http://www.mof.gov.eg/MOFGallerySource/Arabic/closingaccounts13-14.pdf"
+  },
+  {
+    "_id": "583c0cfae2f0d7001827f4ca",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2567437a082fbf1b5ebea52f4b56e824a6dad6ec.pdf",
+    "source": "http://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=s981"
+  },
+  {
+    "_id": "583c0b77fb586d000f52ad4a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/35f8c9f22ed55586087babb3a0dc08490df7f58f.pdf",
+    "source": "http://www.dsd.wa.gov.au/docs/default-source/default-document-library/wa-iron-ore-profile-0916?sfvrsn=4"
+  },
+  {
+    "_id": "583c03e3fb586d000f52acb9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/26c8128c5aa037bc58f2a2eeda70d8bc803bf8d3.pdf",
+    "source": "http://www.arabianoilandgas.com/article-5935-aramco-and-shell-develop-empty-quarter-gas-jv/"
+  },
+  {
+    "_id": "583c1020fb586d000f52adb7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a5a1a17aae9c13c3a54a862c3d59d3b58248bc1.pdf",
+    "source": "https://www.globalwitness.org/en/archive/congo-fails-reveal-loss-making-oil-deal-controversial-businessmans-offshore-firm/"
+  },
+  {
+    "_id": "583c1287fb586d000f52ade3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f9ce0cdca0262b6bb3e86e689515af7f960b882e.pdf",
+    "source": "http://www.mof.gov.eg/English/About%20MOF/Pages/Egyptian%20Tax%20Authority.aspx"
+  },
+  {
+    "_id": "583c137ce2f0d7001827f51a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca9ef0b03327adb5e156a6c827d420688c664b0e.pdf",
+    "source": "http://www.incometax.gov.eg/"
+  },
+  {
+    "_id": "583c231afb586d000f52aed7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4dab51112af20208ef109c11fad4fddf3148a3a1.pdf",
+    "source": "https://www.constituteproject.org/constitution/Morocco_2011.pdf?lang=en"
+  },
+  {
+    "_id": "583c12bde2f0d7001827f50c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0d0508e3847723bb8c396d7af76dee6c72be968e.pdf",
+    "source": "http://www.asa.gov.eg/page.aspx?id=1&lang=0"
+  },
+  {
+    "_id": "583c1551e2f0d7001827f532",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9014fbf2c2a5441e9f35ad440a715162c32bd608.pdf",
+    "source": "http://www.africaprogresspanel.org/publications/policy-papers/africa-progress-report-2013/"
+  },
+  {
+    "_id": "583c2702fb586d000f52af7c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fb580d5891723fa52f025e4fe38e2b11e7844de8.pdf",
+    "source": "http://www.ibtimes.co.uk/why-liberia-could-plunge-back-into-conflict-if-historic-land-rights-bill-isnt-passed-1576507"
+  },
+  {
+    "_id": "583c27d2e2f0d7001827f72f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c39992af54065a02c01b6e6b4bc454264e4b88fa.pdf",
+    "source": "https://www.escr-net.org/news/2015/liberia-conflict-and-human-rights-issues-post-conflict-environment"
+  },
+  {
+    "_id": "583c2685fb586d000f52af6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fd5d3c249e6d04a9dc30e6b10ec5020826412886.pdf",
+    "source": "http://www.reuters.com/article/us-liberia-land-palmoil-idUSKCN0XX17U"
+  },
+  {
+    "_id": "583c2878fb586d000f52afeb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dcd56abad00ca3774d585db99cf2a081577319be.pdf",
+    "source": "https://www.escr-net.org/news/2015/liberia-conflict-and-human-rights-issues-post-conflict-environment"
+  },
+  {
+    "_id": "583c2c14fb586d000f52b074",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3f7d0536129f35b96323e8f3f0db6cccb71127bd.pdf",
+    "source": "http://www.jadwa.com/en/download/2016-budget-1/gdp-report-15-6-2-1-2"
+  },
+  {
+    "_id": "583c2e4cfb586d000f52b0e1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa3d98e6ac11574fa0af348743d1b20a1deb8b05.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/630b27cc091836eaa4e937d57f8f877bb0311e83.pdf"
+  },
+  {
+    "_id": "583c33e6e2f0d7001827f8d2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/064ca7ff0e6cb55b88c5f404b8e6f87a376d4905.pdf",
+    "source": "https://www.mfdp.gov.lr/index.php/fiscal-outturn"
+  },
+  {
+    "_id": "583c2cfbe2f0d7001827f812",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e4906baed7ac3380e1228a9aac0f9e3b89ce26ab.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/9ef891b014fd02a948798eceadfb64b5ccfc4910.pdf"
+  },
+  {
+    "_id": "583c2ec0e2f0d7001827f877",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/06022260a49d46ab6a767d82da37d9bab429f175.pdf",
+    "source": "http://www.resourcegovernance.org/sites/default/files/Liberia%20Minerals%20and%20Mining%20Law%20(Approved%20April%203%202000).pdf"
+  },
+  {
+    "_id": "583c33d8fb586d000f52b167",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/10c4ec6d3ccbc50bc813e8528afed98ecdfb103c.pdf",
+    "source": "http://static.ourstatebudget.wa.gov.au/16-17/2016-17-wa-state-budget-bp3.pdf?"
+  },
+  {
+    "_id": "583c3fcafb586d000f52b254",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/80d9a480622cc996e1a840dbf7290302abbe1938.pdf",
+    "source": "https://www.mof.gov.sa/en/docslibrary/Pages/default.aspx?RootFolder=/en/docslibrary/Documents/Statistical%20Data"
+  },
+  {
+    "_id": "583c3c62fb586d000f52b20a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/057a1dff2015dee77a5cf772e00e508de3838c8a.pdf",
+    "source": "http://www.cragus.com/news/GTG_Saudi_Arabia.pdf"
+  },
+  {
+    "_id": "583c4077e2f0d7001827f9e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/913006b7b8eaeccf39af002454c812cd35bde170.pdf",
+    "source": "http://www.gac.gov.lr/reports.php"
+  },
+  {
+    "_id": "583c49b0e2f0d7001827fac6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/425c9ba365b9964d32b505f80f676be2bb1a5168.pdf",
+    "source": "http://www.dgi.gouv.ci/site/ressources/pdf/annexe_fiscale_2016.pdf"
+  },
+  {
+    "_id": "583c5ee0e2f0d7001827fbee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a6a5899b098cc107e44169e293b57303d97dc41c.pdf",
+    "source": "http://jp.gov.eg/ar/Default.aspx"
+  },
+  {
+    "_id": "583c5dace2f0d7001827fbd3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1ba2bb0058a590a6459dee87ae3d0c1bca9524ec.pdf",
+    "source": "http://mohamedbamby.blogspot.com/2012/03/62-1975.html"
+  },
+  {
+    "_id": "583c6289fb586d000f52b49f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7611fa8be9893b5c098fd0e5a1addb86c7528fbb.pdf",
+    "source": "http://www.moci.gov.kw/StaticShow.aspx?id=972"
+  },
+  {
+    "_id": "583c6368fb586d000f52b4ad",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6249efb8ce40ff668f4767ba0606d55b1196019c.pdf",
+    "source": "http://www.hrdiscussion.com/downloadfile/16127/1/1437769601/%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%20%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF.pdf%E2%80%8F"
+  },
+  {
+    "_id": "583c7538fb586d000f52b5ee",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa0e0fe883ffea97ddb22aeedbb7aaf4181c2724.pdf",
+    "source": "https://www.gab.gov.sa/en/Pages/NewsPaper.aspx"
+  },
+  {
+    "_id": "583c7189e2f0d7001827fcf4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc8c1a891e21a2a3205d7b47587066c40d3d006e.pdf",
+    "source": "http://www.petroleum.gov.eg/en/Pages/Facts.aspx"
+  },
+  {
+    "_id": "583c6a67fb586d000f52b4d6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4fff2366a7d83685eedc8e7f314fb97f7adea94b.pdf",
+    "source": "http://www.egas.com.eg/home.aspx"
+  },
+  {
+    "_id": "583c6e82e2f0d7001827fca1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/17f0f07b97cbb4b1b887aa8ba0d2585c00951ccf.pdf",
+    "source": "https://www.boe.gov.sa/ViewSystemDetails.aspx?lang=&SystemID=274&VersionID=254&languageid=2"
+  },
+  {
+    "_id": "583c6c65e2f0d7001827fc59",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6c5e6101c6ae9a366d32b8eb33d13e1db85048cf.pdf",
+    "source": "http://www.cbk.gov.kw/en/statistics-and-publication/publications/economic-reports.jsp"
+  },
+  {
+    "_id": "583c769be2f0d7001827fd43",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e76ee59c5d265cff5d3346d5889f6428cb95e7b6.pdf",
+    "source": "http://arabic.people.com.cn/31659/6238934.html"
+  },
+  {
+    "_id": "583c7616e2f0d7001827fd32",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/34a7ffdfb23ce90dfe0dd7a44f7e9a1209673805.pdf",
+    "source": "https://www.gab.gov.sa/en/mediacenter/pages/news.aspx"
+  },
+  {
+    "_id": "583c7a37e2f0d7001827fd95",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f667c5e9f09bf10d03631d97b7568040119a2fe5.pdf",
+    "source": "http://www.masress.com/alwafd/247206"
+  },
+  {
+    "_id": "583c865cfb586d000f52b6a4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd0cd7602175298b7485f977f8e1f14b5159ae6f.pdf",
+    "source": "https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwj7maD2mMzQAhWEVhoKHcMnC_MQFggyMAE&url=http%3A%2F%2Fplatformlondon.org%2Fcarbonweb%2Fdocuments%2Fdrc%2FA_Lake_of_Oil_Congo_DRC_Tullow_PLATFORM_May_2010.pdf&usg=AFQjCNHntJ5En87Mk7Ys5QwsiewpFKWQOg&cad=rja"
+  },
+  {
+    "_id": "583c7b80e2f0d7001827fda8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/478efa6b6438cbba6468e23ef661d27f9890166f.pdf",
+    "source": "http://www.youm7.com/story/2016/6/8/%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D9%88%D8%A7%D8%B3%D8%AA%D9%87%D9%84%D8%A7%D9%83-%D9%85%D8%B5%D8%B1-%D9%85%D9%86-%D8%A7%D9%84%D8%BA%D8%A7%D8%B2-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%89-%D9%88%D9%85%D8%B4%D8%AA%D9%82%D8%A7%D8%AA%D9%87/2753007"
+  },
+  {
+    "_id": "583c974dfb586d000f52b700",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ceb4dedfeca365fecefd936ae7fdb9476713a88e.pdf",
+    "source": "http://www.egpc.com.eg/PDFS/Bid%20General/5-2016%20Bid%20Round%20Procedures.pdf"
+  },
+  {
+    "_id": "583c88b4e2f0d7001827fe34",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37b07225e1811f871ec7df24c2b7d285ee934689.pdf",
+    "source": "http://www.pole-institute.org/publications/la-vuln%C3%A9rabilit%C3%A9-des-aires-prot%C3%A9g%C3%A9es-de-la-rdc-cas-du-parc-national-des-virunga"
+  },
+  {
+    "_id": "583c9b11e2f0d7001827fe8a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec1a0f386be1183b0b6412e35ced30a26144f599.pdf",
+    "source": "http://www.egpc.com.eg/PDFS/Bid%20General/6-Bid%20Round%202016%20Main%20commercial%20paramters.pdf"
+  },
+  {
+    "_id": "583c87a5e2f0d7001827fe26",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/72bba83e3d54af943dc5588871ac5e72c39b426c.pdf",
+    "source": "https://www.crisisgroup.org/africa/central-africa/democratic-republic-congo/black-gold-congo-threat-stability-or-development-opportunity"
+  },
+  {
+    "_id": "583ca086e2f0d7001827feeb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3371e2a0c743f70aadf5951f9a4af7d258d9f6f.pdf",
+    "source": "https://www.google.co.zw/?gws_rd=cr&ei=f408WOObEMf9UrCMrKgH#q=Zimbabwe+finance+act+pdf"
+  },
+  {
+    "_id": "583cb02dfb586d000f52b821",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/794044e2c5a9be8b64a3a9055e7270ca9f26e050.pdf",
+    "source": "http://www.nogtec.com/eni-bp-win-oil-block-licenses-offshore-egypt-in-2015-bid-round/"
+  },
+  {
+    "_id": "583cafd7fb586d000f52b815",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/680fc7cf2654eb04759f680e68ca7f9f4ba4e01a.pdf",
+    "source": "http://www.egyptoil-gas.com/publications/egpc-has-a-successful-2011-bid-round/"
+  },
+  {
+    "_id": "583cbab3fb586d000f52b8e8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c868cfd99cca8ca25ac84a7d7274146dfffe04f3.pdf",
+    "source": "http://www.sharkawylaw.com/wp-content/uploads/2015/02/OilAndGasReview.pdf"
+  },
+  {
+    "_id": "583d2227e2f0d7001828023c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cc60b1ba148ddf2f78fb2df1d5236203fa5b84f9.pdf",
+    "source": "https://www.boe.gov.sa/printsystem.aspx?lang=en&systemid=117&versionid=143"
+  },
+  {
+    "_id": "583cc232e2f0d70018280089",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bd7b9078a3e4bdfbd079bba56a644e5d5818c932.pdf",
+    "source": "http://www.shearman.com/~/media/Files/NewsInsights/Publications/2015/08/20150301_EGML_Algeria_Book-Africa-Upstream-Oil-and-Gas.pdf"
+  },
+  {
+    "_id": "583bd72ae2f0d7001827f1f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d2eeb98cd4d42d293e1e8250676c6c44bd10642.pdf",
+    "source": "http://www.treasury.gov.my/pdf/percukaian/penerbitan/buku_anggaran_hasil_kerajaan_persekutuan_2017.pdf"
+  },
+  {
+    "_id": "583c5de8fb586d000f52b477",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09962e976518d26b2416d40c18521c4c656bbd80.docx",
+    "source": "http://www.lesaffaires.com/secteurs-d-activite/services-professionnels/important-contrat-marocain-pour-snc-lavalin/555450"
+  },
+  {
+    "_id": "583c40c3fb586d000f52b27d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/737f5b0862ddfdffed8aac40b821a65fe1a2461d.xlsx",
+    "source": "https://www.mof.gov.sa/en/docslibrary/Pages/default.aspx?RootFolder=%2Fen%2Fdocslibrary%2FDocuments%2FStatistical%20Data%2FBudget&FolderCTID=0x012000297F9680FC361B47ADACBF0792FF77D1&View=%7B94BEEDF4-72E6-478F-B8C3-5FDFBC95AD49%7D"
+  },
+  {
+    "_id": "583c002ee2f0d7001827f3c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3c3dd95d90e9cddab405b8f41df598ed8e198c2d.xlsx",
+    "source": "http://www.minfin.kg/ru/novosti/mamlekettik-karyz/tyshky-karyz/struktura-gosudarstvennogo-vneshnego-dolga-kr-po-s3518.html"
+  },
+  {
+    "_id": "583bf24ce2f0d7001827f2ba",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/21f0e14be5b1d3f527c10ef807c8b36c2f9b4b8d.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/111278"
+  },
+  {
+    "_id": "583bfe83fb586d000f52ac22",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de2d297726a3fb1ca6c6f6b3112f614eab1b25bc.docx",
+    "source": "http://budget.okmot.kg/en/"
+  },
+  {
+    "_id": "583bd903fb586d000f52aabc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3a90f57029f62cb9646a56e1ec49b2f8f8a61b4a.doc",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/111277?cl=ru-ru"
+  },
+  {
+    "_id": "583bdcade2f0d7001827f218",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d3a33d0109ce7b759f745952ee4a0df2cc7728aa.docx",
+    "source": "http://kyrgyzaltyn.kg/%D0%BE-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D0%B0%D0%BB%D1%82%D1%8B%D0%BD/"
+  },
+  {
+    "_id": "583be463e2f0d7001827f263",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e823b29e3808c6fff3b69dfe4e4a7efc8b9c05c3.docx",
+    "source": "http://cbd.minjust.gov.kg/ru-ru/npakr/DocumentList?documentListId=de286aab-d61e-4bd4-b8ef-bbdba1c0bb58"
+  },
+  {
+    "_id": "583be8a8e2f0d7001827f27c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3902f271e2a1cfe45ca11ea408b5c3f2b8bc61e5.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/69"
+  },
+  {
+    "_id": "583bc138e2f0d7001827f160",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0097480a41fdb393ce174ab6d2e425100e48898d.docx",
+    "source": "http://geti.specialist.net.kg/contents/viewcontent/id/208/pid/203"
+  },
+  {
+    "_id": "583bc3adfb586d000f52aa71",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3be02df39fa9238589e3a29d4b445b139d355bd0.docx",
+    "source": "http://fgi.gov.kg/ru/get/subcategory/16"
+  },
+  {
+    "_id": "583bcbbbe2f0d7001827f1a0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4f7246d88d602f6cabe81d683cf8f460ddfab5a.docx",
+    "source": "http://esep.kg/audit-gosfinansov/otchety-o-rezultatax-audita/"
+  },
+  {
+    "_id": "583bb252fb586d000f52aa3c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4d2e67ae307796887c44063c75430d312e204742.doc",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/6"
+  },
+  {
+    "_id": "583bb733e2f0d7001827f133",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0be7116e279c0e5b1a4c29dd40d35ebbc70ee149.doc",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/8"
+  },
+  {
+    "_id": "583bbc97e2f0d7001827f144",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/139c1a542f2b1c134468f06b77cd97191f67f519.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/211967"
+  },
+  {
+    "_id": "583bbedcfb586d000f52aa56",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/61fe193d9d1d41ea457933658d2891a0228bf050.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/38586?cl=ru-ru"
   }
 ]
