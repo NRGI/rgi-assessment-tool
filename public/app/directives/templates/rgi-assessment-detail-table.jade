@@ -3,7 +3,7 @@ div(id="answers_div").bottom-padding-med
     div.panel(
     ng-repeat="precept in answers track by precept.id"
     ng-if="precept.data.length > 0"
-    ng-class="{'panel-success': ((!current_user.isSupervisor() && ((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized===precept.data.length)),'panel-primary': ((!current_user.isSupervisor() && !((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized!==precept.data.length)),'panel-danger': precept.flagged !== 0 || (current_user.isSupervisor() && precept.unresolved !== 0)}")
+    ng-class="{'panel-success': ((!current_user.isSupervisor() && ((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized===precept.data.length)),'panel-primary': ((!current_user.isSupervisor() && !((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized!==precept.data.length)),'panel-danger': precept.flagged !== 0 || (current_user.isSupervisor() && precept.unresolved !== 0), 'panel-info': assessment.resubmitted && current_user.isSupervisor() && (precept.modified > 0)}")
         div.panel-heading.bottom-padding-med
             .panel-title
                 div(role="button", data-toggle="collapse", href="#{{::precept.id}}") {{::precept.label}}

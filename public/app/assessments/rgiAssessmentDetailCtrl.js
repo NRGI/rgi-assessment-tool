@@ -64,6 +64,10 @@ angular.module('app')
                                             $scope.answers[answer.question_ID.precept - 1][counter]++;
                                         }
                                     }
+
+                                    if(answer.modified) {
+                                        $scope.answers[answer.question_ID.precept - 1].modified++;
+                                    }
                                 }
                             });
                         });
