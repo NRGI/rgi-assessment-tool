@@ -18,6 +18,7 @@ angular.module('app')
                     templateData.flagged = 0;
                     templateData.unresolved = 0;
                     templateData.finalized = 0;
+                    templateData.modified = 0;
                 }
 
                 templates.push(templateData);
