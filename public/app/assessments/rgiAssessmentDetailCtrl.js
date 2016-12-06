@@ -72,34 +72,24 @@ angular.module('app')
             }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
         });
 
-        var submitAssessment = function(counterNames, dialogMethod) {
-            var submittedNumber = 0;
-
-            counterNames.forEach(function(counterName) {
-                submittedNumber += $scope.assessment_counters[counterName];
-            });
-
-            if ($scope.assessment_counters.approved + submittedNumber < $scope.assessment_counters.length) {
-                rgiNotifier.error('Some answers have not been marked complete or approved!');
-            } else {
-                rgiDialogFactory[dialogMethod]($scope);
-            }
+        var submitAssessment = function(dialogMethod) {
+            rgiDialogFactory[dialogMethod]($scope);
         };
 
         $scope.submitTrialAssessmentDialog = function () {
             if ($scope.assessment_counters.flagged > 0) {
                 rgiNotifier.error('You must address all flags!');
             } else {
-                submitAssessment(['submitted'], 'assessmentTrialSubmit');
+                submitAssessment('assessmentTrialSubmit');
             }
         };
 
         $scope.submitAssessmentDialog = function () {
-            submitAssessment(['submitted'], 'assessmentSubmit');
+            submitAssessment('assessmentSubmit');
         };
 
         $scope.resubmitAssessmentDialog = function () {
-            submitAssessment(['submitted', 'resubmitted'], 'assessmentResubmit');
+            submitAssessment('assessmentResubmit');
         };
 
         $scope.moveAssessmentDialog = function () {
