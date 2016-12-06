@@ -12,6 +12,7 @@ div(id="answers_div").bottom-padding-med
                     text(ng-if="precept.flagged!==0") ({{::precept.flagged}} flagged)
                     text(ng-if="precept.unresolved!==0 && current_user.isSupervisor()") ({{::precept.unresolved}} unresolved)
                     text(ng-if="current_user.isSupervisor() && precept.finalized!==0") ({{::precept.finalized}} final answers)
+                    text(ng-if="current_user.isSupervisor() && precept.modified > 0") ({{::precept.modified}} modified)
         div.panel-collapse.collapse(id="{{::precept.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed
