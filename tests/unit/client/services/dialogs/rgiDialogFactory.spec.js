@@ -157,11 +157,6 @@ describe('rgiDialogFactory', function () {
                         scope: {assessment_counters: {flagged: 0}, value: true}
                     }).called.should.be.equal(true);
                 });
-
-                it('shows an error message if is at least one flagged question', function() {
-                    mocks.notifier.expects('error').withArgs('You must resubmit all flagged answers!');
-                    rgiDialogFactory.assessmentResubmit({assessment_counters: {flagged: 1}});
-                });
             });
 
             afterEach(function() {
