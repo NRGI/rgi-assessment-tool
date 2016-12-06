@@ -282,12 +282,6 @@ describe('rgiAssessmentDetailCtrl', function () {
                         mock.expects(testAttributes.dialogMethod).withArgs($scope);
                     });
 
-                    it('shows an error message if not all answers are approved or ' + testAttributes.field, function() {
-                        setCounters(1, 1, 3, testAttributes.field);
-                        mock = sinon.mock(rgiNotifier);
-                        mock.expects('error').withArgs('Some answers have not been marked complete or approved!');
-                    });
-
                     afterEach(function() {
                         $scope[testAttributes.scopeMethod]();
                     });
