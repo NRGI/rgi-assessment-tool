@@ -259,19 +259,6 @@ exports.fileCheck = function (req, res) {
     });
 };
 
-// exports.getDocuments = function (req, res) {
-//     var limit = Number(req.params.limit),
-//         skip = Number(req.params.skip),
-//         query = Doc.find(req.query);
-//     console.log(skip);
-//     console.log(limit);
-//     console.log(query);
-//
-//     query.exec(function (err, collection) {
-//         res.send(collection);
-//     });
-// };
-
 exports.getDocuments = function(req, res) {
     var limit = Number(req.params.limit),
         skip = Number(req.params.skip),
@@ -343,12 +330,6 @@ exports.listPublicData = function(req, res) {
     }
 };
 
-// exports.getUsersByID = function (req, res) {
-//     User.findOne({_id: req.params.id}).exec(function (err, user) {
-//         res.send(user);
-//     });
-// };
-
 exports.updateDocument = function (req, res) {
     var document_update = req.body;
 
@@ -407,5 +388,42 @@ exports.updateDocument = function (req, res) {
 exports.deleteDocument = function (req, res) {
     Doc.remove({_id: req.params.id}, function (err) {
         res.send(err ? {reason: err.toString()} : {});
+    });
+};
+
+exports.unlinkDocument = function (req, res) {
+    var sendResponse = function(err) {
+        res.send(err ? {reason: err.toString()} : {});
+    };
+
+    Doc.findOne({_id: req.params.id}).exec(function (documentError, document) {
+        if(documentError) {
+            sendResponse(documentError);
+        } else {
+            Answer.find({answer_ID: document.answers}).exec(function (answerError, answers) {
+                if(answerError) {
+                    sendResponse(answerError);
+                } else {
+                    var promises = [];
+
+                    answers.forEach(function(answer) {
+                        var answerModified = false;
+
+                        answer.references.forEach(function(reference) {
+                            if((reference.citation_type === 'document') && reference.document_ID.equals(document._id)) {
+                                reference.hidden = true;
+                                answerModified = true;
+                            }
+                        });
+
+                        if(answerModified) {
+                            promises.push(function(callback) {new Answer(answer).save(callback);});
+                        }
+                    });
+
+                    async.parallel(promises, sendResponse);
+                }
+            });
+        }
     });
 };

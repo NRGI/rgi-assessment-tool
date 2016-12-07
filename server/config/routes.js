@@ -71,6 +71,8 @@ module.exports = function (app) {
     app.get('/api/documents/:id', auth.requiresApiLogin, documents.getDocumentsByID);
     app.put('/api/documents', auth.requiresApiLogin, documents.updateDocument);
     app.delete('/api/documents/:id', auth.requiresRole('supervisor'), documents.deleteDocument);
+    //UNLINK DOCUMENT
+    app.delete('/api/unlink-document/:id', auth.requiresRole('supervisor'), documents.unlinkDocument);
 
     /////////////////////////
     //// UPLOAD DOCUMENTS ///
