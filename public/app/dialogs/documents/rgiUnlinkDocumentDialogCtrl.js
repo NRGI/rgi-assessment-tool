@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', 'rgiDocumentMethodSrvc', 'rgiNotifier', function (
+    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', '$q', 'rgiDocumentMethodSrvc', 'rgiNotifier', function (
         $scope,
+        $q,
         rgiDocumentMethodSrvc,
         rgiNotifier
     ) {
+        var fields = ['answers', 'assessments', 'questions'];
+
         var getDocumentIndex = function(currentDocument) {
             var documentIndex = -1;
 
@@ -18,16 +21,32 @@ angular.module('app')
             return documentIndex;
         };
 
-        $scope.unlinkDocument = function() {
-            $scope.document.answers = [];
-            $scope.document.assessments = [];
-            $scope.document.questions = [];
+        var unlinkDocument = function(documentId) {
+            fields.forEach(function(field) {
+                $scope.document[field] = [];
+            });
+            return rgiDocumentMethodSrvc.updateDocument(documentId).$promise;
+        };
 
-            rgiDocumentMethodSrvc.updateDocument($scope.document._id).then(function() {
+        $scope.unlinkDocument = function() {
+            var backup = {};
+            var promises = [];
+
+            fields.forEach(function(field) {
+                backup[field] = $scope.document[field].slice();
+            });
+
+            promises.push(unlinkDocument($scope.document._id));
+
+            $q.all(promises).then(function() {
+                $scope.documents[getDocumentIndex($scope.document)] = $scope.document;
                 $scope.closeThisDialog();
                 rgiNotifier.notify('The document has been deleted');
-                $scope.documents[getDocumentIndex($scope.document)] = $scope.document;
             }, function(reason) {
+                fields.forEach(function(field) {
+                    $scope.document[field] = backup[field];
+                });
+
                 rgiNotifier.error(reason);
             });
         };
