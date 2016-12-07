@@ -9,6 +9,7 @@ var bunyan              =   require('bunyan'),
     s3                  =   require('s3'),
     async               =   require('async'),
     Answer              =   require('mongoose').model('Answer'),
+    Assessment          =   require('mongoose').model('Assessment'),
     Doc                 =   require('mongoose').model('Documents'),
     FileUploadStatus    =   require('mongoose').model('FileUploadStatus'),
     FILE_SIZE_LIMIT     =   400 * 1024 * 1024,//400MB
@@ -396,32 +397,55 @@ exports.unlinkDocument = function (req, res) {
         res.send(err ? {reason: err.toString()} : {});
     };
 
-    Doc.findOne({_id: req.params.id}).exec(function (documentError, document) {
+    Doc.findOne({_id: req.params.id}).exec(function (documentError, doc) {
         if(documentError) {
             sendResponse(documentError);
         } else {
-            Answer.find({answer_ID: document.answers}).exec(function (answerError, answers) {
-                if(answerError) {
-                    sendResponse(answerError);
+            Assessment.find({assessment_ID: doc.assessments}).exec(function (assessmentError, assessments) {
+                if(assessmentError) {
+                    sendResponse(assessmentError);
                 } else {
-                    var promises = [];
+                    Answer.find({answer_ID: doc.answers}).exec(function (answerError, answers) {
+                        if(answerError) {
+                            sendResponse(answerError);
+                        } else {
+                            var promises = [];
 
-                    answers.forEach(function(answer) {
-                        var answerModified = false;
+                            assessments.forEach(function(assessment) {
+                                var assessmentModified = false, documentLinksSet = [];
 
-                        answer.references.forEach(function(reference) {
-                            if((reference.citation_type === 'document') && reference.document_ID.equals(document._id)) {
-                                reference.hidden = true;
-                                answerModified = true;
-                            }
-                        });
+                                assessment.documents.forEach(function(documentLink) {
+                                    if(documentLink === doc._id) {
+                                        assessmentModified = true;
+                                    } else {
+                                        documentLinksSet.push(documentLink);
+                                    }
+                                });
 
-                        if(answerModified) {
-                            promises.push(function(callback) {new Answer(answer).save(callback);});
+                                if(assessmentModified) {
+                                    assessment.documents = documentLinksSet;
+                                    promises.push(function(callback) {new Assessment(assessment).save(callback);});
+                                }
+                            });
+
+                            answers.forEach(function(answer) {
+                                var answerModified = false;
+
+                                answer.references.forEach(function(ref) {
+                                    if((ref.citation_type === 'document') && ref.document_ID.equals(doc._id)) {
+                                        ref.hidden = true;
+                                        answerModified = true;
+                                    }
+                                });
+
+                                if(answerModified) {
+                                    promises.push(function(callback) {new Answer(answer).save(callback);});
+                                }
+                            });
+
+                            async.parallel(promises, sendResponse);
                         }
                     });
-
-                    async.parallel(promises, sendResponse);
                 }
             });
         }
