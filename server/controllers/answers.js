@@ -9,6 +9,7 @@ var Answer      = require('mongoose').model('Answer'),
 var filterAnswerScoreHistory = function(answer, skipJustificationComparison) {
     ['researcher', 'reviewer'].forEach(function(role) {
         var field = role + '_score_history';
+        answer['raw_' + field] = answer[field].slice();
         answer[field] = getFilteredScoreHistory(answer[field], skipJustificationComparison);
     });
 };

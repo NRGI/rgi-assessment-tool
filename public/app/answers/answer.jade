@@ -63,7 +63,8 @@
                     .row
                         .col-md-6
                             h4 Researcher scores:
-                                em(ng-if="answer.researcher_score_history.length<1")  N/A
+                                em(ng-if="answer.researcher_score_history.length < 1")  N/A
+                            .small(ng-if="answer.raw_researcher_score_history.length > 0") Last modified on {{::answer.raw_researcher_score_history[answer.raw_researcher_score_history.length - 1].date|date}}
                             table.table.table-hover(ng-if="answer.researcher_score_history.length > 0")
                                 thead
                                     tr
@@ -78,6 +79,7 @@
                         .col-md-6
                             h4 Reviewer scores:
                                 em(ng-if="answer.reviewer_score_history.length < 1")  N/A
+                            .small(ng-if="answer.raw_reviewer_score_history.length > 0") Last modified on {{::answer.raw_reviewer_score_history[answer.raw_reviewer_score_history.length - 1].date|date}}
                             table.table.table-hover(ng-if="answer.reviewer_score_history.length > 0")
                                 thead
                                     tr
