@@ -1,25 +1,15 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', '$q', 'rgiDocumentMethodSrvc', 'rgiNotifier', function (
+    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', '$q', 'rgiDocumentMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiUnlinkDocumentSrvc', function (
         $scope,
         $q,
         rgiDocumentMethodSrvc,
-        rgiNotifier
+        rgiHttpResponseProcessorSrvc,
+        rgiNotifier,
+        rgiUnlinkDocumentSrvc
     ) {
         var fields = ['answers', 'assessments', 'questions'];
-
-        var getDocumentIndex = function(currentDocument) {
-            var documentIndex = -1;
-
-            $scope.documents.forEach(function(doc, index) {
-                if(doc._id === currentDocument._id) {
-                    documentIndex = index;
-                }
-            });
-
-            return documentIndex;
-        };
 
         var unlinkDocument = function(documentId) {
             fields.forEach(function(field) {
@@ -37,17 +27,19 @@ angular.module('app')
             });
 
             promises.push(unlinkDocument($scope.document._id));
+            promises.push(rgiUnlinkDocumentSrvc.delete({documentId: $scope.document._id}).$promise);
 
-            $q.all(promises).then(function() {
-                $scope.documents[getDocumentIndex($scope.document)] = $scope.document;
-                $scope.closeThisDialog();
-                rgiNotifier.notify('The document has been deleted');
-            }, function(reason) {
-                fields.forEach(function(field) {
-                    $scope.document[field] = backup[field];
-                });
+            $q.all(promises).then(function(res) {
+                if(res.reason) {
+                    fields.forEach(function(field) {
+                        $scope.document[field] = backup[field];
+                    });
 
-                rgiNotifier.error(reason);
-            });
+                    rgiNotifier.error(res.reason);
+                } else {
+                    $scope.closeThisDialog();
+                    rgiNotifier.notify('The document has been deleted');
+                }
+            }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Unlink document failure'));
         };
     }]);

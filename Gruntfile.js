@@ -33,6 +33,7 @@ var appFileList = [
     'public/app/services/rgiQuestionRawSrvc.js',
     'public/app/services/rgiResetPasswordSrvc.js',
     'public/app/services/rgiResourcesSrvc.js',
+    'public/app/services/rgiUnlinkDocumentSrvc.js',
     'public/app/services/rgiUserSrvc.js',
 
     'public/app/services/utils/rgiAllowedFileExtensionGuideSrvc.js',
