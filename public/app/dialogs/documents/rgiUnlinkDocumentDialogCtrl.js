@@ -1,21 +1,21 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', '$q', 'rgiDocumentMethodSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiUnlinkDocumentSrvc', function (
+    .controller('rgiUnlinkDocumentDialogCtrl', ['$scope', '$q', 'rgiDocumentSrvc', 'rgiHttpResponseProcessorSrvc', 'rgiNotifier', 'rgiUnlinkDocumentSrvc', function (
         $scope,
         $q,
-        rgiDocumentMethodSrvc,
+        rgiDocumentSrvc,
         rgiHttpResponseProcessorSrvc,
         rgiNotifier,
         rgiUnlinkDocumentSrvc
     ) {
         var fields = ['answers', 'assessments', 'questions'];
 
-        var unlinkDocument = function(documentId) {
+        var unlinkDocument = function() {
             fields.forEach(function(field) {
                 $scope.document[field] = [];
             });
-            return rgiDocumentMethodSrvc.updateDocument(documentId).$promise;
+            return new rgiDocumentSrvc($scope.document).$update();
         };
 
         $scope.unlinkDocument = function() {
@@ -26,7 +26,7 @@ angular.module('app')
                 backup[field] = $scope.document[field].slice();
             });
 
-            promises.push(unlinkDocument($scope.document._id));
+            promises.push(unlinkDocument().$promise);
             promises.push(rgiUnlinkDocumentSrvc.delete({documentId: $scope.document._id}).$promise);
 
             $q.all(promises).then(function(res) {
