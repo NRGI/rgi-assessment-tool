@@ -132,6 +132,7 @@ answerSchema = new Schema({
     },
     researcher_justification: htmlSettings,
     researcher_score_history: [scoreHistorySchema],
+    raw_researcher_score_history: [scoreHistorySchema],
     reviewer_score: {
         name: String,
         letter: String,
@@ -141,6 +142,7 @@ answerSchema = new Schema({
     },
     reviewer_justification: htmlSettings,
     reviewer_score_history: [scoreHistorySchema],
+    raw_reviewer_score_history: [scoreHistorySchema],
     final_score: {
         name: String,
         letter: String,
