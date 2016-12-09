@@ -342,17 +342,21 @@ exports.updateAssessment = function (req, res, next) {
 
                 var updateAnswersStatuses = function(criteria, updateData) {
                     Answer.find(criteria).exec(function (err, answers) {
+                        var promises = [];
+
                         answers.forEach(function (answer) {
                             Object.keys(updateData).forEach(function(field) {
                                 answer[field] = updateData[field];
                             });
 
-                            answer.save(function (err) {
-                                if (err) {
-                                    res.sendStatus(500);
-                                    return next(err);
-                                }
-                            });
+                            promises.push(function(callback) {new Answer(answer).save(callback);});
+                        });
+
+                        async.parallel(promises, function (err) {
+                            if(err) {
+                                res.sendStatus(500);
+                                return next(err);
+                            }
                         });
                     });
                 };
@@ -562,8 +566,7 @@ exports.updateAssessment = function (req, res, next) {
                             {status: 'submitted'});
                         assessment.save(function (err) {
                             if (err) {
-                                res.sendStatus(500);
-                                return next(err);
+                                return res.sendStatus(500);
                             } else {
                                 //TODO deal with from email feature
                                 ///////////////////////////////
