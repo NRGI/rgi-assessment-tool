@@ -1981,5 +1981,499 @@
     "_id": "583bbedcfb586d000f52aa56",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/61fe193d9d1d41ea457933658d2891a0228bf050.docx",
     "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/38586?cl=ru-ru"
+  },
+  {
+    "_id": "583d36e5e2f0d70018280330",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/417835b234c3c4426d0e623ab4137e6ab26b3042.pdf",
+    "source": "http://www.pme.gov.sa/En/PAandSD/SustainableDevelopment/Pages/default.aspx"
+  },
+  {
+    "_id": "583d24f6d6ca91000eb91c18",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1937b1a95a14f3e4748310b2457ad86def04ae4e.pdf",
+    "source": "http://www.pme.gov.sa/En/PAandSD/EnvironmentProtection/Pages/default.aspx"
+  },
+  {
+    "_id": "583d3666e2f0d70018280325",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04fe1ca317418f15bbaabae484316b9bc6645258.pdf",
+    "source": "http://www.mopm.gov.sa/arabic/mediacenter/events/Pages/default.aspx"
+  },
+  {
+    "_id": "583d2996d6ca91000eb91c61",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce74dc9b36588dafd373953ed4050f33920329d3.pdf",
+    "source": "http://www.shell.sa/en_sa/sustainability/environment.html"
+  },
+  {
+    "_id": "583d66a6d6ca91000eb91f51",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e9ea8b1bb2843039429841b00eefc6ed099d2caa.pdf",
+    "source": "http://emb.gov.ph/wp-content/uploads/2015/09/PD-1586.pdf"
+  },
+  {
+    "_id": "583d6a4be2f0d70018280628",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0190a8a3b94f4dd87b8945552c6e657a49e02616.pdf",
+    "source": "http://www.saudiaramco.com/en/home/about/key-facts-and-figures.html"
+  },
+  {
+    "_id": "583d6838d6ca91000eb91f85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6099f7a7725b7836fd6aacc803d6729cfda3deca.pdf",
+    "source": "http://www.luberef.com/en/history.aspx"
+  },
+  {
+    "_id": "583d7496d6ca91000eb92095",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d46290c7d10c30108be78f4a0efa1056b370950.pdf",
+    "source": "http://www.saudiaramco.com/en/home/about/governance.html"
+  },
+  {
+    "_id": "583d7530d6ca91000eb920ac",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/09b9aceac5f9505753852a64bfc0d380c3ccf231.pdf",
+    "source": "http://www.saudiaramco.com/en/home/search.html?q=audit"
+  },
+  {
+    "_id": "583d7341d6ca91000eb92088",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a3e7863f96a1c01dddb73c4acfa66c870e0d30eb.pdf",
+    "source": "http://www.treasury.wa.gov.au/Treasury/Publications/State_Taxes/"
+  },
+  {
+    "_id": "583d76fbe2f0d70018280764",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d62f9149a6f4a6218b7c3631e95a9afad49dcee1.pdf",
+    "source": "http://www.treasury.wa.gov.au/Treasury/News/2015-16_Annual_Report_on_State_Finances/"
+  },
+  {
+    "_id": "583d7621e2f0d70018280745",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/18b41d2f8711e9988a57087ad60a0c7cb3823d65.pdf",
+    "source": "http://www.saudiaramco.com/content/dam/Publications/annual-review/2013/2013AnnualReview_EN.pdf"
+  },
+  {
+    "_id": "583d8a47d6ca91000eb922b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/62c13a8c075a1a1a9648b11e3851a458c9d26d0c.pdf",
+    "source": "http://www.saudiaramco.com/en/home/news-media/news/BoardEndorses.html"
+  },
+  {
+    "_id": "583d778de2f0d70018280783",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5d8c40032dade1b7ed8aa6ee784e73cecf1b837.pdf",
+    "source": "http://www.saudiaramco.com/en/home/news-media/news/new-partnership-for-traffic-safety-efforts.html"
+  },
+  {
+    "_id": "583d77c0d6ca91000eb920f7",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a42a55c4ce9253ab4e046035d451cedca4f6bdae.pdf",
+    "source": "https://www.dropbox.com/s/6wcwo3m84i12byj/Translation%20of%20law%2031%20of%201978.pdf?dl=0"
+  },
+  {
+    "_id": "583d7dd6e2f0d70018280808",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c6eefa02d0f01d71e48f88a5f0431a7eb8a1f1f1.pdf",
+    "source": "http://www.mopm.gov.sa/arabic/ministry/Documents/Export-requirements-for-institutions-and-companies.pdf"
+  },
+  {
+    "_id": "583d78d3d6ca91000eb9210f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9457f20a86e653843ee4318d5af19e07183df5ca.pdf",
+    "source": "http://www.saudiaramco.com/content/dam/Publications/annual-review/2014/AR-2014-SaudiAramco-English-full.pdf"
+  },
+  {
+    "_id": "583da58dd6ca91000eb9240d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df4aafec1d7da5cbdd52a3f296f02540fcab0047.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_ruc.html"
+  },
+  {
+    "_id": "583da987e2f0d70018280a5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c2fa3255138f191d71fff6994f8b1e9779ae5306.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_cuadros.html"
+  },
+  {
+    "_id": "583d909fe2f0d7001828097a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c5349f12a45782d91a6a532fc1845e80a2c69f9.pdf",
+    "source": "http://www.kuna.net.kw/ArticlePrintPage.aspx?id=2490377&language=ar"
+  },
+  {
+    "_id": "583d8f9ae2f0d70018280965",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c01c3f0bfabc54402182828925a0421d08737aa7.pdf",
+    "source": "http://www.aleqt.com/2016/01/13/article_1021513.html"
+  },
+  {
+    "_id": "583da32ee2f0d700182809f9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2d2e0a278346c0dd01d63d54803e975f5f93d592.pdf",
+    "source": "http://www2.congreso.gob.pe/sicr/cendocbib/con4_uibd.nsf/3A718E6E25AD2CF205257FD800672C24/$FILE/311013T.pdf"
+  },
+  {
+    "_id": "583db8c3d6ca91000eb92563",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/53fd5f4e06d1c8fb880ab34f864c7bceceac40f5.pdf",
+    "source": "http://apps5.mineco.gob.pe/transparenciaingresos/Navegador/default.aspx"
+  },
+  {
+    "_id": "583daa14e2f0d70018280a67",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/58c049124999bac2eb0a5cccc77c657d510e1465.pdf",
+    "source": "http://www.sunat.gob.pe/estadisticasestudios/busqueda_cuadros.html"
+  },
+  {
+    "_id": "583dd055e2f0d70018280c49",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/47b012fcf2f172af242d01adfa766c0b3770e9f3.pdf",
+    "source": "http://www.sundaymail.co.zw/zmdc-needs-urgent-real-reform/"
+  },
+  {
+    "_id": "583db840e2f0d70018280b5b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/389958a10de3a4ab914cbcd93ea61ab3520fa66d.pdf",
+    "source": "https://wikileaks.org/gifiles/attach/139/139274_JSTOR_MidEastJ.V53.pdf"
+  },
+  {
+    "_id": "583dc304e2f0d70018280be2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/befe437cf89bf87fc1507822550f41a34cf931fc.pdf"
+  },
+  {
+    "_id": "583dd222d6ca91000eb9263d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f2ebb5d7fb9098cd22d3543c7241a612976bc1a.pdf",
+    "source": "http://www.veritaszim.net/node/699"
+  },
+  {
+    "_id": "583dd6ec59e353000ee9ec01",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1304b26ccdee3c9ceaa3425609c7fffaf36aced6.pdf",
+    "source": "https://www.ft.com/content/02273d4e-98da-11e5-95c7-d47aa298f769"
+  },
+  {
+    "_id": "583ddb0928e4a2000e1ceb46",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3e66f70214e91d8897c018fc1cb63de712284d3e.pdf",
+    "source": "http://bulawayo24.com/index-id-News-sc-national-byo-5917-article-Zimbabwe%20parastatal%20paying%20for%20civil%20servants%20salaries.html"
+  },
+  {
+    "_id": "583de48859e353000ee9ec5a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d5bf0be66e363b656e03aed6860e67edea9d2b18.pdf",
+    "source": "http://www.zmdc.co.zw/media-and-gallery/reports-and-publications/zmdc-annual-report-2012"
+  },
+  {
+    "_id": "583de49428e4a2000e1ceb95",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ad9859815b4b6d7eee6e2674a0dbbf31113c4423.pdf",
+    "source": "http://www.kmg.kz/upload/corporate_management/equity/2013/Final_Base_Prospectus_Full_2013.pdf"
+  },
+  {
+    "_id": "583e0d1528e4a2000e1ced3f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5f8c7e0207478ea7775586bb146194bc5e1eaf93.pdf",
+    "source": "http://www.bworldonline.com/content.php?section=Economy&title=speaker-wants-miners-to-seek-congress-franchise&id=130959"
+  },
+  {
+    "_id": "583e14fa59e353000ee9ee77",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f16c309532a21d4af7b00efaafa618a5f7cd320e.pdf",
+    "source": "http://www.gov.ph/1997/12/11/republic-act-no-8424/"
+  },
+  {
+    "_id": "583e1e0d59e353000ee9ef1c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a810dded803f82b6ebd63f72f50c5591ccc57570.pdf",
+    "source": "http://ph-eiti.org/Country-Reports/#/Reporting-Templates"
+  },
+  {
+    "_id": "583e2f6328e4a2000e1cee9c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4c5f84b9a0568805c62ba0cf0400eee77ac223af.pdf",
+    "source": "http://ph-eiti.org/Resources/#/GIS"
+  },
+  {
+    "_id": "583e31d459e353000ee9efa4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3fa3c3cc6d9f97f53f3e01faa1073bed5a9dd773.pdf",
+    "source": "http://ph-eiti.org/filerepo/GIS/2016/01/10/2014/Adnama%20Mining%20Resources,%20Inc.pdf"
+  },
+  {
+    "_id": "583e317628e4a2000e1ceeaa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3b69c1b597364a801cc8a223a4169bdad8a38fd.pdf",
+    "source": "http://ph-eiti.org/filerepo/GIS/2016/01/10/2014/Norweah%20Metals%20and%20Minerals%20Co.,%20Inc..pdf"
+  },
+  {
+    "_id": "583e401059e353000ee9f00a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/cd0e1c6d4c7f4472ad1c53cb8c768ecf5c5ae845.pdf",
+    "source": "http://www.dbm.gov.ph/wp-content/uploads/BESF/BESF2016/C3.pdf"
+  },
+  {
+    "_id": "583e422f59e353000ee9f013",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f0dd3bd3fa1beb8d31ea7b5c4cd7f3d47cbd0c1a.pdf"
+  },
+  {
+    "_id": "583e564d59e353000ee9f05a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/75850aa4d5b671042136aeb28dbda0cabd117d47.pdf",
+    "source": "http://www.gov.ph/1987/07/22/executive-order-no-230-s-1987/"
+  },
+  {
+    "_id": "583e72b1b65a8d000f0110fd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/feb49c6755a007761b867f537bd397e203aae94a.pdf",
+    "source": "http://www.businessmirror.com.ph/green-groups-want-oceanagold-to-account-for-environmental-human-rights-violations/"
+  },
+  {
+    "_id": "583e6beeb65a8d000f0110e9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aff528c3aa6208afa22bb142a1ecac01ec584e95.pdf",
+    "source": "http://www.gov.ph/downloads/2012/07jul/20120706-EO-0079-BSA.pdf"
+  },
+  {
+    "_id": "583e7373456576000f99781c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0cc367fff481dd270ccd7e87f2217f3e06e8c3ab.pdf",
+    "source": "http://www.philstar.com/nation/2014/02/08/1287776/tribal-families-displaced-vizcaya-mine-project-seek-compensation"
+  },
+  {
+    "_id": "583e68e2456576000f9977f4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a06ad509f02df8c0e452476d98b6e048db6e74fd.pdf",
+    "source": "http://www.gov.ph/2016/06/15/lgus-shares-national-wealth/"
+  },
+  {
+    "_id": "583e8648b65a8d000f011156",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fe5f78ba378a62c0451c10e43770e22701d01a0f.pdf",
+    "source": "http://www.kia.gov.kw/ar/Pages/KIALOW1982.aspx"
+  },
+  {
+    "_id": "583e8095456576000f99783b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8a2a736a9abc79c95f882bf17cd05d94464a41c4.pdf",
+    "source": "http://www.ombudsman.gov.ph/docs/keyservices/request_for_copy_of_SALN.pdf"
+  },
+  {
+    "_id": "583e8c73456576000f99789a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/fa1ca5741d6610a6f8a1d8c18e25af6949849236.pdf",
+    "source": "https://www.boe.gov.sa/ViewSystemDetails.aspx?lang=&SystemID=192&VersionID=207"
+  },
+  {
+    "_id": "583e8043456576000f997832",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8763a035d6a4de400f5790b2554998c95f45cdc3.pdf",
+    "source": "http://www.gov.ph/downloads/2012/05may/SALN.pdf"
+  },
+  {
+    "_id": "583eb206456576000f997cbd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a53522ad5f9e765f1bb8aa4bf670e47e0abdeea6.pdf",
+    "source": "https://www.mof.gov.sa/en/mediacenter/news/Pages/News_28122015.aspx"
+  },
+  {
+    "_id": "583e9accb65a8d000f0112ea",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d35d3d94e402efdeeb75ce588522aa44bddb30af.pdf",
+    "source": "http://mgb.gov.ph/attachments/article/53/PFMPSA.pdf"
+  },
+  {
+    "_id": "583e991c456576000f9979c9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6827dfb47676c4ee30d15baf098290bebc6f8b6c.pdf",
+    "source": "https://www.mof.gov.sa/en/generalservcies/open-data/Pages/default.aspx"
+  },
+  {
+    "_id": "583ea255b65a8d000f011469",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bdc313e00ac6e269c775a3c6559b507fd62df980.pdf",
+    "source": "http://www.gov.ph/2014/05/18/energy-mining-taxes-tapped-for-p837-m-release-to-lgus/"
+  },
+  {
+    "_id": "583e9a01b65a8d000f0112cc",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b6e9f0473485acfc434b596fdc1a89d9764b816.pdf",
+    "source": "http://www.sama.gov.sa/en-US/EconomicReports/AnnualReport/Fifty%20Second%20Annual%20Report.pdf"
+  },
+  {
+    "_id": "583eb53d456576000f997cfa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d872ae142f8fca6016850f7195893e1509b7b6bf.pdf",
+    "source": "http://mcsetender.kockw.com/commercial%20Documents/contract/files/31_CEC_Category_23.pdf#"
+  },
+  {
+    "_id": "583ee404456576000f997fd6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a8bdb6e657aa441acff46c236b311d3255fc710a.pdf",
+    "source": "http://www.swfinstitute.org/fund-rankings/"
+  },
+  {
+    "_id": "583eb97c456576000f997d6e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/81297f94bd0dd6bd1cc932fdee1f2f3b2612113c.pdf",
+    "source": "http://mcsetender.kockw.com/Commercial%20Documents/contract/files/00_INDEX_KOC_LIST_APPROVED_CONTRACTORS1.pdf"
+  },
+  {
+    "_id": "583ed3e0456576000f997ec5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/461937e7251fc49840cdcd4d8a81beaf70f9e269.pdf",
+    "source": "http://www.molme.gov.lr/page_info.php?&7d5f44532cbfc489b8db9e12e44eb820=MjI4"
+  },
+  {
+    "_id": "583ed426456576000f997ed3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6effe89ab37b4b685e5752a2be02a7400beed080.pdf",
+    "source": "http://www.anrmp.ci/images/PDF/59-249.pdf"
+  },
+  {
+    "_id": "583e9377456576000f99790b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e91b1b543578aedaa7e240b301af3fcbb69228eb.xlsx",
+    "source": "https://www.mof.gov.sa/en/docslibrary/Pages/default.aspx?RootFolder=%2Fen%2Fdocslibrary%2FDocuments%2FStatistical%20Data%2FBudget&FolderCTID=0x012000297F9680FC361B47ADACBF0792FF77D1&View=%7B94BEEDF4-72E6-478F-B8C3-5FDFBC95AD49%7D"
+  },
+  {
+    "_id": "583e5fccc23154000fda5595",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5aa115fe39f69b34a7c9357461118ef0f0fdfb0e.doc",
+    "source": "http://coa.gov.ph/index.php/national-government-agencies/2015/category/5695-department-of-budget-and-management?download=26021:department-of-budget-and-management"
+  },
+  {
+    "_id": "583e271c28e4a2000e1cee4b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7eb961c4c404eefee16d135aba90a21d2ae49d3.png",
+    "source": "http://contracts.ph-eiti.org/search?q=&year=&resource=Nickel&company_name="
+  },
+  {
+    "_id": "583d3aade2f0d70018280370",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3075a9cd2edbdd44e02297226b5a275f958a498b.docx",
+    "source": "http://minfin.kg/ru/novosti/novosti/za-8-mesyatsev-2016-goda-iz-respublikanskogo-byudz.html"
+  },
+  {
+    "_id": "583d4238d6ca91000eb91d8d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e8a8c94d0d0a83d88f85458e7f05f6d9d6c17c7.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/111338?cl=ru-ru"
+  },
+  {
+    "_id": "583d2ecce2f0d700182802c6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/22b71462fc5d2b33c253f815354065c52052cc3e.docx",
+    "source": "http://cbd.minjust.gov.kg/act/view/ru-ru/93795?cl=ru-ru"
+  },
+  {
+    "_id": "583e59f159e353000ee9f06a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d725e92b9798a4ec6a8c7b4108857fbcb5713561.docx",
+    "source": "http://coa.gov.ph/index.php/national-government-agencies/2015/category/5710-national-economic-and-development-authority"
+  },
+  {
+    "_id": "583e5f41116c5a00101429ed",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7d7ee27d3df03b34057948870efb47ae5bd95827.doc",
+    "source": "http://coa.gov.ph/index.php/national-government-agencies/2015/category/5711-department-of-finance?download=25877:department-of-finance"
+  },
+  {
+    "_id": "583ee955b65a8d000f0118af",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d9c813810493d3fd3262ddb01f22a68bdc56ee42.pdf",
+    "source": "https://www.boe.gov.sa/printsystem.aspx?lang=&systemid=192&versionid=207"
+  },
+  {
+    "_id": "583ef7deb65a8d000f0119f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1d87ffb9f708cd4eeb4b2a22a9809bd140b8e93e.pdf",
+    "source": "http://www.oxfordbusinessgroup.com/analysis/sovereign-wealth-country%E2%80%99s-wealth-funds-now-include-more-diverse-investments"
+  },
+  {
+    "_id": "583ef8a1456576000f99816f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7a3d551b776553cce4e5bc9665ea9d0532656adb.pdf",
+    "source": "http://www.sama.gov.sa/en-US/Laws/Pages/FinanceLaws.aspx"
+  },
+  {
+    "_id": "583efbc9b65a8d000f011a69",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8b3dce7b31c676aac84efc40df6a1629eae80d96.pdf",
+    "source": "http://www.reuters.com/article/us-saudi-sovereign-funds-idUSKBN0K40A820141226"
+  },
+  {
+    "_id": "583efc99b65a8d000f011a85",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5330e6e686fab863bf0363875d79d203dd784cd.pdf",
+    "source": "http://www.sama.gov.sa/en-US/EconomicReports/MonthlyStatistics/monthly%20bulletin%20Oct%202016.pdf"
+  },
+  {
+    "_id": "583eff20456576000f9982b2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9b15fc592486912e0d06aed74b6de84367ca2ac0.pdf",
+    "source": "https://s3.amazonaws.com/rgi-documents/957c0d57de8a8135adb49b049058811555c03c0c.pdf"
+  },
+  {
+    "_id": "583f0249b65a8d000f011bc8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec8a16f7f6a800f815c440b8b3403505995e6c4a.pdf",
+    "source": "http://www.sama.gov.sa/en-us/EconomicReports/Pages/MonthlyStatistics.aspx"
+  },
+  {
+    "_id": "583f098eb65a8d000f011c45",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d17e33086e4b81ecba2d1797e18d0752e65bd2fb.pdf",
+    "source": "http://en.energo.gov.kz/"
+  },
+  {
+    "_id": "583f227ab65a8d000f011e6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8ec4751627965d173517cc9e0ad10e7cced2c9a0.pdf",
+    "source": "http://www.kmgep.kz/details/ndownload.php?fn=581&lang=eng"
+  },
+  {
+    "_id": "583f2c69456576000f998699",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/916376044fc6eddee6ac6e02b90ab3cc57ceddd6.pdf",
+    "source": "http://www.ine.gob.bo:8082/comex/make_table.jsp?query=comex"
+  },
+  {
+    "_id": "58404d12ae75d6000f01bf68",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/895ff3aafc1fd91082f4c9874d1a6e44e4e6a1b8.pdf",
+    "source": "http://www.biodiv.be/civoire/implementation/loi-code-decrets-et-textes-sur-lenvironnement/decret-ndeg-96-894-du-8-novembre-1996-determinant-les-regles-et-procedures"
+  },
+  {
+    "_id": "584073aaae75d6000f01c066",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f7b9c1b455d8d22e058f8e23356c7ef8fe6d7921.pdf",
+    "source": "http://www.eia.gov/petroleum/production/#ng-tab"
+  },
+  {
+    "_id": "583f98cab65a8d000f011f7b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/261f38bd97000b5e29e1186dca53453fde258da6.pdf",
+    "source": "https://ickhmer.wordpress.com/2015/12/18/economy-of-geologic-potential-of-cambodia-copper-and-gold/"
+  },
+  {
+    "_id": "58405aabae75d6000f01bfda",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aef05e06df5b3cbfaa97865c1305ff7905ce741a.pdf"
+  },
+  {
+    "_id": "58405270ae75d6000f01bfb5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5912788e4e28c0beac7b2b4d483299b642bef1e0.pdf",
+    "source": "https://www.kpc.com.kw/press/KPCPublications/AnnualReports/AnnualRep2015-eng.pdf"
+  },
+  {
+    "_id": "584081bcae75d6000f01c08c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/70312f796bfae1658ac5b3954b36f8e4f04aa865.pdf",
+    "source": "https://www.boem.gov/Sale-241-Phase-2-Award-Letter-4-21-2016/"
+  },
+  {
+    "_id": "58408275ae75d6000f01c099",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/37a2f928f9b30d97aa566baee102e1db5415ed0a.pdf",
+    "source": "https://www.boem.gov/Sale-241-Phase-2-Decision-Matrix/"
+  },
+  {
+    "_id": "5840779862d9d1000fd05f93",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ef27dee563564fd65c5848e4fb5036ef5a461ed0.pdf",
+    "source": "https://www.boem.gov/Regulations/Notices-To-Lessees/2012/BOEM-NTL-2012-N01-pdf.aspx"
+  },
+  {
+    "_id": "58408cec62d9d1000fd05fe3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f044697b4beb9fbc427af26070dcf22aa021de8f.pdf",
+    "source": "https://www.boem.gov/Record-of-Decision-Lease-Sale-241/"
+  },
+  {
+    "_id": "5840747a62d9d1000fd05f84",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d706f66b8576a249e011c37224369e9b3799617d.pdf",
+    "source": "http://www.eia.gov/petroleum/production/#ng-tab"
+  },
+  {
+    "_id": "584111ed62d9d1000fd0615d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4792ed264a8b66d437fbbbb7f552e60db055c0f5.pdf",
+    "source": "http://www.ctc.gov.kw/module/cls/jsp/conditions.jsf#"
+  },
+  {
+    "_id": "58408fd162d9d1000fd06004",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/372e1df2df58cc9dd20b67d4b0f7b17172d48637.pdf",
+    "source": "https://contenido.bce.fin.ec/home1/estadisticas/bolmensual/IEMensual.jsp"
+  },
+  {
+    "_id": "584094ae62d9d1000fd0606f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/63782adb99ed9e87041fc0e3b83be9b7f0a3c9a4.pdf",
+    "source": "https://contenido.bce.fin.ec/home1/estadisticas/bolmensual/IEMensual.jsp"
+  },
+  {
+    "_id": "58409406ae75d6000f01c113",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/353a295b37f4b85aaa54cc0d347394ff6831298d.pdf",
+    "source": "http://www.mof.gov.kw/MofBudget/PDF/Disproprty-Law12-2014-2015.pdf"
+  },
+  {
+    "_id": "5840a050ae75d6000f01c193",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b31d394254659e011f9603c79a8f5070d1948657.pdf",
+    "source": "http://www.mof.gov.kw/MofBudget/MofBudgetDetail.aspx#generalBudget3"
+  },
+  {
+    "_id": "5841128662d9d1000fd06169",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/bc1845270ac1cfe9c402f8fbc98369bdeffa0a10.pdf",
+    "source": "http://www.ctc.gov.kw/module/cls/jsp/conditions.jsf#"
+  },
+  {
+    "_id": "58411404ae75d6000f01c254",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c5ec9d367da5b271acde3085a4d72a379171d4b5.pdf",
+    "source": "http://mcsetender.kockw.com/Commercial%20Documents/standards/VEC%20Main%20Category%20List-%201-5-2015/VEC%20%20Procedure%20%20and%20Instruction%20to%20Download%20and%20Submit%20PQ%20application%20%20Revision%20%2030%20April%202015.pdf"
+  },
+  {
+    "_id": "58412ca9ae75d6000f01c299",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a269c4be743c9883bba71328494f546b55454a84.pdf",
+    "source": "http://ctc.gov.kw/module/tenders/jsp/main.jsf#"
+  },
+  {
+    "_id": "5841154962d9d1000fd06182",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f4611d94dc228014a8eb932136aa3d222dd63871.pdf",
+    "source": "http://mcsetender.kockw.com/Commercial%20Documents/standards/APPLICATION%20FOR%20PQ%20-%20KOC%20CATEGORY/APPLICATION_KOC_PQ.htm"
+  },
+  {
+    "_id": "5841172262d9d1000fd0618d",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ce9f5a5c9da7ac1c76428fd1ea2f87e8ce0e6270.pdf",
+    "source": "http://mcsetender.kockw.com/Commercial%20Documents/standards/APPLICATION%20FOR%20PQ%20-%20KOC%20CATEGORY/APPLICATION_KOC_PQ.htm"
+  },
+  {
+    "_id": "583dd615d6ca91000eb92662",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/14dfb608aa91c26b3a095c5c89702c8ba5162b23.pdf"
+  },
+  {
+    "_id": "583dd86c28e4a2000e1ceb39",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/5d7e0039be09b52b8ecbf86a17f568a2757244f1.pdf"
+  },
+  {
+    "_id": "583ddad959e353000ee9ec25",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e96263a938a68c8a311138d4a0769f37346afb94.pdf"
   }
 ]
