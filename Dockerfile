@@ -13,7 +13,6 @@ RUN yum install -y \
     freetype \
     libfontconfig.so.1 \
     libfreetype.so.6 \
-    libstdc++.so.6 \
     tar.x86_64 \
     urw-fonts \
     wget &&\
