@@ -16,7 +16,7 @@
                         ng-model="sortOrder"
                         ng-options="item.value as item.text for item in sortOptions")
                 br
-                div(ng-if="!identity.currentUser.isSupervisor()")
+                div(ng-if="!(identity.currentUser.isSupervisor() || identity.currentUser.isViewer())")
                     button.btn.btn-success.pull-right(
                     ng-click="submitTrialAssessmentDialog()"
                     ng-disabled="assessment_counters.length <= 0"
@@ -37,16 +37,16 @@
                         button.btn.btn-danger.pull-right(ng-click="deleteAssessmentDialog()") Delete
 
             .pull-left.left-padding-lg.bottom-padding-lg
-                .row(ng-if="identity.currentUser.isSupervisor()")
+                .row(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
                     | Researcher:
                     a(href="mailto:{{::assessment.researcher_ID.email}}")  {{::assessment.researcher_ID.firstName}}  {{::assessment.researcher_ID.lastName}}
-                .row(ng-if="identity.currentUser.isSupervisor()")
+                .row(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
                     | Reviewer:
                     a(
                     ng-if="assessment.reviewer_ID"
                     href="mailto:{{::assessment.reviewer_ID.email}}")  {{::assessment.reviewer_ID.firstName}}  {{::assessment.reviewer_ID.lastName}}
                     em(ng-if="!assessment.reviewer_ID")  N/A
-                .row(ng-if="identity.currentUser.isSupervisor() && assessment.ext_reviewer_ID.length > 0")
+                .row(ng-if="(identity.currentUser.isSupervisor() || identity.currentUser.isViewer()) && assessment.ext_reviewer_ID.length > 0")
                     | External Reviewer(s):&nbsp;
                     text(ng-repeat="reviewer in assessment.ext_reviewer_ID track by reviewer._id")
                         a(href="mailto:{{::reviewer.email}}") {{::reviewer.firstName}} {{::reviewer.lastName}}
@@ -57,8 +57,8 @@
                     | Last edited by
                     a(
                     href="mailto:{{::assessment.last_modified.user.email}}"
-                    ng-if="identity.currentUser.isSupervisor()")  {{::assessment.last_modified.user.firstName}}  {{::assessment.last_modified.user.lastName}}
-                    text(ng-if="!identity.currentUser.isSupervisor()")  {{::assessment.last_modified.user.role|role|ucfirst}}
+                    ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")  {{::assessment.last_modified.user.firstName}}  {{::assessment.last_modified.user.lastName}}
+                    text(ng-if="!(identity.currentUser.isSupervisor() || identity.currentUser.isViewer())")  {{::assessment.last_modified.user.role|role|ucfirst}}
                     |  on
                     em  {{::assessment.last_modified.date | date:'MM/dd/yyyy @ h:mma' : timezone}}
                     //span(ng-repeat="mod in assessment.modified")
@@ -87,7 +87,7 @@
                     | Unresolved: {{assessment_counters.unresolved}}
                 .row
                     | Unfinalized: {{assessment_counters.length - assessment_counters.finalized}}
-                .row(ng-if="identity.currentUser.isSupervisor()")
+                .row(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
                     | Supervisors:
                     text(ng-repeat="sup in assessment.supervisor_ID track by sup._id")
                         |  {{::sup.firstName}} {{::sup.lastName}}
