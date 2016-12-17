@@ -28,5 +28,9 @@ angular.module('app')
             return this.isRoleAssigned('researcher');
         };
 
+        UserResource.prototype.isViewer = function () {
+            return this.isRoleAssigned('viewer');
+        };
+
         return UserResource;
     }]);
