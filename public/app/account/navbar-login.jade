@@ -20,12 +20,14 @@
                 a(href="/faq" title="FAQs") FAQs
             li(ng-if="!identity.currentUser.isExternalReviewer()")
                 a(href="/resource" title="Other resources") Resources
-            li
+            li(ng-if="!identity.currentUser.isViewer()")
                 a(href="/assessments" title="Assessment dashboard") Assessments
         //- ADMIN USER
         ul.nav.navbar-nav.dropdown
-            li.dropdown(ng-if="identity.currentUser.isSupervisor()")
-                a.dropdown-toggle(data-toggle="dropdown") Assessment Admin
+            li.dropdown(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
+                a.dropdown-toggle(data-toggle="dropdown")
+                    span(ng-if="identity.currentUser.isSupervisor()") Assessment Admin
+                    span(ng-if="identity.currentUser.isViewer()") Assessments
                     b.caret
                 ul.dropdown-menu
                     li
@@ -35,27 +37,37 @@
 
         //- ADMIN DROPDOWN
         ul.nav.navbar-nav.dropdown
-            li.dropdown(ng-if="identity.currentUser.isSupervisor()")
-                a.dropdown-toggle(href="", data-toggle="dropdown") Admin
+            li.dropdown(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
+                a.dropdown-toggle(href="", data-toggle="dropdown")
+                    span(ng-if="identity.currentUser.isSupervisor()") Admin
+                    span(ng-if="identity.currentUser.isViewer()") Data
                     b.caret
                 ul.dropdown-menu
                     li
                         a(href="/admin/answer-raw-list") Raw Answer Data
                     li
                         a(href="/admin/question-raw-list") Raw Question Data
-                    li
+                    li(ng-if="identity.currentUser.isSupervisor()")
                         a(href="/admin/user-create") Create User
                     li
-                        a(href="/admin/user-admin") User Admin
+                        a(href="/admin/user-admin")
+                            span(ng-if="identity.currentUser.isSupervisor()") User Admin
+                            span(ng-if="identity.currentUser.isViewer()") User List
                     li
-                        a(href="/admin/question-admin") Questions Admin
+                        a(href="/admin/question-admin")
+                            span(ng-if="identity.currentUser.isSupervisor()") Questions Admin
+                            span(ng-if="identity.currentUser.isViewer()") Questions List
                     li
-                        a(href="/admin/documents-admin") Document Admin
+                        a(href="/admin/documents-admin")
+                            span(ng-if="identity.currentUser.isSupervisor()") Document Admin
+                            span(ng-if="identity.currentUser.isViewer()") Document List
                     li
-                        a(href="/admin/interviewees-admin") Interviewee Admin
-                    li
+                        a(href="/admin/interviewees-admin")
+                            span(ng-if="identity.currentUser.isSupervisor()") Interviewee Admin
+                            span(ng-if="identity.currentUser.isViewer()") Interviewee List
+                    li(ng-if="identity.currentUser.isSupervisor()")
                         a(href="/admin/resource-admin") Resources Admin
-                    li
+                    li(ng-if="identity.currentUser.isSupervisor()")
                         a(href="/admin/faq-admin") FAQs Admin
       
         //- PROFILE

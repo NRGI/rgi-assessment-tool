@@ -13,7 +13,7 @@ angular.module('app')
         var setUserData = function() {
             $scope.versions = [];
 
-            if (rgiIdentitySrvc.currentUser && rgiIdentitySrvc.currentUser.isSupervisor()) {
+            if( rgiIdentitySrvc.currentUser && (rgiIdentitySrvc.currentUser.isSupervisor() || rgiIdentitySrvc.currentUser.isViewer()) ) {
                 var urls = [], versions = [];
 
                 rgiAssessmentSrvc.query({}, function (assessments) {
