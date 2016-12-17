@@ -18,7 +18,7 @@ describe('rgiPatternSet', function () {
 
     describe('AVAILABLE_ROLES_SET', function() {
         it('includes all available roles in the app', function() {
-            AVAILABLE_ROLES_SET.should.deep.equal(['supervisor', 'researcher', 'reviewer', 'ext_reviewer']);
+            AVAILABLE_ROLES_SET.should.deep.equal(['supervisor', 'viewer', 'researcher', 'reviewer', 'ext_reviewer']);
         });
     });
 });
