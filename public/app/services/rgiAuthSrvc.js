@@ -36,8 +36,16 @@ angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponsePro
 
             return dfd.promise;
         },
-        authorizeCurrentUserForRoute: function (role) {
-            return rgiIdentitySrvc.isAuthorized(role) ? true : $q.reject('not authorized');
+        authorizeCurrentUserForRoute: function (roles) {
+            var authorized = false;
+
+            roles.forEach(function(role) {
+                if(rgiIdentitySrvc.isAuthorized(role)) {
+                    authorized = true;
+                }
+            });
+
+            return authorized || $q.reject('not authorized');
         },
         authorizeAuthenticatedUserForRoute: function () {
             return rgiIdentitySrvc.isAuthenticated() ? true : $q.reject('not authorized');
