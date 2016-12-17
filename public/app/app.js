@@ -25,13 +25,13 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
   // role checks
     var routeRoleChecks = {
             supervisor: {auth: function (rgiAuthSrvc) {
-                return rgiAuthSrvc.authorizeCurrentUserForRoute('supervisor');
+                return rgiAuthSrvc.authorizeCurrentUserForRoute(['supervisor', 'viewer']);
             }},
             researcher: {auth: function (rgiAuthSrvc) {
-                return rgiAuthSrvc.authorizeCurrentUserForRoute('researcher');
+                return rgiAuthSrvc.authorizeCurrentUserForRoute(['researcher']);
             }},
             reviewer: {auth: function (rgiAuthSrvc) {
-                return rgiAuthSrvc.authorizeCurrentUserForRoute('reviewer');
+                return rgiAuthSrvc.authorizeCurrentUserForRoute(['reviewer']);
             }},
             user: {auth: function (rgiAuthSrvc) {
                 return rgiAuthSrvc.authorizeAuthenticatedUserForRoute();

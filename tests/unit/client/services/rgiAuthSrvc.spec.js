@@ -27,18 +27,16 @@ describe('rgiAuthSrvc', function () {
     }));
 
     describe('#authorizeCurrentUserForRoute', function () {
-        var role = 'user';
+        var ROLE = 'user';
         var rgiIdentityIsAuthorizedStub, rgiIdentityIsAuthorizedSpy;
 
-        it('returns TRUE, if the current user has the defined role', function() {
-            rgiIdentityIsAuthorizedSpy = sinon.spy(function() {
-                return true;
-            });
+        it('returns TRUE, if the current user has the required role', function() {
+            rgiIdentityIsAuthorizedSpy = sinon.spy(function() {return true;});
             rgiIdentityIsAuthorizedStub = sinon.stub(rgiIdentitySrvc, 'isAuthorized', rgiIdentityIsAuthorizedSpy);
-            rgiAuthSrvc.authorizeCurrentUserForRoute(role).should.be.equal(true);
+            rgiAuthSrvc.authorizeCurrentUserForRoute(['another role', ROLE]).should.be.equal(true);
         });
 
-        it('rejects $q, if the current user does not have the defined role', function() {
+        it('rejects $q, if the current user does not have the required role', function() {
             var $qRejectSpy = sinon.spy();
             var $qRejectStub = sinon.stub($q, 'reject', $qRejectSpy);
 
@@ -47,13 +45,13 @@ describe('rgiAuthSrvc', function () {
             });
             rgiIdentityIsAuthorizedStub = sinon.stub(rgiIdentitySrvc, 'isAuthorized', rgiIdentityIsAuthorizedSpy);
 
-            should.equal(rgiAuthSrvc.authorizeCurrentUserForRoute(role), undefined);
+            should.equal(rgiAuthSrvc.authorizeCurrentUserForRoute([ROLE]), undefined);
             $qRejectSpy.withArgs('not authorized').called.should.be.equal(true);
             $qRejectStub.restore();
         });
 
         afterEach(function () {
-            rgiIdentityIsAuthorizedSpy.withArgs(role).called.should.be.equal(true);
+            rgiIdentityIsAuthorizedSpy.withArgs(ROLE).called.should.be.equal(true);
             rgiIdentityIsAuthorizedStub.restore();
         });
     });
