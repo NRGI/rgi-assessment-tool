@@ -382,6 +382,10 @@ describe('rgiDeleteReferenceDialogCtrl', function () {
                     expect(actualErrorHandlers.indexOf('Load reference data failure') !== -1).to.equal(true);
                 });
 
+                afterEach(function() {
+                    spies.answerMethodUpdateAnswer.args[0][0].modified.should.be.equal(true);
+                });
+
                 describe('GET DOCUMENT CALLBACK', function() {
                     var DOCUMENT,
                         ANOTHER_ASSESSMENT_ID = 'AU-2016-MI', ANOTHER_ANSWER_ID = ANOTHER_ASSESSMENT_ID + '-2';
