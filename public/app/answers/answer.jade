@@ -4,7 +4,7 @@
             .h3 {{::assessment.country}} {{::assessment.year}} {{::assessment.mineral|addSpaces}} {{::assessment.version}} assessment
             ul.nav.nav-tabs
                 li.active: a(data-target="#question" data-toggle="tab") Question
-                li: a(data-target="#guidance" data-toggle="tab") Question Guidance
+                li: a(data-target="#guidance", data-toggle="tab", ng-if="!identity.currentUser.isViewer()") Question Guidance
                 li(ng-if="identity.currentUser.isSupervisor()"): a(data-target="#previous" data-toggle="tab") Answer History
                 .row-fluid.right-padding-lg
                     rgi-answer-nav(
@@ -17,7 +17,7 @@
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag.hint(ng-if="answer.status==='flagged'", popover="For resubmission you should first change the choice or upload a new reference", popover-trigger="mouseenter")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg(ng-if="answer.status==='unresolved'")
                         text.pull-right.right-padding-lg(ng-if="answer.status==='assigned'")
-                    div(ng-if="identity.currentUser.isSupervisor()")
+                    div(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()")
                         text.pull-right.right-padding-lg.text-success.glyphicon.glyphicon-ok-circle(ng-if="['approved', 'final'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-danger.glyphicon.glyphicon-flag(ng-if="['flagged', 'unresolved'].indexOf(answer.status) > -1")  {{answer.status | ucfirst}}
                         text.pull-right.right-padding-lg.text-primary.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{answer.status | ucfirst}}
@@ -36,7 +36,7 @@
 
                     .row.bottom-padding-lg
                         rgi-active-answer-buttons
-                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitted'].indexOf(answer.status) > -1) || identity.currentUser.isSupervisor())")
+                    .row(ng-if="answer.flags.length!==0 && ((['flagged', 'unresolved', 'submitted'].indexOf(answer.status) > -1) || identity.currentUser.isSupervisor()) && !identity.currentUser.isViewer()")
                         rgi-flag-tabs
 
                     .row(ng-if="answer.external_answer.length!==0")
@@ -45,14 +45,14 @@
                     .row.bottom-padding-med(ng-if="assessment.edit_control === identity.currentUser._id")
                         rgi-answer-form
 
-                    .row.bottom-padding-lg(ng-if="(assessment.edit_control === identity.currentUser._id) || identity.currentUser.isSupervisor() || identity.currentUser.isExternalReviewer()")
+                    .row.bottom-padding-lg(ng-if="(assessment.edit_control === identity.currentUser._id) || identity.currentUser.isSupervisor() || identity.currentUser.isViewer() || identity.currentUser.isExternalReviewer()")
                         rgi-references
 
-                    .row.bottom-padding-med
+                    .row.bottom-padding-med(ng-if="!identity.currentUser.isViewer()")
                         rgi-comments(update="answer")
 
 
-                #guidance.tab-pane
+                #guidance.tab-pane(ng-if="!identity.currentUser.isViewer()")
                     label: h3 Guidance:
                     .right-padding-lg.left-padding-lg(ng-bind-html="question.question_guidance_text")
                     .right-padding-lg.left-padding-lg(ng-if="question.question_dependancies")
