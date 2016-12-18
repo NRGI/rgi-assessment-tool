@@ -19,6 +19,10 @@ angular
             },
             questionOrders = [];
 
+        if(role === 'viewer') {
+            role = 'supervisor';
+        }
+
         rgiQuestionSetSrvc.loadQuestions(function() {
             rgiQuestionSetSrvc.getAvailableQuestions(role, true).forEach(function (question) {
                 questionOrders.push(question.question_order);

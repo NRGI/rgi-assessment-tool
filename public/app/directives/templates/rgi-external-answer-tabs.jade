@@ -3,7 +3,7 @@ div(id="external_answer_div").bottom-padding-med
     .panel-group#prev_external_answer_div(role="tablist" aria-multiselectable="true")
         .panel.panel-primary(
             ng-repeat="answer in answer.external_answer"
-            ng-if="current_user.isSupervisor() || current_user.isExternalReviewer()"
+            ng-if="current_user.isSupervisor() || current_user.isExternalReviewer() || current_user.isViewer()"
         )
             .panel-heading(role="tab" id="heading{{answer._id}}")
                 h4.panel-title
@@ -16,7 +16,7 @@ div(id="external_answer_div").bottom-padding-med
                         aria-expanded="false"
                         aria-controls="collapse{{answer._id}}"
                     )
-                        b(ng-if="current_user.isSupervisor() || current_user._id===answer.author._id") {{answer.author.firstName | ucfirst}} {{answer.author.lastName | ucfirst}} -
+                        b(ng-if="(current_user.isSupervisor() || current_user.isViewer()) || current_user._id===answer.author._id") {{answer.author.firstName | ucfirst}} {{answer.author.lastName | ucfirst}} -
                         b: em  {{answer.author.external_type}} reviewer
                         em.pull-right  {{answer.date | date:'MM/dd/yyyy'}}
 
