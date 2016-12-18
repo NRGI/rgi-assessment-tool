@@ -80,6 +80,10 @@ describe('rgiEditReferenceDialogCtrl', function () {
                         $scope.editReference(REFERENCE_INDEX);
                     });
 
+                    it('sets the `edit` flag', function() {
+                        $scope.$parent.$parent.answer.modified.should.be.equal(true);
+                    });
+
                     it('submits a request to update the answer data', function() {
                         spies.answerMethodUpdateAnswer.withArgs($scope.$parent.$parent.answer)
                             .called.should.be.equal(true);
