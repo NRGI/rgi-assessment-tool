@@ -3,16 +3,16 @@ div(id="answers_div").bottom-padding-med
     div.panel(
     ng-repeat="precept in answers track by precept.id"
     ng-if="precept.data.length > 0"
-    ng-class="{'panel-success': ((!current_user.isSupervisor() && ((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized===precept.data.length)),'panel-primary': ((!current_user.isSupervisor() && !((precept.complete+precept.approved)===precept.data.length)) || (current_user.isSupervisor() && precept.approved+precept.finalized!==precept.data.length)),'panel-danger': precept.flagged !== 0 || (current_user.isSupervisor() && precept.unresolved !== 0), 'panel-info': assessment.resubmitted && current_user.isSupervisor() && (precept.modified > 0)}")
+    ng-class="{'panel-success': ((!(current_user.isSupervisor() || current_user.isViewer()) && ((precept.complete+precept.approved)===precept.data.length)) || ((current_user.isSupervisor() || current_user.isViewer()) && precept.approved+precept.finalized===precept.data.length)),'panel-primary': ((!(current_user.isSupervisor() || current_user.isViewer()) && !((precept.complete+precept.approved)===precept.data.length)) || ((current_user.isSupervisor() || current_user.isViewer()) && precept.approved+precept.finalized!==precept.data.length)),'panel-danger': precept.flagged !== 0 || ((current_user.isSupervisor() || current_user.isViewer()) && precept.unresolved !== 0), 'panel-info': assessment.resubmitted && (current_user.isSupervisor() || current_user.isViewer()) && (precept.modified > 0)}")
         div.panel-heading.bottom-padding-med
             .panel-title
                 div(role="button", data-toggle="collapse", href="#{{::precept.id}}") {{::precept.label}}
-                    text(ng-if="!current_user.isSupervisor() && !current_user.isExternalReviewer()") ({{::precept.complete + precept.approved}} of {{::precept.data.length}} completed)
-                    text(ng-if="current_user.isSupervisor()") ({{::precept.approved+precept.finalized}} of {{::precept.data.length}} approved)
+                    text(ng-if="!(current_user.isSupervisor() || current_user.isViewer()) && !current_user.isExternalReviewer()") ({{::precept.complete + precept.approved}} of {{::precept.data.length}} completed)
+                    text(ng-if="current_user.isSupervisor() || current_user.isViewer()") ({{::precept.approved+precept.finalized}} of {{::precept.data.length}} approved)
                     text(ng-if="precept.flagged!==0") ({{::precept.flagged}} flagged)
-                    text(ng-if="precept.unresolved!==0 && current_user.isSupervisor()") ({{::precept.unresolved}} unresolved)
-                    text(ng-if="current_user.isSupervisor() && precept.finalized!==0") ({{::precept.finalized}} final answers)
-                    text(ng-if="current_user.isSupervisor() && precept.modified > 0") ({{::precept.modified}} modified)
+                    text(ng-if="precept.unresolved!==0 && (current_user.isSupervisor() || current_user.isViewer())") ({{::precept.unresolved}} unresolved)
+                    text(ng-if="(current_user.isSupervisor() || current_user.isViewer()) && precept.finalized!==0") ({{::precept.finalized}} final answers)
+                    text(ng-if="(current_user.isSupervisor() || current_user.isViewer()) && precept.modified > 0") ({{::precept.modified}} modified)
         div.panel-collapse.collapse(id="{{::precept.id}}")
             div.panel-body
                 table.table.table-hover.table-striped.table-condensed
@@ -23,18 +23,18 @@ div(id="answers_div").bottom-padding-med
                         th.col-md-2.text-center Status
                         th.col-md-1.text-center Researcher Score
                         th.col-md-1.text-center Reviewer Score
-                        th.col-md-1.text-center(ng-if="current_user.isSupervisor()") External Reviewer(s) Score
+                        th.col-md-1.text-center(ng-if="current_user.isSupervisor() || current_user.isViewer()") External Reviewer(s) Score
                         th.col-md-1.text-center Final Score
                         th.col-md-1.text-center
                     tbody
                         tr(
                         ng-repeat="answer in precept.data|filter: searchText|orderBy:sortOrder track by answer.answer_ID",
-                        ng-class="{'info': assessment.resubmitted && current_user.isSupervisor() && answer.modified}",
+                        ng-class="{'info': assessment.resubmitted && (current_user.isSupervisor() || current_user.isViewer()) && answer.modified}",
                         ng-if="(!current_user.isExternalReviewer() || ['approved', 'flagged', 'final'].indexOf(answer.status) > -1) && isAnswerAvailable(answer)")
                             td.col-md-1.text-center {{::answer.question_ID.question_label}}
                             td.col-md-1 {{::answer.question_ID.component_text}}
                             td.col-md-3 {{::answer.question_ID.question_text}}
-                            td.col-md-2.text-center(ng-if="!current_user.isSupervisor()")
+                            td.col-md-2.text-center(ng-if="!(current_user.isSupervisor() || current_user.isViewer())")
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='submitted'")  Complete
                                 .text-success.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='resubmitted'")  Complete
                                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{::answer.status | ucfirst}}
@@ -42,7 +42,7 @@ div(id="answers_div").bottom-padding-med
                                 .text-primary.glyphicon.glyphicon-ok-circle(ng-if="answer.status==='approved'")  {{::answer.status | ucfirst}}
                                 .text(ng-if="answer.status==='assigned'")  {{::answer.status | ucfirst}}
                                 .text(ng-if="answer.status==='unresolved'")
-                            td.col-md-2.text-center(ng-if="current_user.isSupervisor()")
+                            td.col-md-2.text-center(ng-if="current_user.isSupervisor() || current_user.isViewer()")
                                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='submitted'")  Needs review
                                 .text-warning.glyphicon.glyphicon-zoom-in(ng-if="answer.status==='resubmitted'")  Needs review
                                 .text-info.glyphicon.glyphicon-floppy-disk(ng-if="answer.status==='saved'")  {{::answer.status | ucfirst}}
@@ -53,7 +53,7 @@ div(id="answers_div").bottom-padding-med
                                 .text(ng-if="answer.status==='assigned'")  {{::answer.status | ucfirst}}
                             td.col-md-1.text-center {{::answer.researcher_score.letter | ucfirst}}
                             td.col-md-1.text-center {{::answer.reviewer_score.letter | ucfirst}}
-                            td.col-md-1(ng-if="current_user.isSupervisor()")
+                            td.col-md-1(ng-if="current_user.isSupervisor() || current_user.isViewer()")
                                 div(ng-repeat="externalReviewerAnswer in answer.external_answer track by externalReviewerAnswer._id") {{::getUser(externalReviewerAnswer.author).firstName}} {{::getUser(externalReviewerAnswer.author).lastName}} - {{::externalReviewerAnswer.score.letter | ucfirst}}
                             td.col-md-1.text-center.text-success {{::answer.final_score.letter | ucfirst}}
                             td(ng-if="!current_user.isSupervisor() && assessment.edit_control===current_user._id")
