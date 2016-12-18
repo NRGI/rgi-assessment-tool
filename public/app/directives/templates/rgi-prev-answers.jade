@@ -36,7 +36,7 @@ div(ng-if="identity.currentUser.isReviewer()")
         .left-padding-lg
             .text-primary(ng-bind-html="answer.researcher_justification")
 
-div(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isExternalReviewer()")
+div(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isExternalReviewer() || identity.currentUser.isViewer()")
     .bottom-padding-med
         div(ng-if="!answer.researcher_score.letter")
             h5 Researcher answer:

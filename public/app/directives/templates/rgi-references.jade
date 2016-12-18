@@ -1,5 +1,5 @@
 legend References
-    text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor()") (required):
+    text(ng-if="!identity.currentUser.isExternalReviewer() && !identity.currentUser.isSupervisor() && !identity.currentUser.isViewer()") (required):
 
 #biblio_div.bottom-padding-med(
     ng-if="((identity.currentUser._id === assessment.edit_control) && (['resubmitted', 'submitted'].indexOf(assessment.status) === -1))|| identity.currentUser.isExternalReviewer() || identity.currentUser.isSupervisor()"
