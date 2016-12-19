@@ -7,36 +7,41 @@
             fieldset
                 div(ng-if="new_document.status!=='submitted'")
                     // TITLE
-                    .row.form-group.top-padding-med
-                        input.form-control(
-                        name="title"
-                        type="text"
-                        placeholder="Title (required)..."
-                        ng-model="new_document.title"
-                        autocomplete="off")
+                    .row
+                        .form-group.top-padding-med
+                            input.form-control(
+                            name="title"
+                            type="text"
+                            placeholder="Title (required)..."
+                            ng-model="new_document.title"
+                            autocomplete="off")
 
                     // DOC TYPE
-                    .row.form-group
-                        select.form-control(
-                        ng-model="new_document.type"
-                        required)
-                            option(value="" selected disabled) Select type (required)...
-                            option(ng-repeat="type in new_doc_type" value="{{type.value}}") {{type.text}}
+                    .row
+                        .form-group
+                            select.form-control(
+                            ng-model="new_document.type"
+                            required)
+                                option(value="" selected disabled) Select type (required)...
+                                option(ng-repeat="type in new_doc_type" value="{{type.value}}") {{type.text}}
                     // AUTHOR
-                    .row.form-group(ng-repeat="author in new_document.authors")
-                        .pull-left.col-lg-5
+                    .row(ng-repeat="author in new_document.authors")
+                        .pull-left.col-lg-5.form-group
                             input.form-control(
                             name="author_first"
                             type="text"
                             placeholder="Author first name..."
                             ng-model="author.first_name"
+                            ng-pattern="humanNamePattern"
                             autocomplete="off")
-                        .pull-left.col-lg-5
+                        .col-lg-2
+                        .pull-left.col-lg-5.form-group
                             input.form-control(
                             name="author_last"
                             type="text"
                             placeholder="Author last name..."
                             ng-model="author.last_name"
+                            ng-pattern="humanNamePattern"
                             autocomplete="off")
                         .pull-left.col-lg-1.right-padding-med(ng-if="$last")
                             glyphicon.text-success.glyphicon.glyphicon-plus-sign(ng-click="authorPush()")
@@ -45,8 +50,8 @@
 
 
                     // SOURCE
-                    .row.form-group
-                        .col-lg-12
+                    .row
+                        .col-lg-12.form-group
                             input.form-control.right-padding-med(
                             name="source"
                             type="url"
@@ -56,37 +61,40 @@
                             ng-model="new_document.source"
                             autocomplete="off")
 
-                    .row.form-group
+                    .row
                         // PUBLISHER
-                        .pull-left.col-lg-6
+                        .pull-left.col-lg-5.form-group
                             input.form-control(
                             name="publisher"
                             type="text"
                             placeholder="Publisher..."
                             ng-model="new_document.publisher"
                             autocomplete="off")
+                        .col-lg-2
 
                         // YEAR
-                        .pull-left.col-lg-6
+                        .pull-left.col-lg-5.form-group
                             input.form-control(
                             name="year"
-                            type="text"
+                            type="number"
                             placeholder="Year published (required)..."
                             ng-model="new_document.year"
+                            ng-pattern="yearPattern"
                             autocomplete="off")
 
                 // EXISTING DOC
                 div(ng-if="new_document.status==='submitted'")
                     .row
                         // TITILE
-                        .col-md-6
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Title:
                                 h5(ng-if="new_document.title")  {{new_document.title | ucfirst}}
                                 h5(ng-if="!new_document.title")   N/A
                         // DOC TYPE
-                        .col-md-6
+                        .col-md-2
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Type:
@@ -94,7 +102,7 @@
                                 h5(ng-if="!new_document.type")  N/A
                     //- AUTHOR
                     .row
-                        .col-md-6
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Author(s):
@@ -103,7 +111,8 @@
                                     text(ng-if="$last") {{author.first_name | ucfirst}} {{author.last_name| ucfirst}}
                                 h5(ng-if="!new_document.authors")  N/A
                         // SOURCE
-                        .col-md-6
+                        .col-md-2
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Source:
@@ -112,36 +121,39 @@
 
                     .row
                         // PUBLISHER
-                        .col-md-6
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Publisher:
                                 h5(ng-if="new_document.publisher")  {{new_document.publisher}}
                                 h5(ng-if="!new_document.publisher")  N/A
                         // YEAR
-                        .col-md-6
+                        .col-md-2
+                        .col-md-5
                             .form-group.pull-left
                                 h5
                                     b Year:
                                 h5(ng-if="new_document.year")  {{new_document.year}}
                                 h5(ng-if="!new_document.year")  N/A
 
-                .row.form-group
+                .row
                     // LOCATION IN DOC
-                    .pull-left.col-lg-6
+                    .pull-left.col-lg-5.form-group
                         input.form-control(
                         name="location"
                         type="text"
                         placeholder="Page number(s) (required)..."
                         ng-model="new_ref_location"
+                        ng-pattern="numericRangePattern"
                         autocomplete="off")
+                    .col-lg-2
 
                     // DATE ACCESSED
                     rgi-calendar(ng-model="ref_date_accessed", placeholder="Date accessed...")
 
                 //- COMMENT
-                #comment.row.form-group
-                    .col-lg-12
+                .row#comment
+                    .col-lg-12.row.form-group
                         textarea.form-control(
                         name="comment"
                         type="text"
