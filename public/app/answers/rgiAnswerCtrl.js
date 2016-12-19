@@ -44,7 +44,7 @@ angular.module('app')
                 });
             }
 
-            if (answer.guidance_dialog) {
+            if (!rgiIdentitySrvc.currentUser.isViewer() && answer.guidance_dialog) {
                 rgiDialogFactory.guidanceDialog($scope);
             }
         }, processFailureResponse);
