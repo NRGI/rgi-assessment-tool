@@ -1,7 +1,7 @@
 'use strict';
 
 describe('rgiPatternSet', function () {
-    var HUMAN_NAME_PATTERN, NUMERIC_RANGE_PATTERN, PASSWORD_PATTERN, VERSION_PATTERN,
+    var HUMAN_NAME_PATTERN, NUMERIC_RANGE_PATTERN, PASSWORD_PATTERN, VERSION_PATTERN, YEAR_PATTERN,
         currentPattern,
         testPattern = function(description, testedValue, expectedResult) {
             it(description, function () {
@@ -11,11 +11,18 @@ describe('rgiPatternSet', function () {
 
     beforeEach(module('app'));
 
-    beforeEach(inject(function(_HUMAN_NAME_PATTERN_, _NUMERIC_RANGE_PATTERN_, _PASSWORD_PATTERN_, _VERSION_PATTERN_) {
+    beforeEach(inject(function(
+        _HUMAN_NAME_PATTERN_,
+        _NUMERIC_RANGE_PATTERN_,
+        _PASSWORD_PATTERN_,
+        _VERSION_PATTERN_,
+        _YEAR_PATTERN_
+    ) {
         HUMAN_NAME_PATTERN = _HUMAN_NAME_PATTERN_;
         NUMERIC_RANGE_PATTERN = _NUMERIC_RANGE_PATTERN_;
         PASSWORD_PATTERN = _PASSWORD_PATTERN_;
         VERSION_PATTERN = _VERSION_PATTERN_;
+        YEAR_PATTERN = _YEAR_PATTERN_;
     }));
 
     describe('HUMAN_NAME_PATTERN', function() {
@@ -37,6 +44,7 @@ describe('rgiPatternSet', function () {
         });
 
         testPattern('accepts a single digit', '1', true);
+        testPattern('rejects non-digital characters', 'word', false);
         testPattern('accepts an arbitrary positive number', '123', true);
         testPattern('declines a negative number', '-3', false);
         testPattern('accepts a dash-separated range', '7-8', true);
@@ -75,5 +83,16 @@ describe('rgiPatternSet', function () {
         testPattern('approves a string with a leading version number and sub-version number', '1.1', true);
         testPattern('approves a string with multiple subversion numbers', '1.1.2', true);
         testPattern('declines a string with a alphabetical character in a sub-subversion number', '1.1.2b', false);
+    });
+
+    describe('YEAR_PATTERN', function() {
+        beforeEach(function() {
+            currentPattern = YEAR_PATTERN;
+        });
+
+        testPattern('accepts 4 digits only', '1234', true);
+        testPattern('declines any non-digital characters', '12A4', false);
+        testPattern('declines digital sequences with length shorter than 4 characters', '123', false);
+        testPattern('declines digital sequences with length longer than 4 characters', '12345', false);
     });
 });
