@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewDocumentDialogCtrl', ['$scope', '$rootScope', 'rgiNotifier', 'rgiAnswerMethodSrvc', 'rgiDocumentSrvc', 'rgiDocumentMethodSrvc', 'rgiIdentitySrvc', 'rgiUserMethodSrvc', function (
+    .controller('rgiNewDocumentDialogCtrl', ['$scope', '$rootScope', 'rgiNotifier', 'rgiAnswerMethodSrvc', 'rgiDocumentSrvc', 'rgiDocumentMethodSrvc', 'rgiIdentitySrvc', 'rgiUserMethodSrvc', 'HUMAN_NAME_PATTERN', 'NUMERIC_RANGE_PATTERN', 'YEAR_PATTERN', function (
         $scope,
         $rootScope,
         rgiNotifier,
@@ -9,15 +9,24 @@ angular.module('app')
         rgiDocumentSrvc,
         rgiDocumentMethodSrvc,
         rgiIdentitySrvc,
-        rgiUserMethodSrvc
+        rgiUserMethodSrvc,
+        HUMAN_NAME_PATTERN,
+        NUMERIC_RANGE_PATTERN,
+        YEAR_PATTERN
     ) {
+        $scope.humanNamePattern = HUMAN_NAME_PATTERN;
+        $scope.numericRangePattern = NUMERIC_RANGE_PATTERN;
+        $scope.yearPattern = YEAR_PATTERN;
+
         $scope.answer.new_ref_comment = '';
         $scope.current_user = rgiIdentitySrvc.currentUser;
         $scope.disable_button = false;
+
         if ($scope.new_document.status === 'created') {
             $scope.new_document.authors = [{first_name: "", last_name: ""}];
             $scope.new_document.editors = [{first_name: "", last_name: ""}];
         }
+
         $scope.new_document = $scope.$parent.new_document;
         $scope.new_document.source = $scope.source;
 
