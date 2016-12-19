@@ -62206,5 +62206,40 @@
     "_id": "58544e61752f38000e6c5a5a",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/0d08e691b8101d7228c09603fdb0e2c622b120d2.pdf",
     "source": "http://soguipami-gn.com/images/PV/STATUTS.pdf"
+  },
+  {
+    "_id": "58551f2d20b7a70010428592",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/877b8ef70d4e2ff311250c78188a4b28da800af9.pdf",
+    "source": "http://petromasila.com/news.aspx"
+  },
+  {
+    "_id": "58552edacdf04100184242aa",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/56d8fe7d77468c01eee29330543038b6b298a667.pdf",
+    "source": "http://www.yogc.com.ye/ar/view.asp?id=29"
+  },
+  {
+    "_id": "58565b37cdf0410018424487",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/16e4920a4b011d973b9dcb74a51498bbb52ecb71.pdf",
+    "source": "http://www.statsbudsjettet.no/Statsbudsjettet-2017/English/?pid=73006#hopp"
+  },
+  {
+    "_id": "58565c18cdf041001842449a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/727b5e2c7d7ad64f07f99d081a36a579801cb466.pdf",
+    "source": "https://www.linkedin.com/pulse/20141002162439-131132941-africa-tracing-the-oil-money-africafocus"
+  },
+  {
+    "_id": "58565dc120b7a70010428718",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b00da4c9a46ce50aca79dd1adbbb8b9c917f6da5.pdf",
+    "source": "https://www.swissaid.ch/sites/default/files/Big_Spenders_2014_10_14.pdf"
+  },
+  {
+    "_id": "5856c8b1d76e1d0010d20cb9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/29de0aab56b09687940fa9d0f0aa1cc4064e2962.pdf",
+    "source": "http://www.izf.net/sites/default/files/rapport_interimaire_de_surveillance_multilaterale_pour_2015_et_perspectives_2016_version_definitive.pdf"
+  },
+  {
+    "_id": "5856cacbd76e1d0010d20cc6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13c8db5e36ea841de24b950f469850a60fa9e5fe.pdf",
+    "source": "https://www.bdeac.org/upload/docs/application/pdf/2015-05/cameroun.pdf"
   }
 ]
