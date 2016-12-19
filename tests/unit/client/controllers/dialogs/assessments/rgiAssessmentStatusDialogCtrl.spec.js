@@ -60,7 +60,6 @@ describe('rgiAssessmentStatusDialogCtrl', function () {
         ));
 
         it('collects IDs of all assigned users', function () {
-            console.log(JSON.stringify($scope.editControl.availableUsers));
             $scope.editControl.availableUsers.should.deep.equal([{_id: SUPERVISOR_ID}, {_id: RESEARCHER_ID}]);
         });
     });
