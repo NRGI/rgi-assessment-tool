@@ -5,22 +5,29 @@ var AuthLog         = require('mongoose').model('AuthLog'),
     mongoose        = require('mongoose'),
     User            = mongoose.model('User');
 
-exports.authenticate = function (req, res, next) {
+exports.authenticate = function (req, res) {
     req.body.username = req.body.username.toLowerCase();
+
     var auth = passport.authenticate('local', function (err, user) {
-        // if (err) {return next(err); }
-        if (err || !user) { res.send({success: false}); }
+        if (err || !user) {
+            return res.send({success: false});
+        } else if(user.disabled) {
+            return res.send({success: false, reason: 'Account is deactivated'});
+        }
+
         req.logIn(user, function (err) {
-            // if (err) {return next(err); }
-            if (err) { res.send({success: false}); }
+            if (err) {
+                return res.send({success: false});
+            }
+
             req.user = user;
             AuthLog.log(req.user._id, 'sign-in');
             req.clientId = 1560;
-            // res.send({success: true, user: user});
-            next();
+            res.send({success: true, user: req.user});
         });
     });
-    auth(req, res, next);
+
+    auth(req, res);
 };
 
 exports.apiAuthenticate = function (req, res, next) {
@@ -73,10 +80,6 @@ exports.logout = function (req, res) {
         req.logout();
     }
     res.end();
-};
-
-exports.passUser = function (req, res) {
-    return res.send({success: true, user: req.user});
 };
 
 exports.requiresApiLogin = function (req, res, next) {

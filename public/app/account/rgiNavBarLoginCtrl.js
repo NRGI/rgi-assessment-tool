@@ -54,7 +54,7 @@ angular.module('app')
                         rgiNotifier.notify('You have successfully signed in!');
                         $location.path('/');
                     } else {
-                        rgiNotifier.error('Username/Password combination incorrect!');
+                        rgiNotifier.error(rgiAuthSrvc.getError() || 'Username / Password combination is incorrect!');
                     }
                 });
             }
