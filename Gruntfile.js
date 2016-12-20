@@ -153,7 +153,8 @@ var appFileList = [
     'public/app/dialogs/resources/rgiNewResourceDialogCtrl.js',
     'public/app/dialogs/documents/rgiUnlinkDocumentDialogCtrl.js',
     'public/app/dialogs/users/rgiDeleteUserDialogCtrl.js',
-    'public/app/dialogs/users/rgiEditUserDialogCtrl.js'
+    'public/app/dialogs/users/rgiEditUserDialogCtrl.js',
+    'public/app/dialogs/users/rgiToggleUserDisabledStatusDialogCtrl.js'
 ];
 
 var vendorsFileList = [

@@ -1,0 +1,8 @@
+div
+    div.modal-header
+        h4(ng-if="user.disabled") Are you sure you want to activate this profile?
+        h4(ng-if="!user.disabled") Are you sure you want to deactivate this profile?
+    div.modal-footer
+        button.btn.btn-danger(ng-click="toggleUserDisabledStatus()") Confirm
+        | &nbsp;
+        button.btn.btn-default(ng-click="closeThisDialog()") Cancel

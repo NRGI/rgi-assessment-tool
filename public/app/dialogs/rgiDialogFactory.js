@@ -468,6 +468,15 @@ angular.module('app')
                     closeByNavigation: true,
                     scope: scope
                 });
+            },
+            toggleUserDisabledStatus: function($scope) {
+                ngDialog.open({
+                    template: 'partials/dialogs/users/toggle-user-disabled-status-dialog',
+                    controller: 'rgiToggleUserDisabledStatusDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
+                    scope: $scope
+                });
             }
         };
     }]);
