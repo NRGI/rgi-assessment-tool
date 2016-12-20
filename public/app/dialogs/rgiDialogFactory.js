@@ -46,6 +46,18 @@ angular.module('app')
                     scope: scope
                 });
             },
+            assessmentViewerAssign: function ($scope, assessment) {
+                $scope.assessment_update_ID = assessment.assessment_ID;
+                $scope.userType = 'viewer';
+
+                ngDialog.open({
+                    template: 'partials/dialogs/assessments/assign-assessment-viewer-dialog',
+                    controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
+                    scope: $scope
+                });
+            },
             assessmentAddReviewer: function ($scope) {
                 var scope = $scope;
                 scope.value = true;
