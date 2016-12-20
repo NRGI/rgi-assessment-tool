@@ -4,9 +4,13 @@
             legend.h3.page-header {{user.firstName}} {{user.lastName}}'s Profile
             .left-padding-lg.right-padding-lg
                 .row-fluid
-                    button.btn.btn-warning(ng-click="editUserDialog()") Edit user
+                    button.btn.btn-primary(ng-click="editUserDialog()") Edit user
                     | &nbsp;
                     a(href="mailto:{{user.email}}").btn.btn-default Email
+                    | &nbsp;
+                    button.btn(ng-click="toggleUserDisabledStatus()", ng-class="user.disabled ? 'btn-success' : 'btn-warning'")
+                        text(ng-if="user.disabled") Activate
+                        text(ng-if="!user.disabled") Deactivate
                     | &nbsp;
                     button.btn.btn-danger(ng-click="deleteConfirmDialog()") Delete
                 .row-fluid.top-padding-med
