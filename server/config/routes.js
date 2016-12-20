@@ -124,7 +124,7 @@ module.exports = function (app) {
     // Send tech contact
     app.post('/contact_tech', contact.techSend);
 
-    app.post('/login', auth.authenticate, auth.passUser);
+    app.post('/login', auth.authenticate);
     app.post('/logout', auth.logout);
 
     app.all('/api/*', function (req, res) {
