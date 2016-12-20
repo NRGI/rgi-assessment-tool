@@ -99,7 +99,7 @@ describe('rgiNavBarLoginCtrl', function () {
             });
 
             it('shows a notification message', function () {
-                rgiNotifierErrorSpy.withArgs('Username/Password combination incorrect!').called.should.be.equal(true);
+                rgiNotifierErrorSpy.withArgs('Username / Password combination is incorrect!').called.should.be.equal(true);
             });
 
             it('clears the version list', function () {
