@@ -79,7 +79,7 @@ angular.module('app')
         var criteria = {};
         $scope.assessmentsStatistics = {};
 
-        if ($scope.current_user.isSupervisor() || $scope.current_user.isViewer()) {
+        if ($scope.current_user.isSupervisor()) {
             $scope.sort_options.push({value: 'year', text: 'Sort by Year of assessment'});
             $scope.sort_options.push({value: 'version', text: 'Sort by Version'});
 
