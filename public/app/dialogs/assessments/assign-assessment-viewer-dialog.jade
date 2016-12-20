@@ -1,0 +1,24 @@
+.left-padding-lg.right-padding-lg
+    .modal-header
+        h3 Assign Assessment to Viewer(s)
+    .modal-body
+        fieldset
+            .row(ng-repeat="useless in assessment.viewer_ID")
+                h4.col-md-4  Viewer {{$index+1}}
+                .form-group.col-md-5.nullable
+                    select.form-group.form-control.right-padding-med(
+                    name="viewer_selector"
+                    ng-model="assessment.viewer_ID[$index]"
+                    ng-options="r._id as (r.firstName + ' ' + r.lastName + ': number of assigned assessments - ' + r.assessments.length) for r in getFilteredAvailableUsers(assessment.viewer_ID[$index]) | orderBy: 'lastName' | orderBy: 'firstName'"
+                    required)
+                        option(value="" selected disabled) Select viewer...
+                .col-md-1
+                    button.btn.btn-danger(ng-click="removeAssignee($index)", ng-disabled="assessment.viewer_ID.length == 1") Delete
+    .modal-footer
+        button.btn.btn-success(ng-click="saveAssigneeList()", ng-disabled="isAssigneeListEmpty() || !isAssigneeListModified()") Assign viewer(s)
+        | &nbsp;
+        button.btn.btn-warning(
+        ng-click="addAssignee()"
+        ng-disabled="assessment.viewer_ID.length < 1 || !assessment.viewer_ID[assessment.viewer_ID.length-1] || !isNewAssigneeAvailable()") Add viewer
+        | &nbsp;
+        button.btn.btn-danger(ng-click="closeThisDialog()") Cancel

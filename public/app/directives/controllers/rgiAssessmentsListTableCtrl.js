@@ -69,6 +69,10 @@ angular
             rgiDialogFactory.assessmentSupervisorAssign($scope, assessment);
         };
 
+        $scope.assignAssessmentViewerDialog = function (assessment) {
+            rgiDialogFactory.assessmentViewerAssign($scope, assessment);
+        };
+
         $scope.isAnyMilestoneStarted = function(assessment) {
             var
                 milestoneFieldSet = false,

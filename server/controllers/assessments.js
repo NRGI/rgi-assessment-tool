@@ -1,8 +1,7 @@
 'use strict';
 /* global require */
 
-var error       = [],
-    logger      = require('../logger/logger'),
+var logger      = require('../logger/logger'),
     Answer      = require('mongoose').model('Answer'),
     Assessment  = require('mongoose').model('Assessment'),
     Document    = require('mongoose').model('Documents'),
@@ -470,6 +469,7 @@ exports.updateAssessment = function (req, res, next) {
                     var updatedFieldsSet = [
                         'ext_reviewer_ID',
                         'supervisor_ID',
+                        'viewer_ID',
                         'first_pass',
                         'edit_control',
                         'status',
