@@ -10,7 +10,10 @@ exports.getNumber = function (req, res) {
 };
 
 exports.list = function (req, res) {
-    AuthLog.list(req.params.user, req.params.itemsPerPage, req.params.page, function(error, logs) {
+    var itemsPerPage = isNaN(req.params.itemsPerPage) ? 20 : parseInt(req.params.itemsPerPage);
+    var page = isNaN(req.params.page) ? 0 : parseInt(req.params.page);
+
+    AuthLog.list(req.params.user, itemsPerPage, page, function(error, logs) {
         res.send({error: error, logs: logs});
     });
 };
