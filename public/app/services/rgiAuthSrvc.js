@@ -7,7 +7,7 @@ angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponsePro
     rgiIdentitySrvc,
     rgiUserSrvc
 ) {
-    var processHttpFailure = rgiHttpResponseProcessorSrvc.getDefaultHandler();
+    var error, processHttpFailure = rgiHttpResponseProcessorSrvc.getDefaultHandler();
 
     return {
         authenticateUser: function (username, password) {
@@ -20,6 +20,7 @@ angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponsePro
                     rgiIdentitySrvc.currentUser = user;
                     dfd.resolve(true);
                 } else {
+                    error = response.data.reason;
                     dfd.resolve(false);
                 }
             }, processHttpFailure);
@@ -49,6 +50,9 @@ angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponsePro
         },
         authorizeAuthenticatedUserForRoute: function () {
             return rgiIdentitySrvc.isAuthenticated() ? true : $q.reject('not authorized');
+        },
+        getError: function() {
+            return error;
         }
     };
 }]);
