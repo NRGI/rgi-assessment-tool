@@ -36,4 +36,8 @@ angular.module('app')
         $scope.addToAssessment = function () {
             rgiDialogFactory.assessmentAddReviewer($scope);
         };
+
+        $scope.toggleUserDisabledStatus = function () {
+            rgiDialogFactory.toggleUserDisabledStatus($scope);
+        };
     }]);
