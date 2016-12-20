@@ -212,6 +212,21 @@ describe('rgiDialogFactory', function () {
             });
         });
 
+        describe('#assessmentViewerAssign', function () {
+            it('opens a dialog', function() {
+                var ASSESSMENT_ID = 'ASSESSMENT ID';
+                rgiDialogFactory.assessmentViewerAssign({}, {assessment_ID: ASSESSMENT_ID});
+
+                spies.openDialog.withArgs({
+                    template: 'partials/dialogs/assessments/assign-assessment-viewer-dialog',
+                    controller: 'rgiAssignAssessmentMultipleAssigneeDialogCtrl',
+                    className: 'ngdialog-theme-default dialogwidth800',
+                    closeByNavigation: true,
+                    scope: {assessment_update_ID: ASSESSMENT_ID, userType: 'viewer'}
+                }).called.should.be.equal(true);
+            });
+        });
+
         describe('#assessmentAddReviewer', function () {
             it('opens a dialog', function() {
                 rgiDialogFactory.assessmentAddReviewer({});
@@ -511,6 +526,20 @@ describe('rgiDialogFactory', function () {
                     className: 'ngdialog-theme-default',
                     closeByNavigation: true,
                     scope: {value: true}
+                }).called.should.be.equal(true);
+            });
+        });
+
+        describe('#toggleUserDisabledStatus', function () {
+            it('opens a dialog', function() {
+                rgiDialogFactory.toggleUserDisabledStatus({});
+
+                spies.openDialog.withArgs({
+                    template: 'partials/dialogs/users/toggle-user-disabled-status-dialog',
+                    controller: 'rgiToggleUserDisabledStatusDialogCtrl',
+                    className: 'ngdialog-theme-default',
+                    closeByNavigation: true,
+                    scope: {}
                 }).called.should.be.equal(true);
             });
         });

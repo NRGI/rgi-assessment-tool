@@ -37,25 +37,23 @@ describe('rgiUserAdminDetailCtrl', function () {
     });
 
     describe('DIALOGS', function () {
-        var dialogFactoryMock;
+        var dialogFactoryMock, checkDialog = function(scopeMethod, expectedDialogFactoryMethod) {
+            describe('#' + scopeMethod, function () {
+                it('opens a dialog', function () {
+                    dialogFactoryMock.expects(expectedDialogFactoryMethod).withArgs($scope);
+                    $scope[scopeMethod]();
+                });
+            });
+        };
 
         beforeEach(function () {
             dialogFactoryMock = sinon.mock(rgiDialogFactory);
         });
 
-        describe('#deleteConfirmDialog', function () {
-            it('opens delete dialog', function () {
-                dialogFactoryMock.expects('userDelete').withArgs($scope);
-                $scope.deleteConfirmDialog();
-            });
-        });
-
-        describe('#editUserDialog', function () {
-            it('opens edit dialog', function () {
-                dialogFactoryMock.expects('userEdit').withArgs($scope);
-                $scope.editUserDialog();
-            });
-        });
+        checkDialog('deleteConfirmDialog', 'userDelete');
+        checkDialog('editUserDialog', 'userEdit');
+        checkDialog('addToAssessment', 'assessmentAddReviewer');
+        checkDialog('toggleUserDisabledStatus', 'toggleUserDisabledStatus');
 
         afterEach(function () {
             dialogFactoryMock.verify();
