@@ -12,6 +12,7 @@ angular.module('app').factory('rgiAuthSrvc', ['$http', '$q', 'rgiHttpResponsePro
     return {
         authenticateUser: function (username, password) {
             var dfd = $q.defer();
+            error = undefined;
 
             $http.post('/login', {username: username, password: password}).then(function (response) {
                 if (response.data.success) {
