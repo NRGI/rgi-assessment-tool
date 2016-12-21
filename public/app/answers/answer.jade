@@ -48,7 +48,7 @@
                     .row.bottom-padding-lg(ng-if="(assessment.edit_control === identity.currentUser._id) || identity.currentUser.isSupervisor() || identity.currentUser.isViewer() || identity.currentUser.isExternalReviewer()")
                         rgi-references
 
-                    .row.bottom-padding-med(ng-if="!identity.currentUser.isViewer()")
+                    .row.bottom-padding-med
                         rgi-comments(update="answer")
 
 
