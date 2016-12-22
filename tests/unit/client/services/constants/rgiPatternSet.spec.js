@@ -90,7 +90,7 @@ describe('rgiPatternSet', function () {
             currentPattern = YEAR_PATTERN;
         });
 
-        testPattern('accepts 4 digits only', '1234', true);
+        testPattern('accepts 4 digits only', '2016', true);
         testPattern('declines any non-digital characters', '12A4', false);
         testPattern('declines digital sequences with length shorter than 4 characters', '123', false);
         testPattern('declines digital sequences with length longer than 4 characters', '12345', false);
