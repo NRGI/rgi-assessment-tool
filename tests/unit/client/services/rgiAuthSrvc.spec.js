@@ -132,17 +132,24 @@ describe('rgiAuthSrvc', function () {
                 spies.$deferredResolve.withArgs(true).called.should.be.equal(true);
             });
 
-            it('does nothing on failed authorization', function() {
-                set$httpPostStub(function(callback) {
-                    callback({
-                        data: {
-                            success: false
-                        }
+            describe('REQUEST REJECTED', function() {
+                var ERROR_REASON = 'error reason';
+
+                beforeEach(function() {
+                    set$httpPostStub(function(callback) {
+                        callback({data: {success: false, reason: ERROR_REASON}});
                     });
+
+                    promiseGot = rgiAuthSrvc.authenticateUser(username, password);
                 });
 
-                promiseGot = rgiAuthSrvc.authenticateUser(username, password);
-                spies.$deferredResolve.withArgs(true).called.should.be.equal(false);
+                it('saves the error message', function() {
+                    rgiAuthSrvc.getError().should.be.equal(ERROR_REASON);
+                });
+
+                it('does nothing', function() {
+                    spies.$deferredResolve.withArgs(true).called.should.be.equal(false);
+                });
             });
 
             afterEach(function () {
