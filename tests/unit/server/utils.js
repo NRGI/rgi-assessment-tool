@@ -9,6 +9,9 @@ var modelStub,
     };
 
 module.exports = {
+    getConfigPath: function(moduleName) {
+        return getUnitPath('config', moduleName);
+    },
     getControllerPath: function(controller) {
         return getUnitPath('controllers', controller);
     },
