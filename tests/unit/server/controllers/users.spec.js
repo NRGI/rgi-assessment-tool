@@ -299,7 +299,9 @@ describe('`users` module', function() {
                     var USER, copiedFields = [
                         'firstName',
                         'lastName',
+                        'disabled',
                         'email',
+                        'role',
                         'address',
                         'language',
                         'assessments',
