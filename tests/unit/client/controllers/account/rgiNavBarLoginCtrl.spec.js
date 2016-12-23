@@ -94,15 +94,31 @@ describe('rgiNavBarLoginCtrl', function () {
         });
 
         describe('Authentication failure', function () {
-            beforeEach(function () {
-                $scope.signin('NON-EXISTING-USER', 'INCORRECT-PASSWORD');
-            });
+            describe('NOTIFICATIONS', function() {
+                var ERROR_MESSAGE = 'error message',
+                    authGetErrorStub,
+                    checkNotification = function(description, errorMessage, expectedNotification) {
+                        it(description, function () {
+                            authGetErrorStub = sinon.stub(rgiAuthSrvc, 'getError', function() {
+                                return errorMessage;
+                            });
+                            $scope.signin('NON-EXISTING-USER', 'INCORRECT-PASSWORD');
+                            rgiNotifierErrorSpy.withArgs(expectedNotification).called.should.be.equal(true);
+                        });
+                    };
 
-            it('shows a notification message', function () {
-                rgiNotifierErrorSpy.withArgs('Username / Password combination is incorrect!').called.should.be.equal(true);
+                checkNotification('shows a default notification message if no error message is set', undefined,
+                    'Username / Password combination is incorrect!');
+
+                checkNotification('shows the notification message which is set', ERROR_MESSAGE, ERROR_MESSAGE);
+
+                afterEach(function() {
+                    authGetErrorStub.restore();
+                });
             });
 
             it('clears the version list', function () {
+                $scope.signin('NON-EXISTING-USER', 'INCORRECT-PASSWORD');
                 $scope.versions.length.should.be.equal(0);
             });
         });
