@@ -44,11 +44,11 @@ describe('`auth-logs` module', function() {
     });
 
     describe('#list', function() {
-        var LOGS = 'logs', ITEMS_PER_PAGE = 20, PAGE = 1;
+        var LOGS = 'logs', ITEMS_PER_PAGE = 50, PAGE = 1, ITEMS_PER_PAGE_STRING = '50', PAGE_STRING = '1';
 
         beforeEach(function() {
             initialize('list', 'authLogList', LOGS);
-            authLogsModule.list({params: {user: USER, itemsPerPage: ITEMS_PER_PAGE, page: PAGE}},
+            authLogsModule.list({params: {user: USER, itemsPerPage: ITEMS_PER_PAGE_STRING, page: PAGE_STRING}},
                 {send: spies.respondSend});
         });
 
