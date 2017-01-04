@@ -93,7 +93,7 @@ angular.module('app')
 
         $scope.sendRequest = function() {
             var contactInfo = $scope.request;
-            if (!contactInfo.first_name || !contactInfo.first_name) {
+            if (!contactInfo.first_name || !contactInfo.last_name) {
                 rgiNotifier.error('You must supply a name!');
             } else if (!contactInfo.email) {
                 rgiNotifier.error('You must supply an email!');
