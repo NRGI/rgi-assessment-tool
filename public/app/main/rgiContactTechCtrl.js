@@ -68,19 +68,15 @@ angular.module('app')
                 rgiAssessmentSrvc.query(criteria, function (assessments) {
                     if (assessments.length > 1) {
                         assessments.sort(function(assessmentA, assessmentB) {
-                            if(assessmentA.country !== assessmentB.country) {
-                                return assessmentA.country > assessmentB.country;
-                            }
+                            var result = 0;
 
-                            if(assessmentA.year !== assessmentB.year) {
-                                return assessmentA.year > assessmentB.year;
-                            }
+                            ['country', 'year', 'version', 'mineral'].forEach(function(field) {
+                                if((result === 0) && (assessmentA[field] !== assessmentB[field])) {
+                                    result = assessmentA[field] > assessmentB[field] ? 1 : -1;
+                                }
+                            });
 
-                            if(assessmentA.version !== assessmentB.version) {
-                                return assessmentA.version > assessmentB.version;
-                            }
-
-                            return assessmentA.mineral > assessmentB.mineral;
+                            return result;
                         });
 
                         $scope.assessments = assessments;
