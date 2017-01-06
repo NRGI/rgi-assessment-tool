@@ -50,8 +50,13 @@ div.left-padding-lg.right-padding-lg(rgi-draggable-dialog)
                         .form-group.pull-left
                             h5
                                 b Year:
-                            h5(ng-if="ref.document_ID.year")  {{ref.document_ID.year}}
-                            h5(ng-if="!ref.document_ID.year")  N/A
+                            div(ng-if="identity.currentUser.isSupervisor()")
+                                a(href="admin/documents-admin/{{ref.document_ID._id}}", target="_blank", title="Change")
+                                    text(ng-if="ref.document_ID.year") {{ref.document_ID.year}}
+                                    text(ng-if="!ref.document_ID.year") N/A
+                            div(ng-if="!identity.currentUser.isSupervisor()")
+                                h5(ng-if="ref.document_ID.year")  {{ref.document_ID.year}}
+                                h5(ng-if="!ref.document_ID.year")  N/A
 
 
             .row.form-group
