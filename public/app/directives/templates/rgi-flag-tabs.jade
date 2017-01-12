@@ -4,7 +4,7 @@
 
         .panel(
         ng-repeat="flag in flags"
-        ng-if="identity.currentUser.isSupervisor() || (!flag.addressed && (flag.addressed_to._id === identity.currentUser._id))"
+        ng-if="(identity.currentUser.isViewer() && !flag.addressed) || identity.currentUser.isSupervisor() || (!flag.addressed && (flag.addressed_to._id === identity.currentUser._id))"
         ng-class="{'panel-success': flag.addressed, 'panel-danger': !flag.addressed}")
             .panel-heading(role="tab", id="heading{{flag._id}}")
                 h4.panel-title
@@ -20,7 +20,7 @@
                         b {{ flag.author.role|role }}
                         b ):
                         em  {{flag.date | date:'MM/dd/yyyy'}}
-                        h6.pull-right(ng-if="identity.currentUser.isSupervisor()") Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
+                        h6.pull-right(ng-if="identity.currentUser.isSupervisor() || identity.currentUser.isViewer()") Addressed to: {{flag.addressed_to.firstName}} {{flag.addressed_to.lastName}}
             .panel-collapse.collapse(
             id="collapse{{flag._id}}"
             role="tabpanel"
@@ -40,6 +40,6 @@
         .top-padding-lg
             div(
             ng-repeat="flag in answer.flags"
-            ng-if="!identity.currentUser.isSupervisor() && flag.addressed_to._id!==identity.currentUser._id")
+            ng-if="!identity.currentUser.isViewer() && !identity.currentUser.isSupervisor() && flag.addressed_to._id!==identity.currentUser._id")
                 i.glyphicon.glyphicon-warning-sign.text-warning  Flag to {{flag.addressed_to.role|role|ucfirst}}:
                 text.wrap-content(ng-bind-html="flag.content")
