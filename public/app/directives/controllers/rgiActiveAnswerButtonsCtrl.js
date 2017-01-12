@@ -139,6 +139,7 @@ angular
 
         $scope.answerApprove = function () {
             var new_answer_data = $scope.answer;
+            new_answer_data.modified = false;
 
             if ((new_answer_data.status !== 'approved') && (rgiUtilsSrvc.flagCheck(new_answer_data.flags) === true)) {
                 rgiNotifier.error('You can only approve an answer when all flags have been dealt with!');
@@ -166,6 +167,7 @@ angular
 
         $scope.answerUnresolved = function() {
             var new_answer_data = $scope.answer;
+            new_answer_data.modified = false;
 
             if (rgiUtilsSrvc.flagCheck(new_answer_data.flags) !== true) {
                 rgiNotifier.error('Only mark flagged answers as unresolved!');
