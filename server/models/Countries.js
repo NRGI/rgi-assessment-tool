@@ -9,7 +9,12 @@ var Country,
         country_ID: String,
         country_use: {
             type: Boolean,
-            default: true}
+            default: true
+        },
+        includeSectorName: {
+            type: Boolean,
+            default: false
+        }
     });
 
 Country = mongoose.model('Country', countrySchema);
