@@ -62,6 +62,7 @@ var appFileList = [
     'public/app/services/constants/rgiFileSizeLimit.js',
     'public/app/services/constants/rgiMineralTagsSet.js',
     'public/app/services/constants/rgiPatternSet.js',
+    'public/app/services/constants/rgiSectorList.js',
 
     'public/app/directives/directives/rgi-active-answer-buttons.js',
     'public/app/directives/directives/rgi-answer-form.js',

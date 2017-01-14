@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('rgiNewAssessmentDialogCtrl', ['$scope', '$route', '$rootScope', '$location', 'rgiAnswerMethodSrvc', 'rgiAssessmentMethodSrvc', 'rgiAssessmentSrvc', 'rgiCountrySrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'MINERAL_TAGS_SET', 'rgiNotifier', 'rgiQuestionMethodSrvc', 'rgiQuestionSrvc', 'rgiUtilsSrvc', function (
+    .controller('rgiNewAssessmentDialogCtrl', ['$scope', '$route', '$rootScope', '$location', 'rgiAnswerMethodSrvc', 'rgiAssessmentMethodSrvc', 'rgiAssessmentSrvc', 'rgiCountrySrvc', 'rgiHttpResponseProcessorSrvc', 'rgiIdentitySrvc', 'MINERAL_TAGS_SET', 'SECTOR_LIST', 'rgiNotifier', 'rgiQuestionMethodSrvc', 'rgiQuestionSrvc', 'rgiUtilsSrvc', function (
         $scope,
         $route,
         $rootScope,
@@ -13,6 +13,7 @@ angular.module('app')
         rgiHttpResponseProcessorSrvc,
         rgiIdentitySrvc,
         MINERAL_TAGS_SET,
+        SECTOR_LIST,
         rgiNotifier,
         rgiQuestionMethodSrvc,
         rgiQuestionSrvc,
@@ -25,6 +26,8 @@ angular.module('app')
 
             $scope.countries = countries;
         }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load country data failure'));
+
+        $scope.sectors = SECTOR_LIST;
 
         $scope.disable_button = false;
         //TODO

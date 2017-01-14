@@ -19,7 +19,7 @@ div
                         .form-group.col-md-5
                             select.form-group.form-control.right-padding-med(
                                 name="version" ng-model="new_assessment.version" required
-                                ng-options="version as (version | ucfirst) for version in ['pilot','hydrocarbons', 'mining', 'oil and gas']"
+                                ng-options="version as (version | ucfirst) for version in sectors"
                             )
                                 option(value="" selected disabled) Select version
 
