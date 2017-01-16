@@ -224,25 +224,12 @@ exports.getExportedAnswersData = function(req, res) {
         answer.question_order = answerData.question_order;
         answer.question_text = answerData.question_ID.question_text;
         answer.status = answerData.status;
-        answer.iso2_code = answerData.iso2_code;
 
         for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
             copyScoreWithJustification(answer, answerData, SCORE_FIELDS[scoreFieldIndex]);
         }
 
-        copyScore(answer, answerData, 'final');
-
-        var externalAnswer;
-
-        if(answerData.external_answer.length > 0) {
-            externalAnswer = answerData.external_answer[answerData.external_answer.length - 1];
-        } else {
-            externalAnswer = {comment: '', justification: '', score: {letter: ''}};
-        }
-
-        answer.external_answer_letter = externalAnswer.score.letter;
-        answer.external_justification = externalAnswer.justification;
-        answer.external_comment = externalAnswer.comment;
+        copyScoreWithJustification(answer, answerData, 'final');
 
         for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
             scoreType = SCORE_FIELDS[scoreFieldIndex];
@@ -268,10 +255,8 @@ exports.getExportedAnswersData = function(req, res) {
         'researcher_score_letter',
         'reviewer_score_justification',
         'reviewer_score_letter',
-        'final_score_letter',
-        'external_answer_letter',
-        'external_justification',
-        'external_comment'
+        'final_score_justification',
+        'final_score_letter'
     ];
 
     exportedFields = exportedFields.concat(getHistoryFields('researcher', historyLength.researcher));
