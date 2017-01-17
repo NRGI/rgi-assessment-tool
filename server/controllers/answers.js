@@ -155,9 +155,6 @@ exports.getExportedAnswersData = function(req, res) {
         getScoreFieldPrefix = function(scoreType) {
             return scoreType + '_score';
         },
-        getHistoryFieldPrefix = function(scoreType) {
-            return getScoreFieldPrefix(scoreType) + '_history';
-        },
         copyScore = function(outputAnswer, inputAnswer, scoreType) {
             var field = getScoreFieldPrefix(scoreType);
             outputAnswer[field + '_letter'] = inputAnswer[field] ? inputAnswer[field].letter : '';
@@ -166,46 +163,30 @@ exports.getExportedAnswersData = function(req, res) {
             outputAnswer[getScoreFieldPrefix(scoreType) + '_justification'] = inputAnswer[scoreType + '_justification'];
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
-        copyScoreHistory = function(outputAnswer, inputAnswer, scoreType, historySize) {
-            var prefix = getHistoryFieldPrefix(scoreType);
+        copyComments = function(outputAnswer, inputAnswer, commentsNumber) {
+            for(var commentIndex = 0; commentIndex < commentsNumber; commentIndex++) {
+                var comment = inputAnswer.comments[commentIndex];
 
-            for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
-                var scoreHistory = inputAnswer[prefix][historyIndex];
-
-                if(scoreHistory) {
-                    outputAnswer[prefix + '_date' + (historyIndex + 1)] = scoreHistory.date.toISOString();
-
-                    if(scoreHistory.score) {
-                        outputAnswer[prefix + '_order' + (historyIndex + 1)] = scoreHistory.score.order;
-                        outputAnswer[prefix + '_score_letter' + (historyIndex + 1)] = scoreHistory.score.letter;
-                    }
+                if(comment) {
+                    outputAnswer['comment' + (commentIndex + 1)] = comment.content;
                 }
             }
         },
-        getHistoryFields = function(scoreType, historySize) {
-            var fields = [], POSTFIXES = ['date', 'order', 'score_letter'];
+        getCommentFields = function(commentsNumber) {
+            var fields = [];
 
-            for(var historyIndex = 0; historyIndex < historySize; historyIndex++) {
-                for(var postfixIndex = 0; postfixIndex < POSTFIXES.length; postfixIndex++) {
-                    fields.push(getHistoryFieldPrefix(scoreType) + '_' + POSTFIXES[postfixIndex] + (historyIndex + 1));
-                }
+            for(var commentIndex = 0; commentIndex < commentsNumber; commentIndex++) {
+                fields.push('comment' + (commentIndex + 1));
             }
 
             return fields;
         };
 
-    var answers = [];
-    var historyLength = {researcher: 0, reviewer: 0};
-    var scoreType, fieldName;
+    var answers = [], commentMaxNumber = 0;
 
     req.answers.forEach(function(answerData) {
-        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
-            scoreType = SCORE_FIELDS[scoreFieldIndex];
-            fieldName = getHistoryFieldPrefix(scoreType);
-
-            if(answerData[fieldName].length > historyLength[scoreType]) {
-                historyLength[scoreType] = answerData[fieldName].length;
-            }
+        if(answerData.comments.length > commentMaxNumber) {
+            commentMaxNumber = answerData.comments.length;
         }
     });
 
@@ -230,11 +211,7 @@ exports.getExportedAnswersData = function(req, res) {
         }
 
         copyScoreWithJustification(answer, answerData, 'final');
-
-        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
-            scoreType = SCORE_FIELDS[scoreFieldIndex];
-            copyScoreHistory(answer, answerData, scoreType, historyLength[scoreType]);
-        }
+        copyComments(answer, answerData, commentMaxNumber);
 
         Object.keys(answer).forEach(function(field) {
             if((answer[field] === undefined) || (answer[field] === null)) {
@@ -259,8 +236,7 @@ exports.getExportedAnswersData = function(req, res) {
         'final_score_letter'
     ];
 
-    exportedFields = exportedFields.concat(getHistoryFields('researcher', historyLength.researcher));
-    exportedFields = exportedFields.concat(getHistoryFields('reviewer', historyLength.reviewer));
+    exportedFields = exportedFields.concat(getCommentFields(commentMaxNumber));
     res.send({data: answers, country: req.params.country, header: exportedFields});
 };
 
