@@ -35,7 +35,7 @@
     "forever": "~0.15.1",
     "jade": "^1.7.0",
     "mime": "^1.3.4",
-    "mongoose": "^4.0.0",
+    "mongoose": "4.7.6",
     "mongoose-history": "^0.4",
     "mongoose-html-2": "^0.1.1",
     "mongoose-validate": "0.0.5",
