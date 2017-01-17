@@ -415,53 +415,32 @@ exports.updateAssessment = function (req, res, next) {
                             break;
                     }
 
-                    _.each(assessmentUpdates.ext_reviewer_ID, function(new_reviewer) {
-                        var new_ext_assignment = true;
-                        _.each(assessment.ext_reviewer_ID, function(old_reviewer) {
-                            if (new_reviewer==old_reviewer) {
-                                new_ext_assignment = false;
+                    ['ext_reviewer', 'spervisor', 'viewer'].forEach(function(role) {
+                        _.each(assessmentUpdates[role + '_ID'], function(newUserId) {
+                            var newUserAssigned = true;
+
+                            _.each(assessment[role + '_ID'], function(oldUserId) {
+                                if ((newUserId == oldUserId) || (newUserId._id == oldUserId)) {
+                                    newUserAssigned = false;
+                                }
+                            });
+
+                            if (newUserAssigned === true) {
+                                User.findOne({_id: newUserId}).exec(function (err, user) {
+                                    user.assessments.push({
+                                        assessment_ID: assessment.assessment_ID,
+                                        country_name: assessment.country
+                                    });
+
+                                    user.save(function (err) {
+                                        if (err) {
+                                            res.sendStatus(500);
+                                            return next(err);
+                                        }
+                                    });
+                                });
                             }
                         });
-                        if (new_ext_assignment===true) {
-                            User.findOne({_id: new_reviewer}).exec(function (err, new_ext_reviewer) {
-
-                                new_ext_reviewer.assessments.push({
-                                    assessment_ID: assessment.assessment_ID,
-                                    country_name: assessment.country
-                                });
-                                new_ext_reviewer.save(function (err) {
-                                    if (err) {
-                                        res.sendStatus(500);
-                                        return next(err);
-                                    }
-                                });
-
-                            });
-                        }
-                    });
-                    _.each(assessmentUpdates.supervisor_ID, function(new_supervisor) {
-                        var new_supervisor_assignment = true;
-                        _.each(assessment.supervisor_ID, function(old_supervisor) {
-                            if (new_supervisor==old_supervisor || new_supervisor._id==old_supervisor) {
-                                new_supervisor_assignment = false;
-                            }
-                        });
-                        if (new_supervisor_assignment===true) {
-                            User.findOne({_id: new_supervisor}).exec(function (err, new_supervisor_assignment) {
-
-                                new_supervisor_assignment.assessments.push({
-                                    assessment_ID: assessment.assessment_ID,
-                                    country_name: assessment.country
-                                });
-                                new_supervisor_assignment.save(function (err) {
-                                    if (err) {
-                                        res.sendStatus(500);
-                                        return next(err);
-                                    }
-                                });
-
-                            });
-                        }
                     });
 
                     assessment.last_modified = {user: req.user._id, date: timestamp};
