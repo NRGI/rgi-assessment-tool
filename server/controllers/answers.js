@@ -1,5 +1,6 @@
 'use strict';
-/* global require */
+
+var striptags = require('striptags');
 
 var Answer      = require('mongoose').model('Answer'),
     Country     = require('mongoose').model('Country'),
@@ -160,7 +161,8 @@ exports.getExportedAnswersData = function(req, res) {
             outputAnswer[field + '_letter'] = inputAnswer[field] ? inputAnswer[field].letter : '';
         },
         copyScoreWithJustification = function(outputAnswer, inputAnswer, scoreType) {
-            outputAnswer[getScoreFieldPrefix(scoreType) + '_justification'] = inputAnswer[scoreType + '_justification'];
+            outputAnswer[getScoreFieldPrefix(scoreType) + '_justification'] =
+                striptags(inputAnswer[scoreType + '_justification']);
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
         copyComments = function(outputAnswer, inputAnswer, commentsNumber) {
@@ -168,7 +170,7 @@ exports.getExportedAnswersData = function(req, res) {
                 var comment = inputAnswer.comments[commentIndex];
 
                 if(comment) {
-                    outputAnswer['comment' + (commentIndex + 1)] = comment.content;
+                    outputAnswer['comment' + (commentIndex + 1)] = striptags(comment.content);
                 }
             }
         },
