@@ -29,16 +29,16 @@
                     table.table.table-hover
                         thead
                             tr
-                                th.col-md-1 Answer ID
+                                th.col-md-2 Country
+                                th.col-md-1 Question order
                                 th.col-md-1 Status
                                 th.col-md-3 Question text
                                 th.col-md-1 Researcher score
                                 th.col-md-1 Reviewer score
                         tbody
                             tr(ng-repeat="answer in answers")
-                                td
-                                    a(ng-if="answer.status != 'assigned'" href="/admin/assessments-admin/answer/{{answer.answer_ID}}") {{answer.answer_ID}}
-                                    span(ng-if="answer.status == 'assigned'") {{answer.answer_ID}}
+                                td {{answer.country_name}}
+                                td {{answer.question_order}}
                                 td {{answer.status}}
                                 td {{answer.question_text}}
                                 td
