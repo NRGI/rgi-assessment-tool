@@ -185,6 +185,17 @@ exports.getExportedAnswersData = function(req, res) {
             }
 
             return fields;
+        },
+        getSectorName = function(version, lowerCase) {
+            var result = '';
+
+            if(version === 'MI') {
+                result = 'Mining';
+            } else if(['HY', 'OI'].indexOf(version) > -1) {
+                result = 'Oil and Gas';
+            }
+
+            return lowerCase ? result.toLowerCase() : result;
         };
 
     var answers = [], listLength = {comments: 0, flags: 0},
@@ -196,62 +207,89 @@ exports.getExportedAnswersData = function(req, res) {
             };
         };
 
-    req.answers.forEach(function(answerData) {
-        Object.keys(listLength).forEach(getFieldCounter(answerData));
-    });
-
-    req.answers.forEach(function(answerData) {
-        var answer = {};
-
-        if(answerData.version === 'MI') {
-            answer.version = 'Minerals';
-        } else if(['HY', 'OI'].indexOf(answerData.version) > -1) {
-            answer.version = 'Oil And Gas';
+    Country.find().exec(function(err, countries) {
+        if(err) {
+            return res.send({reason: err});
         }
 
-        answer.answer_ID = answerData.answer_ID;
-        answer.question_order = answerData.question_order;
-        answer.question_text = answerData.question_ID.question_text;
-        answer.status = answerData.status;
+        var
+            getCountryData = function(iso3) {
+                var countryData = {};
 
-        for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
-            copyScoreWithJustification(answer, answerData, SCORE_FIELDS[scoreFieldIndex]);
-        }
+                countries.forEach(function(country) {
+                    if(country.country_ID === iso3) {
+                        countryData = country;
+                    }
+                });
 
-        copyScoreWithJustification(answer, answerData, 'final');
+                return countryData;
+            },
+            getCountryFullName = function(answerId) {
+                var answerIdParts = answerId.split('-');
+                var countryData = getCountryData(answerIdParts[0]);
+                var countryName = countryData.country;
+
+                if(countryData.includeSectorName) {
+                    countryName += ' (' + getSectorName(answerIdParts[2], true) + ')';
+                }
+
+                return countryName;
+            };
+
+        req.answers.forEach(function(answerData) {
+            Object.keys(listLength).forEach(getFieldCounter(answerData));
+        });
+
+        req.answers.forEach(function(answerData) {
+            var answer = {
+                country_name: getCountryFullName(answerData.answer_ID),
+                question_text: answerData.question_ID.question_text,
+                version: getSectorName(answerData.answer_ID.split('-')[2], false)
+            };
+
+            ['question_order', 'status'].forEach(function(field) {
+                answer[field] = answerData[field];
+            });
+
+            for(scoreFieldIndex = 0; scoreFieldIndex < SCORE_FIELDS.length; scoreFieldIndex++) {
+                copyScoreWithJustification(answer, answerData, SCORE_FIELDS[scoreFieldIndex]);
+            }
+
+            copyScoreWithJustification(answer, answerData, 'final');
+
+            Object.keys(listLength).forEach(function(field) {
+                copyListValues(answer, answerData, field, listLength[field]);
+            });
+
+            Object.keys(answer).forEach(function(field) {
+                if((answer[field] === undefined) || (answer[field] === null)) {
+                    answer[field] = '';
+                }
+            });
+
+            answers.push(answer);
+        });
+
+        var exportedFields = [
+            'country_name',
+            'version',
+            'question_order',
+            'question_text',
+            'status',
+            'researcher_score_justification',
+            'researcher_score_letter',
+            'reviewer_score_justification',
+            'reviewer_score_letter',
+            'final_score_justification',
+            'final_score_letter'
+        ];
 
         Object.keys(listLength).forEach(function(field) {
-            copyListValues(answer, answerData, field, listLength[field]);
+            exportedFields = exportedFields.concat(getListFields(field, listLength[field]));
         });
 
-        Object.keys(answer).forEach(function(field) {
-            if((answer[field] === undefined) || (answer[field] === null)) {
-                answer[field] = '';
-            }
-        });
-
-        answers.push(answer);
+        res.send({data: answers, country: req.params.country, header: exportedFields});
     });
-
-    var exportedFields = [
-        'answer_ID',
-        'version',
-        'question_order',
-        'question_text',
-        'status',
-        'researcher_score_justification',
-        'researcher_score_letter',
-        'reviewer_score_justification',
-        'reviewer_score_letter',
-        'final_score_justification',
-        'final_score_letter'
-    ];
-
-    Object.keys(listLength).forEach(function(field) {
-        exportedFields = exportedFields.concat(getListFields(field, listLength[field]));
-    });
-
-    res.send({data: answers, country: req.params.country, header: exportedFields});
 };
 
 exports.getAnswersByID = function (req, res) {
