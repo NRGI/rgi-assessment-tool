@@ -153,6 +153,9 @@ exports.getAnswersPortion = function(req, res, next) {
 exports.getExportedAnswersData = function(req, res) {
     var
         scoreFieldIndex, SCORE_FIELDS = ['researcher', 'reviewer'],
+        getListFieldPrefix = function(field) {
+            return field.substr(0, field.length - 1);
+        },
         getScoreFieldPrefix = function(scoreType) {
             return scoreType + '_score';
         },
@@ -165,31 +168,36 @@ exports.getExportedAnswersData = function(req, res) {
                 striptags(inputAnswer[scoreType + '_justification']);
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
-        copyComments = function(outputAnswer, inputAnswer, commentsNumber) {
-            for(var commentIndex = 0; commentIndex < commentsNumber; commentIndex++) {
-                var comment = inputAnswer.comments[commentIndex];
+        copyListValues = function(outputAnswer, inputAnswer, field, valuesNumber) {
+            for(var index = 0; index < valuesNumber; index++) {
+                var data = inputAnswer[field][index];
 
-                if(comment) {
-                    outputAnswer['comment' + (commentIndex + 1)] = striptags(comment.content);
+                if(data) {
+                    outputAnswer[getListFieldPrefix(field) + (index + 1)] = striptags(data.content);
                 }
             }
         },
-        getCommentFields = function(commentsNumber) {
+        getListFields = function(fieldName, fieldsNumberNumber) {
             var fields = [];
 
-            for(var commentIndex = 0; commentIndex < commentsNumber; commentIndex++) {
-                fields.push('comment' + (commentIndex + 1));
+            for(var index = 0; index < fieldsNumberNumber; index++) {
+                fields.push(getListFieldPrefix(fieldName) + (index + 1));
             }
 
             return fields;
         };
 
-    var answers = [], commentMaxNumber = 0;
+    var answers = [], listLength = {comments: 0, flags: 0},
+        getFieldCounter = function(answerData) {
+            return function(field) {
+                if(answerData[field].length > listLength[field]) {
+                    listLength[field] = answerData[field].length;
+                }
+            };
+        };
 
     req.answers.forEach(function(answerData) {
-        if(answerData.comments.length > commentMaxNumber) {
-            commentMaxNumber = answerData.comments.length;
-        }
+        Object.keys(listLength).forEach(getFieldCounter(answerData));
     });
 
     req.answers.forEach(function(answerData) {
@@ -211,7 +219,10 @@ exports.getExportedAnswersData = function(req, res) {
         }
 
         copyScoreWithJustification(answer, answerData, 'final');
-        copyComments(answer, answerData, commentMaxNumber);
+
+        Object.keys(listLength).forEach(function(field) {
+            copyListValues(answer, answerData, field, listLength[field]);
+        });
 
         Object.keys(answer).forEach(function(field) {
             if((answer[field] === undefined) || (answer[field] === null)) {
@@ -236,7 +247,10 @@ exports.getExportedAnswersData = function(req, res) {
         'final_score_letter'
     ];
 
-    exportedFields = exportedFields.concat(getCommentFields(commentMaxNumber));
+    Object.keys(listLength).forEach(function(field) {
+        exportedFields = exportedFields.concat(getListFields(field, listLength[field]));
+    });
+
     res.send({data: answers, country: req.params.country, header: exportedFields});
 };
 
