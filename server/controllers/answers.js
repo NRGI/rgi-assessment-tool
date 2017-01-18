@@ -197,9 +197,7 @@ exports.getExportedAnswersData = function(req, res) {
 
         if(answerData.version === 'MI') {
             answer.version = 'Minerals';
-        } else if(answerData.version === 'HY') {
-            answer.version = 'Hydrocarbons';
-        } else if(answerData.version === 'OI') {
+        } else if(['HY', 'OI'].indexOf(answerData.version) > -1) {
             answer.version = 'Oil And Gas';
         }
 

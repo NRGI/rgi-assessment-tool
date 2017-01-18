@@ -11,7 +11,7 @@ describe('rgiPatternSet', function () {
 
     describe('AVAILABLE_ROLES_SET', function() {
         it('includes all available sectors', function() {
-            SECTOR_LIST.should.deep.equal(['pilot','hydrocarbons', 'mining', 'oil and gas']);
+            SECTOR_LIST.should.deep.equal(['pilot', 'mining', 'oil and gas']);
         });
     });
 });
