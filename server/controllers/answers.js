@@ -242,12 +242,13 @@ exports.getExportedAnswersData = function(req, res) {
 
         req.answers.forEach(function(answerData) {
             var answer = {
+                country_code: answerData.answer_ID.split('-')[0],
                 country_name: getCountryFullName(answerData.answer_ID),
                 question_text: answerData.question_ID.question_text,
                 version: getSectorName(answerData.answer_ID.split('-')[2], false)
             };
 
-            ['question_order', 'status'].forEach(function(field) {
+            ['answer_ID', 'question_order', 'status'].forEach(function(field) {
                 answer[field] = answerData[field];
             });
 
@@ -271,6 +272,8 @@ exports.getExportedAnswersData = function(req, res) {
         });
 
         var exportedFields = [
+            'answer_ID',
+            'country_code',
             'country_name',
             'version',
             'question_order',
