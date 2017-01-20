@@ -3,9 +3,9 @@ div(id="comments_div").bottom-padding-med
     div(id="prev_comments_div" ng-if="update.comments.length!==0")
         .row.left-padding-lg.bottom-padding-med(ng-repeat="comment in update.comments", ng-if="!comment.hidden")
             .row
-                b(ng-if='current_user.isSupervisor()') {{comment.author.firstName}} {{comment.author.lastName}} (
+                b(ng-if="current_user.isSupervisor() || current_user.isViewer()") {{comment.author.firstName}} {{comment.author.lastName}} (
                 b {{comment.author.role|role}}
-                b(ng-if='current_user.isSupervisor()') ):
+                b(ng-if="current_user.isSupervisor() || current_user.isViewer()") ):
             .row
                 date
                     small
@@ -16,7 +16,7 @@ div(id="comments_div").bottom-padding-med
                 | &nbsp
                 button.btn.btn-danger(ng-click="deleteComment(comment)") Delete comment
 
-    #new_comment_div.bottom-padding-med.top-padding-med
+    #new_comment_div.bottom-padding-med.top-padding-med(ng-if="!current_user.isViewer()")
         ng-form(name="new_comment_form")
             .row.left-padding-lg
                 .col-md-10
