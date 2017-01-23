@@ -14,9 +14,13 @@ angular.module('app')
             $scope.versions = [];
 
             if( rgiIdentitySrvc.currentUser && (rgiIdentitySrvc.currentUser.isSupervisor() || rgiIdentitySrvc.currentUser.isViewer()) ) {
-                var urls = [], versions = [];
+                var urls = [], versions = [], query = {};
 
-                rgiAssessmentSrvc.query({}, function (assessments) {
+                if(rgiIdentitySrvc.currentUser.isViewer()) {
+                    query.viewer_ID = rgiIdentitySrvc.currentUser._id;
+                }
+
+                rgiAssessmentSrvc.query(query, function (assessments) {
                     assessments.forEach(function (assessment) {
                         if(!assessment.deleted && (urls.indexOf(assessment.year + '_' + assessment.version) < 0)) {
                             urls.push(assessment.year + '_' + assessment.version);
