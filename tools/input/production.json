@@ -63535,5 +63535,294 @@
     "_id": "587bfe26e30a63000e5b0da5",
     "s3_url": "https://s3.amazonaws.com/rgi-documents/39659ba6ccf94686703bb6b0632506b4e39e672a.pdf",
     "source": "http://www.mof.go.tz/mofdocs/revenue/traact.pdf"
+  },
+  {
+    "_id": "587c1b8ee30a63000e5b0e48",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8f536f5790a09ab45dd964b538714b7d2977af91.pdf",
+    "source": "http://www.tmaa.go.tz/publications/view/tmaa-annual-report-2015"
+  },
+  {
+    "_id": "587c8678d249eb000f6a9190",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/270051bc58d418cdd607b65b4f4cead0b558deee.pdf",
+    "source": "https://mem.go.tz/category/projects/"
+  },
+  {
+    "_id": "587c883fb18075000e6a0636",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/69dbab89040ee2f1bf3ad0cbfcc07cbb734c1083.pdf",
+    "source": "http://www.tpdc-tz.com/upstream.php"
+  },
+  {
+    "_id": "587c8bffb18075000e6a0650",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/13ce510b3631c8a2d49ff882efea7f71db8d0d2a.pdf",
+    "source": "http://www.oilinuganda.org/features/opinion/secrecy-plague-invades-tanzania-too.html"
+  },
+  {
+    "_id": "587cb5bbd249eb000f6a9321",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04a98596ecd92be5bd2df240e280f675a5dfc939.pdf",
+    "source": "http://www.d-raqaba-m.iq/pdf/final2016.pdf"
+  },
+  {
+    "_id": "587cdaedb18075000e6a08b8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b1d80ca30776612179ef3a43eaf3275f7486fd67.pdf",
+    "source": "http://www.molme.gov.lr/page_info.php?&7d5f44532cbfc489b8db9e12e44eb820=Mzc0"
+  },
+  {
+    "_id": "587ce4b9d249eb000f6a93e6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/137da3c7fe645425dc22f45a6c8ecc368f9c0bf7.pdf",
+    "source": "https://eiti.org/liberia"
+  },
+  {
+    "_id": "587cea3ad249eb000f6a93f8",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7193fb70991800b7e6a3799c2b1db06352998055.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/lbr67266.pdf"
+  },
+  {
+    "_id": "587cf404d249eb000f6a941b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f84b48e93a43867994e3c9625ab824dbb030e41.png",
+    "source": "http://www.ecologie.gov.mg"
+  },
+  {
+    "_id": "587d0005b18075000e6a0947",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4a9557a58c3141c56742f180d5a4557a9a7d6efe.pdf",
+    "source": "http://gacliberia.com/content.php?sub=129&related=8&third=70&pg=tp"
+  },
+  {
+    "_id": "587d0692b18075000e6a0968",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f2ac841a2c5d1f5cf985b0a157fe34a134d4a72c.pdf",
+    "source": "http://faolex.fao.org/docs/pdf/gha85046.pdf"
+  },
+  {
+    "_id": "587d14b1b18075000e6a09a6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e6e629c489107cf5401cb33c3d8c33e55f1a7507.pdf",
+    "source": "https://www.mfdp.gov.lr/index.php/the-budget"
+  },
+  {
+    "_id": "587dfb09dd5d99000f944b72",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c9aa4bea5e580f4b96dfba514f7a2f8d265b5656.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=29473"
+  },
+  {
+    "_id": "587e03a0dd5d99000f944b89",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/527a2a02521d66ff944a6115b76a71b512e1e059.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=242302"
+  },
+  {
+    "_id": "587f855f058c70000fedcdd1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9d4137189584990380aa4edc567d4e26c69759fa.png",
+    "source": "http://www.mopm.gov.sa/arabic/rules-and-regulations/Pages/default.aspx"
+  },
+  {
+    "_id": "587fe6773112e7000f1b7e2f",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/c3d4d906352abeff33f9ad2ae9448c410d274f30.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=245930"
+  },
+  {
+    "_id": "587fe684eed887000ecff6f3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3bfdb7f41f404717a6600608b31ba8b3983dcda7.pdf",
+    "source": "http://www.sernageomin.cl/pdf/mineria/estadisticas/anuario/anuario2013.pdf"
+  },
+  {
+    "_id": "587fe7f4eed887000ecff706",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d29644e468d81a2cfc8b2283633b9146bb34b80b.pdf",
+    "source": "http://www.sernageomin.cl/mineria-c-explotacion.php?pagina=2&accion=consulta®ion=15&provincia=1&comuna=01"
+  },
+  {
+    "_id": "587fe8ebeed887000ecff714",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/6e2315f776b5df2ed2b3653d8d6d6ce3640fe1f6.pdf",
+    "source": "http://www.sernageomin.cl/mineria-c-exploracion.php"
+  },
+  {
+    "_id": "587feac13112e7000f1b7e4a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/50fa06200157feb00721dcb38e1c623a2d0e2cea.xlsx",
+    "source": "http://www.sernageomin.cl/sminera-atlas.php"
+  },
+  {
+    "_id": "587feb91eed887000ecff725",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1bd07d715a2ff900a045ab95885c019574b3f7cd.pdf",
+    "source": "http://catastro.sernageomin.cl/"
+  },
+  {
+    "_id": "587fed49eed887000ecff73b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/65039ae9259ef39f794e2cd11728c3ce5aa02a76.pdf",
+    "source": "http://www.sii.cl/pagina/jurisprudencia/legislacion/complementaria/dfl_1.htm"
+  },
+  {
+    "_id": "587fee21eed887000ecff74e",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/04dfd62ddb20ec39253842158c479c93098eb26f.pdf",
+    "source": "http://www.sii.cl/diccionario_tributario/dicc_a.htm"
+  },
+  {
+    "_id": "587fef773112e7000f1b7e6c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2f438fea90da03f04bd7fbd211104cd05acf3d07.pdf",
+    "source": "https://www.codelco.com/memoria2015/pdf/memoria-anual/memoria-anual-codelco-2015.pdf"
+  },
+  {
+    "_id": "587ff079eed887000ecff767",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/0f9e04b65181738590b4d20bce8e2a085b767956.pdf",
+    "source": "http://web.sofofa.cl/noticia/gobierno-no-cumplira-meta-de-balance-estructural-y-anticipa-deuda-de-us9-500-millones-en-2016/"
+  },
+  {
+    "_id": "587ff124eed887000ecff77a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a679598410e7471b2d40f61f76b4ca5984891b4.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=1063905"
+  },
+  {
+    "_id": "587ff221eed887000ecff78b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/321811b3140bc88be9f7444167f8771b6a0e9fe6.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=30510"
+  },
+  {
+    "_id": "587ff2b73112e7000f1b7e8b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/de3a58577b599e094e03e433c1a90762df1e8dc4.pdf",
+    "source": "http://www.leychile.cl/Navegar?idNorma=243771&idVersion="
+  },
+  {
+    "_id": "587ff845eed887000ecff7b1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/df286de8d0be597a3ae7e77f94438250144bb927.pdf",
+    "source": "http://www.contraloria.cl/SicaProd/SICAv3-BIFAPortalCGR/faces/buscadorBifa?_adf.ctrl-state=uhbiq8qwu_51"
+  },
+  {
+    "_id": "587ffe77eed887000ecff7f0",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ec14a41d581a9c784545ce843367826fa623f8d3.pdf",
+    "source": "http://seia.sea.gob.cl/expediente/expedientesEvaluacion.php?modo=ficha&id_expediente=2130577300"
+  },
+  {
+    "_id": "587fff3aeed887000ecff7fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d882794f59bf9fa2c74655b5600a34a74186d4dc.pdf",
+    "source": "http://seia.sea.gob.cl/documentos/documento.php?idDocumento=2130577305"
+  },
+  {
+    "_id": "5880006f3112e7000f1b7ef6",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/dc6352168759002f9584bcd7e1cc5f8416a96d4a.pdf",
+    "source": "http://snifa.sma.gob.cl/v2"
+  },
+  {
+    "_id": "588000ceeed887000ecff80a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/9a6e2be3dae1cdc805e1fa439d9c7f56cf6b8dee.pdf",
+    "source": "http://snifa.sma.gob.cl/v2/Instrumento"
+  },
+  {
+    "_id": "588002423112e7000f1b7f0a",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/baea1270ab62c8909b3c78db23ae742af20d214f.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=28585"
+  },
+  {
+    "_id": "588003103112e7000f1b7f15",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/b715544470ce0069a0721c3432a7aa50836ae271.pdf",
+    "source": "https://www.leychile.cl/Navegar?idNorma=6577"
+  },
+  {
+    "_id": "58800683eed887000ecff81c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a0610ceece3f82729292c0f0aa94ecf8d2838b94.pdf",
+    "source": "http://www.contraloria.cl/SicaProd/SICAv3-BIFAPortalCGR/faces/buscadorBifa?_adf.ctrl-state=1bx3o9e26a_3"
+  },
+  {
+    "_id": "58808dd2eed887000ecff8e4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2348f0e784bb90901c730cb7669f2a00034e8b8f.png",
+    "source": "https://www.cambodiadaily.com/archives/government-considering-national-oil-company-79538/"
+  },
+  {
+    "_id": "5880a5883112e7000f1b8077",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/20bf65f3c5f7c25956b52bac6872a474486dbebd.xlsx",
+    "source": "http://www.bcv.org.ve/c2/indicadores.asp"
+  },
+  {
+    "_id": "5880a5f5eed887000ecff9b9",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/8826e6e795b963d8e2f306988b61d6bf810cdf8c.pdf",
+    "source": "http://www.cambodiainvestment.gov.kh/content/uploads/2012/02/Law-on-Taxation-of-2004_0401.pdf"
+  },
+  {
+    "_id": "5880a788eed887000ecff9d5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/202a681cce90639daca1601587afd7ab28005375.png",
+    "source": "https://home.kpmg.com/xx/en/home/insights/2011/12/cambodia-income-tax.html"
+  },
+  {
+    "_id": "5880b9c23112e7000f1b8109",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/2623d4987d5c259c75f217ea0f3f04d12265a334.pdf",
+    "source": "http://www.sama.gov.sa/en-US/EconomicReports/Pages/MonthlyStatistics.aspx"
+  },
+  {
+    "_id": "5880fab83112e7000f1b8398",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4aba2a0760c1f70b6de18b0efbc2ad64ab1c452a.pdf",
+    "source": "https://www.constituteproject.org/constitution/South_Sudan_2011.pdf"
+  },
+  {
+    "_id": "5880fbefeed887000ecffbb2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1c51732474f954a2ae30a53d87a70e4596e2f9fc.pdf",
+    "source": "http://mpmisouthsudan.org/Publications.html"
+  },
+  {
+    "_id": "588103673112e7000f1b83c3",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ba290baff8ee4a699fb7ede56a8e1b07e124843e.pdf",
+    "source": "https://eiti.org/countries-archive"
+  },
+  {
+    "_id": "588104603112e7000f1b83d4",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/3cc046a657a6a8e3b464731e7763e64d508251b1.pdf",
+    "source": "http://www.reuters.com/article/us-southsudan-corruption-idUSBRE8530QI20120604"
+  },
+  {
+    "_id": "5881db5da54004000e956653",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/882fc87ccd4ed36d868e74640866c62e97879f13.pdf",
+    "source": "https://www.cordaid.org/en/projects/research-in-transparency-accountability/"
+  },
+  {
+    "_id": "5881dde0a54004000e956666",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/78a9d9471a14f894bbef166a5723f34090362089.pdf",
+    "source": "https://www.globalwitness.org/en/reports/turning-tide-full/"
+  },
+  {
+    "_id": "5881de88a54004000e95667c",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/1f9102e51ad197b9455e8c6674f8f704b90a8e51.pdf",
+    "source": "https://www.globalwitness.org/en/reports/turning-tide-full/"
+  },
+  {
+    "_id": "5881e04c240db7000f4f1b09",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/7298ee8abeb1e91b32ca209773cd92859227038a.pdf",
+    "source": "https://www.globalwitness.org/en/reports/will-star-shine-south-sudan/"
+  },
+  {
+    "_id": "5881e146240db7000f4f1b16",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4949aa03f02c2c4bf85787d7d028722db332d8b0.xlsx",
+    "source": "http://www.mpetromin.gob.ve/portalmenpet/secciones.php?option=view&idS=21"
+  },
+  {
+    "_id": "5881eba6a54004000e9566dd",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/ca83695c966dfc77f430ba463b7a0e31b47c01a4.pdf",
+    "source": "http://150.187.240.43:8080/vapres/ficheros/elementos-de-la-pagina/gaceta-oficial/go-39859"
+  },
+  {
+    "_id": "5881f1f5240db7000f4f1ba5",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/aa64e57233290a0ed739ce5a103b5a04fbeefc7b.png",
+    "source": "https://opendevelopmentcambodia.net/topics/environmental-impact-assessments/"
+  },
+  {
+    "_id": "5882123c240db7000f4f1c5b",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/d71ebd67bfe66e544cf2798383907bcc53a68ffa.pdf",
+    "source": "https://www.env.go.jp/policy/assess/7-1asiaeia2016_pdf/asiaeiaconference2016-g3.pdf"
+  },
+  {
+    "_id": "58822435240db7000f4f1ce1",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/f44c1539e72820335f3e3ab2094d95cc6bdddbc9.pdf",
+    "source": "http://www.anp.gov.br/wwwanp/dados-estatisticos"
+  },
+  {
+    "_id": "588227c3a54004000e956870",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/4099b4a62a0701d2aa657f4055030304e7f843af.pdf",
+    "source": "http://www.cambodianbudget.org/"
+  },
+  {
+    "_id": "5884b183240db7000f4f21f2",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/64ec1fc9ba223e440778cfd2af64071c710b4457.pdf",
+    "source": "http://www.droit-afrique.com/upload/doc/congo/Congo-Loi-2000-17-propriete-fonciere-MAJ-2015.pdf"
+  },
+  {
+    "_id": "5884b5ba240db7000f4f21fb",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/e7e040a4ad058db4b749f2d22a5d140dab3b1754.pdf"
+  },
+  {
+    "_id": "58850da3240db7000f4f2251",
+    "s3_url": "https://s3.amazonaws.com/rgi-documents/a9a4be5b437760e2666d0e44cd11369e3256b02c.pdf",
+    "source": "http://www2.camara.leg.br/atividade-legislativa/orcamentobrasil/ldo/ldo2016"
   }
 ]
