@@ -42,6 +42,28 @@ angular.module('app')
 
                                 if (!answers.reason && (answers.data.length < portionSize)) {
                                     allAnswersLoaded = true;
+
+                                    var answersHeader = [];
+
+                                    $scope.answersHeader.forEach(function(fieldName) {
+                                        if((fieldName.indexOf('comment') !== 0) && (fieldName.indexOf('flag') !== 0)) {
+                                            answersHeader.push(fieldName);
+                                        }
+                                    });
+
+                                    $scope.answersHeader.forEach(function(fieldName) {
+                                        if(fieldName.indexOf('comment') === 0) {
+                                            answersHeader.push(fieldName);
+                                        }
+                                    });
+
+                                    $scope.answersHeader.forEach(function(fieldName) {
+                                        if(fieldName.indexOf('flag') === 0) {
+                                            answersHeader.push(fieldName);
+                                        }
+                                    });
+
+                                    $scope.answersHeader = answersHeader;
                                 }
                             }
                         }).finally(function () {
