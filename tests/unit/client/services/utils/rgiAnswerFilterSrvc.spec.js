@@ -1,6 +1,6 @@
 'use strict';
 
-describe('rgiSortableGuideSrvc', function () {
+describe('rgiAnswerFilterSrvc', function () {
     var rgiAnswerFilterSrvc;
 
     beforeEach(module('app'));

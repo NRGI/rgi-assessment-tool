@@ -1,6 +1,6 @@
 'use strict';
 
-describe('rgiSortableGuideSrvc', function () {
+describe('rgiPreceptGuideSrvc', function () {
     var rgiPreceptGuideSrvc;
 
     beforeEach(module('app'));
