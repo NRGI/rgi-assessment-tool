@@ -83,7 +83,19 @@ exports.updateUser = function (req, res) {
 
     User.findOne({_id: req.body._id}).exec(function (findUserError, user) {
         var updateUser = function() {
-            ['firstName', 'lastName', 'disabled', 'email', 'role', 'address', 'language','assessments', 'documents', 'interviewees']
+            [
+                'firstName',
+                'lastName',
+                'disabled',
+                'email',
+                'role',
+                'address',
+                'language',
+                'assessments',
+                'documents',
+                'interviewees',
+                'showAllAssessments'
+            ]
                 .forEach(function(field) {
                     user[field] = user_update[field];
                 });
