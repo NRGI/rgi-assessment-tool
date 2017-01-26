@@ -69,7 +69,9 @@
                         .form-group
                             label.control-label
                                 small Role:
-                            select.form-control(ng-model="new_user_data.role" ng-options="role as (role|role|ucfirst) for role in roles")
+                            select.form-control(
+                                ng-model="new_user_data.role" ng-options="role as (role|role|ucfirst) for role in roles"
+                            )
                 .row
                     .col-lg-5
                         .form-group
@@ -98,6 +100,18 @@
                             placeholder="Repeat password..."
                             ng-model="password_rep"
                             autocomplete="off")
+                .row(ng-show="new_user_data.role == 'viewer'")
+                    .col-lg-7
+                        .form-group
+                            label.control-label
+                                small Show all assessments:
+                    .col-lg-1
+                        .form-group
+                            input.form-control(
+                                name="showAllAssessments"
+                                type="checkbox"
+                                ng-model="new_user_data.showAllAssessments"
+                            )
     .modal-footer
         .col-lg-6
             button.btn.btn-block.btn-success(ng-click="update()" ng-disabled="profileForm.$invalid") Save
