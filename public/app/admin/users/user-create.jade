@@ -122,10 +122,15 @@
                                 placeholder="Address"
                                 ng-model="new_user_data.address"
                                 autocomplete="off")
-                        //.form-group
-                        //	label.col-md-2.control-label(form="language") Preferred Language
-                        //	.col-md-10
-                        //		input.form-control(name="language", type="text", placeholder="Language", ng-model="language")
+                        .form-group(ng-show="new_user_data.role == 'viewer'")
+                            label.col-md-3.control-label(form="createUserForm" for="createUserForm.showAllAssessments") Show All Assessments
+                            .col-md-1
+                                input.form-control(
+                                    name="showAllAssessments"
+                                    id="createUserForm.showAllAssessments"
+                                    type="checkbox"
+                                    ng-model="new_user_data.showAllAssessments"
+                                )
 
                         .form-group
                             .col-md-10.col-md-offset-2
