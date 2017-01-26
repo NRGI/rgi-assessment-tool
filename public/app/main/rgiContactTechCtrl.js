@@ -87,7 +87,10 @@ angular.module('app')
                 }, rgiHttpResponseProcessorSrvc.getDefaultHandler('Load assessment data failure'));
             };
 
-            criteria[rgiIdentitySrvc.currentUser.role + '_ID'] = rgiIdentitySrvc.currentUser._id;
+            if(!(rgiIdentitySrvc.currentUser.isViewer() && rgiIdentitySrvc.currentUser.showAllAssessments)) {
+                criteria[rgiIdentitySrvc.currentUser.role + '_ID'] = rgiIdentitySrvc.currentUser._id;
+            }
+
             getAssessments(criteria);
         }
 
