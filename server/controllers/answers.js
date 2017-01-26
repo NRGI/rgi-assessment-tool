@@ -40,7 +40,7 @@ var getFilteredScoreHistory = function(rawHistory, skipJustificationComparison) 
 };
 
 exports.getAnswers = function (req, res, next) {
-    if (req.user.hasRole('supervisor')) {
+    if (req.user.hasRole('supervisor') || (req.user.hasRole('viewer') && req.user.showAllAssessments)) {
         Answer.find(req.query)
             .populate('question_ID', 'question_label question_text dejure question_criteria question_order component_text precept')
             .populate('references.author', 'firstName lastName role')

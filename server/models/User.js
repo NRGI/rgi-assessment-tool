@@ -53,6 +53,7 @@ userSchema = new Schema({
         type:  Date,
         default: Date.now},
     disabled: {type: Boolean, default: false},
+    showAllAssessments: {type: Boolean, default: false},
     address: String,
     external_type: String, //government, country_team,
     salutation: String,
