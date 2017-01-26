@@ -16,7 +16,7 @@ angular.module('app')
             if( rgiIdentitySrvc.currentUser && (rgiIdentitySrvc.currentUser.isSupervisor() || rgiIdentitySrvc.currentUser.isViewer()) ) {
                 var urls = [], versions = [], query = {};
 
-                if(rgiIdentitySrvc.currentUser.isViewer()) {
+                if(rgiIdentitySrvc.currentUser.isViewer() && !rgiIdentitySrvc.currentUser.showAllAssessments) {
                     query.viewer_ID = rgiIdentitySrvc.currentUser._id;
                 }
 

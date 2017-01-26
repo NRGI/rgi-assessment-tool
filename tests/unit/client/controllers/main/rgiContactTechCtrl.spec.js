@@ -106,7 +106,8 @@ describe('rgiContactTechCtrl', function () {
             email: 'CURRENT@USER.EMAIL',
             firstName: 'CURRENT USER FIRST NAME',
             lastName: 'CURRENT USER LAST NAME',
-            role: 'CURRENT USER ROLE'
+            role: 'CURRENT USER ROLE',
+            isViewer: function() {return false;}
         };
 
         initializeController(CURRENT_USER);
