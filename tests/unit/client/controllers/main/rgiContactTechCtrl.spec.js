@@ -106,58 +106,91 @@ describe('rgiContactTechCtrl', function () {
             email: 'CURRENT@USER.EMAIL',
             firstName: 'CURRENT USER FIRST NAME',
             lastName: 'CURRENT USER LAST NAME',
-            role: 'CURRENT USER ROLE',
-            isViewer: function() {return false;}
+            role: 'CURRENT USER ROLE'
         };
 
-        initializeController(CURRENT_USER);
-
-        it('automatically supplements the request data', function() {
-            $scope.request.first_name.should.be.equal(CURRENT_USER.firstName);
-            $scope.request.last_name.should.be.equal(CURRENT_USER.lastName);
-            $scope.request.email.should.be.equal(CURRENT_USER.email);
-        });
-
-        it('submits a request to get the assessment data', function() {
-            var criteria = {};
-            criteria[CURRENT_USER.role + '_ID'] = CURRENT_USER._id;
-            spies.assessmentQuery.withArgs(criteria).called.should.be.equal(true);
-        });
-
-        it('processes HTTP failures', function() {
-            values.httpErrorHandler.should.be.equal('Load assessment data failure');
-        });
-
-        describe('GET ASSESSMENT DATA CALLBACK', function() {
-            it('does nothing if the assessment list is empty', function() {
-                callbacks.assessmentQuery([]);
-                should.not.exist($scope.assessments);
-                should.not.exist($scope.request.assessment);
+        describe('THE CURRENT USER IS A VIEWER ALLOWED TO SEE ALL ASSESSMENTS', function() {
+            beforeEach(function() {
+                CURRENT_USER.showAllAssessments = true;
+                CURRENT_USER.isViewer = function() {return true;};
             });
 
-            it('supplements the request if just one assessment is got', function() {
-                var ASSESSMENT = 'assessment';
-                callbacks.assessmentQuery([ASSESSMENT]);
-                $scope.request.assessment.should.be.equal(ASSESSMENT);
+            initializeController(CURRENT_USER);
+
+            it('submits a request to get the assessment data', function() {
+                spies.assessmentQuery.withArgs({}).called.should.be.equal(true);
+            });
+        });
+
+        describe('THE CURRENT USER IS A VIEWER', function() {
+            beforeEach(function() {
+                CURRENT_USER.showAllAssessments = false;
+                CURRENT_USER.isViewer = function() {return true;};
             });
 
-            it('sets sorted assessments list if more than one assessment are got', function() {
-                callbacks.assessmentQuery([
-                    {"country": "Columbia", "year": 2016, "version": "MI", "mineral": "Gold"},
-                    {"country": "Brazil", "year": 2016, "version": "MI", "mineral": "Gold"},
-                    {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Iron"},
-                    {"country": "Brazil", "year": 2017, "version": "HY"},
-                    {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Gold"}
-                ]);
+            initializeController(CURRENT_USER);
 
-                $scope.assessments.should.deep.equal([
-                    {"country": "Brazil", "year": 2016, "version": "MI", "mineral": "Gold"},
-                    {"country": "Brazil", "year": 2017, "version": "HY"},
-                    {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Gold"},
-                    {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Iron"},
-                    {"country": "Columbia", "year": 2016, "version": "MI", "mineral": "Gold"}
-                ]);
-            })
+            it('submits a request to get the assessment data', function() {
+                var criteria = {};
+                criteria[CURRENT_USER.role + '_ID'] = CURRENT_USER._id;
+                spies.assessmentQuery.withArgs(criteria).called.should.be.equal(true);
+            });
+        });
+
+        describe('THE CURRENT USER IS NOT VIEWER', function() {
+            beforeEach(function() {
+                CURRENT_USER.isViewer = function() {return false;};
+            });
+
+            initializeController(CURRENT_USER);
+
+            it('automatically supplements the request data', function() {
+                $scope.request.first_name.should.be.equal(CURRENT_USER.firstName);
+                $scope.request.last_name.should.be.equal(CURRENT_USER.lastName);
+                $scope.request.email.should.be.equal(CURRENT_USER.email);
+            });
+
+            it('submits a request to get the assessment data', function() {
+                var criteria = {};
+                criteria[CURRENT_USER.role + '_ID'] = CURRENT_USER._id;
+                spies.assessmentQuery.withArgs(criteria).called.should.be.equal(true);
+            });
+
+            it('processes HTTP failures', function() {
+                values.httpErrorHandler.should.be.equal('Load assessment data failure');
+            });
+
+            describe('GET ASSESSMENT DATA CALLBACK', function() {
+                it('does nothing if the assessment list is empty', function() {
+                    callbacks.assessmentQuery([]);
+                    should.not.exist($scope.assessments);
+                    should.not.exist($scope.request.assessment);
+                });
+
+                it('supplements the request if just one assessment is got', function() {
+                    var ASSESSMENT = 'assessment';
+                    callbacks.assessmentQuery([ASSESSMENT]);
+                    $scope.request.assessment.should.be.equal(ASSESSMENT);
+                });
+
+                it('sets sorted assessments list if more than one assessment are got', function() {
+                    callbacks.assessmentQuery([
+                        {"country": "Columbia", "year": 2016, "version": "MI", "mineral": "Gold"},
+                        {"country": "Brazil", "year": 2016, "version": "MI", "mineral": "Gold"},
+                        {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Iron"},
+                        {"country": "Brazil", "year": 2017, "version": "HY"},
+                        {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Gold"}
+                    ]);
+
+                    $scope.assessments.should.deep.equal([
+                        {"country": "Brazil", "year": 2016, "version": "MI", "mineral": "Gold"},
+                        {"country": "Brazil", "year": 2017, "version": "HY"},
+                        {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Gold"},
+                        {"country": "Brazil", "year": 2017, "version": "MI", "mineral": "Iron"},
+                        {"country": "Columbia", "year": 2016, "version": "MI", "mineral": "Gold"}
+                    ]);
+                })
+            });
         });
     });
 
