@@ -198,10 +198,21 @@ exports.getExportedAnswersData = function(req, res) {
         };
 
     var answers = [], listLength = {comments: 0, flags: 0},
+        getFieldListLength = function(fieldList) {
+            var fieldListLength = 0;
+
+            fieldList.forEach(function(fieldListItem) {
+                if(!fieldListItem.hidden) {
+                    fieldListLength++;
+                }
+            });
+
+            return fieldListLength;
+        },
         getFieldCounter = function(answerData) {
             return function(field) {
-                if(answerData[field].length > listLength[field]) {
-                    listLength[field] = answerData[field].length;
+                if(getFieldListLength(answerData[field]) > listLength[field]) {
+                    listLength[field] = getFieldListLength(answerData[field]);
                 }
             };
         };
