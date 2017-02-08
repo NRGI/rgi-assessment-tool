@@ -4,7 +4,7 @@
             .h3 {{::assessment.country}} {{::assessment.year}} {{::assessment.mineral|addSpaces}} {{::assessment.version}} assessment
             ul.nav.nav-tabs
                 li.active: a(data-target="#question" data-toggle="tab") Question
-                li: a(data-target="#guidance", data-toggle="tab", ng-if="!identity.currentUser.isViewer()") Question Guidance
+                li: a(data-target="#guidance", data-toggle="tab") Question Guidance
                 li(ng-if="identity.currentUser.isSupervisor()"): a(data-target="#previous" data-toggle="tab") Answer History
                 .row-fluid.right-padding-lg
                     rgi-answer-nav(
@@ -52,7 +52,7 @@
                         rgi-comments(update="answer")
 
 
-                #guidance.tab-pane(ng-if="!identity.currentUser.isViewer()")
+                #guidance.tab-pane
                     label: h3 Guidance:
                     .right-padding-lg.left-padding-lg(ng-bind-html="question.question_guidance_text")
                     .right-padding-lg.left-padding-lg(ng-if="question.question_dependancies")
