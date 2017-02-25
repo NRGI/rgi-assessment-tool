@@ -1,6 +1,8 @@
 'use strict';
 
 var striptags = require('striptags');
+var Entities = require('html-entities').XmlEntities;
+var entities = new Entities();
 
 var Answer      = require('mongoose').model('Answer'),
     Country     = require('mongoose').model('Country'),
@@ -164,7 +166,7 @@ exports.getExportedAnswersData = function(req, res) {
         },
         copyScoreWithJustification = function(outputAnswer, inputAnswer, scoreType) {
             outputAnswer[getScoreFieldPrefix(scoreType) + '_justification'] =
-                striptags(inputAnswer[scoreType + '_justification']);
+                entities.decode(striptags(inputAnswer[scoreType + '_justification']));
             copyScore(outputAnswer, inputAnswer, scoreType);
         },
         copyListValues = function(outputAnswer, inputAnswer, field, valuesNumber) {
@@ -172,7 +174,7 @@ exports.getExportedAnswersData = function(req, res) {
                 var data = inputAnswer[field][index];
 
                 if(data) {
-                    outputAnswer[getListFieldPrefix(field) + (index + 1)] = striptags(data.content);
+                    outputAnswer[getListFieldPrefix(field) + (index + 1)] = entities.decode(striptags(data.content));
                 }
             }
         },
