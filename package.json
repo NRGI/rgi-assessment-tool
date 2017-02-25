@@ -33,6 +33,7 @@
     "express": "^4.10.2",
     "express-session": "^1.9.1",
     "forever": "~0.15.1",
+    "html-entities": "^1.2.0",
     "jade": "^1.7.0",
     "mime": "^1.3.4",
     "mongoose": "4.7.6",
