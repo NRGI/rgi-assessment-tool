@@ -1,5 +1,6 @@
 'use strict';
 
+var async = require('async');
 var striptags = require('striptags');
 var Entities = require('html-entities').XmlEntities;
 var entities = new Entities();
@@ -99,6 +100,42 @@ exports.listPublicData = function(req, res) {
         res.sendStatus(404);
         return res.end();
     }
+};
+
+exports.setFinalScore = function(req, res) {
+    if (req.params.assessment_ID !== undefined) {
+        Answer.find({assessment_ID: req.params.assessment_ID}) .exec(function (err, answers) {
+            if (err) {
+                return res.send({reason: err});
+            }
+
+            var promises = [];
+            var sendResponse = function(err) {
+                res.send(err ? {reason: err.toString()} : {result: promises.length + ' answers modified'});
+            };
+
+            answers.forEach(function(answer) {
+                if((answer.researcher_score.letter !== undefined) && (answer.reviewer_score.letter !== undefined)) {
+                    if((answer.researcher_score.letter === answer.reviewer_score.letter)) {
+                        if ((answer.final_score.letter === undefined) && !answer.reviewer_justification) {
+                            answer.final_score = answer.researcher_score;
+                            answer.final_justification = answer.researcher_justification;
+
+                            promises.push(function(callback) {
+                                new Answer(answer).save(callback);
+                            });
+                        }
+                    }
+                }
+            });
+
+            async.parallel(promises, sendResponse);
+        });
+    } else {
+        res.sendStatus(404);
+        return res.end();
+    }
+
 };
 
 exports.getAnswersPortion = function(req, res, next) {
