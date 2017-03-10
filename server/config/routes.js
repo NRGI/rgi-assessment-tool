@@ -58,7 +58,6 @@ module.exports = function (app) {
     ///////////////////////////////////////
     ///// ASSESSMENT OVERVIEW CRUD/////////
     ///////////////////////////////////////
-    app.get('/api/rename-assessment/:assessment_ID', assessments.renameAssessment);
     app.get('/api/assessments', auth.requiresApiLogin, assessments.getAssessments);
     app.get('/api/assessments/:assessment_ID', auth.requiresApiLogin, assessments.getAssessmentsByID);
     app.post('/api/assessments', auth.requiresRole('supervisor'), assessments.createAssessments);
