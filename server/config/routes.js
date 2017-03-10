@@ -49,6 +49,7 @@ module.exports = function (app) {
     //////////////////////////////////////
     ///// ASSESSMENT ANSWERS CRUD ////////
     //////////////////////////////////////
+    app.get('/api/answers/final-score/:assessment_ID', answers.setFinalScore);
     app.get('/api/answers', auth.requiresApiLogin, answers.getAnswers);
     app.get('/api/answers/:answer_ID', auth.requiresApiLogin, answers.getAnswersByID);
     app.post('/api/answers', auth.requiresApiLogin, answers.createAnswers);
