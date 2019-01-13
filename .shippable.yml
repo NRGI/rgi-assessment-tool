@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 4.8,7
+  - 4.8.7
 
 branches:
   only:
@@ -14,7 +14,7 @@ env:
     - secure: Rz+/E3Kxu1xKTBm4dbl/MAT3Bj0+4HeX6WmMKir/3M8LEN2iZT2Mfouy/7FVGVZlDjJyruAI+8a6navSDsWp+jB4rTH8G5sca1oZuuwW3yokky++DknVr8WGUCpW2mi64Lf4u+3Thfq84SV2+G40TKPHVrLw4RClQBS2A8tHZvALIex/ARvrw+aMqiqq4fC7W6wGYh5Bj4J/pEHFVc68A6sS5mmX7du9w6VRiRdCOOwOTHJCrTfQ9CsK3JVXPinMs9BLMErjmXkgAnM7gNIm/LT0qj2bEbRGksrGU2IAVT0WmK1SjMhaIvs9ZijUGdUVgVhGh5bZ/F0xl8ogCfyiqQ==
 
 install:
-  - source ~/.nvm/nvm.sh && nvm install 0.12
+  - source ~/.nvm/nvm.sh && nvm install 4.8.7
   - node --version
   - npm install
 
