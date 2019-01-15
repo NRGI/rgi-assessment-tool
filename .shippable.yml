@@ -31,18 +31,6 @@ integrations:
 
 build:
   ci:
-    - npm install --dev
-    - npm install -g bower@1.7.9 phantomjs-prebuilt
-    - bower install
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-
-    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
-
-    # Cleanup src folder
-    - rm -rf node_modules
-    - rm -rf bower_components
 
     # Create the version file
     - ./create_version.sh
