@@ -32,8 +32,8 @@ integrations:
 
 build:
   ci:
-    - npm install --dev
-    - bower install
+    - npm install --only=dev
+    - bower install --allow-root
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
 
