@@ -30,25 +30,20 @@ integrations:
       on_success: change
       on_failure: always      
 
-#before_script:
-#  - npm install --dev
-#  - npm install -g bower@1.7.9 phantomjs
-#  - bower install
-#  - mkdir -p shippable/testresults
-#  - mkdir -p shippable/codecoverage
-#
-#script:
-#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-#  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
-#
-#after_success:
 build:
   ci:
-    # Cleanup src folder
+    - npm install --dev
+    - bower install
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+      #Cleanup src folder
     - rm -rf node_modules
     - rm -rf bower_components
 
-    # Create the version file
+     # Create the version file
     - ./create_version.sh
 
     # Build image
