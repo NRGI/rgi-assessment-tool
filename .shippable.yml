@@ -1,12 +1,13 @@
 language: node_js
 
 node_js:
-  - 1.10
+  - 5.12.0
 
 branches:
   only:
     - staging
     - master
+    - 596-fix-build
 
 env:
   global:
@@ -31,15 +32,25 @@ integrations:
 
 build:
   ci:
+    - npm install --only=dev
+    - bower install --allow-root
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
 
-    # Create the version file
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+    #Cleanup src folder
+    - rm -rf node_modules
+    - rm -rf bower_components
+
+     # Create the version file
     - ./create_version.sh
 
     # Build image
     - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
 
     # Create the `latest` tag and force it in case the tag is already there from a previous build
-    - sudo docker tag -f nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
+    - sudo docker tag nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
 
     - sudo docker push nrgi/rgi-assessment-tool:$BRANCH
     - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
