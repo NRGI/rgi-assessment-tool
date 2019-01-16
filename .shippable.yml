@@ -1,13 +1,12 @@
 language: node_js
 
 node_js:
-  - 0.10
+  - 5.12.0
 
 branches:
   only:
     - staging
     - master
-
 env:
   global:
     # Shippable API token used to trigger deploy
@@ -22,7 +21,6 @@ integrations:
       type: email
       recipients:
         - nrgi@vitaminsoftware.com
-        - sascha.elgin@gmail.com
       branches:
         only:
           - master
@@ -30,32 +28,29 @@ integrations:
       on_success: change
       on_failure: always      
 
-before_script:
-  - npm install --dev
-  - npm install -g bower@1.7.9 phantomjs
-  - bower install
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
+build:
+  ci:
+    - npm install
+    - bower install --allow-root
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
 
-script:
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
-  - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters junit
+    - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run --reporters coverage
+      #Cleanup src folder
+    - rm -rf node_modules
+    - rm -rf bower_components
 
-after_success:
-  # Cleanup src folder
-  - rm -rf node_modules
-  - rm -rf bower_components
+     # Create the version file
+    - ./create_version.sh
 
-  # Create the version file
-  - ./create_version.sh
-  
-  # Build image
-  - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
+    # Build image
+    - sudo docker build --no-cache=true -t nrgi/rgi-assessment-tool:$BRANCH.$COMMIT .
 
-  # Create the `latest` tag and force it in case the tag is already there from a previous build
-  - sudo docker tag -f nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
+    # Create the `latest` tag and force it in case the tag is already there from a previous build
+    - sudo docker tag nrgi/rgi-assessment-tool:$BRANCH.$COMMIT nrgi/rgi-assessment-tool:$BRANCH
 
-  - sudo docker push nrgi/rgi-assessment-tool:$BRANCH
-  - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
+    - sudo docker push nrgi/rgi-assessment-tool:$BRANCH
+    - sudo docker push nrgi/rgi-assessment-tool:$BRANCH.$COMMIT
 
-  - ./deploy.sh
+    - ./deploy.sh
