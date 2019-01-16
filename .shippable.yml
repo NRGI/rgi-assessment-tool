@@ -20,7 +20,7 @@ integrations:
     - integrationName: email
       type: email
       recipients:
-        - adina@vitaminsoftware.com
+        - nrgi@vitaminsoftware.com
       branches:
         only:
           - master
