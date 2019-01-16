@@ -7,8 +7,6 @@ branches:
   only:
     - staging
     - master
-    - 596-fix-build
-
 env:
   global:
     # Shippable API token used to trigger deploy
