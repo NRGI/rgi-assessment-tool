@@ -22,37 +22,31 @@ module.exports = {
     //},
     staging: {
         baseUrl: 'http://rgi-staging.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev?replicaSet=set-54c2868c4ae1de388800b2a3',
-        rootPath: rootPath,
-        port: process.env.PORT || 80
-    },
-    staging_2: {
-        baseUrl: 'http://rgi-staging_2.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev_2?replicaSet=set-54c2868c4ae1de388800b2a3',
+        db: '@rgi-assessment-tool-shard-00-00-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-01-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-02-xscpv.mongodb.net:27017/rgi_dev?ssl=true&replicaSet=rgi-assessment-tool-shard-0&authSource=admin',
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
     question_staging: {
         baseUrl: 'http://rgi-question-staging.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_question_staging?replicaSet=set-54c2868c4ae1de388800b2a3',
+        db: '@rgi-assessment-tool-shard-00-00-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-01-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-02-xscpv.mongodb.net:27017/rgi_question_staging?ssl=true&replicaSet=rgi-assessment-tool-shard-0&authSource=admin',
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
     production: {
         baseUrl: 'http://rgi.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_production?replicaSet=set-54c2868c4ae1de388800b2a3',
+        db: '@rgi-assessment-tool-shard-00-00-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-01-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-02-xscpv.mongodb.net:27017/rgi_production?ssl=true&replicaSet=rgi-assessment-tool-shard-0&authSource=admin',
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
     pilot: {
         baseUrl: 'http://rgi-pilot.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_pilot?replicaSet=set-54c2868c4ae1de388800b2a3',
+        db: '@rgi-assessment-tool-shard-00-00-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-01-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-02-xscpv.mongodb.net:27017/rgi_pilot?ssl=true&replicaSet=rgi-assessment-tool-shard-0&authSource=admin',
         rootPath: rootPath,
         port: process.env.PORT || 80
     },
     new_data: {
         baseUrl: 'http://rgi-new-data.nrgi-assessment.org',
-        db: '@candidate.19.mongolayer.com:10726,candidate.32.mongolayer.com:10582/rgi_dev?replicaSet=set-54c2868c4ae1de388800b2a3',
+        db: '@rgi-assessment-tool-shard-00-00-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-01-xscpv.mongodb.net:27017,rgi-assessment-tool-shard-00-02-xscpv.mongodb.net:27017/rgi_dev?ssl=true&replicaSet=rgi-assessment-tool-shard-0&authSource=admin',
         rootPath: rootPath,
         port: process.env.PORT || 80
     }
