@@ -5,11 +5,11 @@ node_js:
 services:
   - docker
 
-before_script:
+install:
+  - npm install
   - npm install --dev
   - npm install -g bower
   - npm install -g phantomjs
   - bower install
-
 script:
   - node_modules/karma/bin/karma start --browsers=PhantomJS --single-run
